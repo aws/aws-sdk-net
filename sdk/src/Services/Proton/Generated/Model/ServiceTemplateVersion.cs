@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Proton.Model
 {
     /// <summary>
-    /// The version of a service template detail data.
+    /// Detailed data of an Proton service template version resource.
     /// </summary>
     public partial class ServiceTemplateVersion
     {
@@ -44,6 +44,7 @@ namespace Amazon.Proton.Model
         private string _schema;
         private TemplateVersionStatus _status;
         private string _statusMessage;
+        private List<string> _supportedComponentSources = new List<string>();
         private string _templateName;
 
         /// <summary>
@@ -253,6 +254,30 @@ namespace Amazon.Proton.Model
         internal bool IsSetStatusMessage()
         {
             return this._statusMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedComponentSources. 
+        /// <para>
+        /// An array of supported component sources. Components with supported sources can be
+        /// attached to service instances based on this service template version.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton Administrator Guide</i>.
+        /// </para>
+        /// </summary>
+        public List<string> SupportedComponentSources
+        {
+            get { return this._supportedComponentSources; }
+            set { this._supportedComponentSources = value; }
+        }
+
+        // Check to see if SupportedComponentSources property is set
+        internal bool IsSetSupportedComponentSources()
+        {
+            return this._supportedComponentSources != null && this._supportedComponentSources.Count > 0; 
         }
 
         /// <summary>

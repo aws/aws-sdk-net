@@ -30,7 +30,7 @@ namespace Amazon.Proton.Model
 {
     /// <summary>
     /// Container for the parameters to the GetEnvironmentTemplateVersion operation.
-    /// View detail data for a major or minor version of an environment template.
+    /// Get detailed data for a major or minor version of an environment template.
     /// </summary>
     public partial class GetEnvironmentTemplateVersionRequest : AmazonProtonRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property MajorVersion. 
         /// <para>
-        /// To view environment template major version detail data, include <code>major Version</code>.
+        /// To get environment template major version detail data, include <code>major Version</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]
@@ -60,7 +60,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property MinorVersion. 
         /// <para>
-        /// To view environment template minor version detail data, include <code>minorVersion</code>.
+        /// To get environment template minor version detail data, include <code>minorVersion</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]
@@ -79,7 +79,8 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property TemplateName. 
         /// <para>
-        /// The name of the environment template.
+        /// The name of the environment template a version of which you want to get detailed data
+        /// for..
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

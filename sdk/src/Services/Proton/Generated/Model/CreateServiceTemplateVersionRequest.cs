@@ -41,6 +41,7 @@ namespace Amazon.Proton.Model
         private string _description;
         private string _majorVersion;
         private TemplateVersionSourceInput _source;
+        private List<string> _supportedComponentSources = new List<string>();
         private List<Tag> _tags = new List<Tag>();
         private string _templateName;
 
@@ -67,8 +68,9 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property CompatibleEnvironmentTemplates. 
         /// <para>
-        /// An array of compatible environment template objects for the new version of a service
-        /// template.
+        /// An array of environment template objects that are compatible with the new service
+        /// template version. A service instance based on this service template version can run
+        /// in environments based on compatible templates.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]
@@ -145,6 +147,30 @@ namespace Amazon.Proton.Model
         internal bool IsSetSource()
         {
             return this._source != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedComponentSources. 
+        /// <para>
+        /// An array of supported component sources. Components with supported sources can be
+        /// attached to service instances based on this service template version.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton Administrator Guide</i>.
+        /// </para>
+        /// </summary>
+        public List<string> SupportedComponentSources
+        {
+            get { return this._supportedComponentSources; }
+            set { this._supportedComponentSources = value; }
+        }
+
+        // Check to see if SupportedComponentSources property is set
+        internal bool IsSetSupportedComponentSources()
+        {
+            return this._supportedComponentSources != null && this._supportedComponentSources.Count > 0; 
         }
 
         /// <summary>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Proton.Model
 {
     /// <summary>
-    /// A summary of detail data for a registered repository.
+    /// Summary data of a repository that has been registered with Proton.
     /// </summary>
     public partial class RepositorySummary
     {

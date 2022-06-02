@@ -117,6 +117,17 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetSupportedComponentSources())
+                {
+                    context.Writer.WritePropertyName("supportedComponentSources");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSupportedComponentSourcesListValue in publicRequest.SupportedComponentSources)
+                    {
+                            context.Writer.Write(publicRequestSupportedComponentSourcesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");

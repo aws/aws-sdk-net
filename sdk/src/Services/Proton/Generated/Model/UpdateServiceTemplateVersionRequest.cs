@@ -39,13 +39,15 @@ namespace Amazon.Proton.Model
         private string _majorVersion;
         private string _minorVersion;
         private TemplateVersionStatus _status;
+        private List<string> _supportedComponentSources = new List<string>();
         private string _templateName;
 
         /// <summary>
         /// Gets and sets the property CompatibleEnvironmentTemplates. 
         /// <para>
-        /// An array of compatible environment names for a service template major or minor version
-        /// to update.
+        /// An array of environment template objects that are compatible with this service template
+        /// version. A service instance based on this service template version can run in environments
+        /// based on compatible templates.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -134,6 +136,36 @@ namespace Amazon.Proton.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedComponentSources. 
+        /// <para>
+        /// An array of supported component sources. Components with supported sources can be
+        /// attached to service instances based on this service template version.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// A change to <code>supportedComponentSources</code> doesn't impact existing component
+        /// attachments to instances based on this template version. A change only affects later
+        /// associations.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton Administrator Guide</i>.
+        /// </para>
+        /// </summary>
+        public List<string> SupportedComponentSources
+        {
+            get { return this._supportedComponentSources; }
+            set { this._supportedComponentSources = value; }
+        }
+
+        // Check to see if SupportedComponentSources property is set
+        internal bool IsSetSupportedComponentSources()
+        {
+            return this._supportedComponentSources != null && this._supportedComponentSources.Count > 0; 
         }
 
         /// <summary>

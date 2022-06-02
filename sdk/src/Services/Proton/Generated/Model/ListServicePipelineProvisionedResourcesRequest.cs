@@ -61,7 +61,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
-        /// The service name.
+        /// The name of the service whose pipeline's provisioned resources you want.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

@@ -29,12 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Proton.Model
 {
     /// <summary>
-    /// The environment detail data. An Proton environment is a set resources shared across
-    /// an Proton service.
+    /// Detailed data of an Proton environment resource. An Proton environment is a set of
+    /// resources shared across Proton services.
     /// </summary>
     public partial class Environment
     {
         private string _arn;
+        private string _componentRoleArn;
         private DateTime? _createdAt;
         private DeploymentStatus _deploymentStatus;
         private string _deploymentStatusMessage;
@@ -69,6 +70,37 @@ namespace Amazon.Proton.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComponentRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning
+        /// directly defined components in this environment. It determines the scope of infrastructure
+        /// that a component can provision.
+        /// </para>
+        ///  
+        /// <para>
+        /// The environment must have a <code>componentRoleArn</code> to allow directly defined
+        /// components to be associated with the environment.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton Administrator Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public string ComponentRoleArn
+        {
+            get { return this._componentRoleArn; }
+            set { this._componentRoleArn = value; }
+        }
+
+        // Check to see if ComponentRoleArn property is set
+        internal bool IsSetComponentRoleArn()
+        {
+            return this._componentRoleArn != null;
         }
 
         /// <summary>

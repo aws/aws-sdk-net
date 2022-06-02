@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Proton.Model
 {
     /// <summary>
-    /// A summary of the service instance detail data.
+    /// Summary data of an Proton service instance resource.
     /// </summary>
     public partial class ServiceInstanceSummary
     {

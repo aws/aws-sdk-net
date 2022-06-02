@@ -30,7 +30,7 @@ namespace Amazon.Proton.Model
 {
     /// <summary>
     /// Container for the parameters to the ListServiceInstances operation.
-    /// List service instances with summaries of detail data.
+    /// List service instances with summary data.
     /// </summary>
     public partial class ListServiceInstancesRequest : AmazonProtonRequest
     {

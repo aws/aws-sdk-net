@@ -38,7 +38,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property ServiceTemplate. 
         /// <para>
-        /// The service template detail data that's returned by Proton.
+        /// The detailed data of the requested service template.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

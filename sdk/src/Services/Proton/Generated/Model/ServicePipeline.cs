@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Proton.Model
 {
     /// <summary>
-    /// The service pipeline detail data.
+    /// Detailed data of an Proton service instance pipeline resource.
     /// </summary>
     public partial class ServicePipeline
     {

@@ -78,6 +78,12 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("clientToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetComponentRoleArn())
+                {
+                    context.Writer.WritePropertyName("componentRoleArn");
+                    context.Writer.Write(publicRequest.ComponentRoleArn);
+                }
+
                 if(publicRequest.IsSetEnvironmentName())
                 {
                     context.Writer.WritePropertyName("environmentName");

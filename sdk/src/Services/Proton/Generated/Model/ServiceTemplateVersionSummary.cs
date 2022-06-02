@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Proton.Model
 {
     /// <summary>
-    /// A summary of the service template version detail data.
+    /// Summary data of an Proton service template version resource.
     /// </summary>
     public partial class ServiceTemplateVersionSummary
     {

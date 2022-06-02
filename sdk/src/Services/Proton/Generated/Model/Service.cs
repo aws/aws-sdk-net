@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Proton.Model
 {
     /// <summary>
-    /// The service detail data.
+    /// Detailed data of an Proton service resource.
     /// </summary>
     public partial class Service
     {
@@ -107,7 +107,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description of a service.
+        /// A description of the service.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=500)]

@@ -38,7 +38,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property ServiceInstance. 
         /// <para>
-        /// The service instance detail data that's returned by Proton.
+        /// The detailed data of the requested service instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

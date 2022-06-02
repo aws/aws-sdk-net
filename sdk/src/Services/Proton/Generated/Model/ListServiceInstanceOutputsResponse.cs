@@ -59,7 +59,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property Outputs. 
         /// <para>
-        /// An array of service instance infrastructure as code outputs.
+        /// An array of service instance Infrastructure as Code (IaC) outputs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

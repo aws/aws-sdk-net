@@ -58,7 +58,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property ServiceInstances. 
         /// <para>
-        /// An array of service instances with summaries of detail data.
+        /// An array of service instances with summary data.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

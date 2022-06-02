@@ -30,7 +30,7 @@ namespace Amazon.Proton.Model
 {
     /// <summary>
     /// Container for the parameters to the GetServiceTemplate operation.
-    /// Get detail data for a service template.
+    /// Get detailed data for a service template.
     /// </summary>
     public partial class GetServiceTemplateRequest : AmazonProtonRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the service template that you want to get detail data for.
+        /// The name of the service template that you want to get detailed data for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

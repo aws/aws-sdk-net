@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Proton.Model
 {
     /// <summary>
-    /// The service instance detail data.
+    /// Detailed data of an Proton service instance resource.
     /// </summary>
     public partial class ServiceInstance
     {
@@ -107,7 +107,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property DeploymentStatusMessage. 
         /// <para>
-        /// A service instance deployment status message.
+        /// The message associated with the service instance deployment status.
         /// </para>
         /// </summary>
         public string DeploymentStatusMessage

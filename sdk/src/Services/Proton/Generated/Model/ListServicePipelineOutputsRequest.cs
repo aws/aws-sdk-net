@@ -30,7 +30,7 @@ namespace Amazon.Proton.Model
 {
     /// <summary>
     /// Container for the parameters to the ListServicePipelineOutputs operation.
-    /// View a list service pipeline infrastructure as code outputs with detail.
+    /// Get a list of service pipeline Infrastructure as Code (IaC) outputs.
     /// </summary>
     public partial class ListServicePipelineOutputsRequest : AmazonProtonRequest
     {
@@ -60,7 +60,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
-        /// The service name.
+        /// The name of the service whose pipeline's outputs you want.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

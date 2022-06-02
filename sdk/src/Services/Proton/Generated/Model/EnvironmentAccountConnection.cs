@@ -29,11 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Proton.Model
 {
     /// <summary>
-    /// The environment account connection detail data.
+    /// Detailed data of an Proton environment account connection resource.
     /// </summary>
     public partial class EnvironmentAccountConnection
     {
         private string _arn;
+        private string _componentRoleArn;
         private string _environmentAccountId;
         private string _environmentName;
         private string _id;
@@ -60,6 +61,38 @@ namespace Amazon.Proton.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComponentRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning
+        /// directly defined components in the associated environment account. It determines the
+        /// scope of infrastructure that a component can provision in the account.
+        /// </para>
+        ///  
+        /// <para>
+        /// The environment account connection must have a <code>componentRoleArn</code> to allow
+        /// directly defined components to be associated with any environments running in the
+        /// account.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton Administrator Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public string ComponentRoleArn
+        {
+            get { return this._componentRoleArn; }
+            set { this._componentRoleArn = value; }
+        }
+
+        // Check to see if ComponentRoleArn property is set
+        internal bool IsSetComponentRoleArn()
+        {
+            return this._componentRoleArn != null;
         }
 
         /// <summary>

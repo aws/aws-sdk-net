@@ -357,6 +357,71 @@ namespace Amazon.Proton
 
         #endregion
         
+        #region  CancelComponentDeployment
+
+
+        /// <summary>
+        /// Attempts to cancel a component deployment (for a component that is in the <code>IN_PROGRESS</code>
+        /// deployment status).
+        /// 
+        ///  
+        /// <para>
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton Administrator Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelComponentDeployment service method.</param>
+        /// 
+        /// <returns>The response from the CancelComponentDeployment service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ConflictException">
+        /// The request <i>couldn't</i> be made due to a conflicting operation or resource.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CancelComponentDeployment">REST API Reference for CancelComponentDeployment Operation</seealso>
+        CancelComponentDeploymentResponse CancelComponentDeployment(CancelComponentDeploymentRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelComponentDeployment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelComponentDeployment operation on AmazonProtonClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelComponentDeployment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CancelComponentDeployment">REST API Reference for CancelComponentDeployment Operation</seealso>
+        IAsyncResult BeginCancelComponentDeployment(CancelComponentDeploymentRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CancelComponentDeployment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelComponentDeployment.</param>
+        /// 
+        /// <returns>Returns a  CancelComponentDeploymentResult from Proton.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CancelComponentDeployment">REST API Reference for CancelComponentDeployment Operation</seealso>
+        CancelComponentDeploymentResponse EndCancelComponentDeployment(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CancelEnvironmentDeployment
 
 
@@ -598,6 +663,75 @@ namespace Amazon.Proton
         /// <returns>Returns a  CancelServicePipelineDeploymentResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CancelServicePipelineDeployment">REST API Reference for CancelServicePipelineDeployment Operation</seealso>
         CancelServicePipelineDeploymentResponse EndCancelServicePipelineDeployment(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateComponent
+
+
+        /// <summary>
+        /// Create an Proton component. A component is an infrastructure extension for a service
+        /// instance.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton Administrator Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateComponent service method.</param>
+        /// 
+        /// <returns>The response from the CreateComponent service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ConflictException">
+        /// The request <i>couldn't</i> be made due to a conflicting operation or resource.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateComponent">REST API Reference for CreateComponent Operation</seealso>
+        CreateComponentResponse CreateComponent(CreateComponentRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateComponent operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateComponent operation on AmazonProtonClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateComponent
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateComponent">REST API Reference for CreateComponent Operation</seealso>
+        IAsyncResult BeginCreateComponent(CreateComponentRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateComponent operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateComponent.</param>
+        /// 
+        /// <returns>Returns a  CreateComponentResult from Proton.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateComponent">REST API Reference for CreateComponent Operation</seealso>
+        CreateComponentResponse EndCreateComponent(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1229,6 +1363,70 @@ namespace Amazon.Proton
 
         #endregion
         
+        #region  DeleteComponent
+
+
+        /// <summary>
+        /// Delete an Proton component resource.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton Administrator Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteComponent service method.</param>
+        /// 
+        /// <returns>The response from the DeleteComponent service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ConflictException">
+        /// The request <i>couldn't</i> be made due to a conflicting operation or resource.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteComponent">REST API Reference for DeleteComponent Operation</seealso>
+        DeleteComponentResponse DeleteComponent(DeleteComponentRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteComponent operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteComponent operation on AmazonProtonClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteComponent
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteComponent">REST API Reference for DeleteComponent Operation</seealso>
+        IAsyncResult BeginDeleteComponent(DeleteComponentRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteComponent operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteComponent.</param>
+        /// 
+        /// <returns>Returns a  DeleteComponentResult from Proton.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteComponent">REST API Reference for DeleteComponent Operation</seealso>
+        DeleteComponentResponse EndDeleteComponent(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteEnvironment
 
 
@@ -1550,7 +1748,19 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Delete a service.
+        /// Delete a service, with its instances and pipeline.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You can't delete a service if it has any service instances that have components attached
+        /// to them.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton Administrator Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteService service method.</param>
         /// 
@@ -1846,11 +2056,72 @@ namespace Amazon.Proton
 
         #endregion
         
+        #region  GetComponent
+
+
+        /// <summary>
+        /// Get detailed data for a component.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton Administrator Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetComponent service method.</param>
+        /// 
+        /// <returns>The response from the GetComponent service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetComponent">REST API Reference for GetComponent Operation</seealso>
+        GetComponentResponse GetComponent(GetComponentRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetComponent operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetComponent operation on AmazonProtonClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetComponent
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetComponent">REST API Reference for GetComponent Operation</seealso>
+        IAsyncResult BeginGetComponent(GetComponentRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetComponent operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetComponent.</param>
+        /// 
+        /// <returns>Returns a  GetComponentResult from Proton.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetComponent">REST API Reference for GetComponent Operation</seealso>
+        GetComponentResponse EndGetComponent(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetEnvironment
 
 
         /// <summary>
-        /// Get detail data for an environment.
+        /// Get detailed data for an environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEnvironment service method.</param>
         /// 
@@ -1905,7 +2176,7 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// In an environment account, view the detail data for an environment account connection.
+        /// In an environment account, get the detailed data for an environment account connection.
         /// 
         ///  
         /// <para>
@@ -1966,7 +2237,7 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Get detail data for an environment template.
+        /// Get detailed data for an environment template.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEnvironmentTemplate service method.</param>
         /// 
@@ -2021,7 +2292,7 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// View detail data for a major or minor version of an environment template.
+        /// Get detailed data for a major or minor version of an environment template.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEnvironmentTemplateVersion service method.</param>
         /// 
@@ -2201,7 +2472,7 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Get detail data for a service.
+        /// Get detailed data for a service.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetService service method.</param>
         /// 
@@ -2256,7 +2527,7 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Get detail data for a service instance. A service instance is an instantiation of
+        /// Get detailed data for a service instance. A service instance is an instantiation of
         /// service template and it runs in a specific environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetServiceInstance service method.</param>
@@ -2312,7 +2583,7 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Get detail data for a service template.
+        /// Get detailed data for a service template.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetServiceTemplate service method.</param>
         /// 
@@ -2367,7 +2638,7 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// View detail data for a major or minor version of a service template.
+        /// Get detailed data for a major or minor version of a service template.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetServiceTemplateVersion service method.</param>
         /// 
@@ -2525,6 +2796,187 @@ namespace Amazon.Proton
         /// <returns>Returns a  GetTemplateSyncStatusResult from Proton.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetTemplateSyncStatus">REST API Reference for GetTemplateSyncStatus Operation</seealso>
         GetTemplateSyncStatusResponse EndGetTemplateSyncStatus(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListComponentOutputs
+
+
+        /// <summary>
+        /// Get a list of component Infrastructure as Code (IaC) outputs.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton Administrator Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListComponentOutputs service method.</param>
+        /// 
+        /// <returns>The response from the ListComponentOutputs service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponentOutputs">REST API Reference for ListComponentOutputs Operation</seealso>
+        ListComponentOutputsResponse ListComponentOutputs(ListComponentOutputsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListComponentOutputs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListComponentOutputs operation on AmazonProtonClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListComponentOutputs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponentOutputs">REST API Reference for ListComponentOutputs Operation</seealso>
+        IAsyncResult BeginListComponentOutputs(ListComponentOutputsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListComponentOutputs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListComponentOutputs.</param>
+        /// 
+        /// <returns>Returns a  ListComponentOutputsResult from Proton.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponentOutputs">REST API Reference for ListComponentOutputs Operation</seealso>
+        ListComponentOutputsResponse EndListComponentOutputs(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListComponentProvisionedResources
+
+
+        /// <summary>
+        /// List provisioned resources for a component with details.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton Administrator Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListComponentProvisionedResources service method.</param>
+        /// 
+        /// <returns>The response from the ListComponentProvisionedResources service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponentProvisionedResources">REST API Reference for ListComponentProvisionedResources Operation</seealso>
+        ListComponentProvisionedResourcesResponse ListComponentProvisionedResources(ListComponentProvisionedResourcesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListComponentProvisionedResources operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListComponentProvisionedResources operation on AmazonProtonClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListComponentProvisionedResources
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponentProvisionedResources">REST API Reference for ListComponentProvisionedResources Operation</seealso>
+        IAsyncResult BeginListComponentProvisionedResources(ListComponentProvisionedResourcesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListComponentProvisionedResources operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListComponentProvisionedResources.</param>
+        /// 
+        /// <returns>Returns a  ListComponentProvisionedResourcesResult from Proton.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponentProvisionedResources">REST API Reference for ListComponentProvisionedResources Operation</seealso>
+        ListComponentProvisionedResourcesResponse EndListComponentProvisionedResources(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListComponents
+
+
+        /// <summary>
+        /// List components with summary data. You can filter the result list by environment,
+        /// service, or a single service instance.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton Administrator Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListComponents service method.</param>
+        /// 
+        /// <returns>The response from the ListComponents service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponents">REST API Reference for ListComponents Operation</seealso>
+        ListComponentsResponse ListComponents(ListComponentsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListComponents operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListComponents operation on AmazonProtonClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListComponents
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponents">REST API Reference for ListComponents Operation</seealso>
+        IAsyncResult BeginListComponents(ListComponentsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListComponents operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListComponents.</param>
+        /// 
+        /// <returns>Returns a  ListComponentsResult from Proton.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponents">REST API Reference for ListComponents Operation</seealso>
+        ListComponentsResponse EndListComponents(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2969,7 +3421,7 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// View a list service instance infrastructure as code outputs with detail data.
+        /// Get a list service of instance Infrastructure as Code (IaC) outputs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServiceInstanceOutputs service method.</param>
         /// 
@@ -3079,7 +3531,7 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// List service instances with summaries of detail data.
+        /// List service instances with summary data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServiceInstances service method.</param>
         /// 
@@ -3134,7 +3586,7 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// View a list service pipeline infrastructure as code outputs with detail.
+        /// Get a list of service pipeline Infrastructure as Code (IaC) outputs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServicePipelineOutputs service method.</param>
         /// 
@@ -3787,6 +4239,84 @@ namespace Amazon.Proton
 
         #endregion
         
+        #region  UpdateComponent
+
+
+        /// <summary>
+        /// Update a component.
+        /// 
+        ///  
+        /// <para>
+        /// There are a few modes for updating a component. The <code>deploymentType</code> field
+        /// defines the mode.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can't update a component while its deployment status, or the deployment status
+        /// of a service instance attached to it, is <code>IN_PROGRESS</code>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton Administrator Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateComponent service method.</param>
+        /// 
+        /// <returns>The response from the UpdateComponent service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ConflictException">
+        /// The request <i>couldn't</i> be made due to a conflicting operation or resource.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateComponent">REST API Reference for UpdateComponent Operation</seealso>
+        UpdateComponentResponse UpdateComponent(UpdateComponentRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateComponent operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateComponent operation on AmazonProtonClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateComponent
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateComponent">REST API Reference for UpdateComponent Operation</seealso>
+        IAsyncResult BeginUpdateComponent(UpdateComponentRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateComponent operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateComponent.</param>
+        /// 
+        /// <returns>Returns a  UpdateComponentResult from Proton.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateComponent">REST API Reference for UpdateComponent Operation</seealso>
+        UpdateComponentResponse EndUpdateComponent(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateEnvironment
 
 
@@ -4133,6 +4663,17 @@ namespace Amazon.Proton
         /// <para>
         /// Edit the <code>spec</code> parameter to add or delete instances.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can't delete a service instance (remove it from the spec) if it has an attached
+        /// component.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton Administrator Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateService service method.</param>
         /// 
@@ -4198,50 +4739,20 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// There are four modes for updating a service instance. The <code>deploymentType</code>
+        /// There are a few modes for updating a service instance. The <code>deploymentType</code>
         /// field defines the mode.
         /// </para>
-        ///  <dl> <dt/> <dd> 
+        ///  <note> 
         /// <para>
-        ///  <code>NONE</code> 
+        /// You can't update a service instance while its deployment status, or the deployment
+        /// status of a component attached to it, is <code>IN_PROGRESS</code>.
         /// </para>
         ///  
         /// <para>
-        /// In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters
-        /// are updated.
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton Administrator Guide</i>.
         /// </para>
-        ///  </dd> <dt/> <dd> 
-        /// <para>
-        ///  <code>CURRENT_VERSION</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// In this mode, the service instance is deployed and updated with the new spec that
-        /// you provide. Only requested parameters are updated. <i>Don’t</i> include minor or
-        /// major version parameters when you use this <code>deployment-type</code>.
-        /// </para>
-        ///  </dd> <dt/> <dd> 
-        /// <para>
-        ///  <code>MINOR_VERSION</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// In this mode, the service instance is deployed and updated with the published, recommended
-        /// (latest) minor version of the current major version in use, by default. You can also
-        /// specify a different minor version of the current major version in use.
-        /// </para>
-        ///  </dd> <dt/> <dd> 
-        /// <para>
-        ///  <code>MAJOR_VERSION</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// In this mode, the service instance is deployed and updated with the published, recommended
-        /// (latest) major and minor version of the current template, by default. You can also
-        /// specify a different major version that's higher than the major version in use and
-        /// a minor version.
-        /// </para>
-        ///  </dd> </dl>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateServiceInstance service method.</param>
         /// 

@@ -30,7 +30,7 @@ namespace Amazon.Proton.Model
 {
     /// <summary>
     /// Container for the parameters to the GetServiceInstance operation.
-    /// Get detail data for a service instance. A service instance is an instantiation of
+    /// Get detailed data for a service instance. A service instance is an instantiation of
     /// service template and it runs in a specific environment.
     /// </summary>
     public partial class GetServiceInstanceRequest : AmazonProtonRequest
@@ -41,7 +41,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of a service instance that you want to get the detail data for.
+        /// The name of a service instance that you want to get the detailed data for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

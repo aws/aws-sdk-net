@@ -67,6 +67,12 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetComponentRoleArn())
+                {
+                    context.Writer.WritePropertyName("componentRoleArn");
+                    context.Writer.Write(publicRequest.ComponentRoleArn);
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("description");
