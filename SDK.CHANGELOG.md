@@ -1,3 +1,17 @@
+### 3.7.287.0 (2022-06-02 18:23 UTC)
+* ApplicationInsights (3.7.3.0)
+	* Provide Account Level onboarding support through CFN/CLI
+* CodeArtifact (3.7.0.168)
+	* Documentation updates for CodeArtifact
+* Connect (3.7.20.0)
+	* This release adds the following features: 1) New APIs to manage (create, list, update) task template resources, 2) Updates to startTaskContact API to support task templates, and 3) new TransferContact API to programmatically transfer in-progress tasks via a contact flow.
+* Kendra (3.7.20.0)
+	* Amazon Kendra now provides a data source connector for GitHub. For more information, see https://docs.aws.amazon.com/kendra/latest/dg/data-source-github.html
+* Proton (3.7.4.0)
+	* Add new "Components" API to enable users to Create, Delete and Update AWS Proton components.
+* VoiceID (3.7.2.0)
+	* Added a new attribute ServerSideEncryptionUpdateDetails to Domain and DomainSummary.
+
 ### 3.7.286.0 (2022-06-01 19:16 UTC)
 * BackupGateway (3.7.1.0)
 	* Adds GetGateway and UpdateGatewaySoftwareNow API and adds hypervisor name to UpdateHypervisor API
