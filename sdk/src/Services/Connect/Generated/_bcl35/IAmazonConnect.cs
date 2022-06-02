@@ -1412,6 +1412,64 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  CreateTaskTemplate
+
+
+        /// <summary>
+        /// Creates a new task template in the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTaskTemplate service method.</param>
+        /// 
+        /// <returns>The response from the CreateTaskTemplate service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.PropertyValidationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateTaskTemplate">REST API Reference for CreateTaskTemplate Operation</seealso>
+        CreateTaskTemplateResponse CreateTaskTemplate(CreateTaskTemplateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTaskTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTaskTemplate operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTaskTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateTaskTemplate">REST API Reference for CreateTaskTemplate Operation</seealso>
+        IAsyncResult BeginCreateTaskTemplate(CreateTaskTemplateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTaskTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTaskTemplate.</param>
+        /// 
+        /// <returns>Returns a  CreateTaskTemplateResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateTaskTemplate">REST API Reference for CreateTaskTemplate Operation</seealso>
+        CreateTaskTemplateResponse EndCreateTaskTemplate(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateUseCase
 
 
@@ -2069,6 +2127,61 @@ namespace Amazon.Connect
         /// <returns>Returns a  DeleteSecurityProfileResult from Connect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteSecurityProfile">REST API Reference for DeleteSecurityProfile Operation</seealso>
         DeleteSecurityProfileResponse EndDeleteSecurityProfile(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteTaskTemplate
+
+
+        /// <summary>
+        /// Deletes the task template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTaskTemplate service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTaskTemplate service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteTaskTemplate">REST API Reference for DeleteTaskTemplate Operation</seealso>
+        DeleteTaskTemplateResponse DeleteTaskTemplate(DeleteTaskTemplateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTaskTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTaskTemplate operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTaskTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteTaskTemplate">REST API Reference for DeleteTaskTemplate Operation</seealso>
+        IAsyncResult BeginDeleteTaskTemplate(DeleteTaskTemplateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTaskTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTaskTemplate.</param>
+        /// 
+        /// <returns>Returns a  DeleteTaskTemplateResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteTaskTemplate">REST API Reference for DeleteTaskTemplate Operation</seealso>
+        DeleteTaskTemplateResponse EndDeleteTaskTemplate(IAsyncResult asyncResult);
 
         #endregion
         
@@ -4074,6 +4187,61 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  GetTaskTemplate
+
+
+        /// <summary>
+        /// Gets details about a specific task template in the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTaskTemplate service method.</param>
+        /// 
+        /// <returns>The response from the GetTaskTemplate service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetTaskTemplate">REST API Reference for GetTaskTemplate Operation</seealso>
+        GetTaskTemplateResponse GetTaskTemplate(GetTaskTemplateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTaskTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTaskTemplate operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTaskTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetTaskTemplate">REST API Reference for GetTaskTemplate Operation</seealso>
+        IAsyncResult BeginGetTaskTemplate(GetTaskTemplateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTaskTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTaskTemplate.</param>
+        /// 
+        /// <returns>Returns a  GetTaskTemplateResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetTaskTemplate">REST API Reference for GetTaskTemplate Operation</seealso>
+        GetTaskTemplateResponse EndGetTaskTemplate(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListAgentStatuses
 
 
@@ -5625,6 +5793,61 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ListTaskTemplates
+
+
+        /// <summary>
+        /// Lists task templates for the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTaskTemplates service method.</param>
+        /// 
+        /// <returns>The response from the ListTaskTemplates service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTaskTemplates">REST API Reference for ListTaskTemplates Operation</seealso>
+        ListTaskTemplatesResponse ListTaskTemplates(ListTaskTemplatesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTaskTemplates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTaskTemplates operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTaskTemplates
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTaskTemplates">REST API Reference for ListTaskTemplates Operation</seealso>
+        IAsyncResult BeginListTaskTemplates(ListTaskTemplatesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTaskTemplates operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTaskTemplates.</param>
+        /// 
+        /// <returns>Returns a  ListTaskTemplatesResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTaskTemplates">REST API Reference for ListTaskTemplates Operation</seealso>
+        ListTaskTemplatesResponse EndListTaskTemplates(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListUseCases
 
 
@@ -6766,7 +6989,8 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// The supported resource types are users, routing profiles, queues, quick connects,
-        /// contact flows, agent status, hours of operation, and phone number.
+        /// contact flows, agent status, hours of operation, phone number, security profiles,
+        /// and task templates.
         /// </para>
         ///  
         /// <para>
@@ -6821,6 +7045,98 @@ namespace Amazon.Connect
         /// <returns>Returns a  TagResourceResult from Connect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/TagResource">REST API Reference for TagResource Operation</seealso>
         TagResourceResponse EndTagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  TransferContact
+
+
+        /// <summary>
+        /// Transfers contacts from one agent or queue to another agent or queue at any point
+        /// after a contact is created. You can transfer a contact to another queue by providing
+        /// the contact flow which orchestrates the contact to the destination queue. This gives
+        /// you more control over contact handling and helps you adhere to the service level agreement
+        /// (SLA) guaranteed to your customers.
+        /// 
+        ///  
+        /// <para>
+        /// Note the following requirements:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Transfer is supported for only <code>TASK</code> contacts.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Do not use both <code>QueueId</code> and <code>UserId</code> in the same call.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The following contact flow types are supported: Inbound contact flow, Transfer to
+        /// agent flow, and Transfer to queue flow.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>TransferContact</code> API can be called only on active contacts.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A contact cannot be transferred more than 11 times.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TransferContact service method.</param>
+        /// 
+        /// <returns>The response from the TransferContact service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.IdempotencyException">
+        /// An entity with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/TransferContact">REST API Reference for TransferContact Operation</seealso>
+        TransferContactResponse TransferContact(TransferContactRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TransferContact operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TransferContact operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTransferContact
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/TransferContact">REST API Reference for TransferContact Operation</seealso>
+        IAsyncResult BeginTransferContact(TransferContactRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TransferContact operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTransferContact.</param>
+        /// 
+        /// <returns>Returns a  TransferContactResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/TransferContact">REST API Reference for TransferContact Operation</seealso>
+        TransferContactResponse EndTransferContact(IAsyncResult asyncResult);
 
         #endregion
         
@@ -8400,6 +8716,66 @@ namespace Amazon.Connect
         /// <returns>Returns a  UpdateSecurityProfileResult from Connect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateSecurityProfile">REST API Reference for UpdateSecurityProfile Operation</seealso>
         UpdateSecurityProfileResponse EndUpdateSecurityProfile(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateTaskTemplate
+
+
+        /// <summary>
+        /// Updates details about a specific task template in the specified Amazon Connect instance.
+        /// This operation does not support partial updates. Instead it does a full update of
+        /// template content.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTaskTemplate service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTaskTemplate service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.PropertyValidationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateTaskTemplate">REST API Reference for UpdateTaskTemplate Operation</seealso>
+        UpdateTaskTemplateResponse UpdateTaskTemplate(UpdateTaskTemplateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTaskTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTaskTemplate operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTaskTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateTaskTemplate">REST API Reference for UpdateTaskTemplate Operation</seealso>
+        IAsyncResult BeginUpdateTaskTemplate(UpdateTaskTemplateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateTaskTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateTaskTemplate.</param>
+        /// 
+        /// <returns>Returns a  UpdateTaskTemplateResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateTaskTemplate">REST API Reference for UpdateTaskTemplate Operation</seealso>
+        UpdateTaskTemplateResponse EndUpdateTaskTemplate(IAsyncResult asyncResult);
 
         #endregion
         

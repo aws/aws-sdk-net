@@ -35,7 +35,8 @@ namespace Amazon.Connect.Model
     ///  
     /// <para>
     /// The supported resource types are users, routing profiles, queues, quick connects,
-    /// contact flows, agent status, hours of operation, and phone number.
+    /// contact flows, agent status, hours of operation, phone number, security profiles,
+    /// and task templates.
     /// </para>
     ///  
     /// <para>

@@ -120,6 +120,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PreviousContactId);
                 }
 
+                if(publicRequest.IsSetQuickConnectId())
+                {
+                    context.Writer.WritePropertyName("QuickConnectId");
+                    context.Writer.Write(publicRequest.QuickConnectId);
+                }
+
                 if(publicRequest.IsSetReferences())
                 {
                     context.Writer.WritePropertyName("References");
@@ -143,6 +149,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("ScheduledTime");
                     context.Writer.Write(publicRequest.ScheduledTime);
+                }
+
+                if(publicRequest.IsSetTaskTemplateId())
+                {
+                    context.Writer.WritePropertyName("TaskTemplateId");
+                    context.Writer.Write(publicRequest.TaskTemplateId);
                 }
 
                 writer.WriteObjectEnd();

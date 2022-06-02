@@ -2144,6 +2144,83 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  CreateTaskTemplate
+
+
+        /// <summary>
+        /// Creates a new task template in the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTaskTemplate service method.</param>
+        /// 
+        /// <returns>The response from the CreateTaskTemplate service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.PropertyValidationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateTaskTemplate">REST API Reference for CreateTaskTemplate Operation</seealso>
+        public virtual CreateTaskTemplateResponse CreateTaskTemplate(CreateTaskTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTaskTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTaskTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTaskTemplateResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new task template in the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTaskTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTaskTemplate service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.PropertyValidationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateTaskTemplate">REST API Reference for CreateTaskTemplate Operation</seealso>
+        public virtual Task<CreateTaskTemplateResponse> CreateTaskTemplateAsync(CreateTaskTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTaskTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTaskTemplateResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateTaskTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateUseCase
 
 
@@ -3031,6 +3108,77 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = DeleteSecurityProfileResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteSecurityProfileResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteTaskTemplate
+
+
+        /// <summary>
+        /// Deletes the task template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTaskTemplate service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTaskTemplate service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteTaskTemplate">REST API Reference for DeleteTaskTemplate Operation</seealso>
+        public virtual DeleteTaskTemplateResponse DeleteTaskTemplate(DeleteTaskTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTaskTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTaskTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTaskTemplateResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the task template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTaskTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTaskTemplate service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteTaskTemplate">REST API Reference for DeleteTaskTemplate Operation</seealso>
+        public virtual Task<DeleteTaskTemplateResponse> DeleteTaskTemplateAsync(DeleteTaskTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTaskTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTaskTemplateResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteTaskTemplateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5713,6 +5861,77 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  GetTaskTemplate
+
+
+        /// <summary>
+        /// Gets details about a specific task template in the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTaskTemplate service method.</param>
+        /// 
+        /// <returns>The response from the GetTaskTemplate service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetTaskTemplate">REST API Reference for GetTaskTemplate Operation</seealso>
+        public virtual GetTaskTemplateResponse GetTaskTemplate(GetTaskTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTaskTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTaskTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<GetTaskTemplateResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets details about a specific task template in the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTaskTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTaskTemplate service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetTaskTemplate">REST API Reference for GetTaskTemplate Operation</seealso>
+        public virtual Task<GetTaskTemplateResponse> GetTaskTemplateAsync(GetTaskTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTaskTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTaskTemplateResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetTaskTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListAgentStatuses
 
 
@@ -7801,6 +8020,77 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ListTaskTemplates
+
+
+        /// <summary>
+        /// Lists task templates for the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTaskTemplates service method.</param>
+        /// 
+        /// <returns>The response from the ListTaskTemplates service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTaskTemplates">REST API Reference for ListTaskTemplates Operation</seealso>
+        public virtual ListTaskTemplatesResponse ListTaskTemplates(ListTaskTemplatesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTaskTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTaskTemplatesResponseUnmarshaller.Instance;
+
+            return Invoke<ListTaskTemplatesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists task templates for the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTaskTemplates service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTaskTemplates service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTaskTemplates">REST API Reference for ListTaskTemplates Operation</seealso>
+        public virtual Task<ListTaskTemplatesResponse> ListTaskTemplatesAsync(ListTaskTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTaskTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTaskTemplatesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTaskTemplatesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListUseCases
 
 
@@ -9372,7 +9662,8 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// The supported resource types are users, routing profiles, queues, quick connects,
-        /// contact flows, agent status, hours of operation, and phone number.
+        /// contact flows, agent status, hours of operation, phone number, security profiles,
+        /// and task templates.
         /// </para>
         ///  
         /// <para>
@@ -9416,7 +9707,8 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// The supported resource types are users, routing profiles, queues, quick connects,
-        /// contact flows, agent status, hours of operation, and phone number.
+        /// contact flows, agent status, hours of operation, phone number, security profiles,
+        /// and task templates.
         /// </para>
         ///  
         /// <para>
@@ -9454,6 +9746,151 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TransferContact
+
+
+        /// <summary>
+        /// Transfers contacts from one agent or queue to another agent or queue at any point
+        /// after a contact is created. You can transfer a contact to another queue by providing
+        /// the contact flow which orchestrates the contact to the destination queue. This gives
+        /// you more control over contact handling and helps you adhere to the service level agreement
+        /// (SLA) guaranteed to your customers.
+        /// 
+        ///  
+        /// <para>
+        /// Note the following requirements:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Transfer is supported for only <code>TASK</code> contacts.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Do not use both <code>QueueId</code> and <code>UserId</code> in the same call.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The following contact flow types are supported: Inbound contact flow, Transfer to
+        /// agent flow, and Transfer to queue flow.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>TransferContact</code> API can be called only on active contacts.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A contact cannot be transferred more than 11 times.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TransferContact service method.</param>
+        /// 
+        /// <returns>The response from the TransferContact service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.IdempotencyException">
+        /// An entity with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/TransferContact">REST API Reference for TransferContact Operation</seealso>
+        public virtual TransferContactResponse TransferContact(TransferContactRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TransferContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TransferContactResponseUnmarshaller.Instance;
+
+            return Invoke<TransferContactResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Transfers contacts from one agent or queue to another agent or queue at any point
+        /// after a contact is created. You can transfer a contact to another queue by providing
+        /// the contact flow which orchestrates the contact to the destination queue. This gives
+        /// you more control over contact handling and helps you adhere to the service level agreement
+        /// (SLA) guaranteed to your customers.
+        /// 
+        ///  
+        /// <para>
+        /// Note the following requirements:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Transfer is supported for only <code>TASK</code> contacts.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Do not use both <code>QueueId</code> and <code>UserId</code> in the same call.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The following contact flow types are supported: Inbound contact flow, Transfer to
+        /// agent flow, and Transfer to queue flow.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>TransferContact</code> API can be called only on active contacts.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A contact cannot be transferred more than 11 times.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TransferContact service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TransferContact service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.IdempotencyException">
+        /// An entity with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/TransferContact">REST API Reference for TransferContact Operation</seealso>
+        public virtual Task<TransferContactResponse> TransferContactAsync(TransferContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TransferContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TransferContactResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<TransferContactResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -11598,6 +12035,87 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = UpdateSecurityProfileResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateSecurityProfileResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateTaskTemplate
+
+
+        /// <summary>
+        /// Updates details about a specific task template in the specified Amazon Connect instance.
+        /// This operation does not support partial updates. Instead it does a full update of
+        /// template content.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTaskTemplate service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTaskTemplate service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.PropertyValidationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateTaskTemplate">REST API Reference for UpdateTaskTemplate Operation</seealso>
+        public virtual UpdateTaskTemplateResponse UpdateTaskTemplate(UpdateTaskTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTaskTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTaskTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTaskTemplateResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates details about a specific task template in the specified Amazon Connect instance.
+        /// This operation does not support partial updates. Instead it does a full update of
+        /// template content.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTaskTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateTaskTemplate service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.PropertyValidationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateTaskTemplate">REST API Reference for UpdateTaskTemplate Operation</seealso>
+        public virtual Task<UpdateTaskTemplateResponse> UpdateTaskTemplateAsync(UpdateTaskTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTaskTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTaskTemplateResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateTaskTemplateResponse>(request, options, cancellationToken);
         }
 
         #endregion

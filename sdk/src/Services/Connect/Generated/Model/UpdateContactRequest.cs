@@ -133,7 +133,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property References. 
         /// <para>
-        /// A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
+        /// Well-formed data on contact, shown to agents on Contact Control Panel (CCP).
         /// </para>
         /// </summary>
         public Dictionary<string, Reference> References

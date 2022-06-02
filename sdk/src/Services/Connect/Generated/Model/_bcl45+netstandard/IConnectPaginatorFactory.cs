@@ -161,6 +161,11 @@ namespace Amazon.Connect.Model
         IListSecurityProfilesPaginator ListSecurityProfiles(ListSecurityProfilesRequest request);
 
         /// <summary>
+        /// Paginator for ListTaskTemplates operation
+        ///</summary>
+        IListTaskTemplatesPaginator ListTaskTemplates(ListTaskTemplatesRequest request);
+
+        /// <summary>
         /// Paginator for ListUseCases operation
         ///</summary>
         IListUseCasesPaginator ListUseCases(ListUseCasesRequest request);

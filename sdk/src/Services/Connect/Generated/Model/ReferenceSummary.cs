@@ -35,12 +35,16 @@ namespace Amazon.Connect.Model
     public partial class ReferenceSummary
     {
         private AttachmentReference _attachment;
+        private DateReference _date;
+        private EmailReference _email;
+        private NumberReference _number;
+        private StringReference _string;
         private UrlReference _url;
 
         /// <summary>
         /// Gets and sets the property Attachment. 
         /// <para>
-        /// Information about the attachment reference if the <code>referenceType</code> is <code>ATTACHMENT</code>.
+        /// Information about the reference when the <code>referenceType</code> is <code>ATTACHMENT</code>.
         /// Otherwise, null.
         /// </para>
         /// </summary>
@@ -57,9 +61,85 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Date. 
+        /// <para>
+        /// Information about a reference when the <code>referenceType</code> is <code>DATE</code>.
+        /// Otherwise, null.
+        /// </para>
+        /// </summary>
+        public DateReference Date
+        {
+            get { return this._date; }
+            set { this._date = value; }
+        }
+
+        // Check to see if Date property is set
+        internal bool IsSetDate()
+        {
+            return this._date != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Email. 
+        /// <para>
+        /// Information about a reference when the <code>referenceType</code> is <code>EMAIL</code>.
+        /// Otherwise, null.
+        /// </para>
+        /// </summary>
+        public EmailReference Email
+        {
+            get { return this._email; }
+            set { this._email = value; }
+        }
+
+        // Check to see if Email property is set
+        internal bool IsSetEmail()
+        {
+            return this._email != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Number. 
+        /// <para>
+        /// Information about a reference when the <code>referenceType</code> is <code>NUMBER</code>.
+        /// Otherwise, null.
+        /// </para>
+        /// </summary>
+        public NumberReference Number
+        {
+            get { return this._number; }
+            set { this._number = value; }
+        }
+
+        // Check to see if Number property is set
+        internal bool IsSetNumber()
+        {
+            return this._number != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property String. 
+        /// <para>
+        /// Information about a reference when the <code>referenceType</code> is <code>STRING</code>.
+        /// Otherwise, null.
+        /// </para>
+        /// </summary>
+        public StringReference String
+        {
+            get { return this._string; }
+            set { this._string = value; }
+        }
+
+        // Check to see if String property is set
+        internal bool IsSetString()
+        {
+            return this._string != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Url. 
         /// <para>
-        /// Information about the URL reference if the <code>referenceType</code> is <code>URL</code>.
+        /// Information about the reference when the <code>referenceType</code> is <code>URL</code>.
         /// Otherwise, null.
         /// </para>
         /// </summary>

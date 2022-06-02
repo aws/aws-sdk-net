@@ -2483,6 +2483,72 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type PropertyValidationExceptionReason.
+    /// </summary>
+    public class PropertyValidationExceptionReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INVALID_FORMAT for PropertyValidationExceptionReason
+        /// </summary>
+        public static readonly PropertyValidationExceptionReason INVALID_FORMAT = new PropertyValidationExceptionReason("INVALID_FORMAT");
+        /// <summary>
+        /// Constant NOT_SUPPORTED for PropertyValidationExceptionReason
+        /// </summary>
+        public static readonly PropertyValidationExceptionReason NOT_SUPPORTED = new PropertyValidationExceptionReason("NOT_SUPPORTED");
+        /// <summary>
+        /// Constant REFERENCED_RESOURCE_NOT_FOUND for PropertyValidationExceptionReason
+        /// </summary>
+        public static readonly PropertyValidationExceptionReason REFERENCED_RESOURCE_NOT_FOUND = new PropertyValidationExceptionReason("REFERENCED_RESOURCE_NOT_FOUND");
+        /// <summary>
+        /// Constant REQUIRED_PROPERTY_MISSING for PropertyValidationExceptionReason
+        /// </summary>
+        public static readonly PropertyValidationExceptionReason REQUIRED_PROPERTY_MISSING = new PropertyValidationExceptionReason("REQUIRED_PROPERTY_MISSING");
+        /// <summary>
+        /// Constant RESOURCE_NAME_ALREADY_EXISTS for PropertyValidationExceptionReason
+        /// </summary>
+        public static readonly PropertyValidationExceptionReason RESOURCE_NAME_ALREADY_EXISTS = new PropertyValidationExceptionReason("RESOURCE_NAME_ALREADY_EXISTS");
+        /// <summary>
+        /// Constant UNIQUE_CONSTRAINT_VIOLATED for PropertyValidationExceptionReason
+        /// </summary>
+        public static readonly PropertyValidationExceptionReason UNIQUE_CONSTRAINT_VIOLATED = new PropertyValidationExceptionReason("UNIQUE_CONSTRAINT_VIOLATED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PropertyValidationExceptionReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PropertyValidationExceptionReason FindValue(string value)
+        {
+            return FindValue<PropertyValidationExceptionReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PropertyValidationExceptionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type QueueStatus.
     /// </summary>
     public class QueueStatus : ConstantClass
@@ -2696,6 +2762,22 @@ namespace Amazon.Connect
         /// Constant ATTACHMENT for ReferenceType
         /// </summary>
         public static readonly ReferenceType ATTACHMENT = new ReferenceType("ATTACHMENT");
+        /// <summary>
+        /// Constant DATE for ReferenceType
+        /// </summary>
+        public static readonly ReferenceType DATE = new ReferenceType("DATE");
+        /// <summary>
+        /// Constant EMAIL for ReferenceType
+        /// </summary>
+        public static readonly ReferenceType EMAIL = new ReferenceType("EMAIL");
+        /// <summary>
+        /// Constant NUMBER for ReferenceType
+        /// </summary>
+        public static readonly ReferenceType NUMBER = new ReferenceType("NUMBER");
+        /// <summary>
+        /// Constant STRING for ReferenceType
+        /// </summary>
+        public static readonly ReferenceType STRING = new ReferenceType("STRING");
         /// <summary>
         /// Constant URL for ReferenceType
         /// </summary>
@@ -3016,6 +3098,146 @@ namespace Amazon.Connect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StringComparisonType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TaskTemplateFieldType.
+    /// </summary>
+    public class TaskTemplateFieldType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BOOLEAN for TaskTemplateFieldType
+        /// </summary>
+        public static readonly TaskTemplateFieldType BOOLEAN = new TaskTemplateFieldType("BOOLEAN");
+        /// <summary>
+        /// Constant DATE_TIME for TaskTemplateFieldType
+        /// </summary>
+        public static readonly TaskTemplateFieldType DATE_TIME = new TaskTemplateFieldType("DATE_TIME");
+        /// <summary>
+        /// Constant DESCRIPTION for TaskTemplateFieldType
+        /// </summary>
+        public static readonly TaskTemplateFieldType DESCRIPTION = new TaskTemplateFieldType("DESCRIPTION");
+        /// <summary>
+        /// Constant EMAIL for TaskTemplateFieldType
+        /// </summary>
+        public static readonly TaskTemplateFieldType EMAIL = new TaskTemplateFieldType("EMAIL");
+        /// <summary>
+        /// Constant NAME for TaskTemplateFieldType
+        /// </summary>
+        public static readonly TaskTemplateFieldType NAME = new TaskTemplateFieldType("NAME");
+        /// <summary>
+        /// Constant NUMBER for TaskTemplateFieldType
+        /// </summary>
+        public static readonly TaskTemplateFieldType NUMBER = new TaskTemplateFieldType("NUMBER");
+        /// <summary>
+        /// Constant QUICK_CONNECT for TaskTemplateFieldType
+        /// </summary>
+        public static readonly TaskTemplateFieldType QUICK_CONNECT = new TaskTemplateFieldType("QUICK_CONNECT");
+        /// <summary>
+        /// Constant SCHEDULED_TIME for TaskTemplateFieldType
+        /// </summary>
+        public static readonly TaskTemplateFieldType SCHEDULED_TIME = new TaskTemplateFieldType("SCHEDULED_TIME");
+        /// <summary>
+        /// Constant SINGLE_SELECT for TaskTemplateFieldType
+        /// </summary>
+        public static readonly TaskTemplateFieldType SINGLE_SELECT = new TaskTemplateFieldType("SINGLE_SELECT");
+        /// <summary>
+        /// Constant TEXT for TaskTemplateFieldType
+        /// </summary>
+        public static readonly TaskTemplateFieldType TEXT = new TaskTemplateFieldType("TEXT");
+        /// <summary>
+        /// Constant TEXT_AREA for TaskTemplateFieldType
+        /// </summary>
+        public static readonly TaskTemplateFieldType TEXT_AREA = new TaskTemplateFieldType("TEXT_AREA");
+        /// <summary>
+        /// Constant URL for TaskTemplateFieldType
+        /// </summary>
+        public static readonly TaskTemplateFieldType URL = new TaskTemplateFieldType("URL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TaskTemplateFieldType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TaskTemplateFieldType FindValue(string value)
+        {
+            return FindValue<TaskTemplateFieldType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TaskTemplateFieldType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TaskTemplateStatus.
+    /// </summary>
+    public class TaskTemplateStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for TaskTemplateStatus
+        /// </summary>
+        public static readonly TaskTemplateStatus ACTIVE = new TaskTemplateStatus("ACTIVE");
+        /// <summary>
+        /// Constant INACTIVE for TaskTemplateStatus
+        /// </summary>
+        public static readonly TaskTemplateStatus INACTIVE = new TaskTemplateStatus("INACTIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TaskTemplateStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TaskTemplateStatus FindValue(string value)
+        {
+            return FindValue<TaskTemplateStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TaskTemplateStatus(string value)
         {
             return FindValue(value);
         }

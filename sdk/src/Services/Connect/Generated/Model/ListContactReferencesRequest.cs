@@ -115,7 +115,7 @@ namespace Amazon.Connect.Model
         /// The type of reference.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=2)]
+        [AWSProperty(Required=true, Max=6)]
         public List<string> ReferenceTypes
         {
             get { return this._referenceTypes; }

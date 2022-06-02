@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Information about the attachment reference if the <code>referenceType</code> is <code>ATTACHMENT</code>.
+    /// Information about a reference when the <code>referenceType</code> is <code>ATTACHMENT</code>.
     /// Otherwise, null.
     /// </summary>
     public partial class AttachmentReference
@@ -60,7 +60,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Status of an attachment reference type.
+        /// Status of the attachment reference type.
         /// </para>
         /// </summary>
         public ReferenceStatus Status
@@ -78,7 +78,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// Contains the location path of the attachment reference.
+        /// The location path of the attachment reference.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4096)]

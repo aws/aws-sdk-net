@@ -41,8 +41,10 @@ namespace Amazon.Connect.Model
         private string _instanceId;
         private string _name;
         private string _previousContactId;
+        private string _quickConnectId;
         private Dictionary<string, Reference> _references = new Dictionary<string, Reference>();
         private DateTime? _scheduledTime;
+        private string _taskTemplateId;
 
         /// <summary>
         /// Gets and sets the property Attributes. 
@@ -104,7 +106,7 @@ namespace Amazon.Connect.Model
         /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=500)]
+        [AWSProperty(Max=500)]
         public string ContactFlowId
         {
             get { return this._contactFlowId; }
@@ -195,6 +197,24 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property QuickConnectId. 
+        /// <para>
+        /// The identifier for the quick connect.
+        /// </para>
+        /// </summary>
+        public string QuickConnectId
+        {
+            get { return this._quickConnectId; }
+            set { this._quickConnectId = value; }
+        }
+
+        // Check to see if QuickConnectId property is set
+        internal bool IsSetQuickConnectId()
+        {
+            return this._quickConnectId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property References. 
         /// <para>
         /// A formatted URL that is shown to an agent in the Contact Control Panel (CCP).
@@ -230,6 +250,25 @@ namespace Amazon.Connect.Model
         internal bool IsSetScheduledTime()
         {
             return this._scheduledTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskTemplateId. 
+        /// <para>
+        /// A unique identifier for the task template.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=500)]
+        public string TaskTemplateId
+        {
+            get { return this._taskTemplateId; }
+            set { this._taskTemplateId = value; }
+        }
+
+        // Check to see if TaskTemplateId property is set
+        internal bool IsSetTaskTemplateId()
+        {
+            return this._taskTemplateId != null;
         }
 
     }

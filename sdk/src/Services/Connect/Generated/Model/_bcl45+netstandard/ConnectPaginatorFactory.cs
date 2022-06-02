@@ -252,6 +252,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListTaskTemplates operation
+        ///</summary>
+        public IListTaskTemplatesPaginator ListTaskTemplates(ListTaskTemplatesRequest request) 
+        {
+            return new ListTaskTemplatesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListUseCases operation
         ///</summary>
         public IListUseCasesPaginator ListUseCases(ListUseCasesRequest request) 
