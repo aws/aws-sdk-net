@@ -29,12 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeArtifact.Model
 {
     /// <summary>
-    /// The details of a repository stored in AWS CodeArtifact. A CodeArtifact repository
-    /// contains a set of package versions, each of which maps to a set of assets. Repositories
-    /// are polyglot—a single repository can contain packages of any supported type. Each
-    /// repository exposes endpoints for fetching and publishing packages using tools like
-    /// the <code>npm</code> CLI, the Maven CLI (<code>mvn</code>), and <code>pip</code>.
-    /// You can create up to 100 repositories per AWS account.
+    /// The details of a repository stored in CodeArtifact. A CodeArtifact repository contains
+    /// a set of package versions, each of which maps to a set of assets. Repositories are
+    /// polyglot—a single repository can contain packages of any supported type. Each repository
+    /// exposes endpoints for fetching and publishing packages using tools like the <code>npm</code>
+    /// CLI, the Maven CLI (<code>mvn</code>), and <code>pip</code>. You can create up to
+    /// 100 repositories per Amazon Web Services account.
     /// </summary>
     public partial class RepositoryDescription
     {
@@ -50,7 +50,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property AdministratorAccount. 
         /// <para>
-        ///  The 12-digit account number of the AWS account that manages the repository. 
+        ///  The 12-digit account number of the Amazon Web Services account that manages the repository.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -126,8 +127,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property DomainOwner. 
         /// <para>
-        ///  The 12-digit account number of the AWS account that owns the domain that contains
-        /// the repository. It does not include dashes or spaces. 
+        ///  The 12-digit account number of the Amazon Web Services account that owns the domain
+        /// that contains the repository. It does not include dashes or spaces. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -184,7 +185,7 @@ namespace Amazon.CodeArtifact.Model
         /// Gets and sets the property Upstreams. 
         /// <para>
         ///  A list of upstream repositories to associate with the repository. The order of the
-        /// upstream repositories in the list determines their priority order when AWS CodeArtifact
+        /// upstream repositories in the list determines their priority order when CodeArtifact
         /// looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working
         /// with upstream repositories</a>. 
         /// </para>

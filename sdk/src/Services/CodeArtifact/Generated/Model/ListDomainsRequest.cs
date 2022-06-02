@@ -31,8 +31,8 @@ namespace Amazon.CodeArtifact.Model
     /// <summary>
     /// Container for the parameters to the ListDomains operation.
     /// Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">DomainSummary</a>
-    /// objects for all domains owned by the AWS account that makes this call. Each returned
-    /// <code>DomainSummary</code> object contains information about a domain.
+    /// objects for all domains owned by the Amazon Web Services account that makes this call.
+    /// Each returned <code>DomainSummary</code> object contains information about a domain.
     /// </summary>
     public partial class ListDomainsRequest : AmazonCodeArtifactRequest
     {

@@ -64,27 +64,6 @@ namespace Amazon.CodeArtifact.Model
         ///  A string that contains the status of the package version. It can be one of the following:
         /// 
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>Published</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Unfinished</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Unlisted</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Archived</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Disposed</code> 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public PackageVersionStatus Status

@@ -32,7 +32,7 @@ namespace Amazon.CodeArtifact.Model
     /// Container for the parameters to the ListRepositories operation.
     /// Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a>
     /// objects. Each <code>RepositorySummary</code> contains information about a repository
-    /// in the specified AWS account and that matches the input parameters.
+    /// in the specified Amazon Web Services account and that matches the input parameters.
     /// </summary>
     public partial class ListRepositoriesRequest : AmazonCodeArtifactRequest
     {

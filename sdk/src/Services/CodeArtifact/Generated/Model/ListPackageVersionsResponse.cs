@@ -73,21 +73,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Format. 
         /// <para>
-        ///  A format of the package. Valid package format values are: 
+        ///  A format of the package. 
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>npm</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>pypi</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>maven</code> 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public PackageFormat Format
         {

@@ -36,8 +36,7 @@ namespace Amazon.CodeArtifact.Model
     /// <para>
     ///  The policy is a resource-based policy, not an identity-based policy. For more information,
     /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based
-    /// policies and resource-based policies </a> in the <i>AWS Identity and Access Management
-    /// User Guide</i>. 
+    /// policies and resource-based policies </a> in the <i>IAM User Guide</i>. 
     /// </para>
     ///  </note>
     /// </summary>
@@ -68,8 +67,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property DomainOwner. 
         /// <para>
-        ///  The 12-digit account number of the AWS account that owns the domain. It does not
-        /// include dashes or spaces. 
+        ///  The 12-digit account number of the Amazon Web Services account that owns the domain.
+        /// It does not include dashes or spaces. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]

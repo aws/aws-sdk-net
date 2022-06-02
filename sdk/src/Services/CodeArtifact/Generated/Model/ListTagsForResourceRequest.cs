@@ -30,8 +30,8 @@ namespace Amazon.CodeArtifact.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS
-    /// CodeArtifact.
+    /// Gets information about Amazon Web Services tags for a specified Amazon Resource Name
+    /// (ARN) in CodeArtifact.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonCodeArtifactRequest
     {

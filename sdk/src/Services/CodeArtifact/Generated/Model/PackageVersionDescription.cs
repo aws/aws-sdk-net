@@ -71,22 +71,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Format. 
         /// <para>
-        ///  The format of the package version. The valid package formats are: 
+        ///  The format of the package version. 
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>npm</code>: A Node Package Manager (npm) package. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>pypi</code>: A Python Package Index (PyPI) package. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>maven</code>: A Maven package that contains compiled code in a distributable
-        /// format, such as a JAR file. 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public PackageFormat Format
         {
@@ -248,30 +234,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  A string that contains the status of the package version. It can be one of the following:
-        /// 
+        ///  A string that contains the status of the package version. 
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>Published</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Unfinished</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Unlisted</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Archived</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Disposed</code> 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public PackageVersionStatus Status
         {

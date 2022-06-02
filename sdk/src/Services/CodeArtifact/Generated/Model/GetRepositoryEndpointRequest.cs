@@ -35,15 +35,19 @@ namespace Amazon.CodeArtifact.Model
     /// 
     ///  <ul> <li> 
     /// <para>
+    ///  <code>maven</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <code>npm</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>pypi</code> 
+    ///  <code>nuget</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>maven</code> 
+    ///  <code>pypi</code> 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -76,8 +80,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property DomainOwner. 
         /// <para>
-        ///  The 12-digit account number of the AWS account that owns the domain that contains
-        /// the repository. It does not include dashes or spaces. 
+        ///  The 12-digit account number of the Amazon Web Services account that owns the domain
+        /// that contains the repository. It does not include dashes or spaces. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -97,21 +101,8 @@ namespace Amazon.CodeArtifact.Model
         /// Gets and sets the property Format. 
         /// <para>
         ///  Returns which endpoint of a repository to return. A repository has one endpoint for
-        /// each package format: 
+        /// each package format. 
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>npm</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>pypi</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>maven</code> 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public PackageFormat Format

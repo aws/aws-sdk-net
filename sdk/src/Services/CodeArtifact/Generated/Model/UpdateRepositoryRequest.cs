@@ -81,8 +81,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property DomainOwner. 
         /// <para>
-        ///  The 12-digit account number of the AWS account that owns the domain. It does not
-        /// include dashes or spaces. 
+        ///  The 12-digit account number of the Amazon Web Services account that owns the domain.
+        /// It does not include dashes or spaces. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -121,7 +121,7 @@ namespace Amazon.CodeArtifact.Model
         /// Gets and sets the property Upstreams. 
         /// <para>
         ///  A list of upstream repositories to associate with the repository. The order of the
-        /// upstream repositories in the list determines their priority order when AWS CodeArtifact
+        /// upstream repositories in the list determines their priority order when CodeArtifact
         /// looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working
         /// with upstream repositories</a>. 
         /// </para>

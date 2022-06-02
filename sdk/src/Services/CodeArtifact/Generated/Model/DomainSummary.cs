@@ -120,8 +120,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Owner. 
         /// <para>
-        ///  The 12-digit account number of the AWS account that owns the domain. It does not
-        /// include dashes or spaces. 
+        ///  The 12-digit account number of the Amazon Web Services account that owns the domain.
+        /// It does not include dashes or spaces. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -140,17 +140,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  A string that contains the status of the domain. The valid values are: 
+        ///  A string that contains the status of the domain. 
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>Active</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Deleted</code> 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public DomainStatus Status
         {

@@ -37,8 +37,8 @@ namespace Amazon.CodeArtifact.Model
     ///  <important> 
     /// <para>
     ///  Use <code>DeleteRepositoryPermissionsPolicy</code> with caution. After a policy is
-    /// deleted, AWS users, roles, and accounts lose permissions to perform the repository
-    /// actions granted by the deleted policy. 
+    /// deleted, Amazon Web Services users, roles, and accounts lose permissions to perform
+    /// the repository actions granted by the deleted policy. 
     /// </para>
     ///  </important>
     /// </summary>
@@ -72,8 +72,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property DomainOwner. 
         /// <para>
-        ///  The 12-digit account number of the AWS account that owns the domain. It does not
-        /// include dashes or spaces. 
+        ///  The 12-digit account number of the Amazon Web Services account that owns the domain.
+        /// It does not include dashes or spaces. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]

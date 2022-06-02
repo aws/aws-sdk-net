@@ -71,8 +71,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property DomainOwner. 
         /// <para>
-        ///  The 12-digit account number of the AWS account that owns the domain. It does not
-        /// include dashes or spaces. 
+        ///  The 12-digit account number of the Amazon Web Services account that owns the domain.
+        /// It does not include dashes or spaces. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -91,23 +91,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Format. 
         /// <para>
-        ///  The format of the package with the requested dependencies. The valid package types
-        /// are: 
+        ///  The format of the package with the requested dependencies. 
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>npm</code>: A Node Package Manager (npm) package. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>pypi</code>: A Python Package Index (PyPI) package. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>maven</code>: A Maven package that contains compiled code in a distributable
-        /// format, such as a JAR file. 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public PackageFormat Format

@@ -30,7 +30,10 @@ namespace Amazon.CodeArtifact.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdatePackageVersionsStatus operation.
-    /// Updates the status of one or more versions of a package.
+    /// Updates the status of one or more versions of a package. Using <code>UpdatePackageVersionsStatus</code>,
+    /// you can update the status of package versions to <code>Archived</code>, <code>Published</code>,
+    /// or <code>Unlisted</code>. To set the status of a package version to <code>Disposed</code>,
+    /// use <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DisposePackageVersions.html">DisposePackageVersions</a>.
     /// </summary>
     public partial class UpdatePackageVersionsStatusRequest : AmazonCodeArtifactRequest
     {
@@ -68,8 +71,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property DomainOwner. 
         /// <para>
-        ///  The 12-digit account number of the AWS account that owns the domain. It does not
-        /// include dashes or spaces. 
+        ///  The 12-digit account number of the Amazon Web Services account that owns the domain.
+        /// It does not include dashes or spaces. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -109,22 +112,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Format. 
         /// <para>
-        ///  A format that specifies the type of the package with the statuses to update. The
-        /// valid values are: 
+        ///  A format that specifies the type of the package with the statuses to update. 
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>npm</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>pypi</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>maven</code> 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public PackageFormat Format

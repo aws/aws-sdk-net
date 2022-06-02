@@ -148,7 +148,7 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        ///  The type of AWS resource. 
+        ///  The type of Amazon Web Services resource. 
         /// </para>
         /// </summary>
         public ResourceType ResourceType

@@ -30,7 +30,7 @@ namespace Amazon.CodeArtifact.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes tags from a resource in AWS CodeArtifact.
+    /// Removes tags from a resource in CodeArtifact.
     /// </summary>
     public partial class UntagResourceRequest : AmazonCodeArtifactRequest
     {

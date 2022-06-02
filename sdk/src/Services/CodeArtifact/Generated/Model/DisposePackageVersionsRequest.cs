@@ -80,8 +80,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property DomainOwner. 
         /// <para>
-        ///  The 12-digit account number of the AWS account that owns the domain. It does not
-        /// include dashes or spaces. 
+        ///  The 12-digit account number of the Amazon Web Services account that owns the domain.
+        /// It does not include dashes or spaces. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -100,29 +100,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property ExpectedStatus. 
         /// <para>
-        ///  The expected status of the package version to dispose. Valid values are: 
+        ///  The expected status of the package version to dispose. 
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>Published</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Unfinished</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Unlisted</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Archived</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Disposed</code> 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public PackageVersionStatus ExpectedStatus
         {
@@ -139,22 +118,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Format. 
         /// <para>
-        ///  A format that specifies the type of package versions you want to dispose. The valid
-        /// values are: 
+        ///  A format that specifies the type of package versions you want to dispose. 
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>npm</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>pypi</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>maven</code> 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public PackageFormat Format
