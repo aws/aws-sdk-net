@@ -30,7 +30,7 @@ namespace Amazon.VoiceID.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteFraudster operation.
-    /// Deletes the specified fraudster from the Amazon Connect Voice ID system.
+    /// Deletes the specified fraudster from Voice ID.
     /// </summary>
     public partial class DeleteFraudsterRequest : AmazonVoiceIDRequest
     {

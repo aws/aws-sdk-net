@@ -183,7 +183,7 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// The client-provied name for the fraudster registration job.
+        /// The client-provided name for the fraudster registration job.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -239,7 +239,7 @@ namespace Amazon.VoiceID.Model
         /// Gets and sets the property OutputDataConfig. 
         /// <para>
         /// The output data config containing the S3 location where you want Voice ID to write
-        /// your job output file; you must also include a KMS Key ID in order to encrypt the file.
+        /// your job output file; you must also include a KMS key iD in order to encrypt the file.
         /// </para>
         /// </summary>
         public OutputDataConfig OutputDataConfig

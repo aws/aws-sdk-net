@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.VoiceID.Model
 {
     /// <summary>
-    /// The configuration containing information about the customer-managed KMS Key used for
-    /// encrypting customer data.
+    /// The configuration containing information about the customer managed key used for encrypting
+    /// customer data.
     /// </summary>
     public partial class ServerSideEncryptionConfiguration
     {
@@ -39,7 +39,7 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The identifier of the KMS Key you want Voice ID to use to encrypt your data.
+        /// The identifier of the KMS key you want Voice ID to use to encrypt your data.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

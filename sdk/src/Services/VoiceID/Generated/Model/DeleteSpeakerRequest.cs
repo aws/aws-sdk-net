@@ -30,7 +30,7 @@ namespace Amazon.VoiceID.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteSpeaker operation.
-    /// Deletes the specified speaker from the Amazon Connect Voice ID system.
+    /// Deletes the specified speaker from Voice ID.
     /// </summary>
     public partial class DeleteSpeakerRequest : AmazonVoiceIDRequest
     {

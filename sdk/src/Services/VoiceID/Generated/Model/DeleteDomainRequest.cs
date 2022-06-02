@@ -30,7 +30,7 @@ namespace Amazon.VoiceID.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDomain operation.
-    /// Deletes the specified domain from the Amazon Connect Voice ID system.
+    /// Deletes the specified domain from Voice ID.
     /// </summary>
     public partial class DeleteDomainRequest : AmazonVoiceIDRequest
     {

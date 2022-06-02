@@ -142,8 +142,8 @@ namespace Amazon.VoiceID.Model
         /// next steps when the Authentication or Fraud Detection results are empty or the decision
         /// is <code>NOT_ENOUGH_SPEECH</code>. In this situation, if the <code>StreamingStatus</code>
         /// is <code>ONGOING/PENDING_CONFIGURATION</code>, it can mean that the client should
-        /// call the API again later, once Voice ID has enough audio to produce a result. If the
-        /// decision remains <code>NOT_ENOUGH_SPEECH</code> even after <code>StreamingStatus</code>
+        /// call the API again later, after Voice ID has enough audio to produce a result. If
+        /// the decision remains <code>NOT_ENOUGH_SPEECH</code> even after <code>StreamingStatus</code>
         /// is <code>ENDED</code>, it means that the previously streamed session did not have
         /// enough speech to perform evaluation, and a new streaming session is needed to try
         /// again.

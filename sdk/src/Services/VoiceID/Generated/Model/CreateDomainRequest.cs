@@ -102,9 +102,9 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property ServerSideEncryptionConfiguration. 
         /// <para>
-        /// The configuration, containing the KMS Key Identifier, to be used by Voice ID for the
+        /// The configuration, containing the KMS key identifier, to be used by Voice ID for the
         /// server-side encryption of your data. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid">
-        /// Amazon Connect VoiceID encryption at rest</a> for more details on how the KMS Key
+        /// Amazon Connect Voice ID encryption at rest</a> for more details on how the KMS key
         /// is used. 
         /// </para>
         /// </summary>

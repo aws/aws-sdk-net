@@ -30,7 +30,7 @@ namespace Amazon.VoiceID.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Tags an Amazon Connect Voice ID resource with the provided list of tags.
+    /// Tags a Voice ID resource with the provided list of tags.
     /// </summary>
     public partial class TagResourceRequest : AmazonVoiceIDRequest
     {

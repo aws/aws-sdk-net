@@ -40,6 +40,7 @@ namespace Amazon.VoiceID.Model
         private DomainStatus _domainStatus;
         private string _name;
         private ServerSideEncryptionConfiguration _serverSideEncryptionConfiguration;
+        private ServerSideEncryptionUpdateDetails _serverSideEncryptionUpdateDetails;
         private DateTime? _updatedAt;
 
         /// <summary>
@@ -156,7 +157,7 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property ServerSideEncryptionConfiguration. 
         /// <para>
-        /// The server-side encryption configuration containing the KMS Key Identifier you want
+        /// The server-side encryption configuration containing the KMS key identifier you want
         /// Voice ID to use to encrypt your data.
         /// </para>
         /// </summary>
@@ -170,6 +171,27 @@ namespace Amazon.VoiceID.Model
         internal bool IsSetServerSideEncryptionConfiguration()
         {
             return this._serverSideEncryptionConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServerSideEncryptionUpdateDetails. 
+        /// <para>
+        /// Details about the most recent server-side encryption configuration update. When the
+        /// server-side encryption configuration is changed, dependency on the old KMS key is
+        /// removed through an asynchronous process. When this update is complete, the domain's
+        /// data can only be accessed using the new KMS key.
+        /// </para>
+        /// </summary>
+        public ServerSideEncryptionUpdateDetails ServerSideEncryptionUpdateDetails
+        {
+            get { return this._serverSideEncryptionUpdateDetails; }
+            set { this._serverSideEncryptionUpdateDetails = value; }
+        }
+
+        // Check to see if ServerSideEncryptionUpdateDetails property is set
+        internal bool IsSetServerSideEncryptionUpdateDetails()
+        {
+            return this._serverSideEncryptionUpdateDetails != null;
         }
 
         /// <summary>

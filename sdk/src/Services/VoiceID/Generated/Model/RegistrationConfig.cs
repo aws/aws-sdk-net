@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.VoiceID.Model
 {
     /// <summary>
-    /// The configuration definining the action to take when a duplicate fraudster is detected,
+    /// The configuration defining the action to take when a duplicate fraudster is detected,
     /// and the similarity threshold to use for detecting a duplicate fraudster during a batch
     /// fraudster registration job.
     /// </summary>

@@ -131,7 +131,7 @@ namespace Amazon.VoiceID
 
 
         /// <summary>
-        /// Deletes the specified domain from the Amazon Connect Voice ID system.
+        /// Deletes the specified domain from Voice ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDomain service method.</param>
         /// 
@@ -165,7 +165,7 @@ namespace Amazon.VoiceID
 
 
         /// <summary>
-        /// Deletes the specified domain from the Amazon Connect Voice ID system.
+        /// Deletes the specified domain from Voice ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDomain service method.</param>
         /// <param name="cancellationToken">
@@ -205,7 +205,7 @@ namespace Amazon.VoiceID
 
 
         /// <summary>
-        /// Deletes the specified fraudster from the Amazon Connect Voice ID system.
+        /// Deletes the specified fraudster from Voice ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFraudster service method.</param>
         /// 
@@ -213,6 +213,10 @@ namespace Amazon.VoiceID
         /// <exception cref="Amazon.VoiceID.Model.AccessDeniedException">
         /// You do not have sufficient permissions to perform this action. Check the error message
         /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ConflictException">
+        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
+        /// message for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
         /// The request failed due to an unknown error on the server side.
@@ -235,7 +239,7 @@ namespace Amazon.VoiceID
 
 
         /// <summary>
-        /// Deletes the specified fraudster from the Amazon Connect Voice ID system.
+        /// Deletes the specified fraudster from Voice ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFraudster service method.</param>
         /// <param name="cancellationToken">
@@ -246,6 +250,10 @@ namespace Amazon.VoiceID
         /// <exception cref="Amazon.VoiceID.Model.AccessDeniedException">
         /// You do not have sufficient permissions to perform this action. Check the error message
         /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ConflictException">
+        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
+        /// message for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
         /// The request failed due to an unknown error on the server side.
@@ -271,7 +279,7 @@ namespace Amazon.VoiceID
 
 
         /// <summary>
-        /// Deletes the specified speaker from the Amazon Connect Voice ID system.
+        /// Deletes the specified speaker from Voice ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSpeaker service method.</param>
         /// 
@@ -305,7 +313,7 @@ namespace Amazon.VoiceID
 
 
         /// <summary>
-        /// Deletes the specified speaker from the Amazon Connect Voice ID system.
+        /// Deletes the specified speaker from Voice ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSpeaker service method.</param>
         /// <param name="cancellationToken">
@@ -685,6 +693,10 @@ namespace Amazon.VoiceID
         /// You do not have sufficient permissions to perform this action. Check the error message
         /// and try again.
         /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ConflictException">
+        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
+        /// message for more details.
+        /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
         /// The request failed due to an unknown error on the server side.
         /// </exception>
@@ -718,6 +730,10 @@ namespace Amazon.VoiceID
         /// <exception cref="Amazon.VoiceID.Model.AccessDeniedException">
         /// You do not have sufficient permissions to perform this action. Check the error message
         /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ConflictException">
+        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
+        /// message for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
         /// The request failed due to an unknown error on the server side.
@@ -1073,12 +1089,12 @@ namespace Amazon.VoiceID
 
 
         /// <summary>
-        /// Opts out a speaker from Voice ID system. A speaker can be opted out regardless of
-        /// whether or not they already exist in the system. If they don't yet exist, a new speaker
-        /// is created in an opted out state. If they already exist, their existing status is
-        /// overridden and they are opted out. Enrollment and evaluation authentication requests
-        /// are rejected for opted out speakers, and opted out speakers have no voice embeddings
-        /// stored in the system.
+        /// Opts out a speaker from Voice ID. A speaker can be opted out regardless of whether
+        /// or not they already exist in Voice ID. If they don't yet exist, a new speaker is created
+        /// in an opted out state. If they already exist, their existing status is overridden
+        /// and they are opted out. Enrollment and evaluation authentication requests are rejected
+        /// for opted out speakers, and opted out speakers have no voice embeddings stored in
+        /// Voice ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the OptOutSpeaker service method.</param>
         /// 
@@ -1112,12 +1128,12 @@ namespace Amazon.VoiceID
 
 
         /// <summary>
-        /// Opts out a speaker from Voice ID system. A speaker can be opted out regardless of
-        /// whether or not they already exist in the system. If they don't yet exist, a new speaker
-        /// is created in an opted out state. If they already exist, their existing status is
-        /// overridden and they are opted out. Enrollment and evaluation authentication requests
-        /// are rejected for opted out speakers, and opted out speakers have no voice embeddings
-        /// stored in the system.
+        /// Opts out a speaker from Voice ID. A speaker can be opted out regardless of whether
+        /// or not they already exist in Voice ID. If they don't yet exist, a new speaker is created
+        /// in an opted out state. If they already exist, their existing status is overridden
+        /// and they are opted out. Enrollment and evaluation authentication requests are rejected
+        /// for opted out speakers, and opted out speakers have no voice embeddings stored in
+        /// Voice ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the OptOutSpeaker service method.</param>
         /// <param name="cancellationToken">
@@ -1321,7 +1337,7 @@ namespace Amazon.VoiceID
 
 
         /// <summary>
-        /// Tags an Amazon Connect Voice ID resource with the provided list of tags.
+        /// Tags a Voice ID resource with the provided list of tags.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -1355,7 +1371,7 @@ namespace Amazon.VoiceID
 
 
         /// <summary>
-        /// Tags an Amazon Connect Voice ID resource with the provided list of tags.
+        /// Tags a Voice ID resource with the provided list of tags.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">

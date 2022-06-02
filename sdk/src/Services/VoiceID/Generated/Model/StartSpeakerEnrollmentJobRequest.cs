@@ -109,7 +109,7 @@ namespace Amazon.VoiceID.Model
         /// Gets and sets the property EnrollmentConfig. 
         /// <para>
         /// The enrollment config that contains details such as the action to take when a speaker
-        /// is already enrolled in the Voice ID system or when a speaker is identified as a fraudster.
+        /// is already enrolled in Voice ID or when a speaker is identified as a fraudster.
         /// </para>
         /// </summary>
         public EnrollmentConfig EnrollmentConfig
@@ -167,7 +167,7 @@ namespace Amazon.VoiceID.Model
         /// Gets and sets the property OutputDataConfig. 
         /// <para>
         /// The output data config containing the S3 location where Voice ID writes the job output
-        /// file; you must also include a KMS Key ID to encrypt the file.
+        /// file; you must also include a KMS key ID to encrypt the file.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
