@@ -37,6 +37,7 @@ namespace Amazon.Kendra.Model
         private ConfluenceConfiguration _confluenceConfiguration;
         private DatabaseConfiguration _databaseConfiguration;
         private FsxConfiguration _fsxConfiguration;
+        private GitHubConfiguration _gitHubConfiguration;
         private GoogleDriveConfiguration _googleDriveConfiguration;
         private JiraConfiguration _jiraConfiguration;
         private OneDriveConfiguration _oneDriveConfiguration;
@@ -119,6 +120,24 @@ namespace Amazon.Kendra.Model
         internal bool IsSetFsxConfiguration()
         {
             return this._fsxConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GitHubConfiguration. 
+        /// <para>
+        /// Provides the configuration information to connect to GitHub as your data source.
+        /// </para>
+        /// </summary>
+        public GitHubConfiguration GitHubConfiguration
+        {
+            get { return this._gitHubConfiguration; }
+            set { this._gitHubConfiguration = value; }
+        }
+
+        // Check to see if GitHubConfiguration property is set
+        internal bool IsSetGitHubConfiguration()
+        {
+            return this._gitHubConfiguration != null;
         }
 
         /// <summary>

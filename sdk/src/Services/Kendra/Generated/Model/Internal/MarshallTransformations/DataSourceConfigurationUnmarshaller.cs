@@ -88,6 +88,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     unmarshalledObject.FsxConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("GitHubConfiguration", targetDepth))
+                {
+                    var unmarshaller = GitHubConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.GitHubConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("GoogleDriveConfiguration", targetDepth))
                 {
                     var unmarshaller = GoogleDriveConfigurationUnmarshaller.Instance;

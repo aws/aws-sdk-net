@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// 
+    /// Provides the configuration information to connect to Jira as your data source.
     /// </summary>
     public partial class JiraConfiguration
     {
@@ -274,8 +274,7 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// jira-id—The Active Directory user name, along with the Domain Name System (DNS) domain
-        /// name. For example, <i>user@corp.example.com</i>.
+        /// jira-id—The ID of the Jira account.
         /// </para>
         ///  </li> <li> 
         /// <para>

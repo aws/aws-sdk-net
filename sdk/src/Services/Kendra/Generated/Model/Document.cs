@@ -155,6 +155,13 @@ namespace Amazon.Kendra.Model
         /// <para>
         /// A unique identifier of the document in the index.
         /// </para>
+        ///  
+        /// <para>
+        /// Note, each document ID must be unique per index. You cannot create a data source to
+        /// index your documents with their unique IDs and then use the <code>BatchPutDocument</code>
+        /// API to index the same documents, or vice versa. You can delete a data source and then
+        /// use the <code>BatchPutDocument</code> API to index the same documents, or vice versa.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
         public string Id

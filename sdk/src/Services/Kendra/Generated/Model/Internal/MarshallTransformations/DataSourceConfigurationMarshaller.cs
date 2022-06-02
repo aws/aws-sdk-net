@@ -89,6 +89,17 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetGitHubConfiguration())
+            {
+                context.Writer.WritePropertyName("GitHubConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = GitHubConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.GitHubConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetGoogleDriveConfiguration())
             {
                 context.Writer.WritePropertyName("GoogleDriveConfiguration");
