@@ -85,6 +85,12 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.CWEMonitorEnabled);
                 }
 
+                if(publicRequest.IsSetGroupingType())
+                {
+                    context.Writer.WritePropertyName("GroupingType");
+                    context.Writer.Write(publicRequest.GroupingType);
+                }
+
                 if(publicRequest.IsSetOpsCenterEnabled())
                 {
                     context.Writer.WritePropertyName("OpsCenterEnabled");

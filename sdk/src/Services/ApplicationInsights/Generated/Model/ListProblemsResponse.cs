@@ -76,7 +76,10 @@ namespace Amazon.ApplicationInsights.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceGroupName.
+        /// Gets and sets the property ResourceGroupName. 
+        /// <para>
+        ///  The name of the resource group. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
         public string ResourceGroupName

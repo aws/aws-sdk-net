@@ -44,7 +44,11 @@ namespace Amazon.ApplicationInsights.Model
         private Tier _tier;
 
         /// <summary>
-        /// Gets and sets the property AutoConfigEnabled.
+        /// Gets and sets the property AutoConfigEnabled. 
+        /// <para>
+        ///  Automatically configures the component by applying the recommended configurations.
+        /// 
+        /// </para>
         /// </summary>
         public bool AutoConfigEnabled
         {
@@ -141,9 +145,7 @@ namespace Amazon.ApplicationInsights.Model
         /// <summary>
         /// Gets and sets the property Tier. 
         /// <para>
-        /// The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>,
-        /// <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and
-        /// <code>DEFAULT</code>.
+        /// The tier of the application component.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

@@ -139,7 +139,10 @@ namespace Amazon.ApplicationInsights.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastRecurrenceTime.
+        /// Gets and sets the property LastRecurrenceTime. 
+        /// <para>
+        ///  The last time that the problem reoccurred after its last resolution. 
+        /// </para>
         /// </summary>
         public DateTime LastRecurrenceTime
         {
@@ -154,7 +157,11 @@ namespace Amazon.ApplicationInsights.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RecurringCount.
+        /// Gets and sets the property RecurringCount. 
+        /// <para>
+        ///  The number of times that the same problem reoccurred after the first time it was
+        /// resolved. 
+        /// </para>
         /// </summary>
         public long RecurringCount
         {

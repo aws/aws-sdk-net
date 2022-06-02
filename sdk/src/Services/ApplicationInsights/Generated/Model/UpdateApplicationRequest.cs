@@ -42,7 +42,10 @@ namespace Amazon.ApplicationInsights.Model
         private string _resourceGroupName;
 
         /// <summary>
-        /// Gets and sets the property AutoConfigEnabled.
+        /// Gets and sets the property AutoConfigEnabled. 
+        /// <para>
+        ///  Turns auto-configuration on or off. 
+        /// </para>
         /// </summary>
         public bool AutoConfigEnabled
         {

@@ -42,7 +42,10 @@ namespace Amazon.ApplicationInsights.Model
         private DateTime? _startTime;
 
         /// <summary>
-        /// Gets and sets the property ComponentName.
+        /// Gets and sets the property ComponentName. 
+        /// <para>
+        ///  The name of the component. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1011)]
         public string ComponentName
