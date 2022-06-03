@@ -20,6 +20,8 @@
         <CustomTasksAssembly>CustomTasks\bin\Debug\CustomTasks.dll</CustomTasksAssembly>
         <TestAnalyzerAssembly>..\sdk\test\TestAnalyzer\IntegrationTestsAnalyzer\bin\Debug\IntegrationTestsAnalyzer.dll</TestAnalyzerAssembly>
         <RunIntegTests Condition="'$(RunIntegTests)'=='' And '$(IntegCategoriesToTest)' != ''">true</RunIntegTests>
+
+        <CodeSigning Condition="'$(CodeSigning)'==''">false</CodeSigning>
     </PropertyGroup>
 
     <Import Project="$(InternalBuildTools)\references.targets" Condition="Exists('$(InternalBuildTools)\references.targets')" />
@@ -47,7 +49,7 @@
     <PropertyGroup>
       <Net35SolutionsFile>AWSSDK.Net35.sln</Net35SolutionsFile>
       <Net45SolutionsFile>AWSSDK.Net45.sln</Net45SolutionsFile>
-      <NetStandardSolutionFile>AWSSDK.NetStandard.sln</NetStandardSolutionFile>      
+      <NetStandardSolutionFile>AWSSDK.NetStandard.sln</NetStandardSolutionFile>
       <Net35UnitTestProject>AWSSDK.UnitTests.Net35.csproj</Net35UnitTestProject>
       <Net45UnitTestProject>AWSSDK.UnitTests.Net45.csproj</Net45UnitTestProject>
       <NetStandardUnitTests>UnitTests.NetStandard.csproj</NetStandardUnitTests>
@@ -85,13 +87,13 @@
         <Delete Files="$(CustomTasksAssembly)" />
         <Delete Files="$(TestAnalyzerAssembly)" />
     </Target>
-    
+
     <UsingTask TaskName="CustomTasks.TimingTask" AssemblyFile="$(CustomTasksAssembly)"/>
     <UsingTask TaskName="CustomTasks.ValidateIntegTests" AssemblyFile="$(CustomTasksAssembly)"/>
     <UsingTask TaskName="CustomTasks.Endpoint.EndpointOverriderTask" AssemblyFile="$(CustomTasksAssembly)"/>
     <UsingTask TaskName="TestWrapper.MsTestWrapperTask" AssemblyFile="$(TestWrapperAssembly)"/>
     <UsingTask TaskName="TestWrapper.XUnitWrapperTask" AssemblyFile="$(TestWrapperAssembly)"/>
-    
+
 
     <Target Name="init" DependsOnTargets="clean-buildtools;build-buildtools">
         <Message Text="Running SDK generation and build for configuration: $(Configuration)" Importance="normal" />
@@ -106,10 +108,10 @@
     <Target Name="override-endpoints-file">
         <Message Text="Applying overrides to the endpoints-original.json file and save it as endpoints.json" Importance="normal" />
 
-        <EndpointOverriderTask 
+        <EndpointOverriderTask
             EndpointsJsonSourceLocation = "..\sdk\src\Core\endpoints-original.json"
             EndpointsOverrideLocation = ".\CustomTasks\Endpoint\endpoints-override.json"
-        />  
+        />
     </Target>
 
     <Target Name="full-build" DependsOnTargets="test-sdk;copy-assemblies;copy-dependencies;copy-service-models;keyscan;consolidate-docartifacts;save-build"/>
@@ -134,7 +136,7 @@
 
     <Target Name="run-generator">
         <CallTarget Targets="clean-old-models" Condition="Exists('$(InternalBuildTools)\references.targets')" />
-    
+
         <Message Text="Build and run code generator"/>
         <Exec Command="dotnet restore -f  AWSSDKGenerator.sln" WorkingDirectory="..\generator" />
         <Exec Command="dotnet clean -c $(Configuration) AWSSDKGenerator.sln" WorkingDirectory="..\generator"/>
@@ -148,12 +150,12 @@
                 WorkingDirectory="..\buildtools\CustomRoslynAnalyzers\CustomRoslynAnalyzers"/>
     </Target>
 
-    <Target Name="ValidateRepo" Condition="Exists('$(InternalBuildTools)\references.targets')=='true' And '$(ServiceList)'=='' And !$(DisableValidateRepo)" DependsOnTargets="build-tools">  
+    <Target Name="ValidateRepo" Condition="Exists('$(InternalBuildTools)\references.targets')=='true' And '$(ServiceList)'=='' And !$(DisableValidateRepo)" DependsOnTargets="build-tools">
       <ValidateRepoTask
-      RepoPath = "$(MSBuildProjectDirectory)\.."/>  
-   </Target>  
+      RepoPath = "$(MSBuildProjectDirectory)\.."/>
+   </Target>
 
-    <Target Name="build-sdk" DependsOnTargets="populate-deployment;build-sdk-desktop;build-code-analysis;build-sdk-netstandard;copy-assemblies;copy-dependencies">
+    <Target Name="build-sdk" DependsOnTargets="populate-deployment;build-sdk-desktop;build-code-analysis;build-sdk-netstandard;sign-sdk-artifacts;copy-assemblies;copy-dependencies">
         <Copy
             SourceFiles="..\generator\ServiceModels\_sdk-versions.json"
             DestinationFolder="$(Deployment)" />
@@ -195,12 +197,64 @@
         <Message Text="Restore and compile NetStandard versions of the SDK"/>
         <Exec Command="dotnet restore -f  $(NetStandardSolutionFile)" WorkingDirectory="..\sdk"/>
         <Exec Command="dotnet clean -c $(Configuration) $(NetStandardSolutionFile)" WorkingDirectory="..\sdk"/>
-        <Exec Command="dotnet build -c $(Configuration) --no-incremental $(NetStandardSolutionFile) /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true;RunAnalyzersDuringBuild=$(RunAnalyzersDuringBuild);RuleSetFileForBuild=$(RuleSetFileForBuild)" WorkingDirectory="..\sdk"/>        
+        <Exec Command="dotnet build -c $(Configuration) --no-incremental $(NetStandardSolutionFile) /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true;RunAnalyzersDuringBuild=$(RunAnalyzersDuringBuild);RuleSetFileForBuild=$(RuleSetFileForBuild)" WorkingDirectory="..\sdk"/>
     </Target>
 
     <Target Name="test-sdk" DependsOnTargets="init;build-sdk;build-roslyn-anlyzer-test-and-run;run-smoke-tests;run-unit-tests;run-integ-tests;run-CSM-tests;test-backward-compatibility" />
 
     <Target Name="test-sdk-service" DependsOnTargets="init;build-sdk-service;build-roslyn-anlyzer-test-and-run;run-unit-tests-service;run-integ-tests-service;test-backward-compatibility" />
+
+    <Target Name="sign-sdk-artifacts" Condition="'$(CodeSigning)'=='true'" DependsOnTargets="build-buildtools">
+        <!-- Configure project specfic code sign properties -->
+        <ItemGroup>
+            <!-- SDK items -->
+            <SignableItems Include="../sdk/src/Core/**/bin/$(Configuration)/*/AWSSDK*.dll" />
+            <SignableItems Include="../sdk/src/Services/**/bin/$(Configuration)/*/AWSSDK*.dll" Exclude="**/AWSSDK.Core.dll" />
+            <!-- Code Analyzer items -->
+            <SignableItems Include="../sdk/code-analysis/ServiceAnalysis/**/bin/$(Configuration)/AWSSDK*.CodeAnalysis.dll" />
+            <SignableItems Include="../sdk/code-analysis/NuGetInstallScripts/install.ps1" />
+            <SignableItems Include="../sdk/code-analysis/NuGetInstallScripts/uninstall.ps1" />
+            <!-- NuGet Package items -->
+            <SignableItems Include="../sdk/nuget-content/account-management.ps1" />
+            <SignableItems Include="../sdk/nuget-content/install.ps1" />
+        </ItemGroup>
+
+        <PropertyGroup>
+            <SignableItemsBasePath>../sdk</SignableItemsBasePath>
+            <ZipPrefix>netsdk</ZipPrefix>
+            <ZipFilesPath>$(MSBuildProjectDirectory)/../codesign-zip</ZipFilesPath>
+            <SigningS3KeyPrefix>netsdk</SigningS3KeyPrefix>
+            <SignedItemsPath>../sdk</SignedItemsPath>
+            <SigningRoleSessionName>netsdk-signer-session</SigningRoleSessionName>
+        </PropertyGroup>
+
+        <CodeSignTask
+            SignableItemsBasePath="$(SignableItemsBasePath)"
+            SignableItems="@(SignableItems)"
+            ZipItemsBeforeSigning="$(ZipItemsBeforeSigning)"
+            ZipPrefix="$(ZipPrefix)"
+            NumberOfFilesPerZip="$(NumberOfFilesPerZip)"
+            ZipFilesPath="$(ZipFilesPath)"
+            SigningProfileName="$(SigningProfileName)"
+            SigningRoleArn="$(SigningRoleArn)"
+            SigningRoleSessionName="$(SigningRoleSessionName)"
+            SigningBucketRegion="$(SigningBucketRegion)"
+            SignerServiceRegion="$(SignerServiceRegion)"
+            UnsignedBucketName="$(UnsignedBucketName)"
+            SigningS3Folder="$(SigningS3Folder)"
+            SigningS3KeyPrefix="$(SigningS3KeyPrefix)"
+            SigningInitialQueryStatusDelay="$(SigningInitialQueryStatusDelay)"
+            SignedItemsPath="$(SignedItemsPath)"
+            KeepZippedSignedFiles="$(KeepZippedSignedFiles)"
+            S3TagPollingInvervalMilliseconds="$(S3TagPollingInvervalMilliseconds)"
+            JobCompletionPollingInvervalMilliseconds="$(JobCompletionPollingInvervalMilliseconds)">
+            <Output TaskParameter="ZipFiles" ItemName="FileWrites" />
+            <Output TaskParameter="ZipFiles" ItemName="SigningZipFiles" />
+            <Output TaskParameter="SignableArtifacts" ItemName="SignableArtifacts" />
+            <Output TaskParameter="DownloadedSignedItems" ItemName="FileWrites" />
+            <Output TaskParameter="DownloadedSignedItems" ItemName="DownloadedSignedItems" />
+        </CodeSignTask>
+    </Target>
 
     <Target Name="validate-integ-tests" DependsOnTargets="build-custom-tasks">
         <ValidateIntegTests
@@ -420,7 +474,7 @@
 
         <Message Text="Build and Test .NET Core Setup Extension"/>
         <Exec Command="dotnet test -c $(Configuration) --no-build NETCore.SetupTests.csproj" WorkingDirectory="..\extensions\test\NETCore.SetupTests"/>
-        
+
         <Message Text="Build and Test Crt Integration Extension"/>
         <Exec Command="dotnet test -c $(Configuration) --no-build CrtIntegrationTests.csproj" WorkingDirectory="..\extensions\test\CrtIntegrationTests"/>
     </Target>
@@ -485,7 +539,7 @@
     <Target Name="build-roslyn-anlyzer-test-and-run" DependsOnTargets="">
         <Exec Command="dotnet build -c $(Configuration) --no-incremental CustomRoslynAnalyzers.Test.csproj"
             WorkingDirectory="..\buildtools\CustomRoslynAnalyzers\CustomRoslynAnalyzers.Test"/>
-        <Exec Command="dotnet test -c $(Configuration) --no-build CustomRoslynAnalyzers.Test.csproj" 
+        <Exec Command="dotnet test -c $(Configuration) --no-build CustomRoslynAnalyzers.Test.csproj"
             WorkingDirectory="..\buildtools\CustomRoslynAnalyzers\CustomRoslynAnalyzers.Test"/>
     </Target>
 
@@ -560,7 +614,7 @@
             SourceFiles="$(TestSettingsFile)"
             DestinationFolder="$(TestSettingsLocation)" />
     </Target>
-    
+
     <Target Name="test-backward-compatibility" Condition="Exists('$(InternalBuildTools)\references.targets') And '$(ServiceList)'=='' And $(TestBackwardCompatibility)">
         <Exec Command="dotnet build -c Release --no-incremental AssemblyComparer.sln" WorkingDirectory="$(InternalBuildTools)\AssemblyComparer"/>
         <!-- BackwardIncompatibilitiesToIgnore is a list of comma separated AssemblyComparer errors that should be ignored. Values can be expressed using the * wildcard. These are some examples of acceptable values:
