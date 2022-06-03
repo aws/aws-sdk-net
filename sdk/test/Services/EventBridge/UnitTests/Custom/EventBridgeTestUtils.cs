@@ -20,6 +20,8 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 using AWSSDK.UnitTests.Mocking;
+using System.Collections.Generic;
+using static AWSSDK.UnitTests.Mocking.TestUtils;
 
 namespace AWSSDK.UnitTests
 {
@@ -37,7 +39,16 @@ namespace AWSSDK.UnitTests
 
         public static IRequest RunMockRequest(AmazonWebServiceRequest request, IMarshaller<IRequest, AmazonWebServiceRequest> marshaller, AmazonEventBridgeConfig config)
         {
-            return TestUtils.RunMockRequest(new AmazonEventBridgePostMarshallHandler(), request, marshaller, config, new EventBridgeSigner());
+            var pipeline = new List<IPipelineHandler>
+            {
+                new NoopPipelineHandler(),
+                new Signer(),
+                new EndpointResolver(),
+                new AmazonEventBridgePostMarshallHandler(),
+                new Marshaller()
+            };
+
+            return TestUtils.RunMockRequest(pipeline, request, marshaller, null, config, new EventBridgeSigner());
         }
     }
 }

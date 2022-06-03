@@ -28,35 +28,56 @@ namespace AWSSDK.UnitTests.Mocking
     public class TestUtils
     {
         /// <summary>
-        /// Allows to mock pipeline to run tests for custom PipelineHandler
+        /// Allows to mock pipeline to run tests using the default pipeline handlers
         /// </summary>
-        /// <param name="pipelineHandler">Custom handler to test</param>
         /// <param name="request">Request to use</param>
-        /// <param name="marshaller">Marshaller to use</param>
+        /// <param name="marshaller">Marshaller to use or null for none</param>
+        /// <param name="unmarshaller">Unmarshaller to use or null for none</param>
         /// <param name="config">ClientConfig to use</param>
         /// <param name="signer">Signer to use</param>
         /// <returns></returns>
-        public static IRequest RunMockRequest(IPipelineHandler pipelineHandler,
-            AmazonWebServiceRequest request, IMarshaller<IRequest,
-            AmazonWebServiceRequest> marshaller,
+        public static IRequest RunMockRequest(AmazonWebServiceRequest request,
+            IMarshaller<IRequest, AmazonWebServiceRequest> marshaller,
+            ResponseUnmarshaller unmarshaller,
             ClientConfig config,
             AbstractAWSSigner signer)
         {
-            var pipeline = new RuntimePipeline(new List<IPipelineHandler>
+            var pipelineHandlers = new List<IPipelineHandler>
             {
                 new NoopPipelineHandler(),
                 new Signer(),
                 new EndpointResolver(),
-                pipelineHandler,
-                new Marshaller(),
-            });
+                new Marshaller()
+            };
+
+            return RunMockRequest(pipelineHandlers, request, marshaller, unmarshaller, config, signer);
+        }
+
+        /// <summary>
+        /// Allows to mock pipeline to run tests for custom pipeline handlers
+        /// </summary>
+        /// <param name="pipelineHandlers">The custom pipeline handlers to test</param>
+        /// <param name="request">Request to use</param>
+        /// <param name="marshaller">Marshaller to use or null for none</param>
+        /// <param name="unmarshaller">Unmarshaller to use or null for none</param>
+        /// <param name="config">ClientConfig to use</param>
+        /// <param name="signer">Signer to use</param>
+        /// <returns></returns>
+        public static IRequest RunMockRequest(List<IPipelineHandler> pipelineHandlers,
+            AmazonWebServiceRequest request, 
+            IMarshaller<IRequest, AmazonWebServiceRequest> marshaller,
+            ResponseUnmarshaller unmarshaller,
+            ClientConfig config,
+            AbstractAWSSigner signer)
+        {
+            var pipeline = new RuntimePipeline(pipelineHandlers);
 
             var requestContext = new RequestContext(config.LogMetrics, signer)
             {
                 ClientConfig = config,
                 Marshaller = marshaller,
                 OriginalRequest = request,
-                Unmarshaller = null,
+                Unmarshaller = unmarshaller,
                 IsAsync = false,
                 ImmutableCredentials = new ImmutableCredentials("access key", "secret", "token")
             };

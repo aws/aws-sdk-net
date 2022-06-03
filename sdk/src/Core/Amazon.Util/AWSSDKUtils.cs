@@ -116,6 +116,11 @@ namespace Amazon.Util
         /// </summary>
         private static string ValidPathCharacters = DetermineValidPathCharacters();
 
+        /// <summary>
+        /// The set of characters which are not to be encoded as part of the X-Amzn-Trace-Id header values
+        /// </summary>
+        public const string ValidTraceIdHeaderValueCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-=;:+&[]{}\"',";
+
         // Checks which path characters should not be encoded
         // This set will be different for .NET 4 and .NET 4.5, as
         // per http://msdn.microsoft.com/en-us/library/hh367887%28v=vs.110%29.aspx
@@ -1010,6 +1015,30 @@ namespace Amazon.Util
             }
 
             return data.Replace("/", EncodedSlash);
+        }
+
+        /// <summary>
+        /// Percent encodes the X-Amzn-Trace-Id header value skipping any characters within the
+        /// ValidTraceIdHeaderValueCharacters character set.
+        /// </summary>
+        /// <param name="value">The X-Amzn-Trace-Id header value to encode.</param>
+        /// <returns>An encoded X-Amzn-Trace-Id header value.</returns>
+        internal static string EncodeTraceIdHeaderValue(string value)
+        {
+            var encoded = new StringBuilder(value.Length * 2);
+            foreach (char symbol in System.Text.Encoding.UTF8.GetBytes(value))
+            {
+                if (ValidTraceIdHeaderValueCharacters.IndexOf(symbol) != -1)
+                {
+                    encoded.Append(symbol);
+                }
+                else
+                {
+                    encoded.Append("%").Append(string.Format(CultureInfo.InvariantCulture, "{0:X2}", (int)symbol));
+                }
+            }
+
+            return encoded.ToString();
         }
 
         /// <summary>

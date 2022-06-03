@@ -13,10 +13,10 @@
  * permissions and limitations under the License.
  */
 
-using Amazon.Util;
-using Amazon.Runtime.Internal.Util;
-using System.Globalization;
 using System;
+using System.Collections.Generic;
+using System.Globalization;
+using Amazon.Util;
 
 namespace Amazon.Runtime.Internal
 {
@@ -104,6 +104,26 @@ namespace Amazon.Runtime.Internal
                         requestContext.Request.Headers[HeaderKeys.ContentTypeHeader] = "application/x-amz-json-1.0";
                     else
                         requestContext.Request.Headers[HeaderKeys.ContentTypeHeader] = AWSSDKUtils.UrlEncodedContent;
+                }
+            }
+
+            SetRecursionDetectionHeader(requestContext.Request.Headers);
+        }
+
+        /// <summary>
+        /// Sets the X-Amzn-Trace-Id header for recursion detection within Lambda workloads.
+        /// </summary>
+        /// <param name="headers">Current request headers before marshalling.</param>
+        private static void SetRecursionDetectionHeader(IDictionary<string, string> headers)
+        {
+            if (!headers.ContainsKey(HeaderKeys.XAmznTraceIdHeader))
+            {                
+                var lambdaFunctionName = Environment.GetEnvironmentVariable(EnvironmentVariables.AWS_LAMBDA_FUNCTION_NAME);
+                var amznTraceId = Environment.GetEnvironmentVariable(EnvironmentVariables._X_AMZN_TRACE_ID);
+
+                if (!string.IsNullOrEmpty(lambdaFunctionName) && !string.IsNullOrEmpty(amznTraceId))
+                {
+                    headers[HeaderKeys.XAmznTraceIdHeader] = AWSSDKUtils.EncodeTraceIdHeaderValue(amznTraceId);
                 }
             }
         }
