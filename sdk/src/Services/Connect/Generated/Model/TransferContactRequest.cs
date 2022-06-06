@@ -114,7 +114,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ContactId. 
         /// <para>
-        /// The identifier of the contact in this instance of Amazon Connect 
+        /// The identifier of the contact in this instance of Amazon Connect. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

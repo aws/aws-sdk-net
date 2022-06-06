@@ -3874,6 +3874,55 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  GetCurrentUserData
+
+        internal virtual GetCurrentUserDataResponse GetCurrentUserData(GetCurrentUserDataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCurrentUserDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCurrentUserDataResponseUnmarshaller.Instance;
+
+            return Invoke<GetCurrentUserDataResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets the real-time active user data from the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCurrentUserData service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCurrentUserData service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetCurrentUserData">REST API Reference for GetCurrentUserData Operation</seealso>
+        public virtual Task<GetCurrentUserDataResponse> GetCurrentUserDataAsync(GetCurrentUserDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCurrentUserDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCurrentUserDataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCurrentUserDataResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetFederationToken
 
         internal virtual GetFederationTokenResponse GetFederationToken(GetFederationTokenRequest request)

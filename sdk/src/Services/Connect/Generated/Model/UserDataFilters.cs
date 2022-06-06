@@ -29,48 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// This is the response object from the TransferContact operation.
+    /// A filter for the user data.
     /// </summary>
-    public partial class TransferContactResponse : AmazonWebServiceResponse
+    public partial class UserDataFilters
     {
-        private string _contactArn;
-        private string _contactId;
+        private ContactFilter _contactFilter;
+        private List<string> _queues = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property ContactArn. 
+        /// Gets and sets the property ContactFilter. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the contact.
+        /// A filter for the user data based on the contact information that is associated to
+        /// the user. It contains a list of contact states. 
         /// </para>
         /// </summary>
-        public string ContactArn
+        public ContactFilter ContactFilter
         {
-            get { return this._contactArn; }
-            set { this._contactArn = value; }
+            get { return this._contactFilter; }
+            set { this._contactFilter = value; }
         }
 
-        // Check to see if ContactArn property is set
-        internal bool IsSetContactArn()
+        // Check to see if ContactFilter property is set
+        internal bool IsSetContactFilter()
         {
-            return this._contactArn != null;
+            return this._contactFilter != null;
         }
 
         /// <summary>
-        /// Gets and sets the property ContactId. 
+        /// Gets and sets the property Queues. 
         /// <para>
-        /// The identifier of the contact in this instance of Amazon Connect. 
+        /// Contains information about a queue resource for which metrics are returned.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
-        public string ContactId
+        [AWSProperty(Min=1, Max=100)]
+        public List<string> Queues
         {
-            get { return this._contactId; }
-            set { this._contactId = value; }
+            get { return this._queues; }
+            set { this._queues = value; }
         }
 
-        // Check to see if ContactId property is set
-        internal bool IsSetContactId()
+        // Check to see if Queues property is set
+        internal bool IsSetQueues()
         {
-            return this._contactId != null;
+            return this._queues != null && this._queues.Count > 0; 
         }
 
     }

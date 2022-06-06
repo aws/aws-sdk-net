@@ -44,6 +44,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for GetCurrentUserData operation
+        ///</summary>
+        public IGetCurrentUserDataPaginator GetCurrentUserData(GetCurrentUserDataRequest request) 
+        {
+            return new GetCurrentUserDataPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetMetricData operation
         ///</summary>
         public IGetMetricDataPaginator GetMetricData(GetMetricDataRequest request) 

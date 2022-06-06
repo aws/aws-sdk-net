@@ -31,6 +31,11 @@ namespace Amazon.Connect.Model
         IGetCurrentMetricDataPaginator GetCurrentMetricData(GetCurrentMetricDataRequest request);
 
         /// <summary>
+        /// Paginator for GetCurrentUserData operation
+        ///</summary>
+        IGetCurrentUserDataPaginator GetCurrentUserData(GetCurrentUserDataRequest request);
+
+        /// <summary>
         /// Paginator for GetMetricData operation
         ///</summary>
         IGetMetricDataPaginator GetMetricData(GetMetricDataRequest request);

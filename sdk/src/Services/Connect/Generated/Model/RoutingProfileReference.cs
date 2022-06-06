@@ -29,48 +29,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// This is the response object from the TransferContact operation.
+    /// Information about the routing profile assigned to the user.
     /// </summary>
-    public partial class TransferContactResponse : AmazonWebServiceResponse
+    public partial class RoutingProfileReference
     {
-        private string _contactArn;
-        private string _contactId;
+        private string _arn;
+        private string _id;
 
         /// <summary>
-        /// Gets and sets the property ContactArn. 
+        /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the contact.
+        /// The Amazon Resource Name (ARN) of the routing profile.
         /// </para>
         /// </summary>
-        public string ContactArn
+        public string Arn
         {
-            get { return this._contactArn; }
-            set { this._contactArn = value; }
+            get { return this._arn; }
+            set { this._arn = value; }
         }
 
-        // Check to see if ContactArn property is set
-        internal bool IsSetContactArn()
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
         {
-            return this._contactArn != null;
+            return this._arn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property ContactId. 
+        /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of the contact in this instance of Amazon Connect. 
+        /// The identifier of the routing profile.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
-        public string ContactId
+        public string Id
         {
-            get { return this._contactId; }
-            set { this._contactId = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
 
-        // Check to see if ContactId property is set
-        internal bool IsSetContactId()
+        // Check to see if Id property is set
+        internal bool IsSetId()
         {
-            return this._contactId != null;
+            return this._id != null;
         }
 
     }

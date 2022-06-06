@@ -29,48 +29,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// This is the response object from the TransferContact operation.
+    /// This is the response object from the GetCurrentUserData operation.
     /// </summary>
-    public partial class TransferContactResponse : AmazonWebServiceResponse
+    public partial class GetCurrentUserDataResponse : AmazonWebServiceResponse
     {
-        private string _contactArn;
-        private string _contactId;
+        private string _nextToken;
+        private List<UserData> _userDataList = new List<UserData>();
 
         /// <summary>
-        /// Gets and sets the property ContactArn. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the contact.
+        /// If there are additional results, this is the token for the next set of results.
         /// </para>
         /// </summary>
-        public string ContactArn
+        public string NextToken
         {
-            get { return this._contactArn; }
-            set { this._contactArn = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if ContactArn property is set
-        internal bool IsSetContactArn()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._contactArn != null;
+            return this._nextToken != null;
         }
 
         /// <summary>
-        /// Gets and sets the property ContactId. 
+        /// Gets and sets the property UserDataList. 
         /// <para>
-        /// The identifier of the contact in this instance of Amazon Connect. 
+        /// A list of the user data that is returned.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
-        public string ContactId
+        public List<UserData> UserDataList
         {
-            get { return this._contactId; }
-            set { this._contactId = value; }
+            get { return this._userDataList; }
+            set { this._userDataList = value; }
         }
 
-        // Check to see if ContactId property is set
-        internal bool IsSetContactId()
+        // Check to see if UserDataList property is set
+        internal bool IsSetUserDataList()
         {
-            return this._contactId != null;
+            return this._userDataList != null && this._userDataList.Count > 0; 
         }
 
     }

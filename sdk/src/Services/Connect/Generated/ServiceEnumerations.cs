@@ -523,6 +523,84 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type ContactState.
+    /// </summary>
+    public class ContactState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONNECTED for ContactState
+        /// </summary>
+        public static readonly ContactState CONNECTED = new ContactState("CONNECTED");
+        /// <summary>
+        /// Constant CONNECTED_ONHOLD for ContactState
+        /// </summary>
+        public static readonly ContactState CONNECTED_ONHOLD = new ContactState("CONNECTED_ONHOLD");
+        /// <summary>
+        /// Constant CONNECTING for ContactState
+        /// </summary>
+        public static readonly ContactState CONNECTING = new ContactState("CONNECTING");
+        /// <summary>
+        /// Constant ENDED for ContactState
+        /// </summary>
+        public static readonly ContactState ENDED = new ContactState("ENDED");
+        /// <summary>
+        /// Constant ERROR for ContactState
+        /// </summary>
+        public static readonly ContactState ERROR = new ContactState("ERROR");
+        /// <summary>
+        /// Constant INCOMING for ContactState
+        /// </summary>
+        public static readonly ContactState INCOMING = new ContactState("INCOMING");
+        /// <summary>
+        /// Constant MISSED for ContactState
+        /// </summary>
+        public static readonly ContactState MISSED = new ContactState("MISSED");
+        /// <summary>
+        /// Constant PENDING for ContactState
+        /// </summary>
+        public static readonly ContactState PENDING = new ContactState("PENDING");
+        /// <summary>
+        /// Constant REJECTED for ContactState
+        /// </summary>
+        public static readonly ContactState REJECTED = new ContactState("REJECTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContactState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContactState FindValue(string value)
+        {
+            return FindValue<ContactState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContactState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CurrentMetricName.
     /// </summary>
     public class CurrentMetricName : ConstantClass

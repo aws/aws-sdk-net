@@ -29,48 +29,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// This is the response object from the TransferContact operation.
+    /// Information about the agent's status.
     /// </summary>
-    public partial class TransferContactResponse : AmazonWebServiceResponse
+    public partial class AgentStatusReference
     {
-        private string _contactArn;
-        private string _contactId;
+        private string _statusArn;
+        private DateTime? _statusStartTimestamp;
 
         /// <summary>
-        /// Gets and sets the property ContactArn. 
+        /// Gets and sets the property StatusArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the contact.
+        /// The Amazon Resource Name (ARN) of the agent's status.
         /// </para>
         /// </summary>
-        public string ContactArn
+        public string StatusArn
         {
-            get { return this._contactArn; }
-            set { this._contactArn = value; }
+            get { return this._statusArn; }
+            set { this._statusArn = value; }
         }
 
-        // Check to see if ContactArn property is set
-        internal bool IsSetContactArn()
+        // Check to see if StatusArn property is set
+        internal bool IsSetStatusArn()
         {
-            return this._contactArn != null;
+            return this._statusArn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property ContactId. 
+        /// Gets and sets the property StatusStartTimestamp. 
         /// <para>
-        /// The identifier of the contact in this instance of Amazon Connect. 
+        /// The start timestamp of the agent's status.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
-        public string ContactId
+        public DateTime StatusStartTimestamp
         {
-            get { return this._contactId; }
-            set { this._contactId = value; }
+            get { return this._statusStartTimestamp.GetValueOrDefault(); }
+            set { this._statusStartTimestamp = value; }
         }
 
-        // Check to see if ContactId property is set
-        internal bool IsSetContactId()
+        // Check to see if StatusStartTimestamp property is set
+        internal bool IsSetStatusStartTimestamp()
         {
-            return this._contactId != null;
+            return this._statusStartTimestamp.HasValue; 
         }
 
     }

@@ -664,6 +664,16 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.GetCurrentUserDataRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.GetCurrentUserDataRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.GetFederationTokenRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -1699,6 +1709,11 @@
     <property>Amazon.Connect.Model.UpdateUserSecurityProfilesRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AgentContactReference.ContactId</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AgentInfo.Id</property>
