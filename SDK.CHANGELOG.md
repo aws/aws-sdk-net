@@ -1,3 +1,12 @@
+### 3.7.288.0 (2022-06-06 18:53 UTC)
+* ChimeSDKMessaging (3.7.4.0)
+	* This release adds support for searching channels by members via the SearchChannels API, removes required restrictions for Name and Mode in UpdateChannel API and enhances CreateChannel API by exposing member and moderator list as well as channel id as optional parameters.
+* Connect (3.7.21.0)
+	* This release adds a new API, GetCurrentUserData, which returns real-time details about users' current activity.
+* Core 3.7.11.12
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.287.0 (2022-06-02 18:23 UTC)
 * ApplicationInsights (3.7.3.0)
 	* Provide Account Level onboarding support through CFN/CLI
