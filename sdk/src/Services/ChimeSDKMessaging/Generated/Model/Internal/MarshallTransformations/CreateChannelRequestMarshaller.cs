@@ -71,6 +71,12 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AppInstanceArn);
                 }
 
+                if(publicRequest.IsSetChannelId())
+                {
+                    context.Writer.WritePropertyName("ChannelId");
+                    context.Writer.Write(publicRequest.ChannelId);
+                }
+
                 if(publicRequest.IsSetClientRequestToken())
                 {
                     context.Writer.WritePropertyName("ClientRequestToken");
@@ -82,6 +88,17 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("ClientRequestToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetMemberArns())
+                {
+                    context.Writer.WritePropertyName("MemberArns");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestMemberArnsListValue in publicRequest.MemberArns)
+                    {
+                            context.Writer.Write(publicRequestMemberArnsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetMetadata())
                 {
                     context.Writer.WritePropertyName("Metadata");
@@ -92,6 +109,17 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("Mode");
                     context.Writer.Write(publicRequest.Mode);
+                }
+
+                if(publicRequest.IsSetModeratorArns())
+                {
+                    context.Writer.WritePropertyName("ModeratorArns");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestModeratorArnsListValue in publicRequest.ModeratorArns)
+                    {
+                            context.Writer.Write(publicRequestModeratorArnsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetName())

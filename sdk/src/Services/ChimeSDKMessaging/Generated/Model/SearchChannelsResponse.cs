@@ -29,47 +29,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKMessaging.Model
 {
     /// <summary>
-    /// Summary of the membership details of an <code>AppInstanceUser</code>.
+    /// This is the response object from the SearchChannels operation.
     /// </summary>
-    public partial class AppInstanceUserMembershipSummary
+    public partial class SearchChannelsResponse : AmazonWebServiceResponse
     {
-        private DateTime? _readMarkerTimestamp;
-        private ChannelMembershipType _type;
+        private List<ChannelSummary> _channels = new List<ChannelSummary>();
+        private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property ReadMarkerTimestamp. 
+        /// Gets and sets the property Channels. 
         /// <para>
-        /// The time at which an <code>AppInstanceUser</code> last marked a channel as read.
+        /// A list of the channels in the request.
         /// </para>
         /// </summary>
-        public DateTime ReadMarkerTimestamp
+        public List<ChannelSummary> Channels
         {
-            get { return this._readMarkerTimestamp.GetValueOrDefault(); }
-            set { this._readMarkerTimestamp = value; }
+            get { return this._channels; }
+            set { this._channels = value; }
         }
 
-        // Check to see if ReadMarkerTimestamp property is set
-        internal bool IsSetReadMarkerTimestamp()
+        // Check to see if Channels property is set
+        internal bool IsSetChannels()
         {
-            return this._readMarkerTimestamp.HasValue; 
+            return this._channels != null && this._channels.Count > 0; 
         }
 
         /// <summary>
-        /// Gets and sets the property Type. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The type of <code>ChannelMembership</code>.
+        /// The token returned from previous API responses until the number of channels is reached.
         /// </para>
         /// </summary>
-        public ChannelMembershipType Type
+        [AWSProperty(Min=0, Max=2048)]
+        public string NextToken
         {
-            get { return this._type; }
-            set { this._type = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if Type property is set
-        internal bool IsSetType()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._type != null;
+            return this._nextToken != null;
         }
 
     }

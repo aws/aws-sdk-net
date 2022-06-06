@@ -39,7 +39,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property ChannelMemberships. 
         /// <para>
-        /// The token passed by previous API calls until all requested users are returned.
+        /// The information for the requested channel memberships.
         /// </para>
         /// </summary>
         public List<ChannelMembershipForAppInstanceUserSummary> ChannelMemberships

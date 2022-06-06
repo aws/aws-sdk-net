@@ -46,10 +46,13 @@ namespace Amazon.ChimeSDKMessaging.Model
     public partial class CreateChannelRequest : AmazonChimeSDKMessagingRequest
     {
         private string _appInstanceArn;
+        private string _channelId;
         private string _chimeBearer;
         private string _clientRequestToken;
+        private List<string> _memberArns = new List<string>();
         private string _metadata;
         private ChannelMode _mode;
+        private List<string> _moderatorArns = new List<string>();
         private string _name;
         private ChannelPrivacy _privacy;
         private List<Tag> _tags = new List<Tag>();
@@ -71,6 +74,25 @@ namespace Amazon.ChimeSDKMessaging.Model
         internal bool IsSetAppInstanceArn()
         {
             return this._appInstanceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChannelId. 
+        /// <para>
+        /// The ID of the channel in the request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string ChannelId
+        {
+            get { return this._channelId; }
+            set { this._channelId = value; }
+        }
+
+        // Check to see if ChannelId property is set
+        internal bool IsSetChannelId()
+        {
+            return this._channelId != null;
         }
 
         /// <summary>
@@ -112,6 +134,25 @@ namespace Amazon.ChimeSDKMessaging.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MemberArns. 
+        /// <para>
+        /// The ARNs of the channel members in the request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<string> MemberArns
+        {
+            get { return this._memberArns; }
+            set { this._memberArns = value; }
+        }
+
+        // Check to see if MemberArns property is set
+        internal bool IsSetMemberArns()
+        {
+            return this._memberArns != null && this._memberArns.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Metadata. 
         /// <para>
         /// The metadata of the creation request. Limited to 1KB and UTF-8.
@@ -148,6 +189,25 @@ namespace Amazon.ChimeSDKMessaging.Model
         internal bool IsSetMode()
         {
             return this._mode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModeratorArns. 
+        /// <para>
+        /// The ARNs of the channel moderators in the request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<string> ModeratorArns
+        {
+            get { return this._moderatorArns; }
+            set { this._moderatorArns = value; }
+        }
+
+        // Check to see if ModeratorArns property is set
+        internal bool IsSetModeratorArns()
+        {
+            return this._moderatorArns != null && this._moderatorArns.Count > 0; 
         }
 
         /// <summary>

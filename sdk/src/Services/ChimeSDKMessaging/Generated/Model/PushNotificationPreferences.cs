@@ -61,7 +61,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property FilterRule. 
         /// <para>
-        /// The simple JSON object used to send a subset of a push notification to the requsted
+        /// The simple JSON object used to send a subset of a push notification to the requested
         /// member.
         /// </para>
         /// </summary>

@@ -32,8 +32,8 @@ namespace Amazon.ChimeSDKMessaging
     /// The Amazon Chime SDK Messaging APIs in this section allow software developers to send
     /// and receive messages in custom messaging applications. These APIs depend on the frameworks
     /// provided by the Amazon Chime SDK Identity APIs. For more information about the messaging
-    /// APIs, see <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_Operations_Amazon_Chime_SDK_Messaging">Amazon
-    /// Chime SDK messaging</a>
+    /// APIs, see <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_Operations_Amazon_Chime_SDK_Messaging.html">Amazon
+    /// Chime SDK messaging</a>.
     /// </summary>
     public partial interface IAmazonChimeSDKMessaging : IAmazonService, IDisposable
     {
@@ -2670,6 +2670,10 @@ namespace Amazon.ChimeSDKMessaging
         /// <exception cref="Amazon.ChimeSDKMessaging.Model.BadRequestException">
         /// The input parameters don't match the service's restrictions.
         /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
         /// <exception cref="Amazon.ChimeSDKMessaging.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request.
         /// </exception>
@@ -2713,6 +2717,66 @@ namespace Amazon.ChimeSDKMessaging
         /// <returns>Returns a  RedactChannelMessageResult from ChimeSDKMessaging.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/RedactChannelMessage">REST API Reference for RedactChannelMessage Operation</seealso>
         RedactChannelMessageResponse EndRedactChannelMessage(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  SearchChannels
+
+
+        /// <summary>
+        /// Allows an <code>AppInstanceUser</code> to search the channels that they belong to.
+        /// The <code>AppInstanceUser</code> can search by membership or external ID. An <code>AppInstanceAdmin</code>
+        /// can search across all channels within the <code>AppInstance</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchChannels service method.</param>
+        /// 
+        /// <returns>The response from the SearchChannels service method, as returned by ChimeSDKMessaging.</returns>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/SearchChannels">REST API Reference for SearchChannels Operation</seealso>
+        SearchChannelsResponse SearchChannels(SearchChannelsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchChannels operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchChannels operation on AmazonChimeSDKMessagingClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchChannels
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/SearchChannels">REST API Reference for SearchChannels Operation</seealso>
+        IAsyncResult BeginSearchChannels(SearchChannelsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchChannels operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchChannels.</param>
+        /// 
+        /// <returns>Returns a  SearchChannelsResult from ChimeSDKMessaging.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/SearchChannels">REST API Reference for SearchChannels Operation</seealso>
+        SearchChannelsResponse EndSearchChannels(IAsyncResult asyncResult);
 
         #endregion
         

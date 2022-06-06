@@ -114,7 +114,6 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// The mode of the update request.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ChannelMode Mode
         {
             get { return this._mode; }
@@ -133,7 +132,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// The name of the channel.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }

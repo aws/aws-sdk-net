@@ -635,6 +635,102 @@ namespace Amazon.ChimeSDKMessaging
 
 
     /// <summary>
+    /// Constants used for properties of type SearchFieldKey.
+    /// </summary>
+    public class SearchFieldKey : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MEMBERS for SearchFieldKey
+        /// </summary>
+        public static readonly SearchFieldKey MEMBERS = new SearchFieldKey("MEMBERS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SearchFieldKey(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SearchFieldKey FindValue(string value)
+        {
+            return FindValue<SearchFieldKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SearchFieldKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SearchFieldOperator.
+    /// </summary>
+    public class SearchFieldOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EQUALS for SearchFieldOperator
+        /// </summary>
+        public static readonly SearchFieldOperator EQUALS = new SearchFieldOperator("EQUALS");
+        /// <summary>
+        /// Constant INCLUDES for SearchFieldOperator
+        /// </summary>
+        public static readonly SearchFieldOperator INCLUDES = new SearchFieldOperator("INCLUDES");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SearchFieldOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SearchFieldOperator FindValue(string value)
+        {
+            return FindValue<SearchFieldOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SearchFieldOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SortOrder.
     /// </summary>
     public class SortOrder : ConstantClass
