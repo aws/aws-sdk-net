@@ -2138,6 +2138,11 @@
           "isRegionalized": false,
           "partitionEndpoint": "aws-global"
         },
+        "catalog.marketplace": {
+          "endpoints": {
+            "us-east-1": {}
+          }
+        },
         "ce": {
           "endpoints": {
             "aws-global": {
