@@ -574,6 +574,11 @@
     <ItemGroup>
       <FileException Include="generator\ServiceModels\elasticbeanstalk\elasticbeanstalk.examples.json" />
       <FileException Include="generator\ServiceClientGenerator\bin\Release\customizations\elasticbeanstalk.customizations.json" />
+      <!-- Skip these as digital signature can cause false positives because signature is encoded as text -->
+      <FileException Include="sdk\code-analysis\NuGetInstallScripts\install.ps1" />
+      <FileException Include="sdk\code-analysis\NuGetInstallScripts\uninstall.ps1" />
+      <FileException Include="sdk\nuget-content\account-management.ps1" />
+      <FileException Include="sdk\nuget-content\install.ps1" />
     </ItemGroup>
 
         <ItemGroup>
