@@ -1,3 +1,12 @@
+### 3.7.289.0 (2022-06-07 18:13 UTC)
+* AuditManager (3.7.10.0)
+	* This release introduces 2 updates to the Audit Manager API. The roleType and roleArn attributes are now required when you use the CreateAssessment or UpdateAssessment operation. We also added a throttling exception to the RegisterAccount API operation.
+* CostExplorer (3.7.6.0)
+	* Added two new APIs to support cost allocation tags operations: ListCostAllocationTags, UpdateCostAllocationTagsStatus.
+* Core 3.7.11.13
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.288.0 (2022-06-06 18:53 UTC)
 * ChimeSDKMessaging (3.7.4.0)
 	* This release adds support for searching channels by members via the SearchChannels API, removes required restrictions for Name and Mode in UpdateChannel API and enhances CreateChannel API by exposing member and moderator list as well as channel id as optional parameters.

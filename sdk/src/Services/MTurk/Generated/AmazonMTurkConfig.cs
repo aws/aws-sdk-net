@@ -32,7 +32,7 @@ namespace Amazon.MTurk
     public partial class AmazonMTurkConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.169");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.170");
 
         private string _userAgent = UserAgentString;
 
