@@ -369,6 +369,23 @@
     <max>99</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CostExplorer.Model.ListCostAllocationTagsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.ListCostAllocationTagsRequest.NextToken</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.ListCostAllocationTagsResponse.NextToken</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CostExplorer.Model.ListCostCategoryDefinitionsRequest.EffectiveOn</property>
     <min>20</min>
     <max>25</max>
@@ -582,6 +599,18 @@
   <property-value-rule>
     <property>Amazon.CostExplorer.Model.AnomalySubscription.Threshold</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.CostAllocationTag.TagKey</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.CostAllocationTagStatusEntry.TagKey</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CostExplorer.Model.CostCategory.CostCategoryArn</property>
@@ -1594,5 +1623,17 @@
     <min>20</min>
     <max>2048</max>
     <pattern>arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:[-a-zA-Z0-9/:_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.UpdateCostAllocationTagsStatusError.Code</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.UpdateCostAllocationTagsStatusError.TagKey</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
   </property-value-rule>
 </property-value-rules>

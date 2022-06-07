@@ -213,10 +213,11 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property PredictionIntervalLevel. 
         /// <para>
-        /// Cost Explorer always returns the mean forecast as a single point. You can request
-        /// a prediction interval around the mean by specifying a confidence level. The higher
-        /// the confidence level, the more confident Cost Explorer is about the actual value falling
-        /// in the prediction interval. Higher confidence levels result in wider prediction intervals.
+        /// Amazon Web Services Cost Explorer always returns the mean forecast as a single point.
+        /// You can request a prediction interval around the mean by specifying a confidence level.
+        /// The higher the confidence level, the more confident Cost Explorer is about the actual
+        /// value falling in the prediction interval. Higher confidence levels result in wider
+        /// prediction intervals.
         /// </para>
         /// </summary>
         [AWSProperty(Min=51, Max=99)]
@@ -236,11 +237,12 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property TimePeriod. 
         /// <para>
         /// The start and end dates of the period that you want to retrieve usage forecast for.
-        /// The start date is inclusive, but the end date is exclusive. For example, if <code>start</code>
-        /// is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the
-        /// cost and usage data is retrieved from <code>2017-01-01</code> up to and including
-        /// <code>2017-04-30</code> but not including <code>2017-05-01</code>. The start date
-        /// must be equal to or later than the current date to avoid a validation error.
+        /// The start date is included in the period, but the end date isn't included in the period.
+        /// For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
+        /// is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code>
+        /// up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
+        /// The start date must be equal to or later than the current date to avoid a validation
+        /// error.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

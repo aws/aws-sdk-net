@@ -48,7 +48,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property CurrencyCode. 
         /// <para>
-        ///  The currency code that Amazon Web Services used to calculate the costs for this instance.
+        /// The currency code that Amazon Web Services used to calculate the costs for this instance.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -106,7 +106,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property OnDemandHoursInLookbackPeriod. 
         /// <para>
-        ///  The number of hours during the lookback period that's billed at On-Demand rates.
+        /// The number of hours during the lookback period that's billed at On-Demand rates.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -125,7 +125,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property ReservationCoveredHoursInLookbackPeriod. 
         /// <para>
-        ///  The number of hours during the lookback period that's covered by reservations.
+        /// The number of hours during the lookback period that's covered by reservations.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

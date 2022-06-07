@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// The amount of Savings Plans eligible usage that is covered by Savings Plans. All calculations
+    /// The amount of Savings Plans eligible usage that's covered by Savings Plans. All calculations
     /// consider the On-Demand equivalent of your Savings Plans usage.
     /// </summary>
     public partial class SavingsPlansCoverage

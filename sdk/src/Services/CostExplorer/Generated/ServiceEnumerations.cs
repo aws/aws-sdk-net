@@ -237,6 +237,106 @@ namespace Amazon.CostExplorer
 
 
     /// <summary>
+    /// Constants used for properties of type CostAllocationTagStatus.
+    /// </summary>
+    public class CostAllocationTagStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for CostAllocationTagStatus
+        /// </summary>
+        public static readonly CostAllocationTagStatus Active = new CostAllocationTagStatus("Active");
+        /// <summary>
+        /// Constant Inactive for CostAllocationTagStatus
+        /// </summary>
+        public static readonly CostAllocationTagStatus Inactive = new CostAllocationTagStatus("Inactive");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CostAllocationTagStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CostAllocationTagStatus FindValue(string value)
+        {
+            return FindValue<CostAllocationTagStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CostAllocationTagStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CostAllocationTagType.
+    /// </summary>
+    public class CostAllocationTagType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWSGenerated for CostAllocationTagType
+        /// </summary>
+        public static readonly CostAllocationTagType AWSGenerated = new CostAllocationTagType("AWSGenerated");
+        /// <summary>
+        /// Constant UserDefined for CostAllocationTagType
+        /// </summary>
+        public static readonly CostAllocationTagType UserDefined = new CostAllocationTagType("UserDefined");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CostAllocationTagType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CostAllocationTagType FindValue(string value)
+        {
+            return FindValue<CostAllocationTagType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CostAllocationTagType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CostCategoryInheritedValueDimensionName.
     /// </summary>
     public class CostCategoryInheritedValueDimensionName : ConstantClass

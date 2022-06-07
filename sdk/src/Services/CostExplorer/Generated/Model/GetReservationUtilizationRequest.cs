@@ -202,7 +202,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        /// The value by which you want to sort the data.
+        /// The value that you want to sort the data by.
         /// </para>
         ///  
         /// <para>
@@ -278,7 +278,7 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+        /// The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.
         /// </para>
         /// </summary>
         public SortDefinition SortBy
@@ -296,11 +296,11 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property TimePeriod. 
         /// <para>
-        /// Sets the start and end dates for retrieving RI utilization. The start date is inclusive,
-        /// but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code>
-        /// and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved
-        /// from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including
-        /// <code>2017-05-01</code>. 
+        /// Sets the start and end dates for retrieving Reserved Instance (RI) utilization. The
+        /// start date is inclusive, but the end date is exclusive. For example, if <code>start</code>
+        /// is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the
+        /// cost and usage data is retrieved from <code>2017-01-01</code> up to and including
+        /// <code>2017-04-30</code> but not including <code>2017-05-01</code>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

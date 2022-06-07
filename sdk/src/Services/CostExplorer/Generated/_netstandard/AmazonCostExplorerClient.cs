@@ -535,15 +535,15 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// Returns the name, ARN, rules, definition, and effective dates of a Cost Category that's
-        /// defined in the account.
+        /// Returns the name, Amazon Resource Name (ARN), rules, definition, and effective dates
+        /// of a Cost Category that's defined in the account.
         /// 
         ///  
         /// <para>
-        /// You have the option to use <code>EffectiveOn</code> to return a Cost Category that
-        /// is active on a specific date. If there is no <code>EffectiveOn</code> specified, you’ll
-        /// see a Cost Category that is effective on the current date. If Cost Category is still
-        /// effective, <code>EffectiveEnd</code> is omitted in the response. 
+        /// You have the option to use <code>EffectiveOn</code> to return a Cost Category that's
+        /// active on a specific date. If there's no <code>EffectiveOn</code> specified, you see
+        /// a Cost Category that's effective on the current date. If Cost Category is still effective,
+        /// <code>EffectiveEnd</code> is omitted in the response. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCostCategoryDefinition service method.</param>
@@ -787,7 +787,7 @@ namespace Amazon.CostExplorer
         ///  <note> 
         /// <para>
         /// This is an opt-in only feature. You can enable this feature from the Cost Explorer
-        /// Settings page. For information on how to access the Settings page, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-access.html">Controlling
+        /// Settings page. For information about how to access the Settings page, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-access.html">Controlling
         /// Access for Cost Explorer</a> in the <i>Billing and Cost Management User Guide</i>.
         /// </para>
         ///  </note>
@@ -989,8 +989,8 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// Retrieves the reservation coverage for your account. This enables you to see how much
-        /// of your Amazon Elastic Compute Cloud, Amazon ElastiCache, Amazon Relational Database
+        /// Retrieves the reservation coverage for your account, which you can use to see how
+        /// much of your Amazon Elastic Compute Cloud, Amazon ElastiCache, Amazon Relational Database
         /// Service, or Amazon Redshift usage is covered by a reservation. An organization's management
         /// account can see the coverage of the associated member accounts. This supports dimensions,
         /// Cost Categories, and nested expressions. For any time period, you can filter data
@@ -1091,9 +1091,9 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// Gets recommendations for which reservations to purchase. These recommendations could
-        /// help you reduce your costs. Reservations provide a discounted hourly rate (up to 75%)
-        /// compared to On-Demand pricing.
+        /// Gets recommendations for reservation purchases. These recommendations might help you
+        /// to reduce your costs. Reservations provide a discounted hourly rate (up to 75%) compared
+        /// to On-Demand pricing.
         /// 
         ///  
         /// <para>
@@ -1101,7 +1101,8 @@ namespace Amazon.CostExplorer
         /// during a specific time period and collecting your usage into categories that are eligible
         /// for a reservation. After Amazon Web Services has these categories, it simulates every
         /// combination of reservations in each category of usage to identify the best number
-        /// of each type of RI to purchase to maximize your estimated savings. 
+        /// of each type of Reserved Instance (RI) to purchase to maximize your estimated savings.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -1109,10 +1110,10 @@ namespace Amazon.CostExplorer
         /// tenancy, and c4 family usage in the US West (Oregon) Region and recommends that you
         /// buy size-flexible regional reservations to apply to the c4 family usage. Amazon Web
         /// Services recommends the smallest size instance in an instance family. This makes it
-        /// easier to purchase a size-flexible RI. Amazon Web Services also shows the equal number
-        /// of normalized units so that you can purchase any instance size that you want. For
-        /// this example, your RI recommendation would be for <code>c4.large</code> because that
-        /// is the smallest size instance in the c4 instance family.
+        /// easier to purchase a size-flexible Reserved Instance (RI). Amazon Web Services also
+        /// shows the equal number of normalized units. This way, you can purchase any instance
+        /// size that you want. For this example, your RI recommendation is for <code>c4.large</code>
+        /// because that is the smallest size instance in the c4 instance family.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetReservationPurchaseRecommendation service method.</param>
@@ -1208,8 +1209,8 @@ namespace Amazon.CostExplorer
         ///  
         /// <para>
         /// Recommendations are generated to either downsize or terminate instances, along with
-        /// providing savings detail and metrics. For details on calculation and function, see
-        /// <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-rightsizing.html">Optimizing
+        /// providing savings detail and metrics. For more information about calculation and function,
+        /// see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-rightsizing.html">Optimizing
         /// Your Cost with Rightsizing Recommendations</a> in the <i>Billing and Cost Management
         /// User Guide</i>.
         /// </para>
@@ -1368,7 +1369,7 @@ namespace Amazon.CostExplorer
         /// 
         ///  <note> 
         /// <para>
-        /// You cannot group by any dimension values for <code>GetSavingsPlansUtilization</code>.
+        /// You can't group by any dimension values for <code>GetSavingsPlansUtilization</code>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1546,6 +1547,47 @@ namespace Amazon.CostExplorer
 
         #endregion
         
+        #region  ListCostAllocationTags
+
+        internal virtual ListCostAllocationTagsResponse ListCostAllocationTags(ListCostAllocationTagsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCostAllocationTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCostAllocationTagsResponseUnmarshaller.Instance;
+
+            return Invoke<ListCostAllocationTagsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Get a list of cost allocation tags. All inputs in the API are optional and serve as
+        /// filters. By default, all cost allocation tags are returned.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCostAllocationTags service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCostAllocationTags service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListCostAllocationTags">REST API Reference for ListCostAllocationTags Operation</seealso>
+        public virtual Task<ListCostAllocationTagsResponse> ListCostAllocationTagsAsync(ListCostAllocationTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCostAllocationTagsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCostAllocationTagsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListCostAllocationTagsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListCostCategoryDefinitions
 
         internal virtual ListCostCategoryDefinitionsResponse ListCostCategoryDefinitions(ListCostCategoryDefinitionsRequest request)
@@ -1560,8 +1602,8 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// Returns the name, ARN, <code>NumberOfRules</code> and effective dates of all Cost
-        /// Categories defined in the account. You have the option to use <code>EffectiveOn</code>
+        /// Returns the name, Amazon Resource Name (ARN), <code>NumberOfRules</code> and effective
+        /// dates of all Cost Categories defined in the account. You have the option to use <code>EffectiveOn</code>
         /// to return a list of Cost Categories that were active on a specific date. If there
         /// is no <code>EffectiveOn</code> specified, you’ll see Cost Categories that are effective
         /// on the current date. If Cost Category is still effective, <code>EffectiveEnd</code>
@@ -1693,8 +1735,8 @@ namespace Amazon.CostExplorer
         /// </para>
         ///  
         /// <para>
-        ///  Although the maximum number of array members is 200, user-tag maximum is 50. The
-        /// remaining are reserved for Amazon Web Services use.
+        /// Although the maximum number of array members is 200, user-tag maximum is 50. The remaining
+        /// are reserved for Amazon Web Services use.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
@@ -1739,8 +1781,8 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// Removes one or more tags from a resource. Specify only tag key(s) in your request.
-        /// Do not specify the value.
+        /// Removes one or more tags from a resource. Specify only tag keys in your request. Don't
+        /// specify the value.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -1846,6 +1888,46 @@ namespace Amazon.CostExplorer
             options.ResponseUnmarshaller = UpdateAnomalySubscriptionResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateAnomalySubscriptionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateCostAllocationTagsStatus
+
+        internal virtual UpdateCostAllocationTagsStatusResponse UpdateCostAllocationTagsStatus(UpdateCostAllocationTagsStatusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCostAllocationTagsStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCostAllocationTagsStatusResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCostAllocationTagsStatusResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates status for cost allocation tags in bulk, with maximum batch size of 20. If
+        /// the tag status that's updated is the same as the existing tag status, the request
+        /// doesn't fail. Instead, it doesn't have any effect on the tag status (for example,
+        /// activating the active tag).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCostAllocationTagsStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCostAllocationTagsStatus service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateCostAllocationTagsStatus">REST API Reference for UpdateCostAllocationTagsStatus Operation</seealso>
+        public virtual Task<UpdateCostAllocationTagsStatusResponse> UpdateCostAllocationTagsStatusAsync(UpdateCostAllocationTagsStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCostAllocationTagsStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCostAllocationTagsStatusResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateCostAllocationTagsStatusResponse>(request, options, cancellationToken);
         }
 
         #endregion

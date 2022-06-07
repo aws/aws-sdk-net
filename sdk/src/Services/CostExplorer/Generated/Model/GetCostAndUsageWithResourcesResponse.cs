@@ -100,7 +100,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property ResultsByTime. 
         /// <para>
-        /// The time period that is covered by the results in the response.
+        /// The time period that's covered by the results in the response.
         /// </para>
         /// </summary>
         public List<ResultByTime> ResultsByTime

@@ -82,7 +82,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EffectiveEnd. 
         /// <para>
-        ///  The effective end data of your Cost Category.
+        /// The effective end data of your Cost Category.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=25)]

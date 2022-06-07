@@ -59,9 +59,9 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property ResourceTags. 
         /// <para>
-        ///  An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalyMonitor.html">
+        /// An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalyMonitor.html">
         /// <code>AnomalyMonitor</code> </a>. You can use resource tags to control access to your
-        /// monitor using IAM policies.
+        /// <code>monitor</code> using IAM policies.
         /// </para>
         ///  
         /// <para>
@@ -83,8 +83,8 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces,
-        /// <code>_.:/=+-</code> 
+        /// Keys and values can only contain alphanumeric characters, spaces, and any of the following:
+        /// <code>_.:/=+@-</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>

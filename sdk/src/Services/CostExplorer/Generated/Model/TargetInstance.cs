@@ -137,8 +137,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property PlatformDifferences. 
         /// <para>
-        ///  Explains the actions you might need to take in order to successfully migrate your
-        /// workloads from the current instance type to the recommended instance type. 
+        /// Explains the actions that you might need to take to successfully migrate your workloads
+        /// from the current instance type to the recommended instance type. 
         /// </para>
         /// </summary>
         public List<string> PlatformDifferences

@@ -81,7 +81,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property SpendCoveredBySavingsPlans. 
         /// <para>
-        /// The amount of your Amazon Web Services usage that is covered by a Savings Plans.
+        /// The amount of your Amazon Web Services usage that's covered by a Savings Plans.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

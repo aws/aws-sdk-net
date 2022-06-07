@@ -64,8 +64,8 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>CostCategoryValues</code> are not returned if <code>CostCategoryName</code>
-        /// is not specified in the request. 
+        /// If the <code>CostCategoryName</code> key isn't specified in the request, the <code>CostCategoryValues</code>
+        /// fields aren't returned. 
         /// </para>
         /// </summary>
         public List<string> CostCategoryValues
@@ -83,7 +83,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property NextPageToken. 
         /// <para>
-        /// If the number of objects that are still available for retrieval exceeds the limit,
+        /// If the number of objects that are still available for retrieval exceeds the quota,
         /// Amazon Web Services returns a NextPageToken value in the response. To retrieve the
         /// next batch of objects, provide the marker from the prior call in your next request.
         /// </para>
@@ -104,7 +104,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property ReturnSize. 
         /// <para>
-        /// The number of objects returned.
+        /// The number of objects that are returned.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

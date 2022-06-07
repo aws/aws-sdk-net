@@ -56,7 +56,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The account that this RI recommendation is for.
+        /// The account that this Reserved Instance (RI) recommendation is for.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -194,7 +194,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EstimatedMonthlySavingsAmount. 
         /// <para>
-        /// How much Amazon Web Services estimates that this specific recommendation could save
+        /// How much Amazon Web Services estimates that this specific recommendation might save
         /// you in a month.
         /// </para>
         /// </summary>
@@ -214,7 +214,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EstimatedMonthlySavingsPercentage. 
         /// <para>
-        /// How much Amazon Web Services estimates that this specific recommendation could save
+        /// How much Amazon Web Services estimates that this specific recommendation might save
         /// you in a month, as a percentage of your overall costs.
         /// </para>
         /// </summary>
@@ -234,8 +234,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EstimatedReservationCostForLookbackPeriod. 
         /// <para>
-        /// How much Amazon Web Services estimates that you would have spent for all usage during
-        /// the specified historical period if you had a reservation.
+        /// How much Amazon Web Services estimates that you might spend for all usage during the
+        /// specified historical period if you had a reservation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

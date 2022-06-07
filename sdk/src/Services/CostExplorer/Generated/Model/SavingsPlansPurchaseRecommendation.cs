@@ -65,7 +65,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property LookbackPeriodInDays. 
         /// <para>
-        /// The lookback period in days, used to generate the recommendation.
+        /// The lookback period in days that's used to generate the recommendation.
         /// </para>
         /// </summary>
         public LookbackPeriodInDays LookbackPeriodInDays
@@ -83,7 +83,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property PaymentOption. 
         /// <para>
-        /// The payment option used to generate the recommendation.
+        /// The payment option that's used to generate the recommendation.
         /// </para>
         /// </summary>
         public PaymentOption PaymentOption
@@ -101,8 +101,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property SavingsPlansPurchaseRecommendationDetails. 
         /// <para>
-        /// Details for the Savings Plans we recommend that you purchase to cover existing Savings
-        /// Plans eligible workloads.
+        /// Details for the Savings Plans that we recommend that you purchase to cover existing
+        /// Savings Plans eligible workloads.
         /// </para>
         /// </summary>
         public List<SavingsPlansPurchaseRecommendationDetail> SavingsPlansPurchaseRecommendationDetails

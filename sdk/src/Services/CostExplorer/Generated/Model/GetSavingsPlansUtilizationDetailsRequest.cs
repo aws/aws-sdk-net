@@ -158,7 +158,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        /// The value by which you want to sort the data.
+        /// The value that you want to sort the data by.
         /// </para>
         ///  
         /// <para>
@@ -194,7 +194,7 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+        /// The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.
         /// </para>
         /// </summary>
         public SortDefinition SortBy

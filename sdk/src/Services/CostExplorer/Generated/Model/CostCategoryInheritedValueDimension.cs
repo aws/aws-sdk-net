@@ -29,13 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// When creating or updating a cost category, you can define the <code>CostCategoryRule</code>
-    /// rule type as <code>INHERITED_VALUE</code>. This rule type adds the flexibility of
-    /// defining a rule that dynamically inherits the cost category value from the dimension
-    /// value defined by <code>CostCategoryInheritedValueDimension</code>. For example, if
-    /// you want to dynamically group costs that are based on the value of a specific tag
-    /// key, first choose an inherited value rule type, then choose the tag dimension and
-    /// specify the tag key to use.
+    /// When you create or update a cost category, you can define the <code>CostCategoryRule</code>
+    /// rule type as <code>INHERITED_VALUE</code>. This rule type adds the flexibility to
+    /// define a rule that dynamically inherits the cost category value from the dimension
+    /// value that's defined by <code>CostCategoryInheritedValueDimension</code>. For example,
+    /// suppose that you want to dynamically group costs that are based on the value of a
+    /// specific tag key. First, choose an inherited value rule type, and then choose the
+    /// tag dimension and specify the tag key to use.
     /// </summary>
     public partial class CostCategoryInheritedValueDimension
     {
@@ -69,8 +69,8 @@ namespace Amazon.CostExplorer.Model
         ///  
         /// <para>
         /// If you specify <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based
-        /// on account name. If you specify <code>TAG</code>, the cost category value will be
-        /// based on the value of the specified tag key.
+        /// on account name. If you specify <code>TAG</code>, the cost category value is based
+        /// on the value of the specified tag key.
         /// </para>
         /// </summary>
         public CostCategoryInheritedValueDimensionName DimensionName

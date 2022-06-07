@@ -42,8 +42,8 @@ namespace Amazon.CostExplorer.Model
     /// </para>
     ///  
     /// <para>
-    ///  Although the maximum number of array members is 200, user-tag maximum is 50. The
-    /// remaining are reserved for Amazon Web Services use.
+    /// Although the maximum number of array members is 200, user-tag maximum is 50. The remaining
+    /// are reserved for Amazon Web Services use.
     /// </para>
     /// </summary>
     public partial class TagResourceRequest : AmazonCostExplorerRequest
@@ -97,8 +97,8 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Valid characters for keys and values are: <code>A-Z</code>, <code>a-z</code>, spaces,
-        /// <code>_.:/=+-</code> 
+        /// Keys and values can only contain alphanumeric characters, spaces, and any of the following:
+        /// <code>_.:/=+@-</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>

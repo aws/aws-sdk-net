@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// The amount of Savings Plans utilization, in hours.
+    /// The amount of Savings Plans utilization (in hours).
     /// </summary>
     public partial class SavingsPlansUtilizationByTime
     {
@@ -60,9 +60,9 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Savings. 
         /// <para>
-        /// The amount saved by using existing Savings Plans. Savings returns both net savings
-        /// from Savings Plans as well as the <code>onDemandCostEquivalent</code> of the Savings
-        /// Plans when considering the utilization rate.
+        /// The amount that's saved by using existing Savings Plans. Savings returns both net
+        /// savings from Savings Plans and also the <code>onDemandCostEquivalent</code> of the
+        /// Savings Plans when considering the utilization rate.
         /// </para>
         /// </summary>
         public SavingsPlansSavings Savings

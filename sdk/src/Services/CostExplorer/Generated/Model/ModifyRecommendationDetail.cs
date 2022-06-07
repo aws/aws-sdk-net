@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// Details on the modification recommendation.
+    /// Details for the modification recommendation.
     /// </summary>
     public partial class ModifyRecommendationDetail
     {

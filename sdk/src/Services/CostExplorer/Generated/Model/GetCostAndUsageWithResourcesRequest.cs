@@ -42,7 +42,7 @@ namespace Amazon.CostExplorer.Model
     ///  <note> 
     /// <para>
     /// This is an opt-in only feature. You can enable this feature from the Cost Explorer
-    /// Settings page. For information on how to access the Settings page, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-access.html">Controlling
+    /// Settings page. For information about how to access the Settings page, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-access.html">Controlling
     /// Access for Cost Explorer</a> in the <i>Billing and Cost Management User Guide</i>.
     /// </para>
     ///  </note>
@@ -155,7 +155,7 @@ namespace Amazon.CostExplorer.Model
         /// If you return the <code>UsageQuantity</code> metric, the service aggregates all usage
         /// numbers without taking the units into account. For example, if you aggregate <code>usageQuantity</code>
         /// across all of Amazon EC2, the results aren't meaningful because Amazon EC2 compute
-        /// hours and data transfer are measured in different units (for example, hours vs. GB).
+        /// hours and data transfer are measured in different units (for example, hour or GB).
         /// To get more meaningful <code>UsageQuantity</code> metrics, filter by <code>UsageType</code>
         /// or <code>UsageTypeGroups</code>. 
         /// </para>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// Utilization metrics of the instance.
+    /// Utilization metrics for the instance.
     /// </summary>
     public partial class EC2ResourceUtilization
     {
@@ -43,7 +43,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property DiskResourceUtilization. 
         /// <para>
-        ///  The field that contains a list of disk (local storage) metrics that are associated
+        /// The field that contains a list of disk (local storage) metrics that are associated
         /// with the current instance. 
         /// </para>
         /// </summary>
@@ -81,7 +81,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property MaxCpuUtilizationPercentage. 
         /// <para>
-        ///  The maximum observed or expected CPU utilization of the instance.
+        /// The maximum observed or expected CPU utilization of the instance.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -100,7 +100,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property MaxMemoryUtilizationPercentage. 
         /// <para>
-        ///  The maximum observed or expected memory utilization of the instance.
+        /// The maximum observed or expected memory utilization of the instance.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -119,7 +119,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property MaxStorageUtilizationPercentage. 
         /// <para>
-        ///  The maximum observed or expected storage utilization of the instance. This doesn't
+        /// The maximum observed or expected storage utilization of the instance. This doesn't
         /// include EBS storage.
         /// </para>
         /// </summary>
@@ -139,7 +139,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property NetworkResourceUtilization. 
         /// <para>
-        ///  The network field that contains a list of network metrics that are associated with
+        /// The network field that contains a list of network metrics that are associated with
         /// the current instance. 
         /// </para>
         /// </summary>

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// The combination of Amazon Web Services service, linked account, Region, and usage
-    /// type where a cost anomaly is observed.
+    /// The combination of Amazon Web Service, linked account, Region, and usage type where
+    /// a cost anomaly is observed.
     /// </summary>
     public partial class RootCause
     {
@@ -80,7 +80,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Service. 
         /// <para>
-        /// The Amazon Web Services service name that's associated with the cost anomaly. 
+        /// The Amazon Web Service name that's associated with the cost anomaly. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

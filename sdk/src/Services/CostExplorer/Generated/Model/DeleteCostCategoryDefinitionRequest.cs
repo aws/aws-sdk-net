@@ -40,7 +40,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property CostCategoryArn. 
         /// <para>
-        ///  The unique identifier for your Cost Category. 
+        /// The unique identifier for your Cost Category. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

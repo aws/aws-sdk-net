@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// The details of how to sort the data.
+    /// The details for how to sort the data.
     /// </summary>
     public partial class SortDefinition
     {

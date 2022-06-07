@@ -48,7 +48,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        ///  The key that is associated with the tag. 
+        /// The key that's associated with the tag. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -67,7 +67,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        ///  The value that is associated with the tag. 
+        /// The value that's associated with the tag. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]

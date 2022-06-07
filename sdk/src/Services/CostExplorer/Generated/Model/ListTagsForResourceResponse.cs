@@ -38,7 +38,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property ResourceTags. 
         /// <para>
-        /// A list of tag key value pairs that are associated with the response. 
+        /// A list of tag key value pairs that are associated with the resource. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]

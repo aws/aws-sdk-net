@@ -70,18 +70,17 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  
         /// <para>
-        /// - Amazon Web Services(Amazon Web Services): The entity that sells Amazon Web Services
-        /// services.
+        /// - Amazon Web Services(Amazon Web Services): The entity that sells Amazon Web Services.
         /// </para>
         ///  
         /// <para>
-        /// - AISPL (Amazon Internet Services Pvt. Ltd.): The local Indian entity that is an acting
-        /// reseller for Amazon Web Services services in India.
+        /// - AISPL (Amazon Internet Services Pvt. Ltd.): The local Indian entity that's an acting
+        /// reseller for Amazon Web Services in India.
         /// </para>
         ///  
         /// <para>
         /// - Amazon Web Services Marketplace: The entity that supports the sale of solutions
-        /// built on Amazon Web Services by third-party software providers.
+        /// that are built on Amazon Web Services by third-party software providers.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -104,13 +103,13 @@ namespace Amazon.CostExplorer.Model
         ///  </li> <li> 
         /// <para>
         /// INSTANCE_TYPE_FAMILY - A family of instance types optimized to fit different use cases.
-        /// Examples are <code>Compute Optimized</code> (<code>C4</code>, <code>C5</code>, <code>C6g</code>,
-        /// <code>C7g</code> etc.), <code>Memory Optimization</code> (<code>R4</code>, <code>R5n</code>,
-        /// <code>R5b</code>, <code>R6g</code> etc).
+        /// Examples are <code>Compute Optimized</code> (for example, <code>C4</code>, <code>C5</code>,
+        /// <code>C6g</code>, and <code>C7g</code>), <code>Memory Optimization</code> (for example,
+        /// <code>R4</code>, <code>R5n</code>, <code>R5b</code>, and <code>R6g</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVOICING_ENTITY - The name of the entity issuing the Amazon Web Services invoice.
+        /// INVOICING_ENTITY - The name of the entity that issues the Amazon Web Services invoice.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -137,7 +136,7 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// PURCHASE_TYPE - The reservation type of the purchase to which this usage is related.
+        /// PURCHASE_TYPE - The reservation type of the purchase that this usage is related to.
         /// Examples include On-Demand Instances and Standard Reserved Instances.
         /// </para>
         ///  </li> <li> 
@@ -177,8 +176,8 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds,
-        /// and credits.
+        /// RECORD_TYPE - The different types of charges such as Reserved Instance (RI) fees,
+        /// usage costs, tax refunds, and credits.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -245,7 +244,8 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// PAYMENT_OPTION - Payment option for the given Savings Plans (for example, All Upfront)
+        /// PAYMENT_OPTION - The payment option for the given Savings Plans (for example, All
+        /// Upfront)
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -318,8 +318,8 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// This field is only used when SortBy is provided in the request. The maximum number
-        /// of objects that to be returned for this request. If MaxResults is not specified with
-        /// SortBy, the request will return 1000 results as the default value for this parameter.
+        /// of objects that are returned for this request. If MaxResults isn't specified with
+        /// SortBy, the request returns 1000 results as the default value for this parameter.
         /// </para>
         ///  
         /// <para>
@@ -381,7 +381,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        /// The value by which you want to sort the data.
+        /// The value that you want to sort the data by.
         /// </para>
         ///  
         /// <para>
@@ -417,13 +417,14 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+        /// The supported values for the <code>SortOrder</code> key are <code>ASCENDING</code>
+        /// or <code>DESCENDING</code>.
         /// </para>
         ///  
         /// <para>
         /// When you specify a <code>SortBy</code> paramater, the context must be <code>COST_AND_USAGE</code>.
         /// Further, when using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code>
-        /// are not supported.
+        /// aren't supported.
         /// </para>
         /// </summary>
         public List<SortDefinition> SortBy
