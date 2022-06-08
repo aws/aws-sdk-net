@@ -329,7 +329,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property TargetDbType. 
         /// <para>
         /// Specifies where to migrate source tables on the target, either to a single database
-        /// or multiple databases.
+        /// or multiple databases. If you specify <code>SPECIFIC_DATABASE</code>, specify the
+        /// database name using the <code>DatabaseName</code> parameter of the <code>Endpoint</code>
+        /// object.
         /// </para>
         ///  
         /// <para>

@@ -649,6 +649,75 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  CreateFleetAdvisorCollector
+
+        /// <summary>
+        /// Creates a Fleet Advisor collector using the specified parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFleetAdvisorCollector service method.</param>
+        /// 
+        /// <returns>The response from the CreateFleetAdvisorCollector service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceQuotaExceededException">
+        /// The quota for this resource quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.S3AccessDeniedException">
+        /// Insufficient privileges are preventing access to an Amazon S3 object.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.S3ResourceNotFoundException">
+        /// A specified Amazon S3 bucket, bucket folder, or other object can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateFleetAdvisorCollector">REST API Reference for CreateFleetAdvisorCollector Operation</seealso>
+        public virtual CreateFleetAdvisorCollectorResponse CreateFleetAdvisorCollector(CreateFleetAdvisorCollectorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFleetAdvisorCollectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFleetAdvisorCollectorResponseUnmarshaller.Instance;
+
+            return Invoke<CreateFleetAdvisorCollectorResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateFleetAdvisorCollector operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateFleetAdvisorCollector operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateFleetAdvisorCollector
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateFleetAdvisorCollector">REST API Reference for CreateFleetAdvisorCollector Operation</seealso>
+        public virtual IAsyncResult BeginCreateFleetAdvisorCollector(CreateFleetAdvisorCollectorRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFleetAdvisorCollectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFleetAdvisorCollectorResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateFleetAdvisorCollector operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateFleetAdvisorCollector.</param>
+        /// 
+        /// <returns>Returns a  CreateFleetAdvisorCollectorResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateFleetAdvisorCollector">REST API Reference for CreateFleetAdvisorCollector Operation</seealso>
+        public virtual CreateFleetAdvisorCollectorResponse EndCreateFleetAdvisorCollector(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateFleetAdvisorCollectorResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateReplicationInstance
 
         /// <summary>
@@ -1141,6 +1210,126 @@ namespace Amazon.DatabaseMigrationService
         public virtual DeleteEventSubscriptionResponse EndDeleteEventSubscription(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteEventSubscriptionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteFleetAdvisorCollector
+
+        /// <summary>
+        /// Deletes the specified Fleet Advisor collector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFleetAdvisorCollector service method.</param>
+        /// 
+        /// <returns>The response from the DeleteFleetAdvisorCollector service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.CollectorNotFoundException">
+        /// The specified collector doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteFleetAdvisorCollector">REST API Reference for DeleteFleetAdvisorCollector Operation</seealso>
+        public virtual DeleteFleetAdvisorCollectorResponse DeleteFleetAdvisorCollector(DeleteFleetAdvisorCollectorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFleetAdvisorCollectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFleetAdvisorCollectorResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFleetAdvisorCollectorResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFleetAdvisorCollector operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFleetAdvisorCollector operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteFleetAdvisorCollector
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteFleetAdvisorCollector">REST API Reference for DeleteFleetAdvisorCollector Operation</seealso>
+        public virtual IAsyncResult BeginDeleteFleetAdvisorCollector(DeleteFleetAdvisorCollectorRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFleetAdvisorCollectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFleetAdvisorCollectorResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteFleetAdvisorCollector operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteFleetAdvisorCollector.</param>
+        /// 
+        /// <returns>Returns a  DeleteFleetAdvisorCollectorResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteFleetAdvisorCollector">REST API Reference for DeleteFleetAdvisorCollector Operation</seealso>
+        public virtual DeleteFleetAdvisorCollectorResponse EndDeleteFleetAdvisorCollector(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteFleetAdvisorCollectorResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteFleetAdvisorDatabases
+
+        /// <summary>
+        /// Deletes the specified Fleet Advisor collector databases.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFleetAdvisorDatabases service method.</param>
+        /// 
+        /// <returns>The response from the DeleteFleetAdvisorDatabases service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidOperationException">
+        /// The action or operation requested isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteFleetAdvisorDatabases">REST API Reference for DeleteFleetAdvisorDatabases Operation</seealso>
+        public virtual DeleteFleetAdvisorDatabasesResponse DeleteFleetAdvisorDatabases(DeleteFleetAdvisorDatabasesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFleetAdvisorDatabasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFleetAdvisorDatabasesResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFleetAdvisorDatabasesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFleetAdvisorDatabases operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFleetAdvisorDatabases operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteFleetAdvisorDatabases
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteFleetAdvisorDatabases">REST API Reference for DeleteFleetAdvisorDatabases Operation</seealso>
+        public virtual IAsyncResult BeginDeleteFleetAdvisorDatabases(DeleteFleetAdvisorDatabasesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFleetAdvisorDatabasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFleetAdvisorDatabasesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteFleetAdvisorDatabases operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteFleetAdvisorDatabases.</param>
+        /// 
+        /// <returns>Returns a  DeleteFleetAdvisorDatabasesResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteFleetAdvisorDatabases">REST API Reference for DeleteFleetAdvisorDatabases Operation</seealso>
+        public virtual DeleteFleetAdvisorDatabasesResponse EndDeleteFleetAdvisorDatabases(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteFleetAdvisorDatabasesResponse>(asyncResult);
         }
 
         #endregion
@@ -2010,6 +2199,292 @@ namespace Amazon.DatabaseMigrationService
         public virtual DescribeEventSubscriptionsResponse EndDescribeEventSubscriptions(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeEventSubscriptionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeFleetAdvisorCollectors
+
+        /// <summary>
+        /// Returns a list of the Fleet Advisor collectors in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFleetAdvisorCollectors service method.</param>
+        /// 
+        /// <returns>The response from the DescribeFleetAdvisorCollectors service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorCollectors">REST API Reference for DescribeFleetAdvisorCollectors Operation</seealso>
+        public virtual DescribeFleetAdvisorCollectorsResponse DescribeFleetAdvisorCollectors(DescribeFleetAdvisorCollectorsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFleetAdvisorCollectorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFleetAdvisorCollectorsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeFleetAdvisorCollectorsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeFleetAdvisorCollectors operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFleetAdvisorCollectors operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeFleetAdvisorCollectors
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorCollectors">REST API Reference for DescribeFleetAdvisorCollectors Operation</seealso>
+        public virtual IAsyncResult BeginDescribeFleetAdvisorCollectors(DescribeFleetAdvisorCollectorsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFleetAdvisorCollectorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFleetAdvisorCollectorsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeFleetAdvisorCollectors operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeFleetAdvisorCollectors.</param>
+        /// 
+        /// <returns>Returns a  DescribeFleetAdvisorCollectorsResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorCollectors">REST API Reference for DescribeFleetAdvisorCollectors Operation</seealso>
+        public virtual DescribeFleetAdvisorCollectorsResponse EndDescribeFleetAdvisorCollectors(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeFleetAdvisorCollectorsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeFleetAdvisorDatabases
+
+        /// <summary>
+        /// Returns a list of Fleet Advisor databases in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFleetAdvisorDatabases service method.</param>
+        /// 
+        /// <returns>The response from the DescribeFleetAdvisorDatabases service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorDatabases">REST API Reference for DescribeFleetAdvisorDatabases Operation</seealso>
+        public virtual DescribeFleetAdvisorDatabasesResponse DescribeFleetAdvisorDatabases(DescribeFleetAdvisorDatabasesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFleetAdvisorDatabasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFleetAdvisorDatabasesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeFleetAdvisorDatabasesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeFleetAdvisorDatabases operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFleetAdvisorDatabases operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeFleetAdvisorDatabases
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorDatabases">REST API Reference for DescribeFleetAdvisorDatabases Operation</seealso>
+        public virtual IAsyncResult BeginDescribeFleetAdvisorDatabases(DescribeFleetAdvisorDatabasesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFleetAdvisorDatabasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFleetAdvisorDatabasesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeFleetAdvisorDatabases operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeFleetAdvisorDatabases.</param>
+        /// 
+        /// <returns>Returns a  DescribeFleetAdvisorDatabasesResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorDatabases">REST API Reference for DescribeFleetAdvisorDatabases Operation</seealso>
+        public virtual DescribeFleetAdvisorDatabasesResponse EndDescribeFleetAdvisorDatabases(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeFleetAdvisorDatabasesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeFleetAdvisorLsaAnalysis
+
+        /// <summary>
+        /// Provides descriptions of large-scale assessment (LSA) analyses produced by your Fleet
+        /// Advisor collectors.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFleetAdvisorLsaAnalysis service method.</param>
+        /// 
+        /// <returns>The response from the DescribeFleetAdvisorLsaAnalysis service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorLsaAnalysis">REST API Reference for DescribeFleetAdvisorLsaAnalysis Operation</seealso>
+        public virtual DescribeFleetAdvisorLsaAnalysisResponse DescribeFleetAdvisorLsaAnalysis(DescribeFleetAdvisorLsaAnalysisRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFleetAdvisorLsaAnalysisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFleetAdvisorLsaAnalysisResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeFleetAdvisorLsaAnalysisResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeFleetAdvisorLsaAnalysis operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFleetAdvisorLsaAnalysis operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeFleetAdvisorLsaAnalysis
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorLsaAnalysis">REST API Reference for DescribeFleetAdvisorLsaAnalysis Operation</seealso>
+        public virtual IAsyncResult BeginDescribeFleetAdvisorLsaAnalysis(DescribeFleetAdvisorLsaAnalysisRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFleetAdvisorLsaAnalysisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFleetAdvisorLsaAnalysisResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeFleetAdvisorLsaAnalysis operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeFleetAdvisorLsaAnalysis.</param>
+        /// 
+        /// <returns>Returns a  DescribeFleetAdvisorLsaAnalysisResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorLsaAnalysis">REST API Reference for DescribeFleetAdvisorLsaAnalysis Operation</seealso>
+        public virtual DescribeFleetAdvisorLsaAnalysisResponse EndDescribeFleetAdvisorLsaAnalysis(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeFleetAdvisorLsaAnalysisResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeFleetAdvisorSchemaObjectSummary
+
+        /// <summary>
+        /// Provides descriptions of the schemas discovered by your Fleet Advisor collectors.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFleetAdvisorSchemaObjectSummary service method.</param>
+        /// 
+        /// <returns>The response from the DescribeFleetAdvisorSchemaObjectSummary service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorSchemaObjectSummary">REST API Reference for DescribeFleetAdvisorSchemaObjectSummary Operation</seealso>
+        public virtual DescribeFleetAdvisorSchemaObjectSummaryResponse DescribeFleetAdvisorSchemaObjectSummary(DescribeFleetAdvisorSchemaObjectSummaryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFleetAdvisorSchemaObjectSummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFleetAdvisorSchemaObjectSummaryResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeFleetAdvisorSchemaObjectSummaryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeFleetAdvisorSchemaObjectSummary operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFleetAdvisorSchemaObjectSummary operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeFleetAdvisorSchemaObjectSummary
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorSchemaObjectSummary">REST API Reference for DescribeFleetAdvisorSchemaObjectSummary Operation</seealso>
+        public virtual IAsyncResult BeginDescribeFleetAdvisorSchemaObjectSummary(DescribeFleetAdvisorSchemaObjectSummaryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFleetAdvisorSchemaObjectSummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFleetAdvisorSchemaObjectSummaryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeFleetAdvisorSchemaObjectSummary operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeFleetAdvisorSchemaObjectSummary.</param>
+        /// 
+        /// <returns>Returns a  DescribeFleetAdvisorSchemaObjectSummaryResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorSchemaObjectSummary">REST API Reference for DescribeFleetAdvisorSchemaObjectSummary Operation</seealso>
+        public virtual DescribeFleetAdvisorSchemaObjectSummaryResponse EndDescribeFleetAdvisorSchemaObjectSummary(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeFleetAdvisorSchemaObjectSummaryResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeFleetAdvisorSchemas
+
+        /// <summary>
+        /// Returns a list of schemas detected by Fleet Advisor Collectors in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFleetAdvisorSchemas service method.</param>
+        /// 
+        /// <returns>The response from the DescribeFleetAdvisorSchemas service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorSchemas">REST API Reference for DescribeFleetAdvisorSchemas Operation</seealso>
+        public virtual DescribeFleetAdvisorSchemasResponse DescribeFleetAdvisorSchemas(DescribeFleetAdvisorSchemasRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFleetAdvisorSchemasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFleetAdvisorSchemasResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeFleetAdvisorSchemasResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeFleetAdvisorSchemas operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFleetAdvisorSchemas operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeFleetAdvisorSchemas
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorSchemas">REST API Reference for DescribeFleetAdvisorSchemas Operation</seealso>
+        public virtual IAsyncResult BeginDescribeFleetAdvisorSchemas(DescribeFleetAdvisorSchemasRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFleetAdvisorSchemasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFleetAdvisorSchemasResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeFleetAdvisorSchemas operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeFleetAdvisorSchemas.</param>
+        /// 
+        /// <returns>Returns a  DescribeFleetAdvisorSchemasResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorSchemas">REST API Reference for DescribeFleetAdvisorSchemas Operation</seealso>
+        public virtual DescribeFleetAdvisorSchemasResponse EndDescribeFleetAdvisorSchemas(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeFleetAdvisorSchemasResponse>(asyncResult);
         }
 
         #endregion
@@ -3576,6 +4051,67 @@ namespace Amazon.DatabaseMigrationService
         public virtual RemoveTagsFromResourceResponse EndRemoveTagsFromResource(IAsyncResult asyncResult)
         {
             return EndInvoke<RemoveTagsFromResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  RunFleetAdvisorLsaAnalysis
+
+        /// <summary>
+        /// Runs large-scale assessment (LSA) analysis on every Fleet Advisor collector in your
+        /// account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RunFleetAdvisorLsaAnalysis service method.</param>
+        /// 
+        /// <returns>The response from the RunFleetAdvisorLsaAnalysis service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RunFleetAdvisorLsaAnalysis">REST API Reference for RunFleetAdvisorLsaAnalysis Operation</seealso>
+        public virtual RunFleetAdvisorLsaAnalysisResponse RunFleetAdvisorLsaAnalysis(RunFleetAdvisorLsaAnalysisRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RunFleetAdvisorLsaAnalysisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RunFleetAdvisorLsaAnalysisResponseUnmarshaller.Instance;
+
+            return Invoke<RunFleetAdvisorLsaAnalysisResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RunFleetAdvisorLsaAnalysis operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RunFleetAdvisorLsaAnalysis operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRunFleetAdvisorLsaAnalysis
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RunFleetAdvisorLsaAnalysis">REST API Reference for RunFleetAdvisorLsaAnalysis Operation</seealso>
+        public virtual IAsyncResult BeginRunFleetAdvisorLsaAnalysis(RunFleetAdvisorLsaAnalysisRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RunFleetAdvisorLsaAnalysisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RunFleetAdvisorLsaAnalysisResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RunFleetAdvisorLsaAnalysis operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRunFleetAdvisorLsaAnalysis.</param>
+        /// 
+        /// <returns>Returns a  RunFleetAdvisorLsaAnalysisResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RunFleetAdvisorLsaAnalysis">REST API Reference for RunFleetAdvisorLsaAnalysis Operation</seealso>
+        public virtual RunFleetAdvisorLsaAnalysisResponse EndRunFleetAdvisorLsaAnalysis(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RunFleetAdvisorLsaAnalysisResponse>(asyncResult);
         }
 
         #endregion

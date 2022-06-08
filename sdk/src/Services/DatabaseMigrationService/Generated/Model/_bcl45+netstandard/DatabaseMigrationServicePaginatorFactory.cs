@@ -100,6 +100,46 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeFleetAdvisorCollectors operation
+        ///</summary>
+        public IDescribeFleetAdvisorCollectorsPaginator DescribeFleetAdvisorCollectors(DescribeFleetAdvisorCollectorsRequest request) 
+        {
+            return new DescribeFleetAdvisorCollectorsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeFleetAdvisorDatabases operation
+        ///</summary>
+        public IDescribeFleetAdvisorDatabasesPaginator DescribeFleetAdvisorDatabases(DescribeFleetAdvisorDatabasesRequest request) 
+        {
+            return new DescribeFleetAdvisorDatabasesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeFleetAdvisorLsaAnalysis operation
+        ///</summary>
+        public IDescribeFleetAdvisorLsaAnalysisPaginator DescribeFleetAdvisorLsaAnalysis(DescribeFleetAdvisorLsaAnalysisRequest request) 
+        {
+            return new DescribeFleetAdvisorLsaAnalysisPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeFleetAdvisorSchemaObjectSummary operation
+        ///</summary>
+        public IDescribeFleetAdvisorSchemaObjectSummaryPaginator DescribeFleetAdvisorSchemaObjectSummary(DescribeFleetAdvisorSchemaObjectSummaryRequest request) 
+        {
+            return new DescribeFleetAdvisorSchemaObjectSummaryPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeFleetAdvisorSchemas operation
+        ///</summary>
+        public IDescribeFleetAdvisorSchemasPaginator DescribeFleetAdvisorSchemas(DescribeFleetAdvisorSchemasRequest request) 
+        {
+            return new DescribeFleetAdvisorSchemasPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeOrderableReplicationInstances operation
         ///</summary>
         public IDescribeOrderableReplicationInstancesPaginator DescribeOrderableReplicationInstances(DescribeOrderableReplicationInstancesRequest request) 

@@ -552,6 +552,55 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  CreateFleetAdvisorCollector
+
+        internal virtual CreateFleetAdvisorCollectorResponse CreateFleetAdvisorCollector(CreateFleetAdvisorCollectorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFleetAdvisorCollectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFleetAdvisorCollectorResponseUnmarshaller.Instance;
+
+            return Invoke<CreateFleetAdvisorCollectorResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a Fleet Advisor collector using the specified parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFleetAdvisorCollector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateFleetAdvisorCollector service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceQuotaExceededException">
+        /// The quota for this resource quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.S3AccessDeniedException">
+        /// Insufficient privileges are preventing access to an Amazon S3 object.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.S3ResourceNotFoundException">
+        /// A specified Amazon S3 bucket, bucket folder, or other object can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateFleetAdvisorCollector">REST API Reference for CreateFleetAdvisorCollector Operation</seealso>
+        public virtual Task<CreateFleetAdvisorCollectorResponse> CreateFleetAdvisorCollectorAsync(CreateFleetAdvisorCollectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFleetAdvisorCollectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFleetAdvisorCollectorResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateFleetAdvisorCollectorResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateReplicationInstance
 
         internal virtual CreateReplicationInstanceResponse CreateReplicationInstance(CreateReplicationInstanceRequest request)
@@ -904,6 +953,86 @@ namespace Amazon.DatabaseMigrationService
             options.ResponseUnmarshaller = DeleteEventSubscriptionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteEventSubscriptionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteFleetAdvisorCollector
+
+        internal virtual DeleteFleetAdvisorCollectorResponse DeleteFleetAdvisorCollector(DeleteFleetAdvisorCollectorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFleetAdvisorCollectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFleetAdvisorCollectorResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFleetAdvisorCollectorResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the specified Fleet Advisor collector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFleetAdvisorCollector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteFleetAdvisorCollector service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.CollectorNotFoundException">
+        /// The specified collector doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteFleetAdvisorCollector">REST API Reference for DeleteFleetAdvisorCollector Operation</seealso>
+        public virtual Task<DeleteFleetAdvisorCollectorResponse> DeleteFleetAdvisorCollectorAsync(DeleteFleetAdvisorCollectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFleetAdvisorCollectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFleetAdvisorCollectorResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteFleetAdvisorCollectorResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteFleetAdvisorDatabases
+
+        internal virtual DeleteFleetAdvisorDatabasesResponse DeleteFleetAdvisorDatabases(DeleteFleetAdvisorDatabasesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFleetAdvisorDatabasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFleetAdvisorDatabasesResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFleetAdvisorDatabasesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the specified Fleet Advisor collector databases.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFleetAdvisorDatabases service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteFleetAdvisorDatabases service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidOperationException">
+        /// The action or operation requested isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteFleetAdvisorDatabases">REST API Reference for DeleteFleetAdvisorDatabases Operation</seealso>
+        public virtual Task<DeleteFleetAdvisorDatabasesResponse> DeleteFleetAdvisorDatabasesAsync(DeleteFleetAdvisorDatabasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFleetAdvisorDatabasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFleetAdvisorDatabasesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteFleetAdvisorDatabasesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1493,6 +1622,192 @@ namespace Amazon.DatabaseMigrationService
             options.ResponseUnmarshaller = DescribeEventSubscriptionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeEventSubscriptionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeFleetAdvisorCollectors
+
+        internal virtual DescribeFleetAdvisorCollectorsResponse DescribeFleetAdvisorCollectors(DescribeFleetAdvisorCollectorsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFleetAdvisorCollectorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFleetAdvisorCollectorsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeFleetAdvisorCollectorsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of the Fleet Advisor collectors in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFleetAdvisorCollectors service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeFleetAdvisorCollectors service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorCollectors">REST API Reference for DescribeFleetAdvisorCollectors Operation</seealso>
+        public virtual Task<DescribeFleetAdvisorCollectorsResponse> DescribeFleetAdvisorCollectorsAsync(DescribeFleetAdvisorCollectorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFleetAdvisorCollectorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFleetAdvisorCollectorsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeFleetAdvisorCollectorsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeFleetAdvisorDatabases
+
+        internal virtual DescribeFleetAdvisorDatabasesResponse DescribeFleetAdvisorDatabases(DescribeFleetAdvisorDatabasesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFleetAdvisorDatabasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFleetAdvisorDatabasesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeFleetAdvisorDatabasesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of Fleet Advisor databases in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFleetAdvisorDatabases service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeFleetAdvisorDatabases service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorDatabases">REST API Reference for DescribeFleetAdvisorDatabases Operation</seealso>
+        public virtual Task<DescribeFleetAdvisorDatabasesResponse> DescribeFleetAdvisorDatabasesAsync(DescribeFleetAdvisorDatabasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFleetAdvisorDatabasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFleetAdvisorDatabasesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeFleetAdvisorDatabasesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeFleetAdvisorLsaAnalysis
+
+        internal virtual DescribeFleetAdvisorLsaAnalysisResponse DescribeFleetAdvisorLsaAnalysis(DescribeFleetAdvisorLsaAnalysisRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFleetAdvisorLsaAnalysisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFleetAdvisorLsaAnalysisResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeFleetAdvisorLsaAnalysisResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Provides descriptions of large-scale assessment (LSA) analyses produced by your Fleet
+        /// Advisor collectors.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFleetAdvisorLsaAnalysis service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeFleetAdvisorLsaAnalysis service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorLsaAnalysis">REST API Reference for DescribeFleetAdvisorLsaAnalysis Operation</seealso>
+        public virtual Task<DescribeFleetAdvisorLsaAnalysisResponse> DescribeFleetAdvisorLsaAnalysisAsync(DescribeFleetAdvisorLsaAnalysisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFleetAdvisorLsaAnalysisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFleetAdvisorLsaAnalysisResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeFleetAdvisorLsaAnalysisResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeFleetAdvisorSchemaObjectSummary
+
+        internal virtual DescribeFleetAdvisorSchemaObjectSummaryResponse DescribeFleetAdvisorSchemaObjectSummary(DescribeFleetAdvisorSchemaObjectSummaryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFleetAdvisorSchemaObjectSummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFleetAdvisorSchemaObjectSummaryResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeFleetAdvisorSchemaObjectSummaryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Provides descriptions of the schemas discovered by your Fleet Advisor collectors.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFleetAdvisorSchemaObjectSummary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeFleetAdvisorSchemaObjectSummary service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorSchemaObjectSummary">REST API Reference for DescribeFleetAdvisorSchemaObjectSummary Operation</seealso>
+        public virtual Task<DescribeFleetAdvisorSchemaObjectSummaryResponse> DescribeFleetAdvisorSchemaObjectSummaryAsync(DescribeFleetAdvisorSchemaObjectSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFleetAdvisorSchemaObjectSummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFleetAdvisorSchemaObjectSummaryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeFleetAdvisorSchemaObjectSummaryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeFleetAdvisorSchemas
+
+        internal virtual DescribeFleetAdvisorSchemasResponse DescribeFleetAdvisorSchemas(DescribeFleetAdvisorSchemasRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFleetAdvisorSchemasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFleetAdvisorSchemasResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeFleetAdvisorSchemasResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of schemas detected by Fleet Advisor Collectors in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFleetAdvisorSchemas service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeFleetAdvisorSchemas service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorSchemas">REST API Reference for DescribeFleetAdvisorSchemas Operation</seealso>
+        public virtual Task<DescribeFleetAdvisorSchemasResponse> DescribeFleetAdvisorSchemasAsync(DescribeFleetAdvisorSchemasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFleetAdvisorSchemasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFleetAdvisorSchemasResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeFleetAdvisorSchemasResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2579,6 +2894,47 @@ namespace Amazon.DatabaseMigrationService
             options.ResponseUnmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<RemoveTagsFromResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RunFleetAdvisorLsaAnalysis
+
+        internal virtual RunFleetAdvisorLsaAnalysisResponse RunFleetAdvisorLsaAnalysis(RunFleetAdvisorLsaAnalysisRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RunFleetAdvisorLsaAnalysisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RunFleetAdvisorLsaAnalysisResponseUnmarshaller.Instance;
+
+            return Invoke<RunFleetAdvisorLsaAnalysisResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Runs large-scale assessment (LSA) analysis on every Fleet Advisor collector in your
+        /// account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RunFleetAdvisorLsaAnalysis service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RunFleetAdvisorLsaAnalysis service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RunFleetAdvisorLsaAnalysis">REST API Reference for RunFleetAdvisorLsaAnalysis Operation</seealso>
+        public virtual Task<RunFleetAdvisorLsaAnalysisResponse> RunFleetAdvisorLsaAnalysisAsync(RunFleetAdvisorLsaAnalysisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RunFleetAdvisorLsaAnalysisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RunFleetAdvisorLsaAnalysisResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RunFleetAdvisorLsaAnalysisResponse>(request, options, cancellationToken);
         }
 
         #endregion

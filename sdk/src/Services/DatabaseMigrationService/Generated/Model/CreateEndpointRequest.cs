@@ -101,7 +101,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property DatabaseName. 
         /// <para>
         /// The name of the endpoint database. For a MySQL source or target endpoint, do not specify
-        /// DatabaseName.
+        /// DatabaseName. To migrate to a specific database, use this setting and <code>targetDbType</code>.
         /// </para>
         /// </summary>
         public string DatabaseName

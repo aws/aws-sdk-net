@@ -257,6 +257,56 @@ namespace Amazon.DatabaseMigrationService
 
 
     /// <summary>
+    /// Constants used for properties of type CollectorStatus.
+    /// </summary>
+    public class CollectorStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for CollectorStatus
+        /// </summary>
+        public static readonly CollectorStatus ACTIVE = new CollectorStatus("ACTIVE");
+        /// <summary>
+        /// Constant UNREGISTERED for CollectorStatus
+        /// </summary>
+        public static readonly CollectorStatus UNREGISTERED = new CollectorStatus("UNREGISTERED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CollectorStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CollectorStatus FindValue(string value)
+        {
+            return FindValue<CollectorStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CollectorStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CompressionTypeValue.
     /// </summary>
     public class CompressionTypeValue : ConstantClass
@@ -1514,6 +1564,60 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TargetDbType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VersionStatus.
+    /// </summary>
+    public class VersionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OUTDATED for VersionStatus
+        /// </summary>
+        public static readonly VersionStatus OUTDATED = new VersionStatus("OUTDATED");
+        /// <summary>
+        /// Constant UNSUPPORTED for VersionStatus
+        /// </summary>
+        public static readonly VersionStatus UNSUPPORTED = new VersionStatus("UNSUPPORTED");
+        /// <summary>
+        /// Constant UP_TO_DATE for VersionStatus
+        /// </summary>
+        public static readonly VersionStatus UP_TO_DATE = new VersionStatus("UP_TO_DATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VersionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VersionStatus FindValue(string value)
+        {
+            return FindValue<VersionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VersionStatus(string value)
         {
             return FindValue(value);
         }
