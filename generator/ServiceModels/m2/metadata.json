@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "AWS Mainframe Modernization service is a managed mainframe service and set of tools for planning, migrating, modernizing, and running mainframe workloads on AWS",
+  "generate-client-constructors": true
+}

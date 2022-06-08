@@ -800,6 +800,10 @@
       <Project>{D774395B-8CE5-4430-9EE3-9C6E3D299326}</Project>
       <Name>AWSSDK.Macie2.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/MainframeModernization/AWSSDK.MainframeModernization.CodeAnalysis.csproj">
+      <Project>{D8054A77-57C9-4B04-BDAF-D556DAECF775}</Project>
+      <Name>AWSSDK.MainframeModernization.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/ManagedBlockchain/AWSSDK.ManagedBlockchain.CodeAnalysis.csproj">
       <Project>{26BEB3CC-1EB9-472C-91F4-F99B549826D9}</Project>
       <Name>AWSSDK.ManagedBlockchain.CodeAnalysis</Name>
