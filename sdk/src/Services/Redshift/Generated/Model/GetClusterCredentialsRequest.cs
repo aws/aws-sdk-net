@@ -95,7 +95,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterIdentifier. 
         /// <para>
-        /// The unique identifier of the cluster that contains the database for which your are
+        /// The unique identifier of the cluster that contains the database for which you are
         /// requesting credentials. This parameter is case sensitive.
         /// </para>
         /// </summary>

@@ -3485,6 +3485,44 @@ namespace Amazon.Redshift
 
         #endregion
                 
+        #region  GetClusterCredentialsWithIAM
+
+
+
+        /// <summary>
+        /// Returns a database user name and temporary password with temporary authorization to
+        /// log in to an Amazon Redshift database. The database user is mapped 1:1 to the source
+        /// Identity and Access Management (IAM) identity. For more information about IAM identities,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id.html">IAM Identities
+        /// (users, user groups, and roles)</a> in the Amazon Web Services Identity and Access
+        /// Management User Guide.
+        /// 
+        ///  
+        /// <para>
+        /// The Identity and Access Management (IAM) identity that runs this operation must have
+        /// an IAM policy attached that allows access to all necessary actions and resources.
+        /// For more information about permissions, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using
+        /// identity-based policies (IAM policies)</a> in the Amazon Redshift Cluster Management
+        /// Guide. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetClusterCredentialsWithIAM service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetClusterCredentialsWithIAM service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/GetClusterCredentialsWithIAM">REST API Reference for GetClusterCredentialsWithIAM Operation</seealso>
+        Task<GetClusterCredentialsWithIAMResponse> GetClusterCredentialsWithIAMAsync(GetClusterCredentialsWithIAMRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetReservedNodeExchangeConfigurationOptions
 
 

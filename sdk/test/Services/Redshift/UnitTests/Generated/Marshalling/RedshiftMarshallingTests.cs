@@ -8178,6 +8178,74 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("Redshift")]
+        public void GetClusterCredentialsWithIAMMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetClusterCredentialsWithIAM");
+
+            var request = InstantiateClassGenerator.Execute<GetClusterCredentialsWithIAMRequest>();
+            var marshaller = new GetClusterCredentialsWithIAMRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = GetClusterCredentialsWithIAMResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetClusterCredentialsWithIAMResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void GetClusterCredentialsWithIAM_ClusterNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetClusterCredentialsWithIAM");
+
+            var request = InstantiateClassGenerator.Execute<GetClusterCredentialsWithIAMRequest>();
+            var marshaller = new GetClusterCredentialsWithIAMRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ClusterNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = GetClusterCredentialsWithIAMResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
+        public void GetClusterCredentialsWithIAM_UnsupportedOperationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetClusterCredentialsWithIAM");
+
+            var request = InstantiateClassGenerator.Execute<GetClusterCredentialsWithIAMRequest>();
+            var marshaller = new GetClusterCredentialsWithIAMRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedOperationException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = GetClusterCredentialsWithIAMResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("Redshift")]
         public void GetReservedNodeExchangeConfigurationOptionsMarshallTest()
         {
             var operation = service_model.FindOperation("GetReservedNodeExchangeConfigurationOptions");
