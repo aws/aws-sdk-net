@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Neptune.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpgradeTarget Object
+    /// Response Unmarshaller for GlobalClusterMember Object
     /// </summary>  
-    public class UpgradeTargetUnmarshaller : IUnmarshaller<UpgradeTarget, XmlUnmarshallerContext>, IUnmarshaller<UpgradeTarget, JsonUnmarshallerContext>
+    public class GlobalClusterMemberUnmarshaller : IUnmarshaller<GlobalClusterMember, XmlUnmarshallerContext>, IUnmarshaller<GlobalClusterMember, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public UpgradeTarget Unmarshall(XmlUnmarshallerContext context)
+        public GlobalClusterMember Unmarshall(XmlUnmarshallerContext context)
         {
-            UpgradeTarget unmarshalledObject = new UpgradeTarget();
+            GlobalClusterMember unmarshalledObject = new GlobalClusterMember();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,40 +54,23 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("AutoUpgrade", targetDepth))
-                    {
-                        var unmarshaller = BoolUnmarshaller.Instance;
-                        unmarshalledObject.AutoUpgrade = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Description", targetDepth))
+                    if (context.TestExpression("DBClusterArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.DBClusterArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("Engine", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Engine = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("EngineVersion", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.EngineVersion = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("IsMajorVersionUpgrade", targetDepth))
+                    if (context.TestExpression("IsWriter", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
-                        unmarshalledObject.IsMajorVersionUpgrade = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.IsWriter = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("SupportsGlobalDatabases", targetDepth))
+                    if (context.TestExpression("Readers/member", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
-                        unmarshalledObject.SupportsGlobalDatabases = unmarshaller.Unmarshall(context);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Readers.Add(item);
                         continue;
                     }
                 }
@@ -105,18 +88,18 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public UpgradeTarget Unmarshall(JsonUnmarshallerContext context)
+        public GlobalClusterMember Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static UpgradeTargetUnmarshaller _instance = new UpgradeTargetUnmarshaller();        
+        private static GlobalClusterMemberUnmarshaller _instance = new GlobalClusterMemberUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpgradeTargetUnmarshaller Instance
+        public static GlobalClusterMemberUnmarshaller Instance
         {
             get
             {

@@ -457,6 +457,10 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.DBSubnetGroupNotFoundException">
         /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
         /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.GlobalClusterNotFoundException">
+        /// The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database
+        /// cluster.
+        /// </exception>
         /// <exception cref="Amazon.Neptune.Model.InsufficientStorageClusterCapacityException">
         /// There is insufficient storage available for the current action. You may be able to
         /// resolve this error by updating your subnet group to use different Availability Zones
@@ -470,6 +474,9 @@ namespace Amazon.Neptune
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.InvalidDBSubnetGroupStateException">
         /// The DB subnet group cannot be deleted because it is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.InvalidGlobalClusterStateException">
+        /// The global cluster is in an invalid state and can't perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.InvalidSubnetException">
         /// The requested subnet is invalid, or multiple subnets were requested that are not all
@@ -537,6 +544,10 @@ namespace Amazon.Neptune
         /// <exception cref="Amazon.Neptune.Model.DBSubnetGroupNotFoundException">
         /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
         /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.GlobalClusterNotFoundException">
+        /// The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database
+        /// cluster.
+        /// </exception>
         /// <exception cref="Amazon.Neptune.Model.InsufficientStorageClusterCapacityException">
         /// There is insufficient storage available for the current action. You may be able to
         /// resolve this error by updating your subnet group to use different Availability Zones
@@ -550,6 +561,9 @@ namespace Amazon.Neptune
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.InvalidDBSubnetGroupStateException">
         /// The DB subnet group cannot be deleted because it is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.InvalidGlobalClusterStateException">
+        /// The global cluster is in an invalid state and can't perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.InvalidSubnetException">
         /// The requested subnet is invalid, or multiple subnets were requested that are not all
@@ -1215,6 +1229,82 @@ namespace Amazon.Neptune
 
         #endregion
         
+        #region  CreateGlobalCluster
+
+
+        /// <summary>
+        /// Creates a Neptune global database spread across multiple Amazon Regions. The global
+        /// database contains a single primary cluster with read-write capability, and read-only
+        /// secondary clusters that receive data from the primary cluster through high-speed replication
+        /// performed by the Neptune storage subsystem.
+        /// 
+        ///  
+        /// <para>
+        /// You can create a global database that is initially empty, and then add a primary cluster
+        /// and secondary clusters to it, or you can specify an existing Neptune cluster during
+        /// the create operation to become the primary cluster of the global database.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGlobalCluster service method.</param>
+        /// 
+        /// <returns>The response from the CreateGlobalCluster service method, as returned by Neptune.</returns>
+        /// <exception cref="Amazon.Neptune.Model.DBClusterNotFoundException">
+        /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.GlobalClusterAlreadyExistsException">
+        /// The <code>GlobalClusterIdentifier</code> already exists. Choose a new global database
+        /// identifier (unique name) to create a new global database cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.GlobalClusterQuotaExceededException">
+        /// The number of global database clusters for this account is already at the maximum
+        /// allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.InvalidDBClusterStateException">
+        /// The DB cluster is not in a valid state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateGlobalCluster">REST API Reference for CreateGlobalCluster Operation</seealso>
+        CreateGlobalClusterResponse CreateGlobalCluster(CreateGlobalClusterRequest request);
+
+
+
+        /// <summary>
+        /// Creates a Neptune global database spread across multiple Amazon Regions. The global
+        /// database contains a single primary cluster with read-write capability, and read-only
+        /// secondary clusters that receive data from the primary cluster through high-speed replication
+        /// performed by the Neptune storage subsystem.
+        /// 
+        ///  
+        /// <para>
+        /// You can create a global database that is initially empty, and then add a primary cluster
+        /// and secondary clusters to it, or you can specify an existing Neptune cluster during
+        /// the create operation to become the primary cluster of the global database.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGlobalCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateGlobalCluster service method, as returned by Neptune.</returns>
+        /// <exception cref="Amazon.Neptune.Model.DBClusterNotFoundException">
+        /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.GlobalClusterAlreadyExistsException">
+        /// The <code>GlobalClusterIdentifier</code> already exists. Choose a new global database
+        /// identifier (unique name) to create a new global database cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.GlobalClusterQuotaExceededException">
+        /// The number of global database clusters for this account is already at the maximum
+        /// allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.InvalidDBClusterStateException">
+        /// The DB cluster is not in a valid state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateGlobalCluster">REST API Reference for CreateGlobalCluster Operation</seealso>
+        Task<CreateGlobalClusterResponse> CreateGlobalClusterAsync(CreateGlobalClusterRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteDBCluster
 
 
@@ -1680,6 +1770,50 @@ namespace Amazon.Neptune
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteEventSubscription">REST API Reference for DeleteEventSubscription Operation</seealso>
         Task<DeleteEventSubscriptionResponse> DeleteEventSubscriptionAsync(DeleteEventSubscriptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteGlobalCluster
+
+
+        /// <summary>
+        /// Deletes a global database. The primary and all secondary clusters must already be
+        /// detached or deleted first.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGlobalCluster service method.</param>
+        /// 
+        /// <returns>The response from the DeleteGlobalCluster service method, as returned by Neptune.</returns>
+        /// <exception cref="Amazon.Neptune.Model.GlobalClusterNotFoundException">
+        /// The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database
+        /// cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.InvalidGlobalClusterStateException">
+        /// The global cluster is in an invalid state and can't perform the requested operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteGlobalCluster">REST API Reference for DeleteGlobalCluster Operation</seealso>
+        DeleteGlobalClusterResponse DeleteGlobalCluster(DeleteGlobalClusterRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a global database. The primary and all secondary clusters must already be
+        /// detached or deleted first.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGlobalCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteGlobalCluster service method, as returned by Neptune.</returns>
+        /// <exception cref="Amazon.Neptune.Model.GlobalClusterNotFoundException">
+        /// The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database
+        /// cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.InvalidGlobalClusterStateException">
+        /// The global cluster is in an invalid state and can't perform the requested operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteGlobalCluster">REST API Reference for DeleteGlobalCluster Operation</seealso>
+        Task<DeleteGlobalClusterResponse> DeleteGlobalClusterAsync(DeleteGlobalClusterRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2319,6 +2453,42 @@ namespace Amazon.Neptune
 
         #endregion
         
+        #region  DescribeGlobalClusters
+
+
+        /// <summary>
+        /// Returns information about Neptune global database clusters. This API supports pagination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGlobalClusters service method.</param>
+        /// 
+        /// <returns>The response from the DescribeGlobalClusters service method, as returned by Neptune.</returns>
+        /// <exception cref="Amazon.Neptune.Model.GlobalClusterNotFoundException">
+        /// The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database
+        /// cluster.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeGlobalClusters">REST API Reference for DescribeGlobalClusters Operation</seealso>
+        DescribeGlobalClustersResponse DescribeGlobalClusters(DescribeGlobalClustersRequest request);
+
+
+
+        /// <summary>
+        /// Returns information about Neptune global database clusters. This API supports pagination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGlobalClusters service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeGlobalClusters service method, as returned by Neptune.</returns>
+        /// <exception cref="Amazon.Neptune.Model.GlobalClusterNotFoundException">
+        /// The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database
+        /// cluster.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeGlobalClusters">REST API Reference for DescribeGlobalClusters Operation</seealso>
+        Task<DescribeGlobalClustersResponse> DescribeGlobalClustersAsync(DescribeGlobalClustersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeOrderableDBInstanceOptions
 
 
@@ -2496,6 +2666,94 @@ namespace Amazon.Neptune
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/FailoverDBCluster">REST API Reference for FailoverDBCluster Operation</seealso>
         Task<FailoverDBClusterResponse> FailoverDBClusterAsync(FailoverDBClusterRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  FailoverGlobalCluster
+
+
+        /// <summary>
+        /// Initiates the failover process for a Neptune global database.
+        /// 
+        ///  
+        /// <para>
+        /// A failover for a Neptune global database promotes one of secondary read-only DB clusters
+        /// to be the primary DB cluster and demotes the primary DB cluster to being a secondary
+        /// (read-only) DB cluster. In other words, the role of the current primary DB cluster
+        /// and the selected target secondary DB cluster are switched. The selected secondary
+        /// DB cluster assumes full read/write capabilities for the Neptune global database.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This action applies <b>only</b> to Neptune global databases. This action is only intended
+        /// for use on healthy Neptune global databases with healthy Neptune DB clusters and no
+        /// region-wide outages, to test disaster recovery scenarios or to reconfigure the global
+        /// database topology.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the FailoverGlobalCluster service method.</param>
+        /// 
+        /// <returns>The response from the FailoverGlobalCluster service method, as returned by Neptune.</returns>
+        /// <exception cref="Amazon.Neptune.Model.DBClusterNotFoundException">
+        /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.GlobalClusterNotFoundException">
+        /// The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database
+        /// cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.InvalidDBClusterStateException">
+        /// The DB cluster is not in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.InvalidGlobalClusterStateException">
+        /// The global cluster is in an invalid state and can't perform the requested operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/FailoverGlobalCluster">REST API Reference for FailoverGlobalCluster Operation</seealso>
+        FailoverGlobalClusterResponse FailoverGlobalCluster(FailoverGlobalClusterRequest request);
+
+
+
+        /// <summary>
+        /// Initiates the failover process for a Neptune global database.
+        /// 
+        ///  
+        /// <para>
+        /// A failover for a Neptune global database promotes one of secondary read-only DB clusters
+        /// to be the primary DB cluster and demotes the primary DB cluster to being a secondary
+        /// (read-only) DB cluster. In other words, the role of the current primary DB cluster
+        /// and the selected target secondary DB cluster are switched. The selected secondary
+        /// DB cluster assumes full read/write capabilities for the Neptune global database.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This action applies <b>only</b> to Neptune global databases. This action is only intended
+        /// for use on healthy Neptune global databases with healthy Neptune DB clusters and no
+        /// region-wide outages, to test disaster recovery scenarios or to reconfigure the global
+        /// database topology.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the FailoverGlobalCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the FailoverGlobalCluster service method, as returned by Neptune.</returns>
+        /// <exception cref="Amazon.Neptune.Model.DBClusterNotFoundException">
+        /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.GlobalClusterNotFoundException">
+        /// The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database
+        /// cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.InvalidDBClusterStateException">
+        /// The DB cluster is not in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.InvalidGlobalClusterStateException">
+        /// The global cluster is in an invalid state and can't perform the requested operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/FailoverGlobalCluster">REST API Reference for FailoverGlobalCluster Operation</seealso>
+        Task<FailoverGlobalClusterResponse> FailoverGlobalClusterAsync(FailoverGlobalClusterRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3273,6 +3531,52 @@ namespace Amazon.Neptune
 
         #endregion
         
+        #region  ModifyGlobalCluster
+
+
+        /// <summary>
+        /// Modify a setting for an Amazon Neptune global cluster. You can change one or more
+        /// database configuration parameters by specifying these parameters and their new values
+        /// in the request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyGlobalCluster service method.</param>
+        /// 
+        /// <returns>The response from the ModifyGlobalCluster service method, as returned by Neptune.</returns>
+        /// <exception cref="Amazon.Neptune.Model.GlobalClusterNotFoundException">
+        /// The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database
+        /// cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.InvalidGlobalClusterStateException">
+        /// The global cluster is in an invalid state and can't perform the requested operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyGlobalCluster">REST API Reference for ModifyGlobalCluster Operation</seealso>
+        ModifyGlobalClusterResponse ModifyGlobalCluster(ModifyGlobalClusterRequest request);
+
+
+
+        /// <summary>
+        /// Modify a setting for an Amazon Neptune global cluster. You can change one or more
+        /// database configuration parameters by specifying these parameters and their new values
+        /// in the request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyGlobalCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyGlobalCluster service method, as returned by Neptune.</returns>
+        /// <exception cref="Amazon.Neptune.Model.GlobalClusterNotFoundException">
+        /// The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database
+        /// cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.InvalidGlobalClusterStateException">
+        /// The global cluster is in an invalid state and can't perform the requested operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyGlobalCluster">REST API Reference for ModifyGlobalCluster Operation</seealso>
+        Task<ModifyGlobalClusterResponse> ModifyGlobalClusterAsync(ModifyGlobalClusterRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  PromoteReadReplicaDBCluster
 
 
@@ -3366,6 +3670,58 @@ namespace Amazon.Neptune
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/RebootDBInstance">REST API Reference for RebootDBInstance Operation</seealso>
         Task<RebootDBInstanceResponse> RebootDBInstanceAsync(RebootDBInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  RemoveFromGlobalCluster
+
+
+        /// <summary>
+        /// Detaches a Neptune DB cluster from a Neptune global database. A secondary cluster
+        /// becomes a normal standalone cluster with read-write capability instead of being read-only,
+        /// and no longer receives data from a the primary cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveFromGlobalCluster service method.</param>
+        /// 
+        /// <returns>The response from the RemoveFromGlobalCluster service method, as returned by Neptune.</returns>
+        /// <exception cref="Amazon.Neptune.Model.DBClusterNotFoundException">
+        /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.GlobalClusterNotFoundException">
+        /// The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database
+        /// cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.InvalidGlobalClusterStateException">
+        /// The global cluster is in an invalid state and can't perform the requested operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/RemoveFromGlobalCluster">REST API Reference for RemoveFromGlobalCluster Operation</seealso>
+        RemoveFromGlobalClusterResponse RemoveFromGlobalCluster(RemoveFromGlobalClusterRequest request);
+
+
+
+        /// <summary>
+        /// Detaches a Neptune DB cluster from a Neptune global database. A secondary cluster
+        /// becomes a normal standalone cluster with read-write capability instead of being read-only,
+        /// and no longer receives data from a the primary cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveFromGlobalCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RemoveFromGlobalCluster service method, as returned by Neptune.</returns>
+        /// <exception cref="Amazon.Neptune.Model.DBClusterNotFoundException">
+        /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.GlobalClusterNotFoundException">
+        /// The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database
+        /// cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.InvalidGlobalClusterStateException">
+        /// The global cluster is in an invalid state and can't perform the requested operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/RemoveFromGlobalCluster">REST API Reference for RemoveFromGlobalCluster Operation</seealso>
+        Task<RemoveFromGlobalClusterResponse> RemoveFromGlobalClusterAsync(RemoveFromGlobalClusterRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

@@ -60,6 +60,7 @@ namespace Amazon.Neptune.Model
         private bool? _enableIAMDatabaseAuthentication;
         private string _engine;
         private string _engineVersion;
+        private string _globalClusterIdentifier;
         private string _kmsKeyId;
         private string _masterUsername;
         private string _masterUserPassword;
@@ -376,6 +377,25 @@ namespace Amazon.Neptune.Model
         internal bool IsSetEngineVersion()
         {
             return this._engineVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GlobalClusterIdentifier. 
+        /// <para>
+        /// The ID of the Neptune global database to which this new DB cluster should be added.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string GlobalClusterIdentifier
+        {
+            get { return this._globalClusterIdentifier; }
+            set { this._globalClusterIdentifier = value; }
+        }
+
+        // Check to see if GlobalClusterIdentifier property is set
+        internal bool IsSetGlobalClusterIdentifier()
+        {
+            return this._globalClusterIdentifier != null;
         }
 
         /// <summary>

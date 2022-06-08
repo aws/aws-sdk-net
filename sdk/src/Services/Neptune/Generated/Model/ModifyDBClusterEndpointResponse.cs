@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Neptune.Model
 {
     /// <summary>
-    /// This data type represents the information you need to connect to an Amazon Aurora
+    /// This data type represents the information you need to connect to an Amazon Neptune
     /// DB cluster. This data type is used as a response element in the following actions:
     /// 
     ///  <ul> <li> 
