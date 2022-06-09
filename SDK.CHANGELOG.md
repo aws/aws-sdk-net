@@ -13,8 +13,6 @@
 	* This release adds support for Neptune to be configured as a global database, with a primary DB cluster in one region, and up to five secondary DB clusters in other regions.
 * Redshift (3.7.16.0)
 	* Adds new API GetClusterCredentialsWithIAM to return temporary credentials.
-* RedshiftServerless (3.7.0.0)
-	* Add new API operations for Amazon Redshift Serverless, a new way of using Amazon Redshift without needing to manually manage provisioned clusters. The new operations let you interact with Redshift Serverless resources, such as create snapshots, list VPC endpoints, delete resource policies, and more.
 * Core 3.7.11.14
 	* Updating endpoints.json file.
 	* All services packages updated to require new Core
