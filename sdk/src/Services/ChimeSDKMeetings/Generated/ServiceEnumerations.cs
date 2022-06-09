@@ -697,6 +697,10 @@ namespace Amazon.ChimeSDKMeetings
         /// </summary>
         public static readonly TranscribeRegion UsEast2 = new TranscribeRegion("us-east-2");
         /// <summary>
+        /// Constant UsGovWest1 for TranscribeRegion
+        /// </summary>
+        public static readonly TranscribeRegion UsGovWest1 = new TranscribeRegion("us-gov-west-1");
+        /// <summary>
         /// Constant UsWest2 for TranscribeRegion
         /// </summary>
         public static readonly TranscribeRegion UsWest2 = new TranscribeRegion("us-west-2");
