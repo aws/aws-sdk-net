@@ -585,6 +585,7 @@
             <FolderException Include="generator\ServiceModels"/>
 			<FolderException Include=".git"/>
 			<FolderException Include="Deployment\models"/>
+			<FolderException Include="NuGetDownloads"/>
         </ItemGroup>
 
         <KeyScannerTask
