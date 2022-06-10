@@ -30,7 +30,8 @@ namespace Amazon.FraudDetector.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteBatchImportJob operation.
-    /// Deletes data that was batch imported to Amazon Fraud Detector.
+    /// Deletes the specified batch import job ID record. This action does not delete the
+    /// data that was batch imported.
     /// </summary>
     public partial class DeleteBatchImportJobRequest : AmazonFraudDetectorRequest
     {
