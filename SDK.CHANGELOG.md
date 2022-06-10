@@ -1,3 +1,10 @@
+### 3.7.291.1 (2022-06-10 18:42 UTC)
+* FraudDetector (3.7.6.53)
+	* Documentation updates for Amazon Fraud Detector (AWSHawksNest)
+* Core 3.7.11.15
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.291.0 (2022-06-09 20:22 UTC)
 * ChimeSDKMeetings (3.7.8.0)
 	* Adds support for live transcription in AWS GovCloud (US) Regions.
