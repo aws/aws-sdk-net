@@ -1,3 +1,7 @@
+### 3.7.292.0 (2022-06-13 18:52 UTC)
+* Outposts (3.7.9.0)
+	* This release adds API operations AWS uses to install Outpost servers.
+
 ### 3.7.291.1 (2022-06-10 18:42 UTC)
 * FraudDetector (3.7.6.53)
 	* Documentation updates for Amazon Fraud Detector (AWSHawksNest)
