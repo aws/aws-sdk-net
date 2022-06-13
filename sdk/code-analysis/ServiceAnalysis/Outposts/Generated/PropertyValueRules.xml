@@ -79,6 +79,18 @@
     <pattern>OR-[A-Z0-9]{7}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Outposts.Model.GetConnectionRequest.ConnectionId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^([\w-]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.GetConnectionResponse.ConnectionId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^([\w-]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Outposts.Model.GetOrderRequest.OrderId</property>
     <min>1</min>
     <max>20</max>
@@ -246,6 +258,41 @@
     <pattern>^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:([a-z\d-]+)/)[a-z]{2,8}-[a-f0-9]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Outposts.Model.StartConnectionRequest.AssetId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^(\w+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.StartConnectionRequest.ClientPublicKey</property>
+    <min>44</min>
+    <max>44</max>
+    <pattern>^[a-zA-Z0-9/+]{43}=$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.StartConnectionRequest.DeviceSerialNumber</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^(\w+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.StartConnectionRequest.NetworkInterfaceDeviceIndex</property>
+    <min>0</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.StartConnectionResponse.ConnectionId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^([\w-]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.StartConnectionResponse.UnderlayIpAddress</property>
+    <min>7</min>
+    <max>15</max>
+    <pattern>^([0-9]{1,3}\.){3}[0-9]{1,3}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Outposts.Model.TagResourceRequest.ResourceArn</property>
     <max>1011</max>
     <pattern>^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:([a-z\d-]+)/)[a-z]{2,8}-[a-f0-9]{17}$</pattern>
@@ -404,6 +451,36 @@
     <min>1</min>
     <max>1000</max>
     <pattern>^[\S \n]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.ConnectionDetails.ClientPublicKey</property>
+    <min>44</min>
+    <max>44</max>
+    <pattern>^[a-zA-Z0-9/+]{43}=$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.ConnectionDetails.ClientTunnelAddress</property>
+    <min>9</min>
+    <max>18</max>
+    <pattern>^([0-9]{1,3}\.){3}[0-9]{1,3}/[0-9]{1,2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.ConnectionDetails.ServerEndpoint</property>
+    <min>9</min>
+    <max>21</max>
+    <pattern>^([0-9]{1,3}\.){3}[0-9]{1,3}:[0-9]{1,5}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.ConnectionDetails.ServerPublicKey</property>
+    <min>44</min>
+    <max>44</max>
+    <pattern>^[a-zA-Z0-9/+]{43}=$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.ConnectionDetails.ServerTunnelAddress</property>
+    <min>9</min>
+    <max>18</max>
+    <pattern>^([0-9]{1,3}\.){3}[0-9]{1,3}/[0-9]{1,2}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.EC2Capacity.Family</property>

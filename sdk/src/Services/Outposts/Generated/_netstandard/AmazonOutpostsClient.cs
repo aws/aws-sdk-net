@@ -611,6 +611,67 @@ namespace Amazon.Outposts
 
         #endregion
         
+        #region  GetConnection
+
+        internal virtual GetConnectionResponse GetConnection(GetConnectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConnectionResponseUnmarshaller.Instance;
+
+            return Invoke<GetConnectionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        ///  Amazon Web Services uses this action to install Outpost servers.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  Gets information about a specified connection. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Use CloudTrail to monitor this action or Amazon Web Services managed policy for Amazon
+        /// Web Services Outposts to secure it. For more information, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/security-iam-awsmanpol.html">
+        /// Amazon Web Services managed policies for Amazon Web Services Outposts</a> and <a href="https://docs.aws.amazon.com/outposts/latest/userguide/logging-using-cloudtrail.html">
+        /// Logging Amazon Web Services Outposts API calls with Amazon Web Services CloudTrail</a>
+        /// in the <i>Amazon Web Services Outposts User Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetConnection service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.NotFoundException">
+        /// The specified request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetConnection">REST API Reference for GetConnection Operation</seealso>
+        public virtual Task<GetConnectionResponse> GetConnectionAsync(GetConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConnectionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetConnectionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetOrder
 
         internal virtual GetOrderResponse GetOrder(GetOrderRequest request)
@@ -1126,6 +1187,67 @@ namespace Amazon.Outposts
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartConnection
+
+        internal virtual StartConnectionResponse StartConnection(StartConnectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartConnectionResponseUnmarshaller.Instance;
+
+            return Invoke<StartConnectionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        ///  Amazon Web Services uses this action to install Outpost servers.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  Starts the connection required for Outpost server installation. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Use CloudTrail to monitor this action or Amazon Web Services managed policy for Amazon
+        /// Web Services Outposts to secure it. For more information, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/security-iam-awsmanpol.html">
+        /// Amazon Web Services managed policies for Amazon Web Services Outposts</a> and <a href="https://docs.aws.amazon.com/outposts/latest/userguide/logging-using-cloudtrail.html">
+        /// Logging Amazon Web Services Outposts API calls with Amazon Web Services CloudTrail</a>
+        /// in the <i>Amazon Web Services Outposts User Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartConnection service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.NotFoundException">
+        /// The specified request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/StartConnection">REST API Reference for StartConnection Operation</seealso>
+        public virtual Task<StartConnectionResponse> StartConnectionAsync(StartConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartConnectionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartConnectionResponse>(request, options, cancellationToken);
         }
 
         #endregion
