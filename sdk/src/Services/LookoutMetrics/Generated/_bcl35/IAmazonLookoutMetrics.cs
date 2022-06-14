@@ -1554,6 +1554,62 @@ namespace Amazon.LookoutMetrics
 
         #endregion
         
+        #region  UpdateAlert
+
+
+        /// <summary>
+        /// Make changes to an existing alert.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAlert service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAlert service method, as returned by LookoutMetrics.</returns>
+        /// <exception cref="Amazon.LookoutMetrics.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutMetrics.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutMetrics.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found. Check the ARN of the resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutMetrics.Model.TooManyRequestsException">
+        /// The request was denied due to too many requests being submitted at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutMetrics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service. Check your
+        /// input values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/UpdateAlert">REST API Reference for UpdateAlert Operation</seealso>
+        UpdateAlertResponse UpdateAlert(UpdateAlertRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAlert operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAlert operation on AmazonLookoutMetricsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAlert
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/UpdateAlert">REST API Reference for UpdateAlert Operation</seealso>
+        IAsyncResult BeginUpdateAlert(UpdateAlertRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateAlert operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAlert.</param>
+        /// 
+        /// <returns>Returns a  UpdateAlertResult from LookoutMetrics.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/UpdateAlert">REST API Reference for UpdateAlert Operation</seealso>
+        UpdateAlertResponse EndUpdateAlert(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateAnomalyDetector
 
 

@@ -36,6 +36,7 @@ namespace Amazon.LookoutMetrics.Model
         private Action _action;
         private string _alertArn;
         private string _alertDescription;
+        private AlertFilters _alertFilters;
         private string _alertName;
         private int? _alertSensitivityThreshold;
         private AlertStatus _alertStatus;
@@ -98,6 +99,24 @@ namespace Amazon.LookoutMetrics.Model
         internal bool IsSetAlertDescription()
         {
             return this._alertDescription != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AlertFilters. 
+        /// <para>
+        /// The configuration of the alert filters, containing MetricList and DimensionFilter.
+        /// </para>
+        /// </summary>
+        public AlertFilters AlertFilters
+        {
+            get { return this._alertFilters; }
+            set { this._alertFilters = value; }
+        }
+
+        // Check to see if AlertFilters property is set
+        internal bool IsSetAlertFilters()
+        {
+            return this._alertFilters != null;
         }
 
         /// <summary>

@@ -421,6 +421,26 @@
     <pattern>arn:([a-z\d-]+):.*:.*:.*:.+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LookoutMetrics.Model.UpdateAlertRequest.AlertArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):.*:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutMetrics.Model.UpdateAlertRequest.AlertDescription</property>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutMetrics.Model.UpdateAlertRequest.AlertSensitivityThreshold</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutMetrics.Model.UpdateAlertResponse.AlertArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):.*:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LookoutMetrics.Model.UpdateAnomalyDetectorRequest.AnomalyDetectorArn</property>
     <max>256</max>
     <pattern>arn:([a-z\d-]+):.*:.*:.*:.+</pattern>
@@ -662,6 +682,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutMetrics.Model.DimensionContribution.DimensionName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9\-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutMetrics.Model.DimensionFilter.DimensionName</property>
     <min>1</min>
     <max>63</max>
     <pattern>^[a-zA-Z0-9][a-zA-Z0-9\-_]*</pattern>

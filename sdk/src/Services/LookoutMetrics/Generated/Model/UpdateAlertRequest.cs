@@ -29,18 +29,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LookoutMetrics.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateAlert operation.
-    /// Creates an alert for an anomaly detector.
+    /// Container for the parameters to the UpdateAlert operation.
+    /// Make changes to an existing alert.
     /// </summary>
-    public partial class CreateAlertRequest : AmazonLookoutMetricsRequest
+    public partial class UpdateAlertRequest : AmazonLookoutMetricsRequest
     {
         private Action _action;
+        private string _alertArn;
         private string _alertDescription;
         private AlertFilters _alertFilters;
-        private string _alertName;
         private int? _alertSensitivityThreshold;
-        private string _anomalyDetectorArn;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property Action. 
@@ -48,7 +46,6 @@ namespace Amazon.LookoutMetrics.Model
         /// Action that will be triggered when there is an alert.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public Action Action
         {
             get { return this._action; }
@@ -59,6 +56,25 @@ namespace Amazon.LookoutMetrics.Model
         internal bool IsSetAction()
         {
             return this._action != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AlertArn. 
+        /// <para>
+        /// The ARN of the alert to update.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Max=256)]
+        public string AlertArn
+        {
+            get { return this._alertArn; }
+            set { this._alertArn = value; }
+        }
+
+        // Check to see if AlertArn property is set
+        internal bool IsSetAlertArn()
+        {
+            return this._alertArn != null;
         }
 
         /// <summary>
@@ -99,25 +115,6 @@ namespace Amazon.LookoutMetrics.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AlertName. 
-        /// <para>
-        /// The name of the alert.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=63)]
-        public string AlertName
-        {
-            get { return this._alertName; }
-            set { this._alertName = value; }
-        }
-
-        // Check to see if AlertName property is set
-        internal bool IsSetAlertName()
-        {
-            return this._alertName != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property AlertSensitivityThreshold. 
         /// <para>
         /// An integer from 0 to 100 specifying the alert sensitivity threshold.
@@ -134,45 +131,6 @@ namespace Amazon.LookoutMetrics.Model
         internal bool IsSetAlertSensitivityThreshold()
         {
             return this._alertSensitivityThreshold.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property AnomalyDetectorArn. 
-        /// <para>
-        /// The ARN of the detector to which the alert is attached.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Max=256)]
-        public string AnomalyDetectorArn
-        {
-            get { return this._anomalyDetectorArn; }
-            set { this._anomalyDetectorArn = value; }
-        }
-
-        // Check to see if AnomalyDetectorArn property is set
-        internal bool IsSetAnomalyDetectorArn()
-        {
-            return this._anomalyDetectorArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>
-        /// to apply to the alert.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=50)]
-        public Dictionary<string, string> Tags
-        {
-            get { return this._tags; }
-            set { this._tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

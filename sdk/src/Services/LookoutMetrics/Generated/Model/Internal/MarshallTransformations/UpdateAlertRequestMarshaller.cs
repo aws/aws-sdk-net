@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateAlert Request Marshaller
+    /// UpdateAlert Request Marshaller
     /// </summary>       
-    public class CreateAlertRequestMarshaller : IMarshaller<IRequest, CreateAlertRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateAlertRequestMarshaller : IMarshaller<IRequest, UpdateAlertRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateAlertRequest)input);
+            return this.Marshall((UpdateAlertRequest)input);
         }
 
         /// <summary>
@@ -52,14 +52,14 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateAlertRequest publicRequest)
+        public IRequest Marshall(UpdateAlertRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.LookoutMetrics");
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/CreateAlert";
+            request.ResourcePath = "/UpdateAlert";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -74,6 +74,12 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.Action, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetAlertArn())
+                {
+                    context.Writer.WritePropertyName("AlertArn");
+                    context.Writer.Write(publicRequest.AlertArn);
                 }
 
                 if(publicRequest.IsSetAlertDescription())
@@ -93,36 +99,10 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetAlertName())
-                {
-                    context.Writer.WritePropertyName("AlertName");
-                    context.Writer.Write(publicRequest.AlertName);
-                }
-
                 if(publicRequest.IsSetAlertSensitivityThreshold())
                 {
                     context.Writer.WritePropertyName("AlertSensitivityThreshold");
                     context.Writer.Write(publicRequest.AlertSensitivityThreshold);
-                }
-
-                if(publicRequest.IsSetAnomalyDetectorArn())
-                {
-                    context.Writer.WritePropertyName("AnomalyDetectorArn");
-                    context.Writer.Write(publicRequest.AnomalyDetectorArn);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                    {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
-                    }
-                    context.Writer.WriteObjectEnd();
                 }
 
                 writer.WriteObjectEnd();
@@ -133,9 +113,9 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateAlertRequestMarshaller _instance = new CreateAlertRequestMarshaller();        
+        private static UpdateAlertRequestMarshaller _instance = new UpdateAlertRequestMarshaller();        
 
-        internal static CreateAlertRequestMarshaller GetInstance()
+        internal static UpdateAlertRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -143,7 +123,7 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateAlertRequestMarshaller Instance
+        public static UpdateAlertRequestMarshaller Instance
         {
             get
             {
