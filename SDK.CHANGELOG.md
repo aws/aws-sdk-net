@@ -1,3 +1,10 @@
+### 3.7.293.0 (2022-06-14 14:03 UTC)
+* DynamoDBv2 (3.7.3.48)
+	* DynamoDB Streams doc update
+* Core 3.7.12.0
+	* Added support for recursion detection.
+	* All services packages updated to require new Core
+
 ### 3.7.292.0 (2022-06-13 18:52 UTC)
 * Outposts (3.7.9.0)
 	* This release adds API operations AWS uses to install Outpost servers.
