@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.293.0",
+    "ProductVersion" : "3.7.294.0",
     "CoreVersion"    : "3.7.12.0",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -594,7 +594,7 @@
             "InPreview"               : false
         },
         "Budgets"                         : {
-            "Version" : "3.7.2.48",
+            "Version" : "3.7.3.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.12.0"
@@ -898,7 +898,7 @@
             "InPreview"               : false
         },
         "MediaConvert"                    : {
-            "Version" : "3.7.16.10",
+            "Version" : "3.7.17.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.12.0"
@@ -2082,7 +2082,7 @@
             "InPreview"               : false
         },
         "LookoutMetrics"                  : {
-            "Version" : "3.7.11.5",
+            "Version" : "3.7.12.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.12.0"

@@ -1,3 +1,11 @@
+### 3.7.294.0 (2022-06-14 18:30 UTC)
+* Budgets (3.7.3.0)
+	* Add a budgets ThrottlingException. Update the CostFilters value pattern.
+* LookoutMetrics (3.7.12.0)
+	* Adding filters to Alert and adding new UpdateAlert API.
+* MediaConvert (3.7.17.0)
+	* AWS Elemental MediaConvert SDK has added support for rules that constrain Automatic-ABR rendition selection when generating ABR package ladders.
+
 ### 3.7.293.0 (2022-06-14 14:03 UTC)
 * DynamoDBv2 (3.7.3.48)
 	* DynamoDB Streams doc update
