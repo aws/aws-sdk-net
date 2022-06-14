@@ -38,10 +38,10 @@ namespace Amazon.Budgets
     /// <summary>
     /// Implementation for accessing Budgets
     ///
-    /// The Amazon Web Services Budgets API enables you to use Amazon Web Services Budgets
-    /// to plan your service usage, service costs, and instance reservations. The API reference
-    /// provides descriptions, syntax, and usage examples for each of the actions and data
-    /// types for Amazon Web Services Budgets. 
+    /// Use the Amazon Web Services Budgets API to plan your service usage, service costs,
+    /// and instance reservations. This API reference provides descriptions, syntax, and usage
+    /// examples for each of the actions and data types for the Amazon Web Services Budgets
+    /// feature. 
     /// 
     ///  
     /// <para>
@@ -374,6 +374,10 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.InvalidParameterException">
         /// An error on the client occurred. Typically, the cause is an invalid input value.
         /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.ThrottlingException">
+        /// The number of API requests has exceeded the maximum allowed API request throttling
+        /// limit for the account.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateBudget">REST API Reference for CreateBudget Operation</seealso>
         public virtual Task<CreateBudgetResponse> CreateBudgetAsync(CreateBudgetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -425,6 +429,10 @@ namespace Amazon.Budgets
         /// </exception>
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.ThrottlingException">
+        /// The number of API requests has exceeded the maximum allowed API request throttling
+        /// limit for the account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateBudgetAction">REST API Reference for CreateBudgetAction Operation</seealso>
         public virtual Task<CreateBudgetActionResponse> CreateBudgetActionAsync(CreateBudgetActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -479,6 +487,10 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
         /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.ThrottlingException">
+        /// The number of API requests has exceeded the maximum allowed API request throttling
+        /// limit for the account.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateNotification">REST API Reference for CreateNotification Operation</seealso>
         public virtual Task<CreateNotificationResponse> CreateNotificationAsync(CreateNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -531,6 +543,10 @@ namespace Amazon.Budgets
         /// </exception>
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.ThrottlingException">
+        /// The number of API requests has exceeded the maximum allowed API request throttling
+        /// limit for the account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CreateSubscriber">REST API Reference for CreateSubscriber Operation</seealso>
         public virtual Task<CreateSubscriberResponse> CreateSubscriberAsync(CreateSubscriberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -585,6 +601,10 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
         /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.ThrottlingException">
+        /// The number of API requests has exceeded the maximum allowed API request throttling
+        /// limit for the account.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteBudget">REST API Reference for DeleteBudget Operation</seealso>
         public virtual Task<DeleteBudgetResponse> DeleteBudgetAsync(DeleteBudgetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -634,6 +654,10 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.ResourceLockedException">
         /// The request was received and recognized by the server, but the server rejected that
         /// particular method for the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.ThrottlingException">
+        /// The number of API requests has exceeded the maximum allowed API request throttling
+        /// limit for the account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteBudgetAction">REST API Reference for DeleteBudgetAction Operation</seealso>
         public virtual Task<DeleteBudgetActionResponse> DeleteBudgetActionAsync(DeleteBudgetActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -688,6 +712,10 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
         /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.ThrottlingException">
+        /// The number of API requests has exceeded the maximum allowed API request throttling
+        /// limit for the account.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteNotification">REST API Reference for DeleteNotification Operation</seealso>
         public virtual Task<DeleteNotificationResponse> DeleteNotificationAsync(DeleteNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -739,6 +767,10 @@ namespace Amazon.Budgets
         /// </exception>
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.ThrottlingException">
+        /// The number of API requests has exceeded the maximum allowed API request throttling
+        /// limit for the account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteSubscriber">REST API Reference for DeleteSubscriber Operation</seealso>
         public virtual Task<DeleteSubscriberResponse> DeleteSubscriberAsync(DeleteSubscriberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -794,6 +826,10 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
         /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.ThrottlingException">
+        /// The number of API requests has exceeded the maximum allowed API request throttling
+        /// limit for the account.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudget">REST API Reference for DescribeBudget Operation</seealso>
         public virtual Task<DescribeBudgetResponse> DescribeBudgetAsync(DescribeBudgetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -839,6 +875,10 @@ namespace Amazon.Budgets
         /// </exception>
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.ThrottlingException">
+        /// The number of API requests has exceeded the maximum allowed API request throttling
+        /// limit for the account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetAction">REST API Reference for DescribeBudgetAction Operation</seealso>
         public virtual Task<DescribeBudgetActionResponse> DescribeBudgetActionAsync(DescribeBudgetActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -889,6 +929,10 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
         /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.ThrottlingException">
+        /// The number of API requests has exceeded the maximum allowed API request throttling
+        /// limit for the account.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetActionHistories">REST API Reference for DescribeBudgetActionHistories Operation</seealso>
         public virtual Task<DescribeBudgetActionHistoriesResponse> DescribeBudgetActionHistoriesAsync(DescribeBudgetActionHistoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -934,6 +978,10 @@ namespace Amazon.Budgets
         /// </exception>
         /// <exception cref="Amazon.Budgets.Model.InvalidParameterException">
         /// An error on the client occurred. Typically, the cause is an invalid input value.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.ThrottlingException">
+        /// The number of API requests has exceeded the maximum allowed API request throttling
+        /// limit for the account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetActionsForAccount">REST API Reference for DescribeBudgetActionsForAccount Operation</seealso>
         public virtual Task<DescribeBudgetActionsForAccountResponse> DescribeBudgetActionsForAccountAsync(DescribeBudgetActionsForAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -983,6 +1031,10 @@ namespace Amazon.Budgets
         /// </exception>
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.ThrottlingException">
+        /// The number of API requests has exceeded the maximum allowed API request throttling
+        /// limit for the account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetActionsForBudget">REST API Reference for DescribeBudgetActionsForBudget Operation</seealso>
         public virtual Task<DescribeBudgetActionsForBudgetResponse> DescribeBudgetActionsForBudgetAsync(DescribeBudgetActionsForBudgetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1036,6 +1088,10 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
         /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.ThrottlingException">
+        /// The number of API requests has exceeded the maximum allowed API request throttling
+        /// limit for the account.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetNotificationsForAccount">REST API Reference for DescribeBudgetNotificationsForAccount Operation</seealso>
         public virtual Task<DescribeBudgetNotificationsForAccountResponse> DescribeBudgetNotificationsForAccountAsync(DescribeBudgetNotificationsForAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1088,6 +1144,10 @@ namespace Amazon.Budgets
         /// </exception>
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.ThrottlingException">
+        /// The number of API requests has exceeded the maximum allowed API request throttling
+        /// limit for the account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetPerformanceHistory">REST API Reference for DescribeBudgetPerformanceHistory Operation</seealso>
         public virtual Task<DescribeBudgetPerformanceHistoryResponse> DescribeBudgetPerformanceHistoryAsync(DescribeBudgetPerformanceHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1149,6 +1209,10 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
         /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.ThrottlingException">
+        /// The number of API requests has exceeded the maximum allowed API request throttling
+        /// limit for the account.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgets">REST API Reference for DescribeBudgets Operation</seealso>
         public virtual Task<DescribeBudgetsResponse> DescribeBudgetsAsync(DescribeBudgetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1200,6 +1264,10 @@ namespace Amazon.Budgets
         /// </exception>
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.ThrottlingException">
+        /// The number of API requests has exceeded the maximum allowed API request throttling
+        /// limit for the account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeNotificationsForBudget">REST API Reference for DescribeNotificationsForBudget Operation</seealso>
         public virtual Task<DescribeNotificationsForBudgetResponse> DescribeNotificationsForBudgetAsync(DescribeNotificationsForBudgetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1253,6 +1321,10 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
         /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.ThrottlingException">
+        /// The number of API requests has exceeded the maximum allowed API request throttling
+        /// limit for the account.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeSubscribersForNotification">REST API Reference for DescribeSubscribersForNotification Operation</seealso>
         public virtual Task<DescribeSubscribersForNotificationResponse> DescribeSubscribersForNotificationAsync(DescribeSubscribersForNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1302,6 +1374,10 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.ResourceLockedException">
         /// The request was received and recognized by the server, but the server rejected that
         /// particular method for the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.ThrottlingException">
+        /// The number of API requests has exceeded the maximum allowed API request throttling
+        /// limit for the account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/ExecuteBudgetAction">REST API Reference for ExecuteBudgetAction Operation</seealso>
         public virtual Task<ExecuteBudgetActionResponse> ExecuteBudgetActionAsync(ExecuteBudgetActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1361,6 +1437,10 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
         /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.ThrottlingException">
+        /// The number of API requests has exceeded the maximum allowed API request throttling
+        /// limit for the account.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateBudget">REST API Reference for UpdateBudget Operation</seealso>
         public virtual Task<UpdateBudgetResponse> UpdateBudgetAsync(UpdateBudgetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1411,6 +1491,10 @@ namespace Amazon.Budgets
         /// The request was received and recognized by the server, but the server rejected that
         /// particular method for the requested resource.
         /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.ThrottlingException">
+        /// The number of API requests has exceeded the maximum allowed API request throttling
+        /// limit for the account.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateBudgetAction">REST API Reference for UpdateBudgetAction Operation</seealso>
         public virtual Task<UpdateBudgetActionResponse> UpdateBudgetActionAsync(UpdateBudgetActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1460,6 +1544,10 @@ namespace Amazon.Budgets
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
         /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.ThrottlingException">
+        /// The number of API requests has exceeded the maximum allowed API request throttling
+        /// limit for the account.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateNotification">REST API Reference for UpdateNotification Operation</seealso>
         public virtual Task<UpdateNotificationResponse> UpdateNotificationAsync(UpdateNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1508,6 +1596,10 @@ namespace Amazon.Budgets
         /// </exception>
         /// <exception cref="Amazon.Budgets.Model.NotFoundException">
         /// We can’t locate the resource that you specified.
+        /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.ThrottlingException">
+        /// The number of API requests has exceeded the maximum allowed API request throttling
+        /// limit for the account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateSubscriber">REST API Reference for UpdateSubscriber Operation</seealso>
         public virtual Task<UpdateSubscriberResponse> UpdateSubscriberAsync(UpdateSubscriberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
