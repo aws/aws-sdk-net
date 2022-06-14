@@ -45,6 +45,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AudioSelector requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAudioDurationCorrection())
+            {
+                context.Writer.WritePropertyName("audioDurationCorrection");
+                context.Writer.Write(requestObject.AudioDurationCorrection);
+            }
+
             if(requestObject.IsSetCustomLanguageCode())
             {
                 context.Writer.WritePropertyName("customLanguageCode");

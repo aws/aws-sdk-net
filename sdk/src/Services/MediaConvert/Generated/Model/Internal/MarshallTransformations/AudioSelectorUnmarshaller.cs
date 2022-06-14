@@ -64,6 +64,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("audioDurationCorrection", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AudioDurationCorrection = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("customLanguageCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
