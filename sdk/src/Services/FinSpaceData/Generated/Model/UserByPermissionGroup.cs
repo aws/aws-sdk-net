@@ -29,20 +29,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FinSpaceData.Model
 {
     /// <summary>
-    /// This is the response object from the GetUser operation.
+    /// The structure of a user account associated with a permission group.
     /// </summary>
-    public partial class GetUserResponse : AmazonWebServiceResponse
+    public partial class UserByPermissionGroup
     {
         private ApiAccess _apiAccess;
         private string _apiAccessPrincipalArn;
-        private long? _createTime;
         private string _emailAddress;
         private string _firstName;
-        private long? _lastDisabledTime;
-        private long? _lastEnabledTime;
-        private long? _lastLoginTime;
-        private long? _lastModifiedTime;
         private string _lastName;
+        private PermissionGroupMembershipStatus _membershipStatus;
         private UserStatus _status;
         private UserType _type;
         private string _userId;
@@ -50,17 +46,15 @@ namespace Amazon.FinSpaceData.Model
         /// <summary>
         /// Gets and sets the property ApiAccess. 
         /// <para>
-        /// Indicates whether the user can use the <code>GetProgrammaticAccessCredentials</code>
-        /// API to obtain credentials that can then be used to access other FinSpace Data API
-        /// operations. 
+        /// Indicates whether the user can access FinSpace API operations.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ENABLED</code> – The user has permissions to use the APIs.
+        ///  <code>ENABLED</code> – The user has permissions to use the API operations.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISABLED</code> – The user does not have permissions to use any APIs.
+        ///  <code>DISABLED</code> – The user does not have permissions to use any API operations.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -79,9 +73,7 @@ namespace Amazon.FinSpaceData.Model
         /// <summary>
         /// Gets and sets the property ApiAccessPrincipalArn. 
         /// <para>
-        /// The ARN identifier of an AWS user or role that is allowed to call the <code>GetProgrammaticAccessCredentials</code>
-        /// API to obtain a credentials token for a specific FinSpace user. This must be an IAM
-        /// role within your FinSpace account.
+        /// The IAM ARN identifier that is attached to FinSpace API calls.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -98,28 +90,10 @@ namespace Amazon.FinSpaceData.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreateTime. 
-        /// <para>
-        /// The timestamp at which the user account was created in FinSpace. The value is determined
-        /// as epoch time in milliseconds. 
-        /// </para>
-        /// </summary>
-        public long CreateTime
-        {
-            get { return this._createTime.GetValueOrDefault(); }
-            set { this._createTime = value; }
-        }
-
-        // Check to see if CreateTime property is set
-        internal bool IsSetCreateTime()
-        {
-            return this._createTime.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property EmailAddress. 
         /// <para>
-        /// The email address that is associated with the user.
+        /// The email address of the user. The email address serves as a unique identifier for
+        /// each user and cannot be changed after it's created.
         /// </para>
         /// </summary>
         [AWSProperty(Min=4, Max=320)]
@@ -155,82 +129,6 @@ namespace Amazon.FinSpaceData.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastDisabledTime. 
-        /// <para>
-        /// Describes the last time the user account was disabled. The value is determined as
-        /// epoch time in milliseconds.
-        /// </para>
-        /// </summary>
-        public long LastDisabledTime
-        {
-            get { return this._lastDisabledTime.GetValueOrDefault(); }
-            set { this._lastDisabledTime = value; }
-        }
-
-        // Check to see if LastDisabledTime property is set
-        internal bool IsSetLastDisabledTime()
-        {
-            return this._lastDisabledTime.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property LastEnabledTime. 
-        /// <para>
-        /// Describes the last time the user account was enabled. The value is determined as epoch
-        /// time in milliseconds.
-        /// </para>
-        /// </summary>
-        public long LastEnabledTime
-        {
-            get { return this._lastEnabledTime.GetValueOrDefault(); }
-            set { this._lastEnabledTime = value; }
-        }
-
-        // Check to see if LastEnabledTime property is set
-        internal bool IsSetLastEnabledTime()
-        {
-            return this._lastEnabledTime.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property LastLoginTime. 
-        /// <para>
-        /// Describes the last time that the user logged into their account. The value is determined
-        /// as epoch time in milliseconds.
-        /// </para>
-        /// </summary>
-        public long LastLoginTime
-        {
-            get { return this._lastLoginTime.GetValueOrDefault(); }
-            set { this._lastLoginTime = value; }
-        }
-
-        // Check to see if LastLoginTime property is set
-        internal bool IsSetLastLoginTime()
-        {
-            return this._lastLoginTime.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property LastModifiedTime. 
-        /// <para>
-        /// Describes the last time the user account was updated. The value is determined as epoch
-        /// time in milliseconds.
-        /// </para>
-        /// </summary>
-        public long LastModifiedTime
-        {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
-            set { this._lastModifiedTime = value; }
-        }
-
-        // Check to see if LastModifiedTime property is set
-        internal bool IsSetLastModifiedTime()
-        {
-            return this._lastModifiedTime.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property LastName. 
         /// <para>
         /// The last name of the user.
@@ -247,6 +145,40 @@ namespace Amazon.FinSpaceData.Model
         internal bool IsSetLastName()
         {
             return this._lastName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MembershipStatus. 
+        /// <para>
+        /// Indicates the status of the user account within a permission group.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to
+        /// the permission group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission
+        /// group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission
+        /// group.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public PermissionGroupMembershipStatus MembershipStatus
+        {
+            get { return this._membershipStatus; }
+            set { this._membershipStatus = value; }
+        }
+
+        // Check to see if MembershipStatus property is set
+        internal bool IsSetMembershipStatus()
+        {
+            return this._membershipStatus != null;
         }
 
         /// <summary>
@@ -283,14 +215,14 @@ namespace Amazon.FinSpaceData.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Indicates the type of user. 
+        ///  Indicates the type of user.
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <code>SUPER_USER</code> – A user with permission to all the functionality and data
         /// in FinSpace.
         /// </para>
-        ///  </li> </ul> <ul> <li> 
+        ///  </li> <li> 
         /// <para>
         ///  <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are
         /// assigned permissions by adding them to a permission group.
@@ -312,7 +244,7 @@ namespace Amazon.FinSpaceData.Model
         /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
-        /// The unique identifier for the user account that is retrieved.
+        /// The unique identifier for the user.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=26)]

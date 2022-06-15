@@ -255,6 +255,79 @@ namespace Amazon.FinSpaceData
         #endregion
 
 
+        #region  AssociateUserToPermissionGroup
+
+        /// <summary>
+        /// Adds a user account to a permission group to grant permissions for actions a user
+        /// can perform in FinSpace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateUserToPermissionGroup service method.</param>
+        /// 
+        /// <returns>The response from the AssociateUserToPermissionGroup service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ConflictException">
+        /// The request conflicts with an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/AssociateUserToPermissionGroup">REST API Reference for AssociateUserToPermissionGroup Operation</seealso>
+        public virtual AssociateUserToPermissionGroupResponse AssociateUserToPermissionGroup(AssociateUserToPermissionGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateUserToPermissionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateUserToPermissionGroupResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateUserToPermissionGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateUserToPermissionGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateUserToPermissionGroup operation on AmazonFinSpaceDataClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateUserToPermissionGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/AssociateUserToPermissionGroup">REST API Reference for AssociateUserToPermissionGroup Operation</seealso>
+        public virtual IAsyncResult BeginAssociateUserToPermissionGroup(AssociateUserToPermissionGroupRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateUserToPermissionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateUserToPermissionGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateUserToPermissionGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateUserToPermissionGroup.</param>
+        /// 
+        /// <returns>Returns a  AssociateUserToPermissionGroupResult from FinSpaceData.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/AssociateUserToPermissionGroup">REST API Reference for AssociateUserToPermissionGroup Operation</seealso>
+        public virtual AssociateUserToPermissionGroupResponse EndAssociateUserToPermissionGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateUserToPermissionGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateChangeset
 
         /// <summary>
@@ -843,6 +916,78 @@ namespace Amazon.FinSpaceData
 
         #endregion
         
+        #region  DisassociateUserFromPermissionGroup
+
+        /// <summary>
+        /// Removes a user account from a permission group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateUserFromPermissionGroup service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateUserFromPermissionGroup service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ConflictException">
+        /// The request conflicts with an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DisassociateUserFromPermissionGroup">REST API Reference for DisassociateUserFromPermissionGroup Operation</seealso>
+        public virtual DisassociateUserFromPermissionGroupResponse DisassociateUserFromPermissionGroup(DisassociateUserFromPermissionGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateUserFromPermissionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateUserFromPermissionGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateUserFromPermissionGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateUserFromPermissionGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateUserFromPermissionGroup operation on AmazonFinSpaceDataClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateUserFromPermissionGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DisassociateUserFromPermissionGroup">REST API Reference for DisassociateUserFromPermissionGroup Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateUserFromPermissionGroup(DisassociateUserFromPermissionGroupRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateUserFromPermissionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateUserFromPermissionGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateUserFromPermissionGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateUserFromPermissionGroup.</param>
+        /// 
+        /// <returns>Returns a  DisassociateUserFromPermissionGroupResult from FinSpaceData.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DisassociateUserFromPermissionGroup">REST API Reference for DisassociateUserFromPermissionGroup Operation</seealso>
+        public virtual DisassociateUserFromPermissionGroupResponse EndDisassociateUserFromPermissionGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateUserFromPermissionGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  EnableUser
 
         /// <summary>
@@ -1127,6 +1272,75 @@ namespace Amazon.FinSpaceData
         public virtual GetDataViewResponse EndGetDataView(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDataViewResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetPermissionGroup
+
+        /// <summary>
+        /// Retrieves the details of a specific permission group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPermissionGroup service method.</param>
+        /// 
+        /// <returns>The response from the GetPermissionGroup service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetPermissionGroup">REST API Reference for GetPermissionGroup Operation</seealso>
+        public virtual GetPermissionGroupResponse GetPermissionGroup(GetPermissionGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPermissionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPermissionGroupResponseUnmarshaller.Instance;
+
+            return Invoke<GetPermissionGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPermissionGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPermissionGroup operation on AmazonFinSpaceDataClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPermissionGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetPermissionGroup">REST API Reference for GetPermissionGroup Operation</seealso>
+        public virtual IAsyncResult BeginGetPermissionGroup(GetPermissionGroupRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPermissionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPermissionGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPermissionGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPermissionGroup.</param>
+        /// 
+        /// <returns>Returns a  GetPermissionGroupResult from FinSpaceData.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetPermissionGroup">REST API Reference for GetPermissionGroup Operation</seealso>
+        public virtual GetPermissionGroupResponse EndGetPermissionGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetPermissionGroupResponse>(asyncResult);
         }
 
         #endregion
@@ -1609,6 +1823,75 @@ namespace Amazon.FinSpaceData
 
         #endregion
         
+        #region  ListPermissionGroupsByUser
+
+        /// <summary>
+        /// Lists all the permission groups that are associated with a specific user account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPermissionGroupsByUser service method.</param>
+        /// 
+        /// <returns>The response from the ListPermissionGroupsByUser service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListPermissionGroupsByUser">REST API Reference for ListPermissionGroupsByUser Operation</seealso>
+        public virtual ListPermissionGroupsByUserResponse ListPermissionGroupsByUser(ListPermissionGroupsByUserRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPermissionGroupsByUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPermissionGroupsByUserResponseUnmarshaller.Instance;
+
+            return Invoke<ListPermissionGroupsByUserResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPermissionGroupsByUser operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPermissionGroupsByUser operation on AmazonFinSpaceDataClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPermissionGroupsByUser
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListPermissionGroupsByUser">REST API Reference for ListPermissionGroupsByUser Operation</seealso>
+        public virtual IAsyncResult BeginListPermissionGroupsByUser(ListPermissionGroupsByUserRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPermissionGroupsByUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPermissionGroupsByUserResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPermissionGroupsByUser operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPermissionGroupsByUser.</param>
+        /// 
+        /// <returns>Returns a  ListPermissionGroupsByUserResult from FinSpaceData.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListPermissionGroupsByUser">REST API Reference for ListPermissionGroupsByUser Operation</seealso>
+        public virtual ListPermissionGroupsByUserResponse EndListPermissionGroupsByUser(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListPermissionGroupsByUserResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListUsers
 
         /// <summary>
@@ -1671,6 +1954,75 @@ namespace Amazon.FinSpaceData
         public virtual ListUsersResponse EndListUsers(IAsyncResult asyncResult)
         {
             return EndInvoke<ListUsersResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListUsersByPermissionGroup
+
+        /// <summary>
+        /// Lists details of all the users in a specific permission group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUsersByPermissionGroup service method.</param>
+        /// 
+        /// <returns>The response from the ListUsersByPermissionGroup service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListUsersByPermissionGroup">REST API Reference for ListUsersByPermissionGroup Operation</seealso>
+        public virtual ListUsersByPermissionGroupResponse ListUsersByPermissionGroup(ListUsersByPermissionGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUsersByPermissionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUsersByPermissionGroupResponseUnmarshaller.Instance;
+
+            return Invoke<ListUsersByPermissionGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListUsersByPermissionGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListUsersByPermissionGroup operation on AmazonFinSpaceDataClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListUsersByPermissionGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListUsersByPermissionGroup">REST API Reference for ListUsersByPermissionGroup Operation</seealso>
+        public virtual IAsyncResult BeginListUsersByPermissionGroup(ListUsersByPermissionGroupRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUsersByPermissionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUsersByPermissionGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListUsersByPermissionGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListUsersByPermissionGroup.</param>
+        /// 
+        /// <returns>Returns a  ListUsersByPermissionGroupResult from FinSpaceData.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListUsersByPermissionGroup">REST API Reference for ListUsersByPermissionGroup Operation</seealso>
+        public virtual ListUsersByPermissionGroupResponse EndListUsersByPermissionGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListUsersByPermissionGroupResponse>(asyncResult);
         }
 
         #endregion

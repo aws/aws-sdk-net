@@ -42,6 +42,72 @@ namespace Amazon.FinSpaceData
         IFinSpaceDataPaginatorFactory Paginators { get; }
 
         
+        #region  AssociateUserToPermissionGroup
+
+
+        /// <summary>
+        /// Adds a user account to a permission group to grant permissions for actions a user
+        /// can perform in FinSpace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateUserToPermissionGroup service method.</param>
+        /// 
+        /// <returns>The response from the AssociateUserToPermissionGroup service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ConflictException">
+        /// The request conflicts with an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/AssociateUserToPermissionGroup">REST API Reference for AssociateUserToPermissionGroup Operation</seealso>
+        AssociateUserToPermissionGroupResponse AssociateUserToPermissionGroup(AssociateUserToPermissionGroupRequest request);
+
+
+
+        /// <summary>
+        /// Adds a user account to a permission group to grant permissions for actions a user
+        /// can perform in FinSpace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateUserToPermissionGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateUserToPermissionGroup service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ConflictException">
+        /// The request conflicts with an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/AssociateUserToPermissionGroup">REST API Reference for AssociateUserToPermissionGroup Operation</seealso>
+        Task<AssociateUserToPermissionGroupResponse> AssociateUserToPermissionGroupAsync(AssociateUserToPermissionGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateChangeset
 
 
@@ -578,6 +644,70 @@ namespace Amazon.FinSpaceData
 
         #endregion
         
+        #region  DisassociateUserFromPermissionGroup
+
+
+        /// <summary>
+        /// Removes a user account from a permission group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateUserFromPermissionGroup service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateUserFromPermissionGroup service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ConflictException">
+        /// The request conflicts with an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DisassociateUserFromPermissionGroup">REST API Reference for DisassociateUserFromPermissionGroup Operation</seealso>
+        DisassociateUserFromPermissionGroupResponse DisassociateUserFromPermissionGroup(DisassociateUserFromPermissionGroupRequest request);
+
+
+
+        /// <summary>
+        /// Removes a user account from a permission group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateUserFromPermissionGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateUserFromPermissionGroup service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ConflictException">
+        /// The request conflicts with an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DisassociateUserFromPermissionGroup">REST API Reference for DisassociateUserFromPermissionGroup Operation</seealso>
+        Task<DisassociateUserFromPermissionGroupResponse> DisassociateUserFromPermissionGroupAsync(DisassociateUserFromPermissionGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  EnableUser
 
 
@@ -831,6 +961,64 @@ namespace Amazon.FinSpaceData
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetDataView">REST API Reference for GetDataView Operation</seealso>
         Task<GetDataViewResponse> GetDataViewAsync(GetDataViewRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetPermissionGroup
+
+
+        /// <summary>
+        /// Retrieves the details of a specific permission group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPermissionGroup service method.</param>
+        /// 
+        /// <returns>The response from the GetPermissionGroup service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetPermissionGroup">REST API Reference for GetPermissionGroup Operation</seealso>
+        GetPermissionGroupResponse GetPermissionGroup(GetPermissionGroupRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the details of a specific permission group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPermissionGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPermissionGroup service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetPermissionGroup">REST API Reference for GetPermissionGroup Operation</seealso>
+        Task<GetPermissionGroupResponse> GetPermissionGroupAsync(GetPermissionGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1230,6 +1418,64 @@ namespace Amazon.FinSpaceData
 
         #endregion
         
+        #region  ListPermissionGroupsByUser
+
+
+        /// <summary>
+        /// Lists all the permission groups that are associated with a specific user account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPermissionGroupsByUser service method.</param>
+        /// 
+        /// <returns>The response from the ListPermissionGroupsByUser service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListPermissionGroupsByUser">REST API Reference for ListPermissionGroupsByUser Operation</seealso>
+        ListPermissionGroupsByUserResponse ListPermissionGroupsByUser(ListPermissionGroupsByUserRequest request);
+
+
+
+        /// <summary>
+        /// Lists all the permission groups that are associated with a specific user account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPermissionGroupsByUser service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPermissionGroupsByUser service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListPermissionGroupsByUser">REST API Reference for ListPermissionGroupsByUser Operation</seealso>
+        Task<ListPermissionGroupsByUserResponse> ListPermissionGroupsByUserAsync(ListPermissionGroupsByUserRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListUsers
 
 
@@ -1279,6 +1525,64 @@ namespace Amazon.FinSpaceData
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListUsers">REST API Reference for ListUsers Operation</seealso>
         Task<ListUsersResponse> ListUsersAsync(ListUsersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListUsersByPermissionGroup
+
+
+        /// <summary>
+        /// Lists details of all the users in a specific permission group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUsersByPermissionGroup service method.</param>
+        /// 
+        /// <returns>The response from the ListUsersByPermissionGroup service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListUsersByPermissionGroup">REST API Reference for ListUsersByPermissionGroup Operation</seealso>
+        ListUsersByPermissionGroupResponse ListUsersByPermissionGroup(ListUsersByPermissionGroupRequest request);
+
+
+
+        /// <summary>
+        /// Lists details of all the users in a specific permission group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUsersByPermissionGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListUsersByPermissionGroup service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListUsersByPermissionGroup">REST API Reference for ListUsersByPermissionGroup Operation</seealso>
+        Task<ListUsersByPermissionGroupResponse> ListUsersByPermissionGroupAsync(ListUsersByPermissionGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

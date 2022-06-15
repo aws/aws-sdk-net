@@ -68,7 +68,7 @@ namespace Amazon.FinSpaceData.Model
         /// <summary>
         /// Gets and sets the property S3DestinationExportFileFormat. 
         /// <para>
-        /// Data view export file format.
+        /// Dataview export file format.
         /// </para>
         ///  <ul> <li> 
         /// <para>

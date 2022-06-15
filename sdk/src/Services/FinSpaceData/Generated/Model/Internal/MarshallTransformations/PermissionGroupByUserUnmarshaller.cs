@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PermissionGroup Object
+    /// Response Unmarshaller for PermissionGroupByUser Object
     /// </summary>  
-    public class PermissionGroupUnmarshaller : IUnmarshaller<PermissionGroup, XmlUnmarshallerContext>, IUnmarshaller<PermissionGroup, JsonUnmarshallerContext>
+    public class PermissionGroupByUserUnmarshaller : IUnmarshaller<PermissionGroupByUser, XmlUnmarshallerContext>, IUnmarshaller<PermissionGroupByUser, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PermissionGroup IUnmarshaller<PermissionGroup, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PermissionGroupByUser IUnmarshaller<PermissionGroupByUser, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,41 +53,17 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public PermissionGroup Unmarshall(JsonUnmarshallerContext context)
+        public PermissionGroupByUser Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PermissionGroup unmarshalledObject = new PermissionGroup();
+            PermissionGroupByUser unmarshalledObject = new PermissionGroupByUser();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("applicationPermissions", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.ApplicationPermissions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("createTime", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("description", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("lastModifiedTime", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("membershipStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -112,12 +88,12 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
         }
 
 
-        private static PermissionGroupUnmarshaller _instance = new PermissionGroupUnmarshaller();        
+        private static PermissionGroupByUserUnmarshaller _instance = new PermissionGroupByUserUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PermissionGroupUnmarshaller Instance
+        public static PermissionGroupByUserUnmarshaller Instance
         {
             get
             {

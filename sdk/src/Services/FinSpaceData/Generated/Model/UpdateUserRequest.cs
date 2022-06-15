@@ -163,7 +163,7 @@ namespace Amazon.FinSpaceData.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are
-        /// assigned permissions by adding them to a permissions group.
+        /// assigned permissions by adding them to a permission group.
         /// </para>
         ///  </li> </ul>
         /// </summary>

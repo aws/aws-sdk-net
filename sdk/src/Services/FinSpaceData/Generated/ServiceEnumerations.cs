@@ -707,6 +707,60 @@ namespace Amazon.FinSpaceData
 
 
     /// <summary>
+    /// Constants used for properties of type PermissionGroupMembershipStatus.
+    /// </summary>
+    public class PermissionGroupMembershipStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADDITION_IN_PROGRESS for PermissionGroupMembershipStatus
+        /// </summary>
+        public static readonly PermissionGroupMembershipStatus ADDITION_IN_PROGRESS = new PermissionGroupMembershipStatus("ADDITION_IN_PROGRESS");
+        /// <summary>
+        /// Constant ADDITION_SUCCESS for PermissionGroupMembershipStatus
+        /// </summary>
+        public static readonly PermissionGroupMembershipStatus ADDITION_SUCCESS = new PermissionGroupMembershipStatus("ADDITION_SUCCESS");
+        /// <summary>
+        /// Constant REMOVAL_IN_PROGRESS for PermissionGroupMembershipStatus
+        /// </summary>
+        public static readonly PermissionGroupMembershipStatus REMOVAL_IN_PROGRESS = new PermissionGroupMembershipStatus("REMOVAL_IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PermissionGroupMembershipStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PermissionGroupMembershipStatus FindValue(string value)
+        {
+            return FindValue<PermissionGroupMembershipStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PermissionGroupMembershipStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type UserStatus.
     /// </summary>
     public class UserStatus : ConstantClass

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PermissionGroup Object
+    /// Response Unmarshaller for UserByPermissionGroup Object
     /// </summary>  
-    public class PermissionGroupUnmarshaller : IUnmarshaller<PermissionGroup, XmlUnmarshallerContext>, IUnmarshaller<PermissionGroup, JsonUnmarshallerContext>
+    public class UserByPermissionGroupUnmarshaller : IUnmarshaller<UserByPermissionGroup, XmlUnmarshallerContext>, IUnmarshaller<UserByPermissionGroup, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PermissionGroup IUnmarshaller<PermissionGroup, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        UserByPermissionGroup IUnmarshaller<UserByPermissionGroup, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,45 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public PermissionGroup Unmarshall(JsonUnmarshallerContext context)
+        public UserByPermissionGroup Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PermissionGroup unmarshalledObject = new PermissionGroup();
+            UserByPermissionGroup unmarshalledObject = new UserByPermissionGroup();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("applicationPermissions", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.ApplicationPermissions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("createTime", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("apiAccess", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ApiAccess = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("lastModifiedTime", targetDepth))
+                if (context.TestExpression("apiAccessPrincipalArn", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ApiAccessPrincipalArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("emailAddress", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EmailAddress = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("firstName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FirstName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("lastName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LastName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("membershipStatus", targetDepth))
@@ -94,16 +100,22 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
                     unmarshalledObject.MembershipStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("permissionGroupId", targetDepth))
+                if (context.TestExpression("type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PermissionGroupId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("userId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UserId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -112,12 +124,12 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
         }
 
 
-        private static PermissionGroupUnmarshaller _instance = new PermissionGroupUnmarshaller();        
+        private static UserByPermissionGroupUnmarshaller _instance = new UserByPermissionGroupUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PermissionGroupUnmarshaller Instance
+        public static UserByPermissionGroupUnmarshaller Instance
         {
             get
             {

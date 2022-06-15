@@ -37,6 +37,7 @@ namespace Amazon.FinSpaceData.Model
         private long? _createTime;
         private string _description;
         private long? _lastModifiedTime;
+        private PermissionGroupMembershipStatus _membershipStatus;
         private string _name;
         private string _permissionGroupId;
 
@@ -145,6 +146,40 @@ namespace Amazon.FinSpaceData.Model
         internal bool IsSetLastModifiedTime()
         {
             return this._lastModifiedTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MembershipStatus. 
+        /// <para>
+        /// Indicates the status of the user account within a permission group.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to
+        /// the permission group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission
+        /// group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission
+        /// group.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public PermissionGroupMembershipStatus MembershipStatus
+        {
+            get { return this._membershipStatus; }
+            set { this._membershipStatus = value; }
+        }
+
+        // Check to see if MembershipStatus property is set
+        internal bool IsSetMembershipStatus()
+        {
+            return this._membershipStatus != null;
         }
 
         /// <summary>
