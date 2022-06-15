@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ProductCode Object
+    /// Response Unmarshaller for DataSourcesFreeTrial Object
     /// </summary>  
-    public class ProductCodeUnmarshaller : IUnmarshaller<ProductCode, XmlUnmarshallerContext>, IUnmarshaller<ProductCode, JsonUnmarshallerContext>
+    public class DataSourcesFreeTrialUnmarshaller : IUnmarshaller<DataSourcesFreeTrial, XmlUnmarshallerContext>, IUnmarshaller<DataSourcesFreeTrial, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ProductCode IUnmarshaller<ProductCode, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DataSourcesFreeTrial IUnmarshaller<DataSourcesFreeTrial, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,45 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ProductCode Unmarshall(JsonUnmarshallerContext context)
+        public DataSourcesFreeTrial Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ProductCode unmarshalledObject = new ProductCode();
+            DataSourcesFreeTrial unmarshalledObject = new DataSourcesFreeTrial();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("productCodeId", targetDepth))
+                if (context.TestExpression("cloudTrail", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Code = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DataSourceFreeTrialUnmarshaller.Instance;
+                    unmarshalledObject.CloudTrail = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("productCodeType", targetDepth))
+                if (context.TestExpression("dnsLogs", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProductType = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DataSourceFreeTrialUnmarshaller.Instance;
+                    unmarshalledObject.DnsLogs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("flowLogs", targetDepth))
+                {
+                    var unmarshaller = DataSourceFreeTrialUnmarshaller.Instance;
+                    unmarshalledObject.FlowLogs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("kubernetes", targetDepth))
+                {
+                    var unmarshaller = KubernetesDataSourceFreeTrialUnmarshaller.Instance;
+                    unmarshalledObject.Kubernetes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("s3Logs", targetDepth))
+                {
+                    var unmarshaller = DataSourceFreeTrialUnmarshaller.Instance;
+                    unmarshalledObject.S3Logs = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +100,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         }
 
 
-        private static ProductCodeUnmarshaller _instance = new ProductCodeUnmarshaller();        
+        private static DataSourcesFreeTrialUnmarshaller _instance = new DataSourcesFreeTrialUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ProductCodeUnmarshaller Instance
+        public static DataSourcesFreeTrialUnmarshaller Instance
         {
             get
             {

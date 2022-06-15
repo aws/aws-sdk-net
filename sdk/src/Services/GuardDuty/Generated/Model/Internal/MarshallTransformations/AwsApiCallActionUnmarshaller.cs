@@ -64,6 +64,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("affectedResources", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.AffectedResources = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("api", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

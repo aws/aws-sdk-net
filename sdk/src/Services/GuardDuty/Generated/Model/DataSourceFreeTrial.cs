@@ -29,11 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// This is the response object from the DisassociateFromMasterAccount operation.
+    /// Contains information about which data sources are enabled for the GuardDuty member
+    /// account.
     /// </summary>
-    [Obsolete("This output is deprecated, use DisassociateFromAdministratorAccountResponse instead")]
-    public partial class DisassociateFromMasterAccountResponse : AmazonWebServiceResponse
+    public partial class DataSourceFreeTrial
     {
+        private int? _freeTrialDaysRemaining;
+
+        /// <summary>
+        /// Gets and sets the property FreeTrialDaysRemaining. 
+        /// <para>
+        /// A value that specifies the number of days left to use each enabled data source.
+        /// </para>
+        /// </summary>
+        public int FreeTrialDaysRemaining
+        {
+            get { return this._freeTrialDaysRemaining.GetValueOrDefault(); }
+            set { this._freeTrialDaysRemaining = value; }
+        }
+
+        // Check to see if FreeTrialDaysRemaining property is set
+        internal bool IsSetFreeTrialDaysRemaining()
+        {
+            return this._freeTrialDaysRemaining.HasValue; 
+        }
 
     }
 }

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ProductCode Object
+    /// Response Unmarshaller for DataSourceFreeTrial Object
     /// </summary>  
-    public class ProductCodeUnmarshaller : IUnmarshaller<ProductCode, XmlUnmarshallerContext>, IUnmarshaller<ProductCode, JsonUnmarshallerContext>
+    public class DataSourceFreeTrialUnmarshaller : IUnmarshaller<DataSourceFreeTrial, XmlUnmarshallerContext>, IUnmarshaller<DataSourceFreeTrial, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ProductCode IUnmarshaller<ProductCode, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DataSourceFreeTrial IUnmarshaller<DataSourceFreeTrial, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,21 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ProductCode Unmarshall(JsonUnmarshallerContext context)
+        public DataSourceFreeTrial Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ProductCode unmarshalledObject = new ProductCode();
+            DataSourceFreeTrial unmarshalledObject = new DataSourceFreeTrial();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("productCodeId", targetDepth))
+                if (context.TestExpression("freeTrialDaysRemaining", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Code = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("productCodeType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProductType = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.FreeTrialDaysRemaining = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +76,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         }
 
 
-        private static ProductCodeUnmarshaller _instance = new ProductCodeUnmarshaller();        
+        private static DataSourceFreeTrialUnmarshaller _instance = new DataSourceFreeTrialUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ProductCodeUnmarshaller Instance
+        public static DataSourceFreeTrialUnmarshaller Instance
         {
             get
             {

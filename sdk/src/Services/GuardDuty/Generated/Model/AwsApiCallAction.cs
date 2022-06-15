@@ -33,6 +33,7 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class AwsApiCallAction
     {
+        private Dictionary<string, string> _affectedResources = new Dictionary<string, string>();
         private string _api;
         private string _callerType;
         private DomainDetails _domainDetails;
@@ -41,6 +42,25 @@ namespace Amazon.GuardDuty.Model
         private RemoteIpDetails _remoteIpDetails;
         private string _serviceName;
         private string _userAgent;
+
+        /// <summary>
+        /// Gets and sets the property AffectedResources. 
+        /// <para>
+        /// The details of the Amazon Web Services account that made the API call. This field
+        /// identifies the resources that were affected by this API call.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> AffectedResources
+        {
+            get { return this._affectedResources; }
+            set { this._affectedResources = value; }
+        }
+
+        // Check to see if AffectedResources property is set
+        internal bool IsSetAffectedResources()
+        {
+            return this._affectedResources != null && this._affectedResources.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Api. 

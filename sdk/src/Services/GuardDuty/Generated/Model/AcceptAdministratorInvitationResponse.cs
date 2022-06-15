@@ -29,10 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// This is the response object from the DisassociateFromMasterAccount operation.
+    /// This is the response object from the AcceptAdministratorInvitation operation.
     /// </summary>
-    [Obsolete("This output is deprecated, use DisassociateFromAdministratorAccountResponse instead")]
-    public partial class DisassociateFromMasterAccountResponse : AmazonWebServiceResponse
+    public partial class AcceptAdministratorInvitationResponse : AmazonWebServiceResponse
     {
 
     }

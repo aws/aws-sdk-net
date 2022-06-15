@@ -39,13 +39,13 @@ namespace Amazon.GuardDuty
     /// Implementation for accessing GuardDuty
     ///
     /// Amazon GuardDuty is a continuous security monitoring service that analyzes and processes
-    /// the following data sources: VPC Flow Logs, Amazon Web Services CloudTrail event logs,
-    /// and DNS logs. It uses threat intelligence feeds (such as lists of malicious IPs and
-    /// domains) and machine learning to identify unexpected, potentially unauthorized, and
-    /// malicious activity within your Amazon Web Services environment. This can include issues
-    /// like escalations of privileges, uses of exposed credentials, or communication with
-    /// malicious IPs, URLs, or domains. For example, GuardDuty can detect compromised EC2
-    /// instances that serve malware or mine bitcoin. 
+    /// the following data sources: VPC Flow Logs, AWS CloudTrail management event logs, CloudTrail
+    /// S3 data event logs, EKS audit logs, and DNS logs. It uses threat intelligence feeds
+    /// (such as lists of malicious IPs and domains) and machine learning to identify unexpected,
+    /// potentially unauthorized, and malicious activity within your Amazon Web Services environment.
+    /// This can include issues like escalations of privileges, uses of exposed credentials,
+    /// or communication with malicious IPs, URLs, or domains. For example, GuardDuty can
+    /// detect compromised EC2 instances that serve malware or mine bitcoin. 
     /// 
     ///  
     /// <para>
@@ -280,8 +280,50 @@ namespace Amazon.GuardDuty
         #endregion
 
 
+        #region  AcceptAdministratorInvitation
+
+        internal virtual AcceptAdministratorInvitationResponse AcceptAdministratorInvitation(AcceptAdministratorInvitationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptAdministratorInvitationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptAdministratorInvitationResponseUnmarshaller.Instance;
+
+            return Invoke<AcceptAdministratorInvitationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Accepts the invitation to be a member account and get monitored by a GuardDuty administrator
+        /// account that sent the invitation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptAdministratorInvitation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AcceptAdministratorInvitation service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/AcceptAdministratorInvitation">REST API Reference for AcceptAdministratorInvitation Operation</seealso>
+        public virtual Task<AcceptAdministratorInvitationResponse> AcceptAdministratorInvitationAsync(AcceptAdministratorInvitationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptAdministratorInvitationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptAdministratorInvitationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AcceptAdministratorInvitationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AcceptInvitation
 
+        [Obsolete("This operation is deprecated, use AcceptAdministratorInvitation instead")]
         internal virtual AcceptInvitationResponse AcceptInvitation(AcceptInvitationRequest request)
         {
             var options = new InvokeOptions();
@@ -309,6 +351,7 @@ namespace Amazon.GuardDuty
         /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/AcceptInvitation">REST API Reference for AcceptInvitation Operation</seealso>
+        [Obsolete("This operation is deprecated, use AcceptAdministratorInvitation instead")]
         public virtual Task<AcceptInvitationResponse> AcceptInvitationAsync(AcceptInvitationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1121,8 +1164,49 @@ namespace Amazon.GuardDuty
 
         #endregion
         
+        #region  DisassociateFromAdministratorAccount
+
+        internal virtual DisassociateFromAdministratorAccountResponse DisassociateFromAdministratorAccount(DisassociateFromAdministratorAccountRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateFromAdministratorAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateFromAdministratorAccountResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateFromAdministratorAccountResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Disassociates the current GuardDuty member account from its administrator account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateFromAdministratorAccount service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateFromAdministratorAccount service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisassociateFromAdministratorAccount">REST API Reference for DisassociateFromAdministratorAccount Operation</seealso>
+        public virtual Task<DisassociateFromAdministratorAccountResponse> DisassociateFromAdministratorAccountAsync(DisassociateFromAdministratorAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateFromAdministratorAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateFromAdministratorAccountResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateFromAdministratorAccountResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociateFromMasterAccount
 
+        [Obsolete("This operation is deprecated, use DisassociateFromAdministratorAccount instead")]
         internal virtual DisassociateFromMasterAccountResponse DisassociateFromMasterAccount(DisassociateFromMasterAccountRequest request)
         {
             var options = new InvokeOptions();
@@ -1150,6 +1234,7 @@ namespace Amazon.GuardDuty
         /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisassociateFromMasterAccount">REST API Reference for DisassociateFromMasterAccount Operation</seealso>
+        [Obsolete("This operation is deprecated, use DisassociateFromAdministratorAccount instead")]
         public virtual Task<DisassociateFromMasterAccountResponse> DisassociateFromMasterAccountAsync(DisassociateFromMasterAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1176,8 +1261,7 @@ namespace Amazon.GuardDuty
 
         /// <summary>
         /// Disassociates GuardDuty member accounts (to the current GuardDuty administrator account)
-        /// specified by the account IDs. Member accounts added through <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_invitations.html">Invitation</a>
-        /// get deleted from the current GuardDuty administrator account after 30 days of disassociation.
+        /// specified by the account IDs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateMembers service method.</param>
         /// <param name="cancellationToken">
@@ -1240,6 +1324,47 @@ namespace Amazon.GuardDuty
             options.ResponseUnmarshaller = EnableOrganizationAdminAccountResponseUnmarshaller.Instance;
 
             return InvokeAsync<EnableOrganizationAdminAccountResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetAdministratorAccount
+
+        internal virtual GetAdministratorAccountResponse GetAdministratorAccount(GetAdministratorAccountRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAdministratorAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAdministratorAccountResponseUnmarshaller.Instance;
+
+            return Invoke<GetAdministratorAccountResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Provides the details for the GuardDuty administrator account associated with the current
+        /// GuardDuty member account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAdministratorAccount service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAdministratorAccount service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetAdministratorAccount">REST API Reference for GetAdministratorAccount Operation</seealso>
+        public virtual Task<GetAdministratorAccountResponse> GetAdministratorAccountAsync(GetAdministratorAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAdministratorAccountRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAdministratorAccountResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetAdministratorAccountResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1487,6 +1612,7 @@ namespace Amazon.GuardDuty
         
         #region  GetMasterAccount
 
+        [Obsolete("This operation is deprecated, use GetAdministratorAccount instead")]
         internal virtual GetMasterAccountResponse GetMasterAccount(GetMasterAccountRequest request)
         {
             var options = new InvokeOptions();
@@ -1515,6 +1641,7 @@ namespace Amazon.GuardDuty
         /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMasterAccount">REST API Reference for GetMasterAccount Operation</seealso>
+        [Obsolete("This operation is deprecated, use GetAdministratorAccount instead")]
         public virtual Task<GetMasterAccountResponse> GetMasterAccountAsync(GetMasterAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -1607,6 +1734,46 @@ namespace Amazon.GuardDuty
 
         #endregion
         
+        #region  GetRemainingFreeTrialDays
+
+        internal virtual GetRemainingFreeTrialDaysResponse GetRemainingFreeTrialDays(GetRemainingFreeTrialDaysRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRemainingFreeTrialDaysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRemainingFreeTrialDaysResponseUnmarshaller.Instance;
+
+            return Invoke<GetRemainingFreeTrialDaysResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Provides the number of days left for each data source used in the free trial period.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRemainingFreeTrialDays service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRemainingFreeTrialDays service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetRemainingFreeTrialDays">REST API Reference for GetRemainingFreeTrialDays Operation</seealso>
+        public virtual Task<GetRemainingFreeTrialDaysResponse> GetRemainingFreeTrialDaysAsync(GetRemainingFreeTrialDaysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRemainingFreeTrialDaysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRemainingFreeTrialDaysResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRemainingFreeTrialDaysResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetThreatIntelSet
 
         internal virtual GetThreatIntelSetResponse GetThreatIntelSet(GetThreatIntelSetRequest request)
@@ -1662,9 +1829,9 @@ namespace Amazon.GuardDuty
 
         /// <summary>
         /// Lists Amazon GuardDuty usage statistics over the last 30 days for the specified detector
-        /// ID. For newly enabled detectors or data sources the cost returned will include only
-        /// the usage so far under 30 days, this may differ from the cost metrics in the console,
-        /// which projects usage over 30 days to provide a monthly cost estimate. For more information
+        /// ID. For newly enabled detectors or data sources, the cost returned will include only
+        /// the usage so far under 30 days. This may differ from the cost metrics in the console,
+        /// which project usage over 30 days to provide a monthly cost estimate. For more information,
         /// see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/monitoring_costs.html#usage-calculations">Understanding
         /// How Usage Costs are Calculated</a>.
         /// </summary>

@@ -33,7 +33,27 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class DnsRequestAction
     {
+        private bool? _blocked;
         private string _domain;
+        private string _protocol;
+
+        /// <summary>
+        /// Gets and sets the property Blocked. 
+        /// <para>
+        /// Indicates whether the targeted port is blocked.
+        /// </para>
+        /// </summary>
+        public bool Blocked
+        {
+            get { return this._blocked.GetValueOrDefault(); }
+            set { this._blocked = value; }
+        }
+
+        // Check to see if Blocked property is set
+        internal bool IsSetBlocked()
+        {
+            return this._blocked.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Domain. 
@@ -51,6 +71,25 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetDomain()
         {
             return this._domain != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Protocol. 
+        /// <para>
+        /// The network connection protocol observed in the activity that prompted GuardDuty to
+        /// generate the finding.
+        /// </para>
+        /// </summary>
+        public string Protocol
+        {
+            get { return this._protocol; }
+            set { this._protocol = value; }
+        }
+
+        // Check to see if Protocol property is set
+        internal bool IsSetProtocol()
+        {
+            return this._protocol != null;
         }
 
     }

@@ -29,11 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// This is the response object from the DisassociateFromMasterAccount operation.
+    /// Provides details about the Kubernetes resources when it is enabled as a data source.
     /// </summary>
-    [Obsolete("This output is deprecated, use DisassociateFromAdministratorAccountResponse instead")]
-    public partial class DisassociateFromMasterAccountResponse : AmazonWebServiceResponse
+    public partial class KubernetesDataSourceFreeTrial
     {
+        private DataSourceFreeTrial _auditLogs;
+
+        /// <summary>
+        /// Gets and sets the property AuditLogs. 
+        /// <para>
+        /// Describes whether Kubernetes audit logs are enabled as a data source.
+        /// </para>
+        /// </summary>
+        public DataSourceFreeTrial AuditLogs
+        {
+            get { return this._auditLogs; }
+            set { this._auditLogs = value; }
+        }
+
+        // Check to see if AuditLogs property is set
+        internal bool IsSetAuditLogs()
+        {
+            return this._auditLogs != null;
+        }
 
     }
 }

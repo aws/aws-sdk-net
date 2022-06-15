@@ -32,6 +32,7 @@ namespace Amazon.GuardDuty.Model
     /// Container for the parameters to the DisassociateFromMasterAccount operation.
     /// Disassociates the current GuardDuty member account from its administrator account.
     /// </summary>
+    [Obsolete("This input is deprecated, use DisassociateFromAdministratorAccountRequest instead")]
     public partial class DisassociateFromMasterAccountRequest : AmazonGuardDutyRequest
     {
         private string _detectorId;

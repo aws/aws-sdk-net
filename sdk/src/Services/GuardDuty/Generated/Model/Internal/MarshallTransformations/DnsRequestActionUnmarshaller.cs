@@ -64,10 +64,22 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("blocked", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Blocked = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("domain", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Domain = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("protocol", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Protocol = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

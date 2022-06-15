@@ -30,13 +30,13 @@ namespace Amazon.GuardDuty
     /// Interface for accessing GuardDuty
     ///
     /// Amazon GuardDuty is a continuous security monitoring service that analyzes and processes
-    /// the following data sources: VPC Flow Logs, Amazon Web Services CloudTrail event logs,
-    /// and DNS logs. It uses threat intelligence feeds (such as lists of malicious IPs and
-    /// domains) and machine learning to identify unexpected, potentially unauthorized, and
-    /// malicious activity within your Amazon Web Services environment. This can include issues
-    /// like escalations of privileges, uses of exposed credentials, or communication with
-    /// malicious IPs, URLs, or domains. For example, GuardDuty can detect compromised EC2
-    /// instances that serve malware or mine bitcoin. 
+    /// the following data sources: VPC Flow Logs, AWS CloudTrail management event logs, CloudTrail
+    /// S3 data event logs, EKS audit logs, and DNS logs. It uses threat intelligence feeds
+    /// (such as lists of malicious IPs and domains) and machine learning to identify unexpected,
+    /// potentially unauthorized, and malicious activity within your Amazon Web Services environment.
+    /// This can include issues like escalations of privileges, uses of exposed credentials,
+    /// or communication with malicious IPs, URLs, or domains. For example, GuardDuty can
+    /// detect compromised EC2 instances that serve malware or mine bitcoin. 
     /// 
     ///  
     /// <para>
@@ -66,6 +66,53 @@ namespace Amazon.GuardDuty
 
 
         
+        #region  AcceptAdministratorInvitation
+
+
+        /// <summary>
+        /// Accepts the invitation to be a member account and get monitored by a GuardDuty administrator
+        /// account that sent the invitation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptAdministratorInvitation service method.</param>
+        /// 
+        /// <returns>The response from the AcceptAdministratorInvitation service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/AcceptAdministratorInvitation">REST API Reference for AcceptAdministratorInvitation Operation</seealso>
+        AcceptAdministratorInvitationResponse AcceptAdministratorInvitation(AcceptAdministratorInvitationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AcceptAdministratorInvitation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AcceptAdministratorInvitation operation on AmazonGuardDutyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAcceptAdministratorInvitation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/AcceptAdministratorInvitation">REST API Reference for AcceptAdministratorInvitation Operation</seealso>
+        IAsyncResult BeginAcceptAdministratorInvitation(AcceptAdministratorInvitationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AcceptAdministratorInvitation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAcceptAdministratorInvitation.</param>
+        /// 
+        /// <returns>Returns a  AcceptAdministratorInvitationResult from GuardDuty.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/AcceptAdministratorInvitation">REST API Reference for AcceptAdministratorInvitation Operation</seealso>
+        AcceptAdministratorInvitationResponse EndAcceptAdministratorInvitation(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  AcceptInvitation
 
 
@@ -82,6 +129,7 @@ namespace Amazon.GuardDuty
         /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/AcceptInvitation">REST API Reference for AcceptInvitation Operation</seealso>
+        [Obsolete("This operation is deprecated, use AcceptAdministratorInvitation instead")]
         AcceptInvitationResponse AcceptInvitation(AcceptInvitationRequest request);
 
         /// <summary>
@@ -96,6 +144,7 @@ namespace Amazon.GuardDuty
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAcceptInvitation
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/AcceptInvitation">REST API Reference for AcceptInvitation Operation</seealso>
+        [Obsolete("This operation is deprecated, use AcceptAdministratorInvitation instead")]
         IAsyncResult BeginAcceptInvitation(AcceptInvitationRequest request, AsyncCallback callback, object state);
 
 
@@ -108,6 +157,7 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>Returns a  AcceptInvitationResult from GuardDuty.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/AcceptInvitation">REST API Reference for AcceptInvitation Operation</seealso>
+        [Obsolete("This operation is deprecated, use AcceptAdministratorInvitation instead")]
         AcceptInvitationResponse EndAcceptInvitation(IAsyncResult asyncResult);
 
         #endregion
@@ -1027,6 +1077,52 @@ namespace Amazon.GuardDuty
 
         #endregion
         
+        #region  DisassociateFromAdministratorAccount
+
+
+        /// <summary>
+        /// Disassociates the current GuardDuty member account from its administrator account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateFromAdministratorAccount service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateFromAdministratorAccount service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisassociateFromAdministratorAccount">REST API Reference for DisassociateFromAdministratorAccount Operation</seealso>
+        DisassociateFromAdministratorAccountResponse DisassociateFromAdministratorAccount(DisassociateFromAdministratorAccountRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateFromAdministratorAccount operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateFromAdministratorAccount operation on AmazonGuardDutyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateFromAdministratorAccount
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisassociateFromAdministratorAccount">REST API Reference for DisassociateFromAdministratorAccount Operation</seealso>
+        IAsyncResult BeginDisassociateFromAdministratorAccount(DisassociateFromAdministratorAccountRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateFromAdministratorAccount operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateFromAdministratorAccount.</param>
+        /// 
+        /// <returns>Returns a  DisassociateFromAdministratorAccountResult from GuardDuty.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisassociateFromAdministratorAccount">REST API Reference for DisassociateFromAdministratorAccount Operation</seealso>
+        DisassociateFromAdministratorAccountResponse EndDisassociateFromAdministratorAccount(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DisassociateFromMasterAccount
 
 
@@ -1043,6 +1139,7 @@ namespace Amazon.GuardDuty
         /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisassociateFromMasterAccount">REST API Reference for DisassociateFromMasterAccount Operation</seealso>
+        [Obsolete("This operation is deprecated, use DisassociateFromAdministratorAccount instead")]
         DisassociateFromMasterAccountResponse DisassociateFromMasterAccount(DisassociateFromMasterAccountRequest request);
 
         /// <summary>
@@ -1057,6 +1154,7 @@ namespace Amazon.GuardDuty
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateFromMasterAccount
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisassociateFromMasterAccount">REST API Reference for DisassociateFromMasterAccount Operation</seealso>
+        [Obsolete("This operation is deprecated, use DisassociateFromAdministratorAccount instead")]
         IAsyncResult BeginDisassociateFromMasterAccount(DisassociateFromMasterAccountRequest request, AsyncCallback callback, object state);
 
 
@@ -1069,6 +1167,7 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>Returns a  DisassociateFromMasterAccountResult from GuardDuty.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisassociateFromMasterAccount">REST API Reference for DisassociateFromMasterAccount Operation</seealso>
+        [Obsolete("This operation is deprecated, use DisassociateFromAdministratorAccount instead")]
         DisassociateFromMasterAccountResponse EndDisassociateFromMasterAccount(IAsyncResult asyncResult);
 
         #endregion
@@ -1078,8 +1177,7 @@ namespace Amazon.GuardDuty
 
         /// <summary>
         /// Disassociates GuardDuty member accounts (to the current GuardDuty administrator account)
-        /// specified by the account IDs. Member accounts added through <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_invitations.html">Invitation</a>
-        /// get deleted from the current GuardDuty administrator account after 30 days of disassociation.
+        /// specified by the account IDs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateMembers service method.</param>
         /// 
@@ -1165,6 +1263,53 @@ namespace Amazon.GuardDuty
         /// <returns>Returns a  EnableOrganizationAdminAccountResult from GuardDuty.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/EnableOrganizationAdminAccount">REST API Reference for EnableOrganizationAdminAccount Operation</seealso>
         EnableOrganizationAdminAccountResponse EndEnableOrganizationAdminAccount(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetAdministratorAccount
+
+
+        /// <summary>
+        /// Provides the details for the GuardDuty administrator account associated with the current
+        /// GuardDuty member account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAdministratorAccount service method.</param>
+        /// 
+        /// <returns>The response from the GetAdministratorAccount service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetAdministratorAccount">REST API Reference for GetAdministratorAccount Operation</seealso>
+        GetAdministratorAccountResponse GetAdministratorAccount(GetAdministratorAccountRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAdministratorAccount operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAdministratorAccount operation on AmazonGuardDutyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAdministratorAccount
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetAdministratorAccount">REST API Reference for GetAdministratorAccount Operation</seealso>
+        IAsyncResult BeginGetAdministratorAccount(GetAdministratorAccountRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAdministratorAccount operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAdministratorAccount.</param>
+        /// 
+        /// <returns>Returns a  GetAdministratorAccountResult from GuardDuty.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetAdministratorAccount">REST API Reference for GetAdministratorAccount Operation</seealso>
+        GetAdministratorAccountResponse EndGetAdministratorAccount(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1462,6 +1607,7 @@ namespace Amazon.GuardDuty
         /// An internal server error exception object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMasterAccount">REST API Reference for GetMasterAccount Operation</seealso>
+        [Obsolete("This operation is deprecated, use GetAdministratorAccount instead")]
         GetMasterAccountResponse GetMasterAccount(GetMasterAccountRequest request);
 
         /// <summary>
@@ -1476,6 +1622,7 @@ namespace Amazon.GuardDuty
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMasterAccount
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMasterAccount">REST API Reference for GetMasterAccount Operation</seealso>
+        [Obsolete("This operation is deprecated, use GetAdministratorAccount instead")]
         IAsyncResult BeginGetMasterAccount(GetMasterAccountRequest request, AsyncCallback callback, object state);
 
 
@@ -1488,6 +1635,7 @@ namespace Amazon.GuardDuty
         /// 
         /// <returns>Returns a  GetMasterAccountResult from GuardDuty.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMasterAccount">REST API Reference for GetMasterAccount Operation</seealso>
+        [Obsolete("This operation is deprecated, use GetAdministratorAccount instead")]
         GetMasterAccountResponse EndGetMasterAccount(IAsyncResult asyncResult);
 
         #endregion
@@ -1585,6 +1733,52 @@ namespace Amazon.GuardDuty
 
         #endregion
         
+        #region  GetRemainingFreeTrialDays
+
+
+        /// <summary>
+        /// Provides the number of days left for each data source used in the free trial period.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRemainingFreeTrialDays service method.</param>
+        /// 
+        /// <returns>The response from the GetRemainingFreeTrialDays service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetRemainingFreeTrialDays">REST API Reference for GetRemainingFreeTrialDays Operation</seealso>
+        GetRemainingFreeTrialDaysResponse GetRemainingFreeTrialDays(GetRemainingFreeTrialDaysRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRemainingFreeTrialDays operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRemainingFreeTrialDays operation on AmazonGuardDutyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRemainingFreeTrialDays
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetRemainingFreeTrialDays">REST API Reference for GetRemainingFreeTrialDays Operation</seealso>
+        IAsyncResult BeginGetRemainingFreeTrialDays(GetRemainingFreeTrialDaysRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetRemainingFreeTrialDays operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRemainingFreeTrialDays.</param>
+        /// 
+        /// <returns>Returns a  GetRemainingFreeTrialDaysResult from GuardDuty.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetRemainingFreeTrialDays">REST API Reference for GetRemainingFreeTrialDays Operation</seealso>
+        GetRemainingFreeTrialDaysResponse EndGetRemainingFreeTrialDays(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetThreatIntelSet
 
 
@@ -1636,9 +1830,9 @@ namespace Amazon.GuardDuty
 
         /// <summary>
         /// Lists Amazon GuardDuty usage statistics over the last 30 days for the specified detector
-        /// ID. For newly enabled detectors or data sources the cost returned will include only
-        /// the usage so far under 30 days, this may differ from the cost metrics in the console,
-        /// which projects usage over 30 days to provide a monthly cost estimate. For more information
+        /// ID. For newly enabled detectors or data sources, the cost returned will include only
+        /// the usage so far under 30 days. This may differ from the cost metrics in the console,
+        /// which project usage over 30 days to provide a monthly cost estimate. For more information,
         /// see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/monitoring_costs.html#usage-calculations">Understanding
         /// How Usage Costs are Calculated</a>.
         /// </summary>

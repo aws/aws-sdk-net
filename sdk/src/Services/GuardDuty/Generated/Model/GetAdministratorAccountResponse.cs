@@ -29,11 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// This is the response object from the DisassociateFromMasterAccount operation.
+    /// This is the response object from the GetAdministratorAccount operation.
     /// </summary>
-    [Obsolete("This output is deprecated, use DisassociateFromAdministratorAccountResponse instead")]
-    public partial class DisassociateFromMasterAccountResponse : AmazonWebServiceResponse
+    public partial class GetAdministratorAccountResponse : AmazonWebServiceResponse
     {
+        private Administrator _administrator;
+
+        /// <summary>
+        /// Gets and sets the property Administrator. 
+        /// <para>
+        /// The administrator account details.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public Administrator Administrator
+        {
+            get { return this._administrator; }
+            set { this._administrator = value; }
+        }
+
+        // Check to see if Administrator property is set
+        internal bool IsSetAdministrator()
+        {
+            return this._administrator != null;
+        }
 
     }
 }

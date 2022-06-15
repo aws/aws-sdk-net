@@ -29,15 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Container for the parameters to the AcceptInvitation operation.
-    /// Accepts the invitation to be monitored by a GuardDuty administrator account.
+    /// Container for the parameters to the DisassociateFromAdministratorAccount operation.
+    /// Disassociates the current GuardDuty member account from its administrator account.
     /// </summary>
-    [Obsolete("This input is deprecated, use AcceptAdministratorInvitationRequest instead")]
-    public partial class AcceptInvitationRequest : AmazonGuardDutyRequest
+    public partial class DisassociateFromAdministratorAccountRequest : AmazonGuardDutyRequest
     {
         private string _detectorId;
-        private string _invitationId;
-        private string _masterId;
 
         /// <summary>
         /// Gets and sets the property DetectorId. 
@@ -56,44 +53,6 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetDetectorId()
         {
             return this._detectorId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property InvitationId. 
-        /// <para>
-        /// The value that is used to validate the administrator account to the member account.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string InvitationId
-        {
-            get { return this._invitationId; }
-            set { this._invitationId = value; }
-        }
-
-        // Check to see if InvitationId property is set
-        internal bool IsSetInvitationId()
-        {
-            return this._invitationId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property MasterId. 
-        /// <para>
-        /// The account ID of the GuardDuty administrator account whose invitation you're accepting.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string MasterId
-        {
-            get { return this._masterId; }
-            set { this._masterId = value; }
-        }
-
-        // Check to see if MasterId property is set
-        internal bool IsSetMasterId()
-        {
-            return this._masterId != null;
         }
 
     }

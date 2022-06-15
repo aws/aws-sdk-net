@@ -29,32 +29,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetMasterAccount operation.
-    /// Provides the details for the GuardDuty administrator account associated with the current
-    /// GuardDuty member account.
+    /// Additional information about the generated finding.
     /// </summary>
-    [Obsolete("This input is deprecated, use GetAdministratorAccountRequest instead")]
-    public partial class GetMasterAccountRequest : AmazonGuardDutyRequest
+    public partial class ServiceAdditionalInfo
     {
-        private string _detectorId;
+        private string _type;
+        private string _value;
 
         /// <summary>
-        /// Gets and sets the property DetectorId. 
+        /// Gets and sets the property Type. 
         /// <para>
-        /// The unique ID of the detector of the GuardDuty member account.
+        /// Describes the type of the additional information.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=300)]
-        public string DetectorId
+        public string Type
         {
-            get { return this._detectorId; }
-            set { this._detectorId = value; }
+            get { return this._type; }
+            set { this._type = value; }
         }
 
-        // Check to see if DetectorId property is set
-        internal bool IsSetDetectorId()
+        // Check to see if Type property is set
+        internal bool IsSetType()
         {
-            return this._detectorId != null;
+            return this._type != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Value. 
+        /// <para>
+        /// This field specifies the value of the additional information.
+        /// </para>
+        /// </summary>
+        public string Value
+        {
+            get { return this._value; }
+            set { this._value = value; }
+        }
+
+        // Check to see if Value property is set
+        internal bool IsSetValue()
+        {
+            return this._value != null;
         }
 
     }

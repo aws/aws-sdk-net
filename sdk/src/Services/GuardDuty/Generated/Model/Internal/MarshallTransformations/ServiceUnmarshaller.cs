@@ -70,6 +70,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.Action = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("additionalInfo", targetDepth))
+                {
+                    var unmarshaller = ServiceAdditionalInfoUnmarshaller.Instance;
+                    unmarshalledObject.AdditionalInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("archived", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

@@ -29,15 +29,34 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Container for the parameters to the AcceptInvitation operation.
-    /// Accepts the invitation to be monitored by a GuardDuty administrator account.
+    /// Container for the parameters to the AcceptAdministratorInvitation operation.
+    /// Accepts the invitation to be a member account and get monitored by a GuardDuty administrator
+    /// account that sent the invitation.
     /// </summary>
-    [Obsolete("This input is deprecated, use AcceptAdministratorInvitationRequest instead")]
-    public partial class AcceptInvitationRequest : AmazonGuardDutyRequest
+    public partial class AcceptAdministratorInvitationRequest : AmazonGuardDutyRequest
     {
+        private string _administratorId;
         private string _detectorId;
         private string _invitationId;
-        private string _masterId;
+
+        /// <summary>
+        /// Gets and sets the property AdministratorId. 
+        /// <para>
+        /// The account ID of the GuardDuty administrator account whose invitation you're accepting.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string AdministratorId
+        {
+            get { return this._administratorId; }
+            set { this._administratorId = value; }
+        }
+
+        // Check to see if AdministratorId property is set
+        internal bool IsSetAdministratorId()
+        {
+            return this._administratorId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DetectorId. 
@@ -75,25 +94,6 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetInvitationId()
         {
             return this._invitationId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property MasterId. 
-        /// <para>
-        /// The account ID of the GuardDuty administrator account whose invitation you're accepting.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string MasterId
-        {
-            get { return this._masterId; }
-            set { this._masterId = value; }
-        }
-
-        // Check to see if MasterId property is set
-        internal bool IsSetMasterId()
-        {
-            return this._masterId != null;
         }
 
     }

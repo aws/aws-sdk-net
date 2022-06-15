@@ -31,6 +31,7 @@ namespace Amazon.GuardDuty.Model
     /// <summary>
     /// This is the response object from the AcceptInvitation operation.
     /// </summary>
+    [Obsolete("This output is deprecated, use AcceptAdministratorInvitationResponse instead")]
     public partial class AcceptInvitationResponse : AmazonWebServiceResponse
     {
 

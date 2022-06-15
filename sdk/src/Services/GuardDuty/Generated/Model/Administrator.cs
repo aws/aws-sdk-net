@@ -29,33 +29,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Container for the parameters to the AcceptInvitation operation.
-    /// Accepts the invitation to be monitored by a GuardDuty administrator account.
+    /// Contains information about the administrator account and invitation.
     /// </summary>
-    [Obsolete("This input is deprecated, use AcceptAdministratorInvitationRequest instead")]
-    public partial class AcceptInvitationRequest : AmazonGuardDutyRequest
+    public partial class Administrator
     {
-        private string _detectorId;
+        private string _accountId;
         private string _invitationId;
-        private string _masterId;
+        private string _invitedAt;
+        private string _relationshipStatus;
 
         /// <summary>
-        /// Gets and sets the property DetectorId. 
+        /// Gets and sets the property AccountId. 
         /// <para>
-        /// The unique ID of the detector of the GuardDuty member account.
+        /// The ID of the account used as the administrator account.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=300)]
-        public string DetectorId
+        [AWSProperty(Min=12, Max=12)]
+        public string AccountId
         {
-            get { return this._detectorId; }
-            set { this._detectorId = value; }
+            get { return this._accountId; }
+            set { this._accountId = value; }
         }
 
-        // Check to see if DetectorId property is set
-        internal bool IsSetDetectorId()
+        // Check to see if AccountId property is set
+        internal bool IsSetAccountId()
         {
-            return this._detectorId != null;
+            return this._accountId != null;
         }
 
         /// <summary>
@@ -64,7 +63,6 @@ namespace Amazon.GuardDuty.Model
         /// The value that is used to validate the administrator account to the member account.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string InvitationId
         {
             get { return this._invitationId; }
@@ -78,22 +76,39 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MasterId. 
+        /// Gets and sets the property InvitedAt. 
         /// <para>
-        /// The account ID of the GuardDuty administrator account whose invitation you're accepting.
+        /// The timestamp when the invitation was sent.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string MasterId
+        public string InvitedAt
         {
-            get { return this._masterId; }
-            set { this._masterId = value; }
+            get { return this._invitedAt; }
+            set { this._invitedAt = value; }
         }
 
-        // Check to see if MasterId property is set
-        internal bool IsSetMasterId()
+        // Check to see if InvitedAt property is set
+        internal bool IsSetInvitedAt()
         {
-            return this._masterId != null;
+            return this._invitedAt != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RelationshipStatus. 
+        /// <para>
+        /// The status of the relationship between the administrator and member accounts.
+        /// </para>
+        /// </summary>
+        public string RelationshipStatus
+        {
+            get { return this._relationshipStatus; }
+            set { this._relationshipStatus = value; }
+        }
+
+        // Check to see if RelationshipStatus property is set
+        internal bool IsSetRelationshipStatus()
+        {
+            return this._relationshipStatus != null;
         }
 
     }

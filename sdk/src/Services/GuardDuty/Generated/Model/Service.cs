@@ -34,6 +34,7 @@ namespace Amazon.GuardDuty.Model
     public partial class Service
     {
         private Action _action;
+        private ServiceAdditionalInfo _additionalInfo;
         private bool? _archived;
         private int? _count;
         private string _detectorId;
@@ -60,6 +61,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetAction()
         {
             return this._action != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdditionalInfo. 
+        /// <para>
+        /// Contains additional information about the generated finding.
+        /// </para>
+        /// </summary>
+        public ServiceAdditionalInfo AdditionalInfo
+        {
+            get { return this._additionalInfo; }
+            set { this._additionalInfo = value; }
+        }
+
+        // Check to see if AdditionalInfo property is set
+        internal bool IsSetAdditionalInfo()
+        {
+            return this._additionalInfo != null;
         }
 
         /// <summary>

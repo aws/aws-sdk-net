@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.AcceptAdministratorInvitationRequest.DetectorId</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.AcceptInvitationRequest.DetectorId</property>
     <min>1</min>
     <max>300</max>
@@ -181,12 +186,22 @@
     <max>300</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.DisassociateFromAdministratorAccountRequest.DetectorId</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.DisassociateFromMasterAccountRequest.DetectorId</property>
     <min>1</min>
     <max>300</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GuardDuty.Model.DisassociateMembersRequest.DetectorId</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetAdministratorAccountRequest.DetectorId</property>
     <min>1</min>
     <max>300</max>
   </property-value-rule>
@@ -272,6 +287,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GuardDuty.Model.GetMembersRequest.DetectorId</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetRemainingFreeTrialDaysRequest.DetectorId</property>
     <min>1</min>
     <max>300</max>
   </property-value-rule>
@@ -511,6 +531,11 @@
     <property>Amazon.GuardDuty.Model.AdminAccount.AdminStatus</property>
     <min>1</min>
     <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.Administrator.AccountId</property>
+    <min>12</min>
+    <max>12</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GuardDuty.Model.CloudTrailConfigurationResult.Status</property>

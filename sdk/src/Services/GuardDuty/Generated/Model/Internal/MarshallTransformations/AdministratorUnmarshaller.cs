@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Member Object
+    /// Response Unmarshaller for Administrator Object
     /// </summary>  
-    public class MemberUnmarshaller : IUnmarshaller<Member, XmlUnmarshallerContext>, IUnmarshaller<Member, JsonUnmarshallerContext>
+    public class AdministratorUnmarshaller : IUnmarshaller<Administrator, XmlUnmarshallerContext>, IUnmarshaller<Administrator, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Member IUnmarshaller<Member, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Administrator IUnmarshaller<Administrator, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,13 +53,13 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Member Unmarshall(JsonUnmarshallerContext context)
+        public Administrator Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Member unmarshalledObject = new Member();
+            Administrator unmarshalledObject = new Administrator();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
@@ -70,22 +70,10 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("administratorId", targetDepth))
+                if (context.TestExpression("invitationId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AdministratorId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("detectorId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DetectorId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("email", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Email = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InvitationId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("invitedAt", targetDepth))
@@ -94,22 +82,10 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.InvitedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("masterId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MasterId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("relationshipStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RelationshipStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("updatedAt", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UpdatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -118,12 +94,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         }
 
 
-        private static MemberUnmarshaller _instance = new MemberUnmarshaller();        
+        private static AdministratorUnmarshaller _instance = new AdministratorUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MemberUnmarshaller Instance
+        public static AdministratorUnmarshaller Instance
         {
             get
             {

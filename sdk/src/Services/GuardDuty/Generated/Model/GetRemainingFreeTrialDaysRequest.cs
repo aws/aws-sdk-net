@@ -29,11 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Container for the parameters to the DisassociateMembers operation.
-    /// Disassociates GuardDuty member accounts (to the current GuardDuty administrator account)
-    /// specified by the account IDs.
+    /// Container for the parameters to the GetRemainingFreeTrialDays operation.
+    /// Provides the number of days left for each data source used in the free trial period.
     /// </summary>
-    public partial class DisassociateMembersRequest : AmazonGuardDutyRequest
+    public partial class GetRemainingFreeTrialDaysRequest : AmazonGuardDutyRequest
     {
         private List<string> _accountIds = new List<string>();
         private string _detectorId;
@@ -41,11 +40,10 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property AccountIds. 
         /// <para>
-        /// A list of account IDs of the GuardDuty member accounts that you want to disassociate
-        /// from the administrator account.
+        /// A list of account identifiers of the GuardDuty member account.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=50)]
+        [AWSProperty(Min=1, Max=50)]
         public List<string> AccountIds
         {
             get { return this._accountIds; }
@@ -61,8 +59,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DetectorId. 
         /// <para>
-        /// The unique ID of the detector of the GuardDuty account whose members you want to disassociate
-        /// from the administrator account.
+        /// The unique ID of the detector of the GuardDuty member account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]
