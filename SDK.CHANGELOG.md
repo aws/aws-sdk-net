@@ -1,3 +1,13 @@
+### 3.7.295.0 (2022-06-15 19:36 UTC)
+* AppRegistry (3.7.3.0)
+	* This release adds a new API ListAttributeGroupsForApplication that returns associated attribute groups of an application. In addition, the UpdateApplication and UpdateAttributeGroup APIs will not allow users to update the 'Name' attribute.
+* FinSpaceData (3.7.4.0)
+	* This release adds a new set of APIs, GetPermissionGroup, DisassociateUserFromPermissionGroup, AssociateUserToPermissionGroup, ListPermissionGroupsByUser, ListUsersByPermissionGroup.
+* GuardDuty (3.7.3.0)
+	* Adds finding fields available from GuardDuty Console. Adds FreeTrial related operations. Deprecates the use of various APIs related to Master Accounts and Replace them with Administrator Accounts.
+* WorkSpaces (3.7.7.0)
+	* Added new field "reason" to OperationNotSupportedException. Receiving this exception in the DeregisterWorkspaceDirectory API will now return a reason giving more context on the failure.
+
 ### 3.7.294.0 (2022-06-14 18:30 UTC)
 * Budgets (3.7.3.0)
 	* Add a budgets ThrottlingException. Update the CostFilters value pattern.
