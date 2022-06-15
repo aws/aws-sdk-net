@@ -93,7 +93,8 @@ namespace Amazon.WorkSpaces.Model
         /// Gets and sets the property Logo2xUrl. 
         /// <para>
         /// The @2x version of the logo. This is the higher resolution display that offers a scale
-        /// factor of 2.0 (or @2x).
+        /// factor of 2.0 (or @2x). The only image format accepted is a binary data object that
+        /// is converted from a <code>.png</code> file.
         /// </para>
         ///  <note> 
         /// <para>
@@ -119,7 +120,8 @@ namespace Amazon.WorkSpaces.Model
         /// Gets and sets the property Logo3xUrl. 
         /// <para>
         /// The @3x version of the logo. This is the higher resolution display that offers a scale
-        /// factor of 3.0 (or @3x).
+        /// factor of 3.0 (or @3x).The only image format accepted is a binary data object that
+        /// is converted from a <code>.png</code> file.
         /// </para>
         ///  <note> 
         /// <para>
@@ -144,8 +146,9 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property LogoUrl. 
         /// <para>
-        /// The logo. This is the link where users can download the logo image. This is the standard-resolution
-        /// display that has a 1:1 pixel density (or @1x), where one pixel is equal to one point.
+        /// The logo. This is the standard-resolution display that has a 1:1 pixel density (or
+        /// @1x), where one pixel is equal to one point. The only image format accepted is a binary
+        /// data object that is converted from a <code>.png</code> file.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]

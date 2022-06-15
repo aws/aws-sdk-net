@@ -53,16 +53,11 @@ namespace Amazon.WorkSpaces.Model
         /// see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
         /// Bring Your Own Windows Desktop Licenses</a>.
         /// </para>
-        ///  <note> <ul> <li> 
+        ///  <note> 
         /// <para>
-        /// Although this parameter is an array, only one item is allowed at this time
+        /// Although this parameter is an array, only one item is allowed at this time.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Microsoft Office 2016 application subscription through AWS is currently not supported
-        /// for Graphics.g4dn Bring Your Own License (BYOL) images
-        /// </para>
-        ///  </li> </ul> </note>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
         public List<string> Applications
@@ -144,15 +139,9 @@ namespace Amazon.WorkSpaces.Model
         /// </para>
         ///  
         /// <para>
-        /// For non-GPU-enabled images (bundles other than Graphics.g4dn, GraphicsPro.g4dn, Graphics,
-        /// or GraphicsPro), specify <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>,
-        /// depending on the protocol.
+        /// For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify
+        /// <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// Use <code>BYOL_GRAPHICS_G4DN</code> ingestion for both Graphics.g4dn and GraphicsPro.g4dn.
-        /// </para>
-        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public WorkspaceImageIngestionProcess IngestionProcess

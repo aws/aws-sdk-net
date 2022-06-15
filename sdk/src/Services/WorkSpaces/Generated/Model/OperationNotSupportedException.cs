@@ -36,6 +36,7 @@ namespace Amazon.WorkSpaces.Model
     #endif
     public partial class OperationNotSupportedException : AmazonWorkSpacesException
     {
+        private string _reason;
 
         /// <summary>
         /// Constructs a new OperationNotSupportedException with the specified error
@@ -97,6 +98,7 @@ namespace Amazon.WorkSpaces.Model
         protected OperationNotSupportedException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.Reason = (string)info.GetValue("Reason", typeof(string));
         }
 
         /// <summary>
@@ -117,8 +119,27 @@ namespace Amazon.WorkSpaces.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("Reason", this.Reason);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property Reason. 
+        /// <para>
+        /// The exception error reason.
+        /// </para>
+        /// </summary>
+        public string Reason
+        {
+            get { return this._reason; }
+            set { this._reason = value; }
+        }
+
+        // Check to see if Reason property is set
+        internal bool IsSetReason()
+        {
+            return this._reason != null;
+        }
 
     }
 }

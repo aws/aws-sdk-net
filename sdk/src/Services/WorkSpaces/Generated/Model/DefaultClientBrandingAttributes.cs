@@ -90,8 +90,8 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property LogoUrl. 
         /// <para>
-        /// The logo URL. This is the link where users can download the logo image. The only supported
-        /// image format is <code>.png</code>.
+        /// The logo URL. The only image format accepted is a binary data object that is converted
+        /// from a <code>.png</code> file.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]

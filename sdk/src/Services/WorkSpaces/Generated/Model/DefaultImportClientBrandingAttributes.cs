@@ -90,8 +90,8 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property Logo. 
         /// <para>
-        /// The logo. This is the link where users can download the logo image. The only image
-        /// format accepted is <code>.png</code>.
+        /// The logo. The only image format accepted is a binary data object that is converted
+        /// from a <code>.png</code> file.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1500000)]
