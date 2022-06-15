@@ -44,5 +44,10 @@ namespace Amazon.AppRegistry.Model
         /// Paginator for ListAttributeGroups operation
         ///</summary>
         IListAttributeGroupsPaginator ListAttributeGroups(ListAttributeGroupsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAttributeGroupsForApplication operation
+        ///</summary>
+        IListAttributeGroupsForApplicationPaginator ListAttributeGroupsForApplication(ListAttributeGroupsForApplicationRequest request);
     }
 }

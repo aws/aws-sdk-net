@@ -100,8 +100,9 @@ namespace Amazon.AppRegistry.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The new name of the attribute group. The name must be unique in the region in which
-        /// you are updating the attribute group.
+        /// Deprecated: The new name of the attribute group. The name must be unique in the region
+        /// in which you are updating the attribute group. Please do not use this field as we
+        /// have stopped supporting name updates.
         /// </para>
         /// </summary>
         [Obsolete("Name update for attribute group is deprecated.")]

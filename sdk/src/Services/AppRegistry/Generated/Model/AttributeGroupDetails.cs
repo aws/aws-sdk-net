@@ -29,62 +29,57 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppRegistry.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateApplication operation.
-    /// Updates an existing application with new attributes.
+    /// The details related to a specific AttributeGroup.
     /// </summary>
-    public partial class UpdateApplicationRequest : AmazonAppRegistryRequest
+    public partial class AttributeGroupDetails
     {
-        private string _application;
-        private string _description;
+        private string _arn;
+        private string _id;
         private string _name;
 
         /// <summary>
-        /// Gets and sets the property Application. 
+        /// Gets and sets the property Arn. 
         /// <para>
-        /// The name or ID of the application that will be updated.
+        /// The Amazon resource name (ARN) that specifies the attribute group.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
-        public string Application
+        public string Arn
         {
-            get { return this._application; }
-            set { this._application = value; }
+            get { return this._arn; }
+            set { this._arn = value; }
         }
 
-        // Check to see if Application property is set
-        internal bool IsSetApplication()
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
         {
-            return this._application != null;
+            return this._arn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Description. 
+        /// Gets and sets the property Id. 
         /// <para>
-        /// The new description of the application.
+        /// The unique identifier of the attribute group.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
-        public string Description
+        [AWSProperty(Min=26, Max=26)]
+        public string Id
         {
-            get { return this._description; }
-            set { this._description = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
 
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
+        // Check to see if Id property is set
+        internal bool IsSetId()
         {
-            return this._description != null;
+            return this._id != null;
         }
 
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Deprecated: The new name of the application. The name must be unique in the region
-        /// in which you are updating the application. Please do not use this field as we have
-        /// stopped supporting name updates.
+        /// The name of the attribute group. 
         /// </para>
         /// </summary>
-        [Obsolete("Name update for application is deprecated.")]
         [AWSProperty(Min=1, Max=256)]
         public string Name
         {

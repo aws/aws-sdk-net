@@ -66,5 +66,13 @@ namespace Amazon.AppRegistry.Model
         {
             return new ListAttributeGroupsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListAttributeGroupsForApplication operation
+        ///</summary>
+        public IListAttributeGroupsForApplicationPaginator ListAttributeGroupsForApplication(ListAttributeGroupsForApplicationRequest request) 
+        {
+            return new ListAttributeGroupsForApplicationPaginator(this.client, request);
+        }
     }
 }

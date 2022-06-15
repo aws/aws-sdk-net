@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateApplication operation
+    /// Response Unmarshaller for ListAttributeGroupsForApplication operation
     /// </summary>  
-    public class UpdateApplicationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListAttributeGroupsForApplicationResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,22 @@ namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdateApplicationResponse response = new UpdateApplicationResponse();
+            ListAttributeGroupsForApplicationResponse response = new ListAttributeGroupsForApplicationResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("application", targetDepth))
+                if (context.TestExpression("attributeGroupsDetails", targetDepth))
                 {
-                    var unmarshaller = ApplicationUnmarshaller.Instance;
-                    response.Application = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<AttributeGroupDetails, AttributeGroupDetailsUnmarshaller>(AttributeGroupDetailsUnmarshaller.Instance);
+                    response.AttributeGroupsDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("nextToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -80,10 +86,6 @@ namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
-                {
-                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -100,9 +102,9 @@ namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
             return new AmazonAppRegistryException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static UpdateApplicationResponseUnmarshaller _instance = new UpdateApplicationResponseUnmarshaller();        
+        private static ListAttributeGroupsForApplicationResponseUnmarshaller _instance = new ListAttributeGroupsForApplicationResponseUnmarshaller();        
 
-        internal static UpdateApplicationResponseUnmarshaller GetInstance()
+        internal static ListAttributeGroupsForApplicationResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -110,7 +112,7 @@ namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateApplicationResponseUnmarshaller Instance
+        public static ListAttributeGroupsForApplicationResponseUnmarshaller Instance
         {
             get
             {

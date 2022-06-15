@@ -29,19 +29,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppRegistry.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateApplication operation.
-    /// Updates an existing application with new attributes.
+    /// Container for the parameters to the ListAttributeGroupsForApplication operation.
+    /// Lists the details of all attribute groups associated with a specific application.
+    /// The results display in pages.
     /// </summary>
-    public partial class UpdateApplicationRequest : AmazonAppRegistryRequest
+    public partial class ListAttributeGroupsForApplicationRequest : AmazonAppRegistryRequest
     {
         private string _application;
-        private string _description;
-        private string _name;
+        private int? _maxResults;
+        private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property Application. 
         /// <para>
-        /// The name or ID of the application that will be updated.
+        /// The name or ID of the application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -58,44 +59,42 @@ namespace Amazon.AppRegistry.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description. 
+        /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The new description of the application.
+        /// The upper bound of the number of results to return. The value cannot exceed 25. If
+        /// you omit this parameter, it defaults to 25. This value is optional.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
-        public string Description
+        [AWSProperty(Min=1, Max=25)]
+        public int MaxResults
         {
-            get { return this._description; }
-            set { this._description = value; }
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
         }
 
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
         {
-            return this._description != null;
+            return this._maxResults.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// Deprecated: The new name of the application. The name must be unique in the region
-        /// in which you are updating the application. Please do not use this field as we have
-        /// stopped supporting name updates.
+        /// This token retrieves the next page of results after a previous API call.
         /// </para>
         /// </summary>
-        [Obsolete("Name update for application is deprecated.")]
-        [AWSProperty(Min=1, Max=256)]
-        public string Name
+        [AWSProperty(Min=1, Max=2024)]
+        public string NextToken
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._name != null;
+            return this._nextToken != null;
         }
 
     }
