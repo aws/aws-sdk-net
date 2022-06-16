@@ -1020,6 +1020,10 @@
       <Project>{BA41F83C-C9E4-4878-81F1-321E865DF4CD}</Project>
       <Name>AWSSDK.RedshiftDataAPIService.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/RedshiftServerless/AWSSDK.RedshiftServerless.CodeAnalysis.csproj">
+      <Project>{36CF3D1D-845D-49B9-8A6F-B6149091920F}</Project>
+      <Name>AWSSDK.RedshiftServerless.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Rekognition/AWSSDK.Rekognition.CodeAnalysis.csproj">
       <Project>{413B40F1-01B7-4290-A8BE-54CBA529A5FE}</Project>
       <Name>AWSSDK.Rekognition.CodeAnalysis</Name>
