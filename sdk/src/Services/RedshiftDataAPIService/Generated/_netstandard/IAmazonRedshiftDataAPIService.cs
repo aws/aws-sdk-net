@@ -36,8 +36,9 @@ namespace Amazon.RedshiftDataAPIService
     /// 
     ///  
     /// <para>
-    /// For more information about the Amazon Redshift Data API, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using
-    /// the Amazon Redshift Data API</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+    /// For more information about the Amazon Redshift Data API and CLI usage examples, see
+    /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the
+    /// Amazon Redshift Data API</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
     /// 
     /// </para>
     /// </summary>
@@ -63,15 +64,16 @@ namespace Amazon.RedshiftDataAPIService
         /// <para>
         /// Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN)
         /// of the secret, the database name, and the cluster identifier that matches the cluster
-        /// in the secret. When connecting to a serverless endpoint, specify the Amazon Resource
+        /// in the secret. When connecting to a serverless workgroup, specify the Amazon Resource
         /// Name (ARN) of the secret and the database name. 
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Temporary credentials - when connecting to a cluster, specify the cluster identifier,
         /// the database name, and the database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code>
-        /// operation is required. When connecting to a serverless endpoint, specify the database
-        /// name. 
+        /// operation is required. When connecting to a serverless workgroup, specify the workgroup
+        /// name and database name. Also, permission to call the <code>redshift-serverless:GetCredentials</code>
+        /// operation is required. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -168,15 +170,16 @@ namespace Amazon.RedshiftDataAPIService
         /// <para>
         /// Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN)
         /// of the secret, the database name, and the cluster identifier that matches the cluster
-        /// in the secret. When connecting to a serverless endpoint, specify the Amazon Resource
+        /// in the secret. When connecting to a serverless workgroup, specify the Amazon Resource
         /// Name (ARN) of the secret and the database name. 
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Temporary credentials - when connecting to a cluster, specify the cluster identifier,
         /// the database name, and the database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code>
-        /// operation is required. When connecting to a serverless endpoint, specify the database
-        /// name. 
+        /// operation is required. When connecting to a serverless workgroup, specify the workgroup
+        /// name and database name. Also, permission to call the <code>redshift-serverless:GetCredentials</code>
+        /// operation is required. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -213,15 +216,16 @@ namespace Amazon.RedshiftDataAPIService
         /// <para>
         /// Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN)
         /// of the secret, the database name, and the cluster identifier that matches the cluster
-        /// in the secret. When connecting to a serverless endpoint, specify the Amazon Resource
+        /// in the secret. When connecting to a serverless workgroup, specify the Amazon Resource
         /// Name (ARN) of the secret and the database name. 
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Temporary credentials - when connecting to a cluster, specify the cluster identifier,
         /// the database name, and the database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code>
-        /// operation is required. When connecting to a serverless endpoint, specify the database
-        /// name. 
+        /// operation is required. When connecting to a serverless workgroup, specify the workgroup
+        /// name and database name. Also, permission to call the <code>redshift-serverless:GetCredentials</code>
+        /// operation is required. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -286,15 +290,16 @@ namespace Amazon.RedshiftDataAPIService
         /// <para>
         /// Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN)
         /// of the secret, the database name, and the cluster identifier that matches the cluster
-        /// in the secret. When connecting to a serverless endpoint, specify the Amazon Resource
+        /// in the secret. When connecting to a serverless workgroup, specify the Amazon Resource
         /// Name (ARN) of the secret and the database name. 
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Temporary credentials - when connecting to a cluster, specify the cluster identifier,
         /// the database name, and the database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code>
-        /// operation is required. When connecting to a serverless endpoint, specify the database
-        /// name. 
+        /// operation is required. When connecting to a serverless workgroup, specify the workgroup
+        /// name and database name. Also, permission to call the <code>redshift-serverless:GetCredentials</code>
+        /// operation is required. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -331,15 +336,16 @@ namespace Amazon.RedshiftDataAPIService
         /// <para>
         /// Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN)
         /// of the secret, the database name, and the cluster identifier that matches the cluster
-        /// in the secret. When connecting to a serverless endpoint, specify the Amazon Resource
+        /// in the secret. When connecting to a serverless workgroup, specify the Amazon Resource
         /// Name (ARN) of the secret and the database name. 
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Temporary credentials - when connecting to a cluster, specify the cluster identifier,
         /// the database name, and the database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code>
-        /// operation is required. When connecting to a serverless endpoint, specify the database
-        /// name. 
+        /// operation is required. When connecting to a serverless workgroup, specify the workgroup
+        /// name and database name. Also, permission to call the <code>redshift-serverless:GetCredentials</code>
+        /// operation is required. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -402,15 +408,16 @@ namespace Amazon.RedshiftDataAPIService
         /// <para>
         /// Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN)
         /// of the secret, the database name, and the cluster identifier that matches the cluster
-        /// in the secret. When connecting to a serverless endpoint, specify the Amazon Resource
+        /// in the secret. When connecting to a serverless workgroup, specify the Amazon Resource
         /// Name (ARN) of the secret and the database name. 
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Temporary credentials - when connecting to a cluster, specify the cluster identifier,
         /// the database name, and the database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code>
-        /// operation is required. When connecting to a serverless endpoint, specify the database
-        /// name. 
+        /// operation is required. When connecting to a serverless workgroup, specify the workgroup
+        /// name and database name. Also, permission to call the <code>redshift-serverless:GetCredentials</code>
+        /// operation is required. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

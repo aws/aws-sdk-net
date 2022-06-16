@@ -6,8 +6,20 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RedshiftDataAPIService.Model.BatchExecuteStatementRequest.WorkgroupName</property>
+    <min>3</min>
+    <max>64</max>
+    <pattern>^[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.BatchExecuteStatementResponse.Id</property>
     <pattern>^[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d+)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftDataAPIService.Model.BatchExecuteStatementResponse.WorkgroupName</property>
+    <min>3</min>
+    <max>64</max>
+    <pattern>^[a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.CancelStatementRequest.Id</property>
@@ -22,9 +34,21 @@
     <pattern>^[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d+)?$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RedshiftDataAPIService.Model.DescribeStatementResponse.WorkgroupName</property>
+    <min>3</min>
+    <max>64</max>
+    <pattern>^[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.DescribeTableRequest.MaxResults</property>
     <min>0</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftDataAPIService.Model.DescribeTableRequest.WorkgroupName</property>
+    <min>3</min>
+    <max>64</max>
+    <pattern>^[a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.ExecuteStatementRequest.StatementName</property>
@@ -32,8 +56,20 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RedshiftDataAPIService.Model.ExecuteStatementRequest.WorkgroupName</property>
+    <min>3</min>
+    <max>64</max>
+    <pattern>^[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.ExecuteStatementResponse.Id</property>
     <pattern>^[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d+)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftDataAPIService.Model.ExecuteStatementResponse.WorkgroupName</property>
+    <min>3</min>
+    <max>64</max>
+    <pattern>^[a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.GetStatementResultRequest.Id</property>
@@ -45,9 +81,21 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RedshiftDataAPIService.Model.ListDatabasesRequest.WorkgroupName</property>
+    <min>3</min>
+    <max>64</max>
+    <pattern>^[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.ListSchemasRequest.MaxResults</property>
     <min>0</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftDataAPIService.Model.ListSchemasRequest.WorkgroupName</property>
+    <min>3</min>
+    <max>64</max>
+    <pattern>^[a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.ListStatementsRequest.MaxResults</property>
@@ -63,6 +111,12 @@
     <property>Amazon.RedshiftDataAPIService.Model.ListTablesRequest.MaxResults</property>
     <min>0</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftDataAPIService.Model.ListTablesRequest.WorkgroupName</property>
+    <min>3</min>
+    <max>64</max>
+    <pattern>^[a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftDataAPIService.Model.SqlParameter.Name</property>

@@ -51,6 +51,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         private StatusString _status;
         private List<SubStatementData> _subStatements = new List<SubStatementData>();
         private DateTime? _updatedAt;
+        private string _workgroupName;
 
         /// <summary>
         /// Gets and sets the property ClusterIdentifier. 
@@ -419,6 +420,25 @@ namespace Amazon.RedshiftDataAPIService.Model
         internal bool IsSetUpdatedAt()
         {
             return this._updatedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkgroupName. 
+        /// <para>
+        /// The serverless workgroup name.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=64)]
+        public string WorkgroupName
+        {
+            get { return this._workgroupName; }
+            set { this._workgroupName = value; }
+        }
+
+        // Check to see if WorkgroupName property is set
+        internal bool IsSetWorkgroupName()
+        {
+            return this._workgroupName != null;
         }
 
     }

@@ -38,15 +38,16 @@ namespace Amazon.RedshiftDataAPIService.Model
     /// <para>
     /// Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN)
     /// of the secret, the database name, and the cluster identifier that matches the cluster
-    /// in the secret. When connecting to a serverless endpoint, specify the Amazon Resource
+    /// in the secret. When connecting to a serverless workgroup, specify the Amazon Resource
     /// Name (ARN) of the secret and the database name. 
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// Temporary credentials - when connecting to a cluster, specify the cluster identifier,
     /// the database name, and the database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code>
-    /// operation is required. When connecting to a serverless endpoint, specify the database
-    /// name. 
+    /// operation is required. When connecting to a serverless workgroup, specify the workgroup
+    /// name and database name. Also, permission to call the <code>redshift-serverless:GetCredentials</code>
+    /// operation is required. 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -60,6 +61,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         private string _sql;
         private string _statementName;
         private bool? _withEvent;
+        private string _workgroupName;
 
         /// <summary>
         /// Gets and sets the property ClusterIdentifier. 
@@ -213,6 +215,26 @@ namespace Amazon.RedshiftDataAPIService.Model
         internal bool IsSetWithEvent()
         {
             return this._withEvent.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkgroupName. 
+        /// <para>
+        /// The serverless workgroup name. This parameter is required when connecting to a serverless
+        /// workgroup and authenticating using either Secrets Manager or temporary credentials.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=64)]
+        public string WorkgroupName
+        {
+            get { return this._workgroupName; }
+            set { this._workgroupName = value; }
+        }
+
+        // Check to see if WorkgroupName property is set
+        internal bool IsSetWorkgroupName()
+        {
+            return this._workgroupName != null;
         }
 
     }

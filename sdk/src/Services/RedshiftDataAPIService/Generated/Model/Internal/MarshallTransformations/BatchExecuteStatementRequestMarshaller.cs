@@ -114,6 +114,12 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.WithEvent);
                 }
 
+                if(publicRequest.IsSetWorkgroupName())
+                {
+                    context.Writer.WritePropertyName("WorkgroupName");
+                    context.Writer.Write(publicRequest.WorkgroupName);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
