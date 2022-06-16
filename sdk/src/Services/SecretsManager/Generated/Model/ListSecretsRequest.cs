@@ -36,6 +36,11 @@ namespace Amazon.SecretsManager.Model
     /// 
     ///  
     /// <para>
+    /// ListSecrets is eventually consistent, however it might not reflect changes from the
+    /// last five minutes. To get the latest information for a specific secret, use <a>DescribeSecret</a>.
+    /// </para>
+    ///  
+    /// <para>
     /// To list the versions of a secret, use <a>ListSecretVersionIds</a>.
     /// </para>
     ///  

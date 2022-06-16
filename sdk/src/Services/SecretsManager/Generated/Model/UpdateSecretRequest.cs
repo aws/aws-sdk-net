@@ -55,8 +55,8 @@ namespace Amazon.SecretsManager.Model
     /// </para>
     ///  
     /// <para>
-    /// If you call this operation with a <code>VersionId</code> that matches an existing
-    /// version's <code>ClientRequestToken</code>, the operation results in an error. You
+    /// If you call this operation with a <code>ClientRequestToken</code> that matches an
+    /// existing version's <code>VersionId</code>, the operation results in an error. You
     /// can't modify an existing version, you can only create a new version. To remove a version,
     /// remove all staging labels from it. See <a>UpdateSecretVersionStage</a>.
     /// </para>

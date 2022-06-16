@@ -824,6 +824,11 @@ namespace Amazon.SecretsManager
         /// 
         ///  
         /// <para>
+        /// ListSecrets is eventually consistent, however it might not reflect changes from the
+        /// last five minutes. To get the latest information for a specific secret, use <a>DescribeSecret</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// To list the versions of a secret, use <a>ListSecretVersionIds</a>.
         /// </para>
         ///  
@@ -1076,11 +1081,11 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  
         /// <para>
-        /// This operation is idempotent. If a version with a <code>VersionId</code> with the
-        /// same value as the <code>ClientRequestToken</code> parameter already exists, and you
-        /// specify the same secret data, the operation succeeds but does nothing. However, if
-        /// the secret data is different, then the operation fails because you can't modify an
-        /// existing version; you can only create new ones.
+        /// This operation is idempotent. If you call this operation with a <code>ClientRequestToken</code>
+        /// that matches an existing version's VersionId, and you specify the same secret data,
+        /// the operation succeeds but does nothing. However, if the secret data is different,
+        /// then the operation fails because you can't modify an existing version; you can only
+        /// create new ones.
         /// </para>
         ///  
         /// <para>
@@ -1828,8 +1833,8 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  
         /// <para>
-        /// If you call this operation with a <code>VersionId</code> that matches an existing
-        /// version's <code>ClientRequestToken</code>, the operation results in an error. You
+        /// If you call this operation with a <code>ClientRequestToken</code> that matches an
+        /// existing version's <code>VersionId</code>, the operation results in an error. You
         /// can't modify an existing version, you can only create a new version. To remove a version,
         /// remove all staging labels from it. See <a>UpdateSecretVersionStage</a>.
         /// </para>
