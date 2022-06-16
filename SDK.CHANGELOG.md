@@ -1,3 +1,16 @@
+### 3.7.296.0 (2022-06-16 18:14 UTC)
+* RedshiftDataAPIService (3.7.6.0)
+	* This release adds a new --workgroup-name field to operations that connect to an endpoint. Customers can now execute queries against their serverless workgroups.
+* RedshiftServerless (3.7.0.0)
+	* Add new API operations for Amazon Redshift Serverless, a new way of using Amazon Redshift without needing to manually manage provisioned clusters. The new operations let you interact with Redshift Serverless resources, such as create snapshots, list VPC endpoints, delete resource policies, and more.
+* SecretsManager (3.7.2.57)
+	* Documentation updates for Secrets Manager
+* SecurityHub (3.7.12.0)
+	* Added Threats field for security findings. Added new resource details for ECS Container, ECS Task, RDS SecurityGroup, Kinesis Stream, EC2 TransitGateway, EFS AccessPoint, CloudFormation Stack, CloudWatch Alarm, VPC Peering Connection and WAF Rules
+* Core 3.7.12.1
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.295.0 (2022-06-15 19:36 UTC)
 * AppRegistry (3.7.3.0)
 	* This release adds a new API ListAttributeGroupsForApplication that returns associated attribute groups of an application. In addition, the UpdateApplication and UpdateAttributeGroup APIs will not allow users to update the 'Name' attribute.
