@@ -34,6 +34,7 @@ namespace Amazon.SecurityHub.Model
     public partial class AwsOpenSearchServiceDomainDetails
     {
         private string _accessPolicies;
+        private AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails _advancedSecurityOptions;
         private string _arn;
         private AwsOpenSearchServiceDomainClusterConfigDetails _clusterConfig;
         private string _domainEndpoint;
@@ -65,6 +66,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAccessPolicies()
         {
             return this._accessPolicies != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdvancedSecurityOptions. 
+        /// <para>
+        /// Specifies options for fine-grained access control. 
+        /// </para>
+        /// </summary>
+        public AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails AdvancedSecurityOptions
+        {
+            get { return this._advancedSecurityOptions; }
+            set { this._advancedSecurityOptions = value; }
+        }
+
+        // Check to see if AdvancedSecurityOptions property is set
+        internal bool IsSetAdvancedSecurityOptions()
+        {
+            return this._advancedSecurityOptions != null;
         }
 
         /// <summary>

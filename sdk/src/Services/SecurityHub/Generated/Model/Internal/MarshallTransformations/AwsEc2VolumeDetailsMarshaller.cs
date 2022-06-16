@@ -67,6 +67,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CreateTime);
             }
 
+            if(requestObject.IsSetDeviceName())
+            {
+                context.Writer.WritePropertyName("DeviceName");
+                context.Writer.Write(requestObject.DeviceName);
+            }
+
             if(requestObject.IsSetEncrypted())
             {
                 context.Writer.WritePropertyName("Encrypted");
@@ -95,6 +101,24 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Status");
                 context.Writer.Write(requestObject.Status);
+            }
+
+            if(requestObject.IsSetVolumeId())
+            {
+                context.Writer.WritePropertyName("VolumeId");
+                context.Writer.Write(requestObject.VolumeId);
+            }
+
+            if(requestObject.IsSetVolumeScanStatus())
+            {
+                context.Writer.WritePropertyName("VolumeScanStatus");
+                context.Writer.Write(requestObject.VolumeScanStatus);
+            }
+
+            if(requestObject.IsSetVolumeType())
+            {
+                context.Writer.WritePropertyName("VolumeType");
+                context.Writer.Write(requestObject.VolumeType);
             }
 
         }

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Provides information about origin groups that are associated with the distribution.
+    /// Provides information about origin groups that are associated with the CloudFront distribution.
     /// </summary>
     public partial class AwsCloudFrontDistributionOriginGroups
     {

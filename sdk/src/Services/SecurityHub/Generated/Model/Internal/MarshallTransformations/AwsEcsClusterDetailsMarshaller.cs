@@ -45,6 +45,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsEcsClusterDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetActiveServicesCount())
+            {
+                context.Writer.WritePropertyName("ActiveServicesCount");
+                context.Writer.Write(requestObject.ActiveServicesCount);
+            }
+
             if(requestObject.IsSetCapacityProviders())
             {
                 context.Writer.WritePropertyName("CapacityProviders");
@@ -54,6 +60,18 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                         context.Writer.Write(requestObjectCapacityProvidersListValue);
                 }
                 context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetClusterArn())
+            {
+                context.Writer.WritePropertyName("ClusterArn");
+                context.Writer.Write(requestObject.ClusterArn);
+            }
+
+            if(requestObject.IsSetClusterName())
+            {
+                context.Writer.WritePropertyName("ClusterName");
+                context.Writer.Write(requestObject.ClusterName);
             }
 
             if(requestObject.IsSetClusterSettings())
@@ -97,6 +115,24 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
                 context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetRegisteredContainerInstancesCount())
+            {
+                context.Writer.WritePropertyName("RegisteredContainerInstancesCount");
+                context.Writer.Write(requestObject.RegisteredContainerInstancesCount);
+            }
+
+            if(requestObject.IsSetRunningTasksCount())
+            {
+                context.Writer.WritePropertyName("RunningTasksCount");
+                context.Writer.Write(requestObject.RunningTasksCount);
+            }
+
+            if(requestObject.IsSetStatus())
+            {
+                context.Writer.WritePropertyName("Status");
+                context.Writer.Write(requestObject.Status);
             }
 
         }

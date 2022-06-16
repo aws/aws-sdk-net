@@ -30,7 +30,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// A complex type that contains information about origins and origin groups for this
-    /// distribution.
+    /// CloudFront distribution.
     /// </summary>
     public partial class AwsCloudFrontDistributionOrigins
     {

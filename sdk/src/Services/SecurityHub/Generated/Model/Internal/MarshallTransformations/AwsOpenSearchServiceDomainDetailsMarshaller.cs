@@ -51,6 +51,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AccessPolicies);
             }
 
+            if(requestObject.IsSetAdvancedSecurityOptions())
+            {
+                context.Writer.WritePropertyName("AdvancedSecurityOptions");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AdvancedSecurityOptions, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetArn())
             {
                 context.Writer.WritePropertyName("Arn");

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// The details of an EC2 instance.
+    /// The details of an Amazon EC2 instance.
     /// </summary>
     public partial class AwsEc2InstanceDetails
     {
@@ -39,9 +39,11 @@ namespace Amazon.SecurityHub.Model
         private List<string> _ipV6Addresses = new List<string>();
         private string _keyName;
         private string _launchedAt;
+        private AwsEc2InstanceMetadataOptions _metadataOptions;
         private List<AwsEc2InstanceNetworkInterfacesDetails> _networkInterfaces = new List<AwsEc2InstanceNetworkInterfacesDetails>();
         private string _subnetId;
         private string _type;
+        private string _virtualizationType;
         private string _vpcId;
 
         /// <summary>
@@ -159,6 +161,24 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MetadataOptions. 
+        /// <para>
+        /// Details about the metadata options for the Amazon EC2 instance. 
+        /// </para>
+        /// </summary>
+        public AwsEc2InstanceMetadataOptions MetadataOptions
+        {
+            get { return this._metadataOptions; }
+            set { this._metadataOptions = value; }
+        }
+
+        // Check to see if MetadataOptions property is set
+        internal bool IsSetMetadataOptions()
+        {
+            return this._metadataOptions != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NetworkInterfaces. 
         /// <para>
         /// The identifiers of the network interfaces for the EC2 instance. The details for each
@@ -212,6 +232,25 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetType()
         {
             return this._type != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VirtualizationType. 
+        /// <para>
+        /// The virtualization type of the Amazon Machine Image (AMI) required to launch the instance.
+        /// 
+        /// </para>
+        /// </summary>
+        public string VirtualizationType
+        {
+            get { return this._virtualizationType; }
+            set { this._virtualizationType = value; }
+        }
+
+        // Check to see if VirtualizationType property is set
+        internal bool IsSetVirtualizationType()
+        {
+            return this._virtualizationType != null;
         }
 
         /// <summary>

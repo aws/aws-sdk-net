@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Provides information about caching for the distribution.
+    /// Provides information about caching for the CloudFront distribution.
     /// </summary>
     public partial class AwsCloudFrontDistributionCacheBehaviors
     {

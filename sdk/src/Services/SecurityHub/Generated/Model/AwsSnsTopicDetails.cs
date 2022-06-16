@@ -29,14 +29,116 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// A wrapper type for the topic's ARN.
+    /// Provides information about an Amazon SNS topic to which notifications can be published.
     /// </summary>
     public partial class AwsSnsTopicDetails
     {
+        private string _applicationSuccessFeedbackRoleArn;
+        private string _firehoseFailureFeedbackRoleArn;
+        private string _firehoseSuccessFeedbackRoleArn;
+        private string _httpFailureFeedbackRoleArn;
+        private string _httpSuccessFeedbackRoleArn;
         private string _kmsMasterKeyId;
         private string _owner;
+        private string _sqsFailureFeedbackRoleArn;
+        private string _sqsSuccessFeedbackRoleArn;
         private List<AwsSnsTopicSubscription> _subscription = new List<AwsSnsTopicSubscription>();
         private string _topicName;
+
+        /// <summary>
+        /// Gets and sets the property ApplicationSuccessFeedbackRoleArn. 
+        /// <para>
+        /// Indicates failed message delivery status for an Amazon SNS topic that is subscribed
+        /// to a platform application endpoint. 
+        /// </para>
+        /// </summary>
+        public string ApplicationSuccessFeedbackRoleArn
+        {
+            get { return this._applicationSuccessFeedbackRoleArn; }
+            set { this._applicationSuccessFeedbackRoleArn = value; }
+        }
+
+        // Check to see if ApplicationSuccessFeedbackRoleArn property is set
+        internal bool IsSetApplicationSuccessFeedbackRoleArn()
+        {
+            return this._applicationSuccessFeedbackRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FirehoseFailureFeedbackRoleArn. 
+        /// <para>
+        /// Indicates failed message delivery status for an Amazon SNS topic that is subscribed
+        /// to an Amazon Kinesis Data Firehose endpoint. 
+        /// </para>
+        /// </summary>
+        public string FirehoseFailureFeedbackRoleArn
+        {
+            get { return this._firehoseFailureFeedbackRoleArn; }
+            set { this._firehoseFailureFeedbackRoleArn = value; }
+        }
+
+        // Check to see if FirehoseFailureFeedbackRoleArn property is set
+        internal bool IsSetFirehoseFailureFeedbackRoleArn()
+        {
+            return this._firehoseFailureFeedbackRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FirehoseSuccessFeedbackRoleArn. 
+        /// <para>
+        /// Indicates successful message delivery status for an Amazon SNS topic that is subscribed
+        /// to an Amazon Kinesis Data Firehose endpoint. 
+        /// </para>
+        /// </summary>
+        public string FirehoseSuccessFeedbackRoleArn
+        {
+            get { return this._firehoseSuccessFeedbackRoleArn; }
+            set { this._firehoseSuccessFeedbackRoleArn = value; }
+        }
+
+        // Check to see if FirehoseSuccessFeedbackRoleArn property is set
+        internal bool IsSetFirehoseSuccessFeedbackRoleArn()
+        {
+            return this._firehoseSuccessFeedbackRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HttpFailureFeedbackRoleArn. 
+        /// <para>
+        /// Indicates failed message delivery status for an Amazon SNS topic that is subscribed
+        /// to an HTTP endpoint. 
+        /// </para>
+        /// </summary>
+        public string HttpFailureFeedbackRoleArn
+        {
+            get { return this._httpFailureFeedbackRoleArn; }
+            set { this._httpFailureFeedbackRoleArn = value; }
+        }
+
+        // Check to see if HttpFailureFeedbackRoleArn property is set
+        internal bool IsSetHttpFailureFeedbackRoleArn()
+        {
+            return this._httpFailureFeedbackRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HttpSuccessFeedbackRoleArn. 
+        /// <para>
+        /// Indicates successful message delivery status for an Amazon SNS topic that is subscribed
+        /// to an HTTP endpoint. 
+        /// </para>
+        /// </summary>
+        public string HttpSuccessFeedbackRoleArn
+        {
+            get { return this._httpSuccessFeedbackRoleArn; }
+            set { this._httpSuccessFeedbackRoleArn = value; }
+        }
+
+        // Check to see if HttpSuccessFeedbackRoleArn property is set
+        internal bool IsSetHttpSuccessFeedbackRoleArn()
+        {
+            return this._httpSuccessFeedbackRoleArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property KmsMasterKeyId. 
@@ -76,10 +178,48 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SqsFailureFeedbackRoleArn. 
+        /// <para>
+        /// Indicates failed message delivery status for an Amazon SNS topic that is subscribed
+        /// to an Amazon SQS endpoint. 
+        /// </para>
+        /// </summary>
+        public string SqsFailureFeedbackRoleArn
+        {
+            get { return this._sqsFailureFeedbackRoleArn; }
+            set { this._sqsFailureFeedbackRoleArn = value; }
+        }
+
+        // Check to see if SqsFailureFeedbackRoleArn property is set
+        internal bool IsSetSqsFailureFeedbackRoleArn()
+        {
+            return this._sqsFailureFeedbackRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SqsSuccessFeedbackRoleArn. 
+        /// <para>
+        /// Indicates successful message delivery status for an Amazon SNS topic that is subscribed
+        /// to an Amazon SQS endpoint. 
+        /// </para>
+        /// </summary>
+        public string SqsSuccessFeedbackRoleArn
+        {
+            get { return this._sqsSuccessFeedbackRoleArn; }
+            set { this._sqsSuccessFeedbackRoleArn = value; }
+        }
+
+        // Check to see if SqsSuccessFeedbackRoleArn property is set
+        internal bool IsSetSqsSuccessFeedbackRoleArn()
+        {
+            return this._sqsSuccessFeedbackRoleArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Subscription. 
         /// <para>
         /// Subscription is an embedded property that describes the subscription endpoints of
-        /// an SNS topic.
+        /// an Amazon SNS topic.
         /// </para>
         /// </summary>
         public List<AwsSnsTopicSubscription> Subscription
@@ -97,7 +237,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property TopicName. 
         /// <para>
-        /// The name of the topic.
+        /// The name of the Amazon SNS topic.
         /// </para>
         /// </summary>
         public string TopicName

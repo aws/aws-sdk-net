@@ -70,6 +70,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.AccessPolicies = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AdvancedSecurityOptions", targetDepth))
+                {
+                    var unmarshaller = AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AdvancedSecurityOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

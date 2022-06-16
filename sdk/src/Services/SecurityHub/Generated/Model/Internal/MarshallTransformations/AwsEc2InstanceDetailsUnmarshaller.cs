@@ -100,6 +100,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.LaunchedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MetadataOptions", targetDepth))
+                {
+                    var unmarshaller = AwsEc2InstanceMetadataOptionsUnmarshaller.Instance;
+                    unmarshalledObject.MetadataOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("NetworkInterfaces", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<AwsEc2InstanceNetworkInterfacesDetails, AwsEc2InstanceNetworkInterfacesDetailsUnmarshaller>(AwsEc2InstanceNetworkInterfacesDetailsUnmarshaller.Instance);
@@ -116,6 +122,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VirtualizationType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VirtualizationType = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("VpcId", targetDepth))

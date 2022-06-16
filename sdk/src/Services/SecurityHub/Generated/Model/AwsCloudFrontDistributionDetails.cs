@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// A distribution configuration.
+    /// A CloudFront distribution configuration.
     /// </summary>
     public partial class AwsCloudFrontDistributionDetails
     {

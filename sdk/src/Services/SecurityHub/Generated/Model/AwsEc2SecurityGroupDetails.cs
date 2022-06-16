@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Details about an EC2 security group.
+    /// Details about an Amazon EC2 security group.
     /// </summary>
     public partial class AwsEc2SecurityGroupDetails
     {

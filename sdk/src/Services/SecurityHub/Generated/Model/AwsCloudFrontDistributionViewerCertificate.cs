@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Provides information about the TLS/SSL configuration that the distribution uses to
-    /// communicate with viewers.
+    /// Provides information about the TLS/SSL configuration that the CloudFront distribution
+    /// uses to communicate with viewers.
     /// </summary>
     public partial class AwsCloudFrontDistributionViewerCertificate
     {

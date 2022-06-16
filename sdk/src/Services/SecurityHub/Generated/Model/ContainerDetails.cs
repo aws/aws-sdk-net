@@ -33,15 +33,36 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class ContainerDetails
     {
+        private string _containerRuntime;
         private string _imageId;
         private string _imageName;
         private string _launchedAt;
         private string _name;
+        private bool? _privileged;
+        private List<VolumeMount> _volumeMounts = new List<VolumeMount>();
+
+        /// <summary>
+        /// Gets and sets the property ContainerRuntime. 
+        /// <para>
+        /// The runtime of the container. 
+        /// </para>
+        /// </summary>
+        public string ContainerRuntime
+        {
+            get { return this._containerRuntime; }
+            set { this._containerRuntime = value; }
+        }
+
+        // Check to see if ContainerRuntime property is set
+        internal bool IsSetContainerRuntime()
+        {
+            return this._containerRuntime != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ImageId. 
         /// <para>
-        /// The identifier of the image related to a finding.
+        /// The identifier of the container image related to a finding.
         /// </para>
         /// </summary>
         public string ImageId
@@ -59,7 +80,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ImageName. 
         /// <para>
-        /// The name of the image related to a finding.
+        /// The name of the container image related to a finding.
         /// </para>
         /// </summary>
         public string ImageName
@@ -114,6 +135,43 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Privileged. 
+        /// <para>
+        /// When this parameter is <code>true</code>, the container is given elevated privileges
+        /// on the host container instance (similar to the root user). 
+        /// </para>
+        /// </summary>
+        public bool Privileged
+        {
+            get { return this._privileged.GetValueOrDefault(); }
+            set { this._privileged = value; }
+        }
+
+        // Check to see if Privileged property is set
+        internal bool IsSetPrivileged()
+        {
+            return this._privileged.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeMounts. 
+        /// <para>
+        /// Provides information about the mounting of a volume in a container. 
+        /// </para>
+        /// </summary>
+        public List<VolumeMount> VolumeMounts
+        {
+            get { return this._volumeMounts; }
+            set { this._volumeMounts = value; }
+        }
+
+        // Check to see if VolumeMounts property is set
+        internal bool IsSetVolumeMounts()
+        {
+            return this._volumeMounts != null && this._volumeMounts.Count > 0; 
         }
 
     }

@@ -45,6 +45,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ContainerDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetContainerRuntime())
+            {
+                context.Writer.WritePropertyName("ContainerRuntime");
+                context.Writer.Write(requestObject.ContainerRuntime);
+            }
+
             if(requestObject.IsSetImageId())
             {
                 context.Writer.WritePropertyName("ImageId");
@@ -67,6 +73,28 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Name");
                 context.Writer.Write(requestObject.Name);
+            }
+
+            if(requestObject.IsSetPrivileged())
+            {
+                context.Writer.WritePropertyName("Privileged");
+                context.Writer.Write(requestObject.Privileged);
+            }
+
+            if(requestObject.IsSetVolumeMounts())
+            {
+                context.Writer.WritePropertyName("VolumeMounts");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectVolumeMountsListValue in requestObject.VolumeMounts)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = VolumeMountMarshaller.Instance;
+                    marshaller.Marshall(requestObjectVolumeMountsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
         }

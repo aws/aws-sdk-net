@@ -91,6 +91,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.LaunchedAt);
             }
 
+            if(requestObject.IsSetMetadataOptions())
+            {
+                context.Writer.WritePropertyName("MetadataOptions");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsEc2InstanceMetadataOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.MetadataOptions, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetNetworkInterfaces())
             {
                 context.Writer.WritePropertyName("NetworkInterfaces");
@@ -117,6 +128,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Type");
                 context.Writer.Write(requestObject.Type);
+            }
+
+            if(requestObject.IsSetVirtualizationType())
+            {
+                context.Writer.WritePropertyName("VirtualizationType");
+                context.Writer.Write(requestObject.VirtualizationType);
             }
 
             if(requestObject.IsSetVpcId())

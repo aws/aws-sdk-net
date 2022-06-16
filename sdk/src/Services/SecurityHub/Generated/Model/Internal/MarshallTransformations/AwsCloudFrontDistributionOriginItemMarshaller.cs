@@ -45,6 +45,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsCloudFrontDistributionOriginItem requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCustomOriginConfig())
+            {
+                context.Writer.WritePropertyName("CustomOriginConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsCloudFrontDistributionOriginCustomOriginConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.CustomOriginConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDomainName())
             {
                 context.Writer.WritePropertyName("DomainName");

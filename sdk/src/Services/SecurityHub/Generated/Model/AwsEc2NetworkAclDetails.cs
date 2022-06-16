@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Contains details about an EC2 network access control list (ACL).
+    /// Contains details about an Amazon EC2 network access control list (ACL).
     /// </summary>
     public partial class AwsEc2NetworkAclDetails
     {

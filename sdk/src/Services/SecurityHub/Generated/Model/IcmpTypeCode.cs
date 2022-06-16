@@ -40,7 +40,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Code. 
         /// <para>
         /// The ICMP code for which to deny or allow access. To deny or allow all codes, use the
-        /// value -1.
+        /// value <code>-1</code>.
         /// </para>
         /// </summary>
         public int Code
@@ -59,7 +59,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// The ICMP type for which to deny or allow access. To deny or allow all types, use the
-        /// value -1.
+        /// value <code>-1</code>.
         /// </para>
         /// </summary>
         public int Type

@@ -87,7 +87,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description of the key.
+        /// A description of the KMS key.
         /// </para>
         /// </summary>
         public string Description

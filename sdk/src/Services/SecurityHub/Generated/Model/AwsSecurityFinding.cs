@@ -74,6 +74,7 @@ namespace Amazon.SecurityHub.Model
         private Severity _severity;
         private string _sourceUrl;
         private List<ThreatIntelIndicator> _threatIntelIndicators = new List<ThreatIntelIndicator>();
+        private List<Threat> _threats = new List<Threat>();
         private string _title;
         private List<string> _types = new List<string>();
         private string _updatedAt;
@@ -746,6 +747,25 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetThreatIntelIndicators()
         {
             return this._threatIntelIndicators != null && this._threatIntelIndicators.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Threats. 
+        /// <para>
+        /// Details about the threat detected in a security finding and the file paths that were
+        /// affected by the threat. 
+        /// </para>
+        /// </summary>
+        public List<Threat> Threats
+        {
+            get { return this._threats; }
+            set { this._threats = value; }
+        }
+
+        // Check to see if Threats property is set
+        internal bool IsSetThreats()
+        {
+            return this._threats != null && this._threats.Count > 0; 
         }
 
         /// <summary>

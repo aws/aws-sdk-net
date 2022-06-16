@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Contains information about the default cache configuration for the distribution.
+    /// Contains information about the default cache configuration for the CloudFront distribution.
     /// </summary>
     public partial class AwsCloudFrontDistributionDefaultCacheBehavior
     {

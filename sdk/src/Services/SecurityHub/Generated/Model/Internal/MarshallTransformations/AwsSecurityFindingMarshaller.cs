@@ -340,6 +340,22 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetThreats())
+            {
+                context.Writer.WritePropertyName("Threats");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectThreatsListValue in requestObject.Threats)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ThreatMarshaller.Instance;
+                    marshaller.Marshall(requestObjectThreatsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetTitle())
             {
                 context.Writer.WritePropertyName("Title");

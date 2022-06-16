@@ -45,6 +45,36 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsSnsTopicDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetApplicationSuccessFeedbackRoleArn())
+            {
+                context.Writer.WritePropertyName("ApplicationSuccessFeedbackRoleArn");
+                context.Writer.Write(requestObject.ApplicationSuccessFeedbackRoleArn);
+            }
+
+            if(requestObject.IsSetFirehoseFailureFeedbackRoleArn())
+            {
+                context.Writer.WritePropertyName("FirehoseFailureFeedbackRoleArn");
+                context.Writer.Write(requestObject.FirehoseFailureFeedbackRoleArn);
+            }
+
+            if(requestObject.IsSetFirehoseSuccessFeedbackRoleArn())
+            {
+                context.Writer.WritePropertyName("FirehoseSuccessFeedbackRoleArn");
+                context.Writer.Write(requestObject.FirehoseSuccessFeedbackRoleArn);
+            }
+
+            if(requestObject.IsSetHttpFailureFeedbackRoleArn())
+            {
+                context.Writer.WritePropertyName("HttpFailureFeedbackRoleArn");
+                context.Writer.Write(requestObject.HttpFailureFeedbackRoleArn);
+            }
+
+            if(requestObject.IsSetHttpSuccessFeedbackRoleArn())
+            {
+                context.Writer.WritePropertyName("HttpSuccessFeedbackRoleArn");
+                context.Writer.Write(requestObject.HttpSuccessFeedbackRoleArn);
+            }
+
             if(requestObject.IsSetKmsMasterKeyId())
             {
                 context.Writer.WritePropertyName("KmsMasterKeyId");
@@ -55,6 +85,18 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Owner");
                 context.Writer.Write(requestObject.Owner);
+            }
+
+            if(requestObject.IsSetSqsFailureFeedbackRoleArn())
+            {
+                context.Writer.WritePropertyName("SqsFailureFeedbackRoleArn");
+                context.Writer.Write(requestObject.SqsFailureFeedbackRoleArn);
+            }
+
+            if(requestObject.IsSetSqsSuccessFeedbackRoleArn())
+            {
+                context.Writer.WritePropertyName("SqsSuccessFeedbackRoleArn");
+                context.Writer.Write(requestObject.SqsSuccessFeedbackRoleArn);
             }
 
             if(requestObject.IsSetSubscription())

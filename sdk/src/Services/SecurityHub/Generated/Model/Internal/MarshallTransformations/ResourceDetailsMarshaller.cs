@@ -122,6 +122,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetAwsCloudFormationStack())
+            {
+                context.Writer.WritePropertyName("AwsCloudFormationStack");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsCloudFormationStackDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsCloudFormationStack, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAwsCloudFrontDistribution())
             {
                 context.Writer.WritePropertyName("AwsCloudFrontDistribution");
@@ -140,6 +151,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
                 var marshaller = AwsCloudTrailTrailDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AwsCloudTrailTrail, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsCloudWatchAlarm())
+            {
+                context.Writer.WritePropertyName("AwsCloudWatchAlarm");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsCloudWatchAlarmDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsCloudWatchAlarm, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -232,6 +254,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetAwsEc2TransitGateway())
+            {
+                context.Writer.WritePropertyName("AwsEc2TransitGateway");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsEc2TransitGatewayDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsEc2TransitGateway, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAwsEc2Volume())
             {
                 context.Writer.WritePropertyName("AwsEc2Volume");
@@ -261,6 +294,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
                 var marshaller = AwsEc2VpcEndpointServiceDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AwsEc2VpcEndpointService, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsEc2VpcPeeringConnection())
+            {
+                context.Writer.WritePropertyName("AwsEc2VpcPeeringConnection");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsEc2VpcPeeringConnectionDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsEc2VpcPeeringConnection, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -309,6 +353,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetAwsEcsContainer())
+            {
+                context.Writer.WritePropertyName("AwsEcsContainer");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsEcsContainerDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsEcsContainer, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAwsEcsService())
             {
                 context.Writer.WritePropertyName("AwsEcsService");
@@ -320,6 +375,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetAwsEcsTask())
+            {
+                context.Writer.WritePropertyName("AwsEcsTask");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsEcsTaskDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsEcsTask, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAwsEcsTaskDefinition())
             {
                 context.Writer.WritePropertyName("AwsEcsTaskDefinition");
@@ -327,6 +393,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
                 var marshaller = AwsEcsTaskDefinitionDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AwsEcsTaskDefinition, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsEfsAccessPoint())
+            {
+                context.Writer.WritePropertyName("AwsEfsAccessPoint");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsEfsAccessPointDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsEfsAccessPoint, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -437,6 +514,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
                 var marshaller = AwsIamUserDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AwsIamUser, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsKinesisStream())
+            {
+                context.Writer.WritePropertyName("AwsKinesisStream");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsKinesisStreamDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsKinesisStream, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -690,6 +778,61 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
                 var marshaller = AwsWafRegionalRateBasedRuleDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AwsWafRegionalRateBasedRule, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsWafRegionalRule())
+            {
+                context.Writer.WritePropertyName("AwsWafRegionalRule");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsWafRegionalRuleDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsWafRegionalRule, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsWafRegionalRuleGroup())
+            {
+                context.Writer.WritePropertyName("AwsWafRegionalRuleGroup");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsWafRegionalRuleGroupDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsWafRegionalRuleGroup, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsWafRegionalWebAcl())
+            {
+                context.Writer.WritePropertyName("AwsWafRegionalWebAcl");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsWafRegionalWebAclDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsWafRegionalWebAcl, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsWafRule())
+            {
+                context.Writer.WritePropertyName("AwsWafRule");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsWafRuleDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsWafRule, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsWafRuleGroup())
+            {
+                context.Writer.WritePropertyName("AwsWafRuleGroup");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsWafRuleGroupDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsWafRuleGroup, context);
 
                 context.Writer.WriteObjectEnd();
             }

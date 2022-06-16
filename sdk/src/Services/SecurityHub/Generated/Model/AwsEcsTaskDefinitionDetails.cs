@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// details about a task definition. A task definition describes the container and volume
+    /// Details about a task definition. A task definition describes the container and volume
     /// definitions of an Amazon Elastic Container Service task.
     /// </summary>
     public partial class AwsEcsTaskDefinitionDetails

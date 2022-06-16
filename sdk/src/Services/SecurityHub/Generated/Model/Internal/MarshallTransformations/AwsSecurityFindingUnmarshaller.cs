@@ -256,6 +256,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.ThreatIntelIndicators = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Threats", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Threat, ThreatUnmarshaller>(ThreatUnmarshaller.Instance);
+                    unmarshalledObject.Threats = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Title", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
