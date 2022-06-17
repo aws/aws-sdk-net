@@ -241,7 +241,7 @@ namespace Amazon.DynamoDBv2.Model
         ///  <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that
         /// are projected into the secondary index. The total count of attributes provided in
         /// <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not
-        /// exceed 20. If you project the same attribute into two different indexes, this counts
+        /// exceed 100. If you project the same attribute into two different indexes, this counts
         /// as two distinct attributes when determining the total.
         /// </para>
         ///  </li> </ul> </li> <li> 
@@ -463,7 +463,7 @@ namespace Amazon.DynamoDBv2.Model
         ///  <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that
         /// are projected into the secondary index. The total count of attributes provided in
         /// <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not
-        /// exceed 20. If you project the same attribute into two different indexes, this counts
+        /// exceed 100. If you project the same attribute into two different indexes, this counts
         /// as two distinct attributes when determining the total.
         /// </para>
         ///  </li> </ul> </li> <li> 

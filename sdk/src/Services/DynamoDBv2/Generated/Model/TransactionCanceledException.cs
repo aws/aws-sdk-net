@@ -92,7 +92,7 @@ namespace Amazon.DynamoDBv2.Model
     /// If using Java, DynamoDB lists the cancellation reasons on the <code>CancellationReasons</code>
     /// property. This property is not set for other languages. Transaction cancellation reasons
     /// are ordered in the order of requested items, if an item has no error it will have
-    /// <code>NONE</code> code and <code>Null</code> message.
+    /// <code>None</code> code and <code>Null</code> message.
     /// </para>
     ///  </note> 
     /// <para>
@@ -104,7 +104,7 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Code: <code>NONE</code> 
+    /// Code: <code>None</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>

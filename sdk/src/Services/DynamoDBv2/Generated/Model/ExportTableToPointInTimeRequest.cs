@@ -100,8 +100,9 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ExportTime. 
         /// <para>
-        /// Time in the past from which to export table data. The table export will be a snapshot
-        /// of the table's state at this point in time.
+        /// Time in the past from which to export table data, counted in seconds from the start
+        /// of the Unix epoch. The table export will be a snapshot of the table's state at this
+        /// point in time.
         /// </para>
         /// </summary>
         public DateTime ExportTime

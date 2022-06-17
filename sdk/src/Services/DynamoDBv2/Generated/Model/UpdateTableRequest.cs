@@ -43,10 +43,6 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Enable or disable DynamoDB Streams on the table.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
     /// Remove a global secondary index from the table.
     /// </para>
     ///  </li> <li> 

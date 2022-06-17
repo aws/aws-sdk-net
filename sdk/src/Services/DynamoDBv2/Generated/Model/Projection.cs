@@ -46,7 +46,7 @@ namespace Amazon.DynamoDBv2.Model
         ///  
         /// <para>
         /// For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed
-        /// across all of the local secondary indexes, must not exceed 20. If you project the
+        /// across all of the local secondary indexes, must not exceed 100. If you project the
         /// same attribute into two different indexes, this counts as two distinct attributes
         /// when determining the total.
         /// </para>

@@ -47,7 +47,12 @@ namespace Amazon.DynamoDBv2.Model
     /// action in the destination Region, deleting the replica and all if its items in the
     /// destination Region.
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> <note> 
+    /// <para>
+    /// When you manually remove a table or global table replica, you do not automatically
+    /// remove any associated scalable targets, scaling policies, or CloudWatch alarms.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ReplicationGroupUpdate
     {
