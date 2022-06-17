@@ -169,6 +169,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.ConfigService.CodeAnalysis" Path="|AWSSDK.ConfigService.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Connect.CodeAnalysis" Path="|AWSSDK.Connect.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Connect.CodeAnalysis" Path="|AWSSDK.Connect.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.ConnectCampaignService.CodeAnalysis" Path="|AWSSDK.ConnectCampaignService.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.ConnectCampaignService.CodeAnalysis" Path="|AWSSDK.ConnectCampaignService.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.ConnectContactLens.CodeAnalysis" Path="|AWSSDK.ConnectContactLens.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.ConnectContactLens.CodeAnalysis" Path="|AWSSDK.ConnectContactLens.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.ConnectParticipant.CodeAnalysis" Path="|AWSSDK.ConnectParticipant.CodeAnalysis|"/>

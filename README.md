@@ -258,6 +258,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS Config is a fully managed service that provides you with an AWS resource inventory, configuration history, and configuration change notifications to enable security and governance.
 * [AWSSDK.Connect](https://www.nuget.org/packages/AWSSDK.Connect/)
 	* Amazon Connect is a self-service, cloud-based contact center service that makes it easy for any business to deliver better customer service at lower cost.
+* [AWSSDK.ConnectCampaignService](https://www.nuget.org/packages/AWSSDK.ConnectCampaignService/)
+	* Added Amazon Connect high volume outbound communications SDK.
 * [AWSSDK.ConnectContactLens](https://www.nuget.org/packages/AWSSDK.ConnectContactLens/)
 	* Contact Lens for Amazon Connect analyzes conversations, both real-time and post-call. The ListRealtimeContactAnalysisSegments API returns a list of analysis segments for a real-time analysis session.
 * [AWSSDK.ConnectParticipant](https://www.nuget.org/packages/AWSSDK.ConnectParticipant/)
