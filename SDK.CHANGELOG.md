@@ -1,3 +1,14 @@
+### 3.7.297.0 (2022-06-17 19:15 UTC)
+* Connect (3.7.22.0)
+	* This release updates these APIs: UpdateInstanceAttribute, DescribeInstanceAttribute and ListInstanceAttributes. You can use it to programmatically enable/disable High volume outbound communications using attribute type HIGH_VOLUME_OUTBOUND on the specified Amazon Connect instance.
+* ConnectCampaignService (3.7.0.0)
+	* Added Amazon Connect high volume outbound communications SDK.
+* DynamoDBv2 (3.7.3.50)
+	* Doc only update for DynamoDB service
+* Core 3.7.12.2
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.296.0 (2022-06-16 18:14 UTC)
 * RedshiftDataAPIService (3.7.6.0)
 	* This release adds a new --workgroup-name field to operations that connect to an endpoint. Customers can now execute queries against their serverless workgroups.
