@@ -200,6 +200,10 @@ namespace Amazon.DirectoryService
         /// Constant SmartCard for ClientAuthenticationType
         /// </summary>
         public static readonly ClientAuthenticationType SmartCard = new ClientAuthenticationType("SmartCard");
+        /// <summary>
+        /// Constant SmartCardOrPassword for ClientAuthenticationType
+        /// </summary>
+        public static readonly ClientAuthenticationType SmartCardOrPassword = new ClientAuthenticationType("SmartCardOrPassword");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -230,6 +234,68 @@ namespace Amazon.DirectoryService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ClientAuthenticationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DirectoryConfigurationStatus.
+    /// </summary>
+    public class DirectoryConfigurationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Default for DirectoryConfigurationStatus
+        /// </summary>
+        public static readonly DirectoryConfigurationStatus Default = new DirectoryConfigurationStatus("Default");
+        /// <summary>
+        /// Constant Failed for DirectoryConfigurationStatus
+        /// </summary>
+        public static readonly DirectoryConfigurationStatus Failed = new DirectoryConfigurationStatus("Failed");
+        /// <summary>
+        /// Constant Requested for DirectoryConfigurationStatus
+        /// </summary>
+        public static readonly DirectoryConfigurationStatus Requested = new DirectoryConfigurationStatus("Requested");
+        /// <summary>
+        /// Constant Updated for DirectoryConfigurationStatus
+        /// </summary>
+        public static readonly DirectoryConfigurationStatus Updated = new DirectoryConfigurationStatus("Updated");
+        /// <summary>
+        /// Constant Updating for DirectoryConfigurationStatus
+        /// </summary>
+        public static readonly DirectoryConfigurationStatus Updating = new DirectoryConfigurationStatus("Updating");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DirectoryConfigurationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DirectoryConfigurationStatus FindValue(string value)
+        {
+            return FindValue<DirectoryConfigurationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DirectoryConfigurationStatus(string value)
         {
             return FindValue(value);
         }

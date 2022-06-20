@@ -2180,6 +2180,70 @@ namespace Amazon.DirectoryService
 
         #endregion
         
+        #region  DescribeSettings
+
+
+        /// <summary>
+        /// Retrieves information about the configurable settings for the specified directory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSettings service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSettings service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeSettings">REST API Reference for DescribeSettings Operation</seealso>
+        DescribeSettingsResponse DescribeSettings(DescribeSettingsRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves information about the configurable settings for the specified directory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeSettings service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeSettings">REST API Reference for DescribeSettings Operation</seealso>
+        Task<DescribeSettingsResponse> DescribeSettingsAsync(DescribeSettingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeSharedDirectories
 
 
@@ -4362,6 +4426,82 @@ namespace Amazon.DirectoryService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateRadius">REST API Reference for UpdateRadius Operation</seealso>
         Task<UpdateRadiusResponse> UpdateRadiusAsync(UpdateRadiusRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateSettings
+
+
+        /// <summary>
+        /// Updates the configurable settings for the specified directory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSettings service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSettings service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
+        /// The specified directory is unavailable or could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.IncompatibleSettingsException">
+        /// The specified directory setting is not compatible with other settings.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedSettingsException">
+        /// The specified directory setting is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateSettings">REST API Reference for UpdateSettings Operation</seealso>
+        UpdateSettingsResponse UpdateSettings(UpdateSettingsRequest request);
+
+
+
+        /// <summary>
+        /// Updates the configurable settings for the specified directory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateSettings service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
+        /// The specified directory is unavailable or could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.IncompatibleSettingsException">
+        /// The specified directory setting is not compatible with other settings.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedSettingsException">
+        /// The specified directory setting is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateSettings">REST API Reference for UpdateSettings Operation</seealso>
+        Task<UpdateSettingsResponse> UpdateSettingsAsync(UpdateSettingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

@@ -180,7 +180,6 @@
     <property>Amazon.DirectoryService.Model.CreateTrustRequest.TrustPassword</property>
     <min>1</min>
     <max>128</max>
-    <pattern>(.|\s)*\S(.|\s)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.CreateTrustResponse.TrustId</property>
@@ -294,6 +293,14 @@
     <property>Amazon.DirectoryService.Model.DescribeRegionsRequest.RegionName</property>
     <min>8</min>
     <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.DescribeSettingsRequest.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.DescribeSettingsResponse.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.DescribeSharedDirectoriesRequest.Limit</property>
@@ -535,6 +542,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.UpdateRadiusRequest.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.UpdateSettingsRequest.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.UpdateSettingsResponse.DirectoryId</property>
     <pattern>^d-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -780,6 +795,10 @@
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DirectoryService.Model.IncompatibleSettingsException.RequestId</property>
+    <pattern>^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DirectoryService.Model.InsufficientPermissionsException.RequestId</property>
     <pattern>^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$</pattern>
   </property-value-rule>
@@ -931,6 +950,36 @@
     <pattern>^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DirectoryService.Model.Setting.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9-/. _]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.Setting.Value</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.SettingEntry.AppliedValue</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.SettingEntry.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9-/. _]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.SettingEntry.RequestedValue</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DirectoryService.Model.SharedDirectory.OwnerAccountId</property>
     <pattern>^(\d{12})$</pattern>
   </property-value-rule>
@@ -1020,6 +1069,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.UnsupportedOperationException.RequestId</property>
+    <pattern>^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.UnsupportedSettingsException.RequestId</property>
     <pattern>^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>

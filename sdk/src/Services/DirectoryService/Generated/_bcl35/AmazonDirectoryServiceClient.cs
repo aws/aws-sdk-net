@@ -2494,6 +2494,78 @@ namespace Amazon.DirectoryService
 
         #endregion
         
+        #region  DescribeSettings
+
+        /// <summary>
+        /// Retrieves information about the configurable settings for the specified directory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSettings service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSettings service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeSettings">REST API Reference for DescribeSettings Operation</seealso>
+        public virtual DescribeSettingsResponse DescribeSettings(DescribeSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeSettingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSettings operation on AmazonDirectoryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeSettings">REST API Reference for DescribeSettings Operation</seealso>
+        public virtual IAsyncResult BeginDescribeSettings(DescribeSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSettings.</param>
+        /// 
+        /// <returns>Returns a  DescribeSettingsResult from DirectoryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeSettings">REST API Reference for DescribeSettings Operation</seealso>
+        public virtual DescribeSettingsResponse EndDescribeSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeSettingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeSharedDirectories
 
         /// <summary>
@@ -4863,6 +4935,84 @@ namespace Amazon.DirectoryService
         public virtual UpdateRadiusResponse EndUpdateRadius(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateRadiusResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateSettings
+
+        /// <summary>
+        /// Updates the configurable settings for the specified directory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSettings service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSettings service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
+        /// The specified directory is unavailable or could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.IncompatibleSettingsException">
+        /// The specified directory setting is not compatible with other settings.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedSettingsException">
+        /// The specified directory setting is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateSettings">REST API Reference for UpdateSettings Operation</seealso>
+        public virtual UpdateSettingsResponse UpdateSettings(UpdateSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSettingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSettings operation on AmazonDirectoryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateSettings">REST API Reference for UpdateSettings Operation</seealso>
+        public virtual IAsyncResult BeginUpdateSettings(UpdateSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSettings.</param>
+        /// 
+        /// <returns>Returns a  UpdateSettingsResult from DirectoryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateSettings">REST API Reference for UpdateSettings Operation</seealso>
+        public virtual UpdateSettingsResponse EndUpdateSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateSettingsResponse>(asyncResult);
         }
 
         #endregion
