@@ -435,6 +435,11 @@
     <pattern>^[\S \n]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Outposts.Model.AssetLocation.RackElevation</property>
+    <min>0</min>
+    <max>99</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Outposts.Model.CatalogItem.CatalogItemId</property>
     <min>1</min>
     <max>10</max>

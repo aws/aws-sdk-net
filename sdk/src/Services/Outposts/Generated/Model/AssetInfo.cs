@@ -34,6 +34,7 @@ namespace Amazon.Outposts.Model
     public partial class AssetInfo
     {
         private string _assetId;
+        private AssetLocation _assetLocation;
         private AssetType _assetType;
         private ComputeAttributes _computeAttributes;
         private string _rackId;
@@ -55,6 +56,24 @@ namespace Amazon.Outposts.Model
         internal bool IsSetAssetId()
         {
             return this._assetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssetLocation. 
+        /// <para>
+        ///  The position of an asset in a rack. 
+        /// </para>
+        /// </summary>
+        public AssetLocation AssetLocation
+        {
+            get { return this._assetLocation; }
+            set { this._assetLocation = value; }
+        }
+
+        // Check to see if AssetLocation property is set
+        internal bool IsSetAssetLocation()
+        {
+            return this._assetLocation != null;
         }
 
         /// <summary>

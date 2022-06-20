@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Outposts.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AssetInfo Object
+    /// Response Unmarshaller for AssetLocation Object
     /// </summary>  
-    public class AssetInfoUnmarshaller : IUnmarshaller<AssetInfo, XmlUnmarshallerContext>, IUnmarshaller<AssetInfo, JsonUnmarshallerContext>
+    public class AssetLocationUnmarshaller : IUnmarshaller<AssetLocation, XmlUnmarshallerContext>, IUnmarshaller<AssetLocation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AssetInfo IUnmarshaller<AssetInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AssetLocation IUnmarshaller<AssetLocation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,21 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AssetInfo Unmarshall(JsonUnmarshallerContext context)
+        public AssetLocation Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AssetInfo unmarshalledObject = new AssetInfo();
+            AssetLocation unmarshalledObject = new AssetLocation();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AssetId", targetDepth))
+                if (context.TestExpression("RackElevation", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AssetId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("AssetLocation", targetDepth))
-                {
-                    var unmarshaller = AssetLocationUnmarshaller.Instance;
-                    unmarshalledObject.AssetLocation = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("AssetType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AssetType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ComputeAttributes", targetDepth))
-                {
-                    var unmarshaller = ComputeAttributesUnmarshaller.Instance;
-                    unmarshalledObject.ComputeAttributes = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RackId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RackId = unmarshaller.Unmarshall(context);
+                    var unmarshaller = FloatUnmarshaller.Instance;
+                    unmarshalledObject.RackElevation = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +76,12 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
         }
 
 
-        private static AssetInfoUnmarshaller _instance = new AssetInfoUnmarshaller();        
+        private static AssetLocationUnmarshaller _instance = new AssetLocationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AssetInfoUnmarshaller Instance
+        public static AssetLocationUnmarshaller Instance
         {
             get
             {
