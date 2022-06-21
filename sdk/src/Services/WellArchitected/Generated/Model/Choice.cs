@@ -33,11 +33,32 @@ namespace Amazon.WellArchitected.Model
     /// </summary>
     public partial class Choice
     {
+        private List<AdditionalResources> _additionalResources = new List<AdditionalResources>();
         private string _choiceId;
         private string _description;
         private ChoiceContent _helpfulResource;
         private ChoiceContent _improvementPlan;
         private string _title;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalResources. 
+        /// <para>
+        /// The additional resources for a choice. A choice can have up to two additional resources:
+        /// one of type <code>HELPFUL_RESOURCE</code>, one of type <code>IMPROVEMENT_PLAN</code>,
+        /// or both.
+        /// </para>
+        /// </summary>
+        public List<AdditionalResources> AdditionalResources
+        {
+            get { return this._additionalResources; }
+            set { this._additionalResources = value; }
+        }
+
+        // Check to see if AdditionalResources property is set
+        internal bool IsSetAdditionalResources()
+        {
+            return this._additionalResources != null && this._additionalResources.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property ChoiceId.

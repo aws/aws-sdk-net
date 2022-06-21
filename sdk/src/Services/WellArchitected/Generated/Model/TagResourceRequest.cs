@@ -31,6 +31,12 @@ namespace Amazon.WellArchitected.Model
     /// <summary>
     /// Container for the parameters to the TagResource operation.
     /// Adds one or more tags to the specified resource.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// The WorkloadArn parameter can be either a workload ARN or a custom lens ARN.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class TagResourceRequest : AmazonWellArchitectedRequest
     {

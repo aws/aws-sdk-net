@@ -255,7 +255,7 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property ReviewOwner.
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=255)]
+        [AWSProperty(Min=3, Max=255)]
         public string ReviewOwner
         {
             get { return this._reviewOwner; }

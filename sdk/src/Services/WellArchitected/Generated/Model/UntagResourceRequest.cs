@@ -32,7 +32,11 @@ namespace Amazon.WellArchitected.Model
     /// Container for the parameters to the UntagResource operation.
     /// Deletes specified tags from a resource.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// The WorkloadArn parameter can be either a workload ARN or a custom lens ARN.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// To specify multiple tags, use separate <b>tagKeys</b> parameters, for example:
     /// </para>

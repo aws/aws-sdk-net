@@ -2111,6 +2111,12 @@ namespace Amazon.WellArchitected
 
         /// <summary>
         /// List the tags for a resource.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The WorkloadArn parameter can be either a workload ARN or a custom lens ARN.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -2128,6 +2134,12 @@ namespace Amazon.WellArchitected
 
         /// <summary>
         /// List the tags for a resource.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The WorkloadArn parameter can be either a workload ARN or a custom lens ARN.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -2261,6 +2273,12 @@ namespace Amazon.WellArchitected
 
         /// <summary>
         /// Adds one or more tags to the specified resource.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The WorkloadArn parameter can be either a workload ARN or a custom lens ARN.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -2278,6 +2296,12 @@ namespace Amazon.WellArchitected
 
         /// <summary>
         /// Adds one or more tags to the specified resource.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The WorkloadArn parameter can be either a workload ARN or a custom lens ARN.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -2302,7 +2326,11 @@ namespace Amazon.WellArchitected
         /// <summary>
         /// Deletes specified tags from a resource.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// The WorkloadArn parameter can be either a workload ARN or a custom lens ARN.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// To specify multiple tags, use separate <b>tagKeys</b> parameters, for example:
         /// </para>
@@ -2328,7 +2356,11 @@ namespace Amazon.WellArchitected
         /// <summary>
         /// Deletes specified tags from a resource.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// The WorkloadArn parameter can be either a workload ARN or a custom lens ARN.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// To specify multiple tags, use separate <b>tagKeys</b> parameters, for example:
         /// </para>

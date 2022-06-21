@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Choice Object
+    /// Response Unmarshaller for AdditionalResources Object
     /// </summary>  
-    public class ChoiceUnmarshaller : IUnmarshaller<Choice, XmlUnmarshallerContext>, IUnmarshaller<Choice, JsonUnmarshallerContext>
+    public class AdditionalResourcesUnmarshaller : IUnmarshaller<AdditionalResources, XmlUnmarshallerContext>, IUnmarshaller<AdditionalResources, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Choice IUnmarshaller<Choice, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AdditionalResources IUnmarshaller<AdditionalResources, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,27 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Choice Unmarshall(JsonUnmarshallerContext context)
+        public AdditionalResources Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Choice unmarshalledObject = new Choice();
+            AdditionalResources unmarshalledObject = new AdditionalResources();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AdditionalResources", targetDepth))
+                if (context.TestExpression("Content", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AdditionalResources, AdditionalResourcesUnmarshaller>(AdditionalResourcesUnmarshaller.Instance);
-                    unmarshalledObject.AdditionalResources = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<ChoiceContent, ChoiceContentUnmarshaller>(ChoiceContentUnmarshaller.Instance);
+                    unmarshalledObject.Content = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ChoiceId", targetDepth))
+                if (context.TestExpression("Type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ChoiceId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Description", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("HelpfulResource", targetDepth))
-                {
-                    var unmarshaller = ChoiceContentUnmarshaller.Instance;
-                    unmarshalledObject.HelpfulResource = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ImprovementPlan", targetDepth))
-                {
-                    var unmarshaller = ChoiceContentUnmarshaller.Instance;
-                    unmarshalledObject.ImprovementPlan = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Title", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Title = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +82,12 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         }
 
 
-        private static ChoiceUnmarshaller _instance = new ChoiceUnmarshaller();        
+        private static AdditionalResourcesUnmarshaller _instance = new AdditionalResourcesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ChoiceUnmarshaller Instance
+        public static AdditionalResourcesUnmarshaller Instance
         {
             get
             {
