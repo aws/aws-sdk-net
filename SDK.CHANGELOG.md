@@ -1,3 +1,11 @@
+### 3.7.299.0 (2022-06-21 18:12 UTC)
+* EC2 (3.7.75.0)
+	* This release adds support for Private IP VPNs, a new feature allowing S2S VPN connections to use private ip addresses as the tunnel outside ip address over Direct Connect as transport.
+* ECS (3.7.5.45)
+	* Amazon ECS UpdateService now supports the following parameters: PlacementStrategies, PlacementConstraints and CapacityProviderStrategy.
+* WellArchitected (3.7.3.0)
+	* Adds support for lens tagging, Adds support for multiple helpful-resource urls and multiple improvement-plan urls.
+
 ### 3.7.298.0 (2022-06-20 18:12 UTC)
 * DirectoryService (3.7.2.0)
 	* This release adds support for describing and updating AWS Managed Microsoft AD settings
