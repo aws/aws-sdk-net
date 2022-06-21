@@ -36,9 +36,11 @@ namespace Amazon.EC2.Model
         private bool? _enableAcceleration;
         private string _localIpv4NetworkCidr;
         private string _localIpv6NetworkCidr;
+        private string _outsideIpAddressType;
         private string _remoteIpv4NetworkCidr;
         private string _remoteIpv6NetworkCidr;
         private bool? _staticRoutesOnly;
+        private string _transportTransitGatewayAttachmentId;
         private TunnelInsideIpVersion _tunnelInsideIpVersion;
         private List<VpnTunnelOptionsSpecification> _tunnelOptions = new List<VpnTunnelOptionsSpecification>();
 
@@ -109,6 +111,33 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OutsideIpAddressType. 
+        /// <para>
+        /// The type of IPv4 address assigned to the outside interface of the customer gateway
+        /// device.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>PrivateIpv4</code> | <code>PublicIpv4</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>PublicIpv4</code> 
+        /// </para>
+        /// </summary>
+        public string OutsideIpAddressType
+        {
+            get { return this._outsideIpAddressType; }
+            set { this._outsideIpAddressType = value; }
+        }
+
+        // Check to see if OutsideIpAddressType property is set
+        internal bool IsSetOutsideIpAddressType()
+        {
+            return this._outsideIpAddressType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RemoteIpv4NetworkCidr. 
         /// <para>
         /// The IPv4 CIDR on the Amazon Web Services side of the VPN connection.
@@ -174,6 +203,28 @@ namespace Amazon.EC2.Model
         internal bool IsSetStaticRoutesOnly()
         {
             return this._staticRoutesOnly.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransportTransitGatewayAttachmentId. 
+        /// <para>
+        /// The transit gateway attachment ID to use for the VPN tunnel.
+        /// </para>
+        ///  
+        /// <para>
+        /// Required if <code>OutsideIpAddressType</code> is set to <code>PrivateIpv4</code>.
+        /// </para>
+        /// </summary>
+        public string TransportTransitGatewayAttachmentId
+        {
+            get { return this._transportTransitGatewayAttachmentId; }
+            set { this._transportTransitGatewayAttachmentId = value; }
+        }
+
+        // Check to see if TransportTransitGatewayAttachmentId property is set
+        internal bool IsSetTransportTransitGatewayAttachmentId()
+        {
+            return this._transportTransitGatewayAttachmentId != null;
         }
 
         /// <summary>

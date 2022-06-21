@@ -82,8 +82,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ip-address</code> - The IP address of the customer gateway's Internet-routable
-        /// external interface.
+        ///  <code>ip-address</code> - The IP address of the customer gateway device's external
+        /// interface.
         /// </para>
         ///  </li> <li> 
         /// <para>

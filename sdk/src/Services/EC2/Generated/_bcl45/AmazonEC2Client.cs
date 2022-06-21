@@ -3709,12 +3709,11 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Provides information to Amazon Web Services about your VPN customer gateway device.
-        /// The customer gateway is the appliance at your end of the VPN connection. (The device
-        /// on the Amazon Web Services side of the VPN connection is the virtual private gateway.)
-        /// You must provide the internet-routable IP address of the customer gateway's external
-        /// interface. The IP address must be static and can be behind a device performing network
-        /// address translation (NAT).
+        /// Provides information to Amazon Web Services about your customer gateway device. The
+        /// customer gateway device is the appliance at your end of the VPN connection. You must
+        /// provide the IP address of the customer gateway device’s external interface. The IP
+        /// address must be static and can be behind a device performing network address translation
+        /// (NAT).
         /// 
         ///  
         /// <para>
@@ -3748,12 +3747,11 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Provides information to Amazon Web Services about your VPN customer gateway device.
-        /// The customer gateway is the appliance at your end of the VPN connection. (The device
-        /// on the Amazon Web Services side of the VPN connection is the virtual private gateway.)
-        /// You must provide the internet-routable IP address of the customer gateway's external
-        /// interface. The IP address must be static and can be behind a device performing network
-        /// address translation (NAT).
+        /// Provides information to Amazon Web Services about your customer gateway device. The
+        /// customer gateway device is the appliance at your end of the VPN connection. You must
+        /// provide the IP address of the customer gateway device’s external interface. The IP
+        /// address must be static and can be behind a device performing network address translation
+        /// (NAT).
         /// 
         ///  
         /// <para>
