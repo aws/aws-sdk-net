@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// An EC2 instance that's running the Amazon ECS agent and has been registered with a
-    /// cluster.
+    /// An Amazon EC2 or External instance that's running the Amazon ECS agent and has been
+    /// registered with a cluster.
     /// </summary>
     public partial class ContainerInstance
     {
@@ -57,8 +57,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property AgentConnected. 
         /// <para>
         /// This parameter returns <code>true</code> if the agent is connected to Amazon ECS.
-        /// Registered instances with an agent that may be unhealthy or stopped return <code>false</code>.
-        /// Only instances connected to an agent can accept placement requests.
+        /// An instance with an agent that may be unhealthy or stopped return <code>false</code>.
+        /// Only instances connected to an agent can accept task placement requests.
         /// </para>
         /// </summary>
         public bool AgentConnected
@@ -95,7 +95,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Attachments. 
         /// <para>
-        /// The resources attached to a container instance, such as elastic network interfaces.
+        /// The resources attached to a container instance, such as an elastic network interface.
         /// </para>
         /// </summary>
         public List<Attachment> Attachments
@@ -150,10 +150,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ContainerInstanceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the container instance. The ARN contains the <code>arn:aws:ecs</code>
-        /// namespace, followed by the Region of the container instance, the Amazon Web Services
-        /// account ID of the container instance owner, the <code>container-instance</code> namespace,
-        /// and then the container instance ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.
+        /// The Amazon Resource Name (ARN) of the container instance. For more information about
+        /// the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon
+        /// Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.
         /// </para>
         /// </summary>
         public string ContainerInstanceArn
@@ -333,7 +332,7 @@ namespace Amazon.ECS.Model
         /// The <code>DRAINING</code> indicates that new tasks aren't placed on the container
         /// instance and any service tasks running on the container instance are removed if possible.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
-        /// Instance Draining</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// instance draining</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public string Status

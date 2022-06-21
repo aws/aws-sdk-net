@@ -821,13 +821,13 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// The Docker 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container,
-        /// so you should not specify fewer than 6 MiB of memory for your containers.
+        /// The Docker 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container.
+        /// So, don't specify less than 6 MiB of memory for your containers. 
         /// </para>
         ///  
         /// <para>
         /// The Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of memory for
-        /// a container, so you should not specify fewer than 4 MiB of memory for your containers.
+        /// a container. So, don't specify less than 4 MiB of memory for your containers.
         /// </para>
         /// </summary>
         public int Memory

@@ -31,7 +31,7 @@ namespace Amazon.ECS.Model
     /// <summary>
     /// The authorization configuration details for Amazon FSx for Windows File Server file
     /// system. See <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_FSxWindowsFileServerVolumeConfiguration.html">FSxWindowsFileServerVolumeConfiguration</a>
-    /// in the <i>Amazon Elastic Container Service API Reference</i>.
+    /// in the <i>Amazon ECS API Reference</i>.
     /// 
     ///  
     /// <para>
@@ -50,7 +50,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The authorization credential option to use. The authorization credential options can
         /// be provided using either the Amazon Resource Name (ARN) of an Secrets Manager secret
-        /// or SSM Parameter Store parameter. The ARNs refer to the stored credentials.
+        /// or SSM Parameter Store parameter. The ARN refers to the stored credentials.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

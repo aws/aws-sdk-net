@@ -50,8 +50,8 @@ namespace Amazon.ECS.Model
     ///  
     /// <para>
     /// A service-linked role is required for services that use multiple target groups. For
-    /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Service-linked
-    /// roles</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+    /// service-linked roles</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class LoadBalancer
@@ -140,14 +140,14 @@ namespace Amazon.ECS.Model
         /// <para>
         /// For services using the <code>ECS</code> deployment controller, you can specify one
         /// or multiple target groups. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/register-multiple-targetgroups.html">Registering
-        /// Multiple Target Groups with a Service</a> in the <i>Amazon Elastic Container Service
+        /// multiple target groups with a service</a> in the <i>Amazon Elastic Container Service
         /// Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For services using the <code>CODE_DEPLOY</code> deployment controller, you're required
-        /// to define two target groups for the load balancer. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-bluegreen.html">Blue/Green
-        /// Deployment with CodeDeploy</a> in the <i>Amazon Elastic Container Service Developer
+        /// to define two target groups for the load balancer. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-bluegreen.html">Blue/green
+        /// deployment with CodeDeploy</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
         /// </para>
         ///  <important> 

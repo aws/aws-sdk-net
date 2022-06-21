@@ -38,11 +38,11 @@ namespace Amazon.ECS
     /// Amazon Elastic Container Service 
     /// <para>
     /// Amazon Elastic Container Service (Amazon ECS) is a highly scalable, fast, container
-    /// management service. It makes it easy to run, stop, and manage Docker containers on
-    /// a cluster. You can host your cluster on a serverless infrastructure that's managed
-    /// by Amazon ECS by launching your services or tasks on Fargate. For more control, you
-    /// can host your tasks on a cluster of Amazon Elastic Compute Cloud (Amazon EC2) instances
-    /// that you manage.
+    /// management service. It makes it easy to run, stop, and manage Docker containers. You
+    /// can host your cluster on a serverless infrastructure that's managed by Amazon ECS
+    /// by launching your services or tasks on Fargate. For more control, you can host your
+    /// tasks on a cluster of Amazon Elastic Compute Cloud (Amazon EC2) or External (on-premises)
+    /// instances that you manage.
     /// </para>
     ///  
     /// <para>
@@ -375,7 +375,7 @@ namespace Amazon.ECS
         /// required resources in other Amazon Web Services services on your behalf. However,
         /// if the IAM user that makes the call doesn't have permissions to create the service-linked
         /// role, it isn't created. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
-        /// Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service
+        /// service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service
         /// Developer Guide</i>.
         /// </para>
         ///  </note>
@@ -446,7 +446,7 @@ namespace Amazon.ECS
         /// Runs and maintains your desired number of tasks from a specified task definition.
         /// If the number of tasks running in a service drops below the <code>desiredCount</code>,
         /// Amazon ECS runs another copy of the task in the specified cluster. To update an existing
-        /// service, see the UpdateService action.
+        /// service, see the <a>UpdateService</a> action.
         /// 
         ///  
         /// <para>
@@ -454,7 +454,7 @@ namespace Amazon.ECS
         /// run your service behind one or more load balancers. The load balancers distribute
         /// traffic across the tasks that are associated with the service. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
-        /// Load Balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// load balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -473,7 +473,7 @@ namespace Amazon.ECS
         /// desired number of tasks across your cluster. By default, the service scheduler spreads
         /// tasks across Availability Zones. You can use task placement strategies and constraints
         /// to customize task placement decisions. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service
-        /// Scheduler Concepts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// scheduler concepts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -484,7 +484,7 @@ namespace Amazon.ECS
         /// When using this strategy, you don't need to specify a desired number of tasks, a task
         /// placement strategy, or use Service Auto Scaling policies. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service
-        /// Scheduler Concepts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// scheduler concepts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -542,7 +542,7 @@ namespace Amazon.ECS
         /// you can specify only parameters that aren't controlled at the task set level. The
         /// only required parameter is the service name. You control your services using the <a>CreateTaskSet</a>
         /// operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
-        /// ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// ECS deployment types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -659,7 +659,7 @@ namespace Amazon.ECS
         /// Create a task set in the specified cluster and service. This is used when a service
         /// uses the <code>EXTERNAL</code> deployment controller type. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
-        /// ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// ECS deployment types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTaskSet service method.</param>
         /// 
@@ -1161,7 +1161,7 @@ namespace Amazon.ECS
         /// <summary>
         /// Deletes a specified task set within a service. This is used when a service uses the
         /// <code>EXTERNAL</code> deployment controller type. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
-        /// ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// ECS deployment types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTaskSet service method.</param>
         /// 
@@ -1767,6 +1767,11 @@ namespace Amazon.ECS
 
         /// <summary>
         /// Describes a specified task or tasks.
+        /// 
+        ///  
+        /// <para>
+        /// Currently, stopped tasks appear in the returned results for at least one hour.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTasks service method.</param>
         /// 
@@ -1922,6 +1927,14 @@ namespace Amazon.ECS
 
         /// <summary>
         /// Runs a command remotely on a container within a task.
+        /// 
+        ///  
+        /// <para>
+        /// If you use a condition key in your IAM policy to refine the conditions for the policy
+        /// statement, for example limit the actions to a specific cluster, you recevie an <code>AccessDeniedException</code>
+        /// when there is a mismatch between the condition key value and the corresponding parameter
+        /// value.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExecuteCommand service method.</param>
         /// 
@@ -4036,17 +4049,8 @@ namespace Amazon.ECS
         #region  UpdateService
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// Updating the task placement strategies and constraints on an Amazon ECS service remains
-        /// in preview and is a Beta Service as defined by and subject to the Beta Service Participation
-        /// Service Terms located at <a href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a>
-        /// ("Beta Terms"). These Beta Terms apply to your participation in this preview.
-        /// </para>
-        ///  </important> 
-        /// <para>
         /// Modifies the parameters of a service.
-        /// </para>
+        /// 
         ///  
         /// <para>
         /// For services using the rolling update (<code>ECS</code>) you can update the desired

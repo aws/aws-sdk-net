@@ -75,7 +75,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Attachments. 
         /// <para>
         /// The resources attached to a cluster. When using a capacity provider with a cluster,
-        /// the Auto Scaling plan that's created is returned as a cluster attachment.
+        /// the capacity provider and associated resources are returned as cluster attachments.
         /// </para>
         /// </summary>
         public List<Attachment> Attachments
@@ -98,8 +98,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <dl> <dt>UPDATE_IN_PROGRESS</dt> <dd> 
         /// <para>
-        /// The available capacity providers for the cluster are updating. This occurs when the
-        /// Auto Scaling plan is provisioning or deprovisioning.
+        /// The available capacity providers for the cluster are updating.
         /// </para>
         ///  </dd> <dt>UPDATE_COMPLETE</dt> <dd> 
         /// <para>
@@ -144,10 +143,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ClusterArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains the <code>arn:aws:ecs</code>
-        /// namespace, followed by the Region of the cluster, the Amazon Web Services account
-        /// ID of the cluster owner, the <code>cluster</code> namespace, and then the cluster
-        /// name. For example, <code>arn:aws:ecs:region:012345678910:cluster/test</code>.
+        /// The Amazon Resource Name (ARN) that identifies the cluster. For more information about
+        /// the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon
+        /// Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.
         /// </para>
         /// </summary>
         public string ClusterArn

@@ -30,17 +30,8 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateService operation.
-    /// <important> 
-    /// <para>
-    /// Updating the task placement strategies and constraints on an Amazon ECS service remains
-    /// in preview and is a Beta Service as defined by and subject to the Beta Service Participation
-    /// Service Terms located at <a href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a>
-    /// ("Beta Terms"). These Beta Terms apply to your participation in this preview.
-    /// </para>
-    ///  </important> 
-    /// <para>
     /// Modifies the parameters of a service.
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// For services using the rolling update (<code>ECS</code>) you can update the desired

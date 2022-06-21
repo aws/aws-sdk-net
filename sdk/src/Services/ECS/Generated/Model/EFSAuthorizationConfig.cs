@@ -44,7 +44,7 @@ namespace Amazon.ECS.Model
         /// or set to <code>/</code> which will enforce the path set on the EFS access point.
         /// If an access point is used, transit encryption must be enabled in the <code>EFSVolumeConfiguration</code>.
         /// For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working
-        /// with Amazon EFS Access Points</a> in the <i>Amazon Elastic File System User Guide</i>.
+        /// with Amazon EFS access points</a> in the <i>Amazon Elastic File System User Guide</i>.
         /// </para>
         /// </summary>
         public string AccessPointId
@@ -66,7 +66,7 @@ namespace Amazon.ECS.Model
         /// when mounting the Amazon EFS file system. If enabled, transit encryption must be enabled
         /// in the <code>EFSVolumeConfiguration</code>. If this parameter is omitted, the default
         /// value of <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html#efs-volume-accesspoints">Using
-        /// Amazon EFS Access Points</a> in the <i>Amazon Elastic Container Service Developer
+        /// Amazon EFS access points</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
         /// </para>
         /// </summary>

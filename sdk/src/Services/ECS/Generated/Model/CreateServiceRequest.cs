@@ -33,7 +33,7 @@ namespace Amazon.ECS.Model
     /// Runs and maintains your desired number of tasks from a specified task definition.
     /// If the number of tasks running in a service drops below the <code>desiredCount</code>,
     /// Amazon ECS runs another copy of the task in the specified cluster. To update an existing
-    /// service, see the UpdateService action.
+    /// service, see the <a>UpdateService</a> action.
     /// 
     ///  
     /// <para>
@@ -41,7 +41,7 @@ namespace Amazon.ECS.Model
     /// run your service behind one or more load balancers. The load balancers distribute
     /// traffic across the tasks that are associated with the service. For more information,
     /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
-    /// Load Balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// load balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -60,7 +60,7 @@ namespace Amazon.ECS.Model
     /// desired number of tasks across your cluster. By default, the service scheduler spreads
     /// tasks across Availability Zones. You can use task placement strategies and constraints
     /// to customize task placement decisions. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service
-    /// Scheduler Concepts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// scheduler concepts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -71,7 +71,7 @@ namespace Amazon.ECS.Model
     /// When using this strategy, you don't need to specify a desired number of tasks, a task
     /// placement strategy, or use Service Auto Scaling policies. For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service
-    /// Scheduler Concepts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// scheduler concepts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -129,7 +129,7 @@ namespace Amazon.ECS.Model
     /// you can specify only parameters that aren't controlled at the task set level. The
     /// only required parameter is the service name. You control your services using the <a>CreateTaskSet</a>
     /// operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
-    /// ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// ECS deployment types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -323,7 +323,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// Specifies whether to turn on Amazon ECS managed tags for the tasks within the service.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
-        /// Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer
+        /// your Amazon ECS resources</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
         /// </para>
         /// </summary>
@@ -444,7 +444,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// A load balancer object representing the load balancers to use with your service. For
         /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
-        /// Load Balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// load balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
