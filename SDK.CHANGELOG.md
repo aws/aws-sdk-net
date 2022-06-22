@@ -1,3 +1,11 @@
+### 3.7.300.0 (2022-06-22 18:12 UTC)
+* APIGateway (3.7.3.30)
+	* Documentation updates for Amazon API Gateway
+* Pricing (3.7.2.0)
+	* This release introduces 1 update to the GetProducts API. The serviceCode attribute is now required when you use the GetProductsRequest.
+* Transfer (3.7.12.0)
+	* Until today, the service supported only RSA host keys and user keys. Now with this launch, Transfer Family has expanded the support for ECDSA and ED25519 host keys and user keys, enabling customers to support a broader set of clients by choosing RSA, ECDSA, and ED25519 host and user keys.
+
 ### 3.7.299.0 (2022-06-21 18:12 UTC)
 * EC2 (3.7.75.0)
 	* This release adds support for Private IP VPNs, a new feature allowing S2S VPN connections to use private ip addresses as the tunnel outside ip address over Direct Connect as transport.
