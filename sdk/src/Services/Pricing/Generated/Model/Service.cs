@@ -60,6 +60,7 @@ namespace Amazon.Pricing.Model
         /// The code for the Amazon Web Services service.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ServiceCode
         {
             get { return this._serviceCode; }

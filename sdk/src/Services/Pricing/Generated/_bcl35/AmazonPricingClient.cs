@@ -35,15 +35,14 @@ namespace Amazon.Pricing
     /// <summary>
     /// Implementation for accessing Pricing
     ///
-    /// Amazon Web Services Price List Service API (Amazon Web Services Price List Service)
-    /// is a centralized and convenient way to programmatically query Amazon Web Services
-    /// for services, products, and pricing information. The Amazon Web Services Price List
-    /// Service uses standardized product attributes such as <code>Location</code>, <code>Storage
-    /// Class</code>, and <code>Operating System</code>, and provides prices at the SKU level.
-    /// You can use the Amazon Web Services Price List Service to build cost control and scenario
-    /// planning tools, reconcile billing data, forecast future spend for budgeting purposes,
-    /// and provide cost benefit analysis that compare your internal workloads with Amazon
-    /// Web Services.
+    /// Amazon Web Services Price List API is a centralized and convenient way to programmatically
+    /// query Amazon Web Services for services, products, and pricing information. The Amazon
+    /// Web Services Price List uses standardized product attributes such as <code>Location</code>,
+    /// <code>Storage Class</code>, and <code>Operating System</code>, and provides prices
+    /// at the SKU level. You can use the Amazon Web Services Price List to build cost control
+    /// and scenario planning tools, reconcile billing data, forecast future spend for budgeting
+    /// purposes, and provide cost benefit analysis that compare your internal workloads with
+    /// Amazon Web Services.
     /// 
     ///  
     /// <para>
@@ -61,7 +60,7 @@ namespace Amazon.Pricing
     /// </para>
     ///  
     /// <para>
-    /// Amazon Web Services Price List Service API provides the following two endpoints:
+    /// Amazon Web Services Price List service API provides the following two endpoints:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -370,8 +369,8 @@ namespace Amazon.Pricing
         /// <summary>
         /// Returns a list of attribute values. Attributes are similar to the details in a Price
         /// List API offer file. For a list of available attributes, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/reading-an-offer.html#pps-defs">Offer
-        /// File Definitions</a> in the <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-what-is.html">Amazon
-        /// Web Services Billing and Cost Management User Guide</a>.
+        /// File Definitions</a> in the <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-what-is.html">Billing
+        /// and Cost Management User Guide</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAttributeValues service method.</param>
         /// 
