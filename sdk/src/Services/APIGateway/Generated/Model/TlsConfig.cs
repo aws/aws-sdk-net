@@ -46,6 +46,13 @@ namespace Amazon.APIGateway.Model
         /// hostname, and presence of a root certificate authority. Supported only for <code>HTTP</code>
         /// and <code>HTTP_PROXY</code> integrations.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// Enabling <code>insecureSkipVerification</code> isn't recommended, especially for integrations
+        /// with public HTTPS endpoints. If you enable <code>insecureSkipVerification</code>,
+        /// you increase the risk of man-in-the-middle attacks.
+        /// </para>
+        ///  </important>
         /// </summary>
         public bool InsecureSkipVerification
         {
