@@ -151,11 +151,6 @@ namespace Amazon.Transfer
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
-        /// 
-        ///  
-        /// <para>
-        ///  HTTP Status Code: 400
-        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateServer">REST API Reference for CreateServer Operation</seealso>
         CreateServerResponse CreateServer(CreateServerRequest request);
@@ -283,11 +278,6 @@ namespace Amazon.Transfer
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
-        /// 
-        ///  
-        /// <para>
-        ///  HTTP Status Code: 400
-        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateWorkflow">REST API Reference for CreateWorkflow Operation</seealso>
         CreateWorkflowResponse CreateWorkflow(CreateWorkflowRequest request);
@@ -465,11 +455,6 @@ namespace Amazon.Transfer
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
-        /// 
-        ///  
-        /// <para>
-        ///  HTTP Status Code: 400
-        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteSshPublicKey">REST API Reference for DeleteSshPublicKey Operation</seealso>
         DeleteSshPublicKeyResponse DeleteSshPublicKey(DeleteSshPublicKeyRequest request);
@@ -1017,11 +1002,6 @@ namespace Amazon.Transfer
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
-        /// 
-        ///  
-        /// <para>
-        ///  HTTP Status Code: 400
-        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ImportSshPublicKey">REST API Reference for ImportSshPublicKey Operation</seealso>
         ImportSshPublicKeyResponse ImportSshPublicKey(ImportSshPublicKeyRequest request);
@@ -1484,11 +1464,6 @@ namespace Amazon.Transfer
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
-        /// 
-        ///  
-        /// <para>
-        ///  HTTP Status Code: 400
-        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/SendWorkflowStepState">REST API Reference for SendWorkflowStepState Operation</seealso>
         SendWorkflowStepStateResponse SendWorkflowStepState(SendWorkflowStepStateRequest request);
@@ -1560,11 +1535,6 @@ namespace Amazon.Transfer
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
-        /// 
-        ///  
-        /// <para>
-        ///  HTTP Status Code: 400
-        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StartServer">REST API Reference for StartServer Operation</seealso>
         StartServerResponse StartServer(StartServerRequest request);
@@ -1642,11 +1612,6 @@ namespace Amazon.Transfer
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
-        /// 
-        ///  
-        /// <para>
-        ///  HTTP Status Code: 400
-        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StopServer">REST API Reference for StopServer Operation</seealso>
         StopServerResponse StopServer(StopServerRequest request);
@@ -2002,11 +1967,6 @@ namespace Amazon.Transfer
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
-        /// 
-        ///  
-        /// <para>
-        ///  HTTP Status Code: 400
-        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateServer">REST API Reference for UpdateServer Operation</seealso>
         UpdateServerResponse UpdateServer(UpdateServerRequest request);
@@ -2073,11 +2033,6 @@ namespace Amazon.Transfer
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
-        /// 
-        ///  
-        /// <para>
-        ///  HTTP Status Code: 400
-        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
         UpdateUserResponse UpdateUser(UpdateUserRequest request);

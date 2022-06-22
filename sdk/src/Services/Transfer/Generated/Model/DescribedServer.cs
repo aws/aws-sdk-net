@@ -316,8 +316,8 @@ namespace Amazon.Transfer.Model
         ///  
         /// <para>
         ///  Use the <code>PassiveIp</code> parameter to indicate passive mode. Enter a single
-        /// dotted-quad IPv4 address, such as the external IP address of a firewall, router, or
-        /// load balancer. 
+        /// IPv4 address, such as the public IP address of a firewall, router, or load balancer.
+        /// 
         /// </para>
         /// </summary>
         public ProtocolDetails ProtocolDetails

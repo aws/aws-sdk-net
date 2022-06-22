@@ -131,11 +131,6 @@ namespace Amazon.Transfer
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
-        /// 
-        ///  
-        /// <para>
-        ///  HTTP Status Code: 400
-        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateServer">REST API Reference for CreateServer Operation</seealso>
         Task<CreateServerResponse> CreateServerAsync(CreateServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -219,11 +214,6 @@ namespace Amazon.Transfer
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
-        /// 
-        ///  
-        /// <para>
-        ///  HTTP Status Code: 400
-        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateWorkflow">REST API Reference for CreateWorkflow Operation</seealso>
         Task<CreateWorkflowResponse> CreateWorkflowAsync(CreateWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -335,11 +325,6 @@ namespace Amazon.Transfer
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
-        /// 
-        ///  
-        /// <para>
-        ///  HTTP Status Code: 400
-        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteSshPublicKey">REST API Reference for DeleteSshPublicKey Operation</seealso>
         Task<DeleteSshPublicKeyResponse> DeleteSshPublicKeyAsync(DeleteSshPublicKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -689,11 +674,6 @@ namespace Amazon.Transfer
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
-        /// 
-        ///  
-        /// <para>
-        ///  HTTP Status Code: 400
-        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ImportSshPublicKey">REST API Reference for ImportSshPublicKey Operation</seealso>
         Task<ImportSshPublicKeyResponse> ImportSshPublicKeyAsync(ImportSshPublicKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -980,11 +960,6 @@ namespace Amazon.Transfer
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
-        /// 
-        ///  
-        /// <para>
-        ///  HTTP Status Code: 400
-        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/SendWorkflowStepState">REST API Reference for SendWorkflowStepState Operation</seealso>
         Task<SendWorkflowStepStateResponse> SendWorkflowStepStateAsync(SendWorkflowStepStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1034,11 +1009,6 @@ namespace Amazon.Transfer
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
-        /// 
-        ///  
-        /// <para>
-        ///  HTTP Status Code: 400
-        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StartServer">REST API Reference for StartServer Operation</seealso>
         Task<StartServerResponse> StartServerAsync(StartServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1094,11 +1064,6 @@ namespace Amazon.Transfer
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
-        /// 
-        ///  
-        /// <para>
-        ///  HTTP Status Code: 400
-        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StopServer">REST API Reference for StopServer Operation</seealso>
         Task<StopServerResponse> StopServerAsync(StopServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1344,11 +1309,6 @@ namespace Amazon.Transfer
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
-        /// 
-        ///  
-        /// <para>
-        ///  HTTP Status Code: 400
-        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateServer">REST API Reference for UpdateServer Operation</seealso>
         Task<UpdateServerResponse> UpdateServerAsync(UpdateServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1393,11 +1353,6 @@ namespace Amazon.Transfer
         /// </exception>
         /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
         /// The request was denied due to request throttling.
-        /// 
-        ///  
-        /// <para>
-        ///  HTTP Status Code: 400
-        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
         Task<UpdateUserResponse> UpdateUserAsync(UpdateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));

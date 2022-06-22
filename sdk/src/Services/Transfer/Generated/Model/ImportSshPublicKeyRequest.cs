@@ -70,6 +70,10 @@ namespace Amazon.Transfer.Model
         /// <para>
         /// The public key portion of an SSH key pair.
         /// </para>
+        ///  
+        /// <para>
+        /// Transfer Family accepts RSA, ECDSA, and ED25519 keys.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=2048)]
         public string SshPublicKeyBody
