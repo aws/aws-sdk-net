@@ -1,3 +1,15 @@
+### 3.7.301.0 (2022-06-23 18:18 UTC)
+* LookoutEquipment (3.7.3.0)
+	* This release adds visualizations to the scheduled inference results. Users will be able to see interference results, including diagnostic results from their running inference schedulers.
+* MediaConvert (3.7.17.3)
+	* AWS Elemental MediaConvert SDK has released support for automatic DolbyVision metadata generation when converting HDR10 to DolbyVision.
+* Mgn (3.7.5.0)
+	* New and modified APIs for the Post-Migration Framework
+* MigrationHubRefactorSpaces (3.7.1.0)
+	* This release adds the new API UpdateRoute that allows route to be updated to ACTIVE/INACTIVE state. In addition, CreateRoute API will now allow users to create route in ACTIVE/INACTIVE state.
+* SageMaker (3.7.37.0)
+	* SageMaker Ground Truth now supports Virtual Private Cloud. Customers can launch labeling jobs and access to their private workforce in VPC mode.
+
 ### 3.7.300.0 (2022-06-22 18:12 UTC)
 * APIGateway (3.7.3.30)
 	* Documentation updates for Amazon API Gateway
