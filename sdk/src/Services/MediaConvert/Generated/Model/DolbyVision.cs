@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// With AWS Elemental MediaConvert, you can create profile 5 or 8.1 Dolby Vision outputs
-    /// from MXF and IMF sources.
+    /// Create Dolby Vision Profile 5 or Profile 8.1  compatible video output.
     /// </summary>
     public partial class DolbyVision
     {
@@ -94,10 +93,11 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Profile. Required when you use Dolby Vision processing.
-        /// Set Profile to Profile 5 to only include frame-interleaved Dolby Vision metadata in
-        /// your output. Set Profile to Profile 8.1 to include both frame-interleaved Dolby Vision
-        /// metadata and HDR10 metadata in your output.
+        /// Gets and sets the property Profile. Required when you enable Dolby Vision. Use Profile
+        /// 5 to include frame-interleaved Dolby Vision metadata in your output. Your input must
+        /// include Dolby Vision metadata or an HDR10 YUV color space. Use Profile 8.1 to include
+        /// frame-interleaved Dolby Vision metadata and HDR10 metadata in your output. Your input
+        /// must include Dolby Vision metadata.
         /// </summary>
         public DolbyVisionProfile Profile
         {
