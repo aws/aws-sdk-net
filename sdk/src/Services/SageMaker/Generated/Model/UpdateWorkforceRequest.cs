@@ -36,6 +36,10 @@ namespace Amazon.SageMaker.Model
     /// 
     ///  
     /// <para>
+    /// The worker portal is now supported in VPC and public internet.
+    /// </para>
+    ///  
+    /// <para>
     ///  Use <code>SourceIpConfig</code> to restrict worker access to tasks to a specific
     /// range of IP addresses. You specify allowed IP addresses by creating a list of up to
     /// ten <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>.
@@ -45,6 +49,15 @@ namespace Amazon.SageMaker.Model
     /// on the worker portal.
     /// </para>
     ///  
+    /// <para>
+    /// To restrict access to all the workers in public internet, add the <code>SourceIpConfig</code>
+    /// CIDR value as "0.0.0.0/0".
+    /// </para>
+    ///  <important> 
+    /// <para>
+    /// Amazon SageMaker does not support Source Ip restriction for worker portals in VPC.
+    /// </para>
+    ///  </important> 
     /// <para>
     /// Use <code>OidcConfig</code> to update the configuration of a workforce created using
     /// your own OIDC IdP. 
@@ -70,6 +83,7 @@ namespace Amazon.SageMaker.Model
         private OidcConfig _oidcConfig;
         private SourceIpConfig _sourceIpConfig;
         private string _workforceName;
+        private WorkforceVpcConfigRequest _workforceVpcConfig;
 
         /// <summary>
         /// Gets and sets the property OidcConfig. 
@@ -131,6 +145,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetWorkforceName()
         {
             return this._workforceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkforceVpcConfig. 
+        /// <para>
+        /// Use this parameter to update your VPC configuration for a workforce.
+        /// </para>
+        /// </summary>
+        public WorkforceVpcConfigRequest WorkforceVpcConfig
+        {
+            get { return this._workforceVpcConfig; }
+            set { this._workforceVpcConfig = value; }
+        }
+
+        // Check to see if WorkforceVpcConfig property is set
+        internal bool IsSetWorkforceVpcConfig()
+        {
+            return this._workforceVpcConfig != null;
         }
 
     }

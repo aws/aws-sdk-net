@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// LabelingJobResourceConfig Marshaller
+    /// WorkforceVpcConfigRequest Marshaller
     /// </summary>
-    public class LabelingJobResourceConfigMarshaller : IRequestMarshaller<LabelingJobResourceConfig, JsonMarshallerContext> 
+    public class WorkforceVpcConfigRequestMarshaller : IRequestMarshaller<WorkforceVpcConfigRequest, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,23 +43,34 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(LabelingJobResourceConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(WorkforceVpcConfigRequest requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetVolumeKmsKeyId())
+            if(requestObject.IsSetSecurityGroupIds())
             {
-                context.Writer.WritePropertyName("VolumeKmsKeyId");
-                context.Writer.Write(requestObject.VolumeKmsKeyId);
+                context.Writer.WritePropertyName("SecurityGroupIds");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectSecurityGroupIdsListValue in requestObject.SecurityGroupIds)
+                {
+                        context.Writer.Write(requestObjectSecurityGroupIdsListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
-            if(requestObject.IsSetVpcConfig())
+            if(requestObject.IsSetSubnets())
             {
-                context.Writer.WritePropertyName("VpcConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("Subnets");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectSubnetsListValue in requestObject.Subnets)
+                {
+                        context.Writer.Write(requestObjectSubnetsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
 
-                var marshaller = VpcConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.VpcConfig, context);
-
-                context.Writer.WriteObjectEnd();
+            if(requestObject.IsSetVpcId())
+            {
+                context.Writer.WritePropertyName("VpcId");
+                context.Writer.Write(requestObject.VpcId);
             }
 
         }
@@ -67,7 +78,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static LabelingJobResourceConfigMarshaller Instance = new LabelingJobResourceConfigMarshaller();
+        public readonly static WorkforceVpcConfigRequestMarshaller Instance = new WorkforceVpcConfigRequestMarshaller();
 
     }
 }

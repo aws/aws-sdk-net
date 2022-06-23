@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LabelingJobResourceConfig Object
+    /// Response Unmarshaller for WorkforceVpcConfigResponse Object
     /// </summary>  
-    public class LabelingJobResourceConfigUnmarshaller : IUnmarshaller<LabelingJobResourceConfig, XmlUnmarshallerContext>, IUnmarshaller<LabelingJobResourceConfig, JsonUnmarshallerContext>
+    public class WorkforceVpcConfigResponseUnmarshaller : IUnmarshaller<WorkforceVpcConfigResponse, XmlUnmarshallerContext>, IUnmarshaller<WorkforceVpcConfigResponse, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        LabelingJobResourceConfig IUnmarshaller<LabelingJobResourceConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        WorkforceVpcConfigResponse IUnmarshaller<WorkforceVpcConfigResponse, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,39 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public LabelingJobResourceConfig Unmarshall(JsonUnmarshallerContext context)
+        public WorkforceVpcConfigResponse Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            LabelingJobResourceConfig unmarshalledObject = new LabelingJobResourceConfig();
+            WorkforceVpcConfigResponse unmarshalledObject = new WorkforceVpcConfigResponse();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("VolumeKmsKeyId", targetDepth))
+                if (context.TestExpression("SecurityGroupIds", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VolumeKmsKeyId = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SecurityGroupIds = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("VpcConfig", targetDepth))
+                if (context.TestExpression("Subnets", targetDepth))
                 {
-                    var unmarshaller = VpcConfigUnmarshaller.Instance;
-                    unmarshalledObject.VpcConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Subnets = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VpcEndpointId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VpcEndpointId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VpcId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VpcId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +94,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static LabelingJobResourceConfigUnmarshaller _instance = new LabelingJobResourceConfigUnmarshaller();        
+        private static WorkforceVpcConfigResponseUnmarshaller _instance = new WorkforceVpcConfigResponseUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LabelingJobResourceConfigUnmarshaller Instance
+        public static WorkforceVpcConfigResponseUnmarshaller Instance
         {
             get
             {

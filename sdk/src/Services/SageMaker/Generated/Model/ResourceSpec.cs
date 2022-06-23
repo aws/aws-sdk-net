@@ -46,9 +46,12 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// JupyterServer Apps only support the <code>system</code> value. KernelGateway Apps
-        /// do not support the <code>system</code> value, but support all other values for available
-        /// instance types.
+        ///  <b>JupyterServer apps</b> only support the <code>system</code> value.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <b>KernelGateway apps</b>, the <code>system</code> value is translated to <code>ml.t3.medium</code>.
+        /// KernelGateway apps also support all other values for available instance types.
         /// </para>
         ///  </note>
         /// </summary>

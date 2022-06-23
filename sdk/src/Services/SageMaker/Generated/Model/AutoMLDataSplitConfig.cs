@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// This structure specifies how to split the data into train and test datasets. The validation
-    /// and training datasets must contain the same headers. The validation dataset must be
-    /// less than 2 GB in size.
+    /// This structure specifies how to split the data into train and validation datasets.
+    /// The validation and training datasets must contain the same headers. The validation
+    /// dataset must be less than 2 GB in size.
     /// </summary>
     public partial class AutoMLDataSplitConfig
     {

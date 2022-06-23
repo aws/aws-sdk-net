@@ -64,6 +64,7 @@ namespace Amazon.SageMaker.Model
         private SourceIpConfig _sourceIpConfig;
         private List<Tag> _tags = new List<Tag>();
         private string _workforceName;
+        private WorkforceVpcConfigRequest _workforceVpcConfig;
 
         /// <summary>
         /// Gets and sets the property CognitoConfig. 
@@ -163,6 +164,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetWorkforceName()
         {
             return this._workforceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkforceVpcConfig. 
+        /// <para>
+        /// Use this parameter to configure a workforce using VPC.
+        /// </para>
+        /// </summary>
+        public WorkforceVpcConfigRequest WorkforceVpcConfig
+        {
+            get { return this._workforceVpcConfig; }
+            set { this._workforceVpcConfig = value; }
+        }
+
+        // Check to see if WorkforceVpcConfig property is set
+        internal bool IsSetWorkforceVpcConfig()
+        {
+            return this._workforceVpcConfig != null;
         }
 
     }

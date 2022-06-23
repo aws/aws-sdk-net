@@ -95,6 +95,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.WorkforceName);
                 }
 
+                if(publicRequest.IsSetWorkforceVpcConfig())
+                {
+                    context.Writer.WritePropertyName("WorkforceVpcConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = WorkforceVpcConfigRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.WorkforceVpcConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

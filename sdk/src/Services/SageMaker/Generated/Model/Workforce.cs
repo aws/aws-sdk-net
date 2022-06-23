@@ -40,12 +40,15 @@ namespace Amazon.SageMaker.Model
     {
         private CognitoConfig _cognitoConfig;
         private DateTime? _createDate;
+        private string _failureReason;
         private DateTime? _lastUpdatedDate;
         private OidcConfigForResponse _oidcConfig;
         private SourceIpConfig _sourceIpConfig;
+        private WorkforceStatus _status;
         private string _subDomain;
         private string _workforceArn;
         private string _workforceName;
+        private WorkforceVpcConfigResponse _workforceVpcConfig;
 
         /// <summary>
         /// Gets and sets the property CognitoConfig. 
@@ -83,6 +86,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCreateDate()
         {
             return this._createDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FailureReason. 
+        /// <para>
+        /// The reason your workforce failed.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string FailureReason
+        {
+            get { return this._failureReason; }
+            set { this._failureReason = value; }
+        }
+
+        // Check to see if FailureReason property is set
+        internal bool IsSetFailureReason()
+        {
+            return this._failureReason != null;
         }
 
         /// <summary>
@@ -144,6 +166,24 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of your workforce.
+        /// </para>
+        /// </summary>
+        public WorkforceStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SubDomain. 
         /// <para>
         /// The subdomain for your OIDC Identity Provider.
@@ -197,6 +237,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetWorkforceName()
         {
             return this._workforceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkforceVpcConfig. 
+        /// <para>
+        /// The configuration of a VPC workforce.
+        /// </para>
+        /// </summary>
+        public WorkforceVpcConfigResponse WorkforceVpcConfig
+        {
+            get { return this._workforceVpcConfig; }
+            set { this._workforceVpcConfig = value; }
+        }
+
+        // Check to see if WorkforceVpcConfig property is set
+        internal bool IsSetWorkforceVpcConfig()
+        {
+            return this._workforceVpcConfig != null;
         }
 
     }

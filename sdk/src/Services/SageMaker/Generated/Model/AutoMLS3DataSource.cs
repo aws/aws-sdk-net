@@ -41,6 +41,35 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The data type.
         /// </para>
+        ///  
+        /// <para>
+        /// A ManifestFile should have the format shown below:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>[ {"prefix": "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/DOC-EXAMPLE-PREFIX/"},
+        /// </code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-1",</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-2",</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>... "DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-N" ]</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// An S3Prefix should have the following format: 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</code> 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public AutoMLS3DataType S3DataType

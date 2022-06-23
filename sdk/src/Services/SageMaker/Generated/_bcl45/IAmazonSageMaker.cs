@@ -2046,9 +2046,8 @@ namespace Amazon.SageMaker
         ///  
         /// <para>
         /// For an example that calls this method when deploying a model to SageMaker hosting
-        /// services, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
-        /// the Model to Amazon SageMaker Hosting Services (Amazon Web Services SDK for Python
-        /// (Boto 3)).</a> 
+        /// services, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints-deployment.html#realtime-endpoints-deployment-create-model">Create
+        /// a Model (Amazon Web Services SDK for Python (Boto 3)).</a> 
         /// </para>
         ///  
         /// <para>
@@ -2098,9 +2097,8 @@ namespace Amazon.SageMaker
         ///  
         /// <para>
         /// For an example that calls this method when deploying a model to SageMaker hosting
-        /// services, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
-        /// the Model to Amazon SageMaker Hosting Services (Amazon Web Services SDK for Python
-        /// (Boto 3)).</a> 
+        /// services, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints-deployment.html#realtime-endpoints-deployment-create-model">Create
+        /// a Model (Amazon Web Services SDK for Python (Boto 3)).</a> 
         /// </para>
         ///  
         /// <para>
@@ -10972,6 +10970,10 @@ namespace Amazon.SageMaker
         /// 
         ///  
         /// <para>
+        /// The worker portal is now supported in VPC and public internet.
+        /// </para>
+        ///  
+        /// <para>
         ///  Use <code>SourceIpConfig</code> to restrict worker access to tasks to a specific
         /// range of IP addresses. You specify allowed IP addresses by creating a list of up to
         /// ten <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>.
@@ -10981,6 +10983,15 @@ namespace Amazon.SageMaker
         /// on the worker portal.
         /// </para>
         ///  
+        /// <para>
+        /// To restrict access to all the workers in public internet, add the <code>SourceIpConfig</code>
+        /// CIDR value as "0.0.0.0/0".
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Amazon SageMaker does not support Source Ip restriction for worker portals in VPC.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// Use <code>OidcConfig</code> to update the configuration of a workforce created using
         /// your own OIDC IdP. 
@@ -11004,6 +11015,10 @@ namespace Amazon.SageMaker
         /// <param name="request">Container for the necessary parameters to execute the UpdateWorkforce service method.</param>
         /// 
         /// <returns>The response from the UpdateWorkforce service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateWorkforce">REST API Reference for UpdateWorkforce Operation</seealso>
         UpdateWorkforceResponse UpdateWorkforce(UpdateWorkforceRequest request);
 
@@ -11016,6 +11031,10 @@ namespace Amazon.SageMaker
         /// 
         ///  
         /// <para>
+        /// The worker portal is now supported in VPC and public internet.
+        /// </para>
+        ///  
+        /// <para>
         ///  Use <code>SourceIpConfig</code> to restrict worker access to tasks to a specific
         /// range of IP addresses. You specify allowed IP addresses by creating a list of up to
         /// ten <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>.
@@ -11025,6 +11044,15 @@ namespace Amazon.SageMaker
         /// on the worker portal.
         /// </para>
         ///  
+        /// <para>
+        /// To restrict access to all the workers in public internet, add the <code>SourceIpConfig</code>
+        /// CIDR value as "0.0.0.0/0".
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Amazon SageMaker does not support Source Ip restriction for worker portals in VPC.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// Use <code>OidcConfig</code> to update the configuration of a workforce created using
         /// your own OIDC IdP. 
@@ -11051,6 +11079,10 @@ namespace Amazon.SageMaker
         /// </param>
         /// 
         /// <returns>The response from the UpdateWorkforce service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+        /// or <code>Artifact</code>.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateWorkforce">REST API Reference for UpdateWorkforce Operation</seealso>
         Task<UpdateWorkforceResponse> UpdateWorkforceAsync(UpdateWorkforceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
