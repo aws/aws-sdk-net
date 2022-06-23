@@ -800,6 +800,48 @@
     <pattern>^arn:aws:refactor-spaces:[a-zA-Z0-9\-]+:\w{12}:[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MigrationHubRefactorSpaces.Model.UpdateRouteRequest.ApplicationIdentifier</property>
+    <min>14</min>
+    <max>14</max>
+    <pattern>^app-[0-9A-Za-z]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MigrationHubRefactorSpaces.Model.UpdateRouteRequest.EnvironmentIdentifier</property>
+    <min>14</min>
+    <max>14</max>
+    <pattern>^env-[0-9A-Za-z]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MigrationHubRefactorSpaces.Model.UpdateRouteRequest.RouteIdentifier</property>
+    <min>14</min>
+    <max>14</max>
+    <pattern>^rte-[0-9A-Za-z]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MigrationHubRefactorSpaces.Model.UpdateRouteResponse.ApplicationId</property>
+    <min>14</min>
+    <max>14</max>
+    <pattern>^app-[0-9A-Za-z]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MigrationHubRefactorSpaces.Model.UpdateRouteResponse.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws:refactor-spaces:[a-zA-Z0-9\-]+:\w{12}:[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MigrationHubRefactorSpaces.Model.UpdateRouteResponse.RouteId</property>
+    <min>14</min>
+    <max>14</max>
+    <pattern>^rte-[0-9A-Za-z]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MigrationHubRefactorSpaces.Model.UpdateRouteResponse.ServiceId</property>
+    <min>14</min>
+    <max>14</max>
+    <pattern>^svc-[0-9A-Za-z]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MigrationHubRefactorSpaces.Model.ApiGatewayProxyConfig.ApiGatewayId</property>
     <min>10</min>
     <max>10</max>

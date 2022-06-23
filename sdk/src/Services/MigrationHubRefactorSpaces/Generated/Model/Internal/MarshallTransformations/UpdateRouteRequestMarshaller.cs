@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateRoute Request Marshaller
+    /// UpdateRoute Request Marshaller
     /// </summary>       
-    public class CreateRouteRequestMarshaller : IMarshaller<IRequest, CreateRouteRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateRouteRequestMarshaller : IMarshaller<IRequest, UpdateRouteRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateRouteRequest)input);
+            return this.Marshall((UpdateRouteRequest)input);
         }
 
         /// <summary>
@@ -52,12 +52,12 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateRouteRequest publicRequest)
+        public IRequest Marshall(UpdateRouteRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MigrationHubRefactorSpaces");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-10-26";
-            request.HttpMethod = "POST";
+            request.HttpMethod = "PATCH";
 
             if (!publicRequest.IsSetApplicationIdentifier())
                 throw new AmazonMigrationHubRefactorSpacesException("Request object does not have required field ApplicationIdentifier set");
@@ -65,69 +65,19 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
             if (!publicRequest.IsSetEnvironmentIdentifier())
                 throw new AmazonMigrationHubRefactorSpacesException("Request object does not have required field EnvironmentIdentifier set");
             request.AddPathResource("{EnvironmentIdentifier}", StringUtils.FromString(publicRequest.EnvironmentIdentifier));
-            request.ResourcePath = "/environments/{EnvironmentIdentifier}/applications/{ApplicationIdentifier}/routes";
+            if (!publicRequest.IsSetRouteIdentifier())
+                throw new AmazonMigrationHubRefactorSpacesException("Request object does not have required field RouteIdentifier set");
+            request.AddPathResource("{RouteIdentifier}", StringUtils.FromString(publicRequest.RouteIdentifier));
+            request.ResourcePath = "/environments/{EnvironmentIdentifier}/applications/{ApplicationIdentifier}/routes/{RouteIdentifier}";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                if(publicRequest.IsSetActivationState())
                 {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDefaultRoute())
-                {
-                    context.Writer.WritePropertyName("DefaultRoute");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DefaultRouteInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DefaultRoute, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRouteType())
-                {
-                    context.Writer.WritePropertyName("RouteType");
-                    context.Writer.Write(publicRequest.RouteType);
-                }
-
-                if(publicRequest.IsSetServiceIdentifier())
-                {
-                    context.Writer.WritePropertyName("ServiceIdentifier");
-                    context.Writer.Write(publicRequest.ServiceIdentifier);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                    {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetUriPathRoute())
-                {
-                    context.Writer.WritePropertyName("UriPathRoute");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UriPathRouteInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.UriPathRoute, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("ActivationState");
+                    context.Writer.Write(publicRequest.ActivationState);
                 }
 
                 writer.WriteObjectEnd();
@@ -138,9 +88,9 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
 
             return request;
         }
-        private static CreateRouteRequestMarshaller _instance = new CreateRouteRequestMarshaller();        
+        private static UpdateRouteRequestMarshaller _instance = new UpdateRouteRequestMarshaller();        
 
-        internal static CreateRouteRequestMarshaller GetInstance()
+        internal static UpdateRouteRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -148,7 +98,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateRouteRequestMarshaller Instance
+        public static UpdateRouteRequestMarshaller Instance
         {
             get
             {

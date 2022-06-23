@@ -38,6 +38,13 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
     /// 
     ///  
     /// <para>
+    /// When created, the default route defaults to an active state so state is not a required
+    /// input. However, like all other state values the state of the default route can be
+    /// updated after creation, but only when all other routes are also inactive. Conversely,
+    /// no route can be active without the default route also being active.
+    /// </para>
+    ///  
+    /// <para>
     /// When you create a route, Refactor Spaces configures the Amazon API Gateway to send
     /// traffic to the target service as follows:
     /// </para>
@@ -59,8 +66,10 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// A one-time health check is performed on the service when the route is created. If
-    /// the health check fails, the route transitions to <code>FAILED</code>, and no traffic
+    /// A one-time health check is performed on the service when either the route is updated
+    /// from inactive to active, or when it is created with an active state. If the health
+    /// check fails, the route transitions the route state to <code>FAILED</code>, an error
+    /// code of <code>SERVICE_ENDPOINT_HEALTH_CHECK_FAILURE</code> is provided, and no traffic
     /// is sent to the service.
     /// </para>
     ///  
@@ -73,15 +82,18 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
     /// </para>
     ///  
     /// <para>
-    /// For public URLs, a connection is opened to the public endpoint. If the URL is not
-    /// reachable, the health check fails. For private URLs, a target group is created and
-    /// the target group health check is run.
+    /// For Lambda endpoints, a check is performed to determine that a Lambda function with
+    /// the specified ARN exists. If it does not exist, the health check fails. For public
+    /// URLs, a connection is opened to the public endpoint. If the URL is not reachable,
+    /// the health check fails. 
     /// </para>
     ///  
     /// <para>
-    /// The <code>HealthCheckProtocol</code>, <code>HealthCheckPort</code>, and <code>HealthCheckPath</code>
-    /// are the same protocol, port, and path specified in the URL or health URL, if used.
-    /// All other settings use the default values, as described in <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/target-group-health-checks.html">Health
+    /// For private URLS, a target group is created on the Elastic Load Balancing and the
+    /// target group health check is run. The <code>HealthCheckProtocol</code>, <code>HealthCheckPort</code>,
+    /// and <code>HealthCheckPath</code> are the same protocol, port, and path specified in
+    /// the URL or health URL, if used. All other settings use the default values, as described
+    /// in <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/target-group-health-checks.html">Health
     /// checks for your target groups</a>. The health check is considered successful if at
     /// least one target within the target group transitions to a healthy state.
     /// </para>
@@ -89,13 +101,14 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
     /// <para>
     /// Services can have HTTP or HTTPS URL endpoints. For HTTPS URLs, publicly-signed certificates
     /// are supported. Private Certificate Authorities (CAs) are permitted only if the CA's
-    /// domain is publicly resolvable.
+    /// domain is also publicly resolvable.
     /// </para>
     /// </summary>
     public partial class CreateRouteRequest : AmazonMigrationHubRefactorSpacesRequest
     {
         private string _applicationIdentifier;
         private string _clientToken;
+        private DefaultRouteInput _defaultRoute;
         private string _environmentIdentifier;
         private RouteType _routeType;
         private string _serviceIdentifier;
@@ -139,6 +152,24 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultRoute. 
+        /// <para>
+        ///  Configuration for the default route type. 
+        /// </para>
+        /// </summary>
+        public DefaultRouteInput DefaultRoute
+        {
+            get { return this._defaultRoute; }
+            set { this._defaultRoute = value; }
+        }
+
+        // Check to see if DefaultRoute property is set
+        internal bool IsSetDefaultRoute()
+        {
+            return this._defaultRoute != null;
         }
 
         /// <summary>

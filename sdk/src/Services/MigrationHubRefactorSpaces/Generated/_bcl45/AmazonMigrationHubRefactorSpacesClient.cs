@@ -463,6 +463,13 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// 
         ///  
         /// <para>
+        /// When created, the default route defaults to an active state so state is not a required
+        /// input. However, like all other state values the state of the default route can be
+        /// updated after creation, but only when all other routes are also inactive. Conversely,
+        /// no route can be active without the default route also being active.
+        /// </para>
+        ///  
+        /// <para>
         /// When you create a route, Refactor Spaces configures the Amazon API Gateway to send
         /// traffic to the target service as follows:
         /// </para>
@@ -484,8 +491,10 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// A one-time health check is performed on the service when the route is created. If
-        /// the health check fails, the route transitions to <code>FAILED</code>, and no traffic
+        /// A one-time health check is performed on the service when either the route is updated
+        /// from inactive to active, or when it is created with an active state. If the health
+        /// check fails, the route transitions the route state to <code>FAILED</code>, an error
+        /// code of <code>SERVICE_ENDPOINT_HEALTH_CHECK_FAILURE</code> is provided, and no traffic
         /// is sent to the service.
         /// </para>
         ///  
@@ -498,15 +507,18 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// </para>
         ///  
         /// <para>
-        /// For public URLs, a connection is opened to the public endpoint. If the URL is not
-        /// reachable, the health check fails. For private URLs, a target group is created and
-        /// the target group health check is run.
+        /// For Lambda endpoints, a check is performed to determine that a Lambda function with
+        /// the specified ARN exists. If it does not exist, the health check fails. For public
+        /// URLs, a connection is opened to the public endpoint. If the URL is not reachable,
+        /// the health check fails. 
         /// </para>
         ///  
         /// <para>
-        /// The <code>HealthCheckProtocol</code>, <code>HealthCheckPort</code>, and <code>HealthCheckPath</code>
-        /// are the same protocol, port, and path specified in the URL or health URL, if used.
-        /// All other settings use the default values, as described in <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/target-group-health-checks.html">Health
+        /// For private URLS, a target group is created on the Elastic Load Balancing and the
+        /// target group health check is run. The <code>HealthCheckProtocol</code>, <code>HealthCheckPort</code>,
+        /// and <code>HealthCheckPath</code> are the same protocol, port, and path specified in
+        /// the URL or health URL, if used. All other settings use the default values, as described
+        /// in <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/target-group-health-checks.html">Health
         /// checks for your target groups</a>. The health check is considered successful if at
         /// least one target within the target group transitions to a healthy state.
         /// </para>
@@ -514,7 +526,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <para>
         /// Services can have HTTP or HTTPS URL endpoints. For HTTPS URLs, publicly-signed certificates
         /// are supported. Private Certificate Authorities (CAs) are permitted only if the CA's
-        /// domain is publicly resolvable.
+        /// domain is also publicly resolvable.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRoute service method.</param>
@@ -561,6 +573,13 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// 
         ///  
         /// <para>
+        /// When created, the default route defaults to an active state so state is not a required
+        /// input. However, like all other state values the state of the default route can be
+        /// updated after creation, but only when all other routes are also inactive. Conversely,
+        /// no route can be active without the default route also being active.
+        /// </para>
+        ///  
+        /// <para>
         /// When you create a route, Refactor Spaces configures the Amazon API Gateway to send
         /// traffic to the target service as follows:
         /// </para>
@@ -582,8 +601,10 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// A one-time health check is performed on the service when the route is created. If
-        /// the health check fails, the route transitions to <code>FAILED</code>, and no traffic
+        /// A one-time health check is performed on the service when either the route is updated
+        /// from inactive to active, or when it is created with an active state. If the health
+        /// check fails, the route transitions the route state to <code>FAILED</code>, an error
+        /// code of <code>SERVICE_ENDPOINT_HEALTH_CHECK_FAILURE</code> is provided, and no traffic
         /// is sent to the service.
         /// </para>
         ///  
@@ -596,15 +617,18 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// </para>
         ///  
         /// <para>
-        /// For public URLs, a connection is opened to the public endpoint. If the URL is not
-        /// reachable, the health check fails. For private URLs, a target group is created and
-        /// the target group health check is run.
+        /// For Lambda endpoints, a check is performed to determine that a Lambda function with
+        /// the specified ARN exists. If it does not exist, the health check fails. For public
+        /// URLs, a connection is opened to the public endpoint. If the URL is not reachable,
+        /// the health check fails. 
         /// </para>
         ///  
         /// <para>
-        /// The <code>HealthCheckProtocol</code>, <code>HealthCheckPort</code>, and <code>HealthCheckPath</code>
-        /// are the same protocol, port, and path specified in the URL or health URL, if used.
-        /// All other settings use the default values, as described in <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/target-group-health-checks.html">Health
+        /// For private URLS, a target group is created on the Elastic Load Balancing and the
+        /// target group health check is run. The <code>HealthCheckProtocol</code>, <code>HealthCheckPort</code>,
+        /// and <code>HealthCheckPath</code> are the same protocol, port, and path specified in
+        /// the URL or health URL, if used. All other settings use the default values, as described
+        /// in <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/target-group-health-checks.html">Health
         /// checks for your target groups</a>. The health check is considered successful if at
         /// least one target within the target group transitions to a healthy state.
         /// </para>
@@ -612,7 +636,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <para>
         /// Services can have HTTP or HTTPS URL endpoints. For HTTPS URLs, publicly-signed certificates
         /// are supported. Private Certificate Authorities (CAs) are permitted only if the CA's
-        /// domain is publicly resolvable.
+        /// domain is also publicly resolvable.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRoute service method.</param>
@@ -2186,6 +2210,77 @@ namespace Amazon.MigrationHubRefactorSpaces
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateRoute
+
+
+        /// <summary>
+        /// Updates an Amazon Web Services Migration Hub Refactor Spaces route.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRoute service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRoute service method, as returned by MigrationHubRefactorSpaces.</returns>
+        /// <exception cref="Amazon.MigrationHubRefactorSpaces.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubRefactorSpaces.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubRefactorSpaces.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubRefactorSpaces.Model.ThrottlingException">
+        /// Request was denied because the request was throttled.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubRefactorSpaces.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/UpdateRoute">REST API Reference for UpdateRoute Operation</seealso>
+        public virtual UpdateRouteResponse UpdateRoute(UpdateRouteRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRouteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRouteResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRouteResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates an Amazon Web Services Migration Hub Refactor Spaces route.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRoute service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRoute service method, as returned by MigrationHubRefactorSpaces.</returns>
+        /// <exception cref="Amazon.MigrationHubRefactorSpaces.Model.AccessDeniedException">
+        /// The user does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubRefactorSpaces.Model.InternalServerException">
+        /// An unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubRefactorSpaces.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubRefactorSpaces.Model.ThrottlingException">
+        /// Request was denied because the request was throttled.
+        /// </exception>
+        /// <exception cref="Amazon.MigrationHubRefactorSpaces.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an Amazon Web Service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/UpdateRoute">REST API Reference for UpdateRoute Operation</seealso>
+        public virtual Task<UpdateRouteResponse> UpdateRouteAsync(UpdateRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRouteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRouteResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateRouteResponse>(request, options, cancellationToken);
         }
 
         #endregion
