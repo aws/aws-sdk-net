@@ -52,6 +52,14 @@ namespace Amazon.LookoutEquipment.Model
         }
 
         /// <summary>
+        /// Paginator for ListInferenceEvents operation
+        ///</summary>
+        public IListInferenceEventsPaginator ListInferenceEvents(ListInferenceEventsRequest request) 
+        {
+            return new ListInferenceEventsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListInferenceExecutions operation
         ///</summary>
         public IListInferenceExecutionsPaginator ListInferenceExecutions(ListInferenceExecutionsRequest request) 

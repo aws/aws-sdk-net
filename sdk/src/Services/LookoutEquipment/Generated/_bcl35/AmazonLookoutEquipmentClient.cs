@@ -1156,6 +1156,77 @@ namespace Amazon.LookoutEquipment
 
         #endregion
         
+        #region  ListInferenceEvents
+
+        /// <summary>
+        /// Lists all inference events that have been found for the specified inference scheduler.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInferenceEvents service method.</param>
+        /// 
+        /// <returns>The response from the ListInferenceEvents service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related AWS service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceEvents">REST API Reference for ListInferenceEvents Operation</seealso>
+        public virtual ListInferenceEventsResponse ListInferenceEvents(ListInferenceEventsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInferenceEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInferenceEventsResponseUnmarshaller.Instance;
+
+            return Invoke<ListInferenceEventsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListInferenceEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListInferenceEvents operation on AmazonLookoutEquipmentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListInferenceEvents
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceEvents">REST API Reference for ListInferenceEvents Operation</seealso>
+        public virtual IAsyncResult BeginListInferenceEvents(ListInferenceEventsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInferenceEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInferenceEventsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListInferenceEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListInferenceEvents.</param>
+        /// 
+        /// <returns>Returns a  ListInferenceEventsResult from LookoutEquipment.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceEvents">REST API Reference for ListInferenceEvents Operation</seealso>
+        public virtual ListInferenceEventsResponse EndListInferenceEvents(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListInferenceEventsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListInferenceExecutions
 
         /// <summary>

@@ -50,7 +50,7 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// Specifies the time the dataset was created in Amazon Lookout for Equipment. 
+        /// Specifies the time the dataset was created in Lookout for Equipment. 
         /// </para>
         /// </summary>
         public DateTime CreatedAt

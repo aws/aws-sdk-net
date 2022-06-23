@@ -355,6 +355,25 @@
     <max>8192</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.ListInferenceEventsRequest.InferenceSchedulerName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z_-]{1,200}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.ListInferenceEventsRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.ListInferenceEventsRequest.NextToken</property>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.ListInferenceEventsResponse.NextToken</property>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ListInferenceExecutionsRequest.InferenceSchedulerName</property>
     <min>1</min>
     <max>200</max>
@@ -596,6 +615,27 @@
     <pattern>^[0-9a-zA-Z_-]{1,200}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.InferenceEventSummary.Diagnostics</property>
+    <min>1</min>
+    <max>50000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.InferenceEventSummary.EventDurationInSeconds</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.InferenceEventSummary.InferenceSchedulerArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:inference-scheduler\/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.InferenceEventSummary.InferenceSchedulerName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z_-]{1,200}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.InferenceExecutionSummary.FailedReason</property>
     <min>1</min>
     <max>5000</max>
@@ -654,7 +694,7 @@
     <property>Amazon.LookoutEquipment.Model.InferenceS3InputConfiguration.Prefix</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>(^$)|([\P{M}\p{M}]{1,1023}/$)</pattern>
+    <pattern>(^$)|([\u0009\u000A\u000D\u0020-\u00FF]{1,1023}/$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.InferenceS3OutputConfiguration.Bucket</property>
@@ -666,7 +706,7 @@
     <property>Amazon.LookoutEquipment.Model.InferenceS3OutputConfiguration.Prefix</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>(^$)|([\P{M}\p{M}]{1,1023}/$)</pattern>
+    <pattern>(^$)|([\u0009\u000A\u000D\u0020-\u00FF]{1,1023}/$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.InferenceSchedulerSummary.DataDelayOffsetInMinutes</property>
@@ -712,7 +752,7 @@
     <property>Amazon.LookoutEquipment.Model.IngestionS3InputConfiguration.Prefix</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>(^$)|([\P{M}\p{M}]{1,1023}/$)</pattern>
+    <pattern>(^$)|([\u0009\u000A\u000D\u0020-\u00FF]{1,1023}/$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.LabelsS3InputConfiguration.Bucket</property>
@@ -724,7 +764,7 @@
     <property>Amazon.LookoutEquipment.Model.LabelsS3InputConfiguration.Prefix</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>(^$)|([\P{M}\p{M}]{1,1023}/$)</pattern>
+    <pattern>(^$)|([\u0009\u000A\u000D\u0020-\u00FF]{1,1023}/$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ModelSummary.DatasetArn</property>

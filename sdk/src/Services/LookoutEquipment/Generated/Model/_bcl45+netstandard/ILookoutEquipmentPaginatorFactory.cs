@@ -36,6 +36,11 @@ namespace Amazon.LookoutEquipment.Model
         IListDatasetsPaginator ListDatasets(ListDatasetsRequest request);
 
         /// <summary>
+        /// Paginator for ListInferenceEvents operation
+        ///</summary>
+        IListInferenceEventsPaginator ListInferenceEvents(ListInferenceEventsRequest request);
+
+        /// <summary>
         /// Paginator for ListInferenceExecutions operation
         ///</summary>
         IListInferenceExecutionsPaginator ListInferenceExecutions(ListInferenceExecutionsRequest request);
