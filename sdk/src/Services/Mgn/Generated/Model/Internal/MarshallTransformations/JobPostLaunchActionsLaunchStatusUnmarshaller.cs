@@ -34,58 +34,64 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ConflictException Object
+    /// Response Unmarshaller for JobPostLaunchActionsLaunchStatus Object
     /// </summary>  
-    public class ConflictExceptionUnmarshaller : IErrorResponseUnmarshaller<ConflictException, JsonUnmarshallerContext>
+    public class JobPostLaunchActionsLaunchStatusUnmarshaller : IUnmarshaller<JobPostLaunchActionsLaunchStatus, XmlUnmarshallerContext>, IUnmarshaller<JobPostLaunchActionsLaunchStatus, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ConflictException Unmarshall(JsonUnmarshallerContext context)
+        JobPostLaunchActionsLaunchStatus IUnmarshaller<JobPostLaunchActionsLaunchStatus, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
+            throw new NotImplementedException();
         }
 
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public ConflictException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
+        public JobPostLaunchActionsLaunchStatus Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
 
-            ConflictException unmarshalledObject = new ConflictException(errorResponse.Message, errorResponse.InnerException,
-                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+            JobPostLaunchActionsLaunchStatus unmarshalledObject = new JobPostLaunchActionsLaunchStatus();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("code", targetDepth))
+                if (context.TestExpression("executionID", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Code = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExecutionID = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("errors", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ErrorDetails, ErrorDetailsUnmarshaller>(ErrorDetailsUnmarshaller.Instance);
-                    unmarshalledObject.Errors = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("resourceId", targetDepth))
+                if (context.TestExpression("executionStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExecutionStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("resourceType", targetDepth))
+                if (context.TestExpression("failureReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ssmDocument", targetDepth))
+                {
+                    var unmarshaller = SsmDocumentUnmarshaller.Instance;
+                    unmarshalledObject.SsmDocument = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ssmDocumentType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SsmDocumentType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -93,12 +99,13 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static ConflictExceptionUnmarshaller _instance = new ConflictExceptionUnmarshaller();        
+
+        private static JobPostLaunchActionsLaunchStatusUnmarshaller _instance = new JobPostLaunchActionsLaunchStatusUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ConflictExceptionUnmarshaller Instance
+        public static JobPostLaunchActionsLaunchStatusUnmarshaller Instance
         {
             get
             {

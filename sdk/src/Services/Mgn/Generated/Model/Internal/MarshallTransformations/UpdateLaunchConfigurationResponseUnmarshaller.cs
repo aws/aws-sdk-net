@@ -93,6 +93,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                     response.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("postLaunchActions", targetDepth))
+                {
+                    var unmarshaller = PostLaunchActionsUnmarshaller.Instance;
+                    response.PostLaunchActions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sourceServerID", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

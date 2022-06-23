@@ -24,6 +24,17 @@
     <pattern>^vcc-[0-9a-zA-Z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Mgn.Model.CreateLaunchConfigurationTemplateResponse.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.CreateLaunchConfigurationTemplateResponse.LaunchConfigurationTemplateID</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^lct-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Mgn.Model.CreateReplicationConfigurationTemplateRequest.BandwidthThrottling</property>
     <min>0</min>
   </property-value-rule>
@@ -81,6 +92,12 @@
     <pattern>^mgnjob-[0-9a-zA-Z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Mgn.Model.DeleteLaunchConfigurationTemplateRequest.LaunchConfigurationTemplateID</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^lct-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Mgn.Model.DeleteReplicationConfigurationTemplateRequest.ReplicationConfigurationTemplateID</property>
     <min>21</min>
     <max>21</max>
@@ -129,6 +146,20 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Mgn.Model.DescribeJobsResponse.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.DescribeLaunchConfigurationTemplatesRequest.MaxResults</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.DescribeLaunchConfigurationTemplatesRequest.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.DescribeLaunchConfigurationTemplatesResponse.NextToken</property>
     <min>0</min>
     <max>2048</max>
   </property-value-rule>
@@ -391,6 +422,23 @@
     <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateLaunchConfigurationTemplateRequest.LaunchConfigurationTemplateID</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^lct-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateLaunchConfigurationTemplateResponse.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.UpdateLaunchConfigurationTemplateResponse.LaunchConfigurationTemplateID</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^lct-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Mgn.Model.UpdateReplicationConfigurationRequest.BandwidthThrottling</property>
     <min>0</min>
   </property-value-rule>
@@ -579,9 +627,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Mgn.Model.DataReplicationInfo.LagDuration</property>
-    <min>19</min>
-    <max>32</max>
-    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Mgn.Model.DataReplicationInfo.LastSnapshotDateTime</property>
@@ -642,6 +689,26 @@
     <property>Amazon.Mgn.Model.Disk.DeviceName</property>
     <min>0</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.ErrorDetails.Code</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.ErrorDetails.Message</property>
+    <min>0</min>
+    <max>65536</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.ErrorDetails.ResourceId</property>
+    <min>0</min>
+    <max>65536</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.ErrorDetails.ResourceType</property>
+    <min>0</min>
+    <max>65536</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Mgn.Model.IdentificationHints.AwsInstanceID</property>
@@ -726,6 +793,16 @@
     <pattern>^i-[0-9a-fA-F]{8,}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Mgn.Model.JobPostLaunchActionsLaunchStatus.ExecutionID</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.JobPostLaunchActionsLaunchStatus.FailureReason</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Mgn.Model.LaunchedInstance.Ec2InstanceID</property>
     <min>0</min>
     <max>255</max>
@@ -745,9 +822,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Mgn.Model.LifeCycle.ElapsedReplicationDuration</property>
-    <min>19</min>
-    <max>32</max>
-    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Mgn.Model.LifeCycle.FirstByteDateTime</property>
@@ -820,10 +896,38 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Mgn.Model.ParticipatingServer.LaunchedEc2InstanceID</property>
+    <min>0</min>
+    <max>255</max>
+    <pattern>^i-[0-9a-fA-F]{8,}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Mgn.Model.ParticipatingServer.SourceServerID</property>
     <min>19</min>
     <max>19</max>
     <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.PostLaunchActions.CloudWatchLogGroupName</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^[\.\-_/#A-Za-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.PostLaunchActions.S3LogBucket</property>
+    <min>3</min>
+    <max>63</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.PostLaunchActions.S3OutputKeyPrefix</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.PostLaunchActionsStatus.SsmAgentDiscoveryDatetime</property>
+    <min>19</min>
+    <max>32</max>
+    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Mgn.Model.ReplicationConfigurationReplicatedDisk.DeviceName</property>
@@ -896,6 +1000,27 @@
     <property>Amazon.Mgn.Model.SourceProperties.RecommendedInstanceType</property>
     <min>0</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.SsmDocument.ActionName</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.SsmDocument.SsmDocumentName</property>
+    <min>3</min>
+    <max>172</max>
+    <pattern>^([A-Za-z0-9/:_\.-])+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.SsmDocument.TimeoutSeconds</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.SsmParameterStoreParameter.ParameterName</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^([A-Za-z0-9_\.-])+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Mgn.Model.ThrottlingException.QuotaCode</property>

@@ -34,58 +34,46 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ConflictException Object
+    /// Response Unmarshaller for PostLaunchActionsStatus Object
     /// </summary>  
-    public class ConflictExceptionUnmarshaller : IErrorResponseUnmarshaller<ConflictException, JsonUnmarshallerContext>
+    public class PostLaunchActionsStatusUnmarshaller : IUnmarshaller<PostLaunchActionsStatus, XmlUnmarshallerContext>, IUnmarshaller<PostLaunchActionsStatus, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ConflictException Unmarshall(JsonUnmarshallerContext context)
+        PostLaunchActionsStatus IUnmarshaller<PostLaunchActionsStatus, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
+            throw new NotImplementedException();
         }
 
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public ConflictException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
+        public PostLaunchActionsStatus Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
 
-            ConflictException unmarshalledObject = new ConflictException(errorResponse.Message, errorResponse.InnerException,
-                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+            PostLaunchActionsStatus unmarshalledObject = new PostLaunchActionsStatus();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("code", targetDepth))
+                if (context.TestExpression("postLaunchActionsLaunchStatusList", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Code = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<JobPostLaunchActionsLaunchStatus, JobPostLaunchActionsLaunchStatusUnmarshaller>(JobPostLaunchActionsLaunchStatusUnmarshaller.Instance);
+                    unmarshalledObject.PostLaunchActionsLaunchStatusList = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("errors", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ErrorDetails, ErrorDetailsUnmarshaller>(ErrorDetailsUnmarshaller.Instance);
-                    unmarshalledObject.Errors = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("resourceId", targetDepth))
+                if (context.TestExpression("ssmAgentDiscoveryDatetime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("resourceType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SsmAgentDiscoveryDatetime = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -93,12 +81,13 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static ConflictExceptionUnmarshaller _instance = new ConflictExceptionUnmarshaller();        
+
+        private static PostLaunchActionsStatusUnmarshaller _instance = new PostLaunchActionsStatusUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ConflictExceptionUnmarshaller Instance
+        public static PostLaunchActionsStatusUnmarshaller Instance
         {
             get
             {

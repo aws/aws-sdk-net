@@ -120,7 +120,7 @@ namespace Amazon.Mgn.Model
         /// Request to query data replication lag duration.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=19, Max=32)]
+        [AWSProperty(Min=1, Max=64)]
         public string LagDuration
         {
             get { return this._lagDuration; }

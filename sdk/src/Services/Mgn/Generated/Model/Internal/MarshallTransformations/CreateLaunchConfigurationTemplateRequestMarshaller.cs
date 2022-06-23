@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateLaunchConfiguration Request Marshaller
+    /// CreateLaunchConfigurationTemplate Request Marshaller
     /// </summary>       
-    public class UpdateLaunchConfigurationRequestMarshaller : IMarshaller<IRequest, UpdateLaunchConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class CreateLaunchConfigurationTemplateRequestMarshaller : IMarshaller<IRequest, CreateLaunchConfigurationTemplateRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateLaunchConfigurationRequest)input);
+            return this.Marshall((CreateLaunchConfigurationTemplateRequest)input);
         }
 
         /// <summary>
@@ -52,60 +52,19 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateLaunchConfigurationRequest publicRequest)
+        public IRequest Marshall(CreateLaunchConfigurationTemplateRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Mgn");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-02-26";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/UpdateLaunchConfiguration";
+            request.ResourcePath = "/CreateLaunchConfigurationTemplate";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBootMode())
-                {
-                    context.Writer.WritePropertyName("bootMode");
-                    context.Writer.Write(publicRequest.BootMode);
-                }
-
-                if(publicRequest.IsSetCopyPrivateIp())
-                {
-                    context.Writer.WritePropertyName("copyPrivateIp");
-                    context.Writer.Write(publicRequest.CopyPrivateIp);
-                }
-
-                if(publicRequest.IsSetCopyTags())
-                {
-                    context.Writer.WritePropertyName("copyTags");
-                    context.Writer.Write(publicRequest.CopyTags);
-                }
-
-                if(publicRequest.IsSetLaunchDisposition())
-                {
-                    context.Writer.WritePropertyName("launchDisposition");
-                    context.Writer.Write(publicRequest.LaunchDisposition);
-                }
-
-                if(publicRequest.IsSetLicensing())
-                {
-                    context.Writer.WritePropertyName("licensing");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LicensingMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Licensing, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
                 if(publicRequest.IsSetPostLaunchActions())
                 {
                     context.Writer.WritePropertyName("postLaunchActions");
@@ -117,16 +76,18 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSourceServerID())
+                if(publicRequest.IsSetTags())
                 {
-                    context.Writer.WritePropertyName("sourceServerID");
-                    context.Writer.Write(publicRequest.SourceServerID);
-                }
+                    context.Writer.WritePropertyName("tags");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    {
+                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
 
-                if(publicRequest.IsSetTargetInstanceTypeRightSizingMethod())
-                {
-                    context.Writer.WritePropertyName("targetInstanceTypeRightSizingMethod");
-                    context.Writer.Write(publicRequest.TargetInstanceTypeRightSizingMethod);
+                            context.Writer.Write(publicRequestTagsValue);
+                    }
+                    context.Writer.WriteObjectEnd();
                 }
 
                 writer.WriteObjectEnd();
@@ -137,9 +98,9 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static UpdateLaunchConfigurationRequestMarshaller _instance = new UpdateLaunchConfigurationRequestMarshaller();        
+        private static CreateLaunchConfigurationTemplateRequestMarshaller _instance = new CreateLaunchConfigurationTemplateRequestMarshaller();        
 
-        internal static UpdateLaunchConfigurationRequestMarshaller GetInstance()
+        internal static CreateLaunchConfigurationTemplateRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -147,7 +108,7 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateLaunchConfigurationRequestMarshaller Instance
+        public static CreateLaunchConfigurationTemplateRequestMarshaller Instance
         {
             get
             {

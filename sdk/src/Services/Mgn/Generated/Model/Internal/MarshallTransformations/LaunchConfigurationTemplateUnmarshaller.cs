@@ -34,58 +34,58 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ConflictException Object
+    /// Response Unmarshaller for LaunchConfigurationTemplate Object
     /// </summary>  
-    public class ConflictExceptionUnmarshaller : IErrorResponseUnmarshaller<ConflictException, JsonUnmarshallerContext>
+    public class LaunchConfigurationTemplateUnmarshaller : IUnmarshaller<LaunchConfigurationTemplate, XmlUnmarshallerContext>, IUnmarshaller<LaunchConfigurationTemplate, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ConflictException Unmarshall(JsonUnmarshallerContext context)
+        LaunchConfigurationTemplate IUnmarshaller<LaunchConfigurationTemplate, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
+            throw new NotImplementedException();
         }
 
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public ConflictException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
+        public LaunchConfigurationTemplate Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
 
-            ConflictException unmarshalledObject = new ConflictException(errorResponse.Message, errorResponse.InnerException,
-                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+            LaunchConfigurationTemplate unmarshalledObject = new LaunchConfigurationTemplate();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("code", targetDepth))
+                if (context.TestExpression("arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Code = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("errors", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ErrorDetails, ErrorDetailsUnmarshaller>(ErrorDetailsUnmarshaller.Instance);
-                    unmarshalledObject.Errors = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("resourceId", targetDepth))
+                if (context.TestExpression("launchConfigurationTemplateID", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LaunchConfigurationTemplateID = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("resourceType", targetDepth))
+                if (context.TestExpression("postLaunchActions", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
+                    var unmarshaller = PostLaunchActionsUnmarshaller.Instance;
+                    unmarshalledObject.PostLaunchActions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("tags", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -93,12 +93,13 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static ConflictExceptionUnmarshaller _instance = new ConflictExceptionUnmarshaller();        
+
+        private static LaunchConfigurationTemplateUnmarshaller _instance = new LaunchConfigurationTemplateUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ConflictExceptionUnmarshaller Instance
+        public static LaunchConfigurationTemplateUnmarshaller Instance
         {
             get
             {

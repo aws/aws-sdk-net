@@ -989,6 +989,110 @@ namespace Amazon.Mgn
 
 
     /// <summary>
+    /// Constants used for properties of type PostLaunchActionExecutionStatus.
+    /// </summary>
+    public class PostLaunchActionExecutionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for PostLaunchActionExecutionStatus
+        /// </summary>
+        public static readonly PostLaunchActionExecutionStatus FAILED = new PostLaunchActionExecutionStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for PostLaunchActionExecutionStatus
+        /// </summary>
+        public static readonly PostLaunchActionExecutionStatus IN_PROGRESS = new PostLaunchActionExecutionStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant SUCCESS for PostLaunchActionExecutionStatus
+        /// </summary>
+        public static readonly PostLaunchActionExecutionStatus SUCCESS = new PostLaunchActionExecutionStatus("SUCCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PostLaunchActionExecutionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PostLaunchActionExecutionStatus FindValue(string value)
+        {
+            return FindValue<PostLaunchActionExecutionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PostLaunchActionExecutionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PostLaunchActionsDeploymentType.
+    /// </summary>
+    public class PostLaunchActionsDeploymentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CUTOVER_ONLY for PostLaunchActionsDeploymentType
+        /// </summary>
+        public static readonly PostLaunchActionsDeploymentType CUTOVER_ONLY = new PostLaunchActionsDeploymentType("CUTOVER_ONLY");
+        /// <summary>
+        /// Constant TEST_AND_CUTOVER for PostLaunchActionsDeploymentType
+        /// </summary>
+        public static readonly PostLaunchActionsDeploymentType TEST_AND_CUTOVER = new PostLaunchActionsDeploymentType("TEST_AND_CUTOVER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PostLaunchActionsDeploymentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PostLaunchActionsDeploymentType FindValue(string value)
+        {
+            return FindValue<PostLaunchActionsDeploymentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PostLaunchActionsDeploymentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ReplicationConfigurationDataPlaneRouting.
     /// </summary>
     public class ReplicationConfigurationDataPlaneRouting : ConstantClass
@@ -1260,6 +1364,102 @@ namespace Amazon.Mgn
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ReplicationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SsmDocumentType.
+    /// </summary>
+    public class SsmDocumentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTOMATION for SsmDocumentType
+        /// </summary>
+        public static readonly SsmDocumentType AUTOMATION = new SsmDocumentType("AUTOMATION");
+        /// <summary>
+        /// Constant COMMAND for SsmDocumentType
+        /// </summary>
+        public static readonly SsmDocumentType COMMAND = new SsmDocumentType("COMMAND");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SsmDocumentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SsmDocumentType FindValue(string value)
+        {
+            return FindValue<SsmDocumentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SsmDocumentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SsmParameterStoreParameterType.
+    /// </summary>
+    public class SsmParameterStoreParameterType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant STRING for SsmParameterStoreParameterType
+        /// </summary>
+        public static readonly SsmParameterStoreParameterType STRING = new SsmParameterStoreParameterType("STRING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SsmParameterStoreParameterType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SsmParameterStoreParameterType FindValue(string value)
+        {
+            return FindValue<SsmParameterStoreParameterType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SsmParameterStoreParameterType(string value)
         {
             return FindValue(value);
         }

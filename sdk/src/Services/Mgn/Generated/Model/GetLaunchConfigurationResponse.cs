@@ -40,6 +40,7 @@ namespace Amazon.Mgn.Model
         private LaunchDisposition _launchDisposition;
         private Licensing _licensing;
         private string _name;
+        private PostLaunchActions _postLaunchActions;
         private string _sourceServerID;
         private TargetInstanceTypeRightSizingMethod _targetInstanceTypeRightSizingMethod;
 
@@ -169,6 +170,21 @@ namespace Amazon.Mgn.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PostLaunchActions.
+        /// </summary>
+        public PostLaunchActions PostLaunchActions
+        {
+            get { return this._postLaunchActions; }
+            set { this._postLaunchActions = value; }
+        }
+
+        // Check to see if PostLaunchActions property is set
+        internal bool IsSetPostLaunchActions()
+        {
+            return this._postLaunchActions != null;
         }
 
         /// <summary>

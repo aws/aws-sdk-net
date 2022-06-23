@@ -34,32 +34,32 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ConflictException Object
+    /// Response Unmarshaller for ErrorDetails Object
     /// </summary>  
-    public class ConflictExceptionUnmarshaller : IErrorResponseUnmarshaller<ConflictException, JsonUnmarshallerContext>
+    public class ErrorDetailsUnmarshaller : IUnmarshaller<ErrorDetails, XmlUnmarshallerContext>, IUnmarshaller<ErrorDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ConflictException Unmarshall(JsonUnmarshallerContext context)
+        ErrorDetails IUnmarshaller<ErrorDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
+            throw new NotImplementedException();
         }
 
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public ConflictException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
+        public ErrorDetails Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
 
-            ConflictException unmarshalledObject = new ConflictException(errorResponse.Message, errorResponse.InnerException,
-                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+            ErrorDetails unmarshalledObject = new ErrorDetails();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
@@ -70,10 +70,10 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                     unmarshalledObject.Code = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("errors", targetDepth))
+                if (context.TestExpression("message", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ErrorDetails, ErrorDetailsUnmarshaller>(ErrorDetailsUnmarshaller.Instance);
-                    unmarshalledObject.Errors = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Message = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("resourceId", targetDepth))
@@ -93,12 +93,13 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static ConflictExceptionUnmarshaller _instance = new ConflictExceptionUnmarshaller();        
+
+        private static ErrorDetailsUnmarshaller _instance = new ErrorDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ConflictExceptionUnmarshaller Instance
+        public static ErrorDetailsUnmarshaller Instance
         {
             get
             {

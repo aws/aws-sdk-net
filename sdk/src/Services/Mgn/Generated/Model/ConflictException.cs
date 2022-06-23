@@ -38,6 +38,7 @@ namespace Amazon.Mgn.Model
     public partial class ConflictException : AmazonMgnException
     {
         private string _code;
+        private List<ErrorDetails> _errors = new List<ErrorDetails>();
         private string _resourceId;
         private string _resourceType;
 
@@ -102,6 +103,7 @@ namespace Amazon.Mgn.Model
             : base(info, context)
         {
             this.Code = (string)info.GetValue("Code", typeof(string));
+            this.Errors = (List<ErrorDetails>)info.GetValue("Errors", typeof(List<ErrorDetails>));
             this.ResourceId = (string)info.GetValue("ResourceId", typeof(string));
             this.ResourceType = (string)info.GetValue("ResourceType", typeof(string));
         }
@@ -125,6 +127,7 @@ namespace Amazon.Mgn.Model
         {
             base.GetObjectData(info, context);
             info.AddValue("Code", this.Code);
+            info.AddValue("Errors", this.Errors);
             info.AddValue("ResourceId", this.ResourceId);
             info.AddValue("ResourceType", this.ResourceType);
         }
@@ -144,6 +147,24 @@ namespace Amazon.Mgn.Model
         internal bool IsSetCode()
         {
             return this._code != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Errors. 
+        /// <para>
+        /// Conflict Exception specific errors.
+        /// </para>
+        /// </summary>
+        public List<ErrorDetails> Errors
+        {
+            get { return this._errors; }
+            set { this._errors = value; }
+        }
+
+        // Check to see if Errors property is set
+        internal bool IsSetErrors()
+        {
+            return this._errors != null && this._errors.Count > 0; 
         }
 
         /// <summary>

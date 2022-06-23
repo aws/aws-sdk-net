@@ -52,6 +52,14 @@ namespace Amazon.Mgn.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeLaunchConfigurationTemplates operation
+        ///</summary>
+        public IDescribeLaunchConfigurationTemplatesPaginator DescribeLaunchConfigurationTemplates(DescribeLaunchConfigurationTemplatesRequest request) 
+        {
+            return new DescribeLaunchConfigurationTemplatesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeReplicationConfigurationTemplates operation
         ///</summary>
         public IDescribeReplicationConfigurationTemplatesPaginator DescribeReplicationConfigurationTemplates(DescribeReplicationConfigurationTemplatesRequest request) 

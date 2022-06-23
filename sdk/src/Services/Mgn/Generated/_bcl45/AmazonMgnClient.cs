@@ -327,6 +327,65 @@ namespace Amazon.Mgn
 
         #endregion
         
+        #region  CreateLaunchConfigurationTemplate
+
+
+        /// <summary>
+        /// Creates a new ReplicationConfigurationTemplate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLaunchConfigurationTemplate service method.</param>
+        /// 
+        /// <returns>The response from the CreateLaunchConfigurationTemplate service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateLaunchConfigurationTemplate">REST API Reference for CreateLaunchConfigurationTemplate Operation</seealso>
+        public virtual CreateLaunchConfigurationTemplateResponse CreateLaunchConfigurationTemplate(CreateLaunchConfigurationTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLaunchConfigurationTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLaunchConfigurationTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLaunchConfigurationTemplateResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new ReplicationConfigurationTemplate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLaunchConfigurationTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLaunchConfigurationTemplate service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateLaunchConfigurationTemplate">REST API Reference for CreateLaunchConfigurationTemplate Operation</seealso>
+        public virtual Task<CreateLaunchConfigurationTemplateResponse> CreateLaunchConfigurationTemplateAsync(CreateLaunchConfigurationTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLaunchConfigurationTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLaunchConfigurationTemplateResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateLaunchConfigurationTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateReplicationConfigurationTemplate
 
 
@@ -443,6 +502,67 @@ namespace Amazon.Mgn
             options.ResponseUnmarshaller = DeleteJobResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteLaunchConfigurationTemplate
+
+
+        /// <summary>
+        /// Creates a new ReplicationConfigurationTemplate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLaunchConfigurationTemplate service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLaunchConfigurationTemplate service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteLaunchConfigurationTemplate">REST API Reference for DeleteLaunchConfigurationTemplate Operation</seealso>
+        public virtual DeleteLaunchConfigurationTemplateResponse DeleteLaunchConfigurationTemplate(DeleteLaunchConfigurationTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLaunchConfigurationTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLaunchConfigurationTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLaunchConfigurationTemplateResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new ReplicationConfigurationTemplate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLaunchConfigurationTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteLaunchConfigurationTemplate service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteLaunchConfigurationTemplate">REST API Reference for DeleteLaunchConfigurationTemplate Operation</seealso>
+        public virtual Task<DeleteLaunchConfigurationTemplateResponse> DeleteLaunchConfigurationTemplateAsync(DeleteLaunchConfigurationTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLaunchConfigurationTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLaunchConfigurationTemplateResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteLaunchConfigurationTemplateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -740,6 +860,65 @@ namespace Amazon.Mgn
             options.ResponseUnmarshaller = DescribeJobsResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeJobsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeLaunchConfigurationTemplates
+
+
+        /// <summary>
+        /// Creates a new ReplicationConfigurationTemplate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLaunchConfigurationTemplates service method.</param>
+        /// 
+        /// <returns>The response from the DescribeLaunchConfigurationTemplates service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DescribeLaunchConfigurationTemplates">REST API Reference for DescribeLaunchConfigurationTemplates Operation</seealso>
+        public virtual DescribeLaunchConfigurationTemplatesResponse DescribeLaunchConfigurationTemplates(DescribeLaunchConfigurationTemplatesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLaunchConfigurationTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLaunchConfigurationTemplatesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLaunchConfigurationTemplatesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new ReplicationConfigurationTemplate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLaunchConfigurationTemplates service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeLaunchConfigurationTemplates service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DescribeLaunchConfigurationTemplates">REST API Reference for DescribeLaunchConfigurationTemplates Operation</seealso>
+        public virtual Task<DescribeLaunchConfigurationTemplatesResponse> DescribeLaunchConfigurationTemplatesAsync(DescribeLaunchConfigurationTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLaunchConfigurationTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLaunchConfigurationTemplatesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeLaunchConfigurationTemplatesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1926,6 +2105,71 @@ namespace Amazon.Mgn
             options.ResponseUnmarshaller = UpdateLaunchConfigurationResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateLaunchConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateLaunchConfigurationTemplate
+
+
+        /// <summary>
+        /// Creates a new ReplicationConfigurationTemplate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLaunchConfigurationTemplate service method.</param>
+        /// 
+        /// <returns>The response from the UpdateLaunchConfigurationTemplate service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateLaunchConfigurationTemplate">REST API Reference for UpdateLaunchConfigurationTemplate Operation</seealso>
+        public virtual UpdateLaunchConfigurationTemplateResponse UpdateLaunchConfigurationTemplate(UpdateLaunchConfigurationTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLaunchConfigurationTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLaunchConfigurationTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateLaunchConfigurationTemplateResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new ReplicationConfigurationTemplate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLaunchConfigurationTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateLaunchConfigurationTemplate service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateLaunchConfigurationTemplate">REST API Reference for UpdateLaunchConfigurationTemplate Operation</seealso>
+        public virtual Task<UpdateLaunchConfigurationTemplateResponse> UpdateLaunchConfigurationTemplateAsync(UpdateLaunchConfigurationTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLaunchConfigurationTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLaunchConfigurationTemplateResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateLaunchConfigurationTemplateResponse>(request, options, cancellationToken);
         }
 
         #endregion

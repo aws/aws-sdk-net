@@ -33,8 +33,29 @@ namespace Amazon.Mgn.Model
     /// </summary>
     public partial class ParticipatingServer
     {
+        private string _launchedEc2InstanceID;
         private LaunchStatus _launchStatus;
+        private PostLaunchActionsStatus _postLaunchActionsStatus;
         private string _sourceServerID;
+
+        /// <summary>
+        /// Gets and sets the property LaunchedEc2InstanceID. 
+        /// <para>
+        /// Participating server Source Server ID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=255)]
+        public string LaunchedEc2InstanceID
+        {
+            get { return this._launchedEc2InstanceID; }
+            set { this._launchedEc2InstanceID = value; }
+        }
+
+        // Check to see if LaunchedEc2InstanceID property is set
+        internal bool IsSetLaunchedEc2InstanceID()
+        {
+            return this._launchedEc2InstanceID != null;
+        }
 
         /// <summary>
         /// Gets and sets the property LaunchStatus. 
@@ -55,12 +76,30 @@ namespace Amazon.Mgn.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PostLaunchActionsStatus. 
+        /// <para>
+        /// Participating server Source Server ID.
+        /// </para>
+        /// </summary>
+        public PostLaunchActionsStatus PostLaunchActionsStatus
+        {
+            get { return this._postLaunchActionsStatus; }
+            set { this._postLaunchActionsStatus = value; }
+        }
+
+        // Check to see if PostLaunchActionsStatus property is set
+        internal bool IsSetPostLaunchActionsStatus()
+        {
+            return this._postLaunchActionsStatus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SourceServerID. 
         /// <para>
         /// Participating server Source Server ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=19, Max=19)]
+        [AWSProperty(Required=true, Min=19, Max=19)]
         public string SourceServerID
         {
             get { return this._sourceServerID; }

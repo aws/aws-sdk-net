@@ -34,58 +34,64 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ConflictException Object
+    /// Response Unmarshaller for SsmDocument Object
     /// </summary>  
-    public class ConflictExceptionUnmarshaller : IErrorResponseUnmarshaller<ConflictException, JsonUnmarshallerContext>
+    public class SsmDocumentUnmarshaller : IUnmarshaller<SsmDocument, XmlUnmarshallerContext>, IUnmarshaller<SsmDocument, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ConflictException Unmarshall(JsonUnmarshallerContext context)
+        SsmDocument IUnmarshaller<SsmDocument, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
+            throw new NotImplementedException();
         }
 
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public ConflictException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
+        public SsmDocument Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
 
-            ConflictException unmarshalledObject = new ConflictException(errorResponse.Message, errorResponse.InnerException,
-                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+            SsmDocument unmarshalledObject = new SsmDocument();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("code", targetDepth))
+                if (context.TestExpression("actionName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Code = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ActionName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("errors", targetDepth))
+                if (context.TestExpression("mustSucceedForCutover", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ErrorDetails, ErrorDetailsUnmarshaller>(ErrorDetailsUnmarshaller.Instance);
-                    unmarshalledObject.Errors = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.MustSucceedForCutover = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("resourceId", targetDepth))
+                if (context.TestExpression("parameters", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, List<SsmParameterStoreParameter>, StringUnmarshaller, ListUnmarshaller<SsmParameterStoreParameter, SsmParameterStoreParameterUnmarshaller>>(StringUnmarshaller.Instance, new ListUnmarshaller<SsmParameterStoreParameter, SsmParameterStoreParameterUnmarshaller>(SsmParameterStoreParameterUnmarshaller.Instance));
+                    unmarshalledObject.Parameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ssmDocumentName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SsmDocumentName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("resourceType", targetDepth))
+                if (context.TestExpression("timeoutSeconds", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.TimeoutSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -93,12 +99,13 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static ConflictExceptionUnmarshaller _instance = new ConflictExceptionUnmarshaller();        
+
+        private static SsmDocumentUnmarshaller _instance = new SsmDocumentUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ConflictExceptionUnmarshaller Instance
+        public static SsmDocumentUnmarshaller Instance
         {
             get
             {

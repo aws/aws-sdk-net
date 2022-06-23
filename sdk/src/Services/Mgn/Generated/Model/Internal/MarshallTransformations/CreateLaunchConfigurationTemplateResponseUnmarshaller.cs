@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetLaunchConfiguration operation
+    /// Response Unmarshaller for CreateLaunchConfigurationTemplate operation
     /// </summary>  
-    public class GetLaunchConfigurationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class CreateLaunchConfigurationTemplateResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,52 +45,22 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetLaunchConfigurationResponse response = new GetLaunchConfigurationResponse();
+            CreateLaunchConfigurationTemplateResponse response = new CreateLaunchConfigurationTemplateResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("bootMode", targetDepth))
+                if (context.TestExpression("arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.BootMode = unmarshaller.Unmarshall(context);
+                    response.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("copyPrivateIp", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.CopyPrivateIp = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("copyTags", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.CopyTags = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ec2LaunchTemplateID", targetDepth))
+                if (context.TestExpression("launchConfigurationTemplateID", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Ec2LaunchTemplateID = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("launchDisposition", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.LaunchDisposition = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("licensing", targetDepth))
-                {
-                    var unmarshaller = LicensingUnmarshaller.Instance;
-                    response.Licensing = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Name = unmarshaller.Unmarshall(context);
+                    response.LaunchConfigurationTemplateID = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("postLaunchActions", targetDepth))
@@ -99,16 +69,10 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                     response.PostLaunchActions = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("sourceServerID", targetDepth))
+                if (context.TestExpression("tags", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.SourceServerID = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("targetInstanceTypeRightSizingMethod", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.TargetInstanceTypeRightSizingMethod = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    response.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -134,21 +98,25 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
                 {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("UninitializedAccountException"))
                 {
                     return UninitializedAccountExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
+                {
+                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
             }
             return new AmazonMgnException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetLaunchConfigurationResponseUnmarshaller _instance = new GetLaunchConfigurationResponseUnmarshaller();        
+        private static CreateLaunchConfigurationTemplateResponseUnmarshaller _instance = new CreateLaunchConfigurationTemplateResponseUnmarshaller();        
 
-        internal static GetLaunchConfigurationResponseUnmarshaller GetInstance()
+        internal static CreateLaunchConfigurationTemplateResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -156,7 +124,7 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetLaunchConfigurationResponseUnmarshaller Instance
+        public static CreateLaunchConfigurationTemplateResponseUnmarshaller Instance
         {
             get
             {

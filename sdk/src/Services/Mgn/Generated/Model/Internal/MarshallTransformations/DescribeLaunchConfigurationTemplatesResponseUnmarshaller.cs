@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetLaunchConfiguration operation
+    /// Response Unmarshaller for DescribeLaunchConfigurationTemplates operation
     /// </summary>  
-    public class GetLaunchConfigurationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribeLaunchConfigurationTemplatesResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,70 +45,22 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetLaunchConfigurationResponse response = new GetLaunchConfigurationResponse();
+            DescribeLaunchConfigurationTemplatesResponse response = new DescribeLaunchConfigurationTemplatesResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("bootMode", targetDepth))
+                if (context.TestExpression("items", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<LaunchConfigurationTemplate, LaunchConfigurationTemplateUnmarshaller>(LaunchConfigurationTemplateUnmarshaller.Instance);
+                    response.Items = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("nextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.BootMode = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("copyPrivateIp", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.CopyPrivateIp = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("copyTags", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.CopyTags = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ec2LaunchTemplateID", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Ec2LaunchTemplateID = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("launchDisposition", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.LaunchDisposition = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("licensing", targetDepth))
-                {
-                    var unmarshaller = LicensingUnmarshaller.Instance;
-                    response.Licensing = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("postLaunchActions", targetDepth))
-                {
-                    var unmarshaller = PostLaunchActionsUnmarshaller.Instance;
-                    response.PostLaunchActions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("sourceServerID", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.SourceServerID = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("targetInstanceTypeRightSizingMethod", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.TargetInstanceTypeRightSizingMethod = unmarshaller.Unmarshall(context);
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -142,13 +94,17 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 {
                     return UninitializedAccountExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
+                {
+                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
             }
             return new AmazonMgnException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetLaunchConfigurationResponseUnmarshaller _instance = new GetLaunchConfigurationResponseUnmarshaller();        
+        private static DescribeLaunchConfigurationTemplatesResponseUnmarshaller _instance = new DescribeLaunchConfigurationTemplatesResponseUnmarshaller();        
 
-        internal static GetLaunchConfigurationResponseUnmarshaller GetInstance()
+        internal static DescribeLaunchConfigurationTemplatesResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -156,7 +112,7 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetLaunchConfigurationResponseUnmarshaller Instance
+        public static DescribeLaunchConfigurationTemplatesResponseUnmarshaller Instance
         {
             get
             {

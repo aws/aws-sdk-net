@@ -36,6 +36,11 @@ namespace Amazon.Mgn.Model
         IDescribeJobsPaginator DescribeJobs(DescribeJobsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeLaunchConfigurationTemplates operation
+        ///</summary>
+        IDescribeLaunchConfigurationTemplatesPaginator DescribeLaunchConfigurationTemplates(DescribeLaunchConfigurationTemplatesRequest request);
+
+        /// <summary>
         /// Paginator for DescribeReplicationConfigurationTemplates operation
         ///</summary>
         IDescribeReplicationConfigurationTemplatesPaginator DescribeReplicationConfigurationTemplates(DescribeReplicationConfigurationTemplatesRequest request);
