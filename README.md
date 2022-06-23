@@ -590,8 +590,6 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon Redshift is a fast, fully managed, petabyte-scale data warehouse solution that makes it simple and cost-effective to efficiently analyze all your data using your existing business intelligence tools.
 * [AWSSDK.RedshiftDataAPIService](https://www.nuget.org/packages/AWSSDK.RedshiftDataAPIService/)
 	* The Amazon Redshift Data API is generally available. This release enables querying Amazon Redshift data and listing various database objects.
-* [AWSSDK.RedshiftServerless](https://www.nuget.org/packages/AWSSDK.RedshiftServerless/)
-	* Add new API operations for Amazon Redshift Serverless, a new way of using Amazon Redshift without needing to manually manage provisioned clusters. The new operations let you interact with Redshift Serverless resources, such as create snapshots, list VPC endpoints, delete resource policies, and more.
 * [AWSSDK.Rekognition](https://www.nuget.org/packages/AWSSDK.Rekognition/)
 	* AWS Rekognition service does image processing and concept recognition, face detection and identification, face verification, similar face search and face clustering.
 * [AWSSDK.ResilienceHub](https://www.nuget.org/packages/AWSSDK.ResilienceHub/)

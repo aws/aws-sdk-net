@@ -48,8 +48,6 @@
 ### 3.7.296.0 (2022-06-16 18:14 UTC)
 * RedshiftDataAPIService (3.7.6.0)
 	* This release adds a new --workgroup-name field to operations that connect to an endpoint. Customers can now execute queries against their serverless workgroups.
-* RedshiftServerless (3.7.0.0)
-	* Add new API operations for Amazon Redshift Serverless, a new way of using Amazon Redshift without needing to manually manage provisioned clusters. The new operations let you interact with Redshift Serverless resources, such as create snapshots, list VPC endpoints, delete resource policies, and more.
 * SecretsManager (3.7.2.57)
 	* Documentation updates for Secrets Manager
 * SecurityHub (3.7.12.0)
