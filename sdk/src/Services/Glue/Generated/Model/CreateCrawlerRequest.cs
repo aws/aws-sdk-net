@@ -149,7 +149,10 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LakeFormationConfiguration.
+        /// Gets and sets the property LakeFormationConfiguration. 
+        /// <para>
+        /// Specifies Lake Formation configuration settings for the crawler.
+        /// </para>
         /// </summary>
         public LakeFormationConfiguration LakeFormationConfiguration
         {

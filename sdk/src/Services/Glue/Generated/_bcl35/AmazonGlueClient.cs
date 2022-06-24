@@ -8965,6 +8965,94 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  ListCrawls
+
+        /// <summary>
+        /// Returns all the crawls of a specified crawler. Returns only the crawls that have occurred
+        /// since the launch date of the crawler history feature, and only retains up to 12 months
+        /// of crawls. Older crawls will not be returned.
+        /// 
+        ///  
+        /// <para>
+        /// You may use this API to:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Retrive all the crawls of a specified crawler.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Retrieve all the crawls of a specified crawler within a limited count.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Retrieve all the crawls of a specified crawler in a specific time range.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Retrieve all the crawls of a specified crawler with a particular state, crawl ID,
+        /// or DPU hour value.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCrawls service method.</param>
+        /// 
+        /// <returns>The response from the ListCrawls service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListCrawls">REST API Reference for ListCrawls Operation</seealso>
+        public virtual ListCrawlsResponse ListCrawls(ListCrawlsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCrawlsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCrawlsResponseUnmarshaller.Instance;
+
+            return Invoke<ListCrawlsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCrawls operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCrawls operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCrawls
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListCrawls">REST API Reference for ListCrawls Operation</seealso>
+        public virtual IAsyncResult BeginListCrawls(ListCrawlsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCrawlsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCrawlsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCrawls operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCrawls.</param>
+        /// 
+        /// <returns>Returns a  ListCrawlsResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListCrawls">REST API Reference for ListCrawls Operation</seealso>
+        public virtual ListCrawlsResponse EndListCrawls(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListCrawlsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListCustomEntityTypes
 
         /// <summary>

@@ -190,7 +190,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property LakeFormationConfiguration. 
         /// <para>
-        /// Specifies whether the crawler should use AWS Lake Formation credentials for the crawler
+        /// Specifies whether the crawler should use Lake Formation credentials for the crawler
         /// instead of the IAM role credentials.
         /// </para>
         /// </summary>

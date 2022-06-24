@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Specifies AWS Lake Formation configuration settings for the crawler.
+    /// Specifies Lake Formation configuration settings for the crawler.
     /// </summary>
     public partial class LakeFormationConfiguration
     {
@@ -59,8 +59,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property UseLakeFormationCredentials. 
         /// <para>
-        /// Specifies whether to use AWS Lake Formation credentials for the crawler instead of
-        /// the IAM role credentials.
+        /// Specifies whether to use Lake Formation credentials for the crawler instead of the
+        /// IAM role credentials.
         /// </para>
         /// </summary>
         public bool UseLakeFormationCredentials

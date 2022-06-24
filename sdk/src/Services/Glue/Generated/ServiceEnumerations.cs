@@ -893,6 +893,64 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type CrawlerHistoryState.
+    /// </summary>
+    public class CrawlerHistoryState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for CrawlerHistoryState
+        /// </summary>
+        public static readonly CrawlerHistoryState COMPLETED = new CrawlerHistoryState("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for CrawlerHistoryState
+        /// </summary>
+        public static readonly CrawlerHistoryState FAILED = new CrawlerHistoryState("FAILED");
+        /// <summary>
+        /// Constant RUNNING for CrawlerHistoryState
+        /// </summary>
+        public static readonly CrawlerHistoryState RUNNING = new CrawlerHistoryState("RUNNING");
+        /// <summary>
+        /// Constant STOPPED for CrawlerHistoryState
+        /// </summary>
+        public static readonly CrawlerHistoryState STOPPED = new CrawlerHistoryState("STOPPED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CrawlerHistoryState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CrawlerHistoryState FindValue(string value)
+        {
+            return FindValue<CrawlerHistoryState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CrawlerHistoryState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CrawlerLineageSettings.
     /// </summary>
     public class CrawlerLineageSettings : ConstantClass
@@ -1325,6 +1383,68 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type FieldName.
+    /// </summary>
+    public class FieldName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CRAWL_ID for FieldName
+        /// </summary>
+        public static readonly FieldName CRAWL_ID = new FieldName("CRAWL_ID");
+        /// <summary>
+        /// Constant DPU_HOUR for FieldName
+        /// </summary>
+        public static readonly FieldName DPU_HOUR = new FieldName("DPU_HOUR");
+        /// <summary>
+        /// Constant END_TIME for FieldName
+        /// </summary>
+        public static readonly FieldName END_TIME = new FieldName("END_TIME");
+        /// <summary>
+        /// Constant START_TIME for FieldName
+        /// </summary>
+        public static readonly FieldName START_TIME = new FieldName("START_TIME");
+        /// <summary>
+        /// Constant STATE for FieldName
+        /// </summary>
+        public static readonly FieldName STATE = new FieldName("STATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FieldName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FieldName FindValue(string value)
+        {
+            return FindValue<FieldName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FieldName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FilterLogicalOperator.
     /// </summary>
     public class FilterLogicalOperator : ConstantClass
@@ -1438,6 +1558,72 @@ namespace Amazon.Glue
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FilterOperation(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FilterOperator.
+    /// </summary>
+    public class FilterOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EQ for FilterOperator
+        /// </summary>
+        public static readonly FilterOperator EQ = new FilterOperator("EQ");
+        /// <summary>
+        /// Constant GE for FilterOperator
+        /// </summary>
+        public static readonly FilterOperator GE = new FilterOperator("GE");
+        /// <summary>
+        /// Constant GT for FilterOperator
+        /// </summary>
+        public static readonly FilterOperator GT = new FilterOperator("GT");
+        /// <summary>
+        /// Constant LE for FilterOperator
+        /// </summary>
+        public static readonly FilterOperator LE = new FilterOperator("LE");
+        /// <summary>
+        /// Constant LT for FilterOperator
+        /// </summary>
+        public static readonly FilterOperator LT = new FilterOperator("LT");
+        /// <summary>
+        /// Constant NE for FilterOperator
+        /// </summary>
+        public static readonly FilterOperator NE = new FilterOperator("NE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FilterOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FilterOperator FindValue(string value)
+        {
+            return FindValue<FilterOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FilterOperator(string value)
         {
             return FindValue(value);
         }
