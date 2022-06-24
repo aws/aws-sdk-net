@@ -37,10 +37,11 @@ namespace Amazon.RDSDataService.Model
     /// If a call isn't part of a transaction because it doesn't include the <code>transactionID</code>
     /// parameter, changes that result from the call are committed automatically.
     /// </para>
-    ///  </important> 
+    ///  
     /// <para>
     /// If the binary response data from the database is more than 1 MB, the call is terminated.
     /// </para>
+    ///  </important>
     /// </summary>
     public partial class ExecuteStatementRequest : AmazonRDSDataServiceRequest
     {
@@ -233,7 +234,13 @@ namespace Amazon.RDSDataService.Model
         /// <summary>
         /// Gets and sets the property SecretArn. 
         /// <para>
-        /// The name or ARN of the secret that enables access to the DB cluster.
+        /// The ARN of the secret that enables access to the DB cluster. Enter the database user
+        /// name and password for the credentials in the secret.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create
+        /// a database secret</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=11, Max=100)]

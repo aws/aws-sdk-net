@@ -66,6 +66,20 @@ namespace Amazon.RDSDataService
         /// If a call isn't part of a transaction because it doesn't include the <code>transactionID</code>
         /// parameter, changes that result from the call are committed automatically.
         /// </para>
+        ///  
+        /// <para>
+        /// There isn't a fixed upper limit on the number of parameter sets. However, the maximum
+        /// size of the HTTP request submitted through the Data API is 4 MiB. If the request exceeds
+        /// this limit, the Data API returns an error and doesn't process the request. This 4-MiB
+        /// limit includes the size of the HTTP headers and the JSON notation in the request.
+        /// Thus, the number of parameter sets that you can include depends on a combination of
+        /// factors, such as the size of the SQL statement and the size of each parameter set.
+        /// </para>
+        ///  
+        /// <para>
+        /// The response size limit is 1 MiB. If the call returns more than 1 MiB of response
+        /// data, the call is terminated.
+        /// </para>
         ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchExecuteStatement service method.</param>
@@ -107,6 +121,20 @@ namespace Amazon.RDSDataService
         /// <para>
         /// If a call isn't part of a transaction because it doesn't include the <code>transactionID</code>
         /// parameter, changes that result from the call are committed automatically.
+        /// </para>
+        ///  
+        /// <para>
+        /// There isn't a fixed upper limit on the number of parameter sets. However, the maximum
+        /// size of the HTTP request submitted through the Data API is 4 MiB. If the request exceeds
+        /// this limit, the Data API returns an error and doesn't process the request. This 4-MiB
+        /// limit includes the size of the HTTP headers and the JSON notation in the request.
+        /// Thus, the number of parameter sets that you can include depends on a combination of
+        /// factors, such as the size of the SQL statement and the size of each parameter set.
+        /// </para>
+        ///  
+        /// <para>
+        /// The response size limit is 1 MiB. If the call returns more than 1 MiB of response
+        /// data, the call is terminated.
         /// </para>
         ///  </important>
         /// </summary>
@@ -380,10 +408,11 @@ namespace Amazon.RDSDataService
         /// If a call isn't part of a transaction because it doesn't include the <code>transactionID</code>
         /// parameter, changes that result from the call are committed automatically.
         /// </para>
-        ///  </important> 
+        ///  
         /// <para>
         /// If the binary response data from the database is more than 1 MB, the call is terminated.
         /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExecuteStatement service method.</param>
         /// 
@@ -419,10 +448,11 @@ namespace Amazon.RDSDataService
         /// If a call isn't part of a transaction because it doesn't include the <code>transactionID</code>
         /// parameter, changes that result from the call are committed automatically.
         /// </para>
-        ///  </important> 
+        ///  
         /// <para>
         /// If the binary response data from the database is more than 1 MB, the call is terminated.
         /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExecuteStatement service method.</param>
         /// <param name="cancellationToken">
