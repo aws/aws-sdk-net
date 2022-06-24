@@ -1,3 +1,12 @@
+### 3.7.302.0 (2022-06-24 18:18 UTC)
+* Glue (3.7.19.0)
+	* This release enables the new ListCrawls API for viewing the AWS Glue Crawler run history.
+* RDSDataService (3.7.1.25)
+	* Documentation updates for RDS Data API
+* Core 3.7.12.3
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.301.0 (2022-06-23 18:18 UTC)
 * LookoutEquipment (3.7.3.0)
 	* This release adds visualizations to the scheduled inference results. Users will be able to see interference results, including diagnostic results from their running inference schedulers.
