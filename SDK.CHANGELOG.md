@@ -1,3 +1,7 @@
+### 3.7.303.0 (2022-06-27 18:12 UTC)
+* IoT (3.7.14.0)
+	* This release ease the restriction for the input of tag value to align with AWS standard, now instead of min length 1, we change it to min length 0.
+
 ### 3.7.302.0 (2022-06-24 18:18 UTC)
 * Glue (3.7.19.0)
 	* This release enables the new ListCrawls API for viewing the AWS Glue Crawler run history.
