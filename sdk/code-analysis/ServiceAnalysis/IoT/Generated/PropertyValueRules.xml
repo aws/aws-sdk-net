@@ -3649,7 +3649,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.Tag.Value</property>
-    <min>1</min>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
