@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FsxProtocol Object
+    /// Response Unmarshaller for FsxProtocolSmb Object
     /// </summary>  
-    public class FsxProtocolUnmarshaller : IUnmarshaller<FsxProtocol, XmlUnmarshallerContext>, IUnmarshaller<FsxProtocol, JsonUnmarshallerContext>
+    public class FsxProtocolSmbUnmarshaller : IUnmarshaller<FsxProtocolSmb, XmlUnmarshallerContext>, IUnmarshaller<FsxProtocolSmb, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        FsxProtocol IUnmarshaller<FsxProtocol, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        FsxProtocolSmb IUnmarshaller<FsxProtocolSmb, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,39 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public FsxProtocol Unmarshall(JsonUnmarshallerContext context)
+        public FsxProtocolSmb Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            FsxProtocol unmarshalledObject = new FsxProtocol();
+            FsxProtocolSmb unmarshalledObject = new FsxProtocolSmb();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("NFS", targetDepth))
+                if (context.TestExpression("Domain", targetDepth))
                 {
-                    var unmarshaller = FsxProtocolNfsUnmarshaller.Instance;
-                    unmarshalledObject.NFS = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Domain = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("SMB", targetDepth))
+                if (context.TestExpression("MountOptions", targetDepth))
                 {
-                    var unmarshaller = FsxProtocolSmbUnmarshaller.Instance;
-                    unmarshalledObject.SMB = unmarshaller.Unmarshall(context);
+                    var unmarshaller = SmbMountOptionsUnmarshaller.Instance;
+                    unmarshalledObject.MountOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Password", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Password = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("User", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.User = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +94,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         }
 
 
-        private static FsxProtocolUnmarshaller _instance = new FsxProtocolUnmarshaller();        
+        private static FsxProtocolSmbUnmarshaller _instance = new FsxProtocolSmbUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FsxProtocolUnmarshaller Instance
+        public static FsxProtocolSmbUnmarshaller Instance
         {
             get
             {

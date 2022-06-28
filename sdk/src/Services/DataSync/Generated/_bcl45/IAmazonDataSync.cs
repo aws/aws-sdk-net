@@ -284,6 +284,50 @@ namespace Amazon.DataSync
 
         #endregion
         
+        #region  CreateLocationFsxOntap
+
+
+        /// <summary>
+        /// Creates an endpoint for an Amazon FSx for NetApp ONTAP file system that DataSync can
+        /// access for a transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-ontap-location.html">Creating
+        /// a location for FSx for ONTAP</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocationFsxOntap service method.</param>
+        /// 
+        /// <returns>The response from the CreateLocationFsxOntap service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationFsxOntap">REST API Reference for CreateLocationFsxOntap Operation</seealso>
+        CreateLocationFsxOntapResponse CreateLocationFsxOntap(CreateLocationFsxOntapRequest request);
+
+
+
+        /// <summary>
+        /// Creates an endpoint for an Amazon FSx for NetApp ONTAP file system that DataSync can
+        /// access for a transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-ontap-location.html">Creating
+        /// a location for FSx for ONTAP</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocationFsxOntap service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLocationFsxOntap service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationFsxOntap">REST API Reference for CreateLocationFsxOntap Operation</seealso>
+        Task<CreateLocationFsxOntapResponse> CreateLocationFsxOntapAsync(CreateLocationFsxOntapRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateLocationFsxOpenZfs
 
 
@@ -450,8 +494,8 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Creates an endpoint for a self-managed object storage bucket. For more information
-        /// about self-managed object storage locations, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating
+        /// Creates an endpoint for an object storage system that DataSync can access for a transfer.
+        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating
         /// a location for object storage</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationObjectStorage service method.</param>
@@ -469,8 +513,8 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Creates an endpoint for a self-managed object storage bucket. For more information
-        /// about self-managed object storage locations, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating
+        /// Creates an endpoint for an object storage system that DataSync can access for a transfer.
+        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating
         /// a location for object storage</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationObjectStorage service method.</param>
@@ -934,6 +978,48 @@ namespace Amazon.DataSync
 
         #endregion
         
+        #region  DescribeLocationFsxOntap
+
+
+        /// <summary>
+        /// Provides details about how an DataSync location for an Amazon FSx for NetApp ONTAP
+        /// file system is configured.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLocationFsxOntap service method.</param>
+        /// 
+        /// <returns>The response from the DescribeLocationFsxOntap service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationFsxOntap">REST API Reference for DescribeLocationFsxOntap Operation</seealso>
+        DescribeLocationFsxOntapResponse DescribeLocationFsxOntap(DescribeLocationFsxOntapRequest request);
+
+
+
+        /// <summary>
+        /// Provides details about how an DataSync location for an Amazon FSx for NetApp ONTAP
+        /// file system is configured.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLocationFsxOntap service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeLocationFsxOntap service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationFsxOntap">REST API Reference for DescribeLocationFsxOntap Operation</seealso>
+        Task<DescribeLocationFsxOntapResponse> DescribeLocationFsxOntapAsync(DescribeLocationFsxOntapRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeLocationFsxOpenZfs
 
 
@@ -1104,9 +1190,7 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Returns metadata about a self-managed object storage server location. For more information
-        /// about self-managed object storage locations, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating
-        /// a location for object storage</a>.
+        /// Returns metadata about your DataSync location for an object storage system.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLocationObjectStorage service method.</param>
         /// 
@@ -1123,9 +1207,7 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Returns metadata about a self-managed object storage server location. For more information
-        /// about self-managed object storage locations, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating
-        /// a location for object storage</a>.
+        /// Returns metadata about your DataSync location for an object storage system.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLocationObjectStorage service method.</param>
         /// <param name="cancellationToken">

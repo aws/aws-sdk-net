@@ -29,18 +29,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// Represents the protocol that DataSync uses to access your Amazon FSx for OpenZFS file
-    /// system.
+    /// Specifies the data transfer protocol that DataSync uses to access your Amazon FSx
+    /// file system.
     /// </summary>
     public partial class FsxProtocol
     {
         private FsxProtocolNfs _nfs;
+        private FsxProtocolSmb _smb;
 
         /// <summary>
         /// Gets and sets the property NFS. 
         /// <para>
-        /// Represents the Network File System (NFS) protocol that DataSync uses to access your
-        /// FSx for OpenZFS file system.
+        /// Specifies the Network File System (NFS) protocol configuration that DataSync uses
+        /// to access your FSx for OpenZFS file system or FSx for ONTAP file system's storage
+        /// virtual machine (SVM).
         /// </para>
         /// </summary>
         public FsxProtocolNfs NFS
@@ -53,6 +55,25 @@ namespace Amazon.DataSync.Model
         internal bool IsSetNFS()
         {
             return this._nfs != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SMB. 
+        /// <para>
+        /// Specifies the Server Message Block (SMB) protocol configuration that DataSync uses
+        /// to access your FSx for ONTAP file system's SVM.
+        /// </para>
+        /// </summary>
+        public FsxProtocolSmb SMB
+        {
+            get { return this._smb; }
+            set { this._smb = value; }
+        }
+
+        // Check to see if SMB property is set
+        internal bool IsSetSMB()
+        {
+            return this._smb != null;
         }
 
     }

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// FsxProtocol Marshaller
+    /// FsxProtocolSmb Marshaller
     /// </summary>
-    public class FsxProtocolMarshaller : IRequestMarshaller<FsxProtocol, JsonMarshallerContext> 
+    public class FsxProtocolSmbMarshaller : IRequestMarshaller<FsxProtocolSmb, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,28 +43,35 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(FsxProtocol requestObject, JsonMarshallerContext context)
+        public void Marshall(FsxProtocolSmb requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetNFS())
+            if(requestObject.IsSetDomain())
             {
-                context.Writer.WritePropertyName("NFS");
+                context.Writer.WritePropertyName("Domain");
+                context.Writer.Write(requestObject.Domain);
+            }
+
+            if(requestObject.IsSetMountOptions())
+            {
+                context.Writer.WritePropertyName("MountOptions");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = FsxProtocolNfsMarshaller.Instance;
-                marshaller.Marshall(requestObject.NFS, context);
+                var marshaller = SmbMountOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.MountOptions, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetSMB())
+            if(requestObject.IsSetPassword())
             {
-                context.Writer.WritePropertyName("SMB");
-                context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("Password");
+                context.Writer.Write(requestObject.Password);
+            }
 
-                var marshaller = FsxProtocolSmbMarshaller.Instance;
-                marshaller.Marshall(requestObject.SMB, context);
-
-                context.Writer.WriteObjectEnd();
+            if(requestObject.IsSetUser())
+            {
+                context.Writer.WritePropertyName("User");
+                context.Writer.Write(requestObject.User);
             }
 
         }
@@ -72,7 +79,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static FsxProtocolMarshaller Instance = new FsxProtocolMarshaller();
+        public readonly static FsxProtocolSmbMarshaller Instance = new FsxProtocolSmbMarshaller();
 
     }
 }

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// Represents the mount options that are available for DataSync to access an NFS location.
+    /// Specifies how DataSync can access a location using the NFS protocol.
     /// </summary>
     public partial class NfsMountOptions
     {
@@ -38,32 +38,38 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The specific NFS version that you want DataSync to use to mount your NFS share. If
-        /// the server refuses to use the version specified, the sync will fail. If you don't
-        /// specify a version, DataSync defaults to <code>AUTOMATIC</code>. That is, DataSync
-        /// automatically selects a version based on negotiation with the NFS server.
+        /// Specifies the NFS version that you want DataSync to use when mounting your NFS share.
+        /// If the server refuses to use the version specified, the task fails.
         /// </para>
         ///  
         /// <para>
-        /// You can specify the following NFS versions:
+        /// You can specify the following options:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <a href="https://tools.ietf.org/html/rfc1813">NFSv3</a> </b> - stateless protocol
-        /// version that allows for asynchronous writes on the server.
+        ///  <code>AUTOMATIC</code> (default): DataSync chooses NFS version 4.1.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <a href="https://tools.ietf.org/html/rfc3530">NFSv4.0</a> </b> - stateful, firewall-friendly
-        /// protocol version that supports delegations and pseudo file systems.
+        ///  <code>NFS3</code>: Stateless protocol version that allows for asynchronous writes
+        /// on the server.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <a href="https://tools.ietf.org/html/rfc5661">NFSv4.1</a> </b> - stateful protocol
-        /// version that supports sessions, directory delegations, and parallel data processing.
-        /// Version 4.1 also includes all features available in version 4.0.
+        ///  <code>NFSv4_0</code>: Stateful, firewall-friendly protocol version that supports
+        /// delegations and pseudo file systems.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NFSv4_1</code>: Stateful protocol version that supports sessions, directory
+        /// delegations, and parallel data processing. NFS version 4.1 also includes all features
+        /// available in version 4.0.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// DataSync currently only supports NFS version 3 with Amazon FSx for NetApp ONTAP locations.
+        /// </para>
+        ///  </note>
         /// </summary>
         public NfsVersion Version
         {

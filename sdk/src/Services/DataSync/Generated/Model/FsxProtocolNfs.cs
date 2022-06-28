@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// Represents the Network File System (NFS) protocol that DataSync uses to access your
-    /// Amazon FSx for OpenZFS file system.
+    /// Specifies the Network File System (NFS) protocol configuration that DataSync uses
+    /// to access your Amazon FSx for OpenZFS or Amazon FSx for NetApp ONTAP file system.
     /// </summary>
     public partial class FsxProtocolNfs
     {

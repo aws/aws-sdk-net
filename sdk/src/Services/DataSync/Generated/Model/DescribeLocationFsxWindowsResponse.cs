@@ -103,7 +103,7 @@ namespace Amazon.DataSync.Model
         /// The URL of the FSx for Windows File Server location that was described.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=4356)]
+        [AWSProperty(Max=4360)]
         public string LocationUri
         {
             get { return this._locationUri; }

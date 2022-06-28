@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// Represents the mount options that are available for DataSync to access an SMB location.
+    /// Specifies how DataSync can access a location using the SMB protocol.
     /// </summary>
     public partial class SmbMountOptions
     {
@@ -38,9 +38,9 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The specific SMB version that you want DataSync to use to mount your SMB share. If
-        /// you don't specify a version, DataSync defaults to <code>AUTOMATIC</code>. That is,
-        /// DataSync automatically selects a version based on negotiation with the SMB server.
+        /// Specifies the SMB version that you want DataSync to use when mounting your SMB share.
+        /// If you don't specify a version, DataSync defaults to <code>AUTOMATIC</code> and chooses
+        /// a version based on negotiation with the SMB server.
         /// </para>
         /// </summary>
         public SmbVersion Version

@@ -212,7 +212,8 @@ namespace Amazon.DataSync.Model
         ///  
         /// <para>
         /// For information about choosing a user name that ensures sufficient permissions to
-        /// files, folders, and metadata, see <a href="create-smb-location.html#SMBuser">user</a>.
+        /// files, folders, and metadata, see the <a href="create-smb-location.html#SMBuser">User
+        /// setting</a> for SMB locations.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=104)]

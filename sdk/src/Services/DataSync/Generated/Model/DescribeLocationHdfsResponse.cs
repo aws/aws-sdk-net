@@ -184,7 +184,7 @@ namespace Amazon.DataSync.Model
         /// The URI of the HDFS cluster location.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=4356)]
+        [AWSProperty(Max=4360)]
         public string LocationUri
         {
             get { return this._locationUri; }

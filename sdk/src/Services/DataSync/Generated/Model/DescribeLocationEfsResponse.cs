@@ -116,8 +116,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property InTransitEncryption. 
         /// <para>
-        /// Whether DataSync uses TLS encryption when transferring data to or from your Amazon
-        /// EFS file system.
+        /// Describes whether DataSync uses Transport Layer Security (TLS) encryption when copying
+        /// data to or from the Amazon EFS file system.
         /// </para>
         /// </summary>
         public EfsInTransitEncryption InTransitEncryption
@@ -157,7 +157,7 @@ namespace Amazon.DataSync.Model
         /// The URL of the Amazon EFS file system location.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=4356)]
+        [AWSProperty(Max=4360)]
         public string LocationUri
         {
             get { return this._locationUri; }

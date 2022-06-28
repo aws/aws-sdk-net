@@ -126,8 +126,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property InTransitEncryption. 
         /// <para>
-        /// Specifies whether you want DataSync to use TLS encryption when transferring data to
-        /// or from your Amazon EFS file system.
+        /// Specifies whether you want DataSync to use Transport Layer Security (TLS) 1.2 encryption
+        /// when it copies data to or from the Amazon EFS file system.
         /// </para>
         ///  
         /// <para>

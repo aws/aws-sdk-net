@@ -29,18 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeLocationObjectStorage operation.
-    /// Returns metadata about your DataSync location for an object storage system.
+    /// Container for the parameters to the DescribeLocationFsxOntap operation.
+    /// Provides details about how an DataSync location for an Amazon FSx for NetApp ONTAP
+    /// file system is configured.
     /// </summary>
-    public partial class DescribeLocationObjectStorageRequest : AmazonDataSyncRequest
+    public partial class DescribeLocationFsxOntapRequest : AmazonDataSyncRequest
     {
         private string _locationArn;
 
         /// <summary>
         /// Gets and sets the property LocationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the object storage system location that you want
-        /// information about.
+        /// Specifies the Amazon Resource Name (ARN) of the FSx for ONTAP file system location
+        /// that you want information about.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]

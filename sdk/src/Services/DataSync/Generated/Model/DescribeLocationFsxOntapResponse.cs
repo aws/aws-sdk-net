@@ -29,20 +29,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeLocationFsxOpenZfs operation.
+    /// This is the response object from the DescribeLocationFsxOntap operation.
     /// </summary>
-    public partial class DescribeLocationFsxOpenZfsResponse : AmazonWebServiceResponse
+    public partial class DescribeLocationFsxOntapResponse : AmazonWebServiceResponse
     {
         private DateTime? _creationTime;
+        private string _fsxFilesystemArn;
         private string _locationArn;
         private string _locationUri;
         private FsxProtocol _protocol;
         private List<string> _securityGroupArns = new List<string>();
+        private string _storageVirtualMachineArn;
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The time that the FSx for OpenZFS location was created.
+        /// The time that the location was created.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -58,9 +60,28 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FsxFilesystemArn. 
+        /// <para>
+        /// The ARN of the FSx for ONTAP file system.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=128)]
+        public string FsxFilesystemArn
+        {
+            get { return this._fsxFilesystemArn; }
+            set { this._fsxFilesystemArn = value; }
+        }
+
+        // Check to see if FsxFilesystemArn property is set
+        internal bool IsSetFsxFilesystemArn()
+        {
+            return this._fsxFilesystemArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LocationArn. 
         /// <para>
-        /// The ARN of the FSx for OpenZFS location that was described.
+        /// The ARN of the FSx for ONTAP file system location.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]
@@ -79,11 +100,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property LocationUri. 
         /// <para>
-        /// The uniform resource identifier (URI) of the FSx for OpenZFS location that was described.
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: <code>fsxz://us-west-2.fs-1234567890abcdef02/fsx/folderA/folder</code> 
+        /// The uniform resource identifier (URI) of the FSx for ONTAP file system location.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4360)]
@@ -100,10 +117,7 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Protocol. 
-        /// <para>
-        /// The type of protocol that DataSync uses to access your file system.
-        /// </para>
+        /// Gets and sets the property Protocol.
         /// </summary>
         public FsxProtocol Protocol
         {
@@ -120,7 +134,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupArns. 
         /// <para>
-        /// The ARNs of the security groups that are configured for the FSx for OpenZFS file system.
+        /// The security groups that DataSync uses to access your FSx for ONTAP file system.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
@@ -134,6 +148,26 @@ namespace Amazon.DataSync.Model
         internal bool IsSetSecurityGroupArns()
         {
             return this._securityGroupArns != null && this._securityGroupArns.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageVirtualMachineArn. 
+        /// <para>
+        /// The ARN of the storage virtual machine (SVM) on your FSx for ONTAP file system where
+        /// you're copying data to or from.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=162)]
+        public string StorageVirtualMachineArn
+        {
+            get { return this._storageVirtualMachineArn; }
+            set { this._storageVirtualMachineArn = value; }
+        }
+
+        // Check to see if StorageVirtualMachineArn property is set
+        internal bool IsSetStorageVirtualMachineArn()
+        {
+            return this._storageVirtualMachineArn != null;
         }
 
     }

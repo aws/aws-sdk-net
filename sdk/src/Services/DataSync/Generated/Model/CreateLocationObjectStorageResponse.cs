@@ -38,8 +38,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property LocationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the agents associated with the self-managed object
-        /// storage server location.
+        /// Specifies the ARN of the object storage system location that you create.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]

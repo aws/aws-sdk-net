@@ -541,6 +541,68 @@ namespace Amazon.DataSync
 
         #endregion
         
+        #region  CreateLocationFsxOntap
+
+        /// <summary>
+        /// Creates an endpoint for an Amazon FSx for NetApp ONTAP file system that DataSync can
+        /// access for a transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-ontap-location.html">Creating
+        /// a location for FSx for ONTAP</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocationFsxOntap service method.</param>
+        /// 
+        /// <returns>The response from the CreateLocationFsxOntap service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationFsxOntap">REST API Reference for CreateLocationFsxOntap Operation</seealso>
+        public virtual CreateLocationFsxOntapResponse CreateLocationFsxOntap(CreateLocationFsxOntapRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLocationFsxOntapRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLocationFsxOntapResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLocationFsxOntapResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateLocationFsxOntap operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocationFsxOntap operation on AmazonDataSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLocationFsxOntap
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationFsxOntap">REST API Reference for CreateLocationFsxOntap Operation</seealso>
+        public virtual IAsyncResult BeginCreateLocationFsxOntap(CreateLocationFsxOntapRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLocationFsxOntapRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLocationFsxOntapResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateLocationFsxOntap operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLocationFsxOntap.</param>
+        /// 
+        /// <returns>Returns a  CreateLocationFsxOntapResult from DataSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationFsxOntap">REST API Reference for CreateLocationFsxOntap Operation</seealso>
+        public virtual CreateLocationFsxOntapResponse EndCreateLocationFsxOntap(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateLocationFsxOntapResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateLocationFsxOpenZfs
 
         /// <summary>
@@ -785,8 +847,8 @@ namespace Amazon.DataSync
         #region  CreateLocationObjectStorage
 
         /// <summary>
-        /// Creates an endpoint for a self-managed object storage bucket. For more information
-        /// about self-managed object storage locations, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating
+        /// Creates an endpoint for an object storage system that DataSync can access for a transfer.
+        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating
         /// a location for object storage</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationObjectStorage service method.</param>
@@ -1426,6 +1488,67 @@ namespace Amazon.DataSync
 
         #endregion
         
+        #region  DescribeLocationFsxOntap
+
+        /// <summary>
+        /// Provides details about how an DataSync location for an Amazon FSx for NetApp ONTAP
+        /// file system is configured.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLocationFsxOntap service method.</param>
+        /// 
+        /// <returns>The response from the DescribeLocationFsxOntap service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationFsxOntap">REST API Reference for DescribeLocationFsxOntap Operation</seealso>
+        public virtual DescribeLocationFsxOntapResponse DescribeLocationFsxOntap(DescribeLocationFsxOntapRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLocationFsxOntapRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLocationFsxOntapResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLocationFsxOntapResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeLocationFsxOntap operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLocationFsxOntap operation on AmazonDataSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLocationFsxOntap
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationFsxOntap">REST API Reference for DescribeLocationFsxOntap Operation</seealso>
+        public virtual IAsyncResult BeginDescribeLocationFsxOntap(DescribeLocationFsxOntapRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLocationFsxOntapRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLocationFsxOntapResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeLocationFsxOntap operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLocationFsxOntap.</param>
+        /// 
+        /// <returns>Returns a  DescribeLocationFsxOntapResult from DataSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationFsxOntap">REST API Reference for DescribeLocationFsxOntap Operation</seealso>
+        public virtual DescribeLocationFsxOntapResponse EndDescribeLocationFsxOntap(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeLocationFsxOntapResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeLocationFsxOpenZfs
 
         /// <summary>
@@ -1672,9 +1795,7 @@ namespace Amazon.DataSync
         #region  DescribeLocationObjectStorage
 
         /// <summary>
-        /// Returns metadata about a self-managed object storage server location. For more information
-        /// about self-managed object storage locations, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating
-        /// a location for object storage</a>.
+        /// Returns metadata about your DataSync location for an object storage system.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLocationObjectStorage service method.</param>
         /// 
