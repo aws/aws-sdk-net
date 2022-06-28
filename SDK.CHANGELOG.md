@@ -1,3 +1,13 @@
+### 3.7.304.0 (2022-06-28 18:14 UTC)
+* DataSync (3.7.8.0)
+	* AWS DataSync now supports Amazon FSx for NetApp ONTAP locations.
+* EC2 (3.7.76.0)
+	* This release adds a new spread placement group to EC2 Placement Groups: host level spread, which spread instances between physical hosts, available to Outpost customers only. CreatePlacementGroup and DescribePlacementGroups APIs were updated with a new parameter: SpreadLevel to support this feature.
+* FinSpaceData (3.7.5.0)
+	* Release new API GetExternalDataViewAccessDetails
+* Polly (3.7.6.0)
+	* Add 4 new neural voices - Pedro (es-US), Liam (fr-CA), Daniel (de-DE) and Arthur (en-GB).
+
 ### 3.7.303.0 (2022-06-27 18:12 UTC)
 * IoT (3.7.14.0)
 	* This release ease the restriction for the input of tag value to align with AWS standard, now instead of min length 1, we change it to min length 0.
