@@ -45,7 +45,13 @@ namespace Amazon.FinSpaceData.Model
         /// The option to indicate FinSpace application permissions that are granted to a specific
         /// group.
         /// </para>
-        ///  <ul> <li> 
+        ///  <important> 
+        /// <para>
+        /// When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code>
+        /// allows users to grant themselves or others access to any functionality in their FinSpace
+        /// environment's application. It should only be granted to trusted users.
+        /// </para>
+        ///  </important> <ul> <li> 
         /// <para>
         ///  <code>CreateDataset</code> – Group members can create new datasets.
         /// </para>
@@ -57,7 +63,9 @@ namespace Amazon.FinSpaceData.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>ManageUsersAndGroups</code> – Group members can manage users and permission
-        /// groups.
+        /// groups. This is a privileged permission that allows users to grant themselves or others
+        /// access to any functionality in the application. It should only be granted to trusted
+        /// users.
         /// </para>
         ///  </li> <li> 
         /// <para>

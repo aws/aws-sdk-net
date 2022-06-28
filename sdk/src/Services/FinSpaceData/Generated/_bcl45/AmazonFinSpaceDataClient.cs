@@ -1358,6 +1358,101 @@ namespace Amazon.FinSpaceData
 
         #endregion
         
+        #region  GetExternalDataViewAccessDetails
+
+
+        /// <summary>
+        /// Returns the credentials to access the external Dataview from an S3 location. To call
+        /// this API:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You must retrieve the programmatic credentials.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must be a member of a FinSpace user group, where the dataset that you want to
+        /// access has <code>Read Dataset Data</code> permissions.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetExternalDataViewAccessDetails service method.</param>
+        /// 
+        /// <returns>The response from the GetExternalDataViewAccessDetails service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetExternalDataViewAccessDetails">REST API Reference for GetExternalDataViewAccessDetails Operation</seealso>
+        public virtual GetExternalDataViewAccessDetailsResponse GetExternalDataViewAccessDetails(GetExternalDataViewAccessDetailsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetExternalDataViewAccessDetailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExternalDataViewAccessDetailsResponseUnmarshaller.Instance;
+
+            return Invoke<GetExternalDataViewAccessDetailsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns the credentials to access the external Dataview from an S3 location. To call
+        /// this API:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You must retrieve the programmatic credentials.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must be a member of a FinSpace user group, where the dataset that you want to
+        /// access has <code>Read Dataset Data</code> permissions.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetExternalDataViewAccessDetails service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetExternalDataViewAccessDetails service method, as returned by FinSpaceData.</returns>
+        /// <exception cref="Amazon.FinSpaceData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.FinSpaceData.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetExternalDataViewAccessDetails">REST API Reference for GetExternalDataViewAccessDetails Operation</seealso>
+        public virtual Task<GetExternalDataViewAccessDetailsResponse> GetExternalDataViewAccessDetailsAsync(GetExternalDataViewAccessDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetExternalDataViewAccessDetailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExternalDataViewAccessDetailsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetExternalDataViewAccessDetailsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetPermissionGroup
 
 

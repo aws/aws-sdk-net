@@ -315,6 +315,16 @@
     <max>26</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.GetExternalDataViewAccessDetailsRequest.DatasetId</property>
+    <min>1</min>
+    <max>26</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.GetExternalDataViewAccessDetailsRequest.DataViewId</property>
+    <min>1</min>
+    <max>26</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FinSpaceData.Model.GetPermissionGroupRequest.PermissionGroupId</property>
     <min>1</min>
     <max>26</max>
@@ -596,6 +606,24 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.AwsCredentials.AccessKeyId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[\s\S]*\S[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.AwsCredentials.SecretAccessKey</property>
+    <min>1</min>
+    <max>1000</max>
+    <pattern>[\s\S]*\S[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.AwsCredentials.SessionToken</property>
+    <min>1</min>
+    <max>1000</max>
+    <pattern>[\s\S]*\S[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FinSpaceData.Model.ChangesetErrorInfo.ErrorMessage</property>
     <max>1000</max>
   </property-value-rule>
@@ -737,6 +765,18 @@
     <min>1</min>
     <max>250</max>
     <pattern>[\s\S]*\S[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.S3Location.Bucket</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^.*\S.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FinSpaceData.Model.S3Location.Key</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^.*\S.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FinSpaceData.Model.User.ApiAccessPrincipalArn</property>
