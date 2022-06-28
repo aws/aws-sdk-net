@@ -266,7 +266,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TransitGateway.
+        /// Gets and sets the property TransitGateway. 
+        /// <para>
+        /// The transit gateway.
+        /// </para>
         /// </summary>
         public AnalysisComponent TransitGateway
         {

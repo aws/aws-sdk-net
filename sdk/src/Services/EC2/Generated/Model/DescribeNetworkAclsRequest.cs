@@ -106,6 +106,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>entry.egress</code> - A Boolean that indicates the type of rule. Specify <code>true</code>
+        /// for egress rules, or <code>false</code> for ingress rules.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>entry.rule-number</code> - The number of an entry (in other words, rule) in
         /// the set of ACL entries.
         /// </para>

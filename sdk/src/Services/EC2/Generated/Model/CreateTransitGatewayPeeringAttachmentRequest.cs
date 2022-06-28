@@ -31,9 +31,8 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the CreateTransitGatewayPeeringAttachment operation.
     /// Requests a transit gateway peering attachment between the specified transit gateway
-    /// (requester) and a peer transit gateway (accepter). The transit gateways must be in
-    /// different Regions. The peer transit gateway can be in your account or a different
-    /// Amazon Web Services account.
+    /// (requester) and a peer transit gateway (accepter). The peer transit gateway can be
+    /// in your account or a different Amazon Web Services account.
     /// 
     ///  
     /// <para>

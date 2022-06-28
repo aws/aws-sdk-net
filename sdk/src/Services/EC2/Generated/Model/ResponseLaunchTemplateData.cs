@@ -603,7 +603,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TagSpecifications. 
         /// <para>
-        /// The tags.
+        /// The tags that are applied to the resources that are created during instance launch.
         /// </para>
         /// </summary>
         public List<LaunchTemplateTagSpecification> TagSpecifications

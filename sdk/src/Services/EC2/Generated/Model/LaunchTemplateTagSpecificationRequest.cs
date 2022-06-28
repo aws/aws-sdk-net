@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// The tags specification for the launch template.
+    /// The tags specification for the resources that are created during instance launch.
     /// </summary>
     public partial class LaunchTemplateTagSpecificationRequest
     {
@@ -39,10 +39,18 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of resource to tag. Currently, the resource types that support tagging on
-        /// creation are <code>instance</code>, <code>volume</code>, <code>elastic-gpu</code>,
-        /// <code>network-interface</code>, and <code>spot-instances-request</code>. To tag a
-        /// resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+        /// The type of resource to tag.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>Valid Values</code> are all the resource types that can be tagged. However,
+        /// when creating a launch template, you can specify tags for the following resource types
+        /// only: <code>instance</code> | <code>volume</code> | <code>elastic-gpu</code> | <code>network-interface</code>
+        /// | <code>spot-instances-request</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
         /// </para>
         /// </summary>
         public ResourceType ResourceType

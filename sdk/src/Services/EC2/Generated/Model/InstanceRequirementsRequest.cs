@@ -493,11 +493,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For instance types with solid state drive (SDD) storage, specify <code>sdd</code>.
+        /// For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Default: <code>hdd</code> and <code>sdd</code> 
+        /// Default: <code>hdd</code> and <code>ssd</code> 
         /// </para>
         /// </summary>
         public List<string> LocalStorageTypes

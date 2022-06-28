@@ -66,6 +66,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("PartitionCount", StringUtils.FromInt(publicRequest.PartitionCount));
                 }
+                if(publicRequest.IsSetSpreadLevel())
+                {
+                    request.Parameters.Add("SpreadLevel", StringUtils.FromString(publicRequest.SpreadLevel));
+                }
                 if(publicRequest.IsSetStrategy())
                 {
                     request.Parameters.Add("Strategy", StringUtils.FromString(publicRequest.Strategy));

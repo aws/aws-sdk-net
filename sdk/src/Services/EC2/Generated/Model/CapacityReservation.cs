@@ -259,8 +259,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property EphemeralStorage. 
         /// <para>
-        /// Indicates whether the Capacity Reservation supports instances with temporary, block-level
-        /// storage.
+        ///  <i>Deprecated.</i> 
         /// </para>
         /// </summary>
         public bool EphemeralStorage

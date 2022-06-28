@@ -51,6 +51,7 @@ namespace Amazon.EC2.Model
     {
         private string _groupName;
         private int? _partitionCount;
+        private SpreadLevel _spreadLevel;
         private PlacementStrategy _strategy;
         private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
 
@@ -109,6 +110,33 @@ namespace Amazon.EC2.Model
         internal bool IsSetPartitionCount()
         {
             return this._partitionCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SpreadLevel. 
+        /// <para>
+        /// Determines how placement groups spread instances. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Host – You can use <code>host</code> only with Outpost placement groups.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Rack – No usage restrictions.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public SpreadLevel SpreadLevel
+        {
+            get { return this._spreadLevel; }
+            set { this._spreadLevel = value; }
+        }
+
+        // Check to see if SpreadLevel property is set
+        internal bool IsSetSpreadLevel()
+        {
+            return this._spreadLevel != null;
         }
 
         /// <summary>

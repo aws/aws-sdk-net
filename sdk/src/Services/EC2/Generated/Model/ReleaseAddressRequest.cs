@@ -56,6 +56,11 @@ namespace Amazon.EC2.Model
     /// [EC2-VPC] After you release an Elastic IP address for use in a VPC, you might be able
     /// to recover it. For more information, see <a>AllocateAddress</a>.
     /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+    /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class ReleaseAddressRequest : AmazonEC2Request
     {
