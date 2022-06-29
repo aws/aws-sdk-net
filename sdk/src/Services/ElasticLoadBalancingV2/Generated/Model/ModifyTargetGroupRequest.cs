@@ -32,6 +32,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// Container for the parameters to the ModifyTargetGroup operation.
     /// Modifies the health checks used when evaluating the health state of the targets in
     /// the specified target group.
+    /// 
+    ///  
+    /// <para>
+    /// If the protocol of the target group is TCP, TLS, UDP, or TCP_UDP, you can't modify
+    /// the health check protocol, interval, timeout, or success codes.
+    /// </para>
     /// </summary>
     public partial class ModifyTargetGroupRequest : AmazonElasticLoadBalancingV2Request
     {
@@ -69,10 +75,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <para>
         /// The approximate amount of time, in seconds, between health checks of an individual
         /// target. For TCP health checks, the supported values are 10 or 30 seconds.
-        /// </para>
-        ///  
-        /// <para>
-        /// With Network Load Balancers, you can't modify this setting.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=300)]
@@ -144,10 +146,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE,
         /// TLS, UDP, and TCP_UDP protocols are not supported for health checks.
         /// </para>
-        ///  
-        /// <para>
-        /// With Network Load Balancers, you can't modify this setting.
-        /// </para>
         /// </summary>
         public ProtocolEnum HealthCheckProtocol
         {
@@ -166,10 +164,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <para>
         /// [HTTP/HTTPS health checks] The amount of time, in seconds, during which no response
         /// means a failed health check.
-        /// </para>
-        ///  
-        /// <para>
-        /// With Network Load Balancers, you can't modify this setting.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=120)]
@@ -210,10 +204,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <para>
         /// [HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful
         /// response from a target.
-        /// </para>
-        ///  
-        /// <para>
-        /// With Network Load Balancers, you can't modify this setting.
         /// </para>
         /// </summary>
         public Matcher Matcher

@@ -74,7 +74,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ipv6.deny-all-igw-traffic</code> - Blocks internet gateway (IGW) access to
+        ///  <code>ipv6.deny_all_igw_traffic</code> - Blocks internet gateway (IGW) access to
         /// the load balancer. It is set to <code>false</code> for internet-facing load balancers
         /// and <code>true</code> for internal load balancers, preventing unintended access to
         /// your internal load balancer through an internet gateway.
@@ -103,6 +103,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>routing.http.preserve_host_header.enabled</code> - Indicates whether the Application
+        /// Load Balancer should preserve the <code>Host</code> header in the HTTP request and
+        /// send it to the target without any change. The possible values are <code>true</code>
+        /// and <code>false</code>. The default is <code>false</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>routing.http.x_amzn_tls_version_and_cipher_suite.enabled</code> - Indicates
         /// whether the two headers (<code>x-amzn-tls-version</code> and <code>x-amzn-tls-cipher-suite</code>),
         /// which contain information about the negotiated TLS version and cipher suite, are added
@@ -121,6 +128,30 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// is <code>false</code>.
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        ///  <code>routing.http.xff_header_processing.mode</code> - Enables you to modify, preserve,
+        /// or remove the <code>X-Forwarded-For</code> header in the HTTP request before the Application
+        /// Load Balancer sends the request to the target. The possible values are <code>append</code>,
+        /// <code>preserve</code>, and <code>remove</code>. The default is <code>append</code>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If the value is <code>append</code>, the Application Load Balancer adds the client
+        /// IP address (of the last hop) to the <code>X-Forwarded-For</code> header in the HTTP
+        /// request before it sends it to targets.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the value is <code>preserve</code> the Application Load Balancer preserves the
+        /// <code>X-Forwarded-For</code> header in the HTTP request, and sends it to targets without
+        /// any change.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the value is <code>remove</code>, the Application Load Balancer removes the <code>X-Forwarded-For</code>
+        /// header in the HTTP request before it sends it to targets.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         ///  <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The possible
         /// values are <code>true</code> and <code>false</code>. The default is <code>true</code>.
