@@ -44,8 +44,8 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Gets and sets the property Settings. 
         /// <para>
-        /// Settings to configure your translation output, including the option to mask profane
-        /// words and phrases.
+        /// Settings to configure your translation output, including the option to set the formality
+        /// level of the output text and the option to mask profane words and phrases.
         /// </para>
         /// </summary>
         public TranslationSettings Settings
@@ -73,6 +73,13 @@ namespace Amazon.Translate.Model
         /// Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon
         /// Comprehend</a> to determine the source language.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you specify <code>auto</code>, you must send the <code>TranslateText</code> request
+        /// in a region that supports Amazon Comprehend. Otherwise, the request returns an error
+        /// indicating that autodetect is not supported. 
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=5)]
         public string SourceLanguageCode

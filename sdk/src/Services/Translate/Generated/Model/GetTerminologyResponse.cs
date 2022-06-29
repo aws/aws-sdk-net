@@ -43,7 +43,7 @@ namespace Amazon.Translate.Model
         /// The Amazon S3 location of a file that provides any errors or warnings that were produced
         /// by your input file. This file was created when Amazon Translate attempted to create
         /// a terminology resource. The location is returned as a presigned URL to that has a
-        /// 30 minute expiration.
+        /// 30-minute expiration.
         /// </para>
         /// </summary>
         public TerminologyDataLocation AuxiliaryDataLocation
@@ -63,7 +63,7 @@ namespace Amazon.Translate.Model
         /// <para>
         /// The Amazon S3 location of the most recent custom terminology input file that was successfully
         /// imported into Amazon Translate. The location is returned as a presigned URL that has
-        /// a 30 minute expiration.
+        /// a 30-minute expiration.
         /// </para>
         ///  <important> 
         /// <para>

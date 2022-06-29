@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Translate.Model
 {
     /// <summary>
-    /// The filter specified for the operation is invalid. Specify a different filter.
+    /// The filter specified for the operation is not valid. Specify a different filter.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

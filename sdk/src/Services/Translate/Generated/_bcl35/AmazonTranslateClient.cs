@@ -273,12 +273,12 @@ namespace Amazon.Translate
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.Translate.Model.InvalidParameterValueException">
-        /// The value of the parameter is invalid. Review the value of the parameter you are using
-        /// to correct it, and then retry your operation.
+        /// The value of the parameter is not valid. Review the value of the parameter you are
+        /// using to correct it, and then retry your operation.
         /// </exception>
         /// <exception cref="Amazon.Translate.Model.InvalidRequestException">
-        /// The request that you made is invalid. Check your request to determine why it's invalid
-        /// and then retry the request.
+        /// The request that you made is not valid. Check your request to determine why it's
+        /// not valid and then retry the request.
         /// </exception>
         /// <exception cref="Amazon.Translate.Model.LimitExceededException">
         /// The specified limit has been exceeded. Review your request and retry it with a quantity
@@ -416,8 +416,8 @@ namespace Amazon.Translate
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.Translate.Model.InvalidParameterValueException">
-        /// The value of the parameter is invalid. Review the value of the parameter you are using
-        /// to correct it, and then retry your operation.
+        /// The value of the parameter is not valid. Review the value of the parameter you are
+        /// using to correct it, and then retry your operation.
         /// </exception>
         /// <exception cref="Amazon.Translate.Model.ResourceNotFoundException">
         /// The resource you are looking for has not been found. Review the resource you're looking
@@ -553,8 +553,8 @@ namespace Amazon.Translate
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.Translate.Model.InvalidParameterValueException">
-        /// The value of the parameter is invalid. Review the value of the parameter you are using
-        /// to correct it, and then retry your operation.
+        /// The value of the parameter is not valid. Review the value of the parameter you are
+        /// using to correct it, and then retry your operation.
         /// </exception>
         /// <exception cref="Amazon.Translate.Model.ResourceNotFoundException">
         /// The resource you are looking for has not been found. Review the resource you're looking
@@ -623,8 +623,8 @@ namespace Amazon.Translate
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.Translate.Model.InvalidParameterValueException">
-        /// The value of the parameter is invalid. Review the value of the parameter you are using
-        /// to correct it, and then retry your operation.
+        /// The value of the parameter is not valid. Review the value of the parameter you are
+        /// using to correct it, and then retry your operation.
         /// </exception>
         /// <exception cref="Amazon.Translate.Model.ResourceNotFoundException">
         /// The resource you are looking for has not been found. Review the resource you're looking
@@ -684,17 +684,17 @@ namespace Amazon.Translate
         #region  ImportTerminology
 
         /// <summary>
-        /// Creates or updates a custom terminology, depending on whether or not one already exists
-        /// for the given terminology name. Importing a terminology with the same name as an existing
-        /// one will merge the terminologies based on the chosen merge strategy. Currently, the
-        /// only supported merge strategy is OVERWRITE, and so the imported terminology will overwrite
-        /// an existing terminology of the same name.
+        /// Creates or updates a custom terminology, depending on whether one already exists for
+        /// the given terminology name. Importing a terminology with the same name as an existing
+        /// one will merge the terminologies based on the chosen merge strategy. The only supported
+        /// merge strategy is OVERWRITE, where the imported terminology overwrites the existing
+        /// terminology of the same name.
         /// 
         ///  
         /// <para>
-        /// If you import a terminology that overwrites an existing one, the new terminology take
-        /// up to 10 minutes to fully propagate and be available for use in a translation due
-        /// to cache policies with the DataPlane service that performs the translations.
+        /// If you import a terminology that overwrites an existing one, the new terminology takes
+        /// up to 10 minutes to fully propagate. After that, translations have access to the new
+        /// terminology.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportTerminology service method.</param>
@@ -704,8 +704,8 @@ namespace Amazon.Translate
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.Translate.Model.InvalidParameterValueException">
-        /// The value of the parameter is invalid. Review the value of the parameter you are using
-        /// to correct it, and then retry your operation.
+        /// The value of the parameter is not valid. Review the value of the parameter you are
+        /// using to correct it, and then retry your operation.
         /// </exception>
         /// <exception cref="Amazon.Translate.Model.LimitExceededException">
         /// The specified limit has been exceeded. Review your request and retry it with a quantity
@@ -761,6 +761,74 @@ namespace Amazon.Translate
 
         #endregion
         
+        #region  ListLanguages
+
+        /// <summary>
+        /// Provides a list of languages (RFC-5646 codes and names) that Amazon Translate supports.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLanguages service method.</param>
+        /// 
+        /// <returns>The response from the ListLanguages service method, as returned by Translate.</returns>
+        /// <exception cref="Amazon.Translate.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.InvalidParameterValueException">
+        /// The value of the parameter is not valid. Review the value of the parameter you are
+        /// using to correct it, and then retry your operation.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.TooManyRequestsException">
+        /// You have made too many requests within a short period of time. Wait for a short time
+        /// and then try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.UnsupportedDisplayLanguageCodeException">
+        /// Requested display language code is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ListLanguages">REST API Reference for ListLanguages Operation</seealso>
+        public virtual ListLanguagesResponse ListLanguages(ListLanguagesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLanguagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLanguagesResponseUnmarshaller.Instance;
+
+            return Invoke<ListLanguagesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListLanguages operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListLanguages operation on AmazonTranslateClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListLanguages
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ListLanguages">REST API Reference for ListLanguages Operation</seealso>
+        public virtual IAsyncResult BeginListLanguages(ListLanguagesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLanguagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLanguagesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListLanguages operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListLanguages.</param>
+        /// 
+        /// <returns>Returns a  ListLanguagesResult from Translate.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ListLanguages">REST API Reference for ListLanguages Operation</seealso>
+        public virtual ListLanguagesResponse EndListLanguages(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListLanguagesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListParallelData
 
         /// <summary>
@@ -773,8 +841,8 @@ namespace Amazon.Translate
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.Translate.Model.InvalidParameterValueException">
-        /// The value of the parameter is invalid. Review the value of the parameter you are using
-        /// to correct it, and then retry your operation.
+        /// The value of the parameter is not valid. Review the value of the parameter you are
+        /// using to correct it, and then retry your operation.
         /// </exception>
         /// <exception cref="Amazon.Translate.Model.TooManyRequestsException">
         /// You have made too many requests within a short period of time. Wait for a short time
@@ -838,8 +906,8 @@ namespace Amazon.Translate
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.Translate.Model.InvalidParameterValueException">
-        /// The value of the parameter is invalid. Review the value of the parameter you are using
-        /// to correct it, and then retry your operation.
+        /// The value of the parameter is not valid. Review the value of the parameter you are
+        /// using to correct it, and then retry your operation.
         /// </exception>
         /// <exception cref="Amazon.Translate.Model.TooManyRequestsException">
         /// You have made too many requests within a short period of time. Wait for a short time
@@ -903,11 +971,11 @@ namespace Amazon.Translate
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.Translate.Model.InvalidFilterException">
-        /// The filter specified for the operation is invalid. Specify a different filter.
+        /// The filter specified for the operation is not valid. Specify a different filter.
         /// </exception>
         /// <exception cref="Amazon.Translate.Model.InvalidRequestException">
-        /// The request that you made is invalid. Check your request to determine why it's invalid
-        /// and then retry the request.
+        /// The request that you made is not valid. Check your request to determine why it's
+        /// not valid and then retry the request.
         /// </exception>
         /// <exception cref="Amazon.Translate.Model.TooManyRequestsException">
         /// You have made too many requests within a short period of time. Wait for a short time
@@ -986,12 +1054,12 @@ namespace Amazon.Translate
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.Translate.Model.InvalidParameterValueException">
-        /// The value of the parameter is invalid. Review the value of the parameter you are using
-        /// to correct it, and then retry your operation.
+        /// The value of the parameter is not valid. Review the value of the parameter you are
+        /// using to correct it, and then retry your operation.
         /// </exception>
         /// <exception cref="Amazon.Translate.Model.InvalidRequestException">
-        /// The request that you made is invalid. Check your request to determine why it's invalid
-        /// and then retry the request.
+        /// The request that you made is not valid. Check your request to determine why it's
+        /// not valid and then retry the request.
         /// </exception>
         /// <exception cref="Amazon.Translate.Model.ResourceNotFoundException">
         /// The resource you are looking for has not been found. Review the resource you're looking
@@ -1152,8 +1220,8 @@ namespace Amazon.Translate
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.Translate.Model.InvalidRequestException">
-        /// The request that you made is invalid. Check your request to determine why it's invalid
-        /// and then retry the request.
+        /// The request that you made is not valid. Check your request to determine why it's
+        /// not valid and then retry the request.
         /// </exception>
         /// <exception cref="Amazon.Translate.Model.ResourceNotFoundException">
         /// The resource you are looking for has not been found. Review the resource you're looking
@@ -1161,8 +1229,8 @@ namespace Amazon.Translate
         /// revised request.
         /// </exception>
         /// <exception cref="Amazon.Translate.Model.ServiceUnavailableException">
-        /// The Amazon Translate service is temporarily unavailable. Please wait a bit and then
-        /// retry your request.
+        /// The Amazon Translate service is temporarily unavailable. Wait a bit and then retry
+        /// your request.
         /// </exception>
         /// <exception cref="Amazon.Translate.Model.TextSizeLimitExceededException">
         /// The size of the text you submitted exceeds the size limit. Reduce the size of the
@@ -1242,12 +1310,12 @@ namespace Amazon.Translate
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.Translate.Model.InvalidParameterValueException">
-        /// The value of the parameter is invalid. Review the value of the parameter you are using
-        /// to correct it, and then retry your operation.
+        /// The value of the parameter is not valid. Review the value of the parameter you are
+        /// using to correct it, and then retry your operation.
         /// </exception>
         /// <exception cref="Amazon.Translate.Model.InvalidRequestException">
-        /// The request that you made is invalid. Check your request to determine why it's invalid
-        /// and then retry the request.
+        /// The request that you made is not valid. Check your request to determine why it's
+        /// not valid and then retry the request.
         /// </exception>
         /// <exception cref="Amazon.Translate.Model.LimitExceededException">
         /// The specified limit has been exceeded. Review your request and retry it with a quantity

@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Translate.Model
 {
     /// <summary>
-    /// The data associated with the custom terminology.
+    /// The data associated with the custom terminology. For information about the custom
+    /// terminology file, see <a href="https://docs.aws.amazon.com/translate/latest/dg/creating-custom-terminology.html">
+    /// Creating a Custom Terminology</a>.
     /// </summary>
     public partial class TerminologyData
     {
@@ -52,9 +54,8 @@ namespace Amazon.Translate.Model
         /// <para>
         /// Any language in the terminology resource can be the source language or a target language.
         /// A single multi-directional terminology resource can be used for jobs that translate
-        /// different language pairs. For example, if the terminology contains terms in English
-        /// and Spanish, then it can be used for jobs that translate English to Spanish and jobs
-        /// that translate Spanish to English.
+        /// different language pairs. For example, if the terminology contains English and Spanish
+        /// terms, it can be used for jobs that translate English to Spanish and Spanish to English.
         /// </para>
         ///  </dd> </dl> 
         /// <para>

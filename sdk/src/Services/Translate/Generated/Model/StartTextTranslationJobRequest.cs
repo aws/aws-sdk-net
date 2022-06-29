@@ -63,8 +63,8 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A unique identifier for the request. This token is auto-generated when using the Amazon
-        /// Translate SDK.
+        /// A unique identifier for the request. This token is generated for you when using the
+        /// Amazon Translate SDK.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -104,7 +104,7 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Gets and sets the property InputDataConfig. 
         /// <para>
-        /// Specifies the format and S3 location of the input documents for the translation job.
+        /// Specifies the format and location of the input documents for the translation job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -201,7 +201,8 @@ namespace Amazon.Translate.Model
         /// Gets and sets the property Settings. 
         /// <para>
         /// Settings to configure your translation output, including the option to mask profane
-        /// words and phrases.
+        /// words and phrases. <code>StartTextTranslationJob</code> does not support the formality
+        /// setting.
         /// </para>
         /// </summary>
         public TranslationSettings Settings

@@ -29,42 +29,42 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Translate.Model
 {
     /// <summary>
-    /// The request that you made is not valid. Check your request to determine why it's
-    /// not valid and then retry the request.
+    /// Requested display language code is not supported.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
-    public partial class InvalidRequestException : AmazonTranslateException
+    public partial class UnsupportedDisplayLanguageCodeException : AmazonTranslateException
     {
+        private string _displayLanguageCode;
 
         /// <summary>
-        /// Constructs a new InvalidRequestException with the specified error
+        /// Constructs a new UnsupportedDisplayLanguageCodeException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public InvalidRequestException(string message) 
+        public UnsupportedDisplayLanguageCodeException(string message) 
             : base(message) {}
 
         /// <summary>
-        /// Construct instance of InvalidRequestException
+        /// Construct instance of UnsupportedDisplayLanguageCodeException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public InvalidRequestException(string message, Exception innerException) 
+        public UnsupportedDisplayLanguageCodeException(string message, Exception innerException) 
             : base(message, innerException) {}
 
         /// <summary>
-        /// Construct instance of InvalidRequestException
+        /// Construct instance of UnsupportedDisplayLanguageCodeException
         /// </summary>
         /// <param name="innerException"></param>
-        public InvalidRequestException(Exception innerException) 
+        public UnsupportedDisplayLanguageCodeException(Exception innerException) 
             : base(innerException) {}
 
         /// <summary>
-        /// Construct instance of InvalidRequestException
+        /// Construct instance of UnsupportedDisplayLanguageCodeException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
@@ -72,32 +72,33 @@ namespace Amazon.Translate.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public InvalidRequestException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public UnsupportedDisplayLanguageCodeException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
-        /// Construct instance of InvalidRequestException
+        /// Construct instance of UnsupportedDisplayLanguageCodeException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="errorType"></param>
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public InvalidRequestException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public UnsupportedDisplayLanguageCodeException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
 #if !NETSTANDARD
         /// <summary>
-        /// Constructs a new instance of the InvalidRequestException class with serialized data.
+        /// Constructs a new instance of the UnsupportedDisplayLanguageCodeException class with serialized data.
         /// </summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        protected InvalidRequestException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        protected UnsupportedDisplayLanguageCodeException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.DisplayLanguageCode = (string)info.GetValue("DisplayLanguageCode", typeof(string));
         }
 
         /// <summary>
@@ -118,8 +119,28 @@ namespace Amazon.Translate.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("DisplayLanguageCode", this.DisplayLanguageCode);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property DisplayLanguageCode. 
+        /// <para>
+        /// Language code passed in with the request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=5)]
+        public string DisplayLanguageCode
+        {
+            get { return this._displayLanguageCode; }
+            set { this._displayLanguageCode = value; }
+        }
+
+        // Check to see if DisplayLanguageCode property is set
+        internal bool IsSetDisplayLanguageCode()
+        {
+            return this._displayLanguageCode != null;
+        }
 
     }
 }

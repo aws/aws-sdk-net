@@ -41,7 +41,7 @@ namespace Amazon.Translate.Model
         /// <para>
         /// The Amazon S3 location of the most recent custom terminology input file that was successfully
         /// imported into Amazon Translate. The location is returned as a presigned URL that has
-        /// a 30 minute expiration.
+        /// a 30-minute expiration .
         /// </para>
         ///  <important> 
         /// <para>

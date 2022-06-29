@@ -75,6 +75,88 @@ namespace Amazon.Translate
 
 
     /// <summary>
+    /// Constants used for properties of type DisplayLanguageCode.
+    /// </summary>
+    public class DisplayLanguageCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant De for DisplayLanguageCode
+        /// </summary>
+        public static readonly DisplayLanguageCode De = new DisplayLanguageCode("de");
+        /// <summary>
+        /// Constant En for DisplayLanguageCode
+        /// </summary>
+        public static readonly DisplayLanguageCode En = new DisplayLanguageCode("en");
+        /// <summary>
+        /// Constant Es for DisplayLanguageCode
+        /// </summary>
+        public static readonly DisplayLanguageCode Es = new DisplayLanguageCode("es");
+        /// <summary>
+        /// Constant Fr for DisplayLanguageCode
+        /// </summary>
+        public static readonly DisplayLanguageCode Fr = new DisplayLanguageCode("fr");
+        /// <summary>
+        /// Constant It for DisplayLanguageCode
+        /// </summary>
+        public static readonly DisplayLanguageCode It = new DisplayLanguageCode("it");
+        /// <summary>
+        /// Constant Ja for DisplayLanguageCode
+        /// </summary>
+        public static readonly DisplayLanguageCode Ja = new DisplayLanguageCode("ja");
+        /// <summary>
+        /// Constant Ko for DisplayLanguageCode
+        /// </summary>
+        public static readonly DisplayLanguageCode Ko = new DisplayLanguageCode("ko");
+        /// <summary>
+        /// Constant Pt for DisplayLanguageCode
+        /// </summary>
+        public static readonly DisplayLanguageCode Pt = new DisplayLanguageCode("pt");
+        /// <summary>
+        /// Constant Zh for DisplayLanguageCode
+        /// </summary>
+        public static readonly DisplayLanguageCode Zh = new DisplayLanguageCode("zh");
+        /// <summary>
+        /// Constant ZhTW for DisplayLanguageCode
+        /// </summary>
+        public static readonly DisplayLanguageCode ZhTW = new DisplayLanguageCode("zh-TW");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DisplayLanguageCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DisplayLanguageCode FindValue(string value)
+        {
+            return FindValue<DisplayLanguageCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DisplayLanguageCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EncryptionKeyType.
     /// </summary>
     public class EncryptionKeyType : ConstantClass
