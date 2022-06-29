@@ -29,48 +29,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Represents the drift check data quality baselines that can be used when the model
-    /// monitor is set using the model package.
+    /// Container for the parameters to the DescribeFeatureMetadata operation.
+    /// Shows the metadata for a feature within a feature group.
     /// </summary>
-    public partial class DriftCheckModelDataQuality
+    public partial class DescribeFeatureMetadataRequest : AmazonSageMakerRequest
     {
-        private MetricsSource _constraints;
-        private MetricsSource _statistics;
+        private string _featureGroupName;
+        private string _featureName;
 
         /// <summary>
-        /// Gets and sets the property Constraints. 
+        /// Gets and sets the property FeatureGroupName. 
         /// <para>
-        /// The drift check model data quality constraints.
+        /// The name of the feature group containing the feature.
         /// </para>
         /// </summary>
-        public MetricsSource Constraints
+        [AWSProperty(Required=true, Min=1, Max=64)]
+        public string FeatureGroupName
         {
-            get { return this._constraints; }
-            set { this._constraints = value; }
+            get { return this._featureGroupName; }
+            set { this._featureGroupName = value; }
         }
 
-        // Check to see if Constraints property is set
-        internal bool IsSetConstraints()
+        // Check to see if FeatureGroupName property is set
+        internal bool IsSetFeatureGroupName()
         {
-            return this._constraints != null;
+            return this._featureGroupName != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Statistics. 
+        /// Gets and sets the property FeatureName. 
         /// <para>
-        /// The drift check model data quality statistics.
+        /// The name of the feature.
         /// </para>
         /// </summary>
-        public MetricsSource Statistics
+        [AWSProperty(Required=true, Min=1, Max=64)]
+        public string FeatureName
         {
-            get { return this._statistics; }
-            set { this._statistics = value; }
+            get { return this._featureName; }
+            set { this._featureName = value; }
         }
 
-        // Check to see if Statistics property is set
-        internal bool IsSetStatistics()
+        // Check to see if FeatureName property is set
+        internal bool IsSetFeatureName()
         {
-            return this._statistics != null;
+            return this._featureName != null;
         }
 
     }

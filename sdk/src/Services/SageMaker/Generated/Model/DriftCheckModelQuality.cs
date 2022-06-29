@@ -38,7 +38,10 @@ namespace Amazon.SageMaker.Model
         private MetricsSource _statistics;
 
         /// <summary>
-        /// Gets and sets the property Constraints.
+        /// Gets and sets the property Constraints. 
+        /// <para>
+        /// The drift check model quality constraints.
+        /// </para>
         /// </summary>
         public MetricsSource Constraints
         {
@@ -53,7 +56,10 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Statistics.
+        /// Gets and sets the property Statistics. 
+        /// <para>
+        /// The drift check model quality statistics.
+        /// </para>
         /// </summary>
         public MetricsSource Statistics
         {

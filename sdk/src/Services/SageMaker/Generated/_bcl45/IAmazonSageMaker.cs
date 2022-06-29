@@ -5812,6 +5812,40 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribeFeatureMetadata
+
+
+        /// <summary>
+        /// Shows the metadata for a feature within a feature group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFeatureMetadata service method.</param>
+        /// 
+        /// <returns>The response from the DescribeFeatureMetadata service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeFeatureMetadata">REST API Reference for DescribeFeatureMetadata Operation</seealso>
+        DescribeFeatureMetadataResponse DescribeFeatureMetadata(DescribeFeatureMetadataRequest request);
+
+
+
+        /// <summary>
+        /// Shows the metadata for a feature within a feature group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFeatureMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeFeatureMetadata service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeFeatureMetadata">REST API Reference for DescribeFeatureMetadata Operation</seealso>
+        Task<DescribeFeatureMetadataResponse> DescribeFeatureMetadataAsync(DescribeFeatureMetadataRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeFlowDefinition
 
 
@@ -10487,6 +10521,74 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateExperiment">REST API Reference for UpdateExperiment Operation</seealso>
         Task<UpdateExperimentResponse> UpdateExperimentAsync(UpdateExperimentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateFeatureGroup
+
+
+        /// <summary>
+        /// Updates the feature group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFeatureGroup service method.</param>
+        /// 
+        /// <returns>The response from the UpdateFeatureGroup service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateFeatureGroup">REST API Reference for UpdateFeatureGroup Operation</seealso>
+        UpdateFeatureGroupResponse UpdateFeatureGroup(UpdateFeatureGroupRequest request);
+
+
+
+        /// <summary>
+        /// Updates the feature group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFeatureGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateFeatureGroup service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateFeatureGroup">REST API Reference for UpdateFeatureGroup Operation</seealso>
+        Task<UpdateFeatureGroupResponse> UpdateFeatureGroupAsync(UpdateFeatureGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateFeatureMetadata
+
+
+        /// <summary>
+        /// Updates the description and parameters of the feature group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFeatureMetadata service method.</param>
+        /// 
+        /// <returns>The response from the UpdateFeatureMetadata service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateFeatureMetadata">REST API Reference for UpdateFeatureMetadata Operation</seealso>
+        UpdateFeatureMetadataResponse UpdateFeatureMetadata(UpdateFeatureMetadataRequest request);
+
+
+
+        /// <summary>
+        /// Updates the description and parameters of the feature group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFeatureMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateFeatureMetadata service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateFeatureMetadata">REST API Reference for UpdateFeatureMetadata Operation</seealso>
+        Task<UpdateFeatureMetadataResponse> UpdateFeatureMetadataAsync(UpdateFeatureMetadataRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

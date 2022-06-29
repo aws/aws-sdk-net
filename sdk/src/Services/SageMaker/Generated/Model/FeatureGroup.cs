@@ -44,6 +44,8 @@ namespace Amazon.SageMaker.Model
         private string _featureGroupArn;
         private string _featureGroupName;
         private FeatureGroupStatus _featureGroupStatus;
+        private DateTime? _lastModifiedTime;
+        private LastUpdateStatus _lastUpdateStatus;
         private OfflineStoreConfig _offlineStoreConfig;
         private OfflineStoreStatus _offlineStoreStatus;
         private OnlineStoreConfig _onlineStoreConfig;
@@ -222,6 +224,42 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetFeatureGroupStatus()
         {
             return this._featureGroupStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastModifiedTime. 
+        /// <para>
+        /// A timestamp indicating the last time you updated the feature group.
+        /// </para>
+        /// </summary>
+        public DateTime LastModifiedTime
+        {
+            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            set { this._lastModifiedTime = value; }
+        }
+
+        // Check to see if LastModifiedTime property is set
+        internal bool IsSetLastModifiedTime()
+        {
+            return this._lastModifiedTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastUpdateStatus. 
+        /// <para>
+        /// A value that indicates whether the feature group was updated successfully.
+        /// </para>
+        /// </summary>
+        public LastUpdateStatus LastUpdateStatus
+        {
+            get { return this._lastUpdateStatus; }
+            set { this._lastUpdateStatus = value; }
+        }
+
+        // Check to see if LastUpdateStatus property is set
+        internal bool IsSetLastUpdateStatus()
+        {
+            return this._lastUpdateStatus != null;
         }
 
         /// <summary>

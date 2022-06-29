@@ -82,6 +82,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.FeatureGroup = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FeatureMetadata", targetDepth))
+                {
+                    var unmarshaller = FeatureMetadataUnmarshaller.Instance;
+                    unmarshalledObject.FeatureMetadata = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ModelPackage", targetDepth))
                 {
                     var unmarshaller = ModelPackageUnmarshaller.Instance;

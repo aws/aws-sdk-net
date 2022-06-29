@@ -5291,6 +5291,43 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribeFeatureMetadata
+
+        internal virtual DescribeFeatureMetadataResponse DescribeFeatureMetadata(DescribeFeatureMetadataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFeatureMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFeatureMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeFeatureMetadataResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Shows the metadata for a feature within a feature group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFeatureMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeFeatureMetadata service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeFeatureMetadata">REST API Reference for DescribeFeatureMetadata Operation</seealso>
+        public virtual Task<DescribeFeatureMetadataResponse> DescribeFeatureMetadataAsync(DescribeFeatureMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFeatureMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFeatureMetadataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeFeatureMetadataResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeFlowDefinition
 
         internal virtual DescribeFlowDefinitionResponse DescribeFlowDefinition(DescribeFlowDefinitionRequest request)
@@ -10226,6 +10263,80 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = UpdateExperimentResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateExperimentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateFeatureGroup
+
+        internal virtual UpdateFeatureGroupResponse UpdateFeatureGroup(UpdateFeatureGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFeatureGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFeatureGroupResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateFeatureGroupResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the feature group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFeatureGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateFeatureGroup service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateFeatureGroup">REST API Reference for UpdateFeatureGroup Operation</seealso>
+        public virtual Task<UpdateFeatureGroupResponse> UpdateFeatureGroupAsync(UpdateFeatureGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFeatureGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFeatureGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateFeatureGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateFeatureMetadata
+
+        internal virtual UpdateFeatureMetadataResponse UpdateFeatureMetadata(UpdateFeatureMetadataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFeatureMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFeatureMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateFeatureMetadataResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the description and parameters of the feature group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFeatureMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateFeatureMetadata service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateFeatureMetadata">REST API Reference for UpdateFeatureMetadata Operation</seealso>
+        public virtual Task<UpdateFeatureMetadataResponse> UpdateFeatureMetadataAsync(UpdateFeatureMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFeatureMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFeatureMetadataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateFeatureMetadataResponse>(request, options, cancellationToken);
         }
 
         #endregion

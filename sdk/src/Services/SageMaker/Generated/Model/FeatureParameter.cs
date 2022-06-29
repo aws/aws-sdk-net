@@ -29,48 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Represents the drift check data quality baselines that can be used when the model
-    /// monitor is set using the model package.
+    /// A key-value pair that you specify to describe the feature.
     /// </summary>
-    public partial class DriftCheckModelDataQuality
+    public partial class FeatureParameter
     {
-        private MetricsSource _constraints;
-        private MetricsSource _statistics;
+        private string _key;
+        private string _value;
 
         /// <summary>
-        /// Gets and sets the property Constraints. 
+        /// Gets and sets the property Key. 
         /// <para>
-        /// The drift check model data quality constraints.
+        /// A key that must contain a value to describe the feature.
         /// </para>
         /// </summary>
-        public MetricsSource Constraints
+        [AWSProperty(Min=1, Max=255)]
+        public string Key
         {
-            get { return this._constraints; }
-            set { this._constraints = value; }
+            get { return this._key; }
+            set { this._key = value; }
         }
 
-        // Check to see if Constraints property is set
-        internal bool IsSetConstraints()
+        // Check to see if Key property is set
+        internal bool IsSetKey()
         {
-            return this._constraints != null;
+            return this._key != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Statistics. 
+        /// Gets and sets the property Value. 
         /// <para>
-        /// The drift check model data quality statistics.
+        /// The value that belongs to a key.
         /// </para>
         /// </summary>
-        public MetricsSource Statistics
+        [AWSProperty(Min=1, Max=255)]
+        public string Value
         {
-            get { return this._statistics; }
-            set { this._statistics = value; }
+            get { return this._value; }
+            set { this._value = value; }
         }
 
-        // Check to see if Statistics property is set
-        internal bool IsSetStatistics()
+        // Check to see if Value property is set
+        internal bool IsSetValue()
         {
-            return this._statistics != null;
+            return this._value != null;
         }
 
     }

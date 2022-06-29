@@ -112,6 +112,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.FeatureGroupStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LastModifiedTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LastUpdateStatus", targetDepth))
+                {
+                    var unmarshaller = LastUpdateStatusUnmarshaller.Instance;
+                    unmarshalledObject.LastUpdateStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OfflineStoreConfig", targetDepth))
                 {
                     var unmarshaller = OfflineStoreConfigUnmarshaller.Instance;

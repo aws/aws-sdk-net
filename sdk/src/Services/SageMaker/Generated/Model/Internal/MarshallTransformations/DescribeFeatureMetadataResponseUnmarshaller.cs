@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeFeatureGroup operation
+    /// Response Unmarshaller for DescribeFeatureMetadata operation
     /// </summary>  
-    public class DescribeFeatureGroupResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribeFeatureMetadataResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeFeatureGroupResponse response = new DescribeFeatureGroupResponse();
+            DescribeFeatureMetadataResponse response = new DescribeFeatureMetadataResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -63,24 +63,6 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("EventTimeFeatureName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.EventTimeFeatureName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("FailureReason", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.FailureReason = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("FeatureDefinitions", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<FeatureDefinition, FeatureDefinitionUnmarshaller>(FeatureDefinitionUnmarshaller.Instance);
-                    response.FeatureDefinitions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("FeatureGroupArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -93,10 +75,16 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.FeatureGroupName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("FeatureGroupStatus", targetDepth))
+                if (context.TestExpression("FeatureName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.FeatureGroupStatus = unmarshaller.Unmarshall(context);
+                    response.FeatureName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FeatureType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.FeatureType = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LastModifiedTime", targetDepth))
@@ -105,52 +93,10 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.LastModifiedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("LastUpdateStatus", targetDepth))
+                if (context.TestExpression("Parameters", targetDepth))
                 {
-                    var unmarshaller = LastUpdateStatusUnmarshaller.Instance;
-                    response.LastUpdateStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("NextToken", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.NextToken = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("OfflineStoreConfig", targetDepth))
-                {
-                    var unmarshaller = OfflineStoreConfigUnmarshaller.Instance;
-                    response.OfflineStoreConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("OfflineStoreStatus", targetDepth))
-                {
-                    var unmarshaller = OfflineStoreStatusUnmarshaller.Instance;
-                    response.OfflineStoreStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("OnlineStoreConfig", targetDepth))
-                {
-                    var unmarshaller = OnlineStoreConfigUnmarshaller.Instance;
-                    response.OnlineStoreConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("OnlineStoreTotalSizeBytes", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    response.OnlineStoreTotalSizeBytes = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RecordIdentifierFeatureName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.RecordIdentifierFeatureName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RoleArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.RoleArn = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<FeatureParameter, FeatureParameterUnmarshaller>(FeatureParameterUnmarshaller.Instance);
+                    response.Parameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -184,9 +130,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             return new AmazonSageMakerException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DescribeFeatureGroupResponseUnmarshaller _instance = new DescribeFeatureGroupResponseUnmarshaller();        
+        private static DescribeFeatureMetadataResponseUnmarshaller _instance = new DescribeFeatureMetadataResponseUnmarshaller();        
 
-        internal static DescribeFeatureGroupResponseUnmarshaller GetInstance()
+        internal static DescribeFeatureMetadataResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -194,7 +140,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeFeatureGroupResponseUnmarshaller Instance
+        public static DescribeFeatureMetadataResponseUnmarshaller Instance
         {
             get
             {

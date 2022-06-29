@@ -5013,6 +5013,60 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type LastUpdateStatusValue.
+    /// </summary>
+    public class LastUpdateStatusValue : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Failed for LastUpdateStatusValue
+        /// </summary>
+        public static readonly LastUpdateStatusValue Failed = new LastUpdateStatusValue("Failed");
+        /// <summary>
+        /// Constant InProgress for LastUpdateStatusValue
+        /// </summary>
+        public static readonly LastUpdateStatusValue InProgress = new LastUpdateStatusValue("InProgress");
+        /// <summary>
+        /// Constant Successful for LastUpdateStatusValue
+        /// </summary>
+        public static readonly LastUpdateStatusValue Successful = new LastUpdateStatusValue("Successful");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LastUpdateStatusValue(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LastUpdateStatusValue FindValue(string value)
+        {
+            return FindValue<LastUpdateStatusValue>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LastUpdateStatusValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LineageType.
     /// </summary>
     public class LineageType : ConstantClass
@@ -8600,6 +8654,10 @@ namespace Amazon.SageMaker
         /// Constant FeatureGroup for ResourceType
         /// </summary>
         public static readonly ResourceType FeatureGroup = new ResourceType("FeatureGroup");
+        /// <summary>
+        /// Constant FeatureMetadata for ResourceType
+        /// </summary>
+        public static readonly ResourceType FeatureMetadata = new ResourceType("FeatureMetadata");
         /// <summary>
         /// Constant ModelPackage for ResourceType
         /// </summary>

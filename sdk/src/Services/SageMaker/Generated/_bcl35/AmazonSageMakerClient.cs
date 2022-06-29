@@ -7428,6 +7428,63 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribeFeatureMetadata
+
+        /// <summary>
+        /// Shows the metadata for a feature within a feature group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFeatureMetadata service method.</param>
+        /// 
+        /// <returns>The response from the DescribeFeatureMetadata service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeFeatureMetadata">REST API Reference for DescribeFeatureMetadata Operation</seealso>
+        public virtual DescribeFeatureMetadataResponse DescribeFeatureMetadata(DescribeFeatureMetadataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFeatureMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFeatureMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeFeatureMetadataResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeFeatureMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFeatureMetadata operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeFeatureMetadata
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeFeatureMetadata">REST API Reference for DescribeFeatureMetadata Operation</seealso>
+        public virtual IAsyncResult BeginDescribeFeatureMetadata(DescribeFeatureMetadataRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFeatureMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFeatureMetadataResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeFeatureMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeFeatureMetadata.</param>
+        /// 
+        /// <returns>Returns a  DescribeFeatureMetadataResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeFeatureMetadata">REST API Reference for DescribeFeatureMetadata Operation</seealso>
+        public virtual DescribeFeatureMetadataResponse EndDescribeFeatureMetadata(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeFeatureMetadataResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeFlowDefinition
 
         /// <summary>
@@ -14963,6 +15020,120 @@ namespace Amazon.SageMaker
         public virtual UpdateExperimentResponse EndUpdateExperiment(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateExperimentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateFeatureGroup
+
+        /// <summary>
+        /// Updates the feature group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFeatureGroup service method.</param>
+        /// 
+        /// <returns>The response from the UpdateFeatureGroup service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateFeatureGroup">REST API Reference for UpdateFeatureGroup Operation</seealso>
+        public virtual UpdateFeatureGroupResponse UpdateFeatureGroup(UpdateFeatureGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFeatureGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFeatureGroupResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateFeatureGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateFeatureGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFeatureGroup operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateFeatureGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateFeatureGroup">REST API Reference for UpdateFeatureGroup Operation</seealso>
+        public virtual IAsyncResult BeginUpdateFeatureGroup(UpdateFeatureGroupRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFeatureGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFeatureGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateFeatureGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateFeatureGroup.</param>
+        /// 
+        /// <returns>Returns a  UpdateFeatureGroupResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateFeatureGroup">REST API Reference for UpdateFeatureGroup Operation</seealso>
+        public virtual UpdateFeatureGroupResponse EndUpdateFeatureGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateFeatureGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateFeatureMetadata
+
+        /// <summary>
+        /// Updates the description and parameters of the feature group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFeatureMetadata service method.</param>
+        /// 
+        /// <returns>The response from the UpdateFeatureMetadata service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateFeatureMetadata">REST API Reference for UpdateFeatureMetadata Operation</seealso>
+        public virtual UpdateFeatureMetadataResponse UpdateFeatureMetadata(UpdateFeatureMetadataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFeatureMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFeatureMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateFeatureMetadataResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateFeatureMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFeatureMetadata operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateFeatureMetadata
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateFeatureMetadata">REST API Reference for UpdateFeatureMetadata Operation</seealso>
+        public virtual IAsyncResult BeginUpdateFeatureMetadata(UpdateFeatureMetadataRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFeatureMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFeatureMetadataResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateFeatureMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateFeatureMetadata.</param>
+        /// 
+        /// <returns>Returns a  UpdateFeatureMetadataResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateFeatureMetadata">REST API Reference for UpdateFeatureMetadata Operation</seealso>
+        public virtual UpdateFeatureMetadataResponse EndUpdateFeatureMetadata(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateFeatureMetadataResponse>(asyncResult);
         }
 
         #endregion

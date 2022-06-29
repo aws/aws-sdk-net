@@ -29,48 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Represents the drift check data quality baselines that can be used when the model
-    /// monitor is set using the model package.
+    /// A value that indicates whether the update was successful.
     /// </summary>
-    public partial class DriftCheckModelDataQuality
+    public partial class LastUpdateStatus
     {
-        private MetricsSource _constraints;
-        private MetricsSource _statistics;
+        private string _failureReason;
+        private LastUpdateStatusValue _status;
 
         /// <summary>
-        /// Gets and sets the property Constraints. 
+        /// Gets and sets the property FailureReason. 
         /// <para>
-        /// The drift check model data quality constraints.
+        /// If the update wasn't successful, indicates the reason why it failed.
         /// </para>
         /// </summary>
-        public MetricsSource Constraints
+        [AWSProperty(Max=1024)]
+        public string FailureReason
         {
-            get { return this._constraints; }
-            set { this._constraints = value; }
+            get { return this._failureReason; }
+            set { this._failureReason = value; }
         }
 
-        // Check to see if Constraints property is set
-        internal bool IsSetConstraints()
+        // Check to see if FailureReason property is set
+        internal bool IsSetFailureReason()
         {
-            return this._constraints != null;
+            return this._failureReason != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Statistics. 
+        /// Gets and sets the property Status. 
         /// <para>
-        /// The drift check model data quality statistics.
+        /// A value that indicates whether the update was made successful.
         /// </para>
         /// </summary>
-        public MetricsSource Statistics
+        [AWSProperty(Required=true)]
+        public LastUpdateStatusValue Status
         {
-            get { return this._statistics; }
-            set { this._statistics = value; }
+            get { return this._status; }
+            set { this._status = value; }
         }
 
-        // Check to see if Statistics property is set
-        internal bool IsSetStatistics()
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
         {
-            return this._statistics != null;
+            return this._status != null;
         }
 
     }

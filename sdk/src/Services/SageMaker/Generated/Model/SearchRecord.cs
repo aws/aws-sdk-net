@@ -36,6 +36,7 @@ namespace Amazon.SageMaker.Model
         private Endpoint _endpoint;
         private Experiment _experiment;
         private FeatureGroup _featureGroup;
+        private FeatureMetadata _featureMetadata;
         private ModelPackage _modelPackage;
         private ModelPackageGroup _modelPackageGroup;
         private Pipeline _pipeline;
@@ -91,6 +92,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetFeatureGroup()
         {
             return this._featureGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FeatureMetadata. 
+        /// <para>
+        /// The feature metadata used to search through the features.
+        /// </para>
+        /// </summary>
+        public FeatureMetadata FeatureMetadata
+        {
+            get { return this._featureMetadata; }
+            set { this._featureMetadata = value; }
+        }
+
+        // Check to see if FeatureMetadata property is set
+        internal bool IsSetFeatureMetadata()
+        {
+            return this._featureMetadata != null;
         }
 
         /// <summary>

@@ -38,7 +38,10 @@ namespace Amazon.SageMaker.Model
         private MetricsSource _report;
 
         /// <summary>
-        /// Gets and sets the property PostTrainingReport.
+        /// Gets and sets the property PostTrainingReport. 
+        /// <para>
+        /// The post-training bias report for a model.
+        /// </para>
         /// </summary>
         public MetricsSource PostTrainingReport
         {
@@ -53,7 +56,10 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PreTrainingReport.
+        /// Gets and sets the property PreTrainingReport. 
+        /// <para>
+        /// The pre-training bias report for a model.
+        /// </para>
         /// </summary>
         public MetricsSource PreTrainingReport
         {
