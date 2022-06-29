@@ -1,3 +1,22 @@
+### 3.7.305.0 (2022-06-29 18:20 UTC)
+* AppStream (3.7.6.0)
+	* Includes support for StreamingExperienceSettings in CreateStack and UpdateStack APIs
+* ElasticLoadBalancingV2 (3.7.3.95)
+	* This release adds two attributes for ALB. One, helps to preserve the host header and the other helps to modify, preserve, or remove the X-Forwarded-For header in the HTTP request.
+* ElasticMapReduce (3.7.6.0)
+	* This release introduces additional optional parameter "Throughput" to VolumeSpecification to enable user to configure throughput for gp3 ebs volumes.
+* MediaLive (3.7.10.0)
+	* This release adds support for automatic renewal of MediaLive reservations at the end of each reservation term. Automatic renewal is optional. This release also adds support for labelling accessibility-focused audio and caption tracks in HLS outputs.
+* RedshiftServerless (3.7.0.0)
+	* Add new API operations for Amazon Redshift Serverless, a new way of using Amazon Redshift without needing to manually manage provisioned clusters. The new operations let you interact with Redshift Serverless resources, such as create snapshots, list VPC endpoints, delete resource policies, and more.
+* SageMaker (3.7.38.0)
+	* This release adds: UpdateFeatureGroup, UpdateFeatureMetadata, DescribeFeatureMetadata APIs; FeatureMetadata type in Search API; LastModifiedTime, LastUpdateStatus, OnlineStoreTotalSizeBytes in DescribeFeatureGroup API.
+* Translate (3.7.5.0)
+	* Added ListLanguages API which can be used to list the languages supported by Translate.
+* Core 3.7.12.4
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.304.0 (2022-06-28 18:14 UTC)
 * DataSync (3.7.8.0)
 	* AWS DataSync now supports Amazon FSx for NetApp ONTAP locations.
