@@ -151,6 +151,17 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetStreamingExperienceSettings())
+                {
+                    context.Writer.WritePropertyName("StreamingExperienceSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StreamingExperienceSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.StreamingExperienceSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");

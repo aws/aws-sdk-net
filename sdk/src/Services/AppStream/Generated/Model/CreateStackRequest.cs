@@ -44,6 +44,7 @@ namespace Amazon.AppStream.Model
         private string _name;
         private string _redirectURL;
         private List<StorageConnector> _storageConnectors = new List<StorageConnector>();
+        private StreamingExperienceSettings _streamingExperienceSettings;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private List<UserSetting> _userSettings = new List<UserSetting>();
 
@@ -220,6 +221,25 @@ namespace Amazon.AppStream.Model
         internal bool IsSetStorageConnectors()
         {
             return this._storageConnectors != null && this._storageConnectors.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StreamingExperienceSettings. 
+        /// <para>
+        /// The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently,
+        /// UDP is only supported in the Windows native client.
+        /// </para>
+        /// </summary>
+        public StreamingExperienceSettings StreamingExperienceSettings
+        {
+            get { return this._streamingExperienceSettings; }
+            set { this._streamingExperienceSettings = value; }
+        }
+
+        // Check to see if StreamingExperienceSettings property is set
+        internal bool IsSetStreamingExperienceSettings()
+        {
+            return this._streamingExperienceSettings != null;
         }
 
         /// <summary>
