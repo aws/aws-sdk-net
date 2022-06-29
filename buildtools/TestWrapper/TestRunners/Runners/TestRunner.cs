@@ -84,6 +84,12 @@ namespace TestWrapper.TestRunners
                     Console.WriteLine(summary);
                     Console.WriteLine("=======================");
 
+                    // If there were no Retryable test failures then stop all retries.
+                    if(summary.ContainsNoRetryableTests)
+                    {
+                        break;
+                    }
+
                     if (summary.ExitCode != 0)
                     {                        
                         prevFailedTestCount = summary.Failed;
@@ -181,7 +187,15 @@ namespace TestWrapper.TestRunners
                 .Select(ele => ele.Attributes("testName").First().Value)
                 .ToList();
 
-            return new ResultsSummary(exitCode, failedTests, passedCount, failedCount, skippedCount);
+            var containsNoRetryableTests = false;
+            var testReportContent = File.ReadAllText(logLocation);
+            if (ResultsSummary.NO_RETRYABLE_STRINGS.Any(x => testReportContent.Contains(x)))
+            {
+                containsNoRetryableTests = true;
+            }
+
+
+            return new ResultsSummary(exitCode, failedTests, passedCount, failedCount, skippedCount, containsNoRetryableTests);
         }
 
         private static void ValidateFileInfo(FileInfo fileInfo, string argName)

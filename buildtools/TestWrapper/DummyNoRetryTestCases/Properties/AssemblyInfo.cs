@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DummyMSTestCases")]
+[assembly: AssemblyTitle("DummyNoRetryTestCases")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("DummyMSTestCases")]
+[assembly: AssemblyProduct("DummyNoRetryTestCases")]
 [assembly: AssemblyCopyright("Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("fd0d6108-36d5-42a7-a3d0-b428c87395c8")]
+[assembly: Guid("4DCAF40E-5A86-427F-A0ED-9847585BF83A")]
 
 // Version information for an assembly consists of the following four values:
 //
