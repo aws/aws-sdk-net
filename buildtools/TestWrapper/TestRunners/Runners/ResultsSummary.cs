@@ -6,16 +6,22 @@ namespace TestWrapper
 {
     public class ResultsSummary
     {
+        public readonly static IList<string> NO_RETRYABLE_STRINGS = new List<string>
+        {
+            "The request signature we calculated does not match the signature you provided."
+        };
+
         public ResultsSummary(
             int exitCode,
             IList<string> failedTests,
-            int passed, int failed, int skipped)
+            int passed, int failed, int skipped, bool containsNoRetryableTests)
         {
             this.ExitCode = exitCode;
             this.FailedTestNames = failedTests;
             this.Passed = passed;
             this.Failed = failed;
             this.Skipped = skipped;
+            this.ContainsNoRetryableTests = containsNoRetryableTests;
         }
 
         public IList<string> FailedTestNames { get; private set; }
@@ -23,6 +29,8 @@ namespace TestWrapper
         public int Failed { get; private set; }
         public int Skipped { get; private set; }
         public int ExitCode { get; private set; }
+
+        public bool ContainsNoRetryableTests { get; private set; }
 
         public override string ToString()
         {
@@ -38,6 +46,11 @@ namespace TestWrapper
                 }
 
                 writer.WriteLine("Passed : {0}, Failed : {1}", this.Passed, this.Failed);
+
+                if(this.ContainsNoRetryableTests)
+                {
+                    writer.WriteLine($"Non Retryable failed tests found");
+                }
                 return writer.ToString();
             }
         }
