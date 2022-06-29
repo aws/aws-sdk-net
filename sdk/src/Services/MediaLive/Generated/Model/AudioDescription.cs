@@ -186,7 +186,7 @@ namespace Amazon.MediaLive.Model
         /// this name to uniquely identify this AudioDescription.  Description names should be
         /// unique within this Live Event.
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=255)]
         public string Name
         {
             get { return this._name; }

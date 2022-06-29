@@ -45,6 +45,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CaptionDescription requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAccessibility())
+            {
+                context.Writer.WritePropertyName("accessibility");
+                context.Writer.Write(requestObject.Accessibility);
+            }
+
             if(requestObject.IsSetCaptionSelectorName())
             {
                 context.Writer.WritePropertyName("captionSelectorName");

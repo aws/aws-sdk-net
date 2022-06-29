@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CaptionDescription Object
+    /// Response Unmarshaller for RenewalSettings Object
     /// </summary>  
-    public class CaptionDescriptionUnmarshaller : IUnmarshaller<CaptionDescription, XmlUnmarshallerContext>, IUnmarshaller<CaptionDescription, JsonUnmarshallerContext>
+    public class RenewalSettingsUnmarshaller : IUnmarshaller<RenewalSettings, XmlUnmarshallerContext>, IUnmarshaller<RenewalSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CaptionDescription IUnmarshaller<CaptionDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RenewalSettings IUnmarshaller<RenewalSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,27 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public CaptionDescription Unmarshall(JsonUnmarshallerContext context)
+        public RenewalSettings Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CaptionDescription unmarshalledObject = new CaptionDescription();
+            RenewalSettings unmarshalledObject = new RenewalSettings();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("accessibility", targetDepth))
+                if (context.TestExpression("automaticRenewal", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Accessibility = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AutomaticRenewal = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("captionSelectorName", targetDepth))
+                if (context.TestExpression("renewalCount", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CaptionSelectorName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("destinationSettings", targetDepth))
-                {
-                    var unmarshaller = CaptionDestinationSettingsUnmarshaller.Instance;
-                    unmarshalledObject.DestinationSettings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("languageCode", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LanguageCode = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("languageDescription", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LanguageDescription = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.RenewalCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +82,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
 
 
-        private static CaptionDescriptionUnmarshaller _instance = new CaptionDescriptionUnmarshaller();        
+        private static RenewalSettingsUnmarshaller _instance = new RenewalSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CaptionDescriptionUnmarshaller Instance
+        public static RenewalSettingsUnmarshaller Instance
         {
             get
             {

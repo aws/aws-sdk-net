@@ -727,6 +727,56 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type AccessibilityType.
+    /// </summary>
+    public class AccessibilityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DOES_NOT_IMPLEMENT_ACCESSIBILITY_FEATURES for AccessibilityType
+        /// </summary>
+        public static readonly AccessibilityType DOES_NOT_IMPLEMENT_ACCESSIBILITY_FEATURES = new AccessibilityType("DOES_NOT_IMPLEMENT_ACCESSIBILITY_FEATURES");
+        /// <summary>
+        /// Constant IMPLEMENTS_ACCESSIBILITY_FEATURES for AccessibilityType
+        /// </summary>
+        public static readonly AccessibilityType IMPLEMENTS_ACCESSIBILITY_FEATURES = new AccessibilityType("IMPLEMENTS_ACCESSIBILITY_FEATURES");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AccessibilityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccessibilityType FindValue(string value)
+        {
+            return FindValue<AccessibilityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccessibilityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AfdSignaling.
     /// </summary>
     public class AfdSignaling : ConstantClass
@@ -2090,6 +2140,10 @@ namespace Amazon.MediaLive
         /// Constant UP_TO_DATE for DeviceUpdateStatus
         /// </summary>
         public static readonly DeviceUpdateStatus UP_TO_DATE = new DeviceUpdateStatus("UP_TO_DATE");
+        /// <summary>
+        /// Constant UPDATING for DeviceUpdateStatus
+        /// </summary>
+        public static readonly DeviceUpdateStatus UPDATING = new DeviceUpdateStatus("UPDATING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -11340,6 +11394,60 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PreferredChannelPipeline(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReservationAutomaticRenewal.
+    /// </summary>
+    public class ReservationAutomaticRenewal : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for ReservationAutomaticRenewal
+        /// </summary>
+        public static readonly ReservationAutomaticRenewal DISABLED = new ReservationAutomaticRenewal("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for ReservationAutomaticRenewal
+        /// </summary>
+        public static readonly ReservationAutomaticRenewal ENABLED = new ReservationAutomaticRenewal("ENABLED");
+        /// <summary>
+        /// Constant UNAVAILABLE for ReservationAutomaticRenewal
+        /// </summary>
+        public static readonly ReservationAutomaticRenewal UNAVAILABLE = new ReservationAutomaticRenewal("UNAVAILABLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReservationAutomaticRenewal(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReservationAutomaticRenewal FindValue(string value)
+        {
+            return FindValue<ReservationAutomaticRenewal>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReservationAutomaticRenewal(string value)
         {
             return FindValue(value);
         }

@@ -37,6 +37,7 @@ namespace Amazon.MediaLive.Model
         private int? _count;
         private string _name;
         private string _offeringId;
+        private RenewalSettings _renewalSettings;
         private string _requestId;
         private string _start;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -86,6 +87,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetOfferingId()
         {
             return this._offeringId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RenewalSettings. Renewal settings for the reservation
+        /// </summary>
+        public RenewalSettings RenewalSettings
+        {
+            get { return this._renewalSettings; }
+            set { this._renewalSettings = value; }
+        }
+
+        // Check to see if RenewalSettings property is set
+        internal bool IsSetRenewalSettings()
+        {
+            return this._renewalSettings != null;
         }
 
         /// <summary>

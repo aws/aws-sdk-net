@@ -58,7 +58,7 @@ namespace Amazon.MediaLive.Model
         /// to a file accessible to the Live system (eg. a http:// URI) depending on the output
         /// type. For example, a RTMP destination should have a uri simliar to: "rtmp://fmsserver/live".
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2048)]
         public string Uri
         {
             get { return this._uri; }

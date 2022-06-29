@@ -80,6 +80,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetRenewalSettings())
+                {
+                    context.Writer.WritePropertyName("renewalSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RenewalSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RenewalSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetRequestId())
                 {
                     context.Writer.WritePropertyName("requestId");

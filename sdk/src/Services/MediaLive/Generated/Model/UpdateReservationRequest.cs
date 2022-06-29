@@ -35,6 +35,7 @@ namespace Amazon.MediaLive.Model
     public partial class UpdateReservationRequest : AmazonMediaLiveRequest
     {
         private string _name;
+        private RenewalSettings _renewalSettings;
         private string _reservationId;
 
         /// <summary>
@@ -50,6 +51,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RenewalSettings. Renewal settings for the reservation
+        /// </summary>
+        public RenewalSettings RenewalSettings
+        {
+            get { return this._renewalSettings; }
+            set { this._renewalSettings = value; }
+        }
+
+        // Check to see if RenewalSettings property is set
+        internal bool IsSetRenewalSettings()
+        {
+            return this._renewalSettings != null;
         }
 
         /// <summary>

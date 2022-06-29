@@ -123,6 +123,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     response.Region = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("renewalSettings", targetDepth))
+                {
+                    var unmarshaller = RenewalSettingsUnmarshaller.Instance;
+                    response.RenewalSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("reservationId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

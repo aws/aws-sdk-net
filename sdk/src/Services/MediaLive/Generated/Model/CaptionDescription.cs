@@ -33,11 +33,28 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class CaptionDescription
     {
+        private AccessibilityType _accessibility;
         private string _captionSelectorName;
         private CaptionDestinationSettings _destinationSettings;
         private string _languageCode;
         private string _languageDescription;
         private string _name;
+
+        /// <summary>
+        /// Gets and sets the property Accessibility. Indicates whether the caption track implements
+        /// accessibility features such as written descriptions of spoken dialog, music, and sounds.
+        /// </summary>
+        public AccessibilityType Accessibility
+        {
+            get { return this._accessibility; }
+            set { this._accessibility = value; }
+        }
+
+        // Check to see if Accessibility property is set
+        internal bool IsSetAccessibility()
+        {
+            return this._accessibility != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CaptionSelectorName. Specifies which input caption selector

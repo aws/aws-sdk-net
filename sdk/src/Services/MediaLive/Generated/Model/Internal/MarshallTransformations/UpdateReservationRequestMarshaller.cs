@@ -74,6 +74,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetRenewalSettings())
+                {
+                    context.Writer.WritePropertyName("renewalSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RenewalSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RenewalSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
