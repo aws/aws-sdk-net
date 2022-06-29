@@ -30,7 +30,7 @@ namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
     /// Configuration of requested EBS block device associated with the instance group with
-    /// count of volumes that will be associated to every instance.
+    /// count of volumes that are associated to every instance.
     /// </summary>
     public partial class EbsBlockDeviceConfig
     {
@@ -40,8 +40,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property VolumeSpecification. 
         /// <para>
-        /// EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested
-        /// for the EBS volume attached to an EC2 instance in the cluster.
+        /// EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s)
+        /// that are requested for the EBS volume attached to an EC2 instance in the cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,8 +60,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property VolumesPerInstance. 
         /// <para>
-        /// Number of EBS volumes with a specific volume configuration that will be associated
-        /// with every instance in the instance group
+        /// Number of EBS volumes with a specific volume configuration that are associated with
+        /// every instance in the instance group
         /// </para>
         /// </summary>
         public int VolumesPerInstance

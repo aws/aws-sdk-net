@@ -990,4 +990,8 @@
     <min>0</min>
     <max>256</max>
   </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.VolumeSpecification.Throughput</property>
+    <min>0</min>
+  </property-value-rule>
 </property-value-rules>

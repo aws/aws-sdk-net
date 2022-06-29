@@ -29,13 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested
-    /// for the EBS volume attached to an EC2 instance in the cluster.
+    /// EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s)
+    /// that are requested for the EBS volume attached to an EC2 instance in the cluster.
     /// </summary>
     public partial class VolumeSpecification
     {
         private int? _iops;
         private int? _sizeInGB;
+        private int? _throughput;
         private string _volumeType;
 
         /// <summary>
@@ -74,6 +75,26 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetSizeInGB()
         {
             return this._sizeInGB.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Throughput. 
+        /// <para>
+        /// The throughput, in mebibyte per second (MiB/s). This optional parameter can be a number
+        /// from 125 - 1000 and is valid only for gp3 volumes.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int Throughput
+        {
+            get { return this._throughput.GetValueOrDefault(); }
+            set { this._throughput = value; }
+        }
+
+        // Check to see if Throughput property is set
+        internal bool IsSetThroughput()
+        {
+            return this._throughput.HasValue; 
         }
 
         /// <summary>

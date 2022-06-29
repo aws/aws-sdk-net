@@ -57,6 +57,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.SizeInGB);
             }
 
+            if(requestObject.IsSetThroughput())
+            {
+                context.Writer.WritePropertyName("Throughput");
+                context.Writer.Write(requestObject.Throughput);
+            }
+
             if(requestObject.IsSetVolumeType())
             {
                 context.Writer.WritePropertyName("VolumeType");
