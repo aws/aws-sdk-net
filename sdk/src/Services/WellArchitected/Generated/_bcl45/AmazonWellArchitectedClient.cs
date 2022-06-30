@@ -3104,6 +3104,79 @@ namespace Amazon.WellArchitected
 
         #endregion
         
+        #region  UpdateGlobalSettings
+
+
+        /// <summary>
+        /// Updates whether the Amazon Web Services account is opted into organization sharing
+        /// features.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGlobalSettings service method.</param>
+        /// 
+        /// <returns>The response from the UpdateGlobalSettings service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateGlobalSettings">REST API Reference for UpdateGlobalSettings Operation</seealso>
+        public virtual UpdateGlobalSettingsResponse UpdateGlobalSettings(UpdateGlobalSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateGlobalSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGlobalSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateGlobalSettingsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates whether the Amazon Web Services account is opted into organization sharing
+        /// features.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGlobalSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateGlobalSettings service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateGlobalSettings">REST API Reference for UpdateGlobalSettings Operation</seealso>
+        public virtual Task<UpdateGlobalSettingsResponse> UpdateGlobalSettingsAsync(UpdateGlobalSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateGlobalSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGlobalSettingsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateGlobalSettingsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateLensReview
 
 

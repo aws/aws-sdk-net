@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListWorkloadShares Request Marshaller
+    /// UpdateGlobalSettings Request Marshaller
     /// </summary>       
-    public class ListWorkloadSharesRequestMarshaller : IMarshaller<IRequest, ListWorkloadSharesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateGlobalSettingsRequestMarshaller : IMarshaller<IRequest, UpdateGlobalSettingsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListWorkloadSharesRequest)input);
+            return this.Marshall((UpdateGlobalSettingsRequest)input);
         }
 
         /// <summary>
@@ -52,35 +52,36 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListWorkloadSharesRequest publicRequest)
+        public IRequest Marshall(UpdateGlobalSettingsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.WellArchitected");
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-03-31";
-            request.HttpMethod = "GET";
+            request.HttpMethod = "PATCH";
 
-            if (!publicRequest.IsSetWorkloadId())
-                throw new AmazonWellArchitectedException("Request object does not have required field WorkloadId set");
-            request.AddPathResource("{WorkloadId}", StringUtils.FromString(publicRequest.WorkloadId));
-            
-            if (publicRequest.IsSetMaxResults())
-                request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));
-            
-            if (publicRequest.IsSetNextToken())
-                request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
-            
-            if (publicRequest.IsSetSharedWithPrefix())
-                request.Parameters.Add("SharedWithPrefix", StringUtils.FromString(publicRequest.SharedWithPrefix));
-            
-            if (publicRequest.IsSetStatus())
-                request.Parameters.Add("Status", StringUtils.FromString(publicRequest.Status));
-            request.ResourcePath = "/workloads/{WorkloadId}/shares";
-            request.UseQueryString = true;
+            request.ResourcePath = "/global-settings";
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetOrganizationSharingStatus())
+                {
+                    context.Writer.WritePropertyName("OrganizationSharingStatus");
+                    context.Writer.Write(publicRequest.OrganizationSharingStatus);
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+            }
+
 
             return request;
         }
-        private static ListWorkloadSharesRequestMarshaller _instance = new ListWorkloadSharesRequestMarshaller();        
+        private static UpdateGlobalSettingsRequestMarshaller _instance = new UpdateGlobalSettingsRequestMarshaller();        
 
-        internal static ListWorkloadSharesRequestMarshaller GetInstance()
+        internal static UpdateGlobalSettingsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -88,7 +89,7 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListWorkloadSharesRequestMarshaller Instance
+        public static UpdateGlobalSettingsRequestMarshaller Instance
         {
             get
             {

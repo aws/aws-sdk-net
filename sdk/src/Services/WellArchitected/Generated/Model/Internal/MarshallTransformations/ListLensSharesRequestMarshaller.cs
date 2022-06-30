@@ -70,6 +70,9 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetSharedWithPrefix())
                 request.Parameters.Add("SharedWithPrefix", StringUtils.FromString(publicRequest.SharedWithPrefix));
+            
+            if (publicRequest.IsSetStatus())
+                request.Parameters.Add("Status", StringUtils.FromString(publicRequest.Status));
             request.ResourcePath = "/lenses/{LensAlias}/shares";
             request.UseQueryString = true;
 
