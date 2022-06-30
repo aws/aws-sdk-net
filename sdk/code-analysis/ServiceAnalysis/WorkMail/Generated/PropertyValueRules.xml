@@ -69,6 +69,24 @@
     <pattern>^m-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkMail.Model.CreateAvailabilityConfigurationRequest.ClientToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\x21-\x7e]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.CreateAvailabilityConfigurationRequest.DomainName</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9.-]+\.[a-zA-Z-]{2,}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.CreateAvailabilityConfigurationRequest.OrganizationId</property>
+    <min>34</min>
+    <max>34</max>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkMail.Model.CreateGroupRequest.Name</property>
     <min>1</min>
     <max>256</max>
@@ -214,6 +232,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DeleteAliasRequest.OrganizationId</property>
+    <min>34</min>
+    <max>34</max>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.DeleteAvailabilityConfigurationRequest.DomainName</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9.-]+\.[a-zA-Z-]{2,}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.DeleteAvailabilityConfigurationRequest.OrganizationId</property>
     <min>34</min>
     <max>34</max>
     <pattern>^m-[0-9a-f]{32}$</pattern>
@@ -789,6 +819,29 @@
     <pattern>[\S\s]*|[a-zA-Z0-9/+=]{1,1024}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkMail.Model.ListAvailabilityConfigurationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.ListAvailabilityConfigurationsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[\S\s]*|[a-zA-Z0-9/+=]{1,1024}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.ListAvailabilityConfigurationsRequest.OrganizationId</property>
+    <min>34</min>
+    <max>34</max>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.ListAvailabilityConfigurationsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[\S\s]*|[a-zA-Z0-9/+=]{1,1024}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkMail.Model.ListGroupMembersRequest.GroupId</property>
     <min>12</min>
     <max>256</max>
@@ -1263,9 +1316,37 @@
     <max>1011</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkMail.Model.TestAvailabilityConfigurationRequest.DomainName</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9.-]+\.[a-zA-Z-]{2,}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.TestAvailabilityConfigurationRequest.OrganizationId</property>
+    <min>34</min>
+    <max>34</max>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.TestAvailabilityConfigurationResponse.FailureReason</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkMail.Model.UntagResourceRequest.ResourceARN</property>
     <min>1</min>
     <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.UpdateAvailabilityConfigurationRequest.DomainName</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9.-]+\.[a-zA-Z-]{2,}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.UpdateAvailabilityConfigurationRequest.OrganizationId</property>
+    <min>34</min>
+    <max>34</max>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.UpdateDefaultMailDomainRequest.DomainName</property>
@@ -1366,6 +1447,12 @@
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkMail.Model.AvailabilityConfiguration.DomainName</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9.-]+\.[a-zA-Z-]{2,}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkMail.Model.Delegate.Id</property>
     <max>256</max>
   </property-value-rule>
@@ -1394,6 +1481,21 @@
     <pattern>[\S\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkMail.Model.EwsAvailabilityProvider.EwsEndpoint</property>
+    <max>256</max>
+    <pattern>https?://[A-Za-z0-9.-]+(:[0-9]+)?/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.EwsAvailabilityProvider.EwsPassword</property>
+    <max>256</max>
+    <pattern>[\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.EwsAvailabilityProvider.EwsUsername</property>
+    <max>256</max>
+    <pattern>[\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkMail.Model.FolderConfiguration.Period</property>
     <min>1</min>
     <max>730</max>
@@ -1414,6 +1516,12 @@
     <min>1</min>
     <max>256</max>
     <pattern>[\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.LambdaAvailabilityProvider.LambdaArn</property>
+    <min>49</min>
+    <max>256</max>
+    <pattern>arn:aws:lambda:[a-z]{2}-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9\-_\.]+(:(\$LATEST|[a-zA-Z0-9\-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.MailboxExportJob.Description</property>
@@ -1540,6 +1648,16 @@
     <property>Amazon.WorkMail.Model.Permission.GranteeId</property>
     <min>12</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.RedactedEwsAvailabilityProvider.EwsEndpoint</property>
+    <max>256</max>
+    <pattern>https?://[A-Za-z0-9.-]+(:[0-9]+)?/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.RedactedEwsAvailabilityProvider.EwsUsername</property>
+    <max>256</max>
+    <pattern>[\u0020-\u00FF]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.Resource.Email</property>

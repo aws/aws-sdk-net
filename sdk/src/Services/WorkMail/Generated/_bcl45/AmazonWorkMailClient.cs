@@ -650,6 +650,83 @@ namespace Amazon.WorkMail
 
         #endregion
         
+        #region  CreateAvailabilityConfiguration
+
+
+        /// <summary>
+        /// Creates an <code>AvailabilityConfiguration</code> for the given WorkMail organization
+        /// and domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAvailabilityConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the CreateAvailabilityConfiguration service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.LimitExceededException">
+        /// The request exceeds the limit of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.NameAvailabilityException">
+        /// The user, group, or resource name isn't unique in Amazon WorkMail.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateAvailabilityConfiguration">REST API Reference for CreateAvailabilityConfiguration Operation</seealso>
+        public virtual CreateAvailabilityConfigurationResponse CreateAvailabilityConfiguration(CreateAvailabilityConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAvailabilityConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAvailabilityConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAvailabilityConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates an <code>AvailabilityConfiguration</code> for the given WorkMail organization
+        /// and domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAvailabilityConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAvailabilityConfiguration service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.LimitExceededException">
+        /// The request exceeds the limit of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.NameAvailabilityException">
+        /// The user, group, or resource name isn't unique in Amazon WorkMail.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateAvailabilityConfiguration">REST API Reference for CreateAvailabilityConfiguration Operation</seealso>
+        public virtual Task<CreateAvailabilityConfigurationResponse> CreateAvailabilityConfigurationAsync(CreateAvailabilityConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAvailabilityConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAvailabilityConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateAvailabilityConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateGroup
 
 
@@ -1265,6 +1342,65 @@ namespace Amazon.WorkMail
             options.ResponseUnmarshaller = DeleteAliasResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteAliasResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteAvailabilityConfiguration
+
+
+        /// <summary>
+        /// Deletes the <code>AvailabilityConfiguration</code> for the given WorkMail organization
+        /// and domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAvailabilityConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAvailabilityConfiguration service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteAvailabilityConfiguration">REST API Reference for DeleteAvailabilityConfiguration Operation</seealso>
+        public virtual DeleteAvailabilityConfigurationResponse DeleteAvailabilityConfiguration(DeleteAvailabilityConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAvailabilityConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAvailabilityConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAvailabilityConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the <code>AvailabilityConfiguration</code> for the given WorkMail organization
+        /// and domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAvailabilityConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAvailabilityConfiguration service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteAvailabilityConfiguration">REST API Reference for DeleteAvailabilityConfiguration Operation</seealso>
+        public virtual Task<DeleteAvailabilityConfigurationResponse> DeleteAvailabilityConfigurationAsync(DeleteAvailabilityConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAvailabilityConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAvailabilityConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteAvailabilityConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3317,6 +3453,63 @@ namespace Amazon.WorkMail
 
         #endregion
         
+        #region  ListAvailabilityConfigurations
+
+
+        /// <summary>
+        /// List all the <code>AvailabilityConfiguration</code>'s for the given WorkMail organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAvailabilityConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListAvailabilityConfigurations service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListAvailabilityConfigurations">REST API Reference for ListAvailabilityConfigurations Operation</seealso>
+        public virtual ListAvailabilityConfigurationsResponse ListAvailabilityConfigurations(ListAvailabilityConfigurationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAvailabilityConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAvailabilityConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAvailabilityConfigurationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// List all the <code>AvailabilityConfiguration</code>'s for the given WorkMail organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAvailabilityConfigurations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAvailabilityConfigurations service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListAvailabilityConfigurations">REST API Reference for ListAvailabilityConfigurations Operation</seealso>
+        public virtual Task<ListAvailabilityConfigurationsResponse> ListAvailabilityConfigurationsAsync(ListAvailabilityConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAvailabilityConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAvailabilityConfigurationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListAvailabilityConfigurationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListGroupMembers
 
 
@@ -4994,6 +5187,103 @@ namespace Amazon.WorkMail
 
         #endregion
         
+        #region  TestAvailabilityConfiguration
+
+
+        /// <summary>
+        /// Performs a test on an availability provider to ensure that access is allowed. For
+        /// EWS, it verifies the provided credentials can be used to successfully log in. For
+        /// Lambda, it verifies that the Lambda function can be invoked and that the resource
+        /// access policy was configured to deny anonymous access. An anonymous invocation is
+        /// one done without providing either a <code>SourceArn</code> or <code>SourceAccount</code>
+        /// header.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The request must contain either one provider definition (<code>EwsProvider</code>
+        /// or <code>LambdaProvider</code>) or the <code>DomainName</code> parameter. If the <code>DomainName</code>
+        /// parameter is provided, the configuration stored under the <code>DomainName</code>
+        /// will be tested. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestAvailabilityConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the TestAvailabilityConfiguration service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/TestAvailabilityConfiguration">REST API Reference for TestAvailabilityConfiguration Operation</seealso>
+        public virtual TestAvailabilityConfigurationResponse TestAvailabilityConfiguration(TestAvailabilityConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TestAvailabilityConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TestAvailabilityConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<TestAvailabilityConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Performs a test on an availability provider to ensure that access is allowed. For
+        /// EWS, it verifies the provided credentials can be used to successfully log in. For
+        /// Lambda, it verifies that the Lambda function can be invoked and that the resource
+        /// access policy was configured to deny anonymous access. An anonymous invocation is
+        /// one done without providing either a <code>SourceArn</code> or <code>SourceAccount</code>
+        /// header.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The request must contain either one provider definition (<code>EwsProvider</code>
+        /// or <code>LambdaProvider</code>) or the <code>DomainName</code> parameter. If the <code>DomainName</code>
+        /// parameter is provided, the configuration stored under the <code>DomainName</code>
+        /// will be tested. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestAvailabilityConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TestAvailabilityConfiguration service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/TestAvailabilityConfiguration">REST API Reference for TestAvailabilityConfiguration Operation</seealso>
+        public virtual Task<TestAvailabilityConfigurationResponse> TestAvailabilityConfigurationAsync(TestAvailabilityConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TestAvailabilityConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TestAvailabilityConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<TestAvailabilityConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UntagResource
 
 
@@ -5037,6 +5327,77 @@ namespace Amazon.WorkMail
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateAvailabilityConfiguration
+
+
+        /// <summary>
+        /// Updates an existing <code>AvailabilityConfiguration</code> for the given WorkMail
+        /// organization and domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAvailabilityConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAvailabilityConfiguration service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateAvailabilityConfiguration">REST API Reference for UpdateAvailabilityConfiguration Operation</seealso>
+        public virtual UpdateAvailabilityConfigurationResponse UpdateAvailabilityConfiguration(UpdateAvailabilityConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAvailabilityConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAvailabilityConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAvailabilityConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates an existing <code>AvailabilityConfiguration</code> for the given WorkMail
+        /// organization and domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAvailabilityConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAvailabilityConfiguration service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateAvailabilityConfiguration">REST API Reference for UpdateAvailabilityConfiguration Operation</seealso>
+        public virtual Task<UpdateAvailabilityConfigurationResponse> UpdateAvailabilityConfigurationAsync(UpdateAvailabilityConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAvailabilityConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAvailabilityConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateAvailabilityConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion

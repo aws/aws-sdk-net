@@ -44,6 +44,14 @@ namespace Amazon.WorkMail.Model
         }
 
         /// <summary>
+        /// Paginator for ListAvailabilityConfigurations operation
+        ///</summary>
+        public IListAvailabilityConfigurationsPaginator ListAvailabilityConfigurations(ListAvailabilityConfigurationsRequest request) 
+        {
+            return new ListAvailabilityConfigurationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListGroupMembers operation
         ///</summary>
         public IListGroupMembersPaginator ListGroupMembers(ListGroupMembersRequest request) 

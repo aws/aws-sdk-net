@@ -339,6 +339,64 @@ namespace Amazon.WorkMail
 
         #endregion
         
+        #region  CreateAvailabilityConfiguration
+
+
+        /// <summary>
+        /// Creates an <code>AvailabilityConfiguration</code> for the given WorkMail organization
+        /// and domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAvailabilityConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the CreateAvailabilityConfiguration service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.LimitExceededException">
+        /// The request exceeds the limit of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.NameAvailabilityException">
+        /// The user, group, or resource name isn't unique in Amazon WorkMail.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateAvailabilityConfiguration">REST API Reference for CreateAvailabilityConfiguration Operation</seealso>
+        CreateAvailabilityConfigurationResponse CreateAvailabilityConfiguration(CreateAvailabilityConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAvailabilityConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAvailabilityConfiguration operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAvailabilityConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateAvailabilityConfiguration">REST API Reference for CreateAvailabilityConfiguration Operation</seealso>
+        IAsyncResult BeginCreateAvailabilityConfiguration(CreateAvailabilityConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAvailabilityConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAvailabilityConfiguration.</param>
+        /// 
+        /// <returns>Returns a  CreateAvailabilityConfigurationResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateAvailabilityConfiguration">REST API Reference for CreateAvailabilityConfiguration Operation</seealso>
+        CreateAvailabilityConfigurationResponse EndCreateAvailabilityConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateGroup
 
 
@@ -782,6 +840,55 @@ namespace Amazon.WorkMail
         /// <returns>Returns a  DeleteAliasResult from WorkMail.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         DeleteAliasResponse EndDeleteAlias(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteAvailabilityConfiguration
+
+
+        /// <summary>
+        /// Deletes the <code>AvailabilityConfiguration</code> for the given WorkMail organization
+        /// and domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAvailabilityConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAvailabilityConfiguration service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteAvailabilityConfiguration">REST API Reference for DeleteAvailabilityConfiguration Operation</seealso>
+        DeleteAvailabilityConfigurationResponse DeleteAvailabilityConfiguration(DeleteAvailabilityConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAvailabilityConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAvailabilityConfiguration operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAvailabilityConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteAvailabilityConfiguration">REST API Reference for DeleteAvailabilityConfiguration Operation</seealso>
+        IAsyncResult BeginDeleteAvailabilityConfiguration(DeleteAvailabilityConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAvailabilityConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAvailabilityConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteAvailabilityConfigurationResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteAvailabilityConfiguration">REST API Reference for DeleteAvailabilityConfiguration Operation</seealso>
+        DeleteAvailabilityConfigurationResponse EndDeleteAvailabilityConfiguration(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2355,6 +2462,54 @@ namespace Amazon.WorkMail
 
         #endregion
         
+        #region  ListAvailabilityConfigurations
+
+
+        /// <summary>
+        /// List all the <code>AvailabilityConfiguration</code>'s for the given WorkMail organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAvailabilityConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListAvailabilityConfigurations service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListAvailabilityConfigurations">REST API Reference for ListAvailabilityConfigurations Operation</seealso>
+        ListAvailabilityConfigurationsResponse ListAvailabilityConfigurations(ListAvailabilityConfigurationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAvailabilityConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAvailabilityConfigurations operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAvailabilityConfigurations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListAvailabilityConfigurations">REST API Reference for ListAvailabilityConfigurations Operation</seealso>
+        IAsyncResult BeginListAvailabilityConfigurations(ListAvailabilityConfigurationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAvailabilityConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAvailabilityConfigurations.</param>
+        /// 
+        /// <returns>Returns a  ListAvailabilityConfigurationsResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListAvailabilityConfigurations">REST API Reference for ListAvailabilityConfigurations Operation</seealso>
+        ListAvailabilityConfigurationsResponse EndListAvailabilityConfigurations(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListGroupMembers
 
 
@@ -3642,6 +3797,74 @@ namespace Amazon.WorkMail
 
         #endregion
         
+        #region  TestAvailabilityConfiguration
+
+
+        /// <summary>
+        /// Performs a test on an availability provider to ensure that access is allowed. For
+        /// EWS, it verifies the provided credentials can be used to successfully log in. For
+        /// Lambda, it verifies that the Lambda function can be invoked and that the resource
+        /// access policy was configured to deny anonymous access. An anonymous invocation is
+        /// one done without providing either a <code>SourceArn</code> or <code>SourceAccount</code>
+        /// header.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The request must contain either one provider definition (<code>EwsProvider</code>
+        /// or <code>LambdaProvider</code>) or the <code>DomainName</code> parameter. If the <code>DomainName</code>
+        /// parameter is provided, the configuration stored under the <code>DomainName</code>
+        /// will be tested. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestAvailabilityConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the TestAvailabilityConfiguration service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/TestAvailabilityConfiguration">REST API Reference for TestAvailabilityConfiguration Operation</seealso>
+        TestAvailabilityConfigurationResponse TestAvailabilityConfiguration(TestAvailabilityConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TestAvailabilityConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TestAvailabilityConfiguration operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTestAvailabilityConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/TestAvailabilityConfiguration">REST API Reference for TestAvailabilityConfiguration Operation</seealso>
+        IAsyncResult BeginTestAvailabilityConfiguration(TestAvailabilityConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TestAvailabilityConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTestAvailabilityConfiguration.</param>
+        /// 
+        /// <returns>Returns a  TestAvailabilityConfigurationResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/TestAvailabilityConfiguration">REST API Reference for TestAvailabilityConfiguration Operation</seealso>
+        TestAvailabilityConfigurationResponse EndTestAvailabilityConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UntagResource
 
 
@@ -3682,6 +3905,61 @@ namespace Amazon.WorkMail
         /// <returns>Returns a  UntagResourceResult from WorkMail.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateAvailabilityConfiguration
+
+
+        /// <summary>
+        /// Updates an existing <code>AvailabilityConfiguration</code> for the given WorkMail
+        /// organization and domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAvailabilityConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAvailabilityConfiguration service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateAvailabilityConfiguration">REST API Reference for UpdateAvailabilityConfiguration Operation</seealso>
+        UpdateAvailabilityConfigurationResponse UpdateAvailabilityConfiguration(UpdateAvailabilityConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAvailabilityConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAvailabilityConfiguration operation on AmazonWorkMailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAvailabilityConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateAvailabilityConfiguration">REST API Reference for UpdateAvailabilityConfiguration Operation</seealso>
+        IAsyncResult BeginUpdateAvailabilityConfiguration(UpdateAvailabilityConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateAvailabilityConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAvailabilityConfiguration.</param>
+        /// 
+        /// <returns>Returns a  UpdateAvailabilityConfigurationResult from WorkMail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateAvailabilityConfiguration">REST API Reference for UpdateAvailabilityConfiguration Operation</seealso>
+        UpdateAvailabilityConfigurationResponse EndUpdateAvailabilityConfiguration(IAsyncResult asyncResult);
 
         #endregion
         
