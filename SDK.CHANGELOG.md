@@ -1,3 +1,23 @@
+### 3.7.306.0 (2022-06-30 18:19 UTC)
+* Athena (3.7.7.0)
+	* This feature introduces the API support for Athena's parameterized query and BatchGetPreparedStatement API.
+* CustomerProfiles (3.7.7.0)
+	* This release adds the optional MinAllowedConfidenceScoreForMerging parameter to the CreateDomain, UpdateDomain, and GetAutoMergingPreview APIs in Customer Profiles. This parameter is used as a threshold to influence the profile auto-merging step of the Identity Resolution process.
+* ElasticMapReduce (3.7.7.0)
+	* This release adds support for the ExecutionRoleArn parameter in the AddJobFlowSteps and DescribeStep APIs. Customers can use ExecutionRoleArn to specify the IAM role used for each job they submit using the AddJobFlowSteps API.
+* Glue (3.7.20.0)
+	* This release adds tag as an input of CreateDatabase
+* Kendra (3.7.21.0)
+	* Amazon Kendra now provides a data source connector for alfresco
+* MWAA (3.7.3.0)
+	* Documentation updates for Amazon Managed Workflows for Apache Airflow.
+* Pricing (3.7.3.0)
+	* Documentation update for GetProducts Response.
+* WellArchitected (3.7.4.0)
+	* Added support for UpdateGlobalSettings API. Added status filter to ListWorkloadShares and ListLensShares.
+* WorkMail (3.7.6.0)
+	* This release adds support for managing user availability configurations in Amazon WorkMail.
+
 ### 3.7.305.0 (2022-06-29 18:20 UTC)
 * AppStream (3.7.6.0)
 	* Includes support for StreamingExperienceSettings in CreateStack and UpdateStack APIs
