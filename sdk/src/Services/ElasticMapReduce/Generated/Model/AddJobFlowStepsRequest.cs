@@ -69,6 +69,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// </summary>
     public partial class AddJobFlowStepsRequest : AmazonElasticMapReduceRequest
     {
+        private string _executionRoleArn;
         private string _jobFlowId;
         private List<StepConfig> _steps = new List<StepConfig>();
 
@@ -95,6 +96,33 @@ namespace Amazon.ElasticMapReduce.Model
         {
             _jobFlowId = jobFlowId;
             _steps = steps;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The
+        /// runtime role can be a cross-account IAM role. The runtime role ARN is a combination
+        /// of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted
+        /// runtime role ARN.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string ExecutionRoleArn
+        {
+            get { return this._executionRoleArn; }
+            set { this._executionRoleArn = value; }
+        }
+
+        // Check to see if ExecutionRoleArn property is set
+        internal bool IsSetExecutionRoleArn()
+        {
+            return this._executionRoleArn != null;
         }
 
         /// <summary>

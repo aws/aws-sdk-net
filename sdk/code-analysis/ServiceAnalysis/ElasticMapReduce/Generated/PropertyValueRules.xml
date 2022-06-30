@@ -31,6 +31,11 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.AddJobFlowStepsRequest.ExecutionRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.AddJobFlowStepsRequest.JobFlowId</property>
     <min>0</min>
     <max>256</max>
@@ -884,6 +889,11 @@
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.SpotProvisioningSpecification.TimeoutDurationMinutes</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.Step.ExecutionRoleArn</property>
+    <min>0</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.StepConfig.Name</property>
