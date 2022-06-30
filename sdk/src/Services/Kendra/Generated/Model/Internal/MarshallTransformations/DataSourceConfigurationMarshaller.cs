@@ -45,6 +45,17 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DataSourceConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAlfrescoConfiguration())
+            {
+                context.Writer.WritePropertyName("AlfrescoConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AlfrescoConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.AlfrescoConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetBoxConfiguration())
             {
                 context.Writer.WritePropertyName("BoxConfiguration");

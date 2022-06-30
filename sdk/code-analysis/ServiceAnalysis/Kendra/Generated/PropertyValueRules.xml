@@ -1273,6 +1273,24 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kendra.Model.AlfrescoConfiguration.SecretArn</property>
+    <min>1</min>
+    <max>1284</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.AlfrescoConfiguration.SiteId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[A-Za-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.AlfrescoConfiguration.SiteUrl</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^https:\/\/[a-zA-Z0-9_\-\.]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kendra.Model.BasicAuthenticationConfiguration.Credentials</property>
     <min>1</min>
     <max>1284</max>

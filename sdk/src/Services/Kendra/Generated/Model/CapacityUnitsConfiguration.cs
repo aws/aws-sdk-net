@@ -46,7 +46,7 @@ namespace Amazon.Kendra.Model
         ///  
         /// <para>
         /// A single extra capacity unit for an index provides 0.1 queries per second or approximately
-        /// 8,000 queries per day.
+        /// 8,000 queries per day. You can add up to 100 extra capacity units.
         /// </para>
         ///  
         /// <para>
@@ -75,7 +75,8 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property StorageCapacityUnits. 
         /// <para>
         /// The amount of extra storage capacity for an index. A single capacity unit provides
-        /// 30 GB of storage space or 100,000 documents, whichever is reached first.
+        /// 30 GB of storage space or 100,000 documents, whichever is reached first. You can add
+        /// up to 100 extra capacity units.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]

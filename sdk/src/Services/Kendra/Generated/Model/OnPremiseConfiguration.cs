@@ -82,7 +82,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property SslCertificateS3Path. 
         /// <para>
-        /// Information required to find a specific file in an Amazon S3 bucket.
+        /// The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect
+        /// to GitHub. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

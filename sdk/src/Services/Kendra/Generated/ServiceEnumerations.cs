@@ -71,6 +71,60 @@ namespace Amazon.Kendra
 
 
     /// <summary>
+    /// Constants used for properties of type AlfrescoEntity.
+    /// </summary>
+    public class AlfrescoEntity : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Blog for AlfrescoEntity
+        /// </summary>
+        public static readonly AlfrescoEntity Blog = new AlfrescoEntity("blog");
+        /// <summary>
+        /// Constant DocumentLibrary for AlfrescoEntity
+        /// </summary>
+        public static readonly AlfrescoEntity DocumentLibrary = new AlfrescoEntity("documentLibrary");
+        /// <summary>
+        /// Constant Wiki for AlfrescoEntity
+        /// </summary>
+        public static readonly AlfrescoEntity Wiki = new AlfrescoEntity("wiki");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AlfrescoEntity(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AlfrescoEntity FindValue(string value)
+        {
+            return FindValue<AlfrescoEntity>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AlfrescoEntity(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConditionOperator.
     /// </summary>
     public class ConditionOperator : ConstantClass
@@ -776,6 +830,10 @@ namespace Amazon.Kendra
     public class DataSourceType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant ALFRESCO for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType ALFRESCO = new DataSourceType("ALFRESCO");
         /// <summary>
         /// Constant BOX for DataSourceType
         /// </summary>

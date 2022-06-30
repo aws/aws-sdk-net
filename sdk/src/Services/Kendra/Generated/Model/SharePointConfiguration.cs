@@ -50,8 +50,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CrawlAttachments. 
         /// <para>
-        ///  <code>TRUE</code> to include attachments to documents stored in your Microsoft SharePoint
-        /// site in the index; otherwise, <code>FALSE</code>.
+        ///  <code>TRUE</code> to index document attachments.
         /// </para>
         /// </summary>
         public bool CrawlAttachments
@@ -69,8 +68,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property DisableLocalGroups. 
         /// <para>
-        /// A Boolean value that specifies whether local groups are disabled (<code>True</code>)
-        /// or enabled (<code>False</code>). 
+        ///  <code>TRUE</code> to disable local groups information.
         /// </para>
         /// </summary>
         public bool DisableLocalGroups
@@ -115,7 +113,7 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  
         /// <para>
-        /// The regex is applied to the display URL of the SharePoint document.
+        /// The regex applies to the display URL of the SharePoint document.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -166,7 +164,7 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  
         /// <para>
-        /// The regex is applied to the display URL of the SharePoint document.
+        /// The regex applies to the display URL of the SharePoint document.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -185,12 +183,11 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property SecretArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of credentials stored in Secrets Manager. The credentials
-        /// should be a user/password pair. If you use SharePoint Server, you also need to provide
-        /// the sever domain name as part of the credentials. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
-        /// a Microsoft SharePoint Data Source</a>. For more information about Secrets Manager
-        /// see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">
-        /// What Is Secrets Manager</a> in the <i>Secrets Manager </i> user guide.
+        /// The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user
+        /// name and password required to connect to the SharePoint instance. If you use SharePoint
+        /// Server, you also need to provide the sever domain name as part of the credentials.
+        /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
+        /// a Microsoft SharePoint Data Source</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1284)]
@@ -209,7 +206,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property SharePointVersion. 
         /// <para>
-        /// The version of Microsoft SharePoint that you are using as a data source.
+        /// The version of Microsoft SharePoint that you use.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -226,7 +223,11 @@ namespace Amazon.Kendra.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SslCertificateS3Path.
+        /// Gets and sets the property SslCertificateS3Path. 
+        /// <para>
+        /// The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect
+        /// to SharePoint.
+        /// </para>
         /// </summary>
         public S3Path SslCertificateS3Path
         {
@@ -243,8 +244,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Urls. 
         /// <para>
-        /// The URLs of the Microsoft SharePoint site that contains the documents that should
-        /// be indexed.
+        /// The Microsoft SharePoint site URLs for the documents you want to indext.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -281,7 +281,12 @@ namespace Amazon.Kendra.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VpcConfiguration.
+        /// Gets and sets the property VpcConfiguration. 
+        /// <para>
+        /// Configuration information for an Amazon Virtual Private Cloud to connect to your Microsoft
+        /// SharePoint. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
+        /// a VPC</a>.
+        /// </para>
         /// </summary>
         public DataSourceVpcConfiguration VpcConfiguration
         {

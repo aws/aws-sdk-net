@@ -31,7 +31,8 @@ namespace Amazon.Kendra.Model
     /// <summary>
     /// Container for the parameters to the CreateExperience operation.
     /// Creates an Amazon Kendra experience such as a search application. For more information
-    /// on creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+    /// on creating a search application experience, including using the Python and Java SDKs,
+    /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
     /// a search experience with no code</a>.
     /// </summary>
     public partial class CreateExperienceRequest : AmazonKendraRequest

@@ -42,7 +42,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CrawlArchivedSpaces. 
         /// <para>
-        /// Specifies whether Amazon Kendra should index archived spaces.
+        ///  <code>TRUE</code> to index archived spaces.
         /// </para>
         /// </summary>
         public bool CrawlArchivedSpaces
@@ -60,10 +60,10 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CrawlPersonalSpaces. 
         /// <para>
-        /// Specifies whether Amazon Kendra should index personal spaces. Users can add restrictions
-        /// to items in personal spaces. If personal spaces are indexed, queries without user
-        /// context information may return restricted items from a personal space in their results.
-        /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering
+        ///  <code>TRUE</code> to index personal spaces. You can add restrictions to items in
+        /// personal spaces. If personal spaces are indexed, queries without user context information
+        /// may return restricted items from a personal space in their results. For more information,
+        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering
         /// on user context</a>.
         /// </para>
         /// </summary>

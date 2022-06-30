@@ -32,6 +32,12 @@ namespace Amazon.Kendra.Model
     /// Container for the parameters to the CreateThesaurus operation.
     /// Creates a thesaurus for an index. The thesaurus contains a list of synonyms in Solr
     /// format.
+    /// 
+    ///  
+    /// <para>
+    /// For an example of adding a thesaurus file to an index, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/index-synonyms-adding-thesaurus-file.html">Adding
+    /// custom synonyms to an index</a>.
+    /// </para>
     /// </summary>
     public partial class CreateThesaurusRequest : AmazonKendraRequest
     {

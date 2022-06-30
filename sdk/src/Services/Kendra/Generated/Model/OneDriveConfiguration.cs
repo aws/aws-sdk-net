@@ -44,8 +44,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property DisableLocalGroups. 
         /// <para>
-        /// A Boolean value that specifies whether local groups are disabled (<code>True</code>)
-        /// or enabled (<code>False</code>). 
+        ///  <code>TRUE</code> to disable local groups information.
         /// </para>
         /// </summary>
         public bool DisableLocalGroups

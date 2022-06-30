@@ -33,6 +33,7 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class DataSourceConfiguration
     {
+        private AlfrescoConfiguration _alfrescoConfiguration;
         private BoxConfiguration _boxConfiguration;
         private ConfluenceConfiguration _confluenceConfiguration;
         private DatabaseConfiguration _databaseConfiguration;
@@ -49,6 +50,24 @@ namespace Amazon.Kendra.Model
         private SlackConfiguration _slackConfiguration;
         private WebCrawlerConfiguration _webCrawlerConfiguration;
         private WorkDocsConfiguration _workDocsConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property AlfrescoConfiguration. 
+        /// <para>
+        /// Provides the configuration information to connect to Alfresco as your data source.
+        /// </para>
+        /// </summary>
+        public AlfrescoConfiguration AlfrescoConfiguration
+        {
+            get { return this._alfrescoConfiguration; }
+            set { this._alfrescoConfiguration = value; }
+        }
+
+        // Check to see if AlfrescoConfiguration property is set
+        internal bool IsSetAlfrescoConfiguration()
+        {
+            return this._alfrescoConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BoxConfiguration. 

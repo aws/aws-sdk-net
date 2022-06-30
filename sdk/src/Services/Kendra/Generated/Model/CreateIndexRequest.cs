@@ -38,7 +38,14 @@ namespace Amazon.Kendra.Model
     ///  
     /// <para>
     /// Once the index is active you can index your documents using the <code>BatchPutDocument</code>
-    /// API or using one of the supported data sources. 
+    /// API or using one of the supported data sources.
+    /// </para>
+    ///  
+    /// <para>
+    /// For an example of creating an index and data source using the Python SDK, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/gs-python.html">Getting
+    /// started with Python SDK</a>. For an example of creating an index and data source using
+    /// the Java SDK, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/gs-java.html">Getting
+    /// started with Java SDK</a>.
     /// </para>
     /// </summary>
     public partial class CreateIndexRequest : AmazonKendraRequest

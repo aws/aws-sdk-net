@@ -206,7 +206,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property JiraAccountUrl. 
         /// <para>
-        /// The URL of the Jira account. For example, company.attlassian.net or https://jira.company.com.
+        /// The URL of the Jira account. For example, <i>company.atlassian.net</i> or <i>https://jira.company.com</i>.
         /// You can find your Jira account URL in the URL of your profile page for Jira desktop.
         /// </para>
         /// </summary>
@@ -268,17 +268,19 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property SecretArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value
+        /// The Amazon Resource Name (ARN) of a secret in Secrets Manager contains the key-value
         /// pairs required to connect to your Jira data source. The secret must contain a JSON
         /// structure with the following keys:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// jira-id—The ID of the Jira account.
+        /// jiraId—The Jira username.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// jiraCredentials—The password of the Jira account user.
+        /// jiraCredentials—The Jira API token. For more information on creating an API token
+        /// in Jira, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-jira.html#jira-authentication">
+        /// Authentication for a Jira data source</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -317,7 +319,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property UseChangeLog. 
         /// <para>
-        /// Specify to use the change log option to update your index.
+        ///  <code>TRUE</code> to use the Jira change log to determine which documents require
+        /// updating in the index. Depending on the change log's size, it may take longer for
+        /// Amazon Kendra to use the change log than to scan all of your documents in Jira.
         /// </para>
         /// </summary>
         public bool UseChangeLog

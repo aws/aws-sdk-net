@@ -69,8 +69,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CrawlAttachments. 
         /// <para>
-        /// Indicates whether Amazon Kendra indexes attachments to the pages and blogs in the
-        /// Confluence data source. 
+        ///  <code>TRUE</code> to index attachments of pages and blogs in Confluence.
         /// </para>
         /// </summary>
         public bool CrawlAttachments

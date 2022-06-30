@@ -72,8 +72,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CrawlAttachments. 
         /// <para>
-        /// Specify whether to crawl attachments in Quip. You can specify one or more of these
-        /// options.
+        ///  <code>TRUE</code> to index attachments.
         /// </para>
         /// </summary>
         public bool CrawlAttachments
@@ -91,8 +90,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CrawlChatRooms. 
         /// <para>
-        /// Specify whether to crawl chat rooms in Quip. You can specify one or more of these
-        /// options.
+        ///  <code>TRUE</code> to index the contents of chat rooms.
         /// </para>
         /// </summary>
         public bool CrawlChatRooms
@@ -110,8 +108,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CrawlFileComments. 
         /// <para>
-        /// Specify whether to crawl file comments in Quip. You can specify one or more of these
-        /// options.
+        ///  <code>TRUE</code> to index file comments.
         /// </para>
         /// </summary>
         public bool CrawlFileComments
@@ -171,7 +168,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property FolderIds. 
         /// <para>
-        /// The identifier of the Quip folder IDs to index.
+        /// The identifier of the Quip folders you want to index.
         /// </para>
         /// </summary>
         public List<string> FolderIds

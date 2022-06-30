@@ -45,6 +45,11 @@ namespace Amazon.Kendra.Model
     /// Amazon Web Services CloudWatch. Any error messages related to processing the batch
     /// are sent to your Amazon Web Services CloudWatch log.
     /// </para>
+    ///  
+    /// <para>
+    /// For an example of ingesting inline documents using Python and Java SDKs, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-binary-doc.html">Adding
+    /// files directly to an index</a>.
+    /// </para>
     /// </summary>
     public partial class BatchPutDocumentRequest : AmazonKendraRequest
     {

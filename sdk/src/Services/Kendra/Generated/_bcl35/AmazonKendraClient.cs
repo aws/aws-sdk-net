@@ -592,6 +592,11 @@ namespace Amazon.Kendra
         /// Amazon Web Services CloudWatch. Any error messages related to processing the batch
         /// are sent to your Amazon Web Services CloudWatch log.
         /// </para>
+        ///  
+        /// <para>
+        /// For an example of ingesting inline documents using Python and Java SDKs, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-binary-doc.html">Adding
+        /// files directly to an index</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchPutDocument service method.</param>
         /// 
@@ -770,6 +775,13 @@ namespace Amazon.Kendra
         /// data sources are the only supported data sources in the Amazon Web Services GovCloud
         /// (US-West) region.
         /// </para>
+        ///  
+        /// <para>
+        /// For an example of creating an index and data source using the Python SDK, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/gs-python.html">Getting
+        /// started with Python SDK</a>. For an example of creating an index and data source using
+        /// the Java SDK, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/gs-java.html">Getting
+        /// started with Java SDK</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataSource service method.</param>
         /// 
@@ -848,7 +860,8 @@ namespace Amazon.Kendra
 
         /// <summary>
         /// Creates an Amazon Kendra experience such as a search application. For more information
-        /// on creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+        /// on creating a search application experience, including using the Python and Java SDKs,
+        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
         /// a search experience with no code</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateExperience service method.</param>
@@ -929,6 +942,11 @@ namespace Amazon.Kendra
         ///  
         /// <para>
         /// Adding FAQs to an index is an asynchronous operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// For an example of adding an FAQ to an index using Python and Java SDKs, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html#using-faq-file">Using
+        /// you FAQ file</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFaq service method.</param>
@@ -1012,7 +1030,14 @@ namespace Amazon.Kendra
         ///  
         /// <para>
         /// Once the index is active you can index your documents using the <code>BatchPutDocument</code>
-        /// API or using one of the supported data sources. 
+        /// API or using one of the supported data sources.
+        /// </para>
+        ///  
+        /// <para>
+        /// For an example of creating an index and data source using the Python SDK, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/gs-python.html">Getting
+        /// started with Python SDK</a>. For an example of creating an index and data source using
+        /// the Java SDK, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/gs-java.html">Getting
+        /// started with Java SDK</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIndex service method.</param>
@@ -1110,6 +1135,12 @@ namespace Amazon.Kendra
         ///  <code>CreateQuerySuggestionsBlockList</code> is currently not supported in the Amazon
         /// Web Services GovCloud (US-West) region.
         /// </para>
+        ///  
+        /// <para>
+        /// For an example of creating a block list for query suggestions using the Python SDK,
+        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/query-suggestions.html#suggestions-block-list">Query
+        /// suggestions block list</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateQuerySuggestionsBlockList service method.</param>
         /// 
@@ -1186,6 +1217,12 @@ namespace Amazon.Kendra
         /// <summary>
         /// Creates a thesaurus for an index. The thesaurus contains a list of synonyms in Solr
         /// format.
+        /// 
+        ///  
+        /// <para>
+        /// For an example of adding a thesaurus file to an index, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/index-synonyms-adding-thesaurus-file.html">Adding
+        /// custom synonyms to an index</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateThesaurus service method.</param>
         /// 
