@@ -342,6 +342,67 @@ namespace Amazon.Athena
 
         #endregion
         
+        #region  BatchGetPreparedStatement
+
+
+        /// <summary>
+        /// Returns the details of a single prepared statement or a list of up to 256 prepared
+        /// statements for the array of prepared statement names that you provide. Requires you
+        /// to have access to the workgroup to which the prepared statements belong. If a prepared
+        /// statement cannot be retrieved for the name specified, the statement is listed in <code>UnprocessedPreparedStatementNames</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetPreparedStatement service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetPreparedStatement service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/BatchGetPreparedStatement">REST API Reference for BatchGetPreparedStatement Operation</seealso>
+        public virtual BatchGetPreparedStatementResponse BatchGetPreparedStatement(BatchGetPreparedStatementRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetPreparedStatementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetPreparedStatementResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetPreparedStatementResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns the details of a single prepared statement or a list of up to 256 prepared
+        /// statements for the array of prepared statement names that you provide. Requires you
+        /// to have access to the workgroup to which the prepared statements belong. If a prepared
+        /// statement cannot be retrieved for the name specified, the statement is listed in <code>UnprocessedPreparedStatementNames</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetPreparedStatement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetPreparedStatement service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/BatchGetPreparedStatement">REST API Reference for BatchGetPreparedStatement Operation</seealso>
+        public virtual Task<BatchGetPreparedStatementResponse> BatchGetPreparedStatementAsync(BatchGetPreparedStatementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetPreparedStatementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetPreparedStatementResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchGetPreparedStatementResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchGetQueryExecution
 
 
@@ -1657,7 +1718,7 @@ namespace Amazon.Athena
 
 
         /// <summary>
-        /// Lists the prepared statements in the specfied workgroup.
+        /// Lists the prepared statements in the specified workgroup.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPreparedStatements service method.</param>
         /// 
@@ -1681,7 +1742,7 @@ namespace Amazon.Athena
 
 
         /// <summary>
-        /// Lists the prepared statements in the specfied workgroup.
+        /// Lists the prepared statements in the specified workgroup.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPreparedStatements service method.</param>
         /// <param name="cancellationToken">

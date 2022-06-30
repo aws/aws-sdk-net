@@ -34,6 +34,7 @@ namespace Amazon.Athena.Model
     public partial class QueryExecution
     {
         private EngineVersion _engineVersion;
+        private List<string> _executionParameters = new List<string>();
         private string _query;
         private QueryExecutionContext _queryExecutionContext;
         private string _queryExecutionId;
@@ -59,6 +60,26 @@ namespace Amazon.Athena.Model
         internal bool IsSetEngineVersion()
         {
             return this._engineVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionParameters. 
+        /// <para>
+        /// A list of values for the parameters in a query. The values are applied sequentially
+        /// to the parameters in the query in the order in which the parameters occur.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<string> ExecutionParameters
+        {
+            get { return this._executionParameters; }
+            set { this._executionParameters = value; }
+        }
+
+        // Check to see if ExecutionParameters property is set
+        internal bool IsSetExecutionParameters()
+        {
+            return this._executionParameters != null && this._executionParameters.Count > 0; 
         }
 
         /// <summary>

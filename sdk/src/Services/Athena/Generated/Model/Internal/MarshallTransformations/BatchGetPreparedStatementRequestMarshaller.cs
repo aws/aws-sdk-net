@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Athena.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// StartQueryExecution Request Marshaller
+    /// BatchGetPreparedStatement Request Marshaller
     /// </summary>       
-    public class StartQueryExecutionRequestMarshaller : IMarshaller<IRequest, StartQueryExecutionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class BatchGetPreparedStatementRequestMarshaller : IMarshaller<IRequest, BatchGetPreparedStatementRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((StartQueryExecutionRequest)input);
+            return this.Marshall((BatchGetPreparedStatementRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(StartQueryExecutionRequest publicRequest)
+        public IRequest Marshall(BatchGetPreparedStatementRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Athena");
-            string target = "AmazonAthena.StartQueryExecution";
+            string target = "AmazonAthena.BatchGetPreparedStatement";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-05-18";
@@ -67,54 +67,15 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientRequestToken())
+                if(publicRequest.IsSetPreparedStatementNames())
                 {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetExecutionParameters())
-                {
-                    context.Writer.WritePropertyName("ExecutionParameters");
+                    context.Writer.WritePropertyName("PreparedStatementNames");
                     context.Writer.WriteArrayStart();
-                    foreach(var publicRequestExecutionParametersListValue in publicRequest.ExecutionParameters)
+                    foreach(var publicRequestPreparedStatementNamesListValue in publicRequest.PreparedStatementNames)
                     {
-                            context.Writer.Write(publicRequestExecutionParametersListValue);
+                            context.Writer.Write(publicRequestPreparedStatementNamesListValue);
                     }
                     context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetQueryExecutionContext())
-                {
-                    context.Writer.WritePropertyName("QueryExecutionContext");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = QueryExecutionContextMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.QueryExecutionContext, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetQueryString())
-                {
-                    context.Writer.WritePropertyName("QueryString");
-                    context.Writer.Write(publicRequest.QueryString);
-                }
-
-                if(publicRequest.IsSetResultConfiguration())
-                {
-                    context.Writer.WritePropertyName("ResultConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ResultConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ResultConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetWorkGroup())
@@ -131,9 +92,9 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static StartQueryExecutionRequestMarshaller _instance = new StartQueryExecutionRequestMarshaller();        
+        private static BatchGetPreparedStatementRequestMarshaller _instance = new BatchGetPreparedStatementRequestMarshaller();        
 
-        internal static StartQueryExecutionRequestMarshaller GetInstance()
+        internal static BatchGetPreparedStatementRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -141,7 +102,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StartQueryExecutionRequestMarshaller Instance
+        public static BatchGetPreparedStatementRequestMarshaller Instance
         {
             get
             {

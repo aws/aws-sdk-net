@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.Athena.Model.BatchGetPreparedStatementRequest.WorkGroup</property>
+    <pattern>[a-zA-Z0-9._-]{1,128}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Athena.Model.CreateDataCatalogRequest.Description</property>
     <min>1</min>
     <max>1024</max>
@@ -557,6 +561,17 @@
     <property>Amazon.Athena.Model.UnprocessedNamedQueryId.ErrorCode</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.UnprocessedPreparedStatementName.ErrorCode</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.UnprocessedPreparedStatementName.StatementName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z_][a-zA-Z0-9_@:]{1,256}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.UnprocessedQueryExecutionId.ErrorCode</property>

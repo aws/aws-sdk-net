@@ -124,7 +124,10 @@ namespace Amazon.Athena.Model
 #endif
 
         /// <summary>
-        /// Gets and sets the property ResourceName.
+        /// Gets and sets the property ResourceName. 
+        /// <para>
+        /// The name of the Amazon resource.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1011)]
         public string ResourceName
