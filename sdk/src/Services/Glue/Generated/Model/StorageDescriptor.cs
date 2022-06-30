@@ -49,7 +49,10 @@ namespace Amazon.Glue.Model
         private bool? _storedAsSubDirectories;
 
         /// <summary>
-        /// Gets and sets the property AdditionalLocations.
+        /// Gets and sets the property AdditionalLocations. 
+        /// <para>
+        /// A list of locations that point to the path where a Delta table is located.
+        /// </para>
         /// </summary>
         public List<string> AdditionalLocations
         {

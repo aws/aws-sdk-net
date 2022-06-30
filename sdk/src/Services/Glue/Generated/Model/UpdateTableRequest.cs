@@ -140,7 +140,10 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VersionId.
+        /// Gets and sets the property VersionId. 
+        /// <para>
+        /// The version ID at which to update the table contents. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
         public string VersionId
