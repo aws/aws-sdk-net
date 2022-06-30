@@ -264,6 +264,11 @@
     <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.GetAutoMergingPreviewRequest.MinAllowedConfidenceScoreForMerging</property>
+    <min>0</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.GetAutoMergingPreviewResponse.DomainName</property>
     <min>1</min>
     <max>64</max>
@@ -1053,6 +1058,11 @@
     <property>Amazon.CustomerProfiles.Model.AppflowIntegrationWorkflowStep.FlowName</property>
     <max>256</max>
     <pattern>[a-zA-Z0-9][\w!@#.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.AutoMerging.MinAllowedConfidenceScoreForMerging</property>
+    <min>0</min>
+    <max>1</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.ConflictResolution.SourceName</property>

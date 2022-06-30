@@ -73,6 +73,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Enabled);
             }
 
+            if(requestObject.IsSetMinAllowedConfidenceScoreForMerging())
+            {
+                context.Writer.WritePropertyName("MinAllowedConfidenceScoreForMerging");
+                context.Writer.Write(requestObject.MinAllowedConfidenceScoreForMerging);
+            }
+
         }
 
         /// <summary>

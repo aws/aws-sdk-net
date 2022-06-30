@@ -242,7 +242,12 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property TemplateId. 
         /// <para>
-        /// A unique identifier for the object template.
+        /// A unique identifier for the object template. For some attributes in the request, the
+        /// service will use the default value from the object template when TemplateId is present.
+        /// If these attributes are present in the request, the service may return a <code>BadRequestException</code>.
+        /// These attributes include: AllowProfileCreation, SourceLastUpdatedTimestampFormat,
+        /// Fields, and Keys. For example, if AllowProfileCreation is set to true when TemplateId
+        /// is set, the service may return a <code>BadRequestException</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

@@ -36,6 +36,7 @@ namespace Amazon.CustomerProfiles.Model
         private ConflictResolution _conflictResolution;
         private Consolidation _consolidation;
         private bool? _enabled;
+        private double? _minAllowedConfidenceScoreForMerging;
 
         /// <summary>
         /// Gets and sets the property ConflictResolution. 
@@ -94,6 +95,27 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetEnabled()
         {
             return this._enabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MinAllowedConfidenceScoreForMerging. 
+        /// <para>
+        /// A number between 0 and 1 that represents the minimum confidence score required for
+        /// profiles within a matching group to be merged during the auto-merge process. A higher
+        /// score means higher similarity required to merge profiles. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public double MinAllowedConfidenceScoreForMerging
+        {
+            get { return this._minAllowedConfidenceScoreForMerging.GetValueOrDefault(); }
+            set { this._minAllowedConfidenceScoreForMerging = value; }
+        }
+
+        // Check to see if MinAllowedConfidenceScoreForMerging property is set
+        internal bool IsSetMinAllowedConfidenceScoreForMerging()
+        {
+            return this._minAllowedConfidenceScoreForMerging.HasValue; 
         }
 
     }
