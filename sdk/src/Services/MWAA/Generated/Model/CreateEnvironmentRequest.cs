@@ -78,9 +78,9 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property AirflowVersion. 
         /// <para>
-        /// The Apache Airflow version for your environment. If no value is specified, defaults
-        /// to the latest version. Valid values: <code>1.10.12</code>, <code>2.0.2</code>. To
-        /// learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache
+        /// The Apache Airflow version for your environment. If no value is specified, it defaults
+        /// to the latest version. Valid values: <code>1.10.12</code>, <code>2.0.2</code>, and
+        /// <code>2.2.2</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache
         /// Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.
         /// </para>
         /// </summary>
@@ -382,11 +382,11 @@ namespace Amazon.MWAA.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// v2.0.2 - Accepts between 2 to 5. Defaults to 2.
+        /// v2 - Accepts between 2 to 5. Defaults to 2.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// v1.10.12 - Accepts 1.
+        /// v1 - Accepts 1.
         /// </para>
         ///  </li> </ul>
         /// </summary>
