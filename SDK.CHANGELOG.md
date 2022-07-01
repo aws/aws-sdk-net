@@ -1,3 +1,9 @@
+### 3.7.307.0 (2022-07-01 18:12 UTC)
+* DatabaseMigrationService (3.7.8.0)
+	* Added new features for AWS DMS version 3.4.7 that includes new endpoint settings for S3, OpenSearch, Postgres, SQLServer and Oracle.
+* RDS (3.7.13.27)
+	* Adds support for additional retention periods to Performance Insights.
+
 ### 3.7.306.0 (2022-06-30 18:19 UTC)
 * Athena (3.7.7.0)
 	* This feature introduces the API support for Athena's parameterized query and BatchGetPreparedStatement API.
