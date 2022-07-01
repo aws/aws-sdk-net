@@ -147,6 +147,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.SlotName);
             }
 
+            if(requestObject.IsSetTrimSpaceInChar())
+            {
+                context.Writer.WritePropertyName("TrimSpaceInChar");
+                context.Writer.Write(requestObject.TrimSpaceInChar);
+            }
+
             if(requestObject.IsSetUsername())
             {
                 context.Writer.WritePropertyName("Username");

@@ -51,6 +51,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AddColumnName);
             }
 
+            if(requestObject.IsSetAddTrailingPaddingCharacter())
+            {
+                context.Writer.WritePropertyName("AddTrailingPaddingCharacter");
+                context.Writer.Write(requestObject.AddTrailingPaddingCharacter);
+            }
+
             if(requestObject.IsSetBucketFolder())
             {
                 context.Writer.WritePropertyName("BucketFolder");
@@ -187,6 +193,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("EncryptionMode");
                 context.Writer.Write(requestObject.EncryptionMode);
+            }
+
+            if(requestObject.IsSetExpectedBucketOwner())
+            {
+                context.Writer.WritePropertyName("ExpectedBucketOwner");
+                context.Writer.Write(requestObject.ExpectedBucketOwner);
             }
 
             if(requestObject.IsSetExternalTableDefinition())

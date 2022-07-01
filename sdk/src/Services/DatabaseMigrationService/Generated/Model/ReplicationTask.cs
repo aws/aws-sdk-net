@@ -447,22 +447,64 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>"STOP_REASON_FULL_LOAD_COMPLETED"</code> – Full-load migration completed.
+        ///  <code>"Stop Reason NORMAL"</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"STOP_REASON_CACHED_CHANGES_APPLIED"</code> – Change data capture (CDC) load
-        /// completed.
+        ///  <code>"Stop Reason RECOVERABLE_ERROR"</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"STOP_REASON_CACHED_CHANGES_NOT_APPLIED"</code> – In a full-load and CDC migration,
-        /// the full load stopped as specified before starting the CDC migration.
+        ///  <code>"Stop Reason FATAL_ERROR"</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"STOP_REASON_SERVER_TIME"</code> – The migration stopped at the specified server
-        /// time.
+        ///  <code>"Stop Reason FULL_LOAD_ONLY_FINISHED"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"Stop Reason STOPPED_AFTER_FULL_LOAD"</code> – Full load completed, with cached
+        /// changes not applied
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"Stop Reason STOPPED_AFTER_CACHED_EVENTS"</code> – Full load completed, with
+        /// cached changes applied
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"Stop Reason EXPRESS_LICENSE_LIMITS_REACHED"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"Stop Reason STOPPED_AFTER_DDL_APPLY"</code> – User-defined stop task after
+        /// DDL applied
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"Stop Reason STOPPED_DUE_TO_LOW_MEMORY"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"Stop Reason STOPPED_DUE_TO_LOW_DISK"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"Stop Reason STOPPED_AT_SERVER_TIME"</code> – User-defined server time for
+        /// stopping task
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"Stop Reason STOPPED_AT_COMMIT_TIME"</code> – User-defined commit time for
+        /// stopping task
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"Stop Reason RECONFIGURATION_RESTART"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"Stop Reason RECYCLE_TASK"</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

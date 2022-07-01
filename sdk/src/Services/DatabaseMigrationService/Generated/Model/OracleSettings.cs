@@ -67,6 +67,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _serverName;
         private string _spatialDataOptionToGeoJsonFunctionName;
         private int? _standbyDelayTime;
+        private bool? _trimSpaceInChar;
         private bool? _useAlternateFolderForOnline;
         private bool? _useBFile;
         private bool? _useDirectPathFullLoad;
@@ -851,6 +852,25 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetStandbyDelayTime()
         {
             return this._standbyDelayTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrimSpaceInChar. 
+        /// <para>
+        /// Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR
+        /// and NCHAR data types during migration. The default value is <code>true</code>.
+        /// </para>
+        /// </summary>
+        public bool TrimSpaceInChar
+        {
+            get { return this._trimSpaceInChar.GetValueOrDefault(); }
+            set { this._trimSpaceInChar = value; }
+        }
+
+        // Check to see if TrimSpaceInChar property is set
+        internal bool IsSetTrimSpaceInChar()
+        {
+            return this._trimSpaceInChar.HasValue; 
         }
 
         /// <summary>

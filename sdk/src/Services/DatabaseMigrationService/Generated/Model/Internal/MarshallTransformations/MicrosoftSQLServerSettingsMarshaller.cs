@@ -111,6 +111,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ServerName);
             }
 
+            if(requestObject.IsSetTrimSpaceInChar())
+            {
+                context.Writer.WritePropertyName("TrimSpaceInChar");
+                context.Writer.Write(requestObject.TrimSpaceInChar);
+            }
+
             if(requestObject.IsSetUseBcpFullLoad())
             {
                 context.Writer.WritePropertyName("UseBcpFullLoad");

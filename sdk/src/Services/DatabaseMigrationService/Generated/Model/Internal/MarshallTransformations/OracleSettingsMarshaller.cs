@@ -254,6 +254,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.StandbyDelayTime);
             }
 
+            if(requestObject.IsSetTrimSpaceInChar())
+            {
+                context.Writer.WritePropertyName("TrimSpaceInChar");
+                context.Writer.Write(requestObject.TrimSpaceInChar);
+            }
+
             if(requestObject.IsSetUseAlternateFolderForOnline())
             {
                 context.Writer.WritePropertyName("UseAlternateFolderForOnline");

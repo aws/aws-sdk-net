@@ -69,6 +69,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ServiceAccessRoleArn);
             }
 
+            if(requestObject.IsSetUseNewMappingType())
+            {
+                context.Writer.WritePropertyName("UseNewMappingType");
+                context.Writer.Write(requestObject.UseNewMappingType);
+            }
+
         }
 
         /// <summary>

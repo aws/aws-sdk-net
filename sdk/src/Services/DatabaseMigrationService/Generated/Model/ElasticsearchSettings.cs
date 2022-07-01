@@ -37,6 +37,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private int? _errorRetryDuration;
         private int? _fullLoadErrorPercentage;
         private string _serviceAccessRoleArn;
+        private bool? _useNewMappingType;
 
         /// <summary>
         /// Gets and sets the property EndpointUri. 
@@ -121,6 +122,26 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetServiceAccessRoleArn()
         {
             return this._serviceAccessRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseNewMappingType. 
+        /// <para>
+        /// Set this option to <code>true</code> for DMS to migrate documentation using the documentation
+        /// type <code>_doc</code>. OpenSearch and an Elasticsearch cluster only support the _doc
+        /// documentation type in versions 7. x and later. The default value is <code>false</code>.
+        /// </para>
+        /// </summary>
+        public bool UseNewMappingType
+        {
+            get { return this._useNewMappingType.GetValueOrDefault(); }
+            set { this._useNewMappingType = value; }
+        }
+
+        // Check to see if UseNewMappingType property is set
+        internal bool IsSetUseNewMappingType()
+        {
+            return this._useNewMappingType.HasValue; 
         }
 
     }

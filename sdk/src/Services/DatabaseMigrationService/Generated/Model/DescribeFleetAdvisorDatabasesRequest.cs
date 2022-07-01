@@ -46,7 +46,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>database-id</code> – The ID of the database, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.
+        ///  <code>database-id</code> – The ID of the database.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -70,7 +70,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code>
+        /// An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="45"</code>
         /// 
         /// </para>
         /// </summary>

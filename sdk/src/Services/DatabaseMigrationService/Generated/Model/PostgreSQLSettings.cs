@@ -50,6 +50,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _secretsManagerSecretId;
         private string _serverName;
         private string _slotName;
+        private bool? _trimSpaceInChar;
         private string _username;
 
         /// <summary>
@@ -425,6 +426,25 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetSlotName()
         {
             return this._slotName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrimSpaceInChar. 
+        /// <para>
+        /// Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR
+        /// and NCHAR data types during migration. The default value is <code>true</code>.
+        /// </para>
+        /// </summary>
+        public bool TrimSpaceInChar
+        {
+            get { return this._trimSpaceInChar.GetValueOrDefault(); }
+            set { this._trimSpaceInChar = value; }
+        }
+
+        // Check to see if TrimSpaceInChar property is set
+        internal bool IsSetTrimSpaceInChar()
+        {
+            return this._trimSpaceInChar.HasValue; 
         }
 
         /// <summary>

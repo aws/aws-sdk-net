@@ -166,6 +166,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.SlotName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TrimSpaceInChar", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.TrimSpaceInChar = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Username", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

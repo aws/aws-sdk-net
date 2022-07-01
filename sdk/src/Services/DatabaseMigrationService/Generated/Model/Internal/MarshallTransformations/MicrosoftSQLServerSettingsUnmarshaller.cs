@@ -130,6 +130,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.ServerName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TrimSpaceInChar", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.TrimSpaceInChar = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("UseBcpFullLoad", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
