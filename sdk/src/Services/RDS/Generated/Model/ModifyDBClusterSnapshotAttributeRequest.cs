@@ -57,8 +57,8 @@ namespace Amazon.RDS.Model
     /// <para>
     /// To view which Amazon Web Services accounts have access to copy or restore a manual
     /// DB cluster snapshot, or whether a manual DB cluster snapshot is public or private,
-    /// use the <a>DescribeDBClusterSnapshotAttributes</a> API action. The accounts are returned
-    /// as values for the <code>restore</code> attribute.
+    /// use the <a>DescribeDBClusterSnapshotAttributes</a> API operation. The accounts are
+    /// returned as values for the <code>restore</code> attribute.
     /// </para>
     /// </summary>
     public partial class ModifyDBClusterSnapshotAttributeRequest : AmazonRDSRequest
@@ -81,7 +81,7 @@ namespace Amazon.RDS.Model
         ///  <note> 
         /// <para>
         /// To view the list of attributes available to modify, use the <a>DescribeDBClusterSnapshotAttributes</a>
-        /// API action.
+        /// API operation.
         /// </para>
         ///  </note>
         /// </summary>

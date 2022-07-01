@@ -48,7 +48,7 @@ namespace Amazon.RDS.Model
     /// <para>
     /// An Amazon Aurora DB cluster automatically fails over to an Aurora Replica, if one
     /// exists, when the primary DB instance fails. A Multi-AZ DB cluster automatically fails
-    /// over to a readbable standby DB instance when the primary DB instance fails.
+    /// over to a readable standby DB instance when the primary DB instance fails.
     /// </para>
     ///  
     /// <para>

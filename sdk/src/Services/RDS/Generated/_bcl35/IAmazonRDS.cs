@@ -472,7 +472,7 @@ namespace Amazon.RDS
         /// </para>
         ///  <note> 
         /// <para>
-        /// This action only applies to Aurora MySQL DB clusters.
+        /// This action applies only to Aurora MySQL DB clusters.
         /// </para>
         ///  </note>
         /// </summary>
@@ -628,7 +628,7 @@ namespace Amazon.RDS
         /// <para>
         /// You can copy an encrypted DB cluster snapshot from another Amazon Web Services Region.
         /// In that case, the Amazon Web Services Region where you call the <code>CopyDBClusterSnapshot</code>
-        /// action is the destination Amazon Web Services Region for the encrypted DB cluster
+        /// operation is the destination Amazon Web Services Region for the encrypted DB cluster
         /// snapshot to be copied to. To copy an encrypted DB cluster snapshot from another Amazon
         /// Web Services Region, you must provide the following values:
         /// </para>
@@ -640,56 +640,6 @@ namespace Amazon.RDS
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PreSignedUrl</code> - A URL that contains a Signature Version 4 signed request
-        /// for the <code>CopyDBClusterSnapshot</code> action to be called in the source Amazon
-        /// Web Services Region where the DB cluster snapshot is copied from. The pre-signed URL
-        /// must be a valid request for the <code>CopyDBClusterSnapshot</code> API action that
-        /// can be executed in the source Amazon Web Services Region that contains the encrypted
-        /// DB cluster snapshot to be copied.
-        /// </para>
-        ///  
-        /// <para>
-        /// The pre-signed URL request must contain the following parameter values:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the KMS key
-        /// to use to encrypt the copy of the DB cluster snapshot in the destination Amazon Web
-        /// Services Region. This is the same identifier for both the <code>CopyDBClusterSnapshot</code>
-        /// action that is called in the destination Amazon Web Services Region, and the action
-        /// contained in the pre-signed URL.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>DestinationRegion</code> - The name of the Amazon Web Services Region that
-        /// the DB cluster snapshot is to be created in.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier
-        /// for the encrypted DB cluster snapshot to be copied. This identifier must be in the
-        /// Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example,
-        /// if you are copying an encrypted DB cluster snapshot from the us-west-2 Amazon Web
-        /// Services Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks like
-        /// the following example: <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// To learn how to generate a Signature Version 4 signed request, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
-        /// Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version
-        /// 4)</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
-        /// Signature Version 4 Signing Process</a>.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code>
-        /// (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code>
-        /// manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that
-        /// is a valid request for the operation that can be executed in the source Amazon Web
-        /// Services Region.
-        /// </para>
-        ///  </note> </li> <li> 
-        /// <para>
         ///  <code>TargetDBClusterSnapshotIdentifier</code> - The identifier for the new copy
         /// of the DB cluster snapshot in the destination Amazon Web Services Region.
         /// </para>
@@ -698,7 +648,7 @@ namespace Amazon.RDS
         ///  <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier
         /// for the encrypted DB cluster snapshot to be copied. This identifier must be in the
         /// ARN format for the source Amazon Web Services Region and is the same value as the
-        /// <code>SourceDBClusterSnapshotIdentifier</code> in the pre-signed URL.
+        /// <code>SourceDBClusterSnapshotIdentifier</code> in the presigned URL.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -837,7 +787,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// You can copy a snapshot from one Amazon Web Services Region to another. In that case,
-        /// the Amazon Web Services Region where you call the <code>CopyDBSnapshot</code> action
+        /// the Amazon Web Services Region where you call the <code>CopyDBSnapshot</code> operation
         /// is the destination Amazon Web Services Region for the DB snapshot copy.
         /// </para>
         ///  
@@ -1061,8 +1011,7 @@ namespace Amazon.RDS
         /// <para>
         /// You can use the <code>ReplicationSourceIdentifier</code> parameter to create an Amazon
         /// Aurora DB cluster as a read replica of another DB cluster or Amazon RDS MySQL or PostgreSQL
-        /// DB instance. For cross-Region replication where the DB cluster identified by <code>ReplicationSourceIdentifier</code>
-        /// is encrypted, also specify the <code>PreSignedUrl</code> parameter.
+        /// DB instance.
         /// </para>
         ///  
         /// <para>
@@ -1181,7 +1130,7 @@ namespace Amazon.RDS
         /// 
         ///  <note> 
         /// <para>
-        /// This action only applies to Aurora DB clusters.
+        /// This action applies only to Aurora DB clusters.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1277,7 +1226,7 @@ namespace Amazon.RDS
         /// database for a DB cluster, such as the character set for the default database defined
         /// by the <code>character_set_database</code> parameter. You can use the <i>Parameter
         /// Groups</i> option of the <a href="https://console.aws.amazon.com/rds/">Amazon RDS
-        /// console</a> or the <code>DescribeDBClusterParameters</code> action to verify that
+        /// console</a> or the <code>DescribeDBClusterParameters</code> operation to verify that
         /// your DB cluster parameter group has been created or modified.
         /// </para>
         ///  </important> 
@@ -1405,6 +1354,24 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Creates a new DB instance.
+        /// 
+        ///  
+        /// <para>
+        /// The new DB instance can be an RDS DB instance, or it can be a DB instance in an Aurora
+        /// DB cluster. For an Aurora DB cluster, you can call this operation multiple times to
+        /// add more than one DB instance to the cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about creating an RDS DB instance, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CreateDBInstance.html">
+        /// Creating an Amazon RDS DB instance</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about creating a DB instance in an Aurora DB cluster, see <a
+        /// href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.CreateInstance.html">
+        /// Creating an Amazon Aurora DB cluster</a> in the <i>Amazon Aurora User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBInstance service method.</param>
         /// 
@@ -1523,8 +1490,8 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// Amazon Aurora doesn't support this action. Call the <code>CreateDBInstance</code>
-        /// action to create a DB instance for an Aurora DB cluster.
+        /// Amazon Aurora doesn't support this operation. Call the <code>CreateDBInstance</code>
+        /// operation to create a DB instance for an Aurora DB cluster.
         /// </para>
         ///  
         /// <para>
@@ -2001,7 +1968,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Creates an RDS event notification subscription. This action requires a topic Amazon
+        /// Creates an RDS event notification subscription. This operation requires a topic Amazon
         /// Resource Name (ARN) created by either the RDS console, the SNS console, or the SNS
         /// API. To obtain an ARN with SNS, you must create a topic in Amazon SNS and subscribe
         /// to the topic. The ARN is displayed in the SNS console.
@@ -2104,7 +2071,7 @@ namespace Amazon.RDS
         /// </para>
         ///  <note> 
         /// <para>
-        /// This action only applies to Aurora DB clusters.
+        /// This action applies only to Aurora DB clusters.
         /// </para>
         ///  </note>
         /// </summary>
@@ -4597,6 +4564,12 @@ namespace Amazon.RDS
         /// group, DB snapshot, DB cluster snapshot group, or RDS Proxy can be obtained by providing
         /// the name as a parameter.
         /// 
+        ///  
+        /// <para>
+        /// For more information on working with events, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/working-with-events.html">Monitoring
+        /// Amazon RDS events</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/working-with-events.html">Monitoring
+        /// Amazon Aurora events</a> in the <i>Amazon Aurora User Guide</i>.
+        /// </para>
         ///  <note> 
         /// <para>
         /// By default, RDS returns events that were generated in the past hour.
@@ -4615,6 +4588,12 @@ namespace Amazon.RDS
         /// group, DB snapshot, DB cluster snapshot group, or RDS Proxy can be obtained by providing
         /// the name as a parameter.
         /// 
+        ///  
+        /// <para>
+        /// For more information on working with events, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/working-with-events.html">Monitoring
+        /// Amazon RDS events</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/working-with-events.html">Monitoring
+        /// Amazon Aurora events</a> in the <i>Amazon Aurora User Guide</i>.
+        /// </para>
         ///  <note> 
         /// <para>
         /// By default, RDS returns events that were generated in the past hour.
@@ -5278,7 +5257,7 @@ namespace Amazon.RDS
         /// <para>
         /// An Amazon Aurora DB cluster automatically fails over to an Aurora Replica, if one
         /// exists, when the primary DB instance fails. A Multi-AZ DB cluster automatically fails
-        /// over to a readbable standby DB instance when the primary DB instance fails.
+        /// over to a readable standby DB instance when the primary DB instance fails.
         /// </para>
         ///  
         /// <para>
@@ -5879,8 +5858,8 @@ namespace Amazon.RDS
         /// important for parameters that are critical when creating the default database for
         /// a DB cluster, such as the character set for the default database defined by the <code>character_set_database</code>
         /// parameter. You can use the <i>Parameter Groups</i> option of the <a href="https://console.aws.amazon.com/rds/">Amazon
-        /// RDS console</a> or the <code>DescribeDBClusterParameters</code> action to verify that
-        /// your DB cluster parameter group has been created or modified.
+        /// RDS console</a> or the <code>DescribeDBClusterParameters</code> operation to verify
+        /// that your DB cluster parameter group has been created or modified.
         /// </para>
         ///  
         /// <para>
@@ -5974,8 +5953,8 @@ namespace Amazon.RDS
         /// <para>
         /// To view which Amazon Web Services accounts have access to copy or restore a manual
         /// DB cluster snapshot, or whether a manual DB cluster snapshot is public or private,
-        /// use the <a>DescribeDBClusterSnapshotAttributes</a> API action. The accounts are returned
-        /// as values for the <code>restore</code> attribute.
+        /// use the <a>DescribeDBClusterSnapshotAttributes</a> API operation. The accounts are
+        /// returned as values for the <code>restore</code> attribute.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBClusterSnapshotAttribute service method.</param>
@@ -6436,7 +6415,7 @@ namespace Amazon.RDS
         /// <para>
         /// To view which Amazon Web Services accounts have access to copy or restore a manual
         /// DB snapshot, or whether a manual DB snapshot public or private, use the <a>DescribeDBSnapshotAttributes</a>
-        /// API action. The accounts are returned as values for the <code>restore</code> attribute.
+        /// API operation. The accounts are returned as values for the <code>restore</code> attribute.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBSnapshotAttribute service method.</param>
@@ -8871,7 +8850,7 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// This command doesn't apply to RDS Custom.
+        /// This command doesn't apply to RDS Custom, Aurora MySQL, and Aurora PostgreSQL.
         /// </para>
         ///  
         /// <para>
