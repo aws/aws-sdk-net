@@ -44,6 +44,7 @@ namespace Amazon.SSMIncidents.Model
         private int? _incidentTemplateImpact;
         private List<NotificationTargetItem> _incidentTemplateNotificationTargets = new List<NotificationTargetItem>();
         private string _incidentTemplateSummary;
+        private Dictionary<string, string> _incidentTemplateTags = new Dictionary<string, string>();
         private string _incidentTemplateTitle;
 
         /// <summary>
@@ -264,6 +265,27 @@ namespace Amazon.SSMIncidents.Model
         internal bool IsSetIncidentTemplateSummary()
         {
             return this._incidentTemplateSummary != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncidentTemplateTags. 
+        /// <para>
+        /// Tags to apply to an incident when calling the <code>StartIncident</code> API action.
+        /// To call this action, you must also have permission to call the <code>TagResource</code>
+        /// API action for the incident record resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public Dictionary<string, string> IncidentTemplateTags
+        {
+            get { return this._incidentTemplateTags; }
+            set { this._incidentTemplateTags = value; }
+        }
+
+        // Check to see if IncidentTemplateTags property is set
+        internal bool IsSetIncidentTemplateTags()
+        {
+            return this._incidentTemplateTags != null && this._incidentTemplateTags.Count > 0; 
         }
 
         /// <summary>

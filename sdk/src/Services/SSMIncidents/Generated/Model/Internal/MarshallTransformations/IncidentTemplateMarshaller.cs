@@ -57,6 +57,20 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Impact);
             }
 
+            if(requestObject.IsSetIncidentTags())
+            {
+                context.Writer.WritePropertyName("incidentTags");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectIncidentTagsKvp in requestObject.IncidentTags)
+                {
+                    context.Writer.WritePropertyName(requestObjectIncidentTagsKvp.Key);
+                    var requestObjectIncidentTagsValue = requestObjectIncidentTagsKvp.Value;
+
+                        context.Writer.Write(requestObjectIncidentTagsValue);
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetNotificationTargets())
             {
                 context.Writer.WritePropertyName("notificationTargets");

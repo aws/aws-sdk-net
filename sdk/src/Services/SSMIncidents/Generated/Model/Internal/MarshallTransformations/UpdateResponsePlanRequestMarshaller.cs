@@ -160,6 +160,20 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.IncidentTemplateSummary);
                 }
 
+                if(publicRequest.IsSetIncidentTemplateTags())
+                {
+                    context.Writer.WritePropertyName("incidentTemplateTags");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestIncidentTemplateTagsKvp in publicRequest.IncidentTemplateTags)
+                    {
+                        context.Writer.WritePropertyName(publicRequestIncidentTemplateTagsKvp.Key);
+                        var publicRequestIncidentTemplateTagsValue = publicRequestIncidentTemplateTagsKvp.Value;
+
+                            context.Writer.Write(publicRequestIncidentTemplateTagsValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetIncidentTemplateTitle())
                 {
                     context.Writer.WritePropertyName("incidentTemplateTitle");

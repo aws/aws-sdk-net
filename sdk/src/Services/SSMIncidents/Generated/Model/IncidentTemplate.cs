@@ -36,6 +36,7 @@ namespace Amazon.SSMIncidents.Model
     {
         private string _dedupeString;
         private int? _impact;
+        private Dictionary<string, string> _incidentTags = new Dictionary<string, string>();
         private List<NotificationTargetItem> _notificationTargets = new List<NotificationTargetItem>();
         private string _summary;
         private string _title;
@@ -77,6 +78,25 @@ namespace Amazon.SSMIncidents.Model
         internal bool IsSetImpact()
         {
             return this._impact.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncidentTags. 
+        /// <para>
+        /// Tags to apply to an incident when calling the <code>StartIncident</code> API action.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, string> IncidentTags
+        {
+            get { return this._incidentTags; }
+            set { this._incidentTags = value; }
+        }
+
+        // Check to see if IncidentTags property is set
+        internal bool IsSetIncidentTags()
+        {
+            return this._incidentTags != null && this._incidentTags.Count > 0; 
         }
 
         /// <summary>
