@@ -40,7 +40,7 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property Transcript. 
         /// <para>
         /// The content of the transcript that meets the search filter criteria. For the JSON
-        /// format of the transcript, see <a href="https://docs.aws.amazon.com/lex/latest/dg/designing-output-format.html">Output
+        /// format of the transcript, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/designing-output-format.html">Output
         /// transcript format</a>.
         /// </para>
         /// </summary>

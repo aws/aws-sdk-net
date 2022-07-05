@@ -73,6 +73,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetMessageSelectionStrategy())
+            {
+                context.Writer.WritePropertyName("messageSelectionStrategy");
+                context.Writer.Write(requestObject.MessageSelectionStrategy);
+            }
+
         }
 
         /// <summary>

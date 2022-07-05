@@ -82,6 +82,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.MessageGroups = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("messageSelectionStrategy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MessageSelectionStrategy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

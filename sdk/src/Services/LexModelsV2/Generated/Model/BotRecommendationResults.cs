@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
-    /// The object representing the URL of the bot definition, the URL of the associated transcript
+    /// The object representing the URL of the bot definition, the URL of the associated transcript,
     /// and a statistical summary of the bot recommendation results.
     /// </summary>
     public partial class BotRecommendationResults
