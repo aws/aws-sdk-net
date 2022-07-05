@@ -29,42 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeAccountSettings operation.
+    /// This is the response object from the CreateAccountSubscription operation.
     /// </summary>
-    public partial class DescribeAccountSettingsResponse : AmazonWebServiceResponse
+    public partial class CreateAccountSubscriptionResponse : AmazonWebServiceResponse
     {
-        private AccountSettings _accountSettings;
         private string _requestId;
+        private SignupResponse _signupResponse;
         private int? _status;
-
-        /// <summary>
-        /// Gets and sets the property AccountSettings. 
-        /// <para>
-        /// The Amazon QuickSight settings for this Amazon Web Services account. This information
-        /// includes the edition of Amazon Amazon QuickSight that you subscribed to (Standard
-        /// or Enterprise) and the notification email for the Amazon QuickSight subscription.
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// In the QuickSight console, the Amazon QuickSight subscription is sometimes referred
-        /// to as a QuickSight "account" even though it's technically not an account by itself.
-        /// Instead, it's a subscription to the Amazon QuickSight service for your Amazon Web
-        /// Services account. The edition that you subscribe to applies to Amazon QuickSight in
-        /// every Amazon Web Services Region where you use it.
-        /// </para>
-        /// </summary>
-        public AccountSettings AccountSettings
-        {
-            get { return this._accountSettings; }
-            set { this._accountSettings = value; }
-        }
-
-        // Check to see if AccountSettings property is set
-        internal bool IsSetAccountSettings()
-        {
-            return this._accountSettings != null;
-        }
 
         /// <summary>
         /// Gets and sets the property RequestId. 
@@ -82,6 +53,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetRequestId()
         {
             return this._requestId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SignupResponse. 
+        /// <para>
+        /// A <code>SignupResponse</code> object that returns information about a newly created
+        /// Amazon QuickSight account.
+        /// </para>
+        /// </summary>
+        public SignupResponse SignupResponse
+        {
+            get { return this._signupResponse; }
+            set { this._signupResponse = value; }
+        }
+
+        // Check to see if SignupResponse property is set
+        internal bool IsSetSignupResponse()
+        {
+            return this._signupResponse != null;
         }
 
         /// <summary>

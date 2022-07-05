@@ -30,8 +30,8 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAccountCustomization operation.
-    /// Creates Amazon QuickSight customizations the current Amazon Web Services Region. Currently,
-    /// you can add a custom default theme by using the <code>CreateAccountCustomization</code>
+    /// Creates Amazon QuickSight customizations for the current Amazon Web Services Region.
+    /// Currently, you can add a custom default theme by using the <code>CreateAccountCustomization</code>
     /// or <code>UpdateAccountCustomization</code> API operation. To further customize Amazon
     /// QuickSight by removing Amazon QuickSight sample assets and videos for all new users,
     /// see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight.html">Customizing

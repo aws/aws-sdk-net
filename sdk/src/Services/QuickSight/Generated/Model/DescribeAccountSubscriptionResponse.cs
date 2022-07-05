@@ -29,41 +29,52 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeAccountSettings operation.
+    /// This is the response object from the DescribeAccountSubscription operation.
     /// </summary>
-    public partial class DescribeAccountSettingsResponse : AmazonWebServiceResponse
+    public partial class DescribeAccountSubscriptionResponse : AmazonWebServiceResponse
     {
-        private AccountSettings _accountSettings;
+        private AccountInfo _accountInfo;
         private string _requestId;
         private int? _status;
 
         /// <summary>
-        /// Gets and sets the property AccountSettings. 
+        /// Gets and sets the property AccountInfo. 
         /// <para>
-        /// The Amazon QuickSight settings for this Amazon Web Services account. This information
-        /// includes the edition of Amazon Amazon QuickSight that you subscribed to (Standard
-        /// or Enterprise) and the notification email for the Amazon QuickSight subscription.
+        /// A structure that contains the following elements:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Your Amazon QuickSight account name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The edition of Amazon QuickSight that your account is using.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The notification email address that is associated with the Amazon QuickSight account.
         /// 
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// In the QuickSight console, the Amazon QuickSight subscription is sometimes referred
-        /// to as a QuickSight "account" even though it's technically not an account by itself.
-        /// Instead, it's a subscription to the Amazon QuickSight service for your Amazon Web
-        /// Services account. The edition that you subscribe to applies to Amazon QuickSight in
-        /// every Amazon Web Services Region where you use it.
+        /// The authentication type of the Amazon QuickSight account.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The status of the Amazon QuickSight account's subscription.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
-        public AccountSettings AccountSettings
+        public AccountInfo AccountInfo
         {
-            get { return this._accountSettings; }
-            set { this._accountSettings = value; }
+            get { return this._accountInfo; }
+            set { this._accountInfo = value; }
         }
 
-        // Check to see if AccountSettings property is set
-        internal bool IsSetAccountSettings()
+        // Check to see if AccountInfo property is set
+        internal bool IsSetAccountInfo()
         {
-            return this._accountSettings != null;
+            return this._accountInfo != null;
         }
 
         /// <summary>

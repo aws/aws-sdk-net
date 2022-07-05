@@ -71,7 +71,7 @@ namespace Amazon.QuickSight.Model
         ///  
         /// <para>
         /// For more information about embedding the Q search bar, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding
-        /// Overview</a>.
+        /// Overview</a> in the <i>Amazon QuickSight User Guide</i>.
         /// </para>
         /// </summary>
         public RegisteredUserQSearchBarEmbeddingConfiguration QSearchBar

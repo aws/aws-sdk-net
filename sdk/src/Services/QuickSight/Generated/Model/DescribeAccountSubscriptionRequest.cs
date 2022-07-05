@@ -29,28 +29,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// An ad hoc (one-time) filtering option.
+    /// Container for the parameters to the DescribeAccountSubscription operation.
+    /// Use the DescribeAccountSubscription operation to receive a description of a Amazon
+    /// QuickSight account's subscription. A successful API call returns an <code>AccountInfo</code>
+    /// object that includes an account's name, subscription status, authentication type,
+    /// edition, and notification email address.
     /// </summary>
-    public partial class AdHocFilteringOption
+    public partial class DescribeAccountSubscriptionRequest : AmazonQuickSightRequest
     {
-        private DashboardBehavior _availabilityStatus;
+        private string _awsAccountId;
 
         /// <summary>
-        /// Gets and sets the property AvailabilityStatus. 
+        /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// Availability status.
+        /// The Amazon Web Services account ID associated with your Amazon QuickSight account.
         /// </para>
         /// </summary>
-        public DashboardBehavior AvailabilityStatus
+        [AWSProperty(Required=true, Min=12, Max=12)]
+        public string AwsAccountId
         {
-            get { return this._availabilityStatus; }
-            set { this._availabilityStatus = value; }
+            get { return this._awsAccountId; }
+            set { this._awsAccountId = value; }
         }
 
-        // Check to see if AvailabilityStatus property is set
-        internal bool IsSetAvailabilityStatus()
+        // Check to see if AwsAccountId property is set
+        internal bool IsSetAwsAccountId()
         {
-            return this._availabilityStatus != null;
+            return this._awsAccountId != null;
         }
 
     }

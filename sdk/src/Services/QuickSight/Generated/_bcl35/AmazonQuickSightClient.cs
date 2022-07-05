@@ -339,8 +339,8 @@ namespace Amazon.QuickSight
         #region  CreateAccountCustomization
 
         /// <summary>
-        /// Creates Amazon QuickSight customizations the current Amazon Web Services Region. Currently,
-        /// you can add a custom default theme by using the <code>CreateAccountCustomization</code>
+        /// Creates Amazon QuickSight customizations for the current Amazon Web Services Region.
+        /// Currently, you can add a custom default theme by using the <code>CreateAccountCustomization</code>
         /// or <code>UpdateAccountCustomization</code> API operation. To further customize Amazon
         /// QuickSight by removing Amazon QuickSight sample assets and videos for all new users,
         /// see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight.html">Customizing
@@ -438,6 +438,128 @@ namespace Amazon.QuickSight
         public virtual CreateAccountCustomizationResponse EndCreateAccountCustomization(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateAccountCustomizationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateAccountSubscription
+
+        /// <summary>
+        /// Creates an Amazon QuickSight account, or subscribes to Amazon QuickSight Q.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Region for the account is derived from what is configured
+        /// in the CLI or SDK. This operation isn't supported in the US East (Ohio) Region, South
+        /// America (Sao Paulo) Region, or Asia Pacific (Singapore) Region. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Before you use this operation, make sure that you can connect to an existing Amazon
+        /// Web Services account. If you don't have an Amazon Web Services account, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/setting-up-aws-sign-up.html">Sign
+        /// up for Amazon Web Services</a> in the <i>Amazon QuickSight User Guide</i>. The person
+        /// who signs up for Amazon QuickSight needs to have the correct Identity and Access Management
+        /// (IAM) permissions. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/iam-policy-examples.html">IAM
+        /// Policy Examples for Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If your IAM policy includes both the <code>Subscribe</code> and <code>CreateAccountSubscription</code>
+        /// actions, make sure that both actions are set to <code>Allow</code>. If either action
+        /// is set to <code>Deny</code>, the <code>Deny</code> action prevails and your API call
+        /// fails.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't pass an existing IAM role to access other Amazon Web Services services using
+        /// this API operation. To pass your existing IAM role to Amazon QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html#security-create-iam-role">Passing
+        /// IAM roles to Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't set default resource access on the new account from the Amazon QuickSight
+        /// API. Instead, add default resource access from the Amazon QuickSight console. For
+        /// more information about setting default resource access to Amazon Web Services services,
+        /// see <a href="https://docs.aws.amazon.com/quicksight/latest/user/scoping-policies-defaults.html">Setting
+        /// default resource access to Amazon Web Services services</a> in the <i>Amazon QuickSight
+        /// User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccountSubscription service method.</param>
+        /// 
+        /// <returns>The response from the CreateAccountSubscription service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
+        /// The resource specified already exists.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
+        /// This resource is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateAccountSubscription">REST API Reference for CreateAccountSubscription Operation</seealso>
+        public virtual CreateAccountSubscriptionResponse CreateAccountSubscription(CreateAccountSubscriptionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAccountSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAccountSubscriptionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAccountSubscriptionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAccountSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccountSubscription operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAccountSubscription
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateAccountSubscription">REST API Reference for CreateAccountSubscription Operation</seealso>
+        public virtual IAsyncResult BeginCreateAccountSubscription(CreateAccountSubscriptionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAccountSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAccountSubscriptionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAccountSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAccountSubscription.</param>
+        /// 
+        /// <returns>Returns a  CreateAccountSubscriptionResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateAccountSubscription">REST API Reference for CreateAccountSubscription Operation</seealso>
+        public virtual CreateAccountSubscriptionResponse EndCreateAccountSubscription(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateAccountSubscriptionResponse>(asyncResult);
         }
 
         #endregion
@@ -3296,6 +3418,84 @@ namespace Amazon.QuickSight
 
         #endregion
         
+        #region  DescribeAccountSubscription
+
+        /// <summary>
+        /// Use the DescribeAccountSubscription operation to receive a description of a Amazon
+        /// QuickSight account's subscription. A successful API call returns an <code>AccountInfo</code>
+        /// object that includes an account's name, subscription status, authentication type,
+        /// edition, and notification email address.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountSubscription service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAccountSubscription service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
+        /// This resource is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAccountSubscription">REST API Reference for DescribeAccountSubscription Operation</seealso>
+        public virtual DescribeAccountSubscriptionResponse DescribeAccountSubscription(DescribeAccountSubscriptionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAccountSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAccountSubscriptionResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAccountSubscriptionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAccountSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountSubscription operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAccountSubscription
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAccountSubscription">REST API Reference for DescribeAccountSubscription Operation</seealso>
+        public virtual IAsyncResult BeginDescribeAccountSubscription(DescribeAccountSubscriptionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAccountSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAccountSubscriptionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAccountSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAccountSubscription.</param>
+        /// 
+        /// <returns>Returns a  DescribeAccountSubscriptionResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAccountSubscription">REST API Reference for DescribeAccountSubscription Operation</seealso>
+        public virtual DescribeAccountSubscriptionResponse EndDescribeAccountSubscription(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeAccountSubscriptionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeAnalysis
 
         /// <summary>
@@ -5140,12 +5340,8 @@ namespace Amazon.QuickSight
         /// <para>
         /// The URL validity period should not be confused with the actual session lifetime that
         /// can be customized using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForAnonymousUser.html#QS-GenerateEmbedUrlForAnonymousUser-request-SessionLifetimeInMinutes">SessionLifetimeInMinutes</a>
-        /// </code> parameter.
-        /// </para>
-        ///  
-        /// <para>
-        /// The resulting user session is valid for 15 minutes (minimum) to 10 hours (maximum).
-        /// The default session duration is 10 hours. 
+        /// </code> parameter. The resulting user session is valid for 15 minutes (minimum) to
+        /// 10 hours (maximum). The default session duration is 10 hours.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5395,15 +5591,15 @@ namespace Amazon.QuickSight
         #region  GetDashboardEmbedUrl
 
         /// <summary>
-        /// Generates a session URL and authorization code that you can use to embed an Amazon
-        /// Amazon QuickSight read-only dashboard in your web server code. Before you use this
-        /// command, make sure that you have configured the dashboards and permissions. 
+        /// Generates a temporary session URL and authorization code that you can use to embed
+        /// an Amazon QuickSight read-only dashboard in your website or application. Before you
+        /// use this command, make sure that you have configured the dashboards and permissions.
+        /// 
         /// 
         ///  
         /// <para>
         /// Currently, you can use <code>GetDashboardEmbedURL</code> only from the server, not
-        /// from the user's browser. The following rules apply to the combination of URL and authorization
-        /// code:
+        /// from the user's browser. The following rules apply to the generated URL:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -5419,7 +5615,9 @@ namespace Amazon.QuickSight
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The resulting user session is valid for 10 hours.
+        /// The resulting user session is valid for 15 minutes (default) up to 10 hours (maximum).
+        /// You can use the optional <code>SessionLifetimeInMinutes</code> parameter to customi
+        /// session duration.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -8019,8 +8217,8 @@ namespace Amazon.QuickSight
         #region  UpdateAccountCustomization
 
         /// <summary>
-        /// Updates Amazon QuickSight customizations the current Amazon Web Services Region. Currently,
-        /// the only customization you can use is a theme.
+        /// Updates Amazon QuickSight customizations for the current Amazon Web Services Region.
+        /// Currently, the only customization that you can use is a theme.
         /// 
         ///  
         /// <para>
@@ -9288,19 +9486,20 @@ namespace Amazon.QuickSight
         #region  UpdatePublicSharingSettings
 
         /// <summary>
-        /// Use the UpdatePublicSharingSettings operation to enable or disable the public sharing
-        /// settings of an Amazon QuickSight dashboard.
+        /// Use the <code>UpdatePublicSharingSettings</code> operation to turn on or turn off
+        /// the public sharing settings of an Amazon QuickSight dashboard.
         /// 
         ///  
         /// <para>
-        /// To use this operation, enable session capacity pricing on your Amazon QuickSight account.
+        /// To use this operation, turn on session capacity pricing for your Amazon QuickSight
+        /// account.
         /// </para>
         ///  
         /// <para>
-        /// Before you can enable public sharing on your account, you need to allow public sharing
-        /// permissions to an administrative user in the IAM console. For more information on
-        /// using IAM with Amazon QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html">Using
-        /// Amazon QuickSight with IAM</a>.
+        /// Before you can turn on public sharing on your account, make sure to give public sharing
+        /// permissions to an administrative user in the Identity and Access Management (IAM)
+        /// console. For more information on using IAM with Amazon QuickSight, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html">Using
+        /// Amazon QuickSight with IAM</a> in the <i>Amazon QuickSight User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePublicSharingSettings service method.</param>

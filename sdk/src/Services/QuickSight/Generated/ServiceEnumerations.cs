@@ -207,6 +207,60 @@ namespace Amazon.QuickSight
 
 
     /// <summary>
+    /// Constants used for properties of type AuthenticationMethodOption.
+    /// </summary>
+    public class AuthenticationMethodOption : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE_DIRECTORY for AuthenticationMethodOption
+        /// </summary>
+        public static readonly AuthenticationMethodOption ACTIVE_DIRECTORY = new AuthenticationMethodOption("ACTIVE_DIRECTORY");
+        /// <summary>
+        /// Constant IAM_AND_QUICKSIGHT for AuthenticationMethodOption
+        /// </summary>
+        public static readonly AuthenticationMethodOption IAM_AND_QUICKSIGHT = new AuthenticationMethodOption("IAM_AND_QUICKSIGHT");
+        /// <summary>
+        /// Constant IAM_ONLY for AuthenticationMethodOption
+        /// </summary>
+        public static readonly AuthenticationMethodOption IAM_ONLY = new AuthenticationMethodOption("IAM_ONLY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AuthenticationMethodOption(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AuthenticationMethodOption FindValue(string value)
+        {
+            return FindValue<AuthenticationMethodOption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AuthenticationMethodOption(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ColumnDataType.
     /// </summary>
     public class ColumnDataType : ConstantClass
@@ -818,6 +872,10 @@ namespace Amazon.QuickSight
         /// Constant ENTERPRISE for Edition
         /// </summary>
         public static readonly Edition ENTERPRISE = new Edition("ENTERPRISE");
+        /// <summary>
+        /// Constant ENTERPRISE_AND_Q for Edition
+        /// </summary>
+        public static readonly Edition ENTERPRISE_AND_Q = new Edition("ENTERPRISE_AND_Q");
         /// <summary>
         /// Constant STANDARD for Edition
         /// </summary>

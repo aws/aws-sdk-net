@@ -29,22 +29,45 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The Amazon QuickSight settings associated with your Amazon Web Services account.
+    /// A structure that contains the following account information elements:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// Your Amazon QuickSight account name.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The edition of Amazon QuickSight that your account is using.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The notification email address that is associated with the Amazon QuickSight account.
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The authentication type of the Amazon QuickSight account.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The status of the Amazon QuickSight account's subscription.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
-    public partial class AccountSettings
+    public partial class AccountInfo
     {
         private string _accountName;
-        private string _defaultNamespace;
+        private string _accountSubscriptionStatus;
+        private string _authenticationType;
         private Edition _edition;
         private string _notificationEmail;
-        private bool? _publicSharingEnabled;
 
         /// <summary>
         /// Gets and sets the property AccountName. 
         /// <para>
-        /// The "account name" you provided for the Amazon QuickSight subscription in your Amazon
-        /// Web Services account. You create this name when you sign up for Amazon QuickSight.
-        /// It is unique in all of Amazon Web Services and it appears only when users sign in.
+        /// The account name that you provided for the Amazon QuickSight subscription in your
+        /// Amazon Web Services account. You create this name when you sign up for Amazon QuickSight.
+        /// It's unique over all of Amazon Web Services, and it appears only when users sign in.
         /// </para>
         /// </summary>
         public string AccountName
@@ -60,29 +83,45 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DefaultNamespace. 
+        /// Gets and sets the property AccountSubscriptionStatus. 
         /// <para>
-        /// The default Amazon QuickSight namespace for your Amazon Web Services account. 
+        /// The status of your account subscription.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=64)]
-        public string DefaultNamespace
+        public string AccountSubscriptionStatus
         {
-            get { return this._defaultNamespace; }
-            set { this._defaultNamespace = value; }
+            get { return this._accountSubscriptionStatus; }
+            set { this._accountSubscriptionStatus = value; }
         }
 
-        // Check to see if DefaultNamespace property is set
-        internal bool IsSetDefaultNamespace()
+        // Check to see if AccountSubscriptionStatus property is set
+        internal bool IsSetAccountSubscriptionStatus()
         {
-            return this._defaultNamespace != null;
+            return this._accountSubscriptionStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AuthenticationType. 
+        /// <para>
+        /// The way that your Amazon QuickSight account is authenticated.
+        /// </para>
+        /// </summary>
+        public string AuthenticationType
+        {
+            get { return this._authenticationType; }
+            set { this._authenticationType = value; }
+        }
+
+        // Check to see if AuthenticationType property is set
+        internal bool IsSetAuthenticationType()
+        {
+            return this._authenticationType != null;
         }
 
         /// <summary>
         /// Gets and sets the property Edition. 
         /// <para>
-        /// The edition of Amazon QuickSight that you're currently subscribed to: Enterprise edition
-        /// or Standard edition.
+        /// The edition of your Amazon QuickSight account.
         /// </para>
         /// </summary>
         public Edition Edition
@@ -100,7 +139,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property NotificationEmail. 
         /// <para>
-        /// The main notification email for your Amazon QuickSight subscription.
+        /// The email address that will be used for Amazon QuickSight to send notifications regarding
+        /// your Amazon Web Services account or Amazon QuickSight subscription.
         /// </para>
         /// </summary>
         public string NotificationEmail
@@ -113,25 +153,6 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetNotificationEmail()
         {
             return this._notificationEmail != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property PublicSharingEnabled. 
-        /// <para>
-        /// A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight
-        /// account. For more information about turning on public sharing, see <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.
-        /// </para>
-        /// </summary>
-        public bool PublicSharingEnabled
-        {
-            get { return this._publicSharingEnabled.GetValueOrDefault(); }
-            set { this._publicSharingEnabled = value; }
-        }
-
-        // Check to see if PublicSharingEnabled property is set
-        internal bool IsSetPublicSharingEnabled()
-        {
-            return this._publicSharingEnabled.HasValue; 
         }
 
     }

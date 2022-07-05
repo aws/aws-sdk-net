@@ -68,6 +68,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAllowedDomains())
+                {
+                    context.Writer.WritePropertyName("AllowedDomains");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAllowedDomainsListValue in publicRequest.AllowedDomains)
+                    {
+                            context.Writer.Write(publicRequestAllowedDomainsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetAuthorizedResourceArns())
                 {
                     context.Writer.WritePropertyName("AuthorizedResourceArns");
