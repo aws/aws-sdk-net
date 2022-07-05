@@ -228,7 +228,7 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You are using an Config managed rule that is triggered at a periodic frequency.
+        /// This is for an Config managed rule that is triggered at a periodic frequency.
         /// </para>
         ///  </li> <li> 
         /// <para>

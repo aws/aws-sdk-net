@@ -3113,9 +3113,28 @@ namespace Amazon.ConfigService
         /// 
         ///  <note> 
         /// <para>
-        /// When you specify the limit and the next token, you receive a paginated response. Limit
-        /// and next token are not applicable if you specify organization Config rule names. It
-        /// is only applicable, when you request all the organization Config rules.
+        /// When you specify the limit and the next token, you receive a paginated response.
+        /// </para>
+        ///  
+        /// <para>
+        /// Limit and next token are not applicable if you specify organization Config rule names.
+        /// It is only applicable, when you request all the organization Config rules.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <i>For accounts within an organzation</i> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you deploy an organizational rule or conformance pack in an organization administrator
+        /// account, and then establish a delegated administrator and deploy an organizational
+        /// rule or conformance pack in the delegated administrator account, you won't be able
+        /// to see the organizational rule or conformance pack in the organization administrator
+        /// account from the delegated administrator account or see the organizational rule or
+        /// conformance pack in the delegated administrator account from organization administrator
+        /// account. The <code>DescribeOrganizationConfigRules</code> and <code>DescribeOrganizationConformancePacks</code>
+        /// APIs can only see and interact with the organization-related resource that were deployed
+        /// from within the account calling those APIs.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3178,9 +3197,28 @@ namespace Amazon.ConfigService
         /// 
         ///  <note> 
         /// <para>
-        /// When you specify the limit and the next token, you receive a paginated response. Limit
-        /// and next token are not applicable if you specify organization Config rule names. It
-        /// is only applicable, when you request all the organization Config rules.
+        /// When you specify the limit and the next token, you receive a paginated response.
+        /// </para>
+        ///  
+        /// <para>
+        /// Limit and next token are not applicable if you specify organization Config rule names.
+        /// It is only applicable, when you request all the organization Config rules.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <i>For accounts within an organzation</i> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you deploy an organizational rule or conformance pack in an organization administrator
+        /// account, and then establish a delegated administrator and deploy an organizational
+        /// rule or conformance pack in the delegated administrator account, you won't be able
+        /// to see the organizational rule or conformance pack in the organization administrator
+        /// account from the delegated administrator account or see the organizational rule or
+        /// conformance pack in the delegated administrator account from organization administrator
+        /// account. The <code>DescribeOrganizationConfigRules</code> and <code>DescribeOrganizationConformancePacks</code>
+        /// APIs can only see and interact with the organization-related resource that were deployed
+        /// from within the account calling those APIs.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3403,6 +3441,22 @@ namespace Amazon.ConfigService
         /// names. They are only applicable, when you request all the organization conformance
         /// packs. 
         /// </para>
+        ///  
+        /// <para>
+        ///  <i>For accounts within an organzation</i> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you deploy an organizational rule or conformance pack in an organization administrator
+        /// account, and then establish a delegated administrator and deploy an organizational
+        /// rule or conformance pack in the delegated administrator account, you won't be able
+        /// to see the organizational rule or conformance pack in the organization administrator
+        /// account from the delegated administrator account or see the organizational rule or
+        /// conformance pack in the delegated administrator account from organization administrator
+        /// account. The <code>DescribeOrganizationConfigRules</code> and <code>DescribeOrganizationConformancePacks</code>
+        /// APIs can only see and interact with the organization-related resource that were deployed
+        /// from within the account calling those APIs.
+        /// </para>
         ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeOrganizationConformancePacks service method.</param>
@@ -3475,6 +3529,22 @@ namespace Amazon.ConfigService
         /// Limit and next token are not applicable if you specify organization conformance packs
         /// names. They are only applicable, when you request all the organization conformance
         /// packs. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <i>For accounts within an organzation</i> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you deploy an organizational rule or conformance pack in an organization administrator
+        /// account, and then establish a delegated administrator and deploy an organizational
+        /// rule or conformance pack in the delegated administrator account, you won't be able
+        /// to see the organizational rule or conformance pack in the organization administrator
+        /// account from the delegated administrator account or see the organizational rule or
+        /// conformance pack in the delegated administrator account from organization administrator
+        /// account. The <code>DescribeOrganizationConfigRules</code> and <code>DescribeOrganizationConformancePacks</code>
+        /// APIs can only see and interact with the organization-related resource that were deployed
+        /// from within the account calling those APIs.
         /// </para>
         ///  </note>
         /// </summary>
@@ -7338,12 +7408,15 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Deploys conformance packs across member accounts in an Amazon Web Services Organization.
+        /// For information on how many organization conformance packs and how many Config rules
+        /// you can have per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
+        /// <b>Service Limits</b> </a> in the Config Developer Guide.
         /// 
         ///  
         /// <para>
         /// Only a master account and a delegated administrator can call this API. When calling
         /// this API with a delegated administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code>
-        /// permissions are added.
+        /// permissions are added. An organization can have up to 3 delegated administrators.
         /// </para>
         ///  
         /// <para>
@@ -7371,11 +7444,6 @@ namespace Amazon.ConfigService
         /// Config sets the state of a conformance pack to CREATE_IN_PROGRESS and UPDATE_IN_PROGRESS
         /// until the conformance pack is created or updated. You cannot update a conformance
         /// pack while it is in this state.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can create 50 conformance packs with 25 Config rules in each pack and 3 delegated
-        /// administrator per organization. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -7526,12 +7594,15 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Deploys conformance packs across member accounts in an Amazon Web Services Organization.
+        /// For information on how many organization conformance packs and how many Config rules
+        /// you can have per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
+        /// <b>Service Limits</b> </a> in the Config Developer Guide.
         /// 
         ///  
         /// <para>
         /// Only a master account and a delegated administrator can call this API. When calling
         /// this API with a delegated administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code>
-        /// permissions are added.
+        /// permissions are added. An organization can have up to 3 delegated administrators.
         /// </para>
         ///  
         /// <para>
@@ -7559,11 +7630,6 @@ namespace Amazon.ConfigService
         /// Config sets the state of a conformance pack to CREATE_IN_PROGRESS and UPDATE_IN_PROGRESS
         /// until the conformance pack is created or updated. You cannot update a conformance
         /// pack while it is in this state.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can create 50 conformance packs with 25 Config rules in each pack and 3 delegated
-        /// administrator per organization. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -7736,6 +7802,18 @@ namespace Amazon.ConfigService
         /// Rules such as Organization Config rules, the rules deployed by conformance packs,
         /// and rules deployed by Amazon Web Services Security Hub.
         /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// For manual remediation configuration, you need to provide a value for <code>automationAssumeRole</code>
+        /// or use a value in the <code>assumeRole</code>field to remediate your resources. The
+        /// SSM automation document can use either as long as it maps to a valid parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// However, for automatic remediation configuration, the only valid <code>assumeRole</code>
+        /// field value is <code>AutomationAssumeRole</code> and you need to provide a value for
+        /// <code>AutomationAssumeRole</code> to remediate your resources.
+        /// </para>
         ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutRemediationConfigurations service method.</param>
@@ -7801,6 +7879,18 @@ namespace Amazon.ConfigService
         /// This API does not support adding remediation configurations for service-linked Config
         /// Rules such as Organization Config rules, the rules deployed by conformance packs,
         /// and rules deployed by Amazon Web Services Security Hub.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// For manual remediation configuration, you need to provide a value for <code>automationAssumeRole</code>
+        /// or use a value in the <code>assumeRole</code>field to remediate your resources. The
+        /// SSM automation document can use either as long as it maps to a valid parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// However, for automatic remediation configuration, the only valid <code>assumeRole</code>
+        /// field value is <code>AutomationAssumeRole</code> and you need to provide a value for
+        /// <code>AutomationAssumeRole</code> to remediate your resources.
         /// </para>
         ///  </note>
         /// </summary>

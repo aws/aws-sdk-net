@@ -83,6 +83,12 @@ namespace Amazon.ConfigService.Model
         /// Amazon Resource Name (ARN) of the IAM role used to describe the Amazon Web Services
         /// resources associated with the account.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// While the API model does not require this field, the server will reject a request
+        /// without a defined roleARN for the configuration recorder.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string RoleARN
         {

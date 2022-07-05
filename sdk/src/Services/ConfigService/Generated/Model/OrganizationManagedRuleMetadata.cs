@@ -86,8 +86,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property MaximumExecutionFrequency. 
         /// <para>
-        /// The maximum frequency with which Config runs evaluations for a rule. You are using
-        /// an Config managed rule that is triggered at a periodic frequency.
+        /// The maximum frequency with which Config runs evaluations for a rule. This is for an
+        /// Config managed rule that is triggered at a periodic frequency.
         /// </para>
         ///  <note> 
         /// <para>
