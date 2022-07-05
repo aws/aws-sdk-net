@@ -1,3 +1,20 @@
+### 3.7.308.0 (2022-07-05 18:21 UTC)
+* ConfigService (3.7.9.33)
+	* Updating documentation service limits
+* IAMRolesAnywhere (3.7.0.0)
+	* IAM Roles Anywhere allows your workloads such as servers, containers, and applications to obtain temporary AWS credentials and use the same IAM roles and policies that you have configured for your AWS workloads to access AWS resources.
+* LexModelsV2 (3.7.13.0)
+	* This release introduces additional optional parameters "messageSelectionStrategy" to PromptSpecification, which enables the users to configure the bot to play messages in orderly manner.
+* QuickSight (3.7.12.0)
+	* This release allows customers to programmatically create QuickSight accounts with Enterprise and Enterprise + Q editions. It also releases allowlisting domains for embedding QuickSight dashboards at runtime through the embedding APIs.
+* RDS (3.7.14.0)
+	* Adds waiters support for DBCluster.
+* SSMIncidents (3.7.6.0)
+	* Adds support for tagging incident-record on creation by providing incident tags in the template within a response-plan.
+* Core 3.7.12.5
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.307.0 (2022-07-01 18:12 UTC)
 * DatabaseMigrationService (3.7.8.0)
 	* Added new features for AWS DMS version 3.4.7 that includes new endpoint settings for S3, OpenSearch, Postgres, SQLServer and Oracle.
