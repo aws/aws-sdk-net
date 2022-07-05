@@ -289,6 +289,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.HealthLake.CodeAnalysis" Path="|AWSSDK.HealthLake.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Honeycode.CodeAnalysis" Path="|AWSSDK.Honeycode.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Honeycode.CodeAnalysis" Path="|AWSSDK.Honeycode.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.IAMRolesAnywhere.CodeAnalysis" Path="|AWSSDK.IAMRolesAnywhere.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.IAMRolesAnywhere.CodeAnalysis" Path="|AWSSDK.IAMRolesAnywhere.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.IdentityManagement.CodeAnalysis" Path="|AWSSDK.IdentityManagement.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.IdentityManagement.CodeAnalysis" Path="|AWSSDK.IdentityManagement.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.IdentityStore.CodeAnalysis" Path="|AWSSDK.IdentityStore.CodeAnalysis|"/>

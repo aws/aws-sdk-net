@@ -600,6 +600,10 @@
       <Project>{7514CF83-2AF7-4EAC-9006-24E159F9D62A}</Project>
       <Name>AWSSDK.Honeycode.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/IAMRolesAnywhere/AWSSDK.IAMRolesAnywhere.CodeAnalysis.csproj">
+      <Project>{213EDD5C-6DB2-491B-B26C-A946922F8007}</Project>
+      <Name>AWSSDK.IAMRolesAnywhere.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/IdentityManagement/AWSSDK.IdentityManagement.CodeAnalysis.csproj">
       <Project>{75CCB501-0580-46F5-8CFB-705D6D6ECFDF}</Project>
       <Name>AWSSDK.IdentityManagement.CodeAnalysis</Name>
