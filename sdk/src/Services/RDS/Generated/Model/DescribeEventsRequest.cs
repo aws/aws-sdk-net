@@ -36,12 +36,6 @@ namespace Amazon.RDS.Model
     /// group, DB snapshot, DB cluster snapshot group, or RDS Proxy can be obtained by providing
     /// the name as a parameter.
     /// 
-    ///  
-    /// <para>
-    /// For more information on working with events, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/working-with-events.html">Monitoring
-    /// Amazon RDS events</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/working-with-events.html">Monitoring
-    /// Amazon Aurora events</a> in the <i>Amazon Aurora User Guide</i>.
-    /// </para>
     ///  <note> 
     /// <para>
     /// By default, RDS returns events that were generated in the past hour.

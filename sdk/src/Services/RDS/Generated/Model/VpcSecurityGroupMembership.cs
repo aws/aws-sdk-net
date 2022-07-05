@@ -39,11 +39,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The membership status of the VPC security group.
-        /// </para>
-        ///  
-        /// <para>
-        /// Currently, the only valid status is <code>active</code>.
+        /// The status of the VPC security group.
         /// </para>
         /// </summary>
         public string Status

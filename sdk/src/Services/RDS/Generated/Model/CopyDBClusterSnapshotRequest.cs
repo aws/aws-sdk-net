@@ -41,7 +41,7 @@ namespace Amazon.RDS.Model
     /// <para>
     /// You can copy an encrypted DB cluster snapshot from another Amazon Web Services Region.
     /// In that case, the Amazon Web Services Region where you call the <code>CopyDBClusterSnapshot</code>
-    /// operation is the destination Amazon Web Services Region for the encrypted DB cluster
+    /// action is the destination Amazon Web Services Region for the encrypted DB cluster
     /// snapshot to be copied to. To copy an encrypted DB cluster snapshot from another Amazon
     /// Web Services Region, you must provide the following values:
     /// </para>
@@ -53,6 +53,56 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <code>PreSignedUrl</code> - A URL that contains a Signature Version 4 signed request
+    /// for the <code>CopyDBClusterSnapshot</code> action to be called in the source Amazon
+    /// Web Services Region where the DB cluster snapshot is copied from. The pre-signed URL
+    /// must be a valid request for the <code>CopyDBClusterSnapshot</code> API action that
+    /// can be executed in the source Amazon Web Services Region that contains the encrypted
+    /// DB cluster snapshot to be copied.
+    /// </para>
+    ///  
+    /// <para>
+    /// The pre-signed URL request must contain the following parameter values:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the KMS key
+    /// to use to encrypt the copy of the DB cluster snapshot in the destination Amazon Web
+    /// Services Region. This is the same identifier for both the <code>CopyDBClusterSnapshot</code>
+    /// action that is called in the destination Amazon Web Services Region, and the action
+    /// contained in the pre-signed URL.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>DestinationRegion</code> - The name of the Amazon Web Services Region that
+    /// the DB cluster snapshot is to be created in.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier
+    /// for the encrypted DB cluster snapshot to be copied. This identifier must be in the
+    /// Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example,
+    /// if you are copying an encrypted DB cluster snapshot from the us-west-2 Amazon Web
+    /// Services Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks like
+    /// the following example: <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// To learn how to generate a Signature Version 4 signed request, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
+    /// Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version
+    /// 4)</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
+    /// Signature Version 4 Signing Process</a>.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code>
+    /// (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code>
+    /// manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that
+    /// is a valid request for the operation that can be executed in the source Amazon Web
+    /// Services Region.
+    /// </para>
+    ///  </note> </li> <li> 
+    /// <para>
     ///  <code>TargetDBClusterSnapshotIdentifier</code> - The identifier for the new copy
     /// of the DB cluster snapshot in the destination Amazon Web Services Region.
     /// </para>
@@ -61,7 +111,7 @@ namespace Amazon.RDS.Model
     ///  <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier
     /// for the encrypted DB cluster snapshot to be copied. This identifier must be in the
     /// ARN format for the source Amazon Web Services Region and is the same value as the
-    /// <code>SourceDBClusterSnapshotIdentifier</code> in the presigned URL.
+    /// <code>SourceDBClusterSnapshotIdentifier</code> in the pre-signed URL.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -164,33 +214,27 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property PreSignedUrl. 
         /// <para>
-        /// When you are copying a DB cluster snapshot from one Amazon Web Services GovCloud (US)
-        /// Region to another, the URL that contains a Signature Version 4 signed request for
-        /// the <code>CopyDBClusterSnapshot</code> API operation in the Amazon Web Services Region
-        /// that contains the source DB cluster snapshot to copy. Use the <code>PreSignedUrl</code>
-        /// parameter when copying an encrypted DB cluster snapshot from another Amazon Web Services
-        /// Region. Don't specify <code>PreSignedUrl</code> when copying an encrypted DB cluster
-        /// snapshot in the same Amazon Web Services Region.
+        /// The URL that contains a Signature Version 4 signed request for the <code>CopyDBClusterSnapshot</code>
+        /// API action in the Amazon Web Services Region that contains the source DB cluster snapshot
+        /// to copy. The <code>PreSignedUrl</code> parameter must be used when copying an encrypted
+        /// DB cluster snapshot from another Amazon Web Services Region. Don't specify <code>PreSignedUrl</code>
+        /// when you are copying an encrypted DB cluster snapshot in the same Amazon Web Services
+        /// Region.
         /// </para>
         ///  
         /// <para>
-        /// This setting applies only to Amazon Web Services GovCloud (US) Regions. It's ignored
-        /// in other Amazon Web Services Regions.
-        /// </para>
-        ///  
-        /// <para>
-        /// The presigned URL must be a valid request for the <code>CopyDBClusterSnapshot</code>
-        /// API operation that can run in the source Amazon Web Services Region that contains
-        /// the encrypted DB cluster snapshot to copy. The presigned URL request must contain
+        /// The pre-signed URL must be a valid request for the <code>CopyDBClusterSnapshot</code>
+        /// API action that can be executed in the source Amazon Web Services Region that contains
+        /// the encrypted DB cluster snapshot to be copied. The pre-signed URL request must contain
         /// the following parameter values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>KmsKeyId</code> - The KMS key identifier for the KMS key to use to encrypt
-        /// the copy of the DB cluster snapshot in the destination Amazon Web Services Region.
-        /// This is the same identifier for both the <code>CopyDBClusterSnapshot</code> operation
-        /// that is called in the destination Amazon Web Services Region, and the operation contained
-        /// in the presigned URL.
+        ///  <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the KMS key
+        /// to use to encrypt the copy of the DB cluster snapshot in the destination Amazon Web
+        /// Services Region. This is the same identifier for both the <code>CopyDBClusterSnapshot</code>
+        /// action that is called in the destination Amazon Web Services Region, and the action
+        /// contained in the pre-signed URL.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -217,9 +261,9 @@ namespace Amazon.RDS.Model
         /// <para>
         /// If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code>
         /// (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code>
-        /// manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that
-        /// is a valid request for the operation that can run in the source Amazon Web Services
-        /// Region.
+        /// manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that
+        /// is a valid request for the operation that can be executed in the source Amazon Web
+        /// Services Region.
         /// </para>
         ///  </note>
         /// </summary>

@@ -43,7 +43,7 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// This action applies only to Aurora DB clusters.
+    /// This action only applies to Aurora DB clusters.
     /// </para>
     ///  </note>
     /// </summary>
@@ -60,7 +60,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DatabaseName. 
         /// <para>
-        /// The name for your database of up to 64 alphanumeric characters. If you do not provide
+        /// The name for your database of up to 64 alpha-numeric characters. If you do not provide
         /// a name, Amazon Aurora will not create a database in the global database cluster you
         /// are creating.
         /// </para>

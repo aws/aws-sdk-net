@@ -39,7 +39,7 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// This action applies only to Aurora MySQL DB clusters.
+    /// This action only applies to Aurora MySQL DB clusters.
     /// </para>
     ///  </note>
     /// </summary>

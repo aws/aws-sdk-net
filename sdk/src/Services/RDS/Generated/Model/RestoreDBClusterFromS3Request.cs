@@ -463,8 +463,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora) and <code>aurora-mysql</code>
-        /// (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)
+        /// Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora), <code>aurora-mysql</code>
+        /// (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora), and <code>aurora-postgresql</code>
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -507,12 +508,30 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
+        /// To list all of the available engine versions for <code>aurora-postgresql</code>, use
+        /// the following command:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>Aurora MySQL</b> 
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.mysql_aurora.2.07.1</code>,
-        /// <code>8.0.mysql_aurora.3.02.0</code> 
+        /// Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
+        /// <code>5.7.mysql_aurora.2.04.5</code>, <code>8.0.mysql_aurora.3.01.0</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Aurora PostgreSQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>9.6.3</code>, <code>10.7</code> 
         /// </para>
         /// </summary>
         public string EngineVersion

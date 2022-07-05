@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the results of a successful invocation of the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeEventCategories.html">DescribeEventCategories</a>
+    /// Contains the results of a successful invocation of the <code>DescribeEventCategories</code>
     /// operation.
     /// </summary>
     public partial class EventCategoriesMap

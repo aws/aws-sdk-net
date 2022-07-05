@@ -1299,42 +1299,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property PerformanceInsightsRetentionPeriod. 
         /// <para>
-        /// The number of days to retain Performance Insights data. The default is 7 days. The
-        /// following values are valid:
+        /// The amount of time, in days, to retain Performance Insights data. Valid values are
+        /// 7 or 731 (2 years).
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// 7
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// 731
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For example, the following values are valid:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// 93 (3 months * 31)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// 341 (11 months * 31)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// 589 (19 months * 31)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// 731
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public int PerformanceInsightsRetentionPeriod
         {
