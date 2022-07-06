@@ -42,9 +42,62 @@ namespace Amazon.CloudFormation.Model
     /// </summary>
     public partial class DeploymentTargets
     {
+        private AccountFilterType _accountFilterType;
         private List<string> _accounts = new List<string>();
         private string _accountsUrl;
         private List<string> _organizationalUnitIds = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property AccountFilterType. 
+        /// <para>
+        /// Limit deployment targets to individual accounts or include additional accounts with
+        /// provided OUs.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is a list of possible values for the <code>AccountFilterType</code>
+        /// operation.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>INTERSECTION</code>: StackSets deploys to the accounts specified in <code>Accounts</code>
+        /// parameter. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DIFFERENCE</code>: StackSets excludes the accounts specified in <code>Accounts</code>
+        /// parameter. This enables user to avoid certain accounts within an OU such as suspended
+        /// accounts.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UNION</code>: (default value) StackSets includes additional accounts deployment
+        /// targets. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This is the default value if <code>AccountFilterType</code> is not provided. This
+        /// enables user to update an entire OU and individual accounts from a different OU in
+        /// one request, which used to be two separate requests.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NONE</code>: Deploys to all the accounts in specified organizational units
+        /// (OU).
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public AccountFilterType AccountFilterType
+        {
+            get { return this._accountFilterType; }
+            set { this._accountFilterType = value; }
+        }
+
+        // Check to see if AccountFilterType property is set
+        internal bool IsSetAccountFilterType()
+        {
+            return this._accountFilterType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Accounts. 
