@@ -30,8 +30,8 @@ namespace Amazon.Synthetics.Model
 {
     /// <summary>
     /// An object that specifies what screenshots to use as a baseline for visual monitoring
-    /// by this canary, and optionally the parts of the screenshots to ignore during the visual
-    /// monitoring comparison.
+    /// by this canary. It can optionally also specify parts of the screenshots to ignore
+    /// during the visual monitoring comparison.
     /// 
     ///  
     /// <para>

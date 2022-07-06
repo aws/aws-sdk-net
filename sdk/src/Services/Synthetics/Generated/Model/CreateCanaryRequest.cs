@@ -43,7 +43,7 @@ namespace Amazon.Synthetics.Model
     ///  
     /// <para>
     /// To create canaries, you must have the <code>CloudWatchSyntheticsFullAccess</code>
-    /// policy. If you are creating a new IAM role for the canary, you also need the the <code>iam:CreateRole</code>,
+    /// policy. If you are creating a new IAM role for the canary, you also need the <code>iam:CreateRole</code>,
     /// <code>iam:CreatePolicy</code> and <code>iam:AttachRolePolicy</code> permissions. For
     /// more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Roles">Necessary
     /// Roles and Permissions</a>.
@@ -233,8 +233,14 @@ namespace Amazon.Synthetics.Model
         /// Gets and sets the property RunConfig. 
         /// <para>
         /// A structure that contains the configuration for individual canary runs, such as timeout
-        /// value.
+        /// value and environment variables.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// The environment variables keys and values are not encrypted. Do not store sensitive
+        /// information in this field.
+        /// </para>
+        ///  </important>
         /// </summary>
         public CanaryRunConfigInput RunConfig
         {

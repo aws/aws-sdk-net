@@ -38,7 +38,7 @@ namespace Amazon.Synthetics.Model
         /// <summary>
         /// Gets and sets the property Canary. 
         /// <para>
-        /// A strucure that contains the full information about the canary.
+        /// A structure that contains the full information about the canary.
         /// </para>
         /// </summary>
         public Canary Canary

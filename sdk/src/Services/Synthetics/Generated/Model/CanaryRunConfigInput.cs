@@ -83,6 +83,12 @@ namespace Amazon.Synthetics.Model
         /// keys, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime">
         /// Runtime environment variables</a>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// The environment variables keys and values are not encrypted. Do not store sensitive
+        /// information in this field.
+        /// </para>
+        ///  </important>
         /// </summary>
         public Dictionary<string, string> EnvironmentVariables
         {

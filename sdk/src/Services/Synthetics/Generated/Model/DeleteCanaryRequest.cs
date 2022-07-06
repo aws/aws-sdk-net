@@ -39,7 +39,7 @@ namespace Amazon.Synthetics.Model
     /// </para>
     ///  
     /// <para>
-    /// Other esources used and created by the canary are not automatically deleted. After
+    /// Other resources used and created by the canary are not automatically deleted. After
     /// you delete a canary that you do not intend to use again, you should also delete the
     /// following:
     /// </para>

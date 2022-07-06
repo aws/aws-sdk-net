@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.Synthetics.Model.AssociateResourceRequest.GroupIdentifier</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.AssociateResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:synthetics:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:canary:[0-9a-z_\-]{1,21}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Synthetics.Model.CreateCanaryRequest.ArtifactS3Location</property>
     <min>1</min>
     <max>1024</max>
@@ -33,10 +44,20 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Synthetics.Model.CreateGroupRequest.Name</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Synthetics.Model.DeleteCanaryRequest.Name</property>
     <min>1</min>
     <max>21</max>
     <pattern>^[0-9a-z_\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.DeleteGroupRequest.GroupIdentifier</property>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.DescribeCanariesRequest.MaxResults</property>
@@ -84,6 +105,17 @@
     <max>252</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Synthetics.Model.DisassociateResourceRequest.GroupIdentifier</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.DisassociateResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:synthetics:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:canary:[0-9a-z_\-]{1,21}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Synthetics.Model.GetCanaryRequest.Name</property>
     <min>1</min>
     <max>21</max>
@@ -111,10 +143,76 @@
     <max>252</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Synthetics.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <property>Amazon.Synthetics.Model.GetGroupRequest.GroupIdentifier</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.ListAssociatedGroupsRequest.MaxResults</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.ListAssociatedGroupsRequest.NextToken</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.ListAssociatedGroupsRequest.ResourceArn</property>
     <min>1</min>
     <max>2048</max>
     <pattern>arn:(aws[a-zA-Z-]*)?:synthetics:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:canary:[0-9a-z_\-]{1,21}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.ListAssociatedGroupsResponse.NextToken</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.ListGroupResourcesRequest.GroupIdentifier</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.ListGroupResourcesRequest.MaxResults</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.ListGroupResourcesRequest.NextToken</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.ListGroupResourcesResponse.NextToken</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.ListGroupsRequest.MaxResults</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.ListGroupsRequest.NextToken</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.ListGroupsResponse.NextToken</property>
+    <min>4</min>
+    <max>252</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:synthetics:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:(canary|group):[0-9a-z_\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.StartCanaryRequest.Name</property>
@@ -132,13 +230,13 @@
     <property>Amazon.Synthetics.Model.TagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:synthetics:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:canary:[0-9a-z_\-]{1,21}</pattern>
+    <pattern>arn:(aws[a-zA-Z-]*)?:synthetics:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:(canary|group):[0-9a-z_\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.UntagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:synthetics:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:canary:[0-9a-z_\-]{1,21}</pattern>
+    <pattern>arn:(aws[a-zA-Z-]*)?:synthetics:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:(canary|group):[0-9a-z_\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.UpdateCanaryRequest.ArtifactS3Location</property>
@@ -325,6 +423,38 @@
     <property>Amazon.Synthetics.Model.CanaryStatus.StateReason</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.Group.Arn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:synthetics:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:group:[0-9a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.Group.Id</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.Group.Name</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.GroupSummary.Arn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:synthetics:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:group:[0-9a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.GroupSummary.Id</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Synthetics.Model.GroupSummary.Name</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.RuntimeVersion.Description</property>

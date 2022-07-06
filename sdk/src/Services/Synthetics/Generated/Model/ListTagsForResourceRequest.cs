@@ -30,7 +30,7 @@ namespace Amazon.Synthetics.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Displays the tags associated with a canary.
+    /// Displays the tags associated with a canary or group.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonSyntheticsRequest
     {
@@ -39,12 +39,17 @@ namespace Amazon.Synthetics.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN of the canary that you want to view tags for.
+        /// The ARN of the canary or group that you want to view tags for.
         /// </para>
         ///  
         /// <para>
         /// The ARN format of a canary is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i>
         /// </code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The ARN format of a group is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i>
+        /// </code> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

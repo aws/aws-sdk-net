@@ -30,10 +30,9 @@ namespace Amazon.Synthetics.Model
 {
     /// <summary>
     /// Container for the parameters to the StopCanary operation.
-    /// Stops the canary to prevent all future runs. If the canary is currently running, Synthetics
-    /// stops waiting for the current run of the specified canary to complete. The run that
-    /// is in progress completes on its own, publishes metrics, and uploads artifacts, but
-    /// it is not recorded in Synthetics as a completed run.
+    /// Stops the canary to prevent all future runs. If the canary is currently running,the
+    /// run that is in progress completes on its own, publishes metrics, and uploads artifacts,
+    /// but it is not recorded in Synthetics as a completed run.
     /// 
     ///  
     /// <para>
@@ -49,7 +48,7 @@ namespace Amazon.Synthetics.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the canary that you want to stop. To find the names of your canaries,
-        /// use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.
+        /// use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">ListCanaries</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=21)]

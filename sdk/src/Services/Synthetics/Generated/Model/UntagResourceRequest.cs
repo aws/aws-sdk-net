@@ -30,7 +30,7 @@ namespace Amazon.Synthetics.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes one or more tags from the specified canary.
+    /// Removes one or more tags from the specified resource.
     /// </summary>
     public partial class UntagResourceRequest : AmazonSyntheticsRequest
     {
@@ -40,12 +40,17 @@ namespace Amazon.Synthetics.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN of the canary that you're removing tags from.
+        /// The ARN of the canary or group that you're removing tags from.
         /// </para>
         ///  
         /// <para>
         /// The ARN format of a canary is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i>
         /// </code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The ARN format of a group is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i>
+        /// </code> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

@@ -41,8 +41,9 @@ namespace Amazon.Synthetics.Model
         /// Gets and sets the property IgnoreCoordinates. 
         /// <para>
         /// Coordinates that define the part of a screen to ignore during screenshot comparisons.
-        /// To obtain the coordinates to use here, use the CloudWatch Logs console to draw the
-        /// boundaries on the screen. For more information, see {LINK}
+        /// To obtain the coordinates to use here, use the CloudWatch console to draw the boundaries
+        /// on the screen. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/synthetics_canaries_deletion.html">
+        /// Editing or deleting a canary</a> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=20)]
