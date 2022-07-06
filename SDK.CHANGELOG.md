@@ -1,3 +1,9 @@
+### 3.7.309.0 (2022-07-06 18:11 UTC)
+* CloudFormation (3.7.11.0)
+	* My AWS Service (placeholder) - Add a new feature Account-level Targeting for StackSet operation
+* Synthetics (3.7.6.0)
+	* This release introduces Group feature, which enables users to group cross-region canaries.
+
 ### 3.7.308.0 (2022-07-05 18:21 UTC)
 * ConfigService (3.7.9.33)
 	* Updating documentation service limits
