@@ -82,6 +82,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                     unmarshalledObject.Multicast = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Positioning", targetDepth))
+                {
+                    var unmarshaller = PositioningUnmarshaller.Instance;
+                    unmarshalledObject.Positioning = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

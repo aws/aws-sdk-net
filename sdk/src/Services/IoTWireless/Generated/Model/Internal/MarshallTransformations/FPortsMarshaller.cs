@@ -63,6 +63,17 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Multicast);
             }
 
+            if(requestObject.IsSetPositioning())
+            {
+                context.Writer.WritePropertyName("Positioning");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = PositioningMarshaller.Instance;
+                marshaller.Marshall(requestObject.Positioning, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

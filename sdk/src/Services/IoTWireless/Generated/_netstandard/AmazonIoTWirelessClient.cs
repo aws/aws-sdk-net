@@ -2221,7 +2221,7 @@ namespace Amazon.IoTWireless
 
 
         /// <summary>
-        /// Get the event configuration by resource types.
+        /// Get the event configuration based on resource types.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEventConfigurationByResourceTypes service method.</param>
         /// <param name="cancellationToken">
@@ -2539,6 +2539,104 @@ namespace Amazon.IoTWireless
             options.ResponseUnmarshaller = GetPartnerAccountResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetPartnerAccountResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetPosition
+
+        internal virtual GetPositionResponse GetPosition(GetPositionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPositionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPositionResponseUnmarshaller.Instance;
+
+            return Invoke<GetPositionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Get the position information for a given resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPosition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPosition service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetPosition">REST API Reference for GetPosition Operation</seealso>
+        public virtual Task<GetPositionResponse> GetPositionAsync(GetPositionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPositionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPositionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetPositionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetPositionConfiguration
+
+        internal virtual GetPositionConfigurationResponse GetPositionConfiguration(GetPositionConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPositionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPositionConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetPositionConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Get position configuration for a given resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPositionConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPositionConfiguration service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetPositionConfiguration">REST API Reference for GetPositionConfiguration Operation</seealso>
+        public virtual Task<GetPositionConfigurationResponse> GetPositionConfigurationAsync(GetPositionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPositionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPositionConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetPositionConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3501,6 +3599,52 @@ namespace Amazon.IoTWireless
 
         #endregion
         
+        #region  ListPositionConfigurations
+
+        internal virtual ListPositionConfigurationsResponse ListPositionConfigurations(ListPositionConfigurationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPositionConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPositionConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPositionConfigurationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// List position configurations for a given resource, such as positioning solvers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPositionConfigurations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPositionConfigurations service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListPositionConfigurations">REST API Reference for ListPositionConfigurations Operation</seealso>
+        public virtual Task<ListPositionConfigurationsResponse> ListPositionConfigurationsAsync(ListPositionConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPositionConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPositionConfigurationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListPositionConfigurationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListQueuedMessages
 
         internal virtual ListQueuedMessagesResponse ListQueuedMessages(ListQueuedMessagesRequest request)
@@ -3779,6 +3923,55 @@ namespace Amazon.IoTWireless
             options.ResponseUnmarshaller = ListWirelessGatewayTaskDefinitionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListWirelessGatewayTaskDefinitionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutPositionConfiguration
+
+        internal virtual PutPositionConfigurationResponse PutPositionConfiguration(PutPositionConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutPositionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutPositionConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutPositionConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Put position configuration for a given resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutPositionConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutPositionConfiguration service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/PutPositionConfiguration">REST API Reference for PutPositionConfiguration Operation</seealso>
+        public virtual Task<PutPositionConfigurationResponse> PutPositionConfigurationAsync(PutPositionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutPositionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutPositionConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutPositionConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4444,7 +4637,7 @@ namespace Amazon.IoTWireless
 
 
         /// <summary>
-        /// Update the event configuration by resource types.
+        /// Update the event configuration based on resource types.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEventConfigurationByResourceTypes service method.</param>
         /// <param name="cancellationToken">
@@ -4725,6 +4918,55 @@ namespace Amazon.IoTWireless
             options.ResponseUnmarshaller = UpdatePartnerAccountResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdatePartnerAccountResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdatePosition
+
+        internal virtual UpdatePositionResponse UpdatePosition(UpdatePositionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePositionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePositionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePositionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Update the position information of a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePosition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdatePosition service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdatePosition">REST API Reference for UpdatePosition Operation</seealso>
+        public virtual Task<UpdatePositionResponse> UpdatePositionAsync(UpdatePositionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePositionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePositionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdatePositionResponse>(request, options, cancellationToken);
         }
 
         #endregion

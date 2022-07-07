@@ -30,7 +30,7 @@ namespace Amazon.IoTWireless.Model
 {
     /// <summary>
     /// Container for the parameters to the GetEventConfigurationByResourceTypes operation.
-    /// Get the event configuration by resource types.
+    /// Get the event configuration based on resource types.
     /// </summary>
     public partial class GetEventConfigurationByResourceTypesRequest : AmazonIoTWirelessRequest
     {

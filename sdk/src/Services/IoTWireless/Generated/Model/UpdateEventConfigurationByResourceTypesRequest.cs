@@ -30,7 +30,7 @@ namespace Amazon.IoTWireless.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateEventConfigurationByResourceTypes operation.
-    /// Update the event configuration by resource types.
+    /// Update the event configuration based on resource types.
     /// </summary>
     public partial class UpdateEventConfigurationByResourceTypesRequest : AmazonIoTWirelessRequest
     {

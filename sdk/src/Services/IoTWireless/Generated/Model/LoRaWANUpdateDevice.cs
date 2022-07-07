@@ -36,6 +36,7 @@ namespace Amazon.IoTWireless.Model
         private UpdateAbpV1_0_x _abpV1_0_x;
         private UpdateAbpV1_1 _abpV1_1;
         private string _deviceProfileId;
+        private UpdateFPorts _fPorts;
         private string _serviceProfileId;
 
         /// <summary>
@@ -91,6 +92,24 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetDeviceProfileId()
         {
             return this._deviceProfileId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FPorts. 
+        /// <para>
+        /// FPorts object for the positioning information of the device.
+        /// </para>
+        /// </summary>
+        public UpdateFPorts FPorts
+        {
+            get { return this._fPorts; }
+            set { this._fPorts = value; }
+        }
+
+        // Check to see if FPorts property is set
+        internal bool IsSetFPorts()
+        {
+            return this._fPorts != null;
         }
 
         /// <summary>

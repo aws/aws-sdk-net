@@ -36,6 +36,7 @@ namespace Amazon.IoTWireless.Model
         private int? _clockSync;
         private int? _fuota;
         private int? _multicast;
+        private Positioning _positioning;
 
         /// <summary>
         /// Gets and sets the property ClockSync.
@@ -83,6 +84,24 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetMulticast()
         {
             return this._multicast.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Positioning. 
+        /// <para>
+        /// FPort values for the GNSS, stream, and ClockSync functions of the positioning information.
+        /// </para>
+        /// </summary>
+        public Positioning Positioning
+        {
+            get { return this._positioning; }
+            set { this._positioning = value; }
+        }
+
+        // Check to see if Positioning property is set
+        internal bool IsSetPositioning()
+        {
+            return this._positioning != null;
         }
 
     }

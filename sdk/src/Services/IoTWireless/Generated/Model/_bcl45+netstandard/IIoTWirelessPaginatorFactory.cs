@@ -56,6 +56,11 @@ namespace Amazon.IoTWireless.Model
         IListNetworkAnalyzerConfigurationsPaginator ListNetworkAnalyzerConfigurations(ListNetworkAnalyzerConfigurationsRequest request);
 
         /// <summary>
+        /// Paginator for ListPositionConfigurations operation
+        ///</summary>
+        IListPositionConfigurationsPaginator ListPositionConfigurations(ListPositionConfigurationsRequest request);
+
+        /// <summary>
         /// Paginator for ListQueuedMessages operation
         ///</summary>
         IListQueuedMessagesPaginator ListQueuedMessages(ListQueuedMessagesRequest request);

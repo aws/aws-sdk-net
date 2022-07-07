@@ -59,7 +59,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property DeviceRegistrationState. 
         /// <para>
-        /// Event configuration for the device registration state event
+        /// Event configuration for the device registration state event.
         /// </para>
         /// </summary>
         public DeviceRegistrationStateEventConfiguration DeviceRegistrationState
@@ -95,7 +95,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property Proximity. 
         /// <para>
-        /// Event configuration for the Proximity event
+        /// Event configuration for the proximity event.
         /// </para>
         /// </summary>
         public ProximityEventConfiguration Proximity

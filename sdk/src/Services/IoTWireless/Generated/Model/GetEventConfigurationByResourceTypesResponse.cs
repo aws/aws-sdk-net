@@ -41,7 +41,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property ConnectionStatus. 
         /// <para>
-        /// Resource type event configuration for the connection status event
+        /// Resource type event configuration for the connection status event.
         /// </para>
         /// </summary>
         public ConnectionStatusResourceTypeEventConfiguration ConnectionStatus
@@ -59,7 +59,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property DeviceRegistrationState. 
         /// <para>
-        /// Resource type event configuration for the device registration state event
+        /// Resource type event configuration for the device registration state event.
         /// </para>
         /// </summary>
         public DeviceRegistrationStateResourceTypeEventConfiguration DeviceRegistrationState
@@ -77,7 +77,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property Join. 
         /// <para>
-        /// Resource type event configuration for the join event
+        /// Resource type event configuration for the join event.
         /// </para>
         /// </summary>
         public JoinResourceTypeEventConfiguration Join
@@ -95,7 +95,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property Proximity. 
         /// <para>
-        /// Resource type event configuration for the proximity event
+        /// Resource type event configuration for the proximity event.
         /// </para>
         /// </summary>
         public ProximityResourceTypeEventConfiguration Proximity

@@ -84,6 +84,14 @@ namespace Amazon.IoTWireless.Model
         }
 
         /// <summary>
+        /// Paginator for ListPositionConfigurations operation
+        ///</summary>
+        public IListPositionConfigurationsPaginator ListPositionConfigurations(ListPositionConfigurationsRequest request) 
+        {
+            return new ListPositionConfigurationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListQueuedMessages operation
         ///</summary>
         public IListQueuedMessagesPaginator ListQueuedMessages(ListQueuedMessagesRequest request) 

@@ -867,6 +867,248 @@ namespace Amazon.IoTWireless
 
 
     /// <summary>
+    /// Constants used for properties of type PositionConfigurationFec.
+    /// </summary>
+    public class PositionConfigurationFec : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for PositionConfigurationFec
+        /// </summary>
+        public static readonly PositionConfigurationFec NONE = new PositionConfigurationFec("NONE");
+        /// <summary>
+        /// Constant ROSE for PositionConfigurationFec
+        /// </summary>
+        public static readonly PositionConfigurationFec ROSE = new PositionConfigurationFec("ROSE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PositionConfigurationFec(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PositionConfigurationFec FindValue(string value)
+        {
+            return FindValue<PositionConfigurationFec>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PositionConfigurationFec(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PositionConfigurationStatus.
+    /// </summary>
+    public class PositionConfigurationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for PositionConfigurationStatus
+        /// </summary>
+        public static readonly PositionConfigurationStatus Disabled = new PositionConfigurationStatus("Disabled");
+        /// <summary>
+        /// Constant Enabled for PositionConfigurationStatus
+        /// </summary>
+        public static readonly PositionConfigurationStatus Enabled = new PositionConfigurationStatus("Enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PositionConfigurationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PositionConfigurationStatus FindValue(string value)
+        {
+            return FindValue<PositionConfigurationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PositionConfigurationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PositionResourceType.
+    /// </summary>
+    public class PositionResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant WirelessDevice for PositionResourceType
+        /// </summary>
+        public static readonly PositionResourceType WirelessDevice = new PositionResourceType("WirelessDevice");
+        /// <summary>
+        /// Constant WirelessGateway for PositionResourceType
+        /// </summary>
+        public static readonly PositionResourceType WirelessGateway = new PositionResourceType("WirelessGateway");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PositionResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PositionResourceType FindValue(string value)
+        {
+            return FindValue<PositionResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PositionResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PositionSolverProvider.
+    /// </summary>
+    public class PositionSolverProvider : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Semtech for PositionSolverProvider
+        /// </summary>
+        public static readonly PositionSolverProvider Semtech = new PositionSolverProvider("Semtech");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PositionSolverProvider(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PositionSolverProvider FindValue(string value)
+        {
+            return FindValue<PositionSolverProvider>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PositionSolverProvider(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PositionSolverType.
+    /// </summary>
+    public class PositionSolverType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GNSS for PositionSolverType
+        /// </summary>
+        public static readonly PositionSolverType GNSS = new PositionSolverType("GNSS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PositionSolverType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PositionSolverType FindValue(string value)
+        {
+            return FindValue<PositionSolverType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PositionSolverType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SigningAlg.
     /// </summary>
     public class SigningAlg : ConstantClass

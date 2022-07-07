@@ -73,6 +73,17 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DeviceProfileId);
             }
 
+            if(requestObject.IsSetFPorts())
+            {
+                context.Writer.WritePropertyName("FPorts");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = UpdateFPortsMarshaller.Instance;
+                marshaller.Marshall(requestObject.FPorts, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetServiceProfileId())
             {
                 context.Writer.WritePropertyName("ServiceProfileId");

@@ -470,6 +470,28 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTWireless.Model.GetPositionRequest.ResourceIdentifier</property>
+    <pattern>[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.GetPositionResponse.SolverVersion</property>
+    <min>0</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.GetPositionResponse.Timestamp</property>
+    <pattern>^([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.GetPositionConfigurationRequest.ResourceIdentifier</property>
+    <pattern>[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.GetPositionConfigurationResponse.Destination</property>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTWireless.Model.GetResourceEventConfigurationRequest.Identifier</property>
     <max>256</max>
   </property-value-rule>
@@ -719,6 +741,19 @@
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTWireless.Model.ListPositionConfigurationsRequest.MaxResults</property>
+    <min>0</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.ListPositionConfigurationsRequest.NextToken</property>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.ListPositionConfigurationsResponse.NextToken</property>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTWireless.Model.ListQueuedMessagesRequest.Id</property>
     <max>256</max>
   </property-value-rule>
@@ -812,6 +847,15 @@
   <property-value-rule>
     <property>Amazon.IoTWireless.Model.ListWirelessGatewayTaskDefinitionsResponse.NextToken</property>
     <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.PutPositionConfigurationRequest.Destination</property>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.PutPositionConfigurationRequest.ResourceIdentifier</property>
+    <pattern>[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTWireless.Model.PutResourceLogLevelRequest.ResourceIdentifier</property>
@@ -957,6 +1001,10 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTWireless.Model.UpdatePositionRequest.ResourceIdentifier</property>
+    <pattern>[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTWireless.Model.UpdateResourceEventConfigurationRequest.Identifier</property>
     <max>256</max>
   </property-value-rule>
@@ -1006,6 +1054,14 @@
     <property>Amazon.IoTWireless.Model.AbpV1_1.FCntStart</property>
     <min>0</min>
     <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.Accuracy.HorizontalAccuracy</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.Accuracy.VerticalAccuracy</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTWireless.Model.CertificateList.Value</property>
@@ -1357,6 +1413,30 @@
   <property-value-rule>
     <property>Amazon.IoTWireless.Model.OtaaV1_1.NwkKey</property>
     <pattern>[a-fA-F0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.PositionConfigurationItem.Destination</property>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.PositionConfigurationItem.ResourceIdentifier</property>
+    <pattern>[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.Positioning.ClockSync</property>
+    <min>1</min>
+    <max>223</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.Positioning.Gnss</property>
+    <min>1</min>
+    <max>223</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.Positioning.Stream</property>
+    <min>1</min>
+    <max>223</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTWireless.Model.ServiceProfile.Id</property>

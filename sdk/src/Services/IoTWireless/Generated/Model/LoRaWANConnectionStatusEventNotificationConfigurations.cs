@@ -38,7 +38,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property GatewayEuiEventTopic. 
         /// <para>
-        /// Enum to denote whether the gateway eui connection status event topic is enabled or
+        /// Enum to denote whether the gateway EUI connection status event topic is enabled or
         /// disabled.
         /// </para>
         /// </summary>
