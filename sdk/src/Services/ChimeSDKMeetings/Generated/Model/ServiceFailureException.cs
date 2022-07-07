@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKMeetings.Model
 {
     /// <summary>
-    /// The service is currently unavailable.
+    /// The service encountered an unexpected error.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

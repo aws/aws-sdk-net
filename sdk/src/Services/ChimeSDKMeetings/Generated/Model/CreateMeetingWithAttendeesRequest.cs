@@ -46,6 +46,7 @@ namespace Amazon.ChimeSDKMeetings.Model
         private string _meetingHostId;
         private NotificationsConfiguration _notificationsConfiguration;
         private string _primaryMeetingId;
+        private List<string> _tenantIds = new List<string>();
 
         /// <summary>
         /// Gets and sets the property Attendees. 
@@ -210,6 +211,26 @@ namespace Amazon.ChimeSDKMeetings.Model
         internal bool IsSetPrimaryMeetingId()
         {
             return this._primaryMeetingId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TenantIds. 
+        /// <para>
+        /// A consistent and opaque identifier, created and maintained by the builder to represent
+        /// a segment of their users.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public List<string> TenantIds
+        {
+            get { return this._tenantIds; }
+            set { this._tenantIds = value; }
+        }
+
+        // Check to see if TenantIds property is set
+        internal bool IsSetTenantIds()
+        {
+            return this._tenantIds != null && this._tenantIds.Count > 0; 
         }
 
     }

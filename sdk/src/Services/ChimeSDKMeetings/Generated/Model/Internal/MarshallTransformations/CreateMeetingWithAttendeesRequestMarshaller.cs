@@ -139,6 +139,17 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PrimaryMeetingId);
                 }
 
+                if(publicRequest.IsSetTenantIds())
+                {
+                    context.Writer.WritePropertyName("TenantIds");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTenantIdsListValue in publicRequest.TenantIds)
+                    {
+                            context.Writer.Write(publicRequestTenantIdsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

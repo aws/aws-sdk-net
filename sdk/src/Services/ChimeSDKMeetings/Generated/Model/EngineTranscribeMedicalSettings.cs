@@ -82,7 +82,7 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// Gets and sets the property Region. 
         /// <para>
         /// The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region,
-        /// Amazon Chime uses the meeting's Region.
+        /// Amazon Chime uses the meeting's Region. 
         /// </para>
         /// </summary>
         public TranscribeMedicalRegion Region

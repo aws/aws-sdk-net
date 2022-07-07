@@ -36,7 +36,10 @@ namespace Amazon.ChimeSDKMeetings.Model
         private Attendee _attendee;
 
         /// <summary>
-        /// Gets and sets the property Attendee.
+        /// Gets and sets the property Attendee. 
+        /// <para>
+        /// The updated attendee data.
+        /// </para>
         /// </summary>
         public Attendee Attendee
         {

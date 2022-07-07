@@ -70,13 +70,13 @@ namespace Amazon.ChimeSDKMeetings
         /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
-        /// The service is currently unavailable.
+        /// The service encountered an unexpected error.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
-        /// The number of requests exceeds the limit.
+        /// The number of customer requests exceeds the request rate limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
         /// The user isn't authorized to request a resource.
@@ -113,13 +113,13 @@ namespace Amazon.ChimeSDKMeetings
         /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
-        /// The service is currently unavailable.
+        /// The service encountered an unexpected error.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
-        /// The number of requests exceeds the limit.
+        /// The number of customer requests exceeds the request rate limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
         /// The user isn't authorized to request a resource.
@@ -138,6 +138,41 @@ namespace Amazon.ChimeSDKMeetings
         /// <summary>
         /// Updates <code>AttendeeCapabilities</code> except the capabilities listed in an <code>ExcludedAttendeeIds</code>
         /// table.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You use the capabilities with a set of values that control what the capabilities can
+        /// do, such as <code>SendReceive</code> data. For more information about those values,
+        /// see .
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// When using capabilities, be aware of these corner cases:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code>
+        /// unless you also set <code>video</code> capabilities to <code>SendReceive</code> or
+        /// <code>Receive</code>. If you don't set the <code>video</code> capability to receive,
+        /// the response will contain an HTTP 400 Bad Request status code. However, you can set
+        /// your <code>video</code> capability to receive and you set your <code>content</code>
+        /// capability to not receive.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code>
+        /// to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their
+        /// microphone unmuted, audio will flow from the attendee to the other meeting participants.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When you change a <code>video</code> or <code>content</code> capability from <code>None</code>
+        /// or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if
+        /// the attendee turned on their video or content streams, remote attendess can receive
+        /// those streams, but only after media renegotiation between the client and the Amazon
+        /// Chime back-end server.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdateAttendeeCapabilitiesExcept service method.</param>
         /// 
@@ -168,6 +203,41 @@ namespace Amazon.ChimeSDKMeetings
         /// <summary>
         /// Updates <code>AttendeeCapabilities</code> except the capabilities listed in an <code>ExcludedAttendeeIds</code>
         /// table.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You use the capabilities with a set of values that control what the capabilities can
+        /// do, such as <code>SendReceive</code> data. For more information about those values,
+        /// see .
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// When using capabilities, be aware of these corner cases:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code>
+        /// unless you also set <code>video</code> capabilities to <code>SendReceive</code> or
+        /// <code>Receive</code>. If you don't set the <code>video</code> capability to receive,
+        /// the response will contain an HTTP 400 Bad Request status code. However, you can set
+        /// your <code>video</code> capability to receive and you set your <code>content</code>
+        /// capability to not receive.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code>
+        /// to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their
+        /// microphone unmuted, audio will flow from the attendee to the other meeting participants.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When you change a <code>video</code> or <code>content</code> capability from <code>None</code>
+        /// or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if
+        /// the attendee turned on their video or content streams, remote attendess can receive
+        /// those streams, but only after media renegotiation between the client and the Amazon
+        /// Chime back-end server.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdateAttendeeCapabilitiesExcept service method.</param>
         /// <param name="cancellationToken">
@@ -222,13 +292,13 @@ namespace Amazon.ChimeSDKMeetings
         /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
-        /// The service is currently unavailable.
+        /// The service encountered an unexpected error.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
-        /// The number of requests exceeds the limit.
+        /// The number of customer requests exceeds the request rate limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
         /// The user isn't authorized to request a resource.
@@ -265,13 +335,13 @@ namespace Amazon.ChimeSDKMeetings
         /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
-        /// The service is currently unavailable.
+        /// The service encountered an unexpected error.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
-        /// The number of requests exceeds the limit.
+        /// The number of customer requests exceeds the request rate limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
         /// The user isn't authorized to request a resource.
@@ -307,13 +377,13 @@ namespace Amazon.ChimeSDKMeetings
         /// The request exceeds the resource limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
-        /// The service is currently unavailable.
+        /// The service encountered an unexpected error.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
-        /// The number of requests exceeds the limit.
+        /// The number of customer requests exceeds the request rate limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
         /// The user isn't authorized to request a resource.
@@ -346,13 +416,13 @@ namespace Amazon.ChimeSDKMeetings
         /// The request exceeds the resource limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
-        /// The service is currently unavailable.
+        /// The service encountered an unexpected error.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
-        /// The number of requests exceeds the limit.
+        /// The number of customer requests exceeds the request rate limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
         /// The user isn't authorized to request a resource.
@@ -385,13 +455,13 @@ namespace Amazon.ChimeSDKMeetings
         /// The request exceeds the resource limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
-        /// The service is currently unavailable.
+        /// The service encountered an unexpected error.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
-        /// The number of requests exceeds the limit.
+        /// The number of customer requests exceeds the request rate limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
         /// The user isn't authorized to request a resource.
@@ -424,13 +494,13 @@ namespace Amazon.ChimeSDKMeetings
         /// The request exceeds the resource limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
-        /// The service is currently unavailable.
+        /// The service encountered an unexpected error.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
-        /// The number of requests exceeds the limit.
+        /// The number of customer requests exceeds the request rate limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
         /// The user isn't authorized to request a resource.
@@ -462,13 +532,13 @@ namespace Amazon.ChimeSDKMeetings
         /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
-        /// The service is currently unavailable.
+        /// The service encountered an unexpected error.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
-        /// The number of requests exceeds the limit.
+        /// The number of customer requests exceeds the request rate limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
         /// The user isn't authorized to request a resource.
@@ -500,13 +570,13 @@ namespace Amazon.ChimeSDKMeetings
         /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
-        /// The service is currently unavailable.
+        /// The service encountered an unexpected error.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
-        /// The number of requests exceeds the limit.
+        /// The number of customer requests exceeds the request rate limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
         /// The user isn't authorized to request a resource.
@@ -538,13 +608,13 @@ namespace Amazon.ChimeSDKMeetings
         /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
-        /// The service is currently unavailable.
+        /// The service encountered an unexpected error.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
-        /// The number of requests exceeds the limit.
+        /// The number of customer requests exceeds the request rate limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
         /// The user isn't authorized to request a resource.
@@ -576,13 +646,13 @@ namespace Amazon.ChimeSDKMeetings
         /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
-        /// The service is currently unavailable.
+        /// The service encountered an unexpected error.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
-        /// The number of requests exceeds the limit.
+        /// The number of customer requests exceeds the request rate limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
         /// The user isn't authorized to request a resource.
@@ -613,13 +683,13 @@ namespace Amazon.ChimeSDKMeetings
         /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
-        /// The service is currently unavailable.
+        /// The service encountered an unexpected error.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
-        /// The number of requests exceeds the limit.
+        /// The number of customer requests exceeds the request rate limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
         /// The user isn't authorized to request a resource.
@@ -650,13 +720,13 @@ namespace Amazon.ChimeSDKMeetings
         /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
-        /// The service is currently unavailable.
+        /// The service encountered an unexpected error.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
-        /// The number of requests exceeds the limit.
+        /// The number of customer requests exceeds the request rate limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
         /// The user isn't authorized to request a resource.
@@ -687,13 +757,13 @@ namespace Amazon.ChimeSDKMeetings
         /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
-        /// The service is currently unavailable.
+        /// The service encountered an unexpected error.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
-        /// The number of requests exceeds the limit.
+        /// The number of customer requests exceeds the request rate limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
         /// The user isn't authorized to request a resource.
@@ -724,13 +794,13 @@ namespace Amazon.ChimeSDKMeetings
         /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
-        /// The service is currently unavailable.
+        /// The service encountered an unexpected error.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
-        /// The number of requests exceeds the limit.
+        /// The number of customer requests exceeds the request rate limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
         /// The user isn't authorized to request a resource.
@@ -761,13 +831,13 @@ namespace Amazon.ChimeSDKMeetings
         /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
-        /// The service is currently unavailable.
+        /// The service encountered an unexpected error.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
-        /// The number of requests exceeds the limit.
+        /// The number of customer requests exceeds the request rate limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
         /// The user isn't authorized to request a resource.
@@ -798,13 +868,13 @@ namespace Amazon.ChimeSDKMeetings
         /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
-        /// The service is currently unavailable.
+        /// The service encountered an unexpected error.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
-        /// The number of requests exceeds the limit.
+        /// The number of customer requests exceeds the request rate limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
         /// The user isn't authorized to request a resource.
@@ -836,13 +906,13 @@ namespace Amazon.ChimeSDKMeetings
         /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
-        /// The service is currently unavailable.
+        /// The service encountered an unexpected error.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
-        /// The number of requests exceeds the limit.
+        /// The number of customer requests exceeds the request rate limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
         /// The user isn't authorized to request a resource.
@@ -877,13 +947,13 @@ namespace Amazon.ChimeSDKMeetings
         /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
-        /// The service is currently unavailable.
+        /// The service encountered an unexpected error.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
-        /// The number of requests exceeds the limit.
+        /// The number of customer requests exceeds the request rate limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
         /// The user isn't authorized to request a resource.
@@ -915,13 +985,13 @@ namespace Amazon.ChimeSDKMeetings
         /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
-        /// The service is currently unavailable.
+        /// The service encountered an unexpected error.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
-        /// The number of requests exceeds the limit.
+        /// The number of customer requests exceeds the request rate limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
         /// The user isn't authorized to request a resource.
@@ -953,13 +1023,13 @@ namespace Amazon.ChimeSDKMeetings
         /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceFailureException">
-        /// The service is currently unavailable.
+        /// The service encountered an unexpected error.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ServiceUnavailableException">
         /// The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.ThrottlingException">
-        /// The number of requests exceeds the limit.
+        /// The number of customer requests exceeds the request rate limit.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMeetings.Model.UnauthorizedException">
         /// The user isn't authorized to request a resource.
@@ -977,6 +1047,41 @@ namespace Amazon.ChimeSDKMeetings
 
         /// <summary>
         /// The capabilties that you want to update.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You use the capabilities with a set of values that control what the capabilities can
+        /// do, such as <code>SendReceive</code> data. For more information about those values,
+        /// see .
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// When using capabilities, be aware of these corner cases:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code>
+        /// unless you also set <code>video</code> capabilities to <code>SendReceive</code> or
+        /// <code>Receive</code>. If you don't set the <code>video</code> capability to receive,
+        /// the response will contain an HTTP 400 Bad Request status code. However, you can set
+        /// your <code>video</code> capability to receive and you set your <code>content</code>
+        /// capability to not receive.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code>
+        /// to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their
+        /// microphone unmuted, audio will flow from the attendee to the other meeting participants.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When you change a <code>video</code> or <code>content</code> capability from <code>None</code>
+        /// or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if
+        /// the attendee turned on their video or content streams, remote attendess can receive
+        /// those streams, but only after media renegotiation between the client and the Amazon
+        /// Chime back-end server.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAttendeeCapabilities service method.</param>
         /// 
@@ -1006,6 +1111,41 @@ namespace Amazon.ChimeSDKMeetings
 
         /// <summary>
         /// The capabilties that you want to update.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You use the capabilities with a set of values that control what the capabilities can
+        /// do, such as <code>SendReceive</code> data. For more information about those values,
+        /// see .
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// When using capabilities, be aware of these corner cases:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code>
+        /// unless you also set <code>video</code> capabilities to <code>SendReceive</code> or
+        /// <code>Receive</code>. If you don't set the <code>video</code> capability to receive,
+        /// the response will contain an HTTP 400 Bad Request status code. However, you can set
+        /// your <code>video</code> capability to receive and you set your <code>content</code>
+        /// capability to not receive.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code>
+        /// to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their
+        /// microphone unmuted, audio will flow from the attendee to the other meeting participants.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When you change a <code>video</code> or <code>content</code> capability from <code>None</code>
+        /// or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if
+        /// the attendee turned on their video or content streams, remote attendess can receive
+        /// those streams, but only after media renegotiation between the client and the Amazon
+        /// Chime back-end server.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAttendeeCapabilities service method.</param>
         /// <param name="cancellationToken">
