@@ -4499,5 +4499,80 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  UpdateSubscriptionsToEventBridge
+
+        /// <summary>
+        /// Migrates 10 active and enabled Amazon SNS subscriptions at a time and converts them
+        /// to corresponding Amazon EventBridge rules. By default, this operation migrates subscriptions
+        /// only when all your replication instance versions are 3.4.6 or higher. If any replication
+        /// instances are from versions earlier than 3.4.6, the operation raises an error and
+        /// tells you to upgrade these instances to version 3.4.6 or higher. To enable migration
+        /// regardless of version, set the <code>Force</code> option to true. However, if you
+        /// don't upgrade instances earlier than version 3.4.6, some types of events might not
+        /// be available when you use Amazon EventBridge.
+        /// 
+        ///  
+        /// <para>
+        /// To call this operation, make sure that you have certain permissions added to your
+        /// user account. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html#CHAP_Events-migrate-to-eventbridge">Migrating
+        /// event subscriptions to Amazon EventBridge</a> in the <i>Amazon Web Services Database
+        /// Migration Service User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSubscriptionsToEventBridge service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSubscriptionsToEventBridge service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/UpdateSubscriptionsToEventBridge">REST API Reference for UpdateSubscriptionsToEventBridge Operation</seealso>
+        public virtual UpdateSubscriptionsToEventBridgeResponse UpdateSubscriptionsToEventBridge(UpdateSubscriptionsToEventBridgeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSubscriptionsToEventBridgeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSubscriptionsToEventBridgeResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSubscriptionsToEventBridgeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateSubscriptionsToEventBridge operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSubscriptionsToEventBridge operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSubscriptionsToEventBridge
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/UpdateSubscriptionsToEventBridge">REST API Reference for UpdateSubscriptionsToEventBridge Operation</seealso>
+        public virtual IAsyncResult BeginUpdateSubscriptionsToEventBridge(UpdateSubscriptionsToEventBridgeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSubscriptionsToEventBridgeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSubscriptionsToEventBridgeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateSubscriptionsToEventBridge operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSubscriptionsToEventBridge.</param>
+        /// 
+        /// <returns>Returns a  UpdateSubscriptionsToEventBridgeResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/UpdateSubscriptionsToEventBridge">REST API Reference for UpdateSubscriptionsToEventBridge Operation</seealso>
+        public virtual UpdateSubscriptionsToEventBridgeResponse EndUpdateSubscriptionsToEventBridge(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateSubscriptionsToEventBridgeResponse>(asyncResult);
+        }
+
+        #endregion
+        
     }
 }
