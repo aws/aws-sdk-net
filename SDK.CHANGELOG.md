@@ -1,3 +1,15 @@
+### 3.7.310.0 (2022-07-07 18:16 UTC)
+* ChimeSDKMeetings (3.7.9.0)
+	* Adds support for AppKeys and TenantIds in Amazon Chime SDK WebRTC sessions
+* DatabaseMigrationService (3.7.9.0)
+	* New api to migrate event subscriptions to event bridge rules
+* IoT (3.7.15.0)
+	* This release adds support to register a CA certificate without having to provide a verification certificate. This also allows multiple AWS accounts to register the same CA in the same region.
+* IoTWireless (3.7.11.0)
+	* Adds 5 APIs: PutPositionConfiguration, GetPositionConfiguration, ListPositionConfigurations, UpdatePosition, GetPosition for the new Positioning Service feature which enables customers to configure solvers to calculate position of LoRaWAN devices, or specify position of LoRaWAN devices & gateways.
+* SageMaker (3.7.39.0)
+	* Heterogeneous clusters: the ability to launch training jobs with multiple instance types. This enables running component of the training job on the instance type that is most suitable for it. e.g. doing data processing and augmentation on CPU instances and neural network training on GPU instances
+
 ### 3.7.309.0 (2022-07-06 18:11 UTC)
 * CloudFormation (3.7.11.0)
 	* My AWS Service (placeholder) - Add a new feature Account-level Targeting for StackSet operation
