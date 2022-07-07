@@ -82,6 +82,22 @@ namespace Amazon.IoT.Model
         /// <para>
         /// The mode of the certificate.
         /// </para>
+        ///  
+        /// <para>
+        ///  <code>DEFAULT</code>: A certificate in <code>DEFAULT</code> mode is either generated
+        /// by Amazon Web Services IoT Core or registered with an issuer certificate authority
+        /// (CA) in <code>DEFAULT</code> mode. Devices with certificates in <code>DEFAULT</code>
+        /// mode aren't required to send the Server Name Indication (SNI) extension when connecting
+        /// to Amazon Web Services IoT Core. However, to use features such as custom domains and
+        /// VPC endpoints, we recommend that you use the SNI extension when connecting to Amazon
+        /// Web Services IoT Core.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>SNI_ONLY</code>: A certificate in <code>SNI_ONLY</code> mode is registered
+        /// without an issuer CA. Devices with certificates in <code>SNI_ONLY</code> mode must
+        /// send the SNI extension when connecting to Amazon Web Services IoT Core. 
+        /// </para>
         /// </summary>
         public CertificateMode CertificateMode
         {

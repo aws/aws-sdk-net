@@ -30,12 +30,10 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterCACertificate operation.
-    /// Registers a CA certificate with IoT. This CA certificate can then be used to sign
-    /// device certificates, which can be then registered with IoT. You can register up to
-    /// 10 CA certificates per Amazon Web Services account that have the same subject field.
-    /// This enables you to have up to 10 certificate authorities sign your device certificates.
-    /// If you have more than one CA certificate registered, make sure you pass the CA certificate
-    /// when you register your device certificates with the <a>RegisterCertificate</a> action.
+    /// Registers a CA certificate with Amazon Web Services IoT Core. There is no limit to
+    /// the number of CA certificates you can register in your Amazon Web Services account.
+    /// You can register up to 10 CA certificates with the same <code>CA subject field</code>
+    /// per Amazon Web Services account.
     /// 
     ///  
     /// <para>
@@ -47,6 +45,7 @@ namespace Amazon.IoT.Model
     {
         private bool? _allowAutoRegistration;
         private string _caCertificate;
+        private CertificateMode _certificateMode;
         private RegistrationConfig _registrationConfig;
         private bool? _setAsActive;
         private List<Tag> _tags = new List<Tag>();
@@ -87,6 +86,32 @@ namespace Amazon.IoT.Model
         internal bool IsSetCaCertificate()
         {
             return this._caCertificate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CertificateMode. 
+        /// <para>
+        /// Describes the certificate mode in which the Certificate Authority (CA) will be registered.
+        /// If the <code>verificationCertificate</code> field is not provided, set <code>certificateMode</code>
+        /// to be <code>SNI_ONLY</code>. If the <code>verificationCertificate</code> field is
+        /// provided, set <code>certificateMode</code> to be <code>DEFAULT</code>. When <code>certificateMode</code>
+        /// is not provided, it defaults to <code>DEFAULT</code>. All the device certificates
+        /// that are registered using this CA will be registered in the same certificate mode
+        /// as the CA. For more information about certificate mode for device certificates, see
+        /// <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode">
+        /// certificate mode</a>. 
+        /// </para>
+        /// </summary>
+        public CertificateMode CertificateMode
+        {
+            get { return this._certificateMode; }
+            set { this._certificateMode = value; }
+        }
+
+        // Check to see if CertificateMode property is set
+        internal bool IsSetCertificateMode()
+        {
+            return this._certificateMode != null;
         }
 
         /// <summary>
@@ -163,10 +188,13 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property VerificationCertificate. 
         /// <para>
-        /// The private key verification certificate.
+        /// The private key verification certificate. If <code>certificateMode</code> is <code>SNI_ONLY</code>,
+        /// the <code>verificationCertificate</code> field must be empty. If <code>certificateMode</code>
+        /// is <code>DEFAULT</code> or not provided, the <code>verificationCertificate</code>
+        /// field must not be empty. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=65536)]
+        [AWSProperty(Min=1, Max=65536)]
         public string VerificationCertificate
         {
             get { return this._verificationCertificate; }

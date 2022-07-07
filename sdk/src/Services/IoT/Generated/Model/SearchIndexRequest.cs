@@ -106,7 +106,9 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property QueryString. 
         /// <para>
-        /// The search query string.
+        /// The search query string. For more information about the search query syntax, see <a
+        /// href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query
+        /// syntax</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

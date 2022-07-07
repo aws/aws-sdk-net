@@ -80,7 +80,11 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IsConcurrent.
+        /// Gets and sets the property IsConcurrent. 
+        /// <para>
+        /// Indicates whether a job is concurrent. Will be true when a job is rolling out new
+        /// job executions or canceling previously created executions, otherwise false.
+        /// </para>
         /// </summary>
         public bool IsConcurrent
         {
