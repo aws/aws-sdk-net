@@ -6319,6 +6319,16 @@
     <pattern>^(https|s3)://([^/]+)/?(.*)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.InstanceGroup.InstanceCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.InstanceGroup.InstanceGroupName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.InstanceMetadataServiceConfiguration.MinimumInstanceMetadataServiceVersion</property>
     <max>1</max>
     <pattern>1|2</pattern>
@@ -7832,7 +7842,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ResourceConfig.InstanceCount</property>
-    <min>1</min>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ResourceConfig.VolumeKmsKeyId</property>

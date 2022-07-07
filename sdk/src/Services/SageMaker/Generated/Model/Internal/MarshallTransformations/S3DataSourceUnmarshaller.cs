@@ -70,6 +70,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.AttributeNames = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InstanceGroupNames", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.InstanceGroupNames = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("S3DataDistributionType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

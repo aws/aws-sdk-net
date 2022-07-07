@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ResourceConfig Marshaller
+    /// InstanceGroup Marshaller
     /// </summary>
-    public class ResourceConfigMarshaller : IRequestMarshaller<ResourceConfig, JsonMarshallerContext> 
+    public class InstanceGroupMarshaller : IRequestMarshaller<InstanceGroup, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ResourceConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(InstanceGroup requestObject, JsonMarshallerContext context)
         {
             if(requestObject.IsSetInstanceCount())
             {
@@ -51,20 +51,10 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.InstanceCount);
             }
 
-            if(requestObject.IsSetInstanceGroups())
+            if(requestObject.IsSetInstanceGroupName())
             {
-                context.Writer.WritePropertyName("InstanceGroups");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectInstanceGroupsListValue in requestObject.InstanceGroups)
-                {
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = InstanceGroupMarshaller.Instance;
-                    marshaller.Marshall(requestObjectInstanceGroupsListValue, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WritePropertyName("InstanceGroupName");
+                context.Writer.Write(requestObject.InstanceGroupName);
             }
 
             if(requestObject.IsSetInstanceType())
@@ -73,24 +63,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.InstanceType);
             }
 
-            if(requestObject.IsSetVolumeKmsKeyId())
-            {
-                context.Writer.WritePropertyName("VolumeKmsKeyId");
-                context.Writer.Write(requestObject.VolumeKmsKeyId);
-            }
-
-            if(requestObject.IsSetVolumeSizeInGB())
-            {
-                context.Writer.WritePropertyName("VolumeSizeInGB");
-                context.Writer.Write(requestObject.VolumeSizeInGB);
-            }
-
         }
 
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ResourceConfigMarshaller Instance = new ResourceConfigMarshaller();
+        public readonly static InstanceGroupMarshaller Instance = new InstanceGroupMarshaller();
 
     }
 }

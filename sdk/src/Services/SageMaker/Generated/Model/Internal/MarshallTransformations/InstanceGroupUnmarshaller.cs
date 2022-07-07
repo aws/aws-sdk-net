@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ResourceConfig Object
+    /// Response Unmarshaller for InstanceGroup Object
     /// </summary>  
-    public class ResourceConfigUnmarshaller : IUnmarshaller<ResourceConfig, XmlUnmarshallerContext>, IUnmarshaller<ResourceConfig, JsonUnmarshallerContext>
+    public class InstanceGroupUnmarshaller : IUnmarshaller<InstanceGroup, XmlUnmarshallerContext>, IUnmarshaller<InstanceGroup, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ResourceConfig IUnmarshaller<ResourceConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        InstanceGroup IUnmarshaller<InstanceGroup, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,13 +53,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ResourceConfig Unmarshall(JsonUnmarshallerContext context)
+        public InstanceGroup Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ResourceConfig unmarshalledObject = new ResourceConfig();
+            InstanceGroup unmarshalledObject = new InstanceGroup();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
@@ -70,10 +70,10 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.InstanceCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("InstanceGroups", targetDepth))
+                if (context.TestExpression("InstanceGroupName", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<InstanceGroup, InstanceGroupUnmarshaller>(InstanceGroupUnmarshaller.Instance);
-                    unmarshalledObject.InstanceGroups = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InstanceGroupName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InstanceType", targetDepth))
@@ -82,30 +82,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("VolumeKmsKeyId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VolumeKmsKeyId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("VolumeSizeInGB", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.VolumeSizeInGB = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
           
             return unmarshalledObject;
         }
 
 
-        private static ResourceConfigUnmarshaller _instance = new ResourceConfigUnmarshaller();        
+        private static InstanceGroupUnmarshaller _instance = new InstanceGroupUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ResourceConfigUnmarshaller Instance
+        public static InstanceGroupUnmarshaller Instance
         {
             get
             {

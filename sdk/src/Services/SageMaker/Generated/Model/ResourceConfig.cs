@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     public partial class ResourceConfig
     {
         private int? _instanceCount;
+        private List<InstanceGroup> _instanceGroups = new List<InstanceGroup>();
         private TrainingInstanceType _instanceType;
         private string _volumeKmsKeyId;
         private int? _volumeSizeInGB;
@@ -46,7 +47,7 @@ namespace Amazon.SageMaker.Model
         /// greater than 1. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Min=0)]
         public int InstanceCount
         {
             get { return this._instanceCount.GetValueOrDefault(); }
@@ -60,12 +61,30 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InstanceGroups. 
+        /// <para>
+        /// The configuration of a heterogeneous cluster in JSON format.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=5)]
+        public List<InstanceGroup> InstanceGroups
+        {
+            get { return this._instanceGroups; }
+            set { this._instanceGroups = value; }
+        }
+
+        // Check to see if InstanceGroups property is set
+        internal bool IsSetInstanceGroups()
+        {
+            return this._instanceGroups != null && this._instanceGroups.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
         /// The ML compute instance type. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public TrainingInstanceType InstanceType
         {
             get { return this._instanceType; }

@@ -34,6 +34,7 @@ namespace Amazon.SageMaker.Model
     public partial class S3DataSource
     {
         private List<string> _attributeNames = new List<string>();
+        private List<string> _instanceGroupNames = new List<string>();
         private S3DataDistribution _s3DataDistributionType;
         private S3DataType _s3DataType;
         private string _s3Uri;
@@ -56,6 +57,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetAttributeNames()
         {
             return this._attributeNames != null && this._attributeNames.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceGroupNames. 
+        /// <para>
+        /// A list of names of instance groups that get data from the S3 data source.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=5)]
+        public List<string> InstanceGroupNames
+        {
+            get { return this._instanceGroupNames; }
+            set { this._instanceGroupNames = value; }
+        }
+
+        // Check to see if InstanceGroupNames property is set
+        internal bool IsSetInstanceGroupNames()
+        {
+            return this._instanceGroupNames != null && this._instanceGroupNames.Count > 0; 
         }
 
         /// <summary>

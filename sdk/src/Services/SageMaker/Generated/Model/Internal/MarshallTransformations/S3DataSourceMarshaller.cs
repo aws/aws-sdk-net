@@ -56,6 +56,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetInstanceGroupNames())
+            {
+                context.Writer.WritePropertyName("InstanceGroupNames");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectInstanceGroupNamesListValue in requestObject.InstanceGroupNames)
+                {
+                        context.Writer.Write(requestObjectInstanceGroupNamesListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetS3DataDistributionType())
             {
                 context.Writer.WritePropertyName("S3DataDistributionType");
