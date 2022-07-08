@@ -47,7 +47,6 @@ namespace Amazon.Backup.Model
         /// recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string IamRoleArn
         {
             get { return this._iamRoleArn; }
