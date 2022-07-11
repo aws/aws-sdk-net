@@ -1,3 +1,14 @@
+### 3.7.312.0 (2022-07-11 18:18 UTC)
+* EC2 (3.7.77.0)
+	* Build, manage, and monitor a unified global network that connects resources running across your cloud and on-premises environments using the AWS Cloud WAN APIs.
+* Redshift (3.7.17.0)
+	* This release adds a new --snapshot-arn field for describe-cluster-snapshots, describe-node-configuration-options, restore-from-cluster-snapshot, authorize-snapshot-acsess, and revoke-snapshot-acsess APIs. It allows customers to give a Redshift snapshot ARN or a Redshift Serverless ARN as input.
+* RedshiftServerless (3.7.0.2)
+	* Removed prerelease language for GA launch.
+* Core 3.7.12.6
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.311.0 (2022-07-08 18:12 UTC)
 * Backup (3.7.8.0)
 	* This release adds support for authentication using IAM user identity instead of passed IAM role, identified by excluding the IamRoleArn field in the StartRestoreJob API. This feature applies to only resource clients with a destructive restore nature (e.g. SAP HANA).
