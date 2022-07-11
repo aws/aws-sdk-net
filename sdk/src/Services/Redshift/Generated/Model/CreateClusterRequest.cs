@@ -523,7 +523,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ElasticIp. 
         /// <para>
-        /// The Elastic IP (EIP) address for the cluster.
+        /// The Elastic IP (EIP) address for the cluster. You don't have to specify the EIP for
+        /// a publicly accessible cluster with AvailabilityZoneRelocation turned on.
         /// </para>
         ///  
         /// <para>

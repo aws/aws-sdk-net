@@ -78,6 +78,7 @@ namespace Amazon.Redshift.Model
         private string _preferredMaintenanceWindow;
         private bool? _publiclyAccessible;
         private string _reservedNodeId;
+        private string _snapshotArn;
         private string _snapshotClusterIdentifier;
         private string _snapshotIdentifier;
         private string _snapshotScheduleIdentifier;
@@ -397,7 +398,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ElasticIp. 
         /// <para>
-        /// The elastic IP (EIP) address for the cluster.
+        /// The elastic IP (EIP) address for the cluster. You don't have to specify the EIP for
+        /// a publicly accessible cluster with AvailabilityZoneRelocation turned on.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
@@ -771,6 +773,26 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SnapshotArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the snapshot associated with the message to restore
+        /// from a cluster.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2147483647)]
+        public string SnapshotArn
+        {
+            get { return this._snapshotArn; }
+            set { this._snapshotArn = value; }
+        }
+
+        // Check to see if SnapshotArn property is set
+        internal bool IsSetSnapshotArn()
+        {
+            return this._snapshotArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SnapshotClusterIdentifier. 
         /// <para>
         /// The name of the cluster the source snapshot was created from. This parameter is required
@@ -802,7 +824,7 @@ namespace Amazon.Redshift.Model
         /// Example: <code>my-snapshot-id</code> 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=2147483647)]
+        [AWSProperty(Max=2147483647)]
         public string SnapshotIdentifier
         {
             get { return this._snapshotIdentifier; }

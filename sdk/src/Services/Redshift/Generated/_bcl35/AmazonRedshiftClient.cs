@@ -750,6 +750,9 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.LimitExceededException">
         /// The encryption key has exceeded its grant limit in Amazon Web Services KMS.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeSnapshotAccess">REST API Reference for AuthorizeSnapshotAccess Operation</seealso>
         public virtual AuthorizeSnapshotAccessResponse AuthorizeSnapshotAccess(AuthorizeSnapshotAccessRequest request)
         {
@@ -4106,6 +4109,9 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
         /// The tag is invalid.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSnapshots">REST API Reference for DescribeClusterSnapshots Operation</seealso>
         public virtual DescribeClusterSnapshotsResponse DescribeClusterSnapshots()
         {
@@ -4144,6 +4150,9 @@ namespace Amazon.Redshift
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
         /// The tag is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSnapshots">REST API Reference for DescribeClusterSnapshots Operation</seealso>
         public virtual DescribeClusterSnapshotsResponse DescribeClusterSnapshots(DescribeClusterSnapshotsRequest request)
@@ -5337,6 +5346,9 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.InvalidClusterSnapshotStateException">
         /// The specified cluster snapshot is not in the <code>available</code> state, or other
         /// accounts are authorized to access the snapshot.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeNodeConfigurationOptions">REST API Reference for DescribeNodeConfigurationOptions Operation</seealso>
         public virtual DescribeNodeConfigurationOptionsResponse DescribeNodeConfigurationOptions(DescribeNodeConfigurationOptionsRequest request)
@@ -9163,6 +9175,9 @@ namespace Amazon.Redshift
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.ClusterSnapshotNotFoundException">
         /// The snapshot identifier does not refer to an existing cluster snapshot.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RevokeSnapshotAccess">REST API Reference for RevokeSnapshotAccess Operation</seealso>
         public virtual RevokeSnapshotAccessResponse RevokeSnapshotAccess(RevokeSnapshotAccessRequest request)

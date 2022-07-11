@@ -82,6 +82,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("OwnerAccount", StringUtils.FromString(publicRequest.OwnerAccount));
                 }
+                if(publicRequest.IsSetSnapshotArn())
+                {
+                    request.Parameters.Add("SnapshotArn", StringUtils.FromString(publicRequest.SnapshotArn));
+                }
                 if(publicRequest.IsSetSnapshotIdentifier())
                 {
                     request.Parameters.Add("SnapshotIdentifier", StringUtils.FromString(publicRequest.SnapshotIdentifier));

@@ -43,6 +43,7 @@ namespace Amazon.Redshift.Model
     public partial class RevokeSnapshotAccessRequest : AmazonRedshiftRequest
     {
         private string _accountWithRestoreAccess;
+        private string _snapshotArn;
         private string _snapshotClusterIdentifier;
         private string _snapshotIdentifier;
 
@@ -64,6 +65,26 @@ namespace Amazon.Redshift.Model
         internal bool IsSetAccountWithRestoreAccess()
         {
             return this._accountWithRestoreAccess != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnapshotArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the snapshot associated with the message to revoke
+        /// access.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2147483647)]
+        public string SnapshotArn
+        {
+            get { return this._snapshotArn; }
+            set { this._snapshotArn = value; }
+        }
+
+        // Check to see if SnapshotArn property is set
+        internal bool IsSetSnapshotArn()
+        {
+            return this._snapshotArn != null;
         }
 
         /// <summary>
@@ -93,7 +114,7 @@ namespace Amazon.Redshift.Model
         /// The identifier of the snapshot that the account can no longer access.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=2147483647)]
+        [AWSProperty(Max=2147483647)]
         public string SnapshotIdentifier
         {
             get { return this._snapshotIdentifier; }

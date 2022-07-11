@@ -41,6 +41,7 @@ namespace Amazon.Redshift.Model
         private string _marker;
         private int? _maxRecords;
         private string _ownerAccount;
+        private string _snapshotArn;
         private string _snapshotIdentifier;
 
         /// <summary>
@@ -174,6 +175,26 @@ namespace Amazon.Redshift.Model
         internal bool IsSetOwnerAccount()
         {
             return this._ownerAccount != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnapshotArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the snapshot associated with the message to describe
+        /// node configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2147483647)]
+        public string SnapshotArn
+        {
+            get { return this._snapshotArn; }
+            set { this._snapshotArn = value; }
+        }
+
+        // Check to see if SnapshotArn property is set
+        internal bool IsSetSnapshotArn()
+        {
+            return this._snapshotArn != null;
         }
 
         /// <summary>

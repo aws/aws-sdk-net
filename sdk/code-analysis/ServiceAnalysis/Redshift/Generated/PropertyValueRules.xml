@@ -128,6 +128,10 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.AuthorizeSnapshotAccessRequest.SnapshotArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.AuthorizeSnapshotAccessRequest.SnapshotClusterIdentifier</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -696,6 +700,10 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.DescribeClusterSnapshotsRequest.SnapshotArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeClusterSnapshotsRequest.SnapshotIdentifier</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -909,6 +917,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeNodeConfigurationOptionsRequest.OwnerAccount</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.DescribeNodeConfigurationOptionsRequest.SnapshotArn</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -1607,6 +1619,10 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.RestoreFromClusterSnapshotRequest.SnapshotArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.RestoreFromClusterSnapshotRequest.SnapshotClusterIdentifier</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -1700,6 +1716,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RevokeSnapshotAccessRequest.AccountWithRestoreAccess</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.RevokeSnapshotAccessRequest.SnapshotArn</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
