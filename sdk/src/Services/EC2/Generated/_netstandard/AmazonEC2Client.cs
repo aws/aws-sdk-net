@@ -1378,6 +1378,41 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  AssociateTransitGatewayPolicyTable
+
+        internal virtual AssociateTransitGatewayPolicyTableResponse AssociateTransitGatewayPolicyTable(AssociateTransitGatewayPolicyTableRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateTransitGatewayPolicyTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateTransitGatewayPolicyTableResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateTransitGatewayPolicyTableResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Associates the specified transit gateway attachment with a transit gateway policy
+        /// table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateTransitGatewayPolicyTable service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateTransitGatewayPolicyTable service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateTransitGatewayPolicyTable">REST API Reference for AssociateTransitGatewayPolicyTable Operation</seealso>
+        public virtual Task<AssociateTransitGatewayPolicyTableResponse> AssociateTransitGatewayPolicyTableAsync(AssociateTransitGatewayPolicyTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateTransitGatewayPolicyTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateTransitGatewayPolicyTableResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateTransitGatewayPolicyTableResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AssociateTransitGatewayRouteTable
 
         internal virtual AssociateTransitGatewayRouteTableResponse AssociateTransitGatewayRouteTable(AssociateTransitGatewayRouteTableRequest request)
@@ -5264,8 +5299,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Requests a transit gateway peering attachment between the specified transit gateway
-        /// (requester) and a peer transit gateway (accepter). The peer transit gateway can be
-        /// in your account or a different Amazon Web Services account.
+        /// (requester) and a peer transit gateway (accepter). The transit gateways must be in
+        /// different Regions. The peer transit gateway can be in your account or a different
+        /// Amazon Web Services account.
         /// 
         ///  
         /// <para>
@@ -5287,6 +5323,40 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = CreateTransitGatewayPeeringAttachmentResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateTransitGatewayPeeringAttachmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateTransitGatewayPolicyTable
+
+        internal virtual CreateTransitGatewayPolicyTableResponse CreateTransitGatewayPolicyTable(CreateTransitGatewayPolicyTableRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTransitGatewayPolicyTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTransitGatewayPolicyTableResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTransitGatewayPolicyTableResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a transit gateway policy table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayPolicyTable service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTransitGatewayPolicyTable service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayPolicyTable">REST API Reference for CreateTransitGatewayPolicyTable Operation</seealso>
+        public virtual Task<CreateTransitGatewayPolicyTableResponse> CreateTransitGatewayPolicyTableAsync(CreateTransitGatewayPolicyTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTransitGatewayPolicyTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTransitGatewayPolicyTableResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateTransitGatewayPolicyTableResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5390,6 +5460,40 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = CreateTransitGatewayRouteTableResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateTransitGatewayRouteTableResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateTransitGatewayRouteTableAnnouncement
+
+        internal virtual CreateTransitGatewayRouteTableAnnouncementResponse CreateTransitGatewayRouteTableAnnouncement(CreateTransitGatewayRouteTableAnnouncementRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTransitGatewayRouteTableAnnouncementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTransitGatewayRouteTableAnnouncementResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTransitGatewayRouteTableAnnouncementResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Advertises a new transit gateway route table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayRouteTableAnnouncement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTransitGatewayRouteTableAnnouncement service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayRouteTableAnnouncement">REST API Reference for CreateTransitGatewayRouteTableAnnouncement Operation</seealso>
+        public virtual Task<CreateTransitGatewayRouteTableAnnouncementResponse> CreateTransitGatewayRouteTableAnnouncementAsync(CreateTransitGatewayRouteTableAnnouncementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTransitGatewayRouteTableAnnouncementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTransitGatewayRouteTableAnnouncementResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateTransitGatewayRouteTableAnnouncementResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7729,6 +7833,40 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DeleteTransitGatewayPolicyTable
+
+        internal virtual DeleteTransitGatewayPolicyTableResponse DeleteTransitGatewayPolicyTable(DeleteTransitGatewayPolicyTableRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTransitGatewayPolicyTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTransitGatewayPolicyTableResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTransitGatewayPolicyTableResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the specified transit gateway policy table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayPolicyTable service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTransitGatewayPolicyTable service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayPolicyTable">REST API Reference for DeleteTransitGatewayPolicyTable Operation</seealso>
+        public virtual Task<DeleteTransitGatewayPolicyTableResponse> DeleteTransitGatewayPolicyTableAsync(DeleteTransitGatewayPolicyTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTransitGatewayPolicyTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTransitGatewayPolicyTableResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteTransitGatewayPolicyTableResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteTransitGatewayPrefixListReference
 
         internal virtual DeleteTransitGatewayPrefixListReferenceResponse DeleteTransitGatewayPrefixListReference(DeleteTransitGatewayPrefixListReferenceRequest request)
@@ -7829,6 +7967,40 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = DeleteTransitGatewayRouteTableResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteTransitGatewayRouteTableResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteTransitGatewayRouteTableAnnouncement
+
+        internal virtual DeleteTransitGatewayRouteTableAnnouncementResponse DeleteTransitGatewayRouteTableAnnouncement(DeleteTransitGatewayRouteTableAnnouncementRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTransitGatewayRouteTableAnnouncementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTransitGatewayRouteTableAnnouncementResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTransitGatewayRouteTableAnnouncementResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Advertises to the transit gateway that a transit gateway route table is deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayRouteTableAnnouncement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTransitGatewayRouteTableAnnouncement service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayRouteTableAnnouncement">REST API Reference for DeleteTransitGatewayRouteTableAnnouncement Operation</seealso>
+        public virtual Task<DeleteTransitGatewayRouteTableAnnouncementResponse> DeleteTransitGatewayRouteTableAnnouncementAsync(DeleteTransitGatewayRouteTableAnnouncementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTransitGatewayRouteTableAnnouncementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTransitGatewayRouteTableAnnouncementResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteTransitGatewayRouteTableAnnouncementResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -13942,6 +14114,74 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeTransitGatewayPolicyTables
+
+        internal virtual DescribeTransitGatewayPolicyTablesResponse DescribeTransitGatewayPolicyTables(DescribeTransitGatewayPolicyTablesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTransitGatewayPolicyTablesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTransitGatewayPolicyTablesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTransitGatewayPolicyTablesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes one or more transit gateway route policy tables.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGatewayPolicyTables service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTransitGatewayPolicyTables service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayPolicyTables">REST API Reference for DescribeTransitGatewayPolicyTables Operation</seealso>
+        public virtual Task<DescribeTransitGatewayPolicyTablesResponse> DescribeTransitGatewayPolicyTablesAsync(DescribeTransitGatewayPolicyTablesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTransitGatewayPolicyTablesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTransitGatewayPolicyTablesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeTransitGatewayPolicyTablesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeTransitGatewayRouteTableAnnouncements
+
+        internal virtual DescribeTransitGatewayRouteTableAnnouncementsResponse DescribeTransitGatewayRouteTableAnnouncements(DescribeTransitGatewayRouteTableAnnouncementsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTransitGatewayRouteTableAnnouncementsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTransitGatewayRouteTableAnnouncementsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTransitGatewayRouteTableAnnouncementsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes one or more transit gateway route table advertisements.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGatewayRouteTableAnnouncements service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTransitGatewayRouteTableAnnouncements service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayRouteTableAnnouncements">REST API Reference for DescribeTransitGatewayRouteTableAnnouncements Operation</seealso>
+        public virtual Task<DescribeTransitGatewayRouteTableAnnouncementsResponse> DescribeTransitGatewayRouteTableAnnouncementsAsync(DescribeTransitGatewayRouteTableAnnouncementsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTransitGatewayRouteTableAnnouncementsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTransitGatewayRouteTableAnnouncementsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeTransitGatewayRouteTableAnnouncementsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeTransitGatewayRouteTables
 
         internal virtual DescribeTransitGatewayRouteTablesResponse DescribeTransitGatewayRouteTables(DescribeTransitGatewayRouteTablesRequest request)
@@ -15883,6 +16123,40 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisassociateTransitGatewayPolicyTable
+
+        internal virtual DisassociateTransitGatewayPolicyTableResponse DisassociateTransitGatewayPolicyTable(DisassociateTransitGatewayPolicyTableRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateTransitGatewayPolicyTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateTransitGatewayPolicyTableResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateTransitGatewayPolicyTableResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes the association between an an attachment and a policy table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateTransitGatewayPolicyTable service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateTransitGatewayPolicyTable service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTransitGatewayPolicyTable">REST API Reference for DisassociateTransitGatewayPolicyTable Operation</seealso>
+        public virtual Task<DisassociateTransitGatewayPolicyTableResponse> DisassociateTransitGatewayPolicyTableAsync(DisassociateTransitGatewayPolicyTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateTransitGatewayPolicyTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateTransitGatewayPolicyTableResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateTransitGatewayPolicyTableResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociateTransitGatewayRouteTable
 
         internal virtual DisassociateTransitGatewayRouteTableResponse DisassociateTransitGatewayRouteTable(DisassociateTransitGatewayRouteTableRequest request)
@@ -17801,6 +18075,74 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = GetTransitGatewayMulticastDomainAssociationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetTransitGatewayMulticastDomainAssociationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetTransitGatewayPolicyTableAssociations
+
+        internal virtual GetTransitGatewayPolicyTableAssociationsResponse GetTransitGatewayPolicyTableAssociations(GetTransitGatewayPolicyTableAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTransitGatewayPolicyTableAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTransitGatewayPolicyTableAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<GetTransitGatewayPolicyTableAssociationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets a list of the transit gateway policy table associations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTransitGatewayPolicyTableAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTransitGatewayPolicyTableAssociations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayPolicyTableAssociations">REST API Reference for GetTransitGatewayPolicyTableAssociations Operation</seealso>
+        public virtual Task<GetTransitGatewayPolicyTableAssociationsResponse> GetTransitGatewayPolicyTableAssociationsAsync(GetTransitGatewayPolicyTableAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTransitGatewayPolicyTableAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTransitGatewayPolicyTableAssociationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetTransitGatewayPolicyTableAssociationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetTransitGatewayPolicyTableEntries
+
+        internal virtual GetTransitGatewayPolicyTableEntriesResponse GetTransitGatewayPolicyTableEntries(GetTransitGatewayPolicyTableEntriesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTransitGatewayPolicyTableEntriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTransitGatewayPolicyTableEntriesResponseUnmarshaller.Instance;
+
+            return Invoke<GetTransitGatewayPolicyTableEntriesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of transit gateway policy table entries.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTransitGatewayPolicyTableEntries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTransitGatewayPolicyTableEntries service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayPolicyTableEntries">REST API Reference for GetTransitGatewayPolicyTableEntries Operation</seealso>
+        public virtual Task<GetTransitGatewayPolicyTableEntriesResponse> GetTransitGatewayPolicyTableEntriesAsync(GetTransitGatewayPolicyTableEntriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTransitGatewayPolicyTableEntriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTransitGatewayPolicyTableEntriesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetTransitGatewayPolicyTableEntriesResponse>(request, options, cancellationToken);
         }
 
         #endregion

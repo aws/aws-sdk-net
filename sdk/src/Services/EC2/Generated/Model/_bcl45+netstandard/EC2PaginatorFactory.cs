@@ -700,6 +700,22 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeTransitGatewayPolicyTables operation
+        ///</summary>
+        public IDescribeTransitGatewayPolicyTablesPaginator DescribeTransitGatewayPolicyTables(DescribeTransitGatewayPolicyTablesRequest request) 
+        {
+            return new DescribeTransitGatewayPolicyTablesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeTransitGatewayRouteTableAnnouncements operation
+        ///</summary>
+        public IDescribeTransitGatewayRouteTableAnnouncementsPaginator DescribeTransitGatewayRouteTableAnnouncements(DescribeTransitGatewayRouteTableAnnouncementsRequest request) 
+        {
+            return new DescribeTransitGatewayRouteTableAnnouncementsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeTransitGatewayRouteTables operation
         ///</summary>
         public IDescribeTransitGatewayRouteTablesPaginator DescribeTransitGatewayRouteTables(DescribeTransitGatewayRouteTablesRequest request) 
@@ -913,6 +929,14 @@ namespace Amazon.EC2.Model
         public IGetTransitGatewayMulticastDomainAssociationsPaginator GetTransitGatewayMulticastDomainAssociations(GetTransitGatewayMulticastDomainAssociationsRequest request) 
         {
             return new GetTransitGatewayMulticastDomainAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetTransitGatewayPolicyTableAssociations operation
+        ///</summary>
+        public IGetTransitGatewayPolicyTableAssociationsPaginator GetTransitGatewayPolicyTableAssociations(GetTransitGatewayPolicyTableAssociationsRequest request) 
+        {
+            return new GetTransitGatewayPolicyTableAssociationsPaginator(this.client, request);
         }
 
         /// <summary>

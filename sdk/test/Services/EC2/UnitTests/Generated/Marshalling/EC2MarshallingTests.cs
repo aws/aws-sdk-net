@@ -568,6 +568,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void AssociateTransitGatewayPolicyTableMarshallTest()
+        {
+            var operation = service_model.FindOperation("AssociateTransitGatewayPolicyTable");
+
+            var request = InstantiateClassGenerator.Execute<AssociateTransitGatewayPolicyTableRequest>();
+            var marshaller = new AssociateTransitGatewayPolicyTableRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = AssociateTransitGatewayPolicyTableResponseUnmarshaller.Instance.Unmarshall(context)
+                as AssociateTransitGatewayPolicyTableResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void AssociateTransitGatewayRouteTableMarshallTest()
         {
             var operation = service_model.FindOperation("AssociateTransitGatewayRouteTable");
@@ -2511,6 +2535,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void CreateTransitGatewayPolicyTableMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateTransitGatewayPolicyTable");
+
+            var request = InstantiateClassGenerator.Execute<CreateTransitGatewayPolicyTableRequest>();
+            var marshaller = new CreateTransitGatewayPolicyTableRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = CreateTransitGatewayPolicyTableResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateTransitGatewayPolicyTableResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void CreateTransitGatewayPrefixListReferenceMarshallTest()
         {
             var operation = service_model.FindOperation("CreateTransitGatewayPrefixListReference");
@@ -2574,6 +2622,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = CreateTransitGatewayRouteTableResponseUnmarshaller.Instance.Unmarshall(context)
                 as CreateTransitGatewayRouteTableResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void CreateTransitGatewayRouteTableAnnouncementMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateTransitGatewayRouteTableAnnouncement");
+
+            var request = InstantiateClassGenerator.Execute<CreateTransitGatewayRouteTableAnnouncementRequest>();
+            var marshaller = new CreateTransitGatewayRouteTableAnnouncementRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = CreateTransitGatewayRouteTableAnnouncementResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateTransitGatewayRouteTableAnnouncementResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -3919,6 +3991,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DeleteTransitGatewayPolicyTableMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteTransitGatewayPolicyTable");
+
+            var request = InstantiateClassGenerator.Execute<DeleteTransitGatewayPolicyTableRequest>();
+            var marshaller = new DeleteTransitGatewayPolicyTableRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DeleteTransitGatewayPolicyTableResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteTransitGatewayPolicyTableResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DeleteTransitGatewayPrefixListReferenceMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteTransitGatewayPrefixListReference");
@@ -3982,6 +4078,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = DeleteTransitGatewayRouteTableResponseUnmarshaller.Instance.Unmarshall(context)
                 as DeleteTransitGatewayRouteTableResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DeleteTransitGatewayRouteTableAnnouncementMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteTransitGatewayRouteTableAnnouncement");
+
+            var request = InstantiateClassGenerator.Execute<DeleteTransitGatewayRouteTableAnnouncementRequest>();
+            var marshaller = new DeleteTransitGatewayRouteTableAnnouncementRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DeleteTransitGatewayRouteTableAnnouncementResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteTransitGatewayRouteTableAnnouncementResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -7057,6 +7177,54 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DescribeTransitGatewayPolicyTablesMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeTransitGatewayPolicyTables");
+
+            var request = InstantiateClassGenerator.Execute<DescribeTransitGatewayPolicyTablesRequest>();
+            var marshaller = new DescribeTransitGatewayPolicyTablesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeTransitGatewayPolicyTablesResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeTransitGatewayPolicyTablesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DescribeTransitGatewayRouteTableAnnouncementsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeTransitGatewayRouteTableAnnouncements");
+
+            var request = InstantiateClassGenerator.Execute<DescribeTransitGatewayRouteTableAnnouncementsRequest>();
+            var marshaller = new DescribeTransitGatewayRouteTableAnnouncementsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeTransitGatewayRouteTableAnnouncementsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeTransitGatewayRouteTableAnnouncementsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DescribeTransitGatewayRouteTablesMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeTransitGatewayRouteTables");
@@ -8074,6 +8242,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = DisassociateTransitGatewayMulticastDomainResponseUnmarshaller.Instance.Unmarshall(context)
                 as DisassociateTransitGatewayMulticastDomainResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DisassociateTransitGatewayPolicyTableMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisassociateTransitGatewayPolicyTable");
+
+            var request = InstantiateClassGenerator.Execute<DisassociateTransitGatewayPolicyTableRequest>();
+            var marshaller = new DisassociateTransitGatewayPolicyTableRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DisassociateTransitGatewayPolicyTableResponseUnmarshaller.Instance.Unmarshall(context)
+                as DisassociateTransitGatewayPolicyTableResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -9216,6 +9408,54 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = GetTransitGatewayMulticastDomainAssociationsResponseUnmarshaller.Instance.Unmarshall(context)
                 as GetTransitGatewayMulticastDomainAssociationsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void GetTransitGatewayPolicyTableAssociationsMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetTransitGatewayPolicyTableAssociations");
+
+            var request = InstantiateClassGenerator.Execute<GetTransitGatewayPolicyTableAssociationsRequest>();
+            var marshaller = new GetTransitGatewayPolicyTableAssociationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = GetTransitGatewayPolicyTableAssociationsResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetTransitGatewayPolicyTableAssociationsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void GetTransitGatewayPolicyTableEntriesMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetTransitGatewayPolicyTableEntries");
+
+            var request = InstantiateClassGenerator.Execute<GetTransitGatewayPolicyTableEntriesRequest>();
+            var marshaller = new GetTransitGatewayPolicyTableEntriesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = GetTransitGatewayPolicyTableEntriesResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetTransitGatewayPolicyTableEntriesResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

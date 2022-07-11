@@ -431,6 +431,16 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeTransitGatewayPolicyTablesRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeTransitGatewayRouteTableAnnouncementsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeTransitGatewayRouteTablesRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
@@ -567,6 +577,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.GetTransitGatewayMulticastDomainAssociationsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.GetTransitGatewayPolicyTableAssociationsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.GetTransitGatewayPolicyTableEntriesRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
   </property-value-rule>

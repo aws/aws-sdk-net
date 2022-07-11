@@ -60,10 +60,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.AccepterTgwInfo = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("accepterTransitGatewayAttachmentId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AccepterTransitGatewayAttachmentId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("creationTime", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;
                         unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("options", targetDepth))
+                    {
+                        var unmarshaller = TransitGatewayPeeringAttachmentOptionsUnmarshaller.Instance;
+                        unmarshalledObject.Options = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("requesterTgwInfo", targetDepth))

@@ -73,6 +73,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             publicRequestOptionslistValueIndex++;
                         }
                     }
+                    if(publicRequest.Options.IsSetAmazonSideAsn())
+                    {
+                        request.Parameters.Add("Options" + "." + "AmazonSideAsn", StringUtils.FromLong(publicRequest.Options.AmazonSideAsn));
+                    }
                     if(publicRequest.Options.IsSetAssociationDefaultRouteTableId())
                     {
                         request.Parameters.Add("Options" + "." + "AssociationDefaultRouteTableId", StringUtils.FromString(publicRequest.Options.AssociationDefaultRouteTableId));

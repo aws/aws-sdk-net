@@ -1263,6 +1263,47 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  AssociateTransitGatewayPolicyTable
+
+
+        /// <summary>
+        /// Associates the specified transit gateway attachment with a transit gateway policy
+        /// table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateTransitGatewayPolicyTable service method.</param>
+        /// 
+        /// <returns>The response from the AssociateTransitGatewayPolicyTable service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateTransitGatewayPolicyTable">REST API Reference for AssociateTransitGatewayPolicyTable Operation</seealso>
+        AssociateTransitGatewayPolicyTableResponse AssociateTransitGatewayPolicyTable(AssociateTransitGatewayPolicyTableRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateTransitGatewayPolicyTable operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateTransitGatewayPolicyTable operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateTransitGatewayPolicyTable
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateTransitGatewayPolicyTable">REST API Reference for AssociateTransitGatewayPolicyTable Operation</seealso>
+        IAsyncResult BeginAssociateTransitGatewayPolicyTable(AssociateTransitGatewayPolicyTableRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateTransitGatewayPolicyTable operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateTransitGatewayPolicyTable.</param>
+        /// 
+        /// <returns>Returns a  AssociateTransitGatewayPolicyTableResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateTransitGatewayPolicyTable">REST API Reference for AssociateTransitGatewayPolicyTable Operation</seealso>
+        AssociateTransitGatewayPolicyTableResponse EndAssociateTransitGatewayPolicyTable(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  AssociateTransitGatewayRouteTable
 
 
@@ -5614,8 +5655,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Requests a transit gateway peering attachment between the specified transit gateway
-        /// (requester) and a peer transit gateway (accepter). The peer transit gateway can be
-        /// in your account or a different Amazon Web Services account.
+        /// (requester) and a peer transit gateway (accepter). The transit gateways must be in
+        /// different Regions. The peer transit gateway can be in your account or a different
+        /// Amazon Web Services account.
         /// 
         ///  
         /// <para>
@@ -5654,6 +5696,46 @@ namespace Amazon.EC2
         /// <returns>Returns a  CreateTransitGatewayPeeringAttachmentResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayPeeringAttachment">REST API Reference for CreateTransitGatewayPeeringAttachment Operation</seealso>
         CreateTransitGatewayPeeringAttachmentResponse EndCreateTransitGatewayPeeringAttachment(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateTransitGatewayPolicyTable
+
+
+        /// <summary>
+        /// Creates a transit gateway policy table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayPolicyTable service method.</param>
+        /// 
+        /// <returns>The response from the CreateTransitGatewayPolicyTable service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayPolicyTable">REST API Reference for CreateTransitGatewayPolicyTable Operation</seealso>
+        CreateTransitGatewayPolicyTableResponse CreateTransitGatewayPolicyTable(CreateTransitGatewayPolicyTableRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTransitGatewayPolicyTable operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayPolicyTable operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTransitGatewayPolicyTable
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayPolicyTable">REST API Reference for CreateTransitGatewayPolicyTable Operation</seealso>
+        IAsyncResult BeginCreateTransitGatewayPolicyTable(CreateTransitGatewayPolicyTableRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTransitGatewayPolicyTable operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTransitGatewayPolicyTable.</param>
+        /// 
+        /// <returns>Returns a  CreateTransitGatewayPolicyTableResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayPolicyTable">REST API Reference for CreateTransitGatewayPolicyTable Operation</seealso>
+        CreateTransitGatewayPolicyTableResponse EndCreateTransitGatewayPolicyTable(IAsyncResult asyncResult);
 
         #endregion
         
@@ -5775,6 +5857,46 @@ namespace Amazon.EC2
         /// <returns>Returns a  CreateTransitGatewayRouteTableResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayRouteTable">REST API Reference for CreateTransitGatewayRouteTable Operation</seealso>
         CreateTransitGatewayRouteTableResponse EndCreateTransitGatewayRouteTable(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateTransitGatewayRouteTableAnnouncement
+
+
+        /// <summary>
+        /// Advertises a new transit gateway route table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayRouteTableAnnouncement service method.</param>
+        /// 
+        /// <returns>The response from the CreateTransitGatewayRouteTableAnnouncement service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayRouteTableAnnouncement">REST API Reference for CreateTransitGatewayRouteTableAnnouncement Operation</seealso>
+        CreateTransitGatewayRouteTableAnnouncementResponse CreateTransitGatewayRouteTableAnnouncement(CreateTransitGatewayRouteTableAnnouncementRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTransitGatewayRouteTableAnnouncement operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayRouteTableAnnouncement operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTransitGatewayRouteTableAnnouncement
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayRouteTableAnnouncement">REST API Reference for CreateTransitGatewayRouteTableAnnouncement Operation</seealso>
+        IAsyncResult BeginCreateTransitGatewayRouteTableAnnouncement(CreateTransitGatewayRouteTableAnnouncementRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTransitGatewayRouteTableAnnouncement operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTransitGatewayRouteTableAnnouncement.</param>
+        /// 
+        /// <returns>Returns a  CreateTransitGatewayRouteTableAnnouncementResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayRouteTableAnnouncement">REST API Reference for CreateTransitGatewayRouteTableAnnouncement Operation</seealso>
+        CreateTransitGatewayRouteTableAnnouncementResponse EndCreateTransitGatewayRouteTableAnnouncement(IAsyncResult asyncResult);
 
         #endregion
         
@@ -8456,6 +8578,46 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DeleteTransitGatewayPolicyTable
+
+
+        /// <summary>
+        /// Deletes the specified transit gateway policy table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayPolicyTable service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTransitGatewayPolicyTable service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayPolicyTable">REST API Reference for DeleteTransitGatewayPolicyTable Operation</seealso>
+        DeleteTransitGatewayPolicyTableResponse DeleteTransitGatewayPolicyTable(DeleteTransitGatewayPolicyTableRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTransitGatewayPolicyTable operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayPolicyTable operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTransitGatewayPolicyTable
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayPolicyTable">REST API Reference for DeleteTransitGatewayPolicyTable Operation</seealso>
+        IAsyncResult BeginDeleteTransitGatewayPolicyTable(DeleteTransitGatewayPolicyTableRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTransitGatewayPolicyTable operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTransitGatewayPolicyTable.</param>
+        /// 
+        /// <returns>Returns a  DeleteTransitGatewayPolicyTableResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayPolicyTable">REST API Reference for DeleteTransitGatewayPolicyTable Operation</seealso>
+        DeleteTransitGatewayPolicyTableResponse EndDeleteTransitGatewayPolicyTable(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteTransitGatewayPrefixListReference
 
 
@@ -8575,6 +8737,46 @@ namespace Amazon.EC2
         /// <returns>Returns a  DeleteTransitGatewayRouteTableResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayRouteTable">REST API Reference for DeleteTransitGatewayRouteTable Operation</seealso>
         DeleteTransitGatewayRouteTableResponse EndDeleteTransitGatewayRouteTable(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteTransitGatewayRouteTableAnnouncement
+
+
+        /// <summary>
+        /// Advertises to the transit gateway that a transit gateway route table is deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayRouteTableAnnouncement service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTransitGatewayRouteTableAnnouncement service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayRouteTableAnnouncement">REST API Reference for DeleteTransitGatewayRouteTableAnnouncement Operation</seealso>
+        DeleteTransitGatewayRouteTableAnnouncementResponse DeleteTransitGatewayRouteTableAnnouncement(DeleteTransitGatewayRouteTableAnnouncementRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTransitGatewayRouteTableAnnouncement operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayRouteTableAnnouncement operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTransitGatewayRouteTableAnnouncement
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayRouteTableAnnouncement">REST API Reference for DeleteTransitGatewayRouteTableAnnouncement Operation</seealso>
+        IAsyncResult BeginDeleteTransitGatewayRouteTableAnnouncement(DeleteTransitGatewayRouteTableAnnouncementRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTransitGatewayRouteTableAnnouncement operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTransitGatewayRouteTableAnnouncement.</param>
+        /// 
+        /// <returns>Returns a  DeleteTransitGatewayRouteTableAnnouncementResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayRouteTableAnnouncement">REST API Reference for DeleteTransitGatewayRouteTableAnnouncement Operation</seealso>
+        DeleteTransitGatewayRouteTableAnnouncementResponse EndDeleteTransitGatewayRouteTableAnnouncement(IAsyncResult asyncResult);
 
         #endregion
         
@@ -15142,6 +15344,86 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeTransitGatewayPolicyTables
+
+
+        /// <summary>
+        /// Describes one or more transit gateway route policy tables.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGatewayPolicyTables service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTransitGatewayPolicyTables service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayPolicyTables">REST API Reference for DescribeTransitGatewayPolicyTables Operation</seealso>
+        DescribeTransitGatewayPolicyTablesResponse DescribeTransitGatewayPolicyTables(DescribeTransitGatewayPolicyTablesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTransitGatewayPolicyTables operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGatewayPolicyTables operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTransitGatewayPolicyTables
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayPolicyTables">REST API Reference for DescribeTransitGatewayPolicyTables Operation</seealso>
+        IAsyncResult BeginDescribeTransitGatewayPolicyTables(DescribeTransitGatewayPolicyTablesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeTransitGatewayPolicyTables operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTransitGatewayPolicyTables.</param>
+        /// 
+        /// <returns>Returns a  DescribeTransitGatewayPolicyTablesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayPolicyTables">REST API Reference for DescribeTransitGatewayPolicyTables Operation</seealso>
+        DescribeTransitGatewayPolicyTablesResponse EndDescribeTransitGatewayPolicyTables(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeTransitGatewayRouteTableAnnouncements
+
+
+        /// <summary>
+        /// Describes one or more transit gateway route table advertisements.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGatewayRouteTableAnnouncements service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTransitGatewayRouteTableAnnouncements service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayRouteTableAnnouncements">REST API Reference for DescribeTransitGatewayRouteTableAnnouncements Operation</seealso>
+        DescribeTransitGatewayRouteTableAnnouncementsResponse DescribeTransitGatewayRouteTableAnnouncements(DescribeTransitGatewayRouteTableAnnouncementsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTransitGatewayRouteTableAnnouncements operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGatewayRouteTableAnnouncements operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTransitGatewayRouteTableAnnouncements
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayRouteTableAnnouncements">REST API Reference for DescribeTransitGatewayRouteTableAnnouncements Operation</seealso>
+        IAsyncResult BeginDescribeTransitGatewayRouteTableAnnouncements(DescribeTransitGatewayRouteTableAnnouncementsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeTransitGatewayRouteTableAnnouncements operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTransitGatewayRouteTableAnnouncements.</param>
+        /// 
+        /// <returns>Returns a  DescribeTransitGatewayRouteTableAnnouncementsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayRouteTableAnnouncements">REST API Reference for DescribeTransitGatewayRouteTableAnnouncements Operation</seealso>
+        DescribeTransitGatewayRouteTableAnnouncementsResponse EndDescribeTransitGatewayRouteTableAnnouncements(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeTransitGatewayRouteTables
 
 
@@ -17278,6 +17560,46 @@ namespace Amazon.EC2
         /// <returns>Returns a  DisassociateTransitGatewayMulticastDomainResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTransitGatewayMulticastDomain">REST API Reference for DisassociateTransitGatewayMulticastDomain Operation</seealso>
         DisassociateTransitGatewayMulticastDomainResponse EndDisassociateTransitGatewayMulticastDomain(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DisassociateTransitGatewayPolicyTable
+
+
+        /// <summary>
+        /// Removes the association between an an attachment and a policy table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateTransitGatewayPolicyTable service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateTransitGatewayPolicyTable service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTransitGatewayPolicyTable">REST API Reference for DisassociateTransitGatewayPolicyTable Operation</seealso>
+        DisassociateTransitGatewayPolicyTableResponse DisassociateTransitGatewayPolicyTable(DisassociateTransitGatewayPolicyTableRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateTransitGatewayPolicyTable operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateTransitGatewayPolicyTable operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateTransitGatewayPolicyTable
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTransitGatewayPolicyTable">REST API Reference for DisassociateTransitGatewayPolicyTable Operation</seealso>
+        IAsyncResult BeginDisassociateTransitGatewayPolicyTable(DisassociateTransitGatewayPolicyTableRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateTransitGatewayPolicyTable operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateTransitGatewayPolicyTable.</param>
+        /// 
+        /// <returns>Returns a  DisassociateTransitGatewayPolicyTableResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTransitGatewayPolicyTable">REST API Reference for DisassociateTransitGatewayPolicyTable Operation</seealso>
+        DisassociateTransitGatewayPolicyTableResponse EndDisassociateTransitGatewayPolicyTable(IAsyncResult asyncResult);
 
         #endregion
         
@@ -19488,6 +19810,86 @@ namespace Amazon.EC2
         /// <returns>Returns a  GetTransitGatewayMulticastDomainAssociationsResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayMulticastDomainAssociations">REST API Reference for GetTransitGatewayMulticastDomainAssociations Operation</seealso>
         GetTransitGatewayMulticastDomainAssociationsResponse EndGetTransitGatewayMulticastDomainAssociations(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetTransitGatewayPolicyTableAssociations
+
+
+        /// <summary>
+        /// Gets a list of the transit gateway policy table associations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTransitGatewayPolicyTableAssociations service method.</param>
+        /// 
+        /// <returns>The response from the GetTransitGatewayPolicyTableAssociations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayPolicyTableAssociations">REST API Reference for GetTransitGatewayPolicyTableAssociations Operation</seealso>
+        GetTransitGatewayPolicyTableAssociationsResponse GetTransitGatewayPolicyTableAssociations(GetTransitGatewayPolicyTableAssociationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTransitGatewayPolicyTableAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTransitGatewayPolicyTableAssociations operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTransitGatewayPolicyTableAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayPolicyTableAssociations">REST API Reference for GetTransitGatewayPolicyTableAssociations Operation</seealso>
+        IAsyncResult BeginGetTransitGatewayPolicyTableAssociations(GetTransitGatewayPolicyTableAssociationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTransitGatewayPolicyTableAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTransitGatewayPolicyTableAssociations.</param>
+        /// 
+        /// <returns>Returns a  GetTransitGatewayPolicyTableAssociationsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayPolicyTableAssociations">REST API Reference for GetTransitGatewayPolicyTableAssociations Operation</seealso>
+        GetTransitGatewayPolicyTableAssociationsResponse EndGetTransitGatewayPolicyTableAssociations(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetTransitGatewayPolicyTableEntries
+
+
+        /// <summary>
+        /// Returns a list of transit gateway policy table entries.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTransitGatewayPolicyTableEntries service method.</param>
+        /// 
+        /// <returns>The response from the GetTransitGatewayPolicyTableEntries service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayPolicyTableEntries">REST API Reference for GetTransitGatewayPolicyTableEntries Operation</seealso>
+        GetTransitGatewayPolicyTableEntriesResponse GetTransitGatewayPolicyTableEntries(GetTransitGatewayPolicyTableEntriesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTransitGatewayPolicyTableEntries operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTransitGatewayPolicyTableEntries operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTransitGatewayPolicyTableEntries
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayPolicyTableEntries">REST API Reference for GetTransitGatewayPolicyTableEntries Operation</seealso>
+        IAsyncResult BeginGetTransitGatewayPolicyTableEntries(GetTransitGatewayPolicyTableEntriesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTransitGatewayPolicyTableEntries operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTransitGatewayPolicyTableEntries.</param>
+        /// 
+        /// <returns>Returns a  GetTransitGatewayPolicyTableEntriesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayPolicyTableEntries">REST API Reference for GetTransitGatewayPolicyTableEntries Operation</seealso>
+        GetTransitGatewayPolicyTableEntriesResponse EndGetTransitGatewayPolicyTableEntries(IAsyncResult asyncResult);
 
         #endregion
         

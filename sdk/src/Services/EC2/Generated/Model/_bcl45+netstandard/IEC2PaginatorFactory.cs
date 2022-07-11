@@ -441,6 +441,16 @@ namespace Amazon.EC2.Model
         IDescribeTransitGatewayPeeringAttachmentsPaginator DescribeTransitGatewayPeeringAttachments(DescribeTransitGatewayPeeringAttachmentsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeTransitGatewayPolicyTables operation
+        ///</summary>
+        IDescribeTransitGatewayPolicyTablesPaginator DescribeTransitGatewayPolicyTables(DescribeTransitGatewayPolicyTablesRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeTransitGatewayRouteTableAnnouncements operation
+        ///</summary>
+        IDescribeTransitGatewayRouteTableAnnouncementsPaginator DescribeTransitGatewayRouteTableAnnouncements(DescribeTransitGatewayRouteTableAnnouncementsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeTransitGatewayRouteTables operation
         ///</summary>
         IDescribeTransitGatewayRouteTablesPaginator DescribeTransitGatewayRouteTables(DescribeTransitGatewayRouteTablesRequest request);
@@ -574,6 +584,11 @@ namespace Amazon.EC2.Model
         /// Paginator for GetTransitGatewayMulticastDomainAssociations operation
         ///</summary>
         IGetTransitGatewayMulticastDomainAssociationsPaginator GetTransitGatewayMulticastDomainAssociations(GetTransitGatewayMulticastDomainAssociationsRequest request);
+
+        /// <summary>
+        /// Paginator for GetTransitGatewayPolicyTableAssociations operation
+        ///</summary>
+        IGetTransitGatewayPolicyTableAssociationsPaginator GetTransitGatewayPolicyTableAssociations(GetTransitGatewayPolicyTableAssociationsRequest request);
 
         /// <summary>
         /// Paginator for GetTransitGatewayPrefixListReferences operation

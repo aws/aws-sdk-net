@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     public partial class ModifyTransitGatewayOptions
     {
         private List<string> _addTransitGatewayCidrBlocks = new List<string>();
+        private long? _amazonSideAsn;
         private string _associationDefaultRouteTableId;
         private AutoAcceptSharedAttachmentsValue _autoAcceptSharedAttachments;
         private DefaultRouteTableAssociationValue _defaultRouteTableAssociation;
@@ -60,6 +61,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetAddTransitGatewayCidrBlocks()
         {
             return this._addTransitGatewayCidrBlocks != null && this._addTransitGatewayCidrBlocks.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AmazonSideAsn. 
+        /// <para>
+        /// A private Autonomous System Number (ASN) for the Amazon side of a BGP session. The
+        /// range is 64512 to 65534 for 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs.
+        /// </para>
+        /// </summary>
+        public long AmazonSideAsn
+        {
+            get { return this._amazonSideAsn.GetValueOrDefault(); }
+            set { this._amazonSideAsn = value; }
+        }
+
+        // Check to see if AmazonSideAsn property is set
+        internal bool IsSetAmazonSideAsn()
+        {
+            return this._amazonSideAsn.HasValue; 
         }
 
         /// <summary>

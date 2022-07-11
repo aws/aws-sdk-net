@@ -33,9 +33,25 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class PeeringTgwInfo
     {
+        private string _coreNetworkId;
         private string _ownerId;
         private string _region;
         private string _transitGatewayId;
+
+        /// <summary>
+        /// Gets and sets the property CoreNetworkId.
+        /// </summary>
+        public string CoreNetworkId
+        {
+            get { return this._coreNetworkId; }
+            set { this._coreNetworkId = value; }
+        }
+
+        // Check to see if CoreNetworkId property is set
+        internal bool IsSetCoreNetworkId()
+        {
+            return this._coreNetworkId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property OwnerId. 

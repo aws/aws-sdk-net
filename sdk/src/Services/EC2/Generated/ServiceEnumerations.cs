@@ -3793,6 +3793,56 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type DynamicRoutingValue.
+    /// </summary>
+    public class DynamicRoutingValue : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disable for DynamicRoutingValue
+        /// </summary>
+        public static readonly DynamicRoutingValue Disable = new DynamicRoutingValue("disable");
+        /// <summary>
+        /// Constant Enable for DynamicRoutingValue
+        /// </summary>
+        public static readonly DynamicRoutingValue Enable = new DynamicRoutingValue("enable");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DynamicRoutingValue(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DynamicRoutingValue FindValue(string value)
+        {
+            return FindValue<DynamicRoutingValue>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DynamicRoutingValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EbsEncryptionSupport.
     /// </summary>
     public class EbsEncryptionSupport : ConstantClass
@@ -13437,9 +13487,17 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly ResourceType TransitGatewayMulticastDomain = new ResourceType("transit-gateway-multicast-domain");
         /// <summary>
+        /// Constant TransitGatewayPolicyTable for ResourceType
+        /// </summary>
+        public static readonly ResourceType TransitGatewayPolicyTable = new ResourceType("transit-gateway-policy-table");
+        /// <summary>
         /// Constant TransitGatewayRouteTable for ResourceType
         /// </summary>
         public static readonly ResourceType TransitGatewayRouteTable = new ResourceType("transit-gateway-route-table");
+        /// <summary>
+        /// Constant TransitGatewayRouteTableAnnouncement for ResourceType
+        /// </summary>
+        public static readonly ResourceType TransitGatewayRouteTableAnnouncement = new ResourceType("transit-gateway-route-table-announcement");
         /// <summary>
         /// Constant Volume for ResourceType
         /// </summary>
@@ -16193,6 +16251,64 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type TransitGatewayPolicyTableState.
+    /// </summary>
+    public class TransitGatewayPolicyTableState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Available for TransitGatewayPolicyTableState
+        /// </summary>
+        public static readonly TransitGatewayPolicyTableState Available = new TransitGatewayPolicyTableState("available");
+        /// <summary>
+        /// Constant Deleted for TransitGatewayPolicyTableState
+        /// </summary>
+        public static readonly TransitGatewayPolicyTableState Deleted = new TransitGatewayPolicyTableState("deleted");
+        /// <summary>
+        /// Constant Deleting for TransitGatewayPolicyTableState
+        /// </summary>
+        public static readonly TransitGatewayPolicyTableState Deleting = new TransitGatewayPolicyTableState("deleting");
+        /// <summary>
+        /// Constant Pending for TransitGatewayPolicyTableState
+        /// </summary>
+        public static readonly TransitGatewayPolicyTableState Pending = new TransitGatewayPolicyTableState("pending");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TransitGatewayPolicyTableState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TransitGatewayPolicyTableState FindValue(string value)
+        {
+            return FindValue<TransitGatewayPolicyTableState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TransitGatewayPolicyTableState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TransitGatewayPrefixListReferenceState.
     /// </summary>
     public class TransitGatewayPrefixListReferenceState : ConstantClass
@@ -16364,6 +16480,122 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TransitGatewayRouteState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TransitGatewayRouteTableAnnouncementDirection.
+    /// </summary>
+    public class TransitGatewayRouteTableAnnouncementDirection : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Incoming for TransitGatewayRouteTableAnnouncementDirection
+        /// </summary>
+        public static readonly TransitGatewayRouteTableAnnouncementDirection Incoming = new TransitGatewayRouteTableAnnouncementDirection("incoming");
+        /// <summary>
+        /// Constant Outgoing for TransitGatewayRouteTableAnnouncementDirection
+        /// </summary>
+        public static readonly TransitGatewayRouteTableAnnouncementDirection Outgoing = new TransitGatewayRouteTableAnnouncementDirection("outgoing");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TransitGatewayRouteTableAnnouncementDirection(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TransitGatewayRouteTableAnnouncementDirection FindValue(string value)
+        {
+            return FindValue<TransitGatewayRouteTableAnnouncementDirection>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TransitGatewayRouteTableAnnouncementDirection(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TransitGatewayRouteTableAnnouncementState.
+    /// </summary>
+    public class TransitGatewayRouteTableAnnouncementState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Available for TransitGatewayRouteTableAnnouncementState
+        /// </summary>
+        public static readonly TransitGatewayRouteTableAnnouncementState Available = new TransitGatewayRouteTableAnnouncementState("available");
+        /// <summary>
+        /// Constant Deleted for TransitGatewayRouteTableAnnouncementState
+        /// </summary>
+        public static readonly TransitGatewayRouteTableAnnouncementState Deleted = new TransitGatewayRouteTableAnnouncementState("deleted");
+        /// <summary>
+        /// Constant Deleting for TransitGatewayRouteTableAnnouncementState
+        /// </summary>
+        public static readonly TransitGatewayRouteTableAnnouncementState Deleting = new TransitGatewayRouteTableAnnouncementState("deleting");
+        /// <summary>
+        /// Constant Failed for TransitGatewayRouteTableAnnouncementState
+        /// </summary>
+        public static readonly TransitGatewayRouteTableAnnouncementState Failed = new TransitGatewayRouteTableAnnouncementState("failed");
+        /// <summary>
+        /// Constant Failing for TransitGatewayRouteTableAnnouncementState
+        /// </summary>
+        public static readonly TransitGatewayRouteTableAnnouncementState Failing = new TransitGatewayRouteTableAnnouncementState("failing");
+        /// <summary>
+        /// Constant Pending for TransitGatewayRouteTableAnnouncementState
+        /// </summary>
+        public static readonly TransitGatewayRouteTableAnnouncementState Pending = new TransitGatewayRouteTableAnnouncementState("pending");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TransitGatewayRouteTableAnnouncementState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TransitGatewayRouteTableAnnouncementState FindValue(string value)
+        {
+            return FindValue<TransitGatewayRouteTableAnnouncementState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TransitGatewayRouteTableAnnouncementState(string value)
         {
             return FindValue(value);
         }

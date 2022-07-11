@@ -781,6 +781,25 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  AssociateTransitGatewayPolicyTable
+
+
+
+        /// <summary>
+        /// Associates the specified transit gateway attachment with a transit gateway policy
+        /// table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateTransitGatewayPolicyTable service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateTransitGatewayPolicyTable service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateTransitGatewayPolicyTable">REST API Reference for AssociateTransitGatewayPolicyTable Operation</seealso>
+        Task<AssociateTransitGatewayPolicyTableResponse> AssociateTransitGatewayPolicyTableAsync(AssociateTransitGatewayPolicyTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  AssociateTransitGatewayRouteTable
 
 
@@ -3355,8 +3374,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Requests a transit gateway peering attachment between the specified transit gateway
-        /// (requester) and a peer transit gateway (accepter). The peer transit gateway can be
-        /// in your account or a different Amazon Web Services account.
+        /// (requester) and a peer transit gateway (accepter). The transit gateways must be in
+        /// different Regions. The peer transit gateway can be in your account or a different
+        /// Amazon Web Services account.
         /// 
         ///  
         /// <para>
@@ -3372,6 +3392,24 @@ namespace Amazon.EC2
         /// <returns>The response from the CreateTransitGatewayPeeringAttachment service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayPeeringAttachment">REST API Reference for CreateTransitGatewayPeeringAttachment Operation</seealso>
         Task<CreateTransitGatewayPeeringAttachmentResponse> CreateTransitGatewayPeeringAttachmentAsync(CreateTransitGatewayPeeringAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateTransitGatewayPolicyTable
+
+
+
+        /// <summary>
+        /// Creates a transit gateway policy table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayPolicyTable service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTransitGatewayPolicyTable service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayPolicyTable">REST API Reference for CreateTransitGatewayPolicyTable Operation</seealso>
+        Task<CreateTransitGatewayPolicyTableResponse> CreateTransitGatewayPolicyTableAsync(CreateTransitGatewayPolicyTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -3427,6 +3465,24 @@ namespace Amazon.EC2
         /// <returns>The response from the CreateTransitGatewayRouteTable service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayRouteTable">REST API Reference for CreateTransitGatewayRouteTable Operation</seealso>
         Task<CreateTransitGatewayRouteTableResponse> CreateTransitGatewayRouteTableAsync(CreateTransitGatewayRouteTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateTransitGatewayRouteTableAnnouncement
+
+
+
+        /// <summary>
+        /// Advertises a new transit gateway route table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayRouteTableAnnouncement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTransitGatewayRouteTableAnnouncement service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayRouteTableAnnouncement">REST API Reference for CreateTransitGatewayRouteTableAnnouncement Operation</seealso>
+        Task<CreateTransitGatewayRouteTableAnnouncementResponse> CreateTransitGatewayRouteTableAnnouncementAsync(CreateTransitGatewayRouteTableAnnouncementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -4814,6 +4870,24 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  DeleteTransitGatewayPolicyTable
+
+
+
+        /// <summary>
+        /// Deletes the specified transit gateway policy table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayPolicyTable service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTransitGatewayPolicyTable service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayPolicyTable">REST API Reference for DeleteTransitGatewayPolicyTable Operation</seealso>
+        Task<DeleteTransitGatewayPolicyTableResponse> DeleteTransitGatewayPolicyTableAsync(DeleteTransitGatewayPolicyTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteTransitGatewayPrefixListReference
 
 
@@ -4867,6 +4941,24 @@ namespace Amazon.EC2
         /// <returns>The response from the DeleteTransitGatewayRouteTable service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayRouteTable">REST API Reference for DeleteTransitGatewayRouteTable Operation</seealso>
         Task<DeleteTransitGatewayRouteTableResponse> DeleteTransitGatewayRouteTableAsync(DeleteTransitGatewayRouteTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteTransitGatewayRouteTableAnnouncement
+
+
+
+        /// <summary>
+        /// Advertises to the transit gateway that a transit gateway route table is deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayRouteTableAnnouncement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTransitGatewayRouteTableAnnouncement service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayRouteTableAnnouncement">REST API Reference for DeleteTransitGatewayRouteTableAnnouncement Operation</seealso>
+        Task<DeleteTransitGatewayRouteTableAnnouncementResponse> DeleteTransitGatewayRouteTableAnnouncementAsync(DeleteTransitGatewayRouteTableAnnouncementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -8712,6 +8804,42 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  DescribeTransitGatewayPolicyTables
+
+
+
+        /// <summary>
+        /// Describes one or more transit gateway route policy tables.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGatewayPolicyTables service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTransitGatewayPolicyTables service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayPolicyTables">REST API Reference for DescribeTransitGatewayPolicyTables Operation</seealso>
+        Task<DescribeTransitGatewayPolicyTablesResponse> DescribeTransitGatewayPolicyTablesAsync(DescribeTransitGatewayPolicyTablesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeTransitGatewayRouteTableAnnouncements
+
+
+
+        /// <summary>
+        /// Describes one or more transit gateway route table advertisements.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGatewayRouteTableAnnouncements service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTransitGatewayRouteTableAnnouncements service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayRouteTableAnnouncements">REST API Reference for DescribeTransitGatewayRouteTableAnnouncements Operation</seealso>
+        Task<DescribeTransitGatewayRouteTableAnnouncementsResponse> DescribeTransitGatewayRouteTableAnnouncementsAsync(DescribeTransitGatewayRouteTableAnnouncementsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeTransitGatewayRouteTables
 
 
@@ -9907,6 +10035,24 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  DisassociateTransitGatewayPolicyTable
+
+
+
+        /// <summary>
+        /// Removes the association between an an attachment and a policy table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateTransitGatewayPolicyTable service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateTransitGatewayPolicyTable service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTransitGatewayPolicyTable">REST API Reference for DisassociateTransitGatewayPolicyTable Operation</seealso>
+        Task<DisassociateTransitGatewayPolicyTableResponse> DisassociateTransitGatewayPolicyTableAsync(DisassociateTransitGatewayPolicyTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DisassociateTransitGatewayRouteTable
 
 
@@ -11058,6 +11204,42 @@ namespace Amazon.EC2
         /// <returns>The response from the GetTransitGatewayMulticastDomainAssociations service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayMulticastDomainAssociations">REST API Reference for GetTransitGatewayMulticastDomainAssociations Operation</seealso>
         Task<GetTransitGatewayMulticastDomainAssociationsResponse> GetTransitGatewayMulticastDomainAssociationsAsync(GetTransitGatewayMulticastDomainAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetTransitGatewayPolicyTableAssociations
+
+
+
+        /// <summary>
+        /// Gets a list of the transit gateway policy table associations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTransitGatewayPolicyTableAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTransitGatewayPolicyTableAssociations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayPolicyTableAssociations">REST API Reference for GetTransitGatewayPolicyTableAssociations Operation</seealso>
+        Task<GetTransitGatewayPolicyTableAssociationsResponse> GetTransitGatewayPolicyTableAssociationsAsync(GetTransitGatewayPolicyTableAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetTransitGatewayPolicyTableEntries
+
+
+
+        /// <summary>
+        /// Returns a list of transit gateway policy table entries.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTransitGatewayPolicyTableEntries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTransitGatewayPolicyTableEntries service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayPolicyTableEntries">REST API Reference for GetTransitGatewayPolicyTableEntries Operation</seealso>
+        Task<GetTransitGatewayPolicyTableEntriesResponse> GetTransitGatewayPolicyTableEntriesAsync(GetTransitGatewayPolicyTableEntriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

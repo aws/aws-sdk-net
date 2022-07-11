@@ -37,6 +37,7 @@ namespace Amazon.EC2.Model
         private string _prefixListId;
         private TransitGatewayRouteState _state;
         private List<TransitGatewayRouteAttachment> _transitGatewayAttachments = new List<TransitGatewayRouteAttachment>();
+        private string _transitGatewayRouteTableAnnouncementId;
         private TransitGatewayRouteType _type;
 
         /// <summary>
@@ -109,6 +110,21 @@ namespace Amazon.EC2.Model
         internal bool IsSetTransitGatewayAttachments()
         {
             return this._transitGatewayAttachments != null && this._transitGatewayAttachments.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitGatewayRouteTableAnnouncementId.
+        /// </summary>
+        public string TransitGatewayRouteTableAnnouncementId
+        {
+            get { return this._transitGatewayRouteTableAnnouncementId; }
+            set { this._transitGatewayRouteTableAnnouncementId = value; }
+        }
+
+        // Check to see if TransitGatewayRouteTableAnnouncementId property is set
+        internal bool IsSetTransitGatewayRouteTableAnnouncementId()
+        {
+            return this._transitGatewayRouteTableAnnouncementId != null;
         }
 
         /// <summary>
