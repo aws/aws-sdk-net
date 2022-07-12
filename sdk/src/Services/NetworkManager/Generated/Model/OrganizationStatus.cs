@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NetworkManager.Model
 {
     /// <summary>
-    /// 
+    /// The status of an Amazon Web Services Organization and the accounts within that organization.
     /// </summary>
     public partial class OrganizationStatus
     {
@@ -39,7 +39,11 @@ namespace Amazon.NetworkManager.Model
         private string _slrDeploymentStatus;
 
         /// <summary>
-        /// Gets and sets the property AccountStatusList.
+        /// Gets and sets the property AccountStatusList. 
+        /// <para>
+        /// The current service-linked role (SLR) deployment status for an Amazon Web Services
+        /// Organization's accounts. This will be either <code>SUCCEEDED</code> or <code>IN_PROGRESS</code>.
+        /// </para>
         /// </summary>
         public List<AccountStatus> AccountStatusList
         {
@@ -54,7 +58,11 @@ namespace Amazon.NetworkManager.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OrganizationAwsServiceAccessStatus.
+        /// Gets and sets the property OrganizationAwsServiceAccessStatus. 
+        /// <para>
+        /// The status of the organization's AWS service access. This will be <code>ENABLED</code>
+        /// or <code>DISABLED</code>.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public string OrganizationAwsServiceAccessStatus
@@ -70,7 +78,10 @@ namespace Amazon.NetworkManager.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OrganizationId.
+        /// Gets and sets the property OrganizationId. 
+        /// <para>
+        /// The ID of an Amazon Web Services Organization.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public string OrganizationId
@@ -86,7 +97,11 @@ namespace Amazon.NetworkManager.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SLRDeploymentStatus.
+        /// Gets and sets the property SLRDeploymentStatus. 
+        /// <para>
+        /// The status of the SLR deployment for the account. This will be either <code>SUCCEEDED</code>
+        /// or <code>IN_PROGRESS</code>.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public string SLRDeploymentStatus

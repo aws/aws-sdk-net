@@ -30,8 +30,8 @@ namespace Amazon.NetworkManager.Model
 {
     /// <summary>
     /// Container for the parameters to the GetCoreNetworkPolicy operation.
-    /// Gets details about a core network policy. You can get details about your current live
-    /// policy or any previous policy version.
+    /// Returns details about a core network policy. You can get details about your current
+    /// live policy or any previous policy version.
     /// </summary>
     public partial class GetCoreNetworkPolicyRequest : AmazonNetworkManagerRequest
     {

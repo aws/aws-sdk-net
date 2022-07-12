@@ -30,7 +30,8 @@ namespace Amazon.NetworkManager.Model
 {
     /// <summary>
     /// Container for the parameters to the ListOrganizationServiceAccessStatus operation.
-    /// 
+    /// Gets the status of the Service Linked Role (SLR) deployment for the accounts in a
+    /// given Amazon Web Services Organization.
     /// </summary>
     public partial class ListOrganizationServiceAccessStatusRequest : AmazonNetworkManagerRequest
     {
@@ -38,7 +39,10 @@ namespace Amazon.NetworkManager.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to return.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
         public int MaxResults
@@ -54,7 +58,10 @@ namespace Amazon.NetworkManager.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token for the next page of results.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
         public string NextToken

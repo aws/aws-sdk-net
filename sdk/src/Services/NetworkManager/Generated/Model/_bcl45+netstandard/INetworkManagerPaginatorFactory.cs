@@ -41,6 +41,11 @@ namespace Amazon.NetworkManager.Model
         IGetConnectPeerAssociationsPaginator GetConnectPeerAssociations(GetConnectPeerAssociationsRequest request);
 
         /// <summary>
+        /// Paginator for GetCoreNetworkChangeEvents operation
+        ///</summary>
+        IGetCoreNetworkChangeEventsPaginator GetCoreNetworkChangeEvents(GetCoreNetworkChangeEventsRequest request);
+
+        /// <summary>
         /// Paginator for GetCoreNetworkChangeSet operation
         ///</summary>
         IGetCoreNetworkChangeSetPaginator GetCoreNetworkChangeSet(GetCoreNetworkChangeSetRequest request);
@@ -119,5 +124,10 @@ namespace Amazon.NetworkManager.Model
         /// Paginator for ListCoreNetworks operation
         ///</summary>
         IListCoreNetworksPaginator ListCoreNetworks(ListCoreNetworksRequest request);
+
+        /// <summary>
+        /// Paginator for ListPeerings operation
+        ///</summary>
+        IListPeeringsPaginator ListPeerings(ListPeeringsRequest request);
     }
 }

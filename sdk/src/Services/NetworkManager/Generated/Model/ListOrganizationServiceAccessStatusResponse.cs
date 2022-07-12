@@ -37,7 +37,10 @@ namespace Amazon.NetworkManager.Model
         private OrganizationStatus _organizationStatus;
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token for the next page of results.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
         public string NextToken
@@ -53,7 +56,10 @@ namespace Amazon.NetworkManager.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OrganizationStatus.
+        /// Gets and sets the property OrganizationStatus. 
+        /// <para>
+        /// Displays the status of an Amazon Web Services Organization.
+        /// </para>
         /// </summary>
         public OrganizationStatus OrganizationStatus
         {

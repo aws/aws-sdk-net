@@ -60,6 +60,14 @@ namespace Amazon.NetworkManager.Model
         }
 
         /// <summary>
+        /// Paginator for GetCoreNetworkChangeEvents operation
+        ///</summary>
+        public IGetCoreNetworkChangeEventsPaginator GetCoreNetworkChangeEvents(GetCoreNetworkChangeEventsRequest request) 
+        {
+            return new GetCoreNetworkChangeEventsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetCoreNetworkChangeSet operation
         ///</summary>
         public IGetCoreNetworkChangeSetPaginator GetCoreNetworkChangeSet(GetCoreNetworkChangeSetRequest request) 
@@ -185,6 +193,14 @@ namespace Amazon.NetworkManager.Model
         public IListCoreNetworksPaginator ListCoreNetworks(ListCoreNetworksRequest request) 
         {
             return new ListCoreNetworksPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPeerings operation
+        ///</summary>
+        public IListPeeringsPaginator ListPeerings(ListPeeringsRequest request) 
+        {
+            return new ListPeeringsPaginator(this.client, request);
         }
     }
 }

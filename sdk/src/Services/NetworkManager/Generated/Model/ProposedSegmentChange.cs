@@ -78,7 +78,7 @@ namespace Amazon.NetworkManager.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The key-value tags that changed for the segment.
+        /// The list of key-value tags that changed for the segment.
         /// </para>
         /// </summary>
         public List<Tag> Tags

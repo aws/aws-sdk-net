@@ -1361,6 +1361,152 @@ namespace Amazon.NetworkManager
 
         #endregion
         
+        #region  CreateTransitGatewayPeering
+
+        /// <summary>
+        /// Creates a transit gateway peering connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayPeering service method.</param>
+        /// 
+        /// <returns>The response from the CreateTransitGatewayPeering service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateTransitGatewayPeering">REST API Reference for CreateTransitGatewayPeering Operation</seealso>
+        public virtual CreateTransitGatewayPeeringResponse CreateTransitGatewayPeering(CreateTransitGatewayPeeringRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTransitGatewayPeeringRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTransitGatewayPeeringResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTransitGatewayPeeringResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTransitGatewayPeering operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayPeering operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTransitGatewayPeering
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateTransitGatewayPeering">REST API Reference for CreateTransitGatewayPeering Operation</seealso>
+        public virtual IAsyncResult BeginCreateTransitGatewayPeering(CreateTransitGatewayPeeringRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTransitGatewayPeeringRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTransitGatewayPeeringResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTransitGatewayPeering operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTransitGatewayPeering.</param>
+        /// 
+        /// <returns>Returns a  CreateTransitGatewayPeeringResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateTransitGatewayPeering">REST API Reference for CreateTransitGatewayPeering Operation</seealso>
+        public virtual CreateTransitGatewayPeeringResponse EndCreateTransitGatewayPeering(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateTransitGatewayPeeringResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateTransitGatewayRouteTableAttachment
+
+        /// <summary>
+        /// Creates a transit gateway route table attachment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayRouteTableAttachment service method.</param>
+        /// 
+        /// <returns>The response from the CreateTransitGatewayRouteTableAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateTransitGatewayRouteTableAttachment">REST API Reference for CreateTransitGatewayRouteTableAttachment Operation</seealso>
+        public virtual CreateTransitGatewayRouteTableAttachmentResponse CreateTransitGatewayRouteTableAttachment(CreateTransitGatewayRouteTableAttachmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTransitGatewayRouteTableAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTransitGatewayRouteTableAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTransitGatewayRouteTableAttachmentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTransitGatewayRouteTableAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayRouteTableAttachment operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTransitGatewayRouteTableAttachment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateTransitGatewayRouteTableAttachment">REST API Reference for CreateTransitGatewayRouteTableAttachment Operation</seealso>
+        public virtual IAsyncResult BeginCreateTransitGatewayRouteTableAttachment(CreateTransitGatewayRouteTableAttachmentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTransitGatewayRouteTableAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTransitGatewayRouteTableAttachmentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTransitGatewayRouteTableAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTransitGatewayRouteTableAttachment.</param>
+        /// 
+        /// <returns>Returns a  CreateTransitGatewayRouteTableAttachmentResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateTransitGatewayRouteTableAttachment">REST API Reference for CreateTransitGatewayRouteTableAttachment Operation</seealso>
+        public virtual CreateTransitGatewayRouteTableAttachmentResponse EndCreateTransitGatewayRouteTableAttachment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateTransitGatewayRouteTableAttachmentResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateVpcAttachment
 
         /// <summary>
@@ -2019,6 +2165,79 @@ namespace Amazon.NetworkManager
         public virtual DeleteLinkResponse EndDeleteLink(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteLinkResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeletePeering
+
+        /// <summary>
+        /// Deletes an existing peering connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePeering service method.</param>
+        /// 
+        /// <returns>The response from the DeletePeering service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeletePeering">REST API Reference for DeletePeering Operation</seealso>
+        public virtual DeletePeeringResponse DeletePeering(DeletePeeringRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePeeringRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePeeringResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePeeringResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePeering operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePeering operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePeering
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeletePeering">REST API Reference for DeletePeering Operation</seealso>
+        public virtual IAsyncResult BeginDeletePeering(DeletePeeringRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePeeringRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePeeringResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePeering operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePeering.</param>
+        /// 
+        /// <returns>Returns a  DeletePeeringResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeletePeering">REST API Reference for DeletePeering Operation</seealso>
+        public virtual DeletePeeringResponse EndDeletePeering(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeletePeeringResponse>(asyncResult);
         }
 
         #endregion
@@ -3029,6 +3248,75 @@ namespace Amazon.NetworkManager
 
         #endregion
         
+        #region  GetCoreNetworkChangeEvents
+
+        /// <summary>
+        /// Returns information about a core network change event.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCoreNetworkChangeEvents service method.</param>
+        /// 
+        /// <returns>The response from the GetCoreNetworkChangeEvents service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetworkChangeEvents">REST API Reference for GetCoreNetworkChangeEvents Operation</seealso>
+        public virtual GetCoreNetworkChangeEventsResponse GetCoreNetworkChangeEvents(GetCoreNetworkChangeEventsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCoreNetworkChangeEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCoreNetworkChangeEventsResponseUnmarshaller.Instance;
+
+            return Invoke<GetCoreNetworkChangeEventsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCoreNetworkChangeEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCoreNetworkChangeEvents operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCoreNetworkChangeEvents
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetworkChangeEvents">REST API Reference for GetCoreNetworkChangeEvents Operation</seealso>
+        public virtual IAsyncResult BeginGetCoreNetworkChangeEvents(GetCoreNetworkChangeEventsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCoreNetworkChangeEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCoreNetworkChangeEventsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCoreNetworkChangeEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCoreNetworkChangeEvents.</param>
+        /// 
+        /// <returns>Returns a  GetCoreNetworkChangeEventsResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetworkChangeEvents">REST API Reference for GetCoreNetworkChangeEvents Operation</seealso>
+        public virtual GetCoreNetworkChangeEventsResponse EndGetCoreNetworkChangeEvents(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetCoreNetworkChangeEventsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetCoreNetworkChangeSet
 
         /// <summary>
@@ -3101,8 +3389,8 @@ namespace Amazon.NetworkManager
         #region  GetCoreNetworkPolicy
 
         /// <summary>
-        /// Gets details about a core network policy. You can get details about your current live
-        /// policy or any previous policy version.
+        /// Returns details about a core network policy. You can get details about your current
+        /// live policy or any previous policy version.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCoreNetworkPolicy service method.</param>
         /// 
@@ -4151,6 +4439,75 @@ namespace Amazon.NetworkManager
 
         #endregion
         
+        #region  GetTransitGatewayPeering
+
+        /// <summary>
+        /// Returns information about a transit gateway peer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTransitGatewayPeering service method.</param>
+        /// 
+        /// <returns>The response from the GetTransitGatewayPeering service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetTransitGatewayPeering">REST API Reference for GetTransitGatewayPeering Operation</seealso>
+        public virtual GetTransitGatewayPeeringResponse GetTransitGatewayPeering(GetTransitGatewayPeeringRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTransitGatewayPeeringRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTransitGatewayPeeringResponseUnmarshaller.Instance;
+
+            return Invoke<GetTransitGatewayPeeringResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTransitGatewayPeering operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTransitGatewayPeering operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTransitGatewayPeering
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetTransitGatewayPeering">REST API Reference for GetTransitGatewayPeering Operation</seealso>
+        public virtual IAsyncResult BeginGetTransitGatewayPeering(GetTransitGatewayPeeringRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTransitGatewayPeeringRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTransitGatewayPeeringResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTransitGatewayPeering operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTransitGatewayPeering.</param>
+        /// 
+        /// <returns>Returns a  GetTransitGatewayPeeringResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetTransitGatewayPeering">REST API Reference for GetTransitGatewayPeering Operation</seealso>
+        public virtual GetTransitGatewayPeeringResponse EndGetTransitGatewayPeering(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetTransitGatewayPeeringResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetTransitGatewayRegistrations
 
         /// <summary>
@@ -4216,6 +4573,75 @@ namespace Amazon.NetworkManager
         public virtual GetTransitGatewayRegistrationsResponse EndGetTransitGatewayRegistrations(IAsyncResult asyncResult)
         {
             return EndInvoke<GetTransitGatewayRegistrationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetTransitGatewayRouteTableAttachment
+
+        /// <summary>
+        /// Returns information about a transit gateway route table attachment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTransitGatewayRouteTableAttachment service method.</param>
+        /// 
+        /// <returns>The response from the GetTransitGatewayRouteTableAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetTransitGatewayRouteTableAttachment">REST API Reference for GetTransitGatewayRouteTableAttachment Operation</seealso>
+        public virtual GetTransitGatewayRouteTableAttachmentResponse GetTransitGatewayRouteTableAttachment(GetTransitGatewayRouteTableAttachmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTransitGatewayRouteTableAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTransitGatewayRouteTableAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<GetTransitGatewayRouteTableAttachmentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTransitGatewayRouteTableAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTransitGatewayRouteTableAttachment operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTransitGatewayRouteTableAttachment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetTransitGatewayRouteTableAttachment">REST API Reference for GetTransitGatewayRouteTableAttachment Operation</seealso>
+        public virtual IAsyncResult BeginGetTransitGatewayRouteTableAttachment(GetTransitGatewayRouteTableAttachmentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTransitGatewayRouteTableAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTransitGatewayRouteTableAttachmentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTransitGatewayRouteTableAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTransitGatewayRouteTableAttachment.</param>
+        /// 
+        /// <returns>Returns a  GetTransitGatewayRouteTableAttachmentResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetTransitGatewayRouteTableAttachment">REST API Reference for GetTransitGatewayRouteTableAttachment Operation</seealso>
+        public virtual GetTransitGatewayRouteTableAttachmentResponse EndGetTransitGatewayRouteTableAttachment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetTransitGatewayRouteTableAttachmentResponse>(asyncResult);
         }
 
         #endregion
@@ -4559,7 +4985,8 @@ namespace Amazon.NetworkManager
         #region  ListOrganizationServiceAccessStatus
 
         /// <summary>
-        /// 
+        /// Gets the status of the Service Linked Role (SLR) deployment for the accounts in a
+        /// given Amazon Web Services Organization.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOrganizationServiceAccessStatus service method.</param>
         /// 
@@ -4606,6 +5033,72 @@ namespace Amazon.NetworkManager
         public virtual ListOrganizationServiceAccessStatusResponse EndListOrganizationServiceAccessStatus(IAsyncResult asyncResult)
         {
             return EndInvoke<ListOrganizationServiceAccessStatusResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListPeerings
+
+        /// <summary>
+        /// Lists the peerings for a core network.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPeerings service method.</param>
+        /// 
+        /// <returns>The response from the ListPeerings service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListPeerings">REST API Reference for ListPeerings Operation</seealso>
+        public virtual ListPeeringsResponse ListPeerings(ListPeeringsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPeeringsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPeeringsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPeeringsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPeerings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPeerings operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPeerings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListPeerings">REST API Reference for ListPeerings Operation</seealso>
+        public virtual IAsyncResult BeginListPeerings(ListPeeringsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPeeringsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPeeringsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPeerings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPeerings.</param>
+        /// 
+        /// <returns>Returns a  ListPeeringsResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListPeerings">REST API Reference for ListPeerings Operation</seealso>
+        public virtual ListPeeringsResponse EndListPeerings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListPeeringsResponse>(asyncResult);
         }
 
         #endregion
@@ -5056,7 +5549,8 @@ namespace Amazon.NetworkManager
         #region  StartOrganizationServiceAccessUpdate
 
         /// <summary>
-        /// 
+        /// Enables for the Network Manager service for an Amazon Web Services Organization. This
+        /// can only be called by a management account within the organization.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartOrganizationServiceAccessUpdate service method.</param>
         /// 

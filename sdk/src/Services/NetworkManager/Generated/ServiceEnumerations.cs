@@ -117,6 +117,10 @@ namespace Amazon.NetworkManager
         /// </summary>
         public static readonly AttachmentType SITE_TO_SITE_VPN = new AttachmentType("SITE_TO_SITE_VPN");
         /// <summary>
+        /// Constant TRANSIT_GATEWAY_ROUTE_TABLE for AttachmentType
+        /// </summary>
+        public static readonly AttachmentType TRANSIT_GATEWAY_ROUTE_TABLE = new AttachmentType("TRANSIT_GATEWAY_ROUTE_TABLE");
+        /// <summary>
         /// Constant VPC for AttachmentType
         /// </summary>
         public static readonly AttachmentType VPC = new AttachmentType("VPC");
@@ -277,6 +281,64 @@ namespace Amazon.NetworkManager
 
 
     /// <summary>
+    /// Constants used for properties of type ChangeStatus.
+    /// </summary>
+    public class ChangeStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETE for ChangeStatus
+        /// </summary>
+        public static readonly ChangeStatus COMPLETE = new ChangeStatus("COMPLETE");
+        /// <summary>
+        /// Constant FAILED for ChangeStatus
+        /// </summary>
+        public static readonly ChangeStatus FAILED = new ChangeStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for ChangeStatus
+        /// </summary>
+        public static readonly ChangeStatus IN_PROGRESS = new ChangeStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant NOT_STARTED for ChangeStatus
+        /// </summary>
+        public static readonly ChangeStatus NOT_STARTED = new ChangeStatus("NOT_STARTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ChangeStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChangeStatus FindValue(string value)
+        {
+            return FindValue<ChangeStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChangeStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ChangeType.
     /// </summary>
     public class ChangeType : ConstantClass
@@ -287,6 +349,10 @@ namespace Amazon.NetworkManager
         /// </summary>
         public static readonly ChangeType ATTACHMENT_MAPPING = new ChangeType("ATTACHMENT_MAPPING");
         /// <summary>
+        /// Constant ATTACHMENT_POLICIES_CONFIGURATION for ChangeType
+        /// </summary>
+        public static readonly ChangeType ATTACHMENT_POLICIES_CONFIGURATION = new ChangeType("ATTACHMENT_POLICIES_CONFIGURATION");
+        /// <summary>
         /// Constant ATTACHMENT_ROUTE_PROPAGATION for ChangeType
         /// </summary>
         public static readonly ChangeType ATTACHMENT_ROUTE_PROPAGATION = new ChangeType("ATTACHMENT_ROUTE_PROPAGATION");
@@ -295,6 +361,10 @@ namespace Amazon.NetworkManager
         /// </summary>
         public static readonly ChangeType ATTACHMENT_ROUTE_STATIC = new ChangeType("ATTACHMENT_ROUTE_STATIC");
         /// <summary>
+        /// Constant CORE_NETWORK_CONFIGURATION for ChangeType
+        /// </summary>
+        public static readonly ChangeType CORE_NETWORK_CONFIGURATION = new ChangeType("CORE_NETWORK_CONFIGURATION");
+        /// <summary>
         /// Constant CORE_NETWORK_EDGE for ChangeType
         /// </summary>
         public static readonly ChangeType CORE_NETWORK_EDGE = new ChangeType("CORE_NETWORK_EDGE");
@@ -302,6 +372,14 @@ namespace Amazon.NetworkManager
         /// Constant CORE_NETWORK_SEGMENT for ChangeType
         /// </summary>
         public static readonly ChangeType CORE_NETWORK_SEGMENT = new ChangeType("CORE_NETWORK_SEGMENT");
+        /// <summary>
+        /// Constant SEGMENT_ACTIONS_CONFIGURATION for ChangeType
+        /// </summary>
+        public static readonly ChangeType SEGMENT_ACTIONS_CONFIGURATION = new ChangeType("SEGMENT_ACTIONS_CONFIGURATION");
+        /// <summary>
+        /// Constant SEGMENTS_CONFIGURATION for ChangeType
+        /// </summary>
+        public static readonly ChangeType SEGMENTS_CONFIGURATION = new ChangeType("SEGMENTS_CONFIGURATION");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1004,6 +1082,110 @@ namespace Amazon.NetworkManager
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LinkState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PeeringState.
+    /// </summary>
+    public class PeeringState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for PeeringState
+        /// </summary>
+        public static readonly PeeringState AVAILABLE = new PeeringState("AVAILABLE");
+        /// <summary>
+        /// Constant CREATING for PeeringState
+        /// </summary>
+        public static readonly PeeringState CREATING = new PeeringState("CREATING");
+        /// <summary>
+        /// Constant DELETING for PeeringState
+        /// </summary>
+        public static readonly PeeringState DELETING = new PeeringState("DELETING");
+        /// <summary>
+        /// Constant FAILED for PeeringState
+        /// </summary>
+        public static readonly PeeringState FAILED = new PeeringState("FAILED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PeeringState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PeeringState FindValue(string value)
+        {
+            return FindValue<PeeringState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PeeringState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PeeringType.
+    /// </summary>
+    public class PeeringType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TRANSIT_GATEWAY for PeeringType
+        /// </summary>
+        public static readonly PeeringType TRANSIT_GATEWAY = new PeeringType("TRANSIT_GATEWAY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PeeringType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PeeringType FindValue(string value)
+        {
+            return FindValue<PeeringType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PeeringType(string value)
         {
             return FindValue(value);
         }

@@ -175,7 +175,7 @@ namespace Amazon.NetworkManager.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags associated with the Connect peer.
+        /// The list of key-value tags associated with the Connect peer.
         /// </para>
         /// </summary>
         public List<Tag> Tags

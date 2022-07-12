@@ -36,7 +36,10 @@ namespace Amazon.NetworkManager.Model
         private OrganizationStatus _organizationStatus;
 
         /// <summary>
-        /// Gets and sets the property OrganizationStatus.
+        /// Gets and sets the property OrganizationStatus. 
+        /// <para>
+        /// The status of the service access update request for an Amazon Web Services Organization.
+        /// </para>
         /// </summary>
         public OrganizationStatus OrganizationStatus
         {

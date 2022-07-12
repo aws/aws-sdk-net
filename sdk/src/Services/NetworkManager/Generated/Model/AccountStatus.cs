@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NetworkManager.Model
 {
     /// <summary>
-    /// 
+    /// Describes the current status of an account within an Amazon Web Services Organization,
+    /// including service-linked roles (SLRs).
     /// </summary>
     public partial class AccountStatus
     {
@@ -37,7 +38,10 @@ namespace Amazon.NetworkManager.Model
         private string _slrDeploymentStatus;
 
         /// <summary>
-        /// Gets and sets the property AccountId.
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// The ID of an account within the Amazon Web Services Organization.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public string AccountId
@@ -53,7 +57,10 @@ namespace Amazon.NetworkManager.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SLRDeploymentStatus.
+        /// Gets and sets the property SLRDeploymentStatus. 
+        /// <para>
+        /// The status of SLR deployment for the account.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public string SLRDeploymentStatus

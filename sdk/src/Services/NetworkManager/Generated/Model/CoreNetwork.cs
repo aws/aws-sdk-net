@@ -194,7 +194,7 @@ namespace Amazon.NetworkManager.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags associated with a core network.
+        /// The list of key-value tags associated with a core network.
         /// </para>
         /// </summary>
         public List<Tag> Tags

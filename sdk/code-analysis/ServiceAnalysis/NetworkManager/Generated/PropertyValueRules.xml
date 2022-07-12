@@ -313,6 +313,42 @@
     <pattern>^arn:[^:]{1,63}:ec2:[^:]{0,63}:[^:]{0,63}:vpn-connection\/vpn-[0-9a-f]{8,17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkManager.Model.CreateTransitGatewayPeeringRequest.ClientToken</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.CreateTransitGatewayPeeringRequest.CoreNetworkId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^core-network-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.CreateTransitGatewayPeeringRequest.TransitGatewayArn</property>
+    <min>0</min>
+    <max>500</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.CreateTransitGatewayRouteTableAttachmentRequest.ClientToken</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.CreateTransitGatewayRouteTableAttachmentRequest.PeeringId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^peering-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.CreateTransitGatewayRouteTableAttachmentRequest.TransitGatewayRouteTableArn</property>
+    <min>0</min>
+    <max>500</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkManager.Model.CreateVpcAttachmentRequest.ClientToken</property>
     <min>0</min>
     <max>256</max>
@@ -395,6 +431,12 @@
     <min>0</min>
     <max>50</max>
     <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.DeletePeeringRequest.PeeringId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^peering-([0-9a-f]{8,17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkManager.Model.DeleteResourcePolicyRequest.ResourceArn</property>
@@ -572,6 +614,29 @@
     <min>0</min>
     <max>50</max>
     <pattern>^core-network-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.GetCoreNetworkChangeEventsRequest.CoreNetworkId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^core-network-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.GetCoreNetworkChangeEventsRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.GetCoreNetworkChangeEventsRequest.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.GetCoreNetworkChangeEventsResponse.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkManager.Model.GetCoreNetworkChangeSetRequest.CoreNetworkId</property>
@@ -1025,6 +1090,12 @@
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkManager.Model.GetTransitGatewayPeeringRequest.PeeringId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^peering-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkManager.Model.GetTransitGatewayRegistrationsRequest.GlobalNetworkId</property>
     <min>0</min>
     <max>50</max>
@@ -1046,6 +1117,12 @@
     <min>0</min>
     <max>2048</max>
     <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.GetTransitGatewayRouteTableAttachmentRequest.AttachmentId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^attachment-([0-9a-f]{8,17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkManager.Model.GetVpcAttachmentRequest.AttachmentId</property>
@@ -1164,6 +1241,35 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkManager.Model.ListOrganizationServiceAccessStatusResponse.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListPeeringsRequest.CoreNetworkId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^core-network-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListPeeringsRequest.EdgeLocation</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListPeeringsRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListPeeringsRequest.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.ListPeeringsResponse.NextToken</property>
     <min>0</min>
     <max>2048</max>
     <pattern>[\s\S]*</pattern>
@@ -1688,6 +1794,42 @@
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkManager.Model.CoreNetworkChange.IdentifierPath</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.CoreNetworkChangeEvent.IdentifierPath</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.CoreNetworkChangeEventValues.AttachmentId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^attachment-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.CoreNetworkChangeEventValues.Cidr</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.CoreNetworkChangeEventValues.EdgeLocation</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.CoreNetworkChangeEventValues.SegmentName</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkManager.Model.CoreNetworkChangeValues.Cidr</property>
     <min>0</min>
     <max>256</max>
@@ -2190,6 +2332,42 @@
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkManager.Model.Peering.CoreNetworkArn</property>
+    <min>0</min>
+    <max>500</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.Peering.CoreNetworkId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^core-network-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.Peering.EdgeLocation</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.Peering.OwnerAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.Peering.PeeringId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^peering-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.Peering.ResourceArn</property>
+    <min>0</min>
+    <max>1500</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkManager.Model.ProposedSegmentChange.SegmentName</property>
     <min>0</min>
     <max>256</max>
@@ -2364,6 +2542,12 @@
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkManager.Model.TransitGatewayPeering.TransitGatewayArn</property>
+    <min>0</min>
+    <max>500</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkManager.Model.TransitGatewayRegistration.GlobalNetworkId</property>
     <min>0</min>
     <max>50</max>
@@ -2379,6 +2563,18 @@
     <property>Amazon.NetworkManager.Model.TransitGatewayRegistrationStateReason.Message</property>
     <min>0</min>
     <max>256</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.TransitGatewayRouteTableAttachment.PeeringId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^peering-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.TransitGatewayRouteTableAttachment.TransitGatewayRouteTableArn</property>
+    <min>0</min>
+    <max>500</max>
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
