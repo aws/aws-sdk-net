@@ -1,3 +1,10 @@
+### 3.7.313.0 (2022-07-12 18:42 UTC)
+* NetworkManager (3.7.4.0)
+	* This release adds general availability API support for AWS Cloud WAN.
+* Core 3.7.12.7
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.312.0 (2022-07-11 18:18 UTC)
 * EC2 (3.7.77.0)
 	* Build, manage, and monitor a unified global network that connects resources running across your cloud and on-premises environments using the AWS Cloud WAN APIs.
