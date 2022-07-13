@@ -33,10 +33,29 @@ namespace Amazon.AppConfig.Model
     /// </summary>
     public partial class DeploymentEvent
     {
+        private List<ActionInvocation> _actionInvocations = new List<ActionInvocation>();
         private string _description;
         private DeploymentEventType _eventType;
         private DateTime? _occurredAt;
         private TriggeredBy _triggeredBy;
+
+        /// <summary>
+        /// Gets and sets the property ActionInvocations. 
+        /// <para>
+        /// The list of extensions that were invoked as part of the deployment.
+        /// </para>
+        /// </summary>
+        public List<ActionInvocation> ActionInvocations
+        {
+            get { return this._actionInvocations; }
+            set { this._actionInvocations = value; }
+        }
+
+        // Check to see if ActionInvocations property is set
+        internal bool IsSetActionInvocations()
+        {
+            return this._actionInvocations != null && this._actionInvocations.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 

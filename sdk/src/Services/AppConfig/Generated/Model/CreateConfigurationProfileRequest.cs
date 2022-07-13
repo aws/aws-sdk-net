@@ -139,7 +139,7 @@ namespace Amazon.AppConfig.Model
         /// A name for the configuration profile.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }

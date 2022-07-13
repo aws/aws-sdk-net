@@ -25,6 +25,76 @@ namespace Amazon.AppConfig
 {
 
     /// <summary>
+    /// Constants used for properties of type ActionPoint.
+    /// </summary>
+    public class ActionPoint : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ON_DEPLOYMENT_BAKING for ActionPoint
+        /// </summary>
+        public static readonly ActionPoint ON_DEPLOYMENT_BAKING = new ActionPoint("ON_DEPLOYMENT_BAKING");
+        /// <summary>
+        /// Constant ON_DEPLOYMENT_COMPLETE for ActionPoint
+        /// </summary>
+        public static readonly ActionPoint ON_DEPLOYMENT_COMPLETE = new ActionPoint("ON_DEPLOYMENT_COMPLETE");
+        /// <summary>
+        /// Constant ON_DEPLOYMENT_ROLLED_BACK for ActionPoint
+        /// </summary>
+        public static readonly ActionPoint ON_DEPLOYMENT_ROLLED_BACK = new ActionPoint("ON_DEPLOYMENT_ROLLED_BACK");
+        /// <summary>
+        /// Constant ON_DEPLOYMENT_START for ActionPoint
+        /// </summary>
+        public static readonly ActionPoint ON_DEPLOYMENT_START = new ActionPoint("ON_DEPLOYMENT_START");
+        /// <summary>
+        /// Constant ON_DEPLOYMENT_STEP for ActionPoint
+        /// </summary>
+        public static readonly ActionPoint ON_DEPLOYMENT_STEP = new ActionPoint("ON_DEPLOYMENT_STEP");
+        /// <summary>
+        /// Constant PRE_CREATE_HOSTED_CONFIGURATION_VERSION for ActionPoint
+        /// </summary>
+        public static readonly ActionPoint PRE_CREATE_HOSTED_CONFIGURATION_VERSION = new ActionPoint("PRE_CREATE_HOSTED_CONFIGURATION_VERSION");
+        /// <summary>
+        /// Constant PRE_START_DEPLOYMENT for ActionPoint
+        /// </summary>
+        public static readonly ActionPoint PRE_START_DEPLOYMENT = new ActionPoint("PRE_START_DEPLOYMENT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ActionPoint(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ActionPoint FindValue(string value)
+        {
+            return FindValue<ActionPoint>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ActionPoint(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BadRequestReason.
     /// </summary>
     public class BadRequestReason : ConstantClass

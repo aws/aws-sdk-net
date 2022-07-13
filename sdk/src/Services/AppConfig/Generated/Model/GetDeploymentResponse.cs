@@ -34,6 +34,7 @@ namespace Amazon.AppConfig.Model
     public partial class GetDeploymentResponse : AmazonWebServiceResponse
     {
         private string _applicationId;
+        private List<AppliedExtension> _appliedExtensions = new List<AppliedExtension>();
         private DateTime? _completedAt;
         private string _configurationLocationUri;
         private string _configurationName;
@@ -68,6 +69,26 @@ namespace Amazon.AppConfig.Model
         internal bool IsSetApplicationId()
         {
             return this._applicationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AppliedExtensions. 
+        /// <para>
+        /// A list of extensions that were processed as part of the deployment. The extensions
+        /// that were previously associated to the configuration profile, environment, or the
+        /// application when <code>StartDeployment</code> was called.
+        /// </para>
+        /// </summary>
+        public List<AppliedExtension> AppliedExtensions
+        {
+            get { return this._appliedExtensions; }
+            set { this._appliedExtensions = value; }
+        }
+
+        // Check to see if AppliedExtensions property is set
+        internal bool IsSetAppliedExtensions()
+        {
+            return this._appliedExtensions != null && this._appliedExtensions.Count > 0; 
         }
 
         /// <summary>

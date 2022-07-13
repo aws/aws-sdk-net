@@ -311,11 +311,11 @@ namespace Amazon.AppConfig
         #region  CreateApplication
 
         /// <summary>
-        /// Creates an application. An application in AppConfig is a logical unit of code that
-        /// provides capabilities for your customers. For example, an application can be a microservice
-        /// that runs on Amazon EC2 instances, a mobile application installed by your users, a
-        /// serverless application using Amazon API Gateway and Lambda, or any system you run
-        /// on behalf of others.
+        /// Creates an application. In AppConfig, an application is simply an organizational construct
+        /// like a folder. This organizational construct has a relationship with some unit of
+        /// executable code. For example, you could create an application called MyMobileApp to
+        /// organize and manage configuration data for a mobile application installed by your
+        /// users.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateApplication service method.</param>
         /// 
@@ -527,12 +527,12 @@ namespace Amazon.AppConfig
 
         /// <summary>
         /// Creates an environment. For each application, you define one or more environments.
-        /// An environment is a logical deployment group of AppConfig targets, such as applications
-        /// in a <code>Beta</code> or <code>Production</code> environment. You can also define
-        /// environments for application subcomponents such as the <code>Web</code>, <code>Mobile</code>
-        /// and <code>Back-end</code> components for your application. You can configure Amazon
-        /// CloudWatch alarms for each environment. The system monitors alarms during a configuration
-        /// deployment. If an alarm is triggered, the system rolls back the configuration.
+        /// An environment is a deployment group of AppConfig targets, such as applications in
+        /// a <code>Beta</code> or <code>Production</code> environment. You can also define environments
+        /// for application subcomponents such as the <code>Web</code>, <code>Mobile</code> and
+        /// <code>Back-end</code> components for your application. You can configure Amazon CloudWatch
+        /// alarms for each environment. The system monitors alarms during a configuration deployment.
+        /// If an alarm is triggered, the system rolls back the configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEnvironment service method.</param>
         /// 
@@ -588,6 +588,161 @@ namespace Amazon.AppConfig
         public virtual CreateEnvironmentResponse EndCreateEnvironment(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateEnvironmentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateExtension
+
+        /// <summary>
+        /// Creates an AppConfig extension. An extension augments your ability to inject logic
+        /// or behavior at different points during the AppConfig workflow of creating or deploying
+        /// a configuration.
+        /// 
+        ///  
+        /// <para>
+        /// You can create your own extensions or use the Amazon Web Services-authored extensions
+        /// provided by AppConfig. For most use-cases, to create your own extension, you must
+        /// create an Lambda function to perform any computation and processing defined in the
+        /// extension. For more information about extensions, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
+        /// with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateExtension service method.</param>
+        /// 
+        /// <returns>The response from the CreateExtension service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ServiceQuotaExceededException">
+        /// The number of hosted configuration versions exceeds the limit for the AppConfig hosted
+        /// configuration store. Delete one or more versions and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateExtension">REST API Reference for CreateExtension Operation</seealso>
+        public virtual CreateExtensionResponse CreateExtension(CreateExtensionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateExtensionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateExtensionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateExtensionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateExtension operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateExtension operation on AmazonAppConfigClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateExtension
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateExtension">REST API Reference for CreateExtension Operation</seealso>
+        public virtual IAsyncResult BeginCreateExtension(CreateExtensionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateExtensionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateExtensionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateExtension operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateExtension.</param>
+        /// 
+        /// <returns>Returns a  CreateExtensionResult from AppConfig.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateExtension">REST API Reference for CreateExtension Operation</seealso>
+        public virtual CreateExtensionResponse EndCreateExtension(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateExtensionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateExtensionAssociation
+
+        /// <summary>
+        /// When you create an extension or configure an Amazon Web Services-authored extension,
+        /// you associate the extension with an AppConfig application, environment, or configuration
+        /// profile. For example, you can choose to run the <code>AppConfig deployment events
+        /// to Amazon SNS</code> Amazon Web Services-authored extension and receive notifications
+        /// on an Amazon SNS topic anytime a configuration deployment is started for a specific
+        /// application. Defining which extension to associate with an AppConfig resource is called
+        /// an <i>extension association</i>. An extension association is a specified relationship
+        /// between an extension and an AppConfig resource, such as an application or a configuration
+        /// profile. For more information about extensions and associations, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
+        /// with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateExtensionAssociation service method.</param>
+        /// 
+        /// <returns>The response from the CreateExtensionAssociation service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ServiceQuotaExceededException">
+        /// The number of hosted configuration versions exceeds the limit for the AppConfig hosted
+        /// configuration store. Delete one or more versions and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateExtensionAssociation">REST API Reference for CreateExtensionAssociation Operation</seealso>
+        public virtual CreateExtensionAssociationResponse CreateExtensionAssociation(CreateExtensionAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateExtensionAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateExtensionAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateExtensionAssociationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateExtensionAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateExtensionAssociation operation on AmazonAppConfigClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateExtensionAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateExtensionAssociation">REST API Reference for CreateExtensionAssociation Operation</seealso>
+        public virtual IAsyncResult BeginCreateExtensionAssociation(CreateExtensionAssociationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateExtensionAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateExtensionAssociationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateExtensionAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateExtensionAssociation.</param>
+        /// 
+        /// <returns>Returns a  CreateExtensionAssociationResult from AppConfig.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateExtensionAssociation">REST API Reference for CreateExtensionAssociation Operation</seealso>
+        public virtual CreateExtensionAssociationResponse EndCreateExtensionAssociation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateExtensionAssociationResponse>(asyncResult);
         }
 
         #endregion
@@ -926,6 +1081,134 @@ namespace Amazon.AppConfig
         public virtual DeleteEnvironmentResponse EndDeleteEnvironment(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteEnvironmentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteExtension
+
+        /// <summary>
+        /// Deletes an AppConfig extension. You must delete all associations to an extension before
+        /// you delete the extension.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteExtension service method.</param>
+        /// 
+        /// <returns>The response from the DeleteExtension service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteExtension">REST API Reference for DeleteExtension Operation</seealso>
+        public virtual DeleteExtensionResponse DeleteExtension(DeleteExtensionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteExtensionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteExtensionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteExtensionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteExtension operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteExtension operation on AmazonAppConfigClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteExtension
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteExtension">REST API Reference for DeleteExtension Operation</seealso>
+        public virtual IAsyncResult BeginDeleteExtension(DeleteExtensionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteExtensionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteExtensionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteExtension operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteExtension.</param>
+        /// 
+        /// <returns>Returns a  DeleteExtensionResult from AppConfig.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteExtension">REST API Reference for DeleteExtension Operation</seealso>
+        public virtual DeleteExtensionResponse EndDeleteExtension(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteExtensionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteExtensionAssociation
+
+        /// <summary>
+        /// Deletes an extension association. This action doesn't delete extensions defined in
+        /// the association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteExtensionAssociation service method.</param>
+        /// 
+        /// <returns>The response from the DeleteExtensionAssociation service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteExtensionAssociation">REST API Reference for DeleteExtensionAssociation Operation</seealso>
+        public virtual DeleteExtensionAssociationResponse DeleteExtensionAssociation(DeleteExtensionAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteExtensionAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteExtensionAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteExtensionAssociationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteExtensionAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteExtensionAssociation operation on AmazonAppConfigClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteExtensionAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteExtensionAssociation">REST API Reference for DeleteExtensionAssociation Operation</seealso>
+        public virtual IAsyncResult BeginDeleteExtensionAssociation(DeleteExtensionAssociationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteExtensionAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteExtensionAssociationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteExtensionAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteExtensionAssociation.</param>
+        /// 
+        /// <returns>Returns a  DeleteExtensionAssociationResult from AppConfig.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteExtensionAssociation">REST API Reference for DeleteExtensionAssociation Operation</seealso>
+        public virtual DeleteExtensionAssociationResponse EndDeleteExtensionAssociation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteExtensionAssociationResponse>(asyncResult);
         }
 
         #endregion
@@ -1352,12 +1635,11 @@ namespace Amazon.AppConfig
         #region  GetEnvironment
 
         /// <summary>
-        /// Retrieves information about an environment. An environment is a logical deployment
-        /// group of AppConfig applications, such as applications in a <code>Production</code>
-        /// environment or in an <code>EU_Region</code> environment. Each configuration deployment
-        /// targets an environment. You can enable one or more Amazon CloudWatch alarms for an
-        /// environment. If an alarm is triggered during a deployment, AppConfig roles back the
-        /// configuration.
+        /// Retrieves information about an environment. An environment is a deployment group of
+        /// AppConfig applications, such as applications in a <code>Production</code> environment
+        /// or in an <code>EU_Region</code> environment. Each configuration deployment targets
+        /// an environment. You can enable one or more Amazon CloudWatch alarms for an environment.
+        /// If an alarm is triggered during a deployment, AppConfig roles back the configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEnvironment service method.</param>
         /// 
@@ -1413,6 +1695,134 @@ namespace Amazon.AppConfig
         public virtual GetEnvironmentResponse EndGetEnvironment(IAsyncResult asyncResult)
         {
             return EndInvoke<GetEnvironmentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetExtension
+
+        /// <summary>
+        /// Returns information about an AppConfig extension.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetExtension service method.</param>
+        /// 
+        /// <returns>The response from the GetExtension service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetExtension">REST API Reference for GetExtension Operation</seealso>
+        public virtual GetExtensionResponse GetExtension(GetExtensionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetExtensionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExtensionResponseUnmarshaller.Instance;
+
+            return Invoke<GetExtensionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetExtension operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetExtension operation on AmazonAppConfigClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetExtension
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetExtension">REST API Reference for GetExtension Operation</seealso>
+        public virtual IAsyncResult BeginGetExtension(GetExtensionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetExtensionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExtensionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetExtension operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetExtension.</param>
+        /// 
+        /// <returns>Returns a  GetExtensionResult from AppConfig.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetExtension">REST API Reference for GetExtension Operation</seealso>
+        public virtual GetExtensionResponse EndGetExtension(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetExtensionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetExtensionAssociation
+
+        /// <summary>
+        /// Returns information about an AppConfig extension association. For more information
+        /// about extensions and associations, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
+        /// with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetExtensionAssociation service method.</param>
+        /// 
+        /// <returns>The response from the GetExtensionAssociation service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetExtensionAssociation">REST API Reference for GetExtensionAssociation Operation</seealso>
+        public virtual GetExtensionAssociationResponse GetExtensionAssociation(GetExtensionAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetExtensionAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExtensionAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<GetExtensionAssociationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetExtensionAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetExtensionAssociation operation on AmazonAppConfigClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetExtensionAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetExtensionAssociation">REST API Reference for GetExtensionAssociation Operation</seealso>
+        public virtual IAsyncResult BeginGetExtensionAssociation(GetExtensionAssociationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetExtensionAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExtensionAssociationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetExtensionAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetExtensionAssociation.</param>
+        /// 
+        /// <returns>Returns a  GetExtensionAssociationResult from AppConfig.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetExtensionAssociation">REST API Reference for GetExtensionAssociation Operation</seealso>
+        public virtual GetExtensionAssociationResponse EndGetExtensionAssociation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetExtensionAssociationResponse>(asyncResult);
         }
 
         #endregion
@@ -1785,6 +2195,130 @@ namespace Amazon.AppConfig
         public virtual ListEnvironmentsResponse EndListEnvironments(IAsyncResult asyncResult)
         {
             return EndInvoke<ListEnvironmentsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListExtensionAssociations
+
+        /// <summary>
+        /// Lists all AppConfig extension associations in the account. For more information about
+        /// extensions and associations, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
+        /// with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExtensionAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ListExtensionAssociations service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListExtensionAssociations">REST API Reference for ListExtensionAssociations Operation</seealso>
+        public virtual ListExtensionAssociationsResponse ListExtensionAssociations(ListExtensionAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListExtensionAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExtensionAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListExtensionAssociationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListExtensionAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListExtensionAssociations operation on AmazonAppConfigClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListExtensionAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListExtensionAssociations">REST API Reference for ListExtensionAssociations Operation</seealso>
+        public virtual IAsyncResult BeginListExtensionAssociations(ListExtensionAssociationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListExtensionAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExtensionAssociationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListExtensionAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListExtensionAssociations.</param>
+        /// 
+        /// <returns>Returns a  ListExtensionAssociationsResult from AppConfig.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListExtensionAssociations">REST API Reference for ListExtensionAssociations Operation</seealso>
+        public virtual ListExtensionAssociationsResponse EndListExtensionAssociations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListExtensionAssociationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListExtensions
+
+        /// <summary>
+        /// Lists all custom and Amazon Web Services-authored AppConfig extensions in the account.
+        /// For more information about extensions, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
+        /// with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExtensions service method.</param>
+        /// 
+        /// <returns>The response from the ListExtensions service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListExtensions">REST API Reference for ListExtensions Operation</seealso>
+        public virtual ListExtensionsResponse ListExtensions(ListExtensionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListExtensionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExtensionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListExtensionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListExtensions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListExtensions operation on AmazonAppConfigClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListExtensions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListExtensions">REST API Reference for ListExtensions Operation</seealso>
+        public virtual IAsyncResult BeginListExtensions(ListExtensionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListExtensionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExtensionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListExtensions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListExtensions.</param>
+        /// 
+        /// <returns>Returns a  ListExtensionsResult from AppConfig.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListExtensions">REST API Reference for ListExtensions Operation</seealso>
+        public virtual ListExtensionsResponse EndListExtensions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListExtensionsResponse>(asyncResult);
         }
 
         #endregion
@@ -2422,6 +2956,139 @@ namespace Amazon.AppConfig
         public virtual UpdateEnvironmentResponse EndUpdateEnvironment(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateEnvironmentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateExtension
+
+        /// <summary>
+        /// Updates an AppConfig extension. For more information about extensions, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
+        /// with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateExtension service method.</param>
+        /// 
+        /// <returns>The response from the UpdateExtension service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateExtension">REST API Reference for UpdateExtension Operation</seealso>
+        public virtual UpdateExtensionResponse UpdateExtension(UpdateExtensionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateExtensionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateExtensionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateExtensionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateExtension operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateExtension operation on AmazonAppConfigClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateExtension
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateExtension">REST API Reference for UpdateExtension Operation</seealso>
+        public virtual IAsyncResult BeginUpdateExtension(UpdateExtensionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateExtensionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateExtensionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateExtension operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateExtension.</param>
+        /// 
+        /// <returns>Returns a  UpdateExtensionResult from AppConfig.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateExtension">REST API Reference for UpdateExtension Operation</seealso>
+        public virtual UpdateExtensionResponse EndUpdateExtension(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateExtensionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateExtensionAssociation
+
+        /// <summary>
+        /// Updates an association. For more information about extensions and associations, see
+        /// <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
+        /// with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateExtensionAssociation service method.</param>
+        /// 
+        /// <returns>The response from the UpdateExtensionAssociation service method, as returned by AppConfig.</returns>
+        /// <exception cref="Amazon.AppConfig.Model.BadRequestException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.InternalServerException">
+        /// There was an internal failure in the AppConfig service.
+        /// </exception>
+        /// <exception cref="Amazon.AppConfig.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateExtensionAssociation">REST API Reference for UpdateExtensionAssociation Operation</seealso>
+        public virtual UpdateExtensionAssociationResponse UpdateExtensionAssociation(UpdateExtensionAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateExtensionAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateExtensionAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateExtensionAssociationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateExtensionAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateExtensionAssociation operation on AmazonAppConfigClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateExtensionAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateExtensionAssociation">REST API Reference for UpdateExtensionAssociation Operation</seealso>
+        public virtual IAsyncResult BeginUpdateExtensionAssociation(UpdateExtensionAssociationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateExtensionAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateExtensionAssociationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateExtensionAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateExtensionAssociation.</param>
+        /// 
+        /// <returns>Returns a  UpdateExtensionAssociationResult from AppConfig.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateExtensionAssociation">REST API Reference for UpdateExtensionAssociation Operation</seealso>
+        public virtual UpdateExtensionAssociationResponse EndUpdateExtensionAssociation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateExtensionAssociationResponse>(asyncResult);
         }
 
         #endregion

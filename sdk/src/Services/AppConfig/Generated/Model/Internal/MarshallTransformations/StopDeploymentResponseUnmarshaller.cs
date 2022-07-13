@@ -57,6 +57,12 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
                     response.ApplicationId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AppliedExtensions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AppliedExtension, AppliedExtensionUnmarshaller>(AppliedExtensionUnmarshaller.Instance);
+                    response.AppliedExtensions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CompletedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
