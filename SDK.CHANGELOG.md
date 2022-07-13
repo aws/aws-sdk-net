@@ -1,3 +1,7 @@
+### 3.7.314.0 (2022-07-13 19:12 UTC)
+* AppConfig (3.7.2.0)
+	* Adding Create, Get, Update, Delete, and List APIs for new two new resources: Extensions and ExtensionAssociations.
+
 ### 3.7.313.0 (2022-07-12 18:42 UTC)
 * NetworkManager (3.7.4.0)
 	* This release adds general availability API support for AWS Cloud WAN.
