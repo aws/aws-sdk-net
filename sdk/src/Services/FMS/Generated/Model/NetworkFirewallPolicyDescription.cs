@@ -33,11 +33,74 @@ namespace Amazon.FMS.Model
     /// </summary>
     public partial class NetworkFirewallPolicyDescription
     {
+        private List<string> _statefulDefaultActions = new List<string>();
+        private StatefulEngineOptions _statefulEngineOptions;
         private List<StatefulRuleGroup> _statefulRuleGroups = new List<StatefulRuleGroup>();
         private List<string> _statelessCustomActions = new List<string>();
         private List<string> _statelessDefaultActions = new List<string>();
         private List<string> _statelessFragmentDefaultActions = new List<string>();
         private List<StatelessRuleGroup> _statelessRuleGroups = new List<StatelessRuleGroup>();
+
+        /// <summary>
+        /// Gets and sets the property StatefulDefaultActions. 
+        /// <para>
+        /// The default actions to take on a packet that doesn't match any stateful rules. The
+        /// stateful default action is optional, and is only valid when using the strict rule
+        /// order.
+        /// </para>
+        ///  
+        /// <para>
+        ///  Valid values of the stateful default action: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// aws:drop_strict
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// aws:drop_established
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// aws:alert_strict
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// aws:alert_established
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public List<string> StatefulDefaultActions
+        {
+            get { return this._statefulDefaultActions; }
+            set { this._statefulDefaultActions = value; }
+        }
+
+        // Check to see if StatefulDefaultActions property is set
+        internal bool IsSetStatefulDefaultActions()
+        {
+            return this._statefulDefaultActions != null && this._statefulDefaultActions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatefulEngineOptions. 
+        /// <para>
+        /// Additional options governing how Network Firewall handles stateful rules. The stateful
+        /// rule groups that you use in your policy must have stateful rule options settings that
+        /// are compatible with these settings.
+        /// </para>
+        /// </summary>
+        public StatefulEngineOptions StatefulEngineOptions
+        {
+            get { return this._statefulEngineOptions; }
+            set { this._statefulEngineOptions = value; }
+        }
+
+        // Check to see if StatefulEngineOptions property is set
+        internal bool IsSetStatefulEngineOptions()
+        {
+            return this._statefulEngineOptions != null;
+        }
 
         /// <summary>
         /// Gets and sets the property StatefulRuleGroups. 

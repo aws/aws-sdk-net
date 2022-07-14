@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FMS.Model
 {
     /// <summary>
-    /// Configures the firewall policy deployment model for a third-party firewall. The deployment
-    /// model can either be distributed or centralized.
+    /// Configures the third-party firewall's firewall policy.
     /// </summary>
     public partial class ThirdPartyFirewallFirewallPolicy
     {

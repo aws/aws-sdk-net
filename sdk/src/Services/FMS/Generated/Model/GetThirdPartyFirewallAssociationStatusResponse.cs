@@ -39,12 +39,13 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property MarketplaceOnboardingStatus. 
         /// <para>
-        /// The status for subscribing to the third-party firewall vendor in the AWS Marketplace.
+        /// The status for subscribing to the third-party firewall vendor in the Amazon Web Services
+        /// Marketplace.
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <code>NO_SUBSCRIPTION</code> - The Firewall Manager policy administrator isn't subscribed
-        /// to the third-party firewall service in the AWS Marketplace.
+        /// to the third-party firewall service in the Amazon Web Services Marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>

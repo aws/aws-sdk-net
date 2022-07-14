@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FMS.Model
 {
     /// <summary>
-    /// Contains the Network Firewall firewall policy options to configure a centralized deployment
-    /// model.
+    /// Contains the Network Firewall firewall policy options to configure the policy's deployment
+    /// model and third-party firewall policy settings.
     /// </summary>
     public partial class PolicyOption
     {

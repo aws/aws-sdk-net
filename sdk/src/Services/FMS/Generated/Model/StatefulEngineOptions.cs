@@ -29,28 +29,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FMS.Model
 {
     /// <summary>
-    /// Configures the deployment model for the third-party firewall.
+    /// Configuration settings for the handling of the stateful rule groups in a Network Firewall
+    /// firewall policy.
     /// </summary>
-    public partial class ThirdPartyFirewallPolicy
+    public partial class StatefulEngineOptions
     {
-        private FirewallDeploymentModel _firewallDeploymentModel;
+        private RuleOrder _ruleOrder;
 
         /// <summary>
-        /// Gets and sets the property FirewallDeploymentModel. 
+        /// Gets and sets the property RuleOrder. 
         /// <para>
-        /// Defines the deployment model to use for the third-party firewall policy.
+        /// Indicates how to manage the order of stateful rule evaluation for the policy. <code>DEFAULT_ACTION_ORDER</code>
+        /// is the default behavior. Stateful rules are provided to the rule engine as Suricata
+        /// compatible strings, and Suricata evaluates them based on certain settings. For more
+        /// information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation
+        /// order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>.
         /// </para>
         /// </summary>
-        public FirewallDeploymentModel FirewallDeploymentModel
+        public RuleOrder RuleOrder
         {
-            get { return this._firewallDeploymentModel; }
-            set { this._firewallDeploymentModel = value; }
+            get { return this._ruleOrder; }
+            set { this._ruleOrder = value; }
         }
 
-        // Check to see if FirewallDeploymentModel property is set
-        internal bool IsSetFirewallDeploymentModel()
+        // Check to see if RuleOrder property is set
+        internal bool IsSetRuleOrder()
         {
-            return this._firewallDeploymentModel != null;
+            return this._ruleOrder != null;
         }
 
     }

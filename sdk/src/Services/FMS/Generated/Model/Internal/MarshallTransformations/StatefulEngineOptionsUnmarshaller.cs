@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StatefulRuleGroup Object
+    /// Response Unmarshaller for StatefulEngineOptions Object
     /// </summary>  
-    public class StatefulRuleGroupUnmarshaller : IUnmarshaller<StatefulRuleGroup, XmlUnmarshallerContext>, IUnmarshaller<StatefulRuleGroup, JsonUnmarshallerContext>
+    public class StatefulEngineOptionsUnmarshaller : IUnmarshaller<StatefulEngineOptions, XmlUnmarshallerContext>, IUnmarshaller<StatefulEngineOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        StatefulRuleGroup IUnmarshaller<StatefulRuleGroup, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        StatefulEngineOptions IUnmarshaller<StatefulEngineOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,21 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public StatefulRuleGroup Unmarshall(JsonUnmarshallerContext context)
+        public StatefulEngineOptions Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            StatefulRuleGroup unmarshalledObject = new StatefulRuleGroup();
+            StatefulEngineOptions unmarshalledObject = new StatefulEngineOptions();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Priority", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Priority = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ResourceId", targetDepth))
+                if (context.TestExpression("RuleOrder", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RuleGroupName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RuleGroupName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RuleOrder = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +76,12 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         }
 
 
-        private static StatefulRuleGroupUnmarshaller _instance = new StatefulRuleGroupUnmarshaller();        
+        private static StatefulEngineOptionsUnmarshaller _instance = new StatefulEngineOptionsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StatefulRuleGroupUnmarshaller Instance
+        public static StatefulEngineOptionsUnmarshaller Instance
         {
             get
             {
