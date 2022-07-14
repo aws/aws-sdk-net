@@ -7837,6 +7837,42 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly ProductionVariantInstanceType MlC5Xlarge = new ProductionVariantInstanceType("ml.c5.xlarge");
         /// <summary>
+        /// Constant MlC6i12xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlC6i12xlarge = new ProductionVariantInstanceType("ml.c6i.12xlarge");
+        /// <summary>
+        /// Constant MlC6i16xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlC6i16xlarge = new ProductionVariantInstanceType("ml.c6i.16xlarge");
+        /// <summary>
+        /// Constant MlC6i24xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlC6i24xlarge = new ProductionVariantInstanceType("ml.c6i.24xlarge");
+        /// <summary>
+        /// Constant MlC6i2xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlC6i2xlarge = new ProductionVariantInstanceType("ml.c6i.2xlarge");
+        /// <summary>
+        /// Constant MlC6i32xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlC6i32xlarge = new ProductionVariantInstanceType("ml.c6i.32xlarge");
+        /// <summary>
+        /// Constant MlC6i4xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlC6i4xlarge = new ProductionVariantInstanceType("ml.c6i.4xlarge");
+        /// <summary>
+        /// Constant MlC6i8xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlC6i8xlarge = new ProductionVariantInstanceType("ml.c6i.8xlarge");
+        /// <summary>
+        /// Constant MlC6iLarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlC6iLarge = new ProductionVariantInstanceType("ml.c6i.large");
+        /// <summary>
+        /// Constant MlC6iXlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlC6iXlarge = new ProductionVariantInstanceType("ml.c6i.xlarge");
+        /// <summary>
         /// Constant MlG4dn12xlarge for ProductionVariantInstanceType
         /// </summary>
         public static readonly ProductionVariantInstanceType MlG4dn12xlarge = new ProductionVariantInstanceType("ml.g4dn.12xlarge");
@@ -7860,6 +7896,38 @@ namespace Amazon.SageMaker
         /// Constant MlG4dnXlarge for ProductionVariantInstanceType
         /// </summary>
         public static readonly ProductionVariantInstanceType MlG4dnXlarge = new ProductionVariantInstanceType("ml.g4dn.xlarge");
+        /// <summary>
+        /// Constant MlG512xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG512xlarge = new ProductionVariantInstanceType("ml.g5.12xlarge");
+        /// <summary>
+        /// Constant MlG516xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG516xlarge = new ProductionVariantInstanceType("ml.g5.16xlarge");
+        /// <summary>
+        /// Constant MlG524xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG524xlarge = new ProductionVariantInstanceType("ml.g5.24xlarge");
+        /// <summary>
+        /// Constant MlG52xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG52xlarge = new ProductionVariantInstanceType("ml.g5.2xlarge");
+        /// <summary>
+        /// Constant MlG548xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG548xlarge = new ProductionVariantInstanceType("ml.g5.48xlarge");
+        /// <summary>
+        /// Constant MlG54xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG54xlarge = new ProductionVariantInstanceType("ml.g5.4xlarge");
+        /// <summary>
+        /// Constant MlG58xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG58xlarge = new ProductionVariantInstanceType("ml.g5.8xlarge");
+        /// <summary>
+        /// Constant MlG5Xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG5Xlarge = new ProductionVariantInstanceType("ml.g5.xlarge");
         /// <summary>
         /// Constant MlInf124xlarge for ProductionVariantInstanceType
         /// </summary>
@@ -7968,6 +8036,10 @@ namespace Amazon.SageMaker
         /// Constant MlP38xlarge for ProductionVariantInstanceType
         /// </summary>
         public static readonly ProductionVariantInstanceType MlP38xlarge = new ProductionVariantInstanceType("ml.p3.8xlarge");
+        /// <summary>
+        /// Constant MlP4d24xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlP4d24xlarge = new ProductionVariantInstanceType("ml.p4d.24xlarge");
         /// <summary>
         /// Constant MlR512xlarge for ProductionVariantInstanceType
         /// </summary>

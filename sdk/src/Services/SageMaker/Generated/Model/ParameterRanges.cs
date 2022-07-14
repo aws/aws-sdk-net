@@ -37,9 +37,10 @@ namespace Amazon.SageMaker.Model
     /// 
     ///  <note> 
     /// <para>
-    /// You can specify a maximum of 20 hyperparameters that a hyperparameter tuning job can
-    /// search over. Every possible value of a categorical parameter range counts against
-    /// this limit.
+    /// The maximum number of items specified for <code>Array Members</code> refers to the
+    /// maximum number of hyperparameters for each range and also the maximum for the hyperparameter
+    /// tuning job itself. That is, the sum of the number of hyperparameters for all the ranges
+    /// can't exceed the maximum number specified.
     /// </para>
     ///  </note>
     /// </summary>
@@ -56,7 +57,7 @@ namespace Amazon.SageMaker.Model
         /// hyperparameters that a hyperparameter tuning job searches.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=20)]
+        [AWSProperty(Min=0, Max=30)]
         public List<CategoricalParameterRange> CategoricalParameterRanges
         {
             get { return this._categoricalParameterRanges; }
@@ -76,7 +77,7 @@ namespace Amazon.SageMaker.Model
         /// hyperparameters that a hyperparameter tuning job searches.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=20)]
+        [AWSProperty(Min=0, Max=30)]
         public List<ContinuousParameterRange> ContinuousParameterRanges
         {
             get { return this._continuousParameterRanges; }
@@ -96,7 +97,7 @@ namespace Amazon.SageMaker.Model
         /// that a hyperparameter tuning job searches.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=20)]
+        [AWSProperty(Min=0, Max=30)]
         public List<IntegerParameterRange> IntegerParameterRanges
         {
             get { return this._integerParameterRanges; }

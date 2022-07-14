@@ -31,7 +31,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Defines an instance group for heterogeneous cluster training. When requesting a training
     /// job using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a>
-    /// API, you can configure up to 5 different ML training instance groups.
+    /// API, you can configure multiple instance groups .
     /// </summary>
     public partial class InstanceGroup
     {
