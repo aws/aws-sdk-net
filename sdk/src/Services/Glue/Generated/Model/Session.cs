@@ -161,8 +161,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property GlueVersion. 
         /// <para>
-        /// The Glue version determines the versions of Apache Spark and Python that AWS Glue
-        /// supports. The GlueVersion must be greater than 2.0.
+        /// The Glue version determines the versions of Apache Spark and Python that Glue supports.
+        /// The GlueVersion must be greater than 2.0.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -200,9 +200,9 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property MaxCapacity. 
         /// <para>
-        /// The number of AWS Glue data processing units (DPUs) that can be allocated when the
-        /// job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs
-        /// of compute capacity and 16 GB memory. 
+        /// The number of Glue data processing units (DPUs) that can be allocated when the job
+        /// runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of
+        /// compute capacity and 16 GB memory. 
         /// </para>
         /// </summary>
         public double MaxCapacity

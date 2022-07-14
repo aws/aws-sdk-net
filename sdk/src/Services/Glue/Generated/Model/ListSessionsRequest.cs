@@ -30,7 +30,7 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the ListSessions operation.
-    /// Retrieve a session..
+    /// Retrieve a list of sessions.
     /// </summary>
     public partial class ListSessionsRequest : AmazonGlueRequest
     {

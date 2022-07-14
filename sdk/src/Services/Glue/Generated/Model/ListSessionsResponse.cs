@@ -40,7 +40,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Ids. 
         /// <para>
-        /// Returns the Id of the session. 
+        /// Returns the ID of the session. 
         /// </para>
         /// </summary>
         public List<string> Ids

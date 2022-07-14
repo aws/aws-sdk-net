@@ -30,7 +30,8 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateJob operation.
-    /// Updates an existing job definition.
+    /// Updates an existing job definition. The previous job definition is completely overwritten
+    /// by this information.
     /// </summary>
     public partial class UpdateJobRequest : AmazonGlueRequest
     {
@@ -59,7 +60,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property JobUpdate. 
         /// <para>
-        /// Specifies the values with which to update the job definition.
+        /// Specifies the values with which to update the job definition. Unspecified configuration
+        /// is removed or reset to default values.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

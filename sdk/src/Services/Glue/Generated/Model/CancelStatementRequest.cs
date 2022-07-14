@@ -30,7 +30,7 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the CancelStatement operation.
-    /// Cancels the statement..
+    /// Cancels the statement.
     /// </summary>
     public partial class CancelStatementRequest : AmazonGlueRequest
     {

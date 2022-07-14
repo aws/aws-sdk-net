@@ -37,7 +37,10 @@ namespace Amazon.Glue.Model
         private List<Statement> _statements = new List<Statement>();
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// A continuation token, if not all statements have yet been returned.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=400000)]
         public string NextToken

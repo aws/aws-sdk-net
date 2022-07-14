@@ -4389,6 +4389,10 @@ namespace Amazon.Glue
     {
 
         /// <summary>
+        /// Constant G025X for WorkerType
+        /// </summary>
+        public static readonly WorkerType G025X = new WorkerType("G.025X");
+        /// <summary>
         /// Constant G1X for WorkerType
         /// </summary>
         public static readonly WorkerType G1X = new WorkerType("G.1X");

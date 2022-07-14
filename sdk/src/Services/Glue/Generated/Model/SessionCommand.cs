@@ -39,7 +39,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Specifies the name of the SessionCommand.Can be 'glueetl' or 'gluestreaming'.
+        /// Specifies the name of the SessionCommand. Can be 'glueetl' or 'gluestreaming'.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

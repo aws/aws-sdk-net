@@ -128,8 +128,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property GlueVersion. 
         /// <para>
-        /// The Glue version determines the versions of Apache Spark and Python that AWS Glue
-        /// supports. The GlueVersion must be greater than 2.0. 
+        /// The Glue version determines the versions of Apache Spark and Python that Glue supports.
+        /// The GlueVersion must be greater than 2.0. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -186,9 +186,9 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property MaxCapacity. 
         /// <para>
-        /// The number of AWS Glue data processing units (DPUs) that can be allocated when the
-        /// job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs
-        /// of compute capacity and 16 GB memory. 
+        /// The number of Glue data processing units (DPUs) that can be allocated when the job
+        /// runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of
+        /// compute capacity and 16 GB memory. 
         /// </para>
         /// </summary>
         public double MaxCapacity
@@ -206,7 +206,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property NumberOfWorkers. 
         /// <para>
-        /// The number of workers to use for the session. 
+        /// The number of workers of a defined <code>WorkerType</code> to use for the session.
+        /// 
         /// </para>
         /// </summary>
         public int NumberOfWorkers
@@ -319,8 +320,34 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property WorkerType. 
         /// <para>
-        /// The Worker Type. Can be one of G.1X, G.2X, Standard 
+        /// The type of predefined worker that is allocated to use for the session. Accepts a
+        /// value of Standard, G.1X, G.2X, or G.025X.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory
+        /// and a 50GB disk, and 2 executors per worker.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of
+        /// memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker
+        /// type for memory-intensive jobs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of
+        /// memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker
+        /// type for memory-intensive jobs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For the <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB
+        /// of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker
+        /// type for low volume streaming jobs. This worker type is only available for Glue version
+        /// 3.0 streaming jobs.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public WorkerType WorkerType
         {

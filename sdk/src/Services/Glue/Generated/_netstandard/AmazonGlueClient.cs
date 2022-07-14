@@ -1037,7 +1037,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Cancels the statement..
+        /// Cancels the statement.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelStatement service method.</param>
         /// <param name="cancellationToken">
@@ -6880,7 +6880,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Retrieve a session..
+        /// Retrieve a list of sessions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSessions service method.</param>
         /// <param name="cancellationToken">
@@ -7657,7 +7657,7 @@ namespace Amazon.Glue
         /// A specified entity does not exist
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.IllegalBlueprintStateException">
-        /// 
+        /// The blueprint is in an invalid state to perform a requested operation.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -8569,7 +8569,7 @@ namespace Amazon.Glue
         /// A specified entity does not exist
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.IllegalBlueprintStateException">
-        /// 
+        /// The blueprint is in an invalid state to perform a requested operation.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -9010,7 +9010,8 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Updates an existing job definition.
+        /// Updates an existing job definition. The previous job definition is completely overwritten
+        /// by this information.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateJob service method.</param>
         /// <param name="cancellationToken">

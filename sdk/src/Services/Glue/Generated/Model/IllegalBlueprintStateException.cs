@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// 
+    /// The blueprint is in an invalid state to perform a requested operation.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

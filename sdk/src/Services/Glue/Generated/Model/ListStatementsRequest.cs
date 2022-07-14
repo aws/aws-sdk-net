@@ -39,7 +39,10 @@ namespace Amazon.Glue.Model
         private string _sessionId;
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// A continuation token, if this is a continuation call.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=400000)]
         public string NextToken
