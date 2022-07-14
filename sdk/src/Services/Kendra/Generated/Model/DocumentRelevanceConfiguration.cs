@@ -39,7 +39,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the tuning configuration to override document relevance at the index level.
+        /// The name of the index field.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=30)]
@@ -56,7 +56,12 @@ namespace Amazon.Kendra.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Relevance.
+        /// Gets and sets the property Relevance. 
+        /// <para>
+        /// Provides information for tuning the relevance of a field in a search. When a query
+        /// includes terms that match the field, the results are given a boost in the response
+        /// based on these tuning parameters.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public Relevance Relevance

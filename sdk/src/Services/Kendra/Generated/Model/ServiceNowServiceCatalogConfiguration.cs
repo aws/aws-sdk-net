@@ -44,8 +44,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CrawlAttachments. 
         /// <para>
-        /// Indicates whether Amazon Kendra should crawl attachments to the service catalog items.
-        /// 
+        ///  <code>TRUE</code> to index attachments to service catalog items.
         /// </para>
         /// </summary>
         public bool CrawlAttachments

@@ -43,9 +43,8 @@ namespace Amazon.Kendra.Model
     /// </para>
     ///  
     /// <para>
-    /// You map users to their groups when you want to filter search results for different
-    /// users based on their group’s access to documents. For more information on filtering
-    /// search results for different users, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering
+    /// This is useful for user context filtering, where search results are filtered based
+    /// on the user or their group access to documents. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering
     /// on user context</a>.
     /// </para>
     ///  

@@ -66,7 +66,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description for a block list.
+        /// A new description for the block list.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
@@ -85,7 +85,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The unique identifier of a block list.
+        /// The identifier of the block list you want to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -104,7 +104,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// The identifier of the index for a block list.
+        /// The identifier of the index for the block list.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -123,7 +123,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of a block list.
+        /// A new name for the block list.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

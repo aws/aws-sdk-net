@@ -91,7 +91,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property DocumentMetadataConfigurationUpdates. 
         /// <para>
-        /// The document metadata you want to update.
+        /// The document metadata configuration you want to update for the index. Document metadata
+        /// are fields or attributes associated with your documents. For example, the company
+        /// department name associated with each document.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=500)]
@@ -110,7 +112,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of the index to update.
+        /// The identifier of the index you want to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -129,7 +131,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the index to update.
+        /// The name of the index you want to update.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -148,8 +150,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// A new IAM role that gives Amazon Kendra permission to access your Amazon CloudWatch
-        /// logs.
+        /// An Identity and Access Management (IAM) role that gives Amazon Kendra permission to
+        /// access Amazon CloudWatch logs and metrics.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1284)]

@@ -30,6 +30,14 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Provides the configuration information to connect to Alfresco as your data source.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Alfresco data source connector is currently in preview mode. Basic authentication
+    /// is currently supported. If you would like to use Alfresco connector in production,
+    /// contact <a href="http://aws.amazon.com/contact-us/">Support</a>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class AlfrescoConfiguration
     {
@@ -74,7 +82,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CrawlComments. 
         /// <para>
-        ///  <code>TRUE</code> to index comments of wikis and blogs.
+        ///  <code>TRUE</code> to index comments of blogs and other content.
         /// </para>
         /// </summary>
         public bool CrawlComments

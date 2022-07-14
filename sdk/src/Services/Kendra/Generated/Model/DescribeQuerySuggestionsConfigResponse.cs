@@ -46,8 +46,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property IncludeQueriesWithoutUserInformation. 
         /// <para>
-        /// Shows whether Amazon Kendra uses all queries or only uses queries that include user
-        /// information to generate query suggestions.
+        ///  <code>TRUE</code> to use all queries, otherwise use only queries that include user
+        /// information to generate the query suggestions.
         /// </para>
         /// </summary>
         public bool IncludeQueriesWithoutUserInformation
@@ -65,7 +65,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property LastClearTime. 
         /// <para>
-        /// Shows the date-time query suggestions for an index was last cleared.
+        /// The date-time query suggestions for an index was last cleared.
         /// </para>
         ///  
         /// <para>
@@ -89,7 +89,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property LastSuggestionsBuildTime. 
         /// <para>
-        /// Shows the date-time query suggestions for an index was last updated.
+        /// The date-time query suggestions for an index was last updated.
         /// </para>
         /// </summary>
         public DateTime LastSuggestionsBuildTime
@@ -107,8 +107,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property MinimumNumberOfQueryingUsers. 
         /// <para>
-        /// Shows the minimum number of unique users who must search a query in order for the
-        /// query to be eligible to suggest to your users.
+        /// The minimum number of unique users who must search a query in order for the query
+        /// to be eligible to suggest to your users.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]
@@ -127,8 +127,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property MinimumQueryCount. 
         /// <para>
-        /// Shows the minimum number of times a query must be searched in order for the query
-        /// to be eligible to suggest to your users.
+        /// The minimum number of times a query must be searched in order for the query to be
+        /// eligible to suggest to your users.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]
@@ -147,7 +147,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Mode. 
         /// <para>
-        /// Shows whether query suggestions are currently in <code>ENABLED</code> mode or <code>LEARN_ONLY</code>
+        /// Whether query suggestions are currently in <code>ENABLED</code> mode or <code>LEARN_ONLY</code>
         /// mode.
         /// </para>
         ///  
@@ -172,7 +172,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property QueryLogLookBackWindowInDays. 
         /// <para>
-        /// Shows how recent your queries are in your query log time window (in days).
+        /// How recent your queries are in your query log time window (in days).
         /// </para>
         /// </summary>
         public int QueryLogLookBackWindowInDays
@@ -190,7 +190,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Shows whether the status of query suggestions settings is currently Active or Updating.
+        /// Whether the status of query suggestions settings is currently <code>ACTIVE</code>
+        /// or <code>UPDATING</code>.
         /// </para>
         ///  
         /// <para>
@@ -213,7 +214,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property TotalSuggestionsCount. 
         /// <para>
-        /// Shows the current total count of query suggestions for an index.
+        /// The current total count of query suggestions for an index.
         /// </para>
         ///  
         /// <para>

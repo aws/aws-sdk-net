@@ -44,6 +44,14 @@ namespace Amazon.Kendra.Model
         }
 
         /// <summary>
+        /// Paginator for ListAccessControlConfigurations operation
+        ///</summary>
+        public IListAccessControlConfigurationsPaginator ListAccessControlConfigurations(ListAccessControlConfigurationsRequest request) 
+        {
+            return new ListAccessControlConfigurationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDataSources operation
         ///</summary>
         public IListDataSourcesPaginator ListDataSources(ListDataSourcesRequest request) 

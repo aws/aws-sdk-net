@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Group summary information.
+    /// Summary information for groups.
     /// </summary>
     public partial class GroupSummary
     {
@@ -39,7 +39,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property GroupId. 
         /// <para>
-        ///  The identifier of the group you want group summary information on. 
+        /// The identifier of the group you want group summary information on.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -58,8 +58,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property OrderingId. 
         /// <para>
-        ///  The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code>
-        /// action. 
+        /// The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code>
+        /// action.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=32535158400000)]

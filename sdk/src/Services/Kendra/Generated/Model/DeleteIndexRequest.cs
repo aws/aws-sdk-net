@@ -41,7 +41,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of the index to delete.
+        /// The identifier of the index you want to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

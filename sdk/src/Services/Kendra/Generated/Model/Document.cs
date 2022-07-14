@@ -33,6 +33,7 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class Document
     {
+        private string _accessControlConfigurationId;
         private List<Principal> _accessControlList = new List<Principal>();
         private List<DocumentAttribute> _attributes = new List<DocumentAttribute>();
         private MemoryStream _blob;
@@ -43,9 +44,30 @@ namespace Amazon.Kendra.Model
         private string _title;
 
         /// <summary>
+        /// Gets and sets the property AccessControlConfigurationId. 
+        /// <para>
+        /// The identifier of the access control configuration that you want to apply to the document.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=36)]
+        public string AccessControlConfigurationId
+        {
+            get { return this._accessControlConfigurationId; }
+            set { this._accessControlConfigurationId = value; }
+        }
+
+        // Check to see if AccessControlConfigurationId property is set
+        internal bool IsSetAccessControlConfigurationId()
+        {
+            return this._accessControlConfigurationId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property AccessControlList. 
         /// <para>
-        /// Information on user and group access rights, which is used for user context filtering.
+        /// Information on principals (users and/or groups) and which documents they should have
+        /// access to. This is useful for user context filtering, where search results are filtered
+        /// based on the user or their group access to documents.
         /// </para>
         /// </summary>
         public List<Principal> AccessControlList

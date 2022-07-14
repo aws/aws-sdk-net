@@ -144,7 +144,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// The identifier of the index associated with the thesaurus to describe.
+        /// The identifier of the index for the thesaurus.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]

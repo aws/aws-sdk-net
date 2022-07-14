@@ -30,7 +30,7 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeQuerySuggestionsConfig operation.
-    /// Describes the settings of query suggestions for an index.
+    /// Gets information on the settings of query suggestions for an index.
     /// 
     ///  
     /// <para>
@@ -49,7 +49,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// The identifier of the index you want to describe query suggestions settings for.
+        /// The identifier of the index with query suggestions that you want to get information
+        /// on.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

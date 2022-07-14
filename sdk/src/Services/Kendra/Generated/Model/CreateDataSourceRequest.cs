@@ -73,9 +73,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A token that you provide to identify the request to create a data source. Multiple
-        /// calls to the <code>CreateDataSource</code> API with the same client token will create
-        /// only one data source.
+        /// A token that you provide to identify the request to create a data source connector.
+        /// Multiple calls to the <code>CreateDataSource</code> API with the same client token
+        /// will create only one data source connector.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -94,7 +94,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        /// Configuration information that is required to access the data source repository.
+        /// Configuration information to connect to your data source repository.
         /// </para>
         ///  
         /// <para>
@@ -123,7 +123,7 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property CustomDocumentEnrichmentConfiguration. 
         /// <para>
         /// Configuration information for altering document metadata and content during the document
-        /// ingestion process when you create a data source.
+        /// ingestion process.
         /// </para>
         ///  
         /// <para>
@@ -147,7 +147,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description for the data source.
+        /// A description for the data source connector.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
@@ -166,7 +166,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// The identifier of the index that should be associated with this data source.
+        /// The identifier of the index you want to use with the data source connector.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -186,8 +186,8 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property LanguageCode. 
         /// <para>
         /// The code for a language. This allows you to support a language for all documents when
-        /// creating the data source. English is supported by default. For more information on
-        /// supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+        /// creating the data source connector. English is supported by default. For more information
+        /// on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
         /// documents in languages other than English</a>.
         /// </para>
         /// </summary>
@@ -207,8 +207,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A unique name for the data source. A data source name can't be changed without deleting
-        /// and recreating the data source.
+        /// A unique name for the data source connector. A data source name can't be changed without
+        /// deleting and recreating the data source connector.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1000)]
@@ -227,8 +227,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of a role with permission to access the data source.
-        /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM
+        /// The Amazon Resource Name (ARN) of a role with permission to access the data source
+        /// connector. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM
         /// Roles for Amazon Kendra</a>.
         /// </para>
         ///  
@@ -258,8 +258,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Schedule. 
         /// <para>
-        /// Sets the frequency for Amazon Kendra to check the documents in your repository and
-        /// update the index. If you don't set a schedule Amazon Kendra will not periodically
+        /// Sets the frequency for Amazon Kendra to check the documents in your data source repository
+        /// and update the index. If you don't set a schedule Amazon Kendra will not periodically
         /// update the index. You can call the <code>StartDataSourceSyncJob</code> API to update
         /// the index.
         /// </para>
@@ -285,8 +285,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of key-value pairs that identify the data source. You can use the tags to identify
-        /// and organize your resources and to control access to resources.
+        /// A list of key-value pairs that identify the data source connector. You can use the
+        /// tags to identify and organize your resources and to control access to resources.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
@@ -305,7 +305,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of repository that contains the data source.
+        /// The type of data source repository. For example, <code>SHAREPOINT</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -51,7 +51,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The unique identifier of the block list that needs to be deleted.
+        /// The identifier of the block list you want to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -70,7 +70,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// The identifier of the you want to delete a block list from.
+        /// The identifier of the index for the block list.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

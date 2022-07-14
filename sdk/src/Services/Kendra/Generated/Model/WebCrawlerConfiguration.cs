@@ -51,13 +51,14 @@ namespace Amazon.Kendra.Model
         ///  
         /// <para>
         /// You can connect to websites using basic authentication of user name and password.
+        /// You use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
+        /// Manager</a> to store your authentication credentials.
         /// </para>
         ///  
         /// <para>
         /// You must provide the website host name and port number. For example, the host name
         /// of https://a.example.com/page1.html is "a.example.com" and the port is 443, the standard
-        /// port for HTTPS. You use a secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
-        /// Manager</a> to store your authentication credentials.
+        /// port for HTTPS.
         /// </para>
         /// </summary>
         public AuthenticationConfiguration AuthenticationConfiguration

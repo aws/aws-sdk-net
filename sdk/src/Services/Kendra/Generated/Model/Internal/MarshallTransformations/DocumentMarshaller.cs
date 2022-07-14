@@ -45,6 +45,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Document requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAccessControlConfigurationId())
+            {
+                context.Writer.WritePropertyName("AccessControlConfigurationId");
+                context.Writer.Write(requestObject.AccessControlConfigurationId);
+            }
+
             if(requestObject.IsSetAccessControlList())
             {
                 context.Writer.WritePropertyName("AccessControlList");

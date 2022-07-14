@@ -113,7 +113,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property DocumentMetadataConfigurations. 
         /// <para>
-        /// Configuration settings for any metadata applied to the documents in the index.
+        /// Configuration information for document metadata or fields. Document metadata are fields
+        /// or attributes associated with your documents. For example, the company department
+        /// name associated with each document.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=500)]
@@ -323,8 +325,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property UserGroupResolutionConfiguration. 
         /// <para>
-        /// Shows whether you have enabled the configuration for fetching access levels of groups
-        /// and users from an Amazon Web Services Single Sign On identity source.
+        /// Whether you have enabled the configuration for fetching access levels of groups and
+        /// users from an Amazon Web Services Single Sign On identity source.
         /// </para>
         /// </summary>
         public UserGroupResolutionConfiguration UserGroupResolutionConfiguration

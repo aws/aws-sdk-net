@@ -63,7 +63,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// The identifier of the index that contains the data source.
+        /// The identifier of the index used with the data source.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

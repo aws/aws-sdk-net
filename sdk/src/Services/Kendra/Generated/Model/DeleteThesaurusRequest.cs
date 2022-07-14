@@ -40,7 +40,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of the thesaurus to delete.
+        /// The identifier of the thesaurus you want to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -59,7 +59,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// The identifier of the index associated with the thesaurus to delete.
+        /// The identifier of the index for the thesaurus.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

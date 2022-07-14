@@ -30,7 +30,7 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateIndex operation.
-    /// Creates a new Amazon Kendra index. Index creation is an asynchronous API. To determine
+    /// Creates an Amazon Kendra index. Index creation is an asynchronous API. To determine
     /// if index creation has completed, check the <code>Status</code> field returned from
     /// a call to <code>DescribeIndex</code>. The <code>Status</code> field is set to <code>ACTIVE</code>
     /// when the index is ready to use.
@@ -135,7 +135,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name for the new index.
+        /// A name for the index.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1000)]

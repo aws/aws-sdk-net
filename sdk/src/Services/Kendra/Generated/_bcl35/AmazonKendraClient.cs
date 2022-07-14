@@ -754,6 +754,106 @@ namespace Amazon.Kendra
 
         #endregion
         
+        #region  CreateAccessControlConfiguration
+
+        /// <summary>
+        /// Creates an access configuration for your documents. This includes user and group access
+        /// information for your documents. This is useful for user context filtering, where search
+        /// results are filtered based on the user or their group access to documents.
+        /// 
+        ///  
+        /// <para>
+        /// You can use this to re-configure your existing document level access control without
+        /// indexing all of your documents again. For example, your index contains top-secret
+        /// company documents that only certain employees or users should access. One of these
+        /// users leaves the company or switches to a team that should be blocked from access
+        /// to top-secret documents. Your documents in your index still give this user access
+        /// to top-secret documents due to the user having access at the time your documents were
+        /// indexed. You can create a specific access control configuration for this user with
+        /// deny access. You can later update the access control configuration to allow access
+        /// in the case the user returns to the company and re-joins the 'top-secret' team. You
+        /// can re-configure access control for your documents circumstances change.
+        /// </para>
+        ///  
+        /// <para>
+        /// To apply your access control configuration to certain documents, you call the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchPutDocument.html">BatchPutDocument</a>
+        /// API with the <code>AccessControlConfigurationId</code> included in the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Document.html">Document</a>
+        /// object. If you use an S3 bucket as a data source, you update the <code>.metadata.json</code>
+        /// with the <code>AccessControlConfigurationId</code> and synchronize your data source.
+        /// Amazon Kendra currently only supports access control configuration for S3 data sources
+        /// and documents indexed using the <code>BatchPutDocument</code> API.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccessControlConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the CreateAccessControlConfiguration service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateAccessControlConfiguration">REST API Reference for CreateAccessControlConfiguration Operation</seealso>
+        public virtual CreateAccessControlConfigurationResponse CreateAccessControlConfiguration(CreateAccessControlConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAccessControlConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAccessControlConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAccessControlConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAccessControlConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccessControlConfiguration operation on AmazonKendraClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAccessControlConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateAccessControlConfiguration">REST API Reference for CreateAccessControlConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginCreateAccessControlConfiguration(CreateAccessControlConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAccessControlConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAccessControlConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAccessControlConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAccessControlConfiguration.</param>
+        /// 
+        /// <returns>Returns a  CreateAccessControlConfigurationResult from Kendra.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateAccessControlConfiguration">REST API Reference for CreateAccessControlConfiguration Operation</seealso>
+        public virtual CreateAccessControlConfigurationResponse EndCreateAccessControlConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateAccessControlConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateDataSource
 
         /// <summary>
@@ -946,7 +1046,7 @@ namespace Amazon.Kendra
         ///  
         /// <para>
         /// For an example of adding an FAQ to an index using Python and Java SDKs, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html#using-faq-file">Using
-        /// you FAQ file</a>.
+        /// your FAQ file</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFaq service method.</param>
@@ -1022,7 +1122,7 @@ namespace Amazon.Kendra
         #region  CreateIndex
 
         /// <summary>
-        /// Creates a new Amazon Kendra index. Index creation is an asynchronous API. To determine
+        /// Creates an Amazon Kendra index. Index creation is an asynchronous API. To determine
         /// if index creation has completed, check the <code>Status</code> field returned from
         /// a call to <code>DescribeIndex</code>. The <code>Status</code> field is set to <code>ACTIVE</code>
         /// when the index is ready to use.
@@ -1290,6 +1390,81 @@ namespace Amazon.Kendra
         public virtual CreateThesaurusResponse EndCreateThesaurus(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateThesaurusResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteAccessControlConfiguration
+
+        /// <summary>
+        /// Deletes an access control configuration that you created for your documents in an
+        /// index. This includes user and group access information for your documents. This is
+        /// useful for user context filtering, where search results are filtered based on the
+        /// user or their group access to documents.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessControlConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAccessControlConfiguration service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteAccessControlConfiguration">REST API Reference for DeleteAccessControlConfiguration Operation</seealso>
+        public virtual DeleteAccessControlConfigurationResponse DeleteAccessControlConfiguration(DeleteAccessControlConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAccessControlConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAccessControlConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAccessControlConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAccessControlConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessControlConfiguration operation on AmazonKendraClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAccessControlConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteAccessControlConfiguration">REST API Reference for DeleteAccessControlConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginDeleteAccessControlConfiguration(DeleteAccessControlConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAccessControlConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAccessControlConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAccessControlConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAccessControlConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteAccessControlConfigurationResult from Kendra.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteAccessControlConfiguration">REST API Reference for DeleteAccessControlConfiguration Operation</seealso>
+        public virtual DeleteAccessControlConfigurationResponse EndDeleteAccessControlConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteAccessControlConfigurationResponse>(asyncResult);
         }
 
         #endregion
@@ -1838,6 +2013,78 @@ namespace Amazon.Kendra
 
         #endregion
         
+        #region  DescribeAccessControlConfiguration
+
+        /// <summary>
+        /// Gets information about an access control configuration that you created for your documents
+        /// in an index. This includes user and group access information for your documents. This
+        /// is useful for user context filtering, where search results are filtered based on the
+        /// user or their group access to documents.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccessControlConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAccessControlConfiguration service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeAccessControlConfiguration">REST API Reference for DescribeAccessControlConfiguration Operation</seealso>
+        public virtual DescribeAccessControlConfigurationResponse DescribeAccessControlConfiguration(DescribeAccessControlConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAccessControlConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAccessControlConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAccessControlConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAccessControlConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccessControlConfiguration operation on AmazonKendraClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAccessControlConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeAccessControlConfiguration">REST API Reference for DescribeAccessControlConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginDescribeAccessControlConfiguration(DescribeAccessControlConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAccessControlConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAccessControlConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAccessControlConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAccessControlConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DescribeAccessControlConfigurationResult from Kendra.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeAccessControlConfiguration">REST API Reference for DescribeAccessControlConfiguration Operation</seealso>
+        public virtual DescribeAccessControlConfigurationResponse EndDescribeAccessControlConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeAccessControlConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeDataSource
 
         /// <summary>
@@ -2050,7 +2297,7 @@ namespace Amazon.Kendra
         #region  DescribeIndex
 
         /// <summary>
-        /// Describes an existing Amazon Kendra index.
+        /// Gets information about an existing Amazon Kendra index.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeIndex service method.</param>
         /// 
@@ -2198,7 +2445,7 @@ namespace Amazon.Kendra
         #region  DescribeQuerySuggestionsBlockList
 
         /// <summary>
-        /// Describes a block list used for query suggestions for an index.
+        /// Gets information about a block list used for query suggestions for an index.
         /// 
         ///  
         /// <para>
@@ -2277,7 +2524,7 @@ namespace Amazon.Kendra
         #region  DescribeQuerySuggestionsConfig
 
         /// <summary>
-        /// Describes the settings of query suggestions for an index.
+        /// Gets information on the settings of query suggestions for an index.
         /// 
         ///  
         /// <para>
@@ -2356,7 +2603,7 @@ namespace Amazon.Kendra
         #region  DescribeThesaurus
 
         /// <summary>
-        /// Describes an existing Amazon Kendra thesaurus.
+        /// Gets information about an existing Amazon Kendra thesaurus.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeThesaurus service method.</param>
         /// 
@@ -2712,6 +2959,77 @@ namespace Amazon.Kendra
         public virtual GetSnapshotsResponse EndGetSnapshots(IAsyncResult asyncResult)
         {
             return EndInvoke<GetSnapshotsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListAccessControlConfigurations
+
+        /// <summary>
+        /// Lists one or more access control configurations for an index. This includes user and
+        /// group access information for your documents. This is useful for user context filtering,
+        /// where search results are filtered based on the user or their group access to documents.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAccessControlConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListAccessControlConfigurations service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListAccessControlConfigurations">REST API Reference for ListAccessControlConfigurations Operation</seealso>
+        public virtual ListAccessControlConfigurationsResponse ListAccessControlConfigurations(ListAccessControlConfigurationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAccessControlConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAccessControlConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAccessControlConfigurationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAccessControlConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAccessControlConfigurations operation on AmazonKendraClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAccessControlConfigurations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListAccessControlConfigurations">REST API Reference for ListAccessControlConfigurations Operation</seealso>
+        public virtual IAsyncResult BeginListAccessControlConfigurations(ListAccessControlConfigurationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAccessControlConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAccessControlConfigurationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAccessControlConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAccessControlConfigurations.</param>
+        /// 
+        /// <returns>Returns a  ListAccessControlConfigurationsResult from Kendra.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListAccessControlConfigurations">REST API Reference for ListAccessControlConfigurations Operation</seealso>
+        public virtual ListAccessControlConfigurationsResponse EndListAccessControlConfigurations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAccessControlConfigurationsResponse>(asyncResult);
         }
 
         #endregion
@@ -3438,7 +3756,7 @@ namespace Amazon.Kendra
         #region  ListThesauri
 
         /// <summary>
-        /// Lists the Amazon Kendra thesauri associated with an index.
+        /// Lists the thesauri for an index.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListThesauri service method.</param>
         /// 
@@ -3520,9 +3838,8 @@ namespace Amazon.Kendra
         /// </para>
         ///  
         /// <para>
-        /// You map users to their groups when you want to filter search results for different
-        /// users based on their group’s access to documents. For more information on filtering
-        /// search results for different users, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering
+        /// This is useful for user context filtering, where search results are filtered based
+        /// on the user or their group access to documents. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering
         /// on user context</a>.
         /// </para>
         ///  
@@ -4078,6 +4395,106 @@ namespace Amazon.Kendra
 
         #endregion
         
+        #region  UpdateAccessControlConfiguration
+
+        /// <summary>
+        /// Updates an access control configuration for your documents in an index. This includes
+        /// user and group access information for your documents. This is useful for user context
+        /// filtering, where search results are filtered based on the user or their group access
+        /// to documents.
+        /// 
+        ///  
+        /// <para>
+        /// You can update an access control configuration you created without indexing all of
+        /// your documents again. For example, your index contains top-secret company documents
+        /// that only certain employees or users should access. You created an 'allow' access
+        /// control configuration for one user who recently joined the 'top-secret' team, switching
+        /// from a team with 'deny' access to top-secret documents. However, the user suddenly
+        /// returns to their previous team and should no longer have access to top secret documents.
+        /// You can update the access control configuration to re-configure access control for
+        /// your documents as circumstances change.
+        /// </para>
+        ///  
+        /// <para>
+        /// You call the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchPutDocument.html">BatchPutDocument</a>
+        /// API to apply the updated access control configuration, with the <code>AccessControlConfigurationId</code>
+        /// included in the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Document.html">Document</a>
+        /// object. If you use an S3 bucket as a data source, you synchronize your data source
+        /// to apply the the <code>AccessControlConfigurationId</code> in the <code>.metadata.json</code>
+        /// file. Amazon Kendra currently only supports access control configuration for S3 data
+        /// sources and documents indexed using the <code>BatchPutDocument</code> API.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAccessControlConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAccessControlConfiguration service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateAccessControlConfiguration">REST API Reference for UpdateAccessControlConfiguration Operation</seealso>
+        public virtual UpdateAccessControlConfigurationResponse UpdateAccessControlConfiguration(UpdateAccessControlConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAccessControlConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAccessControlConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAccessControlConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAccessControlConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAccessControlConfiguration operation on AmazonKendraClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAccessControlConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateAccessControlConfiguration">REST API Reference for UpdateAccessControlConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginUpdateAccessControlConfiguration(UpdateAccessControlConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAccessControlConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAccessControlConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateAccessControlConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAccessControlConfiguration.</param>
+        /// 
+        /// <returns>Returns a  UpdateAccessControlConfigurationResult from Kendra.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateAccessControlConfiguration">REST API Reference for UpdateAccessControlConfiguration Operation</seealso>
+        public virtual UpdateAccessControlConfigurationResponse EndUpdateAccessControlConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateAccessControlConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateDataSource
 
         /// <summary>
@@ -4494,7 +4911,7 @@ namespace Amazon.Kendra
         #region  UpdateThesaurus
 
         /// <summary>
-        /// Updates a thesaurus file associated with an index.
+        /// Updates a thesaurus for an index.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateThesaurus service method.</param>
         /// 

@@ -55,6 +55,35 @@
     <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kendra.Model.CreateAccessControlConfigurationRequest.ClientToken</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.CreateAccessControlConfigurationRequest.Description</property>
+    <min>0</min>
+    <max>1000</max>
+    <pattern>^\P{C}*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.CreateAccessControlConfigurationRequest.IndexId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.CreateAccessControlConfigurationRequest.Name</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.CreateAccessControlConfigurationResponse.Id</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kendra.Model.CreateDataSourceRequest.ClientToken</property>
     <min>1</min>
     <max>100</max>
@@ -271,6 +300,18 @@
     <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kendra.Model.DeleteAccessControlConfigurationRequest.Id</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.DeleteAccessControlConfigurationRequest.IndexId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kendra.Model.DeleteDataSourceRequest.Id</property>
     <min>1</min>
     <max>100</max>
@@ -358,6 +399,36 @@
     <min>36</min>
     <max>36</max>
     <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.DescribeAccessControlConfigurationRequest.Id</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.DescribeAccessControlConfigurationRequest.IndexId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.DescribeAccessControlConfigurationResponse.Description</property>
+    <min>0</min>
+    <max>1000</max>
+    <pattern>^\P{C}*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.DescribeAccessControlConfigurationResponse.ErrorMessage</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^\P{C}*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.DescribeAccessControlConfigurationResponse.Name</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>[\S\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kendra.Model.DescribeDataSourceRequest.Id</property>
@@ -755,6 +826,27 @@
     <max>800</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kendra.Model.ListAccessControlConfigurationsRequest.IndexId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.ListAccessControlConfigurationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.ListAccessControlConfigurationsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.ListAccessControlConfigurationsResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kendra.Model.ListDataSourcesRequest.IndexId</property>
     <min>36</min>
     <max>36</max>
@@ -1091,6 +1183,30 @@
     <max>1011</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kendra.Model.UpdateAccessControlConfigurationRequest.Description</property>
+    <min>0</min>
+    <max>1000</max>
+    <pattern>^\P{C}*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.UpdateAccessControlConfigurationRequest.Id</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.UpdateAccessControlConfigurationRequest.IndexId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.UpdateAccessControlConfigurationRequest.Name</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kendra.Model.UpdateDataSourceRequest.Description</property>
     <min>0</min>
     <max>1000</max>
@@ -1255,6 +1371,12 @@
     <min>0</min>
     <max>1284</max>
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.AccessControlConfigurationSummary.Id</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kendra.Model.AccessControlListConfiguration.KeyPath</property>
@@ -1582,6 +1704,12 @@
     <min>1</min>
     <max>30</max>
     <pattern>^\P{C}*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.Document.AccessControlConfigurationId</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kendra.Model.Document.Id</property>

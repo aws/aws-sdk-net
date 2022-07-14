@@ -30,7 +30,7 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateThesaurus operation.
-    /// Updates a thesaurus file associated with an index.
+    /// Updates a thesaurus for an index.
     /// </summary>
     public partial class UpdateThesaurusRequest : AmazonKendraRequest
     {
@@ -44,7 +44,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The updated description of the thesaurus.
+        /// A new description for the thesaurus.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
@@ -63,7 +63,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of the thesaurus to update.
+        /// The identifier of the thesaurus you want to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -82,7 +82,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// The identifier of the index associated with the thesaurus to update.
+        /// The identifier of the index for the thesaurus.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -101,7 +101,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The updated name of the thesaurus.
+        /// A new name for the thesaurus.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -120,7 +120,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The updated role ARN of the thesaurus.
+        /// An IAM role that gives Amazon Kendra permissions to access thesaurus file specified
+        /// in <code>SourceS3Path</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1284)]

@@ -143,7 +143,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// The identifier of the index that contains the FAQ.
+        /// The identifier of the index for the FAQ.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]

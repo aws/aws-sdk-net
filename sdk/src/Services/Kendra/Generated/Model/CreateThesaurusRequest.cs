@@ -73,7 +73,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description for the new thesaurus.
+        /// A description for the thesaurus.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
@@ -92,7 +92,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// The unique identifier of the index for the new thesaurus. 
+        /// The identifier of the index for the thesaurus.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -111,7 +111,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name for the new thesaurus.
+        /// A name for the thesaurus.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -150,7 +150,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property SourceS3Path. 
         /// <para>
-        /// The thesaurus file Amazon S3 source path. 
+        /// The path to the thesaurus file in S3.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

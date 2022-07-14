@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Information on the processing of <code>PUT</code> and <code>DELETE</code> actions
-    /// for mapping users to their groups.
+    /// Summary information on the processing of <code>PUT</code> and <code>DELETE</code>
+    /// actions for mapping users to their groups.
     /// </summary>
     public partial class GroupOrderingIdSummary
     {

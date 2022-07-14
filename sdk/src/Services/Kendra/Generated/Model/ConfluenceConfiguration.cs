@@ -151,7 +151,7 @@ namespace Amazon.Kendra.Model
         /// name and password required to connect to the Confluence instance. If you use Confluence
         /// cloud, you use a generated API token as the password. For more information, see <a
         /// href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using
-        /// a Confluemce data source</a>.
+        /// a Confluence data source</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1284)]
@@ -209,7 +209,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The version or the type of the Confluence installation to connect to.
+        /// The version or the type of Confluence installation to connect to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

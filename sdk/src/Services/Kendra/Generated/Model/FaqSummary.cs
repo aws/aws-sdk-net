@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Provides information about a frequently asked questions and answer contained in an
-    /// index.
+    /// Summary information for frequently asked questions and answers included in an index.
     /// </summary>
     public partial class FaqSummary
     {

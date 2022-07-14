@@ -46,7 +46,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        /// Configuration information for your Amazon Kendra you want to update.
+        /// Configuration information you want to update for your Amazon Kendra experience.
         /// </para>
         /// </summary>
         public ExperienceConfiguration Configuration
@@ -64,7 +64,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of your Amazon Kendra experience you want to update.
+        /// A new description for your Amazon Kendra experience.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
@@ -102,7 +102,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// The identifier of the index for your Amazon Kendra experience you want to update.
+        /// The identifier of the index for your Amazon Kendra experience.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -121,7 +121,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of your Amazon Kendra experience you want to update.
+        /// A new name for your Amazon Kendra experience.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]

@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Provides information for manually tuning the relevance of a field in a search. When
-    /// a query includes terms that match the field, the results are given a boost in the
-    /// response based on these tuning parameters.
+    /// Provides information for tuning the relevance of a field in a search. When a query
+    /// includes terms that match the field, the results are given a boost in the response
+    /// based on these tuning parameters.
     /// </summary>
     public partial class Relevance
     {

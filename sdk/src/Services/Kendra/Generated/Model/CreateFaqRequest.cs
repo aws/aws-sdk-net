@@ -39,7 +39,7 @@ namespace Amazon.Kendra.Model
     ///  
     /// <para>
     /// For an example of adding an FAQ to an index using Python and Java SDKs, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html#using-faq-file">Using
-    /// you FAQ file</a>.
+    /// your FAQ file</a>.
     /// </para>
     /// </summary>
     public partial class CreateFaqRequest : AmazonKendraRequest
@@ -78,7 +78,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description of the FAQ.
+        /// A description for the FAQ.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
@@ -97,9 +97,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property FileFormat. 
         /// <para>
-        /// The format of the input file. You can choose between a basic CSV format, a CSV format
-        /// that includes customs attributes in a header, and a JSON format that includes custom
-        /// attributes.
+        /// The format of the FAQ input file. You can choose between a basic CSV format, a CSV
+        /// format that includes customs attributes in a header, and a JSON format that includes
+        /// custom attributes.
         /// </para>
         ///  
         /// <para>
@@ -127,7 +127,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// The identifier of the index that contains the FAQ.
+        /// The identifier of the index for the FAQ.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -168,7 +168,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name that should be associated with the FAQ.
+        /// A name for the FAQ.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -208,7 +208,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property S3Path. 
         /// <para>
-        /// The S3 location of the FAQ input data.
+        /// The path to the FAQ file in S3.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

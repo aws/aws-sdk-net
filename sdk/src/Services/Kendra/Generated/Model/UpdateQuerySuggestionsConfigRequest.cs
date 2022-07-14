@@ -107,7 +107,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// The identifier of the index you want to update query suggestions settings for.
+        ///  The identifier of the index with query suggestions you want to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

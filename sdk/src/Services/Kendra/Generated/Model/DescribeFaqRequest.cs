@@ -40,7 +40,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The unique identifier of the FAQ.
+        /// The identifier of the FAQ you want to get information on.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -59,7 +59,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// The identifier of the index that contains the FAQ.
+        /// The identifier of the index for the FAQ.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
