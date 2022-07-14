@@ -118,6 +118,12 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetRuntimeRoleArn())
+                {
+                    context.Writer.WritePropertyName("runtimeRoleArn");
+                    context.Writer.Write(publicRequest.RuntimeRoleArn);
+                }
+
                 if(publicRequest.IsSetScriptParameters())
                 {
                     context.Writer.WritePropertyName("scriptParameters");
@@ -132,6 +138,12 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetSecureInitializationRoleArn())
+                {
+                    context.Writer.WritePropertyName("secureInitializationRoleArn");
+                    context.Writer.Write(publicRequest.SecureInitializationRoleArn);
                 }
 
                 if(publicRequest.IsSetSubtype())

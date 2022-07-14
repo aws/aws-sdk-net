@@ -112,10 +112,22 @@ namespace Amazon.NimbleStudio.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("runtimeRoleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RuntimeRoleArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("scriptParameters", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<ScriptParameterKeyValue, ScriptParameterKeyValueUnmarshaller>(ScriptParameterKeyValueUnmarshaller.Instance);
                     unmarshalledObject.ScriptParameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("secureInitializationRoleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SecureInitializationRoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("state", targetDepth))

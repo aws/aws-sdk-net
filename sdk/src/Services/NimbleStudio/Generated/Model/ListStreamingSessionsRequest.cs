@@ -30,7 +30,7 @@ namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
     /// Container for the parameters to the ListStreamingSessions operation.
-    /// Lists the streaming image resources in a studio.
+    /// Lists the streaming sessions in a studio.
     /// </summary>
     public partial class ListStreamingSessionsRequest : AmazonNimbleStudioRequest
     {

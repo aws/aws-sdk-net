@@ -3353,7 +3353,7 @@ namespace Amazon.NimbleStudio
 
 
         /// <summary>
-        /// Lists the streaming image resources in a studio.
+        /// Lists the streaming sessions in a studio.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStreamingSessions service method.</param>
         /// 
@@ -3398,7 +3398,7 @@ namespace Amazon.NimbleStudio
 
 
         /// <summary>
-        /// Lists the streaming image resources in a studio.
+        /// Lists the streaming sessions in a studio.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStreamingSessions service method.</param>
         /// <param name="cancellationToken">

@@ -51,6 +51,7 @@ namespace Amazon.NimbleStudio.Model
         /// The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
         public string AdminRoleArn
         {
             get { return this._adminRoleArn; }
@@ -128,6 +129,7 @@ namespace Amazon.NimbleStudio.Model
         /// The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
         public string UserRoleArn
         {
             get { return this._userRoleArn; }

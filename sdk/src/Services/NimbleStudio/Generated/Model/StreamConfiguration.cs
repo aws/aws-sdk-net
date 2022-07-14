@@ -113,14 +113,14 @@ namespace Amazon.NimbleStudio.Model
         /// If the value is missing or set to 0, your sessions can’t be stopped. If you then call
         /// <code>StopStreamingSession</code>, the session fails. If the time that a session stays
         /// in the READY state exceeds the <code>maxSessionLengthInMinutes</code> value, the session
-        /// will automatically be terminated by AWS (instead of stopped).
+        /// will automatically be terminated (instead of stopped).
         /// </para>
         ///  
         /// <para>
         /// If the value is set to a positive number, the session can be stopped. You can call
         /// <code>StopStreamingSession</code> to stop sessions in the READY state. If the time
         /// that a session stays in the READY state exceeds the <code>maxSessionLengthInMinutes</code>
-        /// value, the session will automatically be stopped by AWS (instead of terminated).
+        /// value, the session will automatically be stopped (instead of terminated).
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5760)]

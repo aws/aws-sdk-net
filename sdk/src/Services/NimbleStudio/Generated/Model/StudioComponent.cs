@@ -56,7 +56,9 @@ namespace Amazon.NimbleStudio.Model
         private List<string> _ec2SecurityGroupIds = new List<string>();
         private List<StudioComponentInitializationScript> _initializationScripts = new List<StudioComponentInitializationScript>();
         private string _name;
+        private string _runtimeRoleArn;
         private List<ScriptParameterKeyValue> _scriptParameters = new List<ScriptParameterKeyValue>();
+        private string _secureInitializationRoleArn;
         private StudioComponentState _state;
         private StudioComponentStatusCode _statusCode;
         private string _statusMessage;
@@ -215,6 +217,26 @@ namespace Amazon.NimbleStudio.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RuntimeRoleArn. 
+        /// <para>
+        /// An IAM role attached to a Studio Component that gives the studio component access
+        /// to AWS resources at anytime while the instance is running. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
+        public string RuntimeRoleArn
+        {
+            get { return this._runtimeRoleArn; }
+            set { this._runtimeRoleArn = value; }
+        }
+
+        // Check to see if RuntimeRoleArn property is set
+        internal bool IsSetRuntimeRoleArn()
+        {
+            return this._runtimeRoleArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ScriptParameters. 
         /// <para>
         /// Parameters for the studio component scripts.
@@ -231,6 +253,27 @@ namespace Amazon.NimbleStudio.Model
         internal bool IsSetScriptParameters()
         {
             return this._scriptParameters != null && this._scriptParameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecureInitializationRoleArn. 
+        /// <para>
+        /// An IAM role attached to Studio Component when the system initialization script runs
+        /// which give the studio component access to AWS resources when the system initialization
+        /// script runs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
+        public string SecureInitializationRoleArn
+        {
+            get { return this._secureInitializationRoleArn; }
+            set { this._secureInitializationRoleArn = value; }
+        }
+
+        // Check to see if SecureInitializationRoleArn property is set
+        internal bool IsSetSecureInitializationRoleArn()
+        {
+            return this._secureInitializationRoleArn != null;
         }
 
         /// <summary>
