@@ -32,7 +32,9 @@ namespace Amazon.ConfigService.Model
     /// Container for the parameters to the PutConformancePack operation.
     /// Creates or updates a conformance pack. A conformance pack is a collection of Config
     /// rules that can be easily deployed in an account and a region and across Amazon Web
-    /// Services Organization.
+    /// Services Organization. For information on how many conformance packs you can have
+    /// per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
+    /// <b>Service Limits</b> </a> in the Config Developer Guide.
     /// 
     ///  
     /// <para>

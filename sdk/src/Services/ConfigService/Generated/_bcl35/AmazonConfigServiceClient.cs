@@ -5922,12 +5922,8 @@ namespace Amazon.ConfigService
         /// </para>
         ///  
         /// <para>
-        /// The maximum number of rules that Config supports is 150.
-        /// </para>
-        ///  
-        /// <para>
-        /// For information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config
-        /// Limits</a> in the <i>Amazon Web Services General Reference Guide</i>.
+        /// For information on how many Config rules you can have per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
+        /// <b>Service Limits</b> </a> in the Config Developer Guide.
         /// </para>
         ///  
         /// <para>
@@ -6300,7 +6296,9 @@ namespace Amazon.ConfigService
         /// <summary>
         /// Creates or updates a conformance pack. A conformance pack is a collection of Config
         /// rules that can be easily deployed in an account and a region and across Amazon Web
-        /// Services Organization.
+        /// Services Organization. For information on how many conformance packs you can have
+        /// per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
+        /// <b>Service Limits</b> </a> in the Config Developer Guide.
         /// 
         ///  
         /// <para>
@@ -6683,13 +6681,16 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Adds or updates organization Config rule for your entire organization evaluating whether
-        /// your Amazon Web Services resources comply with your desired configurations.
+        /// your Amazon Web Services resources comply with your desired configurations. For information
+        /// on how many organization Config rules you can have per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
+        /// <b>Service Limits</b> </a> in the Config Developer Guide.
         /// 
         ///  
         /// <para>
         ///  Only a master account and a delegated administrator can create or update an organization
         /// Config rule. When calling this API with a delegated administrator, you must ensure
-        /// Organizations <code>ListDelegatedAdministrator</code> permissions are added. 
+        /// Organizations <code>ListDelegatedAdministrator</code> permissions are added. An organization
+        /// can have up to 3 delegated administrators.
         /// </para>
         ///  
         /// <para>
@@ -6715,11 +6716,6 @@ namespace Amazon.ConfigService
         /// action to add the rule to Config, you must specify the Amazon Resource Name (ARN)
         /// that Lambda assigns to the function. If you are adding an Config managed rule, specify
         /// the rule's identifier for the <code>RuleIdentifier</code> key.
-        /// </para>
-        ///  
-        /// <para>
-        /// The maximum number of organization Config rules that Config supports is 150 and 3
-        /// delegated administrator per organization. 
         /// </para>
         ///  <note> 
         /// <para>
