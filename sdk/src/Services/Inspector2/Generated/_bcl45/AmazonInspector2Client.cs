@@ -1220,6 +1220,67 @@ namespace Amazon.Inspector2
 
         #endregion
         
+        #region  GetConfiguration
+
+
+        /// <summary>
+        /// Retrieves setting configurations for Inspector scans.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetConfiguration service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ResourceNotFoundException">
+        /// The operation tried to access an invalid resource. Make sure the resource is specified
+        /// correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetConfiguration">REST API Reference for GetConfiguration Operation</seealso>
+        public virtual GetConfigurationResponse GetConfiguration(GetConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves setting configurations for Inspector scans.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetConfiguration service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ResourceNotFoundException">
+        /// The operation tried to access an invalid resource. Make sure the resource is specified
+        /// correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetConfiguration">REST API Reference for GetConfiguration Operation</seealso>
+        public virtual Task<GetConfigurationResponse> GetConfigurationAsync(GetConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetDelegatedAdminAccount
 
 
@@ -2237,6 +2298,77 @@ namespace Amazon.Inspector2
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateConfiguration
+
+
+        /// <summary>
+        /// Updates setting configurations for your Amazon Inspector account. When you use this
+        /// API as an Amazon Inspector delegated administrator this updates the setting for all
+        /// accounts you manage. Member accounts in an organization cannot update this setting.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateConfiguration service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateConfiguration">REST API Reference for UpdateConfiguration Operation</seealso>
+        public virtual UpdateConfigurationResponse UpdateConfiguration(UpdateConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates setting configurations for your Amazon Inspector account. When you use this
+        /// API as an Amazon Inspector delegated administrator this updates the setting for all
+        /// accounts you manage. Member accounts in an organization cannot update this setting.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateConfiguration service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateConfiguration">REST API Reference for UpdateConfiguration Operation</seealso>
+        public virtual Task<UpdateConfigurationResponse> UpdateConfigurationAsync(UpdateConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion

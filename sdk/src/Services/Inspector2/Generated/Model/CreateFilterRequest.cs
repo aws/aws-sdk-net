@@ -38,6 +38,7 @@ namespace Amazon.Inspector2.Model
         private string _description;
         private FilterCriteria _filterCriteria;
         private string _name;
+        private string _reason;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
@@ -116,6 +117,25 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Reason. 
+        /// <para>
+        /// The reason for creating the filter.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=512)]
+        public string Reason
+        {
+            get { return this._reason; }
+            set { this._reason = value; }
+        }
+
+        // Check to see if Reason property is set
+        internal bool IsSetReason()
+        {
+            return this._reason != null;
         }
 
         /// <summary>

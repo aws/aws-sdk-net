@@ -727,6 +727,114 @@ namespace Amazon.Inspector2
 
 
     /// <summary>
+    /// Constants used for properties of type EcrRescanDuration.
+    /// </summary>
+    public class EcrRescanDuration : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DAYS_180 for EcrRescanDuration
+        /// </summary>
+        public static readonly EcrRescanDuration DAYS_180 = new EcrRescanDuration("DAYS_180");
+        /// <summary>
+        /// Constant DAYS_30 for EcrRescanDuration
+        /// </summary>
+        public static readonly EcrRescanDuration DAYS_30 = new EcrRescanDuration("DAYS_30");
+        /// <summary>
+        /// Constant LIFETIME for EcrRescanDuration
+        /// </summary>
+        public static readonly EcrRescanDuration LIFETIME = new EcrRescanDuration("LIFETIME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EcrRescanDuration(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EcrRescanDuration FindValue(string value)
+        {
+            return FindValue<EcrRescanDuration>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EcrRescanDuration(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EcrRescanDurationStatus.
+    /// </summary>
+    public class EcrRescanDurationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for EcrRescanDurationStatus
+        /// </summary>
+        public static readonly EcrRescanDurationStatus FAILED = new EcrRescanDurationStatus("FAILED");
+        /// <summary>
+        /// Constant PENDING for EcrRescanDurationStatus
+        /// </summary>
+        public static readonly EcrRescanDurationStatus PENDING = new EcrRescanDurationStatus("PENDING");
+        /// <summary>
+        /// Constant SUCCESS for EcrRescanDurationStatus
+        /// </summary>
+        public static readonly EcrRescanDurationStatus SUCCESS = new EcrRescanDurationStatus("SUCCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EcrRescanDurationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EcrRescanDurationStatus FindValue(string value)
+        {
+            return FindValue<EcrRescanDurationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EcrRescanDurationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EcrScanFrequency.
     /// </summary>
     public class EcrScanFrequency : ConstantClass
@@ -790,6 +898,10 @@ namespace Amazon.Inspector2
         /// Constant ACCESS_DENIED for ErrorCode
         /// </summary>
         public static readonly ErrorCode ACCESS_DENIED = new ErrorCode("ACCESS_DENIED");
+        /// <summary>
+        /// Constant ACCOUNT_IS_ISOLATED for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode ACCOUNT_IS_ISOLATED = new ErrorCode("ACCOUNT_IS_ISOLATED");
         /// <summary>
         /// Constant ALREADY_ENABLED for ErrorCode
         /// </summary>
@@ -1591,6 +1703,10 @@ namespace Amazon.Inspector2
         /// </summary>
         public static readonly PackageManager JAR = new PackageManager("JAR");
         /// <summary>
+        /// Constant NODEPKG for PackageManager
+        /// </summary>
+        public static readonly PackageManager NODEPKG = new PackageManager("NODEPKG");
+        /// <summary>
         /// Constant NPM for PackageManager
         /// </summary>
         public static readonly PackageManager NPM = new PackageManager("NPM");
@@ -1603,6 +1719,10 @@ namespace Amazon.Inspector2
         /// </summary>
         public static readonly PackageManager OS = new PackageManager("OS");
         /// <summary>
+        /// Constant PIP for PackageManager
+        /// </summary>
+        public static readonly PackageManager PIP = new PackageManager("PIP");
+        /// <summary>
         /// Constant PIPENV for PackageManager
         /// </summary>
         public static readonly PackageManager PIPENV = new PackageManager("PIPENV");
@@ -1610,6 +1730,14 @@ namespace Amazon.Inspector2
         /// Constant POETRY for PackageManager
         /// </summary>
         public static readonly PackageManager POETRY = new PackageManager("POETRY");
+        /// <summary>
+        /// Constant POM for PackageManager
+        /// </summary>
+        public static readonly PackageManager POM = new PackageManager("POM");
+        /// <summary>
+        /// Constant PYTHONPKG for PackageManager
+        /// </summary>
+        public static readonly PackageManager PYTHONPKG = new PackageManager("PYTHONPKG");
         /// <summary>
         /// Constant YARN for PackageManager
         /// </summary>
@@ -1851,6 +1979,14 @@ namespace Amazon.Inspector2
     {
 
         /// <summary>
+        /// Constant BUCKET_NOT_FOUND for ReportingErrorCode
+        /// </summary>
+        public static readonly ReportingErrorCode BUCKET_NOT_FOUND = new ReportingErrorCode("BUCKET_NOT_FOUND");
+        /// <summary>
+        /// Constant INCOMPATIBLE_BUCKET_REGION for ReportingErrorCode
+        /// </summary>
+        public static readonly ReportingErrorCode INCOMPATIBLE_BUCKET_REGION = new ReportingErrorCode("INCOMPATIBLE_BUCKET_REGION");
+        /// <summary>
         /// Constant INTERNAL_ERROR for ReportingErrorCode
         /// </summary>
         public static readonly ReportingErrorCode INTERNAL_ERROR = new ReportingErrorCode("INTERNAL_ERROR");
@@ -1858,6 +1994,14 @@ namespace Amazon.Inspector2
         /// Constant INVALID_PERMISSIONS for ReportingErrorCode
         /// </summary>
         public static readonly ReportingErrorCode INVALID_PERMISSIONS = new ReportingErrorCode("INVALID_PERMISSIONS");
+        /// <summary>
+        /// Constant MALFORMED_KMS_KEY for ReportingErrorCode
+        /// </summary>
+        public static readonly ReportingErrorCode MALFORMED_KMS_KEY = new ReportingErrorCode("MALFORMED_KMS_KEY");
+        /// <summary>
+        /// Constant NO_FINDINGS_FOUND for ReportingErrorCode
+        /// </summary>
+        public static readonly ReportingErrorCode NO_FINDINGS_FOUND = new ReportingErrorCode("NO_FINDINGS_FOUND");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2132,6 +2276,10 @@ namespace Amazon.Inspector2
         /// Constant NO_RESOURCES_FOUND for ScanStatusReason
         /// </summary>
         public static readonly ScanStatusReason NO_RESOURCES_FOUND = new ScanStatusReason("NO_RESOURCES_FOUND");
+        /// <summary>
+        /// Constant PENDING_DISABLE for ScanStatusReason
+        /// </summary>
+        public static readonly ScanStatusReason PENDING_DISABLE = new ScanStatusReason("PENDING_DISABLE");
         /// <summary>
         /// Constant PENDING_INITIAL_SCAN for ScanStatusReason
         /// </summary>

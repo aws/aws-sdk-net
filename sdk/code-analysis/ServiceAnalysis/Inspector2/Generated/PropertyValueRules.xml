@@ -31,6 +31,11 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Inspector2.Model.CreateFilterRequest.Reason</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Inspector2.Model.CreateFilterResponse.Arn</property>
     <min>1</min>
     <max>128</max>
@@ -266,6 +271,11 @@
     <property>Amazon.Inspector2.Model.UpdateFilterRequest.Name</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.UpdateFilterRequest.Reason</property>
+    <min>1</min>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.UpdateFilterResponse.Arn</property>
@@ -583,7 +593,7 @@
   <property-value-rule>
     <property>Amazon.Inspector2.Model.PackageVulnerabilityDetails.VulnerabilityId</property>
     <min>1</min>
-    <max>64</max>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.PortRange.Begin</property>

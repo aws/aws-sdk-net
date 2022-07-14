@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateFilter Request Marshaller
+    /// UpdateConfiguration Request Marshaller
     /// </summary>       
-    public class CreateFilterRequestMarshaller : IMarshaller<IRequest, CreateFilterRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateConfigurationRequestMarshaller : IMarshaller<IRequest, UpdateConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateFilterRequest)input);
+            return this.Marshall((UpdateConfigurationRequest)input);
         }
 
         /// <summary>
@@ -52,65 +52,27 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateFilterRequest publicRequest)
+        public IRequest Marshall(UpdateConfigurationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Inspector2");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-06-08";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/filters/create";
+            request.ResourcePath = "/configuration/update";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAction())
+                if(publicRequest.IsSetEcrConfiguration())
                 {
-                    context.Writer.WritePropertyName("action");
-                    context.Writer.Write(publicRequest.Action);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetFilterCriteria())
-                {
-                    context.Writer.WritePropertyName("filterCriteria");
+                    context.Writer.WritePropertyName("ecrConfiguration");
                     context.Writer.WriteObjectStart();
 
-                    var marshaller = FilterCriteriaMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.FilterCriteria, context);
+                    var marshaller = EcrConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EcrConfiguration, context);
 
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetReason())
-                {
-                    context.Writer.WritePropertyName("reason");
-                    context.Writer.Write(publicRequest.Reason);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                    {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
-                    }
                     context.Writer.WriteObjectEnd();
                 }
 
@@ -122,9 +84,9 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateFilterRequestMarshaller _instance = new CreateFilterRequestMarshaller();        
+        private static UpdateConfigurationRequestMarshaller _instance = new UpdateConfigurationRequestMarshaller();        
 
-        internal static CreateFilterRequestMarshaller GetInstance()
+        internal static UpdateConfigurationRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -132,7 +94,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateFilterRequestMarshaller Instance
+        public static UpdateConfigurationRequestMarshaller Instance
         {
             get
             {

@@ -100,6 +100,12 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetReason())
+                {
+                    context.Writer.WritePropertyName("reason");
+                    context.Writer.Write(publicRequest.Reason);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
