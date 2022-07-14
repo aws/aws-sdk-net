@@ -346,7 +346,6 @@ namespace Amazon.EC2.Model
         /// or all traffic.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public TrafficType TrafficType
         {
             get { return this._trafficType; }

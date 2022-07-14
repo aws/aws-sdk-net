@@ -5303,6 +5303,14 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly FlowLogsResourceType Subnet = new FlowLogsResourceType("Subnet");
         /// <summary>
+        /// Constant TransitGateway for FlowLogsResourceType
+        /// </summary>
+        public static readonly FlowLogsResourceType TransitGateway = new FlowLogsResourceType("TransitGateway");
+        /// <summary>
+        /// Constant TransitGatewayAttachment for FlowLogsResourceType
+        /// </summary>
+        public static readonly FlowLogsResourceType TransitGatewayAttachment = new FlowLogsResourceType("TransitGatewayAttachment");
+        /// <summary>
         /// Constant VPC for FlowLogsResourceType
         /// </summary>
         public static readonly FlowLogsResourceType VPC = new FlowLogsResourceType("VPC");
