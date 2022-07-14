@@ -85,7 +85,7 @@ namespace Amazon.CodeArtifact.Model
         /// The name of the external connection to be removed from the repository. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=2, Max=100)]
         public string ExternalConnection
         {
             get { return this._externalConnection; }

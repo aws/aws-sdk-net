@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PackageSummary Object
+    /// Response Unmarshaller for PackageOriginConfiguration Object
     /// </summary>  
-    public class PackageSummaryUnmarshaller : IUnmarshaller<PackageSummary, XmlUnmarshallerContext>, IUnmarshaller<PackageSummary, JsonUnmarshallerContext>
+    public class PackageOriginConfigurationUnmarshaller : IUnmarshaller<PackageOriginConfiguration, XmlUnmarshallerContext>, IUnmarshaller<PackageOriginConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PackageSummary IUnmarshaller<PackageSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PackageOriginConfiguration IUnmarshaller<PackageOriginConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,21 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public PackageSummary Unmarshall(JsonUnmarshallerContext context)
+        public PackageOriginConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PackageSummary unmarshalledObject = new PackageSummary();
+            PackageOriginConfiguration unmarshalledObject = new PackageOriginConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("format", targetDepth))
+                if (context.TestExpression("restrictions", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Format = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("namespace", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Namespace = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("originConfiguration", targetDepth))
-                {
-                    var unmarshaller = PackageOriginConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.OriginConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("package", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Package = unmarshaller.Unmarshall(context);
+                    var unmarshaller = PackageOriginRestrictionsUnmarshaller.Instance;
+                    unmarshalledObject.Restrictions = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +76,12 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
         }
 
 
-        private static PackageSummaryUnmarshaller _instance = new PackageSummaryUnmarshaller();        
+        private static PackageOriginConfigurationUnmarshaller _instance = new PackageOriginConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PackageSummaryUnmarshaller Instance
+        public static PackageOriginConfigurationUnmarshaller Instance
         {
             get
             {

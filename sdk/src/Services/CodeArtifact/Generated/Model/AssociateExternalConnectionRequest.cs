@@ -97,10 +97,6 @@ namespace Amazon.CodeArtifact.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>public:nuget-org</code> - for the NuGet Gallery. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>public:pypi</code> - for the Python Package Index. 
         /// </para>
         ///  </li> <li> 
@@ -121,7 +117,7 @@ namespace Amazon.CodeArtifact.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=2, Max=100)]
         public string ExternalConnection
         {
             get { return this._externalConnection; }

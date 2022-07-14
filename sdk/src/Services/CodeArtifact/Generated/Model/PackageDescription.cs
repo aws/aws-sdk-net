@@ -29,41 +29,57 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeArtifact.Model
 {
     /// <summary>
-    /// Details about a package dependency.
+    /// Details about a package.
     /// </summary>
-    public partial class PackageDependency
+    public partial class PackageDescription
     {
-        private string _dependencyType;
+        private PackageFormat _format;
+        private string _name;
         private string _awsNamespace;
-        private string _package;
-        private string _versionRequirement;
+        private PackageOriginConfiguration _originConfiguration;
 
         /// <summary>
-        /// Gets and sets the property DependencyType. 
+        /// Gets and sets the property Format. 
         /// <para>
-        ///  The type of a package dependency. The possible values depend on the package type.
-        /// Example types are <code>compile</code>, <code>runtime</code>, and <code>test</code>
-        /// for Maven packages, and <code>dev</code>, <code>prod</code>, and <code>optional</code>
-        /// for npm packages. 
+        /// A format that specifies the type of the package.
         /// </para>
         /// </summary>
-        public string DependencyType
+        public PackageFormat Format
         {
-            get { return this._dependencyType; }
-            set { this._dependencyType = value; }
+            get { return this._format; }
+            set { this._format = value; }
         }
 
-        // Check to see if DependencyType property is set
-        internal bool IsSetDependencyType()
+        // Check to see if Format property is set
+        internal bool IsSetFormat()
         {
-            return this._dependencyType != null;
+            return this._format != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the package.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
         }
 
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The namespace of the package that this package depends on. The package component that
-        /// specifies its namespace depends on its type. For example:
+        /// The namespace of the package. The package component that specifies its namespace depends
+        /// on its type. For example:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -94,43 +110,21 @@ namespace Amazon.CodeArtifact.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Package. 
+        /// Gets and sets the property OriginConfiguration. 
         /// <para>
-        ///  The name of the package that this package depends on. 
+        /// The package origin configuration for the package.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
-        public string Package
+        public PackageOriginConfiguration OriginConfiguration
         {
-            get { return this._package; }
-            set { this._package = value; }
+            get { return this._originConfiguration; }
+            set { this._originConfiguration = value; }
         }
 
-        // Check to see if Package property is set
-        internal bool IsSetPackage()
+        // Check to see if OriginConfiguration property is set
+        internal bool IsSetOriginConfiguration()
         {
-            return this._package != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property VersionRequirement. 
-        /// <para>
-        ///  The required version, or version range, of the package that this package depends
-        /// on. The version format is specific to the package type. For example, the following
-        /// are possible valid required versions: <code>1.2.3</code>, <code>^2.3.4</code>, or
-        /// <code>4.x</code>. 
-        /// </para>
-        /// </summary>
-        public string VersionRequirement
-        {
-            get { return this._versionRequirement; }
-            set { this._versionRequirement = value; }
-        }
-
-        // Check to see if VersionRequirement property is set
-        internal bool IsSetVersionRequirement()
-        {
-            return this._versionRequirement != null;
+            return this._originConfiguration != null;
         }
 
     }

@@ -187,6 +187,11 @@ namespace Amazon.CodeArtifact
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <code>DescribePackage</code>: Returns a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDescription.html">PackageDescription</a>
+    /// object that contains details about a package. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <code>DescribePackageVersion</code>: Returns a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a>
     /// object that contains details about a package version. 
     /// </para>
@@ -289,6 +294,12 @@ namespace Amazon.CodeArtifact
     ///  </li> <li> 
     /// <para>
     ///  <code>PutDomainPermissionsPolicy</code>: Attaches a resource policy to a domain.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>PutPackageOriginConfiguration</code>: Sets the package origin configuration
+    /// for a package, which determine how new versions of the package can be added to a specific
+    /// repository.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -1099,6 +1110,70 @@ namespace Amazon.CodeArtifact
 
         #endregion
         
+        #region  DescribePackage
+
+
+        /// <summary>
+        /// Returns a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDescription.html">PackageDescription</a>
+        /// object that contains information about the requested package.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePackage service method.</param>
+        /// 
+        /// <returns>The response from the DescribePackage service method, as returned by CodeArtifact.</returns>
+        /// <exception cref="Amazon.CodeArtifact.Model.AccessDeniedException">
+        /// The operation did not succeed because of an unauthorized access attempt.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
+        /// The operation did not succeed because the resource requested is not found in the
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ThrottlingException">
+        /// The operation did not succeed because too many requests are sent to the service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ValidationException">
+        /// The operation did not succeed because a parameter in the request was sent with an
+        /// invalid value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DescribePackage">REST API Reference for DescribePackage Operation</seealso>
+        DescribePackageResponse DescribePackage(DescribePackageRequest request);
+
+
+
+        /// <summary>
+        /// Returns a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDescription.html">PackageDescription</a>
+        /// object that contains information about the requested package.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePackage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribePackage service method, as returned by CodeArtifact.</returns>
+        /// <exception cref="Amazon.CodeArtifact.Model.AccessDeniedException">
+        /// The operation did not succeed because of an unauthorized access attempt.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
+        /// The operation did not succeed because the resource requested is not found in the
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ThrottlingException">
+        /// The operation did not succeed because too many requests are sent to the service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ValidationException">
+        /// The operation did not succeed because a parameter in the request was sent with an
+        /// invalid value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DescribePackage">REST API Reference for DescribePackage Operation</seealso>
+        Task<DescribePackageResponse> DescribePackageAsync(DescribePackageRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribePackageVersion
 
 
@@ -1677,7 +1752,10 @@ namespace Amazon.CodeArtifact
 
 
         /// <summary>
-        /// Gets the readme file or descriptive text for a package version. 
+        /// Gets the readme file or descriptive text for a package version. For packages that
+        /// do not contain a readme file, CodeArtifact extracts a description from a metadata
+        /// file. For example, from the <code>&lt;description&gt;</code> element in the <code>pom.xml</code>
+        /// file of a Maven package. 
         /// 
         ///  
         /// <para>
@@ -1711,7 +1789,10 @@ namespace Amazon.CodeArtifact
 
 
         /// <summary>
-        /// Gets the readme file or descriptive text for a package version. 
+        /// Gets the readme file or descriptive text for a package version. For packages that
+        /// do not contain a readme file, CodeArtifact extracts a description from a metadata
+        /// file. For example, from the <code>&lt;description&gt;</code> element in the <code>pom.xml</code>
+        /// file of a Maven package. 
         /// 
         ///  
         /// <para>
@@ -2502,6 +2583,108 @@ namespace Amazon.CodeArtifact
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/PutDomainPermissionsPolicy">REST API Reference for PutDomainPermissionsPolicy Operation</seealso>
         Task<PutDomainPermissionsPolicyResponse> PutDomainPermissionsPolicyAsync(PutDomainPermissionsPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutPackageOriginConfiguration
+
+
+        /// <summary>
+        /// Sets the package origin configuration for a package.
+        /// 
+        ///  
+        /// <para>
+        /// The package origin configuration determines how new versions of a package can be added
+        /// to a repository. You can allow or block direct publishing of new package versions,
+        /// or ingestion and retaining of new package versions from an external connection or
+        /// upstream source. For more information about package origin controls and configuration,
+        /// see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/package-origin-controls.html">Editing
+        /// package origin controls</a> in the <i>CodeArtifact User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>PutPackageOriginConfiguration</code> can be called on a package that doesn't
+        /// yet exist in the repository. When called on a package that does not exist, a package
+        /// is created in the repository with no versions and the requested restrictions are set
+        /// on the package. This can be used to preemptively block ingesting or retaining any
+        /// versions from external connections or upstream repositories, or to block publishing
+        /// any versions of the package into the repository before connecting any package managers
+        /// or publishers to the repository.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutPackageOriginConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutPackageOriginConfiguration service method, as returned by CodeArtifact.</returns>
+        /// <exception cref="Amazon.CodeArtifact.Model.AccessDeniedException">
+        /// The operation did not succeed because of an unauthorized access attempt.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
+        /// The operation did not succeed because the resource requested is not found in the
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ThrottlingException">
+        /// The operation did not succeed because too many requests are sent to the service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ValidationException">
+        /// The operation did not succeed because a parameter in the request was sent with an
+        /// invalid value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/PutPackageOriginConfiguration">REST API Reference for PutPackageOriginConfiguration Operation</seealso>
+        PutPackageOriginConfigurationResponse PutPackageOriginConfiguration(PutPackageOriginConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Sets the package origin configuration for a package.
+        /// 
+        ///  
+        /// <para>
+        /// The package origin configuration determines how new versions of a package can be added
+        /// to a repository. You can allow or block direct publishing of new package versions,
+        /// or ingestion and retaining of new package versions from an external connection or
+        /// upstream source. For more information about package origin controls and configuration,
+        /// see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/package-origin-controls.html">Editing
+        /// package origin controls</a> in the <i>CodeArtifact User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>PutPackageOriginConfiguration</code> can be called on a package that doesn't
+        /// yet exist in the repository. When called on a package that does not exist, a package
+        /// is created in the repository with no versions and the requested restrictions are set
+        /// on the package. This can be used to preemptively block ingesting or retaining any
+        /// versions from external connections or upstream repositories, or to block publishing
+        /// any versions of the package into the repository before connecting any package managers
+        /// or publishers to the repository.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutPackageOriginConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutPackageOriginConfiguration service method, as returned by CodeArtifact.</returns>
+        /// <exception cref="Amazon.CodeArtifact.Model.AccessDeniedException">
+        /// The operation did not succeed because of an unauthorized access attempt.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
+        /// The operation did not succeed because the resource requested is not found in the
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ThrottlingException">
+        /// The operation did not succeed because too many requests are sent to the service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ValidationException">
+        /// The operation did not succeed because a parameter in the request was sent with an
+        /// invalid value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/PutPackageOriginConfiguration">REST API Reference for PutPackageOriginConfiguration Operation</seealso>
+        Task<PutPackageOriginConfigurationResponse> PutPackageOriginConfigurationAsync(PutPackageOriginConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

@@ -91,8 +91,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        ///  The namespace of the package. The package component that specifies its namespace
-        /// depends on its type. For example: 
+        /// The namespace of the package that contains the requested package versions. The package
+        /// component that specifies its namespace depends on its type. For example:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -104,8 +104,8 @@ namespace Amazon.CodeArtifact.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  A Python package does not contain a corresponding component, so Python packages do
-        /// not have a namespace. 
+        ///  Python and NuGet packages do not contain a corresponding component, packages of those
+        /// formats do not have a namespace. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

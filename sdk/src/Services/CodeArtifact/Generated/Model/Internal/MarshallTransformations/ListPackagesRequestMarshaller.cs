@@ -81,8 +81,14 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetPackagePrefix())
                 request.Parameters.Add("package-prefix", StringUtils.FromString(publicRequest.PackagePrefix));
             
+            if (publicRequest.IsSetPublish())
+                request.Parameters.Add("publish", StringUtils.FromString(publicRequest.Publish));
+            
             if (publicRequest.IsSetRepository())
                 request.Parameters.Add("repository", StringUtils.FromString(publicRequest.Repository));
+            
+            if (publicRequest.IsSetUpstream())
+                request.Parameters.Add("upstream", StringUtils.FromString(publicRequest.Upstream));
             request.ResourcePath = "/v1/packages";
             request.UseQueryString = true;
 

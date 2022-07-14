@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeArtifact.Model
 {
     /// <summary>
-    /// An error associated with package.
+    /// l An error associated with package.
     /// </summary>
     public partial class PackageVersionError
     {

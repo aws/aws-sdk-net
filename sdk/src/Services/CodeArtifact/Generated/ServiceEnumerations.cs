@@ -25,6 +25,106 @@ namespace Amazon.CodeArtifact
 {
 
     /// <summary>
+    /// Constants used for properties of type AllowPublish.
+    /// </summary>
+    public class AllowPublish : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALLOW for AllowPublish
+        /// </summary>
+        public static readonly AllowPublish ALLOW = new AllowPublish("ALLOW");
+        /// <summary>
+        /// Constant BLOCK for AllowPublish
+        /// </summary>
+        public static readonly AllowPublish BLOCK = new AllowPublish("BLOCK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AllowPublish(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AllowPublish FindValue(string value)
+        {
+            return FindValue<AllowPublish>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AllowPublish(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AllowUpstream.
+    /// </summary>
+    public class AllowUpstream : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALLOW for AllowUpstream
+        /// </summary>
+        public static readonly AllowUpstream ALLOW = new AllowUpstream("ALLOW");
+        /// <summary>
+        /// Constant BLOCK for AllowUpstream
+        /// </summary>
+        public static readonly AllowUpstream BLOCK = new AllowUpstream("BLOCK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AllowUpstream(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AllowUpstream FindValue(string value)
+        {
+            return FindValue<AllowUpstream>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AllowUpstream(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DomainStatus.
     /// </summary>
     public class DomainStatus : ConstantClass
@@ -296,6 +396,60 @@ namespace Amazon.CodeArtifact
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PackageVersionErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PackageVersionOriginType.
+    /// </summary>
+    public class PackageVersionOriginType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXTERNAL for PackageVersionOriginType
+        /// </summary>
+        public static readonly PackageVersionOriginType EXTERNAL = new PackageVersionOriginType("EXTERNAL");
+        /// <summary>
+        /// Constant INTERNAL for PackageVersionOriginType
+        /// </summary>
+        public static readonly PackageVersionOriginType INTERNAL = new PackageVersionOriginType("INTERNAL");
+        /// <summary>
+        /// Constant UNKNOWN for PackageVersionOriginType
+        /// </summary>
+        public static readonly PackageVersionOriginType UNKNOWN = new PackageVersionOriginType("UNKNOWN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PackageVersionOriginType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PackageVersionOriginType FindValue(string value)
+        {
+            return FindValue<PackageVersionOriginType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PackageVersionOriginType(string value)
         {
             return FindValue(value);
         }

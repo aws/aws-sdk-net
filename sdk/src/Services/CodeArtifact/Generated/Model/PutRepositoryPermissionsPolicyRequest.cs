@@ -95,7 +95,7 @@ namespace Amazon.CodeArtifact.Model
         /// policy on the provided repository. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=5120)]
+        [AWSProperty(Required=true, Min=1, Max=7168)]
         public string PolicyDocument
         {
             get { return this._policyDocument; }

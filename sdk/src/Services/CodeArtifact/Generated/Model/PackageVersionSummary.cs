@@ -35,9 +35,29 @@ namespace Amazon.CodeArtifact.Model
     /// </summary>
     public partial class PackageVersionSummary
     {
+        private PackageVersionOrigin _origin;
         private string _revision;
         private PackageVersionStatus _status;
         private string _version;
+
+        /// <summary>
+        /// Gets and sets the property Origin. 
+        /// <para>
+        /// A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">PackageVersionOrigin</a>
+        /// object that contains information about how the package version was added to the repository.
+        /// </para>
+        /// </summary>
+        public PackageVersionOrigin Origin
+        {
+            get { return this._origin; }
+            set { this._origin = value; }
+        }
+
+        // Check to see if Origin property is set
+        internal bool IsSetOrigin()
+        {
+            return this._origin != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Revision. 

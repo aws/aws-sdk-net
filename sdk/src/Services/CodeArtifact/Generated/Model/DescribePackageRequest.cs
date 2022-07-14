@@ -29,33 +29,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeArtifact.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetPackageVersionReadme operation.
-    /// Gets the readme file or descriptive text for a package version. For packages that
-    /// do not contain a readme file, CodeArtifact extracts a description from a metadata
-    /// file. For example, from the <code>&lt;description&gt;</code> element in the <code>pom.xml</code>
-    /// file of a Maven package. 
-    /// 
-    ///  
-    /// <para>
-    ///  The returned text might contain formatting. For example, it might contain formatting
-    /// for Markdown or reStructuredText. 
-    /// </para>
+    /// Container for the parameters to the DescribePackage operation.
+    /// Returns a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDescription.html">PackageDescription</a>
+    /// object that contains information about the requested package.
     /// </summary>
-    public partial class GetPackageVersionReadmeRequest : AmazonCodeArtifactRequest
+    public partial class DescribePackageRequest : AmazonCodeArtifactRequest
     {
         private string _domain;
         private string _domainOwner;
         private PackageFormat _format;
         private string _awsNamespace;
         private string _package;
-        private string _packageVersion;
         private string _repository;
 
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        ///  The name of the domain that contains the repository that contains the package version
-        /// with the requested readme file. 
+        /// The name of the domain that contains the repository that contains the package.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=50)]
@@ -94,8 +84,7 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Format. 
         /// <para>
-        ///  A format that specifies the type of the package version with the requested readme
-        /// file. 
+        /// A format that specifies the type of the requested package.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -114,21 +103,22 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The namespace of the package version with the requested readme file. The package version
-        /// component that specifies its namespace depends on its type. For example:
+        /// The namespace of the requested package. The package component that specifies its namespace
+        /// depends on its type. For example:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  The namespace of a Maven package version is its <code>groupId</code>. 
+        ///  The namespace of a Maven package is its <code>groupId</code>. The namespace is required
+        /// when requesting Maven packages. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  The namespace of an npm package version is its <code>scope</code>. 
+        ///  The namespace of an npm package is its <code>scope</code>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Python and NuGet package versions do not contain a corresponding component, package
-        /// versions of those formats do not have a namespace. 
+        ///  Python and NuGet packages do not contain a corresponding component, packages of those
+        /// formats do not have a namespace. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -148,7 +138,7 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Package. 
         /// <para>
-        ///  The name of the package version that contains the requested readme file. 
+        /// The name of the requested package.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -165,28 +155,9 @@ namespace Amazon.CodeArtifact.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PackageVersion. 
-        /// <para>
-        ///  A string that contains the package version (for example, <code>3.5.2</code>). 
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
-        public string PackageVersion
-        {
-            get { return this._packageVersion; }
-            set { this._packageVersion = value; }
-        }
-
-        // Check to see if PackageVersion property is set
-        internal bool IsSetPackageVersion()
-        {
-            return this._packageVersion != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property Repository. 
         /// <para>
-        ///  The repository that contains the package with the requested readme file. 
+        /// The name of the repository that contains the requested package. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=100)]

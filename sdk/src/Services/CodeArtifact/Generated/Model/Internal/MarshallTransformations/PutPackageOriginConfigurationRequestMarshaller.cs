@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListPackageVersions Request Marshaller
+    /// PutPackageOriginConfiguration Request Marshaller
     /// </summary>       
-    public class ListPackageVersionsRequestMarshaller : IMarshaller<IRequest, ListPackageVersionsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class PutPackageOriginConfigurationRequestMarshaller : IMarshaller<IRequest, PutPackageOriginConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListPackageVersionsRequest)input);
+            return this.Marshall((PutPackageOriginConfigurationRequest)input);
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListPackageVersionsRequest publicRequest)
+        public IRequest Marshall(PutPackageOriginConfigurationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CodeArtifact");
             request.Headers["Content-Type"] = "application/json";
@@ -69,37 +69,43 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetFormat())
                 request.Parameters.Add("format", StringUtils.FromString(publicRequest.Format));
             
-            if (publicRequest.IsSetMaxResults())
-                request.Parameters.Add("max-results", StringUtils.FromInt(publicRequest.MaxResults));
-            
             if (publicRequest.IsSetNamespace())
                 request.Parameters.Add("namespace", StringUtils.FromString(publicRequest.Namespace));
-            
-            if (publicRequest.IsSetNextToken())
-                request.Parameters.Add("next-token", StringUtils.FromString(publicRequest.NextToken));
-            
-            if (publicRequest.IsSetOriginType())
-                request.Parameters.Add("originType", StringUtils.FromString(publicRequest.OriginType));
             
             if (publicRequest.IsSetPackage())
                 request.Parameters.Add("package", StringUtils.FromString(publicRequest.Package));
             
             if (publicRequest.IsSetRepository())
                 request.Parameters.Add("repository", StringUtils.FromString(publicRequest.Repository));
-            
-            if (publicRequest.IsSetSortBy())
-                request.Parameters.Add("sortBy", StringUtils.FromString(publicRequest.SortBy));
-            
-            if (publicRequest.IsSetStatus())
-                request.Parameters.Add("status", StringUtils.FromString(publicRequest.Status));
-            request.ResourcePath = "/v1/package/versions";
+            request.ResourcePath = "/v1/package";
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetRestrictions())
+                {
+                    context.Writer.WritePropertyName("restrictions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PackageOriginRestrictionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Restrictions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+            }
+
             request.UseQueryString = true;
 
             return request;
         }
-        private static ListPackageVersionsRequestMarshaller _instance = new ListPackageVersionsRequestMarshaller();        
+        private static PutPackageOriginConfigurationRequestMarshaller _instance = new PutPackageOriginConfigurationRequestMarshaller();        
 
-        internal static ListPackageVersionsRequestMarshaller GetInstance()
+        internal static PutPackageOriginConfigurationRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -107,7 +113,7 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListPackageVersionsRequestMarshaller Instance
+        public static PutPackageOriginConfigurationRequestMarshaller Instance
         {
             get
             {

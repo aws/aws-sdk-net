@@ -43,6 +43,7 @@ namespace Amazon.CodeArtifact.Model
         ///  The name of the external connection associated with a repository. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=2, Max=100)]
         public string ExternalConnectionName
         {
             get { return this._externalConnectionName; }

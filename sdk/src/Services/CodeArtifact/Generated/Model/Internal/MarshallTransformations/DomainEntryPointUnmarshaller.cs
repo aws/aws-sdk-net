@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PackageSummary Object
+    /// Response Unmarshaller for DomainEntryPoint Object
     /// </summary>  
-    public class PackageSummaryUnmarshaller : IUnmarshaller<PackageSummary, XmlUnmarshallerContext>, IUnmarshaller<PackageSummary, JsonUnmarshallerContext>
+    public class DomainEntryPointUnmarshaller : IUnmarshaller<DomainEntryPoint, XmlUnmarshallerContext>, IUnmarshaller<DomainEntryPoint, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PackageSummary IUnmarshaller<PackageSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DomainEntryPoint IUnmarshaller<DomainEntryPoint, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public PackageSummary Unmarshall(JsonUnmarshallerContext context)
+        public DomainEntryPoint Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PackageSummary unmarshalledObject = new PackageSummary();
+            DomainEntryPoint unmarshalledObject = new DomainEntryPoint();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("format", targetDepth))
+                if (context.TestExpression("externalConnectionName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Format = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExternalConnectionName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("namespace", targetDepth))
+                if (context.TestExpression("repositoryName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Namespace = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("originConfiguration", targetDepth))
-                {
-                    var unmarshaller = PackageOriginConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.OriginConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("package", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Package = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RepositoryName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
         }
 
 
-        private static PackageSummaryUnmarshaller _instance = new PackageSummaryUnmarshaller();        
+        private static DomainEntryPointUnmarshaller _instance = new DomainEntryPointUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PackageSummaryUnmarshaller Instance
+        public static DomainEntryPointUnmarshaller Instance
         {
             get
             {

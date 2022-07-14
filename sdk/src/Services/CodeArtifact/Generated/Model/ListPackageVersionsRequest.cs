@@ -41,6 +41,7 @@ namespace Amazon.CodeArtifact.Model
         private int? _maxResults;
         private string _awsNamespace;
         private string _nextToken;
+        private PackageVersionOriginType _originType;
         private string _package;
         private string _repository;
         private PackageVersionSortType _sortBy;
@@ -49,7 +50,7 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        ///  The name of the domain that contains the repository that contains the returned package
+        ///  The name of the domain that contains the repository that contains the requested package
         /// versions. 
         /// </para>
         /// </summary>
@@ -89,7 +90,7 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Format. 
         /// <para>
-        ///  The format of the returned packages. 
+        ///  The format of the returned package versions. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -127,8 +128,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        ///  The namespace of the package. The package component that specifies its namespace
-        /// depends on its type. For example: 
+        /// The namespace of the package that contains the requested package versions. The package
+        /// component that specifies its namespace depends on its type. For example:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -140,8 +141,8 @@ namespace Amazon.CodeArtifact.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  A Python package does not contain a corresponding component, so Python packages do
-        /// not have a namespace. 
+        ///  Python and NuGet packages do not contain a corresponding component, packages of those
+        /// formats do not have a namespace. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -179,10 +180,28 @@ namespace Amazon.CodeArtifact.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OriginType. 
+        /// <para>
+        /// The <code>originType</code> used to filter package versions. Only package versions
+        /// with the provided <code>originType</code> will be returned.
+        /// </para>
+        /// </summary>
+        public PackageVersionOriginType OriginType
+        {
+            get { return this._originType; }
+            set { this._originType = value; }
+        }
+
+        // Check to see if OriginType property is set
+        internal bool IsSetOriginType()
+        {
+            return this._originType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Package. 
         /// <para>
-        ///  The name of the package for which you want to return a list of package versions.
-        /// 
+        ///  The name of the package for which you want to request package versions. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -201,7 +220,7 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Repository. 
         /// <para>
-        ///  The name of the repository that contains the package. 
+        ///  The name of the repository that contains the requested package versions. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=100)]
@@ -220,7 +239,7 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        ///  How to sort the returned list of package versions. 
+        ///  How to sort the requested list of package versions. 
         /// </para>
         /// </summary>
         public PackageVersionSortType SortBy
@@ -238,8 +257,7 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  A string that specifies the status of the package versions to include in the returned
-        /// list. 
+        ///  A string that filters the requested package versions by status. 
         /// </para>
         /// </summary>
         public PackageVersionStatus Status

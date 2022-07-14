@@ -44,7 +44,7 @@ namespace Amazon.CodeArtifact.Model
         ///  The resource policy formatted in JSON. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=5120)]
+        [AWSProperty(Min=1, Max=7168)]
         public string Document
         {
             get { return this._document; }

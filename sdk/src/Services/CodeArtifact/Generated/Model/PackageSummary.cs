@@ -36,6 +36,7 @@ namespace Amazon.CodeArtifact.Model
     {
         private PackageFormat _format;
         private string _awsNamespace;
+        private PackageOriginConfiguration _originConfiguration;
         private string _package;
 
         /// <summary>
@@ -59,8 +60,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        ///  The namespace of the package. The package component that specifies its namespace
-        /// depends on its type. For example: 
+        /// The namespace of the package. The package component that specifies its namespace depends
+        /// on its type. For example:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -72,8 +73,8 @@ namespace Amazon.CodeArtifact.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  A Python package does not contain a corresponding component, so Python packages do
-        /// not have a namespace. 
+        ///  Python and NuGet packages do not contain a corresponding component, packages of those
+        /// formats do not have a namespace. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -88,6 +89,26 @@ namespace Amazon.CodeArtifact.Model
         internal bool IsSetNamespace()
         {
             return this._awsNamespace != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OriginConfiguration. 
+        /// <para>
+        /// A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginConfiguration.html">PackageOriginConfiguration</a>
+        /// object that contains a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>
+        /// object that contains information about the upstream and publish package origin restrictions.
+        /// </para>
+        /// </summary>
+        public PackageOriginConfiguration OriginConfiguration
+        {
+            get { return this._originConfiguration; }
+            set { this._originConfiguration = value; }
+        }
+
+        // Check to see if OriginConfiguration property is set
+        internal bool IsSetOriginConfiguration()
+        {
+            return this._originConfiguration != null;
         }
 
         /// <summary>

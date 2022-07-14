@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PackageSummary Object
+    /// Response Unmarshaller for PackageVersionOrigin Object
     /// </summary>  
-    public class PackageSummaryUnmarshaller : IUnmarshaller<PackageSummary, XmlUnmarshallerContext>, IUnmarshaller<PackageSummary, JsonUnmarshallerContext>
+    public class PackageVersionOriginUnmarshaller : IUnmarshaller<PackageVersionOrigin, XmlUnmarshallerContext>, IUnmarshaller<PackageVersionOrigin, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PackageSummary IUnmarshaller<PackageSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PackageVersionOrigin IUnmarshaller<PackageVersionOrigin, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public PackageSummary Unmarshall(JsonUnmarshallerContext context)
+        public PackageVersionOrigin Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PackageSummary unmarshalledObject = new PackageSummary();
+            PackageVersionOrigin unmarshalledObject = new PackageVersionOrigin();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("format", targetDepth))
+                if (context.TestExpression("domainEntryPoint", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Format = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DomainEntryPointUnmarshaller.Instance;
+                    unmarshalledObject.DomainEntryPoint = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("namespace", targetDepth))
+                if (context.TestExpression("originType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Namespace = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("originConfiguration", targetDepth))
-                {
-                    var unmarshaller = PackageOriginConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.OriginConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("package", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Package = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OriginType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
         }
 
 
-        private static PackageSummaryUnmarshaller _instance = new PackageSummaryUnmarshaller();        
+        private static PackageVersionOriginUnmarshaller _instance = new PackageVersionOriginUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PackageSummaryUnmarshaller Instance
+        public static PackageVersionOriginUnmarshaller Instance
         {
             get
             {

@@ -29,33 +29,43 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeArtifact.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetPackageVersionReadme operation.
-    /// Gets the readme file or descriptive text for a package version. For packages that
-    /// do not contain a readme file, CodeArtifact extracts a description from a metadata
-    /// file. For example, from the <code>&lt;description&gt;</code> element in the <code>pom.xml</code>
-    /// file of a Maven package. 
+    /// Container for the parameters to the PutPackageOriginConfiguration operation.
+    /// Sets the package origin configuration for a package.
     /// 
     ///  
     /// <para>
-    ///  The returned text might contain formatting. For example, it might contain formatting
-    /// for Markdown or reStructuredText. 
+    /// The package origin configuration determines how new versions of a package can be added
+    /// to a repository. You can allow or block direct publishing of new package versions,
+    /// or ingestion and retaining of new package versions from an external connection or
+    /// upstream source. For more information about package origin controls and configuration,
+    /// see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/package-origin-controls.html">Editing
+    /// package origin controls</a> in the <i>CodeArtifact User Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>PutPackageOriginConfiguration</code> can be called on a package that doesn't
+    /// yet exist in the repository. When called on a package that does not exist, a package
+    /// is created in the repository with no versions and the requested restrictions are set
+    /// on the package. This can be used to preemptively block ingesting or retaining any
+    /// versions from external connections or upstream repositories, or to block publishing
+    /// any versions of the package into the repository before connecting any package managers
+    /// or publishers to the repository.
     /// </para>
     /// </summary>
-    public partial class GetPackageVersionReadmeRequest : AmazonCodeArtifactRequest
+    public partial class PutPackageOriginConfigurationRequest : AmazonCodeArtifactRequest
     {
         private string _domain;
         private string _domainOwner;
         private PackageFormat _format;
         private string _awsNamespace;
         private string _package;
-        private string _packageVersion;
         private string _repository;
+        private PackageOriginRestrictions _restrictions;
 
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        ///  The name of the domain that contains the repository that contains the package version
-        /// with the requested readme file. 
+        /// The name of the domain that contains the repository that contains the package.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=50)]
@@ -94,8 +104,7 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Format. 
         /// <para>
-        ///  A format that specifies the type of the package version with the requested readme
-        /// file. 
+        /// A format that specifies the type of the package to be updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -114,21 +123,21 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The namespace of the package version with the requested readme file. The package version
-        /// component that specifies its namespace depends on its type. For example:
+        /// The namespace of the package to be updated. The package component that specifies its
+        /// namespace depends on its type. For example:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  The namespace of a Maven package version is its <code>groupId</code>. 
+        ///  The namespace of a Maven package is its <code>groupId</code>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  The namespace of an npm package version is its <code>scope</code>. 
+        ///  The namespace of an npm package is its <code>scope</code>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Python and NuGet package versions do not contain a corresponding component, package
-        /// versions of those formats do not have a namespace. 
+        ///  Python and NuGet packages do not contain a corresponding component, packages of those
+        /// formats do not have a namespace. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -148,7 +157,7 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Package. 
         /// <para>
-        ///  The name of the package version that contains the requested readme file. 
+        /// The name of the package to be updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -165,28 +174,9 @@ namespace Amazon.CodeArtifact.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PackageVersion. 
-        /// <para>
-        ///  A string that contains the package version (for example, <code>3.5.2</code>). 
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
-        public string PackageVersion
-        {
-            get { return this._packageVersion; }
-            set { this._packageVersion = value; }
-        }
-
-        // Check to see if PackageVersion property is set
-        internal bool IsSetPackageVersion()
-        {
-            return this._packageVersion != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property Repository. 
         /// <para>
-        ///  The repository that contains the package with the requested readme file. 
+        /// The name of the repository that contains the package.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=100)]
@@ -200,6 +190,34 @@ namespace Amazon.CodeArtifact.Model
         internal bool IsSetRepository()
         {
             return this._repository != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Restrictions. 
+        /// <para>
+        /// A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>
+        /// object that contains information about the <code>upstream</code> and <code>publish</code>
+        /// package origin restrictions. The <code>upstream</code> restriction determines if new
+        /// package versions can be ingested or retained from external connections or upstream
+        /// repositories. The <code>publish</code> restriction determines if new package versions
+        /// can be published directly to the repository.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must include both the desired <code>upstream</code> and <code>publish</code> restrictions.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public PackageOriginRestrictions Restrictions
+        {
+            get { return this._restrictions; }
+            set { this._restrictions = value; }
+        }
+
+        // Check to see if Restrictions property is set
+        internal bool IsSetRestrictions()
+        {
+            return this._restrictions != null;
         }
 
     }

@@ -88,7 +88,7 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Format. 
         /// <para>
-        ///  The format of the package that contains the returned package version assets. 
+        ///  The format of the package that contains the requested package version assets. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -126,21 +126,22 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        ///  The namespace of the package. The package component that specifies its namespace
-        /// depends on its type. For example: 
+        /// The namespace of the package version that contains the requested package version assets.
+        /// The package version component that specifies its namespace depends on its type. For
+        /// example:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  The namespace of a Maven package is its <code>groupId</code>. 
+        ///  The namespace of a Maven package version is its <code>groupId</code>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  The namespace of an npm package is its <code>scope</code>. 
+        ///  The namespace of an npm package version is its <code>scope</code>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  A Python package does not contain a corresponding component, so Python packages do
-        /// not have a namespace. 
+        ///  Python and NuGet package versions do not contain a corresponding component, package
+        /// versions of those formats do not have a namespace. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -180,7 +181,7 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Package. 
         /// <para>
-        ///  The name of the package that contains the returned package version assets. 
+        ///  The name of the package that contains the requested package version assets. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -218,8 +219,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Repository. 
         /// <para>
-        ///  The name of the repository that contains the package that contains the returned package
-        /// version assets. 
+        ///  The name of the repository that contains the package that contains the requested
+        /// package version assets. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=100)]
