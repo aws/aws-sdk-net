@@ -60,7 +60,7 @@ namespace Amazon.Outposts.Model
         ///  The ID of the connection you receive. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
+        [AWSProperty(Min=1, Max=1024)]
         public string ConnectionId
         {
             get { return this._connectionId; }

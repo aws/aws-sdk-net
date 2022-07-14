@@ -33,10 +33,30 @@ namespace Amazon.Outposts.Model
     /// </summary>
     public partial class LineItem
     {
+        private List<LineItemAssetInformation> _assetInformationList = new List<LineItemAssetInformation>();
         private string _catalogItemId;
         private string _lineItemId;
         private int? _quantity;
+        private ShipmentInformation _shipmentInformation;
         private LineItemStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property AssetInformationList. 
+        /// <para>
+        ///  Information about assets. 
+        /// </para>
+        /// </summary>
+        public List<LineItemAssetInformation> AssetInformationList
+        {
+            get { return this._assetInformationList; }
+            set { this._assetInformationList = value; }
+        }
+
+        // Check to see if AssetInformationList property is set
+        internal bool IsSetAssetInformationList()
+        {
+            return this._assetInformationList != null && this._assetInformationList.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property CatalogItemId. 
@@ -92,6 +112,24 @@ namespace Amazon.Outposts.Model
         internal bool IsSetQuantity()
         {
             return this._quantity.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShipmentInformation. 
+        /// <para>
+        ///  Information about a line item shipment. 
+        /// </para>
+        /// </summary>
+        public ShipmentInformation ShipmentInformation
+        {
+            get { return this._shipmentInformation; }
+            set { this._shipmentInformation = value; }
+        }
+
+        // Check to see if ShipmentInformation property is set
+        internal bool IsSetShipmentInformation()
+        {
+            return this._shipmentInformation != null;
         }
 
         /// <summary>

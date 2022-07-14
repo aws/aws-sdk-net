@@ -29,49 +29,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Outposts.Model
 {
     /// <summary>
-    /// This is the response object from the StartConnection operation.
+    /// Information about a line item shipment.
     /// </summary>
-    public partial class StartConnectionResponse : AmazonWebServiceResponse
+    public partial class ShipmentInformation
     {
-        private string _connectionId;
-        private string _underlayIpAddress;
+        private ShipmentCarrier _shipmentCarrier;
+        private string _shipmentTrackingNumber;
 
         /// <summary>
-        /// Gets and sets the property ConnectionId. 
+        /// Gets and sets the property ShipmentCarrier. 
         /// <para>
-        ///  The ID of the connection. 
+        ///  The carrier of the shipment. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
-        public string ConnectionId
+        public ShipmentCarrier ShipmentCarrier
         {
-            get { return this._connectionId; }
-            set { this._connectionId = value; }
+            get { return this._shipmentCarrier; }
+            set { this._shipmentCarrier = value; }
         }
 
-        // Check to see if ConnectionId property is set
-        internal bool IsSetConnectionId()
+        // Check to see if ShipmentCarrier property is set
+        internal bool IsSetShipmentCarrier()
         {
-            return this._connectionId != null;
+            return this._shipmentCarrier != null;
         }
 
         /// <summary>
-        /// Gets and sets the property UnderlayIpAddress. 
+        /// Gets and sets the property ShipmentTrackingNumber. 
         /// <para>
-        ///  The underlay IP address. 
+        ///  The tracking number of the shipment. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=7, Max=15)]
-        public string UnderlayIpAddress
+        [AWSProperty(Min=6, Max=42)]
+        public string ShipmentTrackingNumber
         {
-            get { return this._underlayIpAddress; }
-            set { this._underlayIpAddress = value; }
+            get { return this._shipmentTrackingNumber; }
+            set { this._shipmentTrackingNumber = value; }
         }
 
-        // Check to see if UnderlayIpAddress property is set
-        internal bool IsSetUnderlayIpAddress()
+        // Check to see if ShipmentTrackingNumber property is set
+        internal bool IsSetShipmentTrackingNumber()
         {
-            return this._underlayIpAddress != null;
+            return this._shipmentTrackingNumber != null;
         }
 
     }

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Outposts.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LineItem Object
+    /// Response Unmarshaller for LineItemAssetInformation Object
     /// </summary>  
-    public class LineItemUnmarshaller : IUnmarshaller<LineItem, XmlUnmarshallerContext>, IUnmarshaller<LineItem, JsonUnmarshallerContext>
+    public class LineItemAssetInformationUnmarshaller : IUnmarshaller<LineItemAssetInformation, XmlUnmarshallerContext>, IUnmarshaller<LineItemAssetInformation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        LineItem IUnmarshaller<LineItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        LineItemAssetInformation IUnmarshaller<LineItemAssetInformation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,27 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public LineItem Unmarshall(JsonUnmarshallerContext context)
+        public LineItemAssetInformation Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            LineItem unmarshalledObject = new LineItem();
+            LineItemAssetInformation unmarshalledObject = new LineItemAssetInformation();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AssetInformationList", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<LineItemAssetInformation, LineItemAssetInformationUnmarshaller>(LineItemAssetInformationUnmarshaller.Instance);
-                    unmarshalledObject.AssetInformationList = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("CatalogItemId", targetDepth))
+                if (context.TestExpression("AssetId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CatalogItemId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AssetId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("LineItemId", targetDepth))
+                if (context.TestExpression("MacAddressList", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LineItemId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Quantity", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Quantity = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ShipmentInformation", targetDepth))
-                {
-                    var unmarshaller = ShipmentInformationUnmarshaller.Instance;
-                    unmarshalledObject.ShipmentInformation = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.MacAddressList = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +82,12 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
         }
 
 
-        private static LineItemUnmarshaller _instance = new LineItemUnmarshaller();        
+        private static LineItemAssetInformationUnmarshaller _instance = new LineItemAssetInformationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LineItemUnmarshaller Instance
+        public static LineItemAssetInformationUnmarshaller Instance
         {
             get
             {

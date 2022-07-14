@@ -29,49 +29,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Outposts.Model
 {
     /// <summary>
-    /// This is the response object from the StartConnection operation.
+    /// Information about a line item asset.
     /// </summary>
-    public partial class StartConnectionResponse : AmazonWebServiceResponse
+    public partial class LineItemAssetInformation
     {
-        private string _connectionId;
-        private string _underlayIpAddress;
+        private string _assetId;
+        private List<string> _macAddressList = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property ConnectionId. 
+        /// Gets and sets the property AssetId. 
         /// <para>
-        ///  The ID of the connection. 
+        ///  The ID of the asset. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
-        public string ConnectionId
+        [AWSProperty(Min=1, Max=100)]
+        public string AssetId
         {
-            get { return this._connectionId; }
-            set { this._connectionId = value; }
+            get { return this._assetId; }
+            set { this._assetId = value; }
         }
 
-        // Check to see if ConnectionId property is set
-        internal bool IsSetConnectionId()
+        // Check to see if AssetId property is set
+        internal bool IsSetAssetId()
         {
-            return this._connectionId != null;
+            return this._assetId != null;
         }
 
         /// <summary>
-        /// Gets and sets the property UnderlayIpAddress. 
+        /// Gets and sets the property MacAddressList. 
         /// <para>
-        ///  The underlay IP address. 
+        ///  MAC addresses of the asset. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=7, Max=15)]
-        public string UnderlayIpAddress
+        public List<string> MacAddressList
         {
-            get { return this._underlayIpAddress; }
-            set { this._underlayIpAddress = value; }
+            get { return this._macAddressList; }
+            set { this._macAddressList = value; }
         }
 
-        // Check to see if UnderlayIpAddress property is set
-        internal bool IsSetUnderlayIpAddress()
+        // Check to see if MacAddressList property is set
+        internal bool IsSetMacAddressList()
         {
-            return this._underlayIpAddress != null;
+            return this._macAddressList != null && this._macAddressList.Count > 0; 
         }
 
     }

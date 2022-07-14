@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Outposts.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LineItem Object
+    /// Response Unmarshaller for ShipmentInformation Object
     /// </summary>  
-    public class LineItemUnmarshaller : IUnmarshaller<LineItem, XmlUnmarshallerContext>, IUnmarshaller<LineItem, JsonUnmarshallerContext>
+    public class ShipmentInformationUnmarshaller : IUnmarshaller<ShipmentInformation, XmlUnmarshallerContext>, IUnmarshaller<ShipmentInformation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        LineItem IUnmarshaller<LineItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ShipmentInformation IUnmarshaller<ShipmentInformation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,27 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public LineItem Unmarshall(JsonUnmarshallerContext context)
+        public ShipmentInformation Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            LineItem unmarshalledObject = new LineItem();
+            ShipmentInformation unmarshalledObject = new ShipmentInformation();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AssetInformationList", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<LineItemAssetInformation, LineItemAssetInformationUnmarshaller>(LineItemAssetInformationUnmarshaller.Instance);
-                    unmarshalledObject.AssetInformationList = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("CatalogItemId", targetDepth))
+                if (context.TestExpression("ShipmentCarrier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CatalogItemId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ShipmentCarrier = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("LineItemId", targetDepth))
+                if (context.TestExpression("ShipmentTrackingNumber", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LineItemId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Quantity", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Quantity = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ShipmentInformation", targetDepth))
-                {
-                    var unmarshaller = ShipmentInformationUnmarshaller.Instance;
-                    unmarshalledObject.ShipmentInformation = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ShipmentTrackingNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +82,12 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
         }
 
 
-        private static LineItemUnmarshaller _instance = new LineItemUnmarshaller();        
+        private static ShipmentInformationUnmarshaller _instance = new ShipmentInformationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LineItemUnmarshaller Instance
+        public static ShipmentInformationUnmarshaller Instance
         {
             get
             {

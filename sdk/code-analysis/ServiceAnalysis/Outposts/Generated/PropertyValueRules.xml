@@ -81,14 +81,14 @@
   <property-value-rule>
     <property>Amazon.Outposts.Model.GetConnectionRequest.ConnectionId</property>
     <min>1</min>
-    <max>255</max>
-    <pattern>^([\w-]+)$</pattern>
+    <max>1024</max>
+    <pattern>^[a-zA-Z0-9+/=]{1,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.GetConnectionResponse.ConnectionId</property>
     <min>1</min>
-    <max>255</max>
-    <pattern>^([\w-]+)$</pattern>
+    <max>1024</max>
+    <pattern>^[a-zA-Z0-9+/=]{1,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.GetOrderRequest.OrderId</property>
@@ -283,8 +283,8 @@
   <property-value-rule>
     <property>Amazon.Outposts.Model.StartConnectionResponse.ConnectionId</property>
     <min>1</min>
-    <max>255</max>
-    <pattern>^([\w-]+)$</pattern>
+    <max>1024</max>
+    <pattern>^[a-zA-Z0-9+/=]{1,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.StartConnectionResponse.UnderlayIpAddress</property>
@@ -509,6 +509,12 @@
     <max>20</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Outposts.Model.LineItemAssetInformation.AssetId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^(\w+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Outposts.Model.LineItemRequest.CatalogItemId</property>
     <min>1</min>
     <max>10</max>
@@ -602,6 +608,12 @@
     <min>1</min>
     <max>255</max>
     <pattern>^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:site/)?(os-[a-f0-9]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.ShipmentInformation.ShipmentTrackingNumber</property>
+    <min>6</min>
+    <max>42</max>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.Site.AccountId</property>
