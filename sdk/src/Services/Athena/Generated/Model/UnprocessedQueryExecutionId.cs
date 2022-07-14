@@ -80,6 +80,7 @@ namespace Amazon.Athena.Model
         /// The unique identifier of the query execution.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string QueryExecutionId
         {
             get { return this._queryExecutionId; }

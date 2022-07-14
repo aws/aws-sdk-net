@@ -44,6 +44,12 @@
     <pattern>[a-zA-Z0-9._-]{1,128}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Athena.Model.CreateNamedQueryResponse.NamedQueryId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Athena.Model.CreatePreparedStatementRequest.Description</property>
     <min>1</min>
     <max>1024</max>
@@ -78,6 +84,12 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Athena.Model.DeleteNamedQueryRequest.NamedQueryId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Athena.Model.DeletePreparedStatementRequest.StatementName</property>
     <min>1</min>
     <max>256</max>
@@ -107,6 +119,12 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Athena.Model.GetNamedQueryRequest.NamedQueryId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Athena.Model.GetPreparedStatementRequest.StatementName</property>
     <min>1</min>
     <max>256</max>
@@ -117,6 +135,12 @@
     <pattern>[a-zA-Z0-9._-]{1,128}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Athena.Model.GetQueryExecutionRequest.QueryExecutionId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Athena.Model.GetQueryResultsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -125,6 +149,12 @@
     <property>Amazon.Athena.Model.GetQueryResultsRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.GetQueryResultsRequest.QueryExecutionId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.GetQueryResultsResponse.NextToken</property>
@@ -336,6 +366,18 @@
     <pattern>[a-zA-Z0-9._-]{1,128}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Athena.Model.StartQueryExecutionResponse.QueryExecutionId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.StopQueryExecutionRequest.QueryExecutionId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Athena.Model.TagResourceRequest.ResourceARN</property>
     <min>1</min>
     <max>1011</max>
@@ -364,6 +406,12 @@
     <property>Amazon.Athena.Model.UpdateNamedQueryRequest.Name</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.UpdateNamedQueryRequest.NamedQueryId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.UpdateNamedQueryRequest.QueryString</property>
@@ -480,6 +528,12 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Athena.Model.NamedQuery.NamedQueryId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Athena.Model.NamedQuery.QueryString</property>
     <min>1</min>
     <max>262144</max>
@@ -520,6 +574,12 @@
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Athena.Model.QueryExecution.QueryExecutionId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Athena.Model.QueryExecution.WorkGroup</property>
     <pattern>[a-zA-Z0-9._-]{1,128}</pattern>
   </property-value-rule>
@@ -537,6 +597,18 @@
     <property>Amazon.Athena.Model.ResourceNotFoundException.ResourceName</property>
     <min>1</min>
     <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ResultConfiguration.ExpectedBucketOwner</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ResultConfigurationUpdates.ExpectedBucketOwner</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.TableMetadata.Name</property>
@@ -563,6 +635,12 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Athena.Model.UnprocessedNamedQueryId.NamedQueryId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Athena.Model.UnprocessedPreparedStatementName.ErrorCode</property>
     <min>1</min>
     <max>256</max>
@@ -577,6 +655,12 @@
     <property>Amazon.Athena.Model.UnprocessedQueryExecutionId.ErrorCode</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.UnprocessedQueryExecutionId.QueryExecutionId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.WorkGroup.Description</property>

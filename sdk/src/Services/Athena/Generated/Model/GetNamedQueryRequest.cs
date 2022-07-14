@@ -43,7 +43,7 @@ namespace Amazon.Athena.Model
         /// The unique ID of the query. Use <a>ListNamedQueries</a> to get query IDs.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string NamedQueryId
         {
             get { return this._namedQueryId; }

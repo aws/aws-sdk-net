@@ -49,6 +49,7 @@ namespace Amazon.Athena.Model
         /// The unique ID of the query to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string NamedQueryId
         {
             get { return this._namedQueryId; }

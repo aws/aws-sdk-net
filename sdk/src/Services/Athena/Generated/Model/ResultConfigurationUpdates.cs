@@ -98,6 +98,7 @@ namespace Amazon.Athena.Model
         /// Settings Override Client-Side Settings</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=12, Max=12)]
         public string ExpectedBucketOwner
         {
             get { return this._expectedBucketOwner; }

@@ -104,6 +104,7 @@ namespace Amazon.Athena.Model
         /// The unique identifier of the query.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string NamedQueryId
         {
             get { return this._namedQueryId; }
