@@ -33,6 +33,12 @@ namespace Amazon.DataSync.Model
     /// For example, to retrieve all tasks on a source location, you can use <code>ListTasks</code>
     /// with filter name <code>LocationId</code> and <code>Operator Equals</code> with the
     /// ARN for the location.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/query-resources.html">filtering
+    /// DataSync resources</a>.
+    /// </para>
     /// </summary>
     public partial class TaskFilter
     {
@@ -64,8 +70,7 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property Operator. 
         /// <para>
         /// The operator that is used to compare filter values (for example, <code>Equals</code>
-        /// or <code>Contains</code>). For more about API filtering operators, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/query-resources.html">API
-        /// filters for ListTasks and ListLocations</a>.
+        /// or <code>Contains</code>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

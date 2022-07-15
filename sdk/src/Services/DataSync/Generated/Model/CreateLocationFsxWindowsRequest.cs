@@ -45,7 +45,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// The name of the Windows domain that the FSx for Windows File Server belongs to.
+        /// Specifies the name of the Windows domain that the FSx for Windows File Server belongs
+        /// to.
         /// </para>
         /// </summary>
         [AWSProperty(Max=253)]
@@ -64,7 +65,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property FsxFilesystemArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the FSx for Windows File Server file system.
+        /// Specifies the Amazon Resource Name (ARN) for the FSx for Windows File Server file
+        /// system.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]
@@ -83,8 +85,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Password. 
         /// <para>
-        /// The password of the user who has the permissions to access files and folders in the
-        /// FSx for Windows File Server file system.
+        /// Specifies the password of the user who has the permissions to access files and folders
+        /// in the file system.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=104)]
@@ -103,9 +105,24 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupArns. 
         /// <para>
-        /// The ARNs of the security groups that are used to configure the FSx for Windows File
-        /// Server file system.
+        /// Specifies the ARNs of the security groups that provide access to your file system's
+        /// preferred subnet.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you choose a security group that doesn't allow connections from within itself,
+        /// do one of the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Configure the security group to allow it to communicate within itself.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Choose a different security group that can communicate with the mount target's security
+        /// group.
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]
         public List<string> SecurityGroupArns
@@ -123,9 +140,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Subdirectory. 
         /// <para>
-        /// A subdirectory in the location's path. This subdirectory in the Amazon FSx for Windows
-        /// File Server file system is used to read data from the Amazon FSx for Windows File
-        /// Server source location or write data to the FSx for Windows File Server destination.
+        /// Specifies a mount path for your file system using forward slashes. This is where DataSync
+        /// reads or writes data (depending on if this is a source or destination location).
         /// </para>
         /// </summary>
         [AWSProperty(Max=4096)]
@@ -144,9 +160,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The key-value pair that represents a tag that you want to add to the resource. The
-        /// value can be an empty string. This value helps you manage, filter, and search for
-        /// your resources. We recommend that you create a name tag for your location.
+        /// Specifies labels that help you categorize, filter, and search for your Amazon Web
+        /// Services resources. We recommend creating at least a name tag for your location.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
@@ -165,8 +180,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property User. 
         /// <para>
-        /// The user who has the permissions to access files and folders in the FSx for Windows
-        /// File Server file system.
+        /// Specifies the user who has the permissions to access files and folders in the file
+        /// system.
         /// </para>
         ///  
         /// <para>

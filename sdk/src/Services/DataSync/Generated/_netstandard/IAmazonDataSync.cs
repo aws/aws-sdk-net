@@ -393,36 +393,35 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Creates a task.
+        /// Configures a task, which defines where and how DataSync transfers your data.
         /// 
         ///  
         /// <para>
-        /// A task includes a source location and a destination location, and a configuration
-        /// that specifies how data is transferred. A task always transfers data from the source
-        /// location to the destination location. The configuration specifies options such as
-        /// task scheduling, bandwidth limits, etc. A task is the complete definition of a data
-        /// transfer.
+        /// A task includes a source location, a destination location, and the preferences for
+        /// how and when you want to transfer your data (such as bandwidth limits, scheduling,
+        /// among other options).
         /// </para>
         ///  
         /// <para>
         /// When you create a task that transfers data between Amazon Web Services services in
-        /// different Amazon Web Services Regions, one of the two locations that you specify must
-        /// reside in the Region where DataSync is being used. The other location must be specified
-        /// in a different Region.
+        /// different Amazon Web Services Regions, one of your locations must reside in the Region
+        /// where you're using DataSync.
         /// </para>
         ///  
         /// <para>
-        /// You can transfer data between commercial Amazon Web Services Regions except for China,
-        /// or between Amazon Web Services GovCloud (US) Regions.
+        /// For more information, see the following topics:
         /// </para>
-        ///  <important> 
+        ///  <ul> <li> 
         /// <para>
-        /// When you use DataSync to copy files or objects between Amazon Web Services Regions,
-        /// you pay for data transfer between Regions. This is billed as data transfer OUT from
-        /// your source Region to your destination Region. For more information, see <a href="http://aws.amazon.com/ec2/pricing/on-demand/#Data_Transfer">Data
-        /// Transfer pricing</a>. 
+        ///  <a href="https://docs.aws.amazon.com/datasync/latest/userguide/working-with-locations.html">Working
+        /// with DataSync locations</a> 
         /// </para>
-        ///  </important>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html">Configure
+        /// DataSync task settings</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTask service method.</param>
         /// <param name="cancellationToken">
@@ -958,7 +957,7 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Returns a list of all the tasks.
+        /// Returns a list of the DataSync tasks you created.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTasks service method.</param>
         /// <param name="cancellationToken">
