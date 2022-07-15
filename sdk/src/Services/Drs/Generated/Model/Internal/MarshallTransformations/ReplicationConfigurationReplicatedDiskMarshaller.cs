@@ -63,6 +63,12 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.IsBootDisk);
             }
 
+            if(requestObject.IsSetOptimizedStagingDiskType())
+            {
+                context.Writer.WritePropertyName("optimizedStagingDiskType");
+                context.Writer.Write(requestObject.OptimizedStagingDiskType);
+            }
+
             if(requestObject.IsSetStagingDiskType())
             {
                 context.Writer.WritePropertyName("stagingDiskType");

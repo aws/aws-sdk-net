@@ -36,6 +36,7 @@ namespace Amazon.Drs.Model
         private string _deviceName;
         private long? _iops;
         private bool? _isBootDisk;
+        private ReplicationConfigurationReplicatedDiskStagingDiskType _optimizedStagingDiskType;
         private ReplicationConfigurationReplicatedDiskStagingDiskType _stagingDiskType;
         private long? _throughput;
 
@@ -93,6 +94,25 @@ namespace Amazon.Drs.Model
         internal bool IsSetIsBootDisk()
         {
             return this._isBootDisk.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OptimizedStagingDiskType. 
+        /// <para>
+        /// The Staging Disk EBS volume type to be used during replication when <code>stagingDiskType</code>
+        /// is set to Auto. This is a read-only field.
+        /// </para>
+        /// </summary>
+        public ReplicationConfigurationReplicatedDiskStagingDiskType OptimizedStagingDiskType
+        {
+            get { return this._optimizedStagingDiskType; }
+            set { this._optimizedStagingDiskType = value; }
+        }
+
+        // Check to see if OptimizedStagingDiskType property is set
+        internal bool IsSetOptimizedStagingDiskType()
+        {
+            return this._optimizedStagingDiskType != null;
         }
 
         /// <summary>

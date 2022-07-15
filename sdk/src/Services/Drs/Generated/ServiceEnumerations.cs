@@ -1495,6 +1495,10 @@ namespace Amazon.Drs
     {
 
         /// <summary>
+        /// Constant AUTO for ReplicationConfigurationDefaultLargeStagingDiskType
+        /// </summary>
+        public static readonly ReplicationConfigurationDefaultLargeStagingDiskType AUTO = new ReplicationConfigurationDefaultLargeStagingDiskType("AUTO");
+        /// <summary>
         /// Constant GP2 for ReplicationConfigurationDefaultLargeStagingDiskType
         /// </summary>
         public static readonly ReplicationConfigurationDefaultLargeStagingDiskType GP2 = new ReplicationConfigurationDefaultLargeStagingDiskType("GP2");
