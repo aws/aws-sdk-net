@@ -30,7 +30,7 @@ namespace Amazon.WAFV2.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateWebACL operation.
-    /// Updates the specified <a>WebACL</a>. While updating a web ACL, WAF provides continous
+    /// Updates the specified <a>WebACL</a>. While updating a web ACL, WAF provides continuous
     /// coverage to the resources that you have associated with the web ACL. 
     /// 
     ///  

@@ -29,12 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// A rule statement that defines a cross-site scripting (XSS) match search for WAF to
-    /// apply to web requests. XSS attacks are those where the attacker uses vulnerabilities
-    /// in a benign website as a vehicle to inject malicious client-site scripts into other
-    /// legitimate web browsers. The XSS match statement provides the location in requests
-    /// that you want WAF to search and text transformations to use on the search area before
-    /// WAF searches for character sequences that are likely to be malicious strings.
+    /// A rule statement that inspects for cross-site scripting (XSS) attacks. In XSS attacks,
+    /// the attacker uses vulnerabilities in a benign website as a vehicle to inject malicious
+    /// client-site scripts into other legitimate web browsers.
     /// </summary>
     public partial class XssMatchStatement
     {
@@ -44,8 +41,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property FieldToMatch. 
         /// <para>
-        /// The part of the web request that you want WAF to inspect. For more information, see
-        /// <a>FieldToMatch</a>. 
+        /// The part of the web request that you want WAF to inspect. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

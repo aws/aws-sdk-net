@@ -33,7 +33,7 @@ namespace Amazon.WAFV2.Model
     /// The byte match statement provides the bytes to search for, the location in requests
     /// that you want WAF to search, and other settings. The bytes to search for are typically
     /// a string that corresponds with ASCII characters. In the WAF console and the developer
-    /// guide, this is refered to as a string match statement.
+    /// guide, this is called a string match statement.
     /// </summary>
     public partial class ByteMatchStatement
     {
@@ -45,8 +45,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property FieldToMatch. 
         /// <para>
-        /// The part of the web request that you want WAF to inspect. For more information, see
-        /// <a>FieldToMatch</a>. 
+        /// The part of the web request that you want WAF to inspect. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -56,6 +56,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSensitivityLevel())
+            {
+                context.Writer.WritePropertyName("SensitivityLevel");
+                context.Writer.Write(requestObject.SensitivityLevel);
+            }
+
             if(requestObject.IsSetTextTransformations())
             {
                 context.Writer.WritePropertyName("TextTransformations");

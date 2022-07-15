@@ -33,7 +33,7 @@ namespace Amazon.WAFV2.Model
     /// 
     ///  
     /// <para>
-    /// This is used to indicate the web request component for WAF to inspect, in the <a>FieldToMatch</a>
+    /// This is used to indicate the web request component to inspect, in the <a>FieldToMatch</a>
     /// specification. 
     /// </para>
     /// </summary>

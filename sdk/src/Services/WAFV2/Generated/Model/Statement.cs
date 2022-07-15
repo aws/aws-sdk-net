@@ -76,7 +76,7 @@ namespace Amazon.WAFV2.Model
         /// The byte match statement provides the bytes to search for, the location in requests
         /// that you want WAF to search, and other settings. The bytes to search for are typically
         /// a string that corresponds with ASCII characters. In the WAF console and the developer
-        /// guide, this is refered to as a string match statement.
+        /// guide, this is called a string match statement.
         /// </para>
         /// </summary>
         public ByteMatchStatement ByteMatchStatement
@@ -271,10 +271,10 @@ namespace Amazon.WAFV2.Model
         ///  </li> </ul> 
         /// <para>
         /// In this rate-based rule, you also define a rate limit. For this example, the rate
-        /// limit is 1,000. Requests that meet both of the conditions in the statements are counted.
-        /// If the count exceeds 1,000 requests per five minutes, the rule action triggers. Requests
-        /// that do not meet both conditions are not counted towards the rate limit and are not
-        /// affected by this rule.
+        /// limit is 1,000. Requests that meet the criteria of both of the nested statements are
+        /// counted. If the count exceeds 1,000 requests per five minutes, the rule action triggers.
+        /// Requests that do not meet the criteria of both of the nested statements are not counted
+        /// towards the rate limit and are not affected by this rule.
         /// </para>
         ///  
         /// <para>
@@ -381,8 +381,8 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// If you configure WAF to inspect the request body, WAF inspects only the first 8192
         /// bytes (8 KB). If the request body for your web requests never exceeds 8192 bytes,
-        /// you can create a size constraint condition and block requests that have a request
-        /// body greater than 8192 bytes.
+        /// you could use a size constraint statement to block requests that have a request body
+        /// greater than 8192 bytes.
         /// </para>
         ///  
         /// <para>
@@ -406,12 +406,9 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property SqliMatchStatement. 
         /// <para>
-        /// Attackers sometimes insert malicious SQL code into web requests in an effort to extract
-        /// data from your database. To allow or block web requests that appear to contain malicious
-        /// SQL code, create one or more SQL injection match conditions. An SQL injection match
-        /// condition identifies the part of web requests, such as the URI or the query string,
-        /// that you want WAF to inspect. Later in the process, when you create a web ACL, you
-        /// specify whether to allow or block requests that appear to contain malicious SQL code.
+        /// A rule statement that inspects for malicious SQL code. Attackers insert malicious
+        /// SQL code into web requests to do things like modify your database or extract data
+        /// from it. 
         /// </para>
         /// </summary>
         public SqliMatchStatement SqliMatchStatement
@@ -429,12 +426,9 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property XssMatchStatement. 
         /// <para>
-        /// A rule statement that defines a cross-site scripting (XSS) match search for WAF to
-        /// apply to web requests. XSS attacks are those where the attacker uses vulnerabilities
-        /// in a benign website as a vehicle to inject malicious client-site scripts into other
-        /// legitimate web browsers. The XSS match statement provides the location in requests
-        /// that you want WAF to search and text transformations to use on the search area before
-        /// WAF searches for character sequences that are likely to be malicious strings. 
+        /// A rule statement that inspects for cross-site scripting (XSS) attacks. In XSS attacks,
+        /// the attacker uses vulnerabilities in a benign website as a vehicle to inject malicious
+        /// client-site scripts into other legitimate web browsers. 
         /// </para>
         /// </summary>
         public XssMatchStatement XssMatchStatement

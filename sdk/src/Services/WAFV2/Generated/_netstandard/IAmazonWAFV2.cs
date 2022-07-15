@@ -57,7 +57,7 @@ namespace Amazon.WAFV2
     /// WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests
     /// that are forwarded to Amazon CloudFront, an Amazon API Gateway REST API, an Application
     /// Load Balancer, or an AppSync GraphQL API. WAF also lets you control access to your
-    /// content. Based on conditions that you specify, such as the IP addresses that requests
+    /// content. Based on criteria that you specify, such as the IP addresses that requests
     /// originate from or the values of query strings, the Amazon API Gateway REST API, CloudFront
     /// distribution, the Application Load Balancer, or the AppSync GraphQL API responds to
     /// requests either with the requested content or with an HTTP 403 status code (Forbidden).
@@ -355,7 +355,7 @@ namespace Amazon.WAFV2
         /// An error occurred during the tagging operation. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationInternalErrorException">
-        /// WAF couldn’t perform your tagging operation because of an internal error. Retry ybjectNoteWebRequestComponentour
+        /// WAF couldn’t perform your tagging operation because of an internal error. Retry your
         /// request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateIPSet">REST API Reference for CreateIPSet Operation</seealso>
@@ -428,7 +428,7 @@ namespace Amazon.WAFV2
         /// An error occurred during the tagging operation. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationInternalErrorException">
-        /// WAF couldn’t perform your tagging operation because of an internal error. Retry ybjectNoteWebRequestComponentour
+        /// WAF couldn’t perform your tagging operation because of an internal error. Retry your
         /// request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateRegexPatternSet">REST API Reference for CreateRegexPatternSet Operation</seealso>
@@ -516,7 +516,7 @@ namespace Amazon.WAFV2
         /// An error occurred during the tagging operation. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationInternalErrorException">
-        /// WAF couldn’t perform your tagging operation because of an internal error. Retry ybjectNoteWebRequestComponentour
+        /// WAF couldn’t perform your tagging operation because of an internal error. Retry your
         /// request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFUnavailableEntityException">
@@ -634,7 +634,7 @@ namespace Amazon.WAFV2
         /// An error occurred during the tagging operation. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationInternalErrorException">
-        /// WAF couldn’t perform your tagging operation because of an internal error. Retry ybjectNoteWebRequestComponentour
+        /// WAF couldn’t perform your tagging operation because of an internal error. Retry your
         /// request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFUnavailableEntityException">
@@ -779,7 +779,7 @@ namespace Amazon.WAFV2
         /// An error occurred during the tagging operation. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationInternalErrorException">
-        /// WAF couldn’t perform your tagging operation because of an internal error. Retry ybjectNoteWebRequestComponentour
+        /// WAF couldn’t perform your tagging operation because of an internal error. Retry your
         /// request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteIPSet">REST API Reference for DeleteIPSet Operation</seealso>
@@ -968,7 +968,7 @@ namespace Amazon.WAFV2
         /// An error occurred during the tagging operation. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationInternalErrorException">
-        /// WAF couldn’t perform your tagging operation because of an internal error. Retry ybjectNoteWebRequestComponentour
+        /// WAF couldn’t perform your tagging operation because of an internal error. Retry your
         /// request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteRegexPatternSet">REST API Reference for DeleteRegexPatternSet Operation</seealso>
@@ -1044,7 +1044,7 @@ namespace Amazon.WAFV2
         /// An error occurred during the tagging operation. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationInternalErrorException">
-        /// WAF couldn’t perform your tagging operation because of an internal error. Retry ybjectNoteWebRequestComponentour
+        /// WAF couldn’t perform your tagging operation because of an internal error. Retry your
         /// request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteRuleGroup">REST API Reference for DeleteRuleGroup Operation</seealso>
@@ -1158,7 +1158,7 @@ namespace Amazon.WAFV2
         /// An error occurred during the tagging operation. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationInternalErrorException">
-        /// WAF couldn’t perform your tagging operation because of an internal error. Retry ybjectNoteWebRequestComponentour
+        /// WAF couldn’t perform your tagging operation because of an internal error. Retry your
         /// request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteWebACL">REST API Reference for DeleteWebACL Operation</seealso>
@@ -2543,7 +2543,7 @@ namespace Amazon.WAFV2
         /// An error occurred during the tagging operation. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationInternalErrorException">
-        /// WAF couldn’t perform your tagging operation because of an internal error. Retry ybjectNoteWebRequestComponentour
+        /// WAF couldn’t perform your tagging operation because of an internal error. Retry your
         /// request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
@@ -2988,7 +2988,7 @@ namespace Amazon.WAFV2
         /// An error occurred during the tagging operation. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationInternalErrorException">
-        /// WAF couldn’t perform your tagging operation because of an internal error. Retry ybjectNoteWebRequestComponentour
+        /// WAF couldn’t perform your tagging operation because of an internal error. Retry your
         /// request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/TagResource">REST API Reference for TagResource Operation</seealso>
@@ -3052,7 +3052,7 @@ namespace Amazon.WAFV2
         /// An error occurred during the tagging operation. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFTagOperationInternalErrorException">
-        /// WAF couldn’t perform your tagging operation because of an internal error. Retry ybjectNoteWebRequestComponentour
+        /// WAF couldn’t perform your tagging operation because of an internal error. Retry your
         /// request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UntagResource">REST API Reference for UntagResource Operation</seealso>
@@ -3157,7 +3157,7 @@ namespace Amazon.WAFV2
         /// <summary>
         /// Updates the expiration information for your managed rule set. Use this to initiate
         /// the expiration of a managed rule group version. After you initiate expiration for
-        /// a version, WAF excludes it from the reponse to <a>ListAvailableManagedRuleGroupVersions</a>
+        /// a version, WAF excludes it from the response to <a>ListAvailableManagedRuleGroupVersions</a>
         /// for the managed rule group. 
         /// 
         ///  <note> 
@@ -3444,7 +3444,7 @@ namespace Amazon.WAFV2
 
 
         /// <summary>
-        /// Updates the specified <a>WebACL</a>. While updating a web ACL, WAF provides continous
+        /// Updates the specified <a>WebACL</a>. While updating a web ACL, WAF provides continuous
         /// coverage to the resources that you have associated with the web ACL. 
         /// 
         ///  

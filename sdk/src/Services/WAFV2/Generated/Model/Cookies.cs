@@ -35,7 +35,7 @@ namespace Amazon.WAFV2.Model
     /// 
     ///  
     /// <para>
-    /// This is used to indicate the web request component for WAF to inspect, in the <a>FieldToMatch</a>
+    /// This is used to indicate the web request component to inspect, in the <a>FieldToMatch</a>
     /// specification. 
     /// </para>
     ///  
@@ -62,7 +62,7 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// Example JSON: <code>"CookieMatchPattern": { "IncludedCookies": {"KeyToInclude1", "KeyToInclude2",
+        /// Example JSON: <code>"MatchPattern": { "IncludedCookies": {"KeyToInclude1", "KeyToInclude2",
         /// "KeyToInclude3"} }</code> 
         /// </para>
         /// </summary>

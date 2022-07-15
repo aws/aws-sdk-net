@@ -38,8 +38,8 @@ namespace Amazon.WAFV2.Model
     /// <para>
     /// If you configure WAF to inspect the request body, WAF inspects only the first 8192
     /// bytes (8 KB). If the request body for your web requests never exceeds 8192 bytes,
-    /// you can create a size constraint condition and block requests that have a request
-    /// body greater than 8192 bytes.
+    /// you could use a size constraint statement to block requests that have a request body
+    /// greater than 8192 bytes.
     /// </para>
     ///  
     /// <para>
@@ -77,8 +77,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property FieldToMatch. 
         /// <para>
-        /// The part of the web request that you want WAF to inspect. For more information, see
-        /// <a>FieldToMatch</a>. 
+        /// The part of the web request that you want WAF to inspect. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

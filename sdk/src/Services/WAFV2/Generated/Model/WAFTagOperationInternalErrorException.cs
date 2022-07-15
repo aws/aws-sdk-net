@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// WAF couldn’t perform your tagging operation because of an internal error. Retry ybjectNoteWebRequestComponentour
+    /// WAF couldn’t perform your tagging operation because of an internal error. Retry your
     /// request.
     /// </summary>
     #if !NETSTANDARD

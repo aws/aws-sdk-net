@@ -29,23 +29,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// Attackers sometimes insert malicious SQL code into web requests in an effort to extract
-    /// data from your database. To allow or block web requests that appear to contain malicious
-    /// SQL code, create one or more SQL injection match conditions. An SQL injection match
-    /// condition identifies the part of web requests, such as the URI or the query string,
-    /// that you want WAF to inspect. Later in the process, when you create a web ACL, you
-    /// specify whether to allow or block requests that appear to contain malicious SQL code.
+    /// A rule statement that inspects for malicious SQL code. Attackers insert malicious
+    /// SQL code into web requests to do things like modify your database or extract data
+    /// from it.
     /// </summary>
     public partial class SqliMatchStatement
     {
         private FieldToMatch _fieldToMatch;
+        private SensitivityLevel _sensitivityLevel;
         private List<TextTransformation> _textTransformations = new List<TextTransformation>();
 
         /// <summary>
         /// Gets and sets the property FieldToMatch. 
         /// <para>
-        /// The part of the web request that you want WAF to inspect. For more information, see
-        /// <a>FieldToMatch</a>. 
+        /// The part of the web request that you want WAF to inspect. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,6 +56,41 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetFieldToMatch()
         {
             return this._fieldToMatch != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SensitivityLevel. 
+        /// <para>
+        /// The sensitivity that you want WAF to use to inspect for SQL injection attacks. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>HIGH</code> detects more attacks, but might generate more false positives,
+        /// especially if your web requests frequently contain unusual strings. For information
+        /// about identifying and mitigating false positives, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/web-acl-testing.html">Testing
+        /// and tuning</a> in the <i>WAF Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>LOW</code> is generally a better choice for resources that already have other
+        /// protections against SQL injection attacks or that have a low tolerance for false positives.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>LOW</code> 
+        /// </para>
+        /// </summary>
+        public SensitivityLevel SensitivityLevel
+        {
+            get { return this._sensitivityLevel; }
+            set { this._sensitivityLevel = value; }
+        }
+
+        // Check to see if SensitivityLevel property is set
+        internal bool IsSetSensitivityLevel()
+        {
+            return this._sensitivityLevel != null;
         }
 
         /// <summary>

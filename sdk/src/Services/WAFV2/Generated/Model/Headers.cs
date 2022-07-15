@@ -29,19 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// Inspect the headers in the web request. You can specify the parts of the headers to
+    /// Inspect all headers in the web request. You can specify the parts of the headers to
     /// inspect and you can narrow the set of headers to inspect by including or excluding
     /// specific keys.
     /// 
     ///  
     /// <para>
-    /// This is used to indicate the web request component for WAF to inspect, in the <a>FieldToMatch</a>
+    /// This is used to indicate the web request component to inspect, in the <a>FieldToMatch</a>
     /// specification. 
     /// </para>
     ///  
     /// <para>
-    /// Alternately, you can use the <code>SingleHeader</code> <code>FieldToMatch</code> setting
-    /// to inspect the value of a single header, identified by its key. 
+    /// If you want to inspect just the value of a single header, use the <code>SingleHeader</code>
+    /// <code>FieldToMatch</code> setting instead.
     /// </para>
     ///  
     /// <para>
@@ -67,7 +67,7 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// Example JSON: <code>"HeaderMatchPattern": { "ExcludedHeaders": {"KeyToExclude1", "KeyToExclude2"}
+        /// Example JSON: <code>"MatchPattern": { "ExcludedHeaders": {"KeyToExclude1", "KeyToExclude2"}
         /// }</code> 
         /// </para>
         /// </summary>

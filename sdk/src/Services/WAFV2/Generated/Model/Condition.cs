@@ -39,7 +39,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property ActionCondition. 
         /// <para>
-        /// A single action condition.
+        /// A single action condition. This is the action setting that a log record must contain
+        /// in order to meet the condition.
         /// </para>
         /// </summary>
         public ActionCondition ActionCondition
@@ -57,7 +58,10 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property LabelNameCondition. 
         /// <para>
-        /// A single label name condition.
+        /// A single label name condition. This is the fully qualified label name that a log record
+        /// must contain in order to meet the condition. Fully qualified labels have a prefix,
+        /// optional namespaces, and label name. The prefix identifies the rule group or web ACL
+        /// context of the rule that added the label. 
         /// </para>
         /// </summary>
         public LabelNameCondition LabelNameCondition

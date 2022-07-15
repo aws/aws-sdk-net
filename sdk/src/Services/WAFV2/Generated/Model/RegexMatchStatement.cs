@@ -41,8 +41,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property FieldToMatch. 
         /// <para>
-        /// The part of the web request that you want WAF to inspect. For more information, see
-        /// <a>FieldToMatch</a>. 
+        /// The part of the web request that you want WAF to inspect. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
