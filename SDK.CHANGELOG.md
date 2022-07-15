@@ -1,3 +1,16 @@
+### 3.7.316.0 (2022-07-15 18:15 UTC)
+* CloudWatchEvidently (3.7.3.0)
+	* This release adds support for the new segmentation feature.
+* DataSync (3.7.8.6)
+	* Documentation updates for AWS DataSync regarding configuring Amazon FSx for ONTAP location security groups and SMB user permissions.
+* Drs (3.7.2.0)
+	* Changed existing APIs to allow choosing a dynamic volume type for replicating volumes, to reduce costs for customers.
+* WAFV2 (3.7.12.0)
+	* This SDK release provide customers ability to add sensitivity level for WAF SQLI Match Statements.
+* Core 3.7.12.9
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.315.0 (2022-07-14 18:27 UTC)
 * Athena (3.7.8.0)
 	* This release updates data types that contain either QueryExecutionId, NamedQueryId or ExpectedBucketOwner. Ids must be between 1 and 128 characters and contain only non-whitespace characters. ExpectedBucketOwner must be 12-digit string.
