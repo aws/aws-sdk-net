@@ -119,6 +119,12 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SamplingRate);
                 }
 
+                if(publicRequest.IsSetSegment())
+                {
+                    context.Writer.WritePropertyName("segment");
+                    context.Writer.Write(publicRequest.Segment);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");

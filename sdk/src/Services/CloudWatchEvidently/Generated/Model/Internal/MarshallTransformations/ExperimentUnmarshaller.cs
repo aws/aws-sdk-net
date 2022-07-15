@@ -136,6 +136,12 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
                     unmarshalledObject.Schedule = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("segment", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Segment = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

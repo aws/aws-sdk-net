@@ -42,6 +42,12 @@ namespace Amazon.CloudWatchEvidently.Model
     /// </para>
     ///  
     /// <para>
+    /// You can optionally specify a <code>segment</code> to have the experiment consider
+    /// only certain audience types in the experiment, such as using only user sessions from
+    /// a certain location or who use a certain internet browser.
+    /// </para>
+    ///  
+    /// <para>
     /// Don't use this operation to update an existing experiment. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateExperiment.html">UpdateExperiment</a>.
     /// 
     /// </para>
@@ -55,6 +61,7 @@ namespace Amazon.CloudWatchEvidently.Model
         private string _project;
         private string _randomizationSalt;
         private long? _samplingRate;
+        private string _segment;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private List<TreatmentConfig> _treatments = new List<TreatmentConfig>();
 
@@ -201,6 +208,27 @@ namespace Amazon.CloudWatchEvidently.Model
         internal bool IsSetSamplingRate()
         {
             return this._samplingRate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Segment. 
+        /// <para>
+        /// Specifies an audience <i>segment</i> to use in the experiment. When a segment is used
+        /// in an experiment, only user sessions that match the segment pattern are used in the
+        /// experiment.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
+        public string Segment
+        {
+            get { return this._segment; }
+            set { this._segment = value; }
+        }
+
+        // Check to see if Segment property is set
+        internal bool IsSetSegment()
+        {
+            return this._segment != null;
         }
 
         /// <summary>

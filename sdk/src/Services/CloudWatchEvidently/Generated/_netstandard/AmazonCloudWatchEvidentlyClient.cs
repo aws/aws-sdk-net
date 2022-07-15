@@ -371,6 +371,12 @@ namespace Amazon.CloudWatchEvidently
         /// </para>
         ///  
         /// <para>
+        /// You can optionally specify a <code>segment</code> to have the experiment consider
+        /// only certain audience types in the experiment, such as using only user sessions from
+        /// a certain location or who use a certain internet browser.
+        /// </para>
+        ///  
+        /// <para>
         /// Don't use this operation to update an existing experiment. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateExperiment.html">UpdateExperiment</a>.
         /// 
         /// </para>
@@ -578,6 +584,68 @@ namespace Amazon.CloudWatchEvidently
             options.ResponseUnmarshaller = CreateProjectResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateProjectResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateSegment
+
+        internal virtual CreateSegmentResponse CreateSegment(CreateSegmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSegmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSegmentResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSegmentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Use this operation to define a <i>segment</i> of your audience. A segment is a portion
+        /// of your audience that share one or more characteristics. Examples could be Chrome
+        /// browser users, users in Europe, or Firefox browser users in Europe who also fit other
+        /// criteria that your application collects, such as age.
+        /// 
+        ///  
+        /// <para>
+        /// Using a segment in an experiment limits that experiment to evaluate only the users
+        /// who match the segment criteria. Using one or more segments in a launch allow you to
+        /// define different traffic splits for the different audience segments.
+        /// </para>
+        ///  <pre><code> &lt;p&gt;For more information about segment pattern syntax, see &lt;a
+        /// href=&quot;https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments-syntax.html&quot;&gt;
+        /// Segment rule pattern syntax&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;The pattern that you define
+        /// for a segment is matched against the value of &lt;code&gt;evaluationContext&lt;/code&gt;,
+        /// which is passed into Evidently in the &lt;a href=&quot;https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html&quot;&gt;EvaluateFeature&lt;/a&gt;
+        /// operation, when Evidently assigns a feature variation to a user.&lt;/p&gt; </code></pre>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSegment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateSegment service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ConflictException">
+        /// A resource was in an inconsistent state during an update or a deletion.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/CreateSegment">REST API Reference for CreateSegment Operation</seealso>
+        public virtual Task<CreateSegmentResponse> CreateSegmentAsync(CreateSegmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSegmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSegmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateSegmentResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -794,6 +862,56 @@ namespace Amazon.CloudWatchEvidently
 
         #endregion
         
+        #region  DeleteSegment
+
+        internal virtual DeleteSegmentResponse DeleteSegment(DeleteSegmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSegmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSegmentResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSegmentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a segment. You can't delete a segment that is being used in a launch or experiment,
+        /// even if that launch or experiment is not currently running.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSegment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteSegment service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ConflictException">
+        /// A resource was in an inconsistent state during an update or a deletion.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/DeleteSegment">REST API Reference for DeleteSegment Operation</seealso>
+        public virtual Task<DeleteSegmentResponse> DeleteSegmentAsync(DeleteSegmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSegmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSegmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteSegmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  EvaluateFeature
 
         internal virtual EvaluateFeatureResponse EvaluateFeature(EvaluateFeatureRequest request)
@@ -817,26 +935,25 @@ namespace Amazon.CloudWatchEvidently
         /// The first rules that are evaluated are the override rules. If the user's <code>entityID</code>
         /// matches an override rule, the user is served the variation specified by that rule.
         /// </para>
-        ///  
-        /// <para>
-        /// Next, if there is a launch of the feature, the user might be assigned to a variation
-        /// in the launch. The chance of this depends on the percentage of users that are allocated
-        /// to that launch. If the user is enrolled in the launch, the variation they are served
-        /// depends on the allocation of the various feature variations used for the launch.
-        /// </para>
-        ///  
-        /// <para>
-        /// If the user is not assigned to a launch, and there is an ongoing experiment for this
+        ///  <pre><code> &lt;p&gt;If there is a current launch with this feature that uses segment
+        /// overrides, and if the user session's &lt;code&gt;evaluationContext&lt;/code&gt; matches
+        /// a segment rule defined in a segment override, the configuration in the segment overrides
+        /// is used. For more information about segments, see &lt;a href=&quot;https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateSegment.html&quot;&gt;CreateSegment&lt;/a&gt;
+        /// and &lt;a href=&quot;https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html&quot;&gt;Use
+        /// segments to focus your audience&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;If there is a launch
+        /// with no segment overrides, the user might be assigned to a variation in the launch.
+        /// The chance of this depends on the percentage of users that are allocated to that launch.
+        /// If the user is enrolled in the launch, the variation they are served depends on the
+        /// allocation of the various feature variations used for the launch.&lt;/p&gt; &lt;p&gt;If
+        /// the user is not assigned to a launch, and there is an ongoing experiment for this
         /// feature, the user might be assigned to a variation in the experiment. The chance of
-        /// this depends on the percentage of users that are allocated to that experiment. If
+        /// this depends on the percentage of users that are allocated to that experiment.&lt;/p&gt;
+        /// &lt;p&gt;If the experiment uses a segment, then only user sessions with &lt;code&gt;evaluationContext&lt;/code&gt;
+        /// values that match the segment rule are used in the experiment.&lt;/p&gt; &lt;p&gt;If
         /// the user is enrolled in the experiment, the variation they are served depends on the
-        /// allocation of the various feature variations used for the experiment. 
-        /// </para>
-        ///  
-        /// <para>
-        /// If the user is not assigned to a launch or experiment, they are served the default
-        /// variation.
-        /// </para>
+        /// allocation of the various feature variations used for the experiment. &lt;/p&gt; &lt;p&gt;If
+        /// the user is not assigned to a launch or experiment, they are served the default variation.&lt;/p&gt;
+        /// </code></pre>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EvaluateFeature service method.</param>
         /// <param name="cancellationToken">
@@ -1113,6 +1230,53 @@ namespace Amazon.CloudWatchEvidently
 
         #endregion
         
+        #region  GetSegment
+
+        internal virtual GetSegmentResponse GetSegment(GetSegmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSegmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSegmentResponseUnmarshaller.Instance;
+
+            return Invoke<GetSegmentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns information about the specified segment. Specify the segment you want to view
+        /// by specifying its ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSegment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSegment service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetSegment">REST API Reference for GetSegment Operation</seealso>
+        public virtual Task<GetSegmentResponse> GetSegmentAsync(GetSegmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSegmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSegmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetSegmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListExperiments
 
         internal virtual ListExperimentsResponse ListExperiments(ListExperimentsRequest request)
@@ -1285,6 +1449,96 @@ namespace Amazon.CloudWatchEvidently
             options.ResponseUnmarshaller = ListProjectsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListProjectsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListSegmentReferences
+
+        internal virtual ListSegmentReferencesResponse ListSegmentReferences(ListSegmentReferencesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSegmentReferencesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSegmentReferencesResponseUnmarshaller.Instance;
+
+            return Invoke<ListSegmentReferencesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Use this operation to find which experiments or launches are using a specified segment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSegmentReferences service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSegmentReferences service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListSegmentReferences">REST API Reference for ListSegmentReferences Operation</seealso>
+        public virtual Task<ListSegmentReferencesResponse> ListSegmentReferencesAsync(ListSegmentReferencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSegmentReferencesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSegmentReferencesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListSegmentReferencesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListSegments
+
+        internal virtual ListSegmentsResponse ListSegments(ListSegmentsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSegmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSegmentsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSegmentsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of audience segments that you have created in your account in this
+        /// Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSegments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSegments service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListSegments">REST API Reference for ListSegments Operation</seealso>
+        public virtual Task<ListSegmentsResponse> ListSegmentsAsync(ListSegmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSegmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSegmentsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListSegmentsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1659,6 +1913,50 @@ namespace Amazon.CloudWatchEvidently
 
         #endregion
         
+        #region  TestSegmentPattern
+
+        internal virtual TestSegmentPatternResponse TestSegmentPattern(TestSegmentPatternRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TestSegmentPatternRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TestSegmentPatternResponseUnmarshaller.Instance;
+
+            return Invoke<TestSegmentPatternResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Use this operation to test a rules pattern that you plan to use to create an audience
+        /// segment. For more information about segments, see <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateSegment.html">CreateSegment</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestSegmentPattern service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TestSegmentPattern service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/TestSegmentPattern">REST API Reference for TestSegmentPattern Operation</seealso>
+        public virtual Task<TestSegmentPatternResponse> TestSegmentPatternAsync(TestSegmentPatternRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TestSegmentPatternRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TestSegmentPatternResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TestSegmentPatternResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UntagResource
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
@@ -1903,6 +2201,9 @@ namespace Amazon.CloudWatchEvidently
         /// <returns>The response from the UpdateProject service method, as returned by CloudWatchEvidently.</returns>
         /// <exception cref="Amazon.CloudWatchEvidently.Model.AccessDeniedException">
         /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ConflictException">
+        /// A resource was in an inconsistent state during an update or a deletion.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvidently.Model.ResourceNotFoundException">
         /// The request references a resource that does not exist.

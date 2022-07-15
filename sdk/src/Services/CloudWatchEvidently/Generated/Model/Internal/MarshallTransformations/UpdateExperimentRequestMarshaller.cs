@@ -110,10 +110,22 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.RandomizationSalt);
                 }
 
+                if(publicRequest.IsSetRemoveSegment())
+                {
+                    context.Writer.WritePropertyName("removeSegment");
+                    context.Writer.Write(publicRequest.RemoveSegment);
+                }
+
                 if(publicRequest.IsSetSamplingRate())
                 {
                     context.Writer.WritePropertyName("samplingRate");
                     context.Writer.Write(publicRequest.SamplingRate);
+                }
+
+                if(publicRequest.IsSetSegment())
+                {
+                    context.Writer.WritePropertyName("segment");
+                    context.Writer.Write(publicRequest.Segment);
                 }
 
                 if(publicRequest.IsSetTreatments())

@@ -35,6 +35,7 @@ namespace Amazon.CloudWatchEvidently.Model
     public partial class ScheduledSplitConfig
     {
         private Dictionary<string, long> _groupWeights = new Dictionary<string, long>();
+        private List<SegmentOverride> _segmentOverrides = new List<SegmentOverride>();
         private DateTime? _startTime;
 
         /// <summary>
@@ -44,6 +45,12 @@ namespace Amazon.CloudWatchEvidently.Model
         /// a launch. This is a set of key-value pairs. The keys are variation names. The values
         /// represent the percentage of traffic to allocate to that variation during this step.
         /// </para>
+        ///  <pre><code> &lt;p&gt;The values is expressed in thousandths of a percent, so assigning
+        /// a weight of 50000 assigns 50% of traffic to that variation.&lt;/p&gt; &lt;p&gt;If
+        /// the sum of the weights for all the variations in a segment override does not add up
+        /// to 100,000, then the remaining traffic that matches this segment is not assigned by
+        /// this segment override, and instead moves on to the next segment override or the default
+        /// traffic split.&lt;/p&gt; </code></pre>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=5)]
         public Dictionary<string, long> GroupWeights
@@ -56,6 +63,34 @@ namespace Amazon.CloudWatchEvidently.Model
         internal bool IsSetGroupWeights()
         {
             return this._groupWeights != null && this._groupWeights.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SegmentOverrides. 
+        /// <para>
+        /// Use this parameter to specify different traffic splits for one or more audience <i>segments</i>.
+        /// A segment is a portion of your audience that share one or more characteristics. Examples
+        /// could be Chrome browser users, users in Europe, or Firefox browser users in Europe
+        /// who also fit other criteria that your application collects, such as age.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is an array of up to six segment override objects. Each of these objects
+        /// specifies a segment that you have already created, and defines the traffic split for
+        /// that segment.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=6)]
+        public List<SegmentOverride> SegmentOverrides
+        {
+            get { return this._segmentOverrides; }
+            set { this._segmentOverrides = value; }
+        }
+
+        // Check to see if SegmentOverrides property is set
+        internal bool IsSetSegmentOverrides()
+        {
+            return this._segmentOverrides != null && this._segmentOverrides.Count > 0; 
         }
 
         /// <summary>

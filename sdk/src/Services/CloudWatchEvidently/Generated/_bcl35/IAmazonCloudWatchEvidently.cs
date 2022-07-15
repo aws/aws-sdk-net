@@ -153,6 +153,12 @@ namespace Amazon.CloudWatchEvidently
         /// </para>
         ///  
         /// <para>
+        /// You can optionally specify a <code>segment</code> to have the experiment consider
+        /// only certain audience types in the experiment, such as using only user sessions from
+        /// a certain location or who use a certain internet browser.
+        /// </para>
+        ///  
+        /// <para>
         /// Don't use this operation to update an existing experiment. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateExperiment.html">UpdateExperiment</a>.
         /// 
         /// </para>
@@ -398,6 +404,74 @@ namespace Amazon.CloudWatchEvidently
 
         #endregion
         
+        #region  CreateSegment
+
+
+        /// <summary>
+        /// Use this operation to define a <i>segment</i> of your audience. A segment is a portion
+        /// of your audience that share one or more characteristics. Examples could be Chrome
+        /// browser users, users in Europe, or Firefox browser users in Europe who also fit other
+        /// criteria that your application collects, such as age.
+        /// 
+        ///  
+        /// <para>
+        /// Using a segment in an experiment limits that experiment to evaluate only the users
+        /// who match the segment criteria. Using one or more segments in a launch allow you to
+        /// define different traffic splits for the different audience segments.
+        /// </para>
+        ///  <pre><code> &lt;p&gt;For more information about segment pattern syntax, see &lt;a
+        /// href=&quot;https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments-syntax.html&quot;&gt;
+        /// Segment rule pattern syntax&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;The pattern that you define
+        /// for a segment is matched against the value of &lt;code&gt;evaluationContext&lt;/code&gt;,
+        /// which is passed into Evidently in the &lt;a href=&quot;https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html&quot;&gt;EvaluateFeature&lt;/a&gt;
+        /// operation, when Evidently assigns a feature variation to a user.&lt;/p&gt; </code></pre>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSegment service method.</param>
+        /// 
+        /// <returns>The response from the CreateSegment service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ConflictException">
+        /// A resource was in an inconsistent state during an update or a deletion.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/CreateSegment">REST API Reference for CreateSegment Operation</seealso>
+        CreateSegmentResponse CreateSegment(CreateSegmentRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSegment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateSegment operation on AmazonCloudWatchEvidentlyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSegment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/CreateSegment">REST API Reference for CreateSegment Operation</seealso>
+        IAsyncResult BeginCreateSegment(CreateSegmentRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateSegment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSegment.</param>
+        /// 
+        /// <returns>Returns a  CreateSegmentResult from CloudWatchEvidently.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/CreateSegment">REST API Reference for CreateSegment Operation</seealso>
+        CreateSegmentResponse EndCreateSegment(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteExperiment
 
 
@@ -634,6 +708,62 @@ namespace Amazon.CloudWatchEvidently
 
         #endregion
         
+        #region  DeleteSegment
+
+
+        /// <summary>
+        /// Deletes a segment. You can't delete a segment that is being used in a launch or experiment,
+        /// even if that launch or experiment is not currently running.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSegment service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSegment service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ConflictException">
+        /// A resource was in an inconsistent state during an update or a deletion.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/DeleteSegment">REST API Reference for DeleteSegment Operation</seealso>
+        DeleteSegmentResponse DeleteSegment(DeleteSegmentRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSegment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSegment operation on AmazonCloudWatchEvidentlyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSegment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/DeleteSegment">REST API Reference for DeleteSegment Operation</seealso>
+        IAsyncResult BeginDeleteSegment(DeleteSegmentRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteSegment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSegment.</param>
+        /// 
+        /// <returns>Returns a  DeleteSegmentResult from CloudWatchEvidently.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/DeleteSegment">REST API Reference for DeleteSegment Operation</seealso>
+        DeleteSegmentResponse EndDeleteSegment(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  EvaluateFeature
 
 
@@ -647,26 +777,25 @@ namespace Amazon.CloudWatchEvidently
         /// The first rules that are evaluated are the override rules. If the user's <code>entityID</code>
         /// matches an override rule, the user is served the variation specified by that rule.
         /// </para>
-        ///  
-        /// <para>
-        /// Next, if there is a launch of the feature, the user might be assigned to a variation
-        /// in the launch. The chance of this depends on the percentage of users that are allocated
-        /// to that launch. If the user is enrolled in the launch, the variation they are served
-        /// depends on the allocation of the various feature variations used for the launch.
-        /// </para>
-        ///  
-        /// <para>
-        /// If the user is not assigned to a launch, and there is an ongoing experiment for this
+        ///  <pre><code> &lt;p&gt;If there is a current launch with this feature that uses segment
+        /// overrides, and if the user session's &lt;code&gt;evaluationContext&lt;/code&gt; matches
+        /// a segment rule defined in a segment override, the configuration in the segment overrides
+        /// is used. For more information about segments, see &lt;a href=&quot;https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateSegment.html&quot;&gt;CreateSegment&lt;/a&gt;
+        /// and &lt;a href=&quot;https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html&quot;&gt;Use
+        /// segments to focus your audience&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;If there is a launch
+        /// with no segment overrides, the user might be assigned to a variation in the launch.
+        /// The chance of this depends on the percentage of users that are allocated to that launch.
+        /// If the user is enrolled in the launch, the variation they are served depends on the
+        /// allocation of the various feature variations used for the launch.&lt;/p&gt; &lt;p&gt;If
+        /// the user is not assigned to a launch, and there is an ongoing experiment for this
         /// feature, the user might be assigned to a variation in the experiment. The chance of
-        /// this depends on the percentage of users that are allocated to that experiment. If
+        /// this depends on the percentage of users that are allocated to that experiment.&lt;/p&gt;
+        /// &lt;p&gt;If the experiment uses a segment, then only user sessions with &lt;code&gt;evaluationContext&lt;/code&gt;
+        /// values that match the segment rule are used in the experiment.&lt;/p&gt; &lt;p&gt;If
         /// the user is enrolled in the experiment, the variation they are served depends on the
-        /// allocation of the various feature variations used for the experiment. 
-        /// </para>
-        ///  
-        /// <para>
-        /// If the user is not assigned to a launch or experiment, they are served the default
-        /// variation.
-        /// </para>
+        /// allocation of the various feature variations used for the experiment. &lt;/p&gt; &lt;p&gt;If
+        /// the user is not assigned to a launch or experiment, they are served the default variation.&lt;/p&gt;
+        /// </code></pre>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EvaluateFeature service method.</param>
         /// 
@@ -989,6 +1118,59 @@ namespace Amazon.CloudWatchEvidently
 
         #endregion
         
+        #region  GetSegment
+
+
+        /// <summary>
+        /// Returns information about the specified segment. Specify the segment you want to view
+        /// by specifying its ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSegment service method.</param>
+        /// 
+        /// <returns>The response from the GetSegment service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetSegment">REST API Reference for GetSegment Operation</seealso>
+        GetSegmentResponse GetSegment(GetSegmentRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSegment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSegment operation on AmazonCloudWatchEvidentlyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSegment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetSegment">REST API Reference for GetSegment Operation</seealso>
+        IAsyncResult BeginGetSegment(GetSegmentRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSegment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSegment.</param>
+        /// 
+        /// <returns>Returns a  GetSegmentResult from CloudWatchEvidently.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetSegment">REST API Reference for GetSegment Operation</seealso>
+        GetSegmentResponse EndGetSegment(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListExperiments
 
 
@@ -1186,6 +1368,108 @@ namespace Amazon.CloudWatchEvidently
         /// <returns>Returns a  ListProjectsResult from CloudWatchEvidently.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListProjects">REST API Reference for ListProjects Operation</seealso>
         ListProjectsResponse EndListProjects(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListSegmentReferences
+
+
+        /// <summary>
+        /// Use this operation to find which experiments or launches are using a specified segment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSegmentReferences service method.</param>
+        /// 
+        /// <returns>The response from the ListSegmentReferences service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListSegmentReferences">REST API Reference for ListSegmentReferences Operation</seealso>
+        ListSegmentReferencesResponse ListSegmentReferences(ListSegmentReferencesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSegmentReferences operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSegmentReferences operation on AmazonCloudWatchEvidentlyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSegmentReferences
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListSegmentReferences">REST API Reference for ListSegmentReferences Operation</seealso>
+        IAsyncResult BeginListSegmentReferences(ListSegmentReferencesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSegmentReferences operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSegmentReferences.</param>
+        /// 
+        /// <returns>Returns a  ListSegmentReferencesResult from CloudWatchEvidently.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListSegmentReferences">REST API Reference for ListSegmentReferences Operation</seealso>
+        ListSegmentReferencesResponse EndListSegmentReferences(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListSegments
+
+
+        /// <summary>
+        /// Returns a list of audience segments that you have created in your account in this
+        /// Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSegments service method.</param>
+        /// 
+        /// <returns>The response from the ListSegments service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListSegments">REST API Reference for ListSegments Operation</seealso>
+        ListSegmentsResponse ListSegments(ListSegmentsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSegments operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSegments operation on AmazonCloudWatchEvidentlyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSegments
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListSegments">REST API Reference for ListSegments Operation</seealso>
+        IAsyncResult BeginListSegments(ListSegmentsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSegments operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSegments.</param>
+        /// 
+        /// <returns>Returns a  ListSegmentsResult from CloudWatchEvidently.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListSegments">REST API Reference for ListSegments Operation</seealso>
+        ListSegmentsResponse EndListSegments(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1601,6 +1885,56 @@ namespace Amazon.CloudWatchEvidently
 
         #endregion
         
+        #region  TestSegmentPattern
+
+
+        /// <summary>
+        /// Use this operation to test a rules pattern that you plan to use to create an audience
+        /// segment. For more information about segments, see <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateSegment.html">CreateSegment</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestSegmentPattern service method.</param>
+        /// 
+        /// <returns>The response from the TestSegmentPattern service method, as returned by CloudWatchEvidently.</returns>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/TestSegmentPattern">REST API Reference for TestSegmentPattern Operation</seealso>
+        TestSegmentPatternResponse TestSegmentPattern(TestSegmentPatternRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TestSegmentPattern operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TestSegmentPattern operation on AmazonCloudWatchEvidentlyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTestSegmentPattern
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/TestSegmentPattern">REST API Reference for TestSegmentPattern Operation</seealso>
+        IAsyncResult BeginTestSegmentPattern(TestSegmentPatternRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TestSegmentPattern operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTestSegmentPattern.</param>
+        /// 
+        /// <returns>Returns a  TestSegmentPatternResult from CloudWatchEvidently.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/TestSegmentPattern">REST API Reference for TestSegmentPattern Operation</seealso>
+        TestSegmentPatternResponse EndTestSegmentPattern(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UntagResource
 
 
@@ -1856,6 +2190,9 @@ namespace Amazon.CloudWatchEvidently
         /// <returns>The response from the UpdateProject service method, as returned by CloudWatchEvidently.</returns>
         /// <exception cref="Amazon.CloudWatchEvidently.Model.AccessDeniedException">
         /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvidently.Model.ConflictException">
+        /// A resource was in an inconsistent state during an update or a deletion.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvidently.Model.ResourceNotFoundException">
         /// The request references a resource that does not exist.

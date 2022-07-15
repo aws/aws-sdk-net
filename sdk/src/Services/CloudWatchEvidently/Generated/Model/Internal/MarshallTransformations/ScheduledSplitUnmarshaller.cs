@@ -70,6 +70,12 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
                     unmarshalledObject.GroupWeights = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("segmentOverrides", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<SegmentOverride, SegmentOverrideUnmarshaller>(SegmentOverrideUnmarshaller.Instance);
+                    unmarshalledObject.SegmentOverrides = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("startTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

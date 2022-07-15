@@ -59,6 +59,22 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSegmentOverrides())
+            {
+                context.Writer.WritePropertyName("segmentOverrides");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectSegmentOverridesListValue in requestObject.SegmentOverrides)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SegmentOverrideMarshaller.Instance;
+                    marshaller.Marshall(requestObjectSegmentOverridesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetStartTime())
             {
                 context.Writer.WritePropertyName("startTime");

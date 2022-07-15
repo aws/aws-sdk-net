@@ -161,7 +161,7 @@ namespace Amazon.CloudWatchEvidently.Model
         /// When Evidently assigns a particular user session to a launch, it must use a randomization
         /// ID to determine which variation the user session is served. This randomization ID
         /// is a combination of the entity ID and <code>randomizationSalt</code>. If you omit
-        /// <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationsSalt</code>.
+        /// <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationSalt</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=127)]
