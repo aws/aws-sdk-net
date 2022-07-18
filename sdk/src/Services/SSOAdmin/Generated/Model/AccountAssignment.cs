@@ -52,6 +52,7 @@ namespace Amazon.SSOAdmin.Model
         /// The identifier of the Amazon Web Services account.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=12, Max=12)]
         public string AccountId
         {
             get { return this._accountId; }

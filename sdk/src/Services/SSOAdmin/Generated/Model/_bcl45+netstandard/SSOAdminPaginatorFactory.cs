@@ -68,6 +68,14 @@ namespace Amazon.SSOAdmin.Model
         }
 
         /// <summary>
+        /// Paginator for ListCustomerManagedPolicyReferencesInPermissionSet operation
+        ///</summary>
+        public IListCustomerManagedPolicyReferencesInPermissionSetPaginator ListCustomerManagedPolicyReferencesInPermissionSet(ListCustomerManagedPolicyReferencesInPermissionSetRequest request) 
+        {
+            return new ListCustomerManagedPolicyReferencesInPermissionSetPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListInstances operation
         ///</summary>
         public IListInstancesPaginator ListInstances(ListInstancesRequest request) 

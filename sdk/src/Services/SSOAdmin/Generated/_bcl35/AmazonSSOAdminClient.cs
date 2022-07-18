@@ -35,20 +35,7 @@ namespace Amazon.SSOAdmin
     /// <summary>
     /// Implementation for accessing SSOAdmin
     ///
-    /// Amazon Web Services Single Sign On (SSO) is a cloud SSO service that makes it easy
-    /// to centrally manage SSO access to multiple Amazon Web Services accounts and business
-    /// applications. This guide provides information on SSO operations which could be used
-    /// for access management of Amazon Web Services accounts. For information about Amazon
-    /// Web Services SSO features, see the <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">Amazon
-    /// Web Services Single Sign-On User Guide</a>.
     /// 
-    ///  
-    /// <para>
-    /// Many operations in the SSO APIs rely on identifiers for users and groups, known as
-    /// principals. For more information about how to work with principals and principal IDs
-    /// in Amazon Web Services SSO, see the <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon
-    /// Web Services SSO Identity Store API Reference</a>.
-    /// </para>
     /// </summary>
     public partial class AmazonSSOAdminClient : AmazonServiceClient, IAmazonSSOAdmin
     {
@@ -268,10 +255,90 @@ namespace Amazon.SSOAdmin
         #endregion
 
 
+        #region  AttachCustomerManagedPolicyReferenceToPermissionSet
+
+        /// <summary>
+        /// Attaches the specified IAM customer managed policy to the specified <a>PermissionSet</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AttachCustomerManagedPolicyReferenceToPermissionSet service method.</param>
+        /// 
+        /// <returns>The response from the AttachCustomerManagedPolicyReferenceToPermissionSet service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ServiceQuotaExceededException">
+        /// Indicates that the principal has crossed the permitted number of resources that can
+        /// be created.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/AttachCustomerManagedPolicyReferenceToPermissionSet">REST API Reference for AttachCustomerManagedPolicyReferenceToPermissionSet Operation</seealso>
+        public virtual AttachCustomerManagedPolicyReferenceToPermissionSetResponse AttachCustomerManagedPolicyReferenceToPermissionSet(AttachCustomerManagedPolicyReferenceToPermissionSetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AttachCustomerManagedPolicyReferenceToPermissionSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachCustomerManagedPolicyReferenceToPermissionSetResponseUnmarshaller.Instance;
+
+            return Invoke<AttachCustomerManagedPolicyReferenceToPermissionSetResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AttachCustomerManagedPolicyReferenceToPermissionSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AttachCustomerManagedPolicyReferenceToPermissionSet operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAttachCustomerManagedPolicyReferenceToPermissionSet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/AttachCustomerManagedPolicyReferenceToPermissionSet">REST API Reference for AttachCustomerManagedPolicyReferenceToPermissionSet Operation</seealso>
+        public virtual IAsyncResult BeginAttachCustomerManagedPolicyReferenceToPermissionSet(AttachCustomerManagedPolicyReferenceToPermissionSetRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AttachCustomerManagedPolicyReferenceToPermissionSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachCustomerManagedPolicyReferenceToPermissionSetResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AttachCustomerManagedPolicyReferenceToPermissionSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAttachCustomerManagedPolicyReferenceToPermissionSet.</param>
+        /// 
+        /// <returns>Returns a  AttachCustomerManagedPolicyReferenceToPermissionSetResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/AttachCustomerManagedPolicyReferenceToPermissionSet">REST API Reference for AttachCustomerManagedPolicyReferenceToPermissionSet Operation</seealso>
+        public virtual AttachCustomerManagedPolicyReferenceToPermissionSetResponse EndAttachCustomerManagedPolicyReferenceToPermissionSet(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AttachCustomerManagedPolicyReferenceToPermissionSetResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  AttachManagedPolicyToPermissionSet
 
         /// <summary>
-        /// Attaches an IAM managed policy ARN to a permission set.
+        /// Attaches an Amazon Web Services managed IAM policy ARN to a permission set.
         /// 
         ///  <note> 
         /// <para>
@@ -855,6 +922,76 @@ namespace Amazon.SSOAdmin
 
         #endregion
         
+        #region  DeletePermissionsBoundaryFromPermissionSet
+
+        /// <summary>
+        /// Deletes the permissions boundary from a specified <a>PermissionSet</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePermissionsBoundaryFromPermissionSet service method.</param>
+        /// 
+        /// <returns>The response from the DeletePermissionsBoundaryFromPermissionSet service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeletePermissionsBoundaryFromPermissionSet">REST API Reference for DeletePermissionsBoundaryFromPermissionSet Operation</seealso>
+        public virtual DeletePermissionsBoundaryFromPermissionSetResponse DeletePermissionsBoundaryFromPermissionSet(DeletePermissionsBoundaryFromPermissionSetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePermissionsBoundaryFromPermissionSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePermissionsBoundaryFromPermissionSetResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePermissionsBoundaryFromPermissionSetResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePermissionsBoundaryFromPermissionSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePermissionsBoundaryFromPermissionSet operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePermissionsBoundaryFromPermissionSet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeletePermissionsBoundaryFromPermissionSet">REST API Reference for DeletePermissionsBoundaryFromPermissionSet Operation</seealso>
+        public virtual IAsyncResult BeginDeletePermissionsBoundaryFromPermissionSet(DeletePermissionsBoundaryFromPermissionSetRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePermissionsBoundaryFromPermissionSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePermissionsBoundaryFromPermissionSetResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePermissionsBoundaryFromPermissionSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePermissionsBoundaryFromPermissionSet.</param>
+        /// 
+        /// <returns>Returns a  DeletePermissionsBoundaryFromPermissionSetResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeletePermissionsBoundaryFromPermissionSet">REST API Reference for DeletePermissionsBoundaryFromPermissionSet Operation</seealso>
+        public virtual DeletePermissionsBoundaryFromPermissionSetResponse EndDeletePermissionsBoundaryFromPermissionSet(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeletePermissionsBoundaryFromPermissionSetResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeletePermissionSet
 
         /// <summary>
@@ -1285,10 +1422,87 @@ namespace Amazon.SSOAdmin
 
         #endregion
         
+        #region  DetachCustomerManagedPolicyReferenceFromPermissionSet
+
+        /// <summary>
+        /// Detaches the specified IAM customer managed policy from the specified <a>PermissionSet</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetachCustomerManagedPolicyReferenceFromPermissionSet service method.</param>
+        /// 
+        /// <returns>The response from the DetachCustomerManagedPolicyReferenceFromPermissionSet service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DetachCustomerManagedPolicyReferenceFromPermissionSet">REST API Reference for DetachCustomerManagedPolicyReferenceFromPermissionSet Operation</seealso>
+        public virtual DetachCustomerManagedPolicyReferenceFromPermissionSetResponse DetachCustomerManagedPolicyReferenceFromPermissionSet(DetachCustomerManagedPolicyReferenceFromPermissionSetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetachCustomerManagedPolicyReferenceFromPermissionSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachCustomerManagedPolicyReferenceFromPermissionSetResponseUnmarshaller.Instance;
+
+            return Invoke<DetachCustomerManagedPolicyReferenceFromPermissionSetResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DetachCustomerManagedPolicyReferenceFromPermissionSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DetachCustomerManagedPolicyReferenceFromPermissionSet operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetachCustomerManagedPolicyReferenceFromPermissionSet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DetachCustomerManagedPolicyReferenceFromPermissionSet">REST API Reference for DetachCustomerManagedPolicyReferenceFromPermissionSet Operation</seealso>
+        public virtual IAsyncResult BeginDetachCustomerManagedPolicyReferenceFromPermissionSet(DetachCustomerManagedPolicyReferenceFromPermissionSetRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DetachCustomerManagedPolicyReferenceFromPermissionSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachCustomerManagedPolicyReferenceFromPermissionSetResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DetachCustomerManagedPolicyReferenceFromPermissionSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDetachCustomerManagedPolicyReferenceFromPermissionSet.</param>
+        /// 
+        /// <returns>Returns a  DetachCustomerManagedPolicyReferenceFromPermissionSetResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DetachCustomerManagedPolicyReferenceFromPermissionSet">REST API Reference for DetachCustomerManagedPolicyReferenceFromPermissionSet Operation</seealso>
+        public virtual DetachCustomerManagedPolicyReferenceFromPermissionSetResponse EndDetachCustomerManagedPolicyReferenceFromPermissionSet(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DetachCustomerManagedPolicyReferenceFromPermissionSetResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DetachManagedPolicyFromPermissionSet
 
         /// <summary>
-        /// Detaches the attached IAM managed policy ARN from the specified permission set.
+        /// Detaches the attached Amazon Web Services managed IAM policy ARN from the specified
+        /// permission set.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachManagedPolicyFromPermissionSet service method.</param>
         /// 
@@ -1427,6 +1641,76 @@ namespace Amazon.SSOAdmin
         public virtual GetInlinePolicyForPermissionSetResponse EndGetInlinePolicyForPermissionSet(IAsyncResult asyncResult)
         {
             return EndInvoke<GetInlinePolicyForPermissionSetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetPermissionsBoundaryForPermissionSet
+
+        /// <summary>
+        /// Obtains the permissions boundary for a specified <a>PermissionSet</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPermissionsBoundaryForPermissionSet service method.</param>
+        /// 
+        /// <returns>The response from the GetPermissionsBoundaryForPermissionSet service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetPermissionsBoundaryForPermissionSet">REST API Reference for GetPermissionsBoundaryForPermissionSet Operation</seealso>
+        public virtual GetPermissionsBoundaryForPermissionSetResponse GetPermissionsBoundaryForPermissionSet(GetPermissionsBoundaryForPermissionSetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPermissionsBoundaryForPermissionSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPermissionsBoundaryForPermissionSetResponseUnmarshaller.Instance;
+
+            return Invoke<GetPermissionsBoundaryForPermissionSetResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPermissionsBoundaryForPermissionSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPermissionsBoundaryForPermissionSet operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPermissionsBoundaryForPermissionSet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetPermissionsBoundaryForPermissionSet">REST API Reference for GetPermissionsBoundaryForPermissionSet Operation</seealso>
+        public virtual IAsyncResult BeginGetPermissionsBoundaryForPermissionSet(GetPermissionsBoundaryForPermissionSetRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPermissionsBoundaryForPermissionSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPermissionsBoundaryForPermissionSetResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPermissionsBoundaryForPermissionSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPermissionsBoundaryForPermissionSet.</param>
+        /// 
+        /// <returns>Returns a  GetPermissionsBoundaryForPermissionSetResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetPermissionsBoundaryForPermissionSet">REST API Reference for GetPermissionsBoundaryForPermissionSet Operation</seealso>
+        public virtual GetPermissionsBoundaryForPermissionSetResponse EndGetPermissionsBoundaryForPermissionSet(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetPermissionsBoundaryForPermissionSetResponse>(asyncResult);
         }
 
         #endregion
@@ -1714,6 +1998,76 @@ namespace Amazon.SSOAdmin
 
         #endregion
         
+        #region  ListCustomerManagedPolicyReferencesInPermissionSet
+
+        /// <summary>
+        /// Lists all IAM customer managed policies attached to a specified <a>PermissionSet</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCustomerManagedPolicyReferencesInPermissionSet service method.</param>
+        /// 
+        /// <returns>The response from the ListCustomerManagedPolicyReferencesInPermissionSet service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListCustomerManagedPolicyReferencesInPermissionSet">REST API Reference for ListCustomerManagedPolicyReferencesInPermissionSet Operation</seealso>
+        public virtual ListCustomerManagedPolicyReferencesInPermissionSetResponse ListCustomerManagedPolicyReferencesInPermissionSet(ListCustomerManagedPolicyReferencesInPermissionSetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCustomerManagedPolicyReferencesInPermissionSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCustomerManagedPolicyReferencesInPermissionSetResponseUnmarshaller.Instance;
+
+            return Invoke<ListCustomerManagedPolicyReferencesInPermissionSetResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCustomerManagedPolicyReferencesInPermissionSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCustomerManagedPolicyReferencesInPermissionSet operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCustomerManagedPolicyReferencesInPermissionSet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListCustomerManagedPolicyReferencesInPermissionSet">REST API Reference for ListCustomerManagedPolicyReferencesInPermissionSet Operation</seealso>
+        public virtual IAsyncResult BeginListCustomerManagedPolicyReferencesInPermissionSet(ListCustomerManagedPolicyReferencesInPermissionSetRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCustomerManagedPolicyReferencesInPermissionSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCustomerManagedPolicyReferencesInPermissionSetResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCustomerManagedPolicyReferencesInPermissionSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCustomerManagedPolicyReferencesInPermissionSet.</param>
+        /// 
+        /// <returns>Returns a  ListCustomerManagedPolicyReferencesInPermissionSetResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListCustomerManagedPolicyReferencesInPermissionSet">REST API Reference for ListCustomerManagedPolicyReferencesInPermissionSet Operation</seealso>
+        public virtual ListCustomerManagedPolicyReferencesInPermissionSetResponse EndListCustomerManagedPolicyReferencesInPermissionSet(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListCustomerManagedPolicyReferencesInPermissionSetResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListInstances
 
         /// <summary>
@@ -1784,7 +2138,8 @@ namespace Amazon.SSOAdmin
         #region  ListManagedPoliciesInPermissionSet
 
         /// <summary>
-        /// Lists the IAM managed policy that is attached to a specified permission set.
+        /// Lists the Amazon Web Services managed IAM policy that is attached to a specified permission
+        /// set.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListManagedPoliciesInPermissionSet service method.</param>
         /// 
@@ -2292,6 +2647,83 @@ namespace Amazon.SSOAdmin
         public virtual PutInlinePolicyToPermissionSetResponse EndPutInlinePolicyToPermissionSet(IAsyncResult asyncResult)
         {
             return EndInvoke<PutInlinePolicyToPermissionSetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutPermissionsBoundaryToPermissionSet
+
+        /// <summary>
+        /// Attaches an Amazon Web Services managed or customer managed IAM policy to the specified
+        /// <a>PermissionSet</a> as a permissions boundary.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutPermissionsBoundaryToPermissionSet service method.</param>
+        /// 
+        /// <returns>The response from the PutPermissionsBoundaryToPermissionSet service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutPermissionsBoundaryToPermissionSet">REST API Reference for PutPermissionsBoundaryToPermissionSet Operation</seealso>
+        public virtual PutPermissionsBoundaryToPermissionSetResponse PutPermissionsBoundaryToPermissionSet(PutPermissionsBoundaryToPermissionSetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutPermissionsBoundaryToPermissionSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutPermissionsBoundaryToPermissionSetResponseUnmarshaller.Instance;
+
+            return Invoke<PutPermissionsBoundaryToPermissionSetResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutPermissionsBoundaryToPermissionSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutPermissionsBoundaryToPermissionSet operation on AmazonSSOAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutPermissionsBoundaryToPermissionSet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutPermissionsBoundaryToPermissionSet">REST API Reference for PutPermissionsBoundaryToPermissionSet Operation</seealso>
+        public virtual IAsyncResult BeginPutPermissionsBoundaryToPermissionSet(PutPermissionsBoundaryToPermissionSetRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutPermissionsBoundaryToPermissionSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutPermissionsBoundaryToPermissionSetResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutPermissionsBoundaryToPermissionSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutPermissionsBoundaryToPermissionSet.</param>
+        /// 
+        /// <returns>Returns a  PutPermissionsBoundaryToPermissionSetResult from SSOAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutPermissionsBoundaryToPermissionSet">REST API Reference for PutPermissionsBoundaryToPermissionSet Operation</seealso>
+        public virtual PutPermissionsBoundaryToPermissionSetResponse EndPutPermissionsBoundaryToPermissionSet(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutPermissionsBoundaryToPermissionSetResponse>(asyncResult);
         }
 
         #endregion

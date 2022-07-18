@@ -31,20 +31,7 @@ namespace Amazon.SSOAdmin
     /// <summary>
     /// Interface for accessing SSOAdmin
     ///
-    /// Amazon Web Services Single Sign On (SSO) is a cloud SSO service that makes it easy
-    /// to centrally manage SSO access to multiple Amazon Web Services accounts and business
-    /// applications. This guide provides information on SSO operations which could be used
-    /// for access management of Amazon Web Services accounts. For information about Amazon
-    /// Web Services SSO features, see the <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">Amazon
-    /// Web Services Single Sign-On User Guide</a>.
     /// 
-    ///  
-    /// <para>
-    /// Many operations in the SSO APIs rely on identifiers for users and groups, known as
-    /// principals. For more information about how to work with principals and principal IDs
-    /// in Amazon Web Services SSO, see the <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon
-    /// Web Services SSO Identity Store API Reference</a>.
-    /// </para>
     /// </summary>
     public partial interface IAmazonSSOAdmin : IAmazonService, IDisposable
     {
@@ -55,11 +42,91 @@ namespace Amazon.SSOAdmin
         ISSOAdminPaginatorFactory Paginators { get; }
 
         
+        #region  AttachCustomerManagedPolicyReferenceToPermissionSet
+
+
+        /// <summary>
+        /// Attaches the specified IAM customer managed policy to the specified <a>PermissionSet</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AttachCustomerManagedPolicyReferenceToPermissionSet service method.</param>
+        /// 
+        /// <returns>The response from the AttachCustomerManagedPolicyReferenceToPermissionSet service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ServiceQuotaExceededException">
+        /// Indicates that the principal has crossed the permitted number of resources that can
+        /// be created.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/AttachCustomerManagedPolicyReferenceToPermissionSet">REST API Reference for AttachCustomerManagedPolicyReferenceToPermissionSet Operation</seealso>
+        AttachCustomerManagedPolicyReferenceToPermissionSetResponse AttachCustomerManagedPolicyReferenceToPermissionSet(AttachCustomerManagedPolicyReferenceToPermissionSetRequest request);
+
+
+
+        /// <summary>
+        /// Attaches the specified IAM customer managed policy to the specified <a>PermissionSet</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AttachCustomerManagedPolicyReferenceToPermissionSet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AttachCustomerManagedPolicyReferenceToPermissionSet service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ServiceQuotaExceededException">
+        /// Indicates that the principal has crossed the permitted number of resources that can
+        /// be created.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/AttachCustomerManagedPolicyReferenceToPermissionSet">REST API Reference for AttachCustomerManagedPolicyReferenceToPermissionSet Operation</seealso>
+        Task<AttachCustomerManagedPolicyReferenceToPermissionSetResponse> AttachCustomerManagedPolicyReferenceToPermissionSetAsync(AttachCustomerManagedPolicyReferenceToPermissionSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  AttachManagedPolicyToPermissionSet
 
 
         /// <summary>
-        /// Attaches an IAM managed policy ARN to a permission set.
+        /// Attaches an Amazon Web Services managed IAM policy ARN to a permission set.
         /// 
         ///  <note> 
         /// <para>
@@ -105,7 +172,7 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Attaches an IAM managed policy ARN to a permission set.
+        /// Attaches an Amazon Web Services managed IAM policy ARN to a permission set.
         /// 
         ///  <note> 
         /// <para>
@@ -669,6 +736,66 @@ namespace Amazon.SSOAdmin
 
         #endregion
         
+        #region  DeletePermissionsBoundaryFromPermissionSet
+
+
+        /// <summary>
+        /// Deletes the permissions boundary from a specified <a>PermissionSet</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePermissionsBoundaryFromPermissionSet service method.</param>
+        /// 
+        /// <returns>The response from the DeletePermissionsBoundaryFromPermissionSet service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeletePermissionsBoundaryFromPermissionSet">REST API Reference for DeletePermissionsBoundaryFromPermissionSet Operation</seealso>
+        DeletePermissionsBoundaryFromPermissionSetResponse DeletePermissionsBoundaryFromPermissionSet(DeletePermissionsBoundaryFromPermissionSetRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the permissions boundary from a specified <a>PermissionSet</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePermissionsBoundaryFromPermissionSet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePermissionsBoundaryFromPermissionSet service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DeletePermissionsBoundaryFromPermissionSet">REST API Reference for DeletePermissionsBoundaryFromPermissionSet Operation</seealso>
+        Task<DeletePermissionsBoundaryFromPermissionSetResponse> DeletePermissionsBoundaryFromPermissionSetAsync(DeletePermissionsBoundaryFromPermissionSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeletePermissionSet
 
 
@@ -1049,11 +1176,84 @@ namespace Amazon.SSOAdmin
 
         #endregion
         
+        #region  DetachCustomerManagedPolicyReferenceFromPermissionSet
+
+
+        /// <summary>
+        /// Detaches the specified IAM customer managed policy from the specified <a>PermissionSet</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetachCustomerManagedPolicyReferenceFromPermissionSet service method.</param>
+        /// 
+        /// <returns>The response from the DetachCustomerManagedPolicyReferenceFromPermissionSet service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DetachCustomerManagedPolicyReferenceFromPermissionSet">REST API Reference for DetachCustomerManagedPolicyReferenceFromPermissionSet Operation</seealso>
+        DetachCustomerManagedPolicyReferenceFromPermissionSetResponse DetachCustomerManagedPolicyReferenceFromPermissionSet(DetachCustomerManagedPolicyReferenceFromPermissionSetRequest request);
+
+
+
+        /// <summary>
+        /// Detaches the specified IAM customer managed policy from the specified <a>PermissionSet</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetachCustomerManagedPolicyReferenceFromPermissionSet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DetachCustomerManagedPolicyReferenceFromPermissionSet service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/DetachCustomerManagedPolicyReferenceFromPermissionSet">REST API Reference for DetachCustomerManagedPolicyReferenceFromPermissionSet Operation</seealso>
+        Task<DetachCustomerManagedPolicyReferenceFromPermissionSetResponse> DetachCustomerManagedPolicyReferenceFromPermissionSetAsync(DetachCustomerManagedPolicyReferenceFromPermissionSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DetachManagedPolicyFromPermissionSet
 
 
         /// <summary>
-        /// Detaches the attached IAM managed policy ARN from the specified permission set.
+        /// Detaches the attached Amazon Web Services managed IAM policy ARN from the specified
+        /// permission set.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachManagedPolicyFromPermissionSet service method.</param>
         /// 
@@ -1086,7 +1286,8 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Detaches the attached IAM managed policy ARN from the specified permission set.
+        /// Detaches the attached Amazon Web Services managed IAM policy ARN from the specified
+        /// permission set.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachManagedPolicyFromPermissionSet service method.</param>
         /// <param name="cancellationToken">
@@ -1178,6 +1379,66 @@ namespace Amazon.SSOAdmin
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetInlinePolicyForPermissionSet">REST API Reference for GetInlinePolicyForPermissionSet Operation</seealso>
         Task<GetInlinePolicyForPermissionSetResponse> GetInlinePolicyForPermissionSetAsync(GetInlinePolicyForPermissionSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetPermissionsBoundaryForPermissionSet
+
+
+        /// <summary>
+        /// Obtains the permissions boundary for a specified <a>PermissionSet</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPermissionsBoundaryForPermissionSet service method.</param>
+        /// 
+        /// <returns>The response from the GetPermissionsBoundaryForPermissionSet service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetPermissionsBoundaryForPermissionSet">REST API Reference for GetPermissionsBoundaryForPermissionSet Operation</seealso>
+        GetPermissionsBoundaryForPermissionSetResponse GetPermissionsBoundaryForPermissionSet(GetPermissionsBoundaryForPermissionSetRequest request);
+
+
+
+        /// <summary>
+        /// Obtains the permissions boundary for a specified <a>PermissionSet</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPermissionsBoundaryForPermissionSet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPermissionsBoundaryForPermissionSet service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/GetPermissionsBoundaryForPermissionSet">REST API Reference for GetPermissionsBoundaryForPermissionSet Operation</seealso>
+        Task<GetPermissionsBoundaryForPermissionSetResponse> GetPermissionsBoundaryForPermissionSetAsync(GetPermissionsBoundaryForPermissionSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1427,6 +1688,66 @@ namespace Amazon.SSOAdmin
 
         #endregion
         
+        #region  ListCustomerManagedPolicyReferencesInPermissionSet
+
+
+        /// <summary>
+        /// Lists all IAM customer managed policies attached to a specified <a>PermissionSet</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCustomerManagedPolicyReferencesInPermissionSet service method.</param>
+        /// 
+        /// <returns>The response from the ListCustomerManagedPolicyReferencesInPermissionSet service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListCustomerManagedPolicyReferencesInPermissionSet">REST API Reference for ListCustomerManagedPolicyReferencesInPermissionSet Operation</seealso>
+        ListCustomerManagedPolicyReferencesInPermissionSetResponse ListCustomerManagedPolicyReferencesInPermissionSet(ListCustomerManagedPolicyReferencesInPermissionSetRequest request);
+
+
+
+        /// <summary>
+        /// Lists all IAM customer managed policies attached to a specified <a>PermissionSet</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCustomerManagedPolicyReferencesInPermissionSet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCustomerManagedPolicyReferencesInPermissionSet service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/ListCustomerManagedPolicyReferencesInPermissionSet">REST API Reference for ListCustomerManagedPolicyReferencesInPermissionSet Operation</seealso>
+        Task<ListCustomerManagedPolicyReferencesInPermissionSetResponse> ListCustomerManagedPolicyReferencesInPermissionSetAsync(ListCustomerManagedPolicyReferencesInPermissionSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListInstances
 
 
@@ -1485,7 +1806,8 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Lists the IAM managed policy that is attached to a specified permission set.
+        /// Lists the Amazon Web Services managed IAM policy that is attached to a specified permission
+        /// set.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListManagedPoliciesInPermissionSet service method.</param>
         /// 
@@ -1512,7 +1834,8 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Lists the IAM managed policy that is attached to a specified permission set.
+        /// Lists the Amazon Web Services managed IAM policy that is attached to a specified permission
+        /// set.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListManagedPoliciesInPermissionSet service method.</param>
         /// <param name="cancellationToken">
@@ -1948,6 +2271,80 @@ namespace Amazon.SSOAdmin
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutInlinePolicyToPermissionSet">REST API Reference for PutInlinePolicyToPermissionSet Operation</seealso>
         Task<PutInlinePolicyToPermissionSetResponse> PutInlinePolicyToPermissionSetAsync(PutInlinePolicyToPermissionSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutPermissionsBoundaryToPermissionSet
+
+
+        /// <summary>
+        /// Attaches an Amazon Web Services managed or customer managed IAM policy to the specified
+        /// <a>PermissionSet</a> as a permissions boundary.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutPermissionsBoundaryToPermissionSet service method.</param>
+        /// 
+        /// <returns>The response from the PutPermissionsBoundaryToPermissionSet service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutPermissionsBoundaryToPermissionSet">REST API Reference for PutPermissionsBoundaryToPermissionSet Operation</seealso>
+        PutPermissionsBoundaryToPermissionSetResponse PutPermissionsBoundaryToPermissionSet(PutPermissionsBoundaryToPermissionSetRequest request);
+
+
+
+        /// <summary>
+        /// Attaches an Amazon Web Services managed or customer managed IAM policy to the specified
+        /// <a>PermissionSet</a> as a permissions boundary.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutPermissionsBoundaryToPermissionSet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutPermissionsBoundaryToPermissionSet service method, as returned by SSOAdmin.</returns>
+        /// <exception cref="Amazon.SSOAdmin.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.SSOAdmin.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/PutPermissionsBoundaryToPermissionSet">REST API Reference for PutPermissionsBoundaryToPermissionSet Operation</seealso>
+        Task<PutPermissionsBoundaryToPermissionSetResponse> PutPermissionsBoundaryToPermissionSetAsync(PutPermissionsBoundaryToPermissionSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

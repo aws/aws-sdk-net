@@ -43,7 +43,7 @@ namespace Amazon.SSOAdmin.Model
         /// The identifier that is used to track the request operation progress.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=36, Max=36)]
         public string AccountAssignmentCreationRequestId
         {
             get { return this._accountAssignmentCreationRequestId; }

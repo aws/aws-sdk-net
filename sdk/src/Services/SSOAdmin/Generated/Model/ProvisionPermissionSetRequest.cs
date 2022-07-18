@@ -87,6 +87,7 @@ namespace Amazon.SSOAdmin.Model
         /// (For example, 123456789012).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=12, Max=12)]
         public string TargetId
         {
             get { return this._targetId; }

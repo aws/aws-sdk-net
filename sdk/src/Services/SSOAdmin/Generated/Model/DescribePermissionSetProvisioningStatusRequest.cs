@@ -66,7 +66,7 @@ namespace Amazon.SSOAdmin.Model
         /// the current status of the provisioning workflow.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=36, Max=36)]
         public string ProvisionPermissionSetRequestId
         {
             get { return this._provisionPermissionSetRequestId; }

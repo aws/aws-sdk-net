@@ -47,6 +47,7 @@ namespace Amazon.SSOAdmin.Model
         /// The identifier of the Amazon Web Services account from which to list the assignments.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=12, Max=12)]
         public string AccountId
         {
             get { return this._accountId; }
@@ -124,6 +125,7 @@ namespace Amazon.SSOAdmin.Model
         /// unique identifier (UUID) workflow.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=36, Max=36)]
         public string RequestId
         {
             get { return this._requestId; }

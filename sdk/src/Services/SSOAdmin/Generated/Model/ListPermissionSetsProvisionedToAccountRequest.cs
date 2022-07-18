@@ -47,7 +47,7 @@ namespace Amazon.SSOAdmin.Model
         /// The identifier of the Amazon Web Services account from which to list the assignments.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=12, Max=12)]
         public string AccountId
         {
             get { return this._accountId; }

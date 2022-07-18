@@ -30,7 +30,8 @@ namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
     /// Container for the parameters to the ListManagedPoliciesInPermissionSet operation.
-    /// Lists the IAM managed policy that is attached to a specified permission set.
+    /// Lists the Amazon Web Services managed IAM policy that is attached to a specified permission
+    /// set.
     /// </summary>
     public partial class ListManagedPoliciesInPermissionSetRequest : AmazonSSOAdminRequest
     {
