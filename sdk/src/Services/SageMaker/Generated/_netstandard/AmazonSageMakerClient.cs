@@ -1066,6 +1066,83 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  CreateEdgeDeploymentPlan
+
+        internal virtual CreateEdgeDeploymentPlanResponse CreateEdgeDeploymentPlan(CreateEdgeDeploymentPlanRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEdgeDeploymentPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEdgeDeploymentPlanResponseUnmarshaller.Instance;
+
+            return Invoke<CreateEdgeDeploymentPlanResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an edge deployment plan, consisting of multiple stages. Each stage may have
+        /// a different deployment configuration and devices.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEdgeDeploymentPlan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateEdgeDeploymentPlan service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEdgeDeploymentPlan">REST API Reference for CreateEdgeDeploymentPlan Operation</seealso>
+        public virtual Task<CreateEdgeDeploymentPlanResponse> CreateEdgeDeploymentPlanAsync(CreateEdgeDeploymentPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEdgeDeploymentPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEdgeDeploymentPlanResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateEdgeDeploymentPlanResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateEdgeDeploymentStage
+
+        internal virtual CreateEdgeDeploymentStageResponse CreateEdgeDeploymentStage(CreateEdgeDeploymentStageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEdgeDeploymentStageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEdgeDeploymentStageResponseUnmarshaller.Instance;
+
+            return Invoke<CreateEdgeDeploymentStageResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new stage in an existing edge deployment plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEdgeDeploymentStage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateEdgeDeploymentStage service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEdgeDeploymentStage">REST API Reference for CreateEdgeDeploymentStage Operation</seealso>
+        public virtual Task<CreateEdgeDeploymentStageResponse> CreateEdgeDeploymentStageAsync(CreateEdgeDeploymentStageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEdgeDeploymentStageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEdgeDeploymentStageResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateEdgeDeploymentStageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateEdgePackagingJob
 
         internal virtual CreateEdgePackagingJobResponse CreateEdgePackagingJob(CreateEdgePackagingJobRequest request)
@@ -3491,6 +3568,81 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DeleteEdgeDeploymentPlan
+
+        internal virtual DeleteEdgeDeploymentPlanResponse DeleteEdgeDeploymentPlan(DeleteEdgeDeploymentPlanRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEdgeDeploymentPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEdgeDeploymentPlanResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEdgeDeploymentPlanResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an edge deployment plan if (and only if) all the stages in the plan are inactive
+        /// or there are no stages in the plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEdgeDeploymentPlan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteEdgeDeploymentPlan service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteEdgeDeploymentPlan">REST API Reference for DeleteEdgeDeploymentPlan Operation</seealso>
+        public virtual Task<DeleteEdgeDeploymentPlanResponse> DeleteEdgeDeploymentPlanAsync(DeleteEdgeDeploymentPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEdgeDeploymentPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEdgeDeploymentPlanResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteEdgeDeploymentPlanResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteEdgeDeploymentStage
+
+        internal virtual DeleteEdgeDeploymentStageResponse DeleteEdgeDeploymentStage(DeleteEdgeDeploymentStageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEdgeDeploymentStageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEdgeDeploymentStageResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEdgeDeploymentStageResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Delete a stage in an edge deployment plan if (and only if) the stage is inactive.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEdgeDeploymentStage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteEdgeDeploymentStage service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteEdgeDeploymentStage">REST API Reference for DeleteEdgeDeploymentStage Operation</seealso>
+        public virtual Task<DeleteEdgeDeploymentStageResponse> DeleteEdgeDeploymentStageAsync(DeleteEdgeDeploymentStageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEdgeDeploymentStageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEdgeDeploymentStageResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteEdgeDeploymentStageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteEndpoint
 
         internal virtual DeleteEndpointResponse DeleteEndpoint(DeleteEndpointRequest request)
@@ -5105,6 +5257,43 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = DescribeDomainResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeDomainResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeEdgeDeploymentPlan
+
+        internal virtual DescribeEdgeDeploymentPlanResponse DescribeEdgeDeploymentPlan(DescribeEdgeDeploymentPlanRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEdgeDeploymentPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEdgeDeploymentPlanResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEdgeDeploymentPlanResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes an edge deployment plan with deployment status per stage.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEdgeDeploymentPlan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeEdgeDeploymentPlan service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeEdgeDeploymentPlan">REST API Reference for DescribeEdgeDeploymentPlan Operation</seealso>
+        public virtual Task<DescribeEdgeDeploymentPlanResponse> DescribeEdgeDeploymentPlanAsync(DescribeEdgeDeploymentPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEdgeDeploymentPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEdgeDeploymentPlanResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeEdgeDeploymentPlanResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7315,6 +7504,40 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListEdgeDeploymentPlans
+
+        internal virtual ListEdgeDeploymentPlansResponse ListEdgeDeploymentPlans(ListEdgeDeploymentPlansRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEdgeDeploymentPlansRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEdgeDeploymentPlansResponseUnmarshaller.Instance;
+
+            return Invoke<ListEdgeDeploymentPlansResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all edge deployment plans.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEdgeDeploymentPlans service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListEdgeDeploymentPlans service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListEdgeDeploymentPlans">REST API Reference for ListEdgeDeploymentPlans Operation</seealso>
+        public virtual Task<ListEdgeDeploymentPlansResponse> ListEdgeDeploymentPlansAsync(ListEdgeDeploymentPlansRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEdgeDeploymentPlansRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEdgeDeploymentPlansResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListEdgeDeploymentPlansResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListEdgePackagingJobs
 
         internal virtual ListEdgePackagingJobsResponse ListEdgePackagingJobs(ListEdgePackagingJobsRequest request)
@@ -8394,6 +8617,41 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListStageDevices
+
+        internal virtual ListStageDevicesResponse ListStageDevices(ListStageDevicesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStageDevicesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStageDevicesResponseUnmarshaller.Instance;
+
+            return Invoke<ListStageDevicesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists devices allocated to the stage, containing detailed device information and deployment
+        /// status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStageDevices service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListStageDevices service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListStageDevices">REST API Reference for ListStageDevices Operation</seealso>
+        public virtual Task<ListStageDevicesResponse> ListStageDevicesAsync(ListStageDevicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStageDevicesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStageDevicesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListStageDevicesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListStudioLifecycleConfigs
 
         internal virtual ListStudioLifecycleConfigsResponse ListStudioLifecycleConfigs(ListStudioLifecycleConfigsRequest request)
@@ -9163,6 +9421,40 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  StartEdgeDeploymentStage
+
+        internal virtual StartEdgeDeploymentStageResponse StartEdgeDeploymentStage(StartEdgeDeploymentStageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartEdgeDeploymentStageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartEdgeDeploymentStageResponseUnmarshaller.Instance;
+
+            return Invoke<StartEdgeDeploymentStageResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts a stage in an edge deployment plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartEdgeDeploymentStage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartEdgeDeploymentStage service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartEdgeDeploymentStage">REST API Reference for StartEdgeDeploymentStage Operation</seealso>
+        public virtual Task<StartEdgeDeploymentStageResponse> StartEdgeDeploymentStageAsync(StartEdgeDeploymentStageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartEdgeDeploymentStageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartEdgeDeploymentStageResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartEdgeDeploymentStageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartMonitoringSchedule
 
         internal virtual StartMonitoringScheduleResponse StartMonitoringSchedule(StartMonitoringScheduleRequest request)
@@ -9372,6 +9664,40 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = StopCompilationJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopCompilationJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopEdgeDeploymentStage
+
+        internal virtual StopEdgeDeploymentStageResponse StopEdgeDeploymentStage(StopEdgeDeploymentStageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopEdgeDeploymentStageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopEdgeDeploymentStageResponseUnmarshaller.Instance;
+
+            return Invoke<StopEdgeDeploymentStageResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Stops a stage in an edge deployment plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopEdgeDeploymentStage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopEdgeDeploymentStage service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopEdgeDeploymentStage">REST API Reference for StopEdgeDeploymentStage Operation</seealso>
+        public virtual Task<StopEdgeDeploymentStageResponse> StopEdgeDeploymentStageAsync(StopEdgeDeploymentStageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopEdgeDeploymentStageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopEdgeDeploymentStageResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopEdgeDeploymentStageResponse>(request, options, cancellationToken);
         }
 
         #endregion

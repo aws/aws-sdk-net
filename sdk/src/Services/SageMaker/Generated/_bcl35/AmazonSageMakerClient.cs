@@ -1383,6 +1383,123 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  CreateEdgeDeploymentPlan
+
+        /// <summary>
+        /// Creates an edge deployment plan, consisting of multiple stages. Each stage may have
+        /// a different deployment configuration and devices.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEdgeDeploymentPlan service method.</param>
+        /// 
+        /// <returns>The response from the CreateEdgeDeploymentPlan service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEdgeDeploymentPlan">REST API Reference for CreateEdgeDeploymentPlan Operation</seealso>
+        public virtual CreateEdgeDeploymentPlanResponse CreateEdgeDeploymentPlan(CreateEdgeDeploymentPlanRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEdgeDeploymentPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEdgeDeploymentPlanResponseUnmarshaller.Instance;
+
+            return Invoke<CreateEdgeDeploymentPlanResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateEdgeDeploymentPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateEdgeDeploymentPlan operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateEdgeDeploymentPlan
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEdgeDeploymentPlan">REST API Reference for CreateEdgeDeploymentPlan Operation</seealso>
+        public virtual IAsyncResult BeginCreateEdgeDeploymentPlan(CreateEdgeDeploymentPlanRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEdgeDeploymentPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEdgeDeploymentPlanResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateEdgeDeploymentPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateEdgeDeploymentPlan.</param>
+        /// 
+        /// <returns>Returns a  CreateEdgeDeploymentPlanResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEdgeDeploymentPlan">REST API Reference for CreateEdgeDeploymentPlan Operation</seealso>
+        public virtual CreateEdgeDeploymentPlanResponse EndCreateEdgeDeploymentPlan(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateEdgeDeploymentPlanResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateEdgeDeploymentStage
+
+        /// <summary>
+        /// Creates a new stage in an existing edge deployment plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEdgeDeploymentStage service method.</param>
+        /// 
+        /// <returns>The response from the CreateEdgeDeploymentStage service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEdgeDeploymentStage">REST API Reference for CreateEdgeDeploymentStage Operation</seealso>
+        public virtual CreateEdgeDeploymentStageResponse CreateEdgeDeploymentStage(CreateEdgeDeploymentStageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEdgeDeploymentStageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEdgeDeploymentStageResponseUnmarshaller.Instance;
+
+            return Invoke<CreateEdgeDeploymentStageResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateEdgeDeploymentStage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateEdgeDeploymentStage operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateEdgeDeploymentStage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEdgeDeploymentStage">REST API Reference for CreateEdgeDeploymentStage Operation</seealso>
+        public virtual IAsyncResult BeginCreateEdgeDeploymentStage(CreateEdgeDeploymentStageRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEdgeDeploymentStageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEdgeDeploymentStageResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateEdgeDeploymentStage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateEdgeDeploymentStage.</param>
+        /// 
+        /// <returns>Returns a  CreateEdgeDeploymentStageResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEdgeDeploymentStage">REST API Reference for CreateEdgeDeploymentStage Operation</seealso>
+        public virtual CreateEdgeDeploymentStageResponse EndCreateEdgeDeploymentStage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateEdgeDeploymentStageResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateEdgePackagingJob
 
         /// <summary>
@@ -4708,6 +4825,121 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DeleteEdgeDeploymentPlan
+
+        /// <summary>
+        /// Deletes an edge deployment plan if (and only if) all the stages in the plan are inactive
+        /// or there are no stages in the plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEdgeDeploymentPlan service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEdgeDeploymentPlan service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteEdgeDeploymentPlan">REST API Reference for DeleteEdgeDeploymentPlan Operation</seealso>
+        public virtual DeleteEdgeDeploymentPlanResponse DeleteEdgeDeploymentPlan(DeleteEdgeDeploymentPlanRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEdgeDeploymentPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEdgeDeploymentPlanResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEdgeDeploymentPlanResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEdgeDeploymentPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEdgeDeploymentPlan operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEdgeDeploymentPlan
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteEdgeDeploymentPlan">REST API Reference for DeleteEdgeDeploymentPlan Operation</seealso>
+        public virtual IAsyncResult BeginDeleteEdgeDeploymentPlan(DeleteEdgeDeploymentPlanRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEdgeDeploymentPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEdgeDeploymentPlanResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteEdgeDeploymentPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEdgeDeploymentPlan.</param>
+        /// 
+        /// <returns>Returns a  DeleteEdgeDeploymentPlanResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteEdgeDeploymentPlan">REST API Reference for DeleteEdgeDeploymentPlan Operation</seealso>
+        public virtual DeleteEdgeDeploymentPlanResponse EndDeleteEdgeDeploymentPlan(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteEdgeDeploymentPlanResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteEdgeDeploymentStage
+
+        /// <summary>
+        /// Delete a stage in an edge deployment plan if (and only if) the stage is inactive.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEdgeDeploymentStage service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEdgeDeploymentStage service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteEdgeDeploymentStage">REST API Reference for DeleteEdgeDeploymentStage Operation</seealso>
+        public virtual DeleteEdgeDeploymentStageResponse DeleteEdgeDeploymentStage(DeleteEdgeDeploymentStageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEdgeDeploymentStageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEdgeDeploymentStageResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEdgeDeploymentStageResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEdgeDeploymentStage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEdgeDeploymentStage operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEdgeDeploymentStage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteEdgeDeploymentStage">REST API Reference for DeleteEdgeDeploymentStage Operation</seealso>
+        public virtual IAsyncResult BeginDeleteEdgeDeploymentStage(DeleteEdgeDeploymentStageRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEdgeDeploymentStageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEdgeDeploymentStageResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteEdgeDeploymentStage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEdgeDeploymentStage.</param>
+        /// 
+        /// <returns>Returns a  DeleteEdgeDeploymentStageResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteEdgeDeploymentStage">REST API Reference for DeleteEdgeDeploymentStage Operation</seealso>
+        public virtual DeleteEdgeDeploymentStageResponse EndDeleteEdgeDeploymentStage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteEdgeDeploymentStageResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteEndpoint
 
         /// <summary>
@@ -7142,6 +7374,63 @@ namespace Amazon.SageMaker
         public virtual DescribeDomainResponse EndDescribeDomain(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeDomainResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeEdgeDeploymentPlan
+
+        /// <summary>
+        /// Describes an edge deployment plan with deployment status per stage.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEdgeDeploymentPlan service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEdgeDeploymentPlan service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeEdgeDeploymentPlan">REST API Reference for DescribeEdgeDeploymentPlan Operation</seealso>
+        public virtual DescribeEdgeDeploymentPlanResponse DescribeEdgeDeploymentPlan(DescribeEdgeDeploymentPlanRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEdgeDeploymentPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEdgeDeploymentPlanResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEdgeDeploymentPlanResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEdgeDeploymentPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEdgeDeploymentPlan operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEdgeDeploymentPlan
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeEdgeDeploymentPlan">REST API Reference for DescribeEdgeDeploymentPlan Operation</seealso>
+        public virtual IAsyncResult BeginDescribeEdgeDeploymentPlan(DescribeEdgeDeploymentPlanRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEdgeDeploymentPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEdgeDeploymentPlanResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeEdgeDeploymentPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEdgeDeploymentPlan.</param>
+        /// 
+        /// <returns>Returns a  DescribeEdgeDeploymentPlanResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeEdgeDeploymentPlan">REST API Reference for DescribeEdgeDeploymentPlan Operation</seealso>
+        public virtual DescribeEdgeDeploymentPlanResponse EndDescribeEdgeDeploymentPlan(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeEdgeDeploymentPlanResponse>(asyncResult);
         }
 
         #endregion
@@ -10552,6 +10841,60 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListEdgeDeploymentPlans
+
+        /// <summary>
+        /// Lists all edge deployment plans.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEdgeDeploymentPlans service method.</param>
+        /// 
+        /// <returns>The response from the ListEdgeDeploymentPlans service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListEdgeDeploymentPlans">REST API Reference for ListEdgeDeploymentPlans Operation</seealso>
+        public virtual ListEdgeDeploymentPlansResponse ListEdgeDeploymentPlans(ListEdgeDeploymentPlansRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEdgeDeploymentPlansRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEdgeDeploymentPlansResponseUnmarshaller.Instance;
+
+            return Invoke<ListEdgeDeploymentPlansResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListEdgeDeploymentPlans operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListEdgeDeploymentPlans operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListEdgeDeploymentPlans
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListEdgeDeploymentPlans">REST API Reference for ListEdgeDeploymentPlans Operation</seealso>
+        public virtual IAsyncResult BeginListEdgeDeploymentPlans(ListEdgeDeploymentPlansRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEdgeDeploymentPlansRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEdgeDeploymentPlansResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListEdgeDeploymentPlans operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListEdgeDeploymentPlans.</param>
+        /// 
+        /// <returns>Returns a  ListEdgeDeploymentPlansResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListEdgeDeploymentPlans">REST API Reference for ListEdgeDeploymentPlans Operation</seealso>
+        public virtual ListEdgeDeploymentPlansResponse EndListEdgeDeploymentPlans(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListEdgeDeploymentPlansResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListEdgePackagingJobs
 
         /// <summary>
@@ -12251,6 +12594,61 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListStageDevices
+
+        /// <summary>
+        /// Lists devices allocated to the stage, containing detailed device information and deployment
+        /// status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStageDevices service method.</param>
+        /// 
+        /// <returns>The response from the ListStageDevices service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListStageDevices">REST API Reference for ListStageDevices Operation</seealso>
+        public virtual ListStageDevicesResponse ListStageDevices(ListStageDevicesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStageDevicesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStageDevicesResponseUnmarshaller.Instance;
+
+            return Invoke<ListStageDevicesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListStageDevices operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListStageDevices operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListStageDevices
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListStageDevices">REST API Reference for ListStageDevices Operation</seealso>
+        public virtual IAsyncResult BeginListStageDevices(ListStageDevicesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStageDevicesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStageDevicesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListStageDevices operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListStageDevices.</param>
+        /// 
+        /// <returns>Returns a  ListStageDevicesResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListStageDevices">REST API Reference for ListStageDevices Operation</seealso>
+        public virtual ListStageDevicesResponse EndListStageDevices(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListStageDevicesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListStudioLifecycleConfigs
 
         /// <summary>
@@ -13400,6 +13798,60 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  StartEdgeDeploymentStage
+
+        /// <summary>
+        /// Starts a stage in an edge deployment plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartEdgeDeploymentStage service method.</param>
+        /// 
+        /// <returns>The response from the StartEdgeDeploymentStage service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartEdgeDeploymentStage">REST API Reference for StartEdgeDeploymentStage Operation</seealso>
+        public virtual StartEdgeDeploymentStageResponse StartEdgeDeploymentStage(StartEdgeDeploymentStageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartEdgeDeploymentStageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartEdgeDeploymentStageResponseUnmarshaller.Instance;
+
+            return Invoke<StartEdgeDeploymentStageResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartEdgeDeploymentStage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartEdgeDeploymentStage operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartEdgeDeploymentStage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartEdgeDeploymentStage">REST API Reference for StartEdgeDeploymentStage Operation</seealso>
+        public virtual IAsyncResult BeginStartEdgeDeploymentStage(StartEdgeDeploymentStageRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartEdgeDeploymentStageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartEdgeDeploymentStageResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartEdgeDeploymentStage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartEdgeDeploymentStage.</param>
+        /// 
+        /// <returns>Returns a  StartEdgeDeploymentStageResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartEdgeDeploymentStage">REST API Reference for StartEdgeDeploymentStage Operation</seealso>
+        public virtual StartEdgeDeploymentStageResponse EndStartEdgeDeploymentStage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartEdgeDeploymentStageResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartMonitoringSchedule
 
         /// <summary>
@@ -13709,6 +14161,60 @@ namespace Amazon.SageMaker
         public virtual StopCompilationJobResponse EndStopCompilationJob(IAsyncResult asyncResult)
         {
             return EndInvoke<StopCompilationJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StopEdgeDeploymentStage
+
+        /// <summary>
+        /// Stops a stage in an edge deployment plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopEdgeDeploymentStage service method.</param>
+        /// 
+        /// <returns>The response from the StopEdgeDeploymentStage service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopEdgeDeploymentStage">REST API Reference for StopEdgeDeploymentStage Operation</seealso>
+        public virtual StopEdgeDeploymentStageResponse StopEdgeDeploymentStage(StopEdgeDeploymentStageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopEdgeDeploymentStageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopEdgeDeploymentStageResponseUnmarshaller.Instance;
+
+            return Invoke<StopEdgeDeploymentStageResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopEdgeDeploymentStage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopEdgeDeploymentStage operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopEdgeDeploymentStage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopEdgeDeploymentStage">REST API Reference for StopEdgeDeploymentStage Operation</seealso>
+        public virtual IAsyncResult BeginStopEdgeDeploymentStage(StopEdgeDeploymentStageRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopEdgeDeploymentStageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopEdgeDeploymentStageResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopEdgeDeploymentStage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopEdgeDeploymentStage.</param>
+        /// 
+        /// <returns>Returns a  StopEdgeDeploymentStageResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopEdgeDeploymentStage">REST API Reference for StopEdgeDeploymentStage Operation</seealso>
+        public virtual StopEdgeDeploymentStageResponse EndStopEdgeDeploymentStage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopEdgeDeploymentStageResponse>(asyncResult);
         }
 
         #endregion

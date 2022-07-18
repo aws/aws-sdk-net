@@ -1002,6 +1002,80 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  CreateEdgeDeploymentPlan
+
+
+        /// <summary>
+        /// Creates an edge deployment plan, consisting of multiple stages. Each stage may have
+        /// a different deployment configuration and devices.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEdgeDeploymentPlan service method.</param>
+        /// 
+        /// <returns>The response from the CreateEdgeDeploymentPlan service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEdgeDeploymentPlan">REST API Reference for CreateEdgeDeploymentPlan Operation</seealso>
+        CreateEdgeDeploymentPlanResponse CreateEdgeDeploymentPlan(CreateEdgeDeploymentPlanRequest request);
+
+
+
+        /// <summary>
+        /// Creates an edge deployment plan, consisting of multiple stages. Each stage may have
+        /// a different deployment configuration and devices.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEdgeDeploymentPlan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateEdgeDeploymentPlan service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEdgeDeploymentPlan">REST API Reference for CreateEdgeDeploymentPlan Operation</seealso>
+        Task<CreateEdgeDeploymentPlanResponse> CreateEdgeDeploymentPlanAsync(CreateEdgeDeploymentPlanRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateEdgeDeploymentStage
+
+
+        /// <summary>
+        /// Creates a new stage in an existing edge deployment plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEdgeDeploymentStage service method.</param>
+        /// 
+        /// <returns>The response from the CreateEdgeDeploymentStage service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEdgeDeploymentStage">REST API Reference for CreateEdgeDeploymentStage Operation</seealso>
+        CreateEdgeDeploymentStageResponse CreateEdgeDeploymentStage(CreateEdgeDeploymentStageRequest request);
+
+
+
+        /// <summary>
+        /// Creates a new stage in an existing edge deployment plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEdgeDeploymentStage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateEdgeDeploymentStage service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEdgeDeploymentStage">REST API Reference for CreateEdgeDeploymentStage Operation</seealso>
+        Task<CreateEdgeDeploymentStageResponse> CreateEdgeDeploymentStageAsync(CreateEdgeDeploymentStageRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateEdgePackagingJob
 
 
@@ -4052,6 +4126,76 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DeleteEdgeDeploymentPlan
+
+
+        /// <summary>
+        /// Deletes an edge deployment plan if (and only if) all the stages in the plan are inactive
+        /// or there are no stages in the plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEdgeDeploymentPlan service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEdgeDeploymentPlan service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteEdgeDeploymentPlan">REST API Reference for DeleteEdgeDeploymentPlan Operation</seealso>
+        DeleteEdgeDeploymentPlanResponse DeleteEdgeDeploymentPlan(DeleteEdgeDeploymentPlanRequest request);
+
+
+
+        /// <summary>
+        /// Deletes an edge deployment plan if (and only if) all the stages in the plan are inactive
+        /// or there are no stages in the plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEdgeDeploymentPlan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteEdgeDeploymentPlan service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteEdgeDeploymentPlan">REST API Reference for DeleteEdgeDeploymentPlan Operation</seealso>
+        Task<DeleteEdgeDeploymentPlanResponse> DeleteEdgeDeploymentPlanAsync(DeleteEdgeDeploymentPlanRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteEdgeDeploymentStage
+
+
+        /// <summary>
+        /// Delete a stage in an edge deployment plan if (and only if) the stage is inactive.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEdgeDeploymentStage service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEdgeDeploymentStage service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteEdgeDeploymentStage">REST API Reference for DeleteEdgeDeploymentStage Operation</seealso>
+        DeleteEdgeDeploymentStageResponse DeleteEdgeDeploymentStage(DeleteEdgeDeploymentStageRequest request);
+
+
+
+        /// <summary>
+        /// Delete a stage in an edge deployment plan if (and only if) the stage is inactive.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEdgeDeploymentStage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteEdgeDeploymentStage service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteEdgeDeploymentStage">REST API Reference for DeleteEdgeDeploymentStage Operation</seealso>
+        Task<DeleteEdgeDeploymentStageResponse> DeleteEdgeDeploymentStageAsync(DeleteEdgeDeploymentStageRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteEndpoint
 
 
@@ -5645,6 +5789,40 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeDomain">REST API Reference for DescribeDomain Operation</seealso>
         Task<DescribeDomainResponse> DescribeDomainAsync(DescribeDomainRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeEdgeDeploymentPlan
+
+
+        /// <summary>
+        /// Describes an edge deployment plan with deployment status per stage.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEdgeDeploymentPlan service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEdgeDeploymentPlan service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeEdgeDeploymentPlan">REST API Reference for DescribeEdgeDeploymentPlan Operation</seealso>
+        DescribeEdgeDeploymentPlanResponse DescribeEdgeDeploymentPlan(DescribeEdgeDeploymentPlanRequest request);
+
+
+
+        /// <summary>
+        /// Describes an edge deployment plan with deployment status per stage.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEdgeDeploymentPlan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeEdgeDeploymentPlan service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeEdgeDeploymentPlan">REST API Reference for DescribeEdgeDeploymentPlan Operation</seealso>
+        Task<DescribeEdgeDeploymentPlanResponse> DescribeEdgeDeploymentPlanAsync(DescribeEdgeDeploymentPlanRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -7660,6 +7838,34 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListEdgeDeploymentPlans
+
+
+        /// <summary>
+        /// Lists all edge deployment plans.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEdgeDeploymentPlans service method.</param>
+        /// 
+        /// <returns>The response from the ListEdgeDeploymentPlans service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListEdgeDeploymentPlans">REST API Reference for ListEdgeDeploymentPlans Operation</seealso>
+        ListEdgeDeploymentPlansResponse ListEdgeDeploymentPlans(ListEdgeDeploymentPlansRequest request);
+
+
+
+        /// <summary>
+        /// Lists all edge deployment plans.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEdgeDeploymentPlans service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListEdgeDeploymentPlans service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListEdgeDeploymentPlans">REST API Reference for ListEdgeDeploymentPlans Operation</seealso>
+        Task<ListEdgeDeploymentPlansResponse> ListEdgeDeploymentPlansAsync(ListEdgeDeploymentPlansRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListEdgePackagingJobs
 
 
@@ -8578,6 +8784,36 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListStageDevices
+
+
+        /// <summary>
+        /// Lists devices allocated to the stage, containing detailed device information and deployment
+        /// status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStageDevices service method.</param>
+        /// 
+        /// <returns>The response from the ListStageDevices service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListStageDevices">REST API Reference for ListStageDevices Operation</seealso>
+        ListStageDevicesResponse ListStageDevices(ListStageDevicesRequest request);
+
+
+
+        /// <summary>
+        /// Lists devices allocated to the stage, containing detailed device information and deployment
+        /// status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStageDevices service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListStageDevices service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListStageDevices">REST API Reference for ListStageDevices Operation</seealso>
+        Task<ListStageDevicesResponse> ListStageDevicesAsync(ListStageDevicesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListStudioLifecycleConfigs
 
 
@@ -9356,6 +9592,34 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  StartEdgeDeploymentStage
+
+
+        /// <summary>
+        /// Starts a stage in an edge deployment plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartEdgeDeploymentStage service method.</param>
+        /// 
+        /// <returns>The response from the StartEdgeDeploymentStage service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartEdgeDeploymentStage">REST API Reference for StartEdgeDeploymentStage Operation</seealso>
+        StartEdgeDeploymentStageResponse StartEdgeDeploymentStage(StartEdgeDeploymentStageRequest request);
+
+
+
+        /// <summary>
+        /// Starts a stage in an edge deployment plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartEdgeDeploymentStage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartEdgeDeploymentStage service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartEdgeDeploymentStage">REST API Reference for StartEdgeDeploymentStage Operation</seealso>
+        Task<StartEdgeDeploymentStageResponse> StartEdgeDeploymentStageAsync(StartEdgeDeploymentStageRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  StartMonitoringSchedule
 
 
@@ -9579,6 +9843,34 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopCompilationJob">REST API Reference for StopCompilationJob Operation</seealso>
         Task<StopCompilationJobResponse> StopCompilationJobAsync(StopCompilationJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StopEdgeDeploymentStage
+
+
+        /// <summary>
+        /// Stops a stage in an edge deployment plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopEdgeDeploymentStage service method.</param>
+        /// 
+        /// <returns>The response from the StopEdgeDeploymentStage service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopEdgeDeploymentStage">REST API Reference for StopEdgeDeploymentStage Operation</seealso>
+        StopEdgeDeploymentStageResponse StopEdgeDeploymentStage(StopEdgeDeploymentStageRequest request);
+
+
+
+        /// <summary>
+        /// Stops a stage in an edge deployment plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopEdgeDeploymentStage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopEdgeDeploymentStage service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopEdgeDeploymentStage">REST API Reference for StopEdgeDeploymentStage Operation</seealso>
+        Task<StopEdgeDeploymentStageResponse> StopEdgeDeploymentStageAsync(StopEdgeDeploymentStageRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

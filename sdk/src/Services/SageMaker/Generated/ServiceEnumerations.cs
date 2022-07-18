@@ -2721,6 +2721,126 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type DeviceDeploymentStatus.
+    /// </summary>
+    public class DeviceDeploymentStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEPLOYED for DeviceDeploymentStatus
+        /// </summary>
+        public static readonly DeviceDeploymentStatus DEPLOYED = new DeviceDeploymentStatus("DEPLOYED");
+        /// <summary>
+        /// Constant FAILED for DeviceDeploymentStatus
+        /// </summary>
+        public static readonly DeviceDeploymentStatus FAILED = new DeviceDeploymentStatus("FAILED");
+        /// <summary>
+        /// Constant INPROGRESS for DeviceDeploymentStatus
+        /// </summary>
+        public static readonly DeviceDeploymentStatus INPROGRESS = new DeviceDeploymentStatus("INPROGRESS");
+        /// <summary>
+        /// Constant READYTODEPLOY for DeviceDeploymentStatus
+        /// </summary>
+        public static readonly DeviceDeploymentStatus READYTODEPLOY = new DeviceDeploymentStatus("READYTODEPLOY");
+        /// <summary>
+        /// Constant STOPPED for DeviceDeploymentStatus
+        /// </summary>
+        public static readonly DeviceDeploymentStatus STOPPED = new DeviceDeploymentStatus("STOPPED");
+        /// <summary>
+        /// Constant STOPPING for DeviceDeploymentStatus
+        /// </summary>
+        public static readonly DeviceDeploymentStatus STOPPING = new DeviceDeploymentStatus("STOPPING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeviceDeploymentStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeviceDeploymentStatus FindValue(string value)
+        {
+            return FindValue<DeviceDeploymentStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeviceDeploymentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DeviceSubsetType.
+    /// </summary>
+    public class DeviceSubsetType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NAMECONTAINS for DeviceSubsetType
+        /// </summary>
+        public static readonly DeviceSubsetType NAMECONTAINS = new DeviceSubsetType("NAMECONTAINS");
+        /// <summary>
+        /// Constant PERCENTAGE for DeviceSubsetType
+        /// </summary>
+        public static readonly DeviceSubsetType PERCENTAGE = new DeviceSubsetType("PERCENTAGE");
+        /// <summary>
+        /// Constant SELECTION for DeviceSubsetType
+        /// </summary>
+        public static readonly DeviceSubsetType SELECTION = new DeviceSubsetType("SELECTION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeviceSubsetType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeviceSubsetType FindValue(string value)
+        {
+            return FindValue<DeviceSubsetType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeviceSubsetType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DirectInternetAccess.
     /// </summary>
     public class DirectInternetAccess : ConstantClass
@@ -3298,6 +3418,56 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ExecutionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FailureHandlingPolicy.
+    /// </summary>
+    public class FailureHandlingPolicy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DO_NOTHING for FailureHandlingPolicy
+        /// </summary>
+        public static readonly FailureHandlingPolicy DO_NOTHING = new FailureHandlingPolicy("DO_NOTHING");
+        /// <summary>
+        /// Constant ROLLBACK_ON_FAILURE for FailureHandlingPolicy
+        /// </summary>
+        public static readonly FailureHandlingPolicy ROLLBACK_ON_FAILURE = new FailureHandlingPolicy("ROLLBACK_ON_FAILURE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FailureHandlingPolicy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FailureHandlingPolicy FindValue(string value)
+        {
+            return FindValue<FailureHandlingPolicy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FailureHandlingPolicy(string value)
         {
             return FindValue(value);
         }
@@ -5226,6 +5396,64 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ListDeviceFleetsSortBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ListEdgeDeploymentPlansSortBy.
+    /// </summary>
+    public class ListEdgeDeploymentPlansSortBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATION_TIME for ListEdgeDeploymentPlansSortBy
+        /// </summary>
+        public static readonly ListEdgeDeploymentPlansSortBy CREATION_TIME = new ListEdgeDeploymentPlansSortBy("CREATION_TIME");
+        /// <summary>
+        /// Constant DEVICE_FLEET_NAME for ListEdgeDeploymentPlansSortBy
+        /// </summary>
+        public static readonly ListEdgeDeploymentPlansSortBy DEVICE_FLEET_NAME = new ListEdgeDeploymentPlansSortBy("DEVICE_FLEET_NAME");
+        /// <summary>
+        /// Constant LAST_MODIFIED_TIME for ListEdgeDeploymentPlansSortBy
+        /// </summary>
+        public static readonly ListEdgeDeploymentPlansSortBy LAST_MODIFIED_TIME = new ListEdgeDeploymentPlansSortBy("LAST_MODIFIED_TIME");
+        /// <summary>
+        /// Constant NAME for ListEdgeDeploymentPlansSortBy
+        /// </summary>
+        public static readonly ListEdgeDeploymentPlansSortBy NAME = new ListEdgeDeploymentPlansSortBy("NAME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ListEdgeDeploymentPlansSortBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ListEdgeDeploymentPlansSortBy FindValue(string value)
+        {
+            return FindValue<ListEdgeDeploymentPlansSortBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ListEdgeDeploymentPlansSortBy(string value)
         {
             return FindValue(value);
         }
@@ -10088,6 +10316,80 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SplitType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StageStatus.
+    /// </summary>
+    public class StageStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATING for StageStatus
+        /// </summary>
+        public static readonly StageStatus CREATING = new StageStatus("CREATING");
+        /// <summary>
+        /// Constant DEPLOYED for StageStatus
+        /// </summary>
+        public static readonly StageStatus DEPLOYED = new StageStatus("DEPLOYED");
+        /// <summary>
+        /// Constant FAILED for StageStatus
+        /// </summary>
+        public static readonly StageStatus FAILED = new StageStatus("FAILED");
+        /// <summary>
+        /// Constant INPROGRESS for StageStatus
+        /// </summary>
+        public static readonly StageStatus INPROGRESS = new StageStatus("INPROGRESS");
+        /// <summary>
+        /// Constant READYTODEPLOY for StageStatus
+        /// </summary>
+        public static readonly StageStatus READYTODEPLOY = new StageStatus("READYTODEPLOY");
+        /// <summary>
+        /// Constant STARTING for StageStatus
+        /// </summary>
+        public static readonly StageStatus STARTING = new StageStatus("STARTING");
+        /// <summary>
+        /// Constant STOPPED for StageStatus
+        /// </summary>
+        public static readonly StageStatus STOPPED = new StageStatus("STOPPED");
+        /// <summary>
+        /// Constant STOPPING for StageStatus
+        /// </summary>
+        public static readonly StageStatus STOPPING = new StageStatus("STOPPING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StageStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StageStatus FindValue(string value)
+        {
+            return FindValue<StageStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StageStatus(string value)
         {
             return FindValue(value);
         }

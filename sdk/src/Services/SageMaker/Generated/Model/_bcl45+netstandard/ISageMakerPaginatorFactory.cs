@@ -101,6 +101,11 @@ namespace Amazon.SageMaker.Model
         IListDomainsPaginator ListDomains(ListDomainsRequest request);
 
         /// <summary>
+        /// Paginator for ListEdgeDeploymentPlans operation
+        ///</summary>
+        IListEdgeDeploymentPlansPaginator ListEdgeDeploymentPlans(ListEdgeDeploymentPlansRequest request);
+
+        /// <summary>
         /// Paginator for ListEdgePackagingJobs operation
         ///</summary>
         IListEdgePackagingJobsPaginator ListEdgePackagingJobs(ListEdgePackagingJobsRequest request);
@@ -254,6 +259,11 @@ namespace Amazon.SageMaker.Model
         /// Paginator for ListProjects operation
         ///</summary>
         IListProjectsPaginator ListProjects(ListProjectsRequest request);
+
+        /// <summary>
+        /// Paginator for ListStageDevices operation
+        ///</summary>
+        IListStageDevicesPaginator ListStageDevices(ListStageDevicesRequest request);
 
         /// <summary>
         /// Paginator for ListStudioLifecycleConfigs operation

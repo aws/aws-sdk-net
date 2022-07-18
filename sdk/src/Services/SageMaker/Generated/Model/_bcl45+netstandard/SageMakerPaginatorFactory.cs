@@ -156,6 +156,14 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Paginator for ListEdgeDeploymentPlans operation
+        ///</summary>
+        public IListEdgeDeploymentPlansPaginator ListEdgeDeploymentPlans(ListEdgeDeploymentPlansRequest request) 
+        {
+            return new ListEdgeDeploymentPlansPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListEdgePackagingJobs operation
         ///</summary>
         public IListEdgePackagingJobsPaginator ListEdgePackagingJobs(ListEdgePackagingJobsRequest request) 
@@ -401,6 +409,14 @@ namespace Amazon.SageMaker.Model
         public IListProjectsPaginator ListProjects(ListProjectsRequest request) 
         {
             return new ListProjectsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListStageDevices operation
+        ///</summary>
+        public IListStageDevicesPaginator ListStageDevices(ListStageDevicesRequest request) 
+        {
+            return new ListStageDevicesPaginator(this.client, request);
         }
 
         /// <summary>
