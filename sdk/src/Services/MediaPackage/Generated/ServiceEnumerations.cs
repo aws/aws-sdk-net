@@ -474,6 +474,22 @@ namespace Amazon.MediaPackage
         /// Constant PRESETAUDIO1 for PresetSpeke20Audio
         /// </summary>
         public static readonly PresetSpeke20Audio PRESETAUDIO1 = new PresetSpeke20Audio("PRESET-AUDIO-1");
+        /// <summary>
+        /// Constant PRESETAUDIO2 for PresetSpeke20Audio
+        /// </summary>
+        public static readonly PresetSpeke20Audio PRESETAUDIO2 = new PresetSpeke20Audio("PRESET-AUDIO-2");
+        /// <summary>
+        /// Constant PRESETAUDIO3 for PresetSpeke20Audio
+        /// </summary>
+        public static readonly PresetSpeke20Audio PRESETAUDIO3 = new PresetSpeke20Audio("PRESET-AUDIO-3");
+        /// <summary>
+        /// Constant SHARED for PresetSpeke20Audio
+        /// </summary>
+        public static readonly PresetSpeke20Audio SHARED = new PresetSpeke20Audio("SHARED");
+        /// <summary>
+        /// Constant UNENCRYPTED for PresetSpeke20Audio
+        /// </summary>
+        public static readonly PresetSpeke20Audio UNENCRYPTED = new PresetSpeke20Audio("UNENCRYPTED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -520,6 +536,42 @@ namespace Amazon.MediaPackage
         /// Constant PRESETVIDEO1 for PresetSpeke20Video
         /// </summary>
         public static readonly PresetSpeke20Video PRESETVIDEO1 = new PresetSpeke20Video("PRESET-VIDEO-1");
+        /// <summary>
+        /// Constant PRESETVIDEO2 for PresetSpeke20Video
+        /// </summary>
+        public static readonly PresetSpeke20Video PRESETVIDEO2 = new PresetSpeke20Video("PRESET-VIDEO-2");
+        /// <summary>
+        /// Constant PRESETVIDEO3 for PresetSpeke20Video
+        /// </summary>
+        public static readonly PresetSpeke20Video PRESETVIDEO3 = new PresetSpeke20Video("PRESET-VIDEO-3");
+        /// <summary>
+        /// Constant PRESETVIDEO4 for PresetSpeke20Video
+        /// </summary>
+        public static readonly PresetSpeke20Video PRESETVIDEO4 = new PresetSpeke20Video("PRESET-VIDEO-4");
+        /// <summary>
+        /// Constant PRESETVIDEO5 for PresetSpeke20Video
+        /// </summary>
+        public static readonly PresetSpeke20Video PRESETVIDEO5 = new PresetSpeke20Video("PRESET-VIDEO-5");
+        /// <summary>
+        /// Constant PRESETVIDEO6 for PresetSpeke20Video
+        /// </summary>
+        public static readonly PresetSpeke20Video PRESETVIDEO6 = new PresetSpeke20Video("PRESET-VIDEO-6");
+        /// <summary>
+        /// Constant PRESETVIDEO7 for PresetSpeke20Video
+        /// </summary>
+        public static readonly PresetSpeke20Video PRESETVIDEO7 = new PresetSpeke20Video("PRESET-VIDEO-7");
+        /// <summary>
+        /// Constant PRESETVIDEO8 for PresetSpeke20Video
+        /// </summary>
+        public static readonly PresetSpeke20Video PRESETVIDEO8 = new PresetSpeke20Video("PRESET-VIDEO-8");
+        /// <summary>
+        /// Constant SHARED for PresetSpeke20Video
+        /// </summary>
+        public static readonly PresetSpeke20Video SHARED = new PresetSpeke20Video("SHARED");
+        /// <summary>
+        /// Constant UNENCRYPTED for PresetSpeke20Video
+        /// </summary>
+        public static readonly PresetSpeke20Video UNENCRYPTED = new PresetSpeke20Video("UNENCRYPTED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

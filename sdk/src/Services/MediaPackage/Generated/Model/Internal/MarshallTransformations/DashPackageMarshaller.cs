@@ -73,6 +73,12 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetIncludeIframeOnlyStream())
+            {
+                context.Writer.WritePropertyName("includeIframeOnlyStream");
+                context.Writer.Write(requestObject.IncludeIframeOnlyStream);
+            }
+
             if(requestObject.IsSetManifestLayout())
             {
                 context.Writer.WritePropertyName("manifestLayout");

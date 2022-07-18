@@ -82,6 +82,12 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                     unmarshalledObject.Encryption = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("includeIframeOnlyStream", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IncludeIframeOnlyStream = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("manifestLayout", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
