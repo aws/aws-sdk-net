@@ -53,7 +53,8 @@ namespace Amazon.KeyManagementService.Model
     /// To create a symmetric encryption KMS key, you aren't required to specify any parameters.
     /// The default value for <code>KeySpec</code>, <code>SYMMETRIC_DEFAULT</code>, and the
     /// default value for <code>KeyUsage</code>, <code>ENCRYPT_DECRYPT</code>, create a symmetric
-    /// encryption KMS key.
+    /// encryption KMS key. For technical details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-symmetric-default">
+    /// SYMMETRIC_DEFAULT key spec</a> in the <i>Key Management Service Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -77,13 +78,13 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  
     /// <para>
-    /// Asymmetric KMS keys contain an RSA key pair or an Elliptic Curve (ECC) key pair. The
-    /// private key in an asymmetric KMS key never leaves KMS unencrypted. However, you can
-    /// use the <a>GetPublicKey</a> operation to download the public key so it can be used
-    /// outside of KMS. KMS keys with RSA key pairs can be used to encrypt or decrypt data
-    /// or sign and verify messages (but not both). KMS keys with ECC key pairs can be used
-    /// only to sign and verify messages. For information about asymmetric KMS keys, see <a
-    /// href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
+    /// Asymmetric KMS keys contain an RSA key pair, Elliptic Curve (ECC) key pair, or an
+    /// SM2 key pair (China Regions only). The private key in an asymmetric KMS key never
+    /// leaves KMS unencrypted. However, you can use the <a>GetPublicKey</a> operation to
+    /// download the public key so it can be used outside of KMS. KMS keys with RSA or SM2
+    /// key pairs can be used to encrypt or decrypt data or sign and verify messages (but
+    /// not both). KMS keys with ECC key pairs can be used only to sign and verify messages.
+    /// For information about asymmetric KMS keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
     /// KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
     /// </para>
     ///  
@@ -321,8 +322,8 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
-        /// Key Store feature</a> feature in KMS, which combines the convenience and extensive
+        /// This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+        /// key store feature</a> feature in KMS, which combines the convenience and extensive
         /// integration of KMS with the isolation and control of a single-tenant key store.
         /// </para>
         /// </summary>
@@ -371,8 +372,9 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property KeySpec. 
         /// <para>
         /// Specifies the type of KMS key to create. The default value, <code>SYMMETRIC_DEFAULT</code>,
-        /// creates a KMS key with a 256-bit symmetric key for encryption and decryption. For
-        /// help choosing a key spec for your KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-types.html#symm-asymm-choose">Choosing
+        /// creates a KMS key with a 256-bit AES-GCM key that is used for encryption and decryption,
+        /// except in China Regions, where it creates a 128-bit symmetric key that uses SM4 encryption.
+        /// For help choosing a key spec for your KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-types.html#symm-asymm-choose">Choosing
         /// a KMS key type</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
         /// </para>
         ///  
@@ -403,7 +405,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SYMMETRIC_DEFAULT</code> (AES-256-GCM)
+        ///  <code>SYMMETRIC_DEFAULT</code> 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -465,6 +467,14 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         ///  <code>ECC_SECG_P256K1</code> (secp256k1), commonly used for cryptocurrencies.
         /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// SM2 key pairs (China Regions only)
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>SM2</code> 
+        /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
         public KeySpec KeySpec
@@ -508,6 +518,11 @@ namespace Amazon.KeyManagementService.Model
         ///  </li> <li> 
         /// <para>
         /// For asymmetric KMS keys with ECC key material, specify <code>SIGN_VERIFY</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For asymmetric KMS keys with SM2 key material (China Regions only), specify <code>ENCRYPT_DECRYPT</code>
+        /// or <code>SIGN_VERIFY</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -637,30 +652,28 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// A key policy document must conform to the following rules.
+        /// A key policy document can include only the following characters:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Up to 32 kilobytes (32768 bytes)
+        /// Printable ASCII characters from the space character (<code>\u0020</code>) through
+        /// the end of the ASCII character range.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Must be UTF-8 encoded
+        /// Printable characters in the Basic Latin and Latin-1 Supplement character set (through
+        /// <code>\u00FF</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The only Unicode characters that are permitted in a key policy document are the horizontal
-        /// tab (U+0009), linefeed (U+000A), carriage return (U+000D), and characters in the range
-        /// U+0020 to U+00FF.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The <code>Sid</code> element in a key policy statement can include spaces. (Spaces
-        /// are prohibited in the <code>Sid</code> element of an IAM policy document.)
+        /// The tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return
+        /// (<code>\u000D</code>) special characters
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
+        /// For information about key policies, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key
+        /// policies in KMS</a> in the <i>Key Management Service Developer Guide</i>. For help
+        /// writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
         /// JSON Policy Reference</a> in the <i> <i>Identity and Access Management User Guide</i>
         /// </i>.
         /// </para>

@@ -53,7 +53,7 @@ namespace Amazon.KeyManagementService.Model
     ///  
     /// <para>
     /// If you specify an asymmetric KMS key, you must also specify the encryption algorithm.
-    /// The algorithm must be compatible with the KMS key type.
+    /// The algorithm must be compatible with the KMS key spec.
     /// </para>
     ///  <important> 
     /// <para>
@@ -119,7 +119,11 @@ namespace Amazon.KeyManagementService.Model
     /// <para>
     ///  <code>RSAES_OAEP_SHA_256</code>: 446 bytes
     /// </para>
-    ///  </li> </ul> </li> </ul> 
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    ///  <code>SM2PKE</code>: 1024 bytes (China Regions only)
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     /// The KMS key that you use for this operation must be in a compatible key state. For
     /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key

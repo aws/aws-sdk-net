@@ -36,8 +36,8 @@ namespace Amazon.KeyManagementService.Model
     /// 
     ///  
     /// <para>
-    /// This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
-    /// Key Store feature</a> feature in KMS, which combines the convenience and extensive
+    /// This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+    /// key store feature</a> feature in KMS, which combines the convenience and extensive
     /// integration of KMS with the isolation and control of a single-tenant key store.
     /// </para>
     ///  
@@ -112,7 +112,7 @@ namespace Amazon.KeyManagementService.Model
         /// operation.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=19, Max=24)]
+        [AWSProperty(Min=19, Max=24)]
         public string CloudHsmClusterId
         {
             get { return this._cloudHsmClusterId; }
@@ -162,7 +162,7 @@ namespace Amazon.KeyManagementService.Model
         /// the password in the CloudHSM cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=7, Max=32)]
+        [AWSProperty(Min=7, Max=32)]
         public string KeyStorePassword
         {
             get { return this._keyStorePassword; }
@@ -183,7 +183,7 @@ namespace Amazon.KeyManagementService.Model
         /// the cluster</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=5000)]
+        [AWSProperty(Min=1, Max=5000)]
         public string TrustAnchorCertificate
         {
             get { return this._trustAnchorCertificate; }

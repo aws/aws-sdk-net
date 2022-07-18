@@ -34,6 +34,11 @@ namespace Amazon.KeyManagementService.Model
     /// 
     ///  
     /// <para>
+    /// You must use the <code>NumberOfBytes</code> parameter to specify the length of the
+    /// random byte string. There is no default value for string length.
+    /// </para>
+    ///  
+    /// <para>
     /// By default, the random byte string is generated in KMS. To generate the byte string
     /// in the CloudHSM cluster that is associated with a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
     /// key store</a>, specify the custom key store ID.
@@ -51,6 +56,11 @@ namespace Amazon.KeyManagementService.Model
     /// <para>
     /// For more information about entropy and random number generation, see <a href="https://docs.aws.amazon.com/kms/latest/cryptographic-details/">Key
     /// Management Service Cryptographic Details</a>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Cross-account use</b>: Not applicable. <code>GenerateRandom</code> does not use
+    /// any account-specific resources, such as KMS keys.
     /// </para>
     ///  
     /// <para>
@@ -88,7 +98,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property NumberOfBytes. 
         /// <para>
-        /// The length of the byte string.
+        /// The length of the random byte string. This parameter is required.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

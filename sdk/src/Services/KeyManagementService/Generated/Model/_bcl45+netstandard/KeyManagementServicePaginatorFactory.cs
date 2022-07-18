@@ -36,6 +36,14 @@ namespace Amazon.KeyManagementService.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeCustomKeyStores operation
+        ///</summary>
+        public IDescribeCustomKeyStoresPaginator DescribeCustomKeyStores(DescribeCustomKeyStoresRequest request) 
+        {
+            return new DescribeCustomKeyStoresPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAliases operation
         ///</summary>
         public IListAliasesPaginator ListAliases(ListAliasesRequest request) 
@@ -65,6 +73,22 @@ namespace Amazon.KeyManagementService.Model
         public IListKeysPaginator ListKeys(ListKeysRequest request) 
         {
             return new ListKeysPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListResourceTags operation
+        ///</summary>
+        public IListResourceTagsPaginator ListResourceTags(ListResourceTagsRequest request) 
+        {
+            return new ListResourceTagsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListRetirableGrants operation
+        ///</summary>
+        public IListRetirableGrantsPaginator ListRetirableGrants(ListRetirableGrantsRequest request) 
+        {
+            return new ListRetirableGrantsPaginator(this.client, request);
         }
     }
 }

@@ -1314,8 +1314,8 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
-        /// Key Store feature</a> feature in KMS, which combines the convenience and extensive
+        /// This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+        /// key store feature</a> feature in KMS, which combines the convenience and extensive
         /// integration of KMS with the isolation and control of a single-tenant key store.
         /// </para>
         ///  
@@ -1476,8 +1476,8 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
-        /// Key Store feature</a> feature in KMS, which combines the convenience and extensive
+        /// This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+        /// key store feature</a> feature in KMS, which combines the convenience and extensive
         /// integration of KMS with the isolation and control of a single-tenant key store.
         /// </para>
         ///  
@@ -1919,7 +1919,8 @@ namespace Amazon.KeyManagementService
         /// To create a symmetric encryption KMS key, you aren't required to specify any parameters.
         /// The default value for <code>KeySpec</code>, <code>SYMMETRIC_DEFAULT</code>, and the
         /// default value for <code>KeyUsage</code>, <code>ENCRYPT_DECRYPT</code>, create a symmetric
-        /// encryption KMS key.
+        /// encryption KMS key. For technical details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-symmetric-default">
+        /// SYMMETRIC_DEFAULT key spec</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1943,13 +1944,13 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// Asymmetric KMS keys contain an RSA key pair or an Elliptic Curve (ECC) key pair. The
-        /// private key in an asymmetric KMS key never leaves KMS unencrypted. However, you can
-        /// use the <a>GetPublicKey</a> operation to download the public key so it can be used
-        /// outside of KMS. KMS keys with RSA key pairs can be used to encrypt or decrypt data
-        /// or sign and verify messages (but not both). KMS keys with ECC key pairs can be used
-        /// only to sign and verify messages. For information about asymmetric KMS keys, see <a
-        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
+        /// Asymmetric KMS keys contain an RSA key pair, Elliptic Curve (ECC) key pair, or an
+        /// SM2 key pair (China Regions only). The private key in an asymmetric KMS key never
+        /// leaves KMS unencrypted. However, you can use the <a>GetPublicKey</a> operation to
+        /// download the public key so it can be used outside of KMS. KMS keys with RSA or SM2
+        /// key pairs can be used to encrypt or decrypt data or sign and verify messages (but
+        /// not both). KMS keys with ECC key pairs can be used only to sign and verify messages.
+        /// For information about asymmetric KMS keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
         /// KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
@@ -2222,7 +2223,8 @@ namespace Amazon.KeyManagementService
         /// To create a symmetric encryption KMS key, you aren't required to specify any parameters.
         /// The default value for <code>KeySpec</code>, <code>SYMMETRIC_DEFAULT</code>, and the
         /// default value for <code>KeyUsage</code>, <code>ENCRYPT_DECRYPT</code>, create a symmetric
-        /// encryption KMS key.
+        /// encryption KMS key. For technical details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-symmetric-default">
+        /// SYMMETRIC_DEFAULT key spec</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -2246,13 +2248,13 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// Asymmetric KMS keys contain an RSA key pair or an Elliptic Curve (ECC) key pair. The
-        /// private key in an asymmetric KMS key never leaves KMS unencrypted. However, you can
-        /// use the <a>GetPublicKey</a> operation to download the public key so it can be used
-        /// outside of KMS. KMS keys with RSA key pairs can be used to encrypt or decrypt data
-        /// or sign and verify messages (but not both). KMS keys with ECC key pairs can be used
-        /// only to sign and verify messages. For information about asymmetric KMS keys, see <a
-        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
+        /// Asymmetric KMS keys contain an RSA key pair, Elliptic Curve (ECC) key pair, or an
+        /// SM2 key pair (China Regions only). The private key in an asymmetric KMS key never
+        /// leaves KMS unencrypted. However, you can use the <a>GetPublicKey</a> operation to
+        /// download the public key so it can be used outside of KMS. KMS keys with RSA or SM2
+        /// key pairs can be used to encrypt or decrypt data or sign and verify messages (but
+        /// not both). KMS keys with ECC key pairs can be used only to sign and verify messages.
+        /// For information about asymmetric KMS keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
         /// KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
@@ -3277,7 +3279,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// The custom key store that you delete cannot contain any KMS <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#kms_keys">KMS
+        /// The custom key store that you delete cannot contain any <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#kms_keys">KMS
         /// keys</a>. Before deleting the key store, verify that you will never need to use any
         /// of the KMS keys in the key store for any <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
         /// operations</a>. Then, use <a>ScheduleKeyDeletion</a> to delete the KMS keys from the
@@ -3304,8 +3306,8 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
-        /// Key Store feature</a> feature in KMS, which combines the convenience and extensive
+        /// This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+        /// key store feature</a> feature in KMS, which combines the convenience and extensive
         /// integration of KMS with the isolation and control of a single-tenant key store.
         /// </para>
         ///  
@@ -3401,7 +3403,7 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// The custom key store that you delete cannot contain any KMS <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#kms_keys">KMS
+        /// The custom key store that you delete cannot contain any <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#kms_keys">KMS
         /// keys</a>. Before deleting the key store, verify that you will never need to use any
         /// of the KMS keys in the key store for any <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
         /// operations</a>. Then, use <a>ScheduleKeyDeletion</a> to delete the KMS keys from the
@@ -3428,8 +3430,8 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
-        /// Key Store feature</a> feature in KMS, which combines the convenience and extensive
+        /// This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+        /// key store feature</a> feature in KMS, which combines the convenience and extensive
         /// integration of KMS with the isolation and control of a single-tenant key store.
         /// </para>
         ///  
@@ -3702,8 +3704,8 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
-        /// Key Store feature</a> feature in KMS, which combines the convenience and extensive
+        /// This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+        /// key store feature</a> feature in KMS, which combines the convenience and extensive
         /// integration of KMS with the isolation and control of a single-tenant key store.
         /// </para>
         ///  
@@ -3796,8 +3798,8 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
-        /// Key Store feature</a> feature in KMS, which combines the convenience and extensive
+        /// This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+        /// key store feature</a> feature in KMS, which combines the convenience and extensive
         /// integration of KMS with the isolation and control of a single-tenant key store.
         /// </para>
         ///  
@@ -3920,7 +3922,7 @@ namespace Amazon.KeyManagementService
         /// Whether automatic key rotation is enabled on the KMS key. To get this information,
         /// use <a>GetKeyRotationStatus</a>. Also, some key states prevent a KMS key from being
         /// automatically rotated. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#rotate-keys-how-it-works">How
-        /// Automatic Key Rotation Works</a> in <i>Key Management Service Developer Guide</i>.
+        /// Automatic Key Rotation Works</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4034,7 +4036,7 @@ namespace Amazon.KeyManagementService
         /// Whether automatic key rotation is enabled on the KMS key. To get this information,
         /// use <a>GetKeyRotationStatus</a>. Also, some key states prevent a KMS key from being
         /// automatically rotated. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#rotate-keys-how-it-works">How
-        /// Automatic Key Rotation Works</a> in <i>Key Management Service Developer Guide</i>.
+        /// Automatic Key Rotation Works</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4149,7 +4151,7 @@ namespace Amazon.KeyManagementService
         /// Whether automatic key rotation is enabled on the KMS key. To get this information,
         /// use <a>GetKeyRotationStatus</a>. Also, some key states prevent a KMS key from being
         /// automatically rotated. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#rotate-keys-how-it-works">How
-        /// Automatic Key Rotation Works</a> in <i>Key Management Service Developer Guide</i>.
+        /// Automatic Key Rotation Works</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4267,7 +4269,7 @@ namespace Amazon.KeyManagementService
         /// Whether automatic key rotation is enabled on the KMS key. To get this information,
         /// use <a>GetKeyRotationStatus</a>. Also, some key states prevent a KMS key from being
         /// automatically rotated. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#rotate-keys-how-it-works">How
-        /// Automatic Key Rotation Works</a> in <i>Key Management Service Developer Guide</i>.
+        /// Automatic Key Rotation Works</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5037,8 +5039,8 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
-        /// Key Store feature</a> feature in KMS, which combines the convenience and extensive
+        /// This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+        /// key store feature</a> feature in KMS, which combines the convenience and extensive
         /// integration of KMS with the isolation and control of a single-tenant key store.
         /// </para>
         ///  
@@ -5146,8 +5148,8 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
-        /// Key Store feature</a> feature in KMS, which combines the convenience and extensive
+        /// This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+        /// key store feature</a> feature in KMS, which combines the convenience and extensive
         /// integration of KMS with the isolation and control of a single-tenant key store.
         /// </para>
         ///  
@@ -5987,7 +5989,7 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// If you specify an asymmetric KMS key, you must also specify the encryption algorithm.
-        /// The algorithm must be compatible with the KMS key type.
+        /// The algorithm must be compatible with the KMS key spec.
         /// </para>
         ///  <important> 
         /// <para>
@@ -6053,7 +6055,11 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <code>RSAES_OAEP_SHA_256</code>: 446 bytes
         /// </para>
-        ///  </li> </ul> </li> </ul> 
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <code>SM2PKE</code>: 1024 bytes (China Regions only)
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
@@ -6176,7 +6182,7 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// If you specify an asymmetric KMS key, you must also specify the encryption algorithm.
-        /// The algorithm must be compatible with the KMS key type.
+        /// The algorithm must be compatible with the KMS key spec.
         /// </para>
         ///  <important> 
         /// <para>
@@ -6242,7 +6248,11 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <code>RSAES_OAEP_SHA_256</code>: 446 bytes
         /// </para>
-        ///  </li> </ul> </li> </ul> 
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <code>SM2PKE</code>: 1024 bytes (China Regions only)
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// The KMS key that you use for this operation must be in a compatible key state. For
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
@@ -6358,10 +6368,20 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// To generate a data key, specify the symmetric encryption KMS key that will be used
         /// to encrypt the data key. You cannot use an asymmetric KMS key to encrypt data keys.
-        /// To get the type of your KMS key, use the <a>DescribeKey</a> operation. You must also
-        /// specify the length of the data key. Use either the <code>KeySpec</code> or <code>NumberOfBytes</code>
-        /// parameters (but not both). For 128-bit and 256-bit data keys, use the <code>KeySpec</code>
-        /// parameter. 
+        /// To get the type of your KMS key, use the <a>DescribeKey</a> operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must also specify the length of the data key. Use either the <code>KeySpec</code>
+        /// or <code>NumberOfBytes</code> parameters (but not both). For 128-bit and 256-bit data
+        /// keys, use the <code>KeySpec</code> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// To generate an SM4 data key (China Regions only), specify a <code>KeySpec</code> value
+        /// of <code>AES_128</code> or <code>NumberOfBytes</code> value of <code>128</code>. The
+        /// symmetric encryption key used in China Regions to encrypt your data key is an SM4
+        /// encryption key.
         /// </para>
         ///  
         /// <para>
@@ -6550,10 +6570,20 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// To generate a data key, specify the symmetric encryption KMS key that will be used
         /// to encrypt the data key. You cannot use an asymmetric KMS key to encrypt data keys.
-        /// To get the type of your KMS key, use the <a>DescribeKey</a> operation. You must also
-        /// specify the length of the data key. Use either the <code>KeySpec</code> or <code>NumberOfBytes</code>
-        /// parameters (but not both). For 128-bit and 256-bit data keys, use the <code>KeySpec</code>
-        /// parameter. 
+        /// To get the type of your KMS key, use the <a>DescribeKey</a> operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must also specify the length of the data key. Use either the <code>KeySpec</code>
+        /// or <code>NumberOfBytes</code> parameters (but not both). For 128-bit and 256-bit data
+        /// keys, use the <code>KeySpec</code> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// To generate an SM4 data key (China Regions only), specify a <code>KeySpec</code> value
+        /// of <code>AES_128</code> or <code>NumberOfBytes</code> value of <code>128</code>. The
+        /// symmetric encryption key used in China Regions to encrypt your data key is an SM4
+        /// encryption key.
         /// </para>
         ///  
         /// <para>
@@ -6762,9 +6792,10 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// Use the <code>KeyPairSpec</code> parameter to choose an RSA or Elliptic Curve (ECC)
-        /// data key pair. KMS recommends that your use ECC key pairs for signing, and use RSA
-        /// key pairs for either encryption or signing, but not both. However, KMS cannot enforce
-        /// any restrictions on the use of data key pairs outside of KMS.
+        /// data key pair. In China Regions, you can also choose an SM2 data key pair. KMS recommends
+        /// that you use ECC key pairs for signing, and use RSA and SM2 key pairs for either encryption
+        /// or signing, but not both. However, KMS cannot enforce any restrictions on the use
+        /// of data key pairs outside of KMS.
         /// </para>
         ///  
         /// <para>
@@ -6930,9 +6961,10 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// Use the <code>KeyPairSpec</code> parameter to choose an RSA or Elliptic Curve (ECC)
-        /// data key pair. KMS recommends that your use ECC key pairs for signing, and use RSA
-        /// key pairs for either encryption or signing, but not both. However, KMS cannot enforce
-        /// any restrictions on the use of data key pairs outside of KMS.
+        /// data key pair. In China Regions, you can also choose an SM2 data key pair. KMS recommends
+        /// that you use ECC key pairs for signing, and use RSA and SM2 key pairs for either encryption
+        /// or signing, but not both. However, KMS cannot enforce any restrictions on the use
+        /// of data key pairs outside of KMS.
         /// </para>
         ///  
         /// <para>
@@ -7104,9 +7136,10 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// Use the <code>KeyPairSpec</code> parameter to choose an RSA or Elliptic Curve (ECC)
-        /// data key pair. KMS recommends that your use ECC key pairs for signing, and use RSA
-        /// key pairs for either encryption or signing, but not both. However, KMS cannot enforce
-        /// any restrictions on the use of data key pairs outside of KMS.
+        /// data key pair. In China Regions, you can also choose an SM2 data key pair. KMS recommends
+        /// that you use ECC key pairs for signing, and use RSA and SM2 key pairs for either encryption
+        /// or signing, but not both. However, KMS cannot enforce any restrictions on the use
+        /// of data key pairs outside of KMS.
         /// </para>
         ///  
         /// <para>
@@ -7260,9 +7293,10 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// Use the <code>KeyPairSpec</code> parameter to choose an RSA or Elliptic Curve (ECC)
-        /// data key pair. KMS recommends that your use ECC key pairs for signing, and use RSA
-        /// key pairs for either encryption or signing, but not both. However, KMS cannot enforce
-        /// any restrictions on the use of data key pairs outside of KMS.
+        /// data key pair. In China Regions, you can also choose an SM2 data key pair. KMS recommends
+        /// that you use ECC key pairs for signing, and use RSA and SM2 key pairs for either encryption
+        /// or signing, but not both. However, KMS cannot enforce any restrictions on the use
+        /// of data key pairs outside of KMS.
         /// </para>
         ///  
         /// <para>
@@ -7946,6 +7980,11 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
+        /// You must use the <code>NumberOfBytes</code> parameter to specify the length of the
+        /// random byte string. There is no default value for string length.
+        /// </para>
+        ///  
+        /// <para>
         /// By default, the random byte string is generated in KMS. To generate the byte string
         /// in the CloudHSM cluster that is associated with a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
         /// key store</a>, specify the custom key store ID.
@@ -7966,11 +8005,16 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
+        ///  <b>Cross-account use</b>: Not applicable. <code>GenerateRandom</code> does not use
+        /// any account-specific resources, such as KMS keys.
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:GenerateRandom</a>
         /// (IAM policy)
         /// </para>
         /// </summary>
-        /// <param name="numberOfBytes">The length of the byte string.</param>
+        /// <param name="numberOfBytes">The length of the random byte string. This parameter is required.</param>
         /// 
         /// <returns>The response from the GenerateRandom service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.CustomKeyStoreInvalidStateException">
@@ -8021,6 +8065,11 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
+        /// You must use the <code>NumberOfBytes</code> parameter to specify the length of the
+        /// random byte string. There is no default value for string length.
+        /// </para>
+        ///  
+        /// <para>
         /// By default, the random byte string is generated in KMS. To generate the byte string
         /// in the CloudHSM cluster that is associated with a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
         /// key store</a>, specify the custom key store ID.
@@ -8038,6 +8087,11 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// For more information about entropy and random number generation, see <a href="https://docs.aws.amazon.com/kms/latest/cryptographic-details/">Key
         /// Management Service Cryptographic Details</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Cross-account use</b>: Not applicable. <code>GenerateRandom</code> does not use
+        /// any account-specific resources, such as KMS keys.
         /// </para>
         ///  
         /// <para>
@@ -8097,6 +8151,11 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
+        /// You must use the <code>NumberOfBytes</code> parameter to specify the length of the
+        /// random byte string. There is no default value for string length.
+        /// </para>
+        ///  
+        /// <para>
         /// By default, the random byte string is generated in KMS. To generate the byte string
         /// in the CloudHSM cluster that is associated with a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
         /// key store</a>, specify the custom key store ID.
@@ -8117,11 +8176,16 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
+        ///  <b>Cross-account use</b>: Not applicable. <code>GenerateRandom</code> does not use
+        /// any account-specific resources, such as KMS keys.
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:GenerateRandom</a>
         /// (IAM policy)
         /// </para>
         /// </summary>
-        /// <param name="numberOfBytes">The length of the byte string.</param>
+        /// <param name="numberOfBytes">The length of the random byte string. This parameter is required.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -8176,6 +8240,11 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
+        /// You must use the <code>NumberOfBytes</code> parameter to specify the length of the
+        /// random byte string. There is no default value for string length.
+        /// </para>
+        ///  
+        /// <para>
         /// By default, the random byte string is generated in KMS. To generate the byte string
         /// in the CloudHSM cluster that is associated with a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
         /// key store</a>, specify the custom key store ID.
@@ -8193,6 +8262,11 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// For more information about entropy and random number generation, see <a href="https://docs.aws.amazon.com/kms/latest/cryptographic-details/">Key
         /// Management Service Cryptographic Details</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Cross-account use</b>: Not applicable. <code>GenerateRandom</code> does not use
+        /// any account-specific resources, such as KMS keys.
         /// </para>
         ///  
         /// <para>
@@ -9143,8 +9217,14 @@ namespace Amazon.KeyManagementService
         /// the identifier of an asymmetric KMS key. When you use the public key within KMS, you
         /// benefit from the authentication, authorization, and logging that are part of every
         /// KMS operation. You also reduce of risk of encrypting data that cannot be decrypted.
-        /// These features are not effective outside of KMS. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/download-public-key.html#download-public-key-considerations">Special
-        /// Considerations for Downloading Public Keys</a>.
+        /// These features are not effective outside of KMS.
+        /// </para>
+        ///  
+        /// <para>
+        /// To verify a signature outside of KMS with an SM2 public key (China Regions only),
+        /// you must specify the distinguishing ID. By default, KMS uses <code>1234567812345678</code>
+        /// as the distinguishing ID. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification">Offline
+        /// verification with SM2 key pairs</a>.
         /// </para>
         ///  
         /// <para>
@@ -9285,8 +9365,14 @@ namespace Amazon.KeyManagementService
         /// the identifier of an asymmetric KMS key. When you use the public key within KMS, you
         /// benefit from the authentication, authorization, and logging that are part of every
         /// KMS operation. You also reduce of risk of encrypting data that cannot be decrypted.
-        /// These features are not effective outside of KMS. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/download-public-key.html#download-public-key-considerations">Special
-        /// Considerations for Downloading Public Keys</a>.
+        /// These features are not effective outside of KMS.
+        /// </para>
+        ///  
+        /// <para>
+        /// To verify a signature outside of KMS with an SM2 public key (China Regions only),
+        /// you must specify the distinguishing ID. By default, KMS uses <code>1234567812345678</code>
+        /// as the distinguishing ID. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification">Offline
+        /// verification with SM2 key pairs</a>.
         /// </para>
         ///  
         /// <para>
@@ -10985,7 +11071,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         /// </summary>
         /// <param name="keyId">Sets the key policy on the specified KMS key. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
-        /// <param name="policy">The key policy to attach to the KMS key. The key policy must meet the following criteria: <ul> <li> If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must allow the principal that is making the <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code> request on the KMS key. This reduces the risk that the KMS key becomes unmanageable. For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>Key Management Service Developer Guide</i>. </li> <li> Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services principal (for example, an IAM user or role), you might need to enforce a delay before including the new principal in a key policy because the new principal might not be immediately visible to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>. </li> </ul> A key policy document must conform to the following rules. <ul> <li> Up to 32 kilobytes (32768 bytes) </li> <li> Must be UTF-8 encoded </li> <li> The only Unicode characters that are permitted in a key policy document are the horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and characters in the range U+0020 to U+00FF. </li> <li> The <code>Sid</code> element in a key policy statement can include spaces. (Spaces are prohibited in the <code>Sid</code> element of an IAM policy document.) </li> </ul></param>
+        /// <param name="policy">The key policy to attach to the KMS key. The key policy must meet the following criteria: <ul> <li> If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must allow the principal that is making the <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code> request on the KMS key. This reduces the risk that the KMS key becomes unmanageable. For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>Key Management Service Developer Guide</i>. </li> <li> Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services principal (for example, an IAM user or role), you might need to enforce a delay before including the new principal in a key policy because the new principal might not be immediately visible to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>. </li> </ul> A key policy document can include only the following characters: <ul> <li> Printable ASCII characters from the space character (<code>\u0020</code>) through the end of the ASCII character range. </li> <li> Printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>). </li> <li> The tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) special characters </li> </ul> For information about key policies, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key policies in KMS</a> in the <i>Key Management Service Developer Guide</i>. For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</param>
         /// <param name="policyName">The name of the key policy. The only valid value is <code>default</code>.</param>
         /// 
         /// <returns>The response from the PutKeyPolicy service method, as returned by KeyManagementService.</returns>
@@ -11130,7 +11216,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         /// </summary>
         /// <param name="keyId">Sets the key policy on the specified KMS key. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
-        /// <param name="policy">The key policy to attach to the KMS key. The key policy must meet the following criteria: <ul> <li> If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must allow the principal that is making the <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code> request on the KMS key. This reduces the risk that the KMS key becomes unmanageable. For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>Key Management Service Developer Guide</i>. </li> <li> Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services principal (for example, an IAM user or role), you might need to enforce a delay before including the new principal in a key policy because the new principal might not be immediately visible to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>. </li> </ul> A key policy document must conform to the following rules. <ul> <li> Up to 32 kilobytes (32768 bytes) </li> <li> Must be UTF-8 encoded </li> <li> The only Unicode characters that are permitted in a key policy document are the horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and characters in the range U+0020 to U+00FF. </li> <li> The <code>Sid</code> element in a key policy statement can include spaces. (Spaces are prohibited in the <code>Sid</code> element of an IAM policy document.) </li> </ul></param>
+        /// <param name="policy">The key policy to attach to the KMS key. The key policy must meet the following criteria: <ul> <li> If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must allow the principal that is making the <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code> request on the KMS key. This reduces the risk that the KMS key becomes unmanageable. For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>Key Management Service Developer Guide</i>. </li> <li> Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services principal (for example, an IAM user or role), you might need to enforce a delay before including the new principal in a key policy because the new principal might not be immediately visible to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>. </li> </ul> A key policy document can include only the following characters: <ul> <li> Printable ASCII characters from the space character (<code>\u0020</code>) through the end of the ASCII character range. </li> <li> Printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>). </li> <li> The tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) special characters </li> </ul> For information about key policies, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key policies in KMS</a> in the <i>Key Management Service Developer Guide</i>. For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</param>
         /// <param name="policyName">The name of the key policy. The only valid value is <code>default</code>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -14172,7 +14258,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="aliasName">Identifies the alias that is changing its KMS key. This value must begin with <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>. You cannot use UpdateAlias to change the alias name.</param>
+        /// <param name="aliasName">Identifies the alias that is changing its KMS key. This value must begin with <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>. You cannot use <code>UpdateAlias</code> to change the alias name.</param>
         /// <param name="targetKeyId">Identifies the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed key</a> to associate with the alias. You don't have permission to associate an alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed key</a>. The KMS key must be in the same Amazon Web Services account and Region as the alias. Also, the new target KMS key must be the same type as the current target KMS key (both symmetric or both asymmetric) and they must have the same key usage.  Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To verify that the alias is mapped to the correct KMS key, use <a>ListAliases</a>.</param>
         /// 
         /// <returns>The response from the UpdateAlias service method, as returned by KeyManagementService.</returns>
@@ -14406,7 +14492,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="aliasName">Identifies the alias that is changing its KMS key. This value must begin with <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>. You cannot use UpdateAlias to change the alias name.</param>
+        /// <param name="aliasName">Identifies the alias that is changing its KMS key. This value must begin with <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>. You cannot use <code>UpdateAlias</code> to change the alias name.</param>
         /// <param name="targetKeyId">Identifies the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed key</a> to associate with the alias. You don't have permission to associate an alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed key</a>. The KMS key must be in the same Amazon Web Services account and Region as the alias. Also, the new target KMS key must be the same type as the current target KMS key (both symmetric or both asymmetric) and they must have the same key usage.  Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To verify that the alias is mapped to the correct KMS key, use <a>ListAliases</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -14619,8 +14705,8 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
-        /// Key Store feature</a> feature in KMS, which combines the convenience and extensive
+        /// This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+        /// key store feature</a> feature in KMS, which combines the convenience and extensive
         /// integration of KMS with the isolation and control of a single-tenant key store.
         /// </para>
         ///  
@@ -14834,8 +14920,8 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
-        /// Key Store feature</a> feature in KMS, which combines the convenience and extensive
+        /// This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+        /// key store feature</a> feature in KMS, which combines the convenience and extensive
         /// integration of KMS with the isolation and control of a single-tenant key store.
         /// </para>
         ///  
@@ -15575,9 +15661,13 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// You can also verify the digital signature by using the public key of the KMS key outside
         /// of KMS. Use the <a>GetPublicKey</a> operation to download the public key in the asymmetric
-        /// KMS key and then use the public key to verify the signature outside of KMS. The advantage
-        /// of using the <code>Verify</code> operation is that it is performed within KMS. As
-        /// a result, it's easy to call, the operation is performed within the FIPS boundary,
+        /// KMS key and then use the public key to verify the signature outside of KMS. To verify
+        /// a signature outside of KMS with an SM2 public key, you must specify the distinguishing
+        /// ID. By default, KMS uses <code>1234567812345678</code> as the distinguishing ID. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification">Offline
+        /// verification with SM2 key pairs</a> in <i>Key Management Service Developer Guide</i>.
+        /// The advantage of using the <code>Verify</code> operation is that it is performed within
+        /// KMS. As a result, it's easy to call, the operation is performed within the FIPS boundary,
         /// it is logged in CloudTrail, and you can use key policy and IAM policy to determine
         /// who is authorized to use the KMS key to verify signatures.
         /// </para>
@@ -15700,9 +15790,13 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// You can also verify the digital signature by using the public key of the KMS key outside
         /// of KMS. Use the <a>GetPublicKey</a> operation to download the public key in the asymmetric
-        /// KMS key and then use the public key to verify the signature outside of KMS. The advantage
-        /// of using the <code>Verify</code> operation is that it is performed within KMS. As
-        /// a result, it's easy to call, the operation is performed within the FIPS boundary,
+        /// KMS key and then use the public key to verify the signature outside of KMS. To verify
+        /// a signature outside of KMS with an SM2 public key, you must specify the distinguishing
+        /// ID. By default, KMS uses <code>1234567812345678</code> as the distinguishing ID. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification">Offline
+        /// verification with SM2 key pairs</a> in <i>Key Management Service Developer Guide</i>.
+        /// The advantage of using the <code>Verify</code> operation is that it is performed within
+        /// KMS. As a result, it's easy to call, the operation is performed within the FIPS boundary,
         /// it is logged in CloudTrail, and you can use key policy and IAM policy to determine
         /// who is authorized to use the KMS key to verify signatures.
         /// </para>

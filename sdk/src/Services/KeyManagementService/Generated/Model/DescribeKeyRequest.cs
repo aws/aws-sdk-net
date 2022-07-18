@@ -59,7 +59,7 @@ namespace Amazon.KeyManagementService.Model
     /// Whether automatic key rotation is enabled on the KMS key. To get this information,
     /// use <a>GetKeyRotationStatus</a>. Also, some key states prevent a KMS key from being
     /// automatically rotated. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#rotate-keys-how-it-works">How
-    /// Automatic Key Rotation Works</a> in <i>Key Management Service Developer Guide</i>.
+    /// Automatic Key Rotation Works</a> in the <i>Key Management Service Developer Guide</i>.
     /// </para>
     ///  </li> <li> 
     /// <para>

@@ -93,6 +93,10 @@ namespace Amazon.KeyManagementService
         /// </summary>
         public static readonly ConnectionErrorCodeType INSUFFICIENT_CLOUDHSM_HSMS = new ConnectionErrorCodeType("INSUFFICIENT_CLOUDHSM_HSMS");
         /// <summary>
+        /// Constant INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET for ConnectionErrorCodeType
+        /// </summary>
+        public static readonly ConnectionErrorCodeType INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET = new ConnectionErrorCodeType("INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET");
+        /// <summary>
         /// Constant INTERNAL_ERROR for ConnectionErrorCodeType
         /// </summary>
         public static readonly ConnectionErrorCodeType INTERNAL_ERROR = new ConnectionErrorCodeType("INTERNAL_ERROR");
@@ -269,6 +273,10 @@ namespace Amazon.KeyManagementService
         /// </summary>
         public static readonly CustomerMasterKeySpec RSA_4096 = new CustomerMasterKeySpec("RSA_4096");
         /// <summary>
+        /// Constant SM2 for CustomerMasterKeySpec
+        /// </summary>
+        public static readonly CustomerMasterKeySpec SM2 = new CustomerMasterKeySpec("SM2");
+        /// <summary>
         /// Constant SYMMETRIC_DEFAULT for CustomerMasterKeySpec
         /// </summary>
         public static readonly CustomerMasterKeySpec SYMMETRIC_DEFAULT = new CustomerMasterKeySpec("SYMMETRIC_DEFAULT");
@@ -342,6 +350,10 @@ namespace Amazon.KeyManagementService
         /// Constant RSA_4096 for DataKeyPairSpec
         /// </summary>
         public static readonly DataKeyPairSpec RSA_4096 = new DataKeyPairSpec("RSA_4096");
+        /// <summary>
+        /// Constant SM2 for DataKeyPairSpec
+        /// </summary>
+        public static readonly DataKeyPairSpec SM2 = new DataKeyPairSpec("SM2");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -442,6 +454,10 @@ namespace Amazon.KeyManagementService
         /// Constant RSAES_OAEP_SHA_256 for EncryptionAlgorithmSpec
         /// </summary>
         public static readonly EncryptionAlgorithmSpec RSAES_OAEP_SHA_256 = new EncryptionAlgorithmSpec("RSAES_OAEP_SHA_256");
+        /// <summary>
+        /// Constant SM2PKE for EncryptionAlgorithmSpec
+        /// </summary>
+        public static readonly EncryptionAlgorithmSpec SM2PKE = new EncryptionAlgorithmSpec("SM2PKE");
         /// <summary>
         /// Constant SYMMETRIC_DEFAULT for EncryptionAlgorithmSpec
         /// </summary>
@@ -738,6 +754,10 @@ namespace Amazon.KeyManagementService
         /// Constant RSA_4096 for KeySpec
         /// </summary>
         public static readonly KeySpec RSA_4096 = new KeySpec("RSA_4096");
+        /// <summary>
+        /// Constant SM2 for KeySpec
+        /// </summary>
+        public static readonly KeySpec SM2 = new KeySpec("SM2");
         /// <summary>
         /// Constant SYMMETRIC_DEFAULT for KeySpec
         /// </summary>
@@ -1160,6 +1180,10 @@ namespace Amazon.KeyManagementService
         /// Constant RSASSA_PSS_SHA_512 for SigningAlgorithmSpec
         /// </summary>
         public static readonly SigningAlgorithmSpec RSASSA_PSS_SHA_512 = new SigningAlgorithmSpec("RSASSA_PSS_SHA_512");
+        /// <summary>
+        /// Constant SM2DSA for SigningAlgorithmSpec
+        /// </summary>
+        public static readonly SigningAlgorithmSpec SM2DSA = new SigningAlgorithmSpec("SM2DSA");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
