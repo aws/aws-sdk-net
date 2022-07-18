@@ -1,3 +1,22 @@
+### 3.7.317.0 (2022-07-18 18:22 UTC)
+* ApplicationDiscoveryService (3.7.2.0)
+	* Add AWS Agentless Collector details to the GetDiscoverySummary API response
+* EC2 (3.7.78.2)
+	* Documentation updates for Amazon EC2.
+* ElastiCache (3.7.7.0)
+	* Adding AutoMinorVersionUpgrade in the DescribeReplicationGroups API
+* KeyManagementService (3.7.4.0)
+	* Added support for the SM2 KeySpec in China Partition Regions
+* MediaPackage (3.7.7.0)
+	* This release adds "IncludeIframeOnlyStream" for Dash endpoints and increases the number of supported video and audio encryption presets for Speke v2
+* SageMaker (3.7.41.0)
+	* Amazon SageMaker Edge Manager provides lightweight model deployment feature to deploy machine learning models on requested devices.
+* SSOAdmin (3.7.1.0)
+	* AWS SSO now supports attaching customer managed policies and a permissions boundary to your permission sets. This release adds new API operations to manage and view the customer managed policies and the permissions boundary for a given permission set.
+* Core 3.7.12.10
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.316.0 (2022-07-15 18:15 UTC)
 * CloudWatchEvidently (3.7.3.0)
 	* This release adds support for the new segmentation feature.
