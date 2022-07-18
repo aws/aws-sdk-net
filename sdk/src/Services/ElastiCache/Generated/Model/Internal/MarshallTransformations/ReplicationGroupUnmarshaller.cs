@@ -84,6 +84,12 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         unmarshalledObject.AutomaticFailover = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("AutoMinorVersionUpgrade", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.AutoMinorVersionUpgrade = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("CacheNodeType", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -38,6 +38,7 @@ namespace Amazon.ElastiCache.Model
         private bool? _authTokenEnabled;
         private DateTime? _authTokenLastModifiedDate;
         private AutomaticFailoverStatus _automaticFailover;
+        private bool? _autoMinorVersionUpgrade;
         private string _cacheNodeType;
         private bool? _clusterEnabled;
         private Endpoint _configurationEndpoint;
@@ -168,6 +169,26 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetAutomaticFailover()
         {
             return this._automaticFailover != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoMinorVersionUpgrade. 
+        /// <para>
+        ///  If you are running Redis engine version 6.0 or later, set this parameter to yes if
+        /// you want to opt-in to the next auto minor version upgrade campaign. This parameter
+        /// is disabled for previous versions.  
+        /// </para>
+        /// </summary>
+        public bool AutoMinorVersionUpgrade
+        {
+            get { return this._autoMinorVersionUpgrade.GetValueOrDefault(); }
+            set { this._autoMinorVersionUpgrade = value; }
+        }
+
+        // Check to see if AutoMinorVersionUpgrade property is set
+        internal bool IsSetAutoMinorVersionUpgrade()
+        {
+            return this._autoMinorVersionUpgrade.HasValue; 
         }
 
         /// <summary>
