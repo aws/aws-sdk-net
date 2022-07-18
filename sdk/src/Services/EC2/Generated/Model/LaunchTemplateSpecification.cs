@@ -43,6 +43,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The ID of the launch template.
         /// </para>
+        ///  
+        /// <para>
+        /// You must specify the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>,
+        /// but not both.
+        /// </para>
         /// </summary>
         public string LaunchTemplateId
         {
@@ -60,6 +65,11 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property LaunchTemplateName. 
         /// <para>
         /// The name of the launch template.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must specify the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>,
+        /// but not both.
         /// </para>
         /// </summary>
         public string LaunchTemplateName

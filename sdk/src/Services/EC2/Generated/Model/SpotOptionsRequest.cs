@@ -163,8 +163,16 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MaxTotalPrice. 
         /// <para>
-        /// The maximum amount per hour for Spot Instances that you're willing to pay.
+        /// The maximum amount per hour for Spot Instances that you're willing to pay. We do not
+        /// recommend using this parameter because it can lead to increased interruptions. If
+        /// you do not specify this parameter, you will pay the current Spot price.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you specify a maximum price, your Spot Instances will be interrupted more frequently
+        /// than if you do not specify this parameter.
+        /// </para>
+        ///  </important>
         /// </summary>
         public string MaxTotalPrice
         {

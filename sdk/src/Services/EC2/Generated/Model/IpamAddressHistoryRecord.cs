@@ -30,8 +30,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// The historical record of a CIDR within an IPAM scope. For more information, see <a
-    /// href="/vpc/latest/ipam/view-history-cidr-ipam.html">View the history of IP addresses</a>
-    /// in the <i>Amazon VPC IPAM User Guide</i>.
+    /// href="https://docs.aws.amazon.com/vpc/latest/ipam/view-history-cidr-ipam.html">View
+    /// the history of IP addresses</a> in the <i>Amazon VPC IPAM User Guide</i>.
     /// </summary>
     public partial class IpamAddressHistoryRecord
     {
@@ -69,8 +69,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property ResourceComplianceStatus. 
         /// <para>
         /// The compliance status of a resource. For more information on compliance statuses,
-        /// see <a href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage
-        /// by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
+        /// CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.
         /// </para>
         /// </summary>
         public IpamComplianceStatus ResourceComplianceStatus
@@ -126,7 +126,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The overlap status of an IPAM resource. The overlap status tells you if the CIDR for
         /// a resource overlaps with another CIDR in the scope. For more information on overlap
-        /// statuses, see <a href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
+        /// statuses, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
         /// CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.
         /// </para>
         /// </summary>

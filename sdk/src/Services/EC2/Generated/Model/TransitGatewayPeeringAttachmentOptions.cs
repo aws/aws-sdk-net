@@ -29,14 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// 
+    /// Describes dynamic routing for the transit gateway peering attachment.
     /// </summary>
     public partial class TransitGatewayPeeringAttachmentOptions
     {
         private DynamicRoutingValue _dynamicRouting;
 
         /// <summary>
-        /// Gets and sets the property DynamicRouting.
+        /// Gets and sets the property DynamicRouting. 
+        /// <para>
+        /// Describes whether dynamic routing is enabled or disabled for the transit gateway peering
+        /// attachment.
+        /// </para>
         /// </summary>
         public DynamicRoutingValue DynamicRouting
         {

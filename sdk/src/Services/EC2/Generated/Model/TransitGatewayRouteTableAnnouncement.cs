@@ -64,7 +64,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CoreNetworkId.
+        /// Gets and sets the property CoreNetworkId. 
+        /// <para>
+        /// The ID of the core network for the transit gateway route table announcement.
+        /// </para>
         /// </summary>
         public string CoreNetworkId
         {
@@ -97,7 +100,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PeerCoreNetworkId.
+        /// Gets and sets the property PeerCoreNetworkId. 
+        /// <para>
+        /// The ID of the core network ID for the peer.
+        /// </para>
         /// </summary>
         public string PeerCoreNetworkId
         {

@@ -113,7 +113,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TransitGatewayRouteTableAnnouncementId.
+        /// Gets and sets the property TransitGatewayRouteTableAnnouncementId. 
+        /// <para>
+        /// The ID of the transit gateway route table announcement. 
+        /// </para>
         /// </summary>
         public string TransitGatewayRouteTableAnnouncementId
         {

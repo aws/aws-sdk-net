@@ -49,7 +49,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about operating Regions, see <a href="/vpc/latest/ipam/create-ipam.html">Create
+        /// For more information about operating Regions, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create
         /// an IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.
         /// </para>
         /// </summary>

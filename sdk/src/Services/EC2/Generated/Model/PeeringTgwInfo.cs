@@ -39,7 +39,10 @@ namespace Amazon.EC2.Model
         private string _transitGatewayId;
 
         /// <summary>
-        /// Gets and sets the property CoreNetworkId.
+        /// Gets and sets the property CoreNetworkId. 
+        /// <para>
+        /// The ID of the core network where the transit gateway peer is located.
+        /// </para>
         /// </summary>
         public string CoreNetworkId
         {

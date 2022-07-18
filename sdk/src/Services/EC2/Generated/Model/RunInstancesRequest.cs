@@ -312,7 +312,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Indicates whether an instance is enabled for stop protection. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
-        /// Protection</a>. 
+        /// protection</a>. 
         /// </para>
         /// </summary>
         public bool DisableApiStop
@@ -1017,9 +1017,35 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TagSpecifications. 
         /// <para>
-        /// The tags to apply to the resources during launch. You can only tag instances and volumes
-        /// on launch. The specified tags are applied to all instances or volumes that are created
-        /// during launch. To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+        /// The tags to apply to the resources that are created during instance launch.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify tags for the following resources only:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Instances
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Volumes
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Elastic graphics
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Spot Instance requests
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Network interfaces
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
         /// </para>
         /// </summary>
         public List<TagSpecification> TagSpecifications

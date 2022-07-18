@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="/vpc/latest/ipam/prov-cidr-ipam.html">Provision
+    /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/prov-cidr-ipam.html">Provision
     /// CIDRs to pools</a> in the <i>Amazon VPC IPAM User Guide</i>. 
     /// </para>
     /// </summary>

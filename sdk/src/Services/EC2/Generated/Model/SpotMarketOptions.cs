@@ -78,9 +78,16 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MaxPrice. 
         /// <para>
-        /// The maximum hourly price you're willing to pay for the Spot Instances. The default
-        /// is the On-Demand price.
+        /// The maximum hourly price that you're willing to pay for a Spot Instance. We do not
+        /// recommend using this parameter because it can lead to increased interruptions. If
+        /// you do not specify this parameter, you will pay the current Spot price.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you specify a maximum price, your Spot Instances will be interrupted more frequently
+        /// than if you do not specify this parameter.
+        /// </para>
+        ///  </important>
         /// </summary>
         public string MaxPrice
         {

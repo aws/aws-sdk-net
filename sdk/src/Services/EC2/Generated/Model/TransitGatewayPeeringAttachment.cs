@@ -98,7 +98,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Options.
+        /// Gets and sets the property Options. 
+        /// <para>
+        /// Details about the transit gateway peering attachment.
+        /// </para>
         /// </summary>
         public TransitGatewayPeeringAttachmentOptions Options
         {

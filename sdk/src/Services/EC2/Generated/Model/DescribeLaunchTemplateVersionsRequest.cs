@@ -129,10 +129,18 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LaunchTemplateId. 
         /// <para>
-        /// The ID of the launch template. To describe one or more versions of a specified launch
-        /// template, you must specify either the launch template ID or the launch template name
-        /// in the request. To describe all the latest or default launch template versions in
-        /// your account, you must omit this parameter.
+        /// The ID of the launch template.
+        /// </para>
+        ///  
+        /// <para>
+        /// To describe one or more versions of a specified launch template, you must specify
+        /// either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but
+        /// not both.
+        /// </para>
+        ///  
+        /// <para>
+        /// To describe all the latest or default launch template versions in your account, you
+        /// must omit this parameter.
         /// </para>
         /// </summary>
         public string LaunchTemplateId
@@ -150,10 +158,18 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LaunchTemplateName. 
         /// <para>
-        /// The name of the launch template. To describe one or more versions of a specified launch
-        /// template, you must specify either the launch template ID or the launch template name
-        /// in the request. To describe all the latest or default launch template versions in
-        /// your account, you must omit this parameter.
+        /// The name of the launch template.
+        /// </para>
+        ///  
+        /// <para>
+        /// To describe one or more versions of a specified launch template, you must specify
+        /// either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but
+        /// not both.
+        /// </para>
+        ///  
+        /// <para>
+        /// To describe all the latest or default launch template versions in your account, you
+        /// must omit this parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=128)]
@@ -260,8 +276,8 @@ namespace Amazon.EC2.Model
         /// To describe all launch templates in your account that are defined as the latest version,
         /// the valid value is <code>$Latest</code>. To describe all launch templates in your
         /// account that are defined as the default version, the valid value is <code>$Default</code>.
-        /// You can specify <code>$Latest</code> and <code>$Default</code> in the same call. You
-        /// cannot specify numbers.
+        /// You can specify <code>$Latest</code> and <code>$Default</code> in the same request.
+        /// You cannot specify numbers.
         /// </para>
         /// </summary>
         public List<string> Versions

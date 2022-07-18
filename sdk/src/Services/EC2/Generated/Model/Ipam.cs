@@ -32,8 +32,8 @@ namespace Amazon.EC2.Model
     /// IPAM is a VPC feature that you can use to automate your IP address management workflows
     /// including assigning, tracking, troubleshooting, and auditing IP addresses across Amazon
     /// Web Services Regions and accounts throughout your Amazon Web Services Organization.
-    /// For more information, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is
-    /// IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What
+    /// is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
     /// </summary>
     public partial class Ipam
     {
@@ -131,7 +131,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about operating Regions, see <a href="/vpc/latest/ipam/create-ipam.html">Create
+        /// For more information about operating Regions, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create
         /// an IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.
         /// </para>
         /// </summary>
@@ -205,8 +205,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property ScopeCount. 
         /// <para>
         /// The number of scopes in the IPAM. The scope quota is 5. For more information on quotas,
-        /// see <a href="/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon
-        /// VPC IPAM User Guide</i>. 
+        /// see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas
+        /// in IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. 
         /// </para>
         /// </summary>
         public int ScopeCount

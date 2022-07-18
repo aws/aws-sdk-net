@@ -38,7 +38,8 @@ namespace Amazon.EC2.Model
     ///  <note> 
     /// <para>
     /// For Amazon EBS-backed instances, <a>CreateImage</a> creates and registers the AMI
-    /// in a single request, so you don't have to register the AMI yourself.
+    /// in a single request, so you don't have to register the AMI yourself. We recommend
+    /// that you always use <a>CreateImage</a> unless you have a specific reason to use RegisterImage.
     /// </para>
     ///  </note> 
     /// <para>

@@ -239,7 +239,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the service.
+        /// The name of the service.
         /// </para>
         /// </summary>
         public string ServiceName

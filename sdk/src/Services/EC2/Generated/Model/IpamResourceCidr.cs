@@ -53,8 +53,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property ComplianceStatus. 
         /// <para>
         /// The compliance status of the IPAM resource. For more information on compliance statuses,
-        /// see <a href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage
-        /// by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
+        /// CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.
         /// </para>
         /// </summary>
         public IpamComplianceStatus ComplianceStatus
@@ -126,9 +126,28 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property IpUsage. 
         /// <para>
-        /// The IP address space in the IPAM pool that is allocated to this resource. To convert
-        /// the decimal to a percentage, multiply the decimal by 100.
+        /// The percentage of IP address space in use. To convert the decimal to a percentage,
+        /// multiply the decimal by 100. Note the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For a resources that are VPCs, this is the percentage of IP address space in the VPC
+        /// that's taken up by subnet CIDRs. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For resources that are subnets, if the subnet has an IPv4 CIDR provisioned to it,
+        /// this is the percentage of IPv4 address space in the subnet that's in use. If the subnet
+        /// has an IPv6 CIDR provisioned to it, the percentage of IPv6 address space in use is
+        /// not represented. The percentage of IPv6 address space in use cannot currently be calculated.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For resources that are public IPv4 pools, this is the percentage of IP address space
+        /// in the pool that's been allocated to Elastic IP addresses (EIPs). 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public double IpUsage
         {
@@ -146,8 +165,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property ManagementState. 
         /// <para>
         /// The management state of the resource. For more information about management states,
-        /// see <a href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor CIDR usage
-        /// by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
+        /// CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.
         /// </para>
         /// </summary>
         public IpamManagementState ManagementState
@@ -167,7 +186,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The overlap status of an IPAM resource. The overlap status tells you if the CIDR for
         /// a resource overlaps with another CIDR in the scope. For more information on overlap
-        /// statuses, see <a href="/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
+        /// statuses, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/monitor-cidr-compliance-ipam.html">Monitor
         /// CIDR usage by resource</a> in the <i>Amazon VPC IPAM User Guide</i>.
         /// </para>
         /// </summary>

@@ -29,7 +29,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the maximum price per hour that you are willing to pay for a Spot Instance.
+    /// The maximum price per unit hour that you are willing to pay for a Spot Instance. We
+    /// do not recommend using this parameter because it can lead to increased interruptions.
+    /// If you do not specify this parameter, you will pay the current Spot price.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// If you specify a maximum price, your instances will be interrupted more frequently
+    /// than if you do not specify this parameter.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class SpotPrice
     {
@@ -78,8 +87,16 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Price. 
         /// <para>
-        /// The maximum price per hour that you are willing to pay for a Spot Instance.
+        /// The maximum price per unit hour that you are willing to pay for a Spot Instance. We
+        /// do not recommend using this parameter because it can lead to increased interruptions.
+        /// If you do not specify this parameter, you will pay the current Spot price.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you specify a maximum price, your instances will be interrupted more frequently
+        /// than if you do not specify this parameter.
+        /// </para>
+        ///  </important>
         /// </summary>
         public string Price
         {

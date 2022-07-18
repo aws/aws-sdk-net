@@ -30,6 +30,15 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// The tags to apply to a resource when the resource is being created.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// The <code>Valid Values</code> lists all the resource types that can be tagged. However,
+    /// the action you're using might not support tagging all of these resource types. If
+    /// you try to tag a resource type that is unsupported for the action you're using, you'll
+    /// get an error.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class TagSpecification
     {

@@ -157,8 +157,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Ipv4IpamPoolId. 
         /// <para>
         /// The ID of an IPv4 IPAM pool you want to use for allocating this VPC's CIDR. For more
-        /// information, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a>
-        /// in the <i>Amazon VPC IPAM User Guide</i>. 
+        /// information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What
+        /// is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>. 
         /// </para>
         /// </summary>
         public string Ipv4IpamPoolId
@@ -177,7 +177,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Ipv4NetmaskLength. 
         /// <para>
         /// The netmask length of the IPv4 CIDR you want to allocate to this VPC from an Amazon
-        /// VPC IP Address Manager (IPAM) pool. For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What
+        /// VPC IP Address Manager (IPAM) pool. For more information about IPAM, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What
         /// is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
         /// </para>
         /// </summary>
@@ -247,8 +247,8 @@ namespace Amazon.EC2.Model
         /// IPAM is a VPC feature that you can use to automate your IP address management workflows
         /// including assigning, tracking, troubleshooting, and auditing IP addresses across Amazon
         /// Web Services Regions and accounts throughout your Amazon Web Services Organization.
-        /// For more information, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What is
-        /// IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What
+        /// is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
         /// </para>
         /// </summary>
         public string Ipv6IpamPoolId
@@ -267,7 +267,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Ipv6NetmaskLength. 
         /// <para>
         /// The netmask length of the IPv6 CIDR you want to allocate to this VPC from an Amazon
-        /// VPC IP Address Manager (IPAM) pool. For more information about IPAM, see <a href="/vpc/latest/ipam/what-is-it-ipam.html">What
+        /// VPC IP Address Manager (IPAM) pool. For more information about IPAM, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What
         /// is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.
         /// </para>
         /// </summary>

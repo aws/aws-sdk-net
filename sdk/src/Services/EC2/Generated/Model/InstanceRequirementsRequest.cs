@@ -579,9 +579,10 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property OnDemandMaxPricePercentageOverLowestPrice. 
         /// <para>
         /// The price protection threshold for On-Demand Instances. This is the maximum you’ll
-        /// pay for an On-Demand Instance, expressed as a percentage above the cheapest M, C,
-        /// or R instance type with your specified attributes. When Amazon EC2 selects instance
-        /// types with your attributes, it excludes instance types priced above your threshold.
+        /// pay for an On-Demand Instance, expressed as a percentage above the least expensive
+        /// current generation M, C, or R instance type with your specified attributes. When Amazon
+        /// EC2 selects instance types with your attributes, it excludes instance types priced
+        /// above your threshold.
         /// </para>
         ///  
         /// <para>
@@ -649,9 +650,9 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property SpotMaxPricePercentageOverLowestPrice. 
         /// <para>
         /// The price protection threshold for Spot Instance. This is the maximum you’ll pay for
-        /// an Spot Instance, expressed as a percentage above the cheapest M, C, or R instance
-        /// type with your specified attributes. When Amazon EC2 selects instance types with your
-        /// attributes, it excludes instance types priced above your threshold.
+        /// an Spot Instance, expressed as a percentage above the least expensive current generation
+        /// M, C, or R instance type with your specified attributes. When Amazon EC2 selects instance
+        /// types with your attributes, it excludes instance types priced above your threshold.
         /// </para>
         ///  
         /// <para>

@@ -40,7 +40,7 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// For more information, see <a href="/vpc/latest/ipam/delete-pool-ipam.html">Delete
+    /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/delete-pool-ipam.html">Delete
     /// a pool</a> in the <i>Amazon VPC IPAM User Guide</i>. 
     /// </para>
     /// </summary>

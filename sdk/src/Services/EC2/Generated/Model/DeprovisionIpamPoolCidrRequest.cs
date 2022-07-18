@@ -32,7 +32,7 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the DeprovisionIpamPoolCidr operation.
     /// Deprovision a CIDR provisioned from an IPAM pool. If you deprovision a CIDR from a
     /// pool that has a source pool, the CIDR is recycled back into the source pool. For more
-    /// information, see <a href="/vpc/latest/ipam/depro-pool-cidr-ipam.html">Deprovision
+    /// information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/depro-pool-cidr-ipam.html">Deprovision
     /// pool CIDRs</a> in the <i>Amazon VPC IPAM User Guide</i>.
     /// </summary>
     public partial class DeprovisionIpamPoolCidrRequest : AmazonEC2Request

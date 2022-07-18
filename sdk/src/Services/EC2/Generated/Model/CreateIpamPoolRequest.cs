@@ -38,8 +38,8 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="/vpc/latest/ipam/create-top-ipam.html">Create a
-    /// top-level pool</a> in the <i>Amazon VPC IPAM User Guide</i>. 
+    /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-top-ipam.html">Create
+    /// a top-level pool</a> in the <i>Amazon VPC IPAM User Guide</i>. 
     /// </para>
     /// </summary>
     public partial class CreateIpamPoolRequest : AmazonEC2Request

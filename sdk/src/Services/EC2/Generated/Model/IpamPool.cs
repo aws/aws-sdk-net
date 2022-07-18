@@ -390,8 +390,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property PoolDepth. 
         /// <para>
         /// The depth of pools in your IPAM pool. The pool depth quota is 10. For more information,
-        /// see <a href="/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a> in the <i>Amazon
-        /// VPC IPAM User Guide</i>. 
+        /// see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas
+        /// in IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. 
         /// </para>
         /// </summary>
         public int PoolDepth

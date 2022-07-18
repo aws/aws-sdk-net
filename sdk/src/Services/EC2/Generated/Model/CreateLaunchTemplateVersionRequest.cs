@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLaunchTemplateVersion operation.
-    /// Creates a new version for a launch template. You can specify an existing version of
+    /// Creates a new version of a launch template. You can specify an existing version of
     /// launch template from which to base the new version.
     /// 
     ///  
@@ -47,7 +47,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#manage-launch-template-versions">Modify
-    /// a launch template (manage launch template versions)</a>in the <i>Amazon Elastic Compute
+    /// a launch template (manage launch template versions)</a> in the <i>Amazon Elastic Compute
     /// Cloud User Guide</i>.
     /// </para>
     /// </summary>
@@ -106,8 +106,12 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LaunchTemplateId. 
         /// <para>
-        /// The ID of the launch template. You must specify either the launch template ID or launch
-        /// template name in the request.
+        /// The ID of the launch template.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>,
+        /// but not both.
         /// </para>
         /// </summary>
         public string LaunchTemplateId
@@ -125,8 +129,12 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LaunchTemplateName. 
         /// <para>
-        /// The name of the launch template. You must specify either the launch template ID or
-        /// launch template name in the request.
+        /// The name of the launch template.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must specify the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>,
+        /// but not both.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=128)]
