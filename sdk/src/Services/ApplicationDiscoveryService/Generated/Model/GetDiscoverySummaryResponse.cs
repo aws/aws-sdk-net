@@ -33,6 +33,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
     /// </summary>
     public partial class GetDiscoverySummaryResponse : AmazonWebServiceResponse
     {
+        private CustomerAgentlessCollectorInfo _agentlessCollectorSummary;
         private CustomerAgentInfo _agentSummary;
         private long? _applications;
         private CustomerConnectorInfo _connectorSummary;
@@ -40,6 +41,21 @@ namespace Amazon.ApplicationDiscoveryService.Model
         private long? _servers;
         private long? _serversMappedToApplications;
         private long? _serversMappedtoTags;
+
+        /// <summary>
+        /// Gets and sets the property AgentlessCollectorSummary.
+        /// </summary>
+        public CustomerAgentlessCollectorInfo AgentlessCollectorSummary
+        {
+            get { return this._agentlessCollectorSummary; }
+            set { this._agentlessCollectorSummary = value; }
+        }
+
+        // Check to see if AgentlessCollectorSummary property is set
+        internal bool IsSetAgentlessCollectorSummary()
+        {
+            return this._agentlessCollectorSummary != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AgentSummary. 

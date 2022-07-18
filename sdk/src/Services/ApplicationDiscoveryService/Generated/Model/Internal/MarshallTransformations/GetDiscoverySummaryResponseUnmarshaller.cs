@@ -51,6 +51,12 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("agentlessCollectorSummary", targetDepth))
+                {
+                    var unmarshaller = CustomerAgentlessCollectorInfoUnmarshaller.Instance;
+                    response.AgentlessCollectorSummary = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("agentSummary", targetDepth))
                 {
                     var unmarshaller = CustomerAgentInfoUnmarshaller.Instance;
