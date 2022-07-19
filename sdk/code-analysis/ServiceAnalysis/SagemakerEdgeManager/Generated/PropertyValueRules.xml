@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.SagemakerEdgeManager.Model.GetDeploymentsRequest.DeviceFleetName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*_*[a-zA-Z0-9])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SagemakerEdgeManager.Model.GetDeploymentsRequest.DeviceName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*_*[a-zA-Z0-9])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SagemakerEdgeManager.Model.GetDeviceRegistrationRequest.DeviceFleetName</property>
     <min>1</min>
     <max>63</max>
@@ -38,6 +50,58 @@
     <min>1</min>
     <max>63</max>
     <pattern>^[a-zA-Z0-9](-*_*[a-zA-Z0-9])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SagemakerEdgeManager.Model.Checksum.Sum</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-z0-9](-*[a-z0-9])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SagemakerEdgeManager.Model.Definition.ModelHandle</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SagemakerEdgeManager.Model.Definition.S3Url</property>
+    <max>1024</max>
+    <pattern>^s3://([^/]+)/?(.*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SagemakerEdgeManager.Model.DeploymentModel.ModelHandle</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SagemakerEdgeManager.Model.DeploymentModel.ModelName</property>
+    <min>4</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SagemakerEdgeManager.Model.DeploymentModel.ModelVersion</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SagemakerEdgeManager.Model.DeploymentResult.DeploymentName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SagemakerEdgeManager.Model.DeploymentResult.DeploymentStatus</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SagemakerEdgeManager.Model.EdgeDeployment.DeploymentName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SagemakerEdgeManager.Model.EdgeMetric.Dimension</property>

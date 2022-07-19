@@ -36,6 +36,7 @@ namespace Amazon.SagemakerEdgeManager.Model
     {
         private List<EdgeMetric> _agentMetrics = new List<EdgeMetric>();
         private string _agentVersion;
+        private DeploymentResult _deploymentResult;
         private string _deviceFleetName;
         private string _deviceName;
         private List<Model> _models = new List<Model>();
@@ -75,6 +76,24 @@ namespace Amazon.SagemakerEdgeManager.Model
         internal bool IsSetAgentVersion()
         {
             return this._agentVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeploymentResult. 
+        /// <para>
+        /// Returns the result of a deployment on the device.
+        /// </para>
+        /// </summary>
+        public DeploymentResult DeploymentResult
+        {
+            get { return this._deploymentResult; }
+            set { this._deploymentResult = value; }
+        }
+
+        // Check to see if DeploymentResult property is set
+        internal bool IsSetDeploymentResult()
+        {
+            return this._deploymentResult != null;
         }
 
         /// <summary>

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SagemakerEdgeManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SendHeartbeat Request Marshaller
+    /// GetDeployments Request Marshaller
     /// </summary>       
-    public class SendHeartbeatRequestMarshaller : IMarshaller<IRequest, SendHeartbeatRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetDeploymentsRequestMarshaller : IMarshaller<IRequest, GetDeploymentsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.SagemakerEdgeManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((SendHeartbeatRequest)input);
+            return this.Marshall((GetDeploymentsRequest)input);
         }
 
         /// <summary>
@@ -52,52 +52,19 @@ namespace Amazon.SagemakerEdgeManager.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(SendHeartbeatRequest publicRequest)
+        public IRequest Marshall(GetDeploymentsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SagemakerEdgeManager");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-09-23";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/SendHeartbeat";
+            request.ResourcePath = "/GetDeployments";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAgentMetrics())
-                {
-                    context.Writer.WritePropertyName("AgentMetrics");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAgentMetricsListValue in publicRequest.AgentMetrics)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = EdgeMetricMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAgentMetricsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetAgentVersion())
-                {
-                    context.Writer.WritePropertyName("AgentVersion");
-                    context.Writer.Write(publicRequest.AgentVersion);
-                }
-
-                if(publicRequest.IsSetDeploymentResult())
-                {
-                    context.Writer.WritePropertyName("DeploymentResult");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DeploymentResultMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DeploymentResult, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
                 if(publicRequest.IsSetDeviceFleetName())
                 {
                     context.Writer.WritePropertyName("DeviceFleetName");
@@ -110,22 +77,6 @@ namespace Amazon.SagemakerEdgeManager.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DeviceName);
                 }
 
-                if(publicRequest.IsSetModels())
-                {
-                    context.Writer.WritePropertyName("Models");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestModelsListValue in publicRequest.Models)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ModelMarshaller.Instance;
-                        marshaller.Marshall(publicRequestModelsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
@@ -134,9 +85,9 @@ namespace Amazon.SagemakerEdgeManager.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static SendHeartbeatRequestMarshaller _instance = new SendHeartbeatRequestMarshaller();        
+        private static GetDeploymentsRequestMarshaller _instance = new GetDeploymentsRequestMarshaller();        
 
-        internal static SendHeartbeatRequestMarshaller GetInstance()
+        internal static GetDeploymentsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -144,7 +95,7 @@ namespace Amazon.SagemakerEdgeManager.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SendHeartbeatRequestMarshaller Instance
+        public static GetDeploymentsRequestMarshaller Instance
         {
             get
             {

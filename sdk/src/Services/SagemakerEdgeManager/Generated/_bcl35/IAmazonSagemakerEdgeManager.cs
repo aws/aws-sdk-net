@@ -38,6 +38,50 @@ namespace Amazon.SagemakerEdgeManager
 
 
         
+        #region  GetDeployments
+
+
+        /// <summary>
+        /// Use to get the active deployments from a device.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDeployments service method.</param>
+        /// 
+        /// <returns>The response from the GetDeployments service method, as returned by SagemakerEdgeManager.</returns>
+        /// <exception cref="Amazon.SagemakerEdgeManager.Model.InternalServiceException">
+        /// An internal failure occurred. Try your request again. If the problem persists, contact
+        /// Amazon Web Services customer support.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-edge-2020-09-23/GetDeployments">REST API Reference for GetDeployments Operation</seealso>
+        GetDeploymentsResponse GetDeployments(GetDeploymentsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDeployments operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDeployments operation on AmazonSagemakerEdgeManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDeployments
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-edge-2020-09-23/GetDeployments">REST API Reference for GetDeployments Operation</seealso>
+        IAsyncResult BeginGetDeployments(GetDeploymentsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDeployments operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDeployments.</param>
+        /// 
+        /// <returns>Returns a  GetDeploymentsResult from SagemakerEdgeManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-edge-2020-09-23/GetDeployments">REST API Reference for GetDeployments Operation</seealso>
+        GetDeploymentsResponse EndGetDeployments(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetDeviceRegistration
 
 
@@ -49,7 +93,7 @@ namespace Amazon.SagemakerEdgeManager
         /// <returns>The response from the GetDeviceRegistration service method, as returned by SagemakerEdgeManager.</returns>
         /// <exception cref="Amazon.SagemakerEdgeManager.Model.InternalServiceException">
         /// An internal failure occurred. Try your request again. If the problem persists, contact
-        /// AWS customer support.
+        /// Amazon Web Services customer support.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-edge-2020-09-23/GetDeviceRegistration">REST API Reference for GetDeviceRegistration Operation</seealso>
         GetDeviceRegistrationResponse GetDeviceRegistration(GetDeviceRegistrationRequest request);
@@ -93,7 +137,7 @@ namespace Amazon.SagemakerEdgeManager
         /// <returns>The response from the SendHeartbeat service method, as returned by SagemakerEdgeManager.</returns>
         /// <exception cref="Amazon.SagemakerEdgeManager.Model.InternalServiceException">
         /// An internal failure occurred. Try your request again. If the problem persists, contact
-        /// AWS customer support.
+        /// Amazon Web Services customer support.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-edge-2020-09-23/SendHeartbeat">REST API Reference for SendHeartbeat Operation</seealso>
         SendHeartbeatResponse SendHeartbeat(SendHeartbeatRequest request);
