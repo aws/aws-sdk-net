@@ -192,7 +192,7 @@ namespace Amazon.SageMaker.Model
         /// your lineage query.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1)]
+        [AWSProperty(Min=0, Max=1)]
         public List<string> StartArns
         {
             get { return this._startArns; }
