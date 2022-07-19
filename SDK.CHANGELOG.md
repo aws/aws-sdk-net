@@ -1,3 +1,7 @@
+### 3.7.317.1 (2022-07-19 14:27 UTC)
+* S3 (3.7.9.27)
+	* Added flag DisableSlashCorrection in TransferUtilityDownloadDirectoryRequest to determine if TransferUtility should ensure the S3Directory property has a trailing / for a virtual S3 directory.
+
 ### 3.7.317.0 (2022-07-18 18:22 UTC)
 * ApplicationDiscoveryService (3.7.2.0)
 	* Add AWS Agentless Collector details to the GetDiscoverySummary API response
