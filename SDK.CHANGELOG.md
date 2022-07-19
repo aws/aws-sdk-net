@@ -1,3 +1,15 @@
+### 3.7.318.0 (2022-07-19 18:13 UTC)
+* DevOpsGuru (3.7.10.0)
+	* Added new APIs for log anomaly detection feature.
+* Glue (3.7.21.3)
+	* Documentation updates for AWS Glue Job Timeout and Autoscaling
+* SageMaker (3.7.42.0)
+	* Fixed an issue with cross account QueryLineage
+* SagemakerEdgeManager (3.7.1.0)
+	* Amazon SageMaker Edge Manager provides lightweight model deployment feature to deploy machine learning models on requested devices.
+* WorkSpaces (3.7.8.0)
+	* Increased the character limit of the login message from 850 to 2000 characters.
+
 ### 3.7.317.1 (2022-07-19 14:27 UTC)
 * S3 (3.7.9.27)
 	* Added flag DisableSlashCorrection in TransferUtilityDownloadDirectoryRequest to determine if TransferUtility should ensure the S3Directory property has a trailing / for a virtual S3 directory.
