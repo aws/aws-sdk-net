@@ -125,6 +125,35 @@
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.ListAnomalousLogGroupsRequest.InsightId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[\w-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.ListAnomalousLogGroupsRequest.MaxResults</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.ListAnomalousLogGroupsRequest.NextToken</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.ListAnomalousLogGroupsResponse.InsightId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[\w-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.ListAnomalousLogGroupsResponse.NextToken</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DevOpsGuru.Model.ListEventsRequest.AccountId</property>
     <min>12</min>
     <max>12</max>
@@ -160,6 +189,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsGuru.Model.ListInsightsResponse.NextToken</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.ListMonitoredResourcesRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.ListMonitoredResourcesRequest.NextToken</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.ListMonitoredResourcesResponse.NextToken</property>
     <min>36</min>
     <max>36</max>
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
@@ -270,6 +316,11 @@
     <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.AnomalousLogGroup.LogGroupName</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DevOpsGuru.Model.AnomalyResource.Type</property>
     <min>1</min>
     <max>256</max>
@@ -333,6 +384,38 @@
     <min>1</min>
     <max>100</max>
     <pattern>^[\w-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.LogAnomalyClass.Explanation</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.LogAnomalyClass.LogAnomalyToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.LogAnomalyClass.LogEventId</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.LogAnomalyClass.LogStreamName</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.MonitoredResourceIdentifier.MonitoredResourceName</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\.\-_\/#A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsGuru.Model.MonitoredResourceIdentifier.Type</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z]+[a-zA-Z0-9-_:]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsGuru.Model.NotificationChannel.Id</property>

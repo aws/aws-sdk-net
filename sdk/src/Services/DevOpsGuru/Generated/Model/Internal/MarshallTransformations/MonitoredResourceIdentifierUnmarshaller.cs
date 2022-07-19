@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ServiceIntegrationConfig Object
+    /// Response Unmarshaller for MonitoredResourceIdentifier Object
     /// </summary>  
-    public class ServiceIntegrationConfigUnmarshaller : IUnmarshaller<ServiceIntegrationConfig, XmlUnmarshallerContext>, IUnmarshaller<ServiceIntegrationConfig, JsonUnmarshallerContext>
+    public class MonitoredResourceIdentifierUnmarshaller : IUnmarshaller<MonitoredResourceIdentifier, XmlUnmarshallerContext>, IUnmarshaller<MonitoredResourceIdentifier, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ServiceIntegrationConfig IUnmarshaller<ServiceIntegrationConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MonitoredResourceIdentifier IUnmarshaller<MonitoredResourceIdentifier, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,33 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ServiceIntegrationConfig Unmarshall(JsonUnmarshallerContext context)
+        public MonitoredResourceIdentifier Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ServiceIntegrationConfig unmarshalledObject = new ServiceIntegrationConfig();
+            MonitoredResourceIdentifier unmarshalledObject = new MonitoredResourceIdentifier();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("LogsAnomalyDetection", targetDepth))
+                if (context.TestExpression("MonitoredResourceName", targetDepth))
                 {
-                    var unmarshaller = LogsAnomalyDetectionIntegrationUnmarshaller.Instance;
-                    unmarshalledObject.LogsAnomalyDetection = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MonitoredResourceName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("OpsCenter", targetDepth))
+                if (context.TestExpression("ResourcePermission", targetDepth))
                 {
-                    var unmarshaller = OpsCenterIntegrationUnmarshaller.Instance;
-                    unmarshalledObject.OpsCenter = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResourcePermission = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Type", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +88,12 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         }
 
 
-        private static ServiceIntegrationConfigUnmarshaller _instance = new ServiceIntegrationConfigUnmarshaller();        
+        private static MonitoredResourceIdentifierUnmarshaller _instance = new MonitoredResourceIdentifierUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ServiceIntegrationConfigUnmarshaller Instance
+        public static MonitoredResourceIdentifierUnmarshaller Instance
         {
             get
             {

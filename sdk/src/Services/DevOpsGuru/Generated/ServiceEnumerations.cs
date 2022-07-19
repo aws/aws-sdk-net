@@ -871,6 +871,80 @@ namespace Amazon.DevOpsGuru
 
 
     /// <summary>
+    /// Constants used for properties of type LogAnomalyType.
+    /// </summary>
+    public class LogAnomalyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BLOCK_FORMAT for LogAnomalyType
+        /// </summary>
+        public static readonly LogAnomalyType BLOCK_FORMAT = new LogAnomalyType("BLOCK_FORMAT");
+        /// <summary>
+        /// Constant FORMAT for LogAnomalyType
+        /// </summary>
+        public static readonly LogAnomalyType FORMAT = new LogAnomalyType("FORMAT");
+        /// <summary>
+        /// Constant HTTP_CODE for LogAnomalyType
+        /// </summary>
+        public static readonly LogAnomalyType HTTP_CODE = new LogAnomalyType("HTTP_CODE");
+        /// <summary>
+        /// Constant KEYWORD for LogAnomalyType
+        /// </summary>
+        public static readonly LogAnomalyType KEYWORD = new LogAnomalyType("KEYWORD");
+        /// <summary>
+        /// Constant KEYWORD_TOKEN for LogAnomalyType
+        /// </summary>
+        public static readonly LogAnomalyType KEYWORD_TOKEN = new LogAnomalyType("KEYWORD_TOKEN");
+        /// <summary>
+        /// Constant NEW_FIELD_NAME for LogAnomalyType
+        /// </summary>
+        public static readonly LogAnomalyType NEW_FIELD_NAME = new LogAnomalyType("NEW_FIELD_NAME");
+        /// <summary>
+        /// Constant NUMERICAL_NAN for LogAnomalyType
+        /// </summary>
+        public static readonly LogAnomalyType NUMERICAL_NAN = new LogAnomalyType("NUMERICAL_NAN");
+        /// <summary>
+        /// Constant NUMERICAL_POINT for LogAnomalyType
+        /// </summary>
+        public static readonly LogAnomalyType NUMERICAL_POINT = new LogAnomalyType("NUMERICAL_POINT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LogAnomalyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LogAnomalyType FindValue(string value)
+        {
+            return FindValue<LogAnomalyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LogAnomalyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OptInStatus.
     /// </summary>
     public class OptInStatus : ConstantClass
@@ -1026,6 +1100,102 @@ namespace Amazon.DevOpsGuru
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceCollectionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourcePermission.
+    /// </summary>
+    public class ResourcePermission : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FULL_PERMISSION for ResourcePermission
+        /// </summary>
+        public static readonly ResourcePermission FULL_PERMISSION = new ResourcePermission("FULL_PERMISSION");
+        /// <summary>
+        /// Constant MISSING_PERMISSION for ResourcePermission
+        /// </summary>
+        public static readonly ResourcePermission MISSING_PERMISSION = new ResourcePermission("MISSING_PERMISSION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourcePermission(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourcePermission FindValue(string value)
+        {
+            return FindValue<ResourcePermission>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourcePermission(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceTypeFilter.
+    /// </summary>
+    public class ResourceTypeFilter : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LOG_GROUPS for ResourceTypeFilter
+        /// </summary>
+        public static readonly ResourceTypeFilter LOG_GROUPS = new ResourceTypeFilter("LOG_GROUPS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceTypeFilter(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceTypeFilter FindValue(string value)
+        {
+            return FindValue<ResourceTypeFilter>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceTypeFilter(string value)
         {
             return FindValue(value);
         }

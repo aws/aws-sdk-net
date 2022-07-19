@@ -34,7 +34,27 @@ namespace Amazon.DevOpsGuru.Model
     /// </summary>
     public partial class ServiceIntegrationConfig
     {
+        private LogsAnomalyDetectionIntegration _logsAnomalyDetection;
         private OpsCenterIntegration _opsCenter;
+
+        /// <summary>
+        /// Gets and sets the property LogsAnomalyDetection. 
+        /// <para>
+        ///  Information about whether DevOps Guru is configured to perform log anomaly detection
+        /// on Amazon CloudWatch log groups. 
+        /// </para>
+        /// </summary>
+        public LogsAnomalyDetectionIntegration LogsAnomalyDetection
+        {
+            get { return this._logsAnomalyDetection; }
+            set { this._logsAnomalyDetection = value; }
+        }
+
+        // Check to see if LogsAnomalyDetection property is set
+        internal bool IsSetLogsAnomalyDetection()
+        {
+            return this._logsAnomalyDetection != null;
+        }
 
         /// <summary>
         /// Gets and sets the property OpsCenter. 

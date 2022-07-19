@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeServiceIntegration operation
+    /// Response Unmarshaller for ListMonitoredResources operation
     /// </summary>  
-    public class DescribeServiceIntegrationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListMonitoredResourcesResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,22 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeServiceIntegrationResponse response = new DescribeServiceIntegrationResponse();
+            ListMonitoredResourcesResponse response = new ListMonitoredResourcesResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ServiceIntegration", targetDepth))
+                if (context.TestExpression("MonitoredResourceIdentifiers", targetDepth))
                 {
-                    var unmarshaller = ServiceIntegrationConfigUnmarshaller.Instance;
-                    response.ServiceIntegration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<MonitoredResourceIdentifier, MonitoredResourceIdentifierUnmarshaller>(MonitoredResourceIdentifierUnmarshaller.Instance);
+                    response.MonitoredResourceIdentifiers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NextToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -80,10 +86,6 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
-                {
-                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -104,9 +106,9 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             return new AmazonDevOpsGuruException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DescribeServiceIntegrationResponseUnmarshaller _instance = new DescribeServiceIntegrationResponseUnmarshaller();        
+        private static ListMonitoredResourcesResponseUnmarshaller _instance = new ListMonitoredResourcesResponseUnmarshaller();        
 
-        internal static DescribeServiceIntegrationResponseUnmarshaller GetInstance()
+        internal static ListMonitoredResourcesResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -114,7 +116,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeServiceIntegrationResponseUnmarshaller Instance
+        public static ListMonitoredResourcesResponseUnmarshaller Instance
         {
             get
             {

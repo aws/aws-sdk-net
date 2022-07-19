@@ -29,31 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// Information about whether DevOps Guru is configured to create an OpsItem in Amazon
-    /// Web Services Systems Manager OpsCenter for each created insight. You can use this
-    /// to update the configuration.
+    /// A cluster of similar anomalous log events found within a log group.
     /// </summary>
-    public partial class OpsCenterIntegrationConfig
+    public partial class LogAnomalyShowcase
     {
-        private OptInStatus _optInStatus;
+        private List<LogAnomalyClass> _logAnomalyClasses = new List<LogAnomalyClass>();
 
         /// <summary>
-        /// Gets and sets the property OptInStatus. 
+        /// Gets and sets the property LogAnomalyClasses. 
         /// <para>
-        ///  Specifies if DevOps Guru is enabled to create an Amazon Web Services Systems Manager
-        /// OpsItem for each created insight. 
+        ///  A list of anomalous log events that may be related. 
         /// </para>
         /// </summary>
-        public OptInStatus OptInStatus
+        [AWSProperty(Min=0, Max=10)]
+        public List<LogAnomalyClass> LogAnomalyClasses
         {
-            get { return this._optInStatus; }
-            set { this._optInStatus = value; }
+            get { return this._logAnomalyClasses; }
+            set { this._logAnomalyClasses = value; }
         }
 
-        // Check to see if OptInStatus property is set
-        internal bool IsSetOptInStatus()
+        // Check to see if LogAnomalyClasses property is set
+        internal bool IsSetLogAnomalyClasses()
         {
-            return this._optInStatus != null;
+            return this._logAnomalyClasses != null && this._logAnomalyClasses.Count > 0; 
         }
 
     }

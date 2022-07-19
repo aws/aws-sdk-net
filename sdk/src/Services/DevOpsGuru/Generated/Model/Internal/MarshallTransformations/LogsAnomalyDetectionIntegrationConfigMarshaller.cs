@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateServiceIntegrationConfig Marshaller
+    /// LogsAnomalyDetectionIntegrationConfig Marshaller
     /// </summary>
-    public class UpdateServiceIntegrationConfigMarshaller : IRequestMarshaller<UpdateServiceIntegrationConfig, JsonMarshallerContext> 
+    public class LogsAnomalyDetectionIntegrationConfigMarshaller : IRequestMarshaller<LogsAnomalyDetectionIntegrationConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,28 +43,12 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(UpdateServiceIntegrationConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(LogsAnomalyDetectionIntegrationConfig requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetLogsAnomalyDetection())
+            if(requestObject.IsSetOptInStatus())
             {
-                context.Writer.WritePropertyName("LogsAnomalyDetection");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = LogsAnomalyDetectionIntegrationConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.LogsAnomalyDetection, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetOpsCenter())
-            {
-                context.Writer.WritePropertyName("OpsCenter");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = OpsCenterIntegrationConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.OpsCenter, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("OptInStatus");
+                context.Writer.Write(requestObject.OptInStatus);
             }
 
         }
@@ -72,7 +56,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static UpdateServiceIntegrationConfigMarshaller Instance = new UpdateServiceIntegrationConfigMarshaller();
+        public readonly static LogsAnomalyDetectionIntegrationConfigMarshaller Instance = new LogsAnomalyDetectionIntegrationConfigMarshaller();
 
     }
 }

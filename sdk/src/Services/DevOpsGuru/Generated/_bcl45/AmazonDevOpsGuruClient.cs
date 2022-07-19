@@ -1305,6 +1305,9 @@ namespace Amazon.DevOpsGuru
         /// <exception cref="Amazon.DevOpsGuru.Model.InternalServerException">
         /// An internal failure in an Amazon service occurred.
         /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ResourceNotFoundException">
+        /// A requested resource could not be found
+        /// </exception>
         /// <exception cref="Amazon.DevOpsGuru.Model.ThrottlingException">
         /// The request was denied due to a request throttling.
         /// </exception>
@@ -1342,6 +1345,9 @@ namespace Amazon.DevOpsGuru
         /// </exception>
         /// <exception cref="Amazon.DevOpsGuru.Model.InternalServerException">
         /// An internal failure in an Amazon service occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ResourceNotFoundException">
+        /// A requested resource could not be found
         /// </exception>
         /// <exception cref="Amazon.DevOpsGuru.Model.ThrottlingException">
         /// The request was denied due to a request throttling.
@@ -1619,6 +1625,85 @@ namespace Amazon.DevOpsGuru
 
         #endregion
         
+        #region  ListAnomalousLogGroups
+
+
+        /// <summary>
+        /// Returns the list of log groups that contain log anomalies.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAnomalousLogGroups service method.</param>
+        /// 
+        /// <returns>The response from the ListAnomalousLogGroups service method, as returned by DevOpsGuru.</returns>
+        /// <exception cref="Amazon.DevOpsGuru.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// Management</a> in the <i>IAM User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.InternalServerException">
+        /// An internal failure in an Amazon service occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ResourceNotFoundException">
+        /// A requested resource could not be found
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ThrottlingException">
+        /// The request was denied due to a request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ValidationException">
+        /// Contains information about data passed in to a field during a request that is not
+        /// valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListAnomalousLogGroups">REST API Reference for ListAnomalousLogGroups Operation</seealso>
+        public virtual ListAnomalousLogGroupsResponse ListAnomalousLogGroups(ListAnomalousLogGroupsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAnomalousLogGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAnomalousLogGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAnomalousLogGroupsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns the list of log groups that contain log anomalies.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAnomalousLogGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAnomalousLogGroups service method, as returned by DevOpsGuru.</returns>
+        /// <exception cref="Amazon.DevOpsGuru.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// Management</a> in the <i>IAM User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.InternalServerException">
+        /// An internal failure in an Amazon service occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ResourceNotFoundException">
+        /// A requested resource could not be found
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ThrottlingException">
+        /// The request was denied due to a request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ValidationException">
+        /// Contains information about data passed in to a field during a request that is not
+        /// valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListAnomalousLogGroups">REST API Reference for ListAnomalousLogGroups Operation</seealso>
+        public virtual Task<ListAnomalousLogGroupsResponse> ListAnomalousLogGroupsAsync(ListAnomalousLogGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAnomalousLogGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAnomalousLogGroupsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListAnomalousLogGroupsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListEvents
 
 
@@ -1773,6 +1858,75 @@ namespace Amazon.DevOpsGuru
             options.ResponseUnmarshaller = ListInsightsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListInsightsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListMonitoredResources
+
+
+        /// <summary>
+        /// Returns the list of all log groups that are being monitored and tagged by DevOps
+        /// Guru.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMonitoredResources service method.</param>
+        /// 
+        /// <returns>The response from the ListMonitoredResources service method, as returned by DevOpsGuru.</returns>
+        /// <exception cref="Amazon.DevOpsGuru.Model.InternalServerException">
+        /// An internal failure in an Amazon service occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ResourceNotFoundException">
+        /// A requested resource could not be found
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ThrottlingException">
+        /// The request was denied due to a request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ValidationException">
+        /// Contains information about data passed in to a field during a request that is not
+        /// valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListMonitoredResources">REST API Reference for ListMonitoredResources Operation</seealso>
+        public virtual ListMonitoredResourcesResponse ListMonitoredResources(ListMonitoredResourcesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMonitoredResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMonitoredResourcesResponseUnmarshaller.Instance;
+
+            return Invoke<ListMonitoredResourcesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns the list of all log groups that are being monitored and tagged by DevOps
+        /// Guru.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMonitoredResources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMonitoredResources service method, as returned by DevOpsGuru.</returns>
+        /// <exception cref="Amazon.DevOpsGuru.Model.InternalServerException">
+        /// An internal failure in an Amazon service occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ResourceNotFoundException">
+        /// A requested resource could not be found
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ThrottlingException">
+        /// The request was denied due to a request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsGuru.Model.ValidationException">
+        /// Contains information about data passed in to a field during a request that is not
+        /// valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ListMonitoredResources">REST API Reference for ListMonitoredResources Operation</seealso>
+        public virtual Task<ListMonitoredResourcesResponse> ListMonitoredResourcesAsync(ListMonitoredResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMonitoredResourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMonitoredResourcesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListMonitoredResourcesResponse>(request, options, cancellationToken);
         }
 
         #endregion

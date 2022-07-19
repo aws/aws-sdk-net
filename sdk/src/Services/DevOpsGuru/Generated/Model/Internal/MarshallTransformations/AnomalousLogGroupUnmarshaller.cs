@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ServiceIntegrationConfig Object
+    /// Response Unmarshaller for AnomalousLogGroup Object
     /// </summary>  
-    public class ServiceIntegrationConfigUnmarshaller : IUnmarshaller<ServiceIntegrationConfig, XmlUnmarshallerContext>, IUnmarshaller<ServiceIntegrationConfig, JsonUnmarshallerContext>
+    public class AnomalousLogGroupUnmarshaller : IUnmarshaller<AnomalousLogGroup, XmlUnmarshallerContext>, IUnmarshaller<AnomalousLogGroup, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ServiceIntegrationConfig IUnmarshaller<ServiceIntegrationConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AnomalousLogGroup IUnmarshaller<AnomalousLogGroup, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,45 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ServiceIntegrationConfig Unmarshall(JsonUnmarshallerContext context)
+        public AnomalousLogGroup Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ServiceIntegrationConfig unmarshalledObject = new ServiceIntegrationConfig();
+            AnomalousLogGroup unmarshalledObject = new AnomalousLogGroup();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("LogsAnomalyDetection", targetDepth))
+                if (context.TestExpression("ImpactEndTime", targetDepth))
                 {
-                    var unmarshaller = LogsAnomalyDetectionIntegrationUnmarshaller.Instance;
-                    unmarshalledObject.LogsAnomalyDetection = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.ImpactEndTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("OpsCenter", targetDepth))
+                if (context.TestExpression("ImpactStartTime", targetDepth))
                 {
-                    var unmarshaller = OpsCenterIntegrationUnmarshaller.Instance;
-                    unmarshalledObject.OpsCenter = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.ImpactStartTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LogAnomalyShowcases", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<LogAnomalyShowcase, LogAnomalyShowcaseUnmarshaller>(LogAnomalyShowcaseUnmarshaller.Instance);
+                    unmarshalledObject.LogAnomalyShowcases = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LogGroupName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LogGroupName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NumberOfLogLinesScanned", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.NumberOfLogLinesScanned = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +100,12 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         }
 
 
-        private static ServiceIntegrationConfigUnmarshaller _instance = new ServiceIntegrationConfigUnmarshaller();        
+        private static AnomalousLogGroupUnmarshaller _instance = new AnomalousLogGroupUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ServiceIntegrationConfigUnmarshaller Instance
+        public static AnomalousLogGroupUnmarshaller Instance
         {
             get
             {

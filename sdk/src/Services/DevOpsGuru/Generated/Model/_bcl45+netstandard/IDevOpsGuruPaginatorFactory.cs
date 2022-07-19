@@ -51,6 +51,11 @@ namespace Amazon.DevOpsGuru.Model
         IListAnomaliesForInsightPaginator ListAnomaliesForInsight(ListAnomaliesForInsightRequest request);
 
         /// <summary>
+        /// Paginator for ListAnomalousLogGroups operation
+        ///</summary>
+        IListAnomalousLogGroupsPaginator ListAnomalousLogGroups(ListAnomalousLogGroupsRequest request);
+
+        /// <summary>
         /// Paginator for ListEvents operation
         ///</summary>
         IListEventsPaginator ListEvents(ListEventsRequest request);
@@ -59,6 +64,11 @@ namespace Amazon.DevOpsGuru.Model
         /// Paginator for ListInsights operation
         ///</summary>
         IListInsightsPaginator ListInsights(ListInsightsRequest request);
+
+        /// <summary>
+        /// Paginator for ListMonitoredResources operation
+        ///</summary>
+        IListMonitoredResourcesPaginator ListMonitoredResources(ListMonitoredResourcesRequest request);
 
         /// <summary>
         /// Paginator for ListNotificationChannels operation

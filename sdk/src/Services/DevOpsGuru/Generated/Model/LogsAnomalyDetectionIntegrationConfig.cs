@@ -29,19 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// Information about whether DevOps Guru is configured to create an OpsItem in Amazon
-    /// Web Services Systems Manager OpsCenter for each created insight. You can use this
-    /// to update the configuration.
+    /// Information about the integration of DevOps Guru with CloudWatch log groups for log
+    /// anomaly detection. You can use this to update the configuration.
     /// </summary>
-    public partial class OpsCenterIntegrationConfig
+    public partial class LogsAnomalyDetectionIntegrationConfig
     {
         private OptInStatus _optInStatus;
 
         /// <summary>
         /// Gets and sets the property OptInStatus. 
         /// <para>
-        ///  Specifies if DevOps Guru is enabled to create an Amazon Web Services Systems Manager
-        /// OpsItem for each created insight. 
+        /// Specifies if DevOps Guru is configured to perform log anomaly detection on CloudWatch
+        /// log groups.
         /// </para>
         /// </summary>
         public OptInStatus OptInStatus
