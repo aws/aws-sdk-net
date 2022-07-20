@@ -36,6 +36,7 @@ namespace Amazon.IoT.Model
     {
         private List<Field> _customFields = new List<Field>();
         private DeviceDefenderIndexingMode _deviceDefenderIndexingMode;
+        private IndexingFilter _filter;
         private List<Field> _managedFields = new List<Field>();
         private NamedShadowIndexingMode _namedShadowIndexingMode;
         private ThingConnectivityIndexingMode _thingConnectivityIndexingMode;
@@ -89,6 +90,27 @@ namespace Amazon.IoT.Model
         internal bool IsSetDeviceDefenderIndexingMode()
         {
             return this._deviceDefenderIndexingMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Filter. 
+        /// <para>
+        /// Provides additional filters for specific data sources. Named shadow is the only data
+        /// source that currently supports and requires a filter. To add named shadows to your
+        /// fleet indexing configuration, set <code>namedShadowIndexingMode</code> to be <code>ON</code>
+        /// and specify your shadow names in <code>filter</code>.
+        /// </para>
+        /// </summary>
+        public IndexingFilter Filter
+        {
+            get { return this._filter; }
+            set { this._filter = value; }
+        }
+
+        // Check to see if Filter property is set
+        internal bool IsSetFilter()
+        {
+            return this._filter != null;
         }
 
         /// <summary>

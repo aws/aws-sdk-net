@@ -67,6 +67,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DeviceDefenderIndexingMode);
             }
 
+            if(requestObject.IsSetFilter())
+            {
+                context.Writer.WritePropertyName("filter");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = IndexingFilterMarshaller.Instance;
+                marshaller.Marshall(requestObject.Filter, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetManagedFields())
             {
                 context.Writer.WritePropertyName("managedFields");

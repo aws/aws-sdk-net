@@ -410,7 +410,8 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        ///  <b>Note:</b> This action is deprecated. Please use <a>AttachPolicy</a> instead.
+        ///  <b>Note:</b> This action is deprecated and works as expected for backward compatibility,
+        /// but we won't add enhancements. Use <a>AttachPolicy</a> instead.
         /// </para>
         ///  
         /// <para>
@@ -452,7 +453,8 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        ///  <b>Note:</b> This action is deprecated. Please use <a>AttachPolicy</a> instead.
+        ///  <b>Note:</b> This action is deprecated and works as expected for backward compatibility,
+        /// but we won't add enhancements. Use <a>AttachPolicy</a> instead.
         /// </para>
         ///  
         /// <para>
