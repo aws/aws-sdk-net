@@ -118,7 +118,7 @@
 
     <Target Name="full-build-service" DependsOnTargets="test-sdk-service"/>
 
-    <Target Name="full-build-nodocs" DependsOnTargets="full-build-nodocs-all;full-build-nodocs-service"/>
+    <Target Name="full-build-nodocs" DependsOnTargets="full-build-nodocs-all;full-build-nodocs-service;verify-signed-sdk-artifacts"/>
 
     <Target Name="full-build-nodocs-all" DependsOnTargets="test-sdk;package-extensions;keyscan;copy-assemblies;copy-dependencies;copy-service-models;save-build" Condition="'$(ServiceList)'==''"/>
 
@@ -203,6 +203,15 @@
     <Target Name="test-sdk" DependsOnTargets="init;build-sdk;build-roslyn-anlyzer-test-and-run;run-smoke-tests;run-unit-tests;run-integ-tests;run-CSM-tests;test-backward-compatibility" />
 
     <Target Name="test-sdk-service" DependsOnTargets="init;build-sdk-service;build-roslyn-anlyzer-test-and-run;run-unit-tests-service;run-integ-tests-service;test-backward-compatibility" />
+
+    <Target Name="verify-signed-sdk-artifacts" Condition="'$(CodeSigning)'=='true'" DependsOnTargets="sign-sdk-artifacts">
+        <Exec LogStandardErrorAsError="true"
+            Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File $(InternalBuildTools)\BuildScripts\Test-Signature.ps1 -folder ..\sdk\code-analysis\NuGetInstallScripts\ -pattern *.ps1"/>
+        <Exec LogStandardErrorAsError="true"
+            Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File $(InternalBuildTools)\BuildScripts\Test-Signature.ps1 -folder ..\sdk\nuget-content\ -pattern *.ps1"/>
+        <Exec LogStandardErrorAsError="true"
+            Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File $(InternalBuildTools)\BuildScripts\Test-Signature.ps1 -folder ..\Deployment\ -pattern AWSSDK*.dll"/>
+    </Target>
 
     <Target Name="sign-sdk-artifacts" Condition="'$(CodeSigning)'=='true'" DependsOnTargets="build-buildtools;build-extensions">
         <!-- Configure project specfic code sign properties -->
