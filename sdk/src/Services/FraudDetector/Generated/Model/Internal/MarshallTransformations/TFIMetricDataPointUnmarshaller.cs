@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PredictionExplanations Object
+    /// Response Unmarshaller for TFIMetricDataPoint Object
     /// </summary>  
-    public class PredictionExplanationsUnmarshaller : IUnmarshaller<PredictionExplanations, XmlUnmarshallerContext>, IUnmarshaller<PredictionExplanations, JsonUnmarshallerContext>
+    public class TFIMetricDataPointUnmarshaller : IUnmarshaller<TFIMetricDataPoint, XmlUnmarshallerContext>, IUnmarshaller<TFIMetricDataPoint, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PredictionExplanations IUnmarshaller<PredictionExplanations, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TFIMetricDataPoint IUnmarshaller<TFIMetricDataPoint, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,39 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public PredictionExplanations Unmarshall(JsonUnmarshallerContext context)
+        public TFIMetricDataPoint Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PredictionExplanations unmarshalledObject = new PredictionExplanations();
+            TFIMetricDataPoint unmarshalledObject = new TFIMetricDataPoint();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("aggregatedVariablesImpactExplanations", targetDepth))
+                if (context.TestExpression("fpr", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AggregatedVariablesImpactExplanation, AggregatedVariablesImpactExplanationUnmarshaller>(AggregatedVariablesImpactExplanationUnmarshaller.Instance);
-                    unmarshalledObject.AggregatedVariablesImpactExplanations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = FloatUnmarshaller.Instance;
+                    unmarshalledObject.Fpr = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("variableImpactExplanations", targetDepth))
+                if (context.TestExpression("precision", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<VariableImpactExplanation, VariableImpactExplanationUnmarshaller>(VariableImpactExplanationUnmarshaller.Instance);
-                    unmarshalledObject.VariableImpactExplanations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = FloatUnmarshaller.Instance;
+                    unmarshalledObject.Precision = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("threshold", targetDepth))
+                {
+                    var unmarshaller = FloatUnmarshaller.Instance;
+                    unmarshalledObject.Threshold = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("tpr", targetDepth))
+                {
+                    var unmarshaller = FloatUnmarshaller.Instance;
+                    unmarshalledObject.Tpr = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +94,12 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         }
 
 
-        private static PredictionExplanationsUnmarshaller _instance = new PredictionExplanationsUnmarshaller();        
+        private static TFIMetricDataPointUnmarshaller _instance = new TFIMetricDataPointUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PredictionExplanationsUnmarshaller Instance
+        public static TFIMetricDataPointUnmarshaller Instance
         {
             get
             {

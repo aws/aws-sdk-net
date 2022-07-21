@@ -555,6 +555,10 @@ namespace Amazon.FraudDetector
     {
 
         /// <summary>
+        /// Constant ACCOUNT_TAKEOVER_INSIGHTS for ModelTypeEnum
+        /// </summary>
+        public static readonly ModelTypeEnum ACCOUNT_TAKEOVER_INSIGHTS = new ModelTypeEnum("ACCOUNT_TAKEOVER_INSIGHTS");
+        /// <summary>
         /// Constant ONLINE_FRAUD_INSIGHTS for ModelTypeEnum
         /// </summary>
         public static readonly ModelTypeEnum ONLINE_FRAUD_INSIGHTS = new ModelTypeEnum("ONLINE_FRAUD_INSIGHTS");

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PredictionExplanations Object
+    /// Response Unmarshaller for TrainingResultV2 Object
     /// </summary>  
-    public class PredictionExplanationsUnmarshaller : IUnmarshaller<PredictionExplanations, XmlUnmarshallerContext>, IUnmarshaller<PredictionExplanations, JsonUnmarshallerContext>
+    public class TrainingResultV2Unmarshaller : IUnmarshaller<TrainingResultV2, XmlUnmarshallerContext>, IUnmarshaller<TrainingResultV2, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PredictionExplanations IUnmarshaller<PredictionExplanations, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TrainingResultV2 IUnmarshaller<TrainingResultV2, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,39 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public PredictionExplanations Unmarshall(JsonUnmarshallerContext context)
+        public TrainingResultV2 Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PredictionExplanations unmarshalledObject = new PredictionExplanations();
+            TrainingResultV2 unmarshalledObject = new TrainingResultV2();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("aggregatedVariablesImpactExplanations", targetDepth))
+                if (context.TestExpression("aggregatedVariablesImportanceMetrics", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AggregatedVariablesImpactExplanation, AggregatedVariablesImpactExplanationUnmarshaller>(AggregatedVariablesImpactExplanationUnmarshaller.Instance);
-                    unmarshalledObject.AggregatedVariablesImpactExplanations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = AggregatedVariablesImportanceMetricsUnmarshaller.Instance;
+                    unmarshalledObject.AggregatedVariablesImportanceMetrics = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("variableImpactExplanations", targetDepth))
+                if (context.TestExpression("dataValidationMetrics", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<VariableImpactExplanation, VariableImpactExplanationUnmarshaller>(VariableImpactExplanationUnmarshaller.Instance);
-                    unmarshalledObject.VariableImpactExplanations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DataValidationMetricsUnmarshaller.Instance;
+                    unmarshalledObject.DataValidationMetrics = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("trainingMetricsV2", targetDepth))
+                {
+                    var unmarshaller = TrainingMetricsV2Unmarshaller.Instance;
+                    unmarshalledObject.TrainingMetricsV2 = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("variableImportanceMetrics", targetDepth))
+                {
+                    var unmarshaller = VariableImportanceMetricsUnmarshaller.Instance;
+                    unmarshalledObject.VariableImportanceMetrics = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +94,12 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         }
 
 
-        private static PredictionExplanationsUnmarshaller _instance = new PredictionExplanationsUnmarshaller();        
+        private static TrainingResultV2Unmarshaller _instance = new TrainingResultV2Unmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PredictionExplanationsUnmarshaller Instance
+        public static TrainingResultV2Unmarshaller Instance
         {
             get
             {

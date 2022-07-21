@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PredictionExplanations Object
+    /// Response Unmarshaller for TrainingMetricsV2 Object
     /// </summary>  
-    public class PredictionExplanationsUnmarshaller : IUnmarshaller<PredictionExplanations, XmlUnmarshallerContext>, IUnmarshaller<PredictionExplanations, JsonUnmarshallerContext>
+    public class TrainingMetricsV2Unmarshaller : IUnmarshaller<TrainingMetricsV2, XmlUnmarshallerContext>, IUnmarshaller<TrainingMetricsV2, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PredictionExplanations IUnmarshaller<PredictionExplanations, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TrainingMetricsV2 IUnmarshaller<TrainingMetricsV2, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,33 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public PredictionExplanations Unmarshall(JsonUnmarshallerContext context)
+        public TrainingMetricsV2 Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PredictionExplanations unmarshalledObject = new PredictionExplanations();
+            TrainingMetricsV2 unmarshalledObject = new TrainingMetricsV2();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("aggregatedVariablesImpactExplanations", targetDepth))
+                if (context.TestExpression("ati", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AggregatedVariablesImpactExplanation, AggregatedVariablesImpactExplanationUnmarshaller>(AggregatedVariablesImpactExplanationUnmarshaller.Instance);
-                    unmarshalledObject.AggregatedVariablesImpactExplanations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ATITrainingMetricsValueUnmarshaller.Instance;
+                    unmarshalledObject.Ati = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("variableImpactExplanations", targetDepth))
+                if (context.TestExpression("ofi", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<VariableImpactExplanation, VariableImpactExplanationUnmarshaller>(VariableImpactExplanationUnmarshaller.Instance);
-                    unmarshalledObject.VariableImpactExplanations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = OFITrainingMetricsValueUnmarshaller.Instance;
+                    unmarshalledObject.Ofi = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("tfi", targetDepth))
+                {
+                    var unmarshaller = TFITrainingMetricsValueUnmarshaller.Instance;
+                    unmarshalledObject.Tfi = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +88,12 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         }
 
 
-        private static PredictionExplanationsUnmarshaller _instance = new PredictionExplanationsUnmarshaller();        
+        private static TrainingMetricsV2Unmarshaller _instance = new TrainingMetricsV2Unmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PredictionExplanationsUnmarshaller Instance
+        public static TrainingMetricsV2Unmarshaller Instance
         {
             get
             {

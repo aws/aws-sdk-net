@@ -29,45 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FraudDetector.Model
 {
     /// <summary>
-    /// The training data schema.
+    /// The Online Fraud Insights (OFI) model performance score.
     /// </summary>
-    public partial class TrainingDataSchema
+    public partial class OFIModelPerformance
     {
-        private LabelSchema _labelSchema;
-        private List<string> _modelVariables = new List<string>();
+        private float? _auc;
 
         /// <summary>
-        /// Gets and sets the property LabelSchema.
-        /// </summary>
-        public LabelSchema LabelSchema
-        {
-            get { return this._labelSchema; }
-            set { this._labelSchema = value; }
-        }
-
-        // Check to see if LabelSchema property is set
-        internal bool IsSetLabelSchema()
-        {
-            return this._labelSchema != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ModelVariables. 
+        /// Gets and sets the property Auc. 
         /// <para>
-        /// The training data schema variables.
+        ///  The area under the curve (auc). This summarizes the total positive rate (tpr) and
+        /// false positive rate (FPR) across all possible model score thresholds. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public List<string> ModelVariables
+        public float Auc
         {
-            get { return this._modelVariables; }
-            set { this._modelVariables = value; }
+            get { return this._auc.GetValueOrDefault(); }
+            set { this._auc = value; }
         }
 
-        // Check to see if ModelVariables property is set
-        internal bool IsSetModelVariables()
+        // Check to see if Auc property is set
+        internal bool IsSetAuc()
         {
-            return this._modelVariables != null && this._modelVariables.Count > 0; 
+            return this._auc.HasValue; 
         }
 
     }

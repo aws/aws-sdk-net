@@ -45,6 +45,7 @@ namespace Amazon.FraudDetector.Model
         private TrainingDataSchema _trainingDataSchema;
         private TrainingDataSourceEnum _trainingDataSource;
         private TrainingResult _trainingResult;
+        private TrainingResultV2 _trainingResultV2;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -267,6 +268,25 @@ namespace Amazon.FraudDetector.Model
         internal bool IsSetTrainingResult()
         {
             return this._trainingResult != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrainingResultV2. 
+        /// <para>
+        ///  The training result details. The details include the relative importance of the variables.
+        /// 
+        /// </para>
+        /// </summary>
+        public TrainingResultV2 TrainingResultV2
+        {
+            get { return this._trainingResultV2; }
+            set { this._trainingResultV2 = value; }
+        }
+
+        // Check to see if TrainingResultV2 property is set
+        internal bool IsSetTrainingResultV2()
+        {
+            return this._trainingResultV2 != null;
         }
 
     }

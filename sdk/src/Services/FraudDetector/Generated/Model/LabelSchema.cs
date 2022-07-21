@@ -50,7 +50,6 @@ namespace Amazon.FraudDetector.Model
         /// label. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public Dictionary<string, List<string>> LabelMapper
         {
             get { return this._labelMapper; }

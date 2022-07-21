@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PredictionExplanations Object
+    /// Response Unmarshaller for ATITrainingMetricsValue Object
     /// </summary>  
-    public class PredictionExplanationsUnmarshaller : IUnmarshaller<PredictionExplanations, XmlUnmarshallerContext>, IUnmarshaller<PredictionExplanations, JsonUnmarshallerContext>
+    public class ATITrainingMetricsValueUnmarshaller : IUnmarshaller<ATITrainingMetricsValue, XmlUnmarshallerContext>, IUnmarshaller<ATITrainingMetricsValue, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PredictionExplanations IUnmarshaller<PredictionExplanations, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ATITrainingMetricsValue IUnmarshaller<ATITrainingMetricsValue, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,27 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public PredictionExplanations Unmarshall(JsonUnmarshallerContext context)
+        public ATITrainingMetricsValue Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PredictionExplanations unmarshalledObject = new PredictionExplanations();
+            ATITrainingMetricsValue unmarshalledObject = new ATITrainingMetricsValue();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("aggregatedVariablesImpactExplanations", targetDepth))
+                if (context.TestExpression("metricDataPoints", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AggregatedVariablesImpactExplanation, AggregatedVariablesImpactExplanationUnmarshaller>(AggregatedVariablesImpactExplanationUnmarshaller.Instance);
-                    unmarshalledObject.AggregatedVariablesImpactExplanations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<ATIMetricDataPoint, ATIMetricDataPointUnmarshaller>(ATIMetricDataPointUnmarshaller.Instance);
+                    unmarshalledObject.MetricDataPoints = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("variableImpactExplanations", targetDepth))
+                if (context.TestExpression("modelPerformance", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<VariableImpactExplanation, VariableImpactExplanationUnmarshaller>(VariableImpactExplanationUnmarshaller.Instance);
-                    unmarshalledObject.VariableImpactExplanations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ATIModelPerformanceUnmarshaller.Instance;
+                    unmarshalledObject.ModelPerformance = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +82,12 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
         }
 
 
-        private static PredictionExplanationsUnmarshaller _instance = new PredictionExplanationsUnmarshaller();        
+        private static ATITrainingMetricsValueUnmarshaller _instance = new ATITrainingMetricsValueUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PredictionExplanationsUnmarshaller Instance
+        public static ATITrainingMetricsValueUnmarshaller Instance
         {
             get
             {

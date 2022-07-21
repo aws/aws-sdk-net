@@ -29,45 +29,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FraudDetector.Model
 {
     /// <summary>
-    /// The training data schema.
+    /// The Account Takeover Insights (ATI) model performance score.
     /// </summary>
-    public partial class TrainingDataSchema
+    public partial class ATIModelPerformance
     {
-        private LabelSchema _labelSchema;
-        private List<string> _modelVariables = new List<string>();
+        private float? _asi;
 
         /// <summary>
-        /// Gets and sets the property LabelSchema.
-        /// </summary>
-        public LabelSchema LabelSchema
-        {
-            get { return this._labelSchema; }
-            set { this._labelSchema = value; }
-        }
-
-        // Check to see if LabelSchema property is set
-        internal bool IsSetLabelSchema()
-        {
-            return this._labelSchema != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ModelVariables. 
+        /// Gets and sets the property Asi. 
         /// <para>
-        /// The training data schema variables.
+        ///  The anomaly separation index (ASI) score. This metric summarizes the overall ability
+        /// of the model to separate anomalous activities from the normal behavior. Depending
+        /// on the business, a large fraction of these anomalous activities can be malicious and
+        /// correspond to the account takeover attacks. A model with no separability power will
+        /// have the lowest possible ASI score of 0.5, whereas the a model with a high separability
+        /// power will have the highest possible ASI score of 1.0 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public List<string> ModelVariables
+        public float Asi
         {
-            get { return this._modelVariables; }
-            set { this._modelVariables = value; }
+            get { return this._asi.GetValueOrDefault(); }
+            set { this._asi = value; }
         }
 
-        // Check to see if ModelVariables property is set
-        internal bool IsSetModelVariables()
+        // Check to see if Asi property is set
+        internal bool IsSetAsi()
         {
-            return this._modelVariables != null && this._modelVariables.Count > 0; 
+            return this._asi.HasValue; 
         }
 
     }

@@ -34,7 +34,34 @@ namespace Amazon.FraudDetector.Model
     /// </summary>
     public partial class PredictionExplanations
     {
+        private List<AggregatedVariablesImpactExplanation> _aggregatedVariablesImpactExplanations = new List<AggregatedVariablesImpactExplanation>();
         private List<VariableImpactExplanation> _variableImpactExplanations = new List<VariableImpactExplanation>();
+
+        /// <summary>
+        /// Gets and sets the property AggregatedVariablesImpactExplanations. 
+        /// <para>
+        ///  The details of the aggregated variables impact on the prediction score. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Account Takeover Insights (ATI) model uses event variables from the login data you
+        /// provide to continuously calculate a set of variables (aggregated variables) based
+        /// on historical events. For example, your ATI model might calculate the number of times
+        /// an user has logged in using the same IP address. In this case, event variables used
+        /// to derive the aggregated variables are <code>IP address</code> and <code>user</code>.
+        /// </para>
+        /// </summary>
+        public List<AggregatedVariablesImpactExplanation> AggregatedVariablesImpactExplanations
+        {
+            get { return this._aggregatedVariablesImpactExplanations; }
+            set { this._aggregatedVariablesImpactExplanations = value; }
+        }
+
+        // Check to see if AggregatedVariablesImpactExplanations property is set
+        internal bool IsSetAggregatedVariablesImpactExplanations()
+        {
+            return this._aggregatedVariablesImpactExplanations != null && this._aggregatedVariablesImpactExplanations.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property VariableImpactExplanations. 

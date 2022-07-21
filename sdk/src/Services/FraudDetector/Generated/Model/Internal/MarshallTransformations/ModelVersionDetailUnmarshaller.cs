@@ -136,6 +136,12 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                     unmarshalledObject.TrainingResult = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("trainingResultV2", targetDepth))
+                {
+                    var unmarshaller = TrainingResultV2Unmarshaller.Instance;
+                    unmarshalledObject.TrainingResultV2 = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;
