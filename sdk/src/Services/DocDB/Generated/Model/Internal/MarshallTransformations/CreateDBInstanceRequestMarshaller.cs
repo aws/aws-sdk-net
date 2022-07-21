@@ -66,6 +66,10 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AvailabilityZone", StringUtils.FromString(publicRequest.AvailabilityZone));
                 }
+                if(publicRequest.IsSetCopyTagsToSnapshot())
+                {
+                    request.Parameters.Add("CopyTagsToSnapshot", StringUtils.FromBool(publicRequest.CopyTagsToSnapshot));
+                }
                 if(publicRequest.IsSetDBClusterIdentifier())
                 {
                     request.Parameters.Add("DBClusterIdentifier", StringUtils.FromString(publicRequest.DBClusterIdentifier));

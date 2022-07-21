@@ -74,6 +74,12 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                         unmarshalledObject.BackupRetentionPeriod = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("CloneGroupId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CloneGroupId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ClusterCreateTime", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;

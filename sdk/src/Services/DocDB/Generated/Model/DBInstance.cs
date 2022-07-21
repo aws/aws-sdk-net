@@ -37,6 +37,7 @@ namespace Amazon.DocDB.Model
         private string _availabilityZone;
         private int? _backupRetentionPeriod;
         private string _caCertificateIdentifier;
+        private bool? _copyTagsToSnapshot;
         private string _dbClusterIdentifier;
         private string _dbInstanceArn;
         private string _dbInstanceClass;
@@ -131,6 +132,25 @@ namespace Amazon.DocDB.Model
         internal bool IsSetCACertificateIdentifier()
         {
             return this._caCertificateIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CopyTagsToSnapshot. 
+        /// <para>
+        /// A value that indicates whether to copy tags from the DB instance to snapshots of the
+        /// DB instance. By default, tags are not copied.
+        /// </para>
+        /// </summary>
+        public bool CopyTagsToSnapshot
+        {
+            get { return this._copyTagsToSnapshot.GetValueOrDefault(); }
+            set { this._copyTagsToSnapshot = value; }
+        }
+
+        // Check to see if CopyTagsToSnapshot property is set
+        internal bool IsSetCopyTagsToSnapshot()
+        {
+            return this._copyTagsToSnapshot.HasValue; 
         }
 
         /// <summary>

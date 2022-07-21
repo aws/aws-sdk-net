@@ -36,6 +36,7 @@ namespace Amazon.DocDB.Model
     {
         private bool? _autoMinorVersionUpgrade;
         private string _availabilityZone;
+        private bool? _copyTagsToSnapshot;
         private string _dbClusterIdentifier;
         private string _dbInstanceClass;
         private string _dbInstanceIdentifier;
@@ -94,6 +95,25 @@ namespace Amazon.DocDB.Model
         internal bool IsSetAvailabilityZone()
         {
             return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CopyTagsToSnapshot. 
+        /// <para>
+        /// A value that indicates whether to copy tags from the DB instance to snapshots of the
+        /// DB instance. By default, tags are not copied.
+        /// </para>
+        /// </summary>
+        public bool CopyTagsToSnapshot
+        {
+            get { return this._copyTagsToSnapshot.GetValueOrDefault(); }
+            set { this._copyTagsToSnapshot = value; }
+        }
+
+        // Check to see if CopyTagsToSnapshot property is set
+        internal bool IsSetCopyTagsToSnapshot()
+        {
+            return this._copyTagsToSnapshot.HasValue; 
         }
 
         /// <summary>
