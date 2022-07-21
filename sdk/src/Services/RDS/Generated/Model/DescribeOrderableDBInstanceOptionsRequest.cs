@@ -265,7 +265,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Minimum 20, maximum 100.
+        /// Constraints: Minimum 20, maximum 10000.
         /// </para>
         /// </summary>
         public int MaxRecords

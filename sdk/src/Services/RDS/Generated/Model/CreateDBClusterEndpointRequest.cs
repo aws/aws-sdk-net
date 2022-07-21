@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model
     /// 
     ///  <note> 
     /// <para>
-    /// This action only applies to Aurora DB clusters.
+    /// This action applies only to Aurora DB clusters.
     /// </para>
     ///  </note>
     /// </summary>

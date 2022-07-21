@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model
     /// 
     ///  
     /// <para>
-    /// This command doesn't apply to RDS Custom.
+    /// This command doesn't apply to RDS Custom, Aurora MySQL, and Aurora PostgreSQL.
     /// </para>
     ///  
     /// <para>

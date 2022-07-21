@@ -66,7 +66,7 @@ namespace Amazon.RDS.Model
     /// database for a DB cluster, such as the character set for the default database defined
     /// by the <code>character_set_database</code> parameter. You can use the <i>Parameter
     /// Groups</i> option of the <a href="https://console.aws.amazon.com/rds/">Amazon RDS
-    /// console</a> or the <code>DescribeDBClusterParameters</code> action to verify that
+    /// console</a> or the <code>DescribeDBClusterParameters</code> operation to verify that
     /// your DB cluster parameter group has been created or modified.
     /// </para>
     ///  </important> 

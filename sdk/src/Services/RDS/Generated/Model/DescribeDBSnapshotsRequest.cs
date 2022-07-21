@@ -53,7 +53,6 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBInstanceIdentifier. 
         /// <para>
         /// The ID of the DB instance to retrieve the list of DB snapshots for. This parameter
-        /// can't be used in conjunction with <code>DBSnapshotIdentifier</code>. This parameter
         /// isn't case-sensitive.
         /// </para>
         ///  
@@ -99,8 +98,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBSnapshotIdentifier. 
         /// <para>
-        /// A specific DB snapshot identifier to describe. This parameter can't be used in conjunction
-        /// with <code>DBInstanceIdentifier</code>. This value is stored as a lowercase string.
+        /// A specific DB snapshot identifier to describe. This value is stored as a lowercase
+        /// string.
         /// </para>
         ///  
         /// <para>

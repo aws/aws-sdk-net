@@ -93,7 +93,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MinCapacity. 
         /// <para>
-        /// The maximum capacity for the Aurora DB cluster in <code>serverless</code> DB engine
+        /// The minimum capacity for an Aurora DB cluster in <code>serverless</code> DB engine
         /// mode.
         /// </para>
         /// </summary>
