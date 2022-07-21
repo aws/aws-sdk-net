@@ -162,6 +162,12 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Athena.Model.GetQueryRuntimeStatisticsRequest.QueryExecutionId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Athena.Model.GetTableMetadataRequest.CatalogName</property>
     <min>1</min>
     <max>256</max>

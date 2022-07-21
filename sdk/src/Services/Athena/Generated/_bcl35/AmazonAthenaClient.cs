@@ -1376,6 +1376,70 @@ namespace Amazon.Athena
 
         #endregion
         
+        #region  GetQueryRuntimeStatistics
+
+        /// <summary>
+        /// Returns query execution runtime statistics related to a single execution of a query
+        /// if you have access to the workgroup in which the query ran. The query execution runtime
+        /// statistics is returned only when <a>QueryExecutionStatus$State</a> is in a SUCCEEDED
+        /// or FAILED state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetQueryRuntimeStatistics service method.</param>
+        /// 
+        /// <returns>The response from the GetQueryRuntimeStatistics service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetQueryRuntimeStatistics">REST API Reference for GetQueryRuntimeStatistics Operation</seealso>
+        public virtual GetQueryRuntimeStatisticsResponse GetQueryRuntimeStatistics(GetQueryRuntimeStatisticsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetQueryRuntimeStatisticsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetQueryRuntimeStatisticsResponseUnmarshaller.Instance;
+
+            return Invoke<GetQueryRuntimeStatisticsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetQueryRuntimeStatistics operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetQueryRuntimeStatistics operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetQueryRuntimeStatistics
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetQueryRuntimeStatistics">REST API Reference for GetQueryRuntimeStatistics Operation</seealso>
+        public virtual IAsyncResult BeginGetQueryRuntimeStatistics(GetQueryRuntimeStatisticsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetQueryRuntimeStatisticsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetQueryRuntimeStatisticsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetQueryRuntimeStatistics operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetQueryRuntimeStatistics.</param>
+        /// 
+        /// <returns>Returns a  GetQueryRuntimeStatisticsResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetQueryRuntimeStatistics">REST API Reference for GetQueryRuntimeStatistics Operation</seealso>
+        public virtual GetQueryRuntimeStatisticsResponse EndGetQueryRuntimeStatistics(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetQueryRuntimeStatisticsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetTableMetadata
 
         /// <summary>

@@ -41,6 +41,11 @@ namespace Amazon.Athena.Model
         IListDataCatalogsPaginator ListDataCatalogs(ListDataCatalogsRequest request);
 
         /// <summary>
+        /// Paginator for ListEngineVersions operation
+        ///</summary>
+        IListEngineVersionsPaginator ListEngineVersions(ListEngineVersionsRequest request);
+
+        /// <summary>
         /// Paginator for ListNamedQueries operation
         ///</summary>
         IListNamedQueriesPaginator ListNamedQueries(ListNamedQueriesRequest request);

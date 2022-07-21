@@ -60,6 +60,14 @@ namespace Amazon.Athena.Model
         }
 
         /// <summary>
+        /// Paginator for ListEngineVersions operation
+        ///</summary>
+        public IListEngineVersionsPaginator ListEngineVersions(ListEngineVersionsRequest request) 
+        {
+            return new ListEngineVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListNamedQueries operation
         ///</summary>
         public IListNamedQueriesPaginator ListNamedQueries(ListNamedQueriesRequest request) 

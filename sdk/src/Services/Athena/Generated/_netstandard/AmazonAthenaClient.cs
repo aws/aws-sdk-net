@@ -1039,6 +1039,50 @@ namespace Amazon.Athena
 
         #endregion
         
+        #region  GetQueryRuntimeStatistics
+
+        internal virtual GetQueryRuntimeStatisticsResponse GetQueryRuntimeStatistics(GetQueryRuntimeStatisticsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetQueryRuntimeStatisticsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetQueryRuntimeStatisticsResponseUnmarshaller.Instance;
+
+            return Invoke<GetQueryRuntimeStatisticsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns query execution runtime statistics related to a single execution of a query
+        /// if you have access to the workgroup in which the query ran. The query execution runtime
+        /// statistics is returned only when <a>QueryExecutionStatus$State</a> is in a SUCCEEDED
+        /// or FAILED state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetQueryRuntimeStatistics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetQueryRuntimeStatistics service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetQueryRuntimeStatistics">REST API Reference for GetQueryRuntimeStatistics Operation</seealso>
+        public virtual Task<GetQueryRuntimeStatisticsResponse> GetQueryRuntimeStatisticsAsync(GetQueryRuntimeStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetQueryRuntimeStatisticsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetQueryRuntimeStatisticsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetQueryRuntimeStatisticsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetTableMetadata
 
         internal virtual GetTableMetadataResponse GetTableMetadata(GetTableMetadataRequest request)
