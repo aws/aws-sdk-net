@@ -282,7 +282,7 @@ namespace Amazon.DatabaseMigrationService.Model
         ///  
         /// <para>
         /// Valid states: Table does not exist | Before load | Full load | Table completed | Table
-        /// cancelled | Table error | Table all | Table updates | Table is being reloaded
+        /// cancelled | Table error | Table is being reloaded
         /// </para>
         /// </summary>
         public string TableState
