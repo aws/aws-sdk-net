@@ -81,9 +81,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the previous response was incomplete (because there is more data to retrieve),
-        /// Amazon Kendra returns a pagination token in the response. You can use this pagination
-        /// token to retrieve the next set of access control configurations.
+        /// If the previous response was incomplete (because there's more data to retrieve), Amazon
+        /// Kendra returns a pagination token in the response. You can use this pagination token
+        /// to retrieve the next set of access control configurations.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

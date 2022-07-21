@@ -2789,6 +2789,56 @@ namespace Amazon.Kendra
 
 
     /// <summary>
+    /// Constants used for properties of type SharePointOnlineAuthenticationType.
+    /// </summary>
+    public class SharePointOnlineAuthenticationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HTTP_BASIC for SharePointOnlineAuthenticationType
+        /// </summary>
+        public static readonly SharePointOnlineAuthenticationType HTTP_BASIC = new SharePointOnlineAuthenticationType("HTTP_BASIC");
+        /// <summary>
+        /// Constant OAUTH2 for SharePointOnlineAuthenticationType
+        /// </summary>
+        public static readonly SharePointOnlineAuthenticationType OAUTH2 = new SharePointOnlineAuthenticationType("OAUTH2");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SharePointOnlineAuthenticationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SharePointOnlineAuthenticationType FindValue(string value)
+        {
+            return FindValue<SharePointOnlineAuthenticationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SharePointOnlineAuthenticationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SharePointVersion.
     /// </summary>
     public class SharePointVersion : ConstantClass

@@ -58,8 +58,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the response is truncated, Amazon Kendra returns this token that you can use in
-        /// the subsequent request to retrieve the next set of access control configurations.
+        /// If the response is truncated, Amazon Kendra returns this token, which you can use
+        /// in the subsequent request to retrieve the next set of access control configurations.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

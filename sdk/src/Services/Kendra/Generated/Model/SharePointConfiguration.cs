@@ -34,6 +34,7 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class SharePointConfiguration
     {
+        private SharePointOnlineAuthenticationType _authenticationType;
         private bool? _crawlAttachments;
         private bool? _disableLocalGroups;
         private string _documentTitleFieldName;
@@ -46,6 +47,26 @@ namespace Amazon.Kendra.Model
         private List<string> _urls = new List<string>();
         private bool? _useChangeLog;
         private DataSourceVpcConfiguration _vpcConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property AuthenticationType. 
+        /// <para>
+        /// Whether you want to connect to SharePoint using basic authentication of user name
+        /// and password, or OAuth authentication of user name, password, client ID, and client
+        /// secret. You can use OAuth authentication for SharePoint Online.
+        /// </para>
+        /// </summary>
+        public SharePointOnlineAuthenticationType AuthenticationType
+        {
+            get { return this._authenticationType; }
+            set { this._authenticationType = value; }
+        }
+
+        // Check to see if AuthenticationType property is set
+        internal bool IsSetAuthenticationType()
+        {
+            return this._authenticationType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CrawlAttachments. 
@@ -188,6 +209,12 @@ namespace Amazon.Kendra.Model
         /// Server, you also need to provide the sever domain name as part of the credentials.
         /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
         /// a Microsoft SharePoint Data Source</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can also provide OAuth authentication credentials of user name, password, client
+        /// ID, and client secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication">Authentication
+        /// for a SharePoint data source</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1284)]
