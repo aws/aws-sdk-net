@@ -60,6 +60,36 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         unmarshalledObject.ActionsEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ActionsSuppressedBy", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ActionsSuppressedBy = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ActionsSuppressedReason", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ActionsSuppressedReason = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ActionsSuppressor", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ActionsSuppressor = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ActionsSuppressorExtensionPeriod", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.ActionsSuppressorExtensionPeriod = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ActionsSuppressorWaitPeriod", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.ActionsSuppressorWaitPeriod = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("AlarmActions/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -121,6 +151,12 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.StateReasonData = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("StateTransitionedTimestamp", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.StateTransitionedTimestamp = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("StateUpdatedTimestamp", targetDepth))
