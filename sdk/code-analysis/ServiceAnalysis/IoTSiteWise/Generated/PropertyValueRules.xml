@@ -200,6 +200,30 @@
     <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.CreateBulkImportJobRequest.JobName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[^\u0000-\u001F\u007F]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.CreateBulkImportJobRequest.JobRoleArn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.CreateBulkImportJobResponse.JobId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.CreateBulkImportJobResponse.JobName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[^\u0000-\u001F\u007F]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.CreateDashboardRequest.ClientToken</property>
     <min>36</min>
     <max>64</max>
@@ -569,6 +593,30 @@
     <min>1</min>
     <max>256</max>
     <pattern>[^\u0000-\u001F\u007F]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.DescribeBulkImportJobRequest.JobId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.DescribeBulkImportJobResponse.JobId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.DescribeBulkImportJobResponse.JobName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[^\u0000-\u001F\u007F]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.DescribeBulkImportJobResponse.JobRoleArn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.DescribeDashboardRequest.DashboardId</property>
@@ -1145,6 +1193,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.ListAssociatedAssetsResponse.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>[A-Za-z0-9+/=]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.ListBulkImportJobsRequest.MaxResults</property>
+    <min>1</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.ListBulkImportJobsRequest.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>[A-Za-z0-9+/=]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.ListBulkImportJobsResponse.NextToken</property>
     <min>1</min>
     <max>4096</max>
     <pattern>[A-Za-z0-9+/=]+</pattern>
@@ -1994,10 +2059,20 @@
     <pattern>[^\u0000-\u001F\u007F]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.ErrorReportLocation.Bucket</property>
+    <min>3</min>
+    <max>63</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.ExpressionVariable.Name</property>
     <min>1</min>
     <max>64</max>
     <pattern>^[a-z][a-z0-9_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.File.Bucket</property>
+    <min>3</min>
+    <max>63</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.GatewayCapabilitySummary.CapabilityNamespace</property>
@@ -2068,6 +2143,18 @@
     <min>1</min>
     <max>256</max>
     <pattern>^(http|https)\://\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.JobSummary.Id</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.JobSummary.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[^\u0000-\u001F\u007F]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.Metric.Expression</property>

@@ -1109,6 +1109,146 @@ namespace Amazon.IoTSiteWise
 
         #endregion
         
+        #region  CreateBulkImportJob
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This API operation is in preview release for IoT SiteWise and is subject to change.
+        /// We recommend that you use this operation only with test data, and not in production
+        /// environments.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Defines a job to ingest data to IoT SiteWise from Amazon S3. For more information,
+        /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/CreateBulkImportJob.html">Create
+        /// a bulk import job (CLI)</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must enable IoT SiteWise to export data to Amazon S3 before you create a bulk
+        /// import job. For more information about how to configure storage settings, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PutStorageConfiguration.html">PutStorageConfiguration</a>.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBulkImportJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateBulkImportJob service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ConflictingOperationException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
+        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// to associate more than the allowed number of child assets or attempting to create
+        /// more than the allowed number of properties for an asset model.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateBulkImportJob">REST API Reference for CreateBulkImportJob Operation</seealso>
+        CreateBulkImportJobResponse CreateBulkImportJob(CreateBulkImportJobRequest request);
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This API operation is in preview release for IoT SiteWise and is subject to change.
+        /// We recommend that you use this operation only with test data, and not in production
+        /// environments.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Defines a job to ingest data to IoT SiteWise from Amazon S3. For more information,
+        /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/CreateBulkImportJob.html">Create
+        /// a bulk import job (CLI)</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must enable IoT SiteWise to export data to Amazon S3 before you create a bulk
+        /// import job. For more information about how to configure storage settings, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PutStorageConfiguration.html">PutStorageConfiguration</a>.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBulkImportJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateBulkImportJob service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ConflictingOperationException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
+        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// to associate more than the allowed number of child assets or attempting to create
+        /// more than the allowed number of properties for an asset model.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateBulkImportJob">REST API Reference for CreateBulkImportJob Operation</seealso>
+        Task<CreateBulkImportJobResponse> CreateBulkImportJobAsync(CreateBulkImportJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateDashboard
 
 
@@ -2488,6 +2628,98 @@ namespace Amazon.IoTSiteWise
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetProperty">REST API Reference for DescribeAssetProperty Operation</seealso>
         Task<DescribeAssetPropertyResponse> DescribeAssetPropertyAsync(DescribeAssetPropertyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeBulkImportJob
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This API operation is in preview release for IoT SiteWise and is subject to change.
+        /// We recommend that you use this operation only with test data, and not in production
+        /// environments.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Retrieves information about a bulk import job request. For more information, see <a
+        /// href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/DescribeBulkImportJob.html">Describe
+        /// a bulk import job (CLI)</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBulkImportJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeBulkImportJob service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeBulkImportJob">REST API Reference for DescribeBulkImportJob Operation</seealso>
+        DescribeBulkImportJobResponse DescribeBulkImportJob(DescribeBulkImportJobRequest request);
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This API operation is in preview release for IoT SiteWise and is subject to change.
+        /// We recommend that you use this operation only with test data, and not in production
+        /// environments.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Retrieves information about a bulk import job request. For more information, see <a
+        /// href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/DescribeBulkImportJob.html">Describe
+        /// a bulk import job (CLI)</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBulkImportJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeBulkImportJob service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeBulkImportJob">REST API Reference for DescribeBulkImportJob Operation</seealso>
+        Task<DescribeBulkImportJobResponse> DescribeBulkImportJobAsync(DescribeBulkImportJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -4220,6 +4452,98 @@ namespace Amazon.IoTSiteWise
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssociatedAssets">REST API Reference for ListAssociatedAssets Operation</seealso>
         Task<ListAssociatedAssetsResponse> ListAssociatedAssetsAsync(ListAssociatedAssetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListBulkImportJobs
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This API operation is in preview release for IoT SiteWise and is subject to change.
+        /// We recommend that you use this operation only with test data, and not in production
+        /// environments.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Retrieves a paginated list of bulk import job requests. For more information, see
+        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/ListBulkImportJobs.html">List
+        /// bulk import jobs (CLI)</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBulkImportJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListBulkImportJobs service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListBulkImportJobs">REST API Reference for ListBulkImportJobs Operation</seealso>
+        ListBulkImportJobsResponse ListBulkImportJobs(ListBulkImportJobsRequest request);
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// This API operation is in preview release for IoT SiteWise and is subject to change.
+        /// We recommend that you use this operation only with test data, and not in production
+        /// environments.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Retrieves a paginated list of bulk import job requests. For more information, see
+        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/ListBulkImportJobs.html">List
+        /// bulk import jobs (CLI)</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBulkImportJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListBulkImportJobs service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListBulkImportJobs">REST API Reference for ListBulkImportJobs Operation</seealso>
+        Task<ListBulkImportJobsResponse> ListBulkImportJobsAsync(ListBulkImportJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

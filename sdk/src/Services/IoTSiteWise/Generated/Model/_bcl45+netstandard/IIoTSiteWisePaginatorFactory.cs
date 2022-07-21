@@ -81,6 +81,11 @@ namespace Amazon.IoTSiteWise.Model
         IListAssociatedAssetsPaginator ListAssociatedAssets(ListAssociatedAssetsRequest request);
 
         /// <summary>
+        /// Paginator for ListBulkImportJobs operation
+        ///</summary>
+        IListBulkImportJobsPaginator ListBulkImportJobs(ListBulkImportJobsRequest request);
+
+        /// <summary>
         /// Paginator for ListDashboards operation
         ///</summary>
         IListDashboardsPaginator ListDashboards(ListDashboardsRequest request);

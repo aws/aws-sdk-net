@@ -124,6 +124,14 @@ namespace Amazon.IoTSiteWise.Model
         }
 
         /// <summary>
+        /// Paginator for ListBulkImportJobs operation
+        ///</summary>
+        public IListBulkImportJobsPaginator ListBulkImportJobs(ListBulkImportJobsRequest request) 
+        {
+            return new ListBulkImportJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDashboards operation
         ///</summary>
         public IListDashboardsPaginator ListDashboards(ListDashboardsRequest request) 
