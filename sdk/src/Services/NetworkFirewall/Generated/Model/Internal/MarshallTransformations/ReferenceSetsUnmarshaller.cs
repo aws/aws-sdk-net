@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FirewallStatus Object
+    /// Response Unmarshaller for ReferenceSets Object
     /// </summary>  
-    public class FirewallStatusUnmarshaller : IUnmarshaller<FirewallStatus, XmlUnmarshallerContext>, IUnmarshaller<FirewallStatus, JsonUnmarshallerContext>
+    public class ReferenceSetsUnmarshaller : IUnmarshaller<ReferenceSets, XmlUnmarshallerContext>, IUnmarshaller<ReferenceSets, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        FirewallStatus IUnmarshaller<FirewallStatus, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ReferenceSets IUnmarshaller<ReferenceSets, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,21 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public FirewallStatus Unmarshall(JsonUnmarshallerContext context)
+        public ReferenceSets Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            FirewallStatus unmarshalledObject = new FirewallStatus();
+            ReferenceSets unmarshalledObject = new ReferenceSets();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CapacityUsageSummary", targetDepth))
+                if (context.TestExpression("IPSetReferences", targetDepth))
                 {
-                    var unmarshaller = CapacityUsageSummaryUnmarshaller.Instance;
-                    unmarshalledObject.CapacityUsageSummary = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ConfigurationSyncStateSummary", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConfigurationSyncStateSummary = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SyncStates", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, SyncState, StringUnmarshaller, SyncStateUnmarshaller>(StringUnmarshaller.Instance, SyncStateUnmarshaller.Instance);
-                    unmarshalledObject.SyncStates = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new DictionaryUnmarshaller<string, IPSetReference, StringUnmarshaller, IPSetReferenceUnmarshaller>(StringUnmarshaller.Instance, IPSetReferenceUnmarshaller.Instance);
+                    unmarshalledObject.IPSetReferences = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +76,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         }
 
 
-        private static FirewallStatusUnmarshaller _instance = new FirewallStatusUnmarshaller();        
+        private static ReferenceSetsUnmarshaller _instance = new ReferenceSetsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FirewallStatusUnmarshaller Instance
+        public static ReferenceSetsUnmarshaller Instance
         {
             get
             {

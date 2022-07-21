@@ -49,9 +49,28 @@ namespace Amazon.NetworkFirewall.Model
     /// </summary>
     public partial class RuleGroup
     {
+        private ReferenceSets _referenceSets;
         private RulesSource _rulesSource;
         private RuleVariables _ruleVariables;
         private StatefulRuleOptions _statefulRuleOptions;
+
+        /// <summary>
+        /// Gets and sets the property ReferenceSets. 
+        /// <para>
+        /// The list of a rule group's reference sets.
+        /// </para>
+        /// </summary>
+        public ReferenceSets ReferenceSets
+        {
+            get { return this._referenceSets; }
+            set { this._referenceSets = value; }
+        }
+
+        // Check to see if ReferenceSets property is set
+        internal bool IsSetReferenceSets()
+        {
+            return this._referenceSets != null;
+        }
 
         /// <summary>
         /// Gets and sets the property RulesSource. 

@@ -64,6 +64,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ReferenceSets", targetDepth))
+                {
+                    var unmarshaller = ReferenceSetsUnmarshaller.Instance;
+                    unmarshalledObject.ReferenceSets = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RulesSource", targetDepth))
                 {
                     var unmarshaller = RulesSourceUnmarshaller.Instance;

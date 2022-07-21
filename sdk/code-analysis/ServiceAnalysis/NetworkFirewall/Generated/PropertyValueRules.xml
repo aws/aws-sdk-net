@@ -725,6 +725,16 @@
     <pattern>^subnet-[0-9a-f]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.CIDRSummary.AvailableCIDRCount</property>
+    <min>0</min>
+    <max>1000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.CIDRSummary.UtilizedCIDRCount</property>
+    <min>0</min>
+    <max>1000000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.CustomAction.ActionName</property>
     <min>1</min>
     <max>128</max>
@@ -847,6 +857,17 @@
     <min>1</min>
     <max>1024</max>
     <pattern>^.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.IPSetMetadata.ResolvedCIDRCount</property>
+    <min>0</min>
+    <max>1000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.IPSetReference.ReferenceArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.LogDestinationConfig.LogDestinationType</property>

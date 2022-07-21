@@ -89,6 +89,10 @@ namespace Amazon.NetworkFirewall
     {
 
         /// <summary>
+        /// Constant CAPACITY_CONSTRAINED for ConfigurationSyncState
+        /// </summary>
+        public static readonly ConfigurationSyncState CAPACITY_CONSTRAINED = new ConfigurationSyncState("CAPACITY_CONSTRAINED");
+        /// <summary>
         /// Constant IN_SYNC for ConfigurationSyncState
         /// </summary>
         public static readonly ConfigurationSyncState IN_SYNC = new ConfigurationSyncState("IN_SYNC");
@@ -442,6 +446,10 @@ namespace Amazon.NetworkFirewall
     public class PerObjectSyncStatus : ConstantClass
     {
 
+        /// <summary>
+        /// Constant CAPACITY_CONSTRAINED for PerObjectSyncStatus
+        /// </summary>
+        public static readonly PerObjectSyncStatus CAPACITY_CONSTRAINED = new PerObjectSyncStatus("CAPACITY_CONSTRAINED");
         /// <summary>
         /// Constant IN_SYNC for PerObjectSyncStatus
         /// </summary>
