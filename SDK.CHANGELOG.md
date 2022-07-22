@@ -1,3 +1,20 @@
+### 3.7.321.0 (2022-07-22 18:22 UTC)
+* Account (3.7.1.0)
+	* This release enables customers to manage the primary contact information for their AWS accounts. For more information, see https://docs.aws.amazon.com/accounts/latest/reference/API_Operations.html
+* EC2 (3.7.79.0)
+	* Added support for EC2 M1 Mac instances. For more information, please visit aws.amazon.com/mac.
+* IoTDeviceAdvisor (3.7.3.0)
+	* Added new service feature (Early access only) - Long Duration Test, where customers can test the IoT device to observe how it behaves when the device is in operation for longer period.
+* MediaLive (3.7.11.0)
+	* Link devices now support remote rebooting. Link devices now support maintenance windows. Maintenance windows allow a Link device to install software updates without stopping the MediaLive channel. The channel will experience a brief loss of input from the device while updates are installed.
+* RDS (3.7.15.0)
+	* This release adds the "ModifyActivityStream" API with support for audit policy state locking and unlocking.
+* TranscribeService (3.7.14.0)
+	* Remove unsupported language codes for StartTranscriptionJob and update VocabularyFileUri for UpdateMedicalVocabulary
+* Core 3.7.12.12
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.320.0 (2022-07-21 18:20 UTC)
 * Athena (3.7.9.0)
 	* This feature allows customers to retrieve runtime statistics for completed queries

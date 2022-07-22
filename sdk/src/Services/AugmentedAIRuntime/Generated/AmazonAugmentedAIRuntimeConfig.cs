@@ -32,7 +32,7 @@ namespace Amazon.AugmentedAIRuntime
     public partial class AmazonAugmentedAIRuntimeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.184");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.185");
 
         private string _userAgent = UserAgentString;
 
