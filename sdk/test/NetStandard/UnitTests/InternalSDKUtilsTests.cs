@@ -23,5 +23,29 @@ namespace AWSSDK_NetStandard.UnitTests
             Assert.NotEqual("Unknown", platform);
             Assert.False(platform.Contains(" "));
         }
+                
+        [Theory]
+        [InlineData(@"c:\a\b\c\test.txt", @"c:\a\b\c", true)]
+        [InlineData(@"c:\a\b\c\..\test.txt", @"c:\a\b\c", false)]
+        [InlineData(@"c:\a\b\c\..\ctest.txt", @"c:\a\b\c", false)]
+        [InlineData(@"c:\a\b\c\test.txt", @"c:\a\b\c\", true)]
+        [InlineData(@"c:\a\b\c\..\test.txt", @"c:\a\b\c\", false)]
+        [InlineData(@"c:\a\b\c\..\ctest.txt", @"c:\a\b\c\", false)]
+        [InlineData(@"/home/a/b/c/test.txt", @"/home/a/b/c", true)]
+        [InlineData(@"/home/a/b/c/../test.txt", @"/home/a/b/c", false)]
+        [InlineData(@"/home/a/b/c/../ctest.txt", @"/home/a/b/c", false)]
+        [InlineData(@"/home/a/b/c/test.txt", @"/home/a/b/c/", true)]
+        [InlineData(@"/home/a/b/c/../test.txt", @"/home/a/b/c/", false)]
+        [InlineData(@"/home/a/b/c/../ctest.txt", @"/home/a/b/c/", false)]
+        [InlineData(@"c:\a\b\c\\test.txt", @"c:\a\b\c", true)]
+        [InlineData(@"c:/a/b/c/test.txt", @"c:\a\b\c", true)]
+        [InlineData(@"c:/a/b/c/test.txt", @"c:/a/b/c", true)]
+        [InlineData(@"c:\a\b\c\d\test.txt", @"c:\a\b\c", true)]
+        [InlineData(@"c:\a\b\c\d/test.txt", @"c:\a\b\c", true)]
+        public void IsFilePathRootedWithDirectoryPathTests(string filePath, string directoryPath, bool expectedResult)
+        {
+            var result = InternalSDKUtils.IsFilePathRootedWithDirectoryPath(filePath, directoryPath);
+            Assert.Equal(expectedResult, result);
+        }
     }
 }

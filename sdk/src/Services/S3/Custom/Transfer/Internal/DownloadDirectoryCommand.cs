@@ -29,6 +29,7 @@ using Amazon.S3.Model;
 using System.Threading;
 using Amazon.S3.Util;
 using Amazon.Util.Internal;
+using Amazon.Runtime;
 
 namespace Amazon.S3.Transfer.Internal
 {
@@ -97,6 +98,13 @@ namespace Amazon.S3.Transfer.Internal
             downloadRequest.Key = s3Object.Key;
             var file = s3Object.Key.Substring(prefixLength).Replace('/', Path.DirectorySeparatorChar);
             downloadRequest.FilePath = Path.Combine(this._request.LocalDirectory, file);
+                        
+            //Ensure the target file is a rooted within LocalDirectory. Otherwise error.
+            if(!InternalSDKUtils.IsFilePathRootedWithDirectoryPath(downloadRequest.FilePath, _request.LocalDirectory))
+            {
+                throw new AmazonClientException($"The file {downloadRequest.FilePath} is not allowed outside of the target directory {_request.LocalDirectory}.");
+            }
+
             downloadRequest.WriteObjectProgressEvent += downloadedProgressEventCallback;
 
             return downloadRequest;
