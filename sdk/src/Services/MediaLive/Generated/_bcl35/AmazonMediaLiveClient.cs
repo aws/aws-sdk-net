@@ -3481,6 +3481,86 @@ namespace Amazon.MediaLive
 
         #endregion
         
+        #region  RebootInputDevice
+
+        /// <summary>
+        /// Send a reboot command to the specified input device. The device will begin rebooting
+        /// within a few seconds of sending the command. When the reboot is complete, the device’s
+        /// connection status will change to connected.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RebootInputDevice service method.</param>
+        /// 
+        /// <returns>The response from the RebootInputDevice service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.UnprocessableEntityException">
+        /// Placeholder documentation for UnprocessableEntityException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/RebootInputDevice">REST API Reference for RebootInputDevice Operation</seealso>
+        public virtual RebootInputDeviceResponse RebootInputDevice(RebootInputDeviceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RebootInputDeviceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RebootInputDeviceResponseUnmarshaller.Instance;
+
+            return Invoke<RebootInputDeviceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RebootInputDevice operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RebootInputDevice operation on AmazonMediaLiveClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRebootInputDevice
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/RebootInputDevice">REST API Reference for RebootInputDevice Operation</seealso>
+        public virtual IAsyncResult BeginRebootInputDevice(RebootInputDeviceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RebootInputDeviceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RebootInputDeviceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RebootInputDevice operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRebootInputDevice.</param>
+        /// 
+        /// <returns>Returns a  RebootInputDeviceResult from MediaLive.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/RebootInputDevice">REST API Reference for RebootInputDevice Operation</seealso>
+        public virtual RebootInputDeviceResponse EndRebootInputDevice(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RebootInputDeviceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  RejectInputDeviceTransfer
 
         /// <summary>
@@ -3636,6 +3716,90 @@ namespace Amazon.MediaLive
         public virtual StartChannelResponse EndStartChannel(IAsyncResult asyncResult)
         {
             return EndInvoke<StartChannelResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartInputDeviceMaintenanceWindow
+
+        /// <summary>
+        /// Start a maintenance window for the specified input device. Starting a maintenance
+        /// window will give the device up to two hours to install software. If the device was
+        /// streaming prior to the maintenance, it will resume streaming when the software is
+        /// fully installed. Devices automatically install updates while they are powered on and
+        /// their MediaLive channels are stopped. A maintenance window allows you to update a
+        /// device without having to stop MediaLive channels that use the device. The device must
+        /// remain powered on and connected to the internet for the duration of the maintenance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartInputDeviceMaintenanceWindow service method.</param>
+        /// 
+        /// <returns>The response from the StartInputDeviceMaintenanceWindow service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.UnprocessableEntityException">
+        /// Placeholder documentation for UnprocessableEntityException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartInputDeviceMaintenanceWindow">REST API Reference for StartInputDeviceMaintenanceWindow Operation</seealso>
+        public virtual StartInputDeviceMaintenanceWindowResponse StartInputDeviceMaintenanceWindow(StartInputDeviceMaintenanceWindowRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartInputDeviceMaintenanceWindowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartInputDeviceMaintenanceWindowResponseUnmarshaller.Instance;
+
+            return Invoke<StartInputDeviceMaintenanceWindowResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartInputDeviceMaintenanceWindow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartInputDeviceMaintenanceWindow operation on AmazonMediaLiveClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartInputDeviceMaintenanceWindow
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartInputDeviceMaintenanceWindow">REST API Reference for StartInputDeviceMaintenanceWindow Operation</seealso>
+        public virtual IAsyncResult BeginStartInputDeviceMaintenanceWindow(StartInputDeviceMaintenanceWindowRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartInputDeviceMaintenanceWindowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartInputDeviceMaintenanceWindowResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartInputDeviceMaintenanceWindow operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartInputDeviceMaintenanceWindow.</param>
+        /// 
+        /// <returns>Returns a  StartInputDeviceMaintenanceWindowResult from MediaLive.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartInputDeviceMaintenanceWindow">REST API Reference for StartInputDeviceMaintenanceWindow Operation</seealso>
+        public virtual StartInputDeviceMaintenanceWindowResponse EndStartInputDeviceMaintenanceWindow(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartInputDeviceMaintenanceWindowResponse>(asyncResult);
         }
 
         #endregion

@@ -11401,6 +11401,56 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type RebootInputDeviceForce.
+    /// </summary>
+    public class RebootInputDeviceForce : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NO for RebootInputDeviceForce
+        /// </summary>
+        public static readonly RebootInputDeviceForce NO = new RebootInputDeviceForce("NO");
+        /// <summary>
+        /// Constant YES for RebootInputDeviceForce
+        /// </summary>
+        public static readonly RebootInputDeviceForce YES = new RebootInputDeviceForce("YES");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RebootInputDeviceForce(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RebootInputDeviceForce FindValue(string value)
+        {
+            return FindValue<RebootInputDeviceForce>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RebootInputDeviceForce(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ReservationAutomaticRenewal.
     /// </summary>
     public class ReservationAutomaticRenewal : ConstantClass
