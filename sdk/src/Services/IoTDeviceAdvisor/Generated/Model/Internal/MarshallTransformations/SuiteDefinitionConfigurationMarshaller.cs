@@ -73,6 +73,18 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.IntendedForQualification);
             }
 
+            if(requestObject.IsSetIsLongDurationTest())
+            {
+                context.Writer.WritePropertyName("isLongDurationTest");
+                context.Writer.Write(requestObject.IsLongDurationTest);
+            }
+
+            if(requestObject.IsSetProtocol())
+            {
+                context.Writer.WritePropertyName("protocol");
+                context.Writer.Write(requestObject.Protocol);
+            }
+
             if(requestObject.IsSetRootGroup())
             {
                 context.Writer.WritePropertyName("rootGroup");

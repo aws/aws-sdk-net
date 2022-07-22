@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SuiteDefinitionConfiguration Object
+    /// Response Unmarshaller for TestCaseScenario Object
     /// </summary>  
-    public class SuiteDefinitionConfigurationUnmarshaller : IUnmarshaller<SuiteDefinitionConfiguration, XmlUnmarshallerContext>, IUnmarshaller<SuiteDefinitionConfiguration, JsonUnmarshallerContext>
+    public class TestCaseScenarioUnmarshaller : IUnmarshaller<TestCaseScenario, XmlUnmarshallerContext>, IUnmarshaller<TestCaseScenario, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SuiteDefinitionConfiguration IUnmarshaller<SuiteDefinitionConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TestCaseScenario IUnmarshaller<TestCaseScenario, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,57 +53,45 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SuiteDefinitionConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public TestCaseScenario Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SuiteDefinitionConfiguration unmarshalledObject = new SuiteDefinitionConfiguration();
+            TestCaseScenario unmarshalledObject = new TestCaseScenario();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("devicePermissionRoleArn", targetDepth))
+                if (context.TestExpression("failure", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DevicePermissionRoleArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Failure = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("devices", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<DeviceUnderTest, DeviceUnderTestUnmarshaller>(DeviceUnderTestUnmarshaller.Instance);
-                    unmarshalledObject.Devices = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("intendedForQualification", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.IntendedForQualification = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("isLongDurationTest", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.IsLongDurationTest = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("protocol", targetDepth))
+                if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Protocol = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("rootGroup", targetDepth))
+                if (context.TestExpression("systemMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RootGroup = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SystemMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("suiteDefinitionName", targetDepth))
+                if (context.TestExpression("testCaseScenarioId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SuiteDefinitionName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TestCaseScenarioId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("testCaseScenarioType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TestCaseScenarioType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -112,12 +100,12 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
         }
 
 
-        private static SuiteDefinitionConfigurationUnmarshaller _instance = new SuiteDefinitionConfigurationUnmarshaller();        
+        private static TestCaseScenarioUnmarshaller _instance = new TestCaseScenarioUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SuiteDefinitionConfigurationUnmarshaller Instance
+        public static TestCaseScenarioUnmarshaller Instance
         {
             get
             {
