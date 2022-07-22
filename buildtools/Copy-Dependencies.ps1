@@ -156,7 +156,7 @@ Function Copy-Dependency
             throw "Configured to copy $assembly but it was not found. Please check the path of the dependency."
         }
 
-        Write-Verbose "Copying $($assembly.FullName) to $(Resolve-Path $platformDestination)"
+        Write-Host "Copying $($assembly.FullName) to $(Resolve-Path $platformDestination)"
         Copy-Item $assembly.FullName -Destination $(Resolve-Path $platformDestination)
     }
 }

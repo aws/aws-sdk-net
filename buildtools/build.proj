@@ -204,12 +204,14 @@
 
     <Target Name="test-sdk-service" DependsOnTargets="init;build-sdk-service;build-roslyn-anlyzer-test-and-run;run-unit-tests-service;run-integ-tests-service;test-backward-compatibility" />
 
-    <Target Name="sign-sdk-artifacts" Condition="'$(CodeSigning)'=='true'" DependsOnTargets="build-buildtools">
+    <Target Name="sign-sdk-artifacts" Condition="'$(CodeSigning)'=='true'" DependsOnTargets="build-buildtools;build-extensions">
         <!-- Configure project specfic code sign properties -->
         <ItemGroup>
             <!-- SDK items -->
             <SignableItems Include="../sdk/src/Core/**/bin/$(Configuration)/*/AWSSDK*.dll" />
             <SignableItems Include="../sdk/src/Services/**/bin/$(Configuration)/*/AWSSDK*.dll" Exclude="**/AWSSDK.Core.dll" />
+            <!-- Extensions -->
+            <SignableItems Include="../Extensions/src/**/bin/$(Configuration)/*/AWSSDK.Extensions*.dll" />
             <!-- Code Analyzer items -->
             <SignableItems Include="../sdk/code-analysis/ServiceAnalysis/**/bin/$(Configuration)/AWSSDK*.CodeAnalysis.dll" />
             <SignableItems Include="../sdk/code-analysis/NuGetInstallScripts/install.ps1" />
@@ -220,11 +222,11 @@
         </ItemGroup>
 
         <PropertyGroup>
-            <SignableItemsBasePath>../sdk</SignableItemsBasePath>
+            <SignableItemsBasePath>../</SignableItemsBasePath>
             <ZipPrefix>netsdk</ZipPrefix>
             <ZipFilesPath>$(MSBuildProjectDirectory)/../codesign-zip</ZipFilesPath>
             <SigningS3KeyPrefix>netsdk</SigningS3KeyPrefix>
-            <SignedItemsPath>../sdk</SignedItemsPath>
+            <SignedItemsPath>../</SignedItemsPath>
             <SigningRoleSessionName>netsdk-signer-session</SigningRoleSessionName>
         </PropertyGroup>
 
