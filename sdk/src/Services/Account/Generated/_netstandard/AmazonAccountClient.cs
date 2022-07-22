@@ -261,6 +261,15 @@ namespace Amazon.Account
         /// For complete details about how to use the alternate contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Access
         /// or updating the alternate contacts</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Before you can update the alternate contact information for an Amazon Web Services
+        /// account that is managed by Organizations, you must first enable integration between
+        /// Amazon Web Services Account Management and Organizations. For more information, see
+        /// <a href="https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-trusted-access.html">Enabling
+        /// trusted access for Amazon Web Services Account Management</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAlternateContact service method.</param>
         /// <param name="cancellationToken">
@@ -319,6 +328,15 @@ namespace Amazon.Account
         /// For complete details about how to use the alternate contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Access
         /// or updating the alternate contacts</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Before you can update the alternate contact information for an Amazon Web Services
+        /// account that is managed by Organizations, you must first enable integration between
+        /// Amazon Web Services Account Management and Organizations. For more information, see
+        /// <a href="https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-trusted-access.html">Enabling
+        /// trusted access for Amazon Web Services Account Management</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAlternateContact service method.</param>
         /// <param name="cancellationToken">
@@ -356,6 +374,64 @@ namespace Amazon.Account
 
         #endregion
         
+        #region  GetContactInformation
+
+        internal virtual GetContactInformationResponse GetContactInformation(GetContactInformationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetContactInformationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetContactInformationResponseUnmarshaller.Instance;
+
+            return Invoke<GetContactInformationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the primary contact information of an Amazon Web Services account.
+        /// 
+        ///  
+        /// <para>
+        /// For complete details about how to use the primary contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Update
+        /// the primary and alternate contact information</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetContactInformation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetContactInformation service method, as returned by Account.</returns>
+        /// <exception cref="Amazon.Account.Model.AccessDeniedException">
+        /// The operation failed because the calling identity doesn't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.InternalServerException">
+        /// The operation failed because of an error internal to Amazon Web Services. Try your
+        /// operation again later.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ResourceNotFoundException">
+        /// The operation failed because it specified a resource that can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.TooManyRequestsException">
+        /// The operation failed because it was called too frequently and exceeded a throttle
+        /// limit.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ValidationException">
+        /// The operation failed because one of the input parameters was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetContactInformation">REST API Reference for GetContactInformation Operation</seealso>
+        public virtual Task<GetContactInformationResponse> GetContactInformationAsync(GetContactInformationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetContactInformationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetContactInformationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetContactInformationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutAlternateContact
 
         internal virtual PutAlternateContactResponse PutAlternateContact(PutAlternateContactRequest request)
@@ -377,6 +453,15 @@ namespace Amazon.Account
         /// For complete details about how to use the alternate contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Access
         /// or updating the alternate contacts</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Before you can update the alternate contact information for an Amazon Web Services
+        /// account that is managed by Organizations, you must first enable integration between
+        /// Amazon Web Services Account Management and Organizations. For more information, see
+        /// <a href="https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-trusted-access.html">Enabling
+        /// trusted access for Amazon Web Services Account Management</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAlternateContact service method.</param>
         /// <param name="cancellationToken">
@@ -407,6 +492,61 @@ namespace Amazon.Account
             options.ResponseUnmarshaller = PutAlternateContactResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutAlternateContactResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutContactInformation
+
+        internal virtual PutContactInformationResponse PutContactInformation(PutContactInformationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutContactInformationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutContactInformationResponseUnmarshaller.Instance;
+
+            return Invoke<PutContactInformationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the primary contact information of an Amazon Web Services account.
+        /// 
+        ///  
+        /// <para>
+        /// For complete details about how to use the primary contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Update
+        /// the primary and alternate contact information</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutContactInformation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutContactInformation service method, as returned by Account.</returns>
+        /// <exception cref="Amazon.Account.Model.AccessDeniedException">
+        /// The operation failed because the calling identity doesn't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.InternalServerException">
+        /// The operation failed because of an error internal to Amazon Web Services. Try your
+        /// operation again later.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.TooManyRequestsException">
+        /// The operation failed because it was called too frequently and exceeded a throttle
+        /// limit.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ValidationException">
+        /// The operation failed because one of the input parameters was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/PutContactInformation">REST API Reference for PutContactInformation Operation</seealso>
+        public virtual Task<PutContactInformationResponse> PutContactInformationAsync(PutContactInformationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutContactInformationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutContactInformationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutContactInformationResponse>(request, options, cancellationToken);
         }
 
         #endregion

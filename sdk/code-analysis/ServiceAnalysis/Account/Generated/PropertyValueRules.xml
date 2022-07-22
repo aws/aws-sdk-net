@@ -9,6 +9,10 @@
     <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Account.Model.GetContactInformationRequest.AccountId</property>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Account.Model.PutAlternateContactRequest.AccountId</property>
     <pattern>^\d{12}$</pattern>
   </property-value-rule>
@@ -16,7 +20,7 @@
     <property>Amazon.Account.Model.PutAlternateContactRequest.EmailAddress</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.-]+@[\w.-]+\.[\w]+</pattern>
+    <pattern>^[\s]*[\w+=.#!&amp;-]+@[\w.-]+\.[\w]+[\s]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Account.Model.PutAlternateContactRequest.Name</property>
@@ -35,10 +39,14 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Account.Model.PutContactInformationRequest.AccountId</property>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Account.Model.AlternateContact.EmailAddress</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[\w+=,.-]+@[\w.-]+\.[\w]+</pattern>
+    <pattern>^[\s]*[\w+=.#!&amp;-]+@[\w.-]+\.[\w]+[\s]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Account.Model.AlternateContact.Name</property>
@@ -55,5 +63,66 @@
     <property>Amazon.Account.Model.AlternateContact.Title</property>
     <min>1</min>
     <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Account.Model.ContactInformation.AddressLine1</property>
+    <min>1</min>
+    <max>60</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Account.Model.ContactInformation.AddressLine2</property>
+    <min>1</min>
+    <max>60</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Account.Model.ContactInformation.AddressLine3</property>
+    <min>1</min>
+    <max>60</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Account.Model.ContactInformation.City</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Account.Model.ContactInformation.CompanyName</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Account.Model.ContactInformation.CountryCode</property>
+    <min>2</min>
+    <max>2</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Account.Model.ContactInformation.DistrictOrCounty</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Account.Model.ContactInformation.FullName</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Account.Model.ContactInformation.PhoneNumber</property>
+    <min>1</min>
+    <max>20</max>
+    <pattern>^[+][\s0-9()-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Account.Model.ContactInformation.PostalCode</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Account.Model.ContactInformation.StateOrRegion</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Account.Model.ContactInformation.WebsiteUrl</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
 </property-value-rules>
