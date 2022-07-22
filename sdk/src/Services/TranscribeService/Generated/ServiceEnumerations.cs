@@ -213,10 +213,6 @@ namespace Amazon.TranscribeService
         /// </summary>
         public static readonly LanguageCode ArSA = new LanguageCode("ar-SA");
         /// <summary>
-        /// Constant CyGB for LanguageCode
-        /// </summary>
-        public static readonly LanguageCode CyGB = new LanguageCode("cy-GB");
-        /// <summary>
         /// Constant DaDK for LanguageCode
         /// </summary>
         public static readonly LanguageCode DaDK = new LanguageCode("da-DK");
@@ -284,14 +280,6 @@ namespace Amazon.TranscribeService
         /// Constant FrFR for LanguageCode
         /// </summary>
         public static readonly LanguageCode FrFR = new LanguageCode("fr-FR");
-        /// <summary>
-        /// Constant GaIE for LanguageCode
-        /// </summary>
-        public static readonly LanguageCode GaIE = new LanguageCode("ga-IE");
-        /// <summary>
-        /// Constant GdGB for LanguageCode
-        /// </summary>
-        public static readonly LanguageCode GdGB = new LanguageCode("gd-GB");
         /// <summary>
         /// Constant HeIL for LanguageCode
         /// </summary>

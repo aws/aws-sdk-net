@@ -74,7 +74,7 @@ namespace Amazon.TranscribeService.Model
         /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2000)]
+        [AWSProperty(Required=true, Min=1, Max=2000)]
         public string VocabularyFileUri
         {
             get { return this._vocabularyFileUri; }
