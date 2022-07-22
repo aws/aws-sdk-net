@@ -46,6 +46,7 @@ namespace Amazon.RDS.Model
         private string _activityStreamKinesisStreamName;
         private string _activityStreamKmsKeyId;
         private ActivityStreamMode _activityStreamMode;
+        private ActivityStreamPolicyStatus _activityStreamPolicyStatus;
         private ActivityStreamStatus _activityStreamStatus;
         private int? _allocatedStorage;
         private List<DBInstanceRole> _associatedRoles = new List<DBInstanceRole>();
@@ -192,6 +193,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetActivityStreamMode()
         {
             return this._activityStreamMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ActivityStreamPolicyStatus. 
+        /// <para>
+        /// The status of the policy state of the activity stream.
+        /// </para>
+        /// </summary>
+        public ActivityStreamPolicyStatus ActivityStreamPolicyStatus
+        {
+            get { return this._activityStreamPolicyStatus; }
+            set { this._activityStreamPolicyStatus = value; }
+        }
+
+        // Check to see if ActivityStreamPolicyStatus property is set
+        internal bool IsSetActivityStreamPolicyStatus()
+        {
+            return this._activityStreamPolicyStatus != null;
         }
 
         /// <summary>

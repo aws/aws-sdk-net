@@ -75,6 +75,64 @@ namespace Amazon.RDS
 
 
     /// <summary>
+    /// Constants used for properties of type ActivityStreamPolicyStatus.
+    /// </summary>
+    public class ActivityStreamPolicyStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Locked for ActivityStreamPolicyStatus
+        /// </summary>
+        public static readonly ActivityStreamPolicyStatus Locked = new ActivityStreamPolicyStatus("locked");
+        /// <summary>
+        /// Constant LockingPolicy for ActivityStreamPolicyStatus
+        /// </summary>
+        public static readonly ActivityStreamPolicyStatus LockingPolicy = new ActivityStreamPolicyStatus("locking-policy");
+        /// <summary>
+        /// Constant Unlocked for ActivityStreamPolicyStatus
+        /// </summary>
+        public static readonly ActivityStreamPolicyStatus Unlocked = new ActivityStreamPolicyStatus("unlocked");
+        /// <summary>
+        /// Constant UnlockingPolicy for ActivityStreamPolicyStatus
+        /// </summary>
+        public static readonly ActivityStreamPolicyStatus UnlockingPolicy = new ActivityStreamPolicyStatus("unlocking-policy");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ActivityStreamPolicyStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ActivityStreamPolicyStatus FindValue(string value)
+        {
+            return FindValue<ActivityStreamPolicyStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ActivityStreamPolicyStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ActivityStreamStatus.
     /// </summary>
     public class ActivityStreamStatus : ConstantClass
@@ -176,6 +234,56 @@ namespace Amazon.RDS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ApplyMethod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AuditPolicyState.
+    /// </summary>
+    public class AuditPolicyState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Locked for AuditPolicyState
+        /// </summary>
+        public static readonly AuditPolicyState Locked = new AuditPolicyState("locked");
+        /// <summary>
+        /// Constant Unlocked for AuditPolicyState
+        /// </summary>
+        public static readonly AuditPolicyState Unlocked = new AuditPolicyState("unlocked");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AuditPolicyState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AuditPolicyState FindValue(string value)
+        {
+            return FindValue<AuditPolicyState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AuditPolicyState(string value)
         {
             return FindValue(value);
         }

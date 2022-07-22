@@ -7736,6 +7736,97 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void ModifyActivityStreamMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyActivityStream");
+
+            var request = InstantiateClassGenerator.Execute<ModifyActivityStreamRequest>();
+            var marshaller = new ModifyActivityStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ModifyActivityStreamResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyActivityStreamResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void ModifyActivityStream_DBInstanceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyActivityStream");
+
+            var request = InstantiateClassGenerator.Execute<ModifyActivityStreamRequest>();
+            var marshaller = new ModifyActivityStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("DBInstanceNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ModifyActivityStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void ModifyActivityStream_InvalidDBInstanceStateExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyActivityStream");
+
+            var request = InstantiateClassGenerator.Execute<ModifyActivityStreamRequest>();
+            var marshaller = new ModifyActivityStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidDBInstanceStateException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ModifyActivityStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void ModifyActivityStream_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyActivityStream");
+
+            var request = InstantiateClassGenerator.Execute<ModifyActivityStreamRequest>();
+            var marshaller = new ModifyActivityStreamRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ModifyActivityStreamResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void ModifyCertificatesMarshallTest()
         {
             var operation = service_model.FindOperation("ModifyCertificates");

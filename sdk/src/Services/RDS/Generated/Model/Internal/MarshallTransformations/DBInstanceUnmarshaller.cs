@@ -78,6 +78,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.ActivityStreamMode = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ActivityStreamPolicyStatus", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ActivityStreamPolicyStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ActivityStreamStatus", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

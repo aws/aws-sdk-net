@@ -5297,6 +5297,59 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  ModifyActivityStream
+
+        internal virtual ModifyActivityStreamResponse ModifyActivityStream(ModifyActivityStreamRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyActivityStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyActivityStreamResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyActivityStreamResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Changes the audit policy state of a database activity stream to either locked (default)
+        /// or unlocked. A locked policy is read-only, whereas an unlocked policy is read/write.
+        /// If your activity stream is started and locked, you can unlock it, customize your audit
+        /// policy, and then lock your activity stream. Restarting the activity stream isn't required.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/DBActivityStreams.Modifying.html">
+        /// Modifying a database activity stream</a> in the <i>Amazon RDS User Guide</i>. 
+        /// 
+        ///  
+        /// <para>
+        /// This operation is supported for RDS for Oracle only.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyActivityStream service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyActivityStream service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The DB instance isn't in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.ResourceNotFoundException">
+        /// The specified resource ID was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyActivityStream">REST API Reference for ModifyActivityStream Operation</seealso>
+        public virtual Task<ModifyActivityStreamResponse> ModifyActivityStreamAsync(ModifyActivityStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyActivityStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyActivityStreamResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyActivityStreamResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ModifyCertificates
 
         internal virtual ModifyCertificatesResponse ModifyCertificates(ModifyCertificatesRequest request)
