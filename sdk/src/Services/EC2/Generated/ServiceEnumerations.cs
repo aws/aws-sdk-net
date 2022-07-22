@@ -8315,6 +8315,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType Mac1Metal = new InstanceType("mac1.metal");
         /// <summary>
+        /// Constant Mac2Metal for InstanceType
+        /// </summary>
+        public static readonly InstanceType Mac2Metal = new InstanceType("mac2.metal");
+        /// <summary>
         /// Constant P216xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType P216xlarge = new InstanceType("p2.16xlarge");
