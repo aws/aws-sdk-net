@@ -1,3 +1,10 @@
+### 3.7.321.1 (2022-07-22 23:07 UTC)
+* S3 (3.7.9.30)
+	* Updated to use new Core, version 3.7.12.13
+	* fix: ensure downloaded file path is always in target directory when using TransferUtility.
+* Core 3.7.12.13
+	* fix: ensure downloaded file path is always in target directory when using TransferUtility.
+
 ### 3.7.321.0 (2022-07-22 18:22 UTC)
 * Account (3.7.1.0)
 	* This release enables customers to manage the primary contact information for their AWS accounts. For more information, see https://docs.aws.amazon.com/accounts/latest/reference/API_Operations.html
