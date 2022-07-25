@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.321.1",
+    "ProductVersion" : "3.7.321.2",
     "CoreVersion"    : "3.7.12.13",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -14,7 +14,7 @@
             "InPreview"               : false
         },
         "AutoScaling" : {
-            "Version" : "3.7.10.35",
+            "Version" : "3.7.10.36",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.12.12"

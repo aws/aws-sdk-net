@@ -1,3 +1,7 @@
+### 3.7.321.2 (2022-07-25 18:17 UTC)
+* AutoScaling (3.7.10.36)
+	* Documentation update for Amazon EC2 Auto Scaling.
+
 ### 3.7.321.1 (2022-07-22 23:07 UTC)
 * S3 (3.7.9.30)
 	* Updated to use new Core, version 3.7.12.13
