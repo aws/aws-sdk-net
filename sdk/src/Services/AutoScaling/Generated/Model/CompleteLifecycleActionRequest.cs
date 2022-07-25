@@ -125,8 +125,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LifecycleActionResult. 
         /// <para>
-        /// The action for the group to take. This parameter can be either <code>CONTINUE</code>
-        /// or <code>ABANDON</code>.
+        /// The action for the group to take. You can specify either <code>CONTINUE</code> or
+        /// <code>ABANDON</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

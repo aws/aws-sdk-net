@@ -39,7 +39,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property InstanceRefreshes. 
         /// <para>
-        /// The instance refreshes for the specified group.
+        /// The instance refreshes for the specified group, sorted by creation timestamp in descending
+        /// order.
         /// </para>
         /// </summary>
         public List<InstanceRefresh> InstanceRefreshes

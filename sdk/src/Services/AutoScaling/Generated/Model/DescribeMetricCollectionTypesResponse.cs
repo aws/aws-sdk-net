@@ -57,7 +57,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Metrics. 
         /// <para>
-        /// One or more metrics.
+        /// The metrics.
         /// </para>
         /// </summary>
         public List<MetricCollectionType> Metrics

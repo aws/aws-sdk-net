@@ -35,12 +35,12 @@ namespace Amazon.AutoScaling.Model
     ///  
     /// <para>
     /// This operation describes only Classic Load Balancers. If you have Application Load
-    /// Balancers, Network Load Balancers, or Gateway Load Balancers, use the <a>DescribeLoadBalancerTargetGroups</a>
+    /// Balancers, Network Load Balancers, or Gateway Load Balancer, use the <a>DescribeLoadBalancerTargetGroups</a>
     /// API instead.
     /// </para>
     ///  
     /// <para>
-    /// To determine the availability of registered instances, use the <code>State</code>
+    /// To determine the attachment status of the load balancer, use the <code>State</code>
     /// element in the response. When you attach a load balancer to an Auto Scaling group,
     /// the initial <code>State</code> value is <code>Adding</code>. The state transitions
     /// to <code>Added</code> after all Auto Scaling instances are registered with the load
@@ -62,9 +62,9 @@ namespace Amazon.AutoScaling.Model
     /// <para>
     /// For help with failed health checks, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ts-as-healthchecks.html">Troubleshooting
     /// Amazon EC2 Auto Scaling: Health checks</a> in the <i>Amazon EC2 Auto Scaling User
-    /// Guide</i>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic
-    /// Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
-    /// Guide</i>. 
+    /// Guide</i>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use
+    /// Elastic Load Balancing to distribute traffic across the instances in your Auto Scaling
+    /// group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. 
     /// </para>
     /// </summary>
     public partial class DescribeLoadBalancersRequest : AmazonAutoScalingRequest

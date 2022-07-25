@@ -125,9 +125,12 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property DefaultResult. 
         /// <para>
-        /// Defines the action the Auto Scaling group should take when the lifecycle hook timeout
-        /// elapses or if an unexpected failure occurs. This parameter can be either <code>CONTINUE</code>
-        /// or <code>ABANDON</code>. The default value is <code>ABANDON</code>.
+        /// The action the Auto Scaling group takes when the lifecycle hook timeout elapses or
+        /// if an unexpected failure occurs. The default value is <code>ABANDON</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>CONTINUE</code> | <code>ABANDON</code> 
         /// </para>
         /// </summary>
         public string DefaultResult
@@ -148,12 +151,6 @@ namespace Amazon.AutoScaling.Model
         /// The maximum time, in seconds, that can elapse before the lifecycle hook times out.
         /// The range is from <code>30</code> to <code>7200</code> seconds. The default value
         /// is <code>3600</code> seconds (1 hour).
-        /// </para>
-        ///  
-        /// <para>
-        /// If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that
-        /// you specified in the <code>DefaultResult</code> parameter. You can prevent the lifecycle
-        /// hook from timing out by calling the <a>RecordLifecycleActionHeartbeat</a> API.
         /// </para>
         /// </summary>
         public int HeartbeatTimeout
@@ -190,16 +187,15 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LifecycleTransition. 
         /// <para>
-        /// The instance state to which you want to attach the lifecycle hook. The valid values
-        /// are:
+        /// The lifecycle transition. For Auto Scaling groups, there are two major lifecycle transitions.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// autoscaling:EC2_INSTANCE_LAUNCHING
+        /// To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// autoscaling:EC2_INSTANCE_TERMINATING
+        /// To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -241,9 +237,9 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property NotificationTargetARN. 
         /// <para>
-        /// The ARN of the notification target that Amazon EC2 Auto Scaling uses to notify you
-        /// when an instance is in the transition state for the lifecycle hook. This target can
-        /// be either an SQS queue or an SNS topic.
+        /// The Amazon Resource Name (ARN) of the notification target that Amazon EC2 Auto Scaling
+        /// uses to notify you when an instance is in a wait state for the lifecycle hook. You
+        /// can specify either an Amazon SNS topic or an Amazon SQS queue.
         /// </para>
         ///  
         /// <para>

@@ -41,10 +41,16 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property DeviceName. 
         /// <para>
-        /// The device name exposed to the EC2 instance (for example, <code>/dev/sdh</code> or
-        /// <code>xvdh</code>). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device
-        /// Naming on Linux Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// The device name assigned to the volume (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device
+        /// naming on Linux instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// To define a block device mapping, set the device name and exactly one of the following
+        /// properties: <code>Ebs</code>, <code>NoDevice</code>, or <code>VirtualName</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string DeviceName
@@ -62,11 +68,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Ebs. 
         /// <para>
-        /// Parameters used to automatically set up EBS volumes when an instance is launched.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can specify either <code>VirtualName</code> or <code>Ebs</code>, but not both.
+        /// Information to attach an EBS volume to an instance at launch.
         /// </para>
         /// </summary>
         public Ebs Ebs
@@ -84,18 +86,15 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property NoDevice. 
         /// <para>
-        /// Setting this value to <code>true</code> suppresses the specified device included in
-        /// the block device mapping of the AMI.
+        /// Setting this value to <code>true</code> prevents a volume that is included in the
+        /// block device mapping of the AMI from being mapped to the specified device name at
+        /// launch.
         /// </para>
         ///  
         /// <para>
         /// If <code>NoDevice</code> is <code>true</code> for the root device, instances might
         /// fail the EC2 health check. In that case, Amazon EC2 Auto Scaling launches replacement
         /// instances.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you specify <code>NoDevice</code>, you cannot specify <code>Ebs</code>.
         /// </para>
         /// </summary>
         public bool NoDevice
@@ -113,11 +112,9 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property VirtualName. 
         /// <para>
-        /// The name of the virtual device (for example, <code>ephemeral0</code>).
-        /// </para>
-        ///  
-        /// <para>
-        /// You can specify either <code>VirtualName</code> or <code>Ebs</code>, but not both.
+        /// The name of the instance store volume (virtual device) to attach to an instance at
+        /// launch. The name must be in the form ephemeral<i>X</i> where <i>X</i> is a number
+        /// starting from zero (0), for example, <code>ephemeral0</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

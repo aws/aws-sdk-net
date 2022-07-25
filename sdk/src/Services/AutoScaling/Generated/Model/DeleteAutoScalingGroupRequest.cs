@@ -82,8 +82,8 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property ForceDelete. 
         /// <para>
         /// Specifies that the group is to be deleted along with all instances associated with
-        /// the group, without waiting for all instances to be terminated. This parameter also
-        /// deletes any outstanding lifecycle actions associated with the group.
+        /// the group, without waiting for all instances to be terminated. This action also deletes
+        /// any outstanding lifecycle actions associated with the group.
         /// </para>
         /// </summary>
         public bool ForceDelete

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Describes an enabled metric.
+    /// Describes an enabled Auto Scaling group metric.
     /// </summary>
     public partial class EnabledMetric
     {
@@ -140,7 +140,11 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         ///  <code>GroupAndWarmPoolTotalCapacity</code> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto
+        /// Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
         public string Metric

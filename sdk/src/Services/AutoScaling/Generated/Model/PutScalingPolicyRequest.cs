@@ -442,7 +442,7 @@ namespace Amazon.AutoScaling.Model
         ///  </li> </ul> 
         /// <para>
         /// If you specify <code>ALBRequestCountPerTarget</code> for the metric, you must specify
-        /// the <code>ResourceLabel</code> parameter with the <code>PredefinedMetricSpecification</code>.
+        /// the <code>ResourceLabel</code> property with the <code>PredefinedMetricSpecification</code>.
         /// </para>
         ///  
         /// <para>

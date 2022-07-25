@@ -44,7 +44,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property InstancesDistribution. 
         /// <para>
-        /// Specifies the instances distribution.
+        /// The instances distribution.
         /// </para>
         /// </summary>
         public InstancesDistribution InstancesDistribution
@@ -62,9 +62,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LaunchTemplate. 
         /// <para>
-        /// Specifies the launch template to use and the instance types (overrides) that are used
-        /// to launch EC2 instances to fulfill On-Demand and Spot capacities. Required when creating
-        /// a mixed instances policy.
+        /// One or more launch templates and the instance types (overrides) that are used to launch
+        /// EC2 instances to fulfill On-Demand and Spot capacities.
         /// </para>
         /// </summary>
         public LaunchTemplate LaunchTemplate

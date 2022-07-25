@@ -37,16 +37,14 @@ namespace Amazon.AutoScaling
     ///
     /// Amazon EC2 Auto Scaling 
     /// <para>
-    /// Amazon EC2 Auto Scaling is designed to automatically launch or terminate EC2 instances
+    /// Amazon EC2 Auto Scaling is designed to automatically launch and terminate EC2 instances
     /// based on user-defined scaling policies, scheduled actions, and health checks.
     /// </para>
     ///  
     /// <para>
-    /// For more information about Amazon EC2 Auto Scaling, see the <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html">Amazon
-    /// EC2 Auto Scaling User Guide</a>. For information about granting IAM users required
-    /// permissions for calls to Amazon EC2 Auto Scaling, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/ec2-auto-scaling-api-permissions.html">Granting
-    /// IAM users required permissions for Amazon EC2 Auto Scaling resources</a> in the <i>Amazon
-    /// EC2 Auto Scaling API Reference</i>.
+    /// For more information, see the <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/">Amazon
+    /// EC2 Auto Scaling User Guide</a> and the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/Welcome.html">Amazon
+    /// EC2 Auto Scaling API Reference</a>.
     /// </para>
     /// </summary>
     public partial class AmazonAutoScalingClient : AmazonServiceClient, IAmazonAutoScaling
@@ -364,7 +362,7 @@ namespace Amazon.AutoScaling
         ///  
         /// <para>
         /// To describe the load balancers for an Auto Scaling group, call the <a>DescribeLoadBalancers</a>
-        /// API. To detach the load balancer from the Auto Scaling group, call the <a>DetachLoadBalancers</a>
+        /// API. To detach a load balancer from the Auto Scaling group, call the <a>DetachLoadBalancers</a>
         /// API.
         /// </para>
         ///  
@@ -374,9 +372,9 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic
-        /// Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
-        /// Guide</i>. 
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use
+        /// Elastic Load Balancing to distribute traffic across the instances in your Auto Scaling
+        /// group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachLoadBalancers service method.</param>
@@ -446,17 +444,17 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  Application Load Balancer - Operates at the application layer (layer 7) and supports
+        /// Application Load Balancer - Operates at the application layer (layer 7) and supports
         /// HTTP and HTTPS. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Network Load Balancer - Operates at the transport layer (layer 4) and supports TCP,
+        /// Network Load Balancer - Operates at the transport layer (layer 4) and supports TCP,
         /// TLS, and UDP. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Gateway Load Balancer - Operates at the network layer (layer 3).
+        /// Gateway Load Balancer - Operates at the network layer (layer 3).
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -471,9 +469,9 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic
-        /// Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
-        /// Guide</i>. 
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use
+        /// Elastic Load Balancing to distribute traffic across the instances in your Auto Scaling
+        /// group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachLoadBalancerTargetGroups service method.</param>
@@ -850,8 +848,8 @@ namespace Amazon.AutoScaling
         /// <para>
         /// If you exceed your maximum limit of Auto Scaling groups, the call fails. To query
         /// this limit, call the <a>DescribeAccountLimits</a> API. For information about updating
-        /// this limit, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
-        /// EC2 Auto Scaling service quotas</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// this limit, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-quotas.html">Quotas
+        /// for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -863,7 +861,7 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// Every Auto Scaling group has three size parameters (<code>DesiredCapacity</code>,
+        /// Every Auto Scaling group has three size properties (<code>DesiredCapacity</code>,
         /// <code>MaxSize</code>, and <code>MinSize</code>). Usually, you set these sizes based
         /// on a specific number of instances. However, if you configure a mixed instances policy
         /// that defines weights for the instance types, you must specify these sizes with the
@@ -944,8 +942,8 @@ namespace Amazon.AutoScaling
         /// <para>
         /// If you exceed your maximum limit of launch configurations, the call fails. To query
         /// this limit, call the <a>DescribeAccountLimits</a> API. For information about updating
-        /// this limit, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
-        /// EC2 Auto Scaling service quotas</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// this limit, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-quotas.html">Quotas
+        /// for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1027,7 +1025,7 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-tagging.html">Tag
         /// Auto Scaling groups and instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
@@ -1648,8 +1646,8 @@ namespace Amazon.AutoScaling
         /// <para>
         /// When you establish an Amazon Web Services account, the account has initial quotas
         /// on the maximum number of Auto Scaling groups and launch configurations that you can
-        /// create in a given Region. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
-        /// EC2 Auto Scaling service quotas</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// create in a given Region. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-quotas.html">Quotas
+        /// for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// 
@@ -1671,8 +1669,8 @@ namespace Amazon.AutoScaling
         /// <para>
         /// When you establish an Amazon Web Services account, the account has initial quotas
         /// on the maximum number of Auto Scaling groups and launch configurations that you can
-        /// create in a given Region. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
-        /// EC2 Auto Scaling service quotas</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// create in a given Region. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-quotas.html">Quotas
+        /// for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountLimits service method.</param>
@@ -2422,12 +2420,12 @@ namespace Amazon.AutoScaling
         ///  
         /// <para>
         /// This operation describes only Classic Load Balancers. If you have Application Load
-        /// Balancers, Network Load Balancers, or Gateway Load Balancers, use the <a>DescribeLoadBalancerTargetGroups</a>
+        /// Balancers, Network Load Balancers, or Gateway Load Balancer, use the <a>DescribeLoadBalancerTargetGroups</a>
         /// API instead.
         /// </para>
         ///  
         /// <para>
-        /// To determine the availability of registered instances, use the <code>State</code>
+        /// To determine the attachment status of the load balancer, use the <code>State</code>
         /// element in the response. When you attach a load balancer to an Auto Scaling group,
         /// the initial <code>State</code> value is <code>Adding</code>. The state transitions
         /// to <code>Added</code> after all Auto Scaling instances are registered with the load
@@ -2449,9 +2447,9 @@ namespace Amazon.AutoScaling
         /// <para>
         /// For help with failed health checks, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ts-as-healthchecks.html">Troubleshooting
         /// Amazon EC2 Auto Scaling: Health checks</a> in the <i>Amazon EC2 Auto Scaling User
-        /// Guide</i>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic
-        /// Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
-        /// Guide</i>. 
+        /// Guide</i>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use
+        /// Elastic Load Balancing to distribute traffic across the instances in your Auto Scaling
+        /// group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancers service method.</param>
@@ -2513,12 +2511,12 @@ namespace Amazon.AutoScaling
         #region  DescribeLoadBalancerTargetGroups
 
         /// <summary>
-        /// Gets information about the load balancer target groups for the specified Auto Scaling
-        /// group.
+        /// Gets information about the Elastic Load Balancing target groups for the specified
+        /// Auto Scaling group.
         /// 
         ///  
         /// <para>
-        /// To determine the availability of registered instances, use the <code>State</code>
+        /// To determine the attachment status of the target group, use the <code>State</code>
         /// element in the response. When you attach a target group to an Auto Scaling group,
         /// the initial <code>State</code> value is <code>Adding</code>. The state transitions
         /// to <code>Added</code> after all Auto Scaling instances are registered with the target
@@ -2540,9 +2538,9 @@ namespace Amazon.AutoScaling
         /// <para>
         /// For help with failed health checks, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ts-as-healthchecks.html">Troubleshooting
         /// Amazon EC2 Auto Scaling: Health checks</a> in the <i>Amazon EC2 Auto Scaling User
-        /// Guide</i>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic
-        /// Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
-        /// Guide</i>. 
+        /// Guide</i>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use
+        /// Elastic Load Balancing to distribute traffic across the instances in your Auto Scaling
+        /// group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancerTargetGroups service method.</param>
@@ -2605,12 +2603,6 @@ namespace Amazon.AutoScaling
 
         /// <summary>
         /// Describes the available CloudWatch metrics for Amazon EC2 Auto Scaling.
-        /// 
-        ///  
-        /// <para>
-        /// The <code>GroupStandbyInstances</code> metric is not returned by default. You must
-        /// explicitly request this metric when calling the <a>EnableMetricsCollection</a> API.
-        /// </para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeMetricCollectionTypes service method, as returned by AutoScaling.</returns>
@@ -2626,12 +2618,6 @@ namespace Amazon.AutoScaling
 
         /// <summary>
         /// Describes the available CloudWatch metrics for Amazon EC2 Auto Scaling.
-        /// 
-        ///  
-        /// <para>
-        /// The <code>GroupStandbyInstances</code> metric is not returned by default. You must
-        /// explicitly request this metric when calling the <a>EnableMetricsCollection</a> API.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMetricCollectionTypes service method.</param>
         /// 
@@ -3152,7 +3138,7 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-tagging.html">Tag
         /// Auto Scaling groups and instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
@@ -3188,7 +3174,7 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-tagging.html">Tag
         /// Auto Scaling groups and instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
@@ -3255,9 +3241,9 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-        /// which Auto Scaling instances terminate during scale in</a> in the <i>Amazon EC2 Auto
-        /// Scaling User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-termination-policies.html">Work
+        /// with Amazon EC2 Auto Scaling termination policies</a> in the <i>Amazon EC2 Auto Scaling
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         /// 
@@ -3277,9 +3263,9 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-        /// which Auto Scaling instances terminate during scale in</a> in the <i>Amazon EC2 Auto
-        /// Scaling User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-termination-policies.html">Work
+        /// with Amazon EC2 Auto Scaling termination policies</a> in the <i>Amazon EC2 Auto Scaling
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTerminationPolicyTypes service method.</param>
@@ -3497,7 +3483,7 @@ namespace Amazon.AutoScaling
         ///  
         /// <para>
         /// This operation detaches only Classic Load Balancers. If you have Application Load
-        /// Balancers, Network Load Balancers, or Gateway Load Balancers, use the <a>DetachLoadBalancerTargetGroups</a>
+        /// Balancers, Network Load Balancers, or Gateway Load Balancer, use the <a>DetachLoadBalancerTargetGroups</a>
         /// API instead.
         /// </para>
         ///  
@@ -3565,6 +3551,14 @@ namespace Amazon.AutoScaling
 
         /// <summary>
         /// Detaches one or more target groups from the specified Auto Scaling group.
+        /// 
+        ///  
+        /// <para>
+        /// When you detach a target group, it enters the <code>Removing</code> state while deregistering
+        /// the instances in the group. When all instances are deregistered, then you can no longer
+        /// describe the target group using the <a>DescribeLoadBalancerTargetGroups</a> API call.
+        /// The instances remain running.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachLoadBalancerTargetGroups service method.</param>
         /// 
@@ -3622,7 +3616,7 @@ namespace Amazon.AutoScaling
         #region  DisableMetricsCollection
 
         /// <summary>
-        /// Disables group metrics for the specified Auto Scaling group.
+        /// Disables group metrics collection for the specified Auto Scaling group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableMetricsCollection service method.</param>
         /// 
@@ -3680,10 +3674,16 @@ namespace Amazon.AutoScaling
         #region  EnableMetricsCollection
 
         /// <summary>
-        /// Enables group metrics for the specified Auto Scaling group. For more information,
-        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-monitoring.html">Monitoring
+        /// Enables group metrics collection for the specified Auto Scaling group.
+        /// 
+        ///  
+        /// <para>
+        /// You can use these metrics to track changes in an Auto Scaling group and to set alarms
+        /// on threshold values. You can view group metrics using the Amazon EC2 Auto Scaling
+        /// console or the CloudWatch console. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html">Monitor
         /// CloudWatch metrics for your Auto Scaling groups and instances</a> in the <i>Amazon
         /// EC2 Auto Scaling User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableMetricsCollection service method.</param>
         /// 
@@ -4333,6 +4333,11 @@ namespace Amazon.AutoScaling
         /// You can view the scheduled actions for an Auto Scaling group using the <a>DescribeScheduledActions</a>
         /// API call. If you are no longer using a scheduled action, you can delete it by calling
         /// the <a>DeleteScheduledAction</a> API.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you try to schedule your action in the past, Amazon EC2 Auto Scaling returns an
+        /// error message.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutScheduledUpdateGroupAction service method.</param>
@@ -5122,8 +5127,8 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// To update an Auto Scaling group, specify the name of the group and the parameter that
-        /// you want to change. Any parameters that you don't specify are not changed by this
+        /// To update an Auto Scaling group, specify the name of the group and the property that
+        /// you want to change. Any properties that you don't specify are not changed by this
         /// update request. The new settings take effect on any scaling activities after this
         /// call returns. 
         /// </para>
@@ -5168,7 +5173,7 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To see which parameters have been set, call the <a>DescribeAutoScalingGroups</a> API.
+        /// To see which properties have been set, call the <a>DescribeAutoScalingGroups</a> API.
         /// To view the scaling policies for an Auto Scaling group, call the <a>DescribePolicies</a>
         /// API. If the group has scaling policies, you can update them by calling the <a>PutScalingPolicy</a>
         /// API.

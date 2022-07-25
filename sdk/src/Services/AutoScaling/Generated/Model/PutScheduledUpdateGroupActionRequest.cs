@@ -43,6 +43,11 @@ namespace Amazon.AutoScaling.Model
     /// API call. If you are no longer using a scheduled action, you can delete it by calling
     /// the <a>DeleteScheduledAction</a> API.
     /// </para>
+    ///  
+    /// <para>
+    /// If you try to schedule your action in the past, Amazon EC2 Auto Scaling returns an
+    /// error message.
+    /// </para>
     /// </summary>
     public partial class PutScheduledUpdateGroupActionRequest : AmazonAutoScalingRequest
     {
@@ -83,6 +88,12 @@ namespace Amazon.AutoScaling.Model
         /// action runs and the capacity it attempts to maintain. It can scale beyond this capacity
         /// if you add more scaling conditions. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You must specify at least one of the following properties: <code>MaxSize</code>, <code>MinSize</code>,
+        /// or <code>DesiredCapacity</code>. 
+        /// </para>
+        ///  </note>
         /// </summary>
         public int DesiredCapacity
         {
@@ -99,7 +110,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property EndTimeUtc. 
         /// <para>
-        /// The date and time for the recurring schedule to end, in UTC.
+        /// The date and time for the recurring schedule to end, in UTC. For example, <code>"2021-06-01T00:00:00Z"</code>.
         /// </para>
         /// </summary>
         public DateTime EndTimeUtc
@@ -204,18 +215,13 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property StartTimeUtc. 
         /// <para>
         /// The date and time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in UTC/GMT
-        /// only and in quotes (for example, <code>"2019-06-01T00:00:00Z"</code>).
+        /// only and in quotes (for example, <code>"2021-06-01T00:00:00Z"</code>).
         /// </para>
         ///  
         /// <para>
         /// If you specify <code>Recurrence</code> and <code>StartTime</code>, Amazon EC2 Auto
         /// Scaling performs the action at this time, and then performs the action based on the
         /// specified recurrence.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you try to schedule your action in the past, Amazon EC2 Auto Scaling returns an
-        /// error message.
         /// </para>
         /// </summary>
         public DateTime StartTimeUtc
@@ -233,7 +239,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property TimeUtc. 
         /// <para>
-        /// This parameter is no longer used.
+        /// This property is no longer used.
         /// </para>
         /// </summary>
         public DateTime TimeUtc
@@ -291,7 +297,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// The date and time for the recurring schedule to end, in UTC.
+        /// The date and time for the recurring schedule to end, in UTC. For example, <code>"2021-06-01T00:00:00Z"</code>.
         /// </para>
         /// </summary>
         [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
@@ -321,18 +327,13 @@ namespace Amazon.AutoScaling.Model
         ///  
         /// <para>
         /// The date and time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in UTC/GMT
-        /// only and in quotes (for example, <code>"2019-06-01T00:00:00Z"</code>).
+        /// only and in quotes (for example, <code>"2021-06-01T00:00:00Z"</code>).
         /// </para>
         ///  
         /// <para>
         /// If you specify <code>Recurrence</code> and <code>StartTime</code>, Amazon EC2 Auto
         /// Scaling performs the action at this time, and then performs the action based on the
         /// specified recurrence.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you try to schedule your action in the past, Amazon EC2 Auto Scaling returns an
-        /// error message.
         /// </para>
         /// </summary>
         [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
@@ -361,7 +362,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter is no longer used.
+        /// This property is no longer used.
         /// </para>
         /// </summary>
         [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +

@@ -188,7 +188,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code>
+        /// Valid values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code>
         /// | <code>Quarantined</code> | <code>InService</code> | <code>Terminating</code> | <code>Terminating:Wait</code>
         /// | <code>Terminating:Proceed</code> | <code>Terminated</code> | <code>Detaching</code>
         /// | <code>Detached</code> | <code>EnteringStandby</code> | <code>Standby</code> | <code>Warmed:Pending</code>

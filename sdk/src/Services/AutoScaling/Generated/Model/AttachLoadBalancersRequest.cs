@@ -43,7 +43,7 @@ namespace Amazon.AutoScaling.Model
     ///  
     /// <para>
     /// To describe the load balancers for an Auto Scaling group, call the <a>DescribeLoadBalancers</a>
-    /// API. To detach the load balancer from the Auto Scaling group, call the <a>DetachLoadBalancers</a>
+    /// API. To detach a load balancer from the Auto Scaling group, call the <a>DetachLoadBalancers</a>
     /// API.
     /// </para>
     ///  
@@ -53,9 +53,9 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic
-    /// Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
-    /// Guide</i>. 
+    /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use
+    /// Elastic Load Balancing to distribute traffic across the instances in your Auto Scaling
+    /// group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     /// </para>
     /// </summary>
     public partial class AttachLoadBalancersRequest : AmazonAutoScalingRequest

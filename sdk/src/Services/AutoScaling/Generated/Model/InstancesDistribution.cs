@@ -64,6 +64,10 @@ namespace Amazon.AutoScaling.Model
         /// Default: <code>lowest-price</code> for Auto Scaling groups that specify <a>InstanceRequirements</a>
         /// in the overrides and <code>prioritized</code> for Auto Scaling groups that don't.
         /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>lowest-price</code> | <code>prioritized</code> 
+        /// </para>
         /// </summary>
         public string OnDemandAllocationStrategy
         {
@@ -157,6 +161,11 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// Default: <code>lowest-price</code> 
         /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>lowest-price</code> | <code>capacity-optimized</code> | <code>capacity-optimized-prioritized</code>
+        /// 
+        /// </para>
         /// </summary>
         public string SpotAllocationStrategy
         {
@@ -202,6 +211,15 @@ namespace Amazon.AutoScaling.Model
         /// you keep the value at its default (unspecified), Amazon EC2 Auto Scaling uses the
         /// On-Demand price as the maximum Spot price. To remove a value that you previously set,
         /// include the property but specify an empty string ("") for the value.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// If your maximum price is lower than the Spot price for the instance types that you
+        /// selected, your Spot Instances are not launched.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Valid Range: Minimum value of 0.001
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=255)]

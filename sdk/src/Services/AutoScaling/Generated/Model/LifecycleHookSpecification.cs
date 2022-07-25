@@ -50,9 +50,12 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property DefaultResult. 
         /// <para>
-        /// Defines the action the Auto Scaling group should take when the lifecycle hook timeout
-        /// elapses or if an unexpected failure occurs. The valid values are <code>CONTINUE</code>
-        /// and <code>ABANDON</code>. The default value is <code>ABANDON</code>.
+        /// The action the Auto Scaling group takes when the lifecycle hook timeout elapses or
+        /// if an unexpected failure occurs. The default value is <code>ABANDON</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>CONTINUE</code> | <code>ABANDON</code> 
         /// </para>
         /// </summary>
         public string DefaultResult
@@ -71,12 +74,8 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property HeartbeatTimeout. 
         /// <para>
         /// The maximum time, in seconds, that can elapse before the lifecycle hook times out.
-        /// </para>
-        ///  
-        /// <para>
-        /// If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that
-        /// you specified in the <code>DefaultResult</code> parameter. You can prevent the lifecycle
-        /// hook from timing out by calling <a>RecordLifecycleActionHeartbeat</a>.
+        /// The range is from <code>30</code> to <code>7200</code> seconds. The default value
+        /// is <code>3600</code> seconds (1 hour).
         /// </para>
         /// </summary>
         public int HeartbeatTimeout
@@ -113,16 +112,15 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LifecycleTransition. 
         /// <para>
-        /// The state of the EC2 instance to which you want to attach the lifecycle hook. The
-        /// valid values are:
+        /// The lifecycle transition. For Auto Scaling groups, there are two major lifecycle transitions.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// autoscaling:EC2_INSTANCE_LAUNCHING
+        /// To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// autoscaling:EC2_INSTANCE_TERMINATING
+        /// To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -162,9 +160,9 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property NotificationTargetARN. 
         /// <para>
-        /// The ARN of the target that Amazon EC2 Auto Scaling sends notifications to when an
-        /// instance is in the transition state for the lifecycle hook. The notification target
-        /// can be either an SQS queue or an SNS topic.
+        /// The Amazon Resource Name (ARN) of the notification target that Amazon EC2 Auto Scaling
+        /// sends notifications to when an instance is in a wait state for the lifecycle hook.
+        /// You can specify an Amazon SNS topic or an Amazon SQS queue.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=255)]
@@ -184,12 +182,13 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property RoleARN. 
         /// <para>
         /// The ARN of the IAM role that allows the Auto Scaling group to publish to the specified
-        /// notification target.
+        /// notification target. For information about creating this role, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/prepare-for-lifecycle-notifications.html#lifecycle-hook-notification-target">Configure
+        /// a notification target for a lifecycle hook</a> in the <i>Amazon EC2 Auto Scaling User
+        /// Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// Valid only if the notification target is an Amazon SNS topic or an Amazon SQS queue.
-        /// Required for new lifecycle hooks, but optional when updating existing hooks.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

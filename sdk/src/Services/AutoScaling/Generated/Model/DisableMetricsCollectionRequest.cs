@@ -30,7 +30,7 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DisableMetricsCollection operation.
-    /// Disables group metrics for the specified Auto Scaling group.
+    /// Disables group metrics collection for the specified Auto Scaling group.
     /// </summary>
     public partial class DisableMetricsCollectionRequest : AmazonAutoScalingRequest
     {
@@ -59,7 +59,11 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Metrics. 
         /// <para>
-        /// Specifies one or more of the following metrics:
+        /// Identifies the metrics to disable.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify one or more of the following metrics:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -143,7 +147,12 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you omit this parameter, all metrics are disabled. 
+        /// If you omit this property, all metrics are disabled.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto
+        /// Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public List<string> Metrics

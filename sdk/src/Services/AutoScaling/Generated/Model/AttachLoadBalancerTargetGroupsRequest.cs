@@ -38,17 +38,17 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  Application Load Balancer - Operates at the application layer (layer 7) and supports
+    /// Application Load Balancer - Operates at the application layer (layer 7) and supports
     /// HTTP and HTTPS. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  Network Load Balancer - Operates at the transport layer (layer 4) and supports TCP,
+    /// Network Load Balancer - Operates at the transport layer (layer 4) and supports TCP,
     /// TLS, and UDP. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  Gateway Load Balancer - Operates at the network layer (layer 3).
+    /// Gateway Load Balancer - Operates at the network layer (layer 3).
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -63,9 +63,9 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic
-    /// Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
-    /// Guide</i>. 
+    /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use
+    /// Elastic Load Balancing to distribute traffic across the instances in your Auto Scaling
+    /// group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. 
     /// </para>
     /// </summary>
     public partial class AttachLoadBalancerTargetGroupsRequest : AmazonAutoScalingRequest

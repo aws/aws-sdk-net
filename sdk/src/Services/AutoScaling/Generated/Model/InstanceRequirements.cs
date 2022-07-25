@@ -448,7 +448,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For instance types with solid state drive (SSD) storage, specify <code>sdd</code>.
+        /// For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -534,12 +534,12 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property OnDemandMaxPricePercentageOverLowestPrice. 
         /// <para>
         /// The price protection threshold for On-Demand Instances. This is the maximum you’ll
-        /// pay for an On-Demand Instance, expressed as a percentage higher than the cheapest
-        /// M, C, or R instance type with your specified attributes. When Amazon EC2 Auto Scaling
-        /// selects instance types with your attributes, we will exclude instance types whose
-        /// price is higher than your threshold. The parameter accepts an integer, which Amazon
-        /// EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify
-        /// a high value, such as <code>999999</code>. 
+        /// pay for an On-Demand Instance, expressed as a percentage higher than the least expensive
+        /// current generation M, C, or R instance type with your specified attributes. When Amazon
+        /// EC2 Auto Scaling selects instance types with your attributes, we will exclude instance
+        /// types whose price is higher than your threshold. The parameter accepts an integer,
+        /// which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection,
+        /// specify a high value, such as <code>999999</code>. 
         /// </para>
         ///  
         /// <para>
@@ -591,12 +591,12 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property SpotMaxPricePercentageOverLowestPrice. 
         /// <para>
         /// The price protection threshold for Spot Instances. This is the maximum you’ll pay
-        /// for a Spot Instance, expressed as a percentage higher than the cheapest M, C, or R
-        /// instance type with your specified attributes. When Amazon EC2 Auto Scaling selects
-        /// instance types with your attributes, we will exclude instance types whose price is
-        /// higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto
-        /// Scaling interprets as a percentage. To turn off price protection, specify a high value,
-        /// such as <code>999999</code>. 
+        /// for a Spot Instance, expressed as a percentage higher than the least expensive current
+        /// generation M, C, or R instance type with your specified attributes. When Amazon EC2
+        /// Auto Scaling selects instance types with your attributes, we will exclude instance
+        /// types whose price is higher than your threshold. The parameter accepts an integer,
+        /// which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection,
+        /// specify a high value, such as <code>999999</code>. 
         /// </para>
         ///  
         /// <para>

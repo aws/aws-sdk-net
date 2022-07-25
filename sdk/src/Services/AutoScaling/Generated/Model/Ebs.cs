@@ -84,7 +84,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-data-protection.html#encryption">Using
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-data-protection.html#encryption">Use
         /// Amazon Web Services KMS keys to encrypt Amazon EBS volumes</a> in the <i>Amazon EC2
         /// Auto Scaling User Guide</i>.
         /// </para>
@@ -241,7 +241,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code>
+        /// Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code>
         /// | <code>sc1</code> | <code>gp3</code> 
         /// </para>
         /// </summary>
