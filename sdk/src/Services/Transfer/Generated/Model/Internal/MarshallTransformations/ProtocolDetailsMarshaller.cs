@@ -45,6 +45,17 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ProtocolDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAs2Transports())
+            {
+                context.Writer.WritePropertyName("As2Transports");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAs2TransportsListValue in requestObject.As2Transports)
+                {
+                        context.Writer.Write(requestObjectAs2TransportsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetPassiveIp())
             {
                 context.Writer.WritePropertyName("PassiveIp");

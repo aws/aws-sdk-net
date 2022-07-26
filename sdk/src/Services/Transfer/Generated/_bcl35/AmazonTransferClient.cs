@@ -35,16 +35,16 @@ namespace Amazon.Transfer
     /// <summary>
     /// Implementation for accessing Transfer
     ///
-    /// Amazon Web Services Transfer Family is a fully managed service that enables the transfer
-    /// of files over the File Transfer Protocol (FTP), File Transfer Protocol over SSL (FTPS),
-    /// or Secure Shell (SSH) File Transfer Protocol (SFTP) directly into and out of Amazon
-    /// Simple Storage Service (Amazon S3). Amazon Web Services helps you seamlessly migrate
-    /// your file transfer workflows to Amazon Web Services Transfer Family by integrating
-    /// with existing authentication systems, and providing DNS routing with Amazon Route
-    /// 53 so nothing changes for your customers and partners, or their applications. With
-    /// your data in Amazon S3, you can use it with Amazon Web Services services for processing,
-    /// analytics, machine learning, and archiving. Getting started with Amazon Web Services
-    /// Transfer Family is easy since there is no infrastructure to buy and set up.
+    /// Transfer Family is a fully managed service that enables the transfer of files over
+    /// the File Transfer Protocol (FTP), File Transfer Protocol over SSL (FTPS), or Secure
+    /// Shell (SSH) File Transfer Protocol (SFTP) directly into and out of Amazon Simple Storage
+    /// Service (Amazon S3). Amazon Web Services helps you seamlessly migrate your file transfer
+    /// workflows to Transfer Family by integrating with existing authentication systems,
+    /// and providing DNS routing with Amazon Route 53 so nothing changes for your customers
+    /// and partners, or their applications. With your data in Amazon S3, you can use it with
+    /// Amazon Web Services for processing, analytics, machine learning, and archiving. Getting
+    /// started with Transfer Family is easy since there is no infrastructure to buy and set
+    /// up.
     /// </summary>
     public partial class AmazonTransferClient : AmazonServiceClient, IAmazonTransfer
     {
@@ -268,11 +268,11 @@ namespace Amazon.Transfer
 
         /// <summary>
         /// Used by administrators to choose which groups in the directory should have access
-        /// to upload and download files over the enabled protocols using Amazon Web Services
-        /// Transfer Family. For example, a Microsoft Active Directory might contain 50,000 users,
-        /// but only a small fraction might need the ability to transfer files to the server.
-        /// An administrator can use <code>CreateAccess</code> to limit the access to the correct
-        /// set of users who need this ability.
+        /// to upload and download files over the enabled protocols using Transfer Family. For
+        /// example, a Microsoft Active Directory might contain 50,000 users, but only a small
+        /// fraction might need the ability to transfer files to the server. An administrator
+        /// can use <code>CreateAccess</code> to limit the access to the correct set of users
+        /// who need this ability.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAccess service method.</param>
         /// 
@@ -337,6 +337,232 @@ namespace Amazon.Transfer
         public virtual CreateAccessResponse EndCreateAccess(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateAccessResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateAgreement
+
+        /// <summary>
+        /// Creates an agreement. An agreement is a bilateral trading partner agreement, or partnership,
+        /// between an Transfer Family server and an AS2 process. The agreement defines the file
+        /// and message transfer relationship between the server and the AS2 process. To define
+        /// an agreement, Transfer Family combines a server, local profile, partner profile, certificate,
+        /// and other attributes.
+        /// 
+        ///  
+        /// <para>
+        /// The partner is identified with the <code>PartnerProfileId</code>, and the AS2 process
+        /// is identified with the <code>LocalProfileId</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAgreement service method.</param>
+        /// 
+        /// <returns>The response from the CreateAgreement service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceExistsException">
+        /// The requested resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateAgreement">REST API Reference for CreateAgreement Operation</seealso>
+        public virtual CreateAgreementResponse CreateAgreement(CreateAgreementRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAgreementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAgreementResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAgreementResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAgreement operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAgreement operation on AmazonTransferClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAgreement
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateAgreement">REST API Reference for CreateAgreement Operation</seealso>
+        public virtual IAsyncResult BeginCreateAgreement(CreateAgreementRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAgreementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAgreementResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAgreement operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAgreement.</param>
+        /// 
+        /// <returns>Returns a  CreateAgreementResult from Transfer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateAgreement">REST API Reference for CreateAgreement Operation</seealso>
+        public virtual CreateAgreementResponse EndCreateAgreement(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateAgreementResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateConnector
+
+        /// <summary>
+        /// Creates the connector, which captures the parameters for an outbound connection for
+        /// the AS2 protocol. The connector is required for sending files from a customer's non
+        /// Amazon Web Services server.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnector service method.</param>
+        /// 
+        /// <returns>The response from the CreateConnector service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceExistsException">
+        /// The requested resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateConnector">REST API Reference for CreateConnector Operation</seealso>
+        public virtual CreateConnectorResponse CreateConnector(CreateConnectorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConnectorResponseUnmarshaller.Instance;
+
+            return Invoke<CreateConnectorResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateConnector operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnector operation on AmazonTransferClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateConnector
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateConnector">REST API Reference for CreateConnector Operation</seealso>
+        public virtual IAsyncResult BeginCreateConnector(CreateConnectorRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConnectorResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateConnector operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateConnector.</param>
+        /// 
+        /// <returns>Returns a  CreateConnectorResult from Transfer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateConnector">REST API Reference for CreateConnector Operation</seealso>
+        public virtual CreateConnectorResponse EndCreateConnector(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateConnectorResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateProfile
+
+        /// <summary>
+        /// Creates the profile for the AS2 process. The agreement is between the partner and
+        /// the AS2 process.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProfile service method.</param>
+        /// 
+        /// <returns>The response from the CreateProfile service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateProfile">REST API Reference for CreateProfile Operation</seealso>
+        public virtual CreateProfileResponse CreateProfile(CreateProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateProfileResponseUnmarshaller.Instance;
+
+            return Invoke<CreateProfileResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateProfile operation on AmazonTransferClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateProfile">REST API Reference for CreateProfile Operation</seealso>
+        public virtual IAsyncResult BeginCreateProfile(CreateProfileRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateProfile.</param>
+        /// 
+        /// <returns>Returns a  CreateProfileResult from Transfer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateProfile">REST API Reference for CreateProfile Operation</seealso>
+        public virtual CreateProfileResponse EndCreateProfile(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateProfileResponse>(asyncResult);
         }
 
         #endregion
@@ -429,9 +655,9 @@ namespace Amazon.Transfer
         /// server. You can only create and associate users with servers that have the <code>IdentityProviderType</code>
         /// set to <code>SERVICE_MANAGED</code>. Using parameters for <code>CreateUser</code>,
         /// you can specify the user name, set the home directory, store the user's public key,
-        /// and assign the user's Amazon Web Services Identity and Access Management (IAM) role.
-        /// You can also optionally add a session policy, and assign metadata with tags that can
-        /// be used to group and search for users.
+        /// and assign the user's Identity and Access Management (IAM) role. You can also optionally
+        /// add a session policy, and assign metadata with tags that can be used to group and
+        /// search for users.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateUser service method.</param>
         /// 
@@ -643,6 +869,282 @@ namespace Amazon.Transfer
         public virtual DeleteAccessResponse EndDeleteAccess(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteAccessResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteAgreement
+
+        /// <summary>
+        /// Delete the agreement that's specified in the provided <code>AgreementId</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAgreement service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAgreement service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteAgreement">REST API Reference for DeleteAgreement Operation</seealso>
+        public virtual DeleteAgreementResponse DeleteAgreement(DeleteAgreementRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAgreementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAgreementResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAgreementResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAgreement operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAgreement operation on AmazonTransferClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAgreement
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteAgreement">REST API Reference for DeleteAgreement Operation</seealso>
+        public virtual IAsyncResult BeginDeleteAgreement(DeleteAgreementRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAgreementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAgreementResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAgreement operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAgreement.</param>
+        /// 
+        /// <returns>Returns a  DeleteAgreementResult from Transfer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteAgreement">REST API Reference for DeleteAgreement Operation</seealso>
+        public virtual DeleteAgreementResponse EndDeleteAgreement(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteAgreementResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteCertificate
+
+        /// <summary>
+        /// Deletes the certificate that's specified in the <code>CertificateId</code> parameter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCertificate service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCertificate service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
+        public virtual DeleteCertificateResponse DeleteCertificate(DeleteCertificateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCertificateResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCertificateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCertificate operation on AmazonTransferClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCertificate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
+        public virtual IAsyncResult BeginDeleteCertificate(DeleteCertificateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCertificateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCertificate.</param>
+        /// 
+        /// <returns>Returns a  DeleteCertificateResult from Transfer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
+        public virtual DeleteCertificateResponse EndDeleteCertificate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteCertificateResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteConnector
+
+        /// <summary>
+        /// Deletes the agreement that's specified in the provided <code>ConnectorId</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnector service method.</param>
+        /// 
+        /// <returns>The response from the DeleteConnector service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteConnector">REST API Reference for DeleteConnector Operation</seealso>
+        public virtual DeleteConnectorResponse DeleteConnector(DeleteConnectorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConnectorResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteConnectorResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteConnector operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnector operation on AmazonTransferClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteConnector
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteConnector">REST API Reference for DeleteConnector Operation</seealso>
+        public virtual IAsyncResult BeginDeleteConnector(DeleteConnectorRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConnectorResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteConnector operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteConnector.</param>
+        /// 
+        /// <returns>Returns a  DeleteConnectorResult from Transfer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteConnector">REST API Reference for DeleteConnector Operation</seealso>
+        public virtual DeleteConnectorResponse EndDeleteConnector(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteConnectorResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteProfile
+
+        /// <summary>
+        /// Deletes the profile that's specified in the <code>ProfileId</code> parameter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProfile service method.</param>
+        /// 
+        /// <returns>The response from the DeleteProfile service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteProfile">REST API Reference for DeleteProfile Operation</seealso>
+        public virtual DeleteProfileResponse DeleteProfile(DeleteProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProfileResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteProfileResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProfile operation on AmazonTransferClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteProfile">REST API Reference for DeleteProfile Operation</seealso>
+        public virtual IAsyncResult BeginDeleteProfile(DeleteProfileRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteProfile.</param>
+        /// 
+        /// <returns>Returns a  DeleteProfileResult from Transfer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteProfile">REST API Reference for DeleteProfile Operation</seealso>
+        public virtual DeleteProfileResponse EndDeleteProfile(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteProfileResponse>(asyncResult);
         }
 
         #endregion
@@ -951,7 +1453,7 @@ namespace Amazon.Transfer
 
         /// <summary>
         /// Describes the access that is assigned to the specific file transfer protocol-enabled
-        /// server, as identified by its <code>ServerId</code> property and its <code>ExternalID</code>.
+        /// server, as identified by its <code>ServerId</code> property and its <code>ExternalId</code>.
         /// 
         ///  
         /// <para>
@@ -1023,6 +1525,213 @@ namespace Amazon.Transfer
 
         #endregion
         
+        #region  DescribeAgreement
+
+        /// <summary>
+        /// Describes the agreement that's identified by the <code>AgreementId</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAgreement service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAgreement service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeAgreement">REST API Reference for DescribeAgreement Operation</seealso>
+        public virtual DescribeAgreementResponse DescribeAgreement(DescribeAgreementRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAgreementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAgreementResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAgreementResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAgreement operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAgreement operation on AmazonTransferClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAgreement
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeAgreement">REST API Reference for DescribeAgreement Operation</seealso>
+        public virtual IAsyncResult BeginDescribeAgreement(DescribeAgreementRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAgreementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAgreementResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAgreement operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAgreement.</param>
+        /// 
+        /// <returns>Returns a  DescribeAgreementResult from Transfer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeAgreement">REST API Reference for DescribeAgreement Operation</seealso>
+        public virtual DescribeAgreementResponse EndDescribeAgreement(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeAgreementResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeCertificate
+
+        /// <summary>
+        /// Describes the certificate that's identified by the <code>CertificateId</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCertificate service method.</param>
+        /// 
+        /// <returns>The response from the DescribeCertificate service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeCertificate">REST API Reference for DescribeCertificate Operation</seealso>
+        public virtual DescribeCertificateResponse DescribeCertificate(DescribeCertificateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCertificateResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCertificateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCertificate operation on AmazonTransferClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCertificate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeCertificate">REST API Reference for DescribeCertificate Operation</seealso>
+        public virtual IAsyncResult BeginDescribeCertificate(DescribeCertificateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCertificateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCertificate.</param>
+        /// 
+        /// <returns>Returns a  DescribeCertificateResult from Transfer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeCertificate">REST API Reference for DescribeCertificate Operation</seealso>
+        public virtual DescribeCertificateResponse EndDescribeCertificate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeCertificateResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeConnector
+
+        /// <summary>
+        /// Describes the connector that's identified by the <code>ConnectorId.</code>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConnector service method.</param>
+        /// 
+        /// <returns>The response from the DescribeConnector service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeConnector">REST API Reference for DescribeConnector Operation</seealso>
+        public virtual DescribeConnectorResponse DescribeConnector(DescribeConnectorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConnectorResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeConnectorResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeConnector operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConnector operation on AmazonTransferClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeConnector
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeConnector">REST API Reference for DescribeConnector Operation</seealso>
+        public virtual IAsyncResult BeginDescribeConnector(DescribeConnectorRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConnectorResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeConnector operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeConnector.</param>
+        /// 
+        /// <returns>Returns a  DescribeConnectorResult from Transfer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeConnector">REST API Reference for DescribeConnector Operation</seealso>
+        public virtual DescribeConnectorResponse EndDescribeConnector(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeConnectorResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeExecution
 
         /// <summary>
@@ -1089,6 +1798,75 @@ namespace Amazon.Transfer
         public virtual DescribeExecutionResponse EndDescribeExecution(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeExecutionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeProfile
+
+        /// <summary>
+        /// Returns the details of the profile that's specified by the <code>ProfileId</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProfile service method.</param>
+        /// 
+        /// <returns>The response from the DescribeProfile service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeProfile">REST API Reference for DescribeProfile Operation</seealso>
+        public virtual DescribeProfileResponse DescribeProfile(DescribeProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeProfileResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeProfileResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProfile operation on AmazonTransferClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeProfile">REST API Reference for DescribeProfile Operation</seealso>
+        public virtual IAsyncResult BeginDescribeProfile(DescribeProfileRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeProfile.</param>
+        /// 
+        /// <returns>Returns a  DescribeProfileResult from Transfer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeProfile">REST API Reference for DescribeProfile Operation</seealso>
+        public virtual DescribeProfileResponse EndDescribeProfile(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeProfileResponse>(asyncResult);
         }
 
         #endregion
@@ -1386,6 +2164,76 @@ namespace Amazon.Transfer
 
         #endregion
         
+        #region  ImportCertificate
+
+        /// <summary>
+        /// Imports the signing and encryption certificates that you need to create local (AS2)
+        /// profiles and partner profiles.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportCertificate service method.</param>
+        /// 
+        /// <returns>The response from the ImportCertificate service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ImportCertificate">REST API Reference for ImportCertificate Operation</seealso>
+        public virtual ImportCertificateResponse ImportCertificate(ImportCertificateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportCertificateResponseUnmarshaller.Instance;
+
+            return Invoke<ImportCertificateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportCertificate operation on AmazonTransferClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportCertificate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ImportCertificate">REST API Reference for ImportCertificate Operation</seealso>
+        public virtual IAsyncResult BeginImportCertificate(ImportCertificateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportCertificateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ImportCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportCertificate.</param>
+        /// 
+        /// <returns>Returns a  ImportCertificateResult from Transfer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ImportCertificate">REST API Reference for ImportCertificate Operation</seealso>
+        public virtual ImportCertificateResponse EndImportCertificate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ImportCertificateResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ImportSshPublicKey
 
         /// <summary>
@@ -1541,6 +2389,230 @@ namespace Amazon.Transfer
 
         #endregion
         
+        #region  ListAgreements
+
+        /// <summary>
+        /// Returns a list of the agreements for the server that's identified by the <code>ServerId</code>
+        /// that you supply. If you want to limit the results to a certain number, supply a value
+        /// for the <code>MaxResults</code> parameter. If you ran the command previously and received
+        /// a value for <code>NextToken</code>, you can supply that value to continue listing
+        /// agreements from where you left off.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAgreements service method.</param>
+        /// 
+        /// <returns>The response from the ListAgreements service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> parameter that was passed is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListAgreements">REST API Reference for ListAgreements Operation</seealso>
+        public virtual ListAgreementsResponse ListAgreements(ListAgreementsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAgreementsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAgreementsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAgreementsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAgreements operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAgreements operation on AmazonTransferClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAgreements
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListAgreements">REST API Reference for ListAgreements Operation</seealso>
+        public virtual IAsyncResult BeginListAgreements(ListAgreementsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAgreementsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAgreementsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAgreements operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAgreements.</param>
+        /// 
+        /// <returns>Returns a  ListAgreementsResult from Transfer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListAgreements">REST API Reference for ListAgreements Operation</seealso>
+        public virtual ListAgreementsResponse EndListAgreements(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAgreementsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListCertificates
+
+        /// <summary>
+        /// Returns a list of the current certificates that have been imported into Transfer Family.
+        /// If you want to limit the results to a certain number, supply a value for the <code>MaxResults</code>
+        /// parameter. If you ran the command previously and received a value for the <code>NextToken</code>
+        /// parameter, you can supply that value to continue listing certificates from where you
+        /// left off.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCertificates service method.</param>
+        /// 
+        /// <returns>The response from the ListCertificates service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> parameter that was passed is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListCertificates">REST API Reference for ListCertificates Operation</seealso>
+        public virtual ListCertificatesResponse ListCertificates(ListCertificatesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCertificatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCertificatesResponseUnmarshaller.Instance;
+
+            return Invoke<ListCertificatesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCertificates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCertificates operation on AmazonTransferClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCertificates
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListCertificates">REST API Reference for ListCertificates Operation</seealso>
+        public virtual IAsyncResult BeginListCertificates(ListCertificatesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCertificatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCertificatesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCertificates operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCertificates.</param>
+        /// 
+        /// <returns>Returns a  ListCertificatesResult from Transfer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListCertificates">REST API Reference for ListCertificates Operation</seealso>
+        public virtual ListCertificatesResponse EndListCertificates(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListCertificatesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListConnectors
+
+        /// <summary>
+        /// Lists the connectors for the specified Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectors service method.</param>
+        /// 
+        /// <returns>The response from the ListConnectors service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> parameter that was passed is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListConnectors">REST API Reference for ListConnectors Operation</seealso>
+        public virtual ListConnectorsResponse ListConnectors(ListConnectorsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConnectorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConnectorsResponseUnmarshaller.Instance;
+
+            return Invoke<ListConnectorsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListConnectors operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectors operation on AmazonTransferClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListConnectors
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListConnectors">REST API Reference for ListConnectors Operation</seealso>
+        public virtual IAsyncResult BeginListConnectors(ListConnectorsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConnectorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConnectorsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListConnectors operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListConnectors.</param>
+        /// 
+        /// <returns>Returns a  ListConnectorsResult from Transfer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListConnectors">REST API Reference for ListConnectors Operation</seealso>
+        public virtual ListConnectorsResponse EndListConnectors(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListConnectorsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListExecutions
 
         /// <summary>
@@ -1609,6 +2681,81 @@ namespace Amazon.Transfer
         public virtual ListExecutionsResponse EndListExecutions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListExecutionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListProfiles
+
+        /// <summary>
+        /// Returns a list of the profiles for your system. If you want to limit the results to
+        /// a certain number, supply a value for the <code>MaxResults</code> parameter. If you
+        /// ran the command previously and received a value for <code>NextToken</code>, you can
+        /// supply that value to continue listing profiles from where you left off.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProfiles service method.</param>
+        /// 
+        /// <returns>The response from the ListProfiles service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> parameter that was passed is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListProfiles">REST API Reference for ListProfiles Operation</seealso>
+        public virtual ListProfilesResponse ListProfiles(ListProfilesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProfilesResponseUnmarshaller.Instance;
+
+            return Invoke<ListProfilesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListProfiles operation on AmazonTransferClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListProfiles
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListProfiles">REST API Reference for ListProfiles Operation</seealso>
+        public virtual IAsyncResult BeginListProfiles(ListProfilesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProfilesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListProfiles.</param>
+        /// 
+        /// <returns>Returns a  ListProfilesResult from Transfer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListProfiles">REST API Reference for ListProfiles Operation</seealso>
+        public virtual ListProfilesResponse EndListProfiles(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListProfilesResponse>(asyncResult);
         }
 
         #endregion
@@ -2043,6 +3190,79 @@ namespace Amazon.Transfer
 
         #endregion
         
+        #region  StartFileTransfer
+
+        /// <summary>
+        /// Begins an outbound file transfer. You specify the <code>ConnectorId</code> and the
+        /// file paths for where to send the files.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartFileTransfer service method.</param>
+        /// 
+        /// <returns>The response from the StartFileTransfer service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StartFileTransfer">REST API Reference for StartFileTransfer Operation</seealso>
+        public virtual StartFileTransferResponse StartFileTransfer(StartFileTransferRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartFileTransferRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartFileTransferResponseUnmarshaller.Instance;
+
+            return Invoke<StartFileTransferResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartFileTransfer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartFileTransfer operation on AmazonTransferClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartFileTransfer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StartFileTransfer">REST API Reference for StartFileTransfer Operation</seealso>
+        public virtual IAsyncResult BeginStartFileTransfer(StartFileTransferRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartFileTransferRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartFileTransferResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartFileTransfer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartFileTransfer.</param>
+        /// 
+        /// <returns>Returns a  StartFileTransferResult from Transfer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StartFileTransfer">REST API Reference for StartFileTransfer Operation</seealso>
+        public virtual StartFileTransferResponse EndStartFileTransfer(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartFileTransferResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartServer
 
         /// <summary>
@@ -2138,7 +3358,7 @@ namespace Amazon.Transfer
         /// 
         ///  <note> 
         /// <para>
-        /// Stopping the server will not reduce or impact your file transfer protocol endpoint
+        /// Stopping the server does not reduce or impact your file transfer protocol endpoint
         /// billing; you must delete the server to stop being billed.
         /// </para>
         ///  </note> 
@@ -2550,6 +3770,294 @@ namespace Amazon.Transfer
         public virtual UpdateAccessResponse EndUpdateAccess(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateAccessResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateAgreement
+
+        /// <summary>
+        /// Updates some of the parameters for an existing agreement. Provide the <code>AgreementId</code>
+        /// and the <code>ServerId</code> for the agreement that you want to update, along with
+        /// the new values for the parameters to update.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAgreement service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAgreement service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceExistsException">
+        /// The requested resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateAgreement">REST API Reference for UpdateAgreement Operation</seealso>
+        public virtual UpdateAgreementResponse UpdateAgreement(UpdateAgreementRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAgreementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAgreementResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAgreementResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAgreement operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAgreement operation on AmazonTransferClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAgreement
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateAgreement">REST API Reference for UpdateAgreement Operation</seealso>
+        public virtual IAsyncResult BeginUpdateAgreement(UpdateAgreementRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAgreementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAgreementResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateAgreement operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAgreement.</param>
+        /// 
+        /// <returns>Returns a  UpdateAgreementResult from Transfer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateAgreement">REST API Reference for UpdateAgreement Operation</seealso>
+        public virtual UpdateAgreementResponse EndUpdateAgreement(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateAgreementResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateCertificate
+
+        /// <summary>
+        /// Updates the active and inactive dates for a certificate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCertificate service method.</param>
+        /// 
+        /// <returns>The response from the UpdateCertificate service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateCertificate">REST API Reference for UpdateCertificate Operation</seealso>
+        public virtual UpdateCertificateResponse UpdateCertificate(UpdateCertificateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCertificateResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCertificateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCertificate operation on AmazonTransferClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateCertificate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateCertificate">REST API Reference for UpdateCertificate Operation</seealso>
+        public virtual IAsyncResult BeginUpdateCertificate(UpdateCertificateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCertificateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateCertificate.</param>
+        /// 
+        /// <returns>Returns a  UpdateCertificateResult from Transfer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateCertificate">REST API Reference for UpdateCertificate Operation</seealso>
+        public virtual UpdateCertificateResponse EndUpdateCertificate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateCertificateResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateConnector
+
+        /// <summary>
+        /// Updates some of the parameters for an existing connector. Provide the <code>ConnectorId</code>
+        /// for the connector that you want to update, along with the new values for the parameters
+        /// to update.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnector service method.</param>
+        /// 
+        /// <returns>The response from the UpdateConnector service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceExistsException">
+        /// The requested resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateConnector">REST API Reference for UpdateConnector Operation</seealso>
+        public virtual UpdateConnectorResponse UpdateConnector(UpdateConnectorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConnectorResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateConnectorResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateConnector operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnector operation on AmazonTransferClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateConnector
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateConnector">REST API Reference for UpdateConnector Operation</seealso>
+        public virtual IAsyncResult BeginUpdateConnector(UpdateConnectorRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConnectorResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateConnector operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateConnector.</param>
+        /// 
+        /// <returns>Returns a  UpdateConnectorResult from Transfer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateConnector">REST API Reference for UpdateConnector Operation</seealso>
+        public virtual UpdateConnectorResponse EndUpdateConnector(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateConnectorResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateProfile
+
+        /// <summary>
+        /// Updates some of the parameters for an existing profile. Provide the <code>ProfileId</code>
+        /// for the profile that you want to update, along with the new values for the parameters
+        /// to update.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProfile service method.</param>
+        /// 
+        /// <returns>The response from the UpdateProfile service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateProfile">REST API Reference for UpdateProfile Operation</seealso>
+        public virtual UpdateProfileResponse UpdateProfile(UpdateProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProfileResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateProfileResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProfile operation on AmazonTransferClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateProfile">REST API Reference for UpdateProfile Operation</seealso>
+        public virtual IAsyncResult BeginUpdateProfile(UpdateProfileRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateProfile.</param>
+        /// 
+        /// <returns>Returns a  UpdateProfileResult from Transfer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateProfile">REST API Reference for UpdateProfile Operation</seealso>
+        public virtual UpdateProfileResponse EndUpdateProfile(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateProfileResponse>(asyncResult);
         }
 
         #endregion

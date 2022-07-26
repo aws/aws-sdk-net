@@ -43,9 +43,8 @@ namespace Amazon.Transfer.Model
         /// <para>
         /// A unique identifier that is required to identify specific groups within your directory.
         /// The users of the group that you associate have access to your Amazon S3 or Amazon
-        /// EFS resources over the enabled protocols using Amazon Web Services Transfer Family.
-        /// If you know the group name, you can view the SID values by running the following command
-        /// using Windows PowerShell.
+        /// EFS resources over the enabled protocols using Transfer Family. If you know the group
+        /// name, you can view the SID values by running the following command using Windows PowerShell.
         /// </para>
         ///  
         /// <para>
@@ -59,8 +58,8 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  
         /// <para>
-        /// The regex used to validate this parameter is a string of characters consisting of
-        /// uppercase and lowercase alphanumeric characters with no spaces. You can also include
+        /// The regular expression used to validate this parameter is a string of characters consisting
+        /// of uppercase and lowercase alphanumeric characters with no spaces. You can also include
         /// underscores or any of the following characters: =,.@:/-
         /// </para>
         /// </summary>

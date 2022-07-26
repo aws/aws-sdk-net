@@ -114,10 +114,10 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property EndpointDetails. 
         /// <para>
         /// The virtual private cloud (VPC) endpoint settings that are configured for your server.
-        /// When you host your endpoint within your VPC, you can make it accessible only to resources
-        /// within your VPC, or you can attach Elastic IP addresses and make it accessible to
-        /// clients over the internet. Your VPC's default security groups are automatically assigned
-        /// to your endpoint.
+        /// When you host your endpoint within your VPC, you can make your endpoint accessible
+        /// only to resources within your VPC, or you can attach Elastic IP addresses and make
+        /// your endpoint accessible to clients over the internet. Your VPC's default security
+        /// groups are automatically assigned to your endpoint.
         /// </para>
         /// </summary>
         public EndpointDetails EndpointDetails
@@ -194,30 +194,29 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property IdentityProviderType. 
         /// <para>
-        /// Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>,
-        /// which allows you to store and access user credentials within the Amazon Web Services
-        /// Transfer Family service.
+        /// The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>,
+        /// which allows you to store and access user credentials within the Transfer Family service.
         /// </para>
         ///  
         /// <para>
         /// Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups
-        /// in Amazon Web Services Managed Active Directory or Microsoft Active Directory in your
-        /// on-premises environment or in Amazon Web Services using AD Connectors. This option
-        /// also requires you to provide a Directory ID using the <code>IdentityProviderDetails</code>
+        /// in Directory Service for Microsoft Active Directory or Microsoft Active Directory
+        /// in your on-premises environment or in Amazon Web Services using AD Connector. This
+        /// option also requires you to provide a Directory ID by using the <code>IdentityProviderDetails</code>
         /// parameter.
         /// </para>
         ///  
         /// <para>
         /// Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your
-        /// choosing. The <code>API_GATEWAY</code> setting requires you to provide an API Gateway
-        /// endpoint URL to call for authentication using the <code>IdentityProviderDetails</code>
+        /// choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon API
+        /// Gateway endpoint URL to call for authentication by using the <code>IdentityProviderDetails</code>
         /// parameter.
         /// </para>
         ///  
         /// <para>
-        /// Use the <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity
-        /// provider. If you choose this value, you must specify the ARN for the lambda function
-        /// in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code>
+        /// Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity
+        /// provider. If you choose this value, you must specify the ARN for the Lambda function
+        /// in the <code>Function</code> parameter or the <code>IdentityProviderDetails</code>
         /// data type.
         /// </para>
         /// </summary>
@@ -236,10 +235,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property LoggingRole. 
         /// <para>
-        /// Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access
-        /// Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for
-        /// Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch
-        /// logs.
+        /// The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that
+        /// allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents.
+        /// When set, you can view user activity in your CloudWatch logs.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -258,7 +256,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property PostAuthenticationLoginBanner. 
         /// <para>
-        /// Specify a string to display when users connect to a server. This string is displayed
+        /// Specifies a string to display when users connect to a server. This string is displayed
         /// after the user authenticates.
         /// </para>
         ///  <note> 
@@ -283,9 +281,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property PreAuthenticationLoginBanner. 
         /// <para>
-        /// Specify a string to display when users connect to a server. This string is displayed
+        /// Specifies a string to display when users connect to a server. This string is displayed
         /// before the user authenticates. For example, the following banner displays details
-        /// about using the system.
+        /// about using the system:
         /// </para>
         ///  
         /// <para>
@@ -353,7 +351,7 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Min=1, Max=3)]
+        [AWSProperty(Min=1, Max=4)]
         public List<string> Protocols
         {
             get { return this._protocols; }
@@ -407,10 +405,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// Specifies the condition of a server for the server that was described. A value of
-        /// <code>ONLINE</code> indicates that the server can accept jobs and transfer files.
-        /// A <code>State</code> value of <code>OFFLINE</code> means that the server cannot perform
-        /// file transfer operations.
+        /// The condition of the server that was described. A value of <code>ONLINE</code> indicates
+        /// that the server can accept jobs and transfer files. A <code>State</code> value of
+        /// <code>OFFLINE</code> means that the server cannot perform file transfer operations.
         /// </para>
         ///  
         /// <para>
@@ -474,8 +471,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property WorkflowDetails. 
         /// <para>
-        /// Specifies the workflow ID for the workflow to assign and the execution role used for
-        /// executing the workflow.
+        /// Specifies the workflow ID for the workflow to assign and the execution role that's
+        /// used for executing the workflow.
         /// </para>
         /// </summary>
         public WorkflowDetails WorkflowDetails

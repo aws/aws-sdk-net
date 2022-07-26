@@ -41,7 +41,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Specifies the aximum number of executions to return.
+        /// Specifies the maximum number of executions to return.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -67,7 +67,7 @@ namespace Amazon.Transfer.Model
         ///  
         /// <para>
         ///  This is useful for pagination, for instance. If you have 100 executions for a workflow,
-        /// you might only want to list first 10. If so, callthe API by specifing the <code>max-results</code>:
+        /// you might only want to list first 10. If so, call the API by specifying the <code>max-results</code>:
         /// 
         /// </para>
         ///  
@@ -77,7 +77,7 @@ namespace Amazon.Transfer.Model
         ///  
         /// <para>
         ///  This returns details for the first 10 executions, as well as the pointer (<code>NextToken</code>)
-        /// to the eleventh execution. You can now call the API again, suppling the <code>NextToken</code>
+        /// to the eleventh execution. You can now call the API again, supplying the <code>NextToken</code>
         /// value you received: 
         /// </para>
         ///  

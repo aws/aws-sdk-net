@@ -56,26 +56,24 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Certificate. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager (ACM)
-        /// certificate. Required when <code>Protocols</code> is set to <code>FTPS</code>.
+        /// The Amazon Resource Name (ARN) of the Certificate Manager (ACM) certificate. Required
+        /// when <code>Protocols</code> is set to <code>FTPS</code>.
         /// </para>
         ///  
         /// <para>
         /// To request a new public certificate, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request
-        /// a public certificate</a> in the <i> Amazon Web Services Certificate Manager User Guide</i>.
+        /// a public certificate</a> in the <i>Certificate Manager User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// To import an existing certificate into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-        /// certificates into ACM</a> in the <i> Amazon Web Services Certificate Manager User
-        /// Guide</i>.
+        /// certificates into ACM</a> in the <i>Certificate Manager User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// To request a private certificate to use FTPS through private IP addresses, see <a
         /// href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request
-        /// a private certificate</a> in the <i> Amazon Web Services Certificate Manager User
-        /// Guide</i>.
+        /// a private certificate</a> in the <i>Certificate Manager User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -150,10 +148,10 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property EndpointDetails. 
         /// <para>
         /// The virtual private cloud (VPC) endpoint settings that are configured for your server.
-        /// When you host your endpoint within your VPC, you can make it accessible only to resources
-        /// within your VPC, or you can attach Elastic IP addresses and make it accessible to
-        /// clients over the internet. Your VPC's default security groups are automatically assigned
-        /// to your endpoint.
+        /// When you host your endpoint within your VPC, you can make your endpoint accessible
+        /// only to resources within your VPC, or you can attach Elastic IP addresses and make
+        /// your endpoint accessible to clients over the internet. Your VPC's default security
+        /// groups are automatically assigned to your endpoint.
         /// </para>
         /// </summary>
         public EndpointDetails EndpointDetails
@@ -226,8 +224,8 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  
         /// <para>
-        /// Use a minimum value of 2048 for the <code>-b</code> option: you can create a stronger
-        /// key using 3072 or 4096.
+        /// Use a minimum value of 2048 for the <code>-b</code> option. You can create a stronger
+        /// key by using 3072 or 4096.
         /// </para>
         ///  
         /// <para>
@@ -263,8 +261,7 @@ namespace Amazon.Transfer.Model
         ///  </important> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-        /// the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services Transfer
-        /// Family User Guide</i>.
+        /// the host key for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4096)]
@@ -305,30 +302,29 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property IdentityProviderType. 
         /// <para>
-        /// Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>,
-        /// which allows you to store and access user credentials within the Amazon Web Services
-        /// Transfer Family service.
+        /// The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>,
+        /// which allows you to store and access user credentials within the Transfer Family service.
         /// </para>
         ///  
         /// <para>
         /// Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups
-        /// in Amazon Web Services Managed Active Directory or Microsoft Active Directory in your
-        /// on-premises environment or in Amazon Web Services using AD Connectors. This option
-        /// also requires you to provide a Directory ID using the <code>IdentityProviderDetails</code>
+        /// in Directory Service for Microsoft Active Directory or Microsoft Active Directory
+        /// in your on-premises environment or in Amazon Web Services using AD Connector. This
+        /// option also requires you to provide a Directory ID by using the <code>IdentityProviderDetails</code>
         /// parameter.
         /// </para>
         ///  
         /// <para>
         /// Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your
-        /// choosing. The <code>API_GATEWAY</code> setting requires you to provide an API Gateway
-        /// endpoint URL to call for authentication using the <code>IdentityProviderDetails</code>
+        /// choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon API
+        /// Gateway endpoint URL to call for authentication by using the <code>IdentityProviderDetails</code>
         /// parameter.
         /// </para>
         ///  
         /// <para>
-        /// Use the <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity
-        /// provider. If you choose this value, you must specify the ARN for the lambda function
-        /// in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code>
+        /// Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity
+        /// provider. If you choose this value, you must specify the ARN for the Lambda function
+        /// in the <code>Function</code> parameter or the <code>IdentityProviderDetails</code>
         /// data type.
         /// </para>
         /// </summary>
@@ -347,10 +343,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property LoggingRole. 
         /// <para>
-        /// Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access
-        /// Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for
-        /// Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch
-        /// logs.
+        /// The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that
+        /// allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents.
+        /// When set, you can view user activity in your CloudWatch logs.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -369,7 +364,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property PostAuthenticationLoginBanner. 
         /// <para>
-        /// Specify a string to display when users connect to a server. This string is displayed
+        /// Specifies a string to display when users connect to a server. This string is displayed
         /// after the user authenticates.
         /// </para>
         ///  <note> 
@@ -394,9 +389,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property PreAuthenticationLoginBanner. 
         /// <para>
-        /// Specify a string to display when users connect to a server. This string is displayed
+        /// Specifies a string to display when users connect to a server. This string is displayed
         /// before the user authenticates. For example, the following banner displays details
-        /// about using the system.
+        /// about using the system:
         /// </para>
         ///  
         /// <para>
@@ -426,25 +421,29 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS
-        /// protocols). Enter a single dotted-quad IPv4 address, such as the external IP address
+        ///  To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code>
+        /// parameter. Enter a single dotted-quad IPv4 address, such as the external IP address
         /// of a firewall, router, or load balancer. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use the <code>SetStatOption</code> to ignore the error that is generated when the
-        /// client attempts to use SETSTAT on a file you are uploading to an S3 bucket. Set the
-        /// value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the SETSTAT
-        /// command, and upload files without needing to make any changes to your SFTP client.
-        /// Note that with <code>SetStatOption</code> set to <code>ENABLE_NO_OP</code>, Transfer
-        /// generates a log entry to CloudWatch Logs, so you can determine when the client is
-        /// making a SETSTAT call.
+        /// To ignore the error that is generated when the client attempts to use the <code>SETSTAT</code>
+        /// command on a file that you are uploading to an Amazon S3 bucket, use the <code>SetStatOption</code>
+        /// parameter. To have the Transfer Family server ignore the <code>SETSTAT</code> command
+        /// and upload files without needing to make any changes to your SFTP client, set the
+        /// value to <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter
+        /// to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon CloudWatch
+        /// Logs, so that you can determine when the client is making a <code>SETSTAT</code> call.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use the <code>TlsSessionResumptionMode</code> parameter to determine whether or not
-        /// your Transfer server resumes recent, negotiated sessions through a unique session
-        /// ID.
+        /// To determine whether your Transfer Family server resumes recent, negotiated sessions
+        /// through a unique session ID, use the <code>TlsSessionResumptionMode</code> parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>As2Transports</code> indicates the transport method for the AS2 messages. Currently,
+        /// only HTTP is supported.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -479,32 +478,42 @@ namespace Amazon.Transfer.Model
         /// <para>
         ///  <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer
         /// </para>
-        ///  </li> </ul> <note> 
+        ///  </li> <li> 
         /// <para>
-        /// If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web
-        /// Services Certificate Manager (ACM) which is used to identify your server when clients
-        /// connect to it over FTPS.
+        ///  <code>AS2</code> (Applicability Statement 2): used for transporting structured business-to-business
+        /// data
         /// </para>
-        ///  
+        ///  </li> </ul> <note> <ul> <li> 
+        /// <para>
+        /// If you select <code>FTPS</code>, you must choose a certificate stored in Certificate
+        /// Manager (ACM) which is used to identify your server when clients connect to it over
+        /// FTPS.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then
         /// the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code>
         /// must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
         /// If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code>
         /// cannot be associated.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
         /// If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code>
         /// can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be
         /// set to <code>SERVICE_MANAGED</code>.
         /// </para>
-        ///  </note>
+        ///  </li> <li> 
+        /// <para>
+        /// If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code>
+        /// must be <code>VPC</code>, and domain must be Amazon S3.
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
-        [AWSProperty(Min=1, Max=3)]
+        [AWSProperty(Min=1, Max=4)]
         public List<string> Protocols
         {
             get { return this._protocols; }
@@ -558,8 +567,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property WorkflowDetails. 
         /// <para>
-        /// Specifies the workflow ID for the workflow to assign and the execution role used for
-        /// executing the workflow.
+        /// Specifies the workflow ID for the workflow to assign and the execution role that's
+        /// used for executing the workflow.
         /// </para>
         /// </summary>
         public WorkflowDetails WorkflowDetails

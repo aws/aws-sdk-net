@@ -44,11 +44,43 @@ namespace Amazon.Transfer.Model
         }
 
         /// <summary>
+        /// Paginator for ListAgreements operation
+        ///</summary>
+        public IListAgreementsPaginator ListAgreements(ListAgreementsRequest request) 
+        {
+            return new ListAgreementsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCertificates operation
+        ///</summary>
+        public IListCertificatesPaginator ListCertificates(ListCertificatesRequest request) 
+        {
+            return new ListCertificatesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListConnectors operation
+        ///</summary>
+        public IListConnectorsPaginator ListConnectors(ListConnectorsRequest request) 
+        {
+            return new ListConnectorsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListExecutions operation
         ///</summary>
         public IListExecutionsPaginator ListExecutions(ListExecutionsRequest request) 
         {
             return new ListExecutionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListProfiles operation
+        ///</summary>
+        public IListProfilesPaginator ListProfiles(ListProfilesRequest request) 
+        {
+            return new ListProfilesPaginator(this.client, request);
         }
 
         /// <summary>

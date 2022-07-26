@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Transfer.Model
 {
     /// <summary>
-    /// A container object for the session details associated with a workflow.
+    /// A container object for the session details that are associated with a workflow.
     /// </summary>
     public partial class ServiceMetadata
     {

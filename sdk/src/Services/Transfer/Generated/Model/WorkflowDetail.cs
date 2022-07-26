@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Transfer.Model
 {
     /// <summary>
-    /// Specifies the workflow ID for the workflow to assign and the execution role used for
-    /// executing the workflow.
+    /// Specifies the workflow ID for the workflow to assign and the execution role that's
+    /// used for executing the workflow.
     /// </summary>
     public partial class WorkflowDetail
     {

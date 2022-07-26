@@ -33,9 +33,29 @@ namespace Amazon.Transfer.Model
     /// </summary>
     public partial class ProtocolDetails
     {
+        private List<string> _as2Transports = new List<string>();
         private string _passiveIp;
         private SetStatOption _setStatOption;
         private TlsSessionResumptionMode _tlsSessionResumptionMode;
+
+        /// <summary>
+        /// Gets and sets the property As2Transports. 
+        /// <para>
+        /// Indicates the transport method for the AS2 messages. Currently, only HTTP is supported.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<string> As2Transports
+        {
+            get { return this._as2Transports; }
+            set { this._as2Transports = value; }
+        }
+
+        // Check to see if As2Transports property is set
+        internal bool IsSetAs2Transports()
+        {
+            return this._as2Transports != null && this._as2Transports.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property PassiveIp. 

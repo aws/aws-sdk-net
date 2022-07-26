@@ -125,10 +125,10 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property EndpointDetails. 
         /// <para>
         /// The virtual private cloud (VPC) endpoint settings that are configured for your server.
-        /// When you host your endpoint within your VPC, you can make it accessible only to resources
-        /// within your VPC, or you can attach Elastic IP addresses and make it accessible to
-        /// clients over the internet. Your VPC's default security groups are automatically assigned
-        /// to your endpoint.
+        /// When you host your endpoint within your VPC, you can make your endpoint accessible
+        /// only to resources within your VPC, or you can attach Elastic IP addresses and make
+        /// your endpoint accessible to clients over the internet. Your VPC's default security
+        /// groups are automatically assigned to your endpoint.
         /// </para>
         /// </summary>
         public EndpointDetails EndpointDetails
@@ -201,8 +201,8 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  
         /// <para>
-        /// Use a minimum value of 2048 for the <code>-b</code> option: you can create a stronger
-        /// key using 3072 or 4096.
+        /// Use a minimum value of 2048 for the <code>-b</code> option. You can create a stronger
+        /// key by using 3072 or 4096.
         /// </para>
         ///  
         /// <para>
@@ -238,8 +238,7 @@ namespace Amazon.Transfer.Model
         ///  </important> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-        /// the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services Transfer
-        /// Family User Guide</i>.
+        /// the host key for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4096)]
@@ -277,10 +276,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property LoggingRole. 
         /// <para>
-        /// Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access
-        /// Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for
-        /// Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch
-        /// logs.
+        /// The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that
+        /// allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents.
+        /// When set, you can view user activity in your CloudWatch logs.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]
@@ -299,7 +297,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property PostAuthenticationLoginBanner. 
         /// <para>
-        /// Specify a string to display when users connect to a server. This string is displayed
+        /// Specifies a string to display when users connect to a server. This string is displayed
         /// after the user authenticates.
         /// </para>
         ///  <note> 
@@ -324,9 +322,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property PreAuthenticationLoginBanner. 
         /// <para>
-        /// Specify a string to display when users connect to a server. This string is displayed
+        /// Specifies a string to display when users connect to a server. This string is displayed
         /// before the user authenticates. For example, the following banner displays details
-        /// about using the system.
+        /// about using the system:
         /// </para>
         ///  
         /// <para>
@@ -356,25 +354,29 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS
-        /// protocols). Enter a single dotted-quad IPv4 address, such as the external IP address
+        ///  To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code>
+        /// parameter. Enter a single dotted-quad IPv4 address, such as the external IP address
         /// of a firewall, router, or load balancer. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use the <code>SetStatOption</code> to ignore the error that is generated when the
-        /// client attempts to use SETSTAT on a file you are uploading to an S3 bucket. Set the
-        /// value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the SETSTAT
-        /// command, and upload files without needing to make any changes to your SFTP client.
-        /// Note that with <code>SetStatOption</code> set to <code>ENABLE_NO_OP</code>, Transfer
-        /// generates a log entry to CloudWatch Logs, so you can determine when the client is
-        /// making a SETSTAT call.
+        /// To ignore the error that is generated when the client attempts to use the <code>SETSTAT</code>
+        /// command on a file that you are uploading to an Amazon S3 bucket, use the <code>SetStatOption</code>
+        /// parameter. To have the Transfer Family server ignore the <code>SETSTAT</code> command
+        /// and upload files without needing to make any changes to your SFTP client, set the
+        /// value to <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter
+        /// to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon CloudWatch
+        /// Logs, so that you can determine when the client is making a <code>SETSTAT</code> call.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use the <code>TlsSessionResumptionMode</code> parameter to determine whether or not
-        /// your Transfer server resumes recent, negotiated sessions through a unique session
-        /// ID.
+        /// To determine whether your Transfer Family server resumes recent, negotiated sessions
+        /// through a unique session ID, use the <code>TlsSessionResumptionMode</code> parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>As2Transports</code> indicates the transport method for the AS2 messages. Currently,
+        /// only HTTP is supported.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -433,7 +435,7 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Min=1, Max=3)]
+        [AWSProperty(Min=1, Max=4)]
         public List<string> Protocols
         {
             get { return this._protocols; }
@@ -488,8 +490,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property WorkflowDetails. 
         /// <para>
-        /// Specifies the workflow ID for the workflow to assign and the execution role used for
-        /// executing the workflow.
+        /// Specifies the workflow ID for the workflow to assign and the execution role that's
+        /// used for executing the workflow.
         /// </para>
         ///  
         /// <para>

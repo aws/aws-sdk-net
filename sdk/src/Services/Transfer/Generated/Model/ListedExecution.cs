@@ -80,7 +80,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property ServiceMetadata. 
         /// <para>
-        /// A container object for the session details associated with a workflow.
+        /// A container object for the session details that are associated with a workflow.
         /// </para>
         /// </summary>
         public ServiceMetadata ServiceMetadata
