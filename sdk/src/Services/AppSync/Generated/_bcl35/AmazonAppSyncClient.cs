@@ -1525,6 +1525,83 @@ namespace Amazon.AppSync
 
         #endregion
         
+        #region  EvaluateMappingTemplate
+
+        /// <summary>
+        /// Evaluates a given template and returns the response. The mapping template can be a
+        /// request or response template.
+        /// 
+        ///  
+        /// <para>
+        /// Request templates take the incoming request after a GraphQL operation is parsed and
+        /// convert it into a request configuration for the selected data source operation. Response
+        /// templates interpret responses from the data source and map it to the shape of the
+        /// GraphQL field output type.
+        /// </para>
+        ///  
+        /// <para>
+        /// Mapping templates are written in the Apache Velocity Template Language (VTL).
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EvaluateMappingTemplate service method.</param>
+        /// 
+        /// <returns>The response from the EvaluateMappingTemplate service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
+        /// You don't have access to perform this operation on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/EvaluateMappingTemplate">REST API Reference for EvaluateMappingTemplate Operation</seealso>
+        public virtual EvaluateMappingTemplateResponse EvaluateMappingTemplate(EvaluateMappingTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EvaluateMappingTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EvaluateMappingTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<EvaluateMappingTemplateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EvaluateMappingTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EvaluateMappingTemplate operation on AmazonAppSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEvaluateMappingTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/EvaluateMappingTemplate">REST API Reference for EvaluateMappingTemplate Operation</seealso>
+        public virtual IAsyncResult BeginEvaluateMappingTemplate(EvaluateMappingTemplateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EvaluateMappingTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EvaluateMappingTemplateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  EvaluateMappingTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEvaluateMappingTemplate.</param>
+        /// 
+        /// <returns>Returns a  EvaluateMappingTemplateResult from AppSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/EvaluateMappingTemplate">REST API Reference for EvaluateMappingTemplate Operation</seealso>
+        public virtual EvaluateMappingTemplateResponse EndEvaluateMappingTemplate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<EvaluateMappingTemplateResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  FlushApiCache
 
         /// <summary>

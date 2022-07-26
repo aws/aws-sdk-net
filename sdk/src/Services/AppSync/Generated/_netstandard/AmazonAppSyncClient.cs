@@ -1168,6 +1168,63 @@ namespace Amazon.AppSync
 
         #endregion
         
+        #region  EvaluateMappingTemplate
+
+        internal virtual EvaluateMappingTemplateResponse EvaluateMappingTemplate(EvaluateMappingTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EvaluateMappingTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EvaluateMappingTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<EvaluateMappingTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Evaluates a given template and returns the response. The mapping template can be a
+        /// request or response template.
+        /// 
+        ///  
+        /// <para>
+        /// Request templates take the incoming request after a GraphQL operation is parsed and
+        /// convert it into a request configuration for the selected data source operation. Response
+        /// templates interpret responses from the data source and map it to the shape of the
+        /// GraphQL field output type.
+        /// </para>
+        ///  
+        /// <para>
+        /// Mapping templates are written in the Apache Velocity Template Language (VTL).
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EvaluateMappingTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EvaluateMappingTemplate service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
+        /// You don't have access to perform this operation on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/EvaluateMappingTemplate">REST API Reference for EvaluateMappingTemplate Operation</seealso>
+        public virtual Task<EvaluateMappingTemplateResponse> EvaluateMappingTemplateAsync(EvaluateMappingTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EvaluateMappingTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EvaluateMappingTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<EvaluateMappingTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  FlushApiCache
 
         internal virtual FlushApiCacheResponse FlushApiCache(FlushApiCacheRequest request)

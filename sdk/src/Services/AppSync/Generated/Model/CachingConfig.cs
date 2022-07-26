@@ -69,6 +69,7 @@ namespace Amazon.AppSync.Model
         /// Valid values are 1–3,600 seconds.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long Ttl
         {
             get { return this._ttl.GetValueOrDefault(); }
