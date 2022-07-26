@@ -38,6 +38,7 @@ namespace Amazon.GuardDuty.Model
         private DataSourceFreeTrial _dnsLogs;
         private DataSourceFreeTrial _flowLogs;
         private KubernetesDataSourceFreeTrial _kubernetes;
+        private MalwareProtectionDataSourceFreeTrial _malwareProtection;
         private DataSourceFreeTrial _s3Logs;
 
         /// <summary>
@@ -110,6 +111,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetKubernetes()
         {
             return this._kubernetes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MalwareProtection. 
+        /// <para>
+        /// Describes whether Malware Protection is enabled as a data source.
+        /// </para>
+        /// </summary>
+        public MalwareProtectionDataSourceFreeTrial MalwareProtection
+        {
+            get { return this._malwareProtection; }
+            set { this._malwareProtection = value; }
+        }
+
+        // Check to see if MalwareProtection property is set
+        internal bool IsSetMalwareProtection()
+        {
+            return this._malwareProtection != null;
         }
 
         /// <summary>

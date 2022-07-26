@@ -94,6 +94,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.DetectorId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ebsVolumeScanDetails", targetDepth))
+                {
+                    var unmarshaller = EbsVolumeScanDetailsUnmarshaller.Instance;
+                    unmarshalledObject.EbsVolumeScanDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("eventFirstSeen", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -110,6 +116,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = EvidenceUnmarshaller.Instance;
                     unmarshalledObject.Evidence = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("featureName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FeatureName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("resourceRole", targetDepth))

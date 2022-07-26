@@ -38,9 +38,11 @@ namespace Amazon.GuardDuty.Model
         private bool? _archived;
         private int? _count;
         private string _detectorId;
+        private EbsVolumeScanDetails _ebsVolumeScanDetails;
         private string _eventFirstSeen;
         private string _eventLastSeen;
         private Evidence _evidence;
+        private string _featureName;
         private string _resourceRole;
         private string _serviceName;
         private string _userFeedback;
@@ -137,6 +139,24 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EbsVolumeScanDetails. 
+        /// <para>
+        /// Returns details from the malware scan that created a finding.
+        /// </para>
+        /// </summary>
+        public EbsVolumeScanDetails EbsVolumeScanDetails
+        {
+            get { return this._ebsVolumeScanDetails; }
+            set { this._ebsVolumeScanDetails = value; }
+        }
+
+        // Check to see if EbsVolumeScanDetails property is set
+        internal bool IsSetEbsVolumeScanDetails()
+        {
+            return this._ebsVolumeScanDetails != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EventFirstSeen. 
         /// <para>
         /// The first-seen timestamp of the activity that prompted GuardDuty to generate this
@@ -189,6 +209,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetEvidence()
         {
             return this._evidence != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FeatureName. 
+        /// <para>
+        /// The name of the feature that generated a finding.
+        /// </para>
+        /// </summary>
+        public string FeatureName
+        {
+            get { return this._featureName; }
+            set { this._featureName = value; }
+        }
+
+        // Check to see if FeatureName property is set
+        internal bool IsSetFeatureName()
+        {
+            return this._featureName != null;
         }
 
         /// <summary>

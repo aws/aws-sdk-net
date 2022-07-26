@@ -75,6 +75,72 @@ namespace Amazon.GuardDuty
 
 
     /// <summary>
+    /// Constants used for properties of type CriterionKey.
+    /// </summary>
+    public class CriterionKey : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCOUNT_ID for CriterionKey
+        /// </summary>
+        public static readonly CriterionKey ACCOUNT_ID = new CriterionKey("ACCOUNT_ID");
+        /// <summary>
+        /// Constant EC2_INSTANCE_ARN for CriterionKey
+        /// </summary>
+        public static readonly CriterionKey EC2_INSTANCE_ARN = new CriterionKey("EC2_INSTANCE_ARN");
+        /// <summary>
+        /// Constant GUARDDUTY_FINDING_ID for CriterionKey
+        /// </summary>
+        public static readonly CriterionKey GUARDDUTY_FINDING_ID = new CriterionKey("GUARDDUTY_FINDING_ID");
+        /// <summary>
+        /// Constant SCAN_ID for CriterionKey
+        /// </summary>
+        public static readonly CriterionKey SCAN_ID = new CriterionKey("SCAN_ID");
+        /// <summary>
+        /// Constant SCAN_START_TIME for CriterionKey
+        /// </summary>
+        public static readonly CriterionKey SCAN_START_TIME = new CriterionKey("SCAN_START_TIME");
+        /// <summary>
+        /// Constant SCAN_STATUS for CriterionKey
+        /// </summary>
+        public static readonly CriterionKey SCAN_STATUS = new CriterionKey("SCAN_STATUS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CriterionKey(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CriterionKey FindValue(string value)
+        {
+            return FindValue<CriterionKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CriterionKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DataSource.
     /// </summary>
     public class DataSource : ConstantClass
@@ -88,6 +154,10 @@ namespace Amazon.GuardDuty
         /// Constant DNS_LOGS for DataSource
         /// </summary>
         public static readonly DataSource DNS_LOGS = new DataSource("DNS_LOGS");
+        /// <summary>
+        /// Constant EC2_MALWARE_SCAN for DataSource
+        /// </summary>
+        public static readonly DataSource EC2_MALWARE_SCAN = new DataSource("EC2_MALWARE_SCAN");
         /// <summary>
         /// Constant FLOW_LOGS for DataSource
         /// </summary>
@@ -276,6 +346,56 @@ namespace Amazon.GuardDuty
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DetectorStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EbsSnapshotPreservation.
+    /// </summary>
+    public class EbsSnapshotPreservation : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NO_RETENTION for EbsSnapshotPreservation
+        /// </summary>
+        public static readonly EbsSnapshotPreservation NO_RETENTION = new EbsSnapshotPreservation("NO_RETENTION");
+        /// <summary>
+        /// Constant RETENTION_WITH_FINDING for EbsSnapshotPreservation
+        /// </summary>
+        public static readonly EbsSnapshotPreservation RETENTION_WITH_FINDING = new EbsSnapshotPreservation("RETENTION_WITH_FINDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EbsSnapshotPreservation(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EbsSnapshotPreservation FindValue(string value)
+        {
+            return FindValue<EbsSnapshotPreservation>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EbsSnapshotPreservation(string value)
         {
             return FindValue(value);
         }
@@ -720,6 +840,156 @@ namespace Amazon.GuardDuty
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PublishingStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ScanCriterionKey.
+    /// </summary>
+    public class ScanCriterionKey : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EC2_INSTANCE_TAG for ScanCriterionKey
+        /// </summary>
+        public static readonly ScanCriterionKey EC2_INSTANCE_TAG = new ScanCriterionKey("EC2_INSTANCE_TAG");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScanCriterionKey(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScanCriterionKey FindValue(string value)
+        {
+            return FindValue<ScanCriterionKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScanCriterionKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ScanResult.
+    /// </summary>
+    public class ScanResult : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLEAN for ScanResult
+        /// </summary>
+        public static readonly ScanResult CLEAN = new ScanResult("CLEAN");
+        /// <summary>
+        /// Constant INFECTED for ScanResult
+        /// </summary>
+        public static readonly ScanResult INFECTED = new ScanResult("INFECTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScanResult(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScanResult FindValue(string value)
+        {
+            return FindValue<ScanResult>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScanResult(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ScanStatus.
+    /// </summary>
+    public class ScanStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for ScanStatus
+        /// </summary>
+        public static readonly ScanStatus COMPLETED = new ScanStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for ScanStatus
+        /// </summary>
+        public static readonly ScanStatus FAILED = new ScanStatus("FAILED");
+        /// <summary>
+        /// Constant RUNNING for ScanStatus
+        /// </summary>
+        public static readonly ScanStatus RUNNING = new ScanStatus("RUNNING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScanStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScanStatus FindValue(string value)
+        {
+            return FindValue<ScanStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScanStatus(string value)
         {
             return FindValue(value);
         }

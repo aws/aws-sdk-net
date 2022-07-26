@@ -70,6 +70,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.Kubernetes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("malwareProtection", targetDepth))
+                {
+                    var unmarshaller = OrganizationMalwareProtectionConfigurationResultUnmarshaller.Instance;
+                    unmarshalledObject.MalwareProtection = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("s3Logs", targetDepth))
                 {
                     var unmarshaller = OrganizationS3LogsConfigurationResultUnmarshaller.Instance;

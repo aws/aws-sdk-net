@@ -35,6 +35,9 @@ namespace Amazon.GuardDuty.Model
     public partial class Resource
     {
         private AccessKeyDetails _accessKeyDetails;
+        private Container _containerDetails;
+        private EbsVolumeDetails _ebsVolumeDetails;
+        private EcsClusterDetails _ecsClusterDetails;
         private EksClusterDetails _eksClusterDetails;
         private InstanceDetails _instanceDetails;
         private KubernetesDetails _kubernetesDetails;
@@ -58,6 +61,57 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetAccessKeyDetails()
         {
             return this._accessKeyDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContainerDetails.
+        /// </summary>
+        public Container ContainerDetails
+        {
+            get { return this._containerDetails; }
+            set { this._containerDetails = value; }
+        }
+
+        // Check to see if ContainerDetails property is set
+        internal bool IsSetContainerDetails()
+        {
+            return this._containerDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EbsVolumeDetails. 
+        /// <para>
+        /// Contains list of scanned and skipped EBS volumes with details.
+        /// </para>
+        /// </summary>
+        public EbsVolumeDetails EbsVolumeDetails
+        {
+            get { return this._ebsVolumeDetails; }
+            set { this._ebsVolumeDetails = value; }
+        }
+
+        // Check to see if EbsVolumeDetails property is set
+        internal bool IsSetEbsVolumeDetails()
+        {
+            return this._ebsVolumeDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EcsClusterDetails. 
+        /// <para>
+        /// Contains information about the details of the ECS Cluster.
+        /// </para>
+        /// </summary>
+        public EcsClusterDetails EcsClusterDetails
+        {
+            get { return this._ecsClusterDetails; }
+            set { this._ecsClusterDetails = value; }
+        }
+
+        // Check to see if EcsClusterDetails property is set
+        internal bool IsSetEcsClusterDetails()
+        {
+            return this._ecsClusterDetails != null;
         }
 
         /// <summary>

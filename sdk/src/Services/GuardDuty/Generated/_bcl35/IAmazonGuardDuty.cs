@@ -937,6 +937,52 @@ namespace Amazon.GuardDuty
 
         #endregion
         
+        #region  DescribeMalwareScans
+
+
+        /// <summary>
+        /// Returns a list of malware scans.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMalwareScans service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMalwareScans service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DescribeMalwareScans">REST API Reference for DescribeMalwareScans Operation</seealso>
+        DescribeMalwareScansResponse DescribeMalwareScans(DescribeMalwareScansRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMalwareScans operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMalwareScans operation on AmazonGuardDutyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMalwareScans
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DescribeMalwareScans">REST API Reference for DescribeMalwareScans Operation</seealso>
+        IAsyncResult BeginDescribeMalwareScans(DescribeMalwareScansRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeMalwareScans operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMalwareScans.</param>
+        /// 
+        /// <returns>Returns a  DescribeMalwareScansResult from GuardDuty.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DescribeMalwareScans">REST API Reference for DescribeMalwareScans Operation</seealso>
+        DescribeMalwareScansResponse EndDescribeMalwareScans(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeOrganizationConfiguration
 
 
@@ -1587,6 +1633,52 @@ namespace Amazon.GuardDuty
         /// <returns>Returns a  GetIPSetResult from GuardDuty.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetIPSet">REST API Reference for GetIPSet Operation</seealso>
         GetIPSetResponse EndGetIPSet(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetMalwareScanSettings
+
+
+        /// <summary>
+        /// Returns the details of the malware scan settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMalwareScanSettings service method.</param>
+        /// 
+        /// <returns>The response from the GetMalwareScanSettings service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMalwareScanSettings">REST API Reference for GetMalwareScanSettings Operation</seealso>
+        GetMalwareScanSettingsResponse GetMalwareScanSettings(GetMalwareScanSettingsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMalwareScanSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMalwareScanSettings operation on AmazonGuardDutyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMalwareScanSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMalwareScanSettings">REST API Reference for GetMalwareScanSettings Operation</seealso>
+        IAsyncResult BeginGetMalwareScanSettings(GetMalwareScanSettingsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMalwareScanSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMalwareScanSettings.</param>
+        /// 
+        /// <returns>Returns a  GetMalwareScanSettingsResult from GuardDuty.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMalwareScanSettings">REST API Reference for GetMalwareScanSettings Operation</seealso>
+        GetMalwareScanSettingsResponse EndGetMalwareScanSettings(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2806,6 +2898,52 @@ namespace Amazon.GuardDuty
         /// <returns>Returns a  UpdateIPSetResult from GuardDuty.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateIPSet">REST API Reference for UpdateIPSet Operation</seealso>
         UpdateIPSetResponse EndUpdateIPSet(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateMalwareScanSettings
+
+
+        /// <summary>
+        /// Updates the malware scan settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMalwareScanSettings service method.</param>
+        /// 
+        /// <returns>The response from the UpdateMalwareScanSettings service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateMalwareScanSettings">REST API Reference for UpdateMalwareScanSettings Operation</seealso>
+        UpdateMalwareScanSettingsResponse UpdateMalwareScanSettings(UpdateMalwareScanSettingsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateMalwareScanSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMalwareScanSettings operation on AmazonGuardDutyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateMalwareScanSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateMalwareScanSettings">REST API Reference for UpdateMalwareScanSettings Operation</seealso>
+        IAsyncResult BeginUpdateMalwareScanSettings(UpdateMalwareScanSettingsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateMalwareScanSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateMalwareScanSettings.</param>
+        /// 
+        /// <returns>Returns a  UpdateMalwareScanSettingsResult from GuardDuty.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateMalwareScanSettings">REST API Reference for UpdateMalwareScanSettings Operation</seealso>
+        UpdateMalwareScanSettingsResponse EndUpdateMalwareScanSettings(IAsyncResult asyncResult);
 
         #endregion
         

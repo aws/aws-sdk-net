@@ -56,6 +56,17 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetMalwareProtection())
+            {
+                context.Writer.WritePropertyName("malwareProtection");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = OrganizationMalwareProtectionConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.MalwareProtection, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetS3Logs())
             {
                 context.Writer.WritePropertyName("s3Logs");

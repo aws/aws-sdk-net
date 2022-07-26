@@ -1042,6 +1042,46 @@ namespace Amazon.GuardDuty
 
         #endregion
         
+        #region  DescribeMalwareScans
+
+        internal virtual DescribeMalwareScansResponse DescribeMalwareScans(DescribeMalwareScansRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMalwareScansRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMalwareScansResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeMalwareScansResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of malware scans.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMalwareScans service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeMalwareScans service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DescribeMalwareScans">REST API Reference for DescribeMalwareScans Operation</seealso>
+        public virtual Task<DescribeMalwareScansResponse> DescribeMalwareScansAsync(DescribeMalwareScansRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMalwareScansRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMalwareScansResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeMalwareScansResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeOrganizationConfiguration
 
         internal virtual DescribeOrganizationConfigurationResponse DescribeOrganizationConfiguration(DescribeOrganizationConfigurationRequest request)
@@ -1606,6 +1646,46 @@ namespace Amazon.GuardDuty
             options.ResponseUnmarshaller = GetIPSetResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetIPSetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetMalwareScanSettings
+
+        internal virtual GetMalwareScanSettingsResponse GetMalwareScanSettings(GetMalwareScanSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMalwareScanSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMalwareScanSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<GetMalwareScanSettingsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the details of the malware scan settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMalwareScanSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMalwareScanSettings service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMalwareScanSettings">REST API Reference for GetMalwareScanSettings Operation</seealso>
+        public virtual Task<GetMalwareScanSettingsResponse> GetMalwareScanSettingsAsync(GetMalwareScanSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMalwareScanSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMalwareScanSettingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetMalwareScanSettingsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2668,6 +2748,46 @@ namespace Amazon.GuardDuty
             options.ResponseUnmarshaller = UpdateIPSetResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateIPSetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateMalwareScanSettings
+
+        internal virtual UpdateMalwareScanSettingsResponse UpdateMalwareScanSettings(UpdateMalwareScanSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMalwareScanSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMalwareScanSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMalwareScanSettingsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the malware scan settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMalwareScanSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateMalwareScanSettings service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateMalwareScanSettings">REST API Reference for UpdateMalwareScanSettings Operation</seealso>
+        public virtual Task<UpdateMalwareScanSettingsResponse> UpdateMalwareScanSettingsAsync(UpdateMalwareScanSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMalwareScanSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMalwareScanSettingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateMalwareScanSettingsResponse>(request, options, cancellationToken);
         }
 
         #endregion

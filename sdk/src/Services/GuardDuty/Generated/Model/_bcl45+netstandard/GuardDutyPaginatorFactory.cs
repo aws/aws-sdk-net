@@ -36,6 +36,14 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeMalwareScans operation
+        ///</summary>
+        public IDescribeMalwareScansPaginator DescribeMalwareScans(DescribeMalwareScansRequest request) 
+        {
+            return new DescribeMalwareScansPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetUsageStatistics operation
         ///</summary>
         public IGetUsageStatisticsPaginator GetUsageStatistics(GetUsageStatisticsRequest request) 
