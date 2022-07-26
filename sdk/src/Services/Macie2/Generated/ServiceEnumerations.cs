@@ -129,6 +129,56 @@ namespace Amazon.Macie2
 
 
     /// <summary>
+    /// Constants used for properties of type AvailabilityCode.
+    /// </summary>
+    public class AvailabilityCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for AvailabilityCode
+        /// </summary>
+        public static readonly AvailabilityCode AVAILABLE = new AvailabilityCode("AVAILABLE");
+        /// <summary>
+        /// Constant UNAVAILABLE for AvailabilityCode
+        /// </summary>
+        public static readonly AvailabilityCode UNAVAILABLE = new AvailabilityCode("UNAVAILABLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AvailabilityCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AvailabilityCode FindValue(string value)
+        {
+            return FindValue<AvailabilityCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AvailabilityCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BucketMetadataErrorCode.
     /// </summary>
     public class BucketMetadataErrorCode : ConstantClass
@@ -1647,6 +1697,110 @@ namespace Amazon.Macie2
 
 
     /// <summary>
+    /// Constants used for properties of type RevealRequestStatus.
+    /// </summary>
+    public class RevealRequestStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ERROR for RevealRequestStatus
+        /// </summary>
+        public static readonly RevealRequestStatus ERROR = new RevealRequestStatus("ERROR");
+        /// <summary>
+        /// Constant PROCESSING for RevealRequestStatus
+        /// </summary>
+        public static readonly RevealRequestStatus PROCESSING = new RevealRequestStatus("PROCESSING");
+        /// <summary>
+        /// Constant SUCCESS for RevealRequestStatus
+        /// </summary>
+        public static readonly RevealRequestStatus SUCCESS = new RevealRequestStatus("SUCCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RevealRequestStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RevealRequestStatus FindValue(string value)
+        {
+            return FindValue<RevealRequestStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RevealRequestStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RevealStatus.
+    /// </summary>
+    public class RevealStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for RevealStatus
+        /// </summary>
+        public static readonly RevealStatus DISABLED = new RevealStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for RevealStatus
+        /// </summary>
+        public static readonly RevealStatus ENABLED = new RevealStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RevealStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RevealStatus FindValue(string value)
+        {
+            return FindValue<RevealStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RevealStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ScopeFilterKey.
     /// </summary>
     public class ScopeFilterKey : ConstantClass
@@ -2312,6 +2466,68 @@ namespace Amazon.Macie2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Type(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UnavailabilityReasonCode.
+    /// </summary>
+    public class UnavailabilityReasonCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INVALID_CLASSIFICATION_RESULT for UnavailabilityReasonCode
+        /// </summary>
+        public static readonly UnavailabilityReasonCode INVALID_CLASSIFICATION_RESULT = new UnavailabilityReasonCode("INVALID_CLASSIFICATION_RESULT");
+        /// <summary>
+        /// Constant OBJECT_EXCEEDS_SIZE_QUOTA for UnavailabilityReasonCode
+        /// </summary>
+        public static readonly UnavailabilityReasonCode OBJECT_EXCEEDS_SIZE_QUOTA = new UnavailabilityReasonCode("OBJECT_EXCEEDS_SIZE_QUOTA");
+        /// <summary>
+        /// Constant OBJECT_UNAVAILABLE for UnavailabilityReasonCode
+        /// </summary>
+        public static readonly UnavailabilityReasonCode OBJECT_UNAVAILABLE = new UnavailabilityReasonCode("OBJECT_UNAVAILABLE");
+        /// <summary>
+        /// Constant UNSUPPORTED_FINDING_TYPE for UnavailabilityReasonCode
+        /// </summary>
+        public static readonly UnavailabilityReasonCode UNSUPPORTED_FINDING_TYPE = new UnavailabilityReasonCode("UNSUPPORTED_FINDING_TYPE");
+        /// <summary>
+        /// Constant UNSUPPORTED_OBJECT_TYPE for UnavailabilityReasonCode
+        /// </summary>
+        public static readonly UnavailabilityReasonCode UNSUPPORTED_OBJECT_TYPE = new UnavailabilityReasonCode("UNSUPPORTED_OBJECT_TYPE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UnavailabilityReasonCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UnavailabilityReasonCode FindValue(string value)
+        {
+            return FindValue<UnavailabilityReasonCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UnavailabilityReasonCode(string value)
         {
             return FindValue(value);
         }

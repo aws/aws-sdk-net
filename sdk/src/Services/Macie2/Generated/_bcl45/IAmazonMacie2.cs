@@ -2938,6 +2938,200 @@ namespace Amazon.Macie2
 
         #endregion
         
+        #region  GetRevealConfiguration
+
+
+        /// <summary>
+        /// Retrieves the status and configuration settings for retrieving (revealing) occurrences
+        /// of sensitive data reported by findings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRevealConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetRevealConfiguration service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetRevealConfiguration">REST API Reference for GetRevealConfiguration Operation</seealso>
+        GetRevealConfigurationResponse GetRevealConfiguration(GetRevealConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the status and configuration settings for retrieving (revealing) occurrences
+        /// of sensitive data reported by findings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRevealConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRevealConfiguration service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetRevealConfiguration">REST API Reference for GetRevealConfiguration Operation</seealso>
+        Task<GetRevealConfigurationResponse> GetRevealConfigurationAsync(GetRevealConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetSensitiveDataOccurrences
+
+
+        /// <summary>
+        /// Retrieves (reveals) occurrences of sensitive data reported by a finding.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSensitiveDataOccurrences service method.</param>
+        /// 
+        /// <returns>The response from the GetSensitiveDataOccurrences service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ServiceQuotaExceededException">
+        /// Provides information about an error that occurred due to one or more service quotas
+        /// for an account.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.UnprocessableEntityException">
+        /// Provides information about an error that occurred due to an unprocessable entity.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetSensitiveDataOccurrences">REST API Reference for GetSensitiveDataOccurrences Operation</seealso>
+        GetSensitiveDataOccurrencesResponse GetSensitiveDataOccurrences(GetSensitiveDataOccurrencesRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves (reveals) occurrences of sensitive data reported by a finding.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSensitiveDataOccurrences service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSensitiveDataOccurrences service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ServiceQuotaExceededException">
+        /// Provides information about an error that occurred due to one or more service quotas
+        /// for an account.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.UnprocessableEntityException">
+        /// Provides information about an error that occurred due to an unprocessable entity.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetSensitiveDataOccurrences">REST API Reference for GetSensitiveDataOccurrences Operation</seealso>
+        Task<GetSensitiveDataOccurrencesResponse> GetSensitiveDataOccurrencesAsync(GetSensitiveDataOccurrencesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetSensitiveDataOccurrencesAvailability
+
+
+        /// <summary>
+        /// Checks whether occurrences of sensitive data can be retrieved (revealed) for a finding.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSensitiveDataOccurrencesAvailability service method.</param>
+        /// 
+        /// <returns>The response from the GetSensitiveDataOccurrencesAvailability service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetSensitiveDataOccurrencesAvailability">REST API Reference for GetSensitiveDataOccurrencesAvailability Operation</seealso>
+        GetSensitiveDataOccurrencesAvailabilityResponse GetSensitiveDataOccurrencesAvailability(GetSensitiveDataOccurrencesAvailabilityRequest request);
+
+
+
+        /// <summary>
+        /// Checks whether occurrences of sensitive data can be retrieved (revealed) for a finding.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSensitiveDataOccurrencesAvailability service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSensitiveDataOccurrencesAvailability service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetSensitiveDataOccurrencesAvailability">REST API Reference for GetSensitiveDataOccurrencesAvailability Operation</seealso>
+        Task<GetSensitiveDataOccurrencesAvailabilityResponse> GetSensitiveDataOccurrencesAvailabilityAsync(GetSensitiveDataOccurrencesAvailabilityRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetUsageStatistics
 
 
@@ -4541,6 +4735,66 @@ namespace Amazon.Macie2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateOrganizationConfiguration">REST API Reference for UpdateOrganizationConfiguration Operation</seealso>
         Task<UpdateOrganizationConfigurationResponse> UpdateOrganizationConfigurationAsync(UpdateOrganizationConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateRevealConfiguration
+
+
+        /// <summary>
+        /// Updates the status and configuration settings for retrieving (revealing) occurrences
+        /// of sensitive data reported by findings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRevealConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRevealConfiguration service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateRevealConfiguration">REST API Reference for UpdateRevealConfiguration Operation</seealso>
+        UpdateRevealConfigurationResponse UpdateRevealConfiguration(UpdateRevealConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Updates the status and configuration settings for retrieving (revealing) occurrences
+        /// of sensitive data reported by findings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRevealConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRevealConfiguration service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateRevealConfiguration">REST API Reference for UpdateRevealConfiguration Operation</seealso>
+        Task<UpdateRevealConfigurationResponse> UpdateRevealConfigurationAsync(UpdateRevealConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

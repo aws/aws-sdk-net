@@ -291,7 +291,8 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property LastRunTime. 
         /// <para>
         /// The date and time, in UTC and extended ISO 8601 format, when the job started. If the
-        /// job is a recurring job, this value indicates when the most recent run started.
+        /// job is a recurring job, this value indicates when the most recent run started or,
+        /// if the job hasn't run yet, when the job was created.
         /// </para>
         /// </summary>
         public DateTime LastRunTime

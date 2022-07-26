@@ -31,7 +31,8 @@ namespace Amazon.Macie2.Model
     /// <summary>
     /// Specifies the location of 1-15 occurrences of sensitive data that was detected by
     /// a managed data identifier or a custom data identifier and produced a sensitive data
-    /// finding.
+    /// finding. Depending on the file or storage format of the affected S3 object, you can
+    /// optionally retrieve (reveal) sample occurrences of the sensitive data that was detected.
     /// </summary>
     public partial class Occurrences
     {

@@ -3106,6 +3106,223 @@ namespace Amazon.Macie2
 
         #endregion
         
+        #region  GetRevealConfiguration
+
+        /// <summary>
+        /// Retrieves the status and configuration settings for retrieving (revealing) occurrences
+        /// of sensitive data reported by findings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRevealConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetRevealConfiguration service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetRevealConfiguration">REST API Reference for GetRevealConfiguration Operation</seealso>
+        public virtual GetRevealConfigurationResponse GetRevealConfiguration(GetRevealConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRevealConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRevealConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetRevealConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRevealConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRevealConfiguration operation on AmazonMacie2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRevealConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetRevealConfiguration">REST API Reference for GetRevealConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginGetRevealConfiguration(GetRevealConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRevealConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRevealConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetRevealConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRevealConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetRevealConfigurationResult from Macie2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetRevealConfiguration">REST API Reference for GetRevealConfiguration Operation</seealso>
+        public virtual GetRevealConfigurationResponse EndGetRevealConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetRevealConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetSensitiveDataOccurrences
+
+        /// <summary>
+        /// Retrieves (reveals) occurrences of sensitive data reported by a finding.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSensitiveDataOccurrences service method.</param>
+        /// 
+        /// <returns>The response from the GetSensitiveDataOccurrences service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ServiceQuotaExceededException">
+        /// Provides information about an error that occurred due to one or more service quotas
+        /// for an account.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.UnprocessableEntityException">
+        /// Provides information about an error that occurred due to an unprocessable entity.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetSensitiveDataOccurrences">REST API Reference for GetSensitiveDataOccurrences Operation</seealso>
+        public virtual GetSensitiveDataOccurrencesResponse GetSensitiveDataOccurrences(GetSensitiveDataOccurrencesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSensitiveDataOccurrencesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSensitiveDataOccurrencesResponseUnmarshaller.Instance;
+
+            return Invoke<GetSensitiveDataOccurrencesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSensitiveDataOccurrences operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSensitiveDataOccurrences operation on AmazonMacie2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSensitiveDataOccurrences
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetSensitiveDataOccurrences">REST API Reference for GetSensitiveDataOccurrences Operation</seealso>
+        public virtual IAsyncResult BeginGetSensitiveDataOccurrences(GetSensitiveDataOccurrencesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSensitiveDataOccurrencesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSensitiveDataOccurrencesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSensitiveDataOccurrences operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSensitiveDataOccurrences.</param>
+        /// 
+        /// <returns>Returns a  GetSensitiveDataOccurrencesResult from Macie2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetSensitiveDataOccurrences">REST API Reference for GetSensitiveDataOccurrences Operation</seealso>
+        public virtual GetSensitiveDataOccurrencesResponse EndGetSensitiveDataOccurrences(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetSensitiveDataOccurrencesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetSensitiveDataOccurrencesAvailability
+
+        /// <summary>
+        /// Checks whether occurrences of sensitive data can be retrieved (revealed) for a finding.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSensitiveDataOccurrencesAvailability service method.</param>
+        /// 
+        /// <returns>The response from the GetSensitiveDataOccurrencesAvailability service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetSensitiveDataOccurrencesAvailability">REST API Reference for GetSensitiveDataOccurrencesAvailability Operation</seealso>
+        public virtual GetSensitiveDataOccurrencesAvailabilityResponse GetSensitiveDataOccurrencesAvailability(GetSensitiveDataOccurrencesAvailabilityRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSensitiveDataOccurrencesAvailabilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSensitiveDataOccurrencesAvailabilityResponseUnmarshaller.Instance;
+
+            return Invoke<GetSensitiveDataOccurrencesAvailabilityResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSensitiveDataOccurrencesAvailability operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSensitiveDataOccurrencesAvailability operation on AmazonMacie2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSensitiveDataOccurrencesAvailability
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetSensitiveDataOccurrencesAvailability">REST API Reference for GetSensitiveDataOccurrencesAvailability Operation</seealso>
+        public virtual IAsyncResult BeginGetSensitiveDataOccurrencesAvailability(GetSensitiveDataOccurrencesAvailabilityRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSensitiveDataOccurrencesAvailabilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSensitiveDataOccurrencesAvailabilityResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSensitiveDataOccurrencesAvailability operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSensitiveDataOccurrencesAvailability.</param>
+        /// 
+        /// <returns>Returns a  GetSensitiveDataOccurrencesAvailabilityResult from Macie2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetSensitiveDataOccurrencesAvailability">REST API Reference for GetSensitiveDataOccurrencesAvailability Operation</seealso>
+        public virtual GetSensitiveDataOccurrencesAvailabilityResponse EndGetSensitiveDataOccurrencesAvailability(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetSensitiveDataOccurrencesAvailabilityResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetUsageStatistics
 
         /// <summary>
@@ -4785,6 +5002,76 @@ namespace Amazon.Macie2
         public virtual UpdateOrganizationConfigurationResponse EndUpdateOrganizationConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateOrganizationConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateRevealConfiguration
+
+        /// <summary>
+        /// Updates the status and configuration settings for retrieving (revealing) occurrences
+        /// of sensitive data reported by findings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRevealConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRevealConfiguration service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateRevealConfiguration">REST API Reference for UpdateRevealConfiguration Operation</seealso>
+        public virtual UpdateRevealConfigurationResponse UpdateRevealConfiguration(UpdateRevealConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRevealConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRevealConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRevealConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateRevealConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRevealConfiguration operation on AmazonMacie2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateRevealConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateRevealConfiguration">REST API Reference for UpdateRevealConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginUpdateRevealConfiguration(UpdateRevealConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRevealConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRevealConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateRevealConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateRevealConfiguration.</param>
+        /// 
+        /// <returns>Returns a  UpdateRevealConfigurationResult from Macie2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateRevealConfiguration">REST API Reference for UpdateRevealConfiguration Operation</seealso>
+        public virtual UpdateRevealConfigurationResponse EndUpdateRevealConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateRevealConfigurationResponse>(asyncResult);
         }
 
         #endregion
