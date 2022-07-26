@@ -34,40 +34,46 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Detective.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ServiceQuotaExceededException Object
+    /// Response Unmarshaller for UnprocessedGraph Object
     /// </summary>  
-    public class ServiceQuotaExceededExceptionUnmarshaller : IErrorResponseUnmarshaller<ServiceQuotaExceededException, JsonUnmarshallerContext>
+    public class UnprocessedGraphUnmarshaller : IUnmarshaller<UnprocessedGraph, XmlUnmarshallerContext>, IUnmarshaller<UnprocessedGraph, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ServiceQuotaExceededException Unmarshall(JsonUnmarshallerContext context)
+        UnprocessedGraph IUnmarshaller<UnprocessedGraph, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
+            throw new NotImplementedException();
         }
 
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public ServiceQuotaExceededException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
+        public UnprocessedGraph Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
 
-            ServiceQuotaExceededException unmarshalledObject = new ServiceQuotaExceededException(errorResponse.Message, errorResponse.InnerException,
-                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+            UnprocessedGraph unmarshalledObject = new UnprocessedGraph();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Resources", targetDepth))
+                if (context.TestExpression("GraphArn", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Resources = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.GraphArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Reason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Reason = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -75,12 +81,13 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static ServiceQuotaExceededExceptionUnmarshaller _instance = new ServiceQuotaExceededExceptionUnmarshaller();        
+
+        private static UnprocessedGraphUnmarshaller _instance = new UnprocessedGraphUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ServiceQuotaExceededExceptionUnmarshaller Instance
+        public static UnprocessedGraphUnmarshaller Instance
         {
             get
             {

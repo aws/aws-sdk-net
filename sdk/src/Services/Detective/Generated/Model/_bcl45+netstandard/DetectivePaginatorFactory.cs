@@ -36,6 +36,14 @@ namespace Amazon.Detective.Model
         }
 
         /// <summary>
+        /// Paginator for ListDatasourcePackages operation
+        ///</summary>
+        public IListDatasourcePackagesPaginator ListDatasourcePackages(ListDatasourcePackagesRequest request) 
+        {
+            return new ListDatasourcePackagesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListGraphs operation
         ///</summary>
         public IListGraphsPaginator ListGraphs(ListGraphsRequest request) 

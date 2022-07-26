@@ -44,9 +44,17 @@ namespace Amazon.Detective.Model
     /// </para>
     ///  
     /// <para>
-    /// The Detective administrator account for an organization must be the same in all Regions.
-    /// If you already designated a Detective administrator account in another Region, then
-    /// you must designate the same account.
+    /// If the organization has a delegated administrator account in Organizations, then the
+    /// Detective administrator account must be either the delegated administrator account
+    /// or the organization management account.
+    /// </para>
+    ///  
+    /// <para>
+    /// If the organization does not have a delegated administrator account in Organizations,
+    /// then you can choose any account in the organization. If you choose an account other
+    /// than the organization management account, Detective calls Organizations to make that
+    /// account the delegated administrator account for Detective. The organization management
+    /// account cannot be the delegated administrator account.
     /// </para>
     /// </summary>
     public partial class EnableOrganizationAdminAccountRequest : AmazonDetectiveRequest

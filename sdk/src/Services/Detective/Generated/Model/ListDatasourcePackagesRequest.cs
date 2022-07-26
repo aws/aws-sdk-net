@@ -29,36 +29,59 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Detective.Model
 {
     /// <summary>
-    /// This is the response object from the ListOrganizationAdminAccounts operation.
+    /// Container for the parameters to the ListDatasourcePackages operation.
+    /// Lists data source packages in the behavior graph.
     /// </summary>
-    public partial class ListOrganizationAdminAccountsResponse : AmazonWebServiceResponse
+    public partial class ListDatasourcePackagesRequest : AmazonDetectiveRequest
     {
-        private List<Administrator> _administrators = new List<Administrator>();
+        private string _graphArn;
+        private int? _maxResults;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Administrators. 
+        /// Gets and sets the property GraphArn. 
         /// <para>
-        /// The list of Detective administrator accounts.
+        /// The ARN of the behavior graph.
         /// </para>
         /// </summary>
-        public List<Administrator> Administrators
+        [AWSProperty(Required=true)]
+        public string GraphArn
         {
-            get { return this._administrators; }
-            set { this._administrators = value; }
+            get { return this._graphArn; }
+            set { this._graphArn = value; }
         }
 
-        // Check to see if Administrators property is set
-        internal bool IsSetAdministrators()
+        // Check to see if GraphArn property is set
+        internal bool IsSetGraphArn()
         {
-            return this._administrators != null && this._administrators.Count > 0; 
+            return this._graphArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to return.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public int MaxResults
+        {
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If there are more accounts remaining in the results, then this is the pagination token
-        /// to use to request the next page of accounts.
+        /// For requests to get the next page of results, the pagination token that was returned
+        /// with the previous set of results. The initial request does not include a pagination
+        /// token.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

@@ -35,6 +35,7 @@ namespace Amazon.Detective.Model
     {
         private string _accountId;
         private string _administratorId;
+        private Dictionary<string, string> _datasourcePackageIngestStates = new Dictionary<string, string>();
         private MemberDisabledReason _disabledReason;
         private string _emailAddress;
         private string _graphArn;
@@ -45,6 +46,7 @@ namespace Amazon.Detective.Model
         private DateTime? _percentOfGraphUtilizationUpdatedTime;
         private MemberStatus _status;
         private DateTime? _updatedTime;
+        private Dictionary<string, DatasourcePackageUsageInfo> _volumeUsageByDatasourcePackage = new Dictionary<string, DatasourcePackageUsageInfo>();
         private long? _volumeUsageInBytes;
         private DateTime? _volumeUsageUpdatedTime;
 
@@ -85,6 +87,24 @@ namespace Amazon.Detective.Model
         internal bool IsSetAdministratorId()
         {
             return this._administratorId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DatasourcePackageIngestStates. 
+        /// <para>
+        /// The state of a data source package for the behavior graph.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> DatasourcePackageIngestStates
+        {
+            get { return this._datasourcePackageIngestStates; }
+            set { this._datasourcePackageIngestStates = value; }
+        }
+
+        // Check to see if DatasourcePackageIngestStates property is set
+        internal bool IsSetDatasourcePackageIngestStates()
+        {
+            return this._datasourcePackageIngestStates != null && this._datasourcePackageIngestStates.Count > 0; 
         }
 
         /// <summary>
@@ -244,7 +264,7 @@ namespace Amazon.Detective.Model
         /// maximum allowed data volume. 
         /// </para>
         /// </summary>
-        [Obsolete("This property is deprecated. Use VolumeUsageInBytes instead.")]
+        [Obsolete("This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
         public double PercentOfGraphUtilization
         {
             get { return this._percentOfGraphUtilization.GetValueOrDefault(); }
@@ -264,7 +284,7 @@ namespace Amazon.Detective.Model
         /// is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.
         /// </para>
         /// </summary>
-        [Obsolete("This property is deprecated. Use VolumeUsageUpdatedTime instead.")]
+        [Obsolete("This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
         public DateTime PercentOfGraphUtilizationUpdatedTime
         {
             get { return this._percentOfGraphUtilizationUpdatedTime.GetValueOrDefault(); }
@@ -360,11 +380,30 @@ namespace Amazon.Detective.Model
         }
 
         /// <summary>
+        /// Gets and sets the property VolumeUsageByDatasourcePackage. 
+        /// <para>
+        /// Details on the volume of usage for each data source package in a behavior graph.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, DatasourcePackageUsageInfo> VolumeUsageByDatasourcePackage
+        {
+            get { return this._volumeUsageByDatasourcePackage; }
+            set { this._volumeUsageByDatasourcePackage = value; }
+        }
+
+        // Check to see if VolumeUsageByDatasourcePackage property is set
+        internal bool IsSetVolumeUsageByDatasourcePackage()
+        {
+            return this._volumeUsageByDatasourcePackage != null && this._volumeUsageByDatasourcePackage.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property VolumeUsageInBytes. 
         /// <para>
         /// The data volume in bytes per day for the member account.
         /// </para>
         /// </summary>
+        [Obsolete("This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
         public long VolumeUsageInBytes
         {
             get { return this._volumeUsageInBytes.GetValueOrDefault(); }
@@ -384,6 +423,7 @@ namespace Amazon.Detective.Model
         /// is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.
         /// </para>
         /// </summary>
+        [Obsolete("This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
         public DateTime VolumeUsageUpdatedTime
         {
             get { return this._volumeUsageUpdatedTime.GetValueOrDefault(); }

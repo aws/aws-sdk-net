@@ -36,6 +36,8 @@ namespace Amazon.Detective.Model
     #endif
     public partial class ValidationException : AmazonDetectiveException
     {
+        private ErrorCode _errorCode;
+        private string _errorCodeReason;
 
         /// <summary>
         /// Constructs a new ValidationException with the specified error
@@ -97,6 +99,8 @@ namespace Amazon.Detective.Model
         protected ValidationException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.ErrorCode = (ErrorCode)info.GetValue("ErrorCode", typeof(ErrorCode));
+            this.ErrorCodeReason = (string)info.GetValue("ErrorCodeReason", typeof(string));
         }
 
         /// <summary>
@@ -117,8 +121,46 @@ namespace Amazon.Detective.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("ErrorCode", this.ErrorCode);
+            info.AddValue("ErrorCodeReason", this.ErrorCodeReason);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property ErrorCode. 
+        /// <para>
+        /// The error code associated with the validation failure.
+        /// </para>
+        /// </summary>
+        public ErrorCode ErrorCode
+        {
+            get { return this._errorCode; }
+            set { this._errorCode = value; }
+        }
+
+        // Check to see if ErrorCode property is set
+        internal bool IsSetErrorCode()
+        {
+            return this._errorCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ErrorCodeReason. 
+        /// <para>
+        ///  An explanation of why validation failed.
+        /// </para>
+        /// </summary>
+        public string ErrorCodeReason
+        {
+            get { return this._errorCodeReason; }
+            set { this._errorCodeReason = value; }
+        }
+
+        // Check to see if ErrorCodeReason property is set
+        internal bool IsSetErrorCodeReason()
+        {
+            return this._errorCodeReason != null;
+        }
 
     }
 }

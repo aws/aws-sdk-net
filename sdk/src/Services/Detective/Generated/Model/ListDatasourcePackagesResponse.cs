@@ -29,36 +29,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Detective.Model
 {
     /// <summary>
-    /// This is the response object from the ListOrganizationAdminAccounts operation.
+    /// This is the response object from the ListDatasourcePackages operation.
     /// </summary>
-    public partial class ListOrganizationAdminAccountsResponse : AmazonWebServiceResponse
+    public partial class ListDatasourcePackagesResponse : AmazonWebServiceResponse
     {
-        private List<Administrator> _administrators = new List<Administrator>();
+        private Dictionary<string, DatasourcePackageIngestDetail> _datasourcePackages = new Dictionary<string, DatasourcePackageIngestDetail>();
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Administrators. 
+        /// Gets and sets the property DatasourcePackages. 
         /// <para>
-        /// The list of Detective administrator accounts.
+        /// Details on the data source packages active in the behavior graph.
         /// </para>
         /// </summary>
-        public List<Administrator> Administrators
+        public Dictionary<string, DatasourcePackageIngestDetail> DatasourcePackages
         {
-            get { return this._administrators; }
-            set { this._administrators = value; }
+            get { return this._datasourcePackages; }
+            set { this._datasourcePackages = value; }
         }
 
-        // Check to see if Administrators property is set
-        internal bool IsSetAdministrators()
+        // Check to see if DatasourcePackages property is set
+        internal bool IsSetDatasourcePackages()
         {
-            return this._administrators != null && this._administrators.Count > 0; 
+            return this._datasourcePackages != null && this._datasourcePackages.Count > 0; 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If there are more accounts remaining in the results, then this is the pagination token
-        /// to use to request the next page of accounts.
+        /// For requests to get the next page of results, the pagination token that was returned
+        /// with the previous set of results. The initial request does not include a pagination
+        /// token.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

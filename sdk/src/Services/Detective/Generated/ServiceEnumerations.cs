@@ -25,6 +25,164 @@ namespace Amazon.Detective
 {
 
     /// <summary>
+    /// Constants used for properties of type DatasourcePackage.
+    /// </summary>
+    public class DatasourcePackage : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DETECTIVE_CORE for DatasourcePackage
+        /// </summary>
+        public static readonly DatasourcePackage DETECTIVE_CORE = new DatasourcePackage("DETECTIVE_CORE");
+        /// <summary>
+        /// Constant EKS_AUDIT for DatasourcePackage
+        /// </summary>
+        public static readonly DatasourcePackage EKS_AUDIT = new DatasourcePackage("EKS_AUDIT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DatasourcePackage(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DatasourcePackage FindValue(string value)
+        {
+            return FindValue<DatasourcePackage>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DatasourcePackage(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DatasourcePackageIngestState.
+    /// </summary>
+    public class DatasourcePackageIngestState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for DatasourcePackageIngestState
+        /// </summary>
+        public static readonly DatasourcePackageIngestState DISABLED = new DatasourcePackageIngestState("DISABLED");
+        /// <summary>
+        /// Constant STARTED for DatasourcePackageIngestState
+        /// </summary>
+        public static readonly DatasourcePackageIngestState STARTED = new DatasourcePackageIngestState("STARTED");
+        /// <summary>
+        /// Constant STOPPED for DatasourcePackageIngestState
+        /// </summary>
+        public static readonly DatasourcePackageIngestState STOPPED = new DatasourcePackageIngestState("STOPPED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DatasourcePackageIngestState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DatasourcePackageIngestState FindValue(string value)
+        {
+            return FindValue<DatasourcePackageIngestState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DatasourcePackageIngestState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ErrorCode.
+    /// </summary>
+    public class ErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INTERNAL_ERROR for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode INTERNAL_ERROR = new ErrorCode("INTERNAL_ERROR");
+        /// <summary>
+        /// Constant INVALID_GRAPH_ARN for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode INVALID_GRAPH_ARN = new ErrorCode("INVALID_GRAPH_ARN");
+        /// <summary>
+        /// Constant INVALID_REQUEST_BODY for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode INVALID_REQUEST_BODY = new ErrorCode("INVALID_REQUEST_BODY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ErrorCode FindValue(string value)
+        {
+            return FindValue<ErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InvitationType.
     /// </summary>
     public class InvitationType : ConstantClass

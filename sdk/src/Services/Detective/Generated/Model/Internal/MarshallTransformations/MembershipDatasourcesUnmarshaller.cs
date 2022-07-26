@@ -34,46 +34,52 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Detective.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ValidationException Object
+    /// Response Unmarshaller for MembershipDatasources Object
     /// </summary>  
-    public class ValidationExceptionUnmarshaller : IErrorResponseUnmarshaller<ValidationException, JsonUnmarshallerContext>
+    public class MembershipDatasourcesUnmarshaller : IUnmarshaller<MembershipDatasources, XmlUnmarshallerContext>, IUnmarshaller<MembershipDatasources, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ValidationException Unmarshall(JsonUnmarshallerContext context)
+        MembershipDatasources IUnmarshaller<MembershipDatasources, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
+            throw new NotImplementedException();
         }
 
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public ValidationException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
+        public MembershipDatasources Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
 
-            ValidationException unmarshalledObject = new ValidationException(errorResponse.Message, errorResponse.InnerException,
-                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+            MembershipDatasources unmarshalledObject = new MembershipDatasources();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ErrorCode", targetDepth))
+                if (context.TestExpression("AccountId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ErrorCode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ErrorCodeReason", targetDepth))
+                if (context.TestExpression("DatasourcePackageIngestHistory", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, Dictionary<string, TimestampForCollection>, StringUnmarshaller, DictionaryUnmarshaller<string, TimestampForCollection, StringUnmarshaller, TimestampForCollectionUnmarshaller>>(StringUnmarshaller.Instance, new DictionaryUnmarshaller<string, TimestampForCollection, StringUnmarshaller, TimestampForCollectionUnmarshaller>(StringUnmarshaller.Instance, TimestampForCollectionUnmarshaller.Instance));
+                    unmarshalledObject.DatasourcePackageIngestHistory = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("GraphArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ErrorCodeReason = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GraphArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -81,12 +87,13 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static ValidationExceptionUnmarshaller _instance = new ValidationExceptionUnmarshaller();        
+
+        private static MembershipDatasourcesUnmarshaller _instance = new MembershipDatasourcesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ValidationExceptionUnmarshaller Instance
+        public static MembershipDatasourcesUnmarshaller Instance
         {
             get
             {

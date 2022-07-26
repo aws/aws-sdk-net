@@ -26,6 +26,11 @@ namespace Amazon.Detective.Model
     {
 
         /// <summary>
+        /// Paginator for ListDatasourcePackages operation
+        ///</summary>
+        IListDatasourcePackagesPaginator ListDatasourcePackages(ListDatasourcePackagesRequest request);
+
+        /// <summary>
         /// Paginator for ListGraphs operation
         ///</summary>
         IListGraphsPaginator ListGraphs(ListGraphsRequest request);

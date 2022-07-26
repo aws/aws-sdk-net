@@ -52,10 +52,15 @@ namespace Amazon.Detective
     /// Detective is also integrated with Organizations. The organization management account
     /// designates the Detective administrator account for the organization. That account
     /// becomes the administrator account for the organization behavior graph. The Detective
-    /// administrator account can enable any organization account as a member account in the
-    /// organization behavior graph. The organization accounts do not receive invitations.
-    /// The Detective administrator account can also invite other accounts to the organization
-    /// behavior graph.
+    /// administrator account is also the delegated administrator account for Detective in
+    /// Organizations.
+    /// </para>
+    ///  
+    /// <para>
+    /// The Detective administrator account can enable any organization account as a member
+    /// account in the organization behavior graph. The organization accounts do not receive
+    /// invitations. The Detective administrator account can also invite other accounts to
+    /// the organization behavior graph.
     /// </para>
     ///  
     /// <para>
@@ -211,6 +216,104 @@ namespace Amazon.Detective
         /// <returns>Returns a  AcceptInvitationResult from Detective.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/AcceptInvitation">REST API Reference for AcceptInvitation Operation</seealso>
         AcceptInvitationResponse EndAcceptInvitation(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  BatchGetGraphMemberDatasources
+
+
+        /// <summary>
+        /// Gets data source package information for the behavior graph.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetGraphMemberDatasources service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetGraphMemberDatasources service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ResourceNotFoundException">
+        /// The request refers to a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/BatchGetGraphMemberDatasources">REST API Reference for BatchGetGraphMemberDatasources Operation</seealso>
+        BatchGetGraphMemberDatasourcesResponse BatchGetGraphMemberDatasources(BatchGetGraphMemberDatasourcesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetGraphMemberDatasources operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetGraphMemberDatasources operation on AmazonDetectiveClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetGraphMemberDatasources
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/BatchGetGraphMemberDatasources">REST API Reference for BatchGetGraphMemberDatasources Operation</seealso>
+        IAsyncResult BeginBatchGetGraphMemberDatasources(BatchGetGraphMemberDatasourcesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchGetGraphMemberDatasources operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetGraphMemberDatasources.</param>
+        /// 
+        /// <returns>Returns a  BatchGetGraphMemberDatasourcesResult from Detective.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/BatchGetGraphMemberDatasources">REST API Reference for BatchGetGraphMemberDatasources Operation</seealso>
+        BatchGetGraphMemberDatasourcesResponse EndBatchGetGraphMemberDatasources(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  BatchGetMembershipDatasources
+
+
+        /// <summary>
+        /// Gets information on the data source package history for an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetMembershipDatasources service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetMembershipDatasources service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ResourceNotFoundException">
+        /// The request refers to a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/BatchGetMembershipDatasources">REST API Reference for BatchGetMembershipDatasources Operation</seealso>
+        BatchGetMembershipDatasourcesResponse BatchGetMembershipDatasources(BatchGetMembershipDatasourcesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetMembershipDatasources operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetMembershipDatasources operation on AmazonDetectiveClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetMembershipDatasources
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/BatchGetMembershipDatasources">REST API Reference for BatchGetMembershipDatasources Operation</seealso>
+        IAsyncResult BeginBatchGetMembershipDatasources(BatchGetMembershipDatasourcesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchGetMembershipDatasources operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetMembershipDatasources.</param>
+        /// 
+        /// <returns>Returns a  BatchGetMembershipDatasourcesResult from Detective.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/BatchGetMembershipDatasources">REST API Reference for BatchGetMembershipDatasources Operation</seealso>
+        BatchGetMembershipDatasourcesResponse EndBatchGetMembershipDatasources(IAsyncResult asyncResult);
 
         #endregion
         
@@ -609,14 +712,24 @@ namespace Amazon.Detective
 
 
         /// <summary>
-        /// Removes the Detective administrator account for the organization in the current Region.
-        /// Deletes the behavior graph for that account.
+        /// Removes the Detective administrator account in the current Region. Deletes the organization
+        /// behavior graph.
         /// 
         ///  
         /// <para>
-        /// Can only be called by the organization management account. Before you can select a
-        /// different Detective administrator account, you must remove the Detective administrator
-        /// account in all Regions.
+        /// Can only be called by the organization management account.
+        /// </para>
+        ///  
+        /// <para>
+        /// Removing the Detective administrator account does not affect the delegated administrator
+        /// account for Detective in Organizations.
+        /// </para>
+        ///  
+        /// <para>
+        /// To remove the delegated administrator account in Organizations, use the Organizations
+        /// API. Removing the delegated administrator account also removes the Detective administrator
+        /// account in all Regions, except for Regions where the Detective administrator account
+        /// is the organization management account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableOrganizationAdminAccount service method.</param>
@@ -742,9 +855,17 @@ namespace Amazon.Detective
         /// </para>
         ///  
         /// <para>
-        /// The Detective administrator account for an organization must be the same in all Regions.
-        /// If you already designated a Detective administrator account in another Region, then
-        /// you must designate the same account.
+        /// If the organization has a delegated administrator account in Organizations, then the
+        /// Detective administrator account must be either the delegated administrator account
+        /// or the organization management account.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the organization does not have a delegated administrator account in Organizations,
+        /// then you can choose any account in the organization. If you choose an account other
+        /// than the organization management account, Detective calls Organizations to make that
+        /// account the delegated administrator account for Detective. The organization management
+        /// account cannot be the delegated administrator account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableOrganizationAdminAccount service method.</param>
@@ -837,6 +958,55 @@ namespace Amazon.Detective
         /// <returns>Returns a  GetMembersResult from Detective.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/GetMembers">REST API Reference for GetMembers Operation</seealso>
         GetMembersResponse EndGetMembers(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListDatasourcePackages
+
+
+        /// <summary>
+        /// Lists data source packages in the behavior graph.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDatasourcePackages service method.</param>
+        /// 
+        /// <returns>The response from the ListDatasourcePackages service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ResourceNotFoundException">
+        /// The request refers to a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListDatasourcePackages">REST API Reference for ListDatasourcePackages Operation</seealso>
+        ListDatasourcePackagesResponse ListDatasourcePackages(ListDatasourcePackagesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDatasourcePackages operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDatasourcePackages operation on AmazonDetectiveClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDatasourcePackages
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListDatasourcePackages">REST API Reference for ListDatasourcePackages Operation</seealso>
+        IAsyncResult BeginListDatasourcePackages(ListDatasourcePackagesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDatasourcePackages operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDatasourcePackages.</param>
+        /// 
+        /// <returns>Returns a  ListDatasourcePackagesResult from Detective.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListDatasourcePackages">REST API Reference for ListDatasourcePackages Operation</seealso>
+        ListDatasourcePackagesResponse EndListDatasourcePackages(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1353,6 +1523,75 @@ namespace Amazon.Detective
         /// <returns>Returns a  UntagResourceResult from Detective.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateDatasourcePackages
+
+
+        /// <summary>
+        /// Starts a data source packages for the behavior graph.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDatasourcePackages service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDatasourcePackages service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ResourceNotFoundException">
+        /// The request refers to a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ServiceQuotaExceededException">
+        /// This request cannot be completed for one of the following reasons.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The request would cause the number of member accounts in the behavior graph to exceed
+        /// the maximum allowed. A behavior graph cannot have more than 1200 member accounts.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The request would cause the data rate for the behavior graph to exceed the maximum
+        /// allowed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Detective is unable to verify the data rate for the member account. This is usually
+        /// because the member account is not enrolled in Amazon GuardDuty.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/UpdateDatasourcePackages">REST API Reference for UpdateDatasourcePackages Operation</seealso>
+        UpdateDatasourcePackagesResponse UpdateDatasourcePackages(UpdateDatasourcePackagesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDatasourcePackages operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDatasourcePackages operation on AmazonDetectiveClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDatasourcePackages
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/UpdateDatasourcePackages">REST API Reference for UpdateDatasourcePackages Operation</seealso>
+        IAsyncResult BeginUpdateDatasourcePackages(UpdateDatasourcePackagesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateDatasourcePackages operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDatasourcePackages.</param>
+        /// 
+        /// <returns>Returns a  UpdateDatasourcePackagesResult from Detective.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/UpdateDatasourcePackages">REST API Reference for UpdateDatasourcePackages Operation</seealso>
+        UpdateDatasourcePackagesResponse EndUpdateDatasourcePackages(IAsyncResult asyncResult);
 
         #endregion
         

@@ -61,10 +61,15 @@ namespace Amazon.Detective
     /// Detective is also integrated with Organizations. The organization management account
     /// designates the Detective administrator account for the organization. That account
     /// becomes the administrator account for the organization behavior graph. The Detective
-    /// administrator account can enable any organization account as a member account in the
-    /// organization behavior graph. The organization accounts do not receive invitations.
-    /// The Detective administrator account can also invite other accounts to the organization
-    /// behavior graph.
+    /// administrator account is also the delegated administrator account for Detective in
+    /// Organizations.
+    /// </para>
+    ///  
+    /// <para>
+    /// The Detective administrator account can enable any organization account as a member
+    /// account in the organization behavior graph. The organization accounts do not receive
+    /// invitations. The Detective administrator account can also invite other accounts to
+    /// the organization behavior graph.
     /// </para>
     ///  
     /// <para>
@@ -443,6 +448,124 @@ namespace Amazon.Detective
             options.ResponseUnmarshaller = AcceptInvitationResponseUnmarshaller.Instance;
             
             return InvokeAsync<AcceptInvitationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchGetGraphMemberDatasources
+
+
+        /// <summary>
+        /// Gets data source package information for the behavior graph.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetGraphMemberDatasources service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetGraphMemberDatasources service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ResourceNotFoundException">
+        /// The request refers to a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/BatchGetGraphMemberDatasources">REST API Reference for BatchGetGraphMemberDatasources Operation</seealso>
+        public virtual BatchGetGraphMemberDatasourcesResponse BatchGetGraphMemberDatasources(BatchGetGraphMemberDatasourcesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetGraphMemberDatasourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetGraphMemberDatasourcesResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetGraphMemberDatasourcesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets data source package information for the behavior graph.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetGraphMemberDatasources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetGraphMemberDatasources service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ResourceNotFoundException">
+        /// The request refers to a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/BatchGetGraphMemberDatasources">REST API Reference for BatchGetGraphMemberDatasources Operation</seealso>
+        public virtual Task<BatchGetGraphMemberDatasourcesResponse> BatchGetGraphMemberDatasourcesAsync(BatchGetGraphMemberDatasourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetGraphMemberDatasourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetGraphMemberDatasourcesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchGetGraphMemberDatasourcesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchGetMembershipDatasources
+
+
+        /// <summary>
+        /// Gets information on the data source package history for an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetMembershipDatasources service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetMembershipDatasources service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ResourceNotFoundException">
+        /// The request refers to a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/BatchGetMembershipDatasources">REST API Reference for BatchGetMembershipDatasources Operation</seealso>
+        public virtual BatchGetMembershipDatasourcesResponse BatchGetMembershipDatasources(BatchGetMembershipDatasourcesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetMembershipDatasourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetMembershipDatasourcesResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetMembershipDatasourcesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets information on the data source package history for an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetMembershipDatasources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetMembershipDatasources service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ResourceNotFoundException">
+        /// The request refers to a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/BatchGetMembershipDatasources">REST API Reference for BatchGetMembershipDatasources Operation</seealso>
+        public virtual Task<BatchGetMembershipDatasourcesResponse> BatchGetMembershipDatasourcesAsync(BatchGetMembershipDatasourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetMembershipDatasourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetMembershipDatasourcesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchGetMembershipDatasourcesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1038,14 +1161,24 @@ namespace Amazon.Detective
 
 
         /// <summary>
-        /// Removes the Detective administrator account for the organization in the current Region.
-        /// Deletes the behavior graph for that account.
+        /// Removes the Detective administrator account in the current Region. Deletes the organization
+        /// behavior graph.
         /// 
         ///  
         /// <para>
-        /// Can only be called by the organization management account. Before you can select a
-        /// different Detective administrator account, you must remove the Detective administrator
-        /// account in all Regions.
+        /// Can only be called by the organization management account.
+        /// </para>
+        ///  
+        /// <para>
+        /// Removing the Detective administrator account does not affect the delegated administrator
+        /// account for Detective in Organizations.
+        /// </para>
+        ///  
+        /// <para>
+        /// To remove the delegated administrator account in Organizations, use the Organizations
+        /// API. Removing the delegated administrator account also removes the Detective administrator
+        /// account in all Regions, except for Regions where the Detective administrator account
+        /// is the organization management account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableOrganizationAdminAccount service method.</param>
@@ -1073,14 +1206,24 @@ namespace Amazon.Detective
 
 
         /// <summary>
-        /// Removes the Detective administrator account for the organization in the current Region.
-        /// Deletes the behavior graph for that account.
+        /// Removes the Detective administrator account in the current Region. Deletes the organization
+        /// behavior graph.
         /// 
         ///  
         /// <para>
-        /// Can only be called by the organization management account. Before you can select a
-        /// different Detective administrator account, you must remove the Detective administrator
-        /// account in all Regions.
+        /// Can only be called by the organization management account.
+        /// </para>
+        ///  
+        /// <para>
+        /// Removing the Detective administrator account does not affect the delegated administrator
+        /// account for Detective in Organizations.
+        /// </para>
+        ///  
+        /// <para>
+        /// To remove the delegated administrator account in Organizations, use the Organizations
+        /// API. Removing the delegated administrator account also removes the Detective administrator
+        /// account in all Regions, except for Regions where the Detective administrator account
+        /// is the organization management account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableOrganizationAdminAccount service method.</param>
@@ -1212,9 +1355,17 @@ namespace Amazon.Detective
         /// </para>
         ///  
         /// <para>
-        /// The Detective administrator account for an organization must be the same in all Regions.
-        /// If you already designated a Detective administrator account in another Region, then
-        /// you must designate the same account.
+        /// If the organization has a delegated administrator account in Organizations, then the
+        /// Detective administrator account must be either the delegated administrator account
+        /// or the organization management account.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the organization does not have a delegated administrator account in Organizations,
+        /// then you can choose any account in the organization. If you choose an account other
+        /// than the organization management account, Detective calls Organizations to make that
+        /// account the delegated administrator account for Detective. The organization management
+        /// account cannot be the delegated administrator account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableOrganizationAdminAccount service method.</param>
@@ -1256,9 +1407,17 @@ namespace Amazon.Detective
         /// </para>
         ///  
         /// <para>
-        /// The Detective administrator account for an organization must be the same in all Regions.
-        /// If you already designated a Detective administrator account in another Region, then
-        /// you must designate the same account.
+        /// If the organization has a delegated administrator account in Organizations, then the
+        /// Detective administrator account must be either the delegated administrator account
+        /// or the organization management account.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the organization does not have a delegated administrator account in Organizations,
+        /// then you can choose any account in the organization. If you choose an account other
+        /// than the organization management account, Detective calls Organizations to make that
+        /// account the delegated administrator account for Detective. The organization management
+        /// account cannot be the delegated administrator account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableOrganizationAdminAccount service method.</param>
@@ -1344,6 +1503,65 @@ namespace Amazon.Detective
             options.ResponseUnmarshaller = GetMembersResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetMembersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDatasourcePackages
+
+
+        /// <summary>
+        /// Lists data source packages in the behavior graph.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDatasourcePackages service method.</param>
+        /// 
+        /// <returns>The response from the ListDatasourcePackages service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ResourceNotFoundException">
+        /// The request refers to a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListDatasourcePackages">REST API Reference for ListDatasourcePackages Operation</seealso>
+        public virtual ListDatasourcePackagesResponse ListDatasourcePackages(ListDatasourcePackagesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDatasourcePackagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDatasourcePackagesResponseUnmarshaller.Instance;
+
+            return Invoke<ListDatasourcePackagesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists data source packages in the behavior graph.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDatasourcePackages service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDatasourcePackages service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ResourceNotFoundException">
+        /// The request refers to a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListDatasourcePackages">REST API Reference for ListDatasourcePackages Operation</seealso>
+        public virtual Task<ListDatasourcePackagesResponse> ListDatasourcePackagesAsync(ListDatasourcePackagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDatasourcePackagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDatasourcePackagesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListDatasourcePackagesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2025,6 +2243,105 @@ namespace Amazon.Detective
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateDatasourcePackages
+
+
+        /// <summary>
+        /// Starts a data source packages for the behavior graph.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDatasourcePackages service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDatasourcePackages service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ResourceNotFoundException">
+        /// The request refers to a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ServiceQuotaExceededException">
+        /// This request cannot be completed for one of the following reasons.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The request would cause the number of member accounts in the behavior graph to exceed
+        /// the maximum allowed. A behavior graph cannot have more than 1200 member accounts.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The request would cause the data rate for the behavior graph to exceed the maximum
+        /// allowed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Detective is unable to verify the data rate for the member account. This is usually
+        /// because the member account is not enrolled in Amazon GuardDuty.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/UpdateDatasourcePackages">REST API Reference for UpdateDatasourcePackages Operation</seealso>
+        public virtual UpdateDatasourcePackagesResponse UpdateDatasourcePackages(UpdateDatasourcePackagesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDatasourcePackagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDatasourcePackagesResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDatasourcePackagesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts a data source packages for the behavior graph.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDatasourcePackages service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDatasourcePackages service method, as returned by Detective.</returns>
+        /// <exception cref="Amazon.Detective.Model.InternalServerException">
+        /// The request was valid but failed because of a problem with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ResourceNotFoundException">
+        /// The request refers to a nonexistent resource.
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ServiceQuotaExceededException">
+        /// This request cannot be completed for one of the following reasons.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The request would cause the number of member accounts in the behavior graph to exceed
+        /// the maximum allowed. A behavior graph cannot have more than 1200 member accounts.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The request would cause the data rate for the behavior graph to exceed the maximum
+        /// allowed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Detective is unable to verify the data rate for the member account. This is usually
+        /// because the member account is not enrolled in Amazon GuardDuty.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.Detective.Model.ValidationException">
+        /// The request parameters are invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/UpdateDatasourcePackages">REST API Reference for UpdateDatasourcePackages Operation</seealso>
+        public virtual Task<UpdateDatasourcePackagesResponse> UpdateDatasourcePackagesAsync(UpdateDatasourcePackagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDatasourcePackagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDatasourcePackagesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateDatasourcePackagesResponse>(request, options, cancellationToken);
         }
 
         #endregion

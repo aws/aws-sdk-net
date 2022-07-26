@@ -34,40 +34,46 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Detective.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ServiceQuotaExceededException Object
+    /// Response Unmarshaller for DatasourcePackageIngestDetail Object
     /// </summary>  
-    public class ServiceQuotaExceededExceptionUnmarshaller : IErrorResponseUnmarshaller<ServiceQuotaExceededException, JsonUnmarshallerContext>
+    public class DatasourcePackageIngestDetailUnmarshaller : IUnmarshaller<DatasourcePackageIngestDetail, XmlUnmarshallerContext>, IUnmarshaller<DatasourcePackageIngestDetail, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ServiceQuotaExceededException Unmarshall(JsonUnmarshallerContext context)
+        DatasourcePackageIngestDetail IUnmarshaller<DatasourcePackageIngestDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
+            throw new NotImplementedException();
         }
 
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public ServiceQuotaExceededException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
+        public DatasourcePackageIngestDetail Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
 
-            ServiceQuotaExceededException unmarshalledObject = new ServiceQuotaExceededException(errorResponse.Message, errorResponse.InnerException,
-                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+            DatasourcePackageIngestDetail unmarshalledObject = new DatasourcePackageIngestDetail();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Resources", targetDepth))
+                if (context.TestExpression("DatasourcePackageIngestState", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Resources = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DatasourcePackageIngestState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LastIngestStateChange", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, TimestampForCollection, StringUnmarshaller, TimestampForCollectionUnmarshaller>(StringUnmarshaller.Instance, TimestampForCollectionUnmarshaller.Instance);
+                    unmarshalledObject.LastIngestStateChange = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -75,12 +81,13 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static ServiceQuotaExceededExceptionUnmarshaller _instance = new ServiceQuotaExceededExceptionUnmarshaller();        
+
+        private static DatasourcePackageIngestDetailUnmarshaller _instance = new DatasourcePackageIngestDetailUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ServiceQuotaExceededExceptionUnmarshaller Instance
+        public static DatasourcePackageIngestDetailUnmarshaller Instance
         {
             get
             {
