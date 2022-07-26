@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Describes the action that AWS WAF should take on a web request when it matches the
-    /// criteria defined in the rule.
+    /// Describes the action that WAF should take on a web request when it matches the criteria
+    /// defined in the rule.
     /// </summary>
     public partial class AwsWafRegionalRuleGroupRulesActionDetails
     {

@@ -43,8 +43,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// The action that AWS WAF takes when a web request matches all conditions in the rule,
-        /// such as allow, block, or count the request. 
+        /// The action that WAF takes when a web request matches all conditions in the rule, such
+        /// as allow, block, or count the request. 
         /// </para>
         /// </summary>
         public AwsWafRegionalWebAclRulesListActionDetails Action
