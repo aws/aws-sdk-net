@@ -39,6 +39,8 @@ namespace Amazon.LookoutforVision.Model
         private OutputS3Object _evaluationManifest;
         private OutputS3Object _evaluationResult;
         private string _kmsKeyId;
+        private int? _maxInferenceUnits;
+        private int? _minInferenceUnits;
         private string _modelArn;
         private string _modelVersion;
         private OutputConfig _outputConfig;
@@ -156,6 +158,46 @@ namespace Amazon.LookoutforVision.Model
         internal bool IsSetKmsKeyId()
         {
             return this._kmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxInferenceUnits. 
+        /// <para>
+        /// The maximum number of inference units Amazon Lookout for Vision uses to auto-scale
+        /// the model. For more information, see <a>StartModel</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int MaxInferenceUnits
+        {
+            get { return this._maxInferenceUnits.GetValueOrDefault(); }
+            set { this._maxInferenceUnits = value; }
+        }
+
+        // Check to see if MaxInferenceUnits property is set
+        internal bool IsSetMaxInferenceUnits()
+        {
+            return this._maxInferenceUnits.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MinInferenceUnits. 
+        /// <para>
+        /// The minimum number of inference units used by the model. For more information, see
+        /// <a>StartModel</a> 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int MinInferenceUnits
+        {
+            get { return this._minInferenceUnits.GetValueOrDefault(); }
+            set { this._minInferenceUnits = value; }
+        }
+
+        // Check to see if MinInferenceUnits property is set
+        internal bool IsSetMinInferenceUnits()
+        {
+            return this._minInferenceUnits.HasValue; 
         }
 
         /// <summary>

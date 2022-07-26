@@ -1788,7 +1788,8 @@ namespace Amazon.LookoutforVision
 
 
         /// <summary>
-        /// Lists the Amazon Lookout for Vision projects in your AWS account.
+        /// Lists the Amazon Lookout for Vision projects in your AWS account that are in the AWS
+        /// Region in which you call <code>ListProjects</code>.
         /// 
         ///  
         /// <para>
@@ -1837,7 +1838,8 @@ namespace Amazon.LookoutforVision
 
 
         /// <summary>
-        /// Lists the Amazon Lookout for Vision projects in your AWS account.
+        /// Lists the Amazon Lookout for Vision projects in your AWS account that are in the AWS
+        /// Region in which you call <code>ListProjects</code>.
         /// 
         ///  
         /// <para>

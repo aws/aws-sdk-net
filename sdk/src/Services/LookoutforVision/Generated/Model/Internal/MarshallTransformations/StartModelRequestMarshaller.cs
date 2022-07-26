@@ -71,6 +71,12 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetMaxInferenceUnits())
+                {
+                    context.Writer.WritePropertyName("MaxInferenceUnits");
+                    context.Writer.Write(publicRequest.MaxInferenceUnits);
+                }
+
                 if(publicRequest.IsSetMinInferenceUnits())
                 {
                     context.Writer.WritePropertyName("MinInferenceUnits");

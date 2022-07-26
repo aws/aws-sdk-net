@@ -55,6 +55,7 @@ namespace Amazon.LookoutforVision.Model
     public partial class StartModelRequest : AmazonLookoutforVisionRequest
     {
         private string _clientToken;
+        private int? _maxInferenceUnits;
         private int? _minInferenceUnits;
         private string _modelVersion;
         private string _projectName;
@@ -92,6 +93,26 @@ namespace Amazon.LookoutforVision.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxInferenceUnits. 
+        /// <para>
+        /// The maximum number of inference units to use for auto-scaling the model. If you don't
+        /// specify a value, Amazon Lookout for Vision doesn't auto-scale the model.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int MaxInferenceUnits
+        {
+            get { return this._maxInferenceUnits.GetValueOrDefault(); }
+            set { this._maxInferenceUnits = value; }
+        }
+
+        // Check to see if MaxInferenceUnits property is set
+        internal bool IsSetMaxInferenceUnits()
+        {
+            return this._maxInferenceUnits.HasValue; 
         }
 
         /// <summary>

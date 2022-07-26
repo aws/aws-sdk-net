@@ -270,6 +270,10 @@
     <pattern>^[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LookoutforVision.Model.StartModelRequest.MaxInferenceUnits</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LookoutforVision.Model.StartModelRequest.MinInferenceUnits</property>
     <min>1</min>
   </property-value-rule>
@@ -463,6 +467,14 @@
     <min>1</min>
     <max>2048</max>
     <pattern>^[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,2048}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutforVision.Model.ModelDescription.MaxInferenceUnits</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutforVision.Model.ModelDescription.MinInferenceUnits</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutforVision.Model.ModelDescription.ModelVersion</property>
