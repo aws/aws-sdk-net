@@ -22,6 +22,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -30,10 +31,11 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Security.AccessControl;
 
+using Amazon.Runtime;
 using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.Util;
-using System.Globalization;
+using Amazon.Util.Internal;
 
 namespace Amazon.S3.IO
 {
@@ -981,7 +983,14 @@ namespace Amazon.S3.IO
             {
                 foreach (S3DirectoryInfo dir in EnumerateDirectories())
                 {
-                    DirectoryInfo newLoc = Directory.CreateDirectory(string.Format(CultureInfo.InvariantCulture, "{0}\\{1}", path, dir.Name));
+                    var dirPath = string.Format(CultureInfo.InvariantCulture, "{0}\\{1}", path, dir.Name);
+
+                    //Ensure the directory is a rooted within path. Otherwise error.
+                    if (!InternalSDKUtils.IsFilePathRootedWithDirectoryPath(dirPath, path))
+                    {
+                        throw new AmazonClientException($"The directory {dirPath} is not allowed outside of the target directory {path}.");                        
+                    }
+                    DirectoryInfo newLoc = Directory.CreateDirectory(dirPath);
                     dir.CopyToLocal(newLoc.FullName, changesSince);
                 }
 
@@ -1114,7 +1123,14 @@ namespace Amazon.S3.IO
            
             foreach (S3DirectoryInfo dir in EnumerateDirectories())
             {
-                DirectoryInfo newLoc = Directory.CreateDirectory(string.Format(CultureInfo.InvariantCulture, "{0}\\{1}", path, dir.Name));
+                var dirPath = string.Format(CultureInfo.InvariantCulture, "{0}\\{1}", path, dir.Name);
+
+                //Ensure the directory is a rooted within path. Otherwise error.
+                if (!InternalSDKUtils.IsFilePathRootedWithDirectoryPath(dirPath, path))
+                {
+                    throw new AmazonClientException($"The directory {dirPath} is not allowed outside of the target directory {path}.");
+                }
+                DirectoryInfo newLoc = Directory.CreateDirectory(dirPath);
                 dir.MoveToLocal(newLoc.FullName);
             }
 
