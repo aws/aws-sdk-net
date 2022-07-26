@@ -38,6 +38,7 @@ namespace Amazon.Rekognition.Model
         private EvaluationResult _evaluationResult;
         private string _kmsKeyId;
         private GroundTruthManifest _manifestSummary;
+        private int? _maxInferenceUnits;
         private int? _minInferenceUnits;
         private OutputConfig _outputConfig;
         private string _projectVersionArn;
@@ -141,6 +142,26 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetManifestSummary()
         {
             return this._manifestSummary != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxInferenceUnits. 
+        /// <para>
+        /// The maximum number of inference units Amazon Rekognition Custom Labels uses to auto-scale
+        /// the model. For more information, see <a>StartProjectVersion</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int MaxInferenceUnits
+        {
+            get { return this._maxInferenceUnits.GetValueOrDefault(); }
+            set { this._maxInferenceUnits = value; }
+        }
+
+        // Check to see if MaxInferenceUnits property is set
+        internal bool IsSetMaxInferenceUnits()
+        {
+            return this._maxInferenceUnits.HasValue; 
         }
 
         /// <summary>

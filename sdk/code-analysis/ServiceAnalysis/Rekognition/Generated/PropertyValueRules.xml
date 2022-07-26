@@ -654,6 +654,10 @@
     <pattern>^[a-zA-Z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Rekognition.Model.StartProjectVersionRequest.MaxInferenceUnits</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Rekognition.Model.StartProjectVersionRequest.MinInferenceUnits</property>
     <min>1</min>
   </property-value-rule>
@@ -1078,6 +1082,10 @@
     <min>1</min>
     <max>2048</max>
     <pattern>^[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,2048}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.ProjectVersionDescription.MaxInferenceUnits</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.ProjectVersionDescription.MinInferenceUnits</property>

@@ -30,7 +30,7 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Specifies a location within the frame that Rekognition checks for objects of interest
-    /// such as text, labels, or faces. It uses a <code>BoundingBox</code> or object or <code>Polygon</code>
+    /// such as text, labels, or faces. It uses a <code>BoundingBox</code> or <code>Polygon</code>
     /// to set a region of the screen.
     /// 
     ///  

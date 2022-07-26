@@ -5022,6 +5022,11 @@ namespace Amazon.Rekognition
         /// </para>
         ///  </note> 
         /// <para>
+        /// For more information, see <i>Running a trained Amazon Rekognition Custom Labels model</i>
+        /// in the Amazon Rekognition Custom Labels Guide.
+        /// </para>
+        ///  
+        /// <para>
         /// This operation requires permissions to perform the <code>rekognition:StartProjectVersion</code>
         /// action.
         /// </para>

@@ -44,22 +44,57 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  </note> 
     /// <para>
+    /// For more information, see <i>Running a trained Amazon Rekognition Custom Labels model</i>
+    /// in the Amazon Rekognition Custom Labels Guide.
+    /// </para>
+    ///  
+    /// <para>
     /// This operation requires permissions to perform the <code>rekognition:StartProjectVersion</code>
     /// action.
     /// </para>
     /// </summary>
     public partial class StartProjectVersionRequest : AmazonRekognitionRequest
     {
+        private int? _maxInferenceUnits;
         private int? _minInferenceUnits;
         private string _projectVersionArn;
+
+        /// <summary>
+        /// Gets and sets the property MaxInferenceUnits. 
+        /// <para>
+        /// The maximum number of inference units to use for auto-scaling the model. If you don't
+        /// specify a value, Amazon Rekognition Custom Labels doesn't auto-scale the model.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int MaxInferenceUnits
+        {
+            get { return this._maxInferenceUnits.GetValueOrDefault(); }
+            set { this._maxInferenceUnits = value; }
+        }
+
+        // Check to see if MaxInferenceUnits property is set
+        internal bool IsSetMaxInferenceUnits()
+        {
+            return this._maxInferenceUnits.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property MinInferenceUnits. 
         /// <para>
         /// The minimum number of inference units to use. A single inference unit represents 1
-        /// hour of processing and can support up to 5 Transaction Pers Second (TPS). Use a higher
-        /// number to increase the TPS throughput of your model. You are charged for the number
-        /// of inference units that you use. 
+        /// hour of processing. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about the number of transactions per second (TPS) that an inference
+        /// unit can support, see <i>Running a trained Amazon Rekognition Custom Labels model</i>
+        /// in the Amazon Rekognition Custom Labels Guide. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Use a higher number to increase the TPS throughput of your model. You are charged
+        /// for the number of inference units that you use. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
