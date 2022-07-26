@@ -176,9 +176,9 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The kinds of databases that the proxy can connect to. This value determines which
         /// database network protocol the proxy recognizes when it interprets network traffic
-        /// to and from the database. <code>MYSQL</code> supports Aurora MySQL and RDS for MySQL
-        /// databases. <code>POSTGRESQL</code> supports Aurora PostgreSQL and RDS for PostgreSQL
-        /// databases.
+        /// to and from the database. <code>MYSQL</code> supports Aurora MySQL, RDS for MariaDB,
+        /// and RDS for MySQL databases. <code>POSTGRESQL</code> supports Aurora PostgreSQL and
+        /// RDS for PostgreSQL databases.
         /// </para>
         /// </summary>
         public string EngineFamily
