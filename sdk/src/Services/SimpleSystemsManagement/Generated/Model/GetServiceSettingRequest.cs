@@ -76,15 +76,19 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>/ssm/managed-instance/activation-tier</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>/ssm/opsinsights/opscenter</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>/ssm/parameter-store/default-parameter-tier</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>/ssm/parameter-store/high-throughput-enabled</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>/ssm/managed-instance/activation-tier</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

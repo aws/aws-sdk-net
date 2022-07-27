@@ -77,15 +77,19 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>/ssm/managed-instance/activation-tier</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>/ssm/opsinsights/opscenter</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>/ssm/parameter-store/default-parameter-tier</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>/ssm/parameter-store/high-throughput-enabled</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>/ssm/managed-instance/activation-tier</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -110,21 +114,6 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>,
-        /// <code>Advanced</code>, <code>Intelligent-Tiering</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>/ssm/managed-instance/activation-tier</code>: <code>true</code> or <code>false</code>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code>
         /// 
         /// </para>
@@ -141,6 +130,21 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or <code>advanced</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>/ssm/opsinsights/opscenter</code>: <code>Enabled</code> or <code>Disabled</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>,
+        /// <code>Advanced</code>, <code>Intelligent-Tiering</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code>
         /// 
         /// </para>
         ///  </li> </ul>

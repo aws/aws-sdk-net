@@ -211,9 +211,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ExpiresAfter. 
         /// <para>
-        /// If this time is reached and the command hasn't already started running, it won't run.
-        /// Calculated based on the <code>ExpiresAfter</code> user input provided as part of the
-        /// <code>SendCommand</code> API operation.
+        /// If a command expires, it changes status to <code>DeliveryTimedOut</code> for all invocations
+        /// that have the status <code>InProgress</code>, <code>Pending</code>, or <code>Delayed</code>.
+        /// <code>ExpiresAfter</code> is calculated based on the total timeout for the overall
+        /// command. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html?icmpid=docs_ec2_console#monitor-about-status-timeouts">Understanding
+        /// command timeout values</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
         public DateTime ExpiresAfter
@@ -502,6 +504,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Rate Exceeded: The number of managed nodes targeted by the command exceeded the account
         /// limit for pending invocations. The system has canceled the command before running
         /// it on any managed node. This is a terminal state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Delayed: The system attempted to send the command to the managed node but wasn't successful.
+        /// The system retries again.
         /// </para>
         ///  </li> </ul>
         /// </summary>

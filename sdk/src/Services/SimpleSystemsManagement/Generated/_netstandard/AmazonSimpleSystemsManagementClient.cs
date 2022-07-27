@@ -38,33 +38,21 @@ namespace Amazon.SimpleSystemsManagement
     /// <summary>
     /// Implementation for accessing SimpleSystemsManagement
     ///
-    /// Amazon Web Services Systems Manager is a collection of capabilities that helps you
-    /// automate management tasks such as collecting system inventory, applying operating
-    /// system (OS) patches, automating the creation of Amazon Machine Images (AMIs), and
-    /// configuring operating systems (OSs) and applications at scale. Systems Manager lets
-    /// you remotely and securely manage the configuration of your managed nodes. A <i>managed
-    /// node</i> is any Amazon Elastic Compute Cloud (Amazon EC2) instance, edge device, or
-    /// on-premises server or virtual machine (VM) that has been configured for Systems Manager.
+    /// Amazon Web Services Systems Manager is a collection of capabilities to help you manage
+    /// your applications and infrastructure running in the Amazon Web Services Cloud;. Systems
+    /// Manager simplifies application and resource management, shortens the time to detect
+    /// and resolve operational problems, and helps you manage your Amazon Web Services resources
+    /// securely at scale.
     /// 
-    /// 
-    ///  <note> 
-    /// <para>
-    /// With support for IoT Greengrass core devices, the phrase <i>managed instance</i> has
-    /// been changed to <i>managed node</i> in most of the Systems Manager documentation.
-    /// The Systems Manager console, API calls, error messages, and SSM documents still use
-    /// the term <i>instance</i>.
-    /// </para>
-    ///  </note> 
+    ///  
     /// <para>
     /// This reference is intended to be used with the <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/">Amazon
     /// Web Services Systems Manager User Guide</a>.
     /// </para>
     ///  
     /// <para>
-    /// To get started, verify prerequisites and configure managed nodes. For more information,
-    /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Setting
-    /// up Amazon Web Services Systems Manager</a> in the <i>Amazon Web Services Systems Manager
-    /// User Guide</i>.
+    /// To get started, verify prerequisites. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Setting
+    /// up Amazon Web Services Systems Manager</a>.
     /// </para>
     ///  <p class="title"> <b>Related resources</b> 
     /// </para>
@@ -325,7 +313,7 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Adds or overwrites one or more tags for the specified resource. Tags are metadata
+        /// Adds or overwrites one or more tags for the specified resource. <i>Tags</i> are metadata
         /// that you can assign to your automations, documents, managed nodes, maintenance windows,
         /// Parameter Store parameters, and patch baselines. Tags enable you to categorize your
         /// resources in different ways, for example, by purpose, owner, or environment. Each
@@ -6653,7 +6641,7 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Severity: A patch severity. For example, <code>critical</code>.
+        /// Severity: A patch severity. For example, <code>Critical</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>

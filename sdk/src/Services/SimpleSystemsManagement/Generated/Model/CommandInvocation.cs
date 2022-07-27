@@ -382,6 +382,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Terminated: The parent command exceeded its MaxErrors limit and subsequent command
         /// invocations were canceled by the system. This is a terminal state.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Delayed: The system attempted to send the command to the managed node but wasn't successful.
+        /// The system retries again.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
