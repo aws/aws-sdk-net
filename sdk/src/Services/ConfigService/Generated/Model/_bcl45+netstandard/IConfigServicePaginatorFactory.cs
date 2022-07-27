@@ -191,6 +191,11 @@ namespace Amazon.ConfigService.Model
         IListAggregateDiscoveredResourcesPaginator ListAggregateDiscoveredResources(ListAggregateDiscoveredResourcesRequest request);
 
         /// <summary>
+        /// Paginator for ListConformancePackComplianceScores operation
+        ///</summary>
+        IListConformancePackComplianceScoresPaginator ListConformancePackComplianceScores(ListConformancePackComplianceScoresRequest request);
+
+        /// <summary>
         /// Paginator for ListDiscoveredResources operation
         ///</summary>
         IListDiscoveredResourcesPaginator ListDiscoveredResources(ListDiscoveredResourcesRequest request);

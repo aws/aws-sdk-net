@@ -4469,6 +4469,62 @@ namespace Amazon.ConfigService
 
         #endregion
         
+        #region  ListConformancePackComplianceScores
+
+
+        /// <summary>
+        /// Returns a list of conformance pack compliance scores. A compliance score is the percentage
+        /// of the number of compliant rule-resource combinations in a conformance pack compared
+        /// to the number of total possible rule-resource combinations in the conformance pack.
+        /// This metric provides you with a high-level view of the compliance state of your conformance
+        /// packs, and can be used to identify, investigate, and understand compliance deviations
+        /// in your conformance packs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConformancePackComplianceScores service method.</param>
+        /// 
+        /// <returns>The response from the ListConformancePackComplianceScores service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidLimitException">
+        /// The specified limit is outside the allowable range.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListConformancePackComplianceScores">REST API Reference for ListConformancePackComplianceScores Operation</seealso>
+        ListConformancePackComplianceScoresResponse ListConformancePackComplianceScores(ListConformancePackComplianceScoresRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListConformancePackComplianceScores operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListConformancePackComplianceScores operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListConformancePackComplianceScores
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListConformancePackComplianceScores">REST API Reference for ListConformancePackComplianceScores Operation</seealso>
+        IAsyncResult BeginListConformancePackComplianceScores(ListConformancePackComplianceScoresRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListConformancePackComplianceScores operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListConformancePackComplianceScores.</param>
+        /// 
+        /// <returns>Returns a  ListConformancePackComplianceScoresResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListConformancePackComplianceScores">REST API Reference for ListConformancePackComplianceScores Operation</seealso>
+        ListConformancePackComplianceScoresResponse EndListConformancePackComplianceScores(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListDiscoveredResources
 
 

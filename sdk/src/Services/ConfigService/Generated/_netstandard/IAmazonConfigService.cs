@@ -3125,6 +3125,40 @@ namespace Amazon.ConfigService
 
         #endregion
                 
+        #region  ListConformancePackComplianceScores
+
+
+
+        /// <summary>
+        /// Returns a list of conformance pack compliance scores. A compliance score is the percentage
+        /// of the number of compliant rule-resource combinations in a conformance pack compared
+        /// to the number of total possible rule-resource combinations in the conformance pack.
+        /// This metric provides you with a high-level view of the compliance state of your conformance
+        /// packs, and can be used to identify, investigate, and understand compliance deviations
+        /// in your conformance packs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConformancePackComplianceScores service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListConformancePackComplianceScores service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidLimitException">
+        /// The specified limit is outside the allowable range.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListConformancePackComplianceScores">REST API Reference for ListConformancePackComplianceScores Operation</seealso>
+        Task<ListConformancePackComplianceScoresResponse> ListConformancePackComplianceScoresAsync(ListConformancePackComplianceScoresRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListDiscoveredResources
 
 

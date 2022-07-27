@@ -300,6 +300,14 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
+        /// Paginator for ListConformancePackComplianceScores operation
+        ///</summary>
+        public IListConformancePackComplianceScoresPaginator ListConformancePackComplianceScores(ListConformancePackComplianceScoresRequest request) 
+        {
+            return new ListConformancePackComplianceScoresPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDiscoveredResources operation
         ///</summary>
         public IListDiscoveredResourcesPaginator ListDiscoveredResources(ListDiscoveredResourcesRequest request) 
