@@ -1077,6 +1077,81 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  CreateWorkspaceImage
+
+        /// <summary>
+        /// Creates a new WorkSpace image from an existing WorkSpace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWorkspaceImage service method.</param>
+        /// 
+        /// <returns>The response from the CreateWorkspaceImage service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspaceImage">REST API Reference for CreateWorkspaceImage Operation</seealso>
+        public virtual CreateWorkspaceImageResponse CreateWorkspaceImage(CreateWorkspaceImageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateWorkspaceImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWorkspaceImageResponseUnmarshaller.Instance;
+
+            return Invoke<CreateWorkspaceImageResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateWorkspaceImage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateWorkspaceImage operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateWorkspaceImage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspaceImage">REST API Reference for CreateWorkspaceImage Operation</seealso>
+        public virtual IAsyncResult BeginCreateWorkspaceImage(CreateWorkspaceImageRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateWorkspaceImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWorkspaceImageResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateWorkspaceImage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateWorkspaceImage.</param>
+        /// 
+        /// <returns>Returns a  CreateWorkspaceImageResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspaceImage">REST API Reference for CreateWorkspaceImage Operation</seealso>
+        public virtual CreateWorkspaceImageResponse EndCreateWorkspaceImage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateWorkspaceImageResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateWorkspaces
 
         /// <summary>

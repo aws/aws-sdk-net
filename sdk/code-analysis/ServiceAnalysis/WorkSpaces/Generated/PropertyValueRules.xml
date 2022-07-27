@@ -133,6 +133,42 @@
     <pattern>wsi-[0-9a-z]{9,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.CreateWorkspaceImageRequest.Description</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9_./() -]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.CreateWorkspaceImageRequest.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_./()\\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.CreateWorkspaceImageRequest.WorkspaceId</property>
+    <pattern>^ws-[0-9a-z]{8,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.CreateWorkspaceImageResponse.Description</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9_./() -]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.CreateWorkspaceImageResponse.ImageId</property>
+    <pattern>wsi-[0-9a-z]{9,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.CreateWorkspaceImageResponse.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_./()\\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.CreateWorkspaceImageResponse.OwnerAccountId</property>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DeleteClientBrandingRequest.ResourceId</property>
     <min>10</min>
     <max>65</max>
