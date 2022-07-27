@@ -12072,7 +12072,7 @@ namespace Amazon.Chime
         /// <summary>
         /// Adds a streaming configuration for the specified Amazon Chime Voice Connector. The
         /// streaming configuration specifies whether media streaming is enabled for sending to
-        /// Indonesians. It also sets the retention period, in hours, for the Amazon Kinesis data.
+        /// Kinesis. It also sets the retention period, in hours, for the Amazon Kinesis data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutVoiceConnectorStreamingConfiguration service method.</param>
         /// 
@@ -15189,6 +15189,84 @@ namespace Amazon.Chime
         public virtual UpdateVoiceConnectorGroupResponse EndUpdateVoiceConnectorGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateVoiceConnectorGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ValidateE911Address
+
+        /// <summary>
+        /// Validates an address to be used for 911 calls made with Amazon Chime Voice Connectors.
+        /// You can use validated addresses in a Presence Information Data Format Location Object
+        /// file that you include in SIP requests. That helps ensure that addresses are routed
+        /// to the appropriate Public Safety Answering Point.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ValidateE911Address service method.</param>
+        /// 
+        /// <returns>The response from the ValidateE911Address service method, as returned by Chime.</returns>
+        /// <exception cref="Amazon.Chime.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.Chime.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ValidateE911Address">REST API Reference for ValidateE911Address Operation</seealso>
+        public virtual ValidateE911AddressResponse ValidateE911Address(ValidateE911AddressRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ValidateE911AddressRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ValidateE911AddressResponseUnmarshaller.Instance;
+
+            return Invoke<ValidateE911AddressResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ValidateE911Address operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ValidateE911Address operation on AmazonChimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndValidateE911Address
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ValidateE911Address">REST API Reference for ValidateE911Address Operation</seealso>
+        public virtual IAsyncResult BeginValidateE911Address(ValidateE911AddressRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ValidateE911AddressRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ValidateE911AddressResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ValidateE911Address operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginValidateE911Address.</param>
+        /// 
+        /// <returns>Returns a  ValidateE911AddressResult from Chime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ValidateE911Address">REST API Reference for ValidateE911Address Operation</seealso>
+        public virtual ValidateE911AddressResponse EndValidateE911Address(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ValidateE911AddressResponse>(asyncResult);
         }
 
         #endregion
