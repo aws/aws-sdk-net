@@ -83,8 +83,8 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property DnsName. 
         /// <para>
-        /// The Domain Name System (DNS) name that Global Accelerator creates that points to your
-        /// accelerator's static IP addresses. 
+        /// The Domain Name System (DNS) name that Global Accelerator creates that points to an
+        /// accelerator's static IPv4 addresses. 
         /// </para>
         ///  
         /// <para>
@@ -94,8 +94,14 @@ namespace Amazon.GlobalAccelerator.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about the default DNS name, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing">
-        /// Support for DNS Addressing in Global Accelerator</a> in the <i>AWS Global Accelerator
+        /// If you have a dual-stack accelerator, you also have a second DNS name, DualStackDnsName,
+        /// that points to both the A record and the AAAA record for all four static addresses
+        /// for the accelerator (two IPv4 addresses and two IPv6 addresses).
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about the default DNS name, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/dns-addressing-custom-domains.dns-addressing.html">
+        /// Support for DNS Addressing in Global Accelerator</a> in the <i>Global Accelerator
         /// Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -139,7 +145,8 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property IpAddressType. 
         /// <para>
-        /// The value for the address type must be IPv4.
+        /// The IP address type that an accelerator supports. For a custom routing accelerator,
+        /// the value must be IPV4.
         /// </para>
         /// </summary>
         public IpAddressType IpAddressType

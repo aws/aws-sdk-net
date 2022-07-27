@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
-    /// A complex type for the endpoint group. An AWS Region can have only one endpoint group
-    /// for a specific listener.
+    /// A complex type for the endpoint group. An Amazon Web Services Region can have only
+    /// one endpoint group for a specific listener.
     /// </summary>
     public partial class EndpointGroup
     {
@@ -85,7 +85,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property EndpointGroupRegion. 
         /// <para>
-        /// The AWS Region where the endpoint group is located.
+        /// The Amazon Web Services Region where the endpoint group is located.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]
@@ -191,7 +191,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// Gets and sets the property PortOverrides. 
         /// <para>
         /// Allows you to override the destination ports used to route traffic to an endpoint.
-        /// Using a port override lets you to map a list of external destination ports (that your
+        /// Using a port override lets you map a list of external destination ports (that your
         /// users send traffic to) to a list of internal destination ports that you want an application
         /// endpoint to receive traffic on. 
         /// </para>
@@ -232,8 +232,8 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property TrafficDialPercentage. 
         /// <para>
-        /// The percentage of traffic to send to an AWS Region. Additional traffic is distributed
-        /// to other endpoint groups for this listener. 
+        /// The percentage of traffic to send to an Amazon Web Services Region. Additional traffic
+        /// is distributed to other endpoint groups for this listener. 
         /// </para>
         ///  
         /// <para>

@@ -31,7 +31,7 @@ namespace Amazon.GlobalAccelerator.Model
     /// <summary>
     /// Container for the parameters to the CreateCustomRoutingEndpointGroup operation.
     /// Create an endpoint group for the specified listener for a custom routing accelerator.
-    /// An endpoint group is a collection of endpoints in one AWS Region.
+    /// An endpoint group is a collection of endpoints in one Amazon Web Services Region.
     /// </summary>
     public partial class CreateCustomRoutingEndpointGroupRequest : AmazonGlobalAcceleratorRequest
     {
@@ -63,8 +63,8 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property EndpointGroupRegion. 
         /// <para>
-        /// The AWS Region where the endpoint group is located. A listener can have only one endpoint
-        /// group in a specific Region.
+        /// The Amazon Web Services Region where the endpoint group is located. A listener can
+        /// have only one endpoint group in a specific Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]

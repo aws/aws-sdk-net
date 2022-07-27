@@ -469,11 +469,65 @@ namespace Amazon.GlobalAccelerator
 
 
     /// <summary>
+    /// Constants used for properties of type IpAddressFamily.
+    /// </summary>
+    public class IpAddressFamily : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IPv4 for IpAddressFamily
+        /// </summary>
+        public static readonly IpAddressFamily IPv4 = new IpAddressFamily("IPv4");
+        /// <summary>
+        /// Constant IPv6 for IpAddressFamily
+        /// </summary>
+        public static readonly IpAddressFamily IPv6 = new IpAddressFamily("IPv6");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IpAddressFamily(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IpAddressFamily FindValue(string value)
+        {
+            return FindValue<IpAddressFamily>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IpAddressFamily(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type IpAddressType.
     /// </summary>
     public class IpAddressType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant DUAL_STACK for IpAddressType
+        /// </summary>
+        public static readonly IpAddressType DUAL_STACK = new IpAddressType("DUAL_STACK");
         /// <summary>
         /// Constant IPV4 for IpAddressType
         /// </summary>

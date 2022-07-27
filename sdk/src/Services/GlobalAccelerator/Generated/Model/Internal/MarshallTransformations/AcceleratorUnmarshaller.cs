@@ -82,10 +82,22 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
                     unmarshalledObject.DnsName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DualStackDnsName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DualStackDnsName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Enabled", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Events", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AcceleratorEvent, AcceleratorEventUnmarshaller>(AcceleratorEventUnmarshaller.Instance);
+                    unmarshalledObject.Events = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("IpAddressType", targetDepth))

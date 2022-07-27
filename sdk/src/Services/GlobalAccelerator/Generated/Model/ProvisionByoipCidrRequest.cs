@@ -30,15 +30,15 @@ namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
     /// Container for the parameters to the ProvisionByoipCidr operation.
-    /// Provisions an IP address range to use with your AWS resources through bring your own
-    /// IP addresses (BYOIP) and creates a corresponding address pool. After the address range
-    /// is provisioned, it is ready to be advertised using <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/AdvertiseByoipCidr.html">
+    /// Provisions an IP address range to use with your Amazon Web Services resources through
+    /// bring your own IP addresses (BYOIP) and creates a corresponding address pool. After
+    /// the address range is provisioned, it is ready to be advertised using <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/AdvertiseByoipCidr.html">
     /// AdvertiseByoipCidr</a>.
     /// 
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
-    /// Your Own IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+    /// your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class ProvisionByoipCidrRequest : AmazonGlobalAcceleratorRequest

@@ -38,7 +38,9 @@ namespace Amazon.GlobalAccelerator.Model
         private string _acceleratorArn;
         private DateTime? _createdTime;
         private string _dnsName;
+        private string _dualStackDnsName;
         private bool? _enabled;
+        private List<AcceleratorEvent> _events = new List<AcceleratorEvent>();
         private IpAddressType _ipAddressType;
         private List<IpSet> _ipSets = new List<IpSet>();
         private DateTime? _lastModifiedTime;
@@ -85,19 +87,25 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property DnsName. 
         /// <para>
-        /// The Domain Name System (DNS) name that Global Accelerator creates that points to your
-        /// accelerator's static IP addresses. 
+        /// The Domain Name System (DNS) name that Global Accelerator creates that points to an
+        /// accelerator's static IPv4 addresses.
         /// </para>
         ///  
         /// <para>
-        /// The naming convention for the DNS name is the following: A lowercase letter a, followed
-        /// by a 16-bit random hex string, followed by .awsglobalaccelerator.com. For example:
-        /// a1234567890abcdef.awsglobalaccelerator.com.
+        /// The naming convention for the DNS name for an accelerator is the following: A lowercase
+        /// letter a, followed by a 16-bit random hex string, followed by .awsglobalaccelerator.com.
+        /// For example: a1234567890abcdef.awsglobalaccelerator.com.
         /// </para>
         ///  
         /// <para>
-        /// For more information about the default DNS name, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing">
-        /// Support for DNS Addressing in Global Accelerator</a> in the <i>AWS Global Accelerator
+        /// If you have a dual-stack accelerator, you also have a second DNS name, DualStackDnsName,
+        /// that points to both the A record and the AAAA record for all four static addresses
+        /// for the accelerator (two IPv4 addresses and two IPv6 addresses).
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about the default DNS name, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/dns-addressing-custom-domains.dns-addressing.html">
+        /// Support for DNS Addressing in Global Accelerator</a> in the <i>Global Accelerator
         /// Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -112,6 +120,44 @@ namespace Amazon.GlobalAccelerator.Model
         internal bool IsSetDnsName()
         {
             return this._dnsName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DualStackDnsName. 
+        /// <para>
+        /// The Domain Name System (DNS) name that Global Accelerator creates that points to a
+        /// dual-stack accelerator's four static IP addresses: two IPv4 addresses and two IPv6
+        /// addresses.
+        /// </para>
+        ///  
+        /// <para>
+        /// The naming convention for the dual-stack DNS name is the following: A lowercase letter
+        /// a, followed by a 16-bit random hex string, followed by .dualstack.awsglobalaccelerator.com.
+        /// For example: a1234567890abcdef.dualstack.awsglobalaccelerator.com.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note: Global Accelerator also assigns a default DNS name, DnsName, to your accelerator
+        /// that points just to the static IPv4 addresses. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing">
+        /// Support for DNS Addressing in Global Accelerator</a> in the <i>Global Accelerator
+        /// Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=255)]
+        public string DualStackDnsName
+        {
+            get { return this._dualStackDnsName; }
+            set { this._dualStackDnsName = value; }
+        }
+
+        // Check to see if DualStackDnsName property is set
+        internal bool IsSetDualStackDnsName()
+        {
+            return this._dualStackDnsName != null;
         }
 
         /// <summary>
@@ -139,9 +185,28 @@ namespace Amazon.GlobalAccelerator.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Events. 
+        /// <para>
+        /// A history of changes that you make to an accelerator in Global Accelerator.
+        /// </para>
+        /// </summary>
+        public List<AcceleratorEvent> Events
+        {
+            get { return this._events; }
+            set { this._events = value; }
+        }
+
+        // Check to see if Events property is set
+        internal bool IsSetEvents()
+        {
+            return this._events != null && this._events.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property IpAddressType. 
         /// <para>
-        /// The value for the address type must be IPv4. 
+        /// The IP address type that an accelerator supports. For a standard accelerator, the
+        /// value can be IPV4 or DUAL_STACK.
         /// </para>
         /// </summary>
         public IpAddressType IpAddressType

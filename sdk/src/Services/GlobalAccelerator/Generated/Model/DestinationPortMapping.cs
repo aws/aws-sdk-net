@@ -142,7 +142,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property EndpointGroupRegion. 
         /// <para>
-        /// The AWS Region for the endpoint group.
+        /// The Amazon Web Services Region for the endpoint group.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]
@@ -180,7 +180,8 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property IpAddressType. 
         /// <para>
-        /// The IP address type, which must be IPv4.
+        /// The IP address type that an accelerator supports. For a custom routing accelerator,
+        /// the value must be IPV4.
         /// </para>
         /// </summary>
         public IpAddressType IpAddressType

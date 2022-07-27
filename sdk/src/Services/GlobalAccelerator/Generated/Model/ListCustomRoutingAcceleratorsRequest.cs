@@ -30,7 +30,7 @@ namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
     /// Container for the parameters to the ListCustomRoutingAccelerators operation.
-    /// List the custom routing accelerators for an AWS account.
+    /// List the custom routing accelerators for an Amazon Web Services account.
     /// </summary>
     public partial class ListCustomRoutingAcceleratorsRequest : AmazonGlobalAcceleratorRequest
     {

@@ -35,8 +35,7 @@ namespace Amazon.GlobalAccelerator.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
-    /// in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.
-    /// 
+    /// in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>. 
     /// </para>
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonGlobalAcceleratorRequest

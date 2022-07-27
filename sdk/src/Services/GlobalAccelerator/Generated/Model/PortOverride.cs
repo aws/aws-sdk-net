@@ -37,7 +37,7 @@ namespace Amazon.GlobalAccelerator.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
-    /// Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+    /// Overriding listener ports</a> in the <i>Global Accelerator Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class PortOverride

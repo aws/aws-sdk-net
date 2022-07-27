@@ -34,6 +34,7 @@ namespace Amazon.GlobalAccelerator.Model
     public partial class IpSet
     {
         private List<string> _ipAddresses = new List<string>();
+        private IpAddressFamily _ipAddressFamily;
         private string _ipFamily;
 
         /// <summary>
@@ -57,11 +58,30 @@ namespace Amazon.GlobalAccelerator.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IpFamily. 
+        /// Gets and sets the property IpAddressFamily. 
         /// <para>
-        /// The types of IP addresses included in this IP set.
+        /// The types of IP addresses included in this IP set. 
         /// </para>
         /// </summary>
+        public IpAddressFamily IpAddressFamily
+        {
+            get { return this._ipAddressFamily; }
+            set { this._ipAddressFamily = value; }
+        }
+
+        // Check to see if IpAddressFamily property is set
+        internal bool IsSetIpAddressFamily()
+        {
+            return this._ipAddressFamily != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpFamily. 
+        /// <para>
+        /// IpFamily is deprecated and has been replaced by IpAddressFamily.
+        /// </para>
+        /// </summary>
+        [Obsolete("IpFamily has been replaced by IpAddressFamily")]
         [AWSProperty(Max=255)]
         public string IpFamily
         {

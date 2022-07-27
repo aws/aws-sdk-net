@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
-    /// A complex type for the endpoint group for a custom routing accelerator. An AWS Region
-    /// can have only one endpoint group for a specific listener.
+    /// A complex type for the endpoint group for a custom routing accelerator. An Amazon
+    /// Web Services Region can have only one endpoint group for a specific listener.
     /// </summary>
     public partial class CustomRoutingEndpointGroup
     {
@@ -99,7 +99,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property EndpointGroupRegion. 
         /// <para>
-        /// The AWS Region where the endpoint group is located.
+        /// The Amazon Web Services Region where the endpoint group is located.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]
