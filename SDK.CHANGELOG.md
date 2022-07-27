@@ -1,3 +1,7 @@
+### 3.7.322.1 (2022-07-26 22:51 UTC)
+* S3 (3.7.9.31)
+	* fix: ensure downloaded file path is always in target directory when using S3.IO.
+
 ### 3.7.322.0 (2022-07-26 18:19 UTC)
 * AppSync (3.7.5.0)
 	* Adds support for a new API to evaluate mapping templates with mock data, allowing you to remotely unit test your AppSync resolvers and functions.
