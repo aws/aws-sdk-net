@@ -735,6 +735,13 @@ namespace Amazon.AuditManager
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
         /// The resource that's specified in the request can't be found.
         /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ServiceQuotaExceededException">
+        /// You've reached your account quota for this resource type. To perform the requested
+        /// action, delete some existing resources or <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">request
+        /// a quota increase</a> from the Service Quotas console. For a list of Audit Manager
+        /// service quotas, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas
+        /// and restrictions for Audit Manager</a>.
+        /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
         /// </exception>
@@ -768,6 +775,13 @@ namespace Amazon.AuditManager
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
         /// The resource that's specified in the request can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ServiceQuotaExceededException">
+        /// You've reached your account quota for this resource type. To perform the requested
+        /// action, delete some existing resources or <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">request
+        /// a quota increase</a> from the Service Quotas console. For a list of Audit Manager
+        /// service quotas, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas
+        /// and restrictions for Audit Manager</a>.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
@@ -804,6 +818,13 @@ namespace Amazon.AuditManager
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
         /// The resource that's specified in the request can't be found.
         /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ServiceQuotaExceededException">
+        /// You've reached your account quota for this resource type. To perform the requested
+        /// action, delete some existing resources or <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">request
+        /// a quota increase</a> from the Service Quotas console. For a list of Audit Manager
+        /// service quotas, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas
+        /// and restrictions for Audit Manager</a>.
+        /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
         /// </exception>
@@ -837,6 +858,13 @@ namespace Amazon.AuditManager
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
         /// The resource that's specified in the request can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ServiceQuotaExceededException">
+        /// You've reached your account quota for this resource type. To perform the requested
+        /// action, delete some existing resources or <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">request
+        /// a quota increase</a> from the Service Quotas console. For a list of Audit Manager
+        /// service quotas, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas
+        /// and restrictions for Audit Manager</a>.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
@@ -942,6 +970,13 @@ namespace Amazon.AuditManager
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
         /// The resource that's specified in the request can't be found.
         /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ServiceQuotaExceededException">
+        /// You've reached your account quota for this resource type. To perform the requested
+        /// action, delete some existing resources or <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">request
+        /// a quota increase</a> from the Service Quotas console. For a list of Audit Manager
+        /// service quotas, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas
+        /// and restrictions for Audit Manager</a>.
+        /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
         /// </exception>
@@ -975,6 +1010,13 @@ namespace Amazon.AuditManager
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
         /// The resource that's specified in the request can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ServiceQuotaExceededException">
+        /// You've reached your account quota for this resource type. To perform the requested
+        /// action, delete some existing resources or <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">request
+        /// a quota increase</a> from the Service Quotas console. For a list of Audit Manager
+        /// service quotas, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas
+        /// and restrictions for Audit Manager</a>.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
@@ -4614,6 +4656,13 @@ namespace Amazon.AuditManager
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
         /// The resource that's specified in the request can't be found.
         /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ServiceQuotaExceededException">
+        /// You've reached your account quota for this resource type. To perform the requested
+        /// action, delete some existing resources or <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">request
+        /// a quota increase</a> from the Service Quotas console. For a list of Audit Manager
+        /// service quotas, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas
+        /// and restrictions for Audit Manager</a>.
+        /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
         /// </exception>
@@ -4647,6 +4696,13 @@ namespace Amazon.AuditManager
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
         /// The resource that's specified in the request can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ServiceQuotaExceededException">
+        /// You've reached your account quota for this resource type. To perform the requested
+        /// action, delete some existing resources or <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">request
+        /// a quota increase</a> from the Service Quotas console. For a list of Audit Manager
+        /// service quotas, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas
+        /// and restrictions for Audit Manager</a>.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.

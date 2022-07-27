@@ -30,7 +30,34 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// The keyword to search for in CloudTrail logs, Config rules, Security Hub checks,
-    /// and Amazon Web Services API names.
+    /// and Amazon Web Services API names. 
+    /// 
+    ///  
+    /// <para>
+    ///  To learn more about the supported keywords that you can use when mapping a control
+    /// data source, see the following pages in the <i>Audit Manager User Guide</i>:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-ash.html">Config
+    /// rules supported by Audit Manager</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-config.html">Security
+    /// Hub controls supported by Audit Manager</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-api.html">API
+    /// calls supported by Audit Manager</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-cloudtrail.html">CloudTrail
+    /// event names supported by Audit Manager</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class SourceKeyword
     {
