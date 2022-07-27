@@ -1,3 +1,24 @@
+### 3.7.323.0 (2022-07-27 18:59 UTC)
+* AuditManager (3.7.11.0)
+	* This release adds an exceeded quota exception to several APIs. We added a ServiceQuotaExceededException for the following operations: CreateAssessment, CreateControl, CreateAssessmentFramework, and UpdateAssessmentStatus.
+* Chime (3.7.16.0)
+	* Chime VoiceConnector will now support ValidateE911Address which will allow customers to prevalidate their addresses included in their SIP invites for emergency calling
+* ConfigService (3.7.11.0)
+	* This release adds ListConformancePackComplianceScores API to support the new compliance score feature, which provides a percentage of the number of compliant rule-resource combinations in a conformance pack compared to the number of total possible rule-resource combinations in the conformance pack.
+* GlobalAccelerator (3.7.1.0)
+	* Global Accelerator now supports dual-stack accelerators, enabling support for IPv4 and IPv6 traffic.
+* MarketplaceCatalog (3.7.2.0)
+	* The SDK for the StartChangeSet API will now automatically set and use an idempotency token in the ClientRequestToken request parameter if the customer does not provide it.
+* Polly (3.7.7.0)
+	* Amazon Polly adds new English and Hindi voice - Kajal. Kajal is available as Neural voice only.
+* SimpleSystemsManagement (3.7.17.31)
+	* Adding doc updates for OpsCenter support in Service Setting actions.
+* WorkSpaces (3.7.9.0)
+	* Added CreateWorkspaceImage API to create a new WorkSpace image from an existing WorkSpace.
+* Core 3.7.12.14
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.322.1 (2022-07-26 22:51 UTC)
 * S3 (3.7.9.31)
 	* fix: ensure downloaded file path is always in target directory when using S3.IO.
