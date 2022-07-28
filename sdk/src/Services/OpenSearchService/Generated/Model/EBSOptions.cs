@@ -35,6 +35,7 @@ namespace Amazon.OpenSearchService.Model
     {
         private bool? _ebsEnabled;
         private int? _iops;
+        private int? _throughput;
         private int? _volumeSize;
         private VolumeType _volumeType;
 
@@ -59,7 +60,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Iops. 
         /// <para>
-        /// The IOPD for a Provisioned IOPS EBS volume (SSD).
+        /// The IOPS for Provisioned IOPS And GP3 EBS volume (SSD).
         /// </para>
         /// </summary>
         public int Iops
@@ -72,6 +73,24 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetIops()
         {
             return this._iops.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Throughput. 
+        /// <para>
+        /// The Throughput for GP3 EBS volume (SSD).
+        /// </para>
+        /// </summary>
+        public int Throughput
+        {
+            get { return this._throughput.GetValueOrDefault(); }
+            set { this._throughput = value; }
+        }
+
+        // Check to see if Throughput property is set
+        internal bool IsSetThroughput()
+        {
+            return this._throughput.HasValue; 
         }
 
         /// <summary>

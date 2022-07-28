@@ -57,6 +57,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Iops);
             }
 
+            if(requestObject.IsSetThroughput())
+            {
+                context.Writer.WritePropertyName("Throughput");
+                context.Writer.Write(requestObject.Throughput);
+            }
+
             if(requestObject.IsSetVolumeSize())
             {
                 context.Writer.WritePropertyName("VolumeSize");

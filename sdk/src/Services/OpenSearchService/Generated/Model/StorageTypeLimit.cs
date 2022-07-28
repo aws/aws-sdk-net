@@ -47,7 +47,10 @@ namespace Amazon.OpenSearchService.Model
         /// empty if not applicable. <li>MaximumIops</li> Maximum amount of Iops that is applicable
         /// for given the storage type. Can be empty if not applicable. <li>MinimumIops</li> Minimum
         /// amount of Iops that is applicable for given the storage type. Can be empty if not
-        /// applicable. </ol> 
+        /// applicable. <li>MaximumThroughput</li> Maximum amount of Throughput that is applicable
+        /// for given the storage type. Can be empty if not applicable. <li>MinimumThroughput</li>
+        /// Minimum amount of Throughput that is applicable for given the storage type. Can be
+        /// empty if not applicable. </ol> 
         /// </para>
         /// </summary>
         public string LimitName
