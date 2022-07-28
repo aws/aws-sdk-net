@@ -1607,6 +1607,10 @@ namespace Amazon.Elasticsearch
         /// </summary>
         public static readonly VolumeType Gp2 = new VolumeType("gp2");
         /// <summary>
+        /// Constant Gp3 for VolumeType
+        /// </summary>
+        public static readonly VolumeType Gp3 = new VolumeType("gp3");
+        /// <summary>
         /// Constant Io1 for VolumeType
         /// </summary>
         public static readonly VolumeType Io1 = new VolumeType("io1");
