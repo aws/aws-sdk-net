@@ -288,7 +288,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a instances)
+        /// Default: <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a/T4g
+        /// instances)
         /// </para>
         ///  
         /// <para>

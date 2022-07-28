@@ -640,9 +640,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SecurityGroups. 
         /// <para>
-        /// [EC2-Classic, default VPC] One or more security group names. For a nondefault VPC,
-        /// you must use security group IDs instead. You cannot specify both a security group
-        /// ID and security name in the same request.
+        /// One or more security group names. For a nondefault VPC, you must use security group
+        /// IDs instead. You cannot specify both a security group ID and security name in the
+        /// same request.
         /// </para>
         /// </summary>
         public List<string> SecurityGroups

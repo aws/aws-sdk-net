@@ -37,7 +37,8 @@ namespace Amazon.EC2.Model
     /// <para>
     /// An outbound rule permits instances to send traffic to the specified IPv4 or IPv6 CIDR
     /// address ranges, or to the instances that are associated with the specified source
-    /// security groups.
+    /// security groups. When specifying an outbound rule for your security group in a VPC,
+    /// the <code>IpPermissions</code> must include a destination for the traffic.
     /// </para>
     ///  
     /// <para>

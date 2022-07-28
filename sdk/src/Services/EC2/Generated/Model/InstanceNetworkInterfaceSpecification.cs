@@ -61,8 +61,8 @@ namespace Amazon.EC2.Model
         ///  
         /// <para>
         /// You can only assign a carrier IP address to a network interface that is in a subnet
-        /// in a Wavelength Zone. For more information about carrier IP addresses, see Carrier
-        /// IP addresses in the Amazon Web Services Wavelength Developer Guide.
+        /// in a Wavelength Zone. For more information about carrier IP addresses, see <a href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip">Carrier
+        /// IP address</a> in the <i>Amazon Web Services Wavelength Developer Guide</i>.
         /// </para>
         /// </summary>
         public bool AssociateCarrierIpAddress

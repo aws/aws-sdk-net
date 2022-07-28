@@ -1076,7 +1076,8 @@ namespace Amazon.EC2
         /// <para>
         /// An outbound rule permits instances to send traffic to the specified IPv4 or IPv6 CIDR
         /// address ranges, or to the instances that are associated with the specified source
-        /// security groups.
+        /// security groups. When specifying an outbound rule for your security group in a VPC,
+        /// the <code>IpPermissions</code> must include a destination for the traffic.
         /// </para>
         ///  
         /// <para>
@@ -1118,7 +1119,8 @@ namespace Amazon.EC2
         /// <para>
         /// An inbound rule permits instances to receive traffic from the specified IPv4 or IPv6
         /// CIDR address range, or from the instances that are associated with the specified destination
-        /// security groups.
+        /// security groups. When specifying an inbound rule for your security group in a VPC,
+        /// the <code>IpPermissions</code> must include a source for the traffic.
         /// </para>
         ///  
         /// <para>
@@ -1136,6 +1138,13 @@ namespace Amazon.EC2
         /// For more information about VPC security group quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
         /// VPC quotas</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AuthorizeSecurityGroupIngress service method.</param>
         /// <param name="cancellationToken">
@@ -2849,6 +2858,13 @@ namespace Amazon.EC2
         /// For more information about VPC security group limits, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
         /// VPC Limits</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSecurityGroup service method.</param>
         /// <param name="cancellationToken">
@@ -4555,6 +4571,13 @@ namespace Amazon.EC2
         /// is referenced by another security group, the operation fails with <code>InvalidGroup.InUse</code>
         /// in EC2-Classic or <code>DependencyViolation</code> in EC2-VPC.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSecurityGroup service method.</param>
         /// <param name="cancellationToken">
@@ -5422,7 +5445,13 @@ namespace Amazon.EC2
         ///  <code>vpc-max-elastic-ips</code>: The maximum number of Elastic IP addresses that
         /// you can allocate for use with EC2-VPC.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -5469,7 +5498,13 @@ namespace Amazon.EC2
         ///  <code>vpc-max-elastic-ips</code>: The maximum number of Elastic IP addresses that
         /// you can allocate for use with EC2-VPC.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountAttributes service method.</param>
         /// <param name="cancellationToken">
@@ -8024,6 +8059,13 @@ namespace Amazon.EC2
         /// <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
         /// groups for your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -8046,6 +8088,13 @@ namespace Amazon.EC2
         /// <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
         /// groups for your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityGroups service method.</param>
         /// <param name="cancellationToken">
@@ -14440,6 +14489,13 @@ namespace Amazon.EC2
         /// Rule changes are propagated to instances within the security group as quickly as possible.
         /// However, a small delay might occur.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RevokeSecurityGroupIngress service method.</param>
         /// <param name="cancellationToken">

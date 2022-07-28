@@ -36,7 +36,8 @@ namespace Amazon.EC2.Model
     /// <para>
     /// An inbound rule permits instances to receive traffic from the specified IPv4 or IPv6
     /// CIDR address range, or from the instances that are associated with the specified destination
-    /// security groups.
+    /// security groups. When specifying an inbound rule for your security group in a VPC,
+    /// the <code>IpPermissions</code> must include a source for the traffic.
     /// </para>
     ///  
     /// <para>
@@ -54,6 +55,13 @@ namespace Amazon.EC2.Model
     /// For more information about VPC security group quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
     /// VPC quotas</a>.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+    /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+    /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class AuthorizeSecurityGroupIngressRequest : AmazonEC2Request
     {
