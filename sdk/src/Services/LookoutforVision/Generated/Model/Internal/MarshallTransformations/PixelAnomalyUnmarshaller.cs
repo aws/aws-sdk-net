@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DetectAnomalyResult Object
+    /// Response Unmarshaller for PixelAnomaly Object
     /// </summary>  
-    public class DetectAnomalyResultUnmarshaller : IUnmarshaller<DetectAnomalyResult, XmlUnmarshallerContext>, IUnmarshaller<DetectAnomalyResult, JsonUnmarshallerContext>
+    public class PixelAnomalyUnmarshaller : IUnmarshaller<PixelAnomaly, XmlUnmarshallerContext>, IUnmarshaller<PixelAnomaly, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DetectAnomalyResult IUnmarshaller<DetectAnomalyResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PixelAnomaly IUnmarshaller<PixelAnomaly, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,27 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DetectAnomalyResult Unmarshall(JsonUnmarshallerContext context)
+        public PixelAnomaly Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DetectAnomalyResult unmarshalledObject = new DetectAnomalyResult();
+            PixelAnomaly unmarshalledObject = new PixelAnomaly();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Anomalies", targetDepth))
+                if (context.TestExpression("Color", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Anomaly, AnomalyUnmarshaller>(AnomalyUnmarshaller.Instance);
-                    unmarshalledObject.Anomalies = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Color = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("AnomalyMask", targetDepth))
-                {
-                    var unmarshaller = MemoryStreamUnmarshaller.Instance;
-                    unmarshalledObject.AnomalyMask = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Confidence", targetDepth))
+                if (context.TestExpression("TotalPercentageArea", targetDepth))
                 {
                     var unmarshaller = FloatUnmarshaller.Instance;
-                    unmarshalledObject.Confidence = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("IsAnomalous", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.IsAnomalous = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Source", targetDepth))
-                {
-                    var unmarshaller = ImageSourceUnmarshaller.Instance;
-                    unmarshalledObject.Source = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalPercentageArea = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +82,12 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
         }
 
 
-        private static DetectAnomalyResultUnmarshaller _instance = new DetectAnomalyResultUnmarshaller();        
+        private static PixelAnomalyUnmarshaller _instance = new PixelAnomalyUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DetectAnomalyResultUnmarshaller Instance
+        public static PixelAnomalyUnmarshaller Instance
         {
             get
             {

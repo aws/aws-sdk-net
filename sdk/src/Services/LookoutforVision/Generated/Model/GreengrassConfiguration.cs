@@ -54,8 +54,7 @@ namespace Amazon.LookoutforVision.Model
         /// Gets and sets the property CompilerOptions. 
         /// <para>
         /// Additional compiler options for the Greengrass component. Currently, only NVIDIA Graphics
-        /// Processing Units (GPU) are supported. If you specify <code>TargetPlatform</code>,
-        /// you must specify <code>CompilerOptions</code>. If you specify <code>TargetDevice</code>,
+        /// Processing Units (GPU) and CPU accelerators are supported. If you specify <code>TargetDevice</code>,
         /// don't specify <code>CompilerOptions</code>.
         /// </para>
         ///  

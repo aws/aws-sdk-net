@@ -1034,6 +1034,8 @@ namespace Amazon.LookoutforVision
         /// <para>
         /// The response from <code>DetectAnomalies</code> includes a boolean prediction that
         /// the image contains one or more anomalies and a confidence value for the prediction.
+        /// If the model is an image segmentation model, the response also includes segmentation
+        /// information for each type of anomaly found in the image.
         /// </para>
         ///  <note> 
         /// <para>
@@ -1044,6 +1046,11 @@ namespace Amazon.LookoutforVision
         /// 
         /// </para>
         ///  </note> 
+        /// <para>
+        /// For more information, see <i>Detecting anomalies in an image</i> in the Amazon Lookout
+        /// for Vision developer guide.
+        /// </para>
+        ///  
         /// <para>
         /// This operation requires permissions to perform the <code>lookoutvision:DetectAnomalies</code>
         /// operation.
@@ -1084,6 +1091,8 @@ namespace Amazon.LookoutforVision
         /// <para>
         /// The response from <code>DetectAnomalies</code> includes a boolean prediction that
         /// the image contains one or more anomalies and a confidence value for the prediction.
+        /// If the model is an image segmentation model, the response also includes segmentation
+        /// information for each type of anomaly found in the image.
         /// </para>
         ///  <note> 
         /// <para>
@@ -1094,6 +1103,11 @@ namespace Amazon.LookoutforVision
         /// 
         /// </para>
         ///  </note> 
+        /// <para>
+        /// For more information, see <i>Detecting anomalies in an image</i> in the Amazon Lookout
+        /// for Vision developer guide.
+        /// </para>
+        ///  
         /// <para>
         /// This operation requires permissions to perform the <code>lookoutvision:DetectAnomalies</code>
         /// operation.
