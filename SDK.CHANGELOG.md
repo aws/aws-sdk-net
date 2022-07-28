@@ -1,3 +1,16 @@
+### 3.7.324.0 (2022-07-28 18:17 UTC)
+* EC2 (3.7.79.2)
+	* Documentation updates for VM Import/Export.
+* Elasticsearch (3.7.6.0)
+	* This release adds support for gp3 EBS (Elastic Block Store) storage.
+* LookoutforVision (3.7.4.0)
+	* This release introduces support for image segmentation models and updates CPU accelerator options for models hosted on edge devices.
+* OpenSearchService (3.7.5.0)
+	* This release adds support for gp3 EBS (Elastic Block Store) storage.
+* Core 3.7.12.15
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.323.0 (2022-07-27 18:59 UTC)
 * AuditManager (3.7.11.0)
 	* This release adds an exceeded quota exception to several APIs. We added a ServiceQuotaExceededException for the following operations: CreateAssessment, CreateControl, CreateAssessmentFramework, and UpdateAssessmentStatus.
