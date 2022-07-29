@@ -1547,8 +1547,7 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Lists tags for an Amazon FSx file systems and backups in the case of Amazon FSx for
-        /// Windows File Server.
+        /// Lists tags for Amazon FSx resources.
         /// 
         ///  
         /// <para>
