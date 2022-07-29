@@ -56,7 +56,10 @@ namespace Amazon.Shield.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TimeRange.
+        /// Gets and sets the property TimeRange. 
+        /// <para>
+        /// The time range of the attack.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public TimeRange TimeRange

@@ -67,6 +67,17 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetInclusionFilters())
+                {
+                    context.Writer.WritePropertyName("InclusionFilters");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = InclusionProtectionFiltersMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.InclusionFilters, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");

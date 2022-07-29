@@ -30,12 +30,13 @@ namespace Amazon.Shield.Model
 {
     /// <summary>
     /// Container for the parameters to the EnableApplicationLayerAutomaticResponse operation.
-    /// Enable the Shield Advanced automatic application layer DDoS mitigation for the resource.
-    /// 
+    /// Enable the Shield Advanced automatic application layer DDoS mitigation for the protected
+    /// resource. 
     /// 
     ///  <note> 
     /// <para>
-    /// This feature is available for Amazon CloudFront distributions only.
+    /// This feature is available for Amazon CloudFront distributions and Application Load
+    /// Balancers only.
     /// </para>
     ///  </note> 
     /// <para>
@@ -45,25 +46,21 @@ namespace Amazon.Shield.Model
     /// about how automatic mitigation works and the requirements for using it, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-advanced-automatic-app-layer-response.html">Shield
     /// Advanced automatic application layer DDoS mitigation</a>.
     /// </para>
-    ///  
+    ///  <note> 
     /// <para>
     /// Don't use this action to make changes to automatic mitigation settings when it's already
     /// enabled for a resource. Instead, use <a>UpdateApplicationLayerAutomaticResponse</a>.
     /// </para>
-    ///  
+    ///  </note> 
     /// <para>
     /// To use this feature, you must associate a web ACL with the protected resource. The
     /// web ACL must be created using the latest version of WAF (v2). You can associate the
     /// web ACL through the Shield Advanced console at <a href="https://console.aws.amazon.com/wafv2/shieldv2#/">https://console.aws.amazon.com/wafv2/shieldv2#/</a>.
     /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html">Getting
-    /// Started with Shield Advanced</a>.
-    /// </para>
-    ///  
-    /// <para>
-    /// You can also do this through the WAF console or the WAF API, but you must manage Shield
-    /// Advanced automatic mitigation through Shield Advanced. For information about WAF,
-    /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">WAF Developer
-    /// Guide</a>.
+    /// Started with Shield Advanced</a>. You can also associate the web ACL to the resource
+    /// through the WAF console or the WAF API, but you must manage Shield Advanced automatic
+    /// mitigation through Shield Advanced. For information about WAF, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">WAF
+    /// Developer Guide</a>.
     /// </para>
     /// </summary>
     public partial class EnableApplicationLayerAutomaticResponseRequest : AmazonShieldRequest
@@ -98,7 +95,7 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN (Amazon Resource Name) of the resource.
+        /// The ARN (Amazon Resource Name) of the protected resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Shield.Model
 {
     /// <summary>
-    /// The ARN of the role that you specifed does not exist.
+    /// The ARN of the role that you specified does not exist.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

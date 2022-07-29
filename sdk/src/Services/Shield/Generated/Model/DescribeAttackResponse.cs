@@ -38,7 +38,7 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property Attack. 
         /// <para>
-        /// The attack that is described.
+        /// The attack that you requested. 
         /// </para>
         /// </summary>
         public AttackDetail Attack
