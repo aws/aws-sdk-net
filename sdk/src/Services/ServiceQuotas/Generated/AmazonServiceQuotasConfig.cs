@@ -32,7 +32,7 @@ namespace Amazon.ServiceQuotas
     public partial class AmazonServiceQuotasConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.186");
+            InternalSDKUtils.BuildUserAgentString("3.7.0.187");
 
         private string _userAgent = UserAgentString;
 

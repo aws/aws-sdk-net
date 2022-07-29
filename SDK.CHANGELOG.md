@@ -1,3 +1,14 @@
+### 3.7.325.0 (2022-07-29 18:17 UTC)
+* EC2 (3.7.80.0)
+	* Documentation updates for Amazon EC2.
+* FSx (3.7.13.24)
+	* Documentation updates for Amazon FSx
+* Shield (3.7.3.0)
+	* AWS Shield Advanced now supports filtering for ListProtections and ListProtectionGroups.
+* Core 3.7.12.16
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.324.0 (2022-07-28 18:17 UTC)
 * EC2 (3.7.79.2)
 	* Documentation updates for VM Import/Export.
