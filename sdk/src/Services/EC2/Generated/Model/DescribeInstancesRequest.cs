@@ -58,6 +58,13 @@ namespace Amazon.EC2.Model
     /// do not specify any instance IDs at all, the call fails. If you describe instances
     /// and specify only instance IDs that are in an unaffected zone, the call works normally.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+    /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+    /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeInstancesRequest : AmazonEC2Request
     {

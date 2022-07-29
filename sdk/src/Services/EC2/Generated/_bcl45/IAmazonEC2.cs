@@ -403,6 +403,13 @@ namespace Amazon.EC2
         /// carrier, to a network interface which resides in a subnet in a Wavelength Zone (for
         /// example an EC2 instance). 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the AllocateAddress service method, as returned by EC2.</returns>
@@ -449,6 +456,13 @@ namespace Amazon.EC2
         /// carrier, to a network interface which resides in a subnet in a Wavelength Zone (for
         /// example an EC2 instance). 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AllocateAddress service method.</param>
         /// 
@@ -496,6 +510,13 @@ namespace Amazon.EC2
         /// carrier, to a network interface which resides in a subnet in a Wavelength Zone (for
         /// example an EC2 instance). 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -546,6 +567,13 @@ namespace Amazon.EC2
         /// carrier, to a network interface which resides in a subnet in a Wavelength Zone (for
         /// example an EC2 instance). 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AllocateAddress service method.</param>
         /// <param name="cancellationToken">
@@ -865,7 +893,13 @@ namespace Amazon.EC2
         /// is remapped to the same instance. For more information, see the <i>Elastic IP Addresses</i>
         /// section of <a href="http://aws.amazon.com/ec2/pricing/">Amazon EC2 Pricing</a>.
         /// </para>
-        ///  </important>
+        ///  </important> <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateAddress service method.</param>
         /// 
@@ -919,7 +953,13 @@ namespace Amazon.EC2
         /// is remapped to the same instance. For more information, see the <i>Elastic IP Addresses</i>
         /// section of <a href="http://aws.amazon.com/ec2/pricing/">Amazon EC2 Pricing</a>.
         /// </para>
-        ///  </important>
+        ///  </important> <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateAddress service method.</param>
         /// <param name="cancellationToken">
@@ -1484,12 +1524,20 @@ namespace Amazon.EC2
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Links an EC2-Classic instance to a ClassicLink-enabled VPC through one or more of
         /// the VPC's security groups. You cannot link an EC2-Classic instance to more than one
         /// VPC at a time. You can only link an instance that's in the <code>running</code> state.
         /// An instance is automatically unlinked from a VPC when it's stopped - you can link
         /// it to the VPC again when you restart it.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// After you've linked an instance, you cannot change the VPC security groups that are
@@ -1510,12 +1558,20 @@ namespace Amazon.EC2
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Links an EC2-Classic instance to a ClassicLink-enabled VPC through one or more of
         /// the VPC's security groups. You cannot link an EC2-Classic instance to more than one
         /// VPC at a time. You can only link an instance that's in the <code>running</code> state.
         /// An instance is automatically unlinked from a VPC when it's stopped - you can link
         /// it to the VPC again when you restart it.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// After you've linked an instance, you cannot change the VPC security groups that are
@@ -2965,6 +3021,13 @@ namespace Amazon.EC2
         /// Is that possible?" in the <a href="http://aws.amazon.com/vpc/faqs/#Default_VPCs">Default
         /// VPCs FAQ</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDefaultVpc service method.</param>
         /// 
@@ -2994,6 +3057,13 @@ namespace Amazon.EC2
         /// Is that possible?" in the <a href="http://aws.amazon.com/vpc/faqs/#Default_VPCs">Default
         /// VPCs FAQ</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDefaultVpc service method.</param>
         /// <param name="cancellationToken">
@@ -9419,6 +9489,13 @@ namespace Amazon.EC2
         /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
         /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeAddresses service method, as returned by EC2.</returns>
@@ -9435,6 +9512,13 @@ namespace Amazon.EC2
         /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
         /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAddresses service method.</param>
         /// 
@@ -9452,6 +9536,13 @@ namespace Amazon.EC2
         /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
         /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -9472,6 +9563,13 @@ namespace Amazon.EC2
         /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
         /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAddresses service method.</param>
         /// <param name="cancellationToken">
@@ -9889,6 +9987,14 @@ namespace Amazon.EC2
         /// Describes one or more of your linked EC2-Classic instances. This request only returns
         /// information about EC2-Classic instances linked to a VPC through ClassicLink. You cannot
         /// use this request to return information about other instances.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeClassicLinkInstances service method.</param>
         /// 
@@ -9902,6 +10008,14 @@ namespace Amazon.EC2
         /// Describes one or more of your linked EC2-Classic instances. This request only returns
         /// information about EC2-Classic instances linked to a VPC through ClassicLink. You cannot
         /// use this request to return information about other instances.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeClassicLinkInstances service method.</param>
         /// <param name="cancellationToken">
@@ -11489,6 +11603,13 @@ namespace Amazon.EC2
         /// do not specify any instance IDs at all, the call fails. If you describe instances
         /// and specify only instance IDs that are in an unaffected zone, the call works normally.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeInstances service method, as returned by EC2.</returns>
@@ -11525,6 +11646,13 @@ namespace Amazon.EC2
         /// do not specify any instance IDs at all, the call fails. If you describe instances
         /// and specify only instance IDs that are in an unaffected zone, the call works normally.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstances service method.</param>
         /// 
@@ -11562,6 +11690,13 @@ namespace Amazon.EC2
         /// do not specify any instance IDs at all, the call fails. If you describe instances
         /// and specify only instance IDs that are in an unaffected zone, the call works normally.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -11602,6 +11737,13 @@ namespace Amazon.EC2
         /// do not specify any instance IDs at all, the call fails. If you describe instances
         /// and specify only instance IDs that are in an unaffected zone, the call works normally.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstances service method.</param>
         /// <param name="cancellationToken">
@@ -13038,6 +13180,13 @@ namespace Amazon.EC2
         /// For more information about Reserved Instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
         /// Instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeReservedInstances service method, as returned by EC2.</returns>
@@ -13053,6 +13202,13 @@ namespace Amazon.EC2
         /// For more information about Reserved Instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
         /// Instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedInstances service method.</param>
         /// 
@@ -13069,6 +13225,13 @@ namespace Amazon.EC2
         /// For more information about Reserved Instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
         /// Instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -13088,6 +13251,13 @@ namespace Amazon.EC2
         /// For more information about Reserved Instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
         /// Instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedInstances service method.</param>
         /// <param name="cancellationToken">
@@ -13271,6 +13441,13 @@ namespace Amazon.EC2
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
         /// Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeReservedInstancesModifications service method, as returned by EC2.</returns>
@@ -13289,6 +13466,13 @@ namespace Amazon.EC2
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
         /// Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedInstancesModifications service method.</param>
         /// 
@@ -13308,6 +13492,13 @@ namespace Amazon.EC2
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
         /// Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -13330,6 +13521,13 @@ namespace Amazon.EC2
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
         /// Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedInstancesModifications service method.</param>
         /// <param name="cancellationToken">
@@ -13362,6 +13560,13 @@ namespace Amazon.EC2
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
         /// Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeReservedInstancesOfferings service method, as returned by EC2.</returns>
@@ -13386,6 +13591,13 @@ namespace Amazon.EC2
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
         /// Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedInstancesOfferings service method.</param>
         /// 
@@ -13411,6 +13623,13 @@ namespace Amazon.EC2
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
         /// Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -13439,6 +13658,13 @@ namespace Amazon.EC2
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
         /// Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedInstancesOfferings service method.</param>
         /// <param name="cancellationToken">
@@ -13566,6 +13792,13 @@ namespace Amazon.EC2
         /// After you find a schedule that meets your needs, call <a>PurchaseScheduledInstances</a>
         /// to purchase Scheduled Instances with that schedule.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeScheduledInstanceAvailability service method.</param>
         /// 
@@ -13590,6 +13823,13 @@ namespace Amazon.EC2
         /// After you find a schedule that meets your needs, call <a>PurchaseScheduledInstances</a>
         /// to purchase Scheduled Instances with that schedule.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeScheduledInstanceAvailability service method.</param>
         /// <param name="cancellationToken">
@@ -13607,6 +13847,14 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the specified Scheduled Instances or all your Scheduled Instances.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeScheduledInstances service method.</param>
         /// 
@@ -13618,6 +13866,14 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the specified Scheduled Instances or all your Scheduled Instances.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeScheduledInstances service method.</param>
         /// <param name="cancellationToken">
@@ -15764,6 +16020,14 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the ClassicLink status of one or more VPCs.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpcClassicLink service method.</param>
         /// 
@@ -15775,6 +16039,14 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the ClassicLink status of one or more VPCs.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpcClassicLink service method.</param>
         /// <param name="cancellationToken">
@@ -15791,12 +16063,21 @@ namespace Amazon.EC2
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Describes the ClassicLink DNS support status of one or more VPCs. If enabled, the
         /// DNS hostname of a linked EC2-Classic instance resolves to its private IP address when
         /// addressed from an instance in the VPC to which it's linked. Similarly, the DNS hostname
         /// of an instance in a VPC resolves to its private IP address when addressed from a linked
         /// EC2-Classic instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
         /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpcClassicLinkDnsSupport service method.</param>
         /// 
@@ -15807,12 +16088,21 @@ namespace Amazon.EC2
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Describes the ClassicLink DNS support status of one or more VPCs. If enabled, the
         /// DNS hostname of a linked EC2-Classic instance resolves to its private IP address when
         /// addressed from an instance in the VPC to which it's linked. Similarly, the DNS hostname
         /// of an instance in a VPC resolves to its private IP address when addressed from a linked
         /// EC2-Classic instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
         /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpcClassicLinkDnsSupport service method.</param>
         /// <param name="cancellationToken">
@@ -16273,9 +16563,18 @@ namespace Amazon.EC2
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Unlinks (detaches) a linked EC2-Classic instance from a VPC. After the instance has
         /// been unlinked, the VPC security groups are no longer associated with it. An instance
         /// is automatically unlinked from a VPC when it's stopped.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachClassicLinkVpc service method.</param>
         /// 
@@ -16286,9 +16585,18 @@ namespace Amazon.EC2
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Unlinks (detaches) a linked EC2-Classic instance from a VPC. After the instance has
         /// been unlinked, the VPC security groups are no longer associated with it. An instance
         /// is automatically unlinked from a VPC when it's stopped.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachClassicLinkVpc service method.</param>
         /// <param name="cancellationToken">
@@ -16775,6 +17083,14 @@ namespace Amazon.EC2
         /// <summary>
         /// Disables ClassicLink for a VPC. You cannot disable ClassicLink for a VPC that has
         /// EC2-Classic instances linked to it.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableVpcClassicLink service method.</param>
         /// 
@@ -16787,6 +17103,14 @@ namespace Amazon.EC2
         /// <summary>
         /// Disables ClassicLink for a VPC. You cannot disable ClassicLink for a VPC that has
         /// EC2-Classic instances linked to it.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableVpcClassicLink service method.</param>
         /// <param name="cancellationToken">
@@ -16812,6 +17136,13 @@ namespace Amazon.EC2
         /// <para>
         /// You must specify a VPC ID in the request.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableVpcClassicLinkDnsSupport service method.</param>
         /// 
@@ -16831,6 +17162,13 @@ namespace Amazon.EC2
         /// <para>
         /// You must specify a VPC ID in the request.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableVpcClassicLinkDnsSupport service method.</param>
         /// <param name="cancellationToken">
@@ -16856,7 +17194,13 @@ namespace Amazon.EC2
         /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
         /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// This is an idempotent operation. If you perform the operation more than once, Amazon
         /// EC2 doesn't return an error.
@@ -16880,7 +17224,13 @@ namespace Amazon.EC2
         /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
         /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// This is an idempotent operation. If you perform the operation more than once, Amazon
         /// EC2 doesn't return an error.
@@ -17709,6 +18059,14 @@ namespace Amazon.EC2
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Enables a VPC for ClassicLink. You can then link EC2-Classic instances to your ClassicLink-enabled
         /// VPC to allow communication over private IP addresses. You cannot enable your VPC for
         /// ClassicLink if any of your VPC route tables have existing routes for address ranges
@@ -17716,6 +18074,7 @@ namespace Amazon.EC2
         /// in the <code>10.0.0.0/16</code> and <code>10.1.0.0/16</code> IP address ranges. For
         /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
         /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableVpcClassicLink service method.</param>
         /// 
@@ -17726,6 +18085,14 @@ namespace Amazon.EC2
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Enables a VPC for ClassicLink. You can then link EC2-Classic instances to your ClassicLink-enabled
         /// VPC to allow communication over private IP addresses. You cannot enable your VPC for
         /// ClassicLink if any of your VPC route tables have existing routes for address ranges
@@ -17733,6 +18100,7 @@ namespace Amazon.EC2
         /// in the <code>10.0.0.0/16</code> and <code>10.1.0.0/16</code> IP address ranges. For
         /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
         /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableVpcClassicLink service method.</param>
         /// <param name="cancellationToken">
@@ -17749,13 +18117,21 @@ namespace Amazon.EC2
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Enables a VPC to support DNS hostname resolution for ClassicLink. If enabled, the
         /// DNS hostname of a linked EC2-Classic instance resolves to its private IP address when
         /// addressed from an instance in the VPC to which it's linked. Similarly, the DNS hostname
         /// of an instance in a VPC resolves to its private IP address when addressed from a linked
         /// EC2-Classic instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
         /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// You must specify a VPC ID in the request.
@@ -17770,13 +18146,21 @@ namespace Amazon.EC2
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Enables a VPC to support DNS hostname resolution for ClassicLink. If enabled, the
         /// DNS hostname of a linked EC2-Classic instance resolves to its private IP address when
         /// addressed from an instance in the VPC to which it's linked. Similarly, the DNS hostname
         /// of an instance in a VPC resolves to its private IP address when addressed from a linked
         /// EC2-Classic instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
         /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// You must specify a VPC ID in the request.
@@ -21135,6 +21519,13 @@ namespace Amazon.EC2
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
         /// Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyReservedInstances service method.</param>
         /// 
@@ -21155,6 +21546,13 @@ namespace Amazon.EC2
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
         /// Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyReservedInstances service method.</param>
         /// <param name="cancellationToken">
@@ -22061,9 +22459,17 @@ namespace Amazon.EC2
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Modifies the VPC peering connection options on one side of a VPC peering connection.
         /// You can do the following:
-        /// 
+        /// </para>
         ///  <ul> <li> 
         /// <para>
         /// Enable/disable communication over the peering connection between an EC2-Classic instance
@@ -22103,9 +22509,17 @@ namespace Amazon.EC2
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Modifies the VPC peering connection options on one side of a VPC peering connection.
         /// You can do the following:
-        /// 
+        /// </para>
         ///  <ul> <li> 
         /// <para>
         /// Enable/disable communication over the peering connection between an EC2-Classic instance
@@ -22518,6 +22932,14 @@ namespace Amazon.EC2
         /// back using the <a>RestoreAddressToClassic</a> request. You cannot move an Elastic
         /// IP address that was originally allocated for use in the EC2-VPC platform to the EC2-Classic
         /// platform.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the MoveAddressToVpc service method.</param>
         /// 
@@ -22535,6 +22957,14 @@ namespace Amazon.EC2
         /// back using the <a>RestoreAddressToClassic</a> request. You cannot move an Elastic
         /// IP address that was originally allocated for use in the EC2-VPC platform to the EC2-Classic
         /// platform.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the MoveAddressToVpc service method.</param>
         /// <param name="cancellationToken">
@@ -23445,7 +23875,13 @@ namespace Amazon.EC2
         /// it from any instance that it's associated with. To disassociate an Elastic IP address
         /// without releasing it, use <a>DisassociateAddress</a>.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// [Nondefault VPC] You must use <a>DisassociateAddress</a> to disassociate the Elastic
         /// IP address before you can release it. Otherwise, Amazon EC2 returns an error (<code>InvalidIPAddress.InUse</code>).
@@ -23486,7 +23922,13 @@ namespace Amazon.EC2
         /// it from any instance that it's associated with. To disassociate an Elastic IP address
         /// without releasing it, use <a>DisassociateAddress</a>.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// [Nondefault VPC] You must use <a>DisassociateAddress</a> to disassociate the Elastic
         /// IP address before you can release it. Otherwise, Amazon EC2 returns an error (<code>InvalidIPAddress.InUse</code>).
@@ -24041,7 +24483,13 @@ namespace Amazon.EC2
         /// is the best Spot request method to use?</a> in the <i>Amazon EC2 User Guide for Linux
         /// Instances</i>.
         /// </para>
-        ///  </important>
+        ///  </important> <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RequestSpotInstances service method.</param>
         /// 
@@ -24066,7 +24514,13 @@ namespace Amazon.EC2
         /// is the best Spot request method to use?</a> in the <i>Amazon EC2 User Guide for Linux
         /// Instances</i>.
         /// </para>
-        ///  </important>
+        ///  </important> <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RequestSpotInstances service method.</param>
         /// <param name="cancellationToken">
@@ -24339,6 +24793,14 @@ namespace Amazon.EC2
         /// to the EC2-Classic platform. You cannot move an Elastic IP address that was originally
         /// allocated for use in EC2-VPC. The Elastic IP address must not be associated with an
         /// instance or network interface.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreAddressToClassic service method.</param>
         /// 
@@ -24353,6 +24815,14 @@ namespace Amazon.EC2
         /// to the EC2-Classic platform. You cannot move an Elastic IP address that was originally
         /// allocated for use in EC2-VPC. The Elastic IP address must not be associated with an
         /// instance or network interface.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreAddressToClassic service method.</param>
         /// <param name="cancellationToken">
@@ -24794,6 +25264,13 @@ namespace Amazon.EC2
         /// to do if an instance immediately terminates</a>, and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting
         /// connecting to your instance</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RunInstances service method.</param>
         /// 
@@ -24883,6 +25360,13 @@ namespace Amazon.EC2
         /// to do if an instance immediately terminates</a>, and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting
         /// connecting to your instance</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RunInstances service method.</param>
         /// <param name="cancellationToken">

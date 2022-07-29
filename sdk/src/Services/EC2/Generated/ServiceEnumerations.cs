@@ -13267,6 +13267,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly ResourceType CapacityReservation = new ResourceType("capacity-reservation");
         /// <summary>
+        /// Constant CapacityReservationFleet for ResourceType
+        /// </summary>
+        public static readonly ResourceType CapacityReservationFleet = new ResourceType("capacity-reservation-fleet");
+        /// <summary>
         /// Constant CarrierGateway for ResourceType
         /// </summary>
         public static readonly ResourceType CarrierGateway = new ResourceType("carrier-gateway");
@@ -13475,6 +13479,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly ResourceType TrafficMirrorFilter = new ResourceType("traffic-mirror-filter");
         /// <summary>
+        /// Constant TrafficMirrorFilterRule for ResourceType
+        /// </summary>
+        public static readonly ResourceType TrafficMirrorFilterRule = new ResourceType("traffic-mirror-filter-rule");
+        /// <summary>
         /// Constant TrafficMirrorSession for ResourceType
         /// </summary>
         public static readonly ResourceType TrafficMirrorSession = new ResourceType("traffic-mirror-session");
@@ -13522,6 +13530,10 @@ namespace Amazon.EC2
         /// Constant VpcEndpoint for ResourceType
         /// </summary>
         public static readonly ResourceType VpcEndpoint = new ResourceType("vpc-endpoint");
+        /// <summary>
+        /// Constant VpcEndpointConnectionDeviceType for ResourceType
+        /// </summary>
+        public static readonly ResourceType VpcEndpointConnectionDeviceType = new ResourceType("vpc-endpoint-connection-device-type");
         /// <summary>
         /// Constant VpcEndpointService for ResourceType
         /// </summary>

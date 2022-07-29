@@ -87,11 +87,21 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The version number of the launch template.
+        /// The launch template version number, <code>$Latest</code>, or <code>$Default</code>.
         /// </para>
         ///  
         /// <para>
-        /// Default: The default version for the launch template.
+        /// If the value is <code>$Latest</code>, Amazon EC2 uses the latest version of the launch
+        /// template.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the value is <code>$Default</code>, Amazon EC2 uses the default version of the
+        /// launch template.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: The default version of the launch template.
         /// </para>
         /// </summary>
         public string Version

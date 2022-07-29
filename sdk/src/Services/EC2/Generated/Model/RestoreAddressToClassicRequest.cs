@@ -34,6 +34,14 @@ namespace Amazon.EC2.Model
     /// to the EC2-Classic platform. You cannot move an Elastic IP address that was originally
     /// allocated for use in EC2-VPC. The Elastic IP address must not be associated with an
     /// instance or network interface.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
+    /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+    /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class RestoreAddressToClassicRequest : AmazonEC2Request
     {
