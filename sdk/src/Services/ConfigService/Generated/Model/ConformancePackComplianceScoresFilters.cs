@@ -38,8 +38,10 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConformancePackNames. 
         /// <para>
-        /// The name of a conformance pack whose score should be included in the compliance score
-        /// result.
+        /// The names of the conformance packs whose compliance scores you want to include in
+        /// the conformance pack compliance score result set. You can include up to 25 conformance
+        /// packs in the <code>ConformancePackNames</code> array of strings, each with a character
+        /// limit of 256 characters for the conformance pack name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=25)]

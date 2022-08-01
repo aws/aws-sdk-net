@@ -29,9 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// Provides the CustomPolicyDetails, the rule owner (Amazon Web Services or customer),
-    /// the rule identifier, and the events that cause the evaluation of your Amazon Web Services
-    /// resources.
+    /// Provides the CustomPolicyDetails, the rule owner (<code>Amazon Web Services</code>
+    /// for managed rules, <code>CUSTOM_POLICY</code> for Custom Policy rules, and <code>CUSTOM_LAMBDA</code>
+    /// for Custom Lambda rules), the rule identifier, and the events that cause the evaluation
+    /// of your Amazon Web Services resources.
     /// </summary>
     public partial class Source
     {
@@ -69,13 +70,13 @@ namespace Amazon.ConfigService.Model
         /// <para>
         /// Config Managed Rules are predefined rules owned by Amazon Web Services. For more information,
         /// see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Config
-        /// Managed Rules</a> in the Config developer guide.
+        /// Managed Rules</a> in the <i>Config developer guide</i>.
         /// </para>
         ///  
         /// <para>
         /// Config Custom Rules are rules that you can develop either with Guard (<code>CUSTOM_POLICY</code>)
         /// or Lambda (<code>CUSTOM_LAMBDA</code>). For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">Config
-        /// Custom Rules </a> in the Config developer guide.
+        /// Custom Rules </a> in the <i>Config developer guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

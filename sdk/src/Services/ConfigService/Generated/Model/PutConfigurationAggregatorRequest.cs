@@ -55,7 +55,7 @@ namespace Amazon.ConfigService.Model
     ///  
     /// <para>
     /// To register a delegated administrator, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/set-up-aggregator-cli.html#register-a-delegated-administrator-cli">Register
-    /// a Delegated Administrator</a> in the Config developer guide. 
+    /// a Delegated Administrator</a> in the <i>Config developer guide</i>. 
     /// </para>
     ///  </note>
     /// </summary>

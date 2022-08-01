@@ -39,7 +39,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConformancePackComplianceScores. 
         /// <para>
-        /// A list of <code>ConformancePackComplianceScore</code> objects
+        /// A list of <code>ConformancePackComplianceScore</code> objects.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

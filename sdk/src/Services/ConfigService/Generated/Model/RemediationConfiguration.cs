@@ -106,7 +106,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property CreatedByService. 
         /// <para>
-        /// Name of the service that owns the service linked rule, if applicable.
+        /// Name of the service that owns the service-linked rule, if applicable.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

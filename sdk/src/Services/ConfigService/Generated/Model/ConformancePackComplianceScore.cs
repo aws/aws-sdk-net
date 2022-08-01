@@ -33,7 +33,7 @@ namespace Amazon.ConfigService.Model
     /// in a conformance pack compared to the number of total possible rule-resource combinations
     /// in the conformance pack. This metric provides you with a high-level view of the compliance
     /// state of your conformance packs, and can be used to identify, investigate, and understand
-    /// compliance deviations in your conformance packs.
+    /// the level of compliance in your conformance packs.
     /// </summary>
     public partial class ConformancePackComplianceScore
     {
@@ -81,7 +81,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property Score. 
         /// <para>
-        /// Compliance score for the conformance pack.
+        /// Compliance score for the conformance pack. Conformance packs with no evaluation results
+        /// will have a compliance score of <code>INSUFFICIENT_DATA</code>.
         /// </para>
         /// </summary>
         public string Score

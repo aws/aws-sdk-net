@@ -29,25 +29,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// An Config rule represents an Lambda function that you create for a custom rule or
-    /// a predefined function for an Config managed rule. The function evaluates configuration
-    /// items to assess whether your Amazon Web Services resources comply with your desired
-    /// configurations. This function can run when Config detects a configuration change to
-    /// an Amazon Web Services resource and at a periodic frequency that you choose (for example,
-    /// every 24 hours).
+    /// Config rules evaluate the configuration settings of your Amazon Web Services resources.
+    /// A rule can run when Config detects a configuration change to an Amazon Web Services
+    /// resource or at a periodic frequency that you choose (for example, every 24 hours).
+    /// There are two types of rules: Config Managed Rules and Config Custom Rules. Managed
+    /// rules are predefined, customizable rules created by Config. For a list of managed
+    /// rules, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">List
+    /// of Config Managed Rules</a>.
     /// 
+    ///  
+    /// <para>
+    /// Custom rules are rules that you can create using either Guard or Lambda functions.
+    /// Guard (<a href="https://github.com/aws-cloudformation/cloudformation-guard">Guard
+    /// GitHub Repository</a>) is a policy-as-code language that allows you to write policies
+    /// that are enforced by Config Custom Policy rules. Lambda uses custom code that you
+    /// upload to evaluate a custom rule. It is invoked by events that are published to it
+    /// by an event source, which Config invokes when the custom rule is initiated.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information about developing and using Config rules, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating
+    /// Amazon Web Services resource Configurations with Config</a> in the <i>Config Developer
+    /// Guide</i>.
+    /// </para>
     ///  <note> 
     /// <para>
     /// You can use the Amazon Web Services CLI and Amazon Web Services SDKs if you want to
     /// create a rule that triggers evaluations for your resources when Config delivers the
     /// configuration snapshot. For more information, see <a>ConfigSnapshotDeliveryProperties</a>.
     /// </para>
-    ///  </note> 
-    /// <para>
-    /// For more information about developing and using Config rules, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating
-    /// Amazon Web Services resource Configurations with Config</a> in the <i>Config Developer
-    /// Guide</i>.
-    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ConfigRule
     {
@@ -164,7 +175,7 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The field is populated only if the service linked rule is created by a service. The
+        /// The field is populated only if the service-linked rule is created by a service. The
         /// field is empty if you create your own rule.
         /// </para>
         ///  </note>
@@ -285,8 +296,10 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// Provides the rule owner (Amazon Web Services or customer), the rule identifier, and
-        /// the notifications that cause the function to evaluate your Amazon Web Services resources.
+        /// Provides the rule owner (<code>Amazon Web Services</code> for managed rules, <code>CUSTOM_POLICY</code>
+        /// for Custom Policy rules, and <code>CUSTOM_LAMBDA</code> for Custom Lambda rules),
+        /// the rule identifier, and the notifications that cause the function to evaluate your
+        /// Amazon Web Services resources.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

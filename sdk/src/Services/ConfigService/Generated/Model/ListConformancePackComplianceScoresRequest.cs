@@ -34,8 +34,14 @@ namespace Amazon.ConfigService.Model
     /// of the number of compliant rule-resource combinations in a conformance pack compared
     /// to the number of total possible rule-resource combinations in the conformance pack.
     /// This metric provides you with a high-level view of the compliance state of your conformance
-    /// packs, and can be used to identify, investigate, and understand compliance deviations
+    /// packs, and can be used to identify, investigate, and understand the level of compliance
     /// in your conformance packs.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Conformance packs with no evaluation results will have a compliance score of <code>INSUFFICIENT_DATA</code>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListConformancePackComplianceScoresRequest : AmazonConfigServiceRequest
     {
@@ -107,6 +113,12 @@ namespace Amazon.ConfigService.Model
         /// Sorts your conformance pack compliance scores in either ascending or descending order,
         /// depending on <code>SortOrder</code>.
         /// </para>
+        ///  
+        /// <para>
+        /// By default, conformance pack compliance scores are sorted in ascending order by compliance
+        /// score and alphabetically by name of the conformance pack if there is more than one
+        /// conformance pack with the same compliance score.
+        /// </para>
         /// </summary>
         public SortBy SortBy
         {
@@ -125,6 +137,11 @@ namespace Amazon.ConfigService.Model
         /// <para>
         /// Determines the order in which conformance pack compliance scores are sorted. Either
         /// in ascending or descending order.
+        /// </para>
+        ///  
+        /// <para>
+        /// Conformance packs with a compliance score of <code>INSUFFICIENT_DATA</code> will be
+        /// first when sorting by ascending order and last when sorting by descending order.
         /// </para>
         /// </summary>
         public SortOrder SortOrder

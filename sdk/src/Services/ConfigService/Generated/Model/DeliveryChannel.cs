@@ -94,7 +94,7 @@ namespace Amazon.ConfigService.Model
         /// If you specify a bucket that belongs to another Amazon Web Services account, that
         /// bucket must have policies that grant access permissions to Config. For more information,
         /// see <a href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions
-        /// for the Amazon S3 Bucket</a> in the Config Developer Guide.
+        /// for the Amazon S3 Bucket</a> in the <i>Config Developer Guide</i>.
         /// </para>
         /// </summary>
         public string S3BucketName
@@ -157,7 +157,7 @@ namespace Amazon.ConfigService.Model
         /// <para>
         /// If you choose a topic from another account, the topic must have policies that grant
         /// access permissions to Config. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions
-        /// for the Amazon SNS Topic</a> in the Config Developer Guide.
+        /// for the Amazon SNS Topic</a> in the <i>Config Developer Guide</i>.
         /// </para>
         /// </summary>
         public string SnsTopicARN
