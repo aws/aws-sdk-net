@@ -1,3 +1,9 @@
+### 3.7.326.0 (2022-08-01 18:15 UTC)
+* ConfigService (3.7.11.3)
+	* Documentation update for PutConfigRule and PutOrganizationConfigRule
+* WorkSpaces (3.7.10.0)
+	* This release introduces ModifySamlProperties, a new API that allows control of SAML properties associated with a WorkSpaces directory. The DescribeWorkspaceDirectories API will now additionally return SAML properties in its responses.
+
 ### 3.7.325.0 (2022-07-29 18:17 UTC)
 * EC2 (3.7.80.0)
 	* Documentation updates for Amazon EC2.
