@@ -42,6 +42,7 @@ namespace Amazon.WorkSpaces.Model
         private string _iamRoleId;
         private List<string> _ipGroupIds = new List<string>();
         private string _registrationCode;
+        private SamlProperties _samlProperties;
         private SelfservicePermissions _selfservicePermissions;
         private WorkspaceDirectoryState _state;
         private List<string> _subnetIds = new List<string>();
@@ -215,6 +216,25 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetRegistrationCode()
         {
             return this._registrationCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SamlProperties. 
+        /// <para>
+        /// Describes the enablement status, user access URL, and relay state parameter name that
+        /// are used for configuring federation with an SAML 2.0 identity provider.
+        /// </para>
+        /// </summary>
+        public SamlProperties SamlProperties
+        {
+            get { return this._samlProperties; }
+            set { this._samlProperties = value; }
+        }
+
+        // Check to see if SamlProperties property is set
+        internal bool IsSetSamlProperties()
+        {
+            return this._samlProperties != null;
         }
 
         /// <summary>

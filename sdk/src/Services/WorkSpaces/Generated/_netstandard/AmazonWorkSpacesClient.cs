@@ -2594,6 +2594,54 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  ModifySamlProperties
+
+        internal virtual ModifySamlPropertiesResponse ModifySamlProperties(ModifySamlPropertiesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifySamlPropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifySamlPropertiesResponseUnmarshaller.Instance;
+
+            return Invoke<ModifySamlPropertiesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Modifies multiple properties related to SAML 2.0 authentication, including the enablement
+        /// status, user access URL, and relay state parameter name that are used for configuring
+        /// federation with an SAML 2.0 identity provider.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifySamlProperties service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifySamlProperties service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifySamlProperties">REST API Reference for ModifySamlProperties Operation</seealso>
+        public virtual Task<ModifySamlPropertiesResponse> ModifySamlPropertiesAsync(ModifySamlPropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifySamlPropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifySamlPropertiesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifySamlPropertiesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ModifySelfservicePermissions
 
         internal virtual ModifySelfservicePermissionsResponse ModifySelfservicePermissions(ModifySelfservicePermissionsRequest request)

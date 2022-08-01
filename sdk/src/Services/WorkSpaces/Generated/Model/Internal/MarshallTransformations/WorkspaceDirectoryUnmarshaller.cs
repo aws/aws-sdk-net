@@ -118,6 +118,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                     unmarshalledObject.RegistrationCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SamlProperties", targetDepth))
+                {
+                    var unmarshaller = SamlPropertiesUnmarshaller.Instance;
+                    unmarshalledObject.SamlProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SelfservicePermissions", targetDepth))
                 {
                     var unmarshaller = SelfservicePermissionsUnmarshaller.Instance;

@@ -589,6 +589,56 @@ namespace Amazon.WorkSpaces
 
 
     /// <summary>
+    /// Constants used for properties of type DeletableSamlProperty.
+    /// </summary>
+    public class DeletableSamlProperty : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME for DeletableSamlProperty
+        /// </summary>
+        public static readonly DeletableSamlProperty SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME = new DeletableSamlProperty("SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME");
+        /// <summary>
+        /// Constant SAML_PROPERTIES_USER_ACCESS_URL for DeletableSamlProperty
+        /// </summary>
+        public static readonly DeletableSamlProperty SAML_PROPERTIES_USER_ACCESS_URL = new DeletableSamlProperty("SAML_PROPERTIES_USER_ACCESS_URL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeletableSamlProperty(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeletableSamlProperty FindValue(string value)
+        {
+            return FindValue<DeletableSamlProperty>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeletableSamlProperty(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ImageType.
     /// </summary>
     public class ImageType : ConstantClass
@@ -886,6 +936,60 @@ namespace Amazon.WorkSpaces
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RunningMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SamlStatusEnum.
+    /// </summary>
+    public class SamlStatusEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for SamlStatusEnum
+        /// </summary>
+        public static readonly SamlStatusEnum DISABLED = new SamlStatusEnum("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for SamlStatusEnum
+        /// </summary>
+        public static readonly SamlStatusEnum ENABLED = new SamlStatusEnum("ENABLED");
+        /// <summary>
+        /// Constant ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK for SamlStatusEnum
+        /// </summary>
+        public static readonly SamlStatusEnum ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK = new SamlStatusEnum("ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SamlStatusEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SamlStatusEnum FindValue(string value)
+        {
+            return FindValue<SamlStatusEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SamlStatusEnum(string value)
         {
             return FindValue(value);
         }

@@ -1659,6 +1659,38 @@ namespace Amazon.WorkSpaces
 
         #endregion
                 
+        #region  ModifySamlProperties
+
+
+
+        /// <summary>
+        /// Modifies multiple properties related to SAML 2.0 authentication, including the enablement
+        /// status, user access URL, and relay state parameter name that are used for configuring
+        /// federation with an SAML 2.0 identity provider.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifySamlProperties service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifySamlProperties service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifySamlProperties">REST API Reference for ModifySamlProperties Operation</seealso>
+        Task<ModifySamlPropertiesResponse> ModifySamlPropertiesAsync(ModifySamlPropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ModifySelfservicePermissions
 
 

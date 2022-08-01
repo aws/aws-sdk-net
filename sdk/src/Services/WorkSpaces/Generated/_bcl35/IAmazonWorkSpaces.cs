@@ -2620,6 +2620,60 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  ModifySamlProperties
+
+
+        /// <summary>
+        /// Modifies multiple properties related to SAML 2.0 authentication, including the enablement
+        /// status, user access URL, and relay state parameter name that are used for configuring
+        /// federation with an SAML 2.0 identity provider.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifySamlProperties service method.</param>
+        /// 
+        /// <returns>The response from the ModifySamlProperties service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifySamlProperties">REST API Reference for ModifySamlProperties Operation</seealso>
+        ModifySamlPropertiesResponse ModifySamlProperties(ModifySamlPropertiesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifySamlProperties operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifySamlProperties operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifySamlProperties
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifySamlProperties">REST API Reference for ModifySamlProperties Operation</seealso>
+        IAsyncResult BeginModifySamlProperties(ModifySamlPropertiesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifySamlProperties operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifySamlProperties.</param>
+        /// 
+        /// <returns>Returns a  ModifySamlPropertiesResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifySamlProperties">REST API Reference for ModifySamlProperties Operation</seealso>
+        ModifySamlPropertiesResponse EndModifySamlProperties(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ModifySelfservicePermissions
 
 

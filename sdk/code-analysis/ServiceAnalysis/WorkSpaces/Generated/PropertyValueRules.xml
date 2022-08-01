@@ -509,6 +509,12 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.ModifySamlPropertiesRequest.ResourceId</property>
+    <min>10</min>
+    <max>65</max>
+    <pattern>^d-[0-9a-f]{8,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpaces.Model.ModifySelfservicePermissionsRequest.ResourceId</property>
     <min>10</min>
     <max>65</max>
@@ -813,6 +819,16 @@
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.RootStorage.Capacity</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.SamlProperties.RelayStateParameterName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.SamlProperties.UserAccessUrl</property>
+    <min>8</min>
+    <max>200</max>
+    <pattern>^(http|https)\://\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.StartRequest.WorkspaceId</property>
