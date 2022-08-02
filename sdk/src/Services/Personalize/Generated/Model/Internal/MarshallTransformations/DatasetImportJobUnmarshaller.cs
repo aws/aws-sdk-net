@@ -94,6 +94,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                     unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("importMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ImportMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("jobName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

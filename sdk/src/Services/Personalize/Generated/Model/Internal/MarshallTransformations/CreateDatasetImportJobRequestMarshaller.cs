@@ -84,6 +84,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetImportMode())
+                {
+                    context.Writer.WritePropertyName("importMode");
+                    context.Writer.Write(publicRequest.ImportMode);
+                }
+
                 if(publicRequest.IsSetJobName())
                 {
                     context.Writer.WritePropertyName("jobName");

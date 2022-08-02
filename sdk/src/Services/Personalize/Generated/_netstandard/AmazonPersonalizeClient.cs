@@ -845,8 +845,9 @@ namespace Amazon.Personalize
         /// 
         ///  <important> 
         /// <para>
-        /// The dataset import job replaces any existing data in the dataset that you imported
-        /// in bulk.
+        /// By default, a dataset import job replaces any existing data in the dataset that you
+        /// imported in bulk. To add new records without replacing existing data, specify INCREMENTAL
+        /// for the import mode in the CreateDatasetImportJob operation.
         /// </para>
         ///  </important> 
         /// <para>

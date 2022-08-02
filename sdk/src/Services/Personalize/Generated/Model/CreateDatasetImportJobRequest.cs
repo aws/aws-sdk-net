@@ -39,8 +39,9 @@ namespace Amazon.Personalize.Model
     /// 
     ///  <important> 
     /// <para>
-    /// The dataset import job replaces any existing data in the dataset that you imported
-    /// in bulk.
+    /// By default, a dataset import job replaces any existing data in the dataset that you
+    /// imported in bulk. To add new records without replacing existing data, specify INCREMENTAL
+    /// for the import mode in the CreateDatasetImportJob operation.
     /// </para>
     ///  </important> 
     /// <para>
@@ -85,6 +86,7 @@ namespace Amazon.Personalize.Model
     {
         private string _datasetArn;
         private DataSource _dataSource;
+        private ImportMode _importMode;
         private string _jobName;
         private string _roleArn;
         private List<Tag> _tags = new List<Tag>();
@@ -125,6 +127,38 @@ namespace Amazon.Personalize.Model
         internal bool IsSetDataSource()
         {
             return this._dataSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImportMode. 
+        /// <para>
+        /// Specify how to add the new records to an existing dataset. The default import mode
+        /// is <code>FULL</code>. If you haven't imported bulk records into the dataset previously,
+        /// you can only specify <code>FULL</code>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Specify <code>FULL</code> to overwrite all existing bulk data in your dataset. Data
+        /// you imported individually is not replaced.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Specify <code>INCREMENTAL</code> to append the new records to the existing data in
+        /// your dataset. Amazon Personalize replaces any record with the same ID with the new
+        /// one.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ImportMode ImportMode
+        {
+            get { return this._importMode; }
+            set { this._importMode = value; }
+        }
+
+        // Check to see if ImportMode property is set
+        internal bool IsSetImportMode()
+        {
+            return this._importMode != null;
         }
 
         /// <summary>

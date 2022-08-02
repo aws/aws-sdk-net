@@ -49,6 +49,7 @@ namespace Amazon.Personalize.Model
         private string _datasetImportJobArn;
         private DataSource _dataSource;
         private string _failureReason;
+        private ImportMode _importMode;
         private string _jobName;
         private DateTime? _lastUpdatedDateTime;
         private string _roleArn;
@@ -144,6 +145,24 @@ namespace Amazon.Personalize.Model
         internal bool IsSetFailureReason()
         {
             return this._failureReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImportMode. 
+        /// <para>
+        /// The import mode used by the dataset import job to import new records.
+        /// </para>
+        /// </summary>
+        public ImportMode ImportMode
+        {
+            get { return this._importMode; }
+            set { this._importMode = value; }
+        }
+
+        // Check to see if ImportMode property is set
+        internal bool IsSetImportMode()
+        {
+            return this._importMode != null;
         }
 
         /// <summary>

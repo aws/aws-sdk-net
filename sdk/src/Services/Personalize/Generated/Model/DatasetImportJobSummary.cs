@@ -38,6 +38,7 @@ namespace Amazon.Personalize.Model
         private DateTime? _creationDateTime;
         private string _datasetImportJobArn;
         private string _failureReason;
+        private ImportMode _importMode;
         private string _jobName;
         private DateTime? _lastUpdatedDateTime;
         private string _status;
@@ -95,6 +96,26 @@ namespace Amazon.Personalize.Model
         internal bool IsSetFailureReason()
         {
             return this._failureReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImportMode. 
+        /// <para>
+        /// The import mode the dataset import job used to update the data in the dataset. For
+        /// more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/updating-existing-bulk-data.html">Updating
+        /// existing bulk data</a>. 
+        /// </para>
+        /// </summary>
+        public ImportMode ImportMode
+        {
+            get { return this._importMode; }
+            set { this._importMode = value; }
+        }
+
+        // Check to see if ImportMode property is set
+        internal bool IsSetImportMode()
+        {
+            return this._importMode != null;
         }
 
         /// <summary>
