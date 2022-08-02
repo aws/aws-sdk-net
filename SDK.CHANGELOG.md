@@ -1,3 +1,12 @@
+### 3.7.327.0 (2022-08-02 18:13 UTC)
+* LicenseManagerUserSubscriptions (3.7.0.0)
+	* This release supports user based subscription for Microsoft Visual Studio Professional and Enterprise on EC2.
+* Personalize (3.7.11.0)
+	* This release adds support for incremental bulk ingestion for the Personalize CreateDatasetImportJob API.
+* Core 3.7.12.17
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.326.0 (2022-08-01 18:15 UTC)
 * ConfigService (3.7.11.3)
 	* Documentation update for PutConfigRule and PutOrganizationConfigRule
