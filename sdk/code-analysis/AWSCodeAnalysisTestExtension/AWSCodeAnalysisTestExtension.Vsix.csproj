@@ -776,6 +776,10 @@
       <Project>{9AF53B73-A790-4430-9B55-6957CC650358}</Project>
       <Name>AWSSDK.LicenseManager.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/LicenseManagerUserSubscriptions/AWSSDK.LicenseManagerUserSubscriptions.CodeAnalysis.csproj">
+      <Project>{27E80A60-0F0A-4776-9A53-BF48F89192A9}</Project>
+      <Name>AWSSDK.LicenseManagerUserSubscriptions.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Lightsail/AWSSDK.Lightsail.CodeAnalysis.csproj">
       <Project>{33C9A310-95F4-4A30-B411-6E6679034FF3}</Project>
       <Name>AWSSDK.Lightsail.CodeAnalysis</Name>
