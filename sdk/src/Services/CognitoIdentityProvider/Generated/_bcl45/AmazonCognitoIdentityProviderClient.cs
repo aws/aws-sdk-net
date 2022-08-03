@@ -3565,7 +3565,7 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Begins setup of time-based one-time password multi-factor authentication (TOTP MFA)
+        /// Begins setup of time-based one-time password (TOTP) multi-factor authentication (MFA)
         /// for a user, with a unique private key that Amazon Cognito generates and returns in
         /// the API response. You can authorize an <code>AssociateSoftwareToken</code> request
         /// with either the user's access token, or a session string from a challenge response
@@ -3593,6 +3593,10 @@ namespace Amazon.CognitoIdentityProvider
         /// <returns>The response from the AssociateSoftwareToken service method, as returned by CognitoIdentityProvider.</returns>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ConcurrentModificationException">
         /// This exception is thrown if two or more modifications are happening concurrently.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
@@ -3623,7 +3627,7 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Begins setup of time-based one-time password multi-factor authentication (TOTP MFA)
+        /// Begins setup of time-based one-time password (TOTP) multi-factor authentication (MFA)
         /// for a user, with a unique private key that Amazon Cognito generates and returns in
         /// the API response. You can authorize an <code>AssociateSoftwareToken</code> request
         /// with either the user's access token, or a session string from a challenge response
@@ -3654,6 +3658,10 @@ namespace Amazon.CognitoIdentityProvider
         /// <returns>The response from the AssociateSoftwareToken service method, as returned by CognitoIdentityProvider.</returns>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ConcurrentModificationException">
         /// This exception is thrown if two or more modifications are happening concurrently.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
@@ -3693,6 +3701,10 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="request">Container for the necessary parameters to execute the ChangePassword service method.</param>
         /// 
         /// <returns>The response from the ChangePassword service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -3745,6 +3757,10 @@ namespace Amazon.CognitoIdentityProvider
         /// </param>
         /// 
         /// <returns>The response from the ChangePassword service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -3798,6 +3814,10 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="request">Container for the necessary parameters to execute the ConfirmDevice service method.</param>
         /// 
         /// <returns>The response from the ConfirmDevice service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -3856,6 +3876,10 @@ namespace Amazon.CognitoIdentityProvider
         /// </param>
         /// 
         /// <returns>The response from the ConfirmDevice service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -3920,6 +3944,10 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ExpiredCodeException">
         /// This exception is thrown if a code has expired.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
@@ -3990,6 +4018,10 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ExpiredCodeException">
         /// This exception is thrown if a code has expired.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
@@ -4069,6 +4101,10 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ExpiredCodeException">
         /// This exception is thrown if a code has expired.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -4139,6 +4175,10 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ExpiredCodeException">
         /// This exception is thrown if a code has expired.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
@@ -5121,6 +5161,10 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="request">Container for the necessary parameters to execute the DeleteUser service method.</param>
         /// 
         /// <returns>The response from the DeleteUser service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -5166,6 +5210,10 @@ namespace Amazon.CognitoIdentityProvider
         /// </param>
         /// 
         /// <returns>The response from the DeleteUser service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -5212,6 +5260,10 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="request">Container for the necessary parameters to execute the DeleteUserAttributes service method.</param>
         /// 
         /// <returns>The response from the DeleteUserAttributes service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -5257,6 +5309,10 @@ namespace Amazon.CognitoIdentityProvider
         /// </param>
         /// 
         /// <returns>The response from the DeleteUserAttributes service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -6043,6 +6099,10 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="request">Container for the necessary parameters to execute the ForgetDevice service method.</param>
         /// 
         /// <returns>The response from the ForgetDevice service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -6091,6 +6151,10 @@ namespace Amazon.CognitoIdentityProvider
         /// </param>
         /// 
         /// <returns>The response from the ForgetDevice service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -6173,6 +6237,10 @@ namespace Amazon.CognitoIdentityProvider
         /// <returns>The response from the ForgotPassword service method, as returned by CognitoIdentityProvider.</returns>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.CodeDeliveryFailureException">
         /// This exception is thrown when a verification code fails to deliver successfully.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
@@ -6275,6 +6343,10 @@ namespace Amazon.CognitoIdentityProvider
         /// <returns>The response from the ForgotPassword service method, as returned by CognitoIdentityProvider.</returns>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.CodeDeliveryFailureException">
         /// This exception is thrown when a verification code fails to deliver successfully.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
@@ -6420,6 +6492,10 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="request">Container for the necessary parameters to execute the GetDevice service method.</param>
         /// 
         /// <returns>The response from the GetDevice service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -6468,6 +6544,10 @@ namespace Amazon.CognitoIdentityProvider
         /// </param>
         /// 
         /// <returns>The response from the GetDevice service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -6815,6 +6895,10 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="request">Container for the necessary parameters to execute the GetUser service method.</param>
         /// 
         /// <returns>The response from the GetUser service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -6860,6 +6944,10 @@ namespace Amazon.CognitoIdentityProvider
         /// </param>
         /// 
         /// <returns>The response from the GetUser service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -6932,6 +7020,10 @@ namespace Amazon.CognitoIdentityProvider
         /// <returns>The response from the GetUserAttributeVerificationCode service method, as returned by CognitoIdentityProvider.</returns>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.CodeDeliveryFailureException">
         /// This exception is thrown when a verification code fails to deliver successfully.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
@@ -7033,6 +7125,10 @@ namespace Amazon.CognitoIdentityProvider
         /// <returns>The response from the GetUserAttributeVerificationCode service method, as returned by CognitoIdentityProvider.</returns>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.CodeDeliveryFailureException">
         /// This exception is thrown when a verification code fails to deliver successfully.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
@@ -7186,6 +7282,10 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="request">Container for the necessary parameters to execute the GlobalSignOut service method.</param>
         /// 
         /// <returns>The response from the GlobalSignOut service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -7232,6 +7332,10 @@ namespace Amazon.CognitoIdentityProvider
         /// </param>
         /// 
         /// <returns>The response from the GlobalSignOut service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -7301,6 +7405,10 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="request">Container for the necessary parameters to execute the InitiateAuth service method.</param>
         /// 
         /// <returns>The response from the InitiateAuth service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -7396,6 +7504,10 @@ namespace Amazon.CognitoIdentityProvider
         /// </param>
         /// 
         /// <returns>The response from the InitiateAuth service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -7466,6 +7578,10 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="request">Container for the necessary parameters to execute the ListDevices service method.</param>
         /// 
         /// <returns>The response from the ListDevices service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -7514,6 +7630,10 @@ namespace Amazon.CognitoIdentityProvider
         /// </param>
         /// 
         /// <returns>The response from the ListDevices service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -8279,6 +8399,10 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.CodeDeliveryFailureException">
         /// This exception is thrown when a verification code fails to deliver successfully.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -8373,6 +8497,10 @@ namespace Amazon.CognitoIdentityProvider
         /// <returns>The response from the ResendConfirmationCode service method, as returned by CognitoIdentityProvider.</returns>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.CodeDeliveryFailureException">
         /// This exception is thrown when a verification code fails to deliver successfully.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
@@ -8478,6 +8606,10 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ExpiredCodeException">
         /// This exception is thrown if a code has expired.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
@@ -8595,6 +8727,10 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ExpiredCodeException">
         /// This exception is thrown if a code has expired.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -8678,6 +8814,10 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="request">Container for the necessary parameters to execute the RevokeToken service method.</param>
         /// 
         /// <returns>The response from the RevokeToken service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -8720,6 +8860,10 @@ namespace Amazon.CognitoIdentityProvider
         /// </param>
         /// 
         /// <returns>The response from the RevokeToken service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -8983,6 +9127,10 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="request">Container for the necessary parameters to execute the SetUserMFAPreference service method.</param>
         /// 
         /// <returns>The response from the SetUserMFAPreference service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -9033,6 +9181,10 @@ namespace Amazon.CognitoIdentityProvider
         /// </param>
         /// 
         /// <returns>The response from the SetUserMFAPreference service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -9218,6 +9370,10 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="request">Container for the necessary parameters to execute the SetUserSettings service method.</param>
         /// 
         /// <returns>The response from the SetUserSettings service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -9263,6 +9419,10 @@ namespace Amazon.CognitoIdentityProvider
         /// </param>
         /// 
         /// <returns>The response from the SetUserSettings service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -9332,6 +9492,10 @@ namespace Amazon.CognitoIdentityProvider
         /// <returns>The response from the SignUp service method, as returned by CognitoIdentityProvider.</returns>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.CodeDeliveryFailureException">
         /// This exception is thrown when a verification code fails to deliver successfully.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
@@ -9427,6 +9591,10 @@ namespace Amazon.CognitoIdentityProvider
         /// <returns>The response from the SignUp service method, as returned by CognitoIdentityProvider.</returns>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.CodeDeliveryFailureException">
         /// This exception is thrown when a verification code fails to deliver successfully.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
@@ -9938,6 +10106,10 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="request">Container for the necessary parameters to execute the UpdateDeviceStatus service method.</param>
         /// 
         /// <returns>The response from the UpdateDeviceStatus service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -9986,6 +10158,10 @@ namespace Amazon.CognitoIdentityProvider
         /// </param>
         /// 
         /// <returns>The response from the UpdateDeviceStatus service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -10321,6 +10497,10 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ExpiredCodeException">
         /// This exception is thrown if a code has expired.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -10429,6 +10609,10 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ExpiredCodeException">
         /// This exception is thrown if a code has expired.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
@@ -10951,6 +11135,10 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when there is a code mismatch and the service fails to configure
         /// the software token TOTP multi-factor authentication (MFA).
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -11011,6 +11199,10 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.EnableSoftwareTokenMFAException">
         /// This exception is thrown when there is a code mismatch and the service fails to configure
         /// the software token TOTP multi-factor authentication (MFA).
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
@@ -11086,6 +11278,10 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ExpiredCodeException">
         /// This exception is thrown if a code has expired.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -11155,6 +11351,10 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ExpiredCodeException">
         /// This exception is thrown if a code has expired.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.

@@ -87,7 +87,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property SoftwareTokenMfaSettings. 
         /// <para>
-        /// The time-based one-time password software token MFA settings.
+        /// The time-based one-time password (TOTP) software token MFA settings.
         /// </para>
         /// </summary>
         public SoftwareTokenMfaSettingsType SoftwareTokenMfaSettings

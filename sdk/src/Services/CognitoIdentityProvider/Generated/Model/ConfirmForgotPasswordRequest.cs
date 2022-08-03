@@ -141,8 +141,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ConfirmationCode. 
         /// <para>
-        /// The confirmation code sent by a user's request to retrieve a forgotten password. For
-        /// more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>.
+        /// The confirmation code from your user's request to reset their password. For more information,
+        /// see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
@@ -161,7 +161,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Password. 
         /// <para>
-        /// The password sent by a user's request to retrieve a forgotten password.
+        /// The new password that your user wants to set.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]

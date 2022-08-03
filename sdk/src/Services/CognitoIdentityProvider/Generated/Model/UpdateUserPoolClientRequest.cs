@@ -579,8 +579,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property SupportedIdentityProviders. 
         /// <para>
         /// A list of provider names for the IdPs that this client supports. The following are
-        /// supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> <code>LoginWithAmazon</code>,
-        /// and the names of your own SAML and OIDC providers.
+        /// supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code>, <code>SignInWithApple</code>,
+        /// <code>LoginWithAmazon</code>, and the names of your own SAML and OIDC providers.
         /// </para>
         /// </summary>
         public List<string> SupportedIdentityProviders

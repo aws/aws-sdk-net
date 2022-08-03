@@ -378,36 +378,34 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// Valid values include:
         /// </para>
-        ///  <ul> <li> 
+        ///  <dl> <dt>ALLOW_ADMIN_USER_PASSWORD_AUTH</dt> <dd> 
         /// <para>
-        ///  <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication
-        /// flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code>
-        /// setting. With this authentication flow, Amazon Cognito receives the password in the
-        /// request instead of using the Secure Remote Password (SRP) protocol to verify passwords.
+        /// Enable admin based user password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>.
+        /// This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication
+        /// flow, Amazon Cognito receives the password in the request instead of using the Secure
+        /// Remote Password (SRP) protocol to verify passwords.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>ALLOW_CUSTOM_AUTH</dt> <dd> 
         /// <para>
-        ///  <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.
+        /// Enable Lambda trigger based authentication.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>ALLOW_USER_PASSWORD_AUTH</dt> <dd> 
         /// <para>
-        ///  <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication.
-        /// In this flow, Amazon Cognito receives the password in the request instead of using
-        /// the SRP protocol to verify passwords.
+        /// Enable user password-based authentication. In this flow, Amazon Cognito receives the
+        /// password in the request instead of using the SRP protocol to verify passwords.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>ALLOW_USER_SRP_AUTH</dt> <dd> 
         /// <para>
-        ///  <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.
+        /// Enable SRP-based authentication.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>ALLOW_REFRESH_TOKEN_AUTH</dt> <dd> 
         /// <para>
-        ///  <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.
+        /// Enable the authflow that refreshes tokens.
         /// </para>
-        ///  </li> </ul> 
+        ///  </dd> </dl> 
         /// <para>
-        /// If you don't specify a value for <code>ExplicitAuthFlows</code>, your app client activates
-        /// the <code>ALLOW_USER_SRP_AUTH</code> and <code>ALLOW_CUSTOM_AUTH</code> authentication
-        /// flows.
+        /// If you don't specify a value for <code>ExplicitAuthFlows</code>, your user client
+        /// supports <code>ALLOW_USER_SRP_AUTH</code> and <code>ALLOW_CUSTOM_AUTH</code>.
         /// </para>
         /// </summary>
         public List<string> ExplicitAuthFlows
@@ -587,9 +585,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property SupportedIdentityProviders. 
         /// <para>
-        /// A list of provider names for the IdPs that this client supports. The following are
-        /// supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> <code>LoginWithAmazon</code>,
-        /// and the names of your own SAML and OIDC providers.
+        /// A list of provider names for the identity providers (IdPs) that are supported on this
+        /// client. The following are supported: <code>COGNITO</code>, <code>Facebook</code>,
+        /// <code>Google</code>, <code>SignInWithApple</code>, and <code>LoginWithAmazon</code>.
+        /// You can also specify the names that you configured for the SAML and OIDC IdPs in your
+        /// user pool, for example <code>MySAMLIdP</code> or <code>MyOIDCIdP</code>.
         /// </para>
         /// </summary>
         public List<string> SupportedIdentityProviders

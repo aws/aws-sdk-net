@@ -209,8 +209,15 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property DeviceConfiguration. 
         /// <para>
-        /// The device configuration.
+        /// The device-remembering configuration for a user pool. A null value indicates that
+        /// you have deactivated device remembering in your user pool.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// When you provide a value for any <code>DeviceConfiguration</code> field, you activate
+        /// the Amazon Cognito device-remembering feature.
+        /// </para>
+        ///  </note>
         /// </summary>
         public DeviceConfigurationType DeviceConfiguration
         {
@@ -604,7 +611,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// a user-pool setting that tells Amazon Cognito how to handle changes to the value of
         /// your users' email address and phone number attributes. For more information, see <a
         /// href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates">
-        /// Verifying updates to to email addresses and phone numbers</a>.
+        /// Verifying updates to email addresses and phone numbers</a>.
         /// </para>
         /// </summary>
         public UserAttributeUpdateSettingsType UserAttributeUpdateSettings

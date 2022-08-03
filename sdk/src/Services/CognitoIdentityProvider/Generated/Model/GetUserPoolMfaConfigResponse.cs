@@ -40,7 +40,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property MfaConfiguration. 
         /// <para>
-        /// The multi-factor (MFA) configuration. Valid values include:
+        /// The multi-factor authentication (MFA) configuration. Valid values include:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -72,7 +72,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property SmsMfaConfiguration. 
         /// <para>
-        /// The SMS text message multi-factor (MFA) configuration.
+        /// The SMS text message multi-factor authentication (MFA) configuration.
         /// </para>
         /// </summary>
         public SmsMfaConfigType SmsMfaConfiguration
@@ -90,7 +90,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property SoftwareTokenMfaConfiguration. 
         /// <para>
-        /// The software token multi-factor (MFA) configuration.
+        /// The software token multi-factor authentication (MFA) configuration.
         /// </para>
         /// </summary>
         public SoftwareTokenMfaConfigType SoftwareTokenMfaConfiguration

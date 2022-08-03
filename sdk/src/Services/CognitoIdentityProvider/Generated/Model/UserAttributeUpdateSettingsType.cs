@@ -33,7 +33,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// a user-pool setting that tells Amazon Cognito how to handle changes to the value of
     /// your users' email address and phone number attributes. For more information, see <a
     /// href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates">
-    /// Verifying updates to to email addresses and phone numbers</a>.
+    /// Verifying updates to email addresses and phone numbers</a>.
     /// </summary>
     public partial class UserAttributeUpdateSettingsType
     {
