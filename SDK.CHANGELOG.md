@@ -1,3 +1,9 @@
+### 3.7.328.0 (2022-08-03 18:12 UTC)
+* CognitoIdentityProvider (3.7.5.0)
+	* Add a new exception type, ForbiddenException, that is returned when request is not allowed
+* WAFV2 (3.7.13.0)
+	* You can now associate an AWS WAF web ACL with an Amazon Cognito user pool.
+
 ### 3.7.327.0 (2022-08-02 18:13 UTC)
 * LicenseManagerUserSubscriptions (3.7.0.0)
 	* This release supports user based subscription for Microsoft Visual Studio Professional and Enterprise on EC2.
