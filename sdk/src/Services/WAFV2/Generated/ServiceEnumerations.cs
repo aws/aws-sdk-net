@@ -2288,6 +2288,10 @@ namespace Amazon.WAFV2
         /// Constant APPSYNC for ResourceType
         /// </summary>
         public static readonly ResourceType APPSYNC = new ResourceType("APPSYNC");
+        /// <summary>
+        /// Constant COGNITO_USER_POOL for ResourceType
+        /// </summary>
+        public static readonly ResourceType COGNITO_USER_POOL = new ResourceType("COGNITO_USER_POOL");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

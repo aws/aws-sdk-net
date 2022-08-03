@@ -88,6 +88,10 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 {
                     return WAFInternalErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("WAFInvalidOperationException"))
+                {
+                    return WAFInvalidOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("WAFInvalidParameterException"))
                 {
                     return WAFInvalidParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

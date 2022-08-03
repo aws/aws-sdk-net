@@ -30,7 +30,12 @@ namespace Amazon.WAFV2.Model
 {
     /// <summary>
     /// The processing guidance for a <a>Rule</a>, used by WAF to determine whether a web
-    /// request matches the rule.
+    /// request matches the rule. 
+    /// 
+    ///  
+    /// <para>
+    /// For example specifications, see the examples section of <a>CreateWebACL</a>.
+    /// </para>
     /// </summary>
     public partial class Statement
     {

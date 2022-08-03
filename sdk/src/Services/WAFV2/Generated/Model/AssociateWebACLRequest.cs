@@ -32,7 +32,7 @@ namespace Amazon.WAFV2.Model
     /// Container for the parameters to the AssociateWebACL operation.
     /// Associates a web ACL with a regional application resource, to protect the resource.
     /// A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway
-    /// REST API, or an AppSync GraphQL API. 
+    /// REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. 
     /// 
     ///  
     /// <para>
@@ -83,6 +83,11 @@ namespace Amazon.WAFV2.Model
         ///  </li> <li> 
         /// <para>
         /// For an AppSync GraphQL API: <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i>
+        /// </code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For an Amazon Cognito user pool: <code>arn:aws:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i>
         /// </code> 
         /// </para>
         ///  </li> </ul>

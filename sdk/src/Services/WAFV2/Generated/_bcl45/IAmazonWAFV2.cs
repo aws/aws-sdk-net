@@ -56,13 +56,13 @@ namespace Amazon.WAFV2
     /// <para>
     /// WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests
     /// that are forwarded to Amazon CloudFront, an Amazon API Gateway REST API, an Application
-    /// Load Balancer, or an AppSync GraphQL API. WAF also lets you control access to your
-    /// content. Based on criteria that you specify, such as the IP addresses that requests
-    /// originate from or the values of query strings, the Amazon API Gateway REST API, CloudFront
-    /// distribution, the Application Load Balancer, or the AppSync GraphQL API responds to
-    /// requests either with the requested content or with an HTTP 403 status code (Forbidden).
-    /// You also can configure CloudFront to return a custom error page when a request is
-    /// blocked.
+    /// Load Balancer, an AppSync GraphQL API, or an Amazon Cognito user pool. WAF also lets
+    /// you control access to your content. Based on conditions that you specify, such as
+    /// the IP addresses that requests originate from or the values of query strings, the
+    /// Amazon API Gateway REST API, CloudFront distribution, the Application Load Balancer,
+    /// the AppSync GraphQL API, or the Amazon Cognito user pool responds to requests either
+    /// with the requested content or with an HTTP 403 status code (Forbidden). You also can
+    /// configure CloudFront to return a custom error page when a request is blocked.
     /// </para>
     ///  
     /// <para>
@@ -80,7 +80,7 @@ namespace Amazon.WAFV2
     /// <para>
     /// For regional applications, you can use any of the endpoints in the list. A regional
     /// application can be an Application Load Balancer (ALB), an Amazon API Gateway REST
-    /// API, or an AppSync GraphQL API. 
+    /// API, an AppSync GraphQL API, or an Amazon Cognito user pool. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -130,7 +130,7 @@ namespace Amazon.WAFV2
         /// <summary>
         /// Associates a web ACL with a regional application resource, to protect the resource.
         /// A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway
-        /// REST API, or an AppSync GraphQL API. 
+        /// REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. 
         /// 
         ///  
         /// <para>
@@ -204,7 +204,7 @@ namespace Amazon.WAFV2
         /// <summary>
         /// Associates a web ACL with a regional application resource, to protect the resource.
         /// A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway
-        /// REST API, or an AppSync GraphQL API. 
+        /// REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. 
         /// 
         ///  
         /// <para>
@@ -308,6 +308,9 @@ namespace Amazon.WAFV2
         /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
         /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
         /// The operation failed because WAF didn't recognize a parameter in the request. For
         /// example: 
@@ -388,6 +391,9 @@ namespace Amazon.WAFV2
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
         /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
         /// The operation failed because WAF didn't recognize a parameter in the request. For
@@ -911,7 +917,8 @@ namespace Amazon.WAFV2
         /// can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule
         /// group. You can associate a web ACL with one or more Amazon Web Services resources
         /// to protect. The resources can be an Amazon CloudFront distribution, an Amazon API
-        /// Gateway REST API, an Application Load Balancer, or an AppSync GraphQL API. 
+        /// Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, or an Amazon
+        /// Cognito user pool. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWebACL service method.</param>
@@ -1022,7 +1029,8 @@ namespace Amazon.WAFV2
         /// can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule
         /// group. You can associate a web ACL with one or more Amazon Web Services resources
         /// to protect. The resources can be an Amazon CloudFront distribution, an Amazon API
-        /// Gateway REST API, an Application Load Balancer, or an AppSync GraphQL API. 
+        /// Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, or an Amazon
+        /// Cognito user pool. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWebACL service method.</param>
@@ -1257,14 +1265,7 @@ namespace Amazon.WAFV2
         /// <returns>The response from the DeleteIPSet service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFAssociatedItemException">
         /// WAF couldn’t perform the operation because your resource is being used by another
-        /// resource or it’s associated with another resource. 
-        /// 
-        ///  
-        /// <para>
-        /// For <code>DeleteWebACL</code>, you will only get this exception if the web ACL is
-        /// still associated with a regional resource. Deleting a web ACL that is still associated
-        /// with an Amazon CloudFront distribution won't get this exception. 
-        /// </para>
+        /// resource or it’s associated with another resource.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
         /// Your request is valid, but WAF couldn’t perform the operation because of a system
@@ -1329,14 +1330,7 @@ namespace Amazon.WAFV2
         /// <returns>The response from the DeleteIPSet service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFAssociatedItemException">
         /// WAF couldn’t perform the operation because your resource is being used by another
-        /// resource or it’s associated with another resource. 
-        /// 
-        ///  
-        /// <para>
-        /// For <code>DeleteWebACL</code>, you will only get this exception if the web ACL is
-        /// still associated with a regional resource. Deleting a web ACL that is still associated
-        /// with an Amazon CloudFront distribution won't get this exception. 
-        /// </para>
+        /// resource or it’s associated with another resource.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
         /// Your request is valid, but WAF couldn’t perform the operation because of a system
@@ -1611,14 +1605,7 @@ namespace Amazon.WAFV2
         /// <returns>The response from the DeleteRegexPatternSet service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFAssociatedItemException">
         /// WAF couldn’t perform the operation because your resource is being used by another
-        /// resource or it’s associated with another resource. 
-        /// 
-        ///  
-        /// <para>
-        /// For <code>DeleteWebACL</code>, you will only get this exception if the web ACL is
-        /// still associated with a regional resource. Deleting a web ACL that is still associated
-        /// with an Amazon CloudFront distribution won't get this exception. 
-        /// </para>
+        /// resource or it’s associated with another resource.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
         /// Your request is valid, but WAF couldn’t perform the operation because of a system
@@ -1683,14 +1670,7 @@ namespace Amazon.WAFV2
         /// <returns>The response from the DeleteRegexPatternSet service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFAssociatedItemException">
         /// WAF couldn’t perform the operation because your resource is being used by another
-        /// resource or it’s associated with another resource. 
-        /// 
-        ///  
-        /// <para>
-        /// For <code>DeleteWebACL</code>, you will only get this exception if the web ACL is
-        /// still associated with a regional resource. Deleting a web ACL that is still associated
-        /// with an Amazon CloudFront distribution won't get this exception. 
-        /// </para>
+        /// resource or it’s associated with another resource.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
         /// Your request is valid, but WAF couldn’t perform the operation because of a system
@@ -1755,14 +1735,7 @@ namespace Amazon.WAFV2
         /// <returns>The response from the DeleteRuleGroup service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFAssociatedItemException">
         /// WAF couldn’t perform the operation because your resource is being used by another
-        /// resource or it’s associated with another resource. 
-        /// 
-        ///  
-        /// <para>
-        /// For <code>DeleteWebACL</code>, you will only get this exception if the web ACL is
-        /// still associated with a regional resource. Deleting a web ACL that is still associated
-        /// with an Amazon CloudFront distribution won't get this exception. 
-        /// </para>
+        /// resource or it’s associated with another resource.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
         /// Your request is valid, but WAF couldn’t perform the operation because of a system
@@ -1827,14 +1800,7 @@ namespace Amazon.WAFV2
         /// <returns>The response from the DeleteRuleGroup service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFAssociatedItemException">
         /// WAF couldn’t perform the operation because your resource is being used by another
-        /// resource or it’s associated with another resource. 
-        /// 
-        ///  
-        /// <para>
-        /// For <code>DeleteWebACL</code>, you will only get this exception if the web ACL is
-        /// still associated with a regional resource. Deleting a web ACL that is still associated
-        /// with an Amazon CloudFront distribution won't get this exception. 
-        /// </para>
+        /// resource or it’s associated with another resource.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
         /// Your request is valid, but WAF couldn’t perform the operation because of a system
@@ -1937,14 +1903,7 @@ namespace Amazon.WAFV2
         /// <returns>The response from the DeleteWebACL service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFAssociatedItemException">
         /// WAF couldn’t perform the operation because your resource is being used by another
-        /// resource or it’s associated with another resource. 
-        /// 
-        ///  
-        /// <para>
-        /// For <code>DeleteWebACL</code>, you will only get this exception if the web ACL is
-        /// still associated with a regional resource. Deleting a web ACL that is still associated
-        /// with an Amazon CloudFront distribution won't get this exception. 
-        /// </para>
+        /// resource or it’s associated with another resource.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
         /// Your request is valid, but WAF couldn’t perform the operation because of a system
@@ -2047,14 +2006,7 @@ namespace Amazon.WAFV2
         /// <returns>The response from the DeleteWebACL service method, as returned by WAFV2.</returns>
         /// <exception cref="Amazon.WAFV2.Model.WAFAssociatedItemException">
         /// WAF couldn’t perform the operation because your resource is being used by another
-        /// resource or it’s associated with another resource. 
-        /// 
-        ///  
-        /// <para>
-        /// For <code>DeleteWebACL</code>, you will only get this exception if the web ACL is
-        /// still associated with a regional resource. Deleting a web ACL that is still associated
-        /// with an Amazon CloudFront distribution won't get this exception. 
-        /// </para>
+        /// resource or it’s associated with another resource.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
         /// Your request is valid, but WAF couldn’t perform the operation because of a system
@@ -2232,8 +2184,8 @@ namespace Amazon.WAFV2
         /// <summary>
         /// Disassociates the specified regional application resource from any existing web ACL
         /// association. A resource can have at most one web ACL association. A regional application
-        /// can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
-        /// GraphQL API. 
+        /// can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync
+        /// GraphQL API, or an Amazon Cognito user pool. 
         /// 
         ///  
         /// <para>
@@ -2288,8 +2240,8 @@ namespace Amazon.WAFV2
         /// <summary>
         /// Disassociates the specified regional application resource from any existing web ACL
         /// association. A resource can have at most one web ACL association. A regional application
-        /// can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
-        /// GraphQL API. 
+        /// can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync
+        /// GraphQL API, or an Amazon Cognito user pool. 
         /// 
         ///  
         /// <para>
@@ -6419,7 +6371,8 @@ namespace Amazon.WAFV2
         /// can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule
         /// group. You can associate a web ACL with one or more Amazon Web Services resources
         /// to protect. The resources can be an Amazon CloudFront distribution, an Amazon API
-        /// Gateway REST API, an Application Load Balancer, or an AppSync GraphQL API. 
+        /// Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, or an Amazon
+        /// Cognito user pool. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateWebACL service method.</param>
@@ -6550,7 +6503,8 @@ namespace Amazon.WAFV2
         /// can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule
         /// group. You can associate a web ACL with one or more Amazon Web Services resources
         /// to protect. The resources can be an Amazon CloudFront distribution, an Amazon API
-        /// Gateway REST API, an Application Load Balancer, or an AppSync GraphQL API. 
+        /// Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, or an Amazon
+        /// Cognito user pool. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateWebACL service method.</param>

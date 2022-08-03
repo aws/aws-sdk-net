@@ -46,6 +46,10 @@ namespace Amazon.WAFV2.Model
     /// objects: <code>LoginPath</code>, <code>PasswordField</code>, <code>PayloadType</code>
     /// and <code>UsernameField</code>.
     /// </para>
+    ///  
+    /// <para>
+    /// For example specifications, see the examples section of <a>CreateWebACL</a>.
+    /// </para>
     /// </summary>
     public partial class ManagedRuleGroupConfig
     {
