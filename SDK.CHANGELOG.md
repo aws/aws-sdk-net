@@ -1,3 +1,16 @@
+### 3.7.329.0 (2022-08-04 18:14 UTC)
+* ChimeSDKMeetings (3.7.10.0)
+	* Adds support for Tags on Amazon Chime SDK WebRTC sessions
+* ConfigService (3.7.12.0)
+	* Add resourceType enums for Athena, GlobalAccelerator, Detective and EC2 types
+* DatabaseMigrationService (3.7.9.13)
+	* Documentation updates for Database Migration Service (DMS).
+* IoT (3.7.17.0)
+	* The release is to support attach a provisioning template to CACert for JITP function,  Customer now doesn't have to hardcode a roleArn and templateBody during register a CACert to enable JITP.
+* Core 3.7.12.18
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.328.0 (2022-08-03 18:12 UTC)
 * CognitoIdentityProvider (3.7.5.0)
 	* Add a new exception type, ForbiddenException, that is returned when request is not allowed
