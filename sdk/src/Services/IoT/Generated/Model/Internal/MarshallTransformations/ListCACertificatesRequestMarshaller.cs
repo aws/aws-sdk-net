@@ -67,6 +67,9 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetPageSize())
                 request.Parameters.Add("pageSize", StringUtils.FromInt(publicRequest.PageSize));
+            
+            if (publicRequest.IsSetTemplateName())
+                request.Parameters.Add("templateName", StringUtils.FromString(publicRequest.TemplateName));
             request.ResourcePath = "/cacertificates";
             request.UseQueryString = true;
 

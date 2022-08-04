@@ -2171,7 +2171,7 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Creates a fleet provisioning template.
+        /// Creates a provisioning template.
         /// 
         ///  
         /// <para>
@@ -2213,7 +2213,7 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Creates a new version of a fleet provisioning template.
+        /// Creates a new version of a provisioning template.
         /// 
         ///  
         /// <para>
@@ -3566,7 +3566,7 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Deletes a fleet provisioning template.
+        /// Deletes a provisioning template.
         /// 
         ///  
         /// <para>
@@ -3612,7 +3612,7 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Deletes a fleet provisioning template version.
+        /// Deletes a provisioning template version.
         /// 
         ///  
         /// <para>
@@ -5124,7 +5124,7 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Returns information about a fleet provisioning template.
+        /// Returns information about a provisioning template.
         /// 
         ///  
         /// <para>
@@ -5163,7 +5163,7 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Returns information about a fleet provisioning template version.
+        /// Returns information about a provisioning template version.
         /// 
         ///  
         /// <para>
@@ -5601,11 +5601,12 @@ namespace Amazon.IoT
         /// <summary>
         /// Removes the specified policy from the specified certificate.
         /// 
-        ///  <note> 
+        ///  
         /// <para>
-        /// This action is deprecated. Please use <a>DetachPolicy</a> instead.
+        ///  <b>Note:</b> This action is deprecated and works as expected for backward compatibility,
+        /// but we won't add enhancements. Use <a>DetachPolicy</a> instead.
         /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DetachPrincipalPolicy</a>
         /// action.
@@ -5644,11 +5645,12 @@ namespace Amazon.IoT
         /// <summary>
         /// Removes the specified policy from the specified certificate.
         /// 
-        ///  <note> 
+        ///  
         /// <para>
-        /// This action is deprecated. Please use <a>DetachPolicy</a> instead.
+        ///  <b>Note:</b> This action is deprecated and works as expected for backward compatibility,
+        /// but we won't add enhancements. Use <a>DetachPolicy</a> instead.
         /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DetachPrincipalPolicy</a>
         /// action.
@@ -7806,7 +7808,8 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        ///  <b>Note:</b> This action is deprecated. Please use <a>ListTargetsForPolicy</a> instead.
+        ///  <b>Note:</b> This action is deprecated and works as expected for backward compatibility,
+        /// but we won't add enhancements. Use <a>ListTargetsForPolicy</a> instead.
         /// </para>
         ///  
         /// <para>
@@ -7932,7 +7935,8 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        ///  <b>Note:</b> This action is deprecated. Please use <a>ListAttachedPolicies</a> instead.
+        ///  <b>Note:</b> This action is deprecated and works as expected for backward compatibility,
+        /// but we won't add enhancements. Use <a>ListAttachedPolicies</a> instead.
         /// </para>
         ///  
         /// <para>
@@ -7976,7 +7980,8 @@ namespace Amazon.IoT
         /// 
         ///  
         /// <para>
-        ///  <b>Note:</b> This action is deprecated. Please use <a>ListAttachedPolicies</a> instead.
+        ///  <b>Note:</b> This action is deprecated and works as expected for backward compatibility,
+        /// but we won't add enhancements. Use <a>ListAttachedPolicies</a> instead.
         /// </para>
         ///  
         /// <para>
@@ -8101,7 +8106,7 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Lists the fleet provisioning templates in your Amazon Web Services account.
+        /// Lists the provisioning templates in your Amazon Web Services account.
         /// 
         ///  
         /// <para>
@@ -8137,7 +8142,7 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// A list of fleet provisioning template versions.
+        /// A list of provisioning template versions.
         /// 
         ///  
         /// <para>
@@ -9135,6 +9140,9 @@ namespace Amazon.IoT
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
         /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
         /// The service is temporarily unavailable.
@@ -10976,7 +10984,7 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Updates a fleet provisioning template.
+        /// Updates a provisioning template.
         /// 
         ///  
         /// <para>

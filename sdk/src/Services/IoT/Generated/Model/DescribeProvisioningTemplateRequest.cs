@@ -30,7 +30,7 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeProvisioningTemplate operation.
-    /// Returns information about a fleet provisioning template.
+    /// Returns information about a provisioning template.
     /// 
     ///  
     /// <para>
@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property TemplateName. 
         /// <para>
-        /// The name of the fleet provisioning template.
+        /// The name of the provisioning template.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=36)]

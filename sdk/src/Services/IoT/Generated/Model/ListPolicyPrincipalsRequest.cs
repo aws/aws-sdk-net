@@ -34,7 +34,8 @@ namespace Amazon.IoT.Model
     /// 
     ///  
     /// <para>
-    ///  <b>Note:</b> This action is deprecated. Please use <a>ListTargetsForPolicy</a> instead.
+    ///  <b>Note:</b> This action is deprecated and works as expected for backward compatibility,
+    /// but we won't add enhancements. Use <a>ListTargetsForPolicy</a> instead.
     /// </para>
     ///  
     /// <para>

@@ -1700,6 +1700,12 @@
     <max>250</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.ListCACertificatesRequest.TemplateName</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[0-9A-Za-z_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.ListCACertificatesResponse.NextMarker</property>
     <max>1024</max>
     <pattern>[A-Za-z0-9+/]+={0,2}</pattern>
@@ -3475,6 +3481,12 @@
     <min>0</min>
     <max>10240</max>
     <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.RegistrationConfig.TemplateName</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[0-9A-Za-z_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.RepublishAction.Qos</property>

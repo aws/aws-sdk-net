@@ -48,6 +48,7 @@ namespace Amazon.IoT.Model
         private bool? _ascendingOrder;
         private string _marker;
         private int? _pageSize;
+        private string _templateName;
 
         /// <summary>
         /// Gets and sets the property AscendingOrder. 
@@ -103,6 +104,25 @@ namespace Amazon.IoT.Model
         internal bool IsSetPageSize()
         {
             return this._pageSize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TemplateName. 
+        /// <para>
+        /// The name of the provisioning template.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=36)]
+        public string TemplateName
+        {
+            get { return this._templateName; }
+            set { this._templateName = value; }
+        }
+
+        // Check to see if TemplateName property is set
+        internal bool IsSetTemplateName()
+        {
+            return this._templateName != null;
         }
 
     }

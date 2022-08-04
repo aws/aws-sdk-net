@@ -57,7 +57,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Templates. 
         /// <para>
-        /// A list of fleet provisioning templates
+        /// A list of provisioning templates
         /// </para>
         /// </summary>
         public List<ProvisioningTemplateSummary> Templates

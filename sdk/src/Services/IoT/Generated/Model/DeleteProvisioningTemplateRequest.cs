@@ -30,7 +30,7 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteProvisioningTemplate operation.
-    /// Deletes a fleet provisioning template.
+    /// Deletes a provisioning template.
     /// 
     ///  
     /// <para>

@@ -30,7 +30,7 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteProvisioningTemplateVersion operation.
-    /// Deletes a fleet provisioning template version.
+    /// Deletes a provisioning template version.
     /// 
     ///  
     /// <para>
@@ -46,7 +46,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property TemplateName. 
         /// <para>
-        /// The name of the fleet provisioning template version to delete.
+        /// The name of the provisioning template version to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=36)]
@@ -65,7 +65,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property VersionId. 
         /// <para>
-        /// The fleet provisioning template version ID to delete.
+        /// The provisioning template version ID to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -30,7 +30,7 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateProvisioningTemplateVersion operation.
-    /// Creates a new version of a fleet provisioning template.
+    /// Creates a new version of a provisioning template.
     /// 
     ///  
     /// <para>
@@ -65,7 +65,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property TemplateBody. 
         /// <para>
-        /// The JSON formatted contents of the fleet provisioning template.
+        /// The JSON formatted contents of the provisioning template.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10240)]
@@ -84,7 +84,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property TemplateName. 
         /// <para>
-        /// The name of the fleet provisioning template.
+        /// The name of the provisioning template.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=36)]

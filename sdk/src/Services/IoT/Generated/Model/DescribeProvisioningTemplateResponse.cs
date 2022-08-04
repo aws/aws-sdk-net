@@ -43,11 +43,12 @@ namespace Amazon.IoT.Model
         private string _templateArn;
         private string _templateBody;
         private string _templateName;
+        private TemplateType _type;
 
         /// <summary>
         /// Gets and sets the property CreationDate. 
         /// <para>
-        /// The date when the fleet provisioning template was created.
+        /// The date when the provisioning template was created.
         /// </para>
         /// </summary>
         public DateTime CreationDate
@@ -83,7 +84,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the fleet provisioning template.
+        /// The description of the provisioning template.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=500)]
@@ -102,7 +103,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// True if the fleet provisioning template is enabled, otherwise false.
+        /// True if the provisioning template is enabled, otherwise false.
         /// </para>
         /// </summary>
         public bool Enabled
@@ -120,7 +121,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property LastModifiedDate. 
         /// <para>
-        /// The date when the fleet provisioning template was last modified.
+        /// The date when the provisioning template was last modified.
         /// </para>
         /// </summary>
         public DateTime LastModifiedDate
@@ -176,7 +177,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property TemplateArn. 
         /// <para>
-        /// The ARN of the fleet provisioning template.
+        /// The ARN of the provisioning template.
         /// </para>
         /// </summary>
         public string TemplateArn
@@ -194,7 +195,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property TemplateBody. 
         /// <para>
-        /// The JSON formatted contents of the fleet provisioning template.
+        /// The JSON formatted contents of the provisioning template.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10240)]
@@ -213,7 +214,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property TemplateName. 
         /// <para>
-        /// The name of the fleet provisioning template.
+        /// The name of the provisioning template.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=36)]
@@ -227,6 +228,28 @@ namespace Amazon.IoT.Model
         internal bool IsSetTemplateName()
         {
             return this._templateName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type you define in a provisioning template. You can create a template with only
+        /// one type. You can't change the template type after its creation. The default value
+        /// is <code>FLEET_PROVISIONING</code>. For more information about provisioning template,
+        /// see: <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning
+        /// template</a>. 
+        /// </para>
+        /// </summary>
+        public TemplateType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }
