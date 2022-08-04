@@ -36,6 +36,7 @@ namespace Amazon.ChimeSDKMeetings.Model
         private string _externalMeetingId;
         private MediaPlacement _mediaPlacement;
         private string _mediaRegion;
+        private string _meetingArn;
         private MeetingFeaturesConfiguration _meetingFeatures;
         private string _meetingHostId;
         private string _meetingId;
@@ -105,6 +106,25 @@ namespace Amazon.ChimeSDKMeetings.Model
         internal bool IsSetMediaRegion()
         {
             return this._mediaRegion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MeetingArn. 
+        /// <para>
+        /// The ARN of the meeting.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1011)]
+        public string MeetingArn
+        {
+            get { return this._meetingArn; }
+            set { this._meetingArn = value; }
+        }
+
+        // Check to see if MeetingArn property is set
+        internal bool IsSetMeetingArn()
+        {
+            return this._meetingArn != null;
         }
 
         /// <summary>

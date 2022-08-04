@@ -82,6 +82,12 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
                     unmarshalledObject.MediaRegion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MeetingArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MeetingArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MeetingFeatures", targetDepth))
                 {
                     var unmarshaller = MeetingFeaturesConfigurationUnmarshaller.Instance;

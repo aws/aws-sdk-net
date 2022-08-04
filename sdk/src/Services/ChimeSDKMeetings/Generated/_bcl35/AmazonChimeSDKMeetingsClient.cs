@@ -1078,6 +1078,63 @@ namespace Amazon.ChimeSDKMeetings
 
         #endregion
         
+        #region  ListTagsForResource
+
+        /// <summary>
+        /// Returns a list of the tags available for the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by ChimeSDKMeetings.</returns>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ResourceNotFoundException">
+        /// The resource that you want to tag couldn't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation on AmazonChimeSDKMeetingsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
+        /// 
+        /// <returns>Returns a  ListTagsForResourceResult from ChimeSDKMeetings.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTagsForResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartMeetingTranscription
 
         /// <summary>
@@ -1233,6 +1290,163 @@ namespace Amazon.ChimeSDKMeetings
         public virtual StopMeetingTranscriptionResponse EndStopMeetingTranscription(IAsyncResult asyncResult)
         {
             return EndInvoke<StopMeetingTranscriptionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  TagResource
+
+        /// <summary>
+        /// The resource that supports tags.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by ChimeSDKMeetings.</returns>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ResourceNotFoundException">
+        /// The resource that you want to tag couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.TooManyTagsException">
+        /// Too many tags were added to the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation on AmazonChimeSDKMeetingsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
+        /// 
+        /// <returns>Returns a  TagResourceResult from ChimeSDKMeetings.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse EndTagResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<TagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+        /// <summary>
+        /// Removes the specified tags from the specified resources. When you specify a tag key,
+        /// the action removes both that key and its associated value. The operation succeeds
+        /// even if you attempt to remove tags from a resource that were already removed. Note
+        /// the following:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// To remove tags from a resource, you need the necessary permissions for the service
+        /// that the resource belongs to as well as permissions for removing tags. For more information,
+        /// see the documentation for the service whose resource you want to untag.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can only tag resources that are located in the specified AWS Region for the calling
+        /// AWS account.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Minimum permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// In addition to the <code>tag:UntagResources</code> permission required by this operation,
+        /// you must also have the remove tags permission defined by the service that created
+        /// the resource. For example, to remove the tags from an Amazon EC2 instance using the
+        /// <code>UntagResources</code> operation, you must have both of the following permissions:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>tag:UntagResource</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>ChimeSDKMeetings:DeleteTags</code> 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by ChimeSDKMeetings.</returns>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMeetings.Model.ResourceNotFoundException">
+        /// The resource that you want to tag couldn't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation on AmazonChimeSDKMeetingsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
+        /// 
+        /// <returns>Returns a  UntagResourceResult from ChimeSDKMeetings.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UntagResourceResponse>(asyncResult);
         }
 
         #endregion

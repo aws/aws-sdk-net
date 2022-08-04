@@ -143,7 +143,10 @@ namespace Amazon.ChimeSDKMeetings.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RequestId.
+        /// Gets and sets the property RequestId. 
+        /// <para>
+        /// The ID of the failed request.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=4096)]
         public string RequestId

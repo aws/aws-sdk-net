@@ -45,6 +45,7 @@ namespace Amazon.ChimeSDKMeetings.Model
         private string _meetingHostId;
         private NotificationsConfiguration _notificationsConfiguration;
         private string _primaryMeetingId;
+        private List<Tag> _tags = new List<Tag>();
         private List<string> _tenantIds = new List<string>();
 
         /// <summary>
@@ -191,6 +192,82 @@ namespace Amazon.ChimeSDKMeetings.Model
         internal bool IsSetPrimaryMeetingId()
         {
             return this._primaryMeetingId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Applies one or more tags to an Amazon Chime SDK meeting. Note the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Not all resources have tags. For a list of services with resources that support tagging
+        /// using this operation, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services
+        /// that support the Resource Groups Tagging API</a>. If the resource doesn't yet support
+        /// this operation, the resource's service might support tagging using its own API operations.
+        /// For more information, refer to the documentation for that service.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Each resource can have up to 50 tags. For other limits, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag
+        /// Naming and Usage Conventions</a> in the <i>AWS General Reference</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can only tag resources that are located in the specified AWS Region for the AWS
+        /// account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To add tags to a resource, you need the necessary permissions for the service that
+        /// the resource belongs to as well as permissions for adding tags. For more information,
+        /// see the documentation for each service.
+        /// </para>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// Do not store personally identifiable information (PII) or other confidential or sensitive
+        /// information in tags. We use tags to provide you with billing and administration services.
+        /// Tags are not intended to be used for private or sensitive data.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  <b>Minimum permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  In addition to the <code>tag:TagResources </code>permission required by this operation,
+        /// you must also have the tagging permission defined by the service that created the
+        /// resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code>
+        /// operation, you must have both of the following permissions:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>tag:TagResources</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>ChimeSDKMeetings:CreateTags</code> 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Some services might have specific requirements for tagging some resources. For example,
+        /// to tag an Amazon S3 bucket, you must also have the <code>s3:GetBucketTagging</code>
+        /// permission. If the expected minimum permissions don't work, check the documentation
+        /// for that service's tagging APIs for more information.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>
