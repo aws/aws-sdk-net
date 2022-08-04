@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "Initial release of AWS Compute Optimizer. AWS Compute Optimizer recommends optimal AWS Compute resources to reduce costs and improve performance for your workloads.",
-  "generate-client-constructors": true
+  "generate-client-constructors": true,
+  "legacy-service-id": "Compute Optimizer"
 }

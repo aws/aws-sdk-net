@@ -18,7 +18,7 @@
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
 
     <NoWarn>CS1591;CS1572;CS1573;CS1570;CS0109;CS0252</NoWarn>
-  </PropertyGroup>
+  </PropertyGroup>  
   <ItemGroup>
     <Compile Update="Generators\CodeAnalysis\CodeAnalysisAssemblyInfo.cs">
       <AutoGen>True</AutoGen>

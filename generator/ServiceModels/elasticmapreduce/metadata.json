@@ -1,7 +1,8 @@
 {
-    "base-name": "ElasticMapReduce", 
-    "synopsis": "Amazon Elastic MapReduce (Amazon EMR) is a web service that makes it easy to quickly and cost-effectively process vast amounts of data.", 
-    "tags": [
-        "EMR"
-    ]
+  "base-name": "ElasticMapReduce",
+  "synopsis": "Amazon Elastic MapReduce (Amazon EMR) is a web service that makes it easy to quickly and cost-effectively process vast amounts of data.",
+  "tags": [
+    "EMR"
+  ],
+  "legacy-service-id": "EMR"
 }

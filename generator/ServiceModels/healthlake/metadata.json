@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "This release introduces Amazon HealthLake (preview), a HIPAA-eligible service that enables healthcare and life sciences customers to store, transform, query, and analyze health data in the AWS Cloud.",
-  "generate-client-constructors": true
+  "generate-client-constructors": true,
+  "legacy-service-id": "HealthLake"
 }

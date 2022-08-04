@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "Released the Amazon Voice ID SDK, for usage with the Amazon Connect Voice ID feature released for Amazon Connect.",
-  "generate-client-constructors": true
+  "generate-client-constructors": true,
+  "legacy-service-id": "Voice ID"
 }

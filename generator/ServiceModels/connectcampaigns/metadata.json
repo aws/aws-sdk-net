@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "Added Amazon Connect high volume outbound communications SDK.",
-  "generate-client-constructors": true
+  "generate-client-constructors": true,
+  "legacy-service-id": "ConnectCampaigns"
 }

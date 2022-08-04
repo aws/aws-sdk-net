@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "AWS MemoryDB  SDK now supports all APIs for newly launched MemoryDB service.",
-  "generate-client-constructors": true
+  "generate-client-constructors": true,
+  "legacy-service-id": "MemoryDB"
 }

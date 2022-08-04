@@ -1,9 +1,10 @@
 {
-    "base-name": "SimpleEmailService", 
-    "active": true, 
-    "namespace": "Amazon.SimpleEmail", 
-    "synopsis": "Amazon SES is an outbound-only email-sending service that provides an easy, cost-effective way for you to send email.", 
-    "tags": [
-        "SES"
-    ]
+  "base-name": "SimpleEmailService",
+  "active": true,
+  "namespace": "Amazon.SimpleEmail",
+  "synopsis": "Amazon SES is an outbound-only email-sending service that provides an easy, cost-effective way for you to send email.",
+  "tags": [
+    "SES"
+  ],
+  "legacy-service-id": "SES"
 }

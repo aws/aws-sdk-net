@@ -6,5 +6,6 @@
   "namespace": "Amazon.SimpleEmailV2",
   "tags": [
     "SESV2"
-  ]
+  ],
+  "legacy-service-id": "SESv2"
 }

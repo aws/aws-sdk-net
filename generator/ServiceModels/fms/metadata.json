@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "This release is the initial release version for AWS Firewall Manager, a new AWS service that makes it easy for customers to centrally configure WAF rules across all their resources (ALBs and CloudFront distributions) and across accounts.",
-  "generate-client-constructors": true
+  "generate-client-constructors": true,
+  "legacy-service-id": "FMS"
 }

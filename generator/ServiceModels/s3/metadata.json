@@ -1,5 +1,6 @@
 {
-    "active": true, 
-    "enable-xamarin-component": true, 
-    "synopsis": "Amazon Simple Storage Service (Amazon S3), provides developers and IT teams with secure, durable, highly-scalable object storage."
+  "active": true,
+  "enable-xamarin-component": true,
+  "synopsis": "Amazon Simple Storage Service (Amazon S3), provides developers and IT teams with secure, durable, highly-scalable object storage.",
+  "legacy-service-id": "S3"
 }

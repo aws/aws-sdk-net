@@ -37,7 +37,7 @@ namespace ServiceClientGenerator
             public const string TagsKey = "tags";
             public const string LicenseUrlKey = "license-url";
             public const string TestServiceKey = "test-service";
-
+            public const string LegacyServiceIdKey = "legacy-service-id";
         }
 
         abstract class ProjectsSectionKeys
@@ -357,6 +357,9 @@ namespace ServiceClientGenerator
             if (modelNode[ModelsSectionKeys.SynopsisKey] != null)
                 config.Synopsis = (string)modelNode[ModelsSectionKeys.SynopsisKey];
 
+            if (modelNode[ModelsSectionKeys.LegacyServiceIdKey] != null)
+                config.LegacyServiceId = (string)modelNode[ModelsSectionKeys.LegacyServiceIdKey];            
+            
             if (modelNode[ModelsSectionKeys.NetStandardSupportKey] != null)
                 config.NetStandardSupport = (bool)modelNode[ModelsSectionKeys.NetStandardSupportKey];
             else

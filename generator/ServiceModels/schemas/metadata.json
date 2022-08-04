@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "This release introduces support for Amazon EventBridge schema registry, making it easy to discover and write code for events in EventBridge.",
-  "generate-client-constructors": true
+  "generate-client-constructors": true,
+  "legacy-service-id": "schemas"
 }

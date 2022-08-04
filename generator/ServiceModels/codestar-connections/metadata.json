@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "Public beta for Bitbucket Cloud support in AWS CodePipeline through integration with AWS CodeStar connections.",
-  "generate-client-constructors": true
+  "generate-client-constructors": true,
+  "legacy-service-id": "CodeStar connections"
 }

@@ -1,5 +1,6 @@
 {
-    "base-name": "DirectoryService", 
-    "active": true, 
-    "synopsis": "AWS Directory Service is a managed service that allows you to connect your AWS resources with an existing on-premises Microsoft Active Directory or to set up a new, stand-alone directory in the AWS Cloud."
+  "base-name": "DirectoryService",
+  "active": true,
+  "synopsis": "AWS Directory Service is a managed service that allows you to connect your AWS resources with an existing on-premises Microsoft Active Directory or to set up a new, stand-alone directory in the AWS Cloud.",
+  "legacy-service-id": "Directory Service"
 }

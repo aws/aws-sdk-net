@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "Introducing CloudWatch Synthetics. This is the first public release of CloudWatch Synthetics.",
-  "generate-client-constructors": true
+  "generate-client-constructors": true,
+  "legacy-service-id": "synthetics"
 }

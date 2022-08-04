@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "AWS AppSync is an enterprise-level, fully managed GraphQL service with real-time data synchronization and offline programming features.",
-  "generate-client-constructors": true
+  "generate-client-constructors": true,
+  "legacy-service-id": "AppSync"
 }

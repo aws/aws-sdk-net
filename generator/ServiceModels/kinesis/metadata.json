@@ -1,4 +1,5 @@
 {
-    "active": true, 
-    "synopsis": "Amazon Kinesis is a fully managed, cloud-based service for real-time processing of large, distributed data streams."
+  "active": true,
+  "synopsis": "Amazon Kinesis is a fully managed, cloud-based service for real-time processing of large, distributed data streams.",
+  "legacy-service-id": "Kinesis"
 }

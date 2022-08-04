@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "This release adds support for Amazon Lex V2 APIs for runtime, including Streaming APIs for conversation management.",
-  "generate-client-constructors": true
+  "generate-client-constructors": true,
+  "legacy-service-id": "Lex Runtime V2"
 }

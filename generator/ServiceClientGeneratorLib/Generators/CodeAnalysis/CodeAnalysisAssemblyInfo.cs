@@ -42,18 +42,10 @@ using System.Runtime.InteropServices;
             
             #line default
             #line hidden
-            this.Write("\")]\r\n[assembly: AssemblyDescription(\"The Amazon Web Services SDK for .NET (3.5) -" +
-                    " ");
+            this.Write("\")]\r\n[assembly: AssemblyDescription(\"");
             
             #line 14 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisAssemblyInfo.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceModel.ServiceFullName));
-            
-            #line default
-            #line hidden
-            this.Write(". ");
-            
-            #line 14 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisAssemblyInfo.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.AssemblyDescription));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.AssemblyDescription(versionIdentifier: "3.5")));
             
             #line default
             #line hidden

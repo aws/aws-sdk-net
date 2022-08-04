@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "APIs for AWS Application Cost Profiler.",
-  "generate-client-constructors": true
+  "generate-client-constructors": true,
+  "legacy-service-id": "ApplicationCostProfiler"
 }

@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "This is an initial release of AWS Single Sign-On (SSO) Access Management APIs. This release adds support for SSO operations which could be used for managing access to AWS accounts.",
-  "generate-client-constructors": true
+  "generate-client-constructors": true,
+  "legacy-service-id": "SSO Admin"
 }

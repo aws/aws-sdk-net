@@ -311,18 +311,18 @@ namespace ServiceClientGenerator
                 // These methods have already been released. The are broken and we need to work with the service teams to get them fixed.
                 if (string.Equals(operation.HttpMethod, "GET", StringComparison.InvariantCultureIgnoreCase) && operation.RequestHasBodyMembers)
                 {
-                    if ((string.Equals("QuickSight", Configuration.ServiceModel.ServiceId) && string.Equals("ListIAMPolicyAssignments", operation.Name)) ||
-                       (string.Equals("OpenSearch", Configuration.ServiceModel.ServiceId) && string.Equals("DescribeDomainAutoTunes", operation.Name)) ||
-                       (string.Equals("ivs", Configuration.ServiceModel.ServiceId) && string.Equals("ListTagsForResource", operation.Name)) ||
-                       (string.Equals("EFS", Configuration.ServiceModel.ServiceId) && string.Equals("DescribeAccountPreferences", operation.Name)) ||
-                       (string.Equals("SESv2", Configuration.ServiceModel.ServiceId) && string.Equals("ListContacts", operation.Name)) ||
-                       (string.Equals("SESv2", Configuration.ServiceModel.ServiceId) && string.Equals("ListImportJobs", operation.Name)) ||
-                       (string.Equals("Elasticsearch Service", Configuration.ServiceModel.ServiceId) && string.Equals("DescribeDomainAutoTunes", operation.Name))
+                    if ((string.Equals("QuickSight", Configuration.ServiceId) && string.Equals("ListIAMPolicyAssignments", operation.Name)) ||
+                       (string.Equals("OpenSearch", Configuration.ServiceId) && string.Equals("DescribeDomainAutoTunes", operation.Name)) ||
+                       (string.Equals("ivs", Configuration.ServiceId) && string.Equals("ListTagsForResource", operation.Name)) ||
+                       (string.Equals("EFS", Configuration.ServiceId) && string.Equals("DescribeAccountPreferences", operation.Name)) ||
+                       (string.Equals("SESv2", Configuration.ServiceId) && string.Equals("ListContacts", operation.Name)) ||
+                       (string.Equals("SESv2", Configuration.ServiceId) && string.Equals("ListImportJobs", operation.Name)) ||
+                       (string.Equals("Elasticsearch Service", Configuration.ServiceId) && string.Equals("DescribeDomainAutoTunes", operation.Name))
                         )
                     {
                         continue;
                     }
-                    throw new InvalidOperationException($"Failed to generate for service {Configuration.ServiceModel.ServiceFullName} because it contains a GET operation ({operation.Name}) with request body members.");
+                    throw new InvalidOperationException($"Failed to generate for service with Id {Configuration.ServiceId} because it contains a GET operation ({operation.Name}) with request body members.");
                 }
             }
         }
@@ -988,24 +988,6 @@ namespace ServiceClientGenerator
             }
         }
 
-        string ConvertHtmlToMarkDown(string text)
-        {
-            var htmlText = text.Replace("<fullname>", "<h1>").Replace("</fullname>", "</h1>");
-            htmlText = htmlText.Replace("<note>", "<i>").Replace("</note>", "</i>");
-            var converter = new ReverseMarkdown.Converter(new ReverseMarkdown.Config(unknownTagsConverter: "raise", githubFlavored: true));
-            try
-            {
-                var markdownText = converter.Convert(htmlText);
-                return markdownText;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("exception while parsing markdown for the service {0}", Configuration.ServiceModel.ServiceFullName);
-                Console.WriteLine("html text = {0}", text);
-                throw e;
-            }
-        }
-
         void GenerateNuspec()
         {
             var coreVersion = GenerationManifest.CoreVersion;
@@ -1044,26 +1026,27 @@ namespace ServiceClientGenerator
                 }
             }
 
-            var assemblyVersion = Configuration.ServiceFileVersion;
-            var assemblyName = Configuration.Namespace.Replace("Amazon.", "AWSSDK.");
-            var assemblyTitle = "AWSSDK - " + Configuration.ServiceModel.ServiceFullName;
-            var nugetTitle = assemblyTitle;
+
+            var nugetAssemblyName = Configuration.AssemblyTitle;
+            var nugetAssemblyTitle = Configuration.AssemblyTitle.Replace("AWSSDK.", "AWSSDK - ");
+
+            var nugetTitle = nugetAssemblyTitle;
             if (!string.IsNullOrEmpty(Configuration.NugetPackageTitleSuffix))
                 nugetTitle += " " + Configuration.NugetPackageTitleSuffix;
 
             var session = new Dictionary<string, object>
             {
-                { "AssemblyName", assemblyName },
-                { "AssemblyTitle",  assemblyTitle },
+                { "AssemblyName", nugetAssemblyName },
+                { "AssemblyTitle",  nugetAssemblyTitle },
                 { "NetStandardSupport",  Configuration.NetStandardSupport },
                 { "NetStandardCoreAssemblyName",  Configuration.ServiceFolderName },
                 { "NuGetTitle",  nugetTitle },
-                { "AssemblyDescription", Configuration.AssemblyDescription },
-                { "AssemblyVersion", assemblyVersion },
+                { "AssemblyDescription", Configuration.AssemblyDescription(includePreamble: false, includeBody: false) },
+                { "AssemblyVersion", Configuration.ServiceFileVersion },
                 { "AWSDependencies", awsDependencies },
-                { "BaseName", this.Configuration.ClassName },
-                { "CodeAnalysisServiceFolder", this.Configuration.Namespace.Replace("Amazon.", "") },
-                { "ProjectFileConfigurations", this.ProjectFileConfigurations},
+                { "BaseName", Configuration.ClassName },
+                { "CodeAnalysisServiceFolder", Configuration.Namespace.Replace("Amazon.", "") },
+                { "ProjectFileConfigurations", ProjectFileConfigurations},
                 { "ExtraTags", Configuration.Tags == null || Configuration.Tags.Count == 0 ? string.Empty : " " + string.Join(" ", Configuration.Tags) },
                 { "licenseUrl", Configuration.LicenseUrl },
                 { "requireLicenseAcceptance",Configuration.RequireLicenseAcceptance?"true":"false" }
@@ -1076,7 +1059,7 @@ namespace ServiceClientGenerator
 
             var nuspecGenerator = new Nuspec { Session = session };
             var text = nuspecGenerator.TransformText();
-            var nuspecFilename = assemblyName + ".nuspec";
+            var nuspecFilename = nugetAssemblyName + ".nuspec";
             WriteFile(ServiceFilesRoot, string.Empty, nuspecFilename, text);
         }
 

@@ -1,4 +1,5 @@
 {
-    "active": true, 
-    "synopsis": "AWS Shield protects web applications from large and sophisticated DDoS attacks at Layer 3, 4 and 7. In addition AWS Shield provides visibility in attacks, and access to 24X7 DDoS Response Team."
+  "active": true,
+  "synopsis": "AWS Shield protects web applications from large and sophisticated DDoS attacks at Layer 3, 4 and 7. In addition AWS Shield provides visibility in attacks, and access to 24X7 DDoS Response Team.",
+  "legacy-service-id": "Shield"
 }

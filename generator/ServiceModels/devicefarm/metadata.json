@@ -1,4 +1,5 @@
 {
-    "active": true, 
-    "synopsis": "AWS Device Farm is an app testing service that enables you to test your Android and Fire OS apps on real, physical phones and tablets that are hosted by AWS. The service allows you to upload your own tests or use built-in, script-free compatibility tests."
+  "active": true,
+  "synopsis": "AWS Device Farm is an app testing service that enables you to test your Android and Fire OS apps on real, physical phones and tablets that are hosted by AWS. The service allows you to upload your own tests or use built-in, script-free compatibility tests.",
+  "legacy-service-id": "Device Farm"
 }

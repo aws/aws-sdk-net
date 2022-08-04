@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "This release adds support for Amazon EMR on EKS, a simple way to run Spark on Kubernetes.",
-  "generate-client-constructors": true
+  "generate-client-constructors": true,
+  "legacy-service-id": "EMR containers"
 }

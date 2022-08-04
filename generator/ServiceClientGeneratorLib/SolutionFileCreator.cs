@@ -261,13 +261,13 @@ namespace ServiceClientGenerator
             var propertyGroups = doc.GetElementsByTagName("PropertyGroup");
             foreach (XmlNode pg in propertyGroups)
             {
-                var conditionAttrbiute = pg.Attributes["Condition"];
-                if (conditionAttrbiute != null)
+                var conditionAttribute = pg.Attributes["Condition"];
+                if (conditionAttribute != null)
                 {
-                    var condition = conditionAttrbiute.Value;
+                    var condition = conditionAttribute.Value;
                     if (condition.IndexOf(searchPhrase, StringComparison.Ordinal) >= 0)
                     {
-                        var thirdQuote = condition.IndexOfNthOccurence('\'', 0, 3);
+                        var thirdQuote = condition.IndexOfNthOccurrence('\'', 0, 3);
                         var fourthQuote = condition.IndexOf('\'', thirdQuote);
                         var platform = condition.Substring(thirdQuote, fourthQuote - thirdQuote);
                         // Project files use the string "AnyCPU", solution files use "Any CPU"

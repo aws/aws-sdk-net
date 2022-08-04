@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "AWS Transfer for SFTP is a fully managed service that enables transfer of secure data over the internet into and out of Amazon S3. SFTP is deeply embedded in data exchange workflows across different industries such as financial services, healthcare, advertising, and retail, among others.",
-  "generate-client-constructors": true
+  "generate-client-constructors": true,
+  "legacy-service-id": "Transfer"
 }

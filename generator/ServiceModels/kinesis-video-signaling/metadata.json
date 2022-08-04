@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "Announcing support for WebRTC in Kinesis Video Streams, as fully managed capability. You can now use simple APIs to enable your connected devices, web, and mobile apps with real-time two-way media streaming capabilities.",
-  "generate-client-constructors": true
+  "generate-client-constructors": true,
+  "legacy-service-id": "Kinesis Video Signaling"
 }

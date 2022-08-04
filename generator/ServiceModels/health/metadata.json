@@ -1,5 +1,6 @@
 {
-    "base-name": "AWSHealth", 
-    "active": true, 
-    "synopsis": "The AWS Health API serves as the primary source for you to receive personalized information related to your AWS infrastructure, guiding your through scheduled changes, and accelerating the troubleshooting of issues impacting your AWS resources and accounts."
+  "base-name": "AWSHealth",
+  "active": true,
+  "synopsis": "The AWS Health API serves as the primary source for you to receive personalized information related to your AWS infrastructure, guiding your through scheduled changes, and accelerating the troubleshooting of issues impacting your AWS resources and accounts.",
+  "legacy-service-id": "Health"
 }

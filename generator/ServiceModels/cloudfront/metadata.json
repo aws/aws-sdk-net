@@ -1,4 +1,5 @@
 {
-    "active": true, 
-    "synopsis": "Amazon CloudFront is a content delivery web service. It integrates with other Amazon Web Services products to give developers and businesses an easy way to distribute content to end users with low latency, high data transfer speeds, and no minimum usage commitments."
+  "active": true,
+  "synopsis": "Amazon CloudFront is a content delivery web service. It integrates with other Amazon Web Services products to give developers and businesses an easy way to distribute content to end users with low latency, high data transfer speeds, and no minimum usage commitments.",
+  "legacy-service-id": "CloudFront"
 }

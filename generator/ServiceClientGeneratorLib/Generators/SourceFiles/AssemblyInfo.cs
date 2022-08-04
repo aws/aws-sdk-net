@@ -41,63 +41,31 @@ using System.Runtime.CompilerServices;
             
             #line default
             #line hidden
-            this.Write("\")]\r\n#if BCL35\r\n[assembly: AssemblyDescription(\"The Amazon Web Services SDK for ." +
-                    "NET (3.5) - ");
+            this.Write("\")]\r\n#if BCL35\r\n[assembly: AssemblyDescription(\"");
             
             #line 14 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceModel.ServiceFullName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.AssemblyDescription(versionIdentifier: "3.5")));
             
             #line default
             #line hidden
-            this.Write(". ");
-            
-            #line 14 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.AssemblyDescription));
-            
-            #line default
-            #line hidden
-            this.Write("\")]\r\n#elif BCL45\r\n[assembly: AssemblyDescription(\"The Amazon Web Services SDK for" +
-                    " .NET (4.5) - ");
+            this.Write("\")]\r\n#elif BCL45\r\n[assembly: AssemblyDescription(\"");
             
             #line 16 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceModel.ServiceFullName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.AssemblyDescription(versionIdentifier: "4.5")));
             
             #line default
             #line hidden
-            this.Write(". ");
-            
-            #line 16 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.AssemblyDescription));
-            
-            #line default
-            #line hidden
-            this.Write("\")]\r\n#elif NETSTANDARD20\r\n[assembly: AssemblyDescription(\"The Amazon Web Services" +
-                    " SDK for .NET (NetStandard 2.0) - ");
+            this.Write("\")]\r\n#elif NETSTANDARD20\r\n[assembly: AssemblyDescription(\"");
             
             #line 18 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceModel.ServiceFullName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.AssemblyDescription(versionIdentifier: "NetStandard 2.0")));
             
             #line default
             #line hidden
-            this.Write(". ");
-            
-            #line 18 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.AssemblyDescription));
-            
-            #line default
-            #line hidden
-            this.Write("\")]\r\n#elif NETCOREAPP3_1\r\n[assembly: AssemblyDescription(\"The Amazon Web Services" +
-                    " SDK for .NET (.NET Core 3.1) - ");
+            this.Write("\")]\r\n#elif NETCOREAPP3_1\r\n[assembly: AssemblyDescription(\"");
             
             #line 20 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceModel.ServiceFullName));
-            
-            #line default
-            #line hidden
-            this.Write(". ");
-            
-            #line 20 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.AssemblyDescription));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.AssemblyDescription(versionIdentifier: ".NET Core 3.1")));
             
             #line default
             #line hidden

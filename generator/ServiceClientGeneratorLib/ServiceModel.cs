@@ -324,7 +324,10 @@ namespace ServiceClientGenerator
         /// </summary>
         public string ServiceId
         {
-            get { return Utils.JsonDataToString(this._metadata[ServiceIdKey]); }
+            get
+            {
+                return Utils.JsonDataToString(this._metadata[ServiceIdKey]);
+            }
         }
 
         /// <summary>

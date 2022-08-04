@@ -1,5 +1,6 @@
 {
   "active": true,
   "synopsis": "Initial release of AWS Backup gateway which enables you to centralize and automate protection of on-premises VMware and VMware Cloud on AWS workloads using AWS Backup.",
-  "generate-client-constructors": true
+  "generate-client-constructors": true,
+  "legacy-service-id": "Backup Gateway"
 }

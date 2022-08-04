@@ -1,0 +1,63 @@
+{
+    "version":"2.0",
+    "metadata":{
+      "apiVersion":"2022-07-12",
+      "endpointPrefix":"use-service-id",
+      "jsonVersion":"1.1",
+      "protocol":"rest-json",
+      "serviceAbbreviation":"Use Service Id Test - Abbreviation",
+      "serviceFullName":"Use Service Id Test - FullName",
+      "serviceId":"Use Service Id Test - service Id",
+      "signatureVersion":"v4",
+      "signingName":"Rest-Json-Test",
+      "uid":"use-service-id-2022-07-12"
+    },
+    "operations":{    
+      "NoPayload":{
+        "name":"NoPayload",
+        "http":{
+          "method":"GET",
+          "requestUri":"/no-payload"
+        },
+        "input":{"shape":"NoPayloadRequest"},
+        "output":{"shape":"NoPayloadResult"},
+        "errors":[],
+        "documentation":"<p> Request without a body </p>"
+      }      
+    },
+    "shapes":{
+      "Integer":{ "type":"integer" },
+      "String":{"type":"string"},
+      "Blob":{"type":"blob"},
+      "NoPayloadRequest":{
+        "type":"structure",
+        "required":[],
+        "members":{
+          "testId":{
+            "shape":"TestId",
+            "documentation":"<p> The unique ID for a test. </p>",
+            "location":"header",
+            "locationName":"x-amz-test-id"
+          }
+        },
+        "documentation":"<p> The request structure for a no payload request. </p>"
+      },
+      "NoPayloadResult":{
+        "type":"structure",
+        "required":["testId"],
+        "members":{
+          "testId":{
+            "shape":"TestId",
+            "documentation":"<p> Optional test identifier. </p>"
+          }
+        },
+        "documentation":"<p> The result structure for the no payload operation. </p>"
+      },
+      "TestId":{
+        "type":"string",
+        "max":8,
+        "min":3,
+        "pattern":"t-[a-z0-9-]+"
+      }
+    }  
+}
