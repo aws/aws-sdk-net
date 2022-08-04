@@ -1559,6 +1559,14 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSApiGatewayV2Stage = new ResourceType("AWS::ApiGatewayV2::Stage");
         /// <summary>
+        /// Constant AWSAthenaDataCatalog for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSAthenaDataCatalog = new ResourceType("AWS::Athena::DataCatalog");
+        /// <summary>
+        /// Constant AWSAthenaWorkGroup for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSAthenaWorkGroup = new ResourceType("AWS::Athena::WorkGroup");
+        /// <summary>
         /// Constant AWSAutoScalingAutoScalingGroup for ResourceType
         /// </summary>
         public static readonly ResourceType AWSAutoScalingAutoScalingGroup = new ResourceType("AWS::AutoScaling::AutoScalingGroup");
@@ -1647,6 +1655,14 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSConfigResourceCompliance = new ResourceType("AWS::Config::ResourceCompliance");
         /// <summary>
+        /// Constant AWSDetectiveGraph for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSDetectiveGraph = new ResourceType("AWS::Detective::Graph");
+        /// <summary>
+        /// Constant AWSDMSCertificate for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSDMSCertificate = new ResourceType("AWS::DMS::Certificate");
+        /// <summary>
         /// Constant AWSDMSEventSubscription for ResourceType
         /// </summary>
         public static readonly ResourceType AWSDMSEventSubscription = new ResourceType("AWS::DMS::EventSubscription");
@@ -1722,6 +1738,14 @@ namespace Amazon.ConfigService
         /// Constant AWSEC2TransitGateway for ResourceType
         /// </summary>
         public static readonly ResourceType AWSEC2TransitGateway = new ResourceType("AWS::EC2::TransitGateway");
+        /// <summary>
+        /// Constant AWSEC2TransitGatewayAttachment for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSEC2TransitGatewayAttachment = new ResourceType("AWS::EC2::TransitGatewayAttachment");
+        /// <summary>
+        /// Constant AWSEC2TransitGatewayRouteTable for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSEC2TransitGatewayRouteTable = new ResourceType("AWS::EC2::TransitGatewayRouteTable");
         /// <summary>
         /// Constant AWSEC2Volume for ResourceType
         /// </summary>
@@ -1814,6 +1838,18 @@ namespace Amazon.ConfigService
         /// Constant AWSEMRSecurityConfiguration for ResourceType
         /// </summary>
         public static readonly ResourceType AWSEMRSecurityConfiguration = new ResourceType("AWS::EMR::SecurityConfiguration");
+        /// <summary>
+        /// Constant AWSGlobalAcceleratorAccelerator for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSGlobalAcceleratorAccelerator = new ResourceType("AWS::GlobalAccelerator::Accelerator");
+        /// <summary>
+        /// Constant AWSGlobalAcceleratorEndpointGroup for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSGlobalAcceleratorEndpointGroup = new ResourceType("AWS::GlobalAccelerator::EndpointGroup");
+        /// <summary>
+        /// Constant AWSGlobalAcceleratorListener for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSGlobalAcceleratorListener = new ResourceType("AWS::GlobalAccelerator::Listener");
         /// <summary>
         /// Constant AWSGuardDutyDetector for ResourceType
         /// </summary>
