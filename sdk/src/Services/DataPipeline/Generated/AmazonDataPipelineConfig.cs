@@ -32,7 +32,7 @@ namespace Amazon.DataPipeline
     public partial class AmazonDataPipelineConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.185");
+            InternalSDKUtils.BuildUserAgentString("3.7.1.186");
 
         private string _userAgent = UserAgentString;
 
