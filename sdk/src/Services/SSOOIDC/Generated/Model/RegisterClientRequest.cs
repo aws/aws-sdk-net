@@ -31,8 +31,9 @@ namespace Amazon.SSOOIDC.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterClient operation.
-    /// Registers a client with AWS SSO. This allows clients to initiate device authorization.
-    /// The output should be persisted for reuse through many authentication requests.
+    /// Registers a client with Amazon Web Services SSO. This allows clients to initiate device
+    /// authorization. The output should be persisted for reuse through many authentication
+    /// requests.
     /// </summary>
     public partial class RegisterClientRequest : AmazonSSOOIDCRequest
     {

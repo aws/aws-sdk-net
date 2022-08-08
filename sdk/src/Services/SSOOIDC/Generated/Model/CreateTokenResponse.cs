@@ -42,7 +42,7 @@ namespace Amazon.SSOOIDC.Model
         /// <summary>
         /// Gets and sets the property AccessToken. 
         /// <para>
-        /// An opaque token to access AWS SSO resources assigned to a user.
+        /// An opaque token to access Amazon Web Services SSO resources assigned to a user.
         /// </para>
         /// </summary>
         public string AccessToken
@@ -78,6 +78,14 @@ namespace Amazon.SSOOIDC.Model
         /// <summary>
         /// Gets and sets the property IdToken. 
         /// <para>
+        /// Currently, <code>idToken</code> is not yet implemented and is not supported. For more
+        /// information about the features and limitations of the current Amazon Web Services
+        /// SSO OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a
+        /// href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">Amazon
+        /// Web Services SSO OIDC API Reference</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// The identifier of the user that associated with the access token, if present.
         /// </para>
         /// </summary>
@@ -95,6 +103,14 @@ namespace Amazon.SSOOIDC.Model
 
         /// <summary>
         /// Gets and sets the property RefreshToken. 
+        /// <para>
+        /// Currently, <code>refreshToken</code> is not yet implemented and is not supported.
+        /// For more information about the features and limitations of the current Amazon Web
+        /// Services SSO OIDC implementation, see <i>Considerations for Using this Guide</i> in
+        /// the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">Amazon
+        /// Web Services SSO OIDC API Reference</a>.
+        /// </para>
+        ///  
         /// <para>
         /// A token that, if present, can be used to refresh a previously issued access token
         /// that might have expired.
