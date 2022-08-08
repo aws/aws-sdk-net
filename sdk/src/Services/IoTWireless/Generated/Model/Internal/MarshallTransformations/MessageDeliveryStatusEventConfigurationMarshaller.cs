@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SidewalkSendDataToDevice Marshaller
+    /// MessageDeliveryStatusEventConfiguration Marshaller
     /// </summary>
-    public class SidewalkSendDataToDeviceMarshaller : IRequestMarshaller<SidewalkSendDataToDevice, JsonMarshallerContext> 
+    public class MessageDeliveryStatusEventConfigurationMarshaller : IRequestMarshaller<MessageDeliveryStatusEventConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,24 +43,23 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SidewalkSendDataToDevice requestObject, JsonMarshallerContext context)
+        public void Marshall(MessageDeliveryStatusEventConfiguration requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAckModeRetryDurationSecs())
+            if(requestObject.IsSetSidewalk())
             {
-                context.Writer.WritePropertyName("AckModeRetryDurationSecs");
-                context.Writer.Write(requestObject.AckModeRetryDurationSecs);
+                context.Writer.WritePropertyName("Sidewalk");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SidewalkEventNotificationConfigurationsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Sidewalk, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetMessageType())
+            if(requestObject.IsSetWirelessDeviceIdEventTopic())
             {
-                context.Writer.WritePropertyName("MessageType");
-                context.Writer.Write(requestObject.MessageType);
-            }
-
-            if(requestObject.IsSetSeq())
-            {
-                context.Writer.WritePropertyName("Seq");
-                context.Writer.Write(requestObject.Seq);
+                context.Writer.WritePropertyName("WirelessDeviceIdEventTopic");
+                context.Writer.Write(requestObject.WirelessDeviceIdEventTopic);
             }
 
         }
@@ -68,7 +67,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static SidewalkSendDataToDeviceMarshaller Instance = new SidewalkSendDataToDeviceMarshaller();
+        public readonly static MessageDeliveryStatusEventConfigurationMarshaller Instance = new MessageDeliveryStatusEventConfigurationMarshaller();
 
     }
 }

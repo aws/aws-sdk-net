@@ -33,8 +33,28 @@ namespace Amazon.IoTWireless.Model
     /// </summary>
     public partial class SidewalkSendDataToDevice
     {
+        private int? _ackModeRetryDurationSecs;
         private MessageType _messageType;
         private int? _seq;
+
+        /// <summary>
+        /// Gets and sets the property AckModeRetryDurationSecs. 
+        /// <para>
+        /// The duration of time in seconds for which you want to retry sending the ACK.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=604800)]
+        public int AckModeRetryDurationSecs
+        {
+            get { return this._ackModeRetryDurationSecs.GetValueOrDefault(); }
+            set { this._ackModeRetryDurationSecs = value; }
+        }
+
+        // Check to see if AckModeRetryDurationSecs property is set
+        internal bool IsSetAckModeRetryDurationSecs()
+        {
+            return this._ackModeRetryDurationSecs.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property MessageType.

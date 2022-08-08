@@ -34,6 +34,8 @@ namespace Amazon.IoTWireless.Model
     public partial class LoRaWANServiceProfile
     {
         private bool? _addGwMetadata;
+        private int? _drMax;
+        private int? _drMin;
 
         /// <summary>
         /// Gets and sets the property AddGwMetadata. 
@@ -51,6 +53,44 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetAddGwMetadata()
         {
             return this._addGwMetadata.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DrMax. 
+        /// <para>
+        /// The DrMax value.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=15)]
+        public int DrMax
+        {
+            get { return this._drMax.GetValueOrDefault(); }
+            set { this._drMax = value; }
+        }
+
+        // Check to see if DrMax property is set
+        internal bool IsSetDrMax()
+        {
+            return this._drMax.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DrMin. 
+        /// <para>
+        /// The DrMin value.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=15)]
+        public int DrMin
+        {
+            get { return this._drMin.GetValueOrDefault(); }
+            set { this._drMin = value; }
+        }
+
+        // Check to see if DrMin property is set
+        internal bool IsSetDrMin()
+        {
+            return this._drMin.HasValue; 
         }
 
     }

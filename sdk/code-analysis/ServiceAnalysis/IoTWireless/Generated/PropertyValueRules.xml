@@ -1347,6 +1347,16 @@
     <max>223</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTWireless.Model.LoRaWANServiceProfile.DrMax</property>
+    <min>0</min>
+    <max>15</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.LoRaWANServiceProfile.DrMin</property>
+    <min>0</min>
+    <max>15</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTWireless.Model.LoRaWANUpdateDevice.DeviceProfileId</property>
     <max>256</max>
   </property-value-rule>
@@ -1513,6 +1523,11 @@
   <property-value-rule>
     <property>Amazon.IoTWireless.Model.SidewalkListDevice.SidewalkManufacturingSn</property>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.SidewalkSendDataToDevice.AckModeRetryDurationSecs</property>
+    <min>0</min>
+    <max>604800</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTWireless.Model.SidewalkSendDataToDevice.Seq</property>

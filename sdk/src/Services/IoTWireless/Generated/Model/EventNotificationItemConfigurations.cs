@@ -36,6 +36,7 @@ namespace Amazon.IoTWireless.Model
         private ConnectionStatusEventConfiguration _connectionStatus;
         private DeviceRegistrationStateEventConfiguration _deviceRegistrationState;
         private JoinEventConfiguration _join;
+        private MessageDeliveryStatusEventConfiguration _messageDeliveryStatus;
         private ProximityEventConfiguration _proximity;
 
         /// <summary>
@@ -90,6 +91,24 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetJoin()
         {
             return this._join != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MessageDeliveryStatus. 
+        /// <para>
+        /// Message delivery status event configuration for an event configuration item.
+        /// </para>
+        /// </summary>
+        public MessageDeliveryStatusEventConfiguration MessageDeliveryStatus
+        {
+            get { return this._messageDeliveryStatus; }
+            set { this._messageDeliveryStatus = value; }
+        }
+
+        // Check to see if MessageDeliveryStatus property is set
+        internal bool IsSetMessageDeliveryStatus()
+        {
+            return this._messageDeliveryStatus != null;
         }
 
         /// <summary>

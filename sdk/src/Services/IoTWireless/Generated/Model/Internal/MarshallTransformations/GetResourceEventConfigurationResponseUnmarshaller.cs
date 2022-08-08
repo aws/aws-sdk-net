@@ -69,6 +69,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                     response.Join = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MessageDeliveryStatus", targetDepth))
+                {
+                    var unmarshaller = MessageDeliveryStatusEventConfigurationUnmarshaller.Instance;
+                    response.MessageDeliveryStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Proximity", targetDepth))
                 {
                     var unmarshaller = ProximityEventConfigurationUnmarshaller.Instance;

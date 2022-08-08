@@ -107,6 +107,17 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetMessageDeliveryStatus())
+                {
+                    context.Writer.WritePropertyName("MessageDeliveryStatus");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MessageDeliveryStatusEventConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.MessageDeliveryStatus, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetProximity())
                 {
                     context.Writer.WritePropertyName("Proximity");

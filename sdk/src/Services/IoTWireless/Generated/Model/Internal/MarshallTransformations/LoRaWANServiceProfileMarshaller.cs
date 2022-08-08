@@ -51,6 +51,18 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AddGwMetadata);
             }
 
+            if(requestObject.IsSetDrMax())
+            {
+                context.Writer.WritePropertyName("DrMax");
+                context.Writer.Write(requestObject.DrMax);
+            }
+
+            if(requestObject.IsSetDrMin())
+            {
+                context.Writer.WritePropertyName("DrMin");
+                context.Writer.Write(requestObject.DrMin);
+            }
+
         }
 
         /// <summary>
