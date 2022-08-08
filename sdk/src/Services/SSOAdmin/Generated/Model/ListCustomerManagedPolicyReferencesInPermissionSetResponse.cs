@@ -39,7 +39,7 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property CustomerManagedPolicyReferences. 
         /// <para>
-        /// Specifies the names and paths of the IAM customer managed policies that you have attached
+        /// Specifies the names and paths of the customer managed policies that you have attached
         /// to your permission set.
         /// </para>
         /// </summary>

@@ -30,7 +30,7 @@ namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
     /// Container for the parameters to the PutPermissionsBoundaryToPermissionSet operation.
-    /// Attaches an Amazon Web Services managed or customer managed IAM policy to the specified
+    /// Attaches an Amazon Web Services managed or customer managed policy to the specified
     /// <a>PermissionSet</a> as a permissions boundary.
     /// </summary>
     public partial class PutPermissionsBoundaryToPermissionSetRequest : AmazonSSOAdminRequest
@@ -42,7 +42,8 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property InstanceArn. 
         /// <para>
-        /// The ARN of the SSO instance under which the operation will be executed. 
+        /// The ARN of the Amazon Web Services SSO instance under which the operation will be
+        /// executed. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=1224)]

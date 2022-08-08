@@ -31,7 +31,7 @@ namespace Amazon.SSOAdmin.Model
     /// <summary>
     /// The value used for mapping a specified attribute to an identity source. For more information,
     /// see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/attributemappingsconcept.html">Attribute
-    /// mappings</a> in the Amazon Web Services Single Sign-On User Guide.
+    /// mappings</a> in the <i>Amazon Web Services SSO User Guide</i>.
     /// </summary>
     public partial class AccessControlAttributeValue
     {

@@ -258,7 +258,7 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Attaches the specified IAM customer managed policy to the specified <a>PermissionSet</a>.
+        /// Attaches the specified customer managed policy to the specified <a>PermissionSet</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachCustomerManagedPolicyReferenceToPermissionSet service method.</param>
         /// 
@@ -301,7 +301,7 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Attaches the specified IAM customer managed policy to the specified <a>PermissionSet</a>.
+        /// Attaches the specified customer managed policy to the specified <a>PermissionSet</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachCustomerManagedPolicyReferenceToPermissionSet service method.</param>
         /// <param name="cancellationToken">
@@ -351,7 +351,7 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Attaches an Amazon Web Services managed IAM policy ARN to a permission set.
+        /// Attaches an Amazon Web Services managed policy ARN to a permission set.
         /// 
         ///  <note> 
         /// <para>
@@ -403,7 +403,7 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Attaches an Amazon Web Services managed IAM policy ARN to a permission set.
+        /// Attaches an Amazon Web Services managed policy ARN to a permission set.
         /// 
         ///  <note> 
         /// <para>
@@ -474,10 +474,10 @@ namespace Amazon.SSOAdmin
         /// <para>
         /// As part of a successful <code>CreateAccountAssignment</code> call, the specified permission
         /// set will automatically be provisioned to the account in the form of an IAM policy.
-        /// That policy is attached to the SSO-created IAM role. If the permission set is subsequently
-        /// updated, the corresponding IAM policies attached to roles in your accounts will not
-        /// be updated automatically. In this case, you must call <code> <a>ProvisionPermissionSet</a>
-        /// </code> to make these updates.
+        /// That policy is attached to the IAM role created in Amazon Web Services SSO. If the
+        /// permission set is subsequently updated, the corresponding IAM policies attached to
+        /// roles in your accounts will not be updated automatically. In this case, you must call
+        /// <code> <a>ProvisionPermissionSet</a> </code> to make these updates.
         /// </para>
         ///  </note>
         /// </summary>
@@ -534,10 +534,10 @@ namespace Amazon.SSOAdmin
         /// <para>
         /// As part of a successful <code>CreateAccountAssignment</code> call, the specified permission
         /// set will automatically be provisioned to the account in the form of an IAM policy.
-        /// That policy is attached to the SSO-created IAM role. If the permission set is subsequently
-        /// updated, the corresponding IAM policies attached to roles in your accounts will not
-        /// be updated automatically. In this case, you must call <code> <a>ProvisionPermissionSet</a>
-        /// </code> to make these updates.
+        /// That policy is attached to the IAM role created in Amazon Web Services SSO. If the
+        /// permission set is subsequently updated, the corresponding IAM policies attached to
+        /// roles in your accounts will not be updated automatically. In this case, you must call
+        /// <code> <a>ProvisionPermissionSet</a> </code> to make these updates.
         /// </para>
         ///  </note>
         /// </summary>
@@ -682,7 +682,7 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Creates a permission set within a specified SSO instance.
+        /// Creates a permission set within a specified Amazon Web Services SSO instance.
         /// 
         ///  <note> 
         /// <para>
@@ -732,7 +732,7 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Creates a permission set within a specified SSO instance.
+        /// Creates a permission set within a specified Amazon Web Services SSO instance.
         /// 
         ///  <note> 
         /// <para>
@@ -1587,7 +1587,7 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Detaches the specified IAM customer managed policy from the specified <a>PermissionSet</a>.
+        /// Detaches the specified customer managed policy from the specified <a>PermissionSet</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachCustomerManagedPolicyReferenceFromPermissionSet service method.</param>
         /// 
@@ -1626,7 +1626,7 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Detaches the specified IAM customer managed policy from the specified <a>PermissionSet</a>.
+        /// Detaches the specified customer managed policy from the specified <a>PermissionSet</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachCustomerManagedPolicyReferenceFromPermissionSet service method.</param>
         /// <param name="cancellationToken">
@@ -1672,8 +1672,8 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Detaches the attached Amazon Web Services managed IAM policy ARN from the specified
-        /// permission set.
+        /// Detaches the attached Amazon Web Services managed policy ARN from the specified permission
+        /// set.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachManagedPolicyFromPermissionSet service method.</param>
         /// 
@@ -1712,8 +1712,8 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Detaches the attached Amazon Web Services managed IAM policy ARN from the specified
-        /// permission set.
+        /// Detaches the attached Amazon Web Services managed policy ARN from the specified permission
+        /// set.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachManagedPolicyFromPermissionSet service method.</param>
         /// <param name="cancellationToken">
@@ -1906,7 +1906,7 @@ namespace Amazon.SSOAdmin
 
         /// <summary>
         /// Lists the status of the Amazon Web Services account assignment creation requests for
-        /// a specified SSO instance.
+        /// a specified Amazon Web Services SSO instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccountAssignmentCreationStatus service method.</param>
         /// 
@@ -1940,7 +1940,7 @@ namespace Amazon.SSOAdmin
 
         /// <summary>
         /// Lists the status of the Amazon Web Services account assignment creation requests for
-        /// a specified SSO instance.
+        /// a specified Amazon Web Services SSO instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccountAssignmentCreationStatus service method.</param>
         /// <param name="cancellationToken">
@@ -1981,7 +1981,7 @@ namespace Amazon.SSOAdmin
 
         /// <summary>
         /// Lists the status of the Amazon Web Services account assignment deletion requests for
-        /// a specified SSO instance.
+        /// a specified Amazon Web Services SSO instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccountAssignmentDeletionStatus service method.</param>
         /// 
@@ -2015,7 +2015,7 @@ namespace Amazon.SSOAdmin
 
         /// <summary>
         /// Lists the status of the Amazon Web Services account assignment deletion requests for
-        /// a specified SSO instance.
+        /// a specified Amazon Web Services SSO instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccountAssignmentDeletionStatus service method.</param>
         /// <param name="cancellationToken">
@@ -2203,7 +2203,7 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Lists all IAM customer managed policies attached to a specified <a>PermissionSet</a>.
+        /// Lists all customer managed policies attached to a specified <a>PermissionSet</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCustomerManagedPolicyReferencesInPermissionSet service method.</param>
         /// 
@@ -2236,7 +2236,7 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Lists all IAM customer managed policies attached to a specified <a>PermissionSet</a>.
+        /// Lists all customer managed policies attached to a specified <a>PermissionSet</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCustomerManagedPolicyReferencesInPermissionSet service method.</param>
         /// <param name="cancellationToken">
@@ -2276,7 +2276,7 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Lists the SSO instances that the caller has access to.
+        /// Lists the Amazon Web Services SSO instances that the caller has access to.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInstances service method.</param>
         /// 
@@ -2306,7 +2306,7 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Lists the SSO instances that the caller has access to.
+        /// Lists the Amazon Web Services SSO instances that the caller has access to.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInstances service method.</param>
         /// <param name="cancellationToken">
@@ -2343,7 +2343,7 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Lists the Amazon Web Services managed IAM policy that is attached to a specified permission
+        /// Lists the Amazon Web Services managed policy that is attached to a specified permission
         /// set.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListManagedPoliciesInPermissionSet service method.</param>
@@ -2377,7 +2377,7 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Lists the Amazon Web Services managed IAM policy that is attached to a specified permission
+        /// Lists the Amazon Web Services managed policy that is attached to a specified permission
         /// set.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListManagedPoliciesInPermissionSet service method.</param>
@@ -2418,7 +2418,8 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Lists the status of the permission set provisioning requests for a specified SSO instance.
+        /// Lists the status of the permission set provisioning requests for a specified Amazon
+        /// Web Services SSO instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPermissionSetProvisioningStatus service method.</param>
         /// 
@@ -2451,7 +2452,8 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Lists the status of the permission set provisioning requests for a specified SSO instance.
+        /// Lists the status of the permission set provisioning requests for a specified Amazon
+        /// Web Services SSO instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPermissionSetProvisioningStatus service method.</param>
         /// <param name="cancellationToken">
@@ -2491,7 +2493,7 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Lists the <a>PermissionSet</a>s in an SSO instance.
+        /// Lists the <a>PermissionSet</a>s in an Amazon Web Services SSO instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPermissionSets service method.</param>
         /// 
@@ -2524,7 +2526,7 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Lists the <a>PermissionSet</a>s in an SSO instance.
+        /// Lists the <a>PermissionSet</a>s in an Amazon Web Services SSO instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPermissionSets service method.</param>
         /// <param name="cancellationToken">
@@ -2797,7 +2799,7 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Attaches an IAM inline policy to a permission set.
+        /// Attaches an inline policy to a permission set.
         /// 
         ///  <note> 
         /// <para>
@@ -2848,7 +2850,7 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Attaches an IAM inline policy to a permission set.
+        /// Attaches an inline policy to a permission set.
         /// 
         ///  <note> 
         /// <para>
@@ -2906,7 +2908,7 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Attaches an Amazon Web Services managed or customer managed IAM policy to the specified
+        /// Attaches an Amazon Web Services managed or customer managed policy to the specified
         /// <a>PermissionSet</a> as a permissions boundary.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutPermissionsBoundaryToPermissionSet service method.</param>
@@ -2946,7 +2948,7 @@ namespace Amazon.SSOAdmin
 
 
         /// <summary>
-        /// Attaches an Amazon Web Services managed or customer managed IAM policy to the specified
+        /// Attaches an Amazon Web Services managed or customer managed policy to the specified
         /// <a>PermissionSet</a> as a permissions boundary.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutPermissionsBoundaryToPermissionSet service method.</param>

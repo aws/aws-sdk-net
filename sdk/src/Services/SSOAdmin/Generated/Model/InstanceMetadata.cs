@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
-    /// Provides information about the SSO instance.
+    /// Provides information about the Amazon Web Services SSO instance.
     /// </summary>
     public partial class InstanceMetadata
     {
@@ -39,7 +39,8 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property IdentityStoreId. 
         /// <para>
-        /// The identifier of the identity store that is connected to the SSO instance.
+        /// The identifier of the identity store that is connected to the Amazon Web Services
+        /// SSO instance.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -58,10 +59,10 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property InstanceArn. 
         /// <para>
-        /// The ARN of the SSO instance under which the operation will be executed. For more information
-        /// about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services
-        /// General Reference</i>.
+        /// The ARN of the Amazon Web Services SSO instance under which the operation will be
+        /// executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon
+        /// Web Services General Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=1224)]

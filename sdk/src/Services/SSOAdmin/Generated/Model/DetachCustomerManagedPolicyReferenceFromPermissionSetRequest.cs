@@ -30,7 +30,7 @@ namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
     /// Container for the parameters to the DetachCustomerManagedPolicyReferenceFromPermissionSet operation.
-    /// Detaches the specified IAM customer managed policy from the specified <a>PermissionSet</a>.
+    /// Detaches the specified customer managed policy from the specified <a>PermissionSet</a>.
     /// </summary>
     public partial class DetachCustomerManagedPolicyReferenceFromPermissionSetRequest : AmazonSSOAdminRequest
     {
@@ -41,9 +41,9 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property CustomerManagedPolicyReference. 
         /// <para>
-        /// Specifies the name and path of the IAM customer managed policy. You must have an IAM
-        /// policy that matches the name and path in each Amazon Web Services account where you
-        /// want to deploy your permission set.
+        /// Specifies the name and path of a customer managed policy. You must have an IAM policy
+        /// that matches the name and path in each Amazon Web Services account where you want
+        /// to deploy your permission set.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,7 +62,8 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property InstanceArn. 
         /// <para>
-        /// The ARN of the SSO instance under which the operation will be executed. 
+        /// The ARN of the Amazon Web Services SSO instance under which the operation will be
+        /// executed. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=1224)]

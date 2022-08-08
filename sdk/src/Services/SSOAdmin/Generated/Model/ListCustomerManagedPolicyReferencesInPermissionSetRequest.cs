@@ -30,7 +30,7 @@ namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
     /// Container for the parameters to the ListCustomerManagedPolicyReferencesInPermissionSet operation.
-    /// Lists all IAM customer managed policies attached to a specified <a>PermissionSet</a>.
+    /// Lists all customer managed policies attached to a specified <a>PermissionSet</a>.
     /// </summary>
     public partial class ListCustomerManagedPolicyReferencesInPermissionSetRequest : AmazonSSOAdminRequest
     {
@@ -42,7 +42,8 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property InstanceArn. 
         /// <para>
-        /// The ARN of the SSO instance under which the operation will be executed. 
+        /// The ARN of the Amazon Web Services SSO instance under which the operation will be
+        /// executed. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=1224)]
@@ -100,7 +101,7 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property PermissionSetArn. 
         /// <para>
-        /// The ARN of the <code>PermissionSet</code>.
+        /// The ARN of the <code>PermissionSet</code>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=1224)]

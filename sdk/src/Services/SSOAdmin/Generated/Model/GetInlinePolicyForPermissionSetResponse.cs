@@ -38,7 +38,7 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property InlinePolicy. 
         /// <para>
-        /// The IAM inline policy that is attached to the permission set.
+        /// The inline policy that is attached to the permission set.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10240)]

@@ -30,7 +30,7 @@ namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePermissionSet operation.
-    /// Creates a permission set within a specified SSO instance.
+    /// Creates a permission set within a specified Amazon Web Services SSO instance.
     /// 
     ///  <note> 
     /// <para>
@@ -70,10 +70,10 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property InstanceArn. 
         /// <para>
-        /// The ARN of the SSO instance under which the operation will be executed. For more information
-        /// about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services
-        /// General Reference</i>.
+        /// The ARN of the Amazon Web Services SSO instance under which the operation will be
+        /// executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon
+        /// Web Services General Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=1224)]
