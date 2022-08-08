@@ -30,7 +30,8 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the ListNamespaces operation.
-    /// Lists the namespaces for the specified Amazon Web Services account.
+    /// Lists the namespaces for the specified Amazon Web Services account. This operation
+    /// doesn't list deleted namespaces.
     /// </summary>
     public partial class ListNamespacesRequest : AmazonQuickSightRequest
     {
@@ -80,7 +81,13 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A pagination token that can be used in a subsequent request.
+        /// A unique pagination token that can be used in a subsequent request. You will receive
+        /// a pagination token in the response body of a previous <code>ListNameSpaces</code>
+        /// API call if there is more data that can be returned. To receive the data, make another
+        /// <code>ListNamespaces</code> API call with the returned token to retrieve the next
+        /// page of data. Each token is valid for 24 hours. If you try to make a <code>ListNamespaces</code>
+        /// API call with an expired token, you will receive a <code>HTTP 400 InvalidNextTokenException</code>
+        /// error.
         /// </para>
         /// </summary>
         public string NextToken

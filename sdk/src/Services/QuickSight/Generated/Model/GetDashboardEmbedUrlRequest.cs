@@ -30,10 +30,10 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDashboardEmbedUrl operation.
-    /// Generates a temporary session URL and authorization code that you can use to embed
-    /// an Amazon QuickSight read-only dashboard in your website or application. Before you
-    /// use this command, make sure that you have configured the dashboards and permissions.
-    /// 
+    /// Generates a temporary session URL and authorization code(bearer token) that you can
+    /// use to embed an Amazon QuickSight read-only dashboard in your website or application.
+    /// Before you use this command, make sure that you have configured the dashboards and
+    /// permissions. 
     /// 
     ///  
     /// <para>
@@ -54,8 +54,12 @@ namespace Amazon.QuickSight.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// You are charged only when the URL is used or there is interaction with Amazon QuickSight.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// The resulting user session is valid for 15 minutes (default) up to 10 hours (maximum).
-    /// You can use the optional <code>SessionLifetimeInMinutes</code> parameter to customi
+    /// You can use the optional <code>SessionLifetimeInMinutes</code> parameter to customize
     /// session duration.
     /// </para>
     ///  </li> </ul> 

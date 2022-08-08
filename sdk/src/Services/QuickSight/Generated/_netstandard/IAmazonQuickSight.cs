@@ -539,7 +539,9 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Creates an Amazon QuickSight group.
+        /// Use the <code>CreateGroup</code> operation to create a group in Amazon QuickSight.
+        /// You can create up to 10,000 groups in a namespace. If you want to create more than
+        /// 10,000 groups in a namespace, contact AWS Support.
         /// 
         ///  
         /// <para>
@@ -3076,10 +3078,10 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Generates a temporary session URL and authorization code that you can use to embed
-        /// an Amazon QuickSight read-only dashboard in your website or application. Before you
-        /// use this command, make sure that you have configured the dashboards and permissions.
-        /// 
+        /// Generates a temporary session URL and authorization code(bearer token) that you can
+        /// use to embed an Amazon QuickSight read-only dashboard in your website or application.
+        /// Before you use this command, make sure that you have configured the dashboards and
+        /// permissions. 
         /// 
         ///  
         /// <para>
@@ -3100,8 +3102,12 @@ namespace Amazon.QuickSight
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// You are charged only when the URL is used or there is interaction with Amazon QuickSight.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// The resulting user session is valid for 15 minutes (default) up to 10 hours (maximum).
-        /// You can use the optional <code>SessionLifetimeInMinutes</code> parameter to customi
+        /// You can use the optional <code>SessionLifetimeInMinutes</code> parameter to customize
         /// session duration.
         /// </para>
         ///  </li> </ul> 
@@ -3756,7 +3762,8 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Lists the namespaces for the specified Amazon Web Services account.
+        /// Lists the namespaces for the specified Amazon Web Services account. This operation
+        /// doesn't list deleted namespaces.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListNamespaces service method.</param>
         /// <param name="cancellationToken">

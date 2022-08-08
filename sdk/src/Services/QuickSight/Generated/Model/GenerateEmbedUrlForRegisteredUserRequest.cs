@@ -84,15 +84,15 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// The domains that you want to add to the allow list for access to the generated URL
         /// that is then embedded. This optional parameter overrides the static domains that are
-        /// configured in the Manage QuickSight menu in the Amazon QuickSight console and instead
-        /// allows only the domains that you include in this parameter. You can list up to three
-        /// domains or subdomains in each API call.
+        /// configured in the Manage QuickSight menu in the Amazon QuickSight console. Instead,
+        /// it allows only the domains that you include in this parameter. You can list up to
+        /// three domains or subdomains in each API call.
         /// </para>
         ///  
         /// <para>
-        /// To include a subdomain, use <code>*</code> to include all subdomains under a specific
-        /// domain to the allow list. For example, <code>https://*.sapp.amazon.com,</code> includes
-        /// all subdomains under <code>https://sapp.amazon.com</code>.
+        /// To include all subdomains under a specific domain to the allow list, use <code>*</code>.
+        /// For example, <code>https://*.sapp.amazon.com</code> includes all subdomains under
+        /// <code>https://sapp.amazon.com</code>.
         /// </para>
         /// </summary>
         public List<string> AllowedDomains

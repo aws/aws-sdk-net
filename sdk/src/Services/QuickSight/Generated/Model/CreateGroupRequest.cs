@@ -30,7 +30,9 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateGroup operation.
-    /// Creates an Amazon QuickSight group.
+    /// Use the <code>CreateGroup</code> operation to create a group in Amazon QuickSight.
+    /// You can create up to 10,000 groups in a namespace. If you want to create more than
+    /// 10,000 groups in a namespace, contact AWS Support.
     /// 
     ///  
     /// <para>
