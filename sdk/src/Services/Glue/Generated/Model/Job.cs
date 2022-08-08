@@ -40,6 +40,7 @@ namespace Amazon.Glue.Model
         private DateTime? _createdOn;
         private Dictionary<string, string> _defaultArguments = new Dictionary<string, string>();
         private string _description;
+        private ExecutionClass _executionClass;
         private ExecutionProperty _executionProperty;
         private string _glueVersion;
         private DateTime? _lastModifiedOn;
@@ -207,6 +208,38 @@ namespace Amazon.Glue.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionClass. 
+        /// <para>
+        /// Indicates whether the job is run with a standard or flexible execution class. The
+        /// standard execution class is ideal for time-sensitive workloads that require fast job
+        /// startup and dedicated resources.
+        /// </para>
+        ///  
+        /// <para>
+        /// The flexible execution class is appropriate for time-insensitive jobs whose start
+        /// and completion times may vary. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Only jobs with Glue version 3.0 and above and command type <code>glueetl</code> will
+        /// be allowed to set <code>ExecutionClass</code> to <code>FLEX</code>. The flexible execution
+        /// class is available for Spark jobs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=16)]
+        public ExecutionClass ExecutionClass
+        {
+            get { return this._executionClass; }
+            set { this._executionClass = value; }
+        }
+
+        // Check to see if ExecutionClass property is set
+        internal bool IsSetExecutionClass()
+        {
+            return this._executionClass != null;
         }
 
         /// <summary>

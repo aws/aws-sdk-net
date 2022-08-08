@@ -33,12 +33,32 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class WorkflowRunStatistics
     {
+        private int? _erroredActions;
         private int? _failedActions;
         private int? _runningActions;
         private int? _stoppedActions;
         private int? _succeededActions;
         private int? _timeoutActions;
         private int? _totalActions;
+        private int? _waitingActions;
+
+        /// <summary>
+        /// Gets and sets the property ErroredActions. 
+        /// <para>
+        /// Indicates the count of job runs in the ERROR state in the workflow run.
+        /// </para>
+        /// </summary>
+        public int ErroredActions
+        {
+            get { return this._erroredActions.GetValueOrDefault(); }
+            set { this._erroredActions = value; }
+        }
+
+        // Check to see if ErroredActions property is set
+        internal bool IsSetErroredActions()
+        {
+            return this._erroredActions.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property FailedActions. 
@@ -146,6 +166,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetTotalActions()
         {
             return this._totalActions.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WaitingActions. 
+        /// <para>
+        /// Indicates the count of job runs in WAITING state in the workflow run.
+        /// </para>
+        /// </summary>
+        public int WaitingActions
+        {
+            get { return this._waitingActions.GetValueOrDefault(); }
+            set { this._waitingActions = value; }
+        }
+
+        // Check to see if WaitingActions property is set
+        internal bool IsSetWaitingActions()
+        {
+            return this._waitingActions.HasValue; 
         }
 
     }

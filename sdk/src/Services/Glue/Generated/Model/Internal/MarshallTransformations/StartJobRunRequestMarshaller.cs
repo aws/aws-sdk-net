@@ -87,6 +87,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetExecutionClass())
+                {
+                    context.Writer.WritePropertyName("ExecutionClass");
+                    context.Writer.Write(publicRequest.ExecutionClass);
+                }
+
                 if(publicRequest.IsSetJobName())
                 {
                     context.Writer.WritePropertyName("JobName");

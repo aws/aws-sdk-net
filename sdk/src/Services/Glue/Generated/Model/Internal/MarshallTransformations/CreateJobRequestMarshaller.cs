@@ -134,6 +134,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetExecutionClass())
+                {
+                    context.Writer.WritePropertyName("ExecutionClass");
+                    context.Writer.Write(publicRequest.ExecutionClass);
+                }
+
                 if(publicRequest.IsSetExecutionProperty())
                 {
                     context.Writer.WritePropertyName("ExecutionProperty");

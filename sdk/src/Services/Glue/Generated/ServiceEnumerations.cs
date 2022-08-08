@@ -1069,6 +1069,10 @@ namespace Amazon.Glue
         /// </summary>
         public static readonly CrawlState CANCELLING = new CrawlState("CANCELLING");
         /// <summary>
+        /// Constant ERROR for CrawlState
+        /// </summary>
+        public static readonly CrawlState ERROR = new CrawlState("ERROR");
+        /// <summary>
         /// Constant FAILED for CrawlState
         /// </summary>
         public static readonly CrawlState FAILED = new CrawlState("FAILED");
@@ -1322,6 +1326,56 @@ namespace Amazon.Glue
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EnableHybridValues(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExecutionClass.
+    /// </summary>
+    public class ExecutionClass : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FLEX for ExecutionClass
+        /// </summary>
+        public static readonly ExecutionClass FLEX = new ExecutionClass("FLEX");
+        /// <summary>
+        /// Constant STANDARD for ExecutionClass
+        /// </summary>
+        public static readonly ExecutionClass STANDARD = new ExecutionClass("STANDARD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExecutionClass(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExecutionClass FindValue(string value)
+        {
+            return FindValue<ExecutionClass>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExecutionClass(string value)
         {
             return FindValue(value);
         }
@@ -2017,6 +2071,10 @@ namespace Amazon.Glue
     {
 
         /// <summary>
+        /// Constant ERROR for JobRunState
+        /// </summary>
+        public static readonly JobRunState ERROR = new JobRunState("ERROR");
+        /// <summary>
         /// Constant FAILED for JobRunState
         /// </summary>
         public static readonly JobRunState FAILED = new JobRunState("FAILED");
@@ -2044,6 +2102,10 @@ namespace Amazon.Glue
         /// Constant TIMEOUT for JobRunState
         /// </summary>
         public static readonly JobRunState TIMEOUT = new JobRunState("TIMEOUT");
+        /// <summary>
+        /// Constant WAITING for JobRunState
+        /// </summary>
+        public static readonly JobRunState WAITING = new JobRunState("WAITING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
