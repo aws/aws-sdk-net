@@ -35,6 +35,7 @@ namespace Amazon.Pinpoint.Model
     {
         private Dictionary<string, Activity> _activities = new Dictionary<string, Activity>();
         private string _applicationId;
+        private ClosedDays _closedDays;
         private string _creationDate;
         private string _id;
         private JourneyChannelSettings _journeyChannelSettings;
@@ -42,10 +43,12 @@ namespace Amazon.Pinpoint.Model
         private JourneyLimits _limits;
         private bool? _localTime;
         private string _name;
+        private OpenHours _openHours;
         private QuietTime _quietTime;
         private string _refreshFrequency;
         private bool? _refreshOnSegmentUpdate;
         private JourneySchedule _schedule;
+        private bool? _sendingSchedule;
         private string _startActivity;
         private StartCondition _startCondition;
         private State _state;
@@ -89,6 +92,25 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetApplicationId()
         {
             return this._applicationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClosedDays. 
+        /// <para>
+        /// The time when journey will stop sending messages. QuietTime should be configured first
+        /// and SendingSchedule should be set to true.
+        /// </para>
+        /// </summary>
+        public ClosedDays ClosedDays
+        {
+            get { return this._closedDays; }
+            set { this._closedDays = value; }
+        }
+
+        // Check to see if ClosedDays property is set
+        internal bool IsSetClosedDays()
+        {
+            return this._closedDays != null;
         }
 
         /// <summary>
@@ -221,6 +243,25 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OpenHours. 
+        /// <para>
+        /// The time when journey allow to send messages. QuietTime should be configured first
+        /// and SendingSchedule should be set to true.
+        /// </para>
+        /// </summary>
+        public OpenHours OpenHours
+        {
+            get { return this._openHours; }
+            set { this._openHours = value; }
+        }
+
+        // Check to see if OpenHours property is set
+        internal bool IsSetOpenHours()
+        {
+            return this._openHours != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property QuietTime. 
         /// <para>
         /// The quiet time settings for the journey. Quiet time is a specific time range when
@@ -313,6 +354,25 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetSchedule()
         {
             return this._schedule != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SendingSchedule. 
+        /// <para>
+        /// Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This flag
+        /// should be set to true in order to allow (OpenHours and ClosedDays)
+        /// </para>
+        /// </summary>
+        public bool SendingSchedule
+        {
+            get { return this._sendingSchedule.GetValueOrDefault(); }
+            set { this._sendingSchedule = value; }
+        }
+
+        // Check to see if SendingSchedule property is set
+        internal bool IsSetSendingSchedule()
+        {
+            return this._sendingSchedule.HasValue; 
         }
 
         /// <summary>

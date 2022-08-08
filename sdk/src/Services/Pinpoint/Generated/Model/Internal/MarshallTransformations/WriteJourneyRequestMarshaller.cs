@@ -64,6 +64,17 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetClosedDays())
+            {
+                context.Writer.WritePropertyName("ClosedDays");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ClosedDaysMarshaller.Instance;
+                marshaller.Marshall(requestObject.ClosedDays, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetCreationDate())
             {
                 context.Writer.WritePropertyName("CreationDate");
@@ -110,6 +121,17 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Name);
             }
 
+            if(requestObject.IsSetOpenHours())
+            {
+                context.Writer.WritePropertyName("OpenHours");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = OpenHoursMarshaller.Instance;
+                marshaller.Marshall(requestObject.OpenHours, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetQuietTime())
             {
                 context.Writer.WritePropertyName("QuietTime");
@@ -142,6 +164,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.Schedule, context);
 
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetSendingSchedule())
+            {
+                context.Writer.WritePropertyName("SendingSchedule");
+                context.Writer.Write(requestObject.SendingSchedule);
             }
 
             if(requestObject.IsSetStartActivity())
