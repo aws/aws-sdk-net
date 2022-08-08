@@ -133,7 +133,7 @@ namespace Amazon.IdentityStore.Model
         /// Gets and sets the property RequestId. 
         /// <para>
         /// The identifier for each request. This value is a globally unique ID that is generated
-        /// by the Identity Store service for each sent request, and is then returned inside the
+        /// by the identity store service for each sent request, and is then returned inside the
         /// exception if the request fails.
         /// </para>
         /// </summary>
@@ -156,9 +156,10 @@ namespace Amazon.IdentityStore.Model
         /// or <code>GroupId</code>. The format for <code>ResourceId</code> is either <code>UUID</code>
         /// or <code>1234567890-UUID</code>, where <code>UUID</code> is a randomly generated value
         /// for each resource when it is created and <code>1234567890</code> represents the <code>IdentityStoreId</code>
-        /// string value. In the case that the identity store is migrated from a legacy SSO identity
-        /// store, the <code>ResourceId</code> for that identity store will be in the format of
-        /// <code>UUID</code>. Otherwise, it will be in the <code>1234567890-UUID</code> format.
+        /// string value. In the case that the identity store is migrated from a legacy single
+        /// sign-on identity store, the <code>ResourceId</code> for that identity store will be
+        /// in the format of <code>UUID</code>. Otherwise, it will be in the <code>1234567890-UUID</code>
+        /// format.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=47)]
@@ -177,7 +178,7 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of resource in the Identity Store service, which is an enum object. Valid
+        /// The type of resource in the identity store service, which is an enum object. Valid
         /// values include USER, GROUP, and IDENTITY_STORE.
         /// </para>
         /// </summary>

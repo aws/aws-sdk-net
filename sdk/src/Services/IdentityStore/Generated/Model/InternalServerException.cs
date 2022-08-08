@@ -128,7 +128,7 @@ namespace Amazon.IdentityStore.Model
         /// Gets and sets the property RequestId. 
         /// <para>
         /// The identifier for each request. This value is a globally unique ID that is generated
-        /// by the Identity Store service for each sent request, and is then returned inside the
+        /// by the identity store service for each sent request, and is then returned inside the
         /// exception if the request fails.
         /// </para>
         /// </summary>
