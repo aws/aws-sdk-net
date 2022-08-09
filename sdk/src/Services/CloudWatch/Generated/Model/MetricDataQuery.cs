@@ -121,7 +121,7 @@ namespace Amazon.CloudWatch.Model
         /// or <code>MetricStat</code> but not both.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=2048)]
         public string Expression
         {
             get { return this._expression; }

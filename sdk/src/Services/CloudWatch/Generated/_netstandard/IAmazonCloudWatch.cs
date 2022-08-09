@@ -115,7 +115,9 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Deletes the specified anomaly detection model from your account.
+        /// Deletes the specified anomaly detection model from your account. For more information
+        /// about how to delete an anomaly detection model, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Anomaly_Detection_Alarm.html#Delete_Anomaly_Detection_Model">Deleting
+        /// an anomaly detection model</a> in the <i>CloudWatch User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAnomalyDetector service method.</param>
         /// <param name="cancellationToken">
@@ -1417,9 +1419,9 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  
         /// <para>
-        /// Each <code>PutMetricData</code> request is limited to 40 KB in size for HTTP POST
-        /// requests. You can send a payload compressed by gzip. Each request is also limited
-        /// to no more than 20 different metrics.
+        /// Each <code>PutMetricData</code> request is limited to 1 MB in size for HTTP POST requests.
+        /// You can send a payload compressed by gzip. Each request is also limited to no more
+        /// than 1000 different metrics.
         /// </para>
         ///  
         /// <para>
@@ -1430,7 +1432,7 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  
         /// <para>
-        /// You can use up to 10 dimensions per metric to further clarify what data the metric
+        /// You can use up to 30 dimensions per metric to further clarify what data the metric
         /// collects. Each dimension consists of a Name and Value pair. For more information about
         /// specifying dimensions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
         /// Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.

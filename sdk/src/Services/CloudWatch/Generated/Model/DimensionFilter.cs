@@ -61,7 +61,7 @@ namespace Amazon.CloudWatch.Model
         /// The value of the dimension to be matched.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
+        [AWSProperty(Min=1, Max=1024)]
         public string Value
         {
             get { return this._value; }

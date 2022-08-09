@@ -57,7 +57,7 @@ namespace Amazon.CloudWatch.Model
         /// you must specify them in order for the call to succeed.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=10)]
+        [AWSProperty(Max=30)]
         public List<Dimension> Dimensions
         {
             get { return this._dimensions; }

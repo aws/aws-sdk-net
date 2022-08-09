@@ -274,7 +274,7 @@ namespace Amazon.CloudWatch.Model
         /// The dimensions for the metric specified in <code>MetricName</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=10)]
+        [AWSProperty(Max=30)]
         public List<Dimension> Dimensions
         {
             get { return this._dimensions; }
@@ -720,7 +720,7 @@ namespace Amazon.CloudWatch.Model
         ///  
         /// <para>
         /// However, if the metric is published with multiple types of units and you don't specify
-        /// a unit, the alarm's behavior is not defined and it behaves predictably.
+        /// a unit, the alarm's behavior is not defined and it behaves unpredictably.
         /// </para>
         ///  
         /// <para>

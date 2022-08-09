@@ -37,7 +37,7 @@ namespace Amazon.CloudWatch.Model
     /// 
     ///  
     /// <para>
-    /// You can assign up to 10 dimensions to a metric.
+    /// You can assign up to 30 dimensions to a metric.
     /// </para>
     /// </summary>
     public partial class Dimension
@@ -72,7 +72,7 @@ namespace Amazon.CloudWatch.Model
         /// must include at least one non-whitespace character.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string Value
         {
             get { return this._value; }

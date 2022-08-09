@@ -135,7 +135,7 @@ namespace Amazon.CloudWatch.Model
         /// Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=10)]
+        [AWSProperty(Max=30)]
         public List<Dimension> Dimensions
         {
             get { return this._dimensions; }

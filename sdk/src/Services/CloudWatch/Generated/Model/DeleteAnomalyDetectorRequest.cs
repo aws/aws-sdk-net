@@ -30,7 +30,9 @@ namespace Amazon.CloudWatch.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAnomalyDetector operation.
-    /// Deletes the specified anomaly detection model from your account.
+    /// Deletes the specified anomaly detection model from your account. For more information
+    /// about how to delete an anomaly detection model, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Anomaly_Detection_Alarm.html#Delete_Anomaly_Detection_Model">Deleting
+    /// an anomaly detection model</a> in the <i>CloudWatch User Guide</i>.
     /// </summary>
     public partial class DeleteAnomalyDetectorRequest : AmazonCloudWatchRequest
     {
@@ -48,7 +50,7 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         /// </summary>
         [Obsolete("Use SingleMetricAnomalyDetector.")]
-        [AWSProperty(Max=10)]
+        [AWSProperty(Max=30)]
         public List<Dimension> Dimensions
         {
             get { return this._dimensions; }

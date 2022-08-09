@@ -74,7 +74,7 @@ namespace Amazon.CloudWatch.Model
         /// and have anomaly detection models associated, they're all returned.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=10)]
+        [AWSProperty(Max=30)]
         public List<Dimension> Dimensions
         {
             get { return this._dimensions; }

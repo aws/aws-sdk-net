@@ -57,10 +57,6 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.CloudWatch.Model.DescribeAlarmsForMetricRequest.ExtendedStatistic</property>
-    <pattern>p(\d{1,2}(\.\d{0,2})?|100)</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.CloudWatch.Model.DescribeAlarmsForMetricRequest.MetricName</property>
     <min>1</min>
     <max>255</max>
@@ -255,10 +251,6 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.CloudWatch.Model.PutMetricAlarmRequest.ExtendedStatistic</property>
-    <pattern>p(\d{1,2}(\.\d{0,2})?|100)</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.CloudWatch.Model.PutMetricAlarmRequest.MetricName</property>
     <min>1</min>
     <max>255</max>
@@ -423,7 +415,7 @@
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.Dimension.Value</property>
     <min>1</min>
-    <max>255</max>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.DimensionFilter.Name</property>
@@ -433,7 +425,7 @@
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.DimensionFilter.Value</property>
     <min>1</min>
-    <max>255</max>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.InsightRule.Definition</property>
@@ -493,10 +485,6 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.CloudWatch.Model.MetricAlarm.ExtendedStatistic</property>
-    <pattern>p(\d{1,2}(\.\d{0,2})?|100)</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.CloudWatch.Model.MetricAlarm.MetricName</property>
     <min>1</min>
     <max>255</max>
@@ -539,7 +527,7 @@
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.MetricDataQuery.Expression</property>
     <min>1</min>
-    <max>1024</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.MetricDataQuery.Id</property>

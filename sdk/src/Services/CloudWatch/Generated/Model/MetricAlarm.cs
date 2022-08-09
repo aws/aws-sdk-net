@@ -218,7 +218,7 @@ namespace Amazon.CloudWatch.Model
         /// The dimensions for the metric associated with the alarm.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=10)]
+        [AWSProperty(Max=30)]
         public List<Dimension> Dimensions
         {
             get { return this._dimensions; }
