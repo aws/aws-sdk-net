@@ -80,12 +80,13 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property Geometry. 
         /// <para>
-        /// Contains the polygon details to specify the position of the geofence.
+        /// Contains the details to specify the position of the geofence. Can be either a polygon
+        /// or a circle. Including both will return a validation error.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">geofence
-        /// polygon</a> can have a maximum of 1,000 vertices.
+        /// Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">
+        /// geofence polygon</a> can have a maximum of 1,000 vertices.
         /// </para>
         ///  </note>
         /// </summary>

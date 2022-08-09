@@ -29,7 +29,7 @@ namespace Amazon.LocationService
     /// <summary>
     /// Interface for accessing LocationService
     ///
-    /// Suite of geospatial services including Maps, Places, Routes, Tracking, and Geofencing
+    /// "Suite of geospatial services including Maps, Places, Routes, Tracking, and Geofencing"
     /// </summary>
     public partial interface IAmazonLocationService : IAmazonService, IDisposable
     {
@@ -570,7 +570,12 @@ namespace Amazon.LocationService
         /// if traveling by <code>Car</code>, or <code>TruckModeOptions</code> if traveling by
         /// <code>Truck</code>.
         /// </para>
-        ///  </li> </ul>
+        ///  <note> 
+        /// <para>
+        /// If you specify <code>walking</code> for the travel mode and your data provider is
+        /// Esri, the start and destination must be within 40km.
+        /// </para>
+        ///  </note> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CalculateRoute service method.</param>
         /// 

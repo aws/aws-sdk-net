@@ -31,6 +31,11 @@ namespace Amazon.LocationService.Model
     /// <summary>
     /// Contains the geofence geometry details.
     /// 
+    ///  
+    /// <para>
+    /// A geofence geometry is made up of either a polygon or a circle. Can be either a polygon
+    /// or a circle. Including both will return a validation error.
+    /// </para>
     ///  <note> 
     /// <para>
     /// Amazon Location doesn't currently support polygons with holes, multipolygons, polygons
@@ -40,7 +45,26 @@ namespace Amazon.LocationService.Model
     /// </summary>
     public partial class GeofenceGeometry
     {
+        private Circle _circle;
         private List<List<List<double>>> _polygon = new List<List<List<double>>>();
+
+        /// <summary>
+        /// Gets and sets the property Circle. 
+        /// <para>
+        /// A circle on the earth, as defined by a center point and a radius.
+        /// </para>
+        /// </summary>
+        public Circle Circle
+        {
+            get { return this._circle; }
+            set { this._circle = value; }
+        }
+
+        // Check to see if Circle property is set
+        internal bool IsSetCircle()
+        {
+            return this._circle != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Polygon. 
@@ -56,6 +80,10 @@ namespace Amazon.LocationService.Model
         /// must list their vertices in counter-clockwise order around the ring's center, where
         /// the left side is the polygon's exterior. Inner rings must list their vertices in clockwise
         /// order, where the left side is the polygon's interior.
+        /// </para>
+        ///  
+        /// <para>
+        /// A geofence polygon can consist of between 4 and 1,000 vertices.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

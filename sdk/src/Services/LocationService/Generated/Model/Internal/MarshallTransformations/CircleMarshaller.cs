@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GeofenceGeometry Marshaller
+    /// Circle Marshaller
     /// </summary>
-    public class GeofenceGeometryMarshaller : IRequestMarshaller<GeofenceGeometry, JsonMarshallerContext> 
+    public class CircleMarshaller : IRequestMarshaller<Circle, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,38 +43,23 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(GeofenceGeometry requestObject, JsonMarshallerContext context)
+        public void Marshall(Circle requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetCircle())
+            if(requestObject.IsSetCenter())
             {
-                context.Writer.WritePropertyName("Circle");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = CircleMarshaller.Instance;
-                marshaller.Marshall(requestObject.Circle, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetPolygon())
-            {
-                context.Writer.WritePropertyName("Polygon");
+                context.Writer.WritePropertyName("Center");
                 context.Writer.WriteArrayStart();
-                foreach(var requestObjectPolygonListValue in requestObject.Polygon)
+                foreach(var requestObjectCenterListValue in requestObject.Center)
                 {
-                    context.Writer.WriteArrayStart();
-                    foreach(var requestObjectPolygonListValueListValue in requestObjectPolygonListValue)
-                    {
-                        context.Writer.WriteArrayStart();
-                        foreach(var requestObjectPolygonListValueListValueListValue in requestObjectPolygonListValueListValue)
-                        {
-                                context.Writer.Write(requestObjectPolygonListValueListValueListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
+                        context.Writer.Write(requestObjectCenterListValue);
                 }
                 context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetRadius())
+            {
+                context.Writer.WritePropertyName("Radius");
+                context.Writer.Write(requestObject.Radius);
             }
 
         }
@@ -82,7 +67,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static GeofenceGeometryMarshaller Instance = new GeofenceGeometryMarshaller();
+        public readonly static CircleMarshaller Instance = new CircleMarshaller();
 
     }
 }

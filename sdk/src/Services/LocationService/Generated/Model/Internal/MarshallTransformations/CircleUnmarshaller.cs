@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GeofenceGeometry Object
+    /// Response Unmarshaller for Circle Object
     /// </summary>  
-    public class GeofenceGeometryUnmarshaller : IUnmarshaller<GeofenceGeometry, XmlUnmarshallerContext>, IUnmarshaller<GeofenceGeometry, JsonUnmarshallerContext>
+    public class CircleUnmarshaller : IUnmarshaller<Circle, XmlUnmarshallerContext>, IUnmarshaller<Circle, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        GeofenceGeometry IUnmarshaller<GeofenceGeometry, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Circle IUnmarshaller<Circle, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,27 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public GeofenceGeometry Unmarshall(JsonUnmarshallerContext context)
+        public Circle Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            GeofenceGeometry unmarshalledObject = new GeofenceGeometry();
+            Circle unmarshalledObject = new Circle();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Circle", targetDepth))
+                if (context.TestExpression("Center", targetDepth))
                 {
-                    var unmarshaller = CircleUnmarshaller.Instance;
-                    unmarshalledObject.Circle = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance);
+                    unmarshalledObject.Center = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Polygon", targetDepth))
+                if (context.TestExpression("Radius", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<List<List<double>>, ListUnmarshaller<List<double>, ListUnmarshaller<double, DoubleUnmarshaller>>>(new ListUnmarshaller<List<double>, ListUnmarshaller<double, DoubleUnmarshaller>>(new ListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance)));
-                    unmarshalledObject.Polygon = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.Radius = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +82,12 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         }
 
 
-        private static GeofenceGeometryUnmarshaller _instance = new GeofenceGeometryUnmarshaller();        
+        private static CircleUnmarshaller _instance = new CircleUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GeofenceGeometryUnmarshaller Instance
+        public static CircleUnmarshaller Instance
         {
             get
             {

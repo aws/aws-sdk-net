@@ -63,7 +63,12 @@ namespace Amazon.LocationService.Model
     /// if traveling by <code>Car</code>, or <code>TruckModeOptions</code> if traveling by
     /// <code>Truck</code>.
     /// </para>
-    ///  </li> </ul>
+    ///  <note> 
+    /// <para>
+    /// If you specify <code>walking</code> for the travel mode and your data provider is
+    /// Esri, the start and destination must be within 40km.
+    /// </para>
+    ///  </note> </li> </ul>
     /// </summary>
     public partial class CalculateRouteRequest : AmazonLocationServiceRequest
     {
@@ -303,7 +308,8 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property TravelMode. 
         /// <para>
         /// Specifies the mode of transport when calculating a route. Used in estimating the speed
-        /// of travel and road compatibility.
+        /// of travel and road compatibility. You can choose <code>Car</code>, <code>Truck</code>,
+        /// or <code>Walking</code> as options for the <code>TravelMode</code>.
         /// </para>
         ///  
         /// <para>

@@ -89,8 +89,8 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>VectorHereBerlin</code> – The HERE Berlin map style is a high contrast detailed
-        /// base map of the world that blends 3D and 2D rendering.
+        ///  <code>VectorHereContrast</code> – The HERE Contrast (Berlin) map style is a high
+        /// contrast detailed base map of the world that blends 3D and 2D rendering.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -104,7 +104,13 @@ namespace Amazon.LocationService.Model
         /// and attributes (e.g. width / height / HAZMAT) symbolized with highlighted segments
         /// and icons on top of HERE Explore to support use cases within transport and logistics.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// The <code>VectorHereContrast</code> style has been renamed from <code>VectorHereBerlin</code>.
+        /// <code>VectorHereBerlin</code> has been deprecated, but will continue to work in applications
+        /// that use it.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
         public string Style

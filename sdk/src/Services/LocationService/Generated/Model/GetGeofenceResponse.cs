@@ -81,7 +81,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property Geometry. 
         /// <para>
-        /// Contains the geofence geometry details describing a polygon.
+        /// Contains the geofence geometry details describing a polygon or a circle.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

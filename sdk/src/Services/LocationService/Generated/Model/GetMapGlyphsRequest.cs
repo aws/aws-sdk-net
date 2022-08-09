@@ -83,7 +83,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// VectorHereBerlin – <code>Fira GO Regular</code> | <code>Fira GO Bold</code> 
+        /// VectorHereContrast – <code>Fira GO Regular</code> | <code>Fira GO Bold</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
