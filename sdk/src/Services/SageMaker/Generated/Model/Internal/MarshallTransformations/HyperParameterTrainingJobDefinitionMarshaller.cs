@@ -102,6 +102,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetHyperParameterTuningResourceConfig())
+            {
+                context.Writer.WritePropertyName("HyperParameterTuningResourceConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = HyperParameterTuningResourceConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.HyperParameterTuningResourceConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetInputDataConfig())
             {
                 context.Writer.WritePropertyName("InputDataConfig");

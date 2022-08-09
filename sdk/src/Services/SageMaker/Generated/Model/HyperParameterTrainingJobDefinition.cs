@@ -40,6 +40,7 @@ namespace Amazon.SageMaker.Model
         private bool? _enableManagedSpotTraining;
         private bool? _enableNetworkIsolation;
         private ParameterRanges _hyperParameterRanges;
+        private HyperParameterTuningResourceConfig _hyperParameterTuningResourceConfig;
         private List<Channel> _inputDataConfig = new List<Channel>();
         private OutputDataConfig _outputDataConfig;
         private ResourceConfig _resourceConfig;
@@ -183,6 +184,28 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property HyperParameterTuningResourceConfig. 
+        /// <para>
+        /// The configuration for the hyperparameter tuning resources, including the compute instances
+        /// and storage volumes, used for training jobs launched by the tuning job. By default,
+        /// storage volumes hold model artifacts and incremental states. Choose <code>File</code>
+        /// for <code>TrainingInputMode</code> in the <code>AlgorithmSpecification</code>parameter
+        /// to additionally store training data in the storage volume (optional).
+        /// </para>
+        /// </summary>
+        public HyperParameterTuningResourceConfig HyperParameterTuningResourceConfig
+        {
+            get { return this._hyperParameterTuningResourceConfig; }
+            set { this._hyperParameterTuningResourceConfig = value; }
+        }
+
+        // Check to see if HyperParameterTuningResourceConfig property is set
+        internal bool IsSetHyperParameterTuningResourceConfig()
+        {
+            return this._hyperParameterTuningResourceConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InputDataConfig. 
         /// <para>
         /// An array of <a>Channel</a> objects that specify the input for the training jobs that
@@ -236,8 +259,13 @@ namespace Amazon.SageMaker.Model
         /// in the algorithm specification. For distributed training algorithms, specify an instance
         /// count greater than 1.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you want to use hyperparameter optimization with instance type flexibility, use
+        /// <code>HyperParameterTuningResourceConfig</code> instead.
+        /// </para>
+        ///  </note>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ResourceConfig ResourceConfig
         {
             get { return this._resourceConfig; }

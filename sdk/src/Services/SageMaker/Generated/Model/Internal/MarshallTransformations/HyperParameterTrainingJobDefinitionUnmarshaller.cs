@@ -106,6 +106,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.HyperParameterRanges = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("HyperParameterTuningResourceConfig", targetDepth))
+                {
+                    var unmarshaller = HyperParameterTuningResourceConfigUnmarshaller.Instance;
+                    unmarshalledObject.HyperParameterTuningResourceConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("InputDataConfig", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Channel, ChannelUnmarshaller>(ChannelUnmarshaller.Instance);
