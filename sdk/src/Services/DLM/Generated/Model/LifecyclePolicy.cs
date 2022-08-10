@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DLM.Model
 {
     /// <summary>
-    /// Detailed information about a lifecycle policy.
+    /// <b>[All policy types]</b> Detailed information about a snapshot, AMI, or event-based
+    /// lifecycle policy.
     /// </summary>
     public partial class LifecyclePolicy
     {

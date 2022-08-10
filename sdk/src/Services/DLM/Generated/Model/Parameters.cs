@@ -29,20 +29,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DLM.Model
 {
     /// <summary>
-    /// Specifies optional parameters to add to a policy. The set of valid parameters depends
-    /// on the combination of policy type and resource type.
+    /// <b>[Snapshot and AMI policies only]</b> Specifies optional parameters for snapshot
+    /// and AMI policies. The set of valid parameters depends on the combination of policy
+    /// type and target resource type.
+    /// 
+    ///  
+    /// <para>
+    /// If you choose to exclude boot volumes and you specify tags that consequently exclude
+    /// all of the additional data volumes attached to an instance, then Amazon DLM will not
+    /// create any snapshots for the affected instance, and it will emit a <code>SnapshotsCreateFailed</code>
+    /// Amazon CloudWatch metric. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-dlm-cw-metrics.html">Monitor
+    /// your policies using Amazon CloudWatch</a>.
+    /// </para>
     /// </summary>
     public partial class Parameters
     {
         private bool? _excludeBootVolume;
+        private List<Tag> _excludeDataVolumeTags = new List<Tag>();
         private bool? _noReboot;
 
         /// <summary>
         /// Gets and sets the property ExcludeBootVolume. 
         /// <para>
-        /// [EBS Snapshot Management – Instance policies only] Indicates whether to exclude the
-        /// root volume from snapshots created using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshots.html">CreateSnapshots</a>.
-        /// The default is false.
+        ///  <b>[Snapshot policies that target instances only]</b> Indicates whether to exclude
+        /// the root volume from multi-volume snapshot sets. The default is <code>false</code>.
+        /// If you specify <code>true</code>, then the root volumes attached to targeted instances
+        /// will be excluded from the multi-volume snapshot sets created by the policy.
         /// </para>
         /// </summary>
         public bool ExcludeBootVolume
@@ -58,11 +70,38 @@ namespace Amazon.DLM.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExcludeDataVolumeTags. 
+        /// <para>
+        ///  <b>[Snapshot policies that target instances only]</b> The tags used to identify data
+        /// (non-root) volumes to exclude from multi-volume snapshot sets.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you create a snapshot lifecycle policy that targets instances and you specify tags
+        /// for this parameter, then data volumes with the specified tags that are attached to
+        /// targeted instances will be excluded from the multi-volume snapshot sets created by
+        /// the policy.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public List<Tag> ExcludeDataVolumeTags
+        {
+            get { return this._excludeDataVolumeTags; }
+            set { this._excludeDataVolumeTags = value; }
+        }
+
+        // Check to see if ExcludeDataVolumeTags property is set
+        internal bool IsSetExcludeDataVolumeTags()
+        {
+            return this._excludeDataVolumeTags != null && this._excludeDataVolumeTags.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property NoReboot. 
         /// <para>
-        /// Applies to AMI lifecycle policies only. Indicates whether targeted instances are rebooted
-        /// when the lifecycle policy runs. <code>true</code> indicates that targeted instances
-        /// are not rebooted when the policy runs. <code>false</code> indicates that target instances
+        ///  <b>[AMI policies only]</b> Indicates whether targeted instances are rebooted when
+        /// the lifecycle policy runs. <code>true</code> indicates that targeted instances are
+        /// not rebooted when the policy runs. <code>false</code> indicates that target instances
         /// are rebooted when the policy runs. The default is <code>true</code> (instances are
         /// not rebooted).
         /// </para>

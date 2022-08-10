@@ -29,8 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DLM.Model
 {
     /// <summary>
-    /// Specifies the retention rule for a lifecycle policy. You can retain snapshots based
-    /// on either a count or a time interval.
+    /// <b>[Snapshot and AMI policies only]</b> Specifies a retention rule for snapshots
+    /// created by snapshot policies or for AMIs created by AMI policies. You can retain snapshots
+    /// based on either a count or a time interval.
+    /// 
+    ///  
+    /// <para>
+    /// You must specify either <b>Count</b>, or <b>Interval</b> and <b>IntervalUnit</b>.
+    /// </para>
     /// </summary>
     public partial class RetainRule
     {

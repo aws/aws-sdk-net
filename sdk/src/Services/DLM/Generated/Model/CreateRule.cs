@@ -29,13 +29,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DLM.Model
 {
     /// <summary>
-    /// Specifies when to create snapshots of EBS volumes.
+    /// <b>[Snapshot and AMI policies only]</b> Specifies when the policy should create snapshots
+    /// or AMIs.
     /// 
-    ///  
+    ///  <important> 
     /// <para>
     /// You must specify either a Cron expression or an interval, interval unit, and start
     /// time. You cannot specify both.
     /// </para>
+    ///  </important>
     /// </summary>
     public partial class CreateRule
     {
@@ -107,20 +109,18 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// Specifies the destination for snapshots created by the policy. To create snapshots
-        /// in the same Region as the source resource, specify <code>CLOUD</code>. To create snapshots
-        /// on the same Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If
-        /// you omit this parameter, <code>CLOUD</code> is used by default.
+        ///  <b>[Snapshot policies only]</b> Specifies the destination for snapshots created by
+        /// the policy. To create snapshots in the same Region as the source resource, specify
+        /// <code>CLOUD</code>. To create snapshots on the same Outpost as the source resource,
+        /// specify <code>OUTPOST_LOCAL</code>. If you omit this parameter, <code>CLOUD</code>
+        /// is used by default.
         /// </para>
         ///  
         /// <para>
         /// If the policy targets resources in an Amazon Web Services Region, then you must create
-        /// snapshots in the same Region as the source resource.
-        /// </para>
-        ///  
-        /// <para>
-        /// If the policy targets resources on an Outpost, then you can create snapshots on the
-        /// same Outpost as the source resource, or in the Region of that Outpost.
+        /// snapshots in the same Region as the source resource. If the policy targets resources
+        /// on an Outpost, then you can create snapshots on the same Outpost as the source resource,
+        /// or in the Region of that Outpost.
         /// </para>
         /// </summary>
         public LocationValues Location

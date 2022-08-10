@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DLM.Model
 {
     /// <summary>
-    /// Specifies an action for an event-based policy.
+    /// <b>[Event-based policies only]</b> Specifies an action for an event-based policy.
     /// </summary>
     public partial class Action
     {

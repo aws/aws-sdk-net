@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DLM.Model
 {
     /// <summary>
-    /// Specifies the configuration of a lifecycle policy.
+    /// <b>[All policy types]</b> Specifies the configuration of a lifecycle policy.
     /// </summary>
     public partial class PolicyDetails
     {
@@ -45,13 +45,8 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property Actions. 
         /// <para>
-        /// The actions to be performed when the event-based policy is triggered. You can specify
-        /// only one action per policy.
-        /// </para>
-        ///  
-        /// <para>
-        /// This parameter is required for event-based policies only. If you are creating a snapshot
-        /// or AMI policy, omit this parameter.
+        ///  <b>[Event-based policies only]</b> The actions to be performed when the event-based
+        /// policy is activated. You can specify only one action per policy.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
@@ -70,12 +65,7 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property EventSource. 
         /// <para>
-        /// The event that triggers the event-based policy. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This parameter is required for event-based policies only. If you are creating a snapshot
-        /// or AMI policy, omit this parameter.
+        ///  <b>[Event-based policies only]</b> The event that activates the event-based policy.
         /// </para>
         /// </summary>
         public EventSource EventSource
@@ -93,13 +83,17 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// A set of optional parameters for snapshot and AMI lifecycle policies. 
+        ///  <b>[Snapshot and AMI policies only]</b> A set of optional parameters for snapshot
+        /// and AMI lifecycle policies. 
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// This parameter is required for snapshot and AMI policies only. If you are creating
-        /// an event-based policy, omit this parameter.
+        /// If you are modifying a policy that was created or previously modified using the Amazon
+        /// Data Lifecycle Manager console, then you must include this parameter and specify either
+        /// the default values or the new values that you require. You can't omit this parameter
+        /// or set its values to null.
         /// </para>
+        ///  </note>
         /// </summary>
         public Parameters Parameters
         {
@@ -116,12 +110,12 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property PolicyType. 
         /// <para>
-        /// The valid target resource types and actions a policy can manage. Specify <code>EBS_SNAPSHOT_MANAGEMENT</code>
-        /// to create a lifecycle policy that manages the lifecycle of Amazon EBS snapshots. Specify
-        /// <code>IMAGE_MANAGEMENT</code> to create a lifecycle policy that manages the lifecycle
-        /// of EBS-backed AMIs. Specify <code>EVENT_BASED_POLICY </code> to create an event-based
-        /// policy that performs specific actions when a defined event occurs in your Amazon Web
-        /// Services account.
+        ///  <b>[All policy types]</b> The valid target resource types and actions a policy can
+        /// manage. Specify <code>EBS_SNAPSHOT_MANAGEMENT</code> to create a lifecycle policy
+        /// that manages the lifecycle of Amazon EBS snapshots. Specify <code>IMAGE_MANAGEMENT</code>
+        /// to create a lifecycle policy that manages the lifecycle of EBS-backed AMIs. Specify
+        /// <code>EVENT_BASED_POLICY </code> to create an event-based policy that performs specific
+        /// actions when a defined event occurs in your Amazon Web Services account.
         /// </para>
         ///  
         /// <para>
@@ -143,9 +137,9 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property ResourceLocations. 
         /// <para>
-        /// The location of the resources to backup. If the source resources are located in an
-        /// Amazon Web Services Region, specify <code>CLOUD</code>. If the source resources are
-        /// located on an Outpost in your account, specify <code>OUTPOST</code>. 
+        ///  <b>[Snapshot and AMI policies only]</b> The location of the resources to backup.
+        /// If the source resources are located in an Amazon Web Services Region, specify <code>CLOUD</code>.
+        /// If the source resources are located on an Outpost in your account, specify <code>OUTPOST</code>.
         /// </para>
         ///  
         /// <para>
@@ -170,14 +164,9 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property ResourceTypes. 
         /// <para>
-        /// The target resource type for snapshot and AMI lifecycle policies. Use <code>VOLUME
-        /// </code>to create snapshots of individual volumes or use <code>INSTANCE</code> to create
-        /// multi-volume snapshots from the volumes for an instance.
-        /// </para>
-        ///  
-        /// <para>
-        /// This parameter is required for snapshot and AMI policies only. If you are creating
-        /// an event-based policy, omit this parameter.
+        ///  <b>[Snapshot policies only]</b> The target resource type for snapshot and AMI lifecycle
+        /// policies. Use <code>VOLUME </code>to create snapshots of individual volumes or use
+        /// <code>INSTANCE</code> to create multi-volume snapshots from the volumes for an instance.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
@@ -196,14 +185,9 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property Schedules. 
         /// <para>
-        /// The schedules of policy-defined actions for snapshot and AMI lifecycle policies. A
-        /// policy can have up to four schedules—one mandatory schedule and up to three optional
-        /// schedules.
-        /// </para>
-        ///  
-        /// <para>
-        /// This parameter is required for snapshot and AMI policies only. If you are creating
-        /// an event-based policy, omit this parameter.
+        ///  <b>[Snapshot and AMI policies only]</b> The schedules of policy-defined actions for
+        /// snapshot and AMI lifecycle policies. A policy can have up to four schedules—one mandatory
+        /// schedule and up to three optional schedules.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4)]
@@ -222,12 +206,8 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property TargetTags. 
         /// <para>
-        /// The single tag that identifies targeted resources for this policy.
-        /// </para>
-        ///  
-        /// <para>
-        /// This parameter is required for snapshot and AMI policies only. If you are creating
-        /// an event-based policy, omit this parameter.
+        ///  <b>[Snapshot and AMI policies only]</b> The single tag that identifies targeted resources
+        /// for this policy.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
