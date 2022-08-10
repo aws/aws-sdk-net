@@ -7,12 +7,14 @@ using Amazon.Auth.AccessControlPolicy;
 
 using System.Threading;
 using System.Threading.Tasks;
+using ThirdParty.Json.LitJson;
 
 using Amazon.Runtime.SharedInterfaces;
 using Amazon.SimpleNotificationService;
 using Amazon.SimpleNotificationService.Model;
 using Amazon.SQS;
 using Amazon.SQS.Model;
+using Amazon.Runtime;
 
 using SNSMessageAttributeValue = Amazon.SimpleNotificationService.Model.MessageAttributeValue;
 using Xunit;
@@ -217,7 +219,53 @@ namespace Amazon.DNXCore.IntegrationTests
 
         [Fact]
         [Trait(CategoryAttribute, "SNS")]
-        public async void IsMessageSignatureValid()
+        public async void IsMessageSignatureValidSHA1()
+        {
+            var topicArn = await CreateTopic();
+            var queueUrl = await CreateQueue();
+            await SubscribeQueue(topicArn, queueUrl);
+            List<Message> messages = await PublishToSNSAndReceiveMessages(GetPublishRequest(topicArn), topicArn, queueUrl);
+
+            Assert.Equal(1, messages.Count);
+            var bodyJson = GetBodyJson(messages[0]);
+            var validMessage = Amazon.SimpleNotificationService.Util.Message.ParseMessage(bodyJson);
+            Assert.True(validMessage.IsMessageSignatureValid());
+
+            var invalidMessage = Amazon.SimpleNotificationService.Util.Message.ParseMessage(bodyJson.Replace("Test Message", "Hacked Message"));
+            Assert.False(invalidMessage.IsMessageSignatureValid());
+        }
+
+        [Fact]
+        [Trait(CategoryAttribute, "SNS")]
+        public async void IsMessageSignatureValidSHA256()
+        {
+            var topicArn = await CreateTopic();
+
+            // set topic attribute
+            var setTopicAttributesRequest = new SetTopicAttributesRequest
+            {
+                TopicArn = topicArn,
+                AttributeName = "SignatureVersion",
+                AttributeValue = "2"
+            };
+            await Client.SetTopicAttributesAsync(setTopicAttributesRequest);
+
+            var queueUrl = await CreateQueue();
+            await SubscribeQueue(topicArn, queueUrl);
+            List<Message> messages = await PublishToSNSAndReceiveMessages(GetPublishRequest(topicArn), topicArn, queueUrl);
+
+            Assert.Equal(1, messages.Count);
+            var bodyJson = GetBodyJson(messages[0]);
+            var validMessage = Amazon.SimpleNotificationService.Util.Message.ParseMessage(bodyJson);
+            Assert.True(validMessage.IsMessageSignatureValid());
+
+            var invalidMessage = Amazon.SimpleNotificationService.Util.Message.ParseMessage(bodyJson.Replace("Test Message", "Hacked Message"));
+            Assert.False(invalidMessage.IsMessageSignatureValid());
+        }
+
+        [Fact]
+        [Trait(CategoryAttribute, "SNS")]
+        public async void IsMessageSignatureValidInvalidSignatureVersion()
         {
             var topicArn = await CreateTopic();
             var queueUrl = await CreateQueue();
@@ -227,11 +275,12 @@ namespace Amazon.DNXCore.IntegrationTests
             Assert.Equal(1, messages.Count);
             var bodyJson = GetBodyJson(messages[0]);
 
-            var validMessage = Amazon.SimpleNotificationService.Util.Message.ParseMessage(bodyJson);
-            Assert.True(validMessage.IsMessageSignatureValid());
+            // modify message to have invalid SignatureVersion
+            var jsonData = JsonMapper.ToObject(bodyJson);
+            jsonData["SignatureVersion"] = "3";
 
-            var invalidMessage = Amazon.SimpleNotificationService.Util.Message.ParseMessage(bodyJson.Replace("Test Message", "Hacked Message"));
-            Assert.False(invalidMessage.IsMessageSignatureValid());
+            var ex = Assert.Throws<AmazonClientException>(() => Amazon.SimpleNotificationService.Util.Message.ParseMessage(jsonData.ToJson()));
+            Assert.Equal(ex.Message, "SignatureVersion is not a valid value");
         }
 
         [Fact]

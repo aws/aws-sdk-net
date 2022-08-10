@@ -228,7 +228,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
         [TestMethod]
         [TestCategory("SimpleNotificationService")]
-        public void IsMessageSignatureValid()
+        public void IsMessageSignatureValidSHA1()
         {
             string topicArn = null;
             string queueUrl = null;
@@ -237,6 +237,49 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             {
                 topicArn = CreateTopic();
                 queueUrl = CreateQueue();
+
+                SubscribeQueue(topicArn, queueUrl);
+                List<Message> messages = PublishToSNSAndReceiveMessages(GetPublishRequest(topicArn), topicArn, queueUrl);
+
+                Assert.AreEqual(1, messages.Count);
+                var bodyJson = GetBodyJson(messages[0]);
+
+                var validMessage = Amazon.SimpleNotificationService.Util.Message.ParseMessage(bodyJson);
+                Assert.IsTrue(validMessage.IsMessageSignatureValid());
+
+                var invalidMessage = Amazon.SimpleNotificationService.Util.Message.ParseMessage(bodyJson.Replace("Test Message", "Hacked Message"));
+                Assert.IsFalse(invalidMessage.IsMessageSignatureValid());
+            }
+            finally
+            {
+                if (topicArn != null)
+                    Client.DeleteTopic(new DeleteTopicRequest { TopicArn = topicArn });
+
+                if (queueUrl != null)
+                    sqsClient.DeleteQueue(new DeleteQueueRequest { QueueUrl = queueUrl });
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("SimpleNotificationService")]
+        public void IsMessageSignatureValidSHA256()
+        {
+            string topicArn = null;
+            string queueUrl = null;
+
+            try
+            {
+                topicArn = CreateTopic();
+                queueUrl = CreateQueue();
+
+                // set topic attribute
+                var setTopicAttributesRequest = new SetTopicAttributesRequest
+                {
+                    TopicArn = topicArn,
+                    AttributeName = "SignatureVersion",
+                    AttributeValue = "2"
+                };
+                Client.SetTopicAttributes(setTopicAttributesRequest);
 
                 SubscribeQueue(topicArn, queueUrl);
                 List<Message> messages = PublishToSNSAndReceiveMessages(GetPublishRequest(topicArn), topicArn, queueUrl);
