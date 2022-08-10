@@ -72,6 +72,15 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("InstanceSpecification" + "." + "ExcludeBootVolume", StringUtils.FromBool(publicRequest.InstanceSpecification.ExcludeBootVolume));
                     }
+                    if(publicRequest.InstanceSpecification.IsSetExcludeDataVolumeIds())
+                    {
+                        int publicRequestInstanceSpecificationlistValueIndex = 1;
+                        foreach(var publicRequestInstanceSpecificationlistValue in publicRequest.InstanceSpecification.ExcludeDataVolumeIds)
+                        {
+                            request.Parameters.Add("InstanceSpecification" + "." + "ExcludeDataVolumeId" + "." + publicRequestInstanceSpecificationlistValueIndex, StringUtils.FromString(publicRequestInstanceSpecificationlistValue));
+                            publicRequestInstanceSpecificationlistValueIndex++;
+                        }
+                    }
                     if(publicRequest.InstanceSpecification.IsSetInstanceId())
                     {
                         request.Parameters.Add("InstanceSpecification" + "." + "InstanceId", StringUtils.FromString(publicRequest.InstanceSpecification.InstanceId));
