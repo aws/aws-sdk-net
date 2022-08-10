@@ -1,3 +1,9 @@
+### 3.7.332.0 (2022-08-10 18:32 UTC)
+* DLM (3.7.2.0)
+	* This release adds support for excluding specific data (non-boot) volumes from multi-volume snapshot sets created by snapshot lifecycle policies
+* EC2 (3.7.81.0)
+	* This release adds support for excluding specific data (non-root) volumes from multi-volume snapshot sets created from instances.
+
 ### 3.7.331.0 (2022-08-09 18:19 UTC)
 * AugmentedAIRuntime (3.7.1.0)
 	* Fix bug with parsing ISO-8601 CreationTime in Java SDK in DescribeHumanLoop
