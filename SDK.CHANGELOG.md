@@ -1,3 +1,14 @@
+### 3.7.333.0 (2022-08-11 18:35 UTC)
+* BackupStorage (3.7.0.0)
+	* This is the first public release of AWS Backup Storage. We are exposing some previously-internal APIs for use by external services. These APIs are not meant to be used directly by customers.
+* Glue (3.7.23.0)
+	* Add support for Python 3.9 AWS Glue Python Shell jobs
+* Private5G (3.7.0.0)
+	* This is the initial SDK release for AWS Private 5G. AWS Private 5G is a managed service that makes it easy to deploy, operate, and scale your own private mobile network at your on-premises location.
+* Core 3.7.12.20
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.332.0 (2022-08-10 18:32 UTC)
 * DLM (3.7.2.0)
 	* This release adds support for excluding specific data (non-boot) volumes from multi-volume snapshot sets created by snapshot lifecycle policies
