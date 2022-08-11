@@ -3155,7 +3155,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.JobCommand.PythonVersion</property>
-    <pattern>^[2-3]$</pattern>
+    <pattern>^([2-3]|3[.]9)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.JobCommand.ScriptLocation</property>
@@ -3975,7 +3975,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.SessionCommand.PythonVersion</property>
-    <pattern>^[2-3]$</pattern>
+    <pattern>^([2-3]|3[.]9)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.SortCriterion.FieldName</property>
