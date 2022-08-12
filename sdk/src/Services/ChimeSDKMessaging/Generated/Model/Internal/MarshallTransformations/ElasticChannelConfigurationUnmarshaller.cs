@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for BatchChannelMemberships Object
+    /// Response Unmarshaller for ElasticChannelConfiguration Object
     /// </summary>  
-    public class BatchChannelMembershipsUnmarshaller : IUnmarshaller<BatchChannelMemberships, XmlUnmarshallerContext>, IUnmarshaller<BatchChannelMemberships, JsonUnmarshallerContext>
+    public class ElasticChannelConfigurationUnmarshaller : IUnmarshaller<ElasticChannelConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ElasticChannelConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        BatchChannelMemberships IUnmarshaller<BatchChannelMemberships, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ElasticChannelConfiguration IUnmarshaller<ElasticChannelConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,33 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public BatchChannelMemberships Unmarshall(JsonUnmarshallerContext context)
+        public ElasticChannelConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            BatchChannelMemberships unmarshalledObject = new BatchChannelMemberships();
+            ElasticChannelConfiguration unmarshalledObject = new ElasticChannelConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ChannelArn", targetDepth))
+                if (context.TestExpression("MaximumSubChannels", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ChannelArn = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaximumSubChannels = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("InvitedBy", targetDepth))
+                if (context.TestExpression("MinimumMembershipPercentage", targetDepth))
                 {
-                    var unmarshaller = IdentityUnmarshaller.Instance;
-                    unmarshalledObject.InvitedBy = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MinimumMembershipPercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Members", targetDepth))
+                if (context.TestExpression("TargetMembershipsPerSubChannel", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Identity, IdentityUnmarshaller>(IdentityUnmarshaller.Instance);
-                    unmarshalledObject.Members = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SubChannelId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SubChannelId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.TargetMembershipsPerSubChannel = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +88,12 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
         }
 
 
-        private static BatchChannelMembershipsUnmarshaller _instance = new BatchChannelMembershipsUnmarshaller();        
+        private static ElasticChannelConfigurationUnmarshaller _instance = new ElasticChannelConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static BatchChannelMembershipsUnmarshaller Instance
+        public static ElasticChannelConfigurationUnmarshaller Instance
         {
             get
             {

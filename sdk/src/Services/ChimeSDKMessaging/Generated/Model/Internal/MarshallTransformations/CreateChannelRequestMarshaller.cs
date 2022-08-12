@@ -88,6 +88,17 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("ClientRequestToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetElasticChannelConfiguration())
+                {
+                    context.Writer.WritePropertyName("ElasticChannelConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ElasticChannelConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ElasticChannelConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetMemberArns())
                 {
                     context.Writer.WritePropertyName("MemberArns");

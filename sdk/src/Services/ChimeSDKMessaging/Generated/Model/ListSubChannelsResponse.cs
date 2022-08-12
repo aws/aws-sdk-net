@@ -29,17 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKMessaging.Model
 {
     /// <summary>
-    /// This is the response object from the UpdateChannelReadMarker operation.
+    /// This is the response object from the ListSubChannels operation.
     /// </summary>
-    public partial class UpdateChannelReadMarkerResponse : AmazonWebServiceResponse
+    public partial class ListSubChannelsResponse : AmazonWebServiceResponse
     {
         private string _channelArn;
-        private string _subChannelId;
+        private string _nextToken;
+        private List<SubChannelSummary> _subChannels = new List<SubChannelSummary>();
 
         /// <summary>
         /// Gets and sets the property ChannelArn. 
         /// <para>
-        /// The ARN of the channel.
+        /// The ARN of elastic channel.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=1600)]
@@ -56,22 +57,40 @@ namespace Amazon.ChimeSDKMessaging.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SubChannelId. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The ID of the SubChannel in the response.
+        /// The token passed by previous API calls until all requested sub-channels are returned.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
-        public string SubChannelId
+        [AWSProperty(Min=0, Max=2048)]
+        public string NextToken
         {
-            get { return this._subChannelId; }
-            set { this._subChannelId = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if SubChannelId property is set
-        internal bool IsSetSubChannelId()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._subChannelId != null;
+            return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubChannels. 
+        /// <para>
+        /// The information about each sub-channel.
+        /// </para>
+        /// </summary>
+        public List<SubChannelSummary> SubChannels
+        {
+            get { return this._subChannels; }
+            set { this._subChannels = value; }
+        }
+
+        // Check to see if SubChannels property is set
+        internal bool IsSetSubChannels()
+        {
+            return this._subChannels != null && this._subChannels.Count > 0; 
         }
 
     }

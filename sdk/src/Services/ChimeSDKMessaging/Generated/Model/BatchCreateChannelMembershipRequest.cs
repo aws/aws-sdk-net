@@ -37,6 +37,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         private string _channelArn;
         private string _chimeBearer;
         private List<string> _memberArns = new List<string>();
+        private string _subChannelId;
         private ChannelMembershipType _type;
 
         /// <summary>
@@ -94,6 +95,31 @@ namespace Amazon.ChimeSDKMessaging.Model
         internal bool IsSetMemberArns()
         {
             return this._memberArns != null && this._memberArns.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubChannelId. 
+        /// <para>
+        /// The ID of the SubChannel in the request. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Only required when creating membership in a SubChannel for a moderator in an elastic
+        /// channel.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string SubChannelId
+        {
+            get { return this._subChannelId; }
+            set { this._subChannelId = value; }
+        }
+
+        // Check to see if SubChannelId property is set
+        internal bool IsSetSubChannelId()
+        {
+            return this._subChannelId != null;
         }
 
         /// <summary>

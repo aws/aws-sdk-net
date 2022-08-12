@@ -45,6 +45,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         private bool? _redacted;
         private Identity _sender;
         private ChannelMessageStatusStructure _status;
+        private string _subChannelId;
         private ChannelMessageType _type;
 
         /// <summary>
@@ -266,6 +267,25 @@ namespace Amazon.ChimeSDKMessaging.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubChannelId. 
+        /// <para>
+        /// The ID of the SubChannel.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string SubChannelId
+        {
+            get { return this._subChannelId; }
+            set { this._subChannelId = value; }
+        }
+
+        // Check to see if SubChannelId property is set
+        internal bool IsSetSubChannelId()
+        {
+            return this._subChannelId != null;
         }
 
         /// <summary>

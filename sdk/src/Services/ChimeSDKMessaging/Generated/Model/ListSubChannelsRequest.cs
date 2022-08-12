@@ -29,34 +29,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKMessaging.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListChannelMemberships operation.
-    /// Lists all channel memberships in a channel.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-    /// of the user that makes the API call as the value in the header.
-    /// </para>
-    ///  </note> 
-    /// <para>
-    /// If you want to list the channels to which a specific app instance user belongs, see
-    /// the <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_ListChannelMembershipsForAppInstanceUser.html">ListChannelMembershipsForAppInstanceUser</a>
-    /// API.
-    /// </para>
+    /// Container for the parameters to the ListSubChannels operation.
+    /// Lists all the SubChannels in an elastic channel when given a channel ID. Available
+    /// only to the app instance admins and channel moderators of elastic channels.
     /// </summary>
-    public partial class ListChannelMembershipsRequest : AmazonChimeSDKMessagingRequest
+    public partial class ListSubChannelsRequest : AmazonChimeSDKMessagingRequest
     {
         private string _channelArn;
         private string _chimeBearer;
         private int? _maxResults;
         private string _nextToken;
-        private string _subChannelId;
-        private ChannelMembershipType _type;
 
         /// <summary>
         /// Gets and sets the property ChannelArn. 
         /// <para>
-        /// The maximum number of channel memberships that you want returned.
+        /// The ARN of elastic channel.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]
@@ -75,7 +62,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property ChimeBearer. 
         /// <para>
-        /// The <code>AppInstanceUserArn</code> of the user that makes the API call.
+        /// The <code>AppInstanceUserArn</code> of the user making the API call.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]
@@ -94,7 +81,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of channel memberships that you want returned.
+        /// The maximum number of sub-channels that you want to return.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -113,8 +100,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token passed by previous API calls until all requested channel memberships are
-        /// returned.
+        /// The token passed by previous API calls until all requested sub-channels are returned.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -128,52 +114,6 @@ namespace Amazon.ChimeSDKMessaging.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SubChannelId. 
-        /// <para>
-        /// The ID of the SubChannel in the request.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// Only required when listing a user's memberships in a particular sub-channel of an
-        /// elastic channel.
-        /// </para>
-        ///  </note>
-        /// </summary>
-        [AWSProperty(Min=1, Max=128)]
-        public string SubChannelId
-        {
-            get { return this._subChannelId; }
-            set { this._subChannelId = value; }
-        }
-
-        // Check to see if SubChannelId property is set
-        internal bool IsSetSubChannelId()
-        {
-            return this._subChannelId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Type. 
-        /// <para>
-        /// The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-        /// members are returned as part of <code>ListChannelMemberships</code> if no type is
-        /// specified. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code>
-        /// equals <code>HIDDEN</code>.
-        /// </para>
-        /// </summary>
-        public ChannelMembershipType Type
-        {
-            get { return this._type; }
-            set { this._type = value; }
-        }
-
-        // Check to see if Type property is set
-        internal bool IsSetType()
-        {
-            return this._type != null;
         }
 
     }

@@ -29,36 +29,35 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKMessaging.Model
 {
     /// <summary>
-    /// Summary of the membership details of an <code>AppInstanceUser</code>.
+    /// Summary of the sub-channels associated with the elastic channel.
     /// </summary>
-    public partial class AppInstanceUserMembershipSummary
+    public partial class SubChannelSummary
     {
-        private DateTime? _readMarkerTimestamp;
+        private int? _membershipCount;
         private string _subChannelId;
-        private ChannelMembershipType _type;
 
         /// <summary>
-        /// Gets and sets the property ReadMarkerTimestamp. 
+        /// Gets and sets the property MembershipCount. 
         /// <para>
-        /// The time at which an <code>AppInstanceUser</code> last marked a channel as read.
+        /// The number of members in a SubChannel.
         /// </para>
         /// </summary>
-        public DateTime ReadMarkerTimestamp
+        public int MembershipCount
         {
-            get { return this._readMarkerTimestamp.GetValueOrDefault(); }
-            set { this._readMarkerTimestamp = value; }
+            get { return this._membershipCount.GetValueOrDefault(); }
+            set { this._membershipCount = value; }
         }
 
-        // Check to see if ReadMarkerTimestamp property is set
-        internal bool IsSetReadMarkerTimestamp()
+        // Check to see if MembershipCount property is set
+        internal bool IsSetMembershipCount()
         {
-            return this._readMarkerTimestamp.HasValue; 
+            return this._membershipCount.HasValue; 
         }
 
         /// <summary>
         /// Gets and sets the property SubChannelId. 
         /// <para>
-        /// The ID of the SubChannel that the <code>AppInstanceUser</code> is a member of.
+        /// The unique ID of a SubChannel.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -72,24 +71,6 @@ namespace Amazon.ChimeSDKMessaging.Model
         internal bool IsSetSubChannelId()
         {
             return this._subChannelId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Type. 
-        /// <para>
-        /// The type of <code>ChannelMembership</code>.
-        /// </para>
-        /// </summary>
-        public ChannelMembershipType Type
-        {
-            get { return this._type; }
-            set { this._type = value; }
-        }
-
-        // Check to see if Type property is set
-        internal bool IsSetType()
-        {
-            return this._type != null;
         }
 
     }

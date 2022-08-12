@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for BatchChannelMemberships Object
+    /// Response Unmarshaller for SubChannelSummary Object
     /// </summary>  
-    public class BatchChannelMembershipsUnmarshaller : IUnmarshaller<BatchChannelMemberships, XmlUnmarshallerContext>, IUnmarshaller<BatchChannelMemberships, JsonUnmarshallerContext>
+    public class SubChannelSummaryUnmarshaller : IUnmarshaller<SubChannelSummary, XmlUnmarshallerContext>, IUnmarshaller<SubChannelSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        BatchChannelMemberships IUnmarshaller<BatchChannelMemberships, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SubChannelSummary IUnmarshaller<SubChannelSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,21 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public BatchChannelMemberships Unmarshall(JsonUnmarshallerContext context)
+        public SubChannelSummary Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            BatchChannelMemberships unmarshalledObject = new BatchChannelMemberships();
+            SubChannelSummary unmarshalledObject = new SubChannelSummary();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ChannelArn", targetDepth))
+                if (context.TestExpression("MembershipCount", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ChannelArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("InvitedBy", targetDepth))
-                {
-                    var unmarshaller = IdentityUnmarshaller.Instance;
-                    unmarshalledObject.InvitedBy = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Members", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Identity, IdentityUnmarshaller>(IdentityUnmarshaller.Instance);
-                    unmarshalledObject.Members = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MembershipCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SubChannelId", targetDepth))
@@ -88,24 +76,18 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                     unmarshalledObject.SubChannelId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
           
             return unmarshalledObject;
         }
 
 
-        private static BatchChannelMembershipsUnmarshaller _instance = new BatchChannelMembershipsUnmarshaller();        
+        private static SubChannelSummaryUnmarshaller _instance = new SubChannelSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static BatchChannelMembershipsUnmarshaller Instance
+        public static SubChannelSummaryUnmarshaller Instance
         {
             get
             {

@@ -49,6 +49,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         private string _channelId;
         private string _chimeBearer;
         private string _clientRequestToken;
+        private ElasticChannelConfiguration _elasticChannelConfiguration;
         private List<string> _memberArns = new List<string>();
         private string _metadata;
         private ChannelMode _mode;
@@ -131,6 +132,25 @@ namespace Amazon.ChimeSDKMessaging.Model
         internal bool IsSetClientRequestToken()
         {
             return this._clientRequestToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ElasticChannelConfiguration. 
+        /// <para>
+        /// The attributes required to configure and create an elastic channel. An elastic channel
+        /// can support a maximum of 1-million users, excluding moderators.
+        /// </para>
+        /// </summary>
+        public ElasticChannelConfiguration ElasticChannelConfiguration
+        {
+            get { return this._elasticChannelConfiguration; }
+            set { this._elasticChannelConfiguration = value; }
+        }
+
+        // Check to see if ElasticChannelConfiguration property is set
+        internal bool IsSetElasticChannelConfiguration()
+        {
+            return this._elasticChannelConfiguration != null;
         }
 
         /// <summary>

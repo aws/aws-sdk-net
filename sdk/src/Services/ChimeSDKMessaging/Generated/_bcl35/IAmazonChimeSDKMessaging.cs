@@ -138,6 +138,12 @@ namespace Amazon.ChimeSDKMessaging
         /// <exception cref="Amazon.ChimeSDKMessaging.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request.
         /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
         /// <exception cref="Amazon.ChimeSDKMessaging.Model.ServiceFailureException">
         /// The service encountered an unexpected error.
         /// </exception>
@@ -569,6 +575,9 @@ namespace Amazon.ChimeSDKMessaging
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMessaging.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKMessaging.Model.ResourceLimitExceededException">
         /// The request exceeds the resource limit.
@@ -2522,6 +2531,65 @@ namespace Amazon.ChimeSDKMessaging
         /// <returns>Returns a  ListChannelsModeratedByAppInstanceUserResult from ChimeSDKMessaging.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ListChannelsModeratedByAppInstanceUser">REST API Reference for ListChannelsModeratedByAppInstanceUser Operation</seealso>
         ListChannelsModeratedByAppInstanceUserResponse EndListChannelsModeratedByAppInstanceUser(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListSubChannels
+
+
+        /// <summary>
+        /// Lists all the SubChannels in an elastic channel when given a channel ID. Available
+        /// only to the app instance admins and channel moderators of elastic channels.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSubChannels service method.</param>
+        /// 
+        /// <returns>The response from the ListSubChannels service method, as returned by ChimeSDKMessaging.</returns>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMessaging.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ListSubChannels">REST API Reference for ListSubChannels Operation</seealso>
+        ListSubChannelsResponse ListSubChannels(ListSubChannelsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSubChannels operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSubChannels operation on AmazonChimeSDKMessagingClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSubChannels
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ListSubChannels">REST API Reference for ListSubChannels Operation</seealso>
+        IAsyncResult BeginListSubChannels(ListSubChannelsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSubChannels operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSubChannels.</param>
+        /// 
+        /// <returns>Returns a  ListSubChannelsResult from ChimeSDKMessaging.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ListSubChannels">REST API Reference for ListSubChannels Operation</seealso>
+        ListSubChannelsResponse EndListSubChannels(IAsyncResult asyncResult);
 
         #endregion
         

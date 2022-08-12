@@ -37,6 +37,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         private string _channelFlowArn;
         private Identity _createdBy;
         private DateTime? _createdTimestamp;
+        private ElasticChannelConfiguration _elasticChannelConfiguration;
         private DateTime? _lastMessageTimestamp;
         private DateTime? _lastUpdatedTimestamp;
         private string _metadata;
@@ -116,6 +117,25 @@ namespace Amazon.ChimeSDKMessaging.Model
         internal bool IsSetCreatedTimestamp()
         {
             return this._createdTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ElasticChannelConfiguration. 
+        /// <para>
+        /// The attributes required to configure and create an elastic channel. An elastic channel
+        /// can support a maximum of 1-million members.
+        /// </para>
+        /// </summary>
+        public ElasticChannelConfiguration ElasticChannelConfiguration
+        {
+            get { return this._elasticChannelConfiguration; }
+            set { this._elasticChannelConfiguration = value; }
+        }
+
+        // Check to see if ElasticChannelConfiguration property is set
+        internal bool IsSetElasticChannelConfiguration()
+        {
+            return this._elasticChannelConfiguration != null;
         }
 
         /// <summary>

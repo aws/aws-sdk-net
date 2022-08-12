@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DeleteChannel Request Marshaller
+    /// ListSubChannels Request Marshaller
     /// </summary>       
-    public class DeleteChannelRequestMarshaller : IMarshaller<IRequest, DeleteChannelRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListSubChannelsRequestMarshaller : IMarshaller<IRequest, ListSubChannelsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DeleteChannelRequest)input);
+            return this.Marshall((ListSubChannelsRequest)input);
         }
 
         /// <summary>
@@ -52,19 +52,22 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DeleteChannelRequest publicRequest)
+        public IRequest Marshall(ListSubChannelsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ChimeSDKMessaging");
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-05-15";
-            request.HttpMethod = "DELETE";
+            request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetChannelArn())
                 throw new AmazonChimeSDKMessagingException("Request object does not have required field ChannelArn set");
             request.AddPathResource("{channelArn}", StringUtils.FromString(publicRequest.ChannelArn));
             
-            if (publicRequest.IsSetSubChannelId())
-                request.Parameters.Add("sub-channel-id", StringUtils.FromString(publicRequest.SubChannelId));
-            request.ResourcePath = "/channels/{channelArn}";
+            if (publicRequest.IsSetMaxResults())
+                request.Parameters.Add("max-results", StringUtils.FromInt(publicRequest.MaxResults));
+            
+            if (publicRequest.IsSetNextToken())
+                request.Parameters.Add("next-token", StringUtils.FromString(publicRequest.NextToken));
+            request.ResourcePath = "/channels/{channelArn}/subchannels";
         
             if (publicRequest.IsSetChimeBearer()) 
             {
@@ -74,9 +77,9 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static DeleteChannelRequestMarshaller _instance = new DeleteChannelRequestMarshaller();        
+        private static ListSubChannelsRequestMarshaller _instance = new ListSubChannelsRequestMarshaller();        
 
-        internal static DeleteChannelRequestMarshaller GetInstance()
+        internal static ListSubChannelsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -84,7 +87,7 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteChannelRequestMarshaller Instance
+        public static ListSubChannelsRequestMarshaller Instance
         {
             get
             {

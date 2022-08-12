@@ -80,6 +80,12 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetSubChannelId())
+                {
+                    context.Writer.WritePropertyName("SubChannelId");
+                    context.Writer.Write(publicRequest.SubChannelId);
+                }
+
                 if(publicRequest.IsSetType())
                 {
                     context.Writer.WritePropertyName("Type");

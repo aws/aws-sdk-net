@@ -76,6 +76,9 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetSortOrder())
                 request.Parameters.Add("sort-order", StringUtils.FromString(publicRequest.SortOrder));
+            
+            if (publicRequest.IsSetSubChannelId())
+                request.Parameters.Add("sub-channel-id", StringUtils.FromString(publicRequest.SubChannelId));
             request.ResourcePath = "/channels/{channelArn}/messages";
         
             if (publicRequest.IsSetChimeBearer()) 

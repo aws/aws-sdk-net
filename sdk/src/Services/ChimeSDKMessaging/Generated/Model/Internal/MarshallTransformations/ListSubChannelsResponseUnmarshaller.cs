@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateChannelReadMarker operation
+    /// Response Unmarshaller for ListSubChannels operation
     /// </summary>  
-    public class UpdateChannelReadMarkerResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListSubChannelsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdateChannelReadMarkerResponse response = new UpdateChannelReadMarkerResponse();
+            ListSubChannelsResponse response = new ListSubChannelsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -57,10 +57,16 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                     response.ChannelArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("SubChannelId", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.SubChannelId = unmarshaller.Unmarshall(context);
+                    response.NextToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SubChannels", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<SubChannelSummary, SubChannelSummaryUnmarshaller>(SubChannelSummaryUnmarshaller.Instance);
+                    response.SubChannels = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -90,10 +96,6 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                 {
                     return BadRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
-                {
-                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ForbiddenException"))
                 {
                     return ForbiddenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -118,9 +120,9 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
             return new AmazonChimeSDKMessagingException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static UpdateChannelReadMarkerResponseUnmarshaller _instance = new UpdateChannelReadMarkerResponseUnmarshaller();        
+        private static ListSubChannelsResponseUnmarshaller _instance = new ListSubChannelsResponseUnmarshaller();        
 
-        internal static UpdateChannelReadMarkerResponseUnmarshaller GetInstance()
+        internal static ListSubChannelsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -128,7 +130,7 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateChannelReadMarkerResponseUnmarshaller Instance
+        public static ListSubChannelsResponseUnmarshaller Instance
         {
             get
             {

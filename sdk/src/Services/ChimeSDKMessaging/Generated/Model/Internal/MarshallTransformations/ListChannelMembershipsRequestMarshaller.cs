@@ -68,6 +68,9 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("next-token", StringUtils.FromString(publicRequest.NextToken));
             
+            if (publicRequest.IsSetSubChannelId())
+                request.Parameters.Add("sub-channel-id", StringUtils.FromString(publicRequest.SubChannelId));
+            
             if (publicRequest.IsSetType())
                 request.Parameters.Add("type", StringUtils.FromString(publicRequest.Type));
             request.ResourcePath = "/channels/{channelArn}/memberships";
