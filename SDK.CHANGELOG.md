@@ -1,3 +1,18 @@
+### 3.7.334.0 (2022-08-12 18:40 UTC)
+* ChimeSDKMessaging (3.7.5.0)
+	* The Amazon Chime SDK now supports channels with up to one million participants with elastic channels.
+* IVS (3.7.5.0)
+	* Updates various list api MaxResults ranges
+* PersonalizeRuntime (3.7.2.0)
+	* This release provides support for promotions in AWS Personalize runtime.
+* PrometheusService (3.7.3.0)
+	* This release adds log APIs that allow customers to manage logging for their Amazon Managed Service for Prometheus workspaces.
+* RDS (3.7.15.9)
+	* Adds support for RDS Custom to DBInstanceClass in ModifyDBInstance
+* Core 3.7.12.21
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.333.0 (2022-08-11 18:35 UTC)
 * BackupStorage (3.7.0.0)
 	* This is the first public release of AWS Backup Storage. We are exposing some previously-internal APIs for use by external services. These APIs are not meant to be used directly by customers.
