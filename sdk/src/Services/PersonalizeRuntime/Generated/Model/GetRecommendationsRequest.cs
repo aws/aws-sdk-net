@@ -63,6 +63,7 @@ namespace Amazon.PersonalizeRuntime.Model
         private Dictionary<string, string> _filterValues = new Dictionary<string, string>();
         private string _itemId;
         private int? _numResults;
+        private List<Promotion> _promotions = new List<Promotion>();
         private string _recommenderArn;
         private string _userId;
 
@@ -150,7 +151,7 @@ namespace Amazon.PersonalizeRuntime.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
-        /// Recommendations</a>.
+        /// recommendations and user segments</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=25)]
@@ -206,6 +207,26 @@ namespace Amazon.PersonalizeRuntime.Model
         internal bool IsSetNumResults()
         {
             return this._numResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Promotions. 
+        /// <para>
+        /// The promotions to apply to the recommendation request. A promotion defines additional
+        /// business rules that apply to a configurable subset of recommended items.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public List<Promotion> Promotions
+        {
+            get { return this._promotions; }
+            set { this._promotions = value; }
+        }
+
+        // Check to see if Promotions property is set
+        internal bool IsSetPromotions()
+        {
+            return this._promotions != null && this._promotions.Count > 0; 
         }
 
         /// <summary>

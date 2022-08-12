@@ -117,6 +117,22 @@ namespace Amazon.PersonalizeRuntime.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NumResults);
                 }
 
+                if(publicRequest.IsSetPromotions())
+                {
+                    context.Writer.WritePropertyName("promotions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestPromotionsListValue in publicRequest.Promotions)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PromotionMarshaller.Instance;
+                        marshaller.Marshall(publicRequestPromotionsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetRecommenderArn())
                 {
                     context.Writer.WritePropertyName("recommenderArn");
