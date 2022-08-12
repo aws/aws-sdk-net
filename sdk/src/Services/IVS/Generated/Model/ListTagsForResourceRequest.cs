@@ -39,7 +39,7 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN of the resource to be retrieved.
+        /// The ARN of the resource to be retrieved. The ARN must be URL-encoded.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

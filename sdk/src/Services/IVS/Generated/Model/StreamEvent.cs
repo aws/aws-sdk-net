@@ -41,7 +41,8 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property EventTime. 
         /// <para>
-        /// UTC ISO-8601 formatted timestamp of when the event occurred.
+        /// Time when the event occurred. This is an ISO 8601 timestamp; <i>note that this is
+        /// returned as a string</i>.
         /// </para>
         /// </summary>
         public DateTime EventTime

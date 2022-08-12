@@ -41,10 +41,11 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Maximum number of recording configurations to return. Default: 50. 
+        /// Maximum number of recording configurations to return. Default: your service quota
+        /// or 100, whichever is smaller. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

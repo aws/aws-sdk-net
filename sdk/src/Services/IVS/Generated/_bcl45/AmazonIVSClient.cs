@@ -123,7 +123,8 @@ namespace Amazon.IVS
     /// might set a tag as <code>topic:nature</code> to label a particular video category.
     /// See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
     /// Amazon Web Services Resources</a> for more information, including restrictions that
-    /// apply to tags.
+    /// apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific
+    /// constraints beyond what is documented there.
     /// </para>
     ///  
     /// <para>
@@ -157,8 +158,8 @@ namespace Amazon.IVS
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <i>Authorization</i> is about granting permissions. You need to be authorized to
-    /// view <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Amazon
+    ///  <i>Authorization</i> is about granting permissions. Your IAM roles need to have permissions
+    /// for Amazon IVS API requests. In addition, authorization is needed to view <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Amazon
     /// IVS private channels</a>. (Private channels are channels that are enabled for "playback
     /// authorization.")
     /// </para>
