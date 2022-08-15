@@ -612,6 +612,14 @@ namespace Amazon.CloudFront
         /// Constant Http2 for HttpVersion
         /// </summary>
         public static readonly HttpVersion Http2 = new HttpVersion("http2");
+        /// <summary>
+        /// Constant Http2and3 for HttpVersion
+        /// </summary>
+        public static readonly HttpVersion Http2and3 = new HttpVersion("http2and3");
+        /// <summary>
+        /// Constant Http3 for HttpVersion
+        /// </summary>
+        public static readonly HttpVersion Http3 = new HttpVersion("http3");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
