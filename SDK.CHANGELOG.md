@@ -1,3 +1,13 @@
+### 3.7.335.0 (2022-08-15 18:44 UTC)
+* CloudFront (3.7.7.0)
+	* Adds Http 3 support to distributions
+* ConnectWisdomService (3.7.2.0)
+	* This release introduces a new API PutFeedback that allows submitting feedback to Wisdom on content relevance.
+* IdentityStore (3.7.0.194)
+	* Documentation updates to reflect service rename - AWS IAM Identity Center (successor to AWS Single Sign-On)
+* SSO (3.7.0.193)
+	* Documentation updates to reflect service rename - AWS IAM Identity Center (successor to AWS Single Sign-On)
+
 ### 3.7.334.0 (2022-08-12 18:40 UTC)
 * ChimeSDKMessaging (3.7.5.0)
 	* The Amazon Chime SDK now supports channels with up to one million participants with elastic channels.
