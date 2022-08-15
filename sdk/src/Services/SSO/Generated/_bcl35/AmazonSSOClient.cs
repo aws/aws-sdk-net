@@ -49,7 +49,7 @@ namespace Amazon.SSO
     /// </para>
     ///  </note> 
     /// <para>
-    /// This API reference guide describes the Amazon Web Services SSO Portal operations that
+    /// This reference guide describes the Amazon Web Services SSO Portal operations that
     /// you can call programatically and includes detailed information on data types and errors.
     /// </para>
     ///  <note> 
