@@ -1123,6 +1123,18 @@ namespace Amazon.Rekognition
     {
 
         /// <summary>
+        /// Constant COPYING_COMPLETED for ProjectVersionStatus
+        /// </summary>
+        public static readonly ProjectVersionStatus COPYING_COMPLETED = new ProjectVersionStatus("COPYING_COMPLETED");
+        /// <summary>
+        /// Constant COPYING_FAILED for ProjectVersionStatus
+        /// </summary>
+        public static readonly ProjectVersionStatus COPYING_FAILED = new ProjectVersionStatus("COPYING_FAILED");
+        /// <summary>
+        /// Constant COPYING_IN_PROGRESS for ProjectVersionStatus
+        /// </summary>
+        public static readonly ProjectVersionStatus COPYING_IN_PROGRESS = new ProjectVersionStatus("COPYING_IN_PROGRESS");
+        /// <summary>
         /// Constant DELETING for ProjectVersionStatus
         /// </summary>
         public static readonly ProjectVersionStatus DELETING = new ProjectVersionStatus("DELETING");

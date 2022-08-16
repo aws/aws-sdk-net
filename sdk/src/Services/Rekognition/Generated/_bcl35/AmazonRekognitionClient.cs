@@ -137,6 +137,11 @@ namespace Amazon.Rekognition
     /// </para>
     ///  <ul> <li> 
     /// <para>
+    ///  <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CopyProjectVersion.html">CopyProjectVersion</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CreateDataset.html">CreateDataset</a>
     /// 
     /// </para>
@@ -158,6 +163,11 @@ namespace Amazon.Rekognition
     ///  </li> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DeleteProject.html">DeleteProject</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DeleteProjectPolicy.html">DeleteProjectPolicy</a>
     /// 
     /// </para>
     ///  </li> <li> 
@@ -198,6 +208,16 @@ namespace Amazon.Rekognition
     ///  </li> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListDatasetLabels.html">ListDatasetLabels</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListProjectPolicies.html">ListProjectPolicies</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_PutProjectPolicy.html">PutProjectPolicy</a>
     /// 
     /// </para>
     ///  </li> <li> 
@@ -331,6 +351,11 @@ namespace Amazon.Rekognition
     ///  </li> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StopStreamProcessor.html">StopStreamProcessor</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_UpdateStreamProcessor.html">UpdateStreamProcessor</a>
     /// 
     /// </para>
     ///  </li> </ul>
@@ -711,6 +736,126 @@ namespace Amazon.Rekognition
         public virtual CompareFacesResponse EndCompareFaces(IAsyncResult asyncResult)
         {
             return EndInvoke<CompareFacesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CopyProjectVersion
+
+        /// <summary>
+        /// Copies a version of an Amazon Rekognition Custom Labels model from a source project
+        /// to a destination project. The source and destination projects can be in different
+        /// AWS accounts but must be in the same AWS Region. You can't copy a model to another
+        /// AWS service. 
+        /// 
+        ///  
+        /// <para>
+        /// To copy a model version to a different AWS account, you need to create a resource-based
+        /// policy known as a <i>project policy</i>. You attach the project policy to the source
+        /// project by calling <a>PutProjectPolicy</a>. The project policy gives permission to
+        /// copy the model version from a trusting AWS account to a trusted account.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information creating and attaching a project policy, see Attaching a project
+        /// policy (SDK) in the <i>Amazon Rekognition Custom Labels Developer Guide</i>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are copying a model version to a project in the same AWS account, you don't
+        /// need to create a project policy.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// To copy a model, the destination project, source project, and source model version
+        /// must already exist.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Copying a model version takes a while to complete. To get the current status, call
+        /// <a>DescribeProjectVersions</a> and check the value of <code>Status</code> in the <a>ProjectVersionDescription</a>
+        /// object. The copy operation has finished when the value of <code>Status</code> is <code>COPYING_COMPLETED</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CopyProjectVersion service method.</param>
+        /// 
+        /// <returns>The response from the CopyProjectVersion service method, as returned by Rekognition.</returns>
+        /// <exception cref="Amazon.Rekognition.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
+        /// Amazon Rekognition experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidParameterException">
+        /// Input parameter violated a constraint. Validate your parameter before calling the
+        /// API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
+        /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
+        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
+        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
+        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
+        /// service limit.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Rekognition.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceInUseException">
+        /// The specified resource is already being used.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
+        /// The resource specified in the request cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ServiceQuotaExceededException">
+        /// The size of the collection exceeds the allowed limit. For more information, see Guidelines
+        /// and quotas in Amazon Rekognition in the Amazon Rekognition Developer Guide.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
+        /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CopyProjectVersion">REST API Reference for CopyProjectVersion Operation</seealso>
+        public virtual CopyProjectVersionResponse CopyProjectVersion(CopyProjectVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CopyProjectVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CopyProjectVersionResponseUnmarshaller.Instance;
+
+            return Invoke<CopyProjectVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CopyProjectVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CopyProjectVersion operation on AmazonRekognitionClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCopyProjectVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CopyProjectVersion">REST API Reference for CopyProjectVersion Operation</seealso>
+        public virtual IAsyncResult BeginCopyProjectVersion(CopyProjectVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CopyProjectVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CopyProjectVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CopyProjectVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCopyProjectVersion.</param>
+        /// 
+        /// <returns>Returns a  CopyProjectVersionResult from Rekognition.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CopyProjectVersion">REST API Reference for CopyProjectVersion Operation</seealso>
+        public virtual CopyProjectVersionResponse EndCopyProjectVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CopyProjectVersionResponse>(asyncResult);
         }
 
         #endregion
@@ -1568,7 +1713,8 @@ namespace Amazon.Rekognition
         /// <para>
         ///  <code>DeleteProject</code> is an asynchronous operation. To check if the project
         /// is deleted, call <a>DescribeProjects</a>. The project is deleted when the project
-        /// no longer appears in the response.
+        /// no longer appears in the response. Be aware that deleting a given project will also
+        /// delete any <code>ProjectPolicies</code> associated with that project.
         /// </para>
         ///  
         /// <para>
@@ -1644,6 +1790,89 @@ namespace Amazon.Rekognition
         public virtual DeleteProjectResponse EndDeleteProject(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteProjectResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteProjectPolicy
+
+        /// <summary>
+        /// Deletes an existing project policy.
+        /// 
+        ///  
+        /// <para>
+        /// To get a list of project policies attached to a project, call <a>ListProjectPolicies</a>.
+        /// To attach a project policy to a project, call <a>PutProjectPolicy</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProjectPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteProjectPolicy service method, as returned by Rekognition.</returns>
+        /// <exception cref="Amazon.Rekognition.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
+        /// Amazon Rekognition experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidParameterException">
+        /// Input parameter violated a constraint. Validate your parameter before calling the
+        /// API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidPolicyRevisionIdException">
+        /// The supplied revision id for the project policy is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Rekognition.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
+        /// The resource specified in the request cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
+        /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteProjectPolicy">REST API Reference for DeleteProjectPolicy Operation</seealso>
+        public virtual DeleteProjectPolicyResponse DeleteProjectPolicy(DeleteProjectPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteProjectPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProjectPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteProjectPolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteProjectPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProjectPolicy operation on AmazonRekognitionClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteProjectPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteProjectPolicy">REST API Reference for DeleteProjectPolicy Operation</seealso>
+        public virtual IAsyncResult BeginDeleteProjectPolicy(DeleteProjectPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteProjectPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProjectPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteProjectPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteProjectPolicy.</param>
+        /// 
+        /// <returns>Returns a  DeleteProjectPolicyResult from Rekognition.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteProjectPolicy">REST API Reference for DeleteProjectPolicy Operation</seealso>
+        public virtual DeleteProjectPolicyResponse EndDeleteProjectPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteProjectPolicyResponse>(asyncResult);
         }
 
         #endregion
@@ -4790,6 +5019,89 @@ namespace Amazon.Rekognition
 
         #endregion
         
+        #region  ListProjectPolicies
+
+        /// <summary>
+        /// Gets a list of the project policies attached to a project.
+        /// 
+        ///  
+        /// <para>
+        /// To attach a project policy to a project, call <a>PutProjectPolicy</a>. To remove a
+        /// project policy from a project, call <a>DeleteProjectPolicy</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProjectPolicies service method.</param>
+        /// 
+        /// <returns>The response from the ListProjectPolicies service method, as returned by Rekognition.</returns>
+        /// <exception cref="Amazon.Rekognition.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
+        /// Amazon Rekognition experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidPaginationTokenException">
+        /// Pagination token in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidParameterException">
+        /// Input parameter violated a constraint. Validate your parameter before calling the
+        /// API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Rekognition.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
+        /// The resource specified in the request cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
+        /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListProjectPolicies">REST API Reference for ListProjectPolicies Operation</seealso>
+        public virtual ListProjectPoliciesResponse ListProjectPolicies(ListProjectPoliciesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListProjectPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProjectPoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<ListProjectPoliciesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListProjectPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListProjectPolicies operation on AmazonRekognitionClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListProjectPolicies
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListProjectPolicies">REST API Reference for ListProjectPolicies Operation</seealso>
+        public virtual IAsyncResult BeginListProjectPolicies(ListProjectPoliciesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListProjectPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProjectPoliciesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListProjectPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListProjectPolicies.</param>
+        /// 
+        /// <returns>Returns a  ListProjectPoliciesResult from Rekognition.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListProjectPolicies">REST API Reference for ListProjectPolicies Operation</seealso>
+        public virtual ListProjectPoliciesResponse EndListProjectPolicies(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListProjectPoliciesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListStreamProcessors
 
         /// <summary>
@@ -4941,6 +5253,127 @@ namespace Amazon.Rekognition
         public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsForResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutProjectPolicy
+
+        /// <summary>
+        /// Attaches a project policy to a Amazon Rekognition Custom Labels project in a trusting
+        /// AWS account. A project policy specifies that a trusted AWS account can copy a model
+        /// version from a trusting AWS account to a project in the trusted AWS account. To copy
+        /// a model version you use the <a>CopyProjectVersion</a> operation.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about the format of a project policy document, see Attaching
+        /// a project policy (SDK) in the <i>Amazon Rekognition Custom Labels Developer Guide</i>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The response from <code>PutProjectPolicy</code> is a revision ID for the project policy.
+        /// You can attach multiple project policies to a project. You can also update an existing
+        /// project policy by specifying the policy revision ID of the existing policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// To remove a project policy from a project, call <a>DeleteProjectPolicy</a>. To get
+        /// a list of project policies attached to a project, call <a>ListProjectPolicies</a>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// You copy a model version by calling <a>CopyProjectVersion</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutProjectPolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutProjectPolicy service method, as returned by Rekognition.</returns>
+        /// <exception cref="Amazon.Rekognition.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
+        /// Amazon Rekognition experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidParameterException">
+        /// Input parameter violated a constraint. Validate your parameter before calling the
+        /// API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidPolicyRevisionIdException">
+        /// The supplied revision id for the project policy is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.LimitExceededException">
+        /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
+        /// Amazon Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>,
+        /// for example) will raise a <code>LimitExceededException</code> exception (HTTP status
+        /// code: 400) until the number of concurrently running jobs is below the Amazon Rekognition
+        /// service limit.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.MalformedPolicyDocumentException">
+        /// The format of the project policy document that you supplied to <code>PutProjectPolicy</code>
+        /// is incorrect.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Rekognition.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceAlreadyExistsException">
+        /// A resource with the specified ID already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
+        /// The resource specified in the request cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ServiceQuotaExceededException">
+        /// The size of the collection exceeds the allowed limit. For more information, see Guidelines
+        /// and quotas in Amazon Rekognition in the Amazon Rekognition Developer Guide.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
+        /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/PutProjectPolicy">REST API Reference for PutProjectPolicy Operation</seealso>
+        public virtual PutProjectPolicyResponse PutProjectPolicy(PutProjectPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutProjectPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutProjectPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutProjectPolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutProjectPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutProjectPolicy operation on AmazonRekognitionClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutProjectPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/PutProjectPolicy">REST API Reference for PutProjectPolicy Operation</seealso>
+        public virtual IAsyncResult BeginPutProjectPolicy(PutProjectPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutProjectPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutProjectPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutProjectPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutProjectPolicy.</param>
+        /// 
+        /// <returns>Returns a  PutProjectPolicyResult from Rekognition.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/PutProjectPolicy">REST API Reference for PutProjectPolicy Operation</seealso>
+        public virtual PutProjectPolicyResponse EndPutProjectPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutProjectPolicyResponse>(asyncResult);
         }
 
         #endregion

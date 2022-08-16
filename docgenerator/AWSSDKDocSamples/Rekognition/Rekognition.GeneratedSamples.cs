@@ -35,6 +35,32 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
             #endregion
         }
 
+        public void RekognitionCopyProjectVersion()
+        {
+            #region copyprojectversion-1658203943815
+
+            var client = new AmazonRekognitionClient();
+            var response = client.CopyProjectVersion(new CopyProjectVersionRequest 
+            {
+                DestinationProjectArn = "arn:aws:rekognition:us-east-1:555555555555:project/DestinationProject/1656705098765",
+                KmsKeyId = "arn:1234abcd-12ab-34cd-56ef-1234567890ab",
+                OutputConfig = new OutputConfig {
+                    S3Bucket = "bucket-name",
+                    S3KeyPrefix = "path_to_folder"
+                },
+                SourceProjectArn = "arn:aws:rekognition:us-east-1:111122223333:project/SourceProject/16565123456",
+                SourceProjectVersionArn = "arn:aws:rekognition:us-east-1:111122223333:project/SourceProject/version/model_1/1656611123456",
+                Tags = new Dictionary<string, string> {
+                    { "key1", "val1" }
+                },
+                VersionName = "DestinationVersionName_cross_account"
+            });
+
+            string projectVersionArn = response.ProjectVersionArn;
+
+            #endregion
+        }
+
         public void RekognitionCreateCollection()
         {
             #region to-create-a-collection-1481833313674
@@ -80,6 +106,22 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
             });
 
             List<string> deletedFaces = response.DeletedFaces;
+
+            #endregion
+        }
+
+        public void RekognitionDeleteProjectPolicy()
+        {
+            #region deleteprojectpolicy-1658204413810
+
+            var client = new AmazonRekognitionClient();
+            var response = client.DeleteProjectPolicy(new DeleteProjectPolicyRequest 
+            {
+                PolicyName = "testPolicy1",
+                PolicyRevisionId = "3b274c25e9203a56a99e00e3ff205fbc",
+                ProjectArn = "arn:aws:rekognition:us-east-1:111122223333:project/SourceProject/1656557123456"
+            });
+
 
             #endregion
         }
@@ -173,6 +215,42 @@ namespace AWSSDKDocSamples.Amazon.Rekognition.Generated
             });
 
             List<Face> faces = response.Faces;
+
+            #endregion
+        }
+
+        public void RekognitionListProjectPolicies()
+        {
+            #region listprojectpolicies-1658202290173
+
+            var client = new AmazonRekognitionClient();
+            var response = client.ListProjectPolicies(new ListProjectPoliciesRequest 
+            {
+                MaxResults = 5,
+                NextToken = "",
+                ProjectArn = "arn:aws:rekognition:us-east-1:111122223333:project/my-sdk-project/1656557051929"
+            });
+
+            string nextToken = response.NextToken;
+            List<ProjectPolicy> projectPolicies = response.ProjectPolicies;
+
+            #endregion
+        }
+
+        public void RekognitionPutProjectPolicy()
+        {
+            #region putprojectpolicy-1658201727623
+
+            var client = new AmazonRekognitionClient();
+            var response = client.PutProjectPolicy(new PutProjectPolicyRequest 
+            {
+                PolicyDocument = "'{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"ALLOW\",\"Principal\":{\"AWS\":\"principal\"},\"Action\":\"rekognition:CopyProjectVersion\",\"Resource\":\"arn:aws:rekognition:us-east-1:123456789012:project/my-sdk-project/version/DestinationVersionName/1627045542080\"}]}'",
+                PolicyName = "SamplePolicy",
+                PolicyRevisionId = "0123456789abcdef",
+                ProjectArn = "arn:aws:rekognition:us-east-1:111122223333:project/my-sdk-project/1656557051929"
+            });
+
+            string policyRevisionId = response.PolicyRevisionId;
 
             #endregion
         }

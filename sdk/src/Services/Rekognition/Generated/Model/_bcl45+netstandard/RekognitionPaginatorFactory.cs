@@ -148,6 +148,14 @@ namespace Amazon.Rekognition.Model
         }
 
         /// <summary>
+        /// Paginator for ListProjectPolicies operation
+        ///</summary>
+        public IListProjectPoliciesPaginator ListProjectPolicies(ListProjectPoliciesRequest request) 
+        {
+            return new ListProjectPoliciesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListStreamProcessors operation
         ///</summary>
         public IListStreamProcessorsPaginator ListStreamProcessors(ListStreamProcessorsRequest request) 

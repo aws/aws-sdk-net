@@ -21,6 +21,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.Rekognition.IAmazonRekognition.CopyProjectVersion(Amazon.Rekognition.Model.CopyProjectVersionRequest)" />
+            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.CopyProjectVersion(Amazon.Rekognition.Model.CopyProjectVersionRequest)" />
+            <member name="T:Amazon.Rekognition.Model.CopyProjectVersionRequest" />
+            <member name="T:Amazon.Rekognition.Model.CopyProjectVersionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation copies a version of an Amazon Rekognition Custom Labels model from a source project to a destination project.
+                </para>
+                <code
+                    title="CopyProjectVersion"
+                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
+                    region="copyprojectversion-1658203943815" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.Rekognition.IAmazonRekognition.CreateCollection(Amazon.Rekognition.Model.CreateCollectionRequest)" />
             <member name="M:Amazon.Rekognition.AmazonRekognitionClient.CreateCollection(Amazon.Rekognition.Model.CreateCollectionRequest)" />
             <member name="T:Amazon.Rekognition.Model.CreateCollectionRequest" />
@@ -73,6 +92,25 @@
                     title="To delete a face"
                     source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
                     region="to-delete-a-face-1482182799377" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Rekognition.IAmazonRekognition.DeleteProjectPolicy(Amazon.Rekognition.Model.DeleteProjectPolicyRequest)" />
+            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.DeleteProjectPolicy(Amazon.Rekognition.Model.DeleteProjectPolicyRequest)" />
+            <member name="T:Amazon.Rekognition.Model.DeleteProjectPolicyRequest" />
+            <member name="T:Amazon.Rekognition.Model.DeleteProjectPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation deletes a revision of an existing project policy from an Amazon Rekognition Custom Labels project.
+                </para>
+                <code
+                    title="DeleteProjectPolicy"
+                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
+                    region="deleteprojectpolicy-1658204413810" />
             </example>
         </value>
     </doc>
@@ -168,6 +206,44 @@
                     title="To list the faces in a collection"
                     source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
                     region="to-list-the-faces-in-a-collection-1482181416530" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Rekognition.IAmazonRekognition.ListProjectPolicies(Amazon.Rekognition.Model.ListProjectPoliciesRequest)" />
+            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.ListProjectPolicies(Amazon.Rekognition.Model.ListProjectPoliciesRequest)" />
+            <member name="T:Amazon.Rekognition.Model.ListProjectPoliciesRequest" />
+            <member name="T:Amazon.Rekognition.Model.ListProjectPoliciesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation lists the project policies that are attached to an Amazon Rekognition Custom Labels project.
+                </para>
+                <code
+                    title="ListProjectPolicies"
+                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
+                    region="listprojectpolicies-1658202290173" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Rekognition.IAmazonRekognition.PutProjectPolicy(Amazon.Rekognition.Model.PutProjectPolicyRequest)" />
+            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.PutProjectPolicy(Amazon.Rekognition.Model.PutProjectPolicyRequest)" />
+            <member name="T:Amazon.Rekognition.Model.PutProjectPolicyRequest" />
+            <member name="T:Amazon.Rekognition.Model.PutProjectPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation attaches a project policy to a Amazon Rekognition Custom Labels project in a trusting AWS account.
+                </para>
+                <code
+                    title="PutProjectPolicy"
+                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
+                    region="putprojectpolicy-1658201727623" />
             </example>
         </value>
     </doc>
