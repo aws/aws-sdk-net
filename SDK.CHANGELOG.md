@@ -1,3 +1,12 @@
+### 3.7.336.0 (2022-08-16 18:17 UTC)
+* Rekognition (3.7.10.0)
+	* This release adds APIs which support copying an Amazon Rekognition Custom Labels model and managing project policies across AWS account.
+* ServiceCatalog (3.7.2.51)
+	* Documentation updates for Service Catalog
+* Core 3.7.12.22
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.335.0 (2022-08-15 18:44 UTC)
 * CloudFront (3.7.7.0)
 	* Adds Http 3 support to distributions
