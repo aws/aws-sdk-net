@@ -53,7 +53,7 @@ namespace Amazon.Runtime
         /// </para>
         ///  </note>
         /// </summary>
-        public int? DurationSeconds { get; }
+        public int? DurationSeconds { get; set; }
 
         /// <summary>
         /// Gets and sets the property ProviderId.
@@ -71,7 +71,7 @@ namespace Amazon.Runtime
         /// Do not specify this value for OpenID Connect ID tokens.
         /// </para>
         /// </summary>
-        public string ProviderId { get; }
+        public string ProviderId { get; set; }
 
         /// <summary>
         /// Gets and sets the property Policy.
@@ -107,7 +107,7 @@ namespace Amazon.Runtime
         /// </para>
         ///  </note>
         /// </summary>
-        public string Policy { get; }
+        public string Policy { get; set; }
 
         /// <summary>
         /// Gets and sets the property PolicyArns.
@@ -141,7 +141,7 @@ namespace Amazon.Runtime
         /// Policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
-        public List<string> PolicyArns { get; }
+        public List<string> PolicyArns { get; set; }
 
         /// <summary>
         /// The proxy settings to use when calling AssumeRoleWithWebIdentity.
@@ -150,9 +150,9 @@ namespace Amazon.Runtime
         /// </para>
         /// </summary>
 #if BCL
-        public WebProxy ProxySettings { get; }
+        public WebProxy ProxySettings { get; set; }
 #elif NETSTANDARD
-        public IWebProxy ProxySettings { get; }
+        public IWebProxy ProxySettings { get; set; }
 #endif
     }
 }
