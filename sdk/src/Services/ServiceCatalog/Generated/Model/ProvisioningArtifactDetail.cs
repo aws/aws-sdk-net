@@ -160,15 +160,16 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
+        ///  <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
+        ///  <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+        ///  <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon
+        /// Web Services Resources
         /// </para>
         ///  </li> </ul>
         /// </summary>

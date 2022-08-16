@@ -118,7 +118,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisioningArtifactMetadata. 
         /// <para>
-        /// The metadata for the provisioning artifact. This is used with AWS Marketplace products.
+        /// The metadata for the provisioning artifact. This is used with Amazon Web Services
+        /// Marketplace products.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

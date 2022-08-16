@@ -45,7 +45,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property StackSetAccounts. 
         /// <para>
-        /// One or more AWS accounts that will have access to the provisioned product.
+        /// One or more Amazon Web Services accounts that will have access to the provisioned
+        /// product.
         /// </para>
         ///  
         /// <para>
@@ -53,9 +54,9 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  
         /// <para>
-        /// The AWS accounts specified should be within the list of accounts in the <code>STACKSET</code>
-        /// constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use
-        /// the <code>DescribeProvisioningParameters</code> operation.
+        /// The Amazon Web Services accounts specified should be within the list of accounts in
+        /// the <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code>
+        /// constraint, use the <code>DescribeProvisioningParameters</code> operation.
         /// </para>
         ///  
         /// <para>
@@ -78,9 +79,9 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property StackSetFailureToleranceCount. 
         /// <para>
-        /// The number of accounts, per region, for which this operation can fail before AWS Service
-        /// Catalog stops the operation in that region. If the operation is stopped in a region,
-        /// AWS Service Catalog doesn't attempt the operation in any subsequent regions.
+        /// The number of accounts, per Region, for which this operation can fail before Service
+        /// Catalog stops the operation in that Region. If the operation is stopped in a Region,
+        /// Service Catalog doesn't attempt the operation in any subsequent Regions.
         /// </para>
         ///  
         /// <para>
@@ -112,13 +113,13 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property StackSetFailureTolerancePercentage. 
         /// <para>
-        /// The percentage of accounts, per region, for which this stack operation can fail before
-        /// AWS Service Catalog stops the operation in that region. If the operation is stopped
-        /// in a region, AWS Service Catalog doesn't attempt the operation in any subsequent regions.
+        /// The percentage of accounts, per Region, for which this stack operation can fail before
+        /// Service Catalog stops the operation in that Region. If the operation is stopped in
+        /// a Region, Service Catalog doesn't attempt the operation in any subsequent Regions.
         /// </para>
         ///  
         /// <para>
-        /// When calculating the number of accounts based on the specified percentage, AWS Service
+        /// When calculating the number of accounts based on the specified percentage, Service
         /// Catalog rounds down to the next whole number.
         /// </para>
         ///  
@@ -187,9 +188,9 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  
         /// <para>
-        /// When calculating the number of accounts based on the specified percentage, AWS Service
+        /// When calculating the number of accounts based on the specified percentage, Service
         /// Catalog rounds down to the next whole number. This is true except in cases where rounding
-        /// down would result is zero. In this case, AWS Service Catalog sets the number as <code>1</code>
+        /// down would result is zero. In this case, Service Catalog sets the number as <code>1</code>
         /// instead.
         /// </para>
         ///  
@@ -224,7 +225,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property StackSetOperationType. 
         /// <para>
-        /// Determines what action AWS Service Catalog performs to a stack set or a stack instance
+        /// Determines what action Service Catalog performs to a stack set or a stack instance
         /// represented by the provisioned product. The default value is <code>UPDATE</code> if
         /// nothing is specified.
         /// </para>
@@ -235,7 +236,7 @@ namespace Amazon.ServiceCatalog.Model
         ///  <dl> <dt>CREATE</dt> <dd> 
         /// <para>
         /// Creates a new stack instance in the stack set represented by the provisioned product.
-        /// In this case, only new stack instances are created based on accounts and regions;
+        /// In this case, only new stack instances are created based on accounts and Regions;
         /// if new ProductId or ProvisioningArtifactID are passed, they will be ignored.
         /// </para>
         ///  </dd> <dt>UPDATE</dt> <dd> 
@@ -263,7 +264,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property StackSetRegions. 
         /// <para>
-        /// One or more AWS Regions where the provisioned product will be available.
+        /// One or more Amazon Web Services Regions where the provisioned product will be available.
         /// </para>
         ///  
         /// <para>
@@ -271,13 +272,13 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  
         /// <para>
-        /// The specified regions should be within the list of regions from the <code>STACKSET</code>
-        /// constraint. To get the list of regions in the <code>STACKSET</code> constraint, use
+        /// The specified Regions should be within the list of Regions from the <code>STACKSET</code>
+        /// constraint. To get the list of Regions in the <code>STACKSET</code> constraint, use
         /// the <code>DescribeProvisioningParameters</code> operation.
         /// </para>
         ///  
         /// <para>
-        /// If no values are specified, the default value is all regions from the <code>STACKSET</code>
+        /// If no values are specified, the default value is all Regions from the <code>STACKSET</code>
         /// constraint.
         /// </para>
         /// </summary>

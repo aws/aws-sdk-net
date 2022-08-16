@@ -45,7 +45,8 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  
         /// <para>
-        /// The URL of the CloudFormation template in Amazon S3, in JSON format. 
+        /// The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit,
+        /// or GitHub in JSON format. 
         /// </para>
         ///  
         /// <para>
@@ -53,7 +54,8 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  
         /// <para>
-        /// Use the URL of the CloudFormation template in Amazon S3 in JSON format.
+        /// Use the URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit,
+        /// or GitHub in JSON format.
         /// </para>
         ///  
         /// <para>

@@ -194,7 +194,7 @@ namespace Amazon.ServiceCatalog.Model
         /// Gets and sets the property ProvisionedProductName. 
         /// <para>
         /// A user-friendly name for the provisioned product. This value must be unique for the
-        /// AWS account and cannot be updated after the product is provisioned.
+        /// Amazon Web Services account and cannot be updated after the product is provisioned.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

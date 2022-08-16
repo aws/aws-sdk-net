@@ -99,8 +99,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The AWS Account Id of the recipient account. This field is required when updating
-        /// an external account to account type share.
+        /// The Amazon Web Services account Id of the recipient account. This field is required
+        /// when updating an external account to account type share.
         /// </para>
         /// </summary>
         public string AccountId

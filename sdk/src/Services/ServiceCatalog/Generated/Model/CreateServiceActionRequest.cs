@@ -80,7 +80,8 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <dl> <dt>Name</dt> <dd> 
         /// <para>
-        /// The name of the AWS Systems Manager document (SSM document). For example, <code>AWS-RestartEC2Instance</code>.
+        /// The name of the Amazon Web Services Systems Manager document (SSM document). For example,
+        /// <code>AWS-RestartEC2Instance</code>.
         /// </para>
         ///  
         /// <para>
@@ -88,8 +89,8 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  </dd> <dt>Version</dt> <dd> 
         /// <para>
-        /// The AWS Systems Manager automation document version. For example, <code>"Version":
-        /// "1"</code> 
+        /// The Amazon Web Services Systems Manager automation document version. For example,
+        /// <code>"Version": "1"</code> 
         /// </para>
         ///  </dd> <dt>AssumeRole</dt> <dd> 
         /// <para>

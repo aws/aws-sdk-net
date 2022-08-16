@@ -99,7 +99,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The AWS account ID. For example, <code>123456789012</code>.
+        /// The Amazon Web Services account ID. For example, <code>123456789012</code>.
         /// </para>
         /// </summary>
         public string AccountId
@@ -117,10 +117,10 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property OrganizationNode. 
         /// <para>
-        /// The organization node to whom you are going to share. If <code>OrganizationNode</code>
-        /// is passed in, <code>PortfolioShare</code> will be created for the node an ListOrganizationPortfolioAccessd
-        /// its children (when applies), and a <code>PortfolioShareToken</code> will be returned
-        /// in the output in order for the administrator to monitor the status of the <code>PortfolioShare</code>
+        /// The organization node to whom you are going to share. When you pass <code>OrganizationNode</code>,
+        /// it creates <code>PortfolioShare</code> for all of the Amazon Web Services accounts
+        /// that are associated to the <code>OrganizationNode</code>. The output returns a <code>PortfolioShareToken</code>,
+        /// which enables the administrator to monitor the status of the <code>PortfolioShare</code>
         /// creation process.
         /// </para>
         /// </summary>

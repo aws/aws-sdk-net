@@ -35,7 +35,8 @@ namespace Amazon.ServiceCatalog.Model
     ///  
     /// <para>
     /// You can copy a product to the same account or another account. You can copy a product
-    /// to the same region or another region.
+    /// to the same Region or another Region. If you copy a product to another account, you
+    /// must first share the product in a portfolio using <a>CreatePortfolioShare</a>.
     /// </para>
     ///  
     /// <para>

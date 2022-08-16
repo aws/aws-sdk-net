@@ -62,8 +62,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property DisableTemplateValidation. 
         /// <para>
-        /// If set to true, AWS Service Catalog stops validating the specified provisioning artifact
-        /// even if it is invalid.
+        /// If set to true, Amazon Web Services Service Catalog stops validating the specified
+        /// provisioning artifact even if it is invalid.
         /// </para>
         /// </summary>
         public bool DisableTemplateValidation
@@ -86,8 +86,8 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  
         /// <para>
-        /// The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON format
-        /// as follows:
+        /// The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit,
+        /// or GitHub in JSON format. Specify the URL in JSON format as follows:
         /// </para>
         ///  
         /// <para>
@@ -141,15 +141,16 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CLOUD_FORMATION_TEMPLATE</code> - AWS CloudFormation template
+        ///  <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MARKETPLACE_AMI</code> - AWS Marketplace AMI
+        ///  <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MARKETPLACE_CAR</code> - AWS Marketplace Clusters and AWS Resources
+        ///  <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon
+        /// Web Services Resources
         /// </para>
         ///  </li> </ul>
         /// </summary>

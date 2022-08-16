@@ -82,7 +82,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The AWS account ID.
+        /// The Amazon Web Services account ID.
         /// </para>
         /// </summary>
         public string AccountId

@@ -85,8 +85,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property IgnoreErrors. 
         /// <para>
-        /// If set to true, AWS Service Catalog stops managing the specified provisioned product
-        /// even if it cannot delete the underlying resources.
+        /// If set to true, Service Catalog stops managing the specified provisioned product even
+        /// if it cannot delete the underlying resources.
         /// </para>
         /// </summary>
         public bool IgnoreErrors

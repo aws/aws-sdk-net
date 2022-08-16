@@ -120,7 +120,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisioningArtifactPreferences. 
         /// <para>
-        /// An object that contains information about preferences, such as regions and accounts,
+        /// An object that contains information about preferences, such as Regions and accounts,
         /// for the provisioning artifact.
         /// </para>
         /// </summary>

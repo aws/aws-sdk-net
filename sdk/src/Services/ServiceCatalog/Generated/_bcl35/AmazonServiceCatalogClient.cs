@@ -37,11 +37,11 @@ namespace Amazon.ServiceCatalog
     ///
     /// AWS Service Catalog 
     /// <para>
-    ///  <a href="https://aws.amazon.com/servicecatalog/">AWS Service Catalog</a> enables
-    /// organizations to create and manage catalogs of IT services that are approved for AWS.
+    ///  <a href="https://aws.amazon.com/servicecatalog/">Service Catalog</a> enables organizations
+    /// to create and manage catalogs of IT services that are approved for Amazon Web Services.
     /// To get the most out of this documentation, you should be familiar with the terminology
-    /// discussed in <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/what-is_concepts.html">AWS
-    /// Service Catalog Concepts</a>.
+    /// discussed in <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/what-is_concepts.html">Service
+    /// Catalog Concepts</a>.
     /// </para>
     /// </summary>
     public partial class AmazonServiceCatalogClient : AmazonServiceClient, IAmazonServiceCatalog
@@ -617,8 +617,8 @@ namespace Amazon.ServiceCatalog
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
         /// An operation requiring TagOptions failed because the TagOptions migration process
-        /// has not been performed for this account. Please use the AWS console to perform the
-        /// migration process before retrying the operation.
+        /// has not been performed for this account. Use the Amazon Web Services Management Console
+        /// to perform the migration process before retrying the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateTagOptionWithResource">REST API Reference for AssociateTagOptionWithResource Operation</seealso>
         public virtual AssociateTagOptionWithResourceResponse AssociateTagOptionWithResource(AssociateTagOptionWithResourceRequest request)
@@ -788,7 +788,8 @@ namespace Amazon.ServiceCatalog
         ///  
         /// <para>
         /// You can copy a product to the same account or another account. You can copy a product
-        /// to the same region or another region.
+        /// to the same Region or another Region. If you copy a product to another account, you
+        /// must first share the product in a portfolio using <a>CreatePortfolioShare</a>.
         /// </para>
         ///  
         /// <para>
@@ -945,8 +946,8 @@ namespace Amazon.ServiceCatalog
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
         /// An operation requiring TagOptions failed because the TagOptions migration process
-        /// has not been performed for this account. Please use the AWS console to perform the
-        /// migration process before retrying the operation.
+        /// has not been performed for this account. Use the Amazon Web Services Management Console
+        /// to perform the migration process before retrying the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolio">REST API Reference for CreatePortfolio Operation</seealso>
         public virtual CreatePortfolioResponse CreatePortfolio(CreatePortfolioRequest request)
@@ -1117,8 +1118,8 @@ namespace Amazon.ServiceCatalog
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
         /// An operation requiring TagOptions failed because the TagOptions migration process
-        /// has not been performed for this account. Please use the AWS console to perform the
-        /// migration process before retrying the operation.
+        /// has not been performed for this account. Use the Amazon Web Services Management Console
+        /// to perform the migration process before retrying the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProduct">REST API Reference for CreateProduct Operation</seealso>
         public virtual CreateProductResponse CreateProduct(CreateProductRequest request)
@@ -1169,14 +1170,17 @@ namespace Amazon.ServiceCatalog
         #region  CreateProvisionedProductPlan
 
         /// <summary>
-        /// Creates a plan. A plan includes the list of resources to be created (when provisioning
-        /// a new product) or modified (when updating a provisioned product) when the plan is
-        /// executed.
+        /// Creates a plan.
         /// 
         ///  
         /// <para>
-        /// You can create one plan per provisioned product. To create a plan for an existing
-        /// provisioned product, the product status must be AVAILBLE or TAINTED.
+        /// A plan includes the list of resources to be created (when provisioning a new product)
+        /// or modified (when updating a provisioned product) when the plan is executed.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can create one plan for each provisioned product. To create a plan for an existing
+        /// provisioned product, the product status must be AVAILABLE or TAINTED.
         /// </para>
         ///  
         /// <para>
@@ -1396,8 +1400,8 @@ namespace Amazon.ServiceCatalog
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
         /// An operation requiring TagOptions failed because the TagOptions migration process
-        /// has not been performed for this account. Please use the AWS console to perform the
-        /// migration process before retrying the operation.
+        /// has not been performed for this account. Use the Amazon Web Services Management Console
+        /// to perform the migration process before retrying the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateTagOption">REST API Reference for CreateTagOption Operation</seealso>
         public virtual CreateTagOptionResponse CreateTagOption(CreateTagOptionRequest request)
@@ -1540,8 +1544,8 @@ namespace Amazon.ServiceCatalog
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
         /// An operation requiring TagOptions failed because the TagOptions migration process
-        /// has not been performed for this account. Please use the AWS console to perform the
-        /// migration process before retrying the operation.
+        /// has not been performed for this account. Use the Amazon Web Services Management Console
+        /// to perform the migration process before retrying the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolio">REST API Reference for DeletePortfolio Operation</seealso>
         public virtual DeletePortfolioResponse DeletePortfolio(DeletePortfolioRequest request)
@@ -1693,8 +1697,8 @@ namespace Amazon.ServiceCatalog
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
         /// An operation requiring TagOptions failed because the TagOptions migration process
-        /// has not been performed for this account. Please use the AWS console to perform the
-        /// migration process before retrying the operation.
+        /// has not been performed for this account. Use the Amazon Web Services Management Console
+        /// to perform the migration process before retrying the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProduct">REST API Reference for DeleteProduct Operation</seealso>
         public virtual DeleteProductResponse DeleteProduct(DeleteProductRequest request)
@@ -1957,8 +1961,8 @@ namespace Amazon.ServiceCatalog
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
         /// An operation requiring TagOptions failed because the TagOptions migration process
-        /// has not been performed for this account. Please use the AWS console to perform the
-        /// migration process before retrying the operation.
+        /// has not been performed for this account. Use the Amazon Web Services Management Console
+        /// to perform the migration process before retrying the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteTagOption">REST API Reference for DeleteTagOption Operation</seealso>
         public virtual DeleteTagOptionResponse DeleteTagOption(DeleteTagOptionRequest request)
@@ -2953,8 +2957,8 @@ namespace Amazon.ServiceCatalog
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
         /// An operation requiring TagOptions failed because the TagOptions migration process
-        /// has not been performed for this account. Please use the AWS console to perform the
-        /// migration process before retrying the operation.
+        /// has not been performed for this account. Use the Amazon Web Services Management Console
+        /// to perform the migration process before retrying the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeTagOption">REST API Reference for DescribeTagOption Operation</seealso>
         public virtual DescribeTagOptionResponse DescribeTagOption(DescribeTagOptionRequest request)
@@ -3005,20 +3009,29 @@ namespace Amazon.ServiceCatalog
         #region  DisableAWSOrganizationsAccess
 
         /// <summary>
-        /// Disable portfolio sharing through AWS Organizations feature. This feature will not
-        /// delete your current shares but it will prevent you from creating new shares throughout
-        /// your organization. Current shares will not be in sync with your organization structure
-        /// if it changes after calling this API. This API can only be called by the management
-        /// account in the organization.
+        /// Disable portfolio sharing through the Organizations service. This command will not
+        /// delete your current shares, but prevents you from creating new shares throughout your
+        /// organization. Current shares are not kept in sync with your organization structure
+        /// if the structure changes after calling this API. Only the management account in the
+        /// organization can call this API.
         /// 
         ///  
         /// <para>
-        /// This API can't be invoked if there are active delegated administrators in the organization.
+        /// You cannot call this API if there are active delegated administrators in the organization.
         /// </para>
         ///  
         /// <para>
         /// Note that a delegated administrator is not authorized to invoke <code>DisableAWSOrganizationsAccess</code>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you share an Service Catalog portfolio in an organization within Organizations,
+        /// and then disable Organizations access for Service Catalog, the portfolio access permissions
+        /// will not sync with the latest changes to the organization structure. Specifically,
+        /// accounts that you removed from the organization after disabling Service Catalog access
+        /// will retain access to the previously shared portfolio.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableAWSOrganizationsAccess service method.</param>
         /// 
@@ -3336,8 +3349,8 @@ namespace Amazon.ServiceCatalog
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
         /// An operation requiring TagOptions failed because the TagOptions migration process
-        /// has not been performed for this account. Please use the AWS console to perform the
-        /// migration process before retrying the operation.
+        /// has not been performed for this account. Use the Amazon Web Services Management Console
+        /// to perform the migration process before retrying the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateTagOptionFromResource">REST API Reference for DisassociateTagOptionFromResource Operation</seealso>
         public virtual DisassociateTagOptionFromResourceResponse DisassociateTagOptionFromResource(DisassociateTagOptionFromResourceRequest request)
@@ -3388,21 +3401,33 @@ namespace Amazon.ServiceCatalog
         #region  EnableAWSOrganizationsAccess
 
         /// <summary>
-        /// Enable portfolio sharing feature through AWS Organizations. This API will allow Service
+        /// Enable portfolio sharing feature through Organizations. This API will allow Service
         /// Catalog to receive updates on your organization in order to sync your shares with
         /// the current structure. This API can only be called by the management account in the
         /// organization.
         /// 
         ///  
         /// <para>
-        /// By calling this API Service Catalog will make a call to organizations:EnableAWSServiceAccess
-        /// on your behalf so that your shares can be in sync with any changes in your AWS Organizations
+        /// When you call this API, Service Catalog calls <code>organizations:EnableAWSServiceAccess</code>
+        /// on your behalf so that your shares stay in sync with any changes in your Organizations
         /// structure.
         /// </para>
         ///  
         /// <para>
         /// Note that a delegated administrator is not authorized to invoke <code>EnableAWSOrganizationsAccess</code>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you have previously disabled Organizations access for Service Catalog, and then
+        /// enable access again, the portfolio access permissions might not sync with the latest
+        /// changes to the organization structure. Specifically, accounts that you removed from
+        /// the organization after disabling Service Catalog access, and before you enabled access
+        /// again, can retain access to the previously shared portfolio. As a result, an account
+        /// that has been removed from the organization might still be able to create or manage
+        /// Amazon Web Services resources when it is no longer authorized to do so. Amazon Web
+        /// Services is working to resolve this issue.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableAWSOrganizationsAccess service method.</param>
         /// 
@@ -3594,7 +3619,7 @@ namespace Amazon.ServiceCatalog
         #region  GetAWSOrganizationsAccessStatus
 
         /// <summary>
-        /// Get the Access Status for AWS Organization portfolio share feature. This API can only
+        /// Get the Access Status for Organizations portfolio share feature. This API can only
         /// be called by the management account in the organization or by a delegated admin.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAWSOrganizationsAccessStatus service method.</param>
@@ -3717,10 +3742,10 @@ namespace Amazon.ServiceCatalog
         #region  ImportAsProvisionedProduct
 
         /// <summary>
-        /// Requests the import of a resource as a Service Catalog provisioned product that is
-        /// associated to a Service Catalog product and provisioning artifact. Once imported,
-        /// all supported Service Catalog governance actions are supported on the provisioned
-        /// product.
+        /// Requests the import of a resource as a Amazon Web Services Service Catalog provisioned
+        /// product that is associated to a Amazon Web Services Service Catalog product and provisioning
+        /// artifact. Once imported, all supported Amazon Web Services Service Catalog governance
+        /// actions are supported on the provisioned product.
         /// 
         ///  
         /// <para>
@@ -3736,7 +3761,7 @@ namespace Amazon.ServiceCatalog
         ///  
         /// <para>
         /// Import of the resource requires that the CloudFormation stack template matches the
-        /// associated Service Catalog product provisioning artifact. 
+        /// associated Amazon Web Services Service Catalog product provisioning artifact. 
         /// </para>
         ///  
         /// <para>
@@ -4618,8 +4643,8 @@ namespace Amazon.ServiceCatalog
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
         /// An operation requiring TagOptions failed because the TagOptions migration process
-        /// has not been performed for this account. Please use the AWS console to perform the
-        /// migration process before retrying the operation.
+        /// has not been performed for this account. Use the Amazon Web Services Management Console
+        /// to perform the migration process before retrying the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListResourcesForTagOption">REST API Reference for ListResourcesForTagOption Operation</seealso>
         public virtual ListResourcesForTagOptionResponse ListResourcesForTagOption(ListResourcesForTagOptionRequest request)
@@ -4790,7 +4815,7 @@ namespace Amazon.ServiceCatalog
         /// <summary>
         /// Returns summary information about stack instances that are associated with the specified
         /// <code>CFN_STACKSET</code> type provisioned product. You can filter for stack instances
-        /// that are associated with a specific AWS account name or region.
+        /// that are associated with a specific Amazon Web Services account name or Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStackInstancesForProvisionedProduct service method.</param>
         /// 
@@ -4860,8 +4885,8 @@ namespace Amazon.ServiceCatalog
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
         /// An operation requiring TagOptions failed because the TagOptions migration process
-        /// has not been performed for this account. Please use the AWS console to perform the
-        /// migration process before retrying the operation.
+        /// has not been performed for this account. Use the Amazon Web Services Management Console
+        /// to perform the migration process before retrying the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListTagOptions">REST API Reference for ListTagOptions Operation</seealso>
         public virtual ListTagOptionsResponse ListTagOptions(ListTagOptionsRequest request)
@@ -5225,6 +5250,22 @@ namespace Amazon.ServiceCatalog
 
         /// <summary>
         /// Gets information about the provisioned products that meet the specified criteria.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// To ensure a complete list of provisioned products and remove duplicate products, use
+        /// <code>sort-by createdTime</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Here is a CLI example: <code> </code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>aws servicecatalog search-provisioned-products --sort-by createdTime </code>
+        /// 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchProvisionedProducts service method.</param>
         /// 
@@ -5429,8 +5470,8 @@ namespace Amazon.ServiceCatalog
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
         /// An operation requiring TagOptions failed because the TagOptions migration process
-        /// has not been performed for this account. Please use the AWS console to perform the
-        /// migration process before retrying the operation.
+        /// has not been performed for this account. Use the Amazon Web Services Management Console
+        /// to perform the migration process before retrying the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdatePortfolio">REST API Reference for UpdatePortfolio Operation</seealso>
         public virtual UpdatePortfolioResponse UpdatePortfolio(UpdatePortfolioRequest request)
@@ -5585,8 +5626,8 @@ namespace Amazon.ServiceCatalog
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
         /// An operation requiring TagOptions failed because the TagOptions migration process
-        /// has not been performed for this account. Please use the AWS console to perform the
-        /// migration process before retrying the operation.
+        /// has not been performed for this account. Use the Amazon Web Services Management Console
+        /// to perform the migration process before retrying the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProduct">REST API Reference for UpdateProduct Operation</seealso>
         public virtual UpdateProductResponse UpdateProduct(UpdateProductRequest request)
@@ -5914,8 +5955,8 @@ namespace Amazon.ServiceCatalog
         /// </exception>
         /// <exception cref="Amazon.ServiceCatalog.Model.TagOptionNotMigratedException">
         /// An operation requiring TagOptions failed because the TagOptions migration process
-        /// has not been performed for this account. Please use the AWS console to perform the
-        /// migration process before retrying the operation.
+        /// has not been performed for this account. Use the Amazon Web Services Management Console
+        /// to perform the migration process before retrying the operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateTagOption">REST API Reference for UpdateTagOption Operation</seealso>
         public virtual UpdateTagOptionResponse UpdateTagOption(UpdateTagOptionRequest request)
