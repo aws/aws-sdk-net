@@ -54,12 +54,16 @@ namespace Amazon.RDS.Model
     /// you don't specify either the SourceType or the <code>SourceIds</code>, you are notified
     /// of events generated from all RDS sources belonging to your customer account.
     /// </para>
-    ///  <note> 
+    ///  
     /// <para>
-    /// RDS event notification is only available for unencrypted SNS topics. If you specify
-    /// an encrypted SNS topic, event notifications aren't sent for the topic.
+    /// For more information about subscribing to an event for RDS DB engines, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.Subscribing.html">
+    /// Subscribing to Amazon RDS event notification</a> in the <i>Amazon RDS User Guide</i>.
     /// </para>
-    ///  </note>
+    ///  
+    /// <para>
+    /// For more information about subscribing to an event for Aurora DB engines, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Events.Subscribing.html">
+    /// Subscribing to Amazon RDS event notification</a> in the <i>Amazon Aurora User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class CreateEventSubscriptionRequest : AmazonRDSRequest
     {

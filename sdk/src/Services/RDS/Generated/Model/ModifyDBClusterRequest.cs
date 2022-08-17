@@ -72,6 +72,7 @@ namespace Amazon.RDS.Model
         private string _masterUserPassword;
         private int? _monitoringInterval;
         private string _monitoringRoleArn;
+        private string _networkType;
         private string _newDBClusterIdentifier;
         private string _optionGroupName;
         private string _performanceInsightsKMSKeyId;
@@ -881,6 +882,51 @@ namespace Amazon.RDS.Model
         internal bool IsSetMonitoringRoleArn()
         {
             return this._monitoringRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// The network type of the DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>IPV4</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DUAL</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The network type is determined by the <code>DBSubnetGroup</code> specified for the
+        /// DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the
+        /// IPv4 and the IPv6 protocols (<code>DUAL</code>).
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+        /// Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid for: Aurora DB clusters only
+        /// </para>
+        /// </summary>
+        public string NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
         }
 
         /// <summary>

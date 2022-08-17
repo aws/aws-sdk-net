@@ -701,17 +701,27 @@ namespace Amazon.RDS
         /// for this API are one of CIDR range, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId
         /// and either EC2SecurityGroupName or EC2SecurityGroupId for non-VPC).
         /// 
-        ///  <note> 
+        ///  
         /// <para>
         /// You can't authorize ingress from an EC2 security group in one Amazon Web Services
         /// Region to an Amazon RDS DB instance in another. You can't authorize ingress from a
         /// VPC security group in one VPC to an Amazon RDS DB instance in another.
         /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// For an overview of CIDR ranges, go to the <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia
         /// Tutorial</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// EC2-Classic was retired on August 15, 2022. If you haven't migrated from EC2-Classic
+        /// to a VPC, we recommend that you migrate as soon as possible. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>, the blog <a href="http://aws.amazon.com/blogs/aws/ec2-classic-is-retiring-heres-how-to-prepare/">EC2-Classic
+        /// Networking is Retiring – Here’s How to Prepare</a>, and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.Non-VPC2VPC.html">Moving
+        /// a DB instance not in a VPC into a VPC</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AuthorizeDBSecurityGroupIngress service method.</param>
         /// 
@@ -748,17 +758,27 @@ namespace Amazon.RDS
         /// for this API are one of CIDR range, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId
         /// and either EC2SecurityGroupName or EC2SecurityGroupId for non-VPC).
         /// 
-        ///  <note> 
+        ///  
         /// <para>
         /// You can't authorize ingress from an EC2 security group in one Amazon Web Services
         /// Region to an Amazon RDS DB instance in another. You can't authorize ingress from a
         /// VPC security group in one VPC to an Amazon RDS DB instance in another.
         /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// For an overview of CIDR ranges, go to the <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Wikipedia
         /// Tutorial</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// EC2-Classic was retired on August 15, 2022. If you haven't migrated from EC2-Classic
+        /// to a VPC, we recommend that you migrate as soon as possible. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>, the blog <a href="http://aws.amazon.com/blogs/aws/ec2-classic-is-retiring-heres-how-to-prepare/">EC2-Classic
+        /// Networking is Retiring – Here’s How to Prepare</a>, and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.Non-VPC2VPC.html">Moving
+        /// a DB instance not in a VPC into a VPC</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AuthorizeDBSecurityGroupIngress service method.</param>
         /// <param name="cancellationToken">
@@ -2806,10 +2826,19 @@ namespace Amazon.RDS
         /// <summary>
         /// Creates a new DB security group. DB security groups control access to a DB instance.
         /// 
-        ///  <note> 
+        ///  
         /// <para>
         /// A DB security group controls access to EC2-Classic DB instances that are not in a
         /// VPC.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// EC2-Classic was retired on August 15, 2022. If you haven't migrated from EC2-Classic
+        /// to a VPC, we recommend that you migrate as soon as possible. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>, the blog <a href="http://aws.amazon.com/blogs/aws/ec2-classic-is-retiring-heres-how-to-prepare/">EC2-Classic
+        /// Networking is Retiring – Here’s How to Prepare</a>, and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.Non-VPC2VPC.html">Moving
+        /// a DB instance not in a VPC into a VPC</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2840,10 +2869,19 @@ namespace Amazon.RDS
         /// <summary>
         /// Creates a new DB security group. DB security groups control access to a DB instance.
         /// 
-        ///  <note> 
+        ///  
         /// <para>
         /// A DB security group controls access to EC2-Classic DB instances that are not in a
         /// VPC.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// EC2-Classic was retired on August 15, 2022. If you haven't migrated from EC2-Classic
+        /// to a VPC, we recommend that you migrate as soon as possible. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>, the blog <a href="http://aws.amazon.com/blogs/aws/ec2-classic-is-retiring-heres-how-to-prepare/">EC2-Classic
+        /// Networking is Retiring – Here’s How to Prepare</a>, and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.Non-VPC2VPC.html">Moving
+        /// a DB instance not in a VPC into a VPC</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3049,12 +3087,16 @@ namespace Amazon.RDS
         /// you don't specify either the SourceType or the <code>SourceIds</code>, you are notified
         /// of events generated from all RDS sources belonging to your customer account.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
-        /// RDS event notification is only available for unencrypted SNS topics. If you specify
-        /// an encrypted SNS topic, event notifications aren't sent for the topic.
+        /// For more information about subscribing to an event for RDS DB engines, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.Subscribing.html">
+        /// Subscribing to Amazon RDS event notification</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
-        ///  </note>
+        ///  
+        /// <para>
+        /// For more information about subscribing to an event for Aurora DB engines, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Events.Subscribing.html">
+        /// Subscribing to Amazon RDS event notification</a> in the <i>Amazon Aurora User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEventSubscription service method.</param>
         /// 
@@ -3116,12 +3158,16 @@ namespace Amazon.RDS
         /// you don't specify either the SourceType or the <code>SourceIds</code>, you are notified
         /// of events generated from all RDS sources belonging to your customer account.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
-        /// RDS event notification is only available for unencrypted SNS topics. If you specify
-        /// an encrypted SNS topic, event notifications aren't sent for the topic.
+        /// For more information about subscribing to an event for RDS DB engines, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.Subscribing.html">
+        /// Subscribing to Amazon RDS event notification</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
-        ///  </note>
+        ///  
+        /// <para>
+        /// For more information about subscribing to an event for Aurora DB engines, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Events.Subscribing.html">
+        /// Subscribing to Amazon RDS event notification</a> in the <i>Amazon Aurora User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEventSubscription service method.</param>
         /// <param name="cancellationToken">
@@ -4174,9 +4220,18 @@ namespace Amazon.RDS
         /// <summary>
         /// Deletes a DB security group.
         /// 
-        ///  <note> 
+        ///  
         /// <para>
         /// The specified DB security group must not be associated with any DB instances.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// EC2-Classic was retired on August 15, 2022. If you haven't migrated from EC2-Classic
+        /// to a VPC, we recommend that you migrate as soon as possible. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>, the blog <a href="http://aws.amazon.com/blogs/aws/ec2-classic-is-retiring-heres-how-to-prepare/">EC2-Classic
+        /// Networking is Retiring – Here’s How to Prepare</a>, and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.Non-VPC2VPC.html">Moving
+        /// a DB instance not in a VPC into a VPC</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -4203,9 +4258,18 @@ namespace Amazon.RDS
         /// <summary>
         /// Deletes a DB security group.
         /// 
-        ///  <note> 
+        ///  
         /// <para>
         /// The specified DB security group must not be associated with any DB instances.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// EC2-Classic was retired on August 15, 2022. If you haven't migrated from EC2-Classic
+        /// to a VPC, we recommend that you migrate as soon as possible. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>, the blog <a href="http://aws.amazon.com/blogs/aws/ec2-classic-is-retiring-heres-how-to-prepare/">EC2-Classic
+        /// Networking is Retiring – Here’s How to Prepare</a>, and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.Non-VPC2VPC.html">Moving
+        /// a DB instance not in a VPC into a VPC</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -5961,6 +6025,17 @@ namespace Amazon.RDS
         /// Returns a list of <code>DBSecurityGroup</code> descriptions. If a <code>DBSecurityGroupName</code>
         /// is specified, the list will contain only the descriptions of the specified DB security
         /// group.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// EC2-Classic was retired on August 15, 2022. If you haven't migrated from EC2-Classic
+        /// to a VPC, we recommend that you migrate as soon as possible. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>, the blog <a href="http://aws.amazon.com/blogs/aws/ec2-classic-is-retiring-heres-how-to-prepare/">EC2-Classic
+        /// Networking is Retiring – Here’s How to Prepare</a>, and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.Non-VPC2VPC.html">Moving
+        /// a DB instance not in a VPC into a VPC</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeDBSecurityGroups service method, as returned by RDS.</returns>
@@ -5978,6 +6053,17 @@ namespace Amazon.RDS
         /// Returns a list of <code>DBSecurityGroup</code> descriptions. If a <code>DBSecurityGroupName</code>
         /// is specified, the list will contain only the descriptions of the specified DB security
         /// group.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// EC2-Classic was retired on August 15, 2022. If you haven't migrated from EC2-Classic
+        /// to a VPC, we recommend that you migrate as soon as possible. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>, the blog <a href="http://aws.amazon.com/blogs/aws/ec2-classic-is-retiring-heres-how-to-prepare/">EC2-Classic
+        /// Networking is Retiring – Here’s How to Prepare</a>, and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.Non-VPC2VPC.html">Moving
+        /// a DB instance not in a VPC into a VPC</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBSecurityGroups service method.</param>
         /// 
@@ -6000,6 +6086,17 @@ namespace Amazon.RDS
         /// Returns a list of <code>DBSecurityGroup</code> descriptions. If a <code>DBSecurityGroupName</code>
         /// is specified, the list will contain only the descriptions of the specified DB security
         /// group.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// EC2-Classic was retired on August 15, 2022. If you haven't migrated from EC2-Classic
+        /// to a VPC, we recommend that you migrate as soon as possible. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>, the blog <a href="http://aws.amazon.com/blogs/aws/ec2-classic-is-retiring-heres-how-to-prepare/">EC2-Classic
+        /// Networking is Retiring – Here’s How to Prepare</a>, and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.Non-VPC2VPC.html">Moving
+        /// a DB instance not in a VPC into a VPC</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -6019,6 +6116,17 @@ namespace Amazon.RDS
         /// Returns a list of <code>DBSecurityGroup</code> descriptions. If a <code>DBSecurityGroupName</code>
         /// is specified, the list will contain only the descriptions of the specified DB security
         /// group.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// EC2-Classic was retired on August 15, 2022. If you haven't migrated from EC2-Classic
+        /// to a VPC, we recommend that you migrate as soon as possible. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>, the blog <a href="http://aws.amazon.com/blogs/aws/ec2-classic-is-retiring-heres-how-to-prepare/">EC2-Classic
+        /// Networking is Retiring – Here’s How to Prepare</a>, and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.Non-VPC2VPC.html">Moving
+        /// a DB instance not in a VPC into a VPC</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBSecurityGroups service method.</param>
         /// <param name="cancellationToken">
@@ -11912,6 +12020,17 @@ namespace Amazon.RDS
         /// Revokes ingress from a DBSecurityGroup for previously authorized IP ranges or EC2
         /// or VPC security groups. Required parameters for this API are one of CIDRIP, EC2SecurityGroupId
         /// for VPC, or (EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId).
+        /// 
+        ///  <note> 
+        /// <para>
+        /// EC2-Classic was retired on August 15, 2022. If you haven't migrated from EC2-Classic
+        /// to a VPC, we recommend that you migrate as soon as possible. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>, the blog <a href="http://aws.amazon.com/blogs/aws/ec2-classic-is-retiring-heres-how-to-prepare/">EC2-Classic
+        /// Networking is Retiring – Here’s How to Prepare</a>, and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.Non-VPC2VPC.html">Moving
+        /// a DB instance not in a VPC into a VPC</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RevokeDBSecurityGroupIngress service method.</param>
         /// 
@@ -11946,6 +12065,17 @@ namespace Amazon.RDS
         /// Revokes ingress from a DBSecurityGroup for previously authorized IP ranges or EC2
         /// or VPC security groups. Required parameters for this API are one of CIDRIP, EC2SecurityGroupId
         /// for VPC, or (EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId).
+        /// 
+        ///  <note> 
+        /// <para>
+        /// EC2-Classic was retired on August 15, 2022. If you haven't migrated from EC2-Classic
+        /// to a VPC, we recommend that you migrate as soon as possible. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>, the blog <a href="http://aws.amazon.com/blogs/aws/ec2-classic-is-retiring-heres-how-to-prepare/">EC2-Classic
+        /// Networking is Retiring – Here’s How to Prepare</a>, and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.Non-VPC2VPC.html">Moving
+        /// a DB instance not in a VPC into a VPC</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RevokeDBSecurityGroupIngress service method.</param>
         /// <param name="cancellationToken">
