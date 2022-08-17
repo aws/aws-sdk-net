@@ -83,6 +83,17 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetSlotCaptureSetting())
+            {
+                context.Writer.WritePropertyName("slotCaptureSetting");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SlotCaptureSettingMarshaller.Instance;
+                marshaller.Marshall(requestObject.SlotCaptureSetting, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSlotConstraint())
             {
                 context.Writer.WritePropertyName("slotConstraint");

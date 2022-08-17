@@ -76,6 +76,18 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.ClosingResponse = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("conditional", targetDepth))
+                {
+                    var unmarshaller = ConditionalSpecificationUnmarshaller.Instance;
+                    unmarshalledObject.Conditional = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("nextStep", targetDepth))
+                {
+                    var unmarshaller = DialogStateUnmarshaller.Instance;
+                    unmarshalledObject.NextStep = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

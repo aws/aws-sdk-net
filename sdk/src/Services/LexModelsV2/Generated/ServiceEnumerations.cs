@@ -1027,6 +1027,84 @@ namespace Amazon.LexModelsV2
 
 
     /// <summary>
+    /// Constants used for properties of type DialogActionType.
+    /// </summary>
+    public class DialogActionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CloseIntent for DialogActionType
+        /// </summary>
+        public static readonly DialogActionType CloseIntent = new DialogActionType("CloseIntent");
+        /// <summary>
+        /// Constant ConfirmIntent for DialogActionType
+        /// </summary>
+        public static readonly DialogActionType ConfirmIntent = new DialogActionType("ConfirmIntent");
+        /// <summary>
+        /// Constant ElicitIntent for DialogActionType
+        /// </summary>
+        public static readonly DialogActionType ElicitIntent = new DialogActionType("ElicitIntent");
+        /// <summary>
+        /// Constant ElicitSlot for DialogActionType
+        /// </summary>
+        public static readonly DialogActionType ElicitSlot = new DialogActionType("ElicitSlot");
+        /// <summary>
+        /// Constant EndConversation for DialogActionType
+        /// </summary>
+        public static readonly DialogActionType EndConversation = new DialogActionType("EndConversation");
+        /// <summary>
+        /// Constant EvaluateConditional for DialogActionType
+        /// </summary>
+        public static readonly DialogActionType EvaluateConditional = new DialogActionType("EvaluateConditional");
+        /// <summary>
+        /// Constant FulfillIntent for DialogActionType
+        /// </summary>
+        public static readonly DialogActionType FulfillIntent = new DialogActionType("FulfillIntent");
+        /// <summary>
+        /// Constant InvokeDialogCodeHook for DialogActionType
+        /// </summary>
+        public static readonly DialogActionType InvokeDialogCodeHook = new DialogActionType("InvokeDialogCodeHook");
+        /// <summary>
+        /// Constant StartIntent for DialogActionType
+        /// </summary>
+        public static readonly DialogActionType StartIntent = new DialogActionType("StartIntent");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DialogActionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DialogActionType FindValue(string value)
+        {
+            return FindValue<DialogActionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DialogActionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Effect.
     /// </summary>
     public class Effect : ConstantClass
@@ -2070,6 +2148,56 @@ namespace Amazon.LexModelsV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SlotFilterOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SlotShape.
+    /// </summary>
+    public class SlotShape : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant List for SlotShape
+        /// </summary>
+        public static readonly SlotShape List = new SlotShape("List");
+        /// <summary>
+        /// Constant Scalar for SlotShape
+        /// </summary>
+        public static readonly SlotShape Scalar = new SlotShape("Scalar");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SlotShape(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SlotShape FindValue(string value)
+        {
+            return FindValue<SlotShape>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SlotShape(string value)
         {
             return FindValue(value);
         }

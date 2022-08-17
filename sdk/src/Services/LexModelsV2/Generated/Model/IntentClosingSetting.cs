@@ -36,6 +36,8 @@ namespace Amazon.LexModelsV2.Model
     {
         private bool? _active;
         private ResponseSpecification _closingResponse;
+        private ConditionalSpecification _conditional;
+        private DialogState _nextStep;
 
         /// <summary>
         /// Gets and sets the property Active. 
@@ -63,7 +65,6 @@ namespace Amazon.LexModelsV2.Model
         /// The response that Amazon Lex sends to the user when the intent is complete.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ResponseSpecification ClosingResponse
         {
             get { return this._closingResponse; }
@@ -74,6 +75,43 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetClosingResponse()
         {
             return this._closingResponse != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Conditional. 
+        /// <para>
+        /// A list of conditional branches associated with the intent's closing response. These
+        /// branches are executed when the <code>nextStep</code> attribute is set to <code>EvalutateConditional</code>.
+        /// </para>
+        /// </summary>
+        public ConditionalSpecification Conditional
+        {
+            get { return this._conditional; }
+            set { this._conditional = value; }
+        }
+
+        // Check to see if Conditional property is set
+        internal bool IsSetConditional()
+        {
+            return this._conditional != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextStep. 
+        /// <para>
+        /// Specifies the next step that the bot executes after playing the intent's closing response.
+        /// </para>
+        /// </summary>
+        public DialogState NextStep
+        {
+            get { return this._nextStep; }
+            set { this._nextStep = value; }
+        }
+
+        // Check to see if NextStep property is set
+        internal bool IsSetNextStep()
+        {
+            return this._nextStep != null;
         }
 
     }

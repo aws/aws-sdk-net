@@ -62,6 +62,28 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetConditional())
+            {
+                context.Writer.WritePropertyName("conditional");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ConditionalSpecificationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Conditional, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetNextStep())
+            {
+                context.Writer.WritePropertyName("nextStep");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DialogStateMarshaller.Instance;
+                marshaller.Marshall(requestObject.NextStep, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

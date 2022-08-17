@@ -39,6 +39,7 @@ namespace Amazon.LexModelsV2.Model
         private string _description;
         private DialogCodeHookSettings _dialogCodeHook;
         private FulfillmentCodeHookSettings _fulfillmentCodeHook;
+        private InitialResponseSetting _initialResponseSetting;
         private List<InputContext> _inputContexts = new List<InputContext>();
         private IntentClosingSetting _intentClosingSetting;
         private IntentConfirmationSetting _intentConfirmationSetting;
@@ -159,6 +160,25 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetFulfillmentCodeHook()
         {
             return this._fulfillmentCodeHook != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InitialResponseSetting. 
+        /// <para>
+        /// Configuration settings for the response that is sent to the user at the beginning
+        /// of a conversation, before eliciting slot values.
+        /// </para>
+        /// </summary>
+        public InitialResponseSetting InitialResponseSetting
+        {
+            get { return this._initialResponseSetting; }
+            set { this._initialResponseSetting = value; }
+        }
+
+        // Check to see if InitialResponseSetting property is set
+        internal bool IsSetInitialResponseSetting()
+        {
+            return this._initialResponseSetting != null;
         }
 
         /// <summary>

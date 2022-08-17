@@ -45,6 +45,28 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PostFulfillmentStatusSpecification requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetFailureConditional())
+            {
+                context.Writer.WritePropertyName("failureConditional");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ConditionalSpecificationMarshaller.Instance;
+                marshaller.Marshall(requestObject.FailureConditional, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetFailureNextStep())
+            {
+                context.Writer.WritePropertyName("failureNextStep");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DialogStateMarshaller.Instance;
+                marshaller.Marshall(requestObject.FailureNextStep, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetFailureResponse())
             {
                 context.Writer.WritePropertyName("failureResponse");
@@ -56,6 +78,28 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSuccessConditional())
+            {
+                context.Writer.WritePropertyName("successConditional");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ConditionalSpecificationMarshaller.Instance;
+                marshaller.Marshall(requestObject.SuccessConditional, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetSuccessNextStep())
+            {
+                context.Writer.WritePropertyName("successNextStep");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DialogStateMarshaller.Instance;
+                marshaller.Marshall(requestObject.SuccessNextStep, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSuccessResponse())
             {
                 context.Writer.WritePropertyName("successResponse");
@@ -63,6 +107,28 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 
                 var marshaller = ResponseSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.SuccessResponse, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetTimeoutConditional())
+            {
+                context.Writer.WritePropertyName("timeoutConditional");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ConditionalSpecificationMarshaller.Instance;
+                marshaller.Marshall(requestObject.TimeoutConditional, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetTimeoutNextStep())
+            {
+                context.Writer.WritePropertyName("timeoutNextStep");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DialogStateMarshaller.Instance;
+                marshaller.Marshall(requestObject.TimeoutNextStep, context);
 
                 context.Writer.WriteObjectEnd();
             }

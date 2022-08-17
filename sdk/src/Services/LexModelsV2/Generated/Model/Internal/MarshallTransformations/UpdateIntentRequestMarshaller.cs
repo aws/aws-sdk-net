@@ -105,6 +105,17 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetInitialResponseSetting())
+                {
+                    context.Writer.WritePropertyName("initialResponseSetting");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = InitialResponseSettingMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.InitialResponseSetting, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetInputContexts())
                 {
                     context.Writer.WritePropertyName("inputContexts");

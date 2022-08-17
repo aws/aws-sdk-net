@@ -2227,6 +2227,17 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.Condition.ExpressionString</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.ConditionalBranch.Name</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^([0-9a-zA-Z][_-]?)+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LexModelsV2.Model.CustomPayload.Value</property>
     <min>1</min>
     <max>1000</max>
@@ -2254,6 +2265,24 @@
     <min>5</min>
     <max>5</max>
     <pattern>^DRAFT$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.DialogAction.SlotToElicit</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^([0-9a-zA-Z][_-]?)+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.DialogCodeHookInvocationSetting.InvocationLabel</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^([0-9a-zA-Z][_-]?)+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.ElicitationCodeHookInvocationSetting.InvocationLabel</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^([0-9a-zA-Z][_-]?)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.EncryptionSetting.AssociatedTranscriptsPassword</property>
@@ -2344,6 +2373,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.InputContext.Name</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^([0-9a-zA-Z][_-]?)+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.IntentOverride.Name</property>
     <min>1</min>
     <max>100</max>
     <pattern>^([0-9a-zA-Z][_-]?)+$</pattern>
@@ -2530,6 +2565,10 @@
     <min>1</min>
     <max>100</max>
     <pattern>^([0-9a-zA-Z][_-]?)+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.SlotValue.InterpretedValue</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.SlotValueRegexFilter.Pattern</property>
