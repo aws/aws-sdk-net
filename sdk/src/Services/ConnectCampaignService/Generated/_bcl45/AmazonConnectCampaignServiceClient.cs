@@ -638,6 +638,9 @@ namespace Amazon.ConnectCampaignService
         /// <exception cref="Amazon.ConnectCampaignService.Model.ThrottlingException">
         /// The request was denied due to request throttling.
         /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaigns-2021-01-30/GetCampaignState">REST API Reference for GetCampaignState Operation</seealso>
         public virtual GetCampaignStateResponse GetCampaignState(GetCampaignStateRequest request)
         {
@@ -669,6 +672,9 @@ namespace Amazon.ConnectCampaignService
         /// </exception>
         /// <exception cref="Amazon.ConnectCampaignService.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaigns-2021-01-30/GetCampaignState">REST API Reference for GetCampaignState Operation</seealso>
         public virtual Task<GetCampaignStateResponse> GetCampaignStateAsync(GetCampaignStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1038,6 +1044,9 @@ namespace Amazon.ConnectCampaignService
         /// <exception cref="Amazon.ConnectCampaignService.Model.ThrottlingException">
         /// The request was denied due to request throttling.
         /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaigns-2021-01-30/PauseCampaign">REST API Reference for PauseCampaign Operation</seealso>
         public virtual PauseCampaignResponse PauseCampaign(PauseCampaignRequest request)
         {
@@ -1077,6 +1086,9 @@ namespace Amazon.ConnectCampaignService
         /// </exception>
         /// <exception cref="Amazon.ConnectCampaignService.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaigns-2021-01-30/PauseCampaign">REST API Reference for PauseCampaign Operation</seealso>
         public virtual Task<PauseCampaignResponse> PauseCampaignAsync(PauseCampaignRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1208,6 +1220,9 @@ namespace Amazon.ConnectCampaignService
         /// <exception cref="Amazon.ConnectCampaignService.Model.ThrottlingException">
         /// The request was denied due to request throttling.
         /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaigns-2021-01-30/ResumeCampaign">REST API Reference for ResumeCampaign Operation</seealso>
         public virtual ResumeCampaignResponse ResumeCampaign(ResumeCampaignRequest request)
         {
@@ -1247,6 +1262,9 @@ namespace Amazon.ConnectCampaignService
         /// </exception>
         /// <exception cref="Amazon.ConnectCampaignService.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaigns-2021-01-30/ResumeCampaign">REST API Reference for ResumeCampaign Operation</seealso>
         public virtual Task<ResumeCampaignResponse> ResumeCampaignAsync(ResumeCampaignRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1289,6 +1307,9 @@ namespace Amazon.ConnectCampaignService
         /// <exception cref="Amazon.ConnectCampaignService.Model.ThrottlingException">
         /// The request was denied due to request throttling.
         /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaigns-2021-01-30/StartCampaign">REST API Reference for StartCampaign Operation</seealso>
         public virtual StartCampaignResponse StartCampaign(StartCampaignRequest request)
         {
@@ -1328,6 +1349,9 @@ namespace Amazon.ConnectCampaignService
         /// </exception>
         /// <exception cref="Amazon.ConnectCampaignService.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaigns-2021-01-30/StartCampaign">REST API Reference for StartCampaign Operation</seealso>
         public virtual Task<StartCampaignResponse> StartCampaignAsync(StartCampaignRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1449,6 +1473,9 @@ namespace Amazon.ConnectCampaignService
         /// <exception cref="Amazon.ConnectCampaignService.Model.ThrottlingException">
         /// The request was denied due to request throttling.
         /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaigns-2021-01-30/StopCampaign">REST API Reference for StopCampaign Operation</seealso>
         public virtual StopCampaignResponse StopCampaign(StopCampaignRequest request)
         {
@@ -1488,6 +1515,9 @@ namespace Amazon.ConnectCampaignService
         /// </exception>
         /// <exception cref="Amazon.ConnectCampaignService.Model.ThrottlingException">
         /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignService.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaigns-2021-01-30/StopCampaign">REST API Reference for StopCampaign Operation</seealso>
         public virtual Task<StopCampaignResponse> StopCampaignAsync(StopCampaignRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
