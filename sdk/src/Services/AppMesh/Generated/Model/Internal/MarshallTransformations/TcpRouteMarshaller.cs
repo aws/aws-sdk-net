@@ -56,6 +56,17 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetMatch())
+            {
+                context.Writer.WritePropertyName("match");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TcpRouteMatchMarshaller.Instance;
+                marshaller.Marshall(requestObject.Match, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTimeout())
             {
                 context.Writer.WritePropertyName("timeout");

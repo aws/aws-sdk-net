@@ -70,6 +70,12 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
                     unmarshalledObject.Action = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("match", targetDepth))
+                {
+                    var unmarshaller = TcpRouteMatchUnmarshaller.Instance;
+                    unmarshalledObject.Match = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("timeout", targetDepth))
                 {
                     var unmarshaller = TcpTimeoutUnmarshaller.Instance;

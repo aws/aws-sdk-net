@@ -37,6 +37,7 @@ namespace Amazon.AppMesh.Model
         private List<HttpRouteHeader> _headers = new List<HttpRouteHeader>();
         private HttpMethod _method;
         private HttpPathMatch _path;
+        private int? _port;
         private string _prefix;
         private List<HttpQueryParameter> _queryParameters = new List<HttpQueryParameter>();
         private HttpScheme _scheme;
@@ -94,6 +95,25 @@ namespace Amazon.AppMesh.Model
         internal bool IsSetPath()
         {
             return this._path != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Port. 
+        /// <para>
+        /// The port number to match on.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=65535)]
+        public int Port
+        {
+            get { return this._port.GetValueOrDefault(); }
+            set { this._port = value; }
+        }
+
+        // Check to see if Port property is set
+        internal bool IsSetPort()
+        {
+            return this._port.HasValue; 
         }
 
         /// <summary>

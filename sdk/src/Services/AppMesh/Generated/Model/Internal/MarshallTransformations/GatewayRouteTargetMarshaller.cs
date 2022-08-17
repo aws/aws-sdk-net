@@ -45,6 +45,12 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GatewayRouteTarget requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetPort())
+            {
+                context.Writer.WritePropertyName("port");
+                context.Writer.Write(requestObject.Port);
+            }
+
             if(requestObject.IsSetVirtualService())
             {
                 context.Writer.WritePropertyName("virtualService");

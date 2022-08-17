@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GrpcRouteMatch Object
+    /// Response Unmarshaller for LoggingFormat Object
     /// </summary>  
-    public class GrpcRouteMatchUnmarshaller : IUnmarshaller<GrpcRouteMatch, XmlUnmarshallerContext>, IUnmarshaller<GrpcRouteMatch, JsonUnmarshallerContext>
+    public class LoggingFormatUnmarshaller : IUnmarshaller<LoggingFormat, XmlUnmarshallerContext>, IUnmarshaller<LoggingFormat, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        GrpcRouteMatch IUnmarshaller<GrpcRouteMatch, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        LoggingFormat IUnmarshaller<LoggingFormat, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public GrpcRouteMatch Unmarshall(JsonUnmarshallerContext context)
+        public LoggingFormat Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            GrpcRouteMatch unmarshalledObject = new GrpcRouteMatch();
+            LoggingFormat unmarshalledObject = new LoggingFormat();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("metadata", targetDepth))
+                if (context.TestExpression("json", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<GrpcRouteMetadata, GrpcRouteMetadataUnmarshaller>(GrpcRouteMetadataUnmarshaller.Instance);
-                    unmarshalledObject.Metadata = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<JsonFormatRef, JsonFormatRefUnmarshaller>(JsonFormatRefUnmarshaller.Instance);
+                    unmarshalledObject.Json = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("methodName", targetDepth))
+                if (context.TestExpression("text", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MethodName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("port", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Port = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("serviceName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ServiceName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Text = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         }
 
 
-        private static GrpcRouteMatchUnmarshaller _instance = new GrpcRouteMatchUnmarshaller();        
+        private static LoggingFormatUnmarshaller _instance = new LoggingFormatUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GrpcRouteMatchUnmarshaller Instance
+        public static LoggingFormatUnmarshaller Instance
         {
             get
             {

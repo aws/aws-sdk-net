@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// VirtualGatewayFileAccessLog Marshaller
+    /// TcpRouteMatch Marshaller
     /// </summary>
-    public class VirtualGatewayFileAccessLogMarshaller : IRequestMarshaller<VirtualGatewayFileAccessLog, JsonMarshallerContext> 
+    public class TcpRouteMatchMarshaller : IRequestMarshaller<TcpRouteMatch, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,23 +43,12 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(VirtualGatewayFileAccessLog requestObject, JsonMarshallerContext context)
+        public void Marshall(TcpRouteMatch requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetFormat())
+            if(requestObject.IsSetPort())
             {
-                context.Writer.WritePropertyName("format");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = LoggingFormatMarshaller.Instance;
-                marshaller.Marshall(requestObject.Format, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetPath())
-            {
-                context.Writer.WritePropertyName("path");
-                context.Writer.Write(requestObject.Path);
+                context.Writer.WritePropertyName("port");
+                context.Writer.Write(requestObject.Port);
             }
 
         }
@@ -67,7 +56,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static VirtualGatewayFileAccessLogMarshaller Instance = new VirtualGatewayFileAccessLogMarshaller();
+        public readonly static TcpRouteMatchMarshaller Instance = new TcpRouteMatchMarshaller();
 
     }
 }

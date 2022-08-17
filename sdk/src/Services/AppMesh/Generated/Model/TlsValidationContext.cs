@@ -41,7 +41,12 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property SubjectAlternativeNames. 
         /// <para>
         /// A reference to an object that represents the SANs for a Transport Layer Security (TLS)
-        /// validation context.
+        /// validation context. If you don't specify SANs on the <i>terminating</i> mesh endpoint,
+        /// the Envoy proxy for that node doesn't verify the SAN on a peer client certificate.
+        /// If you don't specify SANs on the <i>originating</i> mesh endpoint, the SAN on the
+        /// certificate provided by the terminating endpoint must match the mesh endpoint service
+        /// discovery configuration. Since SPIRE vended certificates have a SPIFFE ID as a name,
+        /// you must set the SAN since the name doesn't match the service discovery name.
         /// </para>
         /// </summary>
         public SubjectAlternativeNames SubjectAlternativeNames

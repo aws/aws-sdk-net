@@ -33,7 +33,27 @@ namespace Amazon.AppMesh.Model
     /// </summary>
     public partial class VirtualGatewayFileAccessLog
     {
+        private LoggingFormat _format;
         private string _path;
+
+        /// <summary>
+        /// Gets and sets the property Format. 
+        /// <para>
+        /// The specified format for the virtual gateway access logs. It can be either <code>json_format</code>
+        /// or <code>text_format</code>.
+        /// </para>
+        /// </summary>
+        public LoggingFormat Format
+        {
+            get { return this._format; }
+            set { this._format = value; }
+        }
+
+        // Check to see if Format property is set
+        internal bool IsSetFormat()
+        {
+            return this._format != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Path. 

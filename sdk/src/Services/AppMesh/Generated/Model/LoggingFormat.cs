@@ -29,49 +29,42 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object that represents a gateway route target.
+    /// An object that represents the format for the logs.
     /// </summary>
-    public partial class GatewayRouteTarget
+    public partial class LoggingFormat
     {
-        private int? _port;
-        private GatewayRouteVirtualService _virtualService;
+        private List<JsonFormatRef> _json = new List<JsonFormatRef>();
+        private string _text;
 
         /// <summary>
-        /// Gets and sets the property Port. 
-        /// <para>
-        /// The port number of the gateway route target.
-        /// </para>
+        /// Gets and sets the property Json.
         /// </summary>
-        [AWSProperty(Min=1, Max=65535)]
-        public int Port
+        public List<JsonFormatRef> Json
         {
-            get { return this._port.GetValueOrDefault(); }
-            set { this._port = value; }
+            get { return this._json; }
+            set { this._json = value; }
         }
 
-        // Check to see if Port property is set
-        internal bool IsSetPort()
+        // Check to see if Json property is set
+        internal bool IsSetJson()
         {
-            return this._port.HasValue; 
+            return this._json != null && this._json.Count > 0; 
         }
 
         /// <summary>
-        /// Gets and sets the property VirtualService. 
-        /// <para>
-        /// An object that represents a virtual service gateway route target.
-        /// </para>
+        /// Gets and sets the property Text.
         /// </summary>
-        [AWSProperty(Required=true)]
-        public GatewayRouteVirtualService VirtualService
+        [AWSProperty(Min=1, Max=1000)]
+        public string Text
         {
-            get { return this._virtualService; }
-            set { this._virtualService = value; }
+            get { return this._text; }
+            set { this._text = value; }
         }
 
-        // Check to see if VirtualService property is set
-        internal bool IsSetVirtualService()
+        // Check to see if Text property is set
+        internal bool IsSetText()
         {
-            return this._virtualService != null;
+            return this._text != null;
         }
 
     }

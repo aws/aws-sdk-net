@@ -29,17 +29,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object that represents a gateway route target.
+    /// An object representing the TCP route to match.
     /// </summary>
-    public partial class GatewayRouteTarget
+    public partial class TcpRouteMatch
     {
         private int? _port;
-        private GatewayRouteVirtualService _virtualService;
 
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// The port number of the gateway route target.
+        /// The port number to match on.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65535)]
@@ -53,25 +52,6 @@ namespace Amazon.AppMesh.Model
         internal bool IsSetPort()
         {
             return this._port.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property VirtualService. 
-        /// <para>
-        /// An object that represents a virtual service gateway route target.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public GatewayRouteVirtualService VirtualService
-        {
-            get { return this._virtualService; }
-            set { this._virtualService = value; }
-        }
-
-        // Check to see if VirtualService property is set
-        internal bool IsSetVirtualService()
-        {
-            return this._virtualService != null;
         }
 
     }

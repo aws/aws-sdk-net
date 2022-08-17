@@ -68,7 +68,9 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property IpPreference. 
         /// <para>
-        /// The IP version to use to control traffic within the mesh.
+        /// The preferred IP version that this virtual node uses. Setting the IP preference on
+        /// the virtual node only overrides the IP preference set for the mesh on this specific
+        /// node.
         /// </para>
         /// </summary>
         public IpPreference IpPreference

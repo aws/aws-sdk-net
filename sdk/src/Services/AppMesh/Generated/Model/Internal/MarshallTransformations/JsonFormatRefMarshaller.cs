@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// VirtualGatewayFileAccessLog Marshaller
+    /// JsonFormatRef Marshaller
     /// </summary>
-    public class VirtualGatewayFileAccessLogMarshaller : IRequestMarshaller<VirtualGatewayFileAccessLog, JsonMarshallerContext> 
+    public class JsonFormatRefMarshaller : IRequestMarshaller<JsonFormatRef, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,23 +43,18 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(VirtualGatewayFileAccessLog requestObject, JsonMarshallerContext context)
+        public void Marshall(JsonFormatRef requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetFormat())
+            if(requestObject.IsSetKey())
             {
-                context.Writer.WritePropertyName("format");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = LoggingFormatMarshaller.Instance;
-                marshaller.Marshall(requestObject.Format, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("key");
+                context.Writer.Write(requestObject.Key);
             }
 
-            if(requestObject.IsSetPath())
+            if(requestObject.IsSetValue())
             {
-                context.Writer.WritePropertyName("path");
-                context.Writer.Write(requestObject.Path);
+                context.Writer.WritePropertyName("value");
+                context.Writer.Write(requestObject.Value);
             }
 
         }
@@ -67,7 +62,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static VirtualGatewayFileAccessLogMarshaller Instance = new VirtualGatewayFileAccessLogMarshaller();
+        public readonly static JsonFormatRefMarshaller Instance = new JsonFormatRefMarshaller();
 
     }
 }

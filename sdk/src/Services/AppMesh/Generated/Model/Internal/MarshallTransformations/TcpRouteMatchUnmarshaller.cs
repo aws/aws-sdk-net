@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GrpcRouteMatch Object
+    /// Response Unmarshaller for TcpRouteMatch Object
     /// </summary>  
-    public class GrpcRouteMatchUnmarshaller : IUnmarshaller<GrpcRouteMatch, XmlUnmarshallerContext>, IUnmarshaller<GrpcRouteMatch, JsonUnmarshallerContext>
+    public class TcpRouteMatchUnmarshaller : IUnmarshaller<TcpRouteMatch, XmlUnmarshallerContext>, IUnmarshaller<TcpRouteMatch, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        GrpcRouteMatch IUnmarshaller<GrpcRouteMatch, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TcpRouteMatch IUnmarshaller<TcpRouteMatch, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,21 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public GrpcRouteMatch Unmarshall(JsonUnmarshallerContext context)
+        public TcpRouteMatch Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            GrpcRouteMatch unmarshalledObject = new GrpcRouteMatch();
+            TcpRouteMatch unmarshalledObject = new TcpRouteMatch();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("metadata", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<GrpcRouteMetadata, GrpcRouteMetadataUnmarshaller>(GrpcRouteMetadataUnmarshaller.Instance);
-                    unmarshalledObject.Metadata = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("methodName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MethodName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("port", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.Port = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("serviceName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ServiceName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +76,12 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         }
 
 
-        private static GrpcRouteMatchUnmarshaller _instance = new GrpcRouteMatchUnmarshaller();        
+        private static TcpRouteMatchUnmarshaller _instance = new TcpRouteMatchUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GrpcRouteMatchUnmarshaller Instance
+        public static TcpRouteMatchUnmarshaller Instance
         {
             get
             {

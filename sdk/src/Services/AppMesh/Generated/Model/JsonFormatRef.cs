@@ -29,49 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object that represents a gateway route target.
+    /// An object that represents the key value pairs for the JSON.
     /// </summary>
-    public partial class GatewayRouteTarget
+    public partial class JsonFormatRef
     {
-        private int? _port;
-        private GatewayRouteVirtualService _virtualService;
+        private string _key;
+        private string _value;
 
         /// <summary>
-        /// Gets and sets the property Port. 
+        /// Gets and sets the property Key. 
         /// <para>
-        /// The port number of the gateway route target.
+        /// The specified key for the JSON.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=65535)]
-        public int Port
+        [AWSProperty(Required=true, Min=1, Max=100)]
+        public string Key
         {
-            get { return this._port.GetValueOrDefault(); }
-            set { this._port = value; }
+            get { return this._key; }
+            set { this._key = value; }
         }
 
-        // Check to see if Port property is set
-        internal bool IsSetPort()
+        // Check to see if Key property is set
+        internal bool IsSetKey()
         {
-            return this._port.HasValue; 
+            return this._key != null;
         }
 
         /// <summary>
-        /// Gets and sets the property VirtualService. 
+        /// Gets and sets the property Value. 
         /// <para>
-        /// An object that represents a virtual service gateway route target.
+        /// The specified value for the JSON.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public GatewayRouteVirtualService VirtualService
+        [AWSProperty(Required=true, Min=1, Max=100)]
+        public string Value
         {
-            get { return this._virtualService; }
-            set { this._virtualService = value; }
+            get { return this._value; }
+            set { this._value = value; }
         }
 
-        // Check to see if VirtualService property is set
-        internal bool IsSetVirtualService()
+        // Check to see if Value property is set
+        internal bool IsSetValue()
         {
-            return this._virtualService != null;
+            return this._value != null;
         }
 
     }

@@ -45,6 +45,12 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(WeightedTarget requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetPort())
+            {
+                context.Writer.WritePropertyName("port");
+                context.Writer.Write(requestObject.Port);
+            }
+
             if(requestObject.IsSetVirtualNode())
             {
                 context.Writer.WritePropertyName("virtualNode");

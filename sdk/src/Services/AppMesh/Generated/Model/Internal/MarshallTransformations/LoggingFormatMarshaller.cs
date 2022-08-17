@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// VirtualGatewayFileAccessLog Marshaller
+    /// LoggingFormat Marshaller
     /// </summary>
-    public class VirtualGatewayFileAccessLogMarshaller : IRequestMarshaller<VirtualGatewayFileAccessLog, JsonMarshallerContext> 
+    public class LoggingFormatMarshaller : IRequestMarshaller<LoggingFormat, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,23 +43,28 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(VirtualGatewayFileAccessLog requestObject, JsonMarshallerContext context)
+        public void Marshall(LoggingFormat requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetFormat())
+            if(requestObject.IsSetJson())
             {
-                context.Writer.WritePropertyName("format");
-                context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("json");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectJsonListValue in requestObject.Json)
+                {
+                    context.Writer.WriteObjectStart();
 
-                var marshaller = LoggingFormatMarshaller.Instance;
-                marshaller.Marshall(requestObject.Format, context);
+                    var marshaller = JsonFormatRefMarshaller.Instance;
+                    marshaller.Marshall(requestObjectJsonListValue, context);
 
-                context.Writer.WriteObjectEnd();
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
-            if(requestObject.IsSetPath())
+            if(requestObject.IsSetText())
             {
-                context.Writer.WritePropertyName("path");
-                context.Writer.Write(requestObject.Path);
+                context.Writer.WritePropertyName("text");
+                context.Writer.Write(requestObject.Text);
             }
 
         }
@@ -67,7 +72,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static VirtualGatewayFileAccessLogMarshaller Instance = new VirtualGatewayFileAccessLogMarshaller();
+        public readonly static LoggingFormatMarshaller Instance = new LoggingFormatMarshaller();
 
     }
 }
