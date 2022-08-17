@@ -47,6 +47,7 @@ namespace Amazon.Kendra.Model
         private DataSourceStatus _status;
         private DataSourceType _type;
         private DateTime? _updatedAt;
+        private DataSourceVpcConfiguration _vpcConfiguration;
 
         /// <summary>
         /// Gets and sets the property Configuration. 
@@ -212,7 +213,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name that you gave the data source when it was created.
+        /// The name for the data source.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -320,6 +321,26 @@ namespace Amazon.Kendra.Model
         internal bool IsSetUpdatedAt()
         {
             return this._updatedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfiguration. 
+        /// <para>
+        /// Configuration information for an Amazon Virtual Private Cloud to connect to your data
+        /// source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
+        /// a VPC</a>.
+        /// </para>
+        /// </summary>
+        public DataSourceVpcConfiguration VpcConfiguration
+        {
+            get { return this._vpcConfiguration; }
+            set { this._vpcConfiguration = value; }
+        }
+
+        // Check to see if VpcConfiguration property is set
+        internal bool IsSetVpcConfiguration()
+        {
+            return this._vpcConfiguration != null;
         }
 
     }

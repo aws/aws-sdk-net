@@ -38,6 +38,7 @@ namespace Amazon.Kendra.Model
         private List<string> _exclusionPatterns = new List<string>();
         private List<string> _inclusionPatterns = new List<string>();
         private ConfluencePageConfiguration _pageConfiguration;
+        private ProxyConfiguration _proxyConfiguration;
         private string _secretArn;
         private string _serverUrl;
         private ConfluenceSpaceConfiguration _spaceConfiguration;
@@ -142,6 +143,46 @@ namespace Amazon.Kendra.Model
         internal bool IsSetPageConfiguration()
         {
             return this._pageConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProxyConfiguration. 
+        /// <para>
+        /// Configuration information to connect to your Confluence URL instance via a web proxy.
+        /// You can use this option for Confluence Server.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must provide the website host name and port number. For example, the host name
+        /// of <i>https://a.example.com/page1.html</i> is "a.example.com" and the port is 443,
+        /// the standard port for HTTPS.
+        /// </para>
+        ///  
+        /// <para>
+        /// Web proxy credentials are optional and you can use them to connect to a web proxy
+        /// server that requires basic authentication of user name and password. To store web
+        /// proxy credentials, you use a secret in Secrets Manager.
+        /// </para>
+        ///  
+        /// <para>
+        /// It is recommended that you follow best security practices when configuring your web
+        /// proxy. This includes setting up throttling, setting up logging and monitoring, and
+        /// applying security patches on a regular basis. If you use your web proxy with multiple
+        /// data sources, sync jobs that occur at the same time could strain the load on your
+        /// proxy. It is recommended you prepare your proxy beforehand for any security and load
+        /// requirements.
+        /// </para>
+        /// </summary>
+        public ProxyConfiguration ProxyConfiguration
+        {
+            get { return this._proxyConfiguration; }
+            set { this._proxyConfiguration = value; }
+        }
+
+        // Check to see if ProxyConfiguration property is set
+        internal bool IsSetProxyConfiguration()
+        {
+            return this._proxyConfiguration != null;
         }
 
         /// <summary>

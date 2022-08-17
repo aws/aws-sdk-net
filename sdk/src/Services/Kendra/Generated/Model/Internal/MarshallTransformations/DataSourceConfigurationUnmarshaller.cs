@@ -154,6 +154,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     unmarshalledObject.SlackConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TemplateConfiguration", targetDepth))
+                {
+                    var unmarshaller = TemplateConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.TemplateConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("WebCrawlerConfiguration", targetDepth))
                 {
                     var unmarshaller = WebCrawlerConfigurationUnmarshaller.Instance;

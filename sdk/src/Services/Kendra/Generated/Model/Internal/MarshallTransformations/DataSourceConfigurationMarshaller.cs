@@ -210,6 +210,17 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetTemplateConfiguration())
+            {
+                context.Writer.WritePropertyName("TemplateConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TemplateConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.TemplateConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetWebCrawlerConfiguration())
             {
                 context.Writer.WritePropertyName("WebCrawlerConfiguration");

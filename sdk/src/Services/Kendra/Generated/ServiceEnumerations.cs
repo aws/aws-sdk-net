@@ -895,6 +895,10 @@ namespace Amazon.Kendra
         /// </summary>
         public static readonly DataSourceType SLACK = new DataSourceType("SLACK");
         /// <summary>
+        /// Constant TEMPLATE for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType TEMPLATE = new DataSourceType("TEMPLATE");
+        /// <summary>
         /// Constant WEBCRAWLER for DataSourceType
         /// </summary>
         public static readonly DataSourceType WEBCRAWLER = new DataSourceType("WEBCRAWLER");

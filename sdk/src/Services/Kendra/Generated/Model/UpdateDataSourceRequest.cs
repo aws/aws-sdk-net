@@ -43,6 +43,7 @@ namespace Amazon.Kendra.Model
         private string _name;
         private string _roleArn;
         private string _schedule;
+        private DataSourceVpcConfiguration _vpcConfiguration;
 
         /// <summary>
         /// Gets and sets the property Configuration. 
@@ -170,8 +171,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A new name for the data source connector. You must first delete the data source and
-        /// re-create it to change the name of the data source.
+        /// A new name for the data source connector.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -224,6 +224,26 @@ namespace Amazon.Kendra.Model
         internal bool IsSetSchedule()
         {
             return this._schedule != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfiguration. 
+        /// <para>
+        /// Configuration information for an Amazon Virtual Private Cloud to connect to your data
+        /// source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
+        /// a VPC</a>.
+        /// </para>
+        /// </summary>
+        public DataSourceVpcConfiguration VpcConfiguration
+        {
+            get { return this._vpcConfiguration; }
+            set { this._vpcConfiguration = value; }
+        }
+
+        // Check to see if VpcConfiguration property is set
+        internal bool IsSetVpcConfiguration()
+        {
+            return this._vpcConfiguration != null;
         }
 
     }

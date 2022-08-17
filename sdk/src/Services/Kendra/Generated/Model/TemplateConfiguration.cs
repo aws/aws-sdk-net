@@ -29,31 +29,38 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Access Control List files for the documents in a data source. For the format of the
-    /// file, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/s3-acl.html">Access
-    /// control for S3 data sources</a>.
+    /// Provides a template for the configuration information to connect to your data source.
     /// </summary>
-    public partial class AccessControlListConfiguration
+    public partial class TemplateConfiguration
     {
-        private string _keyPath;
+        private Amazon.Runtime.Documents.Document _template;
 
         /// <summary>
-        /// Gets and sets the property KeyPath. 
+        /// Gets and sets the property Template. 
         /// <para>
-        /// Path to the Amazon S3 bucket that contains the ACL files.
+        /// The template schema used for the data source.
         /// </para>
+        ///  
+        /// <para>
+        /// The following links to the template schema for data sources where templates are supported:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-zendesk.html#zendesk-template-schema">Zendesk
+        /// template schema</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
-        public string KeyPath
+        public Amazon.Runtime.Documents.Document Template
         {
-            get { return this._keyPath; }
-            set { this._keyPath = value; }
+            get { return this._template; }
+            set { this._template = value; }
         }
 
-        // Check to see if KeyPath property is set
-        internal bool IsSetKeyPath()
+        // Check to see if Template property is set
+        internal bool IsSetTemplate()
         {
-            return this._keyPath != null;
+            return !this._template.IsNull();
         }
 
     }

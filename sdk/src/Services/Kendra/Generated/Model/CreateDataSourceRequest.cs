@@ -69,6 +69,7 @@ namespace Amazon.Kendra.Model
         private string _schedule;
         private List<Tag> _tags = new List<Tag>();
         private DataSourceType _type;
+        private DataSourceVpcConfiguration _vpcConfiguration;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -207,8 +208,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A unique name for the data source connector. A data source name can't be changed without
-        /// deleting and recreating the data source connector.
+        /// A name for the data source connector.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1000)]
@@ -319,6 +319,26 @@ namespace Amazon.Kendra.Model
         internal bool IsSetType()
         {
             return this._type != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfiguration. 
+        /// <para>
+        /// Configuration information for an Amazon Virtual Private Cloud to connect to your data
+        /// source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
+        /// a VPC</a>.
+        /// </para>
+        /// </summary>
+        public DataSourceVpcConfiguration VpcConfiguration
+        {
+            get { return this._vpcConfiguration; }
+            set { this._vpcConfiguration = value; }
+        }
+
+        // Check to see if VpcConfiguration property is set
+        internal bool IsSetVpcConfiguration()
+        {
+            return this._vpcConfiguration != null;
         }
 
     }

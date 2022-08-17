@@ -135,6 +135,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     response.UpdatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("VpcConfiguration", targetDepth))
+                {
+                    var unmarshaller = DataSourceVpcConfigurationUnmarshaller.Instance;
+                    response.VpcConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

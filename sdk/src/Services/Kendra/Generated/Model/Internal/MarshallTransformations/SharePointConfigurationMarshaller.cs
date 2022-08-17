@@ -107,6 +107,17 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetProxyConfiguration())
+            {
+                context.Writer.WritePropertyName("ProxyConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ProxyConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ProxyConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSecretArn())
             {
                 context.Writer.WritePropertyName("SecretArn");

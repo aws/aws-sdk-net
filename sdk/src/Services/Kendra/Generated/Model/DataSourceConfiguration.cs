@@ -48,6 +48,7 @@ namespace Amazon.Kendra.Model
         private ServiceNowConfiguration _serviceNowConfiguration;
         private SharePointConfiguration _sharePointConfiguration;
         private SlackConfiguration _slackConfiguration;
+        private TemplateConfiguration _templateConfiguration;
         private WebCrawlerConfiguration _webCrawlerConfiguration;
         private WorkDocsConfiguration _workDocsConfiguration;
 
@@ -322,6 +323,24 @@ namespace Amazon.Kendra.Model
         internal bool IsSetSlackConfiguration()
         {
             return this._slackConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TemplateConfiguration. 
+        /// <para>
+        /// Provides a template for the configuration information to connect to your data source.
+        /// </para>
+        /// </summary>
+        public TemplateConfiguration TemplateConfiguration
+        {
+            get { return this._templateConfiguration; }
+            set { this._templateConfiguration = value; }
+        }
+
+        // Check to see if TemplateConfiguration property is set
+        internal bool IsSetTemplateConfiguration()
+        {
+            return this._templateConfiguration != null;
         }
 
         /// <summary>

@@ -131,6 +131,17 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Schedule);
                 }
 
+                if(publicRequest.IsSetVpcConfiguration())
+                {
+                    context.Writer.WritePropertyName("VpcConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DataSourceVpcConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.VpcConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

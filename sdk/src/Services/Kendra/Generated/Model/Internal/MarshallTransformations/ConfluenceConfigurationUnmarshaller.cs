@@ -94,6 +94,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     unmarshalledObject.PageConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ProxyConfiguration", targetDepth))
+                {
+                    var unmarshaller = ProxyConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ProxyConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SecretArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

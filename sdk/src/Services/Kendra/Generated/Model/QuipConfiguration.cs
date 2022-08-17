@@ -168,7 +168,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property FolderIds. 
         /// <para>
-        /// The identifiers of the Quip folders you want to index.
+        /// The identifiers of the Quip folders you want to index. You can find in your browser
+        /// URL when you access your folder in Quip. For example, <i>https://quip-company.com/zlLuOVNSarTL/folder-name</i>.
         /// </para>
         /// </summary>
         public List<string> FolderIds
