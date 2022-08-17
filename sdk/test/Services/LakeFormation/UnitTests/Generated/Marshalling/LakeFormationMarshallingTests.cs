@@ -267,6 +267,196 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("LakeFormation")]
+        public void AssumeDecoratedRoleWithSAMLMarshallTest()
+        {
+            var operation = service_model.FindOperation("AssumeDecoratedRoleWithSAML");
+
+            var request = InstantiateClassGenerator.Execute<AssumeDecoratedRoleWithSAMLRequest>();
+            var marshaller = new AssumeDecoratedRoleWithSAMLRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("AssumeDecoratedRoleWithSAML", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = AssumeDecoratedRoleWithSAMLResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as AssumeDecoratedRoleWithSAMLResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("LakeFormation")]
+        public void AssumeDecoratedRoleWithSAML_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("AssumeDecoratedRoleWithSAML");
+
+            var request = InstantiateClassGenerator.Execute<AssumeDecoratedRoleWithSAMLRequest>();
+            var marshaller = new AssumeDecoratedRoleWithSAMLRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("AssumeDecoratedRoleWithSAML", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = AssumeDecoratedRoleWithSAMLResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("LakeFormation")]
+        public void AssumeDecoratedRoleWithSAML_EntityNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("AssumeDecoratedRoleWithSAML");
+
+            var request = InstantiateClassGenerator.Execute<AssumeDecoratedRoleWithSAMLRequest>();
+            var marshaller = new AssumeDecoratedRoleWithSAMLRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("AssumeDecoratedRoleWithSAML", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("EntityNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","EntityNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = AssumeDecoratedRoleWithSAMLResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("LakeFormation")]
+        public void AssumeDecoratedRoleWithSAML_InternalServiceExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("AssumeDecoratedRoleWithSAML");
+
+            var request = InstantiateClassGenerator.Execute<AssumeDecoratedRoleWithSAMLRequest>();
+            var marshaller = new AssumeDecoratedRoleWithSAMLRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("AssumeDecoratedRoleWithSAML", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServiceException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServiceException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = AssumeDecoratedRoleWithSAMLResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("LakeFormation")]
+        public void AssumeDecoratedRoleWithSAML_InvalidInputExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("AssumeDecoratedRoleWithSAML");
+
+            var request = InstantiateClassGenerator.Execute<AssumeDecoratedRoleWithSAMLRequest>();
+            var marshaller = new AssumeDecoratedRoleWithSAMLRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("AssumeDecoratedRoleWithSAML", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidInputException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidInputException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = AssumeDecoratedRoleWithSAMLResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("LakeFormation")]
+        public void AssumeDecoratedRoleWithSAML_OperationTimeoutExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("AssumeDecoratedRoleWithSAML");
+
+            var request = InstantiateClassGenerator.Execute<AssumeDecoratedRoleWithSAMLRequest>();
+            var marshaller = new AssumeDecoratedRoleWithSAMLRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("AssumeDecoratedRoleWithSAML", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("OperationTimeoutException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","OperationTimeoutException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = AssumeDecoratedRoleWithSAMLResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("LakeFormation")]
         public void BatchGrantPermissionsMarshallTest()
         {
             var operation = service_model.FindOperation("BatchGrantPermissions");

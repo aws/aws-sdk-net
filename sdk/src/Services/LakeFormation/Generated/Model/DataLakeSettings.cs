@@ -177,7 +177,7 @@ namespace Amazon.LakeFormation.Model
         /// A list of Lake Formation principals. Supported principals are IAM users or IAM roles.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=10)]
+        [AWSProperty(Min=0, Max=30)]
         public List<DataLakePrincipal> DataLakeAdmins
         {
             get { return this._dataLakeAdmins; }
@@ -197,7 +197,7 @@ namespace Amazon.LakeFormation.Model
         /// that are to perform data filtering.&gt;
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=10)]
+        [AWSProperty(Min=0, Max=30)]
         public List<DataLakePrincipal> ExternalDataFilteringAllowList
         {
             get { return this._externalDataFilteringAllowList; }
