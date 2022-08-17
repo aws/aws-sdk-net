@@ -137,9 +137,9 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The ARN of the KMS key that Secrets Manager uses to encrypt the secret value. If the
-        /// secret is encrypted with the Amazon Web Services managed key <code>aws/secretsmanager</code>,
-        /// this field is omitted.
+        /// The key ID or alias ARN of the KMS key that Secrets Manager uses to encrypt the secret
+        /// value. If the secret is encrypted with the Amazon Web Services managed key <code>aws/secretsmanager</code>,
+        /// this field is omitted. Secrets created using the console use an KMS key ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -158,8 +158,8 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property LastAccessedDate. 
         /// <para>
-        /// The last date that the secret value was retrieved. This value does not include the
-        /// time. This field is omitted if the secret has never been retrieved.
+        /// The date that the secret was last accessed in the Region. This field is omitted if
+        /// the secret has never been retrieved in the Region.
         /// </para>
         /// </summary>
         public DateTime LastAccessedDate
@@ -233,7 +233,8 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property OwningService. 
         /// <para>
-        /// The name of the service that created this secret.
+        /// The ID of the service that created this secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+        /// managed by other Amazon Web Services services</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

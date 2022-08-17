@@ -41,6 +41,11 @@ namespace Amazon.SecretsManager.Model
     /// </para>
     ///  
     /// <para>
+    /// To retrieve the previous version of a secret, use <code>VersionStage</code> and specify
+    /// AWSPREVIOUS. To revert to the previous version of a secret, call <a href="https://docs.aws.amazon.com/cli/latest/reference/secretsmanager/update-secret-version-stage.html">UpdateSecretVersionStage</a>.
+    /// </para>
+    ///  
+    /// <para>
     ///  <b>Required permissions: </b> <code>secretsmanager:GetSecretValue</code>. If the
     /// secret is encrypted using a customer-managed key instead of the Amazon Web Services
     /// managed key <code>aws/secretsmanager</code>, then you also need <code>kms:Decrypt</code>

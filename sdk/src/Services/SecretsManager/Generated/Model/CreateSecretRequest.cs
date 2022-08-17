@@ -218,7 +218,9 @@ namespace Amazon.SecretsManager.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt the
-        /// secret value in the secret.
+        /// secret value in the secret. An alias is always prefixed by <code>alias/</code>, for
+        /// example <code>alias/aws/secretsmanager</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/alias-about.html">About
+        /// aliases</a>.
         /// </para>
         ///  
         /// <para>

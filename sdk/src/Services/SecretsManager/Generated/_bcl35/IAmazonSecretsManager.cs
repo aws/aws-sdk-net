@@ -148,6 +148,12 @@ namespace Amazon.SecretsManager
         /// You tried to enable rotation on a secret that doesn't already have a Lambda function
         /// ARN configured and you didn't include such an ARN as a parameter in this call. 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The secret is managed by another service, and you must use that service to update
+        /// it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+        /// managed by other Amazon Web Services services</a>.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
@@ -279,6 +285,12 @@ namespace Amazon.SecretsManager
         /// You tried to enable rotation on a secret that doesn't already have a Lambda function
         /// ARN configured and you didn't include such an ARN as a parameter in this call. 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The secret is managed by another service, and you must use that service to update
+        /// it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+        /// managed by other Amazon Web Services services</a>.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.LimitExceededException">
@@ -366,6 +378,12 @@ namespace Amazon.SecretsManager
         /// <para>
         /// You tried to enable rotation on a secret that doesn't already have a Lambda function
         /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The secret is managed by another service, and you must use that service to update
+        /// it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+        /// managed by other Amazon Web Services services</a>.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -481,6 +499,12 @@ namespace Amazon.SecretsManager
         /// <para>
         /// You tried to enable rotation on a secret that doesn't already have a Lambda function
         /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The secret is managed by another service, and you must use that service to update
+        /// it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+        /// managed by other Amazon Web Services services</a>.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -617,6 +641,12 @@ namespace Amazon.SecretsManager
         /// You tried to enable rotation on a secret that doesn't already have a Lambda function
         /// ARN configured and you didn't include such an ARN as a parameter in this call. 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The secret is managed by another service, and you must use that service to update
+        /// it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+        /// managed by other Amazon Web Services services</a>.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetRandomPassword">REST API Reference for GetRandomPassword Operation</seealso>
@@ -691,6 +721,12 @@ namespace Amazon.SecretsManager
         /// You tried to enable rotation on a secret that doesn't already have a Lambda function
         /// ARN configured and you didn't include such an ARN as a parameter in this call. 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The secret is managed by another service, and you must use that service to update
+        /// it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+        /// managed by other Amazon Web Services services</a>.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
@@ -742,6 +778,11 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  
         /// <para>
+        /// To retrieve the previous version of a secret, use <code>VersionStage</code> and specify
+        /// AWSPREVIOUS. To revert to the previous version of a secret, call <a href="https://docs.aws.amazon.com/cli/latest/reference/secretsmanager/update-secret-version-stage.html">UpdateSecretVersionStage</a>.
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>Required permissions: </b> <code>secretsmanager:GetSecretValue</code>. If the
         /// secret is encrypted using a customer-managed key instead of the Amazon Web Services
         /// managed key <code>aws/secretsmanager</code>, then you also need <code>kms:Decrypt</code>
@@ -777,6 +818,12 @@ namespace Amazon.SecretsManager
         /// <para>
         /// You tried to enable rotation on a secret that doesn't already have a Lambda function
         /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The secret is managed by another service, and you must use that service to update
+        /// it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+        /// managed by other Amazon Web Services services</a>.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -1004,6 +1051,12 @@ namespace Amazon.SecretsManager
         /// You tried to enable rotation on a secret that doesn't already have a Lambda function
         /// ARN configured and you didn't include such an ARN as a parameter in this call. 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The secret is managed by another service, and you must use that service to update
+        /// it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+        /// managed by other Amazon Web Services services</a>.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.MalformedPolicyDocumentException">
@@ -1129,6 +1182,12 @@ namespace Amazon.SecretsManager
         /// You tried to enable rotation on a secret that doesn't already have a Lambda function
         /// ARN configured and you didn't include such an ARN as a parameter in this call. 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The secret is managed by another service, and you must use that service to update
+        /// it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+        /// managed by other Amazon Web Services services</a>.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.LimitExceededException">
@@ -1211,6 +1270,12 @@ namespace Amazon.SecretsManager
         /// You tried to enable rotation on a secret that doesn't already have a Lambda function
         /// ARN configured and you didn't include such an ARN as a parameter in this call. 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The secret is managed by another service, and you must use that service to update
+        /// it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+        /// managed by other Amazon Web Services services</a>.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
@@ -1287,6 +1352,12 @@ namespace Amazon.SecretsManager
         /// You tried to enable rotation on a secret that doesn't already have a Lambda function
         /// ARN configured and you didn't include such an ARN as a parameter in this call. 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The secret is managed by another service, and you must use that service to update
+        /// it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+        /// managed by other Amazon Web Services services</a>.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
@@ -1362,6 +1433,12 @@ namespace Amazon.SecretsManager
         /// <para>
         /// You tried to enable rotation on a secret that doesn't already have a Lambda function
         /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The secret is managed by another service, and you must use that service to update
+        /// it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+        /// managed by other Amazon Web Services services</a>.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -1482,6 +1559,12 @@ namespace Amazon.SecretsManager
         /// You tried to enable rotation on a secret that doesn't already have a Lambda function
         /// ARN configured and you didn't include such an ARN as a parameter in this call. 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The secret is managed by another service, and you must use that service to update
+        /// it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+        /// managed by other Amazon Web Services services</a>.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
@@ -1562,6 +1645,12 @@ namespace Amazon.SecretsManager
         /// <para>
         /// You tried to enable rotation on a secret that doesn't already have a Lambda function
         /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The secret is managed by another service, and you must use that service to update
+        /// it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+        /// managed by other Amazon Web Services services</a>.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -1681,6 +1770,12 @@ namespace Amazon.SecretsManager
         /// You tried to enable rotation on a secret that doesn't already have a Lambda function
         /// ARN configured and you didn't include such an ARN as a parameter in this call. 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The secret is managed by another service, and you must use that service to update
+        /// it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+        /// managed by other Amazon Web Services services</a>.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
@@ -1768,6 +1863,12 @@ namespace Amazon.SecretsManager
         /// You tried to enable rotation on a secret that doesn't already have a Lambda function
         /// ARN configured and you didn't include such an ARN as a parameter in this call. 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The secret is managed by another service, and you must use that service to update
+        /// it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+        /// managed by other Amazon Web Services services</a>.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
@@ -1840,21 +1941,6 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify an KMS encryption key, Secrets Manager uses the Amazon Web Services
-        /// managed key <code>aws/secretsmanager</code>. If this key doesn't already exist in
-        /// your account, then Secrets Manager creates it for you automatically. All users and
-        /// roles in the Amazon Web Services account automatically have access to use <code>aws/secretsmanager</code>.
-        /// Creating <code>aws/secretsmanager</code> can result in a one-time significant delay
-        /// in returning the result. 
-        /// </para>
-        ///  
-        /// <para>
-        /// If the secret is in a different Amazon Web Services account from the credentials calling
-        /// the API, then you can't use <code>aws/secretsmanager</code> to encrypt the secret,
-        /// and you must create and use a customer managed key. 
-        /// </para>
-        ///  
-        /// <para>
         ///  <b>Required permissions: </b> <code>secretsmanager:UpdateSecret</code>. For more
         /// information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
         /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
@@ -1897,6 +1983,12 @@ namespace Amazon.SecretsManager
         /// <para>
         /// You tried to enable rotation on a secret that doesn't already have a Lambda function
         /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The secret is managed by another service, and you must use that service to update
+        /// it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+        /// managed by other Amazon Web Services services</a>.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -2012,6 +2104,12 @@ namespace Amazon.SecretsManager
         /// You tried to enable rotation on a secret that doesn't already have a Lambda function
         /// ARN configured and you didn't include such an ARN as a parameter in this call. 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The secret is managed by another service, and you must use that service to update
+        /// it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+        /// managed by other Amazon Web Services services</a>.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.LimitExceededException">
@@ -2108,6 +2206,12 @@ namespace Amazon.SecretsManager
         /// <para>
         /// You tried to enable rotation on a secret that doesn't already have a Lambda function
         /// ARN configured and you didn't include such an ARN as a parameter in this call. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The secret is managed by another service, and you must use that service to update
+        /// it. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
+        /// managed by other Amazon Web Services services</a>.
         /// </para>
         ///  </li> </ul>
         /// </exception>
