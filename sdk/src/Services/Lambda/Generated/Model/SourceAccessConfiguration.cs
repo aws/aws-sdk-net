@@ -81,7 +81,7 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka)
+        ///  <code>CLIENT_CERTIFICATE_TLS_AUTH</code> - (Amazon MSK, self-managed Apache Kafka)
         /// The Secrets Manager ARN of your secret key containing the certificate chain (X.509
         /// PEM), private key (PKCS#8 PEM), and private key password (optional) used for mutual
         /// TLS authentication of your MSK/Apache Kafka brokers.

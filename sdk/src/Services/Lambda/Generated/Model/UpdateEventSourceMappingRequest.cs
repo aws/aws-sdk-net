@@ -70,7 +70,7 @@ namespace Amazon.Lambda.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// The following error handling options are only available for stream sources (DynamoDB
+    /// The following error handling options are available only for stream sources (DynamoDB
     /// and Kinesis):
     /// </para>
     ///  <ul> <li> 
@@ -180,7 +180,7 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.
+        ///  <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -395,8 +395,8 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property MaximumRetryAttempts. 
         /// <para>
         /// (Streams only) Discard records after the specified number of retries. The default
-        /// value is infinite (-1). When set to infinite (-1), failed records will be retried
-        /// until the record expires.
+        /// value is infinite (-1). When set to infinite (-1), failed records are retried until
+        /// the record expires.
         /// </para>
         /// </summary>
         [AWSProperty(Min=-1, Max=10000)]
@@ -455,7 +455,7 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property TumblingWindowInSeconds. 
         /// <para>
         /// (Streams only) The duration in seconds of a processing window. The range is between
-        /// 1 second up to 900 seconds.
+        /// 1 second and 900 seconds.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=900)]

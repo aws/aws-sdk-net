@@ -34,6 +34,7 @@ namespace Amazon.Lambda.Model
     /// </summary>
     public partial class UpdateEventSourceMappingResponse : AmazonWebServiceResponse
     {
+        private AmazonManagedKafkaEventSourceConfig _amazonManagedKafkaEventSourceConfig;
         private int? _batchSize;
         private bool? _bisectBatchOnFunctionError;
         private DestinationConfig _destinationConfig;
@@ -49,6 +50,7 @@ namespace Amazon.Lambda.Model
         private int? _parallelizationFactor;
         private List<string> _queues = new List<string>();
         private SelfManagedEventSource _selfManagedEventSource;
+        private SelfManagedKafkaEventSourceConfig _selfManagedKafkaEventSourceConfig;
         private List<SourceAccessConfiguration> _sourceAccessConfigurations = new List<SourceAccessConfiguration>();
         private EventSourcePosition _startingPosition;
         private DateTime? _startingPositionTimestamp;
@@ -57,6 +59,25 @@ namespace Amazon.Lambda.Model
         private List<string> _topics = new List<string>();
         private int? _tumblingWindowInSeconds;
         private string _uuid;
+
+        /// <summary>
+        /// Gets and sets the property AmazonManagedKafkaEventSourceConfig. 
+        /// <para>
+        /// Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon
+        /// MSK) event source.
+        /// </para>
+        /// </summary>
+        public AmazonManagedKafkaEventSourceConfig AmazonManagedKafkaEventSourceConfig
+        {
+            get { return this._amazonManagedKafkaEventSourceConfig; }
+            set { this._amazonManagedKafkaEventSourceConfig = value; }
+        }
+
+        // Check to see if AmazonManagedKafkaEventSourceConfig property is set
+        internal bool IsSetAmazonManagedKafkaEventSourceConfig()
+        {
+            return this._amazonManagedKafkaEventSourceConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BatchSize. 
@@ -365,6 +386,24 @@ namespace Amazon.Lambda.Model
         internal bool IsSetSelfManagedEventSource()
         {
             return this._selfManagedEventSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SelfManagedKafkaEventSourceConfig. 
+        /// <para>
+        /// Specific configuration settings for a self-managed Apache Kafka event source.
+        /// </para>
+        /// </summary>
+        public SelfManagedKafkaEventSourceConfig SelfManagedKafkaEventSourceConfig
+        {
+            get { return this._selfManagedKafkaEventSourceConfig; }
+            set { this._selfManagedKafkaEventSourceConfig = value; }
+        }
+
+        // Check to see if SelfManagedKafkaEventSourceConfig property is set
+        internal bool IsSetSelfManagedKafkaEventSourceConfig()
+        {
+            return this._selfManagedKafkaEventSourceConfig != null;
         }
 
         /// <summary>

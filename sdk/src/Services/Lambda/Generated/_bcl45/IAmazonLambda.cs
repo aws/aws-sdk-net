@@ -480,7 +480,7 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Creates a mapping between an event source and an Lambda function. Lambda reads items
-        /// from the event source and triggers the function.
+        /// from the event source and invokes the function.
         /// 
         ///  
         /// <para>
@@ -519,7 +519,7 @@ namespace Amazon.Lambda
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The following error handling options are only available for stream sources (DynamoDB
+        /// The following error handling options are available only for stream sources (DynamoDB
         /// and Kinesis):
         /// </para>
         ///  <ul> <li> 
@@ -610,7 +610,7 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Creates a mapping between an event source and an Lambda function. Lambda reads items
-        /// from the event source and triggers the function.
+        /// from the event source and invokes the function.
         /// 
         ///  
         /// <para>
@@ -649,7 +649,7 @@ namespace Amazon.Lambda
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The following error handling options are only available for stream sources (DynamoDB
+        /// The following error handling options are available only for stream sources (DynamoDB
         /// and Kinesis):
         /// </para>
         ///  <ul> <li> 
@@ -2680,7 +2680,9 @@ namespace Amazon.Lambda
         ///  
         /// <para>
         /// This operation requires permission for the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslambda.html">lambda:InvokeFunction</a>
-        /// action.
+        /// action. For details on how to set up permissions for cross-account invocations, see
+        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html#permissions-resource-xaccountinvoke">Granting
+        /// function access to other accounts</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Invoke service method.</param>
@@ -2833,7 +2835,9 @@ namespace Amazon.Lambda
         ///  
         /// <para>
         /// This operation requires permission for the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslambda.html">lambda:InvokeFunction</a>
-        /// action.
+        /// action. For details on how to set up permissions for cross-account invocations, see
+        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html#permissions-resource-xaccountinvoke">Granting
+        /// function access to other accounts</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Invoke service method.</param>
@@ -3116,7 +3120,7 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Lists event source mappings. Specify an <code>EventSourceArn</code> to only show event
+        /// Lists event source mappings. Specify an <code>EventSourceArn</code> to show only event
         /// source mappings for a single event source.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEventSourceMappings service method.</param>
@@ -3140,7 +3144,7 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Lists event source mappings. Specify an <code>EventSourceArn</code> to only show event
+        /// Lists event source mappings. Specify an <code>EventSourceArn</code> to show only event
         /// source mappings for a single event source.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEventSourceMappings service method.</param>
@@ -4653,7 +4657,7 @@ namespace Amazon.Lambda
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The following error handling options are only available for stream sources (DynamoDB
+        /// The following error handling options are available only for stream sources (DynamoDB
         /// and Kinesis):
         /// </para>
         ///  <ul> <li> 
@@ -4788,7 +4792,7 @@ namespace Amazon.Lambda
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The following error handling options are only available for stream sources (DynamoDB
+        /// The following error handling options are available only for stream sources (DynamoDB
         /// and Kinesis):
         /// </para>
         ///  <ul> <li> 

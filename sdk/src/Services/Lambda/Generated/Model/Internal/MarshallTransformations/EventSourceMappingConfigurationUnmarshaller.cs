@@ -64,6 +64,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AmazonManagedKafkaEventSourceConfig", targetDepth))
+                {
+                    var unmarshaller = AmazonManagedKafkaEventSourceConfigUnmarshaller.Instance;
+                    unmarshalledObject.AmazonManagedKafkaEventSourceConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("BatchSize", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -152,6 +158,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = SelfManagedEventSourceUnmarshaller.Instance;
                     unmarshalledObject.SelfManagedEventSource = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SelfManagedKafkaEventSourceConfig", targetDepth))
+                {
+                    var unmarshaller = SelfManagedKafkaEventSourceConfigUnmarshaller.Instance;
+                    unmarshalledObject.SelfManagedKafkaEventSourceConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SourceAccessConfigurations", targetDepth))

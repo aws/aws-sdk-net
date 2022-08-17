@@ -31,7 +31,7 @@ namespace Amazon.Lambda.Model
     /// <summary>
     /// Container for the parameters to the CreateEventSourceMapping operation.
     /// Creates a mapping between an event source and an Lambda function. Lambda reads items
-    /// from the event source and triggers the function.
+    /// from the event source and invokes the function.
     /// 
     ///  
     /// <para>
@@ -70,7 +70,7 @@ namespace Amazon.Lambda.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// The following error handling options are only available for stream sources (DynamoDB
+    /// The following error handling options are available only for stream sources (DynamoDB
     /// and Kinesis):
     /// </para>
     ///  <ul> <li> 
@@ -138,6 +138,7 @@ namespace Amazon.Lambda.Model
     /// </summary>
     public partial class CreateEventSourceMappingRequest : AmazonLambdaRequest
     {
+        private AmazonManagedKafkaEventSourceConfig _amazonManagedKafkaEventSourceConfig;
         private int? _batchSize;
         private bool? _bisectBatchOnFunctionError;
         private DestinationConfig _destinationConfig;
@@ -152,11 +153,31 @@ namespace Amazon.Lambda.Model
         private int? _parallelizationFactor;
         private List<string> _queues = new List<string>();
         private SelfManagedEventSource _selfManagedEventSource;
+        private SelfManagedKafkaEventSourceConfig _selfManagedKafkaEventSourceConfig;
         private List<SourceAccessConfiguration> _sourceAccessConfigurations = new List<SourceAccessConfiguration>();
         private EventSourcePosition _startingPosition;
         private DateTime? _startingPositionTimestamp;
         private List<string> _topics = new List<string>();
         private int? _tumblingWindowInSeconds;
+
+        /// <summary>
+        /// Gets and sets the property AmazonManagedKafkaEventSourceConfig. 
+        /// <para>
+        /// Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon
+        /// MSK) event source.
+        /// </para>
+        /// </summary>
+        public AmazonManagedKafkaEventSourceConfig AmazonManagedKafkaEventSourceConfig
+        {
+            get { return this._amazonManagedKafkaEventSourceConfig; }
+            set { this._amazonManagedKafkaEventSourceConfig = value; }
+        }
+
+        // Check to see if AmazonManagedKafkaEventSourceConfig property is set
+        internal bool IsSetAmazonManagedKafkaEventSourceConfig()
+        {
+            return this._amazonManagedKafkaEventSourceConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BatchSize. 
@@ -185,7 +206,7 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.
+        ///  <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -435,8 +456,8 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property MaximumRetryAttempts. 
         /// <para>
         /// (Streams only) Discard records after the specified number of retries. The default
-        /// value is infinite (-1). When set to infinite (-1), failed records will be retried
-        /// until the record expires.
+        /// value is infinite (-1). When set to infinite (-1), failed records are retried until
+        /// the record expires.
         /// </para>
         /// </summary>
         [AWSProperty(Min=-1, Max=10000)]
@@ -493,7 +514,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property SelfManagedEventSource. 
         /// <para>
-        /// The Self-Managed Apache Kafka cluster to send records.
+        /// The self-managed Apache Kafka cluster to receive records from.
         /// </para>
         /// </summary>
         public SelfManagedEventSource SelfManagedEventSource
@@ -506,6 +527,24 @@ namespace Amazon.Lambda.Model
         internal bool IsSetSelfManagedEventSource()
         {
             return this._selfManagedEventSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SelfManagedKafkaEventSourceConfig. 
+        /// <para>
+        /// Specific configuration settings for a self-managed Apache Kafka event source.
+        /// </para>
+        /// </summary>
+        public SelfManagedKafkaEventSourceConfig SelfManagedKafkaEventSourceConfig
+        {
+            get { return this._selfManagedKafkaEventSourceConfig; }
+            set { this._selfManagedKafkaEventSourceConfig = value; }
+        }
+
+        // Check to see if SelfManagedKafkaEventSourceConfig property is set
+        internal bool IsSetSelfManagedKafkaEventSourceConfig()
+        {
+            return this._selfManagedKafkaEventSourceConfig != null;
         }
 
         /// <summary>
@@ -532,8 +571,8 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property StartingPosition. 
         /// <para>
         /// The position in a stream from which to start reading. Required for Amazon Kinesis,
-        /// Amazon DynamoDB, and Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is only
-        /// supported for Amazon Kinesis streams.
+        /// Amazon DynamoDB, and Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is supported
+        /// only for Amazon Kinesis streams.
         /// </para>
         /// </summary>
         public EventSourcePosition StartingPosition
@@ -590,7 +629,7 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property TumblingWindowInSeconds. 
         /// <para>
         /// (Streams only) The duration in seconds of a processing window. The range is between
-        /// 1 second up to 900 seconds.
+        /// 1 second and 900 seconds.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=900)]

@@ -30,7 +30,7 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the ListEventSourceMappings operation.
-    /// Lists event source mappings. Specify an <code>EventSourceArn</code> to only show event
+    /// Lists event source mappings. Specify an <code>EventSourceArn</code> to show only event
     /// source mappings for a single event source.
     /// </summary>
     public partial class ListEventSourceMappingsRequest : AmazonLambdaRequest
