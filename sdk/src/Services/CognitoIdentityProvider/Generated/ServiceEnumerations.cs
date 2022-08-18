@@ -965,13 +965,17 @@ namespace Amazon.CognitoIdentityProvider
     {
 
         /// <summary>
-        /// Constant Failure for EventResponseType
+        /// Constant Fail for EventResponseType
         /// </summary>
-        public static readonly EventResponseType Failure = new EventResponseType("Failure");
+        public static readonly EventResponseType Fail = new EventResponseType("Fail");
         /// <summary>
-        /// Constant Success for EventResponseType
+        /// Constant InProgress for EventResponseType
         /// </summary>
-        public static readonly EventResponseType Success = new EventResponseType("Success");
+        public static readonly EventResponseType InProgress = new EventResponseType("InProgress");
+        /// <summary>
+        /// Constant Pass for EventResponseType
+        /// </summary>
+        public static readonly EventResponseType Pass = new EventResponseType("Pass");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1018,6 +1022,14 @@ namespace Amazon.CognitoIdentityProvider
         /// Constant ForgotPassword for EventType
         /// </summary>
         public static readonly EventType ForgotPassword = new EventType("ForgotPassword");
+        /// <summary>
+        /// Constant PasswordChange for EventType
+        /// </summary>
+        public static readonly EventType PasswordChange = new EventType("PasswordChange");
+        /// <summary>
+        /// Constant ResendCode for EventType
+        /// </summary>
+        public static readonly EventType ResendCode = new EventType("ResendCode");
         /// <summary>
         /// Constant SignIn for EventType
         /// </summary>
