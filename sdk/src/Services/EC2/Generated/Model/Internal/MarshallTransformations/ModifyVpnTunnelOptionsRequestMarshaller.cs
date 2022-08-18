@@ -80,6 +80,24 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             publicRequestTunnelOptionslistValueIndex++;
                         }
                     }
+                    if(publicRequest.TunnelOptions.IsSetLogOptions())
+                    {
+                        if(publicRequest.TunnelOptions.LogOptions.IsSetCloudWatchLogOptions())
+                        {
+                            if(publicRequest.TunnelOptions.LogOptions.CloudWatchLogOptions.IsSetLogEnabled())
+                            {
+                                request.Parameters.Add("TunnelOptions" + "." + "LogOptions" + "." + "CloudWatchLogOptions" + "." + "LogEnabled", StringUtils.FromBool(publicRequest.TunnelOptions.LogOptions.CloudWatchLogOptions.LogEnabled));
+                            }
+                            if(publicRequest.TunnelOptions.LogOptions.CloudWatchLogOptions.IsSetLogGroupArn())
+                            {
+                                request.Parameters.Add("TunnelOptions" + "." + "LogOptions" + "." + "CloudWatchLogOptions" + "." + "LogGroupArn", StringUtils.FromString(publicRequest.TunnelOptions.LogOptions.CloudWatchLogOptions.LogGroupArn));
+                            }
+                            if(publicRequest.TunnelOptions.LogOptions.CloudWatchLogOptions.IsSetLogOutputFormat())
+                            {
+                                request.Parameters.Add("TunnelOptions" + "." + "LogOptions" + "." + "CloudWatchLogOptions" + "." + "LogOutputFormat", StringUtils.FromString(publicRequest.TunnelOptions.LogOptions.CloudWatchLogOptions.LogOutputFormat));
+                            }
+                        }
+                    }
                     if(publicRequest.TunnelOptions.IsSetPhase1DHGroupNumbers())
                     {
                         int publicRequestTunnelOptionslistValueIndex = 1;

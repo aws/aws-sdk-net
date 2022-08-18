@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
         private string _dpdTimeoutAction;
         private int? _dpdTimeoutSeconds;
         private List<IKEVersionsListValue> _ikeVersions = new List<IKEVersionsListValue>();
+        private VpnTunnelLogOptions _logOptions;
         private string _outsideIpAddress;
         private List<Phase1DHGroupNumbersListValue> _phase1DHGroupNumbers = new List<Phase1DHGroupNumbersListValue>();
         private List<Phase1EncryptionAlgorithmsListValue> _phase1EncryptionAlgorithms = new List<Phase1EncryptionAlgorithmsListValue>();
@@ -105,6 +106,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetIkeVersions()
         {
             return this._ikeVersions != null && this._ikeVersions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogOptions. 
+        /// <para>
+        /// Options for logging VPN tunnel activity.
+        /// </para>
+        /// </summary>
+        public VpnTunnelLogOptions LogOptions
+        {
+            get { return this._logOptions; }
+            set { this._logOptions = value; }
+        }
+
+        // Check to see if LogOptions property is set
+        internal bool IsSetLogOptions()
+        {
+            return this._logOptions != null;
         }
 
         /// <summary>

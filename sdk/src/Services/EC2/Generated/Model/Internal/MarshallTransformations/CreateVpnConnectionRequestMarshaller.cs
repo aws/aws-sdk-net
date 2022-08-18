@@ -125,6 +125,24 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                     publicRequestOptionslistValuelistValueIndex++;
                                 }
                             }
+                            if(publicRequestOptionslistValue.IsSetLogOptions())
+                            {
+                                if(publicRequestOptionslistValue.LogOptions.IsSetCloudWatchLogOptions())
+                                {
+                                    if(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.IsSetLogEnabled())
+                                    {
+                                        request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "LogOptions" + "." + "CloudWatchLogOptions" + "." + "LogEnabled", StringUtils.FromBool(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.LogEnabled));
+                                    }
+                                    if(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.IsSetLogGroupArn())
+                                    {
+                                        request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "LogOptions" + "." + "CloudWatchLogOptions" + "." + "LogGroupArn", StringUtils.FromString(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.LogGroupArn));
+                                    }
+                                    if(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.IsSetLogOutputFormat())
+                                    {
+                                        request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "LogOptions" + "." + "CloudWatchLogOptions" + "." + "LogOutputFormat", StringUtils.FromString(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.LogOutputFormat));
+                                    }
+                                }
+                            }
                             if(publicRequestOptionslistValue.IsSetPhase1DHGroupNumbers())
                             {
                                 int publicRequestOptionslistValuelistValueIndex = 1;

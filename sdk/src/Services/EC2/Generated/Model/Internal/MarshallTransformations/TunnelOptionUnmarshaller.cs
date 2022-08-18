@@ -73,6 +73,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.IkeVersions.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("logOptions", targetDepth))
+                    {
+                        var unmarshaller = VpnTunnelLogOptionsUnmarshaller.Instance;
+                        unmarshalledObject.LogOptions = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("outsideIpAddress", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
