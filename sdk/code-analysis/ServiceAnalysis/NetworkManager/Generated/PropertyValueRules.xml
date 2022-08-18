@@ -2548,6 +2548,12 @@
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkManager.Model.TransitGatewayPeering.TransitGatewayPeeringAttachmentId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^tgw-attach-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkManager.Model.TransitGatewayRegistration.GlobalNetworkId</property>
     <min>0</min>
     <max>50</max>

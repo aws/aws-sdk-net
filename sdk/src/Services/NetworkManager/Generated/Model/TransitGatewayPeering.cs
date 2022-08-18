@@ -35,6 +35,7 @@ namespace Amazon.NetworkManager.Model
     {
         private Peering _peering;
         private string _transitGatewayArn;
+        private string _transitGatewayPeeringAttachmentId;
 
         /// <summary>
         /// Gets and sets the property Peering. 
@@ -71,6 +72,25 @@ namespace Amazon.NetworkManager.Model
         internal bool IsSetTransitGatewayArn()
         {
             return this._transitGatewayArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitGatewayPeeringAttachmentId. 
+        /// <para>
+        /// The ID of the transit gateway peering attachment.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public string TransitGatewayPeeringAttachmentId
+        {
+            get { return this._transitGatewayPeeringAttachmentId; }
+            set { this._transitGatewayPeeringAttachmentId = value; }
+        }
+
+        // Check to see if TransitGatewayPeeringAttachmentId property is set
+        internal bool IsSetTransitGatewayPeeringAttachmentId()
+        {
+            return this._transitGatewayPeeringAttachmentId != null;
         }
 
     }

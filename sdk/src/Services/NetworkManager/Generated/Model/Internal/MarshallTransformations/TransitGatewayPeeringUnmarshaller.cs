@@ -76,6 +76,12 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.TransitGatewayArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TransitGatewayPeeringAttachmentId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TransitGatewayPeeringAttachmentId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;
