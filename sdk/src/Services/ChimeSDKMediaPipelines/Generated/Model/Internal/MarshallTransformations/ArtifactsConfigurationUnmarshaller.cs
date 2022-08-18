@@ -70,6 +70,12 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
                     unmarshalledObject.Audio = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CompositedVideo", targetDepth))
+                {
+                    var unmarshaller = CompositedVideoArtifactsConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.CompositedVideo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Content", targetDepth))
                 {
                     var unmarshaller = ContentArtifactsConfigurationUnmarshaller.Instance;

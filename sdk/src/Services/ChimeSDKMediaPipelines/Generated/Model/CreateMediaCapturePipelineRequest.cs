@@ -30,7 +30,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateMediaCapturePipeline operation.
-    /// Creates a media capture pipeline.
+    /// Creates a media pipeline.
     /// </summary>
     public partial class CreateMediaCapturePipelineRequest : AmazonChimeSDKMediaPipelinesRequest
     {
@@ -45,8 +45,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property ChimeSdkMeetingConfiguration. 
         /// <para>
-        /// The configuration for a specified media capture pipeline. <code>SourceType</code>
-        /// must be <code>ChimeSdkMeeting</code>.
+        /// The configuration for a specified media pipeline. <code>SourceType</code> must be
+        /// <code>ChimeSdkMeeting</code>.
         /// </para>
         /// </summary>
         public ChimeSdkMeetingConfiguration ChimeSdkMeetingConfiguration
@@ -64,7 +64,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// The token assigned to the client making the pipeline request.
+        /// The unique identifier for the client request. The token makes the API request idempotent.
+        /// Use a unique token for each media pipeline request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=64)]
@@ -103,7 +104,6 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// Gets and sets the property SinkType. 
         /// <para>
         /// Destination type to which the media artifacts are saved. You must use an S3 bucket.
-        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -161,7 +161,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The list of tags.
+        /// The tag key-value pairs.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

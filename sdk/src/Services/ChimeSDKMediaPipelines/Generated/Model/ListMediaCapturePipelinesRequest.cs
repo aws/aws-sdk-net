@@ -30,7 +30,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
 {
     /// <summary>
     /// Container for the parameters to the ListMediaCapturePipelines operation.
-    /// Returns a list of media capture pipelines.
+    /// Returns a list of media pipelines.
     /// </summary>
     public partial class ListMediaCapturePipelinesRequest : AmazonChimeSDKMediaPipelinesRequest
     {

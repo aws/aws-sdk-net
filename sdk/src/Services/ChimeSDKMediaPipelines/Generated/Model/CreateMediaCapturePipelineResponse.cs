@@ -38,8 +38,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property MediaCapturePipeline. 
         /// <para>
-        /// A media capture pipeline object, the ID, source type, source ARN, sink type, and sink
-        /// ARN of a media capture pipeline object.
+        /// A media pipeline object, the ID, source type, source ARN, sink type, and sink ARN
+        /// of a media pipeline object.
         /// </para>
         /// </summary>
         public MediaCapturePipeline MediaCapturePipeline

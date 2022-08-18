@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKMediaPipelines.Model
 {
     /// <summary>
-    /// A media capture pipeline object consisting of an ID, source type, source ARN, a sink
-    /// type, a sink ARN, and a configuration object.
+    /// A media pipeline object consisting of an ID, source type, source ARN, a sink type,
+    /// a sink ARN, and a configuration object.
     /// </summary>
     public partial class MediaCapturePipeline
     {
@@ -48,8 +48,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property ChimeSdkMeetingConfiguration. 
         /// <para>
-        /// The configuration for a specified media capture pipeline. <code>SourceType</code>
-        /// must be <code>ChimeSdkMeeting</code>.
+        /// The configuration for a specified media pipeline. <code>SourceType</code> must be
+        /// <code>ChimeSdkMeeting</code>.
         /// </para>
         /// </summary>
         public ChimeSdkMeetingConfiguration ChimeSdkMeetingConfiguration
@@ -67,7 +67,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property CreatedTimestamp. 
         /// <para>
-        /// The time at which the capture pipeline was created, in ISO 8601 format.
+        /// The time at which the pipeline was created, in ISO 8601 format.
         /// </para>
         /// </summary>
         public DateTime CreatedTimestamp
@@ -85,7 +85,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property MediaPipelineArn. 
         /// <para>
-        /// The ARN of a media capture pipeline.
+        /// The ARN of the media capture pipeline
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1011)]
@@ -104,7 +104,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property MediaPipelineId. 
         /// <para>
-        /// The ID of a media capture pipeline.
+        /// The ID of a media pipeline.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -197,7 +197,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the media capture pipeline.
+        /// The status of the media pipeline.
         /// </para>
         /// </summary>
         public MediaPipelineStatus Status
@@ -215,7 +215,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property UpdatedTimestamp. 
         /// <para>
-        /// The time at which the capture pipeline was updated, in ISO 8601 format.
+        /// The time at which the pipeline was updated, in ISO 8601 format.
         /// </para>
         /// </summary>
         public DateTime UpdatedTimestamp

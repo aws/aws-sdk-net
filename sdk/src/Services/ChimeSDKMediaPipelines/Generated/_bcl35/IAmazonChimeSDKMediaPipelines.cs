@@ -30,9 +30,8 @@ namespace Amazon.ChimeSDKMediaPipelines
     /// Interface for accessing ChimeSDKMediaPipelines
     ///
     /// The Amazon Chime SDK media pipeline APIs in this section allow software developers
-    /// to create Amazon Chime SDK media pipelines and capture audio, video, events, and data
-    /// messages from Amazon Chime SDK meetings. For more information about media pipleines,
-    /// see <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_Operations_Amazon_Chime_SDK_Media_Pipelines.html">Amzon
+    /// to create Amazon Chime SDK media pipelines that capture, concatenate, or stream your
+    /// Amazon Chime SDK meetings. For more information about media pipleines, see <a href="http://amazonaws.com/chime/latest/APIReference/API_Operations_Amazon_Chime_SDK_Media_Pipelines.html">Amazon
     /// Chime SDK media pipelines</a>.
     /// </summary>
     public partial interface IAmazonChimeSDKMediaPipelines : IAmazonService, IDisposable
@@ -52,7 +51,7 @@ namespace Amazon.ChimeSDKMediaPipelines
 
 
         /// <summary>
-        /// Creates a media capture pipeline.
+        /// Creates a media pipeline.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMediaCapturePipeline service method.</param>
         /// 
@@ -109,11 +108,133 @@ namespace Amazon.ChimeSDKMediaPipelines
 
         #endregion
         
+        #region  CreateMediaConcatenationPipeline
+
+
+        /// <summary>
+        /// Creates a media concatenation pipeline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMediaConcatenationPipeline service method.</param>
+        /// 
+        /// <returns>The response from the CreateMediaConcatenationPipeline service method, as returned by ChimeSDKMediaPipelines.</returns>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaConcatenationPipeline">REST API Reference for CreateMediaConcatenationPipeline Operation</seealso>
+        CreateMediaConcatenationPipelineResponse CreateMediaConcatenationPipeline(CreateMediaConcatenationPipelineRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateMediaConcatenationPipeline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateMediaConcatenationPipeline operation on AmazonChimeSDKMediaPipelinesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateMediaConcatenationPipeline
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaConcatenationPipeline">REST API Reference for CreateMediaConcatenationPipeline Operation</seealso>
+        IAsyncResult BeginCreateMediaConcatenationPipeline(CreateMediaConcatenationPipelineRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateMediaConcatenationPipeline operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateMediaConcatenationPipeline.</param>
+        /// 
+        /// <returns>Returns a  CreateMediaConcatenationPipelineResult from ChimeSDKMediaPipelines.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaConcatenationPipeline">REST API Reference for CreateMediaConcatenationPipeline Operation</seealso>
+        CreateMediaConcatenationPipelineResponse EndCreateMediaConcatenationPipeline(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateMediaLiveConnectorPipeline
+
+
+        /// <summary>
+        /// Creates a streaming media pipeline in an Amazon Chime SDK meeting.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMediaLiveConnectorPipeline service method.</param>
+        /// 
+        /// <returns>The response from the CreateMediaLiveConnectorPipeline service method, as returned by ChimeSDKMediaPipelines.</returns>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaLiveConnectorPipeline">REST API Reference for CreateMediaLiveConnectorPipeline Operation</seealso>
+        CreateMediaLiveConnectorPipelineResponse CreateMediaLiveConnectorPipeline(CreateMediaLiveConnectorPipelineRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateMediaLiveConnectorPipeline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateMediaLiveConnectorPipeline operation on AmazonChimeSDKMediaPipelinesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateMediaLiveConnectorPipeline
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaLiveConnectorPipeline">REST API Reference for CreateMediaLiveConnectorPipeline Operation</seealso>
+        IAsyncResult BeginCreateMediaLiveConnectorPipeline(CreateMediaLiveConnectorPipelineRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateMediaLiveConnectorPipeline operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateMediaLiveConnectorPipeline.</param>
+        /// 
+        /// <returns>Returns a  CreateMediaLiveConnectorPipelineResult from ChimeSDKMediaPipelines.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/CreateMediaLiveConnectorPipeline">REST API Reference for CreateMediaLiveConnectorPipeline Operation</seealso>
+        CreateMediaLiveConnectorPipelineResponse EndCreateMediaLiveConnectorPipeline(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteMediaCapturePipeline
 
 
         /// <summary>
-        /// Deletes the media capture pipeline.
+        /// Deletes the media pipeline.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMediaCapturePipeline service method.</param>
         /// 
@@ -170,11 +291,72 @@ namespace Amazon.ChimeSDKMediaPipelines
 
         #endregion
         
+        #region  DeleteMediaPipeline
+
+
+        /// <summary>
+        /// Deletes the media pipeline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMediaPipeline service method.</param>
+        /// 
+        /// <returns>The response from the DeleteMediaPipeline service method, as returned by ChimeSDKMediaPipelines.</returns>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/DeleteMediaPipeline">REST API Reference for DeleteMediaPipeline Operation</seealso>
+        DeleteMediaPipelineResponse DeleteMediaPipeline(DeleteMediaPipelineRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteMediaPipeline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMediaPipeline operation on AmazonChimeSDKMediaPipelinesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMediaPipeline
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/DeleteMediaPipeline">REST API Reference for DeleteMediaPipeline Operation</seealso>
+        IAsyncResult BeginDeleteMediaPipeline(DeleteMediaPipelineRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteMediaPipeline operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteMediaPipeline.</param>
+        /// 
+        /// <returns>Returns a  DeleteMediaPipelineResult from ChimeSDKMediaPipelines.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/DeleteMediaPipeline">REST API Reference for DeleteMediaPipeline Operation</seealso>
+        DeleteMediaPipelineResponse EndDeleteMediaPipeline(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetMediaCapturePipeline
 
 
         /// <summary>
-        /// Gets an existing media capture pipeline.
+        /// Gets an existing media pipeline.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMediaCapturePipeline service method.</param>
         /// 
@@ -231,11 +413,72 @@ namespace Amazon.ChimeSDKMediaPipelines
 
         #endregion
         
+        #region  GetMediaPipeline
+
+
+        /// <summary>
+        /// Gets an existing media pipeline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMediaPipeline service method.</param>
+        /// 
+        /// <returns>The response from the GetMediaPipeline service method, as returned by ChimeSDKMediaPipelines.</returns>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/GetMediaPipeline">REST API Reference for GetMediaPipeline Operation</seealso>
+        GetMediaPipelineResponse GetMediaPipeline(GetMediaPipelineRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMediaPipeline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMediaPipeline operation on AmazonChimeSDKMediaPipelinesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMediaPipeline
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/GetMediaPipeline">REST API Reference for GetMediaPipeline Operation</seealso>
+        IAsyncResult BeginGetMediaPipeline(GetMediaPipelineRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMediaPipeline operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMediaPipeline.</param>
+        /// 
+        /// <returns>Returns a  GetMediaPipelineResult from ChimeSDKMediaPipelines.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/GetMediaPipeline">REST API Reference for GetMediaPipeline Operation</seealso>
+        GetMediaPipelineResponse EndGetMediaPipeline(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListMediaCapturePipelines
 
 
         /// <summary>
-        /// Returns a list of media capture pipelines.
+        /// Returns a list of media pipelines.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMediaCapturePipelines service method.</param>
         /// 
@@ -292,11 +535,72 @@ namespace Amazon.ChimeSDKMediaPipelines
 
         #endregion
         
+        #region  ListMediaPipelines
+
+
+        /// <summary>
+        /// Returns a list of media pipelines.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMediaPipelines service method.</param>
+        /// 
+        /// <returns>The response from the ListMediaPipelines service method, as returned by ChimeSDKMediaPipelines.</returns>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKMediaPipelines.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/ListMediaPipelines">REST API Reference for ListMediaPipelines Operation</seealso>
+        ListMediaPipelinesResponse ListMediaPipelines(ListMediaPipelinesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMediaPipelines operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMediaPipelines operation on AmazonChimeSDKMediaPipelinesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMediaPipelines
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/ListMediaPipelines">REST API Reference for ListMediaPipelines Operation</seealso>
+        IAsyncResult BeginListMediaPipelines(ListMediaPipelinesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMediaPipelines operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMediaPipelines.</param>
+        /// 
+        /// <returns>Returns a  ListMediaPipelinesResult from ChimeSDKMediaPipelines.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/ListMediaPipelines">REST API Reference for ListMediaPipelines Operation</seealso>
+        ListMediaPipelinesResponse EndListMediaPipelines(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListTagsForResource
 
 
         /// <summary>
-        /// Lists the tags applied to an Amazon Chime SDK media capture pipeline.
+        /// Lists the tags available for a media pipeline.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -357,7 +661,8 @@ namespace Amazon.ChimeSDKMediaPipelines
 
 
         /// <summary>
-        /// Applies the specified tags to the specified Amazon Chime SDK media capture pipeline.
+        /// The ARN of the media pipeline that you want to tag. Consists of he pipeline's endpoint
+        /// region, resource ID, and pipeline ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -418,7 +723,7 @@ namespace Amazon.ChimeSDKMediaPipelines
 
 
         /// <summary>
-        /// Removes the specified tags from the specified Amazon Chime SDK media capture pipeline.
+        /// Removes any tags from a media pipeline.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 

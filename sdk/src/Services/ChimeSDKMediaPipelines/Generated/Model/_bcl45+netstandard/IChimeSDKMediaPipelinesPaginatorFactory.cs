@@ -29,5 +29,10 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// Paginator for ListMediaCapturePipelines operation
         ///</summary>
         IListMediaCapturePipelinesPaginator ListMediaCapturePipelines(ListMediaCapturePipelinesRequest request);
+
+        /// <summary>
+        /// Paginator for ListMediaPipelines operation
+        ///</summary>
+        IListMediaPipelinesPaginator ListMediaPipelines(ListMediaPipelinesRequest request);
     }
 }

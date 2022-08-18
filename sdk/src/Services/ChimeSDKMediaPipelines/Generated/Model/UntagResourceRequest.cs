@@ -30,7 +30,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes the specified tags from the specified Amazon Chime SDK media capture pipeline.
+    /// Removes any tags from a media pipeline.
     /// </summary>
     public partial class UntagResourceRequest : AmazonChimeSDKMediaPipelinesRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property ResourceARN. 
         /// <para>
-        /// The resource ARN.
+        /// The ARN of the pipeline that you want to untag.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]
@@ -59,7 +59,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// The tag keys.
+        /// The key/value pairs in the tag that you want to remove.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]

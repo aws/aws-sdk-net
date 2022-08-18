@@ -25,6 +25,56 @@ namespace Amazon.ChimeSDKMediaPipelines
 {
 
     /// <summary>
+    /// Constants used for properties of type ArtifactsConcatenationState.
+    /// </summary>
+    public class ArtifactsConcatenationState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for ArtifactsConcatenationState
+        /// </summary>
+        public static readonly ArtifactsConcatenationState Disabled = new ArtifactsConcatenationState("Disabled");
+        /// <summary>
+        /// Constant Enabled for ArtifactsConcatenationState
+        /// </summary>
+        public static readonly ArtifactsConcatenationState Enabled = new ArtifactsConcatenationState("Enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ArtifactsConcatenationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ArtifactsConcatenationState FindValue(string value)
+        {
+            return FindValue<ArtifactsConcatenationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ArtifactsConcatenationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ArtifactsState.
     /// </summary>
     public class ArtifactsState : ConstantClass
@@ -75,6 +125,102 @@ namespace Amazon.ChimeSDKMediaPipelines
 
 
     /// <summary>
+    /// Constants used for properties of type AudioArtifactsConcatenationState.
+    /// </summary>
+    public class AudioArtifactsConcatenationState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Enabled for AudioArtifactsConcatenationState
+        /// </summary>
+        public static readonly AudioArtifactsConcatenationState Enabled = new AudioArtifactsConcatenationState("Enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AudioArtifactsConcatenationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AudioArtifactsConcatenationState FindValue(string value)
+        {
+            return FindValue<AudioArtifactsConcatenationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AudioArtifactsConcatenationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AudioChannelsOption.
+    /// </summary>
+    public class AudioChannelsOption : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Mono for AudioChannelsOption
+        /// </summary>
+        public static readonly AudioChannelsOption Mono = new AudioChannelsOption("Mono");
+        /// <summary>
+        /// Constant Stereo for AudioChannelsOption
+        /// </summary>
+        public static readonly AudioChannelsOption Stereo = new AudioChannelsOption("Stereo");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AudioChannelsOption(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AudioChannelsOption FindValue(string value)
+        {
+            return FindValue<AudioChannelsOption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AudioChannelsOption(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AudioMuxType.
     /// </summary>
     public class AudioMuxType : ConstantClass
@@ -88,6 +234,10 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// Constant AudioWithActiveSpeakerVideo for AudioMuxType
         /// </summary>
         public static readonly AudioMuxType AudioWithActiveSpeakerVideo = new AudioMuxType("AudioWithActiveSpeakerVideo");
+        /// <summary>
+        /// Constant AudioWithCompositedVideo for AudioMuxType
+        /// </summary>
+        public static readonly AudioMuxType AudioWithCompositedVideo = new AudioMuxType("AudioWithCompositedVideo");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -118,6 +268,98 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AudioMuxType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConcatenationSinkType.
+    /// </summary>
+    public class ConcatenationSinkType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant S3Bucket for ConcatenationSinkType
+        /// </summary>
+        public static readonly ConcatenationSinkType S3Bucket = new ConcatenationSinkType("S3Bucket");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConcatenationSinkType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConcatenationSinkType FindValue(string value)
+        {
+            return FindValue<ConcatenationSinkType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConcatenationSinkType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConcatenationSourceType.
+    /// </summary>
+    public class ConcatenationSourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MediaCapturePipeline for ConcatenationSourceType
+        /// </summary>
+        public static readonly ConcatenationSourceType MediaCapturePipeline = new ConcatenationSourceType("MediaCapturePipeline");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConcatenationSourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConcatenationSourceType FindValue(string value)
+        {
+            return FindValue<ConcatenationSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConcatenationSourceType(string value)
         {
             return FindValue(value);
         }
@@ -164,6 +406,60 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ContentMuxType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ContentShareLayoutOption.
+    /// </summary>
+    public class ContentShareLayoutOption : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Horizontal for ContentShareLayoutOption
+        /// </summary>
+        public static readonly ContentShareLayoutOption Horizontal = new ContentShareLayoutOption("Horizontal");
+        /// <summary>
+        /// Constant PresenterOnly for ContentShareLayoutOption
+        /// </summary>
+        public static readonly ContentShareLayoutOption PresenterOnly = new ContentShareLayoutOption("PresenterOnly");
+        /// <summary>
+        /// Constant Vertical for ContentShareLayoutOption
+        /// </summary>
+        public static readonly ContentShareLayoutOption Vertical = new ContentShareLayoutOption("Vertical");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContentShareLayoutOption(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContentShareLayoutOption FindValue(string value)
+        {
+            return FindValue<ContentShareLayoutOption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContentShareLayoutOption(string value)
         {
             return FindValue(value);
         }
@@ -234,6 +530,194 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LayoutOption.
+    /// </summary>
+    public class LayoutOption : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GridView for LayoutOption
+        /// </summary>
+        public static readonly LayoutOption GridView = new LayoutOption("GridView");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LayoutOption(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LayoutOption FindValue(string value)
+        {
+            return FindValue<LayoutOption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LayoutOption(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LiveConnectorMuxType.
+    /// </summary>
+    public class LiveConnectorMuxType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AudioWithActiveSpeakerVideo for LiveConnectorMuxType
+        /// </summary>
+        public static readonly LiveConnectorMuxType AudioWithActiveSpeakerVideo = new LiveConnectorMuxType("AudioWithActiveSpeakerVideo");
+        /// <summary>
+        /// Constant AudioWithCompositedVideo for LiveConnectorMuxType
+        /// </summary>
+        public static readonly LiveConnectorMuxType AudioWithCompositedVideo = new LiveConnectorMuxType("AudioWithCompositedVideo");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LiveConnectorMuxType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LiveConnectorMuxType FindValue(string value)
+        {
+            return FindValue<LiveConnectorMuxType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LiveConnectorMuxType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LiveConnectorSinkType.
+    /// </summary>
+    public class LiveConnectorSinkType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RTMP for LiveConnectorSinkType
+        /// </summary>
+        public static readonly LiveConnectorSinkType RTMP = new LiveConnectorSinkType("RTMP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LiveConnectorSinkType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LiveConnectorSinkType FindValue(string value)
+        {
+            return FindValue<LiveConnectorSinkType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LiveConnectorSinkType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LiveConnectorSourceType.
+    /// </summary>
+    public class LiveConnectorSourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ChimeSdkMeeting for LiveConnectorSourceType
+        /// </summary>
+        public static readonly LiveConnectorSourceType ChimeSdkMeeting = new LiveConnectorSourceType("ChimeSdkMeeting");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LiveConnectorSourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LiveConnectorSourceType FindValue(string value)
+        {
+            return FindValue<LiveConnectorSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LiveConnectorSourceType(string value)
         {
             return FindValue(value);
         }
@@ -388,6 +872,114 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MediaPipelineStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PresenterPosition.
+    /// </summary>
+    public class PresenterPosition : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BottomLeft for PresenterPosition
+        /// </summary>
+        public static readonly PresenterPosition BottomLeft = new PresenterPosition("BottomLeft");
+        /// <summary>
+        /// Constant BottomRight for PresenterPosition
+        /// </summary>
+        public static readonly PresenterPosition BottomRight = new PresenterPosition("BottomRight");
+        /// <summary>
+        /// Constant TopLeft for PresenterPosition
+        /// </summary>
+        public static readonly PresenterPosition TopLeft = new PresenterPosition("TopLeft");
+        /// <summary>
+        /// Constant TopRight for PresenterPosition
+        /// </summary>
+        public static readonly PresenterPosition TopRight = new PresenterPosition("TopRight");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PresenterPosition(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PresenterPosition FindValue(string value)
+        {
+            return FindValue<PresenterPosition>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PresenterPosition(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResolutionOption.
+    /// </summary>
+    public class ResolutionOption : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FHD for ResolutionOption
+        /// </summary>
+        public static readonly ResolutionOption FHD = new ResolutionOption("FHD");
+        /// <summary>
+        /// Constant HD for ResolutionOption
+        /// </summary>
+        public static readonly ResolutionOption HD = new ResolutionOption("HD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResolutionOption(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResolutionOption FindValue(string value)
+        {
+            return FindValue<ResolutionOption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResolutionOption(string value)
         {
             return FindValue(value);
         }

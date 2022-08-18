@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKMediaPipelines.Model
 {
     /// <summary>
-    /// The configuration object of the Amazon Chime SDK meeting for a specified media capture
-    /// pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.
+    /// The configuration object of the Amazon Chime SDK meeting for a specified media pipeline.
+    /// <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.
     /// </summary>
     public partial class ChimeSdkMeetingConfiguration
     {
@@ -58,7 +58,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property SourceConfiguration. 
         /// <para>
-        /// The source configuration for a specified media capture pipline.
+        /// The source configuration for a specified media pipline.
         /// </para>
         /// </summary>
         public SourceConfiguration SourceConfiguration

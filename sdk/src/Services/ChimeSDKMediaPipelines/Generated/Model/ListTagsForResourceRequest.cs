@@ -30,7 +30,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Lists the tags applied to an Amazon Chime SDK media capture pipeline.
+    /// Lists the tags available for a media pipeline.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonChimeSDKMediaPipelinesRequest
     {
@@ -39,7 +39,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property ResourceARN. 
         /// <para>
-        /// The resource ARN.
+        /// The ARN of the media pipeline associated with any tags. The ARN consists of the pipeline's
+        /// region, resource ID, and pipeline ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]

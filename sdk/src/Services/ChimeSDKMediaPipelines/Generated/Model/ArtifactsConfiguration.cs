@@ -34,6 +34,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
     public partial class ArtifactsConfiguration
     {
         private AudioArtifactsConfiguration _audio;
+        private CompositedVideoArtifactsConfiguration _compositedVideo;
         private ContentArtifactsConfiguration _content;
         private VideoArtifactsConfiguration _video;
 
@@ -54,6 +55,24 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         internal bool IsSetAudio()
         {
             return this._audio != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CompositedVideo. 
+        /// <para>
+        /// Enables video compositing.
+        /// </para>
+        /// </summary>
+        public CompositedVideoArtifactsConfiguration CompositedVideo
+        {
+            get { return this._compositedVideo; }
+            set { this._compositedVideo = value; }
+        }
+
+        // Check to see if CompositedVideo property is set
+        internal bool IsSetCompositedVideo()
+        {
+            return this._compositedVideo != null;
         }
 
         /// <summary>

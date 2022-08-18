@@ -30,7 +30,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteMediaCapturePipeline operation.
-    /// Deletes the media capture pipeline.
+    /// Deletes the media pipeline.
     /// </summary>
     public partial class DeleteMediaCapturePipelineRequest : AmazonChimeSDKMediaPipelinesRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property MediaPipelineId. 
         /// <para>
-        /// The ID of the media capture pipeline being deleted. 
+        /// The ID of the media pipeline being deleted. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

@@ -38,7 +38,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tag key-value pairs.
+        /// The tags associated with the specified media pipeline.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

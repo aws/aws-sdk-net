@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKMediaPipelines.Model
 {
     /// <summary>
-    /// The video streams to capture for a specified media capture pipeline. The total number
-    /// of video streams can't exceed 25.
+    /// The video streams for a specified media pipeline. The total number of video streams
+    /// can't exceed 25.
     /// </summary>
     public partial class SelectedVideoStreams
     {
@@ -40,7 +40,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property AttendeeIds. 
         /// <para>
-        /// The attendee IDs of the streams selected for a media capture pipeline. 
+        /// The attendee IDs of the streams selected for a media pipeline. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -59,7 +59,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property ExternalUserIds. 
         /// <para>
-        /// The external user IDs of the streams selected for a media capture pipeline.
+        /// The external user IDs of the streams selected for a media pipeline.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

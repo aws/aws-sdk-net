@@ -30,7 +30,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
 {
     /// <summary>
     /// Container for the parameters to the GetMediaCapturePipeline operation.
-    /// Gets an existing media capture pipeline.
+    /// Gets an existing media pipeline.
     /// </summary>
     public partial class GetMediaCapturePipelineRequest : AmazonChimeSDKMediaPipelinesRequest
     {

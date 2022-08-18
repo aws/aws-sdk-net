@@ -39,7 +39,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property MediaCapturePipelines. 
         /// <para>
-        /// The media capture pipeline objects in the list.
+        /// The media pipeline objects in the list.
         /// </para>
         /// </summary>
         public List<MediaCapturePipelineSummary> MediaCapturePipelines

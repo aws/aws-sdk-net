@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKMediaPipelines.Model
 {
     /// <summary>
-    /// Source configuration for a specified media capture pipeline.
+    /// Source configuration for a specified media pipeline.
     /// </summary>
     public partial class SourceConfiguration
     {
@@ -38,8 +38,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property SelectedVideoStreams. 
         /// <para>
-        /// The selected video streams to capture for a specified media capture pipeline. The
-        /// number of video streams can't exceed 25.
+        /// The selected video streams for a specified media pipeline. The number of video streams
+        /// can't exceed 25.
         /// </para>
         /// </summary>
         public SelectedVideoStreams SelectedVideoStreams

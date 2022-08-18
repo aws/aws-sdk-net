@@ -56,6 +56,17 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetCompositedVideo())
+            {
+                context.Writer.WritePropertyName("CompositedVideo");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CompositedVideoArtifactsConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.CompositedVideo, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetContent())
             {
                 context.Writer.WritePropertyName("Content");

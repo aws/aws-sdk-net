@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKMediaPipelines.Model
 {
     /// <summary>
-    /// A summary of a media capture pipeline.
+    /// The summary data of a media capture pipeline.
     /// </summary>
     public partial class MediaCapturePipelineSummary
     {
@@ -39,7 +39,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property MediaPipelineArn. 
         /// <para>
-        /// The ARN of a media capture pipeline.
+        /// The ARN of the media pipeline in the summary.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1011)]
@@ -58,7 +58,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property MediaPipelineId. 
         /// <para>
-        /// The ID of a media capture pipeline.
+        /// The ID of the media pipeline in the summary.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
