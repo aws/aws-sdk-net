@@ -36,6 +36,11 @@ namespace Amazon.CloudWatch.Model
         IDescribeAlarmsPaginator DescribeAlarms(DescribeAlarmsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeAnomalyDetectors operation
+        ///</summary>
+        IDescribeAnomalyDetectorsPaginator DescribeAnomalyDetectors(DescribeAnomalyDetectorsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeInsightRules operation
         ///</summary>
         IDescribeInsightRulesPaginator DescribeInsightRules(DescribeInsightRulesRequest request);
@@ -49,6 +54,11 @@ namespace Amazon.CloudWatch.Model
         /// Paginator for ListDashboards operation
         ///</summary>
         IListDashboardsPaginator ListDashboards(ListDashboardsRequest request);
+
+        /// <summary>
+        /// Paginator for ListManagedInsightRules operation
+        ///</summary>
+        IListManagedInsightRulesPaginator ListManagedInsightRules(ListManagedInsightRulesRequest request);
 
         /// <summary>
         /// Paginator for ListMetrics operation

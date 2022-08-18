@@ -227,7 +227,7 @@ namespace Amazon.CloudWatch.Model
         /// Array of numbers representing the values for the metric during the period. Each unique
         /// value is listed just once in this array, and the corresponding number in the <code>Counts</code>
         /// array specifies the number of times that value occurred during the period. You can
-        /// include up to 500 unique values in each <code>PutMetricData</code> action that specifies
+        /// include up to 150 unique values in each <code>PutMetricData</code> action that specifies
         /// a <code>Values</code> array.
         /// </para>
         ///  

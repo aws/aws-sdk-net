@@ -153,6 +153,16 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatch.Model.ListManagedInsightRulesRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.ListManagedInsightRulesRequest.ResourceARN</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatch.Model.ListMetricsRequest.MetricName</property>
     <min>1</min>
     <max>255</max>
@@ -441,6 +451,38 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.InsightRule.State</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>[\x20-\x7E]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.ManagedRule.ResourceARN</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.ManagedRule.TemplateName</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.ManagedRuleDescription.ResourceARN</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.ManagedRuleDescription.TemplateName</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.ManagedRuleState.RuleName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\x20-\x7E]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.ManagedRuleState.State</property>
     <min>1</min>
     <max>32</max>
     <pattern>[\x20-\x7E]+</pattern>

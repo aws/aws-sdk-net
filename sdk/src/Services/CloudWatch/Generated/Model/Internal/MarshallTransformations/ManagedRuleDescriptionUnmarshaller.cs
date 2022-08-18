@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for InsightRule Object
+    /// Response Unmarshaller for ManagedRuleDescription Object
     /// </summary>  
-    public class InsightRuleUnmarshaller : IUnmarshaller<InsightRule, XmlUnmarshallerContext>, IUnmarshaller<InsightRule, JsonUnmarshallerContext>
+    public class ManagedRuleDescriptionUnmarshaller : IUnmarshaller<ManagedRuleDescription, XmlUnmarshallerContext>, IUnmarshaller<ManagedRuleDescription, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public InsightRule Unmarshall(XmlUnmarshallerContext context)
+        public ManagedRuleDescription Unmarshall(XmlUnmarshallerContext context)
         {
-            InsightRule unmarshalledObject = new InsightRule();
+            ManagedRuleDescription unmarshalledObject = new ManagedRuleDescription();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,34 +54,22 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Definition", targetDepth))
+                    if (context.TestExpression("ResourceARN", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Definition = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ResourceARN = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("ManagedRule", targetDepth))
+                    if (context.TestExpression("RuleState", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
-                        unmarshalledObject.ManagedRule = unmarshaller.Unmarshall(context);
+                        var unmarshaller = ManagedRuleStateUnmarshaller.Instance;
+                        unmarshalledObject.RuleState = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("Name", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Schema", targetDepth))
+                    if (context.TestExpression("TemplateName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Schema = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("State", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.TemplateName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -99,18 +87,18 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public InsightRule Unmarshall(JsonUnmarshallerContext context)
+        public ManagedRuleDescription Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static InsightRuleUnmarshaller _instance = new InsightRuleUnmarshaller();        
+        private static ManagedRuleDescriptionUnmarshaller _instance = new ManagedRuleDescriptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static InsightRuleUnmarshaller Instance
+        public static ManagedRuleDescriptionUnmarshaller Instance
         {
             get
             {

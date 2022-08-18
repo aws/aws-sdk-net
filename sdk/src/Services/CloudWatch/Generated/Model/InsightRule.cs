@@ -37,6 +37,7 @@ namespace Amazon.CloudWatch.Model
     public partial class InsightRule
     {
         private string _definition;
+        private bool? _managedRule;
         private string _name;
         private string _schema;
         private string _state;
@@ -61,6 +62,24 @@ namespace Amazon.CloudWatch.Model
         internal bool IsSetDefinition()
         {
             return this._definition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedRule. 
+        /// <para>
+        ///  An optional built-in rule that Amazon Web Services manages. 
+        /// </para>
+        /// </summary>
+        public bool ManagedRule
+        {
+            get { return this._managedRule.GetValueOrDefault(); }
+            set { this._managedRule = value; }
+        }
+
+        // Check to see if ManagedRule property is set
+        internal bool IsSetManagedRule()
+        {
+            return this._managedRule.HasValue; 
         }
 
         /// <summary>

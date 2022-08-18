@@ -957,6 +957,34 @@ namespace Amazon.CloudWatch
 
         #endregion
                 
+        #region  ListManagedInsightRules
+
+
+
+        /// <summary>
+        /// Returns a list that contains the number of managed Contributor Insights rules in
+        /// your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListManagedInsightRules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListManagedInsightRules service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidNextTokenException">
+        /// The next token specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.MissingRequiredParameterException">
+        /// An input parameter that is required is missing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListManagedInsightRules">REST API Reference for ListManagedInsightRules Operation</seealso>
+        Task<ListManagedInsightRulesResponse> ListManagedInsightRulesAsync(ListManagedInsightRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListMetrics
 
 
@@ -1306,6 +1334,36 @@ namespace Amazon.CloudWatch
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutInsightRule">REST API Reference for PutInsightRule Operation</seealso>
         Task<PutInsightRuleResponse> PutInsightRuleAsync(PutInsightRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutManagedInsightRules
+
+
+
+        /// <summary>
+        /// Creates a managed Contributor Insights rule for a specified Amazon Web Services resource.
+        /// When you enable a managed rule, you create a Contributor Insights rule that collects
+        /// data from Amazon Web Services services. You cannot edit these rules with <code>PutInsightRule</code>.
+        /// The rules can be enabled, disabled, and deleted using <code>EnableInsightRules</code>,
+        /// <code>DisableInsightRules</code>, and <code>DeleteInsightRules</code>. If a previously
+        /// created managed rule is currently disabled, a subsequent call to this API will re-enable
+        /// it. Use <code>ListManagedInsightRules</code> to describe all available rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutManagedInsightRules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutManagedInsightRules service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
+        /// The value of an input parameter is bad or out-of-range.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.MissingRequiredParameterException">
+        /// An input parameter that is required is missing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutManagedInsightRules">REST API Reference for PutManagedInsightRules Operation</seealso>
+        Task<PutManagedInsightRulesResponse> PutManagedInsightRulesAsync(PutManagedInsightRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
