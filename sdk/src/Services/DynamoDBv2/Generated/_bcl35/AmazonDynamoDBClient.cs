@@ -2583,6 +2583,63 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  DescribeImport
+
+        /// <summary>
+        /// Represents the properties of the import.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImport service method.</param>
+        /// 
+        /// <returns>The response from the DescribeImport service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ImportNotFoundException">
+        /// The specified import was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeImport">REST API Reference for DescribeImport Operation</seealso>
+        public virtual DescribeImportResponse DescribeImport(DescribeImportRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeImportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImportResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeImportResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeImport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImport operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeImport
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeImport">REST API Reference for DescribeImport Operation</seealso>
+        public virtual IAsyncResult BeginDescribeImport(DescribeImportRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeImportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImportResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeImport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeImport.</param>
+        /// 
+        /// <returns>Returns a  DescribeImportResult from DynamoDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeImport">REST API Reference for DescribeImport Operation</seealso>
+        public virtual DescribeImportResponse EndDescribeImport(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeImportResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeKinesisStreamingDestination
 
         /// <summary>
@@ -3955,6 +4012,91 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  ImportTable
+
+        /// <summary>
+        /// Imports table data from an S3 bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportTable service method.</param>
+        /// 
+        /// <returns>The response from the ImportTable service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ImportConflictException">
+        /// There was a conflict when importing from the specified S3 source. This can occur
+        /// when the current import conflicts with a previous import request that had the same
+        /// client token.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
+        /// There is no limit to the number of daily on-demand backups that can be taken. 
+        /// 
+        ///  
+        /// <para>
+        /// Up to 500 simultaneous table operations are allowed per account. These operations
+        /// include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The only exception is when you are creating a table with one or more secondary indexes.
+        /// You can have up to 250 such requests running at a time; however, if the table or index
+        /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
+        /// operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// There is a soft account quota of 2,500 tables.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
+        /// The operation conflicts with the resource's availability. For example, you attempted
+        /// to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code>
+        /// state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ImportTable">REST API Reference for ImportTable Operation</seealso>
+        public virtual ImportTableResponse ImportTable(ImportTableRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportTableResponseUnmarshaller.Instance;
+
+            return Invoke<ImportTableResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportTable operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportTable operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportTable
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ImportTable">REST API Reference for ImportTable Operation</seealso>
+        public virtual IAsyncResult BeginImportTable(ImportTableRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportTableResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ImportTable operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportTable.</param>
+        /// 
+        /// <returns>Returns a  ImportTableResult from DynamoDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ImportTable">REST API Reference for ImportTable Operation</seealso>
+        public virtual ImportTableResponse EndImportTable(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ImportTableResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListBackups
 
         /// <summary>
@@ -4233,6 +4375,81 @@ namespace Amazon.DynamoDBv2
         public virtual ListGlobalTablesResponse EndListGlobalTables(IAsyncResult asyncResult)
         {
             return EndInvoke<ListGlobalTablesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListImports
+
+        /// <summary>
+        /// Lists completed imports within the past 90 days.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImports service method.</param>
+        /// 
+        /// <returns>The response from the ListImports service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
+        /// There is no limit to the number of daily on-demand backups that can be taken. 
+        /// 
+        ///  
+        /// <para>
+        /// Up to 500 simultaneous table operations are allowed per account. These operations
+        /// include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The only exception is when you are creating a table with one or more secondary indexes.
+        /// You can have up to 250 such requests running at a time; however, if the table or index
+        /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
+        /// operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// There is a soft account quota of 2,500 tables.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListImports">REST API Reference for ListImports Operation</seealso>
+        public virtual ListImportsResponse ListImports(ListImportsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListImportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImportsResponseUnmarshaller.Instance;
+
+            return Invoke<ListImportsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListImports operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListImports operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListImports
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListImports">REST API Reference for ListImports Operation</seealso>
+        public virtual IAsyncResult BeginListImports(ListImportsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListImportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImportsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListImports operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListImports.</param>
+        /// 
+        /// <returns>Returns a  ListImportsResult from DynamoDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListImports">REST API Reference for ListImports Operation</seealso>
+        public virtual ListImportsResponse EndListImports(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListImportsResponse>(asyncResult);
         }
 
         #endregion

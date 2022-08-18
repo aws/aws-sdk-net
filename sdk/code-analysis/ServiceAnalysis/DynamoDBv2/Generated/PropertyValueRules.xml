@@ -100,6 +100,11 @@
     <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.DescribeImportRequest.ImportArn</property>
+    <min>37</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.DescribeKinesisStreamingDestinationRequest.TableName</property>
     <min>3</min>
     <max>255</max>
@@ -214,6 +219,23 @@
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.ExportTableToPointInTimeRequest.ClientToken</property>
+    <pattern>^[^\$]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.ExportTableToPointInTimeRequest.S3Bucket</property>
+    <max>255</max>
+    <pattern>^[a-z0-9A-Z]+[\.\-\w]*[a-z0-9A-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.ExportTableToPointInTimeRequest.S3BucketOwner</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.ExportTableToPointInTimeRequest.S3Prefix</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ExportTableToPointInTimeRequest.S3SseKmsKeyId</property>
     <min>1</min>
     <max>2048</max>
@@ -223,6 +245,10 @@
     <min>3</min>
     <max>255</max>
     <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.ImportTableRequest.ClientToken</property>
+    <pattern>^[^\$]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ListBackupsRequest.ExclusiveStartBackupArn</property>
@@ -275,6 +301,23 @@
     <min>3</min>
     <max>255</max>
     <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.ListImportsRequest.NextToken</property>
+    <min>112</min>
+    <max>1024</max>
+    <pattern>([0-9a-f]{16})+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.ListImportsRequest.PageSize</property>
+    <min>1</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.ListImportsResponse.NextToken</property>
+    <min>112</min>
+    <max>1024</max>
+    <pattern>([0-9a-f]{16})+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ListTablesRequest.ExclusiveStartTableName</property>
@@ -583,6 +626,12 @@
     <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.CsvOptions.Delimiter</property>
+    <min>1</min>
+    <max>1</max>
+    <pattern>[,;:|\t ]</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.Delete.TableName</property>
     <min>3</min>
     <max>255</max>
@@ -599,6 +648,10 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.ExportDescription.ClientToken</property>
+    <pattern>^[^\$]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ExportDescription.ExportArn</property>
     <min>37</min>
     <max>1024</max>
@@ -606,6 +659,19 @@
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ExportDescription.ItemCount</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.ExportDescription.S3Bucket</property>
+    <max>255</max>
+    <pattern>^[a-z0-9A-Z]+[\.\-\w]*[a-z0-9A-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.ExportDescription.S3BucketOwner</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.ExportDescription.S3Prefix</property>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ExportDescription.S3SseKmsKeyId</property>
@@ -672,6 +738,46 @@
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.GlobalTableGlobalSecondaryIndexSettingsUpdate.ProvisionedWriteCapacityUnits</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.ImportSummary.CloudWatchLogGroupArn</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.ImportSummary.ImportArn</property>
+    <min>37</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.ImportTableDescription.ClientToken</property>
+    <pattern>^[^\$]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.ImportTableDescription.CloudWatchLogGroupArn</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.ImportTableDescription.ErrorCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.ImportTableDescription.ImportArn</property>
+    <min>37</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.ImportTableDescription.ImportedItemCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.ImportTableDescription.ProcessedItemCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.ImportTableDescription.TableId</property>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.KeySchemaElement.AttributeName</property>
@@ -802,6 +908,19 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.S3BucketSource.S3Bucket</property>
+    <max>255</max>
+    <pattern>^[a-z0-9A-Z]+[\.\-\w]*[a-z0-9A-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.S3BucketSource.S3BucketOwner</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.S3BucketSource.S3KeyPrefix</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.SourceTableDetails.ItemCount</property>
     <min>0</min>
   </property-value-rule>
@@ -817,6 +936,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.TableAutoScalingDescription.TableName</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.TableCreationParameters.TableName</property>
     <min>3</min>
     <max>255</max>
     <pattern>[a-zA-Z0-9_.-]+</pattern>

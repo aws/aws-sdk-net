@@ -62,8 +62,7 @@ namespace Amazon.DynamoDBv2.Model
         ///  
         /// <para>
         /// If you submit a request with the same client token but a change in other parameters
-        /// within the 8-hour idempotency window, DynamoDB returns an <code>IdempotentParameterMismatch</code>
-        /// exception.
+        /// within the 8-hour idempotency window, DynamoDB returns an <code>ImportConflictException</code>.
         /// </para>
         /// </summary>
         public string ClientToken
@@ -123,7 +122,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The name of the Amazon S3 bucket to export the snapshot to.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=255)]
         public string S3Bucket
         {
             get { return this._s3Bucket; }
@@ -161,6 +160,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The Amazon S3 bucket prefix to use as the file name and path of the exported snapshot.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string S3Prefix
         {
             get { return this._s3Prefix; }

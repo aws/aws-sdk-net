@@ -29,47 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// An error associated with a statement in a PartiQL batch that was run.
+    /// The format options for the data that was imported into the target table. There is
+    /// one value, CsvOption.
     /// </summary>
-    public partial class BatchStatementError
+    public partial class InputFormatOptions
     {
-        private BatchStatementErrorCodeEnum _code;
-        private string _message;
+        private CsvOptions _csv;
 
         /// <summary>
-        /// Gets and sets the property Code. 
+        /// Gets and sets the property Csv. 
         /// <para>
-        ///  The error code associated with the failed PartiQL batch statement. 
+        ///  The options for imported source files in CSV format. The values are Delimiter and
+        /// HeaderList. 
         /// </para>
         /// </summary>
-        public BatchStatementErrorCodeEnum Code
+        public CsvOptions Csv
         {
-            get { return this._code; }
-            set { this._code = value; }
+            get { return this._csv; }
+            set { this._csv = value; }
         }
 
-        // Check to see if Code property is set
-        internal bool IsSetCode()
+        // Check to see if Csv property is set
+        internal bool IsSetCsv()
         {
-            return this._code != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Message. 
-        /// <para>
-        ///  The error message associated with the PartiQL batch response. 
-        /// </para>
-        /// </summary>
-        public string Message
-        {
-            get { return this._message; }
-            set { this._message = value; }
-        }
-
-        // Check to see if Message property is set
-        internal bool IsSetMessage()
-        {
-            return this._message != null;
+            return this._csv != null;
         }
 
     }

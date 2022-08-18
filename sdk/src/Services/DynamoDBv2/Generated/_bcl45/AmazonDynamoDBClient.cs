@@ -3750,6 +3750,53 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  DescribeImport
+
+
+        /// <summary>
+        /// Represents the properties of the import.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImport service method.</param>
+        /// 
+        /// <returns>The response from the DescribeImport service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ImportNotFoundException">
+        /// The specified import was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeImport">REST API Reference for DescribeImport Operation</seealso>
+        public virtual DescribeImportResponse DescribeImport(DescribeImportRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeImportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImportResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeImportResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Represents the properties of the import.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeImport service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ImportNotFoundException">
+        /// The specified import was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeImport">REST API Reference for DescribeImport Operation</seealso>
+        public virtual Task<DescribeImportResponse> DescribeImportAsync(DescribeImportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeImportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImportResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeImportResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeKinesisStreamingDestination
 
 
@@ -5741,6 +5788,109 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  ImportTable
+
+
+        /// <summary>
+        /// Imports table data from an S3 bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportTable service method.</param>
+        /// 
+        /// <returns>The response from the ImportTable service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ImportConflictException">
+        /// There was a conflict when importing from the specified S3 source. This can occur
+        /// when the current import conflicts with a previous import request that had the same
+        /// client token.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
+        /// There is no limit to the number of daily on-demand backups that can be taken. 
+        /// 
+        ///  
+        /// <para>
+        /// Up to 500 simultaneous table operations are allowed per account. These operations
+        /// include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The only exception is when you are creating a table with one or more secondary indexes.
+        /// You can have up to 250 such requests running at a time; however, if the table or index
+        /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
+        /// operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// There is a soft account quota of 2,500 tables.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
+        /// The operation conflicts with the resource's availability. For example, you attempted
+        /// to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code>
+        /// state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ImportTable">REST API Reference for ImportTable Operation</seealso>
+        public virtual ImportTableResponse ImportTable(ImportTableRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportTableResponseUnmarshaller.Instance;
+
+            return Invoke<ImportTableResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Imports table data from an S3 bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportTable service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ImportTable service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ImportConflictException">
+        /// There was a conflict when importing from the specified S3 source. This can occur
+        /// when the current import conflicts with a previous import request that had the same
+        /// client token.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
+        /// There is no limit to the number of daily on-demand backups that can be taken. 
+        /// 
+        ///  
+        /// <para>
+        /// Up to 500 simultaneous table operations are allowed per account. These operations
+        /// include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The only exception is when you are creating a table with one or more secondary indexes.
+        /// You can have up to 250 such requests running at a time; however, if the table or index
+        /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
+        /// operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// There is a soft account quota of 2,500 tables.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
+        /// The operation conflicts with the resource's availability. For example, you attempted
+        /// to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code>
+        /// state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ImportTable">REST API Reference for ImportTable Operation</seealso>
+        public virtual Task<ImportTableResponse> ImportTableAsync(ImportTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ImportTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportTableResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ImportTableResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListBackups
 
 
@@ -6025,6 +6175,89 @@ namespace Amazon.DynamoDBv2
             options.EndpointOperation = EndpointOperation;
             
             return InvokeAsync<ListGlobalTablesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListImports
+
+
+        /// <summary>
+        /// Lists completed imports within the past 90 days.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImports service method.</param>
+        /// 
+        /// <returns>The response from the ListImports service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
+        /// There is no limit to the number of daily on-demand backups that can be taken. 
+        /// 
+        ///  
+        /// <para>
+        /// Up to 500 simultaneous table operations are allowed per account. These operations
+        /// include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The only exception is when you are creating a table with one or more secondary indexes.
+        /// You can have up to 250 such requests running at a time; however, if the table or index
+        /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
+        /// operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// There is a soft account quota of 2,500 tables.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListImports">REST API Reference for ListImports Operation</seealso>
+        public virtual ListImportsResponse ListImports(ListImportsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListImportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImportsResponseUnmarshaller.Instance;
+
+            return Invoke<ListImportsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists completed imports within the past 90 days.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImports service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListImports service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
+        /// There is no limit to the number of daily on-demand backups that can be taken. 
+        /// 
+        ///  
+        /// <para>
+        /// Up to 500 simultaneous table operations are allowed per account. These operations
+        /// include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The only exception is when you are creating a table with one or more secondary indexes.
+        /// You can have up to 250 such requests running at a time; however, if the table or index
+        /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
+        /// operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// There is a soft account quota of 2,500 tables.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListImports">REST API Reference for ListImports Operation</seealso>
+        public virtual Task<ListImportsResponse> ListImportsAsync(ListImportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListImportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImportsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListImportsResponse>(request, options, cancellationToken);
         }
 
         #endregion

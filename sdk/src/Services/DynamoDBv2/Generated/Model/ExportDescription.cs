@@ -263,6 +263,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The name of the Amazon S3 bucket containing the export.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=255)]
         public string S3Bucket
         {
             get { return this._s3Bucket; }
@@ -299,6 +300,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The Amazon S3 bucket prefix used as the file name and path of the exported snapshot.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string S3Prefix
         {
             get { return this._s3Prefix; }
