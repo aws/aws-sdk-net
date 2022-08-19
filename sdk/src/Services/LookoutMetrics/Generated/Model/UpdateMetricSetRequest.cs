@@ -156,7 +156,7 @@ namespace Amazon.LookoutMetrics.Model
         /// Gets and sets the property Offset. 
         /// <para>
         /// After an interval ends, the amount of seconds that the detector waits before importing
-        /// data. Offset is only supported for S3 and Redshift datasources.
+        /// data. Offset is only supported for S3, Redshift, Athena and datasources.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=432000)]

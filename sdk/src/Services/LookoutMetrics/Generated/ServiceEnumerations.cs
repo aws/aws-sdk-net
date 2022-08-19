@@ -485,6 +485,88 @@ namespace Amazon.LookoutMetrics
 
 
     /// <summary>
+    /// Constants used for properties of type DataQualityMetricType.
+    /// </summary>
+    public class DataQualityMetricType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BACKTEST_INFERENCE_DATA_END_TIME_STAMP for DataQualityMetricType
+        /// </summary>
+        public static readonly DataQualityMetricType BACKTEST_INFERENCE_DATA_END_TIME_STAMP = new DataQualityMetricType("BACKTEST_INFERENCE_DATA_END_TIME_STAMP");
+        /// <summary>
+        /// Constant BACKTEST_INFERENCE_DATA_START_TIME_STAMP for DataQualityMetricType
+        /// </summary>
+        public static readonly DataQualityMetricType BACKTEST_INFERENCE_DATA_START_TIME_STAMP = new DataQualityMetricType("BACKTEST_INFERENCE_DATA_START_TIME_STAMP");
+        /// <summary>
+        /// Constant BACKTEST_TRAINING_DATA_END_TIME_STAMP for DataQualityMetricType
+        /// </summary>
+        public static readonly DataQualityMetricType BACKTEST_TRAINING_DATA_END_TIME_STAMP = new DataQualityMetricType("BACKTEST_TRAINING_DATA_END_TIME_STAMP");
+        /// <summary>
+        /// Constant BACKTEST_TRAINING_DATA_START_TIME_STAMP for DataQualityMetricType
+        /// </summary>
+        public static readonly DataQualityMetricType BACKTEST_TRAINING_DATA_START_TIME_STAMP = new DataQualityMetricType("BACKTEST_TRAINING_DATA_START_TIME_STAMP");
+        /// <summary>
+        /// Constant COLUMN_COMPLETENESS for DataQualityMetricType
+        /// </summary>
+        public static readonly DataQualityMetricType COLUMN_COMPLETENESS = new DataQualityMetricType("COLUMN_COMPLETENESS");
+        /// <summary>
+        /// Constant DIMENSION_UNIQUENESS for DataQualityMetricType
+        /// </summary>
+        public static readonly DataQualityMetricType DIMENSION_UNIQUENESS = new DataQualityMetricType("DIMENSION_UNIQUENESS");
+        /// <summary>
+        /// Constant INVALID_ROWS_COMPLIANCE for DataQualityMetricType
+        /// </summary>
+        public static readonly DataQualityMetricType INVALID_ROWS_COMPLIANCE = new DataQualityMetricType("INVALID_ROWS_COMPLIANCE");
+        /// <summary>
+        /// Constant ROWS_PARTIAL_COMPLIANCE for DataQualityMetricType
+        /// </summary>
+        public static readonly DataQualityMetricType ROWS_PARTIAL_COMPLIANCE = new DataQualityMetricType("ROWS_PARTIAL_COMPLIANCE");
+        /// <summary>
+        /// Constant ROWS_PROCESSED for DataQualityMetricType
+        /// </summary>
+        public static readonly DataQualityMetricType ROWS_PROCESSED = new DataQualityMetricType("ROWS_PROCESSED");
+        /// <summary>
+        /// Constant TIME_SERIES_COUNT for DataQualityMetricType
+        /// </summary>
+        public static readonly DataQualityMetricType TIME_SERIES_COUNT = new DataQualityMetricType("TIME_SERIES_COUNT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataQualityMetricType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataQualityMetricType FindValue(string value)
+        {
+            return FindValue<DataQualityMetricType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataQualityMetricType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Frequency.
     /// </summary>
     public class Frequency : ConstantClass

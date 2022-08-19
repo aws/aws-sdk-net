@@ -222,6 +222,16 @@
     <pattern>[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LookoutMetrics.Model.GetDataQualityMetricsRequest.AnomalyDetectorArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):.*:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutMetrics.Model.GetDataQualityMetricsRequest.MetricSetArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):.*:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LookoutMetrics.Model.GetFeedbackRequest.AnomalyDetectorArn</property>
     <max>256</max>
     <pattern>arn:([a-z\d-]+):.*:.*:.*:.+</pattern>
@@ -681,6 +691,18 @@
     <pattern>[^\r\n]|^$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LookoutMetrics.Model.DataQualityMetric.MetricDescription</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutMetrics.Model.DataQualityMetric.RelatedColumnName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LookoutMetrics.Model.DimensionContribution.DimensionName</property>
     <min>1</min>
     <max>63</max>
@@ -765,6 +787,11 @@
     <property>Amazon.LookoutMetrics.Model.MetricLevelImpact.MetricName</property>
     <max>256</max>
     <pattern>^[a-zA-Z0-9][a-zA-Z0-9\-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutMetrics.Model.MetricSetDataQualityMetric.MetricSetArn</property>
+    <max>256</max>
+    <pattern>arn:([a-z\d-]+):.*:.*:.*:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutMetrics.Model.MetricSetSummary.AnomalyDetectorArn</property>

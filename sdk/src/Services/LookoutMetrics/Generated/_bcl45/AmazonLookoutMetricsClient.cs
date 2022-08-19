@@ -1370,6 +1370,79 @@ namespace Amazon.LookoutMetrics
 
         #endregion
         
+        #region  GetDataQualityMetrics
+
+
+        /// <summary>
+        /// Returns details about the requested data quality metrics.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataQualityMetrics service method.</param>
+        /// 
+        /// <returns>The response from the GetDataQualityMetrics service method, as returned by LookoutMetrics.</returns>
+        /// <exception cref="Amazon.LookoutMetrics.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutMetrics.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutMetrics.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found. Check the ARN of the resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutMetrics.Model.TooManyRequestsException">
+        /// The request was denied due to too many requests being submitted at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutMetrics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service. Check your
+        /// input values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/GetDataQualityMetrics">REST API Reference for GetDataQualityMetrics Operation</seealso>
+        public virtual GetDataQualityMetricsResponse GetDataQualityMetrics(GetDataQualityMetricsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataQualityMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataQualityMetricsResponseUnmarshaller.Instance;
+
+            return Invoke<GetDataQualityMetricsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns details about the requested data quality metrics.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataQualityMetrics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDataQualityMetrics service method, as returned by LookoutMetrics.</returns>
+        /// <exception cref="Amazon.LookoutMetrics.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutMetrics.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutMetrics.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found. Check the ARN of the resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutMetrics.Model.TooManyRequestsException">
+        /// The request was denied due to too many requests being submitted at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutMetrics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service. Check your
+        /// input values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/GetDataQualityMetrics">REST API Reference for GetDataQualityMetrics Operation</seealso>
+        public virtual Task<GetDataQualityMetricsResponse> GetDataQualityMetricsAsync(GetDataQualityMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataQualityMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataQualityMetricsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetDataQualityMetricsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetFeedback
 
 
