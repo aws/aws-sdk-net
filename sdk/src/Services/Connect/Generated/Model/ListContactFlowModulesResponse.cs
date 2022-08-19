@@ -39,7 +39,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ContactFlowModulesSummaryList. 
         /// <para>
-        /// Information about the contact flow module.
+        /// Information about the flow module.
         /// </para>
         /// </summary>
         public List<ContactFlowModuleSummary> ContactFlowModulesSummaryList

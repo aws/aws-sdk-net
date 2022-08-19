@@ -59,7 +59,7 @@ namespace Amazon.Connect
     /// </para>
     ///  <note> 
     /// <para>
-    /// Working with contact flows? Check out the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+    /// Working with flows? Check out the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
     /// Connect Flow language</a>.
     /// </para>
     ///  </note>
@@ -761,7 +761,7 @@ namespace Amazon.Connect
         #region  AssociatePhoneNumberContactFlow
 
         /// <summary>
-        /// Associates a contact flow with a phone number claimed to your Amazon Connect instance.
+        /// Associates a flow with a phone number claimed to your Amazon Connect instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociatePhoneNumberContactFlow service method.</param>
         /// 
@@ -1208,11 +1208,11 @@ namespace Amazon.Connect
         #region  CreateContactFlow
 
         /// <summary>
-        /// Creates a contact flow for the specified Amazon Connect instance.
+        /// Creates a flow for the specified Amazon Connect instance.
         /// 
         ///  
         /// <para>
-        /// You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+        /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
         /// Connect Flow language</a>.
         /// </para>
         /// </summary>
@@ -1226,7 +1226,7 @@ namespace Amazon.Connect
         /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidContactFlowException">
-        /// The contact flow is not valid.
+        /// The flow is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -1292,7 +1292,7 @@ namespace Amazon.Connect
         #region  CreateContactFlowModule
 
         /// <summary>
-        /// Creates a contact flow module for the specified Amazon Connect instance.
+        /// Creates a flow module for the specified Amazon Connect instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateContactFlowModule service method.</param>
         /// 
@@ -1932,7 +1932,7 @@ namespace Amazon.Connect
         /// One or more of the specified parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.PropertyValidationException">
-        /// 
+        /// The property is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -2296,7 +2296,7 @@ namespace Amazon.Connect
         #region  DeleteContactFlow
 
         /// <summary>
-        /// Deletes a contact flow for the specified Amazon Connect instance.
+        /// Deletes a flow for the specified Amazon Connect instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteContactFlow service method.</param>
         /// 
@@ -2368,7 +2368,7 @@ namespace Amazon.Connect
         #region  DeleteContactFlowModule
 
         /// <summary>
-        /// Deletes the specified contact flow module.
+        /// Deletes the specified flow module.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteContactFlowModule service method.</param>
         /// 
@@ -3317,11 +3317,11 @@ namespace Amazon.Connect
         #region  DescribeContactFlow
 
         /// <summary>
-        /// Describes the specified contact flow.
+        /// Describes the specified flow.
         /// 
         ///  
         /// <para>
-        /// You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+        /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
         /// Connect Flow language</a>.
         /// </para>
         /// </summary>
@@ -3329,7 +3329,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the DescribeContactFlow service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.ContactFlowNotPublishedException">
-        /// The contact flow has not been published.
+        /// The flow has not been published.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
@@ -3395,7 +3395,7 @@ namespace Amazon.Connect
         #region  DescribeContactFlowModule
 
         /// <summary>
-        /// Describes the specified contact flow module.
+        /// Describes the specified flow module.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeContactFlowModule service method.</param>
         /// 
@@ -4623,8 +4623,8 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        /// Remove the Lambda function from the dropdown options available in the relevant contact
-        /// flow blocks.
+        /// Remove the Lambda function from the dropdown options available in the relevant flow
+        /// blocks.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateLambdaFunction service method.</param>
@@ -4769,8 +4769,8 @@ namespace Amazon.Connect
         #region  DisassociatePhoneNumberContactFlow
 
         /// <summary>
-        /// Removes the contact flow association from a phone number claimed to your Amazon Connect
-        /// instance, if a contact flow association exists.
+        /// Removes the flow association from a phone number claimed to your Amazon Connect instance,
+        /// if a flow association exists.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociatePhoneNumberContactFlow service method.</param>
         /// 
@@ -5711,8 +5711,7 @@ namespace Amazon.Connect
         #region  ListContactFlowModules
 
         /// <summary>
-        /// Provides information about the contact flow modules for the specified Amazon Connect
-        /// instance.
+        /// Provides information about the flow modules for the specified Amazon Connect instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListContactFlowModules service method.</param>
         /// 
@@ -5784,17 +5783,17 @@ namespace Amazon.Connect
         #region  ListContactFlows
 
         /// <summary>
-        /// Provides information about the contact flows for the specified Amazon Connect instance.
+        /// Provides information about the flows for the specified Amazon Connect instance.
         /// 
         ///  
         /// <para>
-        /// You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+        /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
         /// Connect Flow language</a>.
         /// </para>
         ///  
         /// <para>
-        /// For more information about contact flows, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-contact-flows.html">Contact
-        /// Flows</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// For more information about flows, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-contact-flows.html">Flows</a>
+        /// in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListContactFlows service method.</param>
@@ -6369,7 +6368,7 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// Returns a paginated list of all Lambda functions that display in the dropdown options
-        /// in the relevant contact flow blocks.
+        /// in the relevant flow blocks.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListLambdaFunctions service method.</param>
@@ -7973,6 +7972,80 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  SearchSecurityProfiles
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Searches security profiles in an Amazon Connect instance, with optional filtering.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchSecurityProfiles service method.</param>
+        /// 
+        /// <returns>The response from the SearchSecurityProfiles service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchSecurityProfiles">REST API Reference for SearchSecurityProfiles Operation</seealso>
+        public virtual SearchSecurityProfilesResponse SearchSecurityProfiles(SearchSecurityProfilesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchSecurityProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchSecurityProfilesResponseUnmarshaller.Instance;
+
+            return Invoke<SearchSecurityProfilesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchSecurityProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchSecurityProfiles operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchSecurityProfiles
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchSecurityProfiles">REST API Reference for SearchSecurityProfiles Operation</seealso>
+        public virtual IAsyncResult BeginSearchSecurityProfiles(SearchSecurityProfilesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchSecurityProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchSecurityProfilesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchSecurityProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchSecurityProfiles.</param>
+        /// 
+        /// <returns>Returns a  SearchSecurityProfilesResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchSecurityProfiles">REST API Reference for SearchSecurityProfiles Operation</seealso>
+        public virtual SearchSecurityProfilesResponse EndSearchSecurityProfiles(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SearchSecurityProfilesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  SearchUsers
 
         /// <summary>
@@ -8112,8 +8185,8 @@ namespace Amazon.Connect
         #region  StartChatContact
 
         /// <summary>
-        /// Initiates a contact flow to start a new chat for the customer. Response of this API
-        /// provides a token required to obtain credentials from the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
+        /// Initiates a flow to start a new chat for the customer. Response of this API provides
+        /// a token required to obtain credentials from the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
         /// API in the Amazon Connect Participant Service.
         /// 
         ///  
@@ -8385,14 +8458,14 @@ namespace Amazon.Connect
         #region  StartOutboundVoiceContact
 
         /// <summary>
-        /// Places an outbound call to a contact, and then initiates the contact flow. It performs
-        /// the actions in the contact flow that's specified (in <code>ContactFlowId</code>).
+        /// Places an outbound call to a contact, and then initiates the flow. It performs the
+        /// actions in the flow that's specified (in <code>ContactFlowId</code>).
         /// 
         ///  
         /// <para>
         /// Agents do not initiate the outbound API, which means that they do not dial the contact.
-        /// If the contact flow places an outbound call to a contact, and then puts the contact
-        /// in queue, the call is then routed to the agent, like any other inbound case.
+        /// If the flow places an outbound call to a contact, and then puts the contact in queue,
+        /// the call is then routed to the agent, like any other inbound case.
         /// </para>
         ///  
         /// <para>
@@ -8409,9 +8482,9 @@ namespace Amazon.Connect
         ///  </note> <note> 
         /// <para>
         /// Campaign calls are not allowed by default. Before you can make a call with <code>TrafficType</code>
-        /// = <code>CAMPAIGN</code>, you must submit a service quota increase request. For more
-        /// information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-        /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>. 
+        /// = <code>CAMPAIGN</code>, you must submit a service quota increase request to the quota
+        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#outbound-communications-quotas">Amazon
+        /// Connect campaigns</a>. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -8488,7 +8561,7 @@ namespace Amazon.Connect
         #region  StartTaskContact
 
         /// <summary>
-        /// Initiates a contact flow to start a new task.
+        /// Initiates a flow to start a new task.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartTaskContact service method.</param>
         /// 
@@ -8863,9 +8936,10 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        /// The supported resource types are users, routing profiles, queues, quick connects,
-        /// contact flows, agent status, hours of operation, phone number, security profiles,
-        /// and task templates.
+        /// Some of the supported resource types are agents, routing profiles, queues, quick connects,
+        /// contact flows, agent statuses, hours of operation, phone numbers, security profiles,
+        /// and task templates. For a complete list, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tagging.html">Tagging
+        /// resources in Amazon Connect</a>.
         /// </para>
         ///  
         /// <para>
@@ -8943,8 +9017,8 @@ namespace Amazon.Connect
         /// <summary>
         /// Transfers contacts from one agent or queue to another agent or queue at any point
         /// after a contact is created. You can transfer a contact to another queue by providing
-        /// the contact flow which orchestrates the contact to the destination queue. This gives
-        /// you more control over contact handling and helps you adhere to the service level agreement
+        /// the flow which orchestrates the contact to the destination queue. This gives you more
+        /// control over contact handling and helps you adhere to the service level agreement
         /// (SLA) guaranteed to your customers.
         /// 
         ///  
@@ -8961,8 +9035,8 @@ namespace Amazon.Connect
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The following contact flow types are supported: Inbound contact flow, Transfer to
-        /// agent flow, and Transfer to queue flow.
+        /// The following flow types are supported: Inbound flow, Transfer to agent flow, and
+        /// Transfer to queue flow.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9292,18 +9366,9 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// Contact attributes are available in Amazon Connect for 24 months, and are then deleted.
-        /// For information about CTR retention and the maximum size of the CTR attributes section,
-        /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature
+        /// For information about contact record retention and the maximum size of the contact
+        /// record attributes section, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature
         /// specifications</a> in the <i>Amazon Connect Administrator Guide</i>. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>Important:</b> You cannot use the operation to update attributes for contacts
-        /// that occurred prior to the release of the API, which was September 12, 2018. You can
-        /// update attributes only for contacts that started after the release of the API. If
-        /// you attempt to update attributes for a contact that occurred prior to the release
-        /// of the API, a 400 error is returned. This applies also to queued callbacks that were
-        /// initiated prior to the release of the API but are still active in your instance.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContactAttributes service method.</param>
@@ -9370,11 +9435,11 @@ namespace Amazon.Connect
         #region  UpdateContactFlowContent
 
         /// <summary>
-        /// Updates the specified contact flow.
+        /// Updates the specified flow.
         /// 
         ///  
         /// <para>
-        /// You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+        /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
         /// Connect Flow language</a>.
         /// </para>
         /// </summary>
@@ -9385,7 +9450,7 @@ namespace Amazon.Connect
         /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidContactFlowException">
-        /// The contact flow is not valid.
+        /// The flow is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -9448,7 +9513,7 @@ namespace Amazon.Connect
         #region  UpdateContactFlowMetadata
 
         /// <summary>
-        /// Updates metadata about specified contact flow.
+        /// Updates metadata about specified flow.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContactFlowMetadata service method.</param>
         /// 
@@ -9520,7 +9585,7 @@ namespace Amazon.Connect
         #region  UpdateContactFlowModuleContent
 
         /// <summary>
-        /// Updates specified contact flow module for the specified Amazon Connect instance.
+        /// Updates specified flow module for the specified Amazon Connect instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContactFlowModuleContent service method.</param>
         /// 
@@ -9592,7 +9657,7 @@ namespace Amazon.Connect
         #region  UpdateContactFlowModuleMetadata
 
         /// <summary>
-        /// Updates metadata about specified contact flow module.
+        /// Updates metadata about specified flow module.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContactFlowModuleMetadata service method.</param>
         /// 
@@ -9667,11 +9732,11 @@ namespace Amazon.Connect
         #region  UpdateContactFlowName
 
         /// <summary>
-        /// The name of the contact flow.
+        /// The name of the flow.
         /// 
         ///  
         /// <para>
-        /// You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+        /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
         /// Connect Flow language</a>.
         /// </para>
         /// </summary>
@@ -11004,7 +11069,7 @@ namespace Amazon.Connect
         /// One or more of the specified parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.PropertyValidationException">
-        /// 
+        /// The property is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.

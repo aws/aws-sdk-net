@@ -30,7 +30,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateContactFlowMetadata operation.
-    /// Updates metadata about specified contact flow.
+    /// Updates metadata about specified flow.
     /// </summary>
     public partial class UpdateContactFlowMetadataRequest : AmazonConnectRequest
     {
@@ -43,7 +43,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ContactFlowId. 
         /// <para>
-        /// The identifier of the contact flow.
+        /// The identifier of the flow.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=500)]
@@ -62,7 +62,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ContactFlowState. 
         /// <para>
-        /// The state of contact flow.
+        /// The state of flow.
         /// </para>
         /// </summary>
         public ContactFlowState ContactFlowState
@@ -80,7 +80,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the contact flow.
+        /// The description of the flow.
         /// </para>
         /// </summary>
         public string Description
@@ -118,7 +118,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// TThe name of the contact flow.
+        /// TThe name of the flow.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

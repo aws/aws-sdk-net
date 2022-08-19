@@ -35,7 +35,7 @@ namespace Amazon.Connect.Model
     ///  
     /// <para>
     /// Returns a paginated list of all Lambda functions that display in the dropdown options
-    /// in the relevant contact flow blocks.
+    /// in the relevant flow blocks.
     /// </para>
     /// </summary>
     public partial class ListLambdaFunctionsRequest : AmazonConnectRequest

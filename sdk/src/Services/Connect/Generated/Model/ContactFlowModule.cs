@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Contains information about a contact flow module.
+    /// Contains information about a flow module.
     /// </summary>
     public partial class ContactFlowModule
     {
@@ -63,7 +63,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// The content of the contact flow module.
+        /// The content of the flow module.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256000)]
@@ -82,7 +82,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the contact flow module.
+        /// The description of the flow module.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=500)]
@@ -101,7 +101,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of the contact flow module.
+        /// The identifier of the flow module.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -120,7 +120,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the contact flow module.
+        /// The name of the flow module.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=127)]
@@ -139,7 +139,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The type of contact flow module.
+        /// The type of flow module.
         /// </para>
         /// </summary>
         public ContactFlowModuleState State
@@ -157,7 +157,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the contact flow module.
+        /// The status of the flow module.
         /// </para>
         /// </summary>
         public ContactFlowModuleStatus Status
@@ -175,7 +175,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags used to organize, track, or control access for this resource.
+        /// The tags used to organize, track, or control access for this resource. For example,
+        /// { "tags": {"key1":"value1", "key2":"value2"} }.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

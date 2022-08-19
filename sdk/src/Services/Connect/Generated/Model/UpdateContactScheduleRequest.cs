@@ -81,8 +81,8 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property ScheduledTime. 
         /// <para>
         /// The timestamp, in Unix Epoch seconds format, at which to start running the inbound
-        /// contact flow. The scheduled time cannot be in the past. It must be within up to 6
-        /// days in future. 
+        /// flow. The scheduled time cannot be in the past. It must be within up to 6 days in
+        /// future. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

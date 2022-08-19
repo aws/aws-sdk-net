@@ -30,8 +30,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the ListContactFlowModules operation.
-    /// Provides information about the contact flow modules for the specified Amazon Connect
-    /// instance.
+    /// Provides information about the flow modules for the specified Amazon Connect instance.
     /// </summary>
     public partial class ListContactFlowModulesRequest : AmazonConnectRequest
     {
@@ -43,7 +42,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ContactFlowModuleState. 
         /// <para>
-        /// The state of the contact flow module.
+        /// The state of the flow module.
         /// </para>
         /// </summary>
         public ContactFlowModuleState ContactFlowModuleState

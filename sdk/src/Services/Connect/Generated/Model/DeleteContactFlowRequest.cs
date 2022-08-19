@@ -30,7 +30,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteContactFlow operation.
-    /// Deletes a contact flow for the specified Amazon Connect instance.
+    /// Deletes a flow for the specified Amazon Connect instance.
     /// </summary>
     public partial class DeleteContactFlowRequest : AmazonConnectRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ContactFlowId. 
         /// <para>
-        /// The identifier of the contact flow.
+        /// The identifier of the flow.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=500)]

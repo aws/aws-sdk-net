@@ -30,7 +30,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateContactFlowModule operation.
-    /// Creates a contact flow module for the specified Amazon Connect instance.
+    /// Creates a flow module for the specified Amazon Connect instance.
     /// </summary>
     public partial class CreateContactFlowModuleRequest : AmazonConnectRequest
     {
@@ -64,7 +64,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// The content of the contact flow module.
+        /// The content of the flow module.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256000)]
@@ -83,7 +83,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the contact flow module. 
+        /// The description of the flow module. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=500)]
@@ -122,7 +122,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the contact flow module.
+        /// The name of the flow module.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=127)]
@@ -141,7 +141,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags used to organize, track, or control access for this resource.
+        /// The tags used to organize, track, or control access for this resource. For example,
+        /// { "tags": {"key1":"value1", "key2":"value2"} }.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

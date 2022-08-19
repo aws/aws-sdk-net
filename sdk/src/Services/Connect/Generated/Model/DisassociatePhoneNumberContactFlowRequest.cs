@@ -30,8 +30,8 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociatePhoneNumberContactFlow operation.
-    /// Removes the contact flow association from a phone number claimed to your Amazon Connect
-    /// instance, if a contact flow association exists.
+    /// Removes the flow association from a phone number claimed to your Amazon Connect instance,
+    /// if a flow association exists.
     /// </summary>
     public partial class DisassociatePhoneNumberContactFlowRequest : AmazonConnectRequest
     {

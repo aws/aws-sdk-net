@@ -300,6 +300,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for SearchSecurityProfiles operation
+        ///</summary>
+        public ISearchSecurityProfilesPaginator SearchSecurityProfiles(SearchSecurityProfilesRequest request) 
+        {
+            return new SearchSecurityProfilesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for SearchUsers operation
         ///</summary>
         public ISearchUsersPaginator SearchUsers(SearchUsersRequest request) 

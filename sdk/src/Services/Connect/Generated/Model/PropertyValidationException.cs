@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// 
+    /// The property is not valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

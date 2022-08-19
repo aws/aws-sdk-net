@@ -30,7 +30,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociatePhoneNumberContactFlow operation.
-    /// Associates a contact flow with a phone number claimed to your Amazon Connect instance.
+    /// Associates a flow with a phone number claimed to your Amazon Connect instance.
     /// </summary>
     public partial class AssociatePhoneNumberContactFlowRequest : AmazonConnectRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ContactFlowId. 
         /// <para>
-        /// The identifier of the contact flow.
+        /// The identifier of the flow.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=500)]

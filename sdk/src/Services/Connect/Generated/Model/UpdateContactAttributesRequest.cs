@@ -45,18 +45,9 @@ namespace Amazon.Connect.Model
     ///  
     /// <para>
     /// Contact attributes are available in Amazon Connect for 24 months, and are then deleted.
-    /// For information about CTR retention and the maximum size of the CTR attributes section,
-    /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature
+    /// For information about contact record retention and the maximum size of the contact
+    /// record attributes section, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature
     /// specifications</a> in the <i>Amazon Connect Administrator Guide</i>. 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>Important:</b> You cannot use the operation to update attributes for contacts
-    /// that occurred prior to the release of the API, which was September 12, 2018. You can
-    /// update attributes only for contacts that started after the release of the API. If
-    /// you attempt to update attributes for a contact that occurred prior to the release
-    /// of the API, a 400 error is returned. This applies also to queued callbacks that were
-    /// initiated prior to the release of the API but are still active in your instance.
     /// </para>
     /// </summary>
     public partial class UpdateContactAttributesRequest : AmazonConnectRequest
@@ -68,8 +59,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// The Amazon Connect attributes. These attributes can be accessed in contact flows just
-        /// like any other contact attributes.
+        /// The Amazon Connect attributes. These attributes can be accessed in flows just like
+        /// any other contact attributes.
         /// </para>
         ///  
         /// <para>

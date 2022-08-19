@@ -39,7 +39,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the contact flow module.
+        /// The Amazon Resource Name (ARN) of the flow module.
         /// </para>
         /// </summary>
         public string Arn
@@ -57,7 +57,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of the contact flow module.
+        /// The identifier of the flow module.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

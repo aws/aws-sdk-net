@@ -30,7 +30,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeContactFlowModule operation.
-    /// Describes the specified contact flow module.
+    /// Describes the specified flow module.
     /// </summary>
     public partial class DescribeContactFlowModuleRequest : AmazonConnectRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ContactFlowModuleId. 
         /// <para>
-        /// The identifier of the contact flow module.
+        /// The identifier of the flow module.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

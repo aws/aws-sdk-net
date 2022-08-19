@@ -32,8 +32,8 @@ namespace Amazon.Connect.Model
     /// Container for the parameters to the TransferContact operation.
     /// Transfers contacts from one agent or queue to another agent or queue at any point
     /// after a contact is created. You can transfer a contact to another queue by providing
-    /// the contact flow which orchestrates the contact to the destination queue. This gives
-    /// you more control over contact handling and helps you adhere to the service level agreement
+    /// the flow which orchestrates the contact to the destination queue. This gives you more
+    /// control over contact handling and helps you adhere to the service level agreement
     /// (SLA) guaranteed to your customers.
     /// 
     ///  
@@ -50,8 +50,8 @@ namespace Amazon.Connect.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The following contact flow types are supported: Inbound contact flow, Transfer to
-    /// agent flow, and Transfer to queue flow.
+    /// The following flow types are supported: Inbound flow, Transfer to agent flow, and
+    /// Transfer to queue flow.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -95,7 +95,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ContactFlowId. 
         /// <para>
-        /// The identifier of the contact flow.
+        /// The identifier of the flow.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=500)]

@@ -1087,6 +1087,26 @@
     <max>100000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.SearchSecurityProfilesRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SearchSecurityProfilesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SearchSecurityProfilesRequest.NextToken</property>
+    <min>1</min>
+    <max>2500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SearchSecurityProfilesResponse.NextToken</property>
+    <min>1</min>
+    <max>2500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.SearchUsersRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -2166,6 +2186,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.SecurityProfile.OrganizationResourceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SecurityProfileSearchSummary.Description</property>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SecurityProfileSearchSummary.OrganizationResourceId</property>
     <min>1</min>
     <max>100</max>
   </property-value-rule>
