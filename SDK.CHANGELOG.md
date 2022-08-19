@@ -1,3 +1,16 @@
+### 3.7.339.0 (2022-08-19 18:21 UTC)
+* Connect (3.7.23.0)
+	* This release adds SearchSecurityProfiles API which can be used to search for Security Profile resources within a Connect Instance.
+* Ivschat (3.7.0.45)
+	* Documentation Change for IVS Chat API Reference - Doc-only update to change text/description for tags field.
+* Kendra (3.7.25.0)
+	* This release adds support for a new authentication type - Personal Access Token (PAT) for confluence server.
+* LookoutMetrics (3.7.13.0)
+	* This release is to make GetDataQualityMetrics API publicly available.
+* Core 3.7.12.23
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.338.0 (2022-08-18 18:20 UTC)
 * ChimeSDKMediaPipelines (3.7.1.0)
 	* The Amazon Chime SDK now supports live streaming of real-time video from the Amazon Chime SDK sessions to streaming platforms such as Amazon IVS and Amazon Elemental MediaLive. We have also added support for concatenation to create a single media capture file.
