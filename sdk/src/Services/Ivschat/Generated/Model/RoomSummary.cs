@@ -139,7 +139,10 @@ namespace Amazon.Ivschat.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags attached to the resource. 
+        /// Tags attached to the resource. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// AWS Resources</a> for details, including restrictions that apply to tags and "Tag
+        /// naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is
+        /// documented there.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

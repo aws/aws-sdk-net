@@ -38,8 +38,7 @@ namespace Amazon.Ivschat.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags to attach to the resource. Array of maps, each of the form <code>string:string
-        /// (key:value)</code>.
+        /// Tags attached to the resource, from the request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=50)]

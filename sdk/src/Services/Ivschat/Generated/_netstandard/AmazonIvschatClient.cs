@@ -82,6 +82,35 @@ namespace Amazon.Ivschat
     /// </para>
     ///  </li> </ul> 
     /// <para>
+    ///  <b>Tagging</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// A <i>tag</i> is a metadata label that you assign to an AWS resource. A tag comprises
+    /// a <i>key</i> and a <i>value</i>, both set by you. For example, you might set a tag
+    /// as <code>topic:nature</code> to label a particular video category. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+    /// AWS Resources</a> for more information, including restrictions that apply to tags
+    /// and "Tag naming limits and requirements"; Amazon IVS Chat has no service-specific
+    /// constraints beyond what is documented there.
+    /// </para>
+    ///  
+    /// <para>
+    /// Tags can help you identify and organize your AWS resources. For example, you can use
+    /// the same tag for different resources to indicate that they are related. You can also
+    /// use tags to manage access (see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Access
+    /// Tags</a>).
+    /// </para>
+    ///  
+    /// <para>
+    /// The Amazon IVS Chat API has these tag-related endpoints: <a>TagResource</a>, <a>UntagResource</a>,
+    /// and <a>ListTagsForResource</a>. The following resource supports tagging: Room.
+    /// </para>
+    ///  
+    /// <para>
+    /// At most 50 tags can be applied to a resource.
+    /// </para>
+    ///  
+    /// <para>
     ///  <b>API Access Security</b> 
     /// </para>
     ///  
