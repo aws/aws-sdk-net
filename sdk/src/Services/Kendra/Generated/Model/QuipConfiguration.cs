@@ -126,7 +126,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// The Quip site domain.
+        /// The Quip site domain. For example, <i>https://quip-company.quipdomain.com/browse</i>.
+        /// The domain in this example is "quipdomain".
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]
@@ -168,8 +169,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property FolderIds. 
         /// <para>
-        /// The identifiers of the Quip folders you want to index. You can find in your browser
-        /// URL when you access your folder in Quip. For example, <i>https://quip-company.com/zlLuOVNSarTL/folder-name</i>.
+        /// The identifiers of the Quip folders you want to index. You can find the folder ID
+        /// in your browser URL when you access your folder in Quip. For example, <i>https://quip-company.quipdomain.com/zlLuOVNSarTL/folder-name</i>.
+        /// The folder ID in this example is "zlLuOVNSarTL".
         /// </para>
         /// </summary>
         public List<string> FolderIds

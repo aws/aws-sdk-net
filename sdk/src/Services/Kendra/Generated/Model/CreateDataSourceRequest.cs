@@ -30,7 +30,7 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDataSource operation.
-    /// Creates a data source that you want to use with an Amazon Kendra index. 
+    /// Creates a data source connector that you want to use with an Amazon Kendra index.
     /// 
     ///  
     /// <para>
@@ -228,8 +228,8 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of a role with permission to access the data source
-        /// connector. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM
-        /// Roles for Amazon Kendra</a>.
+        /// and required resources. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM
+        /// roles for Amazon Kendra</a>.
         /// </para>
         ///  
         /// <para>

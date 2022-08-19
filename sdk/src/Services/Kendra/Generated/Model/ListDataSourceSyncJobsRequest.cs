@@ -30,7 +30,7 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDataSourceSyncJobs operation.
-    /// Gets statistics about synchronizing Amazon Kendra with a data source.
+    /// Gets statistics about synchronizing a data source connector.
     /// </summary>
     public partial class ListDataSourceSyncJobsRequest : AmazonKendraRequest
     {
@@ -44,7 +44,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of the data source.
+        /// The identifier of the data source connector.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -63,7 +63,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// The identifier of the index used with the data source.
+        /// The identifier of the index used with the data source connector.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -124,7 +124,7 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property StartTimeFilter. 
         /// <para>
         /// When specified, the synchronization jobs returned in the list are limited to jobs
-        /// between the specified dates. 
+        /// between the specified dates.
         /// </para>
         /// </summary>
         public TimeRange StartTimeFilter
@@ -142,8 +142,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property StatusFilter. 
         /// <para>
-        /// When specified, only returns synchronization jobs with the <code>Status</code> field
-        /// equal to the specified status.
+        /// Only returns synchronization jobs with the <code>Status</code> field equal to the
+        /// specified status.
         /// </para>
         /// </summary>
         public DataSourceSyncJobStatus StatusFilter

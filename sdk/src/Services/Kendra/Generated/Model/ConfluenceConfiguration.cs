@@ -34,6 +34,7 @@ namespace Amazon.Kendra.Model
     public partial class ConfluenceConfiguration
     {
         private ConfluenceAttachmentConfiguration _attachmentConfiguration;
+        private ConfluenceAuthenticationType _authenticationType;
         private ConfluenceBlogConfiguration _blogConfiguration;
         private List<string> _exclusionPatterns = new List<string>();
         private List<string> _inclusionPatterns = new List<string>();
@@ -61,6 +62,26 @@ namespace Amazon.Kendra.Model
         internal bool IsSetAttachmentConfiguration()
         {
             return this._attachmentConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AuthenticationType. 
+        /// <para>
+        /// Whether you want to connect to Confluence using basic authentication of user name
+        /// and password, or a personal access token. You can use a personal access token for
+        /// Confluence Server.
+        /// </para>
+        /// </summary>
+        public ConfluenceAuthenticationType AuthenticationType
+        {
+            get { return this._authenticationType; }
+            set { this._authenticationType = value; }
+        }
+
+        // Check to see if AuthenticationType property is set
+        internal bool IsSetAuthenticationType()
+        {
+            return this._authenticationType != null;
         }
 
         /// <summary>
@@ -190,9 +211,15 @@ namespace Amazon.Kendra.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user
         /// name and password required to connect to the Confluence instance. If you use Confluence
-        /// cloud, you use a generated API token as the password. For more information, see <a
+        /// Cloud, you use a generated API token as the password. For more information, see <a
         /// href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using
         /// a Confluence data source</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can also provide authentication credentials in the form of a personal access token.
+        /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html#confluence-authentication">Authentication
+        /// for a Confluence data source</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1284)]

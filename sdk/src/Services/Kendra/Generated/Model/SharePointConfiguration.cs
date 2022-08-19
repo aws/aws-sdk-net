@@ -294,7 +294,13 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property SslCertificateS3Path. 
         /// <para>
         /// The path to the SSL certificate stored in an Amazon S3 bucket. You use this to connect
-        /// to SharePoint.
+        /// to SharePoint Server if you require a secure SSL connection.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can simply generate a self-signed X509 certificate on any computer using OpenSSL.
+        /// For an example of using OpenSSL to create an X509 certificate, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create
+        /// and sign an X509 certificate</a>.
         /// </para>
         /// </summary>
         public S3Path SslCertificateS3Path
@@ -312,7 +318,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Urls. 
         /// <para>
-        /// The Microsoft SharePoint site URLs for the documents you want to indext.
+        /// The Microsoft SharePoint site URLs for the documents you want to index.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

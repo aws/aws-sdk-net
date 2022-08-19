@@ -30,7 +30,7 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDataSource operation.
-    /// Updates an existing Amazon Kendra data source.
+    /// Updates an existing Amazon Kendra data source connector.
     /// </summary>
     public partial class UpdateDataSourceRequest : AmazonKendraRequest
     {
@@ -110,7 +110,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of the data source you want to update.
+        /// The identifier of the data source connector you want to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -190,9 +190,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of a role with permission to access the data source.
-        /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM
-        /// Roles for Amazon Kendra</a>.
+        /// The Amazon Resource Name (ARN) of a role with permission to access the data source
+        /// and required resources. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM
+        /// roles for Amazon Kendra</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1284)]

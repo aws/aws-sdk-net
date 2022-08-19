@@ -56,6 +56,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetAuthenticationType())
+            {
+                context.Writer.WritePropertyName("AuthenticationType");
+                context.Writer.Write(requestObject.AuthenticationType);
+            }
+
             if(requestObject.IsSetBlogConfiguration())
             {
                 context.Writer.WritePropertyName("BlogConfiguration");

@@ -684,7 +684,7 @@ namespace Amazon.Kendra
 
 
         /// <summary>
-        /// Creates a data source that you want to use with an Amazon Kendra index. 
+        /// Creates a data source connector that you want to use with an Amazon Kendra index.
         /// 
         ///  
         /// <para>
@@ -743,7 +743,7 @@ namespace Amazon.Kendra
 
 
         /// <summary>
-        /// Creates a data source that you want to use with an Amazon Kendra index. 
+        /// Creates a data source connector that you want to use with an Amazon Kendra index.
         /// 
         ///  
         /// <para>
@@ -1354,10 +1354,10 @@ namespace Amazon.Kendra
 
 
         /// <summary>
-        /// Deletes an Amazon Kendra data source. An exception is not thrown if the data source
-        /// is already being deleted. While the data source is being deleted, the <code>Status</code>
-        /// field returned by a call to the <code>DescribeDataSource</code> API is set to <code>DELETING</code>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/delete-data-source.html">Deleting
+        /// Deletes an Amazon Kendra data source connector. An exception is not thrown if the
+        /// data source is already being deleted. While the data source is being deleted, the
+        /// <code>Status</code> field returned by a call to the <code>DescribeDataSource</code>
+        /// API is set to <code>DELETING</code>. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/delete-data-source.html">Deleting
         /// Data Sources</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataSource service method.</param>
@@ -1387,10 +1387,10 @@ namespace Amazon.Kendra
 
 
         /// <summary>
-        /// Deletes an Amazon Kendra data source. An exception is not thrown if the data source
-        /// is already being deleted. While the data source is being deleted, the <code>Status</code>
-        /// field returned by a call to the <code>DescribeDataSource</code> API is set to <code>DELETING</code>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/delete-data-source.html">Deleting
+        /// Deletes an Amazon Kendra data source connector. An exception is not thrown if the
+        /// data source is already being deleted. While the data source is being deleted, the
+        /// <code>Status</code> field returned by a call to the <code>DescribeDataSource</code>
+        /// API is set to <code>DELETING</code>. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/delete-data-source.html">Deleting
         /// Data Sources</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataSource service method.</param>
@@ -1946,7 +1946,7 @@ namespace Amazon.Kendra
 
 
         /// <summary>
-        /// Gets information about an Amazon Kendra data source.
+        /// Gets information about an Amazon Kendra data source connector.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDataSource service method.</param>
         /// 
@@ -1972,7 +1972,7 @@ namespace Amazon.Kendra
 
 
         /// <summary>
-        /// Gets information about an Amazon Kendra data source.
+        /// Gets information about an Amazon Kendra data source connector.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDataSource service method.</param>
         /// <param name="cancellationToken">
@@ -2804,7 +2804,7 @@ namespace Amazon.Kendra
 
 
         /// <summary>
-        /// Lists the data sources that you have created.
+        /// Lists the data source connectors that you have created.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDataSources service method.</param>
         /// 
@@ -2830,7 +2830,7 @@ namespace Amazon.Kendra
 
 
         /// <summary>
-        /// Lists the data sources that you have created.
+        /// Lists the data source connectors that you have created.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDataSources service method.</param>
         /// <param name="cancellationToken">
@@ -2862,7 +2862,7 @@ namespace Amazon.Kendra
 
 
         /// <summary>
-        /// Gets statistics about synchronizing Amazon Kendra with a data source.
+        /// Gets statistics about synchronizing a data source connector.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDataSourceSyncJobs service method.</param>
         /// 
@@ -2891,7 +2891,7 @@ namespace Amazon.Kendra
 
 
         /// <summary>
-        /// Gets statistics about synchronizing Amazon Kendra with a data source.
+        /// Gets statistics about synchronizing a data source connector.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDataSourceSyncJobs service method.</param>
         /// <param name="cancellationToken">
@@ -3758,8 +3758,9 @@ namespace Amazon.Kendra
 
 
         /// <summary>
-        /// Starts a synchronization job for a data source. If a synchronization job is already
-        /// in progress, Amazon Kendra returns a <code>ResourceInUseException</code> exception.
+        /// Starts a synchronization job for a data source connector. If a synchronization job
+        /// is already in progress, Amazon Kendra returns a <code>ResourceInUseException</code>
+        /// exception.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDataSourceSyncJob service method.</param>
         /// 
@@ -3791,8 +3792,9 @@ namespace Amazon.Kendra
 
 
         /// <summary>
-        /// Starts a synchronization job for a data source. If a synchronization job is already
-        /// in progress, Amazon Kendra returns a <code>ResourceInUseException</code> exception.
+        /// Starts a synchronization job for a data source connector. If a synchronization job
+        /// is already in progress, Amazon Kendra returns a <code>ResourceInUseException</code>
+        /// exception.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDataSourceSyncJob service method.</param>
         /// <param name="cancellationToken">
@@ -4206,7 +4208,7 @@ namespace Amazon.Kendra
 
 
         /// <summary>
-        /// Updates an existing Amazon Kendra data source.
+        /// Updates an existing Amazon Kendra data source connector.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDataSource service method.</param>
         /// 
@@ -4235,7 +4237,7 @@ namespace Amazon.Kendra
 
 
         /// <summary>
-        /// Updates an existing Amazon Kendra data source.
+        /// Updates an existing Amazon Kendra data source connector.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDataSource service method.</param>
         /// <param name="cancellationToken">

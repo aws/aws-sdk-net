@@ -30,7 +30,7 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDataSource operation.
-    /// Gets information about an Amazon Kendra data source.
+    /// Gets information about an Amazon Kendra data source connector.
     /// </summary>
     public partial class DescribeDataSourceRequest : AmazonKendraRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of the data source.
+        /// The identifier of the data source connector.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -59,7 +59,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// The identifier of the index used with the data source.
+        /// The identifier of the index used with the data source connector.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

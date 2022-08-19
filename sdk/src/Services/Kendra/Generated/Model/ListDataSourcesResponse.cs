@@ -40,7 +40,7 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the response is truncated, Amazon Kendra returns this token that you can use in
-        /// the subsequent request to retrieve the next set of data sources. 
+        /// the subsequent request to retrieve the next set of data source connectors.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=800)]
@@ -59,7 +59,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property SummaryItems. 
         /// <para>
-        /// An array of summary information for one or more data sources.
+        /// An array of summary information for one or more data source connector.
         /// </para>
         /// </summary>
         public List<DataSourceSummary> SummaryItems
