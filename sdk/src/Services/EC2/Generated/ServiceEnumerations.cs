@@ -7391,6 +7391,46 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType C6i8xlarge = new InstanceType("c6i.8xlarge");
         /// <summary>
+        /// Constant C6id12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C6id12xlarge = new InstanceType("c6id.12xlarge");
+        /// <summary>
+        /// Constant C6id16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C6id16xlarge = new InstanceType("c6id.16xlarge");
+        /// <summary>
+        /// Constant C6id24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C6id24xlarge = new InstanceType("c6id.24xlarge");
+        /// <summary>
+        /// Constant C6id2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C6id2xlarge = new InstanceType("c6id.2xlarge");
+        /// <summary>
+        /// Constant C6id32xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C6id32xlarge = new InstanceType("c6id.32xlarge");
+        /// <summary>
+        /// Constant C6id4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C6id4xlarge = new InstanceType("c6id.4xlarge");
+        /// <summary>
+        /// Constant C6id8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C6id8xlarge = new InstanceType("c6id.8xlarge");
+        /// <summary>
+        /// Constant C6idLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C6idLarge = new InstanceType("c6id.large");
+        /// <summary>
+        /// Constant C6idMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType C6idMetal = new InstanceType("c6id.metal");
+        /// <summary>
+        /// Constant C6idXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C6idXlarge = new InstanceType("c6id.xlarge");
+        /// <summary>
         /// Constant C6iLarge for InstanceType
         /// </summary>
         public static readonly InstanceType C6iLarge = new InstanceType("c6i.large");
@@ -8299,6 +8339,46 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType M6i8xlarge = new InstanceType("m6i.8xlarge");
         /// <summary>
+        /// Constant M6id12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M6id12xlarge = new InstanceType("m6id.12xlarge");
+        /// <summary>
+        /// Constant M6id16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M6id16xlarge = new InstanceType("m6id.16xlarge");
+        /// <summary>
+        /// Constant M6id24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M6id24xlarge = new InstanceType("m6id.24xlarge");
+        /// <summary>
+        /// Constant M6id2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M6id2xlarge = new InstanceType("m6id.2xlarge");
+        /// <summary>
+        /// Constant M6id32xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M6id32xlarge = new InstanceType("m6id.32xlarge");
+        /// <summary>
+        /// Constant M6id4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M6id4xlarge = new InstanceType("m6id.4xlarge");
+        /// <summary>
+        /// Constant M6id8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M6id8xlarge = new InstanceType("m6id.8xlarge");
+        /// <summary>
+        /// Constant M6idLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M6idLarge = new InstanceType("m6id.large");
+        /// <summary>
+        /// Constant M6idMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType M6idMetal = new InstanceType("m6id.metal");
+        /// <summary>
+        /// Constant M6idXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M6idXlarge = new InstanceType("m6id.xlarge");
+        /// <summary>
         /// Constant M6iLarge for InstanceType
         /// </summary>
         public static readonly InstanceType M6iLarge = new InstanceType("m6i.large");
@@ -8350,6 +8430,10 @@ namespace Amazon.EC2
         /// Constant P4d24xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType P4d24xlarge = new InstanceType("p4d.24xlarge");
+        /// <summary>
+        /// Constant P4de24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType P4de24xlarge = new InstanceType("p4de.24xlarge");
         /// <summary>
         /// Constant R32xlarge for InstanceType
         /// </summary>
@@ -8639,6 +8723,50 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType R5Xlarge = new InstanceType("r5.xlarge");
         /// <summary>
+        /// Constant R6a12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6a12xlarge = new InstanceType("r6a.12xlarge");
+        /// <summary>
+        /// Constant R6a16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6a16xlarge = new InstanceType("r6a.16xlarge");
+        /// <summary>
+        /// Constant R6a24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6a24xlarge = new InstanceType("r6a.24xlarge");
+        /// <summary>
+        /// Constant R6a2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6a2xlarge = new InstanceType("r6a.2xlarge");
+        /// <summary>
+        /// Constant R6a32xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6a32xlarge = new InstanceType("r6a.32xlarge");
+        /// <summary>
+        /// Constant R6a48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6a48xlarge = new InstanceType("r6a.48xlarge");
+        /// <summary>
+        /// Constant R6a4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6a4xlarge = new InstanceType("r6a.4xlarge");
+        /// <summary>
+        /// Constant R6a8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6a8xlarge = new InstanceType("r6a.8xlarge");
+        /// <summary>
+        /// Constant R6aLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6aLarge = new InstanceType("r6a.large");
+        /// <summary>
+        /// Constant R6aMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6aMetal = new InstanceType("r6a.metal");
+        /// <summary>
+        /// Constant R6aXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6aXlarge = new InstanceType("r6a.xlarge");
+        /// <summary>
         /// Constant R6g12xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType R6g12xlarge = new InstanceType("r6g.12xlarge");
@@ -8738,6 +8866,46 @@ namespace Amazon.EC2
         /// Constant R6i8xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType R6i8xlarge = new InstanceType("r6i.8xlarge");
+        /// <summary>
+        /// Constant R6id12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6id12xlarge = new InstanceType("r6id.12xlarge");
+        /// <summary>
+        /// Constant R6id16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6id16xlarge = new InstanceType("r6id.16xlarge");
+        /// <summary>
+        /// Constant R6id24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6id24xlarge = new InstanceType("r6id.24xlarge");
+        /// <summary>
+        /// Constant R6id2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6id2xlarge = new InstanceType("r6id.2xlarge");
+        /// <summary>
+        /// Constant R6id32xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6id32xlarge = new InstanceType("r6id.32xlarge");
+        /// <summary>
+        /// Constant R6id4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6id4xlarge = new InstanceType("r6id.4xlarge");
+        /// <summary>
+        /// Constant R6id8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6id8xlarge = new InstanceType("r6id.8xlarge");
+        /// <summary>
+        /// Constant R6idLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6idLarge = new InstanceType("r6id.large");
+        /// <summary>
+        /// Constant R6idMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6idMetal = new InstanceType("r6id.metal");
+        /// <summary>
+        /// Constant R6idXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R6idXlarge = new InstanceType("r6id.xlarge");
         /// <summary>
         /// Constant R6iLarge for InstanceType
         /// </summary>
