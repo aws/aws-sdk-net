@@ -121,7 +121,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the VPN tunnel.
+        /// The status of the VPN tunnel. Valid values are <code>DOWN</code> or <code>UP</code>.
         /// </para>
         /// </summary>
         public string Status

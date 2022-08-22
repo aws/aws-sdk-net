@@ -39,7 +39,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of environment file.
+        /// The type of environment file. The valid value is <code>s3</code>.
         /// </para>
         /// </summary>
         public string Type

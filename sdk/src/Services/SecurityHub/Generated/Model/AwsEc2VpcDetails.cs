@@ -97,7 +97,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The current state of the VPC.
+        /// The current state of the VPC. Valid values are <code>available</code> or <code>pending</code>.
         /// </para>
         /// </summary>
         public string State

@@ -56,6 +56,9 @@ namespace Amazon.SecurityHub.Model
         private AwsApiGatewayV2StageDetails _awsApiGatewayV2Stage;
         private AwsAutoScalingAutoScalingGroupDetails _awsAutoScalingAutoScalingGroup;
         private AwsAutoScalingLaunchConfigurationDetails _awsAutoScalingLaunchConfiguration;
+        private AwsBackupBackupPlanDetails _awsBackupBackupPlan;
+        private AwsBackupBackupVaultDetails _awsBackupBackupVault;
+        private AwsBackupRecoveryPointDetails _awsBackupRecoveryPoint;
         private AwsCertificateManagerCertificateDetails _awsCertificateManagerCertificate;
         private AwsCloudFormationStackDetails _awsCloudFormationStack;
         private AwsCloudFrontDistributionDetails _awsCloudFrontDistribution;
@@ -233,6 +236,60 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAwsAutoScalingLaunchConfiguration()
         {
             return this._awsAutoScalingLaunchConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsBackupBackupPlan. 
+        /// <para>
+        /// Provides details about an Backup backup plan. 
+        /// </para>
+        /// </summary>
+        public AwsBackupBackupPlanDetails AwsBackupBackupPlan
+        {
+            get { return this._awsBackupBackupPlan; }
+            set { this._awsBackupBackupPlan = value; }
+        }
+
+        // Check to see if AwsBackupBackupPlan property is set
+        internal bool IsSetAwsBackupBackupPlan()
+        {
+            return this._awsBackupBackupPlan != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsBackupBackupVault. 
+        /// <para>
+        /// Provides details about an Backup backup vault. 
+        /// </para>
+        /// </summary>
+        public AwsBackupBackupVaultDetails AwsBackupBackupVault
+        {
+            get { return this._awsBackupBackupVault; }
+            set { this._awsBackupBackupVault = value; }
+        }
+
+        // Check to see if AwsBackupBackupVault property is set
+        internal bool IsSetAwsBackupBackupVault()
+        {
+            return this._awsBackupBackupVault != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsBackupRecoveryPoint. 
+        /// <para>
+        /// Provides details about an Backup backup, or recovery point. 
+        /// </para>
+        /// </summary>
+        public AwsBackupRecoveryPointDetails AwsBackupRecoveryPoint
+        {
+            get { return this._awsBackupRecoveryPoint; }
+            set { this._awsBackupRecoveryPoint = value; }
+        }
+
+        // Check to see if AwsBackupRecoveryPoint property is set
+        internal bool IsSetAwsBackupRecoveryPoint()
+        {
+            return this._awsBackupRecoveryPoint != null;
         }
 
         /// <summary>

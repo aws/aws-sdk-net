@@ -39,7 +39,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of resource to assign to a container.
+        /// The type of resource to assign to a container. Valid values are <code>GPU</code> or
+        /// <code>InferenceAccelerator</code>.
         /// </para>
         /// </summary>
         public string Type

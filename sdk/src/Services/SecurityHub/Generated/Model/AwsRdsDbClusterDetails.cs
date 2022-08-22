@@ -74,8 +74,25 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ActivityStreamStatus. 
         /// <para>
-        /// The status of the database activity stream.
+        /// The status of the database activity stream. Valid values are as follows:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>started</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>starting</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>stopped</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>stopping</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string ActivityStreamStatus
         {
@@ -445,8 +462,21 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The name of the database engine to use for this DB cluster.
+        /// The name of the database engine to use for this DB cluster. Valid values are as follows:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>aurora</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>aurora-mysql</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>aurora-postgresql</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Engine
         {
@@ -463,8 +493,29 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property EngineMode. 
         /// <para>
-        /// The database engine mode of the DB cluster.
+        /// The database engine mode of the DB cluster.Valid values are as follows:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>global</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>multimaster</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>parallelquery</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>provisioned</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>serverless</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string EngineMode
         {

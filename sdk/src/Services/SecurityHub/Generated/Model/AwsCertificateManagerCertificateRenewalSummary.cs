@@ -85,7 +85,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property RenewalStatusReason. 
         /// <para>
-        /// The reason that a renewal request was unsuccessful.
+        /// The reason that a renewal request was unsuccessful. This attribute is used only when
+        /// <code>RenewalStatus</code> is <code>FAILED</code>.
         /// </para>
         ///  
         /// <para>

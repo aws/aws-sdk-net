@@ -43,7 +43,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property OnDemandAllocationStrategy. 
         /// <para>
-        /// How to allocate instance types to fulfill On-Demand capacity.
+        /// How to allocate instance types to fulfill On-Demand capacity. The valid value is <code>prioritized</code>.
         /// </para>
         /// </summary>
         public string OnDemandAllocationStrategy
@@ -99,8 +99,21 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property SpotAllocationStrategy. 
         /// <para>
-        /// How to allocate instances across Spot Instance pools.
+        /// How to allocate instances across Spot Instance pools. Valid values are as follows:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>lowest-price</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>capacity-optimized</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>capacity-optimized-prioritized</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string SpotAllocationStrategy
         {

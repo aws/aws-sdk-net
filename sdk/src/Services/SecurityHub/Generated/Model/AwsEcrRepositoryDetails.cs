@@ -79,7 +79,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ImageTagMutability. 
         /// <para>
-        /// The tag mutability setting for the repository.
+        /// The tag mutability setting for the repository. Valid values are <code>IMMUTABLE</code>
+        /// or <code>MUTABLE</code>.
         /// </para>
         /// </summary>
         public string ImageTagMutability

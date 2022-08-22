@@ -57,8 +57,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Protocol. 
         /// <para>
-        /// The protocol to use when redirecting requests. By default, uses the same protocol
-        /// as the original request.
+        /// The protocol to use when redirecting requests. By default, this field uses the same
+        /// protocol as the original request. Valid values are <code>http</code> or <code>https</code>.
         /// </para>
         /// </summary>
         public string Protocol

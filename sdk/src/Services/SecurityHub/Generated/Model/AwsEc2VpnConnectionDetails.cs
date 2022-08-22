@@ -141,8 +141,25 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The current state of the VPN connection.
+        /// The current state of the VPN connection. Valid values are as follows:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>available</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>deleted</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>deleting</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>pending</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string State
         {

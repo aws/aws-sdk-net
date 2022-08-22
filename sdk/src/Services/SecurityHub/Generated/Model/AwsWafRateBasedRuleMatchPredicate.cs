@@ -83,8 +83,37 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of predicate.
+        /// The type of predicate. Valid values are as follows:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ByteMatch</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>GeoMatch</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>IPMatch</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>RegexMatch</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SizeConstraint</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SqlInjectionMatch</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>XssMatch</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Type
         {

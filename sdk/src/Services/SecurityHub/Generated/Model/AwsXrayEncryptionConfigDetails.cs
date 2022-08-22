@@ -59,8 +59,13 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the encryption configuration. When <code>Status</code> is <code>UPDATING</code>,
-        /// X-Ray might use both the old and new encryption.
+        /// The current status of the encryption configuration. Valid values are <code>ACTIVE</code>
+        /// or <code>UPDATING</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When <code>Status</code> is equal to <code>UPDATING</code>, X-Ray might use both the
+        /// old and new encryption.
         /// </para>
         /// </summary>
         public string Status
@@ -79,7 +84,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// The type of encryption. <code>KMS</code> indicates that the encryption uses KMS keys.
-        /// <code>NONE</code> indicates to use the default encryption.
+        /// <code>NONE</code> indicates the default encryption.
         /// </para>
         /// </summary>
         public string Type

@@ -153,8 +153,29 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property UpdateStatus. 
         /// <para>
-        /// The status of the service software update.
+        /// The status of the service software update. Valid values are as follows:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>COMPLETED</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ELIGIBLE</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>IN_PROGRESS</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NOT_ELIGIBLE</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PENDING_UPDATE</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string UpdateStatus
         {

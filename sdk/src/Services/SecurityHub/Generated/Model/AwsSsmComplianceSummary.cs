@@ -309,8 +309,33 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property OverallSeverity. 
         /// <para>
-        /// The highest severity for the patches.
+        /// The highest severity for the patches. Valid values are as follows:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>CRITICAL</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>HIGH</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>MEDIUM</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LOW</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>INFORMATIONAL</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UNSPECIFIED</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string OverallSeverity
         {
@@ -365,11 +390,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current patch compliance status.
-        /// </para>
-        ///  
-        /// <para>
-        /// The possible status values are:
+        /// The current patch compliance status. Valid values are as follows:
         /// </para>
         ///  <ul> <li> 
         /// <para>

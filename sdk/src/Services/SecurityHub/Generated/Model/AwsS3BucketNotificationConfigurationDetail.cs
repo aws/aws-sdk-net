@@ -97,8 +97,21 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// Indicates the type of notification. Notifications can be generated using Lambda functions,
-        /// Amazon SQS queues or Amazon SNS topics.
+        /// Amazon SQS queues, or Amazon SNS topics, with corresponding valid values as follows:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>LambdaConfiguration</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>QueueConfiguration</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TopicConfiguration</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Type
         {

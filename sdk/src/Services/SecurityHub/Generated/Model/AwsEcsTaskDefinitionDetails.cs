@@ -70,8 +70,29 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Cpu. 
         /// <para>
-        /// The number of CPU units used by the task.
+        /// The number of CPU units used by the task.Valid values are as follows:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>256 (.25 vCPU)</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>512 (.5 vCPU)</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>1024 (1 vCPU)</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>2048 (2 vCPU)</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>4096 (4 vCPU)</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Cpu
         {
@@ -143,8 +164,22 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property IpcMode. 
         /// <para>
-        /// The IPC resource namespace to use for the containers in the task.
+        /// The inter-process communication (IPC) resource namespace to use for the containers
+        /// in the task. Valid values are as follows:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>host</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>none</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>task</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string IpcMode
         {
@@ -161,7 +196,16 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Memory. 
         /// <para>
-        /// The amount (in MiB) of memory used by the task.
+        /// The amount (in MiB) of memory used by the task. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For tasks that are hosted on Amazon EC2, you can provide a task-level memory value
+        /// or a container-level memory value. For tasks that are hosted on Fargate, you must
+        /// use one of the <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#task_size">specified
+        /// values</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i> </i>,
+        /// which determines your range of supported values for the <code>Cpu</code> and <code>Memory</code>
+        /// parameters.
         /// </para>
         /// </summary>
         public string Memory
@@ -179,8 +223,26 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property NetworkMode. 
         /// <para>
-        /// The Docker networking mode to use for the containers in the task.
+        /// The Docker networking mode to use for the containers in the task. Valid values are
+        /// as follows:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>awsvpc</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>bridge</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>host</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>none</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string NetworkMode
         {
@@ -197,7 +259,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property PidMode. 
         /// <para>
-        /// The process namespace to use for the containers in the task.
+        /// The process namespace to use for the containers in the task. Valid values are <code>host</code>
+        /// or <code>task</code>.
         /// </para>
         /// </summary>
         public string PidMode

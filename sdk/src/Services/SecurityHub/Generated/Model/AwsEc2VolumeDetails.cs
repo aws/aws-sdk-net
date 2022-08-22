@@ -181,8 +181,33 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The volume state.
+        /// The volume state. Valid values are as follows:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>available</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>creating</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>deleted</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>deleting</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>error</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>in-use</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Status
         {

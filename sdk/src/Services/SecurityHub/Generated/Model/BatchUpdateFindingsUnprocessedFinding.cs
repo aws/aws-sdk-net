@@ -45,34 +45,36 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ConcurrentUpdateError</code> - Another process or request attempted to update
-        /// the finding while this request was being processed
+        ///  <code>ConcurrentUpdateError</code> - Another request attempted to update the finding
+        /// while this request was being processed. This error may also occur if you call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html">
+        /// <code>BatchUpdateFindings</code> </a> and <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html">
+        /// <code>BatchImportFindings</code> </a> at the same time.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>DuplicatedFindingIdentifier</code> - The request included two or more findings
-        /// with the same <code>FindingIdentifier</code> 
+        /// with the same <code>FindingIdentifier</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>FindingNotFound</code> - The <code>FindingIdentifier</code> included in the
-        /// request did not match an existing finding
+        /// request did not match an existing finding.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>FindingSizeExceeded</code> - The finding size was greater than the permissible
-        /// value of 240 KB
+        /// value of 240 KB.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>InternalFailure</code> - An internal service failure occurred when updating
-        /// the finding
+        /// the finding.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>InvalidInput</code> - The finding update contained an invalid value that did
         /// not satisfy the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon
-        /// Web Services Security Finding Format</a> syntax
+        /// Web Services Security Finding Format</a> syntax.
         /// </para>
         ///  </li> </ul>
         /// </summary>

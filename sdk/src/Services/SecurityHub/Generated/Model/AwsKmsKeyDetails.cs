@@ -160,8 +160,29 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property KeyState. 
         /// <para>
-        /// The state of the KMS key.
+        /// The state of the KMS key. Valid values are as follows:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Disabled</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Enabled</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PendingDeletion</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PendingImport</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Unavailable</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string KeyState
         {

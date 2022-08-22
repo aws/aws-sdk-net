@@ -125,7 +125,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property HealthCheckType. 
         /// <para>
-        /// The service to use for the health checks.
+        /// The service to use for the health checks. Valid values are <code>EC2</code> or <code>ELB</code>.
         /// </para>
         /// </summary>
         public string HealthCheckType

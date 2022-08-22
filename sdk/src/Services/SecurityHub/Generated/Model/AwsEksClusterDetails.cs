@@ -82,8 +82,33 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ClusterStatus. 
         /// <para>
-        /// The status of the cluster.
+        /// The status of the cluster. Valid values are as follows:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ACTIVE</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CREATING</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DELETING</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>FAILED</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PENDING</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UPDATING</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string ClusterStatus
         {

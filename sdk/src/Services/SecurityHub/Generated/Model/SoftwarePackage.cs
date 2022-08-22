@@ -36,9 +36,11 @@ namespace Amazon.SecurityHub.Model
         private string _architecture;
         private string _epoch;
         private string _filePath;
+        private string _fixedInVersion;
         private string _name;
         private string _packageManager;
         private string _release;
+        private string _remediation;
         private string _version;
 
         /// <summary>
@@ -96,6 +98,25 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FixedInVersion. 
+        /// <para>
+        /// The version of the software package in which the vulnerability has been resolved.
+        /// 
+        /// </para>
+        /// </summary>
+        public string FixedInVersion
+        {
+            get { return this._fixedInVersion; }
+            set { this._fixedInVersion = value; }
+        }
+
+        // Check to see if FixedInVersion property is set
+        internal bool IsSetFixedInVersion()
+        {
+            return this._fixedInVersion != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the software package.
@@ -147,6 +168,25 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetRelease()
         {
             return this._release != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Remediation. 
+        /// <para>
+        /// Describes the actions a customer can take to resolve the vulnerability in the software
+        /// package. 
+        /// </para>
+        /// </summary>
+        public string Remediation
+        {
+            get { return this._remediation; }
+            set { this._remediation = value; }
+        }
+
+        // Check to see if Remediation property is set
+        internal bool IsSetRemediation()
+        {
+            return this._remediation != null;
         }
 
         /// <summary>

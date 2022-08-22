@@ -100,6 +100,24 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsAutoScalingLaunchConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AwsBackupBackupPlan", targetDepth))
+                {
+                    var unmarshaller = AwsBackupBackupPlanDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsBackupBackupPlan = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AwsBackupBackupVault", targetDepth))
+                {
+                    var unmarshaller = AwsBackupBackupVaultDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsBackupBackupVault = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AwsBackupRecoveryPoint", targetDepth))
+                {
+                    var unmarshaller = AwsBackupRecoveryPointDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsBackupRecoveryPoint = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AwsCertificateManagerCertificate", targetDepth))
                 {
                     var unmarshaller = AwsCertificateManagerCertificateDetailsUnmarshaller.Instance;

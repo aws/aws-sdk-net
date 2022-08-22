@@ -43,8 +43,21 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Architecture. 
         /// <para>
-        /// The architecture of the image.
+        /// The architecture of the image. Valid values are as follows:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arm64</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>i386</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>x86_64</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Architecture
         {

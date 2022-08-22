@@ -59,8 +59,21 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ProjectionType. 
         /// <para>
-        /// The types of attributes that are projected into the index.
+        /// The types of attributes that are projected into the index. Valid values are as follows:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ALL</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>INCLUDE</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>KEYS_ONLY</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string ProjectionType
         {

@@ -57,8 +57,29 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Types. 
         /// <para>
-        /// A list of logging types.
+        /// A list of logging types. Valid values are as follows:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>api</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>audit</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>authenticator</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>controllerManager</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>scheduler</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<string> Types
         {

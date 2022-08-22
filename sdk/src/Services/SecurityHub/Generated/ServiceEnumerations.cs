@@ -1343,6 +1343,60 @@ namespace Amazon.SecurityHub
 
 
     /// <summary>
+    /// Constants used for properties of type VulnerabilityFixAvailable.
+    /// </summary>
+    public class VulnerabilityFixAvailable : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NO for VulnerabilityFixAvailable
+        /// </summary>
+        public static readonly VulnerabilityFixAvailable NO = new VulnerabilityFixAvailable("NO");
+        /// <summary>
+        /// Constant PARTIAL for VulnerabilityFixAvailable
+        /// </summary>
+        public static readonly VulnerabilityFixAvailable PARTIAL = new VulnerabilityFixAvailable("PARTIAL");
+        /// <summary>
+        /// Constant YES for VulnerabilityFixAvailable
+        /// </summary>
+        public static readonly VulnerabilityFixAvailable YES = new VulnerabilityFixAvailable("YES");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VulnerabilityFixAvailable(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VulnerabilityFixAvailable FindValue(string value)
+        {
+            return FindValue<VulnerabilityFixAvailable>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VulnerabilityFixAvailable(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type WorkflowState.
     /// </summary>
     public class WorkflowState : ConstantClass

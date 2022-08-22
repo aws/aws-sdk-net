@@ -111,6 +111,39 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetAwsBackupBackupPlan())
+            {
+                context.Writer.WritePropertyName("AwsBackupBackupPlan");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsBackupBackupPlanDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsBackupBackupPlan, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsBackupBackupVault())
+            {
+                context.Writer.WritePropertyName("AwsBackupBackupVault");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsBackupBackupVaultDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsBackupBackupVault, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsBackupRecoveryPoint())
+            {
+                context.Writer.WritePropertyName("AwsBackupRecoveryPoint");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsBackupRecoveryPointDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsBackupRecoveryPoint, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAwsCertificateManagerCertificate())
             {
                 context.Writer.WritePropertyName("AwsCertificateManagerCertificate");

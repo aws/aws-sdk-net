@@ -84,8 +84,29 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property StorageClass. 
         /// <para>
-        /// The storage class to transition the object to.
+        /// The storage class to transition the object to. Valid values are as follows:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>DEEP_ARCHIVE</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>GLACIER</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>INTELLIGENT_TIERING</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ONEZONE_IA</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>STANDARD_IA</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string StorageClass
         {

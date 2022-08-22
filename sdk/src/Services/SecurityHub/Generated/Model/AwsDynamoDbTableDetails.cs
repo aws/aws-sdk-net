@@ -386,8 +386,37 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property TableStatus. 
         /// <para>
-        /// The current status of the table.
+        /// The current status of the table. Valid values are as follows:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ACTIVE</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ARCHIVED</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ARCHIVING</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CREATING</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DELETING</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UPDATING</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string TableStatus
         {

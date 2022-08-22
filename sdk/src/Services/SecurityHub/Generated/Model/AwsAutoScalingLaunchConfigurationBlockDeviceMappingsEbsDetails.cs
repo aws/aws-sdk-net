@@ -167,8 +167,33 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property VolumeType. 
         /// <para>
-        /// The volume type.
+        /// The volume type. Valid values are as follows:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>gp2</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>gp3</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>io1</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>sc1</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>st1</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>standard</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string VolumeType
         {

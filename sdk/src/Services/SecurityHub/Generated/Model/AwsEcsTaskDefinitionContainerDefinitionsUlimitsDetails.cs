@@ -58,8 +58,69 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The type of the ulimit.
+        /// The type of the ulimit. Valid values are as follows:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>core</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>cpu</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>data</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>fsize</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>locks</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>memlock</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>msgqueue</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>nice</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>nofile</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>nproc</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>rss</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>rtprio</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>rttime</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>sigpending</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>stack</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Name
         {

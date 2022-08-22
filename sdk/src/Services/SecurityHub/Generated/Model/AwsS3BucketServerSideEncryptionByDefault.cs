@@ -57,7 +57,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property SSEAlgorithm. 
         /// <para>
-        /// Server-side encryption algorithm to use for the default encryption.
+        /// Server-side encryption algorithm to use for the default encryption. Valid values are
+        /// <code>aws: kms</code> or <code>AES256</code>.
         /// </para>
         /// </summary>
         public string SSEAlgorithm

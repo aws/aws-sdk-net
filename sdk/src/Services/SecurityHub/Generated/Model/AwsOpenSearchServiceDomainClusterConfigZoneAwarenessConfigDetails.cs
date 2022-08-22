@@ -38,8 +38,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZoneCount. 
         /// <para>
-        /// The number of Availability Zones that the domain uses. Valid values are 2 and 3. The
-        /// default is 2.
+        /// The number of Availability Zones that the domain uses. Valid values are <code>2</code>
+        /// or <code>3</code>. The default is <code>2</code>.
         /// </para>
         /// </summary>
         public int AvailabilityZoneCount

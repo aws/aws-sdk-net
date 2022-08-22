@@ -173,8 +173,65 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The name of the database engine to use for this DB instance.
+        /// The name of the database engine to use for this DB instance. Valid values are as follows:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>aurora</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>aurora-mysql</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>aurora-postgresql</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>c</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>mariadb</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>mysql</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>oracle-ee</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>oracle-se</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>oracle-se1</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>oracle-se2</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>sqlserver-ee</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>sqlserver-ex</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>sqlserver-se</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>sqlserver-web</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Engine
         {
@@ -483,8 +540,21 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        /// The storage type associated with the DB snapshot.
+        /// The storage type associated with the DB snapshot. Valid values are as follows:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>gp2</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>io1</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>standard</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string StorageType
         {
