@@ -1228,6 +1228,10 @@
       <Project>{EAA89879-58E1-4469-83F2-C6479AEA119E}</Project>
       <Name>AWSSDK.StorageGateway.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/SupportApp/AWSSDK.SupportApp.CodeAnalysis.csproj">
+      <Project>{933B8B19-E6AA-4CF6-A202-0F9E2CF9579C}</Project>
+      <Name>AWSSDK.SupportApp.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Synthetics/AWSSDK.Synthetics.CodeAnalysis.csproj">
       <Project>{87A5016B-5D72-4F13-BE02-E352EC9C6B04}</Project>
       <Name>AWSSDK.Synthetics.CodeAnalysis</Name>
