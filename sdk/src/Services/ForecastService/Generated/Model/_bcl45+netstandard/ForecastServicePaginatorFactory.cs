@@ -122,5 +122,29 @@ namespace Amazon.ForecastService.Model
         {
             return new ListPredictorsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListWhatIfAnalyses operation
+        ///</summary>
+        public IListWhatIfAnalysesPaginator ListWhatIfAnalyses(ListWhatIfAnalysesRequest request) 
+        {
+            return new ListWhatIfAnalysesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListWhatIfForecastExports operation
+        ///</summary>
+        public IListWhatIfForecastExportsPaginator ListWhatIfForecastExports(ListWhatIfForecastExportsRequest request) 
+        {
+            return new ListWhatIfForecastExportsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListWhatIfForecasts operation
+        ///</summary>
+        public IListWhatIfForecastsPaginator ListWhatIfForecasts(ListWhatIfForecastsRequest request) 
+        {
+            return new ListWhatIfForecastsPaginator(this.client, request);
+        }
     }
 }

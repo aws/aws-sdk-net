@@ -137,6 +137,64 @@ namespace Amazon.ForecastService
 
 
     /// <summary>
+    /// Constants used for properties of type Condition.
+    /// </summary>
+    public class Condition : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EQUALS for Condition
+        /// </summary>
+        public static readonly Condition EQUALS = new Condition("EQUALS");
+        /// <summary>
+        /// Constant GREATER_THAN for Condition
+        /// </summary>
+        public static readonly Condition GREATER_THAN = new Condition("GREATER_THAN");
+        /// <summary>
+        /// Constant LESS_THAN for Condition
+        /// </summary>
+        public static readonly Condition LESS_THAN = new Condition("LESS_THAN");
+        /// <summary>
+        /// Constant NOT_EQUALS for Condition
+        /// </summary>
+        public static readonly Condition NOT_EQUALS = new Condition("NOT_EQUALS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Condition(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Condition FindValue(string value)
+        {
+            return FindValue<Condition>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Condition(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DatasetType.
     /// </summary>
     public class DatasetType : ConstantClass
@@ -560,6 +618,64 @@ namespace Amazon.ForecastService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Month(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Operation.
+    /// </summary>
+    public class Operation : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADD for Operation
+        /// </summary>
+        public static readonly Operation ADD = new Operation("ADD");
+        /// <summary>
+        /// Constant DIVIDE for Operation
+        /// </summary>
+        public static readonly Operation DIVIDE = new Operation("DIVIDE");
+        /// <summary>
+        /// Constant MULTIPLY for Operation
+        /// </summary>
+        public static readonly Operation MULTIPLY = new Operation("MULTIPLY");
+        /// <summary>
+        /// Constant SUBTRACT for Operation
+        /// </summary>
+        public static readonly Operation SUBTRACT = new Operation("SUBTRACT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Operation(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Operation FindValue(string value)
+        {
+            return FindValue<Operation>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Operation(string value)
         {
             return FindValue(value);
         }

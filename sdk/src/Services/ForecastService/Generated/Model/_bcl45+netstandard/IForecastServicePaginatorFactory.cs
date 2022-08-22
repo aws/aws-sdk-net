@@ -79,5 +79,20 @@ namespace Amazon.ForecastService.Model
         /// Paginator for ListPredictors operation
         ///</summary>
         IListPredictorsPaginator ListPredictors(ListPredictorsRequest request);
+
+        /// <summary>
+        /// Paginator for ListWhatIfAnalyses operation
+        ///</summary>
+        IListWhatIfAnalysesPaginator ListWhatIfAnalyses(ListWhatIfAnalysesRequest request);
+
+        /// <summary>
+        /// Paginator for ListWhatIfForecastExports operation
+        ///</summary>
+        IListWhatIfForecastExportsPaginator ListWhatIfForecastExports(ListWhatIfForecastExportsRequest request);
+
+        /// <summary>
+        /// Paginator for ListWhatIfForecasts operation
+        ///</summary>
+        IListWhatIfForecastsPaginator ListWhatIfForecasts(ListWhatIfForecastsRequest request);
     }
 }
