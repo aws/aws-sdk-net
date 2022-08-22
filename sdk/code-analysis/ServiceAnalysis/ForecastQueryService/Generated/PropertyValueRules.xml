@@ -10,4 +10,14 @@
     <min>1</min>
     <max>3000</max>
   </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastQueryService.Model.QueryWhatIfForecastRequest.NextToken</property>
+    <min>1</min>
+    <max>3000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastQueryService.Model.QueryWhatIfForecastRequest.WhatIfForecastArn</property>
+    <max>300</max>
+    <pattern>arn:([a-z\d-]+):forecast:.*:.*:.+</pattern>
+  </property-value-rule>
 </property-value-rules>
