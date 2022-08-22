@@ -82,6 +82,9 @@ namespace Amazon.IoTSiteWise
         /// in the <i>IoT SiteWise User Guide</i>.
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
         /// The requested resource can't be found.
         /// </exception>
