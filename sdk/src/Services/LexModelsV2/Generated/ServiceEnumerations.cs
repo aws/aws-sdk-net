@@ -671,6 +671,14 @@ namespace Amazon.LexModelsV2
         /// </summary>
         public static readonly BotRecommendationStatus Processing = new BotRecommendationStatus("Processing");
         /// <summary>
+        /// Constant Stopped for BotRecommendationStatus
+        /// </summary>
+        public static readonly BotRecommendationStatus Stopped = new BotRecommendationStatus("Stopped");
+        /// <summary>
+        /// Constant Stopping for BotRecommendationStatus
+        /// </summary>
+        public static readonly BotRecommendationStatus Stopping = new BotRecommendationStatus("Stopping");
+        /// <summary>
         /// Constant Updating for BotRecommendationStatus
         /// </summary>
         public static readonly BotRecommendationStatus Updating = new BotRecommendationStatus("Updating");
