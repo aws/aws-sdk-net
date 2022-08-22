@@ -1,3 +1,24 @@
+### 3.7.340.0 (2022-08-22 18:29 UTC)
+* DocDB (3.7.4.12)
+	* Update document for volume clone
+* EC2 (3.7.83.0)
+	* R6a instances are powered by 3rd generation AMD EPYC (Milan) processors delivering all-core turbo frequency of 3.6 GHz. C6id, M6id, and R6id instances are powered by 3rd generation Intel Xeon Scalable processor (Ice Lake) delivering all-core turbo frequency of 3.5 GHz.
+* ForecastQueryService (3.7.1.0)
+	* releasing What-If Analysis APIs
+* ForecastService (3.7.11.0)
+	* releasing What-If Analysis APIs and update ARN regex pattern to be more strict in accordance with security recommendation
+* IoTSiteWise (3.7.13.0)
+	* Enable non-unique asset names under different hierarchies
+* LexModelsV2 (3.7.15.0)
+	* This release introduces a new feature to stop a running BotRecommendation Job for Automated Chatbot Designer.
+* SecurityHub (3.7.13.0)
+	* Added new resource details objects to ASFF, including resources for AwsBackupBackupVault, AwsBackupBackupPlan and AwsBackupRecoveryPoint. Added FixAvailable, FixedInVersion and Remediation  to Vulnerability.
+* SupportApp (3.7.0.0)
+	* This is the initial SDK release for the AWS Support App in Slack.
+* Core 3.7.12.24
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.339.0 (2022-08-19 18:21 UTC)
 * Connect (3.7.23.0)
 	* This release adds SearchSecurityProfiles API which can be used to search for Security Profile resources within a Connect Instance.

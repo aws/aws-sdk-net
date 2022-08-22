@@ -32,7 +32,7 @@ namespace Amazon.LexModelsV2
     public partial class AmazonLexModelsV2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.14.1");
+            InternalSDKUtils.BuildUserAgentString("3.7.15.0");
 
         private string _userAgent = UserAgentString;
 
