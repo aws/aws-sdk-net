@@ -60,6 +60,7 @@ namespace Amazon.RDS.Model
         private int? _port;
         private List<ProcessorFeature> _processorFeatures = new List<ProcessorFeature>();
         private DateTime? _snapshotCreateTime;
+        private DateTime? _snapshotDatabaseTime;
         private string _snapshotTarget;
         private string _snapshotType;
         private string _sourceDBSnapshotIdentifier;
@@ -462,6 +463,34 @@ namespace Amazon.RDS.Model
         internal bool IsSetSnapshotCreateTime()
         {
             return this._snapshotCreateTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnapshotDatabaseTime. 
+        /// <para>
+        /// The timestamp of the most recent transaction applied to the database that you're backing
+        /// up. Thus, if you restore a snapshot, SnapshotDatabaseTime is the most recent transaction
+        /// in the restored DB instance. In contrast, originalSnapshotCreateTime specifies the
+        /// system time that the snapshot completed.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you back up a read replica, you can determine the replica lag by comparing SnapshotDatabaseTime
+        /// with originalSnapshotCreateTime. For example, if originalSnapshotCreateTime is two
+        /// hours later than SnapshotDatabaseTime, then the replica lag is two hours. *** REVIEWERS
+        /// 7/27: Switchover
+        /// </para>
+        /// </summary>
+        public DateTime SnapshotDatabaseTime
+        {
+            get { return this._snapshotDatabaseTime.GetValueOrDefault(); }
+            set { this._snapshotDatabaseTime = value; }
+        }
+
+        // Check to see if SnapshotDatabaseTime property is set
+        internal bool IsSetSnapshotDatabaseTime()
+        {
+            return this._snapshotDatabaseTime.HasValue; 
         }
 
         /// <summary>

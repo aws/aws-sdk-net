@@ -181,6 +181,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.SnapshotCreateTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("SnapshotDatabaseTime", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.SnapshotDatabaseTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("SnapshotTarget", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

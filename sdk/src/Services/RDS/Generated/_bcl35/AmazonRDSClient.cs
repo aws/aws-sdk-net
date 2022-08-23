@@ -11190,5 +11190,67 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  SwitchoverReadReplica
+
+        /// <summary>
+        /// Switches over an Oracle standby database in an Oracle Data Guard environment, making
+        /// it the new primary database. Issue this command in the AWS Region that hosts the current
+        /// standby database.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SwitchoverReadReplica service method.</param>
+        /// 
+        /// <returns>The response from the SwitchoverReadReplica service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The DB instance isn't in a valid state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/SwitchoverReadReplica">REST API Reference for SwitchoverReadReplica Operation</seealso>
+        public virtual SwitchoverReadReplicaResponse SwitchoverReadReplica(SwitchoverReadReplicaRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SwitchoverReadReplicaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SwitchoverReadReplicaResponseUnmarshaller.Instance;
+
+            return Invoke<SwitchoverReadReplicaResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SwitchoverReadReplica operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SwitchoverReadReplica operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSwitchoverReadReplica
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/SwitchoverReadReplica">REST API Reference for SwitchoverReadReplica Operation</seealso>
+        public virtual IAsyncResult BeginSwitchoverReadReplica(SwitchoverReadReplicaRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SwitchoverReadReplicaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SwitchoverReadReplicaResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SwitchoverReadReplica operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSwitchoverReadReplica.</param>
+        /// 
+        /// <returns>Returns a  SwitchoverReadReplicaResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/SwitchoverReadReplica">REST API Reference for SwitchoverReadReplica Operation</seealso>
+        public virtual SwitchoverReadReplicaResponse EndSwitchoverReadReplica(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SwitchoverReadReplicaResponse>(asyncResult);
+        }
+
+        #endregion
+        
     }
 }

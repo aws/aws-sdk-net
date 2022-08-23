@@ -8577,5 +8577,47 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  SwitchoverReadReplica
+
+        internal virtual SwitchoverReadReplicaResponse SwitchoverReadReplica(SwitchoverReadReplicaRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SwitchoverReadReplicaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SwitchoverReadReplicaResponseUnmarshaller.Instance;
+
+            return Invoke<SwitchoverReadReplicaResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Switches over an Oracle standby database in an Oracle Data Guard environment, making
+        /// it the new primary database. Issue this command in the AWS Region that hosts the current
+        /// standby database.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SwitchoverReadReplica service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SwitchoverReadReplica service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
+        /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The DB instance isn't in a valid state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/SwitchoverReadReplica">REST API Reference for SwitchoverReadReplica Operation</seealso>
+        public virtual Task<SwitchoverReadReplicaResponse> SwitchoverReadReplicaAsync(SwitchoverReadReplicaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SwitchoverReadReplicaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SwitchoverReadReplicaResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SwitchoverReadReplicaResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
     }
 }
