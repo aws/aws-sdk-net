@@ -32,6 +32,13 @@ namespace Amazon.SSOAdmin.Model
     /// Container for the parameters to the DeleteAccountAssignment operation.
     /// Deletes a principal's access from a specified Amazon Web Services account using a
     /// specified permission set.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// After a successful response, call <code>DescribeAccountAssignmentCreationStatus</code>
+    /// to describe the status of an assignment deletion request.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DeleteAccountAssignmentRequest : AmazonSSOAdminRequest
     {

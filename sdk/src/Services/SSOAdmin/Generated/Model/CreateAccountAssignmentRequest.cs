@@ -47,6 +47,11 @@ namespace Amazon.SSOAdmin.Model
     /// roles in your accounts will not be updated automatically. In this case, you must call
     /// <code> <a>ProvisionPermissionSet</a> </code> to make these updates.
     /// </para>
+    ///  </note> <note> 
+    /// <para>
+    ///  After a successful response, call <code>DescribeAccountAssignmentCreationStatus</code>
+    /// to describe the status of an assignment creation request. 
+    /// </para>
     ///  </note>
     /// </summary>
     public partial class CreateAccountAssignmentRequest : AmazonSSOAdminRequest

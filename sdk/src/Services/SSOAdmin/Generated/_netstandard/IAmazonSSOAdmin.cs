@@ -31,7 +31,42 @@ namespace Amazon.SSOAdmin
     /// <summary>
     /// Interface for accessing SSOAdmin
     ///
+    /// Amazon Web Services Single Sign On helps you securely create, or connect, your workforce
+    /// identities and manage their access centrally across Amazon Web Services accounts and
+    /// applications. Amazon Web Services SSO is the recommended approach for workforce authentication
+    /// and authorization in Amazon Web Services, for organizations of any size and type.
     /// 
+    ///  <note> 
+    /// <para>
+    /// Although Amazon Web Services Single Sign-On was renamed, the <code>sso</code> and
+    /// <code>identitystore</code> API namespaces will continue to retain their original name
+    /// for backward compatibility purposes. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html#renamed">Amazon
+    /// Web Services SSO rename</a>.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// This reference guide provides information on single sign-on operations which could
+    /// be used for access management of Amazon Web Services accounts. For information about
+    /// Amazon Web Services SSO features, see the <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">Amazon
+    /// Web Services SSO User Guide</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// Many operations in the Amazon Web Services SSO APIs rely on identifiers for users
+    /// and groups, known as principals. For more information about how to work with principals
+    /// and principal IDs in Amazon Web Services SSO, see the <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Identity
+    /// Store API Reference</a>.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// Amazon Web Services provides SDKs that consist of libraries and sample code for various
+    /// programming languages and platforms (Java, Ruby, .Net, iOS, Android, and more). The
+    /// SDKs provide a convenient way to create programmatic access to Amazon Web Services
+    /// SSO and other Amazon Web Services services. For more information about the Amazon
+    /// Web Services SDKs, including how to download and install them, see <a href="http://aws.amazon.com/tools/">Tools
+    /// for Amazon Web Services</a>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial interface IAmazonSSOAdmin : IAmazonService, IDisposable
     {
@@ -161,6 +196,11 @@ namespace Amazon.SSOAdmin
         /// roles in your accounts will not be updated automatically. In this case, you must call
         /// <code> <a>ProvisionPermissionSet</a> </code> to make these updates.
         /// </para>
+        ///  </note> <note> 
+        /// <para>
+        ///  After a successful response, call <code>DescribeAccountAssignmentCreationStatus</code>
+        /// to describe the status of an assignment creation request. 
+        /// </para>
         ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAccountAssignment service method.</param>
@@ -210,6 +250,13 @@ namespace Amazon.SSOAdmin
         /// configuration during the enabling process. For more information about ABAC, see <a
         /// href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a>
         /// in the <i>Amazon Web Services SSO User Guide</i>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// After a successful response, call <code>DescribeInstanceAccessControlAttributeConfiguration</code>
+        /// to validate that <code>InstanceAccessControlAttributeConfiguration</code> was created.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateInstanceAccessControlAttributeConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -302,6 +349,13 @@ namespace Amazon.SSOAdmin
         /// <summary>
         /// Deletes a principal's access from a specified Amazon Web Services account using a
         /// specified permission set.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// After a successful response, call <code>DescribeAccountAssignmentCreationStatus</code>
+        /// to describe the status of an assignment deletion request.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccountAssignment service method.</param>
         /// <param name="cancellationToken">

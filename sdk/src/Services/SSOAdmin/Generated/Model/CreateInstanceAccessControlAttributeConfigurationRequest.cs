@@ -35,6 +35,13 @@ namespace Amazon.SSOAdmin.Model
     /// configuration during the enabling process. For more information about ABAC, see <a
     /// href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a>
     /// in the <i>Amazon Web Services SSO User Guide</i>.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// After a successful response, call <code>DescribeInstanceAccessControlAttributeConfiguration</code>
+    /// to validate that <code>InstanceAccessControlAttributeConfiguration</code> was created.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateInstanceAccessControlAttributeConfigurationRequest : AmazonSSOAdminRequest
     {
