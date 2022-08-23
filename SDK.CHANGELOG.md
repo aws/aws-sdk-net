@@ -1,3 +1,7 @@
+### 3.7.340.1 (2022-08-23 13:37 UTC)
+* SimpleNotificationService (3.7.3.96)
+	* Added SHA256 message validation support.
+
 ### 3.7.340.0 (2022-08-22 18:29 UTC)
 * DocDB (3.7.4.12)
 	* Update document for volume clone

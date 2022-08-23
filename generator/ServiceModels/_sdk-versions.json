@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.340.0",
+    "ProductVersion" : "3.7.340.1",
     "CoreVersion"    : "3.7.12.24",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -346,7 +346,7 @@
             "InPreview"               : false
         },
         "SimpleNotificationService" : {
-            "Version" : "3.7.3.95",
+            "Version" : "3.7.3.96",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.12.24"
