@@ -1,3 +1,9 @@
+### 3.7.341.0 (2022-08-23 18:44 UTC)
+* RDS (3.7.17.0)
+	* RDS for Oracle supports Oracle Data Guard switchover and read replica backups.
+* SSOAdmin (3.7.1.14)
+	* Documentation updates to reflect service rename - AWS IAM Identity Center (successor to AWS Single Sign-On)
+
 ### 3.7.340.1 (2022-08-23 13:37 UTC)
 * SimpleNotificationService (3.7.3.96)
 	* Added SHA256 message validation support.
