@@ -26,6 +26,14 @@ namespace Amazon.DynamoDBv2.DataModel
     {
         #region Constructor
 
+        /// <summary>
+        /// This constructor is used for mocking. Users that want to mock AsyncSearch can create a subclass of AsyncSearch and make a public parameterless constructor.
+        /// </summary>
+        protected AsyncSearch()
+        {
+
+        }
+
         internal AsyncSearch(DynamoDBContext source, DynamoDBContext.ContextSearch contextSearch)
         {
             SourceContext = source;
@@ -48,7 +56,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <summary>
         /// Flag that, if true, indicates that the search is done
         /// </summary>
-        public bool IsDone
+        public virtual bool IsDone
         {
             get
             {
