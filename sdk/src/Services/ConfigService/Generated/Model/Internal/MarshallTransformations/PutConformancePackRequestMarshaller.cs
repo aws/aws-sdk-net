@@ -113,6 +113,17 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.TemplateS3Uri);
                 }
 
+                if(publicRequest.IsSetTemplateSSMDocumentDetails())
+                {
+                    context.Writer.WritePropertyName("TemplateSSMDocumentDetails");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TemplateSSMDocumentDetailsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TemplateSSMDocumentDetails, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

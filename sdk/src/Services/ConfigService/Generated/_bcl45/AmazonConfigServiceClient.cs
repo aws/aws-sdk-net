@@ -1765,7 +1765,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To read Amazon S3 bucket.
+        /// To read Amazon S3 bucket or call SSM:GetDocument.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </exception>
@@ -1830,7 +1830,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To read Amazon S3 bucket.
+        /// To read Amazon S3 bucket or call SSM:GetDocument.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </exception>
@@ -7255,7 +7255,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To read Amazon S3 bucket.
+        /// To read Amazon S3 bucket or call SSM:GetDocument.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </exception>
@@ -7409,7 +7409,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To read Amazon S3 bucket.
+        /// To read Amazon S3 bucket or call SSM:GetDocument.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </exception>
@@ -7809,9 +7809,8 @@ namespace Amazon.ConfigService
         /// </para>
         ///  <note> 
         /// <para>
-        /// You must specify either the <code>TemplateS3Uri</code> or the <code>TemplateBody</code>
-        /// parameter, but not both. If you provide both Config uses the <code>TemplateS3Uri</code>
-        /// parameter and ignores the <code>TemplateBody</code> parameter.
+        /// You must specify one and only one of the<code>TemplateS3Uri</code>, <code>TemplateBody</code>
+        /// or <code>TemplateSSMDocumentDetails</code> parameters.
         /// </para>
         ///  </note>
         /// </summary>
@@ -7851,7 +7850,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To read Amazon S3 bucket.
+        /// To read Amazon S3 bucket or call SSM:GetDocument.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </exception>
@@ -7929,9 +7928,8 @@ namespace Amazon.ConfigService
         /// </para>
         ///  <note> 
         /// <para>
-        /// You must specify either the <code>TemplateS3Uri</code> or the <code>TemplateBody</code>
-        /// parameter, but not both. If you provide both Config uses the <code>TemplateS3Uri</code>
-        /// parameter and ignores the <code>TemplateBody</code> parameter.
+        /// You must specify one and only one of the<code>TemplateS3Uri</code>, <code>TemplateBody</code>
+        /// or <code>TemplateSSMDocumentDetails</code> parameters.
         /// </para>
         ///  </note>
         /// </summary>
@@ -7974,7 +7972,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To read Amazon S3 bucket.
+        /// To read Amazon S3 bucket or call SSM:GetDocument.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </exception>
@@ -8397,7 +8395,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To read Amazon S3 bucket.
+        /// To read Amazon S3 bucket or call SSM:GetDocument.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </exception>
@@ -8617,7 +8615,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To read Amazon S3 bucket.
+        /// To read Amazon S3 bucket or call SSM:GetDocument.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </exception>
@@ -8813,7 +8811,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To read Amazon S3 bucket.
+        /// To read Amazon S3 bucket or call SSM:GetDocument.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </exception>
@@ -9008,7 +9006,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To read Amazon S3 bucket.
+        /// To read Amazon S3 bucket or call SSM:GetDocument.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </exception>
@@ -9195,7 +9193,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To read Amazon S3 bucket.
+        /// To read Amazon S3 bucket or call SSM:GetDocument.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </exception>
@@ -9282,7 +9280,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To read Amazon S3 bucket.
+        /// To read Amazon S3 bucket or call SSM:GetDocument.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </exception>
@@ -9351,7 +9349,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To read Amazon S3 bucket.
+        /// To read Amazon S3 bucket or call SSM:GetDocument.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </exception>
@@ -9419,7 +9417,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To read Amazon S3 bucket.
+        /// To read Amazon S3 bucket or call SSM:GetDocument.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </exception>
@@ -9499,7 +9497,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To read Amazon S3 bucket.
+        /// To read Amazon S3 bucket or call SSM:GetDocument.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </exception>
@@ -9596,7 +9594,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To read Amazon S3 bucket.
+        /// To read Amazon S3 bucket or call SSM:GetDocument.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </exception>
@@ -10428,7 +10426,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To read Amazon S3 bucket.
+        /// To read Amazon S3 bucket or call SSM:GetDocument.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </exception>
@@ -10497,7 +10495,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To read Amazon S3 bucket.
+        /// To read Amazon S3 bucket or call SSM:GetDocument.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </exception>

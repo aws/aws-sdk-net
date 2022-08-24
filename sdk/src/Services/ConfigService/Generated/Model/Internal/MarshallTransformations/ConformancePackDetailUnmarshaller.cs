@@ -112,6 +112,12 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastUpdateRequestedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TemplateSSMDocumentDetails", targetDepth))
+                {
+                    var unmarshaller = TemplateSSMDocumentDetailsUnmarshaller.Instance;
+                    unmarshalledObject.TemplateSSMDocumentDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

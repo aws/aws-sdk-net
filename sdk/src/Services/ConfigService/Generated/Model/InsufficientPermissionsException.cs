@@ -58,7 +58,7 @@ namespace Amazon.ConfigService.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// To read Amazon S3 bucket.
+    /// To read Amazon S3 bucket or call SSM:GetDocument.
     /// </para>
     ///  </li> </ul> </li> </ul>
     /// </summary>
