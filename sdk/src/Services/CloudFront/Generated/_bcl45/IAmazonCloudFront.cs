@@ -410,6 +410,10 @@ namespace Amazon.CloudFront
         /// The specified configuration for field-level encryption can't be associated with the
         /// specified cache behavior.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalOriginAccessConfigurationException">
+        /// An origin cannot contain both an origin access control (OAC) and an origin access
+        /// identity (OAI).
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
         /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
         /// </exception>
@@ -418,6 +422,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidDefaultRootObjectException">
         /// The default root object file name is too big or contains an invalid character.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidDomainNameForOriginAccessControlException">
+        /// An origin access control is associated with an origin whose domain name is not supported.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidErrorCodeException">
         /// An invalid error code was specified.
@@ -444,6 +451,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidMinimumProtocolVersionException">
         /// The minimum protocol version specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessControlException">
+        /// The origin access control is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
         /// The origin access identity is not valid or doesn't exist.
@@ -538,6 +548,16 @@ namespace Amazon.CloudFront
         /// The number of distributions that reference this key group is more than the maximum
         /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToOriginAccessControlException">
+        /// The maximum number of distributions have been associated with the specified origin
+        /// access control.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToOriginRequestPolicyException">
         /// The maximum number of distributions have been associated with the specified origin
@@ -653,6 +673,10 @@ namespace Amazon.CloudFront
         /// The specified configuration for field-level encryption can't be associated with the
         /// specified cache behavior.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalOriginAccessConfigurationException">
+        /// An origin cannot contain both an origin access control (OAC) and an origin access
+        /// identity (OAI).
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
         /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
         /// </exception>
@@ -661,6 +685,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidDefaultRootObjectException">
         /// The default root object file name is too big or contains an invalid character.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidDomainNameForOriginAccessControlException">
+        /// An origin access control is associated with an origin whose domain name is not supported.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidErrorCodeException">
         /// An invalid error code was specified.
@@ -687,6 +714,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidMinimumProtocolVersionException">
         /// The minimum protocol version specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessControlException">
+        /// The origin access control is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
         /// The origin access identity is not valid or doesn't exist.
@@ -781,6 +811,16 @@ namespace Amazon.CloudFront
         /// The number of distributions that reference this key group is more than the maximum
         /// allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
         /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToOriginAccessControlException">
+        /// The maximum number of distributions have been associated with the specified origin
+        /// access control.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsAssociatedToOriginRequestPolicyException">
         /// The maximum number of distributions have been associated with the specified origin
@@ -890,6 +930,9 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidDefaultRootObjectException">
         /// The default root object file name is too big or contains an invalid character.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidDomainNameForOriginAccessControlException">
+        /// An origin access control is associated with an origin whose domain name is not supported.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidErrorCodeException">
         /// An invalid error code was specified.
         /// </exception>
@@ -915,6 +958,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidMinimumProtocolVersionException">
         /// The minimum protocol version specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessControlException">
+        /// The origin access control is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
         /// The origin access identity is not valid or doesn't exist.
@@ -1121,6 +1167,9 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidDefaultRootObjectException">
         /// The default root object file name is too big or contains an invalid character.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidDomainNameForOriginAccessControlException">
+        /// An origin access control is associated with an origin whose domain name is not supported.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidErrorCodeException">
         /// An invalid error code was specified.
         /// </exception>
@@ -1146,6 +1195,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidMinimumProtocolVersionException">
         /// The minimum protocol version specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessControlException">
+        /// The origin access control is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
         /// The origin access identity is not valid or doesn't exist.
@@ -1760,6 +1812,9 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
         /// Access denied.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.MonitoringSubscriptionAlreadyExistsException">
+        /// A monitoring subscription already exists for the specified distribution.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
@@ -1791,6 +1846,9 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
         /// Access denied.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.MonitoringSubscriptionAlreadyExistsException">
+        /// A monitoring subscription already exists for the specified distribution.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
@@ -1799,6 +1857,94 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateMonitoringSubscription">REST API Reference for CreateMonitoringSubscription Operation</seealso>
         Task<CreateMonitoringSubscriptionResponse> CreateMonitoringSubscriptionAsync(CreateMonitoringSubscriptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateOriginAccessControl
+
+
+        /// <summary>
+        /// Creates a new origin access control in CloudFront. After you create an origin access
+        /// control, you can add it to an origin in a CloudFront distribution so that CloudFront
+        /// sends authenticated (signed) requests to the origin.
+        /// 
+        ///  
+        /// <para>
+        /// For an Amazon S3 origin, this makes it possible to block public access to the Amazon
+        /// S3 bucket so that viewers (users) can access the content in the bucket only through
+        /// CloudFront.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about using a CloudFront origin access control, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Restricting
+        /// access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateOriginAccessControl service method.</param>
+        /// 
+        /// <returns>The response from the CreateOriginAccessControl service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.OriginAccessControlAlreadyExistsException">
+        /// An origin access control with the specified parameters already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginAccessControlsException">
+        /// The number of origin access controls in your Amazon Web Services account exceeds the
+        /// maximum allowed.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateOriginAccessControl">REST API Reference for CreateOriginAccessControl Operation</seealso>
+        CreateOriginAccessControlResponse CreateOriginAccessControl(CreateOriginAccessControlRequest request);
+
+
+
+        /// <summary>
+        /// Creates a new origin access control in CloudFront. After you create an origin access
+        /// control, you can add it to an origin in a CloudFront distribution so that CloudFront
+        /// sends authenticated (signed) requests to the origin.
+        /// 
+        ///  
+        /// <para>
+        /// For an Amazon S3 origin, this makes it possible to block public access to the Amazon
+        /// S3 bucket so that viewers (users) can access the content in the bucket only through
+        /// CloudFront.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about using a CloudFront origin access control, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Restricting
+        /// access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateOriginAccessControl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateOriginAccessControl service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.OriginAccessControlAlreadyExistsException">
+        /// An origin access control with the specified parameters already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginAccessControlsException">
+        /// The number of origin access controls in your Amazon Web Services account exceeds the
+        /// maximum allowed.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+        /// (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateOriginAccessControl">REST API Reference for CreateOriginAccessControl Operation</seealso>
+        Task<CreateOriginAccessControlResponse> CreateOriginAccessControlAsync(CreateOriginAccessControlRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2259,6 +2405,9 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessControlException">
+        /// The origin access control is not valid.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
         /// The origin access identity is not valid or doesn't exist.
         /// </exception>
@@ -2314,6 +2463,9 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessControlException">
+        /// The origin access control is not valid.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
         /// The origin access identity is not valid or doesn't exist.
         /// </exception>
@@ -2368,6 +2520,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessControlException">
+        /// The origin access control is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
         /// The origin access identity is not valid or doesn't exist.
@@ -2426,6 +2581,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessControlException">
+        /// The origin access control is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
         /// The origin access identity is not valid or doesn't exist.
@@ -3063,6 +3221,9 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchMonitoringSubscriptionException">
+        /// A monitoring subscription does not exist for the specified distribution.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
         /// This operation is not supported in this region.
         /// </exception>
@@ -3086,11 +3247,86 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchMonitoringSubscriptionException">
+        /// A monitoring subscription does not exist for the specified distribution.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
         /// This operation is not supported in this region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteMonitoringSubscription">REST API Reference for DeleteMonitoringSubscription Operation</seealso>
         Task<DeleteMonitoringSubscriptionResponse> DeleteMonitoringSubscriptionAsync(DeleteMonitoringSubscriptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteOriginAccessControl
+
+
+        /// <summary>
+        /// Deletes a CloudFront origin access control.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete an origin access control if it's in use. First, update all distributions
+        /// to remove the origin access control from all origins, then delete the origin access
+        /// control.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOriginAccessControl service method.</param>
+        /// 
+        /// <returns>The response from the DeleteOriginAccessControl service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <code>If-Match</code> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginAccessControlException">
+        /// The origin access control does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.OriginAccessControlInUseException">
+        /// Cannot delete the origin access control because it's in use by one or more distributions.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteOriginAccessControl">REST API Reference for DeleteOriginAccessControl Operation</seealso>
+        DeleteOriginAccessControlResponse DeleteOriginAccessControl(DeleteOriginAccessControlRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a CloudFront origin access control.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete an origin access control if it's in use. First, update all distributions
+        /// to remove the origin access control from all origins, then delete the origin access
+        /// control.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOriginAccessControl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteOriginAccessControl service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <code>If-Match</code> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginAccessControlException">
+        /// The origin access control does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.OriginAccessControlInUseException">
+        /// Cannot delete the origin access control because it's in use by one or more distributions.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteOriginAccessControl">REST API Reference for DeleteOriginAccessControl Operation</seealso>
+        Task<DeleteOriginAccessControlResponse> DeleteOriginAccessControlAsync(DeleteOriginAccessControlRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -4613,6 +4849,9 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchMonitoringSubscriptionException">
+        /// A monitoring subscription does not exist for the specified distribution.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
         /// This operation is not supported in this region.
         /// </exception>
@@ -4637,11 +4876,94 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchMonitoringSubscriptionException">
+        /// A monitoring subscription does not exist for the specified distribution.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
         /// This operation is not supported in this region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetMonitoringSubscription">REST API Reference for GetMonitoringSubscription Operation</seealso>
         Task<GetMonitoringSubscriptionResponse> GetMonitoringSubscriptionAsync(GetMonitoringSubscriptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetOriginAccessControl
+
+
+        /// <summary>
+        /// Gets a CloudFront origin access control.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOriginAccessControl service method.</param>
+        /// 
+        /// <returns>The response from the GetOriginAccessControl service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginAccessControlException">
+        /// The origin access control does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetOriginAccessControl">REST API Reference for GetOriginAccessControl Operation</seealso>
+        GetOriginAccessControlResponse GetOriginAccessControl(GetOriginAccessControlRequest request);
+
+
+
+        /// <summary>
+        /// Gets a CloudFront origin access control.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOriginAccessControl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetOriginAccessControl service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginAccessControlException">
+        /// The origin access control does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetOriginAccessControl">REST API Reference for GetOriginAccessControl Operation</seealso>
+        Task<GetOriginAccessControlResponse> GetOriginAccessControlAsync(GetOriginAccessControlRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetOriginAccessControlConfig
+
+
+        /// <summary>
+        /// Gets a CloudFront origin access control.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOriginAccessControlConfig service method.</param>
+        /// 
+        /// <returns>The response from the GetOriginAccessControlConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginAccessControlException">
+        /// The origin access control does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetOriginAccessControlConfig">REST API Reference for GetOriginAccessControlConfig Operation</seealso>
+        GetOriginAccessControlConfigResponse GetOriginAccessControlConfig(GetOriginAccessControlConfigRequest request);
+
+
+
+        /// <summary>
+        /// Gets a CloudFront origin access control.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOriginAccessControlConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetOriginAccessControlConfig service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginAccessControlException">
+        /// The origin access control does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetOriginAccessControlConfig">REST API Reference for GetOriginAccessControlConfig Operation</seealso>
+        Task<GetOriginAccessControlConfigResponse> GetOriginAccessControlConfigAsync(GetOriginAccessControlConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -6089,6 +6411,58 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  ListOriginAccessControls
+
+
+        /// <summary>
+        /// Gets the list of CloudFront origin access controls in this Amazon Web Services account.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// another request that specifies the <code>NextMarker</code> value from the current
+        /// response as the <code>Marker</code> value in the next request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOriginAccessControls service method.</param>
+        /// 
+        /// <returns>The response from the ListOriginAccessControls service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListOriginAccessControls">REST API Reference for ListOriginAccessControls Operation</seealso>
+        ListOriginAccessControlsResponse ListOriginAccessControls(ListOriginAccessControlsRequest request);
+
+
+
+        /// <summary>
+        /// Gets the list of CloudFront origin access controls in this Amazon Web Services account.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally specify the maximum number of items to receive in the response.
+        /// If the total number of items in the list exceeds the maximum that you specify, or
+        /// the default maximum, the response is paginated. To get the next page of items, send
+        /// another request that specifies the <code>NextMarker</code> value from the current
+        /// response as the <code>Marker</code> value in the next request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOriginAccessControls service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListOriginAccessControls service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListOriginAccessControls">REST API Reference for ListOriginAccessControls Operation</seealso>
+        Task<ListOriginAccessControlsResponse> ListOriginAccessControlsAsync(ListOriginAccessControlsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListOriginRequestPolicies
 
 
@@ -7071,6 +7445,10 @@ namespace Amazon.CloudFront
         /// The specified configuration for field-level encryption can't be associated with the
         /// specified cache behavior.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalOriginAccessConfigurationException">
+        /// An origin cannot contain both an origin access control (OAC) and an origin access
+        /// identity (OAI).
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
         /// The update contains modifications that are not allowed.
         /// </exception>
@@ -7082,6 +7460,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidDefaultRootObjectException">
         /// The default root object file name is too big or contains an invalid character.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidDomainNameForOriginAccessControlException">
+        /// An origin access control is associated with an origin whose domain name is not supported.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidErrorCodeException">
         /// An invalid error code was specified.
@@ -7111,6 +7492,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidMinimumProtocolVersionException">
         /// The minimum protocol version specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessControlException">
+        /// The origin access control is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
         /// The origin access identity is not valid or doesn't exist.
@@ -7392,6 +7776,10 @@ namespace Amazon.CloudFront
         /// The specified configuration for field-level encryption can't be associated with the
         /// specified cache behavior.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalOriginAccessConfigurationException">
+        /// An origin cannot contain both an origin access control (OAC) and an origin access
+        /// identity (OAI).
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
         /// The update contains modifications that are not allowed.
         /// </exception>
@@ -7403,6 +7791,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidDefaultRootObjectException">
         /// The default root object file name is too big or contains an invalid character.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidDomainNameForOriginAccessControlException">
+        /// An origin access control is associated with an origin whose domain name is not supported.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidErrorCodeException">
         /// An invalid error code was specified.
@@ -7432,6 +7823,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidMinimumProtocolVersionException">
         /// The minimum protocol version specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessControlException">
+        /// The origin access control is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
         /// The origin access identity is not valid or doesn't exist.
@@ -7996,6 +8390,76 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  UpdateOriginAccessControl
+
+
+        /// <summary>
+        /// Updates a CloudFront origin access control.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateOriginAccessControl service method.</param>
+        /// 
+        /// <returns>The response from the UpdateOriginAccessControl service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// The update contains modifications that are not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <code>If-Match</code> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginAccessControlException">
+        /// The origin access control does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.OriginAccessControlAlreadyExistsException">
+        /// An origin access control with the specified parameters already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateOriginAccessControl">REST API Reference for UpdateOriginAccessControl Operation</seealso>
+        UpdateOriginAccessControlResponse UpdateOriginAccessControl(UpdateOriginAccessControlRequest request);
+
+
+
+        /// <summary>
+        /// Updates a CloudFront origin access control.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateOriginAccessControl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateOriginAccessControl service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// The update contains modifications that are not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <code>If-Match</code> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginAccessControlException">
+        /// The origin access control does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.OriginAccessControlAlreadyExistsException">
+        /// An origin access control with the specified parameters already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateOriginAccessControl">REST API Reference for UpdateOriginAccessControl Operation</seealso>
+        Task<UpdateOriginAccessControlResponse> UpdateOriginAccessControlAsync(UpdateOriginAccessControlRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UpdateOriginRequestPolicy
 
 
@@ -8499,6 +8963,9 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
         /// The <code>If-Match</code> version is missing or not valid.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessControlException">
+        /// The origin access control is not valid.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
         /// The origin access identity is not valid or doesn't exist.
         /// </exception>
@@ -8552,6 +9019,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
         /// The <code>If-Match</code> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessControlException">
+        /// The origin access control is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
         /// The origin access identity is not valid or doesn't exist.

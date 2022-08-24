@@ -81,6 +81,7 @@ namespace Amazon.CloudFront.Model
         private CustomOriginConfig _customOriginConfig;
         private string _domainName;
         private string _id;
+        private string _originAccessControlId;
         private string _originPath;
         private OriginShield _originShield;
         private S3OriginConfig _s3OriginConfig;
@@ -233,6 +234,29 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OriginAccessControlId. 
+        /// <para>
+        /// The unique identifier of an origin access control for this origin.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Restricting
+        /// access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public string OriginAccessControlId
+        {
+            get { return this._originAccessControlId; }
+            set { this._originAccessControlId = value; }
+        }
+
+        // Check to see if OriginAccessControlId property is set
+        internal bool IsSetOriginAccessControlId()
+        {
+            return this._originAccessControlId != null;
         }
 
         /// <summary>

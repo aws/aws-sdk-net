@@ -909,6 +909,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                 if(publicRequestDistributionConfigOriginsItemsValue.IsSetId())
                                     xmlWriter.WriteElementString("Id", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequestDistributionConfigOriginsItemsValue.Id));                 
                 
+                                if(publicRequestDistributionConfigOriginsItemsValue.IsSetOriginAccessControlId())
+                                    xmlWriter.WriteElementString("OriginAccessControlId", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequestDistributionConfigOriginsItemsValue.OriginAccessControlId));                 
+                
                                 if(publicRequestDistributionConfigOriginsItemsValue.IsSetOriginPath())
                                     xmlWriter.WriteElementString("OriginPath", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequestDistributionConfigOriginsItemsValue.OriginPath));                 
                 

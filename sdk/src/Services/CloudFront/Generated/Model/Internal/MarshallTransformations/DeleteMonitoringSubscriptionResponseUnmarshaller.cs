@@ -76,6 +76,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     return NoSuchDistributionExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchMonitoringSubscription"))
+                {
+                    return NoSuchMonitoringSubscriptionExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedOperation"))
                 {
                     return UnsupportedOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

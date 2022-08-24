@@ -98,6 +98,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("MonitoringSubscriptionAlreadyExists"))
+                {
+                    return MonitoringSubscriptionAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchDistribution"))
                 {
                     return NoSuchDistributionExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

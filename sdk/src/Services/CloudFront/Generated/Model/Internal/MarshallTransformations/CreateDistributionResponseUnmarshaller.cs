@@ -114,6 +114,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     return IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("IllegalOriginAccessConfiguration"))
+                {
+                    return IllegalOriginAccessConfigurationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InconsistentQuantities"))
                 {
                     return InconsistentQuantitiesExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -125,6 +129,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDefaultRootObject"))
                 {
                     return InvalidDefaultRootObjectExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDomainNameForOriginAccessControl"))
+                {
+                    return InvalidDomainNameForOriginAccessControlExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidErrorCode"))
                 {
@@ -157,6 +165,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidMinimumProtocolVersion"))
                 {
                     return InvalidMinimumProtocolVersionExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidOriginAccessControl"))
+                {
+                    return InvalidOriginAccessControlExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidOriginAccessIdentity"))
                 {
@@ -265,6 +277,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyDistributionsAssociatedToKeyGroup"))
                 {
                     return TooManyDistributionsAssociatedToKeyGroupExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyDistributionsAssociatedToOriginAccessControl"))
+                {
+                    return TooManyDistributionsAssociatedToOriginAccessControlExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyDistributionsAssociatedToOriginRequestPolicy"))
                 {
