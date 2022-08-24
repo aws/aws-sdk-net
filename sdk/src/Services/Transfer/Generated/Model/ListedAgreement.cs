@@ -103,7 +103,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property LocalProfileId. 
         /// <para>
-        /// A unique identifier for the AS2 process.
+        /// A unique identifier for the AS2 local profile.
         /// </para>
         /// </summary>
         [AWSProperty(Min=19, Max=19)]
@@ -122,7 +122,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property PartnerProfileId. 
         /// <para>
-        /// A unique identifier for the partner process.
+        /// A unique identifier for the partner profile.
         /// </para>
         /// </summary>
         [AWSProperty(Min=19, Max=19)]

@@ -47,9 +47,16 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property AccessRole. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that
-        /// grants access to at least the <code>HomeDirectory</code> of your users' Amazon S3
-        /// buckets.
+        /// With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying
+        /// the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s
+        /// parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>,
+        /// parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2
+        /// message file, store the MDN when we receive them from the partner, and write a final
+        /// JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code>
+        /// needs to provide read and write access to the parent directory of the file location
+        /// used in the <code>StartFileTransfer</code> request. Additionally, you need to provide
+        /// read and write access to the parent directory of the files that you intend to send
+        /// with <code>StartFileTransfer</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -145,7 +152,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property LocalProfileId. 
         /// <para>
-        /// A unique identifier for the AS2 process.
+        /// A unique identifier for the AS2 local profile.
         /// </para>
         /// </summary>
         [AWSProperty(Min=19, Max=19)]
@@ -164,7 +171,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property PartnerProfileId. 
         /// <para>
-        /// A unique identifier for the partner in the agreement.
+        /// A unique identifier for the partner profile used in the agreement.
         /// </para>
         /// </summary>
         [AWSProperty(Min=19, Max=19)]

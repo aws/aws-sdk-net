@@ -82,7 +82,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property LocalProfileId. 
         /// <para>
-        /// A unique identifier for the AS2 process.
+        /// A unique identifier for the AS2 local profile.
         /// </para>
         /// </summary>
         [AWSProperty(Min=19, Max=19)]
@@ -133,6 +133,12 @@ namespace Amazon.Transfer.Model
         /// <para>
         /// The signing algorithm for the MDN response.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If set to DEFAULT (or not set at all), the value for <code>SigningAlogorithm</code>
+        /// is used.
+        /// </para>
+        ///  </note>
         /// </summary>
         public MdnSigningAlg MdnSigningAlgorithm
         {
@@ -149,7 +155,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property MessageSubject. 
         /// <para>
-        /// A short description to help identify the connector.
+        /// Used as the <code>Subject</code> HTTP header attribute in AS2 messages that are being
+        /// sent with the connector.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -168,7 +175,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property PartnerProfileId. 
         /// <para>
-        /// A unique identifier for the partner for the connector.
+        /// A unique identifier for the partner profile for the connector.
         /// </para>
         /// </summary>
         [AWSProperty(Min=19, Max=19)]
@@ -187,7 +194,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property SigningAlgorithm. 
         /// <para>
-        /// The algorithm that is used to sign the AS2 transfers for this partner profile.
+        /// The algorithm that is used to sign the AS2 messages sent with the connector.
         /// </para>
         /// </summary>
         public SigningAlg SigningAlgorithm

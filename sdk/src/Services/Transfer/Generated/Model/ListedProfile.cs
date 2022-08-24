@@ -60,7 +60,11 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property As2Id. 
         /// <para>
-        /// The unique identifier for the AS2 process.
+        /// The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC
+        /// 4130</a>. For inbound transfers, this is the <code>AS2-From</code> header for the
+        /// AS2 messages sent from the partner. For outbound connectors, this is the <code>AS2-To</code>
+        /// header for the AS2 messages sent to the partner using the <code>StartFileTransfer</code>
+        /// API operation. This ID cannot include spaces.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
