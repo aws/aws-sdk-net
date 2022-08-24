@@ -1,3 +1,17 @@
+### 3.7.342.0 (2022-08-24 18:25 UTC)
+* CloudFront (3.7.8.0)
+	* Adds support for CloudFront origin access control (OAC), making it possible to restrict public access to S3 bucket origins in all AWS Regions, those with SSE-KMS, and more.
+* ConfigService (3.7.13.0)
+	* AWS Config now supports ConformancePackTemplate documents in SSM Docs for the deployment and update of conformance packs.
+* IdentityManagement (3.7.2.176)
+	* Documentation updates for AWS Identity and Access Management (IAM).
+* IVS (3.7.5.4)
+	* Documentation Change for IVS API Reference - Doc-only update to type field description for CreateChannel and UpdateChannel actions and for Channel data type. Also added Amazon Resource Names (ARNs) paragraph to Welcome section.
+* QuickSight (3.7.13.0)
+	* Added a new optional property DashboardVisual under ExperienceConfiguration parameter of GenerateEmbedUrlForAnonymousUser and GenerateEmbedUrlForRegisteredUser API operations. This supports embedding of specific visuals in QuickSight dashboards.
+* Transfer (3.7.13.12)
+	* Documentation updates for AWS Transfer Family
+
 ### 3.7.341.0 (2022-08-23 18:44 UTC)
 * RDS (3.7.17.0)
 	* RDS for Oracle supports Oracle Data Guard switchover and read replica backups.
