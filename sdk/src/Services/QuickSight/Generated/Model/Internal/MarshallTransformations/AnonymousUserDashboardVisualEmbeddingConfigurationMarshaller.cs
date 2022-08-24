@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AnonymousUserEmbeddingExperienceConfiguration Marshaller
+    /// AnonymousUserDashboardVisualEmbeddingConfiguration Marshaller
     /// </summary>
-    public class AnonymousUserEmbeddingExperienceConfigurationMarshaller : IRequestMarshaller<AnonymousUserEmbeddingExperienceConfiguration, JsonMarshallerContext> 
+    public class AnonymousUserDashboardVisualEmbeddingConfigurationMarshaller : IRequestMarshaller<AnonymousUserDashboardVisualEmbeddingConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,26 +43,15 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AnonymousUserEmbeddingExperienceConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(AnonymousUserDashboardVisualEmbeddingConfiguration requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetDashboard())
+            if(requestObject.IsSetInitialDashboardVisualId())
             {
-                context.Writer.WritePropertyName("Dashboard");
+                context.Writer.WritePropertyName("InitialDashboardVisualId");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = AnonymousUserDashboardEmbeddingConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.Dashboard, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetDashboardVisual())
-            {
-                context.Writer.WritePropertyName("DashboardVisual");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = AnonymousUserDashboardVisualEmbeddingConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.DashboardVisual, context);
+                var marshaller = DashboardVisualIdMarshaller.Instance;
+                marshaller.Marshall(requestObject.InitialDashboardVisualId, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -72,7 +61,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static AnonymousUserEmbeddingExperienceConfigurationMarshaller Instance = new AnonymousUserEmbeddingExperienceConfigurationMarshaller();
+        public readonly static AnonymousUserDashboardVisualEmbeddingConfigurationMarshaller Instance = new AnonymousUserDashboardVisualEmbeddingConfigurationMarshaller();
 
     }
 }

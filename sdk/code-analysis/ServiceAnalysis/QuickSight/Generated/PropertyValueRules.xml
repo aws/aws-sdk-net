@@ -2167,6 +2167,24 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.DashboardVisualId.DashboardId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DashboardVisualId.SheetId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DashboardVisualId.VisualId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.DataColorPalette.EmptyFillColor</property>
     <pattern>^#[A-F0-9]{6}$</pattern>
   </property-value-rule>

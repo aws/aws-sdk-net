@@ -6232,9 +6232,9 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Generates an embed URL that you can use to embed an Amazon QuickSight dashboard in
-        /// your website, without having to register any reader users. Before you use this action,
-        /// make sure that you have configured the dashboards and permissions.
+        /// Generates an embed URL that you can use to embed an Amazon QuickSight dashboard or
+        /// visual in your website, without having to register any reader users. Before you use
+        /// this action, make sure that you have configured the dashboards and permissions.
         /// 
         ///  
         /// <para>
@@ -6324,9 +6324,9 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Generates an embed URL that you can use to embed an Amazon QuickSight dashboard in
-        /// your website, without having to register any reader users. Before you use this action,
-        /// make sure that you have configured the dashboards and permissions.
+        /// Generates an embed URL that you can use to embed an Amazon QuickSight dashboard or
+        /// visual in your website, without having to register any reader users. Before you use
+        /// this action, make sure that you have configured the dashboards and permissions.
         /// 
         ///  
         /// <para>

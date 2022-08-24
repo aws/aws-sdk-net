@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AnonymousUserEmbeddingExperienceConfiguration Marshaller
+    /// DashboardVisualId Marshaller
     /// </summary>
-    public class AnonymousUserEmbeddingExperienceConfigurationMarshaller : IRequestMarshaller<AnonymousUserEmbeddingExperienceConfiguration, JsonMarshallerContext> 
+    public class DashboardVisualIdMarshaller : IRequestMarshaller<DashboardVisualId, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,28 +43,24 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AnonymousUserEmbeddingExperienceConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(DashboardVisualId requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetDashboard())
+            if(requestObject.IsSetDashboardId())
             {
-                context.Writer.WritePropertyName("Dashboard");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = AnonymousUserDashboardEmbeddingConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.Dashboard, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("DashboardId");
+                context.Writer.Write(requestObject.DashboardId);
             }
 
-            if(requestObject.IsSetDashboardVisual())
+            if(requestObject.IsSetSheetId())
             {
-                context.Writer.WritePropertyName("DashboardVisual");
-                context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("SheetId");
+                context.Writer.Write(requestObject.SheetId);
+            }
 
-                var marshaller = AnonymousUserDashboardVisualEmbeddingConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.DashboardVisual, context);
-
-                context.Writer.WriteObjectEnd();
+            if(requestObject.IsSetVisualId())
+            {
+                context.Writer.WritePropertyName("VisualId");
+                context.Writer.Write(requestObject.VisualId);
             }
 
         }
@@ -72,7 +68,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static AnonymousUserEmbeddingExperienceConfigurationMarshaller Instance = new AnonymousUserEmbeddingExperienceConfigurationMarshaller();
+        public readonly static DashboardVisualIdMarshaller Instance = new DashboardVisualIdMarshaller();
 
     }
 }

@@ -35,6 +35,7 @@ namespace Amazon.QuickSight.Model
     public partial class AnonymousUserEmbeddingExperienceConfiguration
     {
         private AnonymousUserDashboardEmbeddingConfiguration _dashboard;
+        private AnonymousUserDashboardVisualEmbeddingConfiguration _dashboardVisual;
 
         /// <summary>
         /// Gets and sets the property Dashboard. 
@@ -52,6 +53,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetDashboard()
         {
             return this._dashboard != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DashboardVisual. 
+        /// <para>
+        /// The type of embedding experience. In this case, Amazon QuickSight visuals.
+        /// </para>
+        /// </summary>
+        public AnonymousUserDashboardVisualEmbeddingConfiguration DashboardVisual
+        {
+            get { return this._dashboardVisual; }
+            set { this._dashboardVisual = value; }
+        }
+
+        // Check to see if DashboardVisual property is set
+        internal bool IsSetDashboardVisual()
+        {
+            return this._dashboardVisual != null;
         }
 
     }
