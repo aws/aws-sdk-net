@@ -191,6 +191,17 @@ namespace Amazon.IVS
     /// </para>
     ///  </li> </ul> 
     /// <para>
+    ///  <b>Amazon Resource Names (ARNs)</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// ARNs uniquely identify AWS resources. An ARN is required when you need to specify
+    /// a resource unambiguously across all of AWS, such as in IAM policies and API calls.
+    /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+    /// Resource Names</a> in the <i>AWS General Reference</i>.
+    /// </para>
+    ///  
+    /// <para>
     ///  <b>Channel Endpoints</b> 
     /// </para>
     ///  <ul> <li> 
@@ -200,8 +211,7 @@ namespace Amazon.IVS
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>GetChannel</a> — Gets the channel configuration for the specified channel ARN
-    /// (Amazon Resource Name).
+    ///  <a>GetChannel</a> — Gets the channel configuration for the specified channel ARN.
     /// </para>
     ///  </li> <li> 
     /// <para>
