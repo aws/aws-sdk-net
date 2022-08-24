@@ -410,22 +410,6 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>EC2-Classic-InstanceStore</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// instance, image, security group
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>EC2-Classic-EBS</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// instance, image, security group, volume
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <b>EC2-VPC-InstanceStore</b> 
         /// </para>
         ///  
