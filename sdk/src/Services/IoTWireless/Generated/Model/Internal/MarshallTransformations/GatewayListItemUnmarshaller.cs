@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LoRaWANSendDataToDevice Object
+    /// Response Unmarshaller for GatewayListItem Object
     /// </summary>  
-    public class LoRaWANSendDataToDeviceUnmarshaller : IUnmarshaller<LoRaWANSendDataToDevice, XmlUnmarshallerContext>, IUnmarshaller<LoRaWANSendDataToDevice, JsonUnmarshallerContext>
+    public class GatewayListItemUnmarshaller : IUnmarshaller<GatewayListItem, XmlUnmarshallerContext>, IUnmarshaller<GatewayListItem, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        LoRaWANSendDataToDevice IUnmarshaller<LoRaWANSendDataToDevice, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        GatewayListItem IUnmarshaller<GatewayListItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,27 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public LoRaWANSendDataToDevice Unmarshall(JsonUnmarshallerContext context)
+        public GatewayListItem Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            LoRaWANSendDataToDevice unmarshalledObject = new LoRaWANSendDataToDevice();
+            GatewayListItem unmarshalledObject = new GatewayListItem();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("FPort", targetDepth))
+                if (context.TestExpression("DownlinkFrequency", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.FPort = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DownlinkFrequency = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ParticipatingGateways", targetDepth))
+                if (context.TestExpression("GatewayId", targetDepth))
                 {
-                    var unmarshaller = ParticipatingGatewaysUnmarshaller.Instance;
-                    unmarshalledObject.ParticipatingGateways = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.GatewayId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +82,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         }
 
 
-        private static LoRaWANSendDataToDeviceUnmarshaller _instance = new LoRaWANSendDataToDeviceUnmarshaller();        
+        private static GatewayListItemUnmarshaller _instance = new GatewayListItemUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LoRaWANSendDataToDeviceUnmarshaller Instance
+        public static GatewayListItemUnmarshaller Instance
         {
             get
             {

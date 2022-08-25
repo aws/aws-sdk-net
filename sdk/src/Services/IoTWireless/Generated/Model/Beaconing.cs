@@ -29,46 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTWireless.Model
 {
     /// <summary>
-    /// LoRaWAN router info.
+    /// Beaconing parameters for configuring the wireless gateways.
     /// </summary>
-    public partial class LoRaWANSendDataToDevice
+    public partial class Beaconing
     {
-        private int? _fPort;
-        private ParticipatingGateways _participatingGateways;
+        private int? _dataRate;
+        private List<int> _frequencies = new List<int>();
 
         /// <summary>
-        /// Gets and sets the property FPort.
-        /// </summary>
-        [AWSProperty(Min=1, Max=223)]
-        public int FPort
-        {
-            get { return this._fPort.GetValueOrDefault(); }
-            set { this._fPort = value; }
-        }
-
-        // Check to see if FPort property is set
-        internal bool IsSetFPort()
-        {
-            return this._fPort.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property ParticipatingGateways. 
+        /// Gets and sets the property DataRate. 
         /// <para>
-        /// Choose the gateways that you want to use for the downlink data traffic when the wireless
-        /// device is running in class B or class C mode.
+        /// The data rate for gateways that are sending the beacons.
         /// </para>
         /// </summary>
-        public ParticipatingGateways ParticipatingGateways
+        [AWSProperty(Min=0, Max=15)]
+        public int DataRate
         {
-            get { return this._participatingGateways; }
-            set { this._participatingGateways = value; }
+            get { return this._dataRate.GetValueOrDefault(); }
+            set { this._dataRate = value; }
         }
 
-        // Check to see if ParticipatingGateways property is set
-        internal bool IsSetParticipatingGateways()
+        // Check to see if DataRate property is set
+        internal bool IsSetDataRate()
         {
-            return this._participatingGateways != null;
+            return this._dataRate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Frequencies. 
+        /// <para>
+        /// The frequency list for the gateways to send the beacons.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<int> Frequencies
+        {
+            get { return this._frequencies; }
+            set { this._frequencies = value; }
+        }
+
+        // Check to see if Frequencies property is set
+        internal bool IsSetFrequencies()
+        {
+            return this._frequencies != null && this._frequencies.Count > 0; 
         }
 
     }

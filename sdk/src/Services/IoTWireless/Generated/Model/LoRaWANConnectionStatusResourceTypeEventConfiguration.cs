@@ -38,8 +38,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property WirelessGatewayEventTopic. 
         /// <para>
-        /// Enum to denote whether the wireless gateway connection status event topic is enabled
-        /// or disabled.
+        /// Denotes whether the wireless gateway connection status event topic is enabled or disabled.
         /// </para>
         /// </summary>
         public EventNotificationTopicStatus WirelessGatewayEventTopic

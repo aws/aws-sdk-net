@@ -59,8 +59,8 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property WirelessDeviceIdEventTopic. 
         /// <para>
-        /// Enum to denote whether the wireless device id device registration state event topic
-        /// is enabled or disabled.
+        /// Denotes whether the wireless device ID device registration state event topic is enabled
+        /// or disabled.
         /// </para>
         /// </summary>
         public EventNotificationTopicStatus WirelessDeviceIdEventTopic

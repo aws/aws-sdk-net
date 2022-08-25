@@ -237,6 +237,60 @@ namespace Amazon.IoTWireless
 
 
     /// <summary>
+    /// Constants used for properties of type DownlinkMode.
+    /// </summary>
+    public class DownlinkMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONCURRENT for DownlinkMode
+        /// </summary>
+        public static readonly DownlinkMode CONCURRENT = new DownlinkMode("CONCURRENT");
+        /// <summary>
+        /// Constant SEQUENTIAL for DownlinkMode
+        /// </summary>
+        public static readonly DownlinkMode SEQUENTIAL = new DownlinkMode("SEQUENTIAL");
+        /// <summary>
+        /// Constant USING_UPLINK_GATEWAY for DownlinkMode
+        /// </summary>
+        public static readonly DownlinkMode USING_UPLINK_GATEWAY = new DownlinkMode("USING_UPLINK_GATEWAY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DownlinkMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DownlinkMode FindValue(string value)
+        {
+            return FindValue<DownlinkMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DownlinkMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Event.
     /// </summary>
     public class Event : ConstantClass

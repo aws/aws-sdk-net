@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LoRaWANSendDataToDevice Object
+    /// Response Unmarshaller for ParticipatingGateways Object
     /// </summary>  
-    public class LoRaWANSendDataToDeviceUnmarshaller : IUnmarshaller<LoRaWANSendDataToDevice, XmlUnmarshallerContext>, IUnmarshaller<LoRaWANSendDataToDevice, JsonUnmarshallerContext>
+    public class ParticipatingGatewaysUnmarshaller : IUnmarshaller<ParticipatingGateways, XmlUnmarshallerContext>, IUnmarshaller<ParticipatingGateways, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        LoRaWANSendDataToDevice IUnmarshaller<LoRaWANSendDataToDevice, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ParticipatingGateways IUnmarshaller<ParticipatingGateways, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,33 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public LoRaWANSendDataToDevice Unmarshall(JsonUnmarshallerContext context)
+        public ParticipatingGateways Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            LoRaWANSendDataToDevice unmarshalledObject = new LoRaWANSendDataToDevice();
+            ParticipatingGateways unmarshalledObject = new ParticipatingGateways();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("FPort", targetDepth))
+                if (context.TestExpression("DownlinkMode", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.FPort = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DownlinkMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ParticipatingGateways", targetDepth))
+                if (context.TestExpression("GatewayList", targetDepth))
                 {
-                    var unmarshaller = ParticipatingGatewaysUnmarshaller.Instance;
-                    unmarshalledObject.ParticipatingGateways = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<GatewayListItem, GatewayListItemUnmarshaller>(GatewayListItemUnmarshaller.Instance);
+                    unmarshalledObject.GatewayList = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TransmissionInterval", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.TransmissionInterval = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +88,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         }
 
 
-        private static LoRaWANSendDataToDeviceUnmarshaller _instance = new LoRaWANSendDataToDeviceUnmarshaller();        
+        private static ParticipatingGatewaysUnmarshaller _instance = new ParticipatingGatewaysUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LoRaWANSendDataToDeviceUnmarshaller Instance
+        public static ParticipatingGatewaysUnmarshaller Instance
         {
             get
             {

@@ -45,6 +45,17 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LoRaWANGateway requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetBeaconing())
+            {
+                context.Writer.WritePropertyName("Beaconing");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = BeaconingMarshaller.Instance;
+                marshaller.Marshall(requestObject.Beaconing, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetGatewayEui())
             {
                 context.Writer.WritePropertyName("GatewayEui");

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// LoRaWANSendDataToDevice Marshaller
+    /// GatewayListItem Marshaller
     /// </summary>
-    public class LoRaWANSendDataToDeviceMarshaller : IRequestMarshaller<LoRaWANSendDataToDevice, JsonMarshallerContext> 
+    public class GatewayListItemMarshaller : IRequestMarshaller<GatewayListItem, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,23 +43,18 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(LoRaWANSendDataToDevice requestObject, JsonMarshallerContext context)
+        public void Marshall(GatewayListItem requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetFPort())
+            if(requestObject.IsSetDownlinkFrequency())
             {
-                context.Writer.WritePropertyName("FPort");
-                context.Writer.Write(requestObject.FPort);
+                context.Writer.WritePropertyName("DownlinkFrequency");
+                context.Writer.Write(requestObject.DownlinkFrequency);
             }
 
-            if(requestObject.IsSetParticipatingGateways())
+            if(requestObject.IsSetGatewayId())
             {
-                context.Writer.WritePropertyName("ParticipatingGateways");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ParticipatingGatewaysMarshaller.Instance;
-                marshaller.Marshall(requestObject.ParticipatingGateways, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("GatewayId");
+                context.Writer.Write(requestObject.GatewayId);
             }
 
         }
@@ -67,7 +62,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static LoRaWANSendDataToDeviceMarshaller Instance = new LoRaWANSendDataToDeviceMarshaller();
+        public readonly static GatewayListItemMarshaller Instance = new GatewayListItemMarshaller();
 
     }
 }
