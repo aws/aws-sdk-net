@@ -55,21 +55,33 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The following attributes are supported by both Application Load Balancers and Network
-        /// Load Balancers:
+        /// The following attributes are supported by Application Load Balancers, Network Load
+        /// Balancers, and Gateway Load Balancers:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled.
+        ///  <code>stickiness.enabled</code> - Indicates whether target stickiness is enabled.
         /// The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>stickiness.type</code> - The type of sticky sessions. The possible values are
-        /// <code>lb_cookie</code> and <code>app_cookie</code> for Application Load Balancers
-        /// or <code>source_ip</code> for Network Load Balancers.
+        ///  <code>stickiness.type</code> - Indicates the type of stickiness. The possible values
+        /// are: 
         /// </para>
-        ///  </li> </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>lb_cookie</code> and <code>app_cookie</code> for Application Load Balancers
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>source_ip</code> for Network Load Balancers
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>source_ip_dest_ip</code> and <code>source_ip_dest_ip_proto</code> for Gateway
+        /// Load Balancers
+        /// </para>
+        ///  </li> </ul> </li> </ul> 
         /// <para>
         /// The following attributes are supported only if the load balancer is an Application
         /// Load Balancer and the target is an instance or an IP address:
