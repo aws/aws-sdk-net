@@ -93,6 +93,12 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
                     response.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DeviceAggregatedStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.DeviceAggregatedStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DeviceConnectionStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -109,6 +115,12 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LatestAlternateSoftware = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LatestDeviceJob", targetDepth))
+                {
+                    var unmarshaller = LatestDeviceJobUnmarshaller.Instance;
+                    response.LatestDeviceJob = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LatestSoftware", targetDepth))

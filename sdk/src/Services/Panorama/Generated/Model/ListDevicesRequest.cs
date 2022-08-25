@@ -34,8 +34,30 @@ namespace Amazon.Panorama.Model
     /// </summary>
     public partial class ListDevicesRequest : AmazonPanoramaRequest
     {
+        private DeviceAggregatedStatus _deviceAggregatedStatusFilter;
         private int? _maxResults;
+        private string _nameFilter;
         private string _nextToken;
+        private ListDevicesSortBy _sortBy;
+        private SortOrder _sortOrder;
+
+        /// <summary>
+        /// Gets and sets the property DeviceAggregatedStatusFilter. 
+        /// <para>
+        /// Filter based on a device's status.
+        /// </para>
+        /// </summary>
+        public DeviceAggregatedStatus DeviceAggregatedStatusFilter
+        {
+            get { return this._deviceAggregatedStatusFilter; }
+            set { this._deviceAggregatedStatusFilter = value; }
+        }
+
+        // Check to see if DeviceAggregatedStatusFilter property is set
+        internal bool IsSetDeviceAggregatedStatusFilter()
+        {
+            return this._deviceAggregatedStatusFilter != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -57,6 +79,24 @@ namespace Amazon.Panorama.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NameFilter. 
+        /// <para>
+        /// Filter based on device's name. Prefixes supported.
+        /// </para>
+        /// </summary>
+        public string NameFilter
+        {
+            get { return this._nameFilter; }
+            set { this._nameFilter = value; }
+        }
+
+        // Check to see if NameFilter property is set
+        internal bool IsSetNameFilter()
+        {
+            return this._nameFilter != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
         /// Specify the pagination token from a previous request to retrieve the next page of
@@ -74,6 +114,43 @@ namespace Amazon.Panorama.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SortBy. 
+        /// <para>
+        /// The target column to be sorted on. Default column sort is CREATED_TIME.
+        /// </para>
+        /// </summary>
+        public ListDevicesSortBy SortBy
+        {
+            get { return this._sortBy; }
+            set { this._sortBy = value; }
+        }
+
+        // Check to see if SortBy property is set
+        internal bool IsSetSortBy()
+        {
+            return this._sortBy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SortOrder. 
+        /// <para>
+        /// The sorting order for the returned list. SortOrder is DESCENDING by default based
+        /// on CREATED_TIME. Otherwise, SortOrder is ASCENDING.
+        /// </para>
+        /// </summary>
+        public SortOrder SortOrder
+        {
+            get { return this._sortOrder; }
+            set { this._sortOrder = value; }
+        }
+
+        // Check to see if SortOrder property is set
+        internal bool IsSetSortOrder()
+        {
+            return this._sortOrder != null;
         }
 
     }

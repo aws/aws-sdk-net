@@ -40,9 +40,11 @@ namespace Amazon.Panorama.Model
         private NetworkStatus _currentNetworkingStatus;
         private string _currentSoftware;
         private string _description;
+        private DeviceAggregatedStatus _deviceAggregatedStatus;
         private DeviceConnectionStatus _deviceConnectionStatus;
         private string _deviceId;
         private string _latestAlternateSoftware;
+        private LatestDeviceJob _latestDeviceJob;
         private string _latestSoftware;
         private DateTime? _leaseExpirationTime;
         private string _name;
@@ -182,6 +184,25 @@ namespace Amazon.Panorama.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DeviceAggregatedStatus. 
+        /// <para>
+        /// A device's aggregated status. Including the device's connection status, provisioning
+        /// status, and lease status.
+        /// </para>
+        /// </summary>
+        public DeviceAggregatedStatus DeviceAggregatedStatus
+        {
+            get { return this._deviceAggregatedStatus; }
+            set { this._deviceAggregatedStatus = value; }
+        }
+
+        // Check to see if DeviceAggregatedStatus property is set
+        internal bool IsSetDeviceAggregatedStatus()
+        {
+            return this._deviceAggregatedStatus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DeviceConnectionStatus. 
         /// <para>
         /// The device's connection status.
@@ -235,6 +256,24 @@ namespace Amazon.Panorama.Model
         internal bool IsSetLatestAlternateSoftware()
         {
             return this._latestAlternateSoftware != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LatestDeviceJob. 
+        /// <para>
+        /// A device's latest job. Includes the target image version, and the job status.
+        /// </para>
+        /// </summary>
+        public LatestDeviceJob LatestDeviceJob
+        {
+            get { return this._latestDeviceJob; }
+            set { this._latestDeviceJob = value; }
+        }
+
+        // Check to see if LatestDeviceJob property is set
+        internal bool IsSetLatestDeviceJob()
+        {
+            return this._latestDeviceJob != null;
         }
 
         /// <summary>

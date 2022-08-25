@@ -76,6 +76,24 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CurrentSoftware", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CurrentSoftware = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Description", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DeviceAggregatedStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DeviceAggregatedStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DeviceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -86,6 +104,12 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdatedTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LatestDeviceJob", targetDepth))
+                {
+                    var unmarshaller = LatestDeviceJobUnmarshaller.Instance;
+                    unmarshalledObject.LatestDeviceJob = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LeaseExpirationTime", targetDepth))
@@ -104,6 +128,18 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ProvisioningStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Tags", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Type", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

@@ -215,6 +215,84 @@ namespace Amazon.Panorama
 
 
     /// <summary>
+    /// Constants used for properties of type DeviceAggregatedStatus.
+    /// </summary>
+    public class DeviceAggregatedStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWAITING_PROVISIONING for DeviceAggregatedStatus
+        /// </summary>
+        public static readonly DeviceAggregatedStatus AWAITING_PROVISIONING = new DeviceAggregatedStatus("AWAITING_PROVISIONING");
+        /// <summary>
+        /// Constant DELETING for DeviceAggregatedStatus
+        /// </summary>
+        public static readonly DeviceAggregatedStatus DELETING = new DeviceAggregatedStatus("DELETING");
+        /// <summary>
+        /// Constant ERROR for DeviceAggregatedStatus
+        /// </summary>
+        public static readonly DeviceAggregatedStatus ERROR = new DeviceAggregatedStatus("ERROR");
+        /// <summary>
+        /// Constant FAILED for DeviceAggregatedStatus
+        /// </summary>
+        public static readonly DeviceAggregatedStatus FAILED = new DeviceAggregatedStatus("FAILED");
+        /// <summary>
+        /// Constant LEASE_EXPIRED for DeviceAggregatedStatus
+        /// </summary>
+        public static readonly DeviceAggregatedStatus LEASE_EXPIRED = new DeviceAggregatedStatus("LEASE_EXPIRED");
+        /// <summary>
+        /// Constant OFFLINE for DeviceAggregatedStatus
+        /// </summary>
+        public static readonly DeviceAggregatedStatus OFFLINE = new DeviceAggregatedStatus("OFFLINE");
+        /// <summary>
+        /// Constant ONLINE for DeviceAggregatedStatus
+        /// </summary>
+        public static readonly DeviceAggregatedStatus ONLINE = new DeviceAggregatedStatus("ONLINE");
+        /// <summary>
+        /// Constant PENDING for DeviceAggregatedStatus
+        /// </summary>
+        public static readonly DeviceAggregatedStatus PENDING = new DeviceAggregatedStatus("PENDING");
+        /// <summary>
+        /// Constant UPDATE_NEEDED for DeviceAggregatedStatus
+        /// </summary>
+        public static readonly DeviceAggregatedStatus UPDATE_NEEDED = new DeviceAggregatedStatus("UPDATE_NEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeviceAggregatedStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeviceAggregatedStatus FindValue(string value)
+        {
+            return FindValue<DeviceAggregatedStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeviceAggregatedStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DeviceBrand.
     /// </summary>
     public class DeviceBrand : ConstantClass
@@ -528,6 +606,64 @@ namespace Amazon.Panorama
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator JobType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ListDevicesSortBy.
+    /// </summary>
+    public class ListDevicesSortBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATED_TIME for ListDevicesSortBy
+        /// </summary>
+        public static readonly ListDevicesSortBy CREATED_TIME = new ListDevicesSortBy("CREATED_TIME");
+        /// <summary>
+        /// Constant DEVICE_AGGREGATED_STATUS for ListDevicesSortBy
+        /// </summary>
+        public static readonly ListDevicesSortBy DEVICE_AGGREGATED_STATUS = new ListDevicesSortBy("DEVICE_AGGREGATED_STATUS");
+        /// <summary>
+        /// Constant DEVICE_ID for ListDevicesSortBy
+        /// </summary>
+        public static readonly ListDevicesSortBy DEVICE_ID = new ListDevicesSortBy("DEVICE_ID");
+        /// <summary>
+        /// Constant NAME for ListDevicesSortBy
+        /// </summary>
+        public static readonly ListDevicesSortBy NAME = new ListDevicesSortBy("NAME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ListDevicesSortBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ListDevicesSortBy FindValue(string value)
+        {
+            return FindValue<ListDevicesSortBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ListDevicesSortBy(string value)
         {
             return FindValue(value);
         }
@@ -972,6 +1108,56 @@ namespace Amazon.Panorama
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PortType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SortOrder.
+    /// </summary>
+    public class SortOrder : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASCENDING for SortOrder
+        /// </summary>
+        public static readonly SortOrder ASCENDING = new SortOrder("ASCENDING");
+        /// <summary>
+        /// Constant DESCENDING for SortOrder
+        /// </summary>
+        public static readonly SortOrder DESCENDING = new SortOrder("DESCENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SortOrder(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SortOrder FindValue(string value)
+        {
+            return FindValue<SortOrder>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SortOrder(string value)
         {
             return FindValue(value);
         }
