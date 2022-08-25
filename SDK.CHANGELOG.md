@@ -1,3 +1,20 @@
+### 3.7.343.0 (2022-08-25 18:36 UTC)
+* ElasticLoadBalancingV2 (3.7.3.115)
+	* Documentation updates for ELBv2.  Gateway Load Balancer now supports Configurable Flow Stickiness, enabling you to configure the hashing used to maintain stickiness of flows to a specific target appliance.
+* GameLift (3.7.2.0)
+	* This release adds support for eight EC2 local zones as fleet locations; Atlanta, Chicago, Dallas, Denver, Houston, Kansas City (us-east-1-mci-1a), Los Angeles, and Phoenix. It also adds support for C5d, C6a, C6i, and R5d EC2 instance families.
+* IoTWireless (3.7.13.0)
+	* This release includes a new feature for the customers to enable the LoRa gateways to send out beacons for Class B devices and an option to select one or more gateways for Class C devices when sending the LoRaWAN downlink messages.
+* Ivschat (3.7.0.47)
+	* Documentation change for IVS Chat API Reference. Doc-only update to add a paragraph on ARNs to the Welcome section.
+* Panorama (3.7.3.0)
+	* Support sorting and filtering in ListDevices API, and add more fields to device listings and single device detail
+* SSOOIDC (3.7.1.0)
+	* Updated required request parameters on IAM Identity Center's OIDC CreateToken action.
+* Core 3.7.12.25
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.342.0 (2022-08-24 18:25 UTC)
 * CloudFront (3.7.8.0)
 	* Adds support for CloudFront origin access control (OAC), making it possible to restrict public access to S3 bucket origins in all AWS Regions, those with SSE-KMS, and more.
