@@ -477,8 +477,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// If you back up a read replica, you can determine the replica lag by comparing SnapshotDatabaseTime
         /// with originalSnapshotCreateTime. For example, if originalSnapshotCreateTime is two
-        /// hours later than SnapshotDatabaseTime, then the replica lag is two hours. *** REVIEWERS
-        /// 7/27: Switchover
+        /// hours later than SnapshotDatabaseTime, then the replica lag is two hours.
         /// </para>
         /// </summary>
         public DateTime SnapshotDatabaseTime
