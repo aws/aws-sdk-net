@@ -1,3 +1,9 @@
+### 3.7.344.0 (2022-08-26 18:21 UTC)
+* MediaPackage (3.7.8.0)
+	* This release adds Ads AdTriggers and AdsOnDeliveryRestrictions to describe calls for CMAF endpoints on MediaPackage.
+* RDS (3.7.17.2)
+	* Removes support for RDS Custom from DBInstanceClass in ModifyDBInstance
+
 ### 3.7.343.0 (2022-08-25 18:36 UTC)
 * ElasticLoadBalancingV2 (3.7.3.115)
 	* Documentation updates for ELBv2.  Gateway Load Balancer now supports Configurable Flow Stickiness, enabling you to configure the hashing used to maintain stickiness of flows to a specific target appliance.
