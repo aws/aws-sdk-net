@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FraudRiskDetails Object
+    /// Response Unmarshaller for VoiceSpoofingRisk Object
     /// </summary>  
-    public class FraudRiskDetailsUnmarshaller : IUnmarshaller<FraudRiskDetails, XmlUnmarshallerContext>, IUnmarshaller<FraudRiskDetails, JsonUnmarshallerContext>
+    public class VoiceSpoofingRiskUnmarshaller : IUnmarshaller<VoiceSpoofingRisk, XmlUnmarshallerContext>, IUnmarshaller<VoiceSpoofingRisk, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        FraudRiskDetails IUnmarshaller<FraudRiskDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        VoiceSpoofingRisk IUnmarshaller<VoiceSpoofingRisk, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,21 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public FraudRiskDetails Unmarshall(JsonUnmarshallerContext context)
+        public VoiceSpoofingRisk Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            FraudRiskDetails unmarshalledObject = new FraudRiskDetails();
+            VoiceSpoofingRisk unmarshalledObject = new VoiceSpoofingRisk();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("KnownFraudsterRisk", targetDepth))
+                if (context.TestExpression("RiskScore", targetDepth))
                 {
-                    var unmarshaller = KnownFraudsterRiskUnmarshaller.Instance;
-                    unmarshalledObject.KnownFraudsterRisk = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("VoiceSpoofingRisk", targetDepth))
-                {
-                    var unmarshaller = VoiceSpoofingRiskUnmarshaller.Instance;
-                    unmarshalledObject.VoiceSpoofingRisk = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.RiskScore = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +76,12 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
         }
 
 
-        private static FraudRiskDetailsUnmarshaller _instance = new FraudRiskDetailsUnmarshaller();        
+        private static VoiceSpoofingRiskUnmarshaller _instance = new VoiceSpoofingRiskUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FraudRiskDetailsUnmarshaller Instance
+        public static VoiceSpoofingRiskUnmarshaller Instance
         {
             get
             {

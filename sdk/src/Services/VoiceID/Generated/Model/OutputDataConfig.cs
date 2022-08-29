@@ -39,8 +39,8 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// the identifier of the KMS key you want Voice ID to use to encrypt the output file
-        /// of the fraudster registration job.
+        /// The identifier of the KMS key you want Voice ID to use to encrypt the output file
+        /// of a speaker enrollment job/fraudster registration job. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

@@ -40,9 +40,7 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results that are returned per call. You can use <code>NextToken</code>
-        /// to obtain further pages of results. The default is 100; the maximum allowed page size
-        /// is also 100. 
+        /// The maximum number of domains to list per API call.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

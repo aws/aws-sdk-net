@@ -140,7 +140,7 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// The client-provied name for the fraudster registration job.
+        /// The client-provided name for the fraudster registration job.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

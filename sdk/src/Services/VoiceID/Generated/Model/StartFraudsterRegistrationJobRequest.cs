@@ -169,7 +169,7 @@ namespace Amazon.VoiceID.Model
         /// <para>
         /// The registration config containing details such as the action to take when a duplicate
         /// fraudster is detected, and the similarity threshold to use for detecting a duplicate
-        /// fraudster.
+        /// fraudster. 
         /// </para>
         /// </summary>
         public RegistrationConfig RegistrationConfig

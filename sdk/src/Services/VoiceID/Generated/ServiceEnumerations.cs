@@ -436,6 +436,10 @@ namespace Amazon.VoiceID
         /// Constant KNOWN_FRAUDSTER for FraudDetectionReason
         /// </summary>
         public static readonly FraudDetectionReason KNOWN_FRAUDSTER = new FraudDetectionReason("KNOWN_FRAUDSTER");
+        /// <summary>
+        /// Constant VOICE_SPOOFING for FraudDetectionReason
+        /// </summary>
+        public static readonly FraudDetectionReason VOICE_SPOOFING = new FraudDetectionReason("VOICE_SPOOFING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

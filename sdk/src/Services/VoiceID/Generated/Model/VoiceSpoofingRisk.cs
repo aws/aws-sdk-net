@@ -29,31 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.VoiceID.Model
 {
     /// <summary>
-    /// The configuration containing information about the customer managed key used for encrypting
-    /// customer data.
+    /// The details resulting from 'Voice Spoofing Risk' analysis of the speaker.
     /// </summary>
-    public partial class ServerSideEncryptionConfiguration
+    public partial class VoiceSpoofingRisk
     {
-        private string _kmsKeyId;
+        private int? _riskScore;
 
         /// <summary>
-        /// Gets and sets the property KmsKeyId. 
+        /// Gets and sets the property RiskScore. 
         /// <para>
-        /// The identifier of the KMS key to use to encrypt data stored by Voice ID. Voice ID
-        /// doesn't support asymmetric customer managed keys. 
+        /// The score indicating the likelihood of speaker’s voice being spoofed.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
-        public string KmsKeyId
+        [AWSProperty(Required=true, Min=0, Max=100)]
+        public int RiskScore
         {
-            get { return this._kmsKeyId; }
-            set { this._kmsKeyId = value; }
+            get { return this._riskScore.GetValueOrDefault(); }
+            set { this._riskScore = value; }
         }
 
-        // Check to see if KmsKeyId property is set
-        internal bool IsSetKmsKeyId()
+        // Check to see if RiskScore property is set
+        internal bool IsSetRiskScore()
         {
-            return this._kmsKeyId != null;
+            return this._riskScore.HasValue; 
         }
 
     }

@@ -985,6 +985,10 @@ namespace Amazon.VoiceID
         /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
         /// message for more details.
         /// </exception>
+        /// <exception cref="Amazon.VoiceID.Model.ServiceQuotaExceededException">
+        /// The request exceeded the service quota. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#voiceid-quotas">Voice
+        /// ID Service Quotas</a> and try your request again.
+        /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.
         /// Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html##voiceid-api-quotas">

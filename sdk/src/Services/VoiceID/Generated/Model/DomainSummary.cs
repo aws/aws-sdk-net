@@ -178,7 +178,7 @@ namespace Amazon.VoiceID.Model
         /// <para>
         /// Details about the most recent server-side encryption configuration update. When the
         /// server-side encryption configuration is changed, dependency on the old KMS key is
-        /// removed through an asynchronous process. When this update is complete, the domain’s
+        /// removed through an asynchronous process. When this update is complete, the domain's
         /// data can only be accessed using the new KMS key.
         /// </para>
         /// </summary>

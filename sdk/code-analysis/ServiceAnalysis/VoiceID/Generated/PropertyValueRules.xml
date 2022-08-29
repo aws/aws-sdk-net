@@ -590,4 +590,9 @@
     <max>256</max>
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
   </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VoiceID.Model.VoiceSpoofingRisk.RiskScore</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
 </property-value-rules>

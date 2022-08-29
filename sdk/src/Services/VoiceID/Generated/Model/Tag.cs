@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.VoiceID.Model
 {
     /// <summary>
-    /// A tag that can be assigned to a Voice ID resource.
+    /// The tags used to organize, track, or control access for this resource. For example,
+    /// { "tags": {"key1":"value1", "key2":"value2"} }.
     /// </summary>
     public partial class Tag
     {
@@ -40,7 +41,7 @@ namespace Amazon.VoiceID.Model
         /// Gets and sets the property Key. 
         /// <para>
         /// The first part of a key:value pair that forms a tag associated with a given resource.
-        /// For example, in the tag ‘Department’:’Sales’, the key is 'Department'. 
+        /// For example, in the tag 'Department':'Sales', the key is 'Department'. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -60,7 +61,7 @@ namespace Amazon.VoiceID.Model
         /// Gets and sets the property Value. 
         /// <para>
         /// The second part of a key:value pair that forms a tag associated with a given resource.
-        /// For example, in the tag ‘Department’:’Sales’, the value is 'Sales'. 
+        /// For example, in the tag 'Department':'Sales', the value is 'Sales'. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]

@@ -239,7 +239,7 @@ namespace Amazon.VoiceID.Model
         /// Gets and sets the property OutputDataConfig. 
         /// <para>
         /// The output data config containing the S3 location where you want Voice ID to write
-        /// your job output file; you must also include a KMS key iD in order to encrypt the file.
+        /// your job output file; you must also include a KMS key ID in order to encrypt the file.
         /// </para>
         /// </summary>
         public OutputDataConfig OutputDataConfig

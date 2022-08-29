@@ -68,8 +68,8 @@ namespace Amazon.VoiceID.Model
         /// The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access
         /// customer's buckets to read the input manifest file and write the job output file.
         /// Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch
-        /// enrollment using audio data from prior calls</a> documentation for the permissions
-        /// needed in this role.
+        /// enrollment using audio data from prior calls</a> for the permissions needed in this
+        /// role.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

@@ -35,6 +35,7 @@ namespace Amazon.VoiceID.Model
     public partial class FraudRiskDetails
     {
         private KnownFraudsterRisk _knownFraudsterRisk;
+        private VoiceSpoofingRisk _voiceSpoofingRisk;
 
         /// <summary>
         /// Gets and sets the property KnownFraudsterRisk. 
@@ -53,6 +54,25 @@ namespace Amazon.VoiceID.Model
         internal bool IsSetKnownFraudsterRisk()
         {
             return this._knownFraudsterRisk != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VoiceSpoofingRisk. 
+        /// <para>
+        /// The details resulting from 'Voice Spoofing Risk' analysis of the speaker.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public VoiceSpoofingRisk VoiceSpoofingRisk
+        {
+            get { return this._voiceSpoofingRisk; }
+            set { this._voiceSpoofingRisk = value; }
+        }
+
+        // Check to see if VoiceSpoofingRisk property is set
+        internal bool IsSetVoiceSpoofingRisk()
+        {
+            return this._voiceSpoofingRisk != null;
         }
 
     }
