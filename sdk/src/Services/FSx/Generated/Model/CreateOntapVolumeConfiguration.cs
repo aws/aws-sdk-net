@@ -63,13 +63,15 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property SecurityStyle. 
         /// <para>
-        /// The security style for the volume. Specify one of the following values:
+        /// The security style for the volume. If a volume's security style is not specified,
+        /// it is automatically set to the root volume's security style. Specify one of the following
+        /// values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <code>UNIX</code> if the file system is managed by a UNIX administrator, the majority
         /// of users are NFS clients, and an application accessing the data uses a UNIX user as
-        /// the service account. <code>UNIX</code> is the default.
+        /// the service account. 
         /// </para>
         ///  </li> <li> 
         /// <para>
