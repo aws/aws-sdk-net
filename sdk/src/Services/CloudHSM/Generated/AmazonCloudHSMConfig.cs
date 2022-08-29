@@ -32,7 +32,7 @@ namespace Amazon.CloudHSM
     public partial class AmazonCloudHSMConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.192");
+            InternalSDKUtils.BuildUserAgentString("3.7.1.193");
 
         private string _userAgent = UserAgentString;
 
