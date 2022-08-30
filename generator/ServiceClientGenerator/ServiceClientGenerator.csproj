@@ -1106,6 +1106,27 @@
     <None Include="..\ServiceModels\docdb\metadata.json">
       <Link>ServiceModels\docdb\metadata.json</Link>
     </None>
+	<None Include="..\ServiceModels\drs\drs-2020-02-26.api.json">
+      <Link>ServiceModels\drs\drs-2020-02-26.api.json</Link>
+    </None>
+    <None Include="..\ServiceModels\drs\drs-2020-02-26.docs.json">
+      <Link>ServiceModels\drs\drs-2020-02-26.docs.json</Link>
+    </None>
+    <None Include="..\ServiceModels\drs\drs-2020-02-26.examples.json">
+      <Link>ServiceModels\drs\drs-2020-02-26.examples.json</Link>
+    </None>
+    <None Include="..\ServiceModels\drs\drs-2020-02-26.normal.json">
+      <Link>ServiceModels\drs\drs-2020-02-26.normal.json</Link>
+    </None>
+    <None Include="..\ServiceModels\drs\drs-2020-02-26.paginators.json">
+      <Link>ServiceModels\drs\drs-2020-02-26.paginators.json</Link>
+    </None>
+    <None Include="..\ServiceModels\drs\drs.customizations.json">
+      <Link>ServiceModels\drs\drs.customizations.json</Link>
+    </None>
+    <None Include="..\ServiceModels\drs\metadata.json">
+      <Link>ServiceModels\drs\metadata.json</Link>
+    </None>
     <None Include="..\ServiceModels\ds\ds-2015-04-16.api.json">
       <Link>ServiceModels\ds\ds-2015-04-16.api.json</Link>
     </None>

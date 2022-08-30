@@ -90,10 +90,32 @@ namespace Amazon.Drs.Model
             set { this._replicationConfigurationTemplateIDs = value; }
         }
 
+        /// <summary>
+        /// This property is set to true if the property <seealso cref="ReplicationConfigurationTemplateIDs"/>
+        /// is set; false otherwise.
+        /// This property can be used to determine if the related property
+        /// was returned by a service response or if the related property
+        /// should be sent to the service during a service call.
+        /// </summary>
+        /// <returns>
+        /// True if the related property was set or will be sent to a service; false otherwise.
+        /// </returns>
+        public bool IsReplicationConfigurationTemplateIDsSet
+        {
+            get
+            {
+                return Amazon.Util.Internal.InternalSDKUtils.GetIsSet(this._replicationConfigurationTemplateIDs);
+            }
+            set
+            {
+                Amazon.Util.Internal.InternalSDKUtils.SetIsSet(value, ref this._replicationConfigurationTemplateIDs);
+            }
+        }
+
         // Check to see if ReplicationConfigurationTemplateIDs property is set
         internal bool IsSetReplicationConfigurationTemplateIDs()
         {
-            return this._replicationConfigurationTemplateIDs != null && this._replicationConfigurationTemplateIDs.Count > 0; 
+            return this.IsReplicationConfigurationTemplateIDsSet; 
         }
 
     }
