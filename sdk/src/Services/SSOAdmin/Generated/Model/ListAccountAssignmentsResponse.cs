@@ -39,8 +39,7 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property AccountAssignments. 
         /// <para>
-        /// The list of assignments that match the input Amazon Web Services account and permission
-        /// set.
+        /// The list of assignments that match the input AWS account and permission set.
         /// </para>
         /// </summary>
         public List<AccountAssignment> AccountAssignments

@@ -40,8 +40,8 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property InstanceArn. 
         /// <para>
-        /// The ARN of the Amazon Web Services SSO instance under which the operation will be
-        /// executed. 
+        /// The ARN of the IAM Identity Center instance under which the operation will be executed.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=1224)]

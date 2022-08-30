@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
-    /// A structure that stores the details of the Amazon Web Services managed policy.
+    /// A structure that stores the details of the AWS managed policy.
     /// </summary>
     public partial class AttachedManagedPolicy
     {
@@ -39,10 +39,8 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the Amazon Web Services managed policy. For more information about ARNs,
-        /// see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-        /// (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services
-        /// General Reference</i>.
+        /// The ARN of the AWS managed policy. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -61,7 +59,7 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the Amazon Web Services managed policy.
+        /// The name of the AWS managed policy.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

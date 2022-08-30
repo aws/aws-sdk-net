@@ -84,8 +84,7 @@ namespace Amazon.SSOAdmin.Model
         /// Gets and sets the property PermissionSetArn. 
         /// <para>
         /// The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon
-        /// Web Services General Reference</i>.
+        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=1224)]
@@ -104,10 +103,10 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property PrincipalId. 
         /// <para>
-        /// An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds
+        /// An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds
         /// are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information
-        /// about PrincipalIds in Amazon Web Services SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon
-        /// Web Services SSO Identity Store API Reference</a>.
+        /// about PrincipalIds in IAM Identity Center, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">IAM
+        /// Identity Center Identity Store API Reference</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=47)]
@@ -182,8 +181,8 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property TargetId. 
         /// <para>
-        /// TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string
-        /// (For example, 123456789012).
+        /// TargetID is an AWS account identifier, typically a 10-12 digit string (For example,
+        /// 123456789012).
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]

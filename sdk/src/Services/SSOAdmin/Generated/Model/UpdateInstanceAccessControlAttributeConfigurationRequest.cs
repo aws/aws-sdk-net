@@ -30,14 +30,14 @@ namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateInstanceAccessControlAttributeConfiguration operation.
-    /// Updates the Amazon Web Services SSO identity store attributes that you can use with
-    /// the Amazon Web Services SSO instance for attributes-based access control (ABAC). When
-    /// using an external identity provider as an identity source, you can pass attributes
-    /// through the SAML assertion as an alternative to configuring attributes from the Amazon
-    /// Web Services SSO identity store. If a SAML assertion passes any of these attributes,
-    /// Amazon Web Services SSO replaces the attribute value with the value from the Amazon
-    /// Web Services SSO identity store. For more information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based
-    /// Access Control</a> in the <i>Amazon Web Services SSO User Guide</i>.
+    /// Updates the IAM Identity Center identity store attributes that you can use with the
+    /// IAM Identity Center instance for attributes-based access control (ABAC). When using
+    /// an external identity provider as an identity source, you can pass attributes through
+    /// the SAML assertion as an alternative to configuring attributes from the IAM Identity
+    /// Center identity store. If a SAML assertion passes any of these attributes, IAM Identity
+    /// Center replaces the attribute value with the value from the IAM Identity Center identity
+    /// store. For more information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based
+    /// Access Control</a> in the <i>IAM Identity Center User Guide</i>.
     /// </summary>
     public partial class UpdateInstanceAccessControlAttributeConfigurationRequest : AmazonSSOAdminRequest
     {
@@ -66,8 +66,7 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property InstanceArn. 
         /// <para>
-        /// The ARN of the Amazon Web Services SSO instance under which the operation will be
-        /// executed.
+        /// The ARN of the IAM Identity Center instance under which the operation will be executed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=1224)]

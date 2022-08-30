@@ -30,8 +30,8 @@ namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
     /// Specifies the name and path of a customer managed policy. You must have an IAM policy
-    /// that matches the name and path in each Amazon Web Services account where you want
-    /// to deploy your permission set.
+    /// that matches the name and path in each AWS account where you want to deploy your permission
+    /// set.
     /// </summary>
     public partial class CustomerManagedPolicyReference
     {
@@ -64,7 +64,7 @@ namespace Amazon.SSOAdmin.Model
         /// The path to the IAM policy that you have configured in each account where you want
         /// to deploy your permission set. The default is <code>/</code>. For more information,
         /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
-        /// names and paths</a> in the <i>Identity and Access Management User Guide</i>.
+        /// names and paths</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]

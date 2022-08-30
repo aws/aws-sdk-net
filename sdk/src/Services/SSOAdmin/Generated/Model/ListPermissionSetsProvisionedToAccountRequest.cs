@@ -30,8 +30,7 @@ namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
     /// Container for the parameters to the ListPermissionSetsProvisionedToAccount operation.
-    /// Lists all the permission sets that are provisioned to a specified Amazon Web Services
-    /// account.
+    /// Lists all the permission sets that are provisioned to a specified AWS account.
     /// </summary>
     public partial class ListPermissionSetsProvisionedToAccountRequest : AmazonSSOAdminRequest
     {
@@ -44,7 +43,7 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The identifier of the Amazon Web Services account from which to list the assignments.
+        /// The identifier of the AWS account from which to list the assignments.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -63,10 +62,9 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property InstanceArn. 
         /// <para>
-        /// The ARN of the Amazon Web Services SSO instance under which the operation will be
-        /// executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon
-        /// Web Services General Reference</i>.
+        /// The ARN of the IAM Identity Center instance under which the operation will be executed.
+        /// For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=1224)]

@@ -30,7 +30,7 @@ namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAccountsForProvisionedPermissionSet operation.
-    /// Lists all the Amazon Web Services accounts where the specified permission set is provisioned.
+    /// Lists all the AWS accounts where the specified permission set is provisioned.
     /// </summary>
     public partial class ListAccountsForProvisionedPermissionSetRequest : AmazonSSOAdminRequest
     {
@@ -43,10 +43,9 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property InstanceArn. 
         /// <para>
-        /// The ARN of the Amazon Web Services SSO instance under which the operation will be
-        /// executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon
-        /// Web Services General Reference</i>.
+        /// The ARN of the IAM Identity Center instance under which the operation will be executed.
+        /// For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=1224)]
@@ -104,8 +103,8 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property PermissionSetArn. 
         /// <para>
-        /// The ARN of the <a>PermissionSet</a> from which the associated Amazon Web Services
-        /// accounts will be listed.
+        /// The ARN of the <a>PermissionSet</a> from which the associated AWS accounts will be
+        /// listed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=1224)]
@@ -124,7 +123,7 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property ProvisioningStatus. 
         /// <para>
-        /// The permission set provisioning status for an Amazon Web Services account.
+        /// The permission set provisioning status for an AWS account.
         /// </para>
         /// </summary>
         public ProvisioningStatus ProvisioningStatus

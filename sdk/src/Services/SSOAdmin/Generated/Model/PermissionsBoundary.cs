@@ -29,20 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
-    /// Specifies the configuration of the Amazon Web Services managed or customer managed
-    /// policy that you want to set as a permissions boundary. Specify either <code>CustomerManagedPolicyReference</code>
+    /// Specifies the configuration of the AWS managed or customer managed policy that you
+    /// want to set as a permissions boundary. Specify either <code>CustomerManagedPolicyReference</code>
     /// to use the name and path of a customer managed policy, or <code>ManagedPolicyArn</code>
-    /// to use the ARN of an Amazon Web Services managed policy. A permissions boundary represents
-    /// the maximum permissions that any policy can grant your role. For more information,
-    /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
-    /// boundaries for IAM entities</a> in the <i>Identity and Access Management User Guide</i>.
+    /// to use the ARN of an AWS managed policy. A permissions boundary represents the maximum
+    /// permissions that any policy can grant your role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+    /// boundaries for IAM entities</a> in the <i>IAM User Guide</i>.
     /// 
     ///  <important> 
     /// <para>
     /// Policies used as permissions boundaries don't provide permissions. You must also attach
     /// an IAM policy to the role. To learn how the effective permissions for a role are evaluated,
     /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html">IAM
-    /// JSON policy evaluation logic</a> in the <i>Identity and Access Management User Guide</i>.
+    /// JSON policy evaluation logic</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  </important>
     /// </summary>
@@ -55,8 +54,8 @@ namespace Amazon.SSOAdmin.Model
         /// Gets and sets the property CustomerManagedPolicyReference. 
         /// <para>
         /// Specifies the name and path of a customer managed policy. You must have an IAM policy
-        /// that matches the name and path in each Amazon Web Services account where you want
-        /// to deploy your permission set.
+        /// that matches the name and path in each AWS account where you want to deploy your permission
+        /// set.
         /// </para>
         /// </summary>
         public CustomerManagedPolicyReference CustomerManagedPolicyReference
@@ -74,8 +73,8 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property ManagedPolicyArn. 
         /// <para>
-        /// The Amazon Web Services managed policy ARN that you want to attach to a permission
-        /// set as a permissions boundary.
+        /// The AWS managed policy ARN that you want to attach to a permission set as a permissions
+        /// boundary.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

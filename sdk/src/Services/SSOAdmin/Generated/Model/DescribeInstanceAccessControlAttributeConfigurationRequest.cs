@@ -30,11 +30,11 @@ namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeInstanceAccessControlAttributeConfiguration operation.
-    /// Returns the list of Amazon Web Services SSO identity store attributes that have been
-    /// configured to work with attributes-based access control (ABAC) for the specified Amazon
-    /// Web Services SSO instance. This will not return attributes configured and sent by
-    /// an external identity provider. For more information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based
-    /// Access Control</a> in the <i>Amazon Web Services SSO User Guide</i>.
+    /// Returns the list of IAM Identity Center identity store attributes that have been configured
+    /// to work with attributes-based access control (ABAC) for the specified IAM Identity
+    /// Center instance. This will not return attributes configured and sent by an external
+    /// identity provider. For more information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based
+    /// Access Control</a> in the <i>IAM Identity Center User Guide</i>.
     /// </summary>
     public partial class DescribeInstanceAccessControlAttributeConfigurationRequest : AmazonSSOAdminRequest
     {
@@ -43,8 +43,7 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property InstanceArn. 
         /// <para>
-        /// The ARN of the Amazon Web Services SSO instance under which the operation will be
-        /// executed.
+        /// The ARN of the IAM Identity Center instance under which the operation will be executed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=1224)]

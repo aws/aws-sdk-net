@@ -100,8 +100,7 @@ namespace Amazon.SSOAdmin.Model
         /// Gets and sets the property PermissionSetArn. 
         /// <para>
         /// The ARN of the permission set. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon
-        /// Web Services General Reference</i>.
+        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=1224)]

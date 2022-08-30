@@ -39,7 +39,7 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property Instances. 
         /// <para>
-        /// Lists the Amazon Web Services SSO instances that the caller has access to.
+        /// Lists the IAM Identity Center instances that the caller has access to.
         /// </para>
         /// </summary>
         public List<InstanceMetadata> Instances

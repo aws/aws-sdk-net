@@ -30,7 +30,7 @@ namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
     /// Container for the parameters to the ListInstances operation.
-    /// Lists the Amazon Web Services SSO instances that the caller has access to.
+    /// Lists the IAM Identity Center instances that the caller has access to.
     /// </summary>
     public partial class ListInstancesRequest : AmazonSSOAdminRequest
     {

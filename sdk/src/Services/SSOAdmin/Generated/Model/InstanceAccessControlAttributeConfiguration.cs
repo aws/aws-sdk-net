@@ -38,8 +38,8 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property AccessControlAttributes. 
         /// <para>
-        /// Lists the attributes that are configured for ABAC in the specified Amazon Web Services
-        /// SSO instance.
+        /// Lists the attributes that are configured for ABAC in the specified IAM Identity Center
+        /// instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=50)]

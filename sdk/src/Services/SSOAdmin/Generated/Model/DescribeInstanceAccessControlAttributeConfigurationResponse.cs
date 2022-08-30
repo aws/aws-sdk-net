@@ -40,8 +40,8 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property InstanceAccessControlAttributeConfiguration. 
         /// <para>
-        /// Gets the list of Amazon Web Services SSO identity store attributes that have been
-        /// added to your ABAC configuration.
+        /// Gets the list of IAM Identity Center identity store attributes that have been added
+        /// to your ABAC configuration.
         /// </para>
         /// </summary>
         public InstanceAccessControlAttributeConfiguration InstanceAccessControlAttributeConfiguration
