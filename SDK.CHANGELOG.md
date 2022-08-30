@@ -1,3 +1,20 @@
+### 3.7.346.0 (2022-08-30 20:32 UTC)
+* GreengrassV2 (3.7.6.0)
+	* Adds topologyFilter to ListInstalledComponentsRequest which allows filtration of components by ROOT or ALL (including root and dependency components). Adds lastStatusChangeTimestamp to ListInstalledComponents response to show the last time a component changed state on a device.
+* IdentityStore (3.7.0.200)
+	* Documentation updates for the Identity Store CLI Reference.
+* LookoutEquipment (3.7.4.0)
+	* This release adds new apis for providing labels.
+* Macie2 (3.7.10.0)
+	* This release of the Amazon Macie API adds support for using allow lists to define specific text and text patterns to ignore when inspecting data sources for sensitive data.
+* SSO (3.7.0.199)
+	* Documentation updates for the AWS IAM Identity Center Portal CLI Reference.
+* SSOAdmin (3.7.1.17)
+	* Documentation updates for the AWS IAM Identity Center CLI Reference.
+* Core 3.7.12.27
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.345.0 (2022-08-29 19:18 UTC)
 * FSx (3.7.13.34)
 	* Documentation updates for Amazon FSx for NetApp ONTAP.
