@@ -38,17 +38,17 @@ namespace Amazon.IdentityStore
     /// <summary>
     /// Implementation for accessing IdentityStore
     ///
-    /// The Identity Store service used by Amazon Web Services Single Sign On provides a single
-    /// place to retrieve all of your identities (users and groups). For more information,
-    /// see the <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">Amazon
-    /// Web Services SSO User Guide</a>.
+    /// The Identity Store service used by AWS IAM Identity Center (successor to AWS Single
+    /// Sign-On) provides a single place to retrieve all of your identities (users and groups).
+    /// For more information, see the <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">IAM
+    /// Identity Center User Guide</a>.
     /// 
     ///  <note> 
     /// <para>
-    /// Although Amazon Web Services Single Sign-On was renamed, the <code>sso</code> and
-    /// <code>identitystore</code> API namespaces will continue to retain their original name
-    /// for backward compatibility purposes. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html#renamed">Amazon
-    /// Web Services SSO rename</a>.
+    /// Although AWS Single Sign-On was renamed, the <code>sso</code> and <code>identitystore</code>
+    /// API namespaces will continue to retain their original name for backward compatibility
+    /// purposes. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html#renamed">IAM
+    /// Identity Center rename</a>.
     /// </para>
     ///  </note> 
     /// <para>
