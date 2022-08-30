@@ -39,7 +39,7 @@ namespace Amazon.SSO.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The identifier of the Amazon Web Services account assigned to the user.
+        /// The identifier of the AWS account assigned to the user.
         /// </para>
         /// </summary>
         public string AccountId

@@ -31,10 +31,9 @@ namespace Amazon.SSO.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAccounts operation.
-    /// Lists all Amazon Web Services accounts assigned to the user. These Amazon Web Services
-    /// accounts are assigned by the administrator of the account. For more information, see
-    /// <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/useraccess.html#assignusers">Assign
-    /// User Access</a> in the <i>Amazon Web Services SSO User Guide</i>. This operation returns
+    /// Lists all AWS accounts assigned to the user. These AWS accounts are assigned by the
+    /// administrator of the account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/useraccess.html#assignusers">Assign
+    /// User Access</a> in the <i>IAM Identity Center User Guide</i>. This operation returns
     /// a paginated response.
     /// </summary>
     public partial class ListAccountsRequest : AmazonSSORequest
@@ -48,7 +47,7 @@ namespace Amazon.SSO.Model
         /// <para>
         /// The token issued by the <code>CreateToken</code> API call. For more information, see
         /// <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a>
-        /// in the <i>Amazon Web Services SSO OIDC API Reference Guide</i>.
+        /// in the <i>IAM Identity Center OIDC API Reference Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

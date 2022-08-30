@@ -31,7 +31,7 @@ namespace Amazon.SSO.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAccountRoles operation.
-    /// Lists all roles that are assigned to the user for a given Amazon Web Services account.
+    /// Lists all roles that are assigned to the user for a given AWS account.
     /// </summary>
     public partial class ListAccountRolesRequest : AmazonSSORequest
     {
@@ -45,7 +45,7 @@ namespace Amazon.SSO.Model
         /// <para>
         /// The token issued by the <code>CreateToken</code> API call. For more information, see
         /// <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a>
-        /// in the <i>Amazon Web Services SSO OIDC API Reference Guide</i>.
+        /// in the <i>IAM Identity Center OIDC API Reference Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -64,7 +64,7 @@ namespace Amazon.SSO.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The identifier for the Amazon Web Services account that is assigned to the user.
+        /// The identifier for the AWS account that is assigned to the user.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

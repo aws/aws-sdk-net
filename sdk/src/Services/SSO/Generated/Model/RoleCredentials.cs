@@ -43,8 +43,8 @@ namespace Amazon.SSO.Model
         /// <para>
         /// The identifier used for the temporary security credentials. For more information,
         /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using
-        /// Temporary Security Credentials to Request Access to Amazon Web Services Resources</a>
-        /// in the <i>Amazon Web Services IAM User Guide</i>.
+        /// Temporary Security Credentials to Request Access to AWS Resources</a> in the <i>AWS
+        /// IAM User Guide</i>.
         /// </para>
         /// </summary>
         public string AccessKeyId
@@ -81,8 +81,8 @@ namespace Amazon.SSO.Model
         /// Gets and sets the property SecretAccessKey. 
         /// <para>
         /// The key that is used to sign the request. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using
-        /// Temporary Security Credentials to Request Access to Amazon Web Services Resources</a>
-        /// in the <i>Amazon Web Services IAM User Guide</i>.
+        /// Temporary Security Credentials to Request Access to AWS Resources</a> in the <i>AWS
+        /// IAM User Guide</i>.
         /// </para>
         /// </summary>
         public string SecretAccessKey
@@ -101,8 +101,8 @@ namespace Amazon.SSO.Model
         /// Gets and sets the property SessionToken. 
         /// <para>
         /// The token used for temporary credentials. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using
-        /// Temporary Security Credentials to Request Access to Amazon Web Services Resources</a>
-        /// in the <i>Amazon Web Services IAM User Guide</i>.
+        /// Temporary Security Credentials to Request Access to AWS Resources</a> in the <i>AWS
+        /// IAM User Guide</i>.
         /// </para>
         /// </summary>
         public string SessionToken

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SSO.Model
 {
     /// <summary>
-    /// Provides information about your Amazon Web Services account.
+    /// Provides information about your AWS account.
     /// </summary>
     public partial class AccountInfo
     {
@@ -40,7 +40,7 @@ namespace Amazon.SSO.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The identifier of the Amazon Web Services account that is assigned to the user.
+        /// The identifier of the AWS account that is assigned to the user.
         /// </para>
         /// </summary>
         public string AccountId
@@ -58,7 +58,7 @@ namespace Amazon.SSO.Model
         /// <summary>
         /// Gets and sets the property AccountName. 
         /// <para>
-        /// The display name of the Amazon Web Services account that is assigned to the user.
+        /// The display name of the AWS account that is assigned to the user.
         /// </para>
         /// </summary>
         public string AccountName
@@ -76,7 +76,7 @@ namespace Amazon.SSO.Model
         /// <summary>
         /// Gets and sets the property EmailAddress. 
         /// <para>
-        /// The email address of the Amazon Web Services account that is assigned to the user.
+        /// The email address of the AWS account that is assigned to the user.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=254)]
