@@ -103,6 +103,11 @@ namespace Amazon.S3
         public static readonly S3Region EUWest3 = new S3Region("eu-west-3");
 
         /// <summary>
+        /// Specifies that the S3 Bucket should use the me-central-1 locality.
+        /// </summary>
+        public static readonly S3Region MECentral1 = new S3Region("me-central-1");
+
+        /// <summary>
         /// Specifies that the S3 Bucket should use the me-south-1 locality.
         /// </summary>
         public static readonly S3Region MESouth1 = new S3Region("me-south-1");

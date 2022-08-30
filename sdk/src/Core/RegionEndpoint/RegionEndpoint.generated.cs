@@ -113,6 +113,11 @@ namespace Amazon
         public static readonly RegionEndpoint EUWest3 = GetEndpoint("eu-west-3", "Europe (Paris)");
 
         /// <summary>
+        /// The Middle East (UAE) endpoint.
+        /// </summary>
+        public static readonly RegionEndpoint MECentral1 = GetEndpoint("me-central-1", "Middle East (UAE)");
+
+        /// <summary>
         /// The Middle East (Bahrain) endpoint.
         /// </summary>
         public static readonly RegionEndpoint MESouth1 = GetEndpoint("me-south-1", "Middle East (Bahrain)");
