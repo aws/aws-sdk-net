@@ -47,6 +47,7 @@
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.CreateDeploymentRequest.DeploymentName</property>
     <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.CreateDeploymentRequest.TargetArn</property>
@@ -467,7 +468,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.LambdaFunctionRecipeSource.LambdaArn</property>
-    <pattern>arn:[^:]*:lambda:[^:]+:[0-9]+:function:[a-zA-Z0-9-_]+:[0-9]+</pattern>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.ResolvedComponentVersion.Arn</property>

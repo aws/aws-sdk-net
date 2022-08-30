@@ -1221,8 +1221,7 @@ namespace Amazon.GreengrassV2
         #region  GetComponent
 
         /// <summary>
-        /// Gets the recipe for a version of a component. Core devices can call this operation
-        /// to identify the artifacts and requirements to install a component.
+        /// Gets the recipe for a version of a component.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetComponent service method.</param>
         /// 
@@ -1467,6 +1466,11 @@ namespace Amazon.GreengrassV2
         /// <para>
         /// At a <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html#greengrass-nucleus-component-configuration-fss">regular
         /// interval that you can configure</a>, which defaults to 24 hours
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For IoT Greengrass Core v2.7.0, the core device sends status updates upon local deployment
+        /// and cloud deployment
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -1917,6 +1921,11 @@ namespace Amazon.GreengrassV2
         /// At a <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html#greengrass-nucleus-component-configuration-fss">regular
         /// interval that you can configure</a>, which defaults to 24 hours
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For IoT Greengrass Core v2.7.0, the core device sends status updates upon local deployment
+        /// and cloud deployment
+        /// </para>
         ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCoreDevices service method.</param>
@@ -2125,9 +2134,10 @@ namespace Amazon.GreengrassV2
         #region  ListInstalledComponents
 
         /// <summary>
-        /// Retrieves a paginated list of the components that a Greengrass core device runs. This
-        /// list doesn't include components that are deployed from local deployments or components
-        /// that are deployed as dependencies of other components.
+        /// Retrieves a paginated list of the components that a Greengrass core device runs. By
+        /// default, this list doesn't include components that are deployed as dependencies of
+        /// other components. To include dependencies in the response, set the <code>topologyFilter</code>
+        /// parameter to <code>ALL</code>.
         /// 
         ///  <note> 
         /// <para>
@@ -2157,6 +2167,11 @@ namespace Amazon.GreengrassV2
         /// <para>
         /// At a <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html#greengrass-nucleus-component-configuration-fss">regular
         /// interval that you can configure</a>, which defaults to 24 hours
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For IoT Greengrass Core v2.7.0, the core device sends status updates upon local deployment
+        /// and cloud deployment
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>

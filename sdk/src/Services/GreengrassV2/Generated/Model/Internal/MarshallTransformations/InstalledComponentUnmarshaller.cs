@@ -82,6 +82,12 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.IsRoot = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("lastStatusChangeTimestamp", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastStatusChangeTimestamp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lifecycleState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

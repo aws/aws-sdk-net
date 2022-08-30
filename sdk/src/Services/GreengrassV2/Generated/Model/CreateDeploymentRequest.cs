@@ -111,7 +111,7 @@ namespace Amazon.GreengrassV2.Model
         /// The name of the deployment.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=256)]
         public string DeploymentName
         {
             get { return this._deploymentName; }

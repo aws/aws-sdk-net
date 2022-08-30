@@ -30,9 +30,10 @@ namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
     /// Container for the parameters to the ListInstalledComponents operation.
-    /// Retrieves a paginated list of the components that a Greengrass core device runs. This
-    /// list doesn't include components that are deployed from local deployments or components
-    /// that are deployed as dependencies of other components.
+    /// Retrieves a paginated list of the components that a Greengrass core device runs. By
+    /// default, this list doesn't include components that are deployed as dependencies of
+    /// other components. To include dependencies in the response, set the <code>topologyFilter</code>
+    /// parameter to <code>ALL</code>.
     /// 
     ///  <note> 
     /// <para>
@@ -63,6 +64,11 @@ namespace Amazon.GreengrassV2.Model
     /// At a <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html#greengrass-nucleus-component-configuration-fss">regular
     /// interval that you can configure</a>, which defaults to 24 hours
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For IoT Greengrass Core v2.7.0, the core device sends status updates upon local deployment
+    /// and cloud deployment
+    /// </para>
     ///  </li> </ul> </note>
     /// </summary>
     public partial class ListInstalledComponentsRequest : AmazonGreengrassV2Request
@@ -70,6 +76,7 @@ namespace Amazon.GreengrassV2.Model
         private string _coreDeviceThingName;
         private int? _maxResults;
         private string _nextToken;
+        private InstalledComponentTopologyFilter _topologyFilter;
 
         /// <summary>
         /// Gets and sets the property CoreDeviceThingName. 
@@ -125,6 +132,38 @@ namespace Amazon.GreengrassV2.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TopologyFilter. 
+        /// <para>
+        /// The filter for the list of components. Choose from the following options:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ALL</code> – The list includes all components installed on the core device.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ROOT</code> – The list includes only <i>root</i> components, which are components
+        /// that you specify in a deployment. When you choose this option, the list doesn't include
+        /// components that the core device installs as dependencies of other components.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Default: <code>ROOT</code> 
+        /// </para>
+        /// </summary>
+        public InstalledComponentTopologyFilter TopologyFilter
+        {
+            get { return this._topologyFilter; }
+            set { this._topologyFilter = value; }
+        }
+
+        // Check to see if TopologyFilter property is set
+        internal bool IsSetTopologyFilter()
+        {
+            return this._topologyFilter != null;
         }
 
     }

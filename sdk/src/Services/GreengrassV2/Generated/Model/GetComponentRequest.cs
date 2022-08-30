@@ -30,8 +30,7 @@ namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
     /// Container for the parameters to the GetComponent operation.
-    /// Gets the recipe for a version of a component. Core devices can call this operation
-    /// to identify the artifacts and requirements to install a component.
+    /// Gets the recipe for a version of a component.
     /// </summary>
     public partial class GetComponentRequest : AmazonGreengrassV2Request
     {

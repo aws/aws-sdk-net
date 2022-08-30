@@ -150,7 +150,7 @@ namespace Amazon.GreengrassV2.Model
         /// You can't use version aliases like <code>$LATEST</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1)]
         public string LambdaArn
         {
             get { return this._lambdaArn; }

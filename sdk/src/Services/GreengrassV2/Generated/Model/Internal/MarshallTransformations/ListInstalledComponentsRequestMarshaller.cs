@@ -67,6 +67,9 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            
+            if (publicRequest.IsSetTopologyFilter())
+                request.Parameters.Add("topologyFilter", StringUtils.FromString(publicRequest.TopologyFilter));
             request.ResourcePath = "/greengrass/v2/coreDevices/{coreDeviceThingName}/installedComponents";
             request.UseQueryString = true;
 

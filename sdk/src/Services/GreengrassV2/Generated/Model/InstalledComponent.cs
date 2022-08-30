@@ -36,6 +36,7 @@ namespace Amazon.GreengrassV2.Model
         private string _componentName;
         private string _componentVersion;
         private bool? _isRoot;
+        private DateTime? _lastStatusChangeTimestamp;
         private InstalledComponentLifecycleState _lifecycleState;
         private string _lifecycleStateDetails;
 
@@ -93,6 +94,30 @@ namespace Amazon.GreengrassV2.Model
         internal bool IsSetIsRoot()
         {
             return this._isRoot.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastStatusChangeTimestamp. 
+        /// <para>
+        /// The status of how current the data is.
+        /// </para>
+        ///  
+        /// <para>
+        /// This response is based off of component state changes. The status reflects component
+        /// disruptions and deployments. If a component only sees a configuration update during
+        /// a deployment, it might not undergo a state change and this status would not be updated.
+        /// </para>
+        /// </summary>
+        public DateTime LastStatusChangeTimestamp
+        {
+            get { return this._lastStatusChangeTimestamp.GetValueOrDefault(); }
+            set { this._lastStatusChangeTimestamp = value; }
+        }
+
+        // Check to see if LastStatusChangeTimestamp property is set
+        internal bool IsSetLastStatusChangeTimestamp()
+        {
+            return this._lastStatusChangeTimestamp.HasValue; 
         }
 
         /// <summary>
