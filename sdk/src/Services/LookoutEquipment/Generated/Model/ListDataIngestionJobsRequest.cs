@@ -81,7 +81,7 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  An opaque pagination token indicating where to continue the listing of data ingestion
+        /// An opaque pagination token indicating where to continue the listing of data ingestion
         /// jobs. 
         /// </para>
         /// </summary>

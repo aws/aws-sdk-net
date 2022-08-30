@@ -76,6 +76,22 @@ namespace Amazon.LookoutEquipment.Model
         }
 
         /// <summary>
+        /// Paginator for ListLabelGroups operation
+        ///</summary>
+        public IListLabelGroupsPaginator ListLabelGroups(ListLabelGroupsRequest request) 
+        {
+            return new ListLabelGroupsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListLabels operation
+        ///</summary>
+        public IListLabelsPaginator ListLabels(ListLabelsRequest request) 
+        {
+            return new ListLabelsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListModels operation
         ///</summary>
         public IListModelsPaginator ListModels(ListModelsRequest request) 

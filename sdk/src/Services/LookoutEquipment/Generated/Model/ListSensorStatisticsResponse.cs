@@ -39,7 +39,7 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  An opaque pagination token indicating where to continue the listing of sensor statistics.
+        /// An opaque pagination token indicating where to continue the listing of sensor statistics.
         /// 
         /// </para>
         /// </summary>
@@ -59,7 +59,7 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property SensorStatisticsSummaries. 
         /// <para>
-        ///  Provides ingestion-based statistics regarding the specified sensor with respect to
+        /// Provides ingestion-based statistics regarding the specified sensor with respect to
         /// various validation types, such as whether data exists, the number and percentage of
         /// missing values, and the number and percentage of duplicate timestamps. 
         /// </para>

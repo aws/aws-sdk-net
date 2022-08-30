@@ -84,7 +84,7 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        ///  Specifies the maximum number of sensors for which to retrieve statistics. 
+        /// Specifies the maximum number of sensors for which to retrieve statistics. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
@@ -103,7 +103,7 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  An opaque pagination token indicating where to continue the listing of sensor statistics.
+        /// An opaque pagination token indicating where to continue the listing of sensor statistics.
         /// 
         /// </para>
         /// </summary>

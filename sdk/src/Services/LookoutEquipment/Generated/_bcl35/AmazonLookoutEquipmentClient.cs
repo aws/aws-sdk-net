@@ -416,6 +416,158 @@ namespace Amazon.LookoutEquipment
 
         #endregion
         
+        #region  CreateLabel
+
+        /// <summary>
+        /// Creates a label for an event.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLabel service method.</param>
+        /// 
+        /// <returns>The response from the CreateLabel service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ServiceQuotaExceededException">
+        /// Resource limitations have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related AWS service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateLabel">REST API Reference for CreateLabel Operation</seealso>
+        public virtual CreateLabelResponse CreateLabel(CreateLabelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLabelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLabelResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLabelResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateLabel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateLabel operation on AmazonLookoutEquipmentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLabel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateLabel">REST API Reference for CreateLabel Operation</seealso>
+        public virtual IAsyncResult BeginCreateLabel(CreateLabelRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLabelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLabelResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateLabel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLabel.</param>
+        /// 
+        /// <returns>Returns a  CreateLabelResult from LookoutEquipment.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateLabel">REST API Reference for CreateLabel Operation</seealso>
+        public virtual CreateLabelResponse EndCreateLabel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateLabelResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateLabelGroup
+
+        /// <summary>
+        /// Creates a group of labels.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLabelGroup service method.</param>
+        /// 
+        /// <returns>The response from the CreateLabelGroup service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ServiceQuotaExceededException">
+        /// Resource limitations have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related AWS service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateLabelGroup">REST API Reference for CreateLabelGroup Operation</seealso>
+        public virtual CreateLabelGroupResponse CreateLabelGroup(CreateLabelGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLabelGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLabelGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLabelGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateLabelGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateLabelGroup operation on AmazonLookoutEquipmentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLabelGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateLabelGroup">REST API Reference for CreateLabelGroup Operation</seealso>
+        public virtual IAsyncResult BeginCreateLabelGroup(CreateLabelGroupRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLabelGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLabelGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateLabelGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLabelGroup.</param>
+        /// 
+        /// <returns>Returns a  CreateLabelGroupResult from LookoutEquipment.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateLabelGroup">REST API Reference for CreateLabelGroup Operation</seealso>
+        public virtual CreateLabelGroupResponse EndCreateLabelGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateLabelGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateModel
 
         /// <summary>
@@ -656,6 +808,148 @@ namespace Amazon.LookoutEquipment
         public virtual DeleteInferenceSchedulerResponse EndDeleteInferenceScheduler(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteInferenceSchedulerResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteLabel
+
+        /// <summary>
+        /// Deletes a label.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLabel service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLabel service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteLabel">REST API Reference for DeleteLabel Operation</seealso>
+        public virtual DeleteLabelResponse DeleteLabel(DeleteLabelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLabelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLabelResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLabelResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteLabel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLabel operation on AmazonLookoutEquipmentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLabel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteLabel">REST API Reference for DeleteLabel Operation</seealso>
+        public virtual IAsyncResult BeginDeleteLabel(DeleteLabelRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLabelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLabelResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteLabel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLabel.</param>
+        /// 
+        /// <returns>Returns a  DeleteLabelResult from LookoutEquipment.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteLabel">REST API Reference for DeleteLabel Operation</seealso>
+        public virtual DeleteLabelResponse EndDeleteLabel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteLabelResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteLabelGroup
+
+        /// <summary>
+        /// Deletes a group of labels.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLabelGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLabelGroup service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteLabelGroup">REST API Reference for DeleteLabelGroup Operation</seealso>
+        public virtual DeleteLabelGroupResponse DeleteLabelGroup(DeleteLabelGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLabelGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLabelGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLabelGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteLabelGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLabelGroup operation on AmazonLookoutEquipmentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLabelGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteLabelGroup">REST API Reference for DeleteLabelGroup Operation</seealso>
+        public virtual IAsyncResult BeginDeleteLabelGroup(DeleteLabelGroupRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLabelGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLabelGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteLabelGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLabelGroup.</param>
+        /// 
+        /// <returns>Returns a  DeleteLabelGroupResult from LookoutEquipment.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteLabelGroup">REST API Reference for DeleteLabelGroup Operation</seealso>
+        public virtual DeleteLabelGroupResponse EndDeleteLabelGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteLabelGroupResponse>(asyncResult);
         }
 
         #endregion
@@ -945,6 +1239,148 @@ namespace Amazon.LookoutEquipment
         public virtual DescribeInferenceSchedulerResponse EndDescribeInferenceScheduler(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeInferenceSchedulerResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeLabel
+
+        /// <summary>
+        /// Returns the name of the label.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLabel service method.</param>
+        /// 
+        /// <returns>The response from the DescribeLabel service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related AWS service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeLabel">REST API Reference for DescribeLabel Operation</seealso>
+        public virtual DescribeLabelResponse DescribeLabel(DescribeLabelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLabelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLabelResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLabelResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeLabel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLabel operation on AmazonLookoutEquipmentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLabel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeLabel">REST API Reference for DescribeLabel Operation</seealso>
+        public virtual IAsyncResult BeginDescribeLabel(DescribeLabelRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLabelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLabelResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeLabel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLabel.</param>
+        /// 
+        /// <returns>Returns a  DescribeLabelResult from LookoutEquipment.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeLabel">REST API Reference for DescribeLabel Operation</seealso>
+        public virtual DescribeLabelResponse EndDescribeLabel(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeLabelResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeLabelGroup
+
+        /// <summary>
+        /// Returns information about the label group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLabelGroup service method.</param>
+        /// 
+        /// <returns>The response from the DescribeLabelGroup service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related AWS service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeLabelGroup">REST API Reference for DescribeLabelGroup Operation</seealso>
+        public virtual DescribeLabelGroupResponse DescribeLabelGroup(DescribeLabelGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLabelGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLabelGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLabelGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeLabelGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLabelGroup operation on AmazonLookoutEquipmentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLabelGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeLabelGroup">REST API Reference for DescribeLabelGroup Operation</seealso>
+        public virtual IAsyncResult BeginDescribeLabelGroup(DescribeLabelGroupRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeLabelGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLabelGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeLabelGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLabelGroup.</param>
+        /// 
+        /// <returns>Returns a  DescribeLabelGroupResult from LookoutEquipment.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeLabelGroup">REST API Reference for DescribeLabelGroup Operation</seealso>
+        public virtual DescribeLabelGroupResponse EndDescribeLabelGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeLabelGroupResponse>(asyncResult);
         }
 
         #endregion
@@ -1362,6 +1798,140 @@ namespace Amazon.LookoutEquipment
         public virtual ListInferenceSchedulersResponse EndListInferenceSchedulers(IAsyncResult asyncResult)
         {
             return EndInvoke<ListInferenceSchedulersResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListLabelGroups
+
+        /// <summary>
+        /// Returns a list of the label groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLabelGroups service method.</param>
+        /// 
+        /// <returns>The response from the ListLabelGroups service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related AWS service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListLabelGroups">REST API Reference for ListLabelGroups Operation</seealso>
+        public virtual ListLabelGroupsResponse ListLabelGroups(ListLabelGroupsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLabelGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLabelGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<ListLabelGroupsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListLabelGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListLabelGroups operation on AmazonLookoutEquipmentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListLabelGroups
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListLabelGroups">REST API Reference for ListLabelGroups Operation</seealso>
+        public virtual IAsyncResult BeginListLabelGroups(ListLabelGroupsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLabelGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLabelGroupsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListLabelGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListLabelGroups.</param>
+        /// 
+        /// <returns>Returns a  ListLabelGroupsResult from LookoutEquipment.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListLabelGroups">REST API Reference for ListLabelGroups Operation</seealso>
+        public virtual ListLabelGroupsResponse EndListLabelGroups(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListLabelGroupsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListLabels
+
+        /// <summary>
+        /// Provides a list of labels.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLabels service method.</param>
+        /// 
+        /// <returns>The response from the ListLabels service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related AWS service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListLabels">REST API Reference for ListLabels Operation</seealso>
+        public virtual ListLabelsResponse ListLabels(ListLabelsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLabelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLabelsResponseUnmarshaller.Instance;
+
+            return Invoke<ListLabelsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListLabels operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListLabels operation on AmazonLookoutEquipmentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListLabels
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListLabels">REST API Reference for ListLabels Operation</seealso>
+        public virtual IAsyncResult BeginListLabels(ListLabelsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLabelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLabelsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListLabels operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListLabels.</param>
+        /// 
+        /// <returns>Returns a  ListLabelsResult from LookoutEquipment.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListLabels">REST API Reference for ListLabels Operation</seealso>
+        public virtual ListLabelsResponse EndListLabels(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListLabelsResponse>(asyncResult);
         }
 
         #endregion
@@ -2026,6 +2596,81 @@ namespace Amazon.LookoutEquipment
         public virtual UpdateInferenceSchedulerResponse EndUpdateInferenceScheduler(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateInferenceSchedulerResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateLabelGroup
+
+        /// <summary>
+        /// Updates the label group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLabelGroup service method.</param>
+        /// 
+        /// <returns>The response from the UpdateLabelGroup service method, as returned by LookoutEquipment.</returns>
+        /// <exception cref="Amazon.LookoutEquipment.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.InternalServerException">
+        /// Processing of the request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ResourceNotFoundException">
+        /// The resource requested could not be found. Verify the resource ID and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutEquipment.Model.ValidationException">
+        /// The input fails to satisfy constraints specified by Amazon Lookout for Equipment
+        /// or a related AWS service that's being utilized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateLabelGroup">REST API Reference for UpdateLabelGroup Operation</seealso>
+        public virtual UpdateLabelGroupResponse UpdateLabelGroup(UpdateLabelGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLabelGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLabelGroupResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateLabelGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateLabelGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLabelGroup operation on AmazonLookoutEquipmentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateLabelGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateLabelGroup">REST API Reference for UpdateLabelGroup Operation</seealso>
+        public virtual IAsyncResult BeginUpdateLabelGroup(UpdateLabelGroupRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLabelGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLabelGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateLabelGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateLabelGroup.</param>
+        /// 
+        /// <returns>Returns a  UpdateLabelGroupResult from LookoutEquipment.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateLabelGroup">REST API Reference for UpdateLabelGroup Operation</seealso>
+        public virtual UpdateLabelGroupResponse EndUpdateLabelGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateLabelGroupResponse>(asyncResult);
         }
 
         #endregion

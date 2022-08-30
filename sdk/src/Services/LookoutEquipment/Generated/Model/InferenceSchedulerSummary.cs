@@ -38,6 +38,7 @@ namespace Amazon.LookoutEquipment.Model
         private DataUploadFrequency _dataUploadFrequency;
         private string _inferenceSchedulerArn;
         private string _inferenceSchedulerName;
+        private LatestInferenceResult _latestInferenceResult;
         private string _modelArn;
         private string _modelName;
         private InferenceSchedulerStatus _status;
@@ -126,6 +127,25 @@ namespace Amazon.LookoutEquipment.Model
         internal bool IsSetInferenceSchedulerName()
         {
             return this._inferenceSchedulerName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LatestInferenceResult. 
+        /// <para>
+        /// Indicates whether the latest execution for the inference scheduler was Anomalous (anomalous
+        /// events found) or Normal (no anomalous events found).
+        /// </para>
+        /// </summary>
+        public LatestInferenceResult LatestInferenceResult
+        {
+            get { return this._latestInferenceResult; }
+            set { this._latestInferenceResult = value; }
+        }
+
+        // Check to see if LatestInferenceResult property is set
+        internal bool IsSetLatestInferenceResult()
+        {
+            return this._latestInferenceResult != null;
         }
 
         /// <summary>

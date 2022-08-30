@@ -76,6 +76,63 @@
     <pattern>^[0-9a-zA-Z_-]{1,200}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.CreateLabelRequest.ClientToken</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.CreateLabelRequest.Equipment</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>[\P{M}\p{M}]{1,200}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.CreateLabelRequest.FaultCode</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\P{M}\p{M}]{1,100}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.CreateLabelRequest.LabelGroupName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z_-]{1,200}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.CreateLabelRequest.Notes</property>
+    <min>1</min>
+    <max>2560</max>
+    <pattern>[\P{M}\p{M}]{1,2560}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.CreateLabelResponse.LabelId</property>
+    <max>32</max>
+    <pattern>[A-Fa-f0-9]{0,32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.CreateLabelGroupRequest.ClientToken</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.CreateLabelGroupRequest.LabelGroupName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z_-]{1,200}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.CreateLabelGroupResponse.LabelGroupArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:label-group\/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.CreateLabelGroupResponse.LabelGroupName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z_-]{1,200}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.CreateModelRequest.ClientToken</property>
     <min>1</min>
     <max>256</max>
@@ -123,6 +180,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DeleteInferenceSchedulerRequest.InferenceSchedulerName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z_-]{1,200}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.DeleteLabelRequest.LabelGroupName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z_-]{1,200}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.DeleteLabelRequest.LabelId</property>
+    <max>32</max>
+    <pattern>[A-Fa-f0-9]{0,32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.DeleteLabelGroupRequest.LabelGroupName</property>
     <min>1</min>
     <max>200</max>
     <pattern>^[0-9a-zA-Z_-]{1,200}$</pattern>
@@ -252,6 +326,70 @@
     <min>1</min>
     <max>1024</max>
     <pattern>arn:aws[a-z\-]*:kms:[a-z0-9\-]*:\d{12}:[\w\-\/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.DescribeLabelRequest.LabelGroupName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z_-]{1,200}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.DescribeLabelRequest.LabelId</property>
+    <max>32</max>
+    <pattern>[A-Fa-f0-9]{0,32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.DescribeLabelResponse.Equipment</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>[\P{M}\p{M}]{1,200}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.DescribeLabelResponse.FaultCode</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\P{M}\p{M}]{1,100}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.DescribeLabelResponse.LabelGroupArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:label-group\/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.DescribeLabelResponse.LabelGroupName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z_-]{1,200}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.DescribeLabelResponse.LabelId</property>
+    <max>32</max>
+    <pattern>[A-Fa-f0-9]{0,32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.DescribeLabelResponse.Notes</property>
+    <min>1</min>
+    <max>2560</max>
+    <pattern>[\P{M}\p{M}]{1,2560}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.DescribeLabelGroupRequest.LabelGroupName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z_-]{1,200}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.DescribeLabelGroupResponse.LabelGroupArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:label-group\/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.DescribeLabelGroupResponse.LabelGroupName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z_-]{1,200}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DescribeModelRequest.ModelName</property>
@@ -418,6 +556,56 @@
     <max>8192</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.ListLabelGroupsRequest.LabelGroupNameBeginsWith</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z_-]{1,200}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.ListLabelGroupsRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.ListLabelGroupsRequest.NextToken</property>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.ListLabelGroupsResponse.NextToken</property>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.ListLabelsRequest.Equipment</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>[\P{M}\p{M}]{1,200}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.ListLabelsRequest.FaultCode</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\P{M}\p{M}]{1,100}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.ListLabelsRequest.LabelGroupName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z_-]{1,200}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.ListLabelsRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.ListLabelsRequest.NextToken</property>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.ListLabelsResponse.NextToken</property>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ListModelsRequest.DatasetNameBeginsWith</property>
     <min>1</min>
     <max>200</max>
@@ -579,6 +767,12 @@
     <min>20</min>
     <max>2048</max>
     <pattern>arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.UpdateLabelGroupRequest.LabelGroupName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z_-]{1,200}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.DataIngestionJobSummary.DatasetArn</property>
@@ -755,6 +949,24 @@
     <pattern>(^$)|([\u0009\u000A\u000D\u0020-\u00FF]{1,1023}/$)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.LabelGroupSummary.LabelGroupArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:label-group\/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.LabelGroupSummary.LabelGroupName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z_-]{1,200}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.LabelsInputConfiguration.LabelGroupName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z_-]{1,200}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.LabelsS3InputConfiguration.Bucket</property>
     <min>3</min>
     <max>63</max>
@@ -765,6 +977,35 @@
     <min>0</min>
     <max>1024</max>
     <pattern>(^$)|([\u0009\u000A\u000D\u0020-\u00FF]{1,1023}/$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.LabelSummary.Equipment</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>[\P{M}\p{M}]{1,200}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.LabelSummary.FaultCode</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\P{M}\p{M}]{1,100}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.LabelSummary.LabelGroupArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:lookoutequipment:[a-zA-Z0-9\-]*:[0-9]{12}:label-group\/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.LabelSummary.LabelGroupName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z_-]{1,200}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutEquipment.Model.LabelSummary.LabelId</property>
+    <max>32</max>
+    <pattern>[A-Fa-f0-9]{0,32}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutEquipment.Model.ModelSummary.DatasetArn</property>

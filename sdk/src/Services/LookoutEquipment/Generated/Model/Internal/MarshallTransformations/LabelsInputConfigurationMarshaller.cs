@@ -45,6 +45,12 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LabelsInputConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetLabelGroupName())
+            {
+                context.Writer.WritePropertyName("LabelGroupName");
+                context.Writer.Write(requestObject.LabelGroupName);
+            }
+
             if(requestObject.IsSetS3InputConfiguration())
             {
                 context.Writer.WritePropertyName("S3InputConfiguration");
