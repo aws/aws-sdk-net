@@ -79,8 +79,8 @@ namespace Amazon.Macie2.Model
         /// </li> <li>
         /// <para>
         /// OBJECT_UNAVAILABLE - The affected S3 object isn't available. The object might have
-        /// been renamed, moved, or deleted. Or the object was changed after Amazon Macie created
-        /// the finding.
+        /// been renamed, moved, or deleted. Or the object was changed after Macie created the
+        /// finding.
         /// </para>
         /// </li> <li>
         /// <para>

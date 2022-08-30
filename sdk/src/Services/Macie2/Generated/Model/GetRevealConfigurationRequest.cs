@@ -30,8 +30,8 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Container for the parameters to the GetRevealConfiguration operation.
-    /// Retrieves the status and configuration settings for retrieving (revealing) occurrences
-    /// of sensitive data reported by findings.
+    /// Retrieves the status and configuration settings for retrieving occurrences of sensitive
+    /// data reported by findings.
     /// </summary>
     public partial class GetRevealConfigurationRequest : AmazonMacie2Request
     {

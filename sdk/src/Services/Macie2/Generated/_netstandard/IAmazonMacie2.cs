@@ -138,6 +138,51 @@ namespace Amazon.Macie2
 
         #endregion
                 
+        #region  CreateAllowList
+
+
+
+        /// <summary>
+        /// Creates and defines the settings for an allow list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAllowList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAllowList service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ConflictException">
+        /// Provides information about an error that occurred due to a versioning conflict for
+        /// a specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ServiceQuotaExceededException">
+        /// Provides information about an error that occurred due to one or more service quotas
+        /// for an account.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateAllowList">REST API Reference for CreateAllowList Operation</seealso>
+        Task<CreateAllowListResponse> CreateAllowListAsync(CreateAllowListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateClassificationJob
 
 
@@ -450,6 +495,43 @@ namespace Amazon.Macie2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeclineInvitations">REST API Reference for DeclineInvitations Operation</seealso>
         Task<DeclineInvitationsResponse> DeclineInvitationsAsync(DeclineInvitationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteAllowList
+
+
+
+        /// <summary>
+        /// Deletes an allow list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAllowList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAllowList service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteAllowList">REST API Reference for DeleteAllowList Operation</seealso>
+        Task<DeleteAllowListResponse> DeleteAllowListAsync(DeleteAllowListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1133,6 +1215,43 @@ namespace Amazon.Macie2
 
         #endregion
                 
+        #region  GetAllowList
+
+
+
+        /// <summary>
+        /// Retrieves the settings and status of an allow list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAllowList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAllowList service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetAllowList">REST API Reference for GetAllowList Operation</seealso>
+        Task<GetAllowListResponse> GetAllowListAsync(GetAllowListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetBucketStatistics
 
 
@@ -1638,8 +1757,8 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Retrieves the status and configuration settings for retrieving (revealing) occurrences
-        /// of sensitive data reported by findings.
+        /// Retrieves the status and configuration settings for retrieving occurrences of sensitive
+        /// data reported by findings.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRevealConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -1672,7 +1791,7 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Retrieves (reveals) occurrences of sensitive data reported by a finding.
+        /// Retrieves occurrences of sensitive data reported by a finding.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSensitiveDataOccurrences service method.</param>
         /// <param name="cancellationToken">
@@ -1713,7 +1832,7 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Checks whether occurrences of sensitive data can be retrieved (revealed) for a finding.
+        /// Checks whether occurrences of sensitive data can be retrieved for a finding.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSensitiveDataOccurrencesAvailability service method.</param>
         /// <param name="cancellationToken">
@@ -1829,6 +1948,39 @@ namespace Amazon.Macie2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetUsageTotals">REST API Reference for GetUsageTotals Operation</seealso>
         Task<GetUsageTotalsResponse> GetUsageTotalsAsync(GetUsageTotalsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListAllowLists
+
+
+
+        /// <summary>
+        /// Retrieves a subset of information about all the allow lists for an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAllowLists service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAllowLists service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListAllowLists">REST API Reference for ListAllowLists Operation</seealso>
+        Task<ListAllowListsResponse> ListAllowListsAsync(ListAllowListsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2174,8 +2326,7 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Retrieves the tags (keys and values) that are associated with a classification job,
-        /// custom data identifier, findings filter, or member account.
+        /// Retrieves the tags (keys and values) that are associated with an Amazon Macie resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -2329,8 +2480,8 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Adds or updates one or more tags (keys and values) that are associated with a classification
-        /// job, custom data identifier, findings filter, or member account.
+        /// Adds or updates one or more tags (keys and values) that are associated with an Amazon
+        /// Macie resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -2393,8 +2544,7 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Removes one or more tags (keys and values) from a classification job, custom data
-        /// identifier, findings filter, or member account.
+        /// Removes one or more tags (keys and values) from an Amazon Macie resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -2404,6 +2554,43 @@ namespace Amazon.Macie2
         /// <returns>The response from the UntagResource service method, as returned by Macie2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateAllowList
+
+
+
+        /// <summary>
+        /// Updates the settings for an allow list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAllowList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAllowList service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateAllowList">REST API Reference for UpdateAllowList Operation</seealso>
+        Task<UpdateAllowListResponse> UpdateAllowListAsync(UpdateAllowListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2638,8 +2825,8 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Updates the status and configuration settings for retrieving (revealing) occurrences
-        /// of sensitive data reported by findings.
+        /// Updates the status and configuration settings for retrieving occurrences of sensitive
+        /// data reported by findings.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRevealConfiguration service method.</param>
         /// <param name="cancellationToken">

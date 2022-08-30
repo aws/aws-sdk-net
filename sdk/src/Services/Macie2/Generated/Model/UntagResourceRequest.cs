@@ -30,8 +30,7 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes one or more tags (keys and values) from a classification job, custom data
-    /// identifier, findings filter, or member account.
+    /// Removes one or more tags (keys and values) from an Amazon Macie resource.
     /// </summary>
     public partial class UntagResourceRequest : AmazonMacie2Request
     {
@@ -41,8 +40,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the classification job, custom data identifier,
-        /// findings filter, or member account.
+        /// The Amazon Resource Name (ARN) of the resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,8 +60,8 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property TagKeys. 
         /// <para>
         /// One or more tags (keys) to remove from the resource. In an HTTP request to remove
-        /// multiple tags, append the tagKeys parameter and argument for each tag to remove, and
-        /// separate them with an ampersand (&amp;).
+        /// multiple tags, append the tagKeys parameter and argument for each tag to remove, separated
+        /// by an ampersand (&amp;).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

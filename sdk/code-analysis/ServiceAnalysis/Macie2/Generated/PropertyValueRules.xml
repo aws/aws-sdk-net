@@ -1,6 +1,59 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.Macie2.Model.CreateAllowListRequest.Description</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^[\s\S]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Macie2.Model.CreateAllowListRequest.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Macie2.Model.CreateAllowListResponse.Arn</property>
+    <min>71</min>
+    <max>89</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):macie2:[a-z1-9-]{9,20}:\d{12}:allow-list\/[a-z0-9]{22}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Macie2.Model.CreateAllowListResponse.Id</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^[a-z0-9]{22}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Macie2.Model.GetAllowListResponse.Arn</property>
+    <min>71</min>
+    <max>89</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):macie2:[a-z1-9-]{9,20}:\d{12}:allow-list\/[a-z0-9]{22}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Macie2.Model.GetAllowListResponse.Description</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^[\s\S]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Macie2.Model.GetAllowListResponse.Id</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^[a-z0-9]{22}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Macie2.Model.GetAllowListResponse.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Macie2.Model.ListAllowListsRequest.MaxResults</property>
+    <min>1</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Macie2.Model.ListFindingsFiltersRequest.MaxResults</property>
     <min>1</min>
     <max>25</max>
@@ -21,6 +74,66 @@
     <max>25</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Macie2.Model.UpdateAllowListRequest.Description</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^[\s\S]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Macie2.Model.UpdateAllowListRequest.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Macie2.Model.UpdateAllowListResponse.Arn</property>
+    <min>71</min>
+    <max>89</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):macie2:[a-z1-9-]{9,20}:\d{12}:allow-list\/[a-z0-9]{22}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Macie2.Model.UpdateAllowListResponse.Id</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^[a-z0-9]{22}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Macie2.Model.AllowListCriteria.Regex</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^[\s\S]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Macie2.Model.AllowListStatus.Description</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^[\s\S]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Macie2.Model.AllowListSummary.Arn</property>
+    <min>71</min>
+    <max>89</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):macie2:[a-z1-9-]{9,20}:\d{12}:allow-list\/[a-z0-9]{22}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Macie2.Model.AllowListSummary.Description</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^[\s\S]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Macie2.Model.AllowListSummary.Id</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^[a-z0-9]{22}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Macie2.Model.AllowListSummary.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Macie2.Model.DetectedDataDetails.Value</property>
     <min>1</min>
     <max>128</max>
@@ -29,5 +142,17 @@
     <property>Amazon.Macie2.Model.RevealConfiguration.KmsKeyId</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Macie2.Model.S3WordsList.BucketName</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>^[A-Za-z0-9.\-_]{3,255}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Macie2.Model.S3WordsList.ObjectKey</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^[\s\S]+$</pattern>
   </property-value-rule>
 </property-value-rules>

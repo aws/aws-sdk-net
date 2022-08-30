@@ -38,7 +38,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A map of key-value pairs that identifies the tags (keys and values) that are associated
+        /// A map of key-value pairs that specifies which tags (keys and values) are associated
         /// with the resource.
         /// </para>
         /// </summary>

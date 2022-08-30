@@ -176,8 +176,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A map of key-value pairs that identifies the tags (keys and values) that are associated
-        /// with the member account in Amazon Macie.
+        /// A map of key-value pairs that specifies which tags (keys and values) are associated
+        /// with the account in Amazon Macie.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

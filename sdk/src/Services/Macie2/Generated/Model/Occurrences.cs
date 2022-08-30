@@ -31,8 +31,7 @@ namespace Amazon.Macie2.Model
     /// <summary>
     /// Specifies the location of 1-15 occurrences of sensitive data that was detected by
     /// a managed data identifier or a custom data identifier and produced a sensitive data
-    /// finding. Depending on the file or storage format of the affected S3 object, you can
-    /// optionally retrieve (reveal) sample occurrences of the sensitive data that was detected.
+    /// finding.
     /// </summary>
     public partial class Occurrences
     {
@@ -48,7 +47,7 @@ namespace Amazon.Macie2.Model
         /// An array of objects, one for each occurrence of sensitive data in a Microsoft Excel
         /// workbook, CSV file, or TSV file. This value is null for all other types of files.
         /// </para>
-        /// 
+        ///  
         /// <para>
         /// Each Cell object specifies a cell or field that contains the sensitive data.
         /// </para>
@@ -118,7 +117,7 @@ namespace Amazon.Macie2.Model
         /// An array of objects, one for each occurrence of sensitive data in an Adobe Portable
         /// Document Format file. This value is null for all other types of files.
         /// </para>
-        /// 
+        ///  
         /// <para>
         /// Each Page object specifies a page that contains the sensitive data.
         /// </para>

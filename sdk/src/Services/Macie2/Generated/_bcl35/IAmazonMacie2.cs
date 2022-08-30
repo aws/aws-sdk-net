@@ -184,6 +184,73 @@ namespace Amazon.Macie2
 
         #endregion
         
+        #region  CreateAllowList
+
+
+        /// <summary>
+        /// Creates and defines the settings for an allow list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAllowList service method.</param>
+        /// 
+        /// <returns>The response from the CreateAllowList service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ConflictException">
+        /// Provides information about an error that occurred due to a versioning conflict for
+        /// a specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ServiceQuotaExceededException">
+        /// Provides information about an error that occurred due to one or more service quotas
+        /// for an account.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateAllowList">REST API Reference for CreateAllowList Operation</seealso>
+        CreateAllowListResponse CreateAllowList(CreateAllowListRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAllowList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAllowList operation on AmazonMacie2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAllowList
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateAllowList">REST API Reference for CreateAllowList Operation</seealso>
+        IAsyncResult BeginCreateAllowList(CreateAllowListRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAllowList operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAllowList.</param>
+        /// 
+        /// <returns>Returns a  CreateAllowListResult from Macie2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateAllowList">REST API Reference for CreateAllowList Operation</seealso>
+        CreateAllowListResponse EndCreateAllowList(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateClassificationJob
 
 
@@ -650,6 +717,65 @@ namespace Amazon.Macie2
         /// <returns>Returns a  DeclineInvitationsResult from Macie2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeclineInvitations">REST API Reference for DeclineInvitations Operation</seealso>
         DeclineInvitationsResponse EndDeclineInvitations(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteAllowList
+
+
+        /// <summary>
+        /// Deletes an allow list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAllowList service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAllowList service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteAllowList">REST API Reference for DeleteAllowList Operation</seealso>
+        DeleteAllowListResponse DeleteAllowList(DeleteAllowListRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAllowList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAllowList operation on AmazonMacie2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAllowList
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteAllowList">REST API Reference for DeleteAllowList Operation</seealso>
+        IAsyncResult BeginDeleteAllowList(DeleteAllowListRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAllowList operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAllowList.</param>
+        /// 
+        /// <returns>Returns a  DeleteAllowListResult from Macie2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteAllowList">REST API Reference for DeleteAllowList Operation</seealso>
+        DeleteAllowListResponse EndDeleteAllowList(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1663,6 +1789,65 @@ namespace Amazon.Macie2
 
         #endregion
         
+        #region  GetAllowList
+
+
+        /// <summary>
+        /// Retrieves the settings and status of an allow list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAllowList service method.</param>
+        /// 
+        /// <returns>The response from the GetAllowList service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetAllowList">REST API Reference for GetAllowList Operation</seealso>
+        GetAllowListResponse GetAllowList(GetAllowListRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAllowList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAllowList operation on AmazonMacie2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAllowList
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetAllowList">REST API Reference for GetAllowList Operation</seealso>
+        IAsyncResult BeginGetAllowList(GetAllowListRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAllowList operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAllowList.</param>
+        /// 
+        /// <returns>Returns a  GetAllowListResult from Macie2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetAllowList">REST API Reference for GetAllowList Operation</seealso>
+        GetAllowListResponse EndGetAllowList(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetBucketStatistics
 
 
@@ -2409,8 +2594,8 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Retrieves the status and configuration settings for retrieving (revealing) occurrences
-        /// of sensitive data reported by findings.
+        /// Retrieves the status and configuration settings for retrieving occurrences of sensitive
+        /// data reported by findings.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRevealConfiguration service method.</param>
         /// 
@@ -2465,7 +2650,7 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Retrieves (reveals) occurrences of sensitive data reported by a finding.
+        /// Retrieves occurrences of sensitive data reported by a finding.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSensitiveDataOccurrences service method.</param>
         /// 
@@ -2528,7 +2713,7 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Checks whether occurrences of sensitive data can be retrieved (revealed) for a finding.
+        /// Checks whether occurrences of sensitive data can be retrieved for a finding.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSensitiveDataOccurrencesAvailability service method.</param>
         /// 
@@ -2711,6 +2896,61 @@ namespace Amazon.Macie2
         /// <returns>Returns a  GetUsageTotalsResult from Macie2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetUsageTotals">REST API Reference for GetUsageTotals Operation</seealso>
         GetUsageTotalsResponse EndGetUsageTotals(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListAllowLists
+
+
+        /// <summary>
+        /// Retrieves a subset of information about all the allow lists for an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAllowLists service method.</param>
+        /// 
+        /// <returns>The response from the ListAllowLists service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListAllowLists">REST API Reference for ListAllowLists Operation</seealso>
+        ListAllowListsResponse ListAllowLists(ListAllowListsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAllowLists operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAllowLists operation on AmazonMacie2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAllowLists
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListAllowLists">REST API Reference for ListAllowLists Operation</seealso>
+        IAsyncResult BeginListAllowLists(ListAllowListsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAllowLists operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAllowLists.</param>
+        /// 
+        /// <returns>Returns a  ListAllowListsResult from Macie2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListAllowLists">REST API Reference for ListAllowLists Operation</seealso>
+        ListAllowListsResponse EndListAllowLists(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3231,8 +3471,7 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Retrieves the tags (keys and values) that are associated with a classification job,
-        /// custom data identifier, findings filter, or member account.
+        /// Retrieves the tags (keys and values) that are associated with an Amazon Macie resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -3474,8 +3713,8 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Adds or updates one or more tags (keys and values) that are associated with a classification
-        /// job, custom data identifier, findings filter, or member account.
+        /// Adds or updates one or more tags (keys and values) that are associated with an Amazon
+        /// Macie resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -3582,8 +3821,7 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Removes one or more tags (keys and values) from a classification job, custom data
-        /// identifier, findings filter, or member account.
+        /// Removes one or more tags (keys and values) from an Amazon Macie resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -3616,6 +3854,65 @@ namespace Amazon.Macie2
         /// <returns>Returns a  UntagResourceResult from Macie2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateAllowList
+
+
+        /// <summary>
+        /// Updates the settings for an allow list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAllowList service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAllowList service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateAllowList">REST API Reference for UpdateAllowList Operation</seealso>
+        UpdateAllowListResponse UpdateAllowList(UpdateAllowListRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAllowList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAllowList operation on AmazonMacie2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAllowList
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateAllowList">REST API Reference for UpdateAllowList Operation</seealso>
+        IAsyncResult BeginUpdateAllowList(UpdateAllowListRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateAllowList operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAllowList.</param>
+        /// 
+        /// <returns>Returns a  UpdateAllowListResult from Macie2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateAllowList">REST API Reference for UpdateAllowList Operation</seealso>
+        UpdateAllowListResponse EndUpdateAllowList(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3959,8 +4256,8 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Updates the status and configuration settings for retrieving (revealing) occurrences
-        /// of sensitive data reported by findings.
+        /// Updates the status and configuration settings for retrieving occurrences of sensitive
+        /// data reported by findings.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRevealConfiguration service method.</param>
         /// 

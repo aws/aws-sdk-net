@@ -75,6 +75,80 @@ namespace Amazon.Macie2
 
 
     /// <summary>
+    /// Constants used for properties of type AllowListStatusCode.
+    /// </summary>
+    public class AllowListStatusCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OK for AllowListStatusCode
+        /// </summary>
+        public static readonly AllowListStatusCode OK = new AllowListStatusCode("OK");
+        /// <summary>
+        /// Constant S3_OBJECT_ACCESS_DENIED for AllowListStatusCode
+        /// </summary>
+        public static readonly AllowListStatusCode S3_OBJECT_ACCESS_DENIED = new AllowListStatusCode("S3_OBJECT_ACCESS_DENIED");
+        /// <summary>
+        /// Constant S3_OBJECT_EMPTY for AllowListStatusCode
+        /// </summary>
+        public static readonly AllowListStatusCode S3_OBJECT_EMPTY = new AllowListStatusCode("S3_OBJECT_EMPTY");
+        /// <summary>
+        /// Constant S3_OBJECT_NOT_FOUND for AllowListStatusCode
+        /// </summary>
+        public static readonly AllowListStatusCode S3_OBJECT_NOT_FOUND = new AllowListStatusCode("S3_OBJECT_NOT_FOUND");
+        /// <summary>
+        /// Constant S3_OBJECT_OVERSIZE for AllowListStatusCode
+        /// </summary>
+        public static readonly AllowListStatusCode S3_OBJECT_OVERSIZE = new AllowListStatusCode("S3_OBJECT_OVERSIZE");
+        /// <summary>
+        /// Constant S3_THROTTLED for AllowListStatusCode
+        /// </summary>
+        public static readonly AllowListStatusCode S3_THROTTLED = new AllowListStatusCode("S3_THROTTLED");
+        /// <summary>
+        /// Constant S3_USER_ACCESS_DENIED for AllowListStatusCode
+        /// </summary>
+        public static readonly AllowListStatusCode S3_USER_ACCESS_DENIED = new AllowListStatusCode("S3_USER_ACCESS_DENIED");
+        /// <summary>
+        /// Constant UNKNOWN_ERROR for AllowListStatusCode
+        /// </summary>
+        public static readonly AllowListStatusCode UNKNOWN_ERROR = new AllowListStatusCode("UNKNOWN_ERROR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AllowListStatusCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AllowListStatusCode FindValue(string value)
+        {
+            return FindValue<AllowListStatusCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AllowListStatusCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AllowsUnencryptedObjectUploads.
     /// </summary>
     public class AllowsUnencryptedObjectUploads : ConstantClass

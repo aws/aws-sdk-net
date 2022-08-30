@@ -65,6 +65,17 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAllowListIds())
+                {
+                    context.Writer.WritePropertyName("allowListIds");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAllowListIdsListValue in publicRequest.AllowListIds)
+                    {
+                            context.Writer.Write(publicRequestAllowListIdsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetClientToken())
                 {
                     context.Writer.WritePropertyName("clientToken");

@@ -60,8 +60,8 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property FindingPublishingFrequency. 
         /// <para>
         /// Specifies how often to publish updates to policy findings for the account. This includes
-        /// publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon
-        /// CloudWatch Events).
+        /// publishing updates to Security Hub and Amazon EventBridge (formerly Amazon CloudWatch
+        /// Events).
         /// </para>
         /// </summary>
         public FindingPublishingFrequency FindingPublishingFrequency

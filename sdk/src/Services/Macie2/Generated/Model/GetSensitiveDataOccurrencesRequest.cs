@@ -30,7 +30,7 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Container for the parameters to the GetSensitiveDataOccurrences operation.
-    /// Retrieves (reveals) occurrences of sensitive data reported by a finding.
+    /// Retrieves occurrences of sensitive data reported by a finding.
     /// </summary>
     public partial class GetSensitiveDataOccurrencesRequest : AmazonMacie2Request
     {

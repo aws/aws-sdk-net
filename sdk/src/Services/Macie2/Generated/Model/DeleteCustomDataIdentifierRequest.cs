@@ -39,8 +39,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The unique identifier for the Amazon Macie resource or account that the request applies
-        /// to.
+        /// The unique identifier for the Amazon Macie resource that the request applies to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
