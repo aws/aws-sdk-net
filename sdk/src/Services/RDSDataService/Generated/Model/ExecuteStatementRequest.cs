@@ -32,7 +32,7 @@ namespace Amazon.RDSDataService.Model
     /// Container for the parameters to the ExecuteStatement operation.
     /// Runs a SQL statement against a database.
     /// 
-    ///  <important> 
+    ///  <note> 
     /// <para>
     /// If a call isn't part of a transaction because it doesn't include the <code>transactionID</code>
     /// parameter, changes that result from the call are committed automatically.
@@ -41,7 +41,7 @@ namespace Amazon.RDSDataService.Model
     /// <para>
     /// If the binary response data from the database is more than 1 MB, the call is terminated.
     /// </para>
-    ///  </important>
+    ///  </note>
     /// </summary>
     public partial class ExecuteStatementRequest : AmazonRDSDataServiceRequest
     {
@@ -63,13 +63,13 @@ namespace Amazon.RDSDataService.Model
         /// A value that indicates whether to continue running the statement after the call times
         /// out. By default, the statement stops running when the call times out.
         /// </para>
-        ///  <important> 
+        ///  <note> 
         /// <para>
         /// For DDL statements, we recommend continuing to run the statement after the call times
         /// out. When a DDL statement terminates before it is finished running, it can result
         /// in errors and possibly corrupted data structures.
         /// </para>
-        ///  </important>
+        ///  </note>
         /// </summary>
         public bool ContinueAfterTimeout
         {

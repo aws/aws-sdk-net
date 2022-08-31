@@ -44,12 +44,12 @@ namespace Amazon.RDSDataService.Model
         /// converted to a String value. The value of <code>DOUBLE_OR_LONG</code> specifies that
         /// it is converted to a Long value if its scale is 0, or to a Double value otherwise.
         /// </para>
-        ///  <important> 
+        ///  <note> 
         /// <para>
         /// Conversion to Double or Long can result in roundoff errors due to precision loss.
         /// We recommend converting to String, especially when working with currency values.
         /// </para>
-        ///  </important>
+        ///  </note>
         /// </summary>
         public DecimalReturnType DecimalReturnType
         {

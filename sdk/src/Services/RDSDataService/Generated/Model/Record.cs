@@ -31,13 +31,13 @@ namespace Amazon.RDSDataService.Model
     /// <summary>
     /// A record returned by a call.
     /// 
-    ///  <important> 
+    ///  <note> 
     /// <para>
     /// This data structure is only used with the deprecated <code>ExecuteSql</code> operation.
     /// Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation
     /// instead.
     /// </para>
-    ///  </important>
+    ///  </note>
     /// </summary>
     public partial class Record
     {

@@ -32,12 +32,12 @@ namespace Amazon.RDSDataService.Model
     /// Container for the parameters to the ExecuteSql operation.
     /// Runs one or more SQL statements.
     /// 
-    ///  <important> 
+    ///  <note> 
     /// <para>
     /// This operation is deprecated. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code>
     /// operation.
     /// </para>
-    ///  </important>
+    ///  </note>
     /// </summary>
     public partial class ExecuteSqlRequest : AmazonRDSDataServiceRequest
     {
