@@ -33,21 +33,42 @@ namespace Amazon.IdentityStore.Model
     /// </summary>
     public partial class DescribeGroupResponse : AmazonWebServiceResponse
     {
+        private string _description;
         private string _displayName;
+        private List<ExternalId> _externalIds = new List<ExternalId>();
         private string _groupId;
+        private string _identityStoreId;
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// A string containing a description of the group.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// Contains the group’s display name value. The length limit is 1,024 characters. This
-        /// value can consist of letters, accented characters, symbols, numbers, punctuation,
-        /// tab, new line, carriage return, space, and nonbreaking space in this attribute. The
-        /// characters <code>&lt;&gt;;:%</code> are excluded. This value is specified at the time
-        /// that the group is created and stored as an attribute of the group object in the identity
-        /// store.
+        /// The group’s display name value. The length limit is 1,024 characters. This value can
+        /// consist of letters, accented characters, symbols, numbers, punctuation, tab, new line,
+        /// carriage return, space, and nonbreaking space in this attribute. The characters <code>&lt;&gt;;:%</code>
+        /// are excluded. This value is specified at the time that the group is created and stored
+        /// as an attribute of the group object in the identity store.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=1024)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -58,6 +79,26 @@ namespace Amazon.IdentityStore.Model
         internal bool IsSetDisplayName()
         {
             return this._displayName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExternalIds. 
+        /// <para>
+        /// A list of <code>ExternalId</code> objects that contains the identifiers issued to
+        /// this resource by an external identity provider.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<ExternalId> ExternalIds
+        {
+            get { return this._externalIds; }
+            set { this._externalIds = value; }
+        }
+
+        // Check to see if ExternalIds property is set
+        internal bool IsSetExternalIds()
+        {
+            return this._externalIds != null && this._externalIds.Count > 0; 
         }
 
         /// <summary>
@@ -77,6 +118,25 @@ namespace Amazon.IdentityStore.Model
         internal bool IsSetGroupId()
         {
             return this._groupId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdentityStoreId. 
+        /// <para>
+        /// The globally unique identifier for the identity store.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=36)]
+        public string IdentityStoreId
+        {
+            get { return this._identityStoreId; }
+            set { this._identityStoreId = value; }
+        }
+
+        // Check to see if IdentityStoreId property is set
+        internal bool IsSetIdentityStoreId()
+        {
+            return this._identityStoreId != null;
         }
 
     }

@@ -41,6 +41,12 @@ namespace Amazon.IdentityStore.Model
         /// </summary>
         public IPaginatedEnumerable<ListGroupsResponse> Responses => new PaginatedResponse<ListGroupsResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the Groups
+        /// </summary>
+        public IPaginatedEnumerable<Group> Groups => 
+            new PaginatedResultKeyResponse<ListGroupsResponse, Group>(this, (i) => i.Groups);
+
         internal ListGroupsPaginator(IAmazonIdentityStore client, ListGroupsRequest request)
         {
             this._client = client;

@@ -70,6 +70,12 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
                     unmarshalledObject.RequestId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RetryAfterSeconds", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.RetryAfterSeconds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

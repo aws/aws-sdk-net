@@ -131,6 +131,7 @@ namespace Amazon.IdentityStore.Model
         /// exception if the request fails.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=36)]
         public string RequestId
         {
             get { return this._requestId; }

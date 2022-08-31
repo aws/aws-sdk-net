@@ -51,6 +51,84 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Addresses", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Address, AddressUnmarshaller>(AddressUnmarshaller.Instance);
+                    response.Addresses = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DisplayName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.DisplayName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Emails", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Email, EmailUnmarshaller>(EmailUnmarshaller.Instance);
+                    response.Emails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ExternalIds", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ExternalId, ExternalIdUnmarshaller>(ExternalIdUnmarshaller.Instance);
+                    response.ExternalIds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IdentityStoreId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.IdentityStoreId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Locale", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Locale = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Name", targetDepth))
+                {
+                    var unmarshaller = NameUnmarshaller.Instance;
+                    response.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NickName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NickName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PhoneNumbers", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<PhoneNumber, PhoneNumberUnmarshaller>(PhoneNumberUnmarshaller.Instance);
+                    response.PhoneNumbers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PreferredLanguage", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.PreferredLanguage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ProfileUrl", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ProfileUrl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Timezone", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Timezone = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Title", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Title = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("UserId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -61,6 +139,12 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.UserName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UserType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.UserType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

@@ -29,5 +29,10 @@ namespace Amazon.IdentityStore.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<ListUsersResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the Users
+        /// </summary>
+        IPaginatedEnumerable<User> Users { get; }
     }
 }

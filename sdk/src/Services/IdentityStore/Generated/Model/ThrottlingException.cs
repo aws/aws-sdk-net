@@ -37,6 +37,9 @@ namespace Amazon.IdentityStore.Model
     public partial class ThrottlingException : AmazonIdentityStoreException
     {
         private string _requestId;
+        private int? _retryAfterSeconds;
+
+        private RetryableDetails _retryableDetails = new RetryableDetails(true);
 
         /// <summary>
         /// Constructs a new ThrottlingException with the specified error
@@ -99,6 +102,7 @@ namespace Amazon.IdentityStore.Model
             : base(info, context)
         {
             this.RequestId = (string)info.GetValue("RequestId", typeof(string));
+            this.RetryAfterSeconds = (int)info.GetValue("RetryAfterSeconds", typeof(int));
         }
 
         /// <summary>
@@ -120,6 +124,7 @@ namespace Amazon.IdentityStore.Model
         {
             base.GetObjectData(info, context);
             info.AddValue("RequestId", this.RequestId);
+            info.AddValue("RetryAfterSeconds", this.RetryAfterSeconds);
         }
 #endif
 
@@ -131,6 +136,7 @@ namespace Amazon.IdentityStore.Model
         /// exception if the request fails.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=36)]
         public string RequestId
         {
             get { return this._requestId; }
@@ -143,5 +149,34 @@ namespace Amazon.IdentityStore.Model
             return this._requestId != null;
         }
 
+        /// <summary>
+        /// Gets and sets the property RetryAfterSeconds. 
+        /// <para>
+        /// The number of seconds that you would like to wait before retrying the next request.
+        /// </para>
+        /// </summary>
+        public int RetryAfterSeconds
+        {
+            get { return this._retryAfterSeconds.GetValueOrDefault(); }
+            set { this._retryAfterSeconds = value; }
+        }
+
+        // Check to see if RetryAfterSeconds property is set
+        internal bool IsSetRetryAfterSeconds()
+        {
+            return this._retryAfterSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Flag indicating if the exception is retryable and the associated retry
+        /// details. A null value indicates that the exception is not retryable.
+        /// </summary>
+        public override RetryableDetails Retryable
+        {
+            get
+            {
+                return _retryableDetails;
+            }
+        }
     }
 }

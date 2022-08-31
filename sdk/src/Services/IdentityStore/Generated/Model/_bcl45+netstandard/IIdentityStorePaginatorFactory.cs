@@ -26,6 +26,16 @@ namespace Amazon.IdentityStore.Model
     {
 
         /// <summary>
+        /// Paginator for ListGroupMemberships operation
+        ///</summary>
+        IListGroupMembershipsPaginator ListGroupMemberships(ListGroupMembershipsRequest request);
+
+        /// <summary>
+        /// Paginator for ListGroupMembershipsForMember operation
+        ///</summary>
+        IListGroupMembershipsForMemberPaginator ListGroupMembershipsForMember(ListGroupMembershipsForMemberRequest request);
+
+        /// <summary>
         /// Paginator for ListGroups operation
         ///</summary>
         IListGroupsPaginator ListGroups(ListGroupsRequest request);

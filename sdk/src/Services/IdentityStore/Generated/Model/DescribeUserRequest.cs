@@ -30,7 +30,7 @@ namespace Amazon.IdentityStore.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeUser operation.
-    /// Retrieves the user metadata and attributes from <code>UserId</code> in an identity
+    /// Retrieves the user metadata and attributes from the <code>UserId</code> in an identity
     /// store.
     /// </summary>
     public partial class DescribeUserRequest : AmazonIdentityStoreRequest
@@ -43,11 +43,11 @@ namespace Amazon.IdentityStore.Model
         /// <para>
         /// The globally unique identifier for the identity store, such as <code>d-1234567890</code>.
         /// In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is
-        /// a randomly generated string that contains number and lower case letters. This value
+        /// a randomly generated string that contains numbers and lower case letters. This value
         /// is generated at the time that a new identity store is created.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=12)]
+        [AWSProperty(Required=true, Min=1, Max=36)]
         public string IdentityStoreId
         {
             get { return this._identityStoreId; }

@@ -33,8 +33,269 @@ namespace Amazon.IdentityStore.Model
     /// </summary>
     public partial class DescribeUserResponse : AmazonWebServiceResponse
     {
+        private List<Address> _addresses = new List<Address>();
+        private string _displayName;
+        private List<Email> _emails = new List<Email>();
+        private List<ExternalId> _externalIds = new List<ExternalId>();
+        private string _identityStoreId;
+        private string _locale;
+        private Name _name;
+        private string _nickName;
+        private List<PhoneNumber> _phoneNumbers = new List<PhoneNumber>();
+        private string _preferredLanguage;
+        private string _profileUrl;
+        private string _timezone;
+        private string _title;
         private string _userId;
         private string _userName;
+        private string _userType;
+
+        /// <summary>
+        /// Gets and sets the property Addresses. 
+        /// <para>
+        /// The user's physical address.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<Address> Addresses
+        {
+            get { return this._addresses; }
+            set { this._addresses = value; }
+        }
+
+        // Check to see if Addresses property is set
+        internal bool IsSetAddresses()
+        {
+            return this._addresses != null && this._addresses.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisplayName. 
+        /// <para>
+        /// The user's name value for display.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string DisplayName
+        {
+            get { return this._displayName; }
+            set { this._displayName = value; }
+        }
+
+        // Check to see if DisplayName property is set
+        internal bool IsSetDisplayName()
+        {
+            return this._displayName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Emails. 
+        /// <para>
+        /// The user's email value.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<Email> Emails
+        {
+            get { return this._emails; }
+            set { this._emails = value; }
+        }
+
+        // Check to see if Emails property is set
+        internal bool IsSetEmails()
+        {
+            return this._emails != null && this._emails.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExternalIds. 
+        /// <para>
+        /// A list of <code>ExternalId</code> objects that contains the identifiers issued to
+        /// this resource by an external identity provider.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<ExternalId> ExternalIds
+        {
+            get { return this._externalIds; }
+            set { this._externalIds = value; }
+        }
+
+        // Check to see if ExternalIds property is set
+        internal bool IsSetExternalIds()
+        {
+            return this._externalIds != null && this._externalIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdentityStoreId. 
+        /// <para>
+        /// The globally unique identifier for the identity store.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=36)]
+        public string IdentityStoreId
+        {
+            get { return this._identityStoreId; }
+            set { this._identityStoreId = value; }
+        }
+
+        // Check to see if IdentityStoreId property is set
+        internal bool IsSetIdentityStoreId()
+        {
+            return this._identityStoreId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Locale. 
+        /// <para>
+        /// A string containing the user's geographical region or location.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string Locale
+        {
+            get { return this._locale; }
+            set { this._locale = value; }
+        }
+
+        // Check to see if Locale property is set
+        internal bool IsSetLocale()
+        {
+            return this._locale != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the user.
+        /// </para>
+        /// </summary>
+        public Name Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NickName. 
+        /// <para>
+        /// An alternative descriptive name for the user.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string NickName
+        {
+            get { return this._nickName; }
+            set { this._nickName = value; }
+        }
+
+        // Check to see if NickName property is set
+        internal bool IsSetNickName()
+        {
+            return this._nickName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PhoneNumbers. 
+        /// <para>
+        /// A list of <code>PhoneNumber</code> objects associated with a user.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<PhoneNumber> PhoneNumbers
+        {
+            get { return this._phoneNumbers; }
+            set { this._phoneNumbers = value; }
+        }
+
+        // Check to see if PhoneNumbers property is set
+        internal bool IsSetPhoneNumbers()
+        {
+            return this._phoneNumbers != null && this._phoneNumbers.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreferredLanguage. 
+        /// <para>
+        /// The preferred language of the user.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string PreferredLanguage
+        {
+            get { return this._preferredLanguage; }
+            set { this._preferredLanguage = value; }
+        }
+
+        // Check to see if PreferredLanguage property is set
+        internal bool IsSetPreferredLanguage()
+        {
+            return this._preferredLanguage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProfileUrl. 
+        /// <para>
+        /// A URL link for the user's profile.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string ProfileUrl
+        {
+            get { return this._profileUrl; }
+            set { this._profileUrl = value; }
+        }
+
+        // Check to see if ProfileUrl property is set
+        internal bool IsSetProfileUrl()
+        {
+            return this._profileUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Timezone. 
+        /// <para>
+        /// The time zone for a user.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string Timezone
+        {
+            get { return this._timezone; }
+            set { this._timezone = value; }
+        }
+
+        // Check to see if Timezone property is set
+        internal bool IsSetTimezone()
+        {
+            return this._timezone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Title. 
+        /// <para>
+        /// A string containing the user's title.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string Title
+        {
+            get { return this._title; }
+            set { this._title = value; }
+        }
+
+        // Check to see if Title property is set
+        internal bool IsSetTitle()
+        {
+            return this._title != null;
+        }
 
         /// <summary>
         /// Gets and sets the property UserId. 
@@ -58,14 +319,13 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// Contains the user’s user name value. The length limit is 128 characters. This value
-        /// can consist of letters, accented characters, symbols, numbers, and punctuation. The
-        /// characters <code>&lt;&gt;;:%</code> are excluded. This value is specified at the time
-        /// the user is created and stored as an attribute of the user object in the identity
-        /// store.
+        /// The user’s username value. The length limit is 128 characters. This value can consist
+        /// of letters, accented characters, symbols, numbers, and punctuation. The characters
+        /// <code>&lt;&gt;;:%</code> are excluded. This value is specified at the time the user
+        /// is created and stored as an attribute of the user object in the identity store.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=128)]
         public string UserName
         {
             get { return this._userName; }
@@ -76,6 +336,25 @@ namespace Amazon.IdentityStore.Model
         internal bool IsSetUserName()
         {
             return this._userName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserType. 
+        /// <para>
+        /// A string indicating the user's type.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string UserType
+        {
+            get { return this._userType; }
+            set { this._userType = value; }
+        }
+
+        // Check to see if UserType property is set
+        internal bool IsSetUserType()
+        {
+            return this._userType != null;
         }
 
     }
