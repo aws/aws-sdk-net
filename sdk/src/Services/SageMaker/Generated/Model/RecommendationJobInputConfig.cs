@@ -33,12 +33,32 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class RecommendationJobInputConfig
     {
+        private RecommendationJobContainerConfig _containerConfig;
         private List<EndpointInputConfiguration> _endpointConfigurations = new List<EndpointInputConfiguration>();
         private int? _jobDurationInSeconds;
         private string _modelPackageVersionArn;
         private RecommendationJobResourceLimit _resourceLimit;
         private TrafficPattern _trafficPattern;
         private string _volumeKmsKeyId;
+
+        /// <summary>
+        /// Gets and sets the property ContainerConfig. 
+        /// <para>
+        /// Specifies mandatory fields for running an Inference Recommender job. The fields specified
+        /// in <code>ContainerConfig</code> override the corresponding fields in the model package.
+        /// </para>
+        /// </summary>
+        public RecommendationJobContainerConfig ContainerConfig
+        {
+            get { return this._containerConfig; }
+            set { this._containerConfig = value; }
+        }
+
+        // Check to see if ContainerConfig property is set
+        internal bool IsSetContainerConfig()
+        {
+            return this._containerConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EndpointConfigurations. 

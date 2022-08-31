@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RecommendationJobInputConfig Object
+    /// Response Unmarshaller for RecommendationJobContainerConfig Object
     /// </summary>  
-    public class RecommendationJobInputConfigUnmarshaller : IUnmarshaller<RecommendationJobInputConfig, XmlUnmarshallerContext>, IUnmarshaller<RecommendationJobInputConfig, JsonUnmarshallerContext>
+    public class RecommendationJobContainerConfigUnmarshaller : IUnmarshaller<RecommendationJobContainerConfig, XmlUnmarshallerContext>, IUnmarshaller<RecommendationJobContainerConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RecommendationJobInputConfig IUnmarshaller<RecommendationJobInputConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RecommendationJobContainerConfig IUnmarshaller<RecommendationJobContainerConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,57 +53,57 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RecommendationJobInputConfig Unmarshall(JsonUnmarshallerContext context)
+        public RecommendationJobContainerConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RecommendationJobInputConfig unmarshalledObject = new RecommendationJobInputConfig();
+            RecommendationJobContainerConfig unmarshalledObject = new RecommendationJobContainerConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ContainerConfig", targetDepth))
-                {
-                    var unmarshaller = RecommendationJobContainerConfigUnmarshaller.Instance;
-                    unmarshalledObject.ContainerConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EndpointConfigurations", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<EndpointInputConfiguration, EndpointInputConfigurationUnmarshaller>(EndpointInputConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.EndpointConfigurations = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("JobDurationInSeconds", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.JobDurationInSeconds = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ModelPackageVersionArn", targetDepth))
+                if (context.TestExpression("Domain", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ModelPackageVersionArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Domain = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ResourceLimit", targetDepth))
-                {
-                    var unmarshaller = RecommendationJobResourceLimitUnmarshaller.Instance;
-                    unmarshalledObject.ResourceLimit = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TrafficPattern", targetDepth))
-                {
-                    var unmarshaller = TrafficPatternUnmarshaller.Instance;
-                    unmarshalledObject.TrafficPattern = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("VolumeKmsKeyId", targetDepth))
+                if (context.TestExpression("Framework", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VolumeKmsKeyId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Framework = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FrameworkVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FrameworkVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NearestModelName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NearestModelName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PayloadConfig", targetDepth))
+                {
+                    var unmarshaller = RecommendationJobPayloadConfigUnmarshaller.Instance;
+                    unmarshalledObject.PayloadConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SupportedInstanceTypes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SupportedInstanceTypes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Task", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Task = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -112,12 +112,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static RecommendationJobInputConfigUnmarshaller _instance = new RecommendationJobInputConfigUnmarshaller();        
+        private static RecommendationJobContainerConfigUnmarshaller _instance = new RecommendationJobContainerConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RecommendationJobInputConfigUnmarshaller Instance
+        public static RecommendationJobContainerConfigUnmarshaller Instance
         {
             get
             {

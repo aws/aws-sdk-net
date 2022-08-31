@@ -35,8 +35,8 @@ namespace Amazon.SageMaker.Model
     /// 
     ///  <note> 
     /// <para>
-    /// HyperParameterTuningResourceConfig supports all of the capabilities of ResourceConfig
-    /// with added functionality for flexible instance management.
+    ///  <code>HyperParameterTuningResourceConfig</code> supports all of the capabilities
+    /// of ResourceConfig with added functionality for flexible instance management.
     /// </para>
     ///  </note>
     /// </summary>
@@ -79,7 +79,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you only want to use a single InstanceConfig inside the <code>HyperParameterTuningResourceConfig</code>
+        /// If you only want to use a single instance configuration inside the <code>HyperParameterTuningResourceConfig</code>
         /// API, do not provide a value for <code>InstanceConfigs</code>. Instead, use <code>InstanceType</code>,
         /// <code>VolumeSizeInGB</code> and <code>InstanceCount</code>. If you use <code>InstanceConfigs</code>,
         /// do not provide values for <code>InstanceType</code>, <code>VolumeSizeInGB</code> or
@@ -142,9 +142,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property VolumeKmsKeyId. 
         /// <para>
-        /// A key used by AWS Key Management Service to encrypt data on the storage volume attached
-        /// to the compute instances used to run the training job. You can use either of the following
-        /// formats to specify a key.
+        /// A key used by Amazon Web Services Key Management Service to encrypt data on the storage
+        /// volume attached to the compute instances used to run the training job. You can use
+        /// either of the following formats to specify a key.
         /// </para>
         ///  
         /// <para>
@@ -156,7 +156,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// Amazon Resource Name (ARN) of a AWS KMS key:
+        /// Amazon Resource Name (ARN) of a KMS key:
         /// </para>
         ///  
         /// <para>
@@ -168,9 +168,10 @@ namespace Amazon.SageMaker.Model
         /// Some instances use local storage, which use a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">hardware
         /// module to encrypt</a> storage volumes. If you choose one of these instance types,
         /// you cannot request a <code>VolumeKmsKeyId</code>. For a list of instance types that
-        /// use local storage, see <a href="https://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance
-        /// store volumes</a>. For more information about AWS Key Management Service, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-kms-permissions.html">AWS
-        /// KMS encryption</a> for more information.
+        /// use local storage, see <a href="http://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance
+        /// store volumes</a>. For more information about Amazon Web Services Key Management Service,
+        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-kms-permissions.html">KMS
+        /// encryption</a> for more information.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]
@@ -199,7 +200,7 @@ namespace Amazon.SageMaker.Model
         /// Some instance types have a fixed total local storage size. If you select one of these
         /// instances for training, <code>VolumeSizeInGB</code> cannot be greater than this total
         /// size. For a list of instance types with local instance storage and their sizes, see
-        /// <a href="https://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance
+        /// <a href="http://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance
         /// store volumes</a>.
         /// </para>
         ///  <note> 

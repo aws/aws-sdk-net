@@ -38,7 +38,7 @@ namespace Amazon.SageMaker.Model
     /// 
     ///  
     /// <para>
-    /// The IAM role or user used to call this API defines the permissions to access the app.
+    /// The IAM role or user passed to this API defines the permissions to access the app.
     /// Once the presigned URL is created, no additional permission is required to access
     /// this URL. IAM authorization policies for this API are also enforced for every HTTP
     /// request and WebSocket frame that attempts to connect to the app.

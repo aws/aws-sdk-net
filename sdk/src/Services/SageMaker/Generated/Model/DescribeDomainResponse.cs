@@ -352,7 +352,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SingleSignOnManagedApplicationInstanceId. 
         /// <para>
-        /// The SSO managed application instance ID.
+        /// The Amazon Web Services SSO managed application instance ID.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

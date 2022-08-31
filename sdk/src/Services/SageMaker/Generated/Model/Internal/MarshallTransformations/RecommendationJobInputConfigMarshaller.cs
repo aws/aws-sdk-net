@@ -45,6 +45,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RecommendationJobInputConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetContainerConfig())
+            {
+                context.Writer.WritePropertyName("ContainerConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RecommendationJobContainerConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.ContainerConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetEndpointConfigurations())
             {
                 context.Writer.WritePropertyName("EndpointConfigurations");
