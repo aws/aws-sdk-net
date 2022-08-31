@@ -1,3 +1,17 @@
+### 3.7.347.0 (2022-08-31 18:30 UTC)
+* CloudFront (3.7.8.4)
+	* Update API documentation for CloudFront origin access control (OAC)
+* IdentityStore (3.7.1.0)
+	* Expand IdentityStore API to support Create, Read, Update, Delete and Get operations for User, Group and GroupMembership resources.
+* IoTThingsGraph (3.7.1.0)
+	* This release deprecates all APIs of the ThingsGraph service
+* IVS (3.7.6.0)
+	* IVS Merge Fragmented Streams. This release adds support for recordingReconnectWindow field in IVS recordingConfigurations. For more information see https://docs.aws.amazon.com/ivs/latest/APIReference/Welcome.html
+* RDSDataService (3.7.1.49)
+	* Documentation updates for RDS Data API
+* SageMaker (3.7.44.0)
+	* SageMaker Inference Recommender now accepts Inference Recommender fields: Domain, Task, Framework, SamplePayloadUrl, SupportedContentTypes, SupportedInstanceTypes, directly in our CreateInferenceRecommendationsJob API through ContainerConfig
+
 ### 3.7.346.0 (2022-08-30 20:32 UTC)
 * GreengrassV2 (3.7.6.0)
 	* Adds topologyFilter to ListInstalledComponentsRequest which allows filtration of components by ROOT or ALL (including root and dependency components). Adds lastStatusChangeTimestamp to ListInstalledComponents response to show the last time a component changed state on a device.
