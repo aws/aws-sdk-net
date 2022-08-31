@@ -52,6 +52,7 @@ namespace Amazon.IVS.Model
     {
         private DestinationConfiguration _destinationConfiguration;
         private string _name;
+        private int? _recordingReconnectWindowSeconds;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private ThumbnailConfiguration _thumbnailConfiguration;
 
@@ -92,6 +93,27 @@ namespace Amazon.IVS.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecordingReconnectWindowSeconds. 
+        /// <para>
+        /// If a broadcast disconnects and then reconnects within the specified interval, the
+        /// multiple streams will be considered a single broadcast and merged together. Default:
+        /// 0.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=300)]
+        public int RecordingReconnectWindowSeconds
+        {
+            get { return this._recordingReconnectWindowSeconds.GetValueOrDefault(); }
+            set { this._recordingReconnectWindowSeconds = value; }
+        }
+
+        // Check to see if RecordingReconnectWindowSeconds property is set
+        internal bool IsSetRecordingReconnectWindowSeconds()
+        {
+            return this._recordingReconnectWindowSeconds.HasValue; 
         }
 
         /// <summary>

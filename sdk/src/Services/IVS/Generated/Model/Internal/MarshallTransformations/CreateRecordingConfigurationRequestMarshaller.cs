@@ -82,6 +82,12 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetRecordingReconnectWindowSeconds())
+                {
+                    context.Writer.WritePropertyName("recordingReconnectWindowSeconds");
+                    context.Writer.Write(publicRequest.RecordingReconnectWindowSeconds);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");
