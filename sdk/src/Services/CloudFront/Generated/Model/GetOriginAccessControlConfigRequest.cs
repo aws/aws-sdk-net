@@ -30,7 +30,7 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the GetOriginAccessControlConfig operation.
-    /// Gets a CloudFront origin access control.
+    /// Gets a CloudFront origin access control configuration.
     /// </summary>
     public partial class GetOriginAccessControlConfigRequest : AmazonCloudFrontRequest
     {

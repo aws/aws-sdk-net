@@ -57,7 +57,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property OriginAccessControl. 
         /// <para>
-        /// Contains an origin access control.
+        /// Contains an origin access control, including its unique identifier.
         /// </para>
         /// </summary>
         public OriginAccessControl OriginAccessControl

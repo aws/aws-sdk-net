@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A CloudFront origin access control.
+    /// A CloudFront origin access control, including its unique identifier.
     /// </summary>
     public partial class OriginAccessControl
     {

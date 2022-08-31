@@ -5762,7 +5762,7 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Gets a CloudFront origin access control.
+        /// Gets a CloudFront origin access control, including its unique identifier.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOriginAccessControl service method.</param>
         /// 
@@ -5785,7 +5785,7 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Gets a CloudFront origin access control.
+        /// Gets a CloudFront origin access control, including its unique identifier.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOriginAccessControl service method.</param>
         /// <param name="cancellationToken">
@@ -5815,7 +5815,7 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Gets a CloudFront origin access control.
+        /// Gets a CloudFront origin access control configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOriginAccessControlConfig service method.</param>
         /// 
@@ -5838,7 +5838,7 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Gets a CloudFront origin access control.
+        /// Gets a CloudFront origin access control configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOriginAccessControlConfig service method.</param>
         /// <param name="cancellationToken">
