@@ -44,6 +44,10 @@ namespace Amazon.IoTThingsGraph
     /// For more information about how AWS IoT Things Graph works, see the <a href="https://docs.aws.amazon.com/thingsgraph/latest/ug/iot-tg-whatis.html">User
     /// Guide</a>.
     /// </para>
+    ///  
+    /// <para>
+    /// The AWS IoT Things Graph service is discontinued.
+    /// </para>
     /// </summary>
     public partial interface IAmazonIoTThingsGraph : IAmazonService, IDisposable
     {
@@ -82,6 +86,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/AssociateEntityToThing">REST API Reference for AssociateEntityToThing Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         AssociateEntityToThingResponse AssociateEntityToThing(AssociateEntityToThingRequest request);
 
 
@@ -114,6 +119,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/AssociateEntityToThing">REST API Reference for AssociateEntityToThing Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         Task<AssociateEntityToThingResponse> AssociateEntityToThingAsync(AssociateEntityToThingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -147,6 +153,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/CreateFlowTemplate">REST API Reference for CreateFlowTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         CreateFlowTemplateResponse CreateFlowTemplate(CreateFlowTemplateRequest request);
 
 
@@ -180,6 +187,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/CreateFlowTemplate">REST API Reference for CreateFlowTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         Task<CreateFlowTemplateResponse> CreateFlowTemplateAsync(CreateFlowTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -236,6 +244,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/CreateSystemInstance">REST API Reference for CreateSystemInstance Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         CreateSystemInstanceResponse CreateSystemInstance(CreateSystemInstanceRequest request);
 
 
@@ -292,6 +301,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/CreateSystemInstance">REST API Reference for CreateSystemInstance Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         Task<CreateSystemInstanceResponse> CreateSystemInstanceAsync(CreateSystemInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -319,6 +329,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/CreateSystemTemplate">REST API Reference for CreateSystemTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         CreateSystemTemplateResponse CreateSystemTemplate(CreateSystemTemplateRequest request);
 
 
@@ -346,6 +357,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/CreateSystemTemplate">REST API Reference for CreateSystemTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         Task<CreateSystemTemplateResponse> CreateSystemTemplateAsync(CreateSystemTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -374,6 +386,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeleteFlowTemplate">REST API Reference for DeleteFlowTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         DeleteFlowTemplateResponse DeleteFlowTemplate(DeleteFlowTemplateRequest request);
 
 
@@ -402,6 +415,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeleteFlowTemplate">REST API Reference for DeleteFlowTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         Task<DeleteFlowTemplateResponse> DeleteFlowTemplateAsync(DeleteFlowTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -412,7 +426,7 @@ namespace Amazon.IoTThingsGraph
         /// <summary>
         /// Deletes the specified namespace. This action deletes all of the entities in the namespace.
         /// Delete the systems and flows that use entities in the namespace before performing
-        /// this action.
+        /// this action. This action takes no request parameters.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteNamespace service method.</param>
         /// 
@@ -424,6 +438,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeleteNamespace">REST API Reference for DeleteNamespace Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         DeleteNamespaceResponse DeleteNamespace(DeleteNamespaceRequest request);
 
 
@@ -431,7 +446,7 @@ namespace Amazon.IoTThingsGraph
         /// <summary>
         /// Deletes the specified namespace. This action deletes all of the entities in the namespace.
         /// Delete the systems and flows that use entities in the namespace before performing
-        /// this action.
+        /// this action. This action takes no request parameters.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteNamespace service method.</param>
         /// <param name="cancellationToken">
@@ -446,6 +461,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeleteNamespace">REST API Reference for DeleteNamespace Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         Task<DeleteNamespaceResponse> DeleteNamespaceAsync(DeleteNamespaceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -478,6 +494,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeleteSystemInstance">REST API Reference for DeleteSystemInstance Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         DeleteSystemInstanceResponse DeleteSystemInstance(DeleteSystemInstanceRequest request);
 
 
@@ -510,6 +527,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeleteSystemInstance">REST API Reference for DeleteSystemInstance Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         Task<DeleteSystemInstanceResponse> DeleteSystemInstanceAsync(DeleteSystemInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -538,6 +556,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeleteSystemTemplate">REST API Reference for DeleteSystemTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         DeleteSystemTemplateResponse DeleteSystemTemplate(DeleteSystemTemplateRequest request);
 
 
@@ -566,6 +585,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeleteSystemTemplate">REST API Reference for DeleteSystemTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         Task<DeleteSystemTemplateResponse> DeleteSystemTemplateAsync(DeleteSystemTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -623,6 +643,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeploySystemInstance">REST API Reference for DeploySystemInstance Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         DeploySystemInstanceResponse DeploySystemInstance(DeploySystemInstanceRequest request);
 
 
@@ -680,6 +701,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeploySystemInstance">REST API Reference for DeploySystemInstance Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         Task<DeploySystemInstanceResponse> DeploySystemInstanceAsync(DeploySystemInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -707,6 +729,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeprecateFlowTemplate">REST API Reference for DeprecateFlowTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         DeprecateFlowTemplateResponse DeprecateFlowTemplate(DeprecateFlowTemplateRequest request);
 
 
@@ -734,6 +757,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeprecateFlowTemplate">REST API Reference for DeprecateFlowTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         Task<DeprecateFlowTemplateResponse> DeprecateFlowTemplateAsync(DeprecateFlowTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -760,6 +784,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeprecateSystemTemplate">REST API Reference for DeprecateSystemTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         DeprecateSystemTemplateResponse DeprecateSystemTemplate(DeprecateSystemTemplateRequest request);
 
 
@@ -786,6 +811,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeprecateSystemTemplate">REST API Reference for DeprecateSystemTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         Task<DeprecateSystemTemplateResponse> DeprecateSystemTemplateAsync(DeprecateSystemTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -813,6 +839,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DescribeNamespace">REST API Reference for DescribeNamespace Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         DescribeNamespaceResponse DescribeNamespace(DescribeNamespaceRequest request);
 
 
@@ -840,6 +867,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DescribeNamespace">REST API Reference for DescribeNamespace Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         Task<DescribeNamespaceResponse> DescribeNamespaceAsync(DescribeNamespaceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -868,6 +896,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DissociateEntityFromThing">REST API Reference for DissociateEntityFromThing Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         DissociateEntityFromThingResponse DissociateEntityFromThing(DissociateEntityFromThingRequest request);
 
 
@@ -896,6 +925,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DissociateEntityFromThing">REST API Reference for DissociateEntityFromThing Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         Task<DissociateEntityFromThingResponse> DissociateEntityFromThingAsync(DissociateEntityFromThingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -964,6 +994,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetEntities">REST API Reference for GetEntities Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         GetEntitiesResponse GetEntities(GetEntitiesRequest request);
 
 
@@ -1032,6 +1063,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetEntities">REST API Reference for GetEntities Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         Task<GetEntitiesResponse> GetEntitiesAsync(GetEntitiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1059,6 +1091,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetFlowTemplate">REST API Reference for GetFlowTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         GetFlowTemplateResponse GetFlowTemplate(GetFlowTemplateRequest request);
 
 
@@ -1086,6 +1119,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetFlowTemplate">REST API Reference for GetFlowTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         Task<GetFlowTemplateResponse> GetFlowTemplateAsync(GetFlowTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1114,6 +1148,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetFlowTemplateRevisions">REST API Reference for GetFlowTemplateRevisions Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         GetFlowTemplateRevisionsResponse GetFlowTemplateRevisions(GetFlowTemplateRevisionsRequest request);
 
 
@@ -1142,6 +1177,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetFlowTemplateRevisions">REST API Reference for GetFlowTemplateRevisions Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         Task<GetFlowTemplateRevisionsResponse> GetFlowTemplateRevisionsAsync(GetFlowTemplateRevisionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1165,6 +1201,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetNamespaceDeletionStatus">REST API Reference for GetNamespaceDeletionStatus Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         GetNamespaceDeletionStatusResponse GetNamespaceDeletionStatus(GetNamespaceDeletionStatusRequest request);
 
 
@@ -1188,6 +1225,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetNamespaceDeletionStatus">REST API Reference for GetNamespaceDeletionStatus Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         Task<GetNamespaceDeletionStatusResponse> GetNamespaceDeletionStatusAsync(GetNamespaceDeletionStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1214,6 +1252,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetSystemInstance">REST API Reference for GetSystemInstance Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         GetSystemInstanceResponse GetSystemInstance(GetSystemInstanceRequest request);
 
 
@@ -1240,6 +1279,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetSystemInstance">REST API Reference for GetSystemInstance Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         Task<GetSystemInstanceResponse> GetSystemInstanceAsync(GetSystemInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1266,6 +1306,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetSystemTemplate">REST API Reference for GetSystemTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         GetSystemTemplateResponse GetSystemTemplate(GetSystemTemplateRequest request);
 
 
@@ -1292,6 +1333,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetSystemTemplate">REST API Reference for GetSystemTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         Task<GetSystemTemplateResponse> GetSystemTemplateAsync(GetSystemTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1321,6 +1363,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetSystemTemplateRevisions">REST API Reference for GetSystemTemplateRevisions Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         GetSystemTemplateRevisionsResponse GetSystemTemplateRevisions(GetSystemTemplateRevisionsRequest request);
 
 
@@ -1350,6 +1393,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetSystemTemplateRevisions">REST API Reference for GetSystemTemplateRevisions Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         Task<GetSystemTemplateRevisionsResponse> GetSystemTemplateRevisionsAsync(GetSystemTemplateRevisionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1376,6 +1420,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetUploadStatus">REST API Reference for GetUploadStatus Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         GetUploadStatusResponse GetUploadStatus(GetUploadStatusRequest request);
 
 
@@ -1402,6 +1447,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetUploadStatus">REST API Reference for GetUploadStatus Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         Task<GetUploadStatusResponse> GetUploadStatusAsync(GetUploadStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1428,6 +1474,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/ListFlowExecutionMessages">REST API Reference for ListFlowExecutionMessages Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         ListFlowExecutionMessagesResponse ListFlowExecutionMessages(ListFlowExecutionMessagesRequest request);
 
 
@@ -1454,6 +1501,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/ListFlowExecutionMessages">REST API Reference for ListFlowExecutionMessages Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         Task<ListFlowExecutionMessagesResponse> ListFlowExecutionMessagesAsync(ListFlowExecutionMessagesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1480,6 +1528,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
 
 
@@ -1506,6 +1555,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1530,6 +1580,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchEntities">REST API Reference for SearchEntities Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         SearchEntitiesResponse SearchEntities(SearchEntitiesRequest request);
 
 
@@ -1554,6 +1605,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchEntities">REST API Reference for SearchEntities Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         Task<SearchEntitiesResponse> SearchEntitiesAsync(SearchEntitiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1580,6 +1632,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchFlowExecutions">REST API Reference for SearchFlowExecutions Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         SearchFlowExecutionsResponse SearchFlowExecutions(SearchFlowExecutionsRequest request);
 
 
@@ -1606,6 +1659,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchFlowExecutions">REST API Reference for SearchFlowExecutions Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         Task<SearchFlowExecutionsResponse> SearchFlowExecutionsAsync(SearchFlowExecutionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1629,6 +1683,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchFlowTemplates">REST API Reference for SearchFlowTemplates Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         SearchFlowTemplatesResponse SearchFlowTemplates(SearchFlowTemplatesRequest request);
 
 
@@ -1652,6 +1707,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchFlowTemplates">REST API Reference for SearchFlowTemplates Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         Task<SearchFlowTemplatesResponse> SearchFlowTemplatesAsync(SearchFlowTemplatesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1675,6 +1731,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchSystemInstances">REST API Reference for SearchSystemInstances Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         SearchSystemInstancesResponse SearchSystemInstances(SearchSystemInstancesRequest request);
 
 
@@ -1698,6 +1755,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchSystemInstances">REST API Reference for SearchSystemInstances Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         Task<SearchSystemInstancesResponse> SearchSystemInstancesAsync(SearchSystemInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1722,6 +1780,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchSystemTemplates">REST API Reference for SearchSystemTemplates Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         SearchSystemTemplatesResponse SearchSystemTemplates(SearchSystemTemplatesRequest request);
 
 
@@ -1746,6 +1805,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchSystemTemplates">REST API Reference for SearchSystemTemplates Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         Task<SearchSystemTemplatesResponse> SearchSystemTemplatesAsync(SearchSystemTemplatesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1785,6 +1845,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchThings">REST API Reference for SearchThings Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         SearchThingsResponse SearchThings(SearchThingsRequest request);
 
 
@@ -1824,6 +1885,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchThings">REST API Reference for SearchThings Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         Task<SearchThingsResponse> SearchThingsAsync(SearchThingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1850,6 +1912,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/TagResource">REST API Reference for TagResource Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         TagResourceResponse TagResource(TagResourceRequest request);
 
 
@@ -1876,6 +1939,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/TagResource">REST API Reference for TagResource Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1905,6 +1969,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/UndeploySystemInstance">REST API Reference for UndeploySystemInstance Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         UndeploySystemInstanceResponse UndeploySystemInstance(UndeploySystemInstanceRequest request);
 
 
@@ -1934,6 +1999,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/UndeploySystemInstance">REST API Reference for UndeploySystemInstance Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         Task<UndeploySystemInstanceResponse> UndeploySystemInstanceAsync(UndeploySystemInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1960,6 +2026,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         UntagResourceResponse UntagResource(UntagResourceRequest request);
 
 
@@ -1986,6 +2053,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2015,6 +2083,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/UpdateFlowTemplate">REST API Reference for UpdateFlowTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         UpdateFlowTemplateResponse UpdateFlowTemplate(UpdateFlowTemplateRequest request);
 
 
@@ -2044,6 +2113,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/UpdateFlowTemplate">REST API Reference for UpdateFlowTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         Task<UpdateFlowTemplateResponse> UpdateFlowTemplateAsync(UpdateFlowTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2072,6 +2142,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/UpdateSystemTemplate">REST API Reference for UpdateSystemTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         UpdateSystemTemplateResponse UpdateSystemTemplate(UpdateSystemTemplateRequest request);
 
 
@@ -2100,6 +2171,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/UpdateSystemTemplate">REST API Reference for UpdateSystemTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         Task<UpdateSystemTemplateResponse> UpdateSystemTemplateAsync(UpdateSystemTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2150,6 +2222,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/UploadEntityDefinitions">REST API Reference for UploadEntityDefinitions Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         UploadEntityDefinitionsResponse UploadEntityDefinitions(UploadEntityDefinitionsRequest request);
 
 
@@ -2200,6 +2273,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/UploadEntityDefinitions">REST API Reference for UploadEntityDefinitions Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         Task<UploadEntityDefinitionsResponse> UploadEntityDefinitionsAsync(UploadEntityDefinitionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

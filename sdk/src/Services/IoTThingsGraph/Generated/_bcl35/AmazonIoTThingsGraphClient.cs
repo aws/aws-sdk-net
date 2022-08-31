@@ -48,6 +48,10 @@ namespace Amazon.IoTThingsGraph
     /// For more information about how AWS IoT Things Graph works, see the <a href="https://docs.aws.amazon.com/thingsgraph/latest/ug/iot-tg-whatis.html">User
     /// Guide</a>.
     /// </para>
+    ///  
+    /// <para>
+    /// The AWS IoT Things Graph service is discontinued.
+    /// </para>
     /// </summary>
     public partial class AmazonIoTThingsGraphClient : AmazonServiceClient, IAmazonIoTThingsGraph
     {
@@ -294,6 +298,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/AssociateEntityToThing">REST API Reference for AssociateEntityToThing Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual AssociateEntityToThingResponse AssociateEntityToThing(AssociateEntityToThingRequest request)
         {
             var options = new InvokeOptions();
@@ -315,6 +320,7 @@ namespace Amazon.IoTThingsGraph
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateEntityToThing
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/AssociateEntityToThing">REST API Reference for AssociateEntityToThing Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual IAsyncResult BeginAssociateEntityToThing(AssociateEntityToThingRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -332,6 +338,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// <returns>Returns a  AssociateEntityToThingResult from IoTThingsGraph.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/AssociateEntityToThing">REST API Reference for AssociateEntityToThing Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual AssociateEntityToThingResponse EndAssociateEntityToThing(IAsyncResult asyncResult)
         {
             return EndInvoke<AssociateEntityToThingResponse>(asyncResult);
@@ -367,6 +374,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/CreateFlowTemplate">REST API Reference for CreateFlowTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual CreateFlowTemplateResponse CreateFlowTemplate(CreateFlowTemplateRequest request)
         {
             var options = new InvokeOptions();
@@ -388,6 +396,7 @@ namespace Amazon.IoTThingsGraph
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateFlowTemplate
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/CreateFlowTemplate">REST API Reference for CreateFlowTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual IAsyncResult BeginCreateFlowTemplate(CreateFlowTemplateRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -405,6 +414,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// <returns>Returns a  CreateFlowTemplateResult from IoTThingsGraph.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/CreateFlowTemplate">REST API Reference for CreateFlowTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual CreateFlowTemplateResponse EndCreateFlowTemplate(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateFlowTemplateResponse>(asyncResult);
@@ -463,6 +473,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/CreateSystemInstance">REST API Reference for CreateSystemInstance Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual CreateSystemInstanceResponse CreateSystemInstance(CreateSystemInstanceRequest request)
         {
             var options = new InvokeOptions();
@@ -484,6 +495,7 @@ namespace Amazon.IoTThingsGraph
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSystemInstance
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/CreateSystemInstance">REST API Reference for CreateSystemInstance Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual IAsyncResult BeginCreateSystemInstance(CreateSystemInstanceRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -501,6 +513,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// <returns>Returns a  CreateSystemInstanceResult from IoTThingsGraph.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/CreateSystemInstance">REST API Reference for CreateSystemInstance Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual CreateSystemInstanceResponse EndCreateSystemInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateSystemInstanceResponse>(asyncResult);
@@ -530,6 +543,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/CreateSystemTemplate">REST API Reference for CreateSystemTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual CreateSystemTemplateResponse CreateSystemTemplate(CreateSystemTemplateRequest request)
         {
             var options = new InvokeOptions();
@@ -551,6 +565,7 @@ namespace Amazon.IoTThingsGraph
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSystemTemplate
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/CreateSystemTemplate">REST API Reference for CreateSystemTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual IAsyncResult BeginCreateSystemTemplate(CreateSystemTemplateRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -568,6 +583,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// <returns>Returns a  CreateSystemTemplateResult from IoTThingsGraph.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/CreateSystemTemplate">REST API Reference for CreateSystemTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual CreateSystemTemplateResponse EndCreateSystemTemplate(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateSystemTemplateResponse>(asyncResult);
@@ -598,6 +614,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeleteFlowTemplate">REST API Reference for DeleteFlowTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual DeleteFlowTemplateResponse DeleteFlowTemplate(DeleteFlowTemplateRequest request)
         {
             var options = new InvokeOptions();
@@ -619,6 +636,7 @@ namespace Amazon.IoTThingsGraph
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteFlowTemplate
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeleteFlowTemplate">REST API Reference for DeleteFlowTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual IAsyncResult BeginDeleteFlowTemplate(DeleteFlowTemplateRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -636,6 +654,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// <returns>Returns a  DeleteFlowTemplateResult from IoTThingsGraph.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeleteFlowTemplate">REST API Reference for DeleteFlowTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual DeleteFlowTemplateResponse EndDeleteFlowTemplate(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteFlowTemplateResponse>(asyncResult);
@@ -648,7 +667,7 @@ namespace Amazon.IoTThingsGraph
         /// <summary>
         /// Deletes the specified namespace. This action deletes all of the entities in the namespace.
         /// Delete the systems and flows that use entities in the namespace before performing
-        /// this action.
+        /// this action. This action takes no request parameters.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteNamespace service method.</param>
         /// 
@@ -660,6 +679,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeleteNamespace">REST API Reference for DeleteNamespace Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual DeleteNamespaceResponse DeleteNamespace(DeleteNamespaceRequest request)
         {
             var options = new InvokeOptions();
@@ -681,6 +701,7 @@ namespace Amazon.IoTThingsGraph
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteNamespace
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeleteNamespace">REST API Reference for DeleteNamespace Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual IAsyncResult BeginDeleteNamespace(DeleteNamespaceRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -698,6 +719,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// <returns>Returns a  DeleteNamespaceResult from IoTThingsGraph.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeleteNamespace">REST API Reference for DeleteNamespace Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual DeleteNamespaceResponse EndDeleteNamespace(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteNamespaceResponse>(asyncResult);
@@ -732,6 +754,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeleteSystemInstance">REST API Reference for DeleteSystemInstance Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual DeleteSystemInstanceResponse DeleteSystemInstance(DeleteSystemInstanceRequest request)
         {
             var options = new InvokeOptions();
@@ -753,6 +776,7 @@ namespace Amazon.IoTThingsGraph
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSystemInstance
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeleteSystemInstance">REST API Reference for DeleteSystemInstance Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual IAsyncResult BeginDeleteSystemInstance(DeleteSystemInstanceRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -770,6 +794,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// <returns>Returns a  DeleteSystemInstanceResult from IoTThingsGraph.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeleteSystemInstance">REST API Reference for DeleteSystemInstance Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual DeleteSystemInstanceResponse EndDeleteSystemInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteSystemInstanceResponse>(asyncResult);
@@ -800,6 +825,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeleteSystemTemplate">REST API Reference for DeleteSystemTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual DeleteSystemTemplateResponse DeleteSystemTemplate(DeleteSystemTemplateRequest request)
         {
             var options = new InvokeOptions();
@@ -821,6 +847,7 @@ namespace Amazon.IoTThingsGraph
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSystemTemplate
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeleteSystemTemplate">REST API Reference for DeleteSystemTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual IAsyncResult BeginDeleteSystemTemplate(DeleteSystemTemplateRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -838,6 +865,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// <returns>Returns a  DeleteSystemTemplateResult from IoTThingsGraph.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeleteSystemTemplate">REST API Reference for DeleteSystemTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual DeleteSystemTemplateResponse EndDeleteSystemTemplate(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteSystemTemplateResponse>(asyncResult);
@@ -897,6 +925,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeploySystemInstance">REST API Reference for DeploySystemInstance Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual DeploySystemInstanceResponse DeploySystemInstance(DeploySystemInstanceRequest request)
         {
             var options = new InvokeOptions();
@@ -918,6 +947,7 @@ namespace Amazon.IoTThingsGraph
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeploySystemInstance
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeploySystemInstance">REST API Reference for DeploySystemInstance Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual IAsyncResult BeginDeploySystemInstance(DeploySystemInstanceRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -935,6 +965,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// <returns>Returns a  DeploySystemInstanceResult from IoTThingsGraph.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeploySystemInstance">REST API Reference for DeploySystemInstance Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual DeploySystemInstanceResponse EndDeploySystemInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<DeploySystemInstanceResponse>(asyncResult);
@@ -964,6 +995,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeprecateFlowTemplate">REST API Reference for DeprecateFlowTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual DeprecateFlowTemplateResponse DeprecateFlowTemplate(DeprecateFlowTemplateRequest request)
         {
             var options = new InvokeOptions();
@@ -985,6 +1017,7 @@ namespace Amazon.IoTThingsGraph
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeprecateFlowTemplate
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeprecateFlowTemplate">REST API Reference for DeprecateFlowTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual IAsyncResult BeginDeprecateFlowTemplate(DeprecateFlowTemplateRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1002,6 +1035,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// <returns>Returns a  DeprecateFlowTemplateResult from IoTThingsGraph.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeprecateFlowTemplate">REST API Reference for DeprecateFlowTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual DeprecateFlowTemplateResponse EndDeprecateFlowTemplate(IAsyncResult asyncResult)
         {
             return EndInvoke<DeprecateFlowTemplateResponse>(asyncResult);
@@ -1030,6 +1064,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeprecateSystemTemplate">REST API Reference for DeprecateSystemTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual DeprecateSystemTemplateResponse DeprecateSystemTemplate(DeprecateSystemTemplateRequest request)
         {
             var options = new InvokeOptions();
@@ -1051,6 +1086,7 @@ namespace Amazon.IoTThingsGraph
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeprecateSystemTemplate
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeprecateSystemTemplate">REST API Reference for DeprecateSystemTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual IAsyncResult BeginDeprecateSystemTemplate(DeprecateSystemTemplateRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1068,6 +1104,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// <returns>Returns a  DeprecateSystemTemplateResult from IoTThingsGraph.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DeprecateSystemTemplate">REST API Reference for DeprecateSystemTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual DeprecateSystemTemplateResponse EndDeprecateSystemTemplate(IAsyncResult asyncResult)
         {
             return EndInvoke<DeprecateSystemTemplateResponse>(asyncResult);
@@ -1097,6 +1134,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DescribeNamespace">REST API Reference for DescribeNamespace Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual DescribeNamespaceResponse DescribeNamespace(DescribeNamespaceRequest request)
         {
             var options = new InvokeOptions();
@@ -1118,6 +1156,7 @@ namespace Amazon.IoTThingsGraph
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeNamespace
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DescribeNamespace">REST API Reference for DescribeNamespace Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual IAsyncResult BeginDescribeNamespace(DescribeNamespaceRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1135,6 +1174,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// <returns>Returns a  DescribeNamespaceResult from IoTThingsGraph.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DescribeNamespace">REST API Reference for DescribeNamespace Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual DescribeNamespaceResponse EndDescribeNamespace(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeNamespaceResponse>(asyncResult);
@@ -1165,6 +1205,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DissociateEntityFromThing">REST API Reference for DissociateEntityFromThing Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual DissociateEntityFromThingResponse DissociateEntityFromThing(DissociateEntityFromThingRequest request)
         {
             var options = new InvokeOptions();
@@ -1186,6 +1227,7 @@ namespace Amazon.IoTThingsGraph
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDissociateEntityFromThing
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DissociateEntityFromThing">REST API Reference for DissociateEntityFromThing Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual IAsyncResult BeginDissociateEntityFromThing(DissociateEntityFromThingRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1203,6 +1245,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// <returns>Returns a  DissociateEntityFromThingResult from IoTThingsGraph.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/DissociateEntityFromThing">REST API Reference for DissociateEntityFromThing Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual DissociateEntityFromThingResponse EndDissociateEntityFromThing(IAsyncResult asyncResult)
         {
             return EndInvoke<DissociateEntityFromThingResponse>(asyncResult);
@@ -1273,6 +1316,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetEntities">REST API Reference for GetEntities Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual GetEntitiesResponse GetEntities(GetEntitiesRequest request)
         {
             var options = new InvokeOptions();
@@ -1294,6 +1338,7 @@ namespace Amazon.IoTThingsGraph
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEntities
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetEntities">REST API Reference for GetEntities Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual IAsyncResult BeginGetEntities(GetEntitiesRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1311,6 +1356,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// <returns>Returns a  GetEntitiesResult from IoTThingsGraph.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetEntities">REST API Reference for GetEntities Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual GetEntitiesResponse EndGetEntities(IAsyncResult asyncResult)
         {
             return EndInvoke<GetEntitiesResponse>(asyncResult);
@@ -1340,6 +1386,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetFlowTemplate">REST API Reference for GetFlowTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual GetFlowTemplateResponse GetFlowTemplate(GetFlowTemplateRequest request)
         {
             var options = new InvokeOptions();
@@ -1361,6 +1408,7 @@ namespace Amazon.IoTThingsGraph
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFlowTemplate
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetFlowTemplate">REST API Reference for GetFlowTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual IAsyncResult BeginGetFlowTemplate(GetFlowTemplateRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1378,6 +1426,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// <returns>Returns a  GetFlowTemplateResult from IoTThingsGraph.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetFlowTemplate">REST API Reference for GetFlowTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual GetFlowTemplateResponse EndGetFlowTemplate(IAsyncResult asyncResult)
         {
             return EndInvoke<GetFlowTemplateResponse>(asyncResult);
@@ -1408,6 +1457,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetFlowTemplateRevisions">REST API Reference for GetFlowTemplateRevisions Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual GetFlowTemplateRevisionsResponse GetFlowTemplateRevisions(GetFlowTemplateRevisionsRequest request)
         {
             var options = new InvokeOptions();
@@ -1429,6 +1479,7 @@ namespace Amazon.IoTThingsGraph
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFlowTemplateRevisions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetFlowTemplateRevisions">REST API Reference for GetFlowTemplateRevisions Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual IAsyncResult BeginGetFlowTemplateRevisions(GetFlowTemplateRevisionsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1446,6 +1497,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// <returns>Returns a  GetFlowTemplateRevisionsResult from IoTThingsGraph.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetFlowTemplateRevisions">REST API Reference for GetFlowTemplateRevisions Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual GetFlowTemplateRevisionsResponse EndGetFlowTemplateRevisions(IAsyncResult asyncResult)
         {
             return EndInvoke<GetFlowTemplateRevisionsResponse>(asyncResult);
@@ -1471,6 +1523,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetNamespaceDeletionStatus">REST API Reference for GetNamespaceDeletionStatus Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual GetNamespaceDeletionStatusResponse GetNamespaceDeletionStatus(GetNamespaceDeletionStatusRequest request)
         {
             var options = new InvokeOptions();
@@ -1492,6 +1545,7 @@ namespace Amazon.IoTThingsGraph
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetNamespaceDeletionStatus
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetNamespaceDeletionStatus">REST API Reference for GetNamespaceDeletionStatus Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual IAsyncResult BeginGetNamespaceDeletionStatus(GetNamespaceDeletionStatusRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1509,6 +1563,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// <returns>Returns a  GetNamespaceDeletionStatusResult from IoTThingsGraph.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetNamespaceDeletionStatus">REST API Reference for GetNamespaceDeletionStatus Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual GetNamespaceDeletionStatusResponse EndGetNamespaceDeletionStatus(IAsyncResult asyncResult)
         {
             return EndInvoke<GetNamespaceDeletionStatusResponse>(asyncResult);
@@ -1537,6 +1592,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetSystemInstance">REST API Reference for GetSystemInstance Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual GetSystemInstanceResponse GetSystemInstance(GetSystemInstanceRequest request)
         {
             var options = new InvokeOptions();
@@ -1558,6 +1614,7 @@ namespace Amazon.IoTThingsGraph
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSystemInstance
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetSystemInstance">REST API Reference for GetSystemInstance Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual IAsyncResult BeginGetSystemInstance(GetSystemInstanceRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1575,6 +1632,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// <returns>Returns a  GetSystemInstanceResult from IoTThingsGraph.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetSystemInstance">REST API Reference for GetSystemInstance Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual GetSystemInstanceResponse EndGetSystemInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<GetSystemInstanceResponse>(asyncResult);
@@ -1603,6 +1661,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetSystemTemplate">REST API Reference for GetSystemTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual GetSystemTemplateResponse GetSystemTemplate(GetSystemTemplateRequest request)
         {
             var options = new InvokeOptions();
@@ -1624,6 +1683,7 @@ namespace Amazon.IoTThingsGraph
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSystemTemplate
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetSystemTemplate">REST API Reference for GetSystemTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual IAsyncResult BeginGetSystemTemplate(GetSystemTemplateRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1641,6 +1701,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// <returns>Returns a  GetSystemTemplateResult from IoTThingsGraph.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetSystemTemplate">REST API Reference for GetSystemTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual GetSystemTemplateResponse EndGetSystemTemplate(IAsyncResult asyncResult)
         {
             return EndInvoke<GetSystemTemplateResponse>(asyncResult);
@@ -1672,6 +1733,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetSystemTemplateRevisions">REST API Reference for GetSystemTemplateRevisions Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual GetSystemTemplateRevisionsResponse GetSystemTemplateRevisions(GetSystemTemplateRevisionsRequest request)
         {
             var options = new InvokeOptions();
@@ -1693,6 +1755,7 @@ namespace Amazon.IoTThingsGraph
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSystemTemplateRevisions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetSystemTemplateRevisions">REST API Reference for GetSystemTemplateRevisions Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual IAsyncResult BeginGetSystemTemplateRevisions(GetSystemTemplateRevisionsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1710,6 +1773,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// <returns>Returns a  GetSystemTemplateRevisionsResult from IoTThingsGraph.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetSystemTemplateRevisions">REST API Reference for GetSystemTemplateRevisions Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual GetSystemTemplateRevisionsResponse EndGetSystemTemplateRevisions(IAsyncResult asyncResult)
         {
             return EndInvoke<GetSystemTemplateRevisionsResponse>(asyncResult);
@@ -1738,6 +1802,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetUploadStatus">REST API Reference for GetUploadStatus Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual GetUploadStatusResponse GetUploadStatus(GetUploadStatusRequest request)
         {
             var options = new InvokeOptions();
@@ -1759,6 +1824,7 @@ namespace Amazon.IoTThingsGraph
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetUploadStatus
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetUploadStatus">REST API Reference for GetUploadStatus Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual IAsyncResult BeginGetUploadStatus(GetUploadStatusRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1776,6 +1842,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// <returns>Returns a  GetUploadStatusResult from IoTThingsGraph.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/GetUploadStatus">REST API Reference for GetUploadStatus Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual GetUploadStatusResponse EndGetUploadStatus(IAsyncResult asyncResult)
         {
             return EndInvoke<GetUploadStatusResponse>(asyncResult);
@@ -1804,6 +1871,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/ListFlowExecutionMessages">REST API Reference for ListFlowExecutionMessages Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual ListFlowExecutionMessagesResponse ListFlowExecutionMessages(ListFlowExecutionMessagesRequest request)
         {
             var options = new InvokeOptions();
@@ -1825,6 +1893,7 @@ namespace Amazon.IoTThingsGraph
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFlowExecutionMessages
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/ListFlowExecutionMessages">REST API Reference for ListFlowExecutionMessages Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual IAsyncResult BeginListFlowExecutionMessages(ListFlowExecutionMessagesRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1842,6 +1911,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// <returns>Returns a  ListFlowExecutionMessagesResult from IoTThingsGraph.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/ListFlowExecutionMessages">REST API Reference for ListFlowExecutionMessages Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual ListFlowExecutionMessagesResponse EndListFlowExecutionMessages(IAsyncResult asyncResult)
         {
             return EndInvoke<ListFlowExecutionMessagesResponse>(asyncResult);
@@ -1870,6 +1940,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
             var options = new InvokeOptions();
@@ -1891,6 +1962,7 @@ namespace Amazon.IoTThingsGraph
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1908,6 +1980,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// <returns>Returns a  ListTagsForResourceResult from IoTThingsGraph.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsForResourceResponse>(asyncResult);
@@ -1934,6 +2007,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchEntities">REST API Reference for SearchEntities Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual SearchEntitiesResponse SearchEntities(SearchEntitiesRequest request)
         {
             var options = new InvokeOptions();
@@ -1955,6 +2029,7 @@ namespace Amazon.IoTThingsGraph
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchEntities
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchEntities">REST API Reference for SearchEntities Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual IAsyncResult BeginSearchEntities(SearchEntitiesRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -1972,6 +2047,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// <returns>Returns a  SearchEntitiesResult from IoTThingsGraph.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchEntities">REST API Reference for SearchEntities Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual SearchEntitiesResponse EndSearchEntities(IAsyncResult asyncResult)
         {
             return EndInvoke<SearchEntitiesResponse>(asyncResult);
@@ -2000,6 +2076,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchFlowExecutions">REST API Reference for SearchFlowExecutions Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual SearchFlowExecutionsResponse SearchFlowExecutions(SearchFlowExecutionsRequest request)
         {
             var options = new InvokeOptions();
@@ -2021,6 +2098,7 @@ namespace Amazon.IoTThingsGraph
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchFlowExecutions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchFlowExecutions">REST API Reference for SearchFlowExecutions Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual IAsyncResult BeginSearchFlowExecutions(SearchFlowExecutionsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2038,6 +2116,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// <returns>Returns a  SearchFlowExecutionsResult from IoTThingsGraph.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchFlowExecutions">REST API Reference for SearchFlowExecutions Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual SearchFlowExecutionsResponse EndSearchFlowExecutions(IAsyncResult asyncResult)
         {
             return EndInvoke<SearchFlowExecutionsResponse>(asyncResult);
@@ -2063,6 +2142,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchFlowTemplates">REST API Reference for SearchFlowTemplates Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual SearchFlowTemplatesResponse SearchFlowTemplates(SearchFlowTemplatesRequest request)
         {
             var options = new InvokeOptions();
@@ -2084,6 +2164,7 @@ namespace Amazon.IoTThingsGraph
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchFlowTemplates
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchFlowTemplates">REST API Reference for SearchFlowTemplates Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual IAsyncResult BeginSearchFlowTemplates(SearchFlowTemplatesRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2101,6 +2182,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// <returns>Returns a  SearchFlowTemplatesResult from IoTThingsGraph.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchFlowTemplates">REST API Reference for SearchFlowTemplates Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual SearchFlowTemplatesResponse EndSearchFlowTemplates(IAsyncResult asyncResult)
         {
             return EndInvoke<SearchFlowTemplatesResponse>(asyncResult);
@@ -2126,6 +2208,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchSystemInstances">REST API Reference for SearchSystemInstances Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual SearchSystemInstancesResponse SearchSystemInstances(SearchSystemInstancesRequest request)
         {
             var options = new InvokeOptions();
@@ -2147,6 +2230,7 @@ namespace Amazon.IoTThingsGraph
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchSystemInstances
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchSystemInstances">REST API Reference for SearchSystemInstances Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual IAsyncResult BeginSearchSystemInstances(SearchSystemInstancesRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2164,6 +2248,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// <returns>Returns a  SearchSystemInstancesResult from IoTThingsGraph.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchSystemInstances">REST API Reference for SearchSystemInstances Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual SearchSystemInstancesResponse EndSearchSystemInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<SearchSystemInstancesResponse>(asyncResult);
@@ -2190,6 +2275,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchSystemTemplates">REST API Reference for SearchSystemTemplates Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual SearchSystemTemplatesResponse SearchSystemTemplates(SearchSystemTemplatesRequest request)
         {
             var options = new InvokeOptions();
@@ -2211,6 +2297,7 @@ namespace Amazon.IoTThingsGraph
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchSystemTemplates
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchSystemTemplates">REST API Reference for SearchSystemTemplates Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual IAsyncResult BeginSearchSystemTemplates(SearchSystemTemplatesRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2228,6 +2315,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// <returns>Returns a  SearchSystemTemplatesResult from IoTThingsGraph.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchSystemTemplates">REST API Reference for SearchSystemTemplates Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual SearchSystemTemplatesResponse EndSearchSystemTemplates(IAsyncResult asyncResult)
         {
             return EndInvoke<SearchSystemTemplatesResponse>(asyncResult);
@@ -2269,6 +2357,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchThings">REST API Reference for SearchThings Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual SearchThingsResponse SearchThings(SearchThingsRequest request)
         {
             var options = new InvokeOptions();
@@ -2290,6 +2379,7 @@ namespace Amazon.IoTThingsGraph
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchThings
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchThings">REST API Reference for SearchThings Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual IAsyncResult BeginSearchThings(SearchThingsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2307,6 +2397,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// <returns>Returns a  SearchThingsResult from IoTThingsGraph.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/SearchThings">REST API Reference for SearchThings Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual SearchThingsResponse EndSearchThings(IAsyncResult asyncResult)
         {
             return EndInvoke<SearchThingsResponse>(asyncResult);
@@ -2335,6 +2426,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/TagResource">REST API Reference for TagResource Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
             var options = new InvokeOptions();
@@ -2356,6 +2448,7 @@ namespace Amazon.IoTThingsGraph
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/TagResource">REST API Reference for TagResource Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2373,6 +2466,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// <returns>Returns a  TagResourceResult from IoTThingsGraph.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/TagResource">REST API Reference for TagResource Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual TagResourceResponse EndTagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<TagResourceResponse>(asyncResult);
@@ -2404,6 +2498,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/UndeploySystemInstance">REST API Reference for UndeploySystemInstance Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual UndeploySystemInstanceResponse UndeploySystemInstance(UndeploySystemInstanceRequest request)
         {
             var options = new InvokeOptions();
@@ -2425,6 +2520,7 @@ namespace Amazon.IoTThingsGraph
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUndeploySystemInstance
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/UndeploySystemInstance">REST API Reference for UndeploySystemInstance Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual IAsyncResult BeginUndeploySystemInstance(UndeploySystemInstanceRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2442,6 +2538,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// <returns>Returns a  UndeploySystemInstanceResult from IoTThingsGraph.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/UndeploySystemInstance">REST API Reference for UndeploySystemInstance Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual UndeploySystemInstanceResponse EndUndeploySystemInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<UndeploySystemInstanceResponse>(asyncResult);
@@ -2470,6 +2567,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
             var options = new InvokeOptions();
@@ -2491,6 +2589,7 @@ namespace Amazon.IoTThingsGraph
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2508,6 +2607,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// <returns>Returns a  UntagResourceResult from IoTThingsGraph.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<UntagResourceResponse>(asyncResult);
@@ -2539,6 +2639,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/UpdateFlowTemplate">REST API Reference for UpdateFlowTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual UpdateFlowTemplateResponse UpdateFlowTemplate(UpdateFlowTemplateRequest request)
         {
             var options = new InvokeOptions();
@@ -2560,6 +2661,7 @@ namespace Amazon.IoTThingsGraph
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateFlowTemplate
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/UpdateFlowTemplate">REST API Reference for UpdateFlowTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual IAsyncResult BeginUpdateFlowTemplate(UpdateFlowTemplateRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2577,6 +2679,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// <returns>Returns a  UpdateFlowTemplateResult from IoTThingsGraph.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/UpdateFlowTemplate">REST API Reference for UpdateFlowTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual UpdateFlowTemplateResponse EndUpdateFlowTemplate(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateFlowTemplateResponse>(asyncResult);
@@ -2607,6 +2710,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/UpdateSystemTemplate">REST API Reference for UpdateSystemTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual UpdateSystemTemplateResponse UpdateSystemTemplate(UpdateSystemTemplateRequest request)
         {
             var options = new InvokeOptions();
@@ -2628,6 +2732,7 @@ namespace Amazon.IoTThingsGraph
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSystemTemplate
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/UpdateSystemTemplate">REST API Reference for UpdateSystemTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual IAsyncResult BeginUpdateSystemTemplate(UpdateSystemTemplateRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2645,6 +2750,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// <returns>Returns a  UpdateSystemTemplateResult from IoTThingsGraph.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/UpdateSystemTemplate">REST API Reference for UpdateSystemTemplate Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual UpdateSystemTemplateResponse EndUpdateSystemTemplate(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateSystemTemplateResponse>(asyncResult);
@@ -2697,6 +2803,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/UploadEntityDefinitions">REST API Reference for UploadEntityDefinitions Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual UploadEntityDefinitionsResponse UploadEntityDefinitions(UploadEntityDefinitionsRequest request)
         {
             var options = new InvokeOptions();
@@ -2718,6 +2825,7 @@ namespace Amazon.IoTThingsGraph
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUploadEntityDefinitions
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/UploadEntityDefinitions">REST API Reference for UploadEntityDefinitions Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual IAsyncResult BeginUploadEntityDefinitions(UploadEntityDefinitionsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
@@ -2735,6 +2843,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         /// <returns>Returns a  UploadEntityDefinitionsResult from IoTThingsGraph.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotthingsgraph-2018-09-06/UploadEntityDefinitions">REST API Reference for UploadEntityDefinitions Operation</seealso>
+        [Obsolete("since: 2022-08-30")]
         public virtual UploadEntityDefinitionsResponse EndUploadEntityDefinitions(IAsyncResult asyncResult)
         {
             return EndInvoke<UploadEntityDefinitionsResponse>(asyncResult);
