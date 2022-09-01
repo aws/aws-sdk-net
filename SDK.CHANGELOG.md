@@ -1,3 +1,14 @@
+### 3.7.348.0 (2022-09-01 18:24 UTC)
+* CodeGuruReviewer (3.7.6.49)
+	* Documentation updates to fix formatting issues in CLI and SDK documentation.
+* ControlTower (3.7.0.0)
+	* This release contains the first SDK for AWS Control Tower. It introduces  a new set of APIs: EnableControl, DisableControl, GetControlOperation, and ListEnabledControls.
+* Route53 (3.7.3.32)
+	* Documentation updates for Amazon Route 53.
+* Core 3.7.12.28
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.347.0 (2022-08-31 18:30 UTC)
 * CloudFront (3.7.8.4)
 	* Update API documentation for CloudFront origin access control (OAC)
