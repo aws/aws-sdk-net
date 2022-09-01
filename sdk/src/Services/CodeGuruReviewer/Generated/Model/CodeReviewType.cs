@@ -29,19 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruReviewer.Model
 {
     /// <summary>
-    /// The type of a code review. There are two code review types: 
+    /// The type of a code review. There are two code review types:
     /// 
     ///  <ul> <li> 
     /// <para>
     ///  <code>PullRequest</code> - A code review that is automatically triggered by a pull
-    /// request on an associated repository. 
+    /// request on an associated repository.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <code>RepositoryAnalysis</code> - A code review that analyzes all code under a specified
     /// branch in an associated repository. The associated repository is specified using its
-    /// ARN in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
-    /// <code>CreateCodeReview</code> </a>. 
+    /// ARN in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -72,9 +71,8 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property RepositoryAnalysis. 
         /// <para>
-        ///  A code review that analyzes all code under a specified branch in an associated repository.
-        /// The associated repository is specified using its ARN in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
-        /// <code>CreateCodeReview</code> </a>. 
+        /// A code review that analyzes all code under a specified branch in an associated repository.
+        /// The associated repository is specified using its ARN in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

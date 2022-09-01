@@ -38,8 +38,8 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        ///  An array of key-value pairs used to tag an associated repository. A tag is a custom
-        /// attribute label with two parts: 
+        /// An array of key-value pairs used to tag an associated repository. A tag is a custom
+        /// attribute label with two parts:
         /// </para>
         ///  <ul> <li> 
         /// <para>

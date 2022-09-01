@@ -40,10 +40,8 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-        /// <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling
-        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-        /// <code>ListRepositoryAssociations</code> </a>. 
+        /// The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a>
+        /// object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1600)]
@@ -62,8 +60,8 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        ///  An array of key-value pairs used to tag an associated repository. A tag is a custom
-        /// attribute label with two parts: 
+        /// An array of key-value pairs used to tag an associated repository. A tag is a custom
+        /// attribute label with two parts:
         /// </para>
         ///  <ul> <li> 
         /// <para>

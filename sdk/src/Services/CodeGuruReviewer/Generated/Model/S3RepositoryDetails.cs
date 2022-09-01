@@ -61,9 +61,9 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property CodeArtifacts. 
         /// <para>
-        ///  A <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes
+        /// A <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes
         /// the S3 object key for a source code .zip file and for a build artifacts .zip file
-        /// that contains .jar or .class files. 
+        /// that contains .jar or .class files.
         /// </para>
         /// </summary>
         public CodeArtifacts CodeArtifacts

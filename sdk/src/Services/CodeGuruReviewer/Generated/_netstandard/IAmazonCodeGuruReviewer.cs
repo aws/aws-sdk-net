@@ -46,11 +46,11 @@ namespace Amazon.CodeGuruReviewer
     /// </para>
     ///  
     /// <para>
-    ///  To improve the security of your CodeGuru Reviewer API calls, you can establish a
-    /// private connection between your VPC and CodeGuru Reviewer by creating an <i>interface
-    /// VPC endpoint</i>. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/vpc-interface-endpoints.html">CodeGuru
+    /// To improve the security of your CodeGuru Reviewer API calls, you can establish a private
+    /// connection between your VPC and CodeGuru Reviewer by creating an <i>interface VPC
+    /// endpoint</i>. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/vpc-interface-endpoints.html">CodeGuru
     /// Reviewer and interface VPC endpoints (Amazon Web Services PrivateLink)</a> in the
-    /// <i>Amazon CodeGuru Reviewer User Guide</i>. 
+    /// <i>Amazon CodeGuru Reviewer User Guide</i>.
     /// </para>
     /// </summary>
     public partial interface IAmazonCodeGuruReviewer : IAmazonService, IDisposable
@@ -67,7 +67,7 @@ namespace Amazon.CodeGuruReviewer
 
 
         /// <summary>
-        /// Use to associate an Amazon Web Services CodeCommit repository or a repostory managed
+        /// Use to associate an Amazon Web Services CodeCommit repository or a repository managed
         /// by Amazon Web Services CodeStar Connections with Amazon CodeGuru Reviewer. When you
         /// associate a repository, CodeGuru Reviewer reviews source code changes in the repository's
         /// pull requests and provides automatic recommendations. You can view recommendations
@@ -90,7 +90,7 @@ namespace Amazon.CodeGuruReviewer
         /// </para>
         ///  <note> 
         /// <para>
-        ///  You cannot use the CodeGuru Reviewer SDK or the Amazon Web Services CLI to associate
+        /// You cannot use the CodeGuru Reviewer SDK or the Amazon Web Services CLI to associate
         /// a GitHub repository with Amazon CodeGuru Reviewer. To associate a GitHub repository,
         /// use the console. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/getting-started-with-guru.html">Getting
         /// started with CodeGuru Reviewer</a> in the <i>CodeGuru Reviewer User Guide.</i> 
@@ -129,10 +129,10 @@ namespace Amazon.CodeGuruReviewer
 
 
         /// <summary>
-        /// Use to create a code review with a <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">
-        /// <code>CodeReviewType</code> </a> of <code>RepositoryAnalysis</code>. This type of
-        /// code review analyzes all code under a specified branch in an associated repository.
-        /// <code>PullRequest</code> code reviews are automatically triggered by a pull request.
+        /// Use to create a code review with a <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">CodeReviewType</a>
+        /// of <code>RepositoryAnalysis</code>. This type of code review analyzes all code under
+        /// a specified branch in an associated repository. <code>PullRequest</code> code reviews
+        /// are automatically triggered by a pull request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCodeReview service method.</param>
         /// <param name="cancellationToken">
@@ -235,9 +235,8 @@ namespace Amazon.CodeGuruReviewer
 
 
         /// <summary>
-        /// Returns a <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-        /// <code>RepositoryAssociation</code> </a> object that contains information about the
-        /// requested repository association.
+        /// Returns a <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a>
+        /// object that contains information about the requested repository association.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRepositoryAssociation service method.</param>
         /// <param name="cancellationToken">
@@ -337,9 +336,8 @@ namespace Amazon.CodeGuruReviewer
 
 
         /// <summary>
-        /// Returns a list of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RecommendationFeedbackSummary.html">
-        /// <code>RecommendationFeedbackSummary</code> </a> objects that contain customer recommendation
-        /// feedback for all CodeGuru Reviewer users.
+        /// Returns a list of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RecommendationFeedbackSummary.html">RecommendationFeedbackSummary</a>
+        /// objects that contain customer recommendation feedback for all CodeGuru Reviewer users.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRecommendationFeedback service method.</param>
         /// <param name="cancellationToken">
@@ -405,13 +403,12 @@ namespace Amazon.CodeGuruReviewer
 
 
         /// <summary>
-        /// Returns a list of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html">
-        /// <code>RepositoryAssociationSummary</code> </a> objects that contain summary information
-        /// about a repository association. You can filter the returned list by <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-ProviderType">
-        /// <code>ProviderType</code> </a>, <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-Name">
-        /// <code>Name</code> </a>, <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-State">
-        /// <code>State</code> </a>, and <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-Owner">
-        /// <code>Owner</code> </a>.
+        /// Returns a list of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html">RepositoryAssociationSummary</a>
+        /// objects that contain summary information about a repository association. You can filter
+        /// the returned list by <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-ProviderType">ProviderType</a>,
+        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-Name">Name</a>,
+        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-State">State</a>,
+        /// and <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-Owner">Owner</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRepositoryAssociations service method.</param>
         /// <param name="cancellationToken">

@@ -29,9 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruReviewer.Model
 {
     /// <summary>
-    /// Information about a repository association. The <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_DescribeRepositoryAssociation.html">
-    /// <code>DescribeRepositoryAssociation</code> </a> operation returns a <code>RepositoryAssociation</code>
-    /// object.
+    /// Information about a repository association. The <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_DescribeRepositoryAssociation.html">DescribeRepositoryAssociation</a>
+    /// operation returns a <code>RepositoryAssociation</code> object.
     /// </summary>
     public partial class RepositoryAssociation
     {
@@ -89,11 +88,10 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property ConnectionArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection.
+        /// The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection.
         /// Its format is <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
-        /// <code>Connection</code> </a> in the <i>Amazon Web Services CodeStar Connections API
-        /// Reference</i>. 
+        /// For more information, see <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a>
+        /// in the <i>Amazon Web Services CodeStar Connections API Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -140,7 +138,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The ID of the Amazon Web Services KMS key that is associated with this respository
+        /// The ID of the Amazon Web Services KMS key that is associated with this repository
         /// association.
         /// </para>
         ///  </li> </ul>
@@ -262,47 +260,46 @@ namespace Amazon.CodeGuruReviewer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Associated</b>: The repository association is complete. 
+        ///  <b>Associated</b>: The repository association is complete.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Associating</b>: CodeGuru Reviewer is: 
+        ///  <b>Associating</b>: CodeGuru Reviewer is:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  Setting up pull request notifications. This is required for pull requests to trigger
-        /// a CodeGuru Reviewer review. 
+        /// Setting up pull request notifications. This is required for pull requests to trigger
+        /// a CodeGuru Reviewer review.
         /// </para>
         ///  <note> 
         /// <para>
-        ///  If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub
+        /// If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub
         /// Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks
         /// in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks,
-        /// reviews of code in your repository cannot be triggered. 
+        /// reviews of code in your repository cannot be triggered.
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
-        ///  Setting up source code access. This is required for CodeGuru Reviewer to securely
-        /// clone code in your repository. 
+        /// Setting up source code access. This is required for CodeGuru Reviewer to securely
+        /// clone code in your repository.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <b>Failed</b>: The repository failed to associate or disassociate. 
+        ///  <b>Failed</b>: The repository failed to associate or disassociate.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request
-        /// notifications and source code access. 
+        /// notifications and source code access.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository.
         /// You can create a new association with this repository if you want to review source
-        /// code in it later. You can control access to code reviews created in an associated
-        /// repository with tags after it has been disassociated. For more information, see <a
-        /// href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
+        /// code in it later. You can control access to code reviews created in anassociated repository
+        /// with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
         /// tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer
-        /// User Guide</i>. 
+        /// User Guide</i>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

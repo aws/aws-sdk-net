@@ -40,7 +40,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property FindingsCount. 
         /// <para>
-        ///  Total number of recommendations found in the code review. 
+        /// Total number of recommendations found in the code review.
         /// </para>
         /// </summary>
         public long FindingsCount
@@ -60,7 +60,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <para>
         ///  <code>MeteredLinesOfCodeCount</code> is the number of lines of code in the repository
         /// where the code review happened. This does not include non-code lines such as comments
-        /// and blank lines. 
+        /// and blank lines.
         /// </para>
         /// </summary>
         public long MeteredLinesOfCodeCount

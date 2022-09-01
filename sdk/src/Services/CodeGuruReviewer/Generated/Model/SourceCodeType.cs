@@ -42,9 +42,9 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property BranchDiff. 
         /// <para>
-        ///  A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-        /// <code>SourceCodeType</code> </a> that specifies a source branch name and a destination
-        /// branch name in an associated repository. 
+        /// A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a>
+        /// that specifies a source branch name and a destination branch name in an associated
+        /// repository.
         /// </para>
         /// </summary>
         public BranchDiffSourceCodeType BranchDiff
@@ -62,9 +62,8 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property CommitDiff. 
         /// <para>
-        ///  A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-        /// <code>SourceCodeType</code> </a> that specifies a commit diff created by a pull request
-        /// on an associated repository. 
+        /// A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a>
+        /// that specifies a commit diff created by a pull request on an associated repository.
         /// </para>
         /// </summary>
         public CommitDiffSourceCodeType CommitDiff
@@ -100,7 +99,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// Metadata that is associated with a code review. This applies to any type of code review
         /// supported by CodeGuru Reviewer. The <code>RequestMetadaa</code> field captures any
         /// event metadata. For example, it might capture metadata associated with an event trigger,
-        /// such as a push or a pull request. 
+        /// such as a push or a pull request.
         /// </para>
         /// </summary>
         public RequestMetadata RequestMetadata
@@ -118,13 +117,12 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property S3BucketRepository. 
         /// <para>
-        ///  Information about an associated repository in an S3 bucket that includes its name
+        /// Information about an associated repository in an S3 bucket that includes its name
         /// and an <code>S3RepositoryDetails</code> object. The <code>S3RepositoryDetails</code>
         /// object includes the name of an S3 bucket, an S3 key for a source code .zip file, and
         /// an S3 key for a build artifacts .zip file. <code>S3BucketRepository</code> is required
-        /// in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-        /// <code>SourceCodeType</code> </a> for <code>S3BucketRepository</code> based code reviews.
-        /// 
+        /// in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a>
+        /// for <code>S3BucketRepository</code> based code reviews.
         /// </para>
         /// </summary>
         public S3BucketRepository S3BucketRepository

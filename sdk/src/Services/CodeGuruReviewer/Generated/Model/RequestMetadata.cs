@@ -106,7 +106,6 @@ namespace Amazon.CodeGuruReviewer.Model
         /// association's <code>ProviderType</code> is <code>S3Bucket</code> and the CI/CD repository
         /// vendor name is GitHub. For more information, see the definition for <code>ProviderType</code>
         /// in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a>.
-        /// 
         /// </para>
         /// </summary>
         public VendorName VendorName

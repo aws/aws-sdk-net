@@ -31,8 +31,7 @@ namespace Amazon.CodeGuruReviewer.Model
     /// <summary>
     /// A code review type that analyzes all code under a specified branch in an associated
     /// repository. The associated repository is specified using its ARN when you call <a
-    /// href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
-    /// <code>CreateCodeReview</code> </a>.
+    /// href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.
     /// </summary>
     public partial class RepositoryAnalysis
     {
@@ -42,9 +41,8 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property RepositoryHead. 
         /// <para>
-        ///  A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-        /// <code>SourceCodeType</code> </a> that specifies the tip of a branch in an associated
-        /// repository. 
+        /// A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a>
+        /// that specifies the tip of a branch in an associated repository.
         /// </para>
         /// </summary>
         public RepositoryHeadSourceCodeType RepositoryHead

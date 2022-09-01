@@ -29,10 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruReviewer.Model
 {
     /// <summary>
-    /// A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
-    /// <code>SourceCodeType</code> </a> that specifies the commit diff for a pull request
-    /// on an associated repository. The <code>SourceCommit</code> and <code>DestinationCommit</code>
-    /// fields are required to do a pull request code review.
+    /// A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a>
+    /// that specifies the commit diff for a pull request on an associated repository. The
+    /// <code>SourceCommit</code> and <code>DestinationCommit</code> fields are required to
+    /// do a pull request code review.
     /// </summary>
     public partial class CommitDiffSourceCodeType
     {
@@ -43,8 +43,8 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property DestinationCommit. 
         /// <para>
-        ///  The SHA of the destination commit used to generate a commit diff. This field is required
-        /// for a pull request code review. 
+        /// The SHA of the destination commit used to generate a commit diff. This field is required
+        /// for a pull request code review.
         /// </para>
         /// </summary>
         [AWSProperty(Min=6, Max=64)]
@@ -82,8 +82,8 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property SourceCommit. 
         /// <para>
-        ///  The SHA of the source commit used to generate a commit diff. This field is required
-        /// for a pull request code review. 
+        /// The SHA of the source commit used to generate a commit diff. This field is required
+        /// for a pull request code review.
         /// </para>
         /// </summary>
         [AWSProperty(Min=6, Max=64)]

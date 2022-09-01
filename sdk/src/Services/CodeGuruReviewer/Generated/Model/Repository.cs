@@ -80,7 +80,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property GitHubEnterpriseServer. 
         /// <para>
-        ///  Information about a GitHub Enterprise Server repository. 
+        /// Information about a GitHub Enterprise Server repository.
         /// </para>
         /// </summary>
         public ThirdPartySourceRepository GitHubEnterpriseServer

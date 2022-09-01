@@ -43,8 +43,8 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property CodeReviewArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-        /// <code>CodeReview</code> </a> object. 
+        /// The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a>
+        /// object. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]
@@ -63,7 +63,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property CreatedTimeStamp. 
         /// <para>
-        ///  The time at which the feedback was created. 
+        /// The time at which the feedback was created.
         /// </para>
         /// </summary>
         public DateTime CreatedTimeStamp
@@ -81,7 +81,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedTimeStamp. 
         /// <para>
-        ///  The time at which the feedback was last updated. 
+        /// The time at which the feedback was last updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedTimeStamp
@@ -99,8 +99,8 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property Reactions. 
         /// <para>
-        ///  List for storing reactions. Reactions are utf-8 text code for emojis. You can send
-        /// an empty list to clear off all your feedback. 
+        /// List for storing reactions. Reactions are utf-8 text code for emojis. You can send
+        /// an empty list to clear off all your feedback.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
@@ -119,8 +119,8 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property RecommendationId. 
         /// <para>
-        ///  The recommendation ID that can be used to track the provided recommendations. Later
-        /// on it can be used to collect the feedback. 
+        /// The recommendation ID that can be used to track the provided recommendations. Later
+        /// on it can be used to collect the feedback.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -139,7 +139,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
-        ///  The ID of the user that made the API call. 
+        /// The ID of the user that made the API call.
         /// </para>
         ///  
         /// <para>
@@ -147,7 +147,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// Services account ID or an Amazon Resource Name (ARN). For more information, see <a
         /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
         /// Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management
-        /// User Guide</i>. 
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
