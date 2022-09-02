@@ -87,7 +87,9 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Permissions. 
         /// <para>
-        /// Permissions assigned to the security profile.
+        /// Permissions assigned to the security profile. For a list of valid permissions, see
+        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
+        /// of security profile permissions</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=500)]

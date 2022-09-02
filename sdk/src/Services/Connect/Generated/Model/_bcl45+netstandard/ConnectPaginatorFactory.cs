@@ -300,6 +300,22 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for SearchQueues operation
+        ///</summary>
+        public ISearchQueuesPaginator SearchQueues(SearchQueuesRequest request) 
+        {
+            return new SearchQueuesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchRoutingProfiles operation
+        ///</summary>
+        public ISearchRoutingProfilesPaginator SearchRoutingProfiles(SearchRoutingProfilesRequest request) 
+        {
+            return new SearchRoutingProfilesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for SearchSecurityProfiles operation
         ///</summary>
         public ISearchSecurityProfilesPaginator SearchSecurityProfiles(SearchSecurityProfilesRequest request) 

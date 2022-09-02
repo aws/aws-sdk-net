@@ -29,12 +29,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// This is the response object from the ListSecurityProfilePermissions operation.
+    /// This is the response object from the SearchQueues operation.
     /// </summary>
-    public partial class ListSecurityProfilePermissionsResponse : AmazonWebServiceResponse
+    public partial class SearchQueuesResponse : AmazonWebServiceResponse
     {
+        private long? _approximateTotalCount;
         private string _nextToken;
-        private List<string> _permissions = new List<string>();
+        private List<Queue> _queues = new List<Queue>();
+
+        /// <summary>
+        /// Gets and sets the property ApproximateTotalCount. 
+        /// <para>
+        /// The total number of queues which matched your search query.
+        /// </para>
+        /// </summary>
+        public long ApproximateTotalCount
+        {
+            get { return this._approximateTotalCount.GetValueOrDefault(); }
+            set { this._approximateTotalCount = value; }
+        }
+
+        // Check to see if ApproximateTotalCount property is set
+        internal bool IsSetApproximateTotalCount()
+        {
+            return this._approximateTotalCount.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -42,6 +61,7 @@ namespace Amazon.Connect.Model
         /// If there are additional results, this is the token for the next set of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2500)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -55,24 +75,21 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Permissions. 
+        /// Gets and sets the property Queues. 
         /// <para>
-        /// The permissions granted to the security profile. For a complete list of valid permissions,
-        /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List
-        /// of security profile permissions</a>.
+        /// Information about the queues.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=500)]
-        public List<string> Permissions
+        public List<Queue> Queues
         {
-            get { return this._permissions; }
-            set { this._permissions = value; }
+            get { return this._queues; }
+            set { this._queues = value; }
         }
 
-        // Check to see if Permissions property is set
-        internal bool IsSetPermissions()
+        // Check to see if Queues property is set
+        internal bool IsSetQueues()
         {
-            return this._permissions != null && this._permissions.Count > 0; 
+            return this._queues != null && this._queues.Count > 0; 
         }
 
     }

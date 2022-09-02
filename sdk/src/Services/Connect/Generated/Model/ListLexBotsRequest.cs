@@ -34,8 +34,9 @@ namespace Amazon.Connect.Model
     /// 
     ///  
     /// <para>
-    /// Returns a paginated list of all the Amazon Lex bots currently associated with the
-    /// instance.
+    /// Returns a paginated list of all the Amazon Lex V1 bots currently associated with the
+    /// instance. To return both Amazon Lex V1 and V2 bots, use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListBots.html">ListBots</a>
+    /// API. 
     /// </para>
     /// </summary>
     public partial class ListLexBotsRequest : AmazonConnectRequest

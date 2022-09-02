@@ -29,32 +29,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// The search criteria to be used to return users.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// The <code>Username</code>, <code>Firstname</code>, and <code>Lastname</code> fields
-    /// support "contains" queries with a minimum of 2 characters and a maximum of 25 characters.
-    /// Any queries with character lengths outside of this range result in empty results.
-    /// 
-    /// </para>
-    ///  </note>
+    /// The search criteria to be used to return routing profiles.
     /// </summary>
-    public partial class UserSearchCriteria
+    public partial class RoutingProfileSearchCriteria
     {
-        private List<UserSearchCriteria> _andConditions = new List<UserSearchCriteria>();
-        private HierarchyGroupCondition _hierarchyGroupCondition;
-        private List<UserSearchCriteria> _orConditions = new List<UserSearchCriteria>();
+        private List<RoutingProfileSearchCriteria> _andConditions = new List<RoutingProfileSearchCriteria>();
+        private List<RoutingProfileSearchCriteria> _orConditions = new List<RoutingProfileSearchCriteria>();
         private StringCondition _stringCondition;
 
         /// <summary>
         /// Gets and sets the property AndConditions. 
         /// <para>
-        /// A list of conditions which would be applied together with an <code>AND</code> condition.
-        /// 
+        /// A list of conditions which would be applied together with an AND condition.
         /// </para>
         /// </summary>
-        public List<UserSearchCriteria> AndConditions
+        public List<RoutingProfileSearchCriteria> AndConditions
         {
             get { return this._andConditions; }
             set { this._andConditions = value; }
@@ -67,30 +56,12 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HierarchyGroupCondition. 
-        /// <para>
-        /// A leaf node condition which can be used to specify a hierarchy group condition.
-        /// </para>
-        /// </summary>
-        public HierarchyGroupCondition HierarchyGroupCondition
-        {
-            get { return this._hierarchyGroupCondition; }
-            set { this._hierarchyGroupCondition = value; }
-        }
-
-        // Check to see if HierarchyGroupCondition property is set
-        internal bool IsSetHierarchyGroupCondition()
-        {
-            return this._hierarchyGroupCondition != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property OrConditions. 
         /// <para>
-        /// A list of conditions which would be applied together with an <code>OR</code> condition.
+        /// A list of conditions which would be applied together with an OR condition.
         /// </para>
         /// </summary>
-        public List<UserSearchCriteria> OrConditions
+        public List<RoutingProfileSearchCriteria> OrConditions
         {
             get { return this._orConditions; }
             set { this._orConditions = value; }
@@ -103,10 +74,7 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StringCondition. 
-        /// <para>
-        /// A leaf node condition which can be used to specify a string condition.
-        /// </para>
+        /// Gets and sets the property StringCondition.
         /// </summary>
         public StringCondition StringCondition
         {

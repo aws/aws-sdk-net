@@ -29,22 +29,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListBots operation.
+    /// Container for the parameters to the SearchQueues operation.
     /// This API is in preview release for Amazon Connect and is subject to change.
     /// 
     ///  
     /// <para>
-    /// For the specified version of Amazon Lex, returns a paginated list of all the Amazon
-    /// Lex bots currently associated with the instance. Use this API to returns both Amazon
-    /// Lex V1 and V2 bots.
+    /// Searches queues in an Amazon Connect instance, with optional filtering.
     /// </para>
     /// </summary>
-    public partial class ListBotsRequest : AmazonConnectRequest
+    public partial class SearchQueuesRequest : AmazonConnectRequest
     {
         private string _instanceId;
-        private LexVersion _lexVersion;
         private int? _maxResults;
         private string _nextToken;
+        private QueueSearchCriteria _searchCriteria;
+        private QueueSearchFilter _searchFilter;
 
         /// <summary>
         /// Gets and sets the property InstanceId. 
@@ -67,31 +66,12 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LexVersion. 
-        /// <para>
-        /// The version of Amazon Lex or Amazon Lex V2.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public LexVersion LexVersion
-        {
-            get { return this._lexVersion; }
-            set { this._lexVersion = value; }
-        }
-
-        // Check to see if LexVersion property is set
-        internal bool IsSetLexVersion()
-        {
-            return this._lexVersion != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to return per page.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=25)]
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -111,6 +91,7 @@ namespace Amazon.Connect.Model
         /// in the next request to retrieve the next set of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=2500)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -121,6 +102,42 @@ namespace Amazon.Connect.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SearchCriteria. 
+        /// <para>
+        /// The search criteria to be used to return queues.
+        /// </para>
+        /// </summary>
+        public QueueSearchCriteria SearchCriteria
+        {
+            get { return this._searchCriteria; }
+            set { this._searchCriteria = value; }
+        }
+
+        // Check to see if SearchCriteria property is set
+        internal bool IsSetSearchCriteria()
+        {
+            return this._searchCriteria != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SearchFilter. 
+        /// <para>
+        /// Filters to be applied to search results.
+        /// </para>
+        /// </summary>
+        public QueueSearchFilter SearchFilter
+        {
+            get { return this._searchFilter; }
+            set { this._searchFilter = value; }
+        }
+
+        // Check to see if SearchFilter property is set
+        internal bool IsSetSearchFilter()
+        {
+            return this._searchFilter != null;
         }
 
     }

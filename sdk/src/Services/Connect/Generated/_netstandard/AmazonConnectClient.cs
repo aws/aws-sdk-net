@@ -2482,6 +2482,10 @@ namespace Amazon.Connect
         /// Contact information remains available in Amazon Connect for 24 months, and then it
         /// is deleted.
         /// </para>
+        ///  
+        /// <para>
+        /// Only data from November 12, 2021, and later is returned by this API.
+        /// </para>
         ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeContact service method.</param>
@@ -4218,7 +4222,8 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// For the specified version of Amazon Lex, returns a paginated list of all the Amazon
-        /// Lex bots currently associated with the instance. 
+        /// Lex bots currently associated with the instance. Use this API to returns both Amazon
+        /// Lex V1 and V2 bots.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListBots service method.</param>
@@ -4796,8 +4801,9 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        /// Returns a paginated list of all the Amazon Lex bots currently associated with the
-        /// instance.
+        /// Returns a paginated list of all the Amazon Lex V1 bots currently associated with the
+        /// instance. To return both Amazon Lex V1 and V2 bots, use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListBots.html">ListBots</a>
+        /// API. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListLexBots service method.</param>
@@ -5891,6 +5897,114 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = SearchAvailablePhoneNumbersResponseUnmarshaller.Instance;
 
             return InvokeAsync<SearchAvailablePhoneNumbersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SearchQueues
+
+        internal virtual SearchQueuesResponse SearchQueues(SearchQueuesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchQueuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchQueuesResponseUnmarshaller.Instance;
+
+            return Invoke<SearchQueuesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Searches queues in an Amazon Connect instance, with optional filtering.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchQueues service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchQueues service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchQueues">REST API Reference for SearchQueues Operation</seealso>
+        public virtual Task<SearchQueuesResponse> SearchQueuesAsync(SearchQueuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchQueuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchQueuesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SearchQueuesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SearchRoutingProfiles
+
+        internal virtual SearchRoutingProfilesResponse SearchRoutingProfiles(SearchRoutingProfilesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchRoutingProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchRoutingProfilesResponseUnmarshaller.Instance;
+
+            return Invoke<SearchRoutingProfilesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Searches routing profiles in an Amazon Connect instance, with optional filtering.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchRoutingProfiles service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchRoutingProfiles service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchRoutingProfiles">REST API Reference for SearchRoutingProfiles Operation</seealso>
+        public virtual Task<SearchRoutingProfilesResponse> SearchRoutingProfilesAsync(SearchRoutingProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchRoutingProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchRoutingProfilesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SearchRoutingProfilesResponse>(request, options, cancellationToken);
         }
 
         #endregion

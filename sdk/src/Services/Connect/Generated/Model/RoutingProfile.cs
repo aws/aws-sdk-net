@@ -38,6 +38,8 @@ namespace Amazon.Connect.Model
         private string _instanceId;
         private List<MediaConcurrency> _mediaConcurrencies = new List<MediaConcurrency>();
         private string _name;
+        private long? _numberOfAssociatedQueues;
+        private long? _numberOfAssociatedUsers;
         private string _routingProfileArn;
         private string _routingProfileId;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -135,6 +137,42 @@ namespace Amazon.Connect.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NumberOfAssociatedQueues. 
+        /// <para>
+        /// The number of associated queues in routing profile.
+        /// </para>
+        /// </summary>
+        public long NumberOfAssociatedQueues
+        {
+            get { return this._numberOfAssociatedQueues.GetValueOrDefault(); }
+            set { this._numberOfAssociatedQueues = value; }
+        }
+
+        // Check to see if NumberOfAssociatedQueues property is set
+        internal bool IsSetNumberOfAssociatedQueues()
+        {
+            return this._numberOfAssociatedQueues.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NumberOfAssociatedUsers. 
+        /// <para>
+        /// The number of associated users in routing profile.
+        /// </para>
+        /// </summary>
+        public long NumberOfAssociatedUsers
+        {
+            get { return this._numberOfAssociatedUsers.GetValueOrDefault(); }
+            set { this._numberOfAssociatedUsers = value; }
+        }
+
+        // Check to see if NumberOfAssociatedUsers property is set
+        internal bool IsSetNumberOfAssociatedUsers()
+        {
+            return this._numberOfAssociatedUsers.HasValue; 
         }
 
         /// <summary>

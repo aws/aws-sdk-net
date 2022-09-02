@@ -3248,6 +3248,10 @@ namespace Amazon.Connect
         /// Contact information remains available in Amazon Connect for 24 months, and then it
         /// is deleted.
         /// </para>
+        ///  
+        /// <para>
+        /// Only data from November 12, 2021, and later is returned by this API.
+        /// </para>
         ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeContact service method.</param>
@@ -5644,7 +5648,8 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// For the specified version of Amazon Lex, returns a paginated list of all the Amazon
-        /// Lex bots currently associated with the instance. 
+        /// Lex bots currently associated with the instance. Use this API to returns both Amazon
+        /// Lex V1 and V2 bots.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListBots service method.</param>
@@ -6442,8 +6447,9 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        /// Returns a paginated list of all the Amazon Lex bots currently associated with the
-        /// instance.
+        /// Returns a paginated list of all the Amazon Lex V1 bots currently associated with the
+        /// instance. To return both Amazon Lex V1 and V2 bots, use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListBots.html">ListBots</a>
+        /// API. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListLexBots service method.</param>
@@ -7968,6 +7974,154 @@ namespace Amazon.Connect
         public virtual SearchAvailablePhoneNumbersResponse EndSearchAvailablePhoneNumbers(IAsyncResult asyncResult)
         {
             return EndInvoke<SearchAvailablePhoneNumbersResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  SearchQueues
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Searches queues in an Amazon Connect instance, with optional filtering.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchQueues service method.</param>
+        /// 
+        /// <returns>The response from the SearchQueues service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchQueues">REST API Reference for SearchQueues Operation</seealso>
+        public virtual SearchQueuesResponse SearchQueues(SearchQueuesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchQueuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchQueuesResponseUnmarshaller.Instance;
+
+            return Invoke<SearchQueuesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchQueues operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchQueues operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchQueues
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchQueues">REST API Reference for SearchQueues Operation</seealso>
+        public virtual IAsyncResult BeginSearchQueues(SearchQueuesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchQueuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchQueuesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchQueues operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchQueues.</param>
+        /// 
+        /// <returns>Returns a  SearchQueuesResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchQueues">REST API Reference for SearchQueues Operation</seealso>
+        public virtual SearchQueuesResponse EndSearchQueues(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SearchQueuesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  SearchRoutingProfiles
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Searches routing profiles in an Amazon Connect instance, with optional filtering.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchRoutingProfiles service method.</param>
+        /// 
+        /// <returns>The response from the SearchRoutingProfiles service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchRoutingProfiles">REST API Reference for SearchRoutingProfiles Operation</seealso>
+        public virtual SearchRoutingProfilesResponse SearchRoutingProfiles(SearchRoutingProfilesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchRoutingProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchRoutingProfilesResponseUnmarshaller.Instance;
+
+            return Invoke<SearchRoutingProfilesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchRoutingProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchRoutingProfiles operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchRoutingProfiles
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchRoutingProfiles">REST API Reference for SearchRoutingProfiles Operation</seealso>
+        public virtual IAsyncResult BeginSearchRoutingProfiles(SearchRoutingProfilesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchRoutingProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchRoutingProfilesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchRoutingProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchRoutingProfiles.</param>
+        /// 
+        /// <returns>Returns a  SearchRoutingProfilesResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchRoutingProfiles">REST API Reference for SearchRoutingProfiles Operation</seealso>
+        public virtual SearchRoutingProfilesResponse EndSearchRoutingProfiles(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SearchRoutingProfilesResponse>(asyncResult);
         }
 
         #endregion

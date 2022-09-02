@@ -118,7 +118,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// TThe name of the flow.
+        /// The name of the flow.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
