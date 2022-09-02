@@ -292,7 +292,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property EmailVerificationMessage. 
         /// <para>
-        /// The contents of the email verification message.
+        /// This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=6, Max=20000)]
@@ -311,7 +311,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property EmailVerificationSubject. 
         /// <para>
-        /// The subject of the email verification message.
+        /// This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=140)]
@@ -570,7 +570,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property SmsVerificationMessage. 
         /// <para>
-        /// The contents of the SMS verification message.
+        /// This parameter is no longer used. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerificationMessageTemplateType.html">VerificationMessageTemplateType</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=6, Max=140)]

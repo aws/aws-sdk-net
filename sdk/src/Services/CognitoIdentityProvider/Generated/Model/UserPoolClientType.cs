@@ -38,6 +38,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         private bool? _allowedOAuthFlowsUserPoolClient;
         private List<string> _allowedOAuthScopes = new List<string>();
         private AnalyticsConfigurationType _analyticsConfiguration;
+        private int? _authSessionValidity;
         private List<string> _callbackURLs = new List<string>();
         private string _clientId;
         private string _clientName;
@@ -190,6 +191,28 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetAnalyticsConfiguration()
         {
             return this._analyticsConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AuthSessionValidity. 
+        /// <para>
+        /// Amazon Cognito creates a session token for each API request in an authentication flow.
+        /// <code>AuthSessionValidity</code> is the duration, in minutes, of that session token.
+        /// Your user pool native user must respond to each authentication challenge before the
+        /// session expires.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=15)]
+        public int AuthSessionValidity
+        {
+            get { return this._authSessionValidity.GetValueOrDefault(); }
+            set { this._authSessionValidity = value; }
+        }
+
+        // Check to see if AuthSessionValidity property is set
+        internal bool IsSetAuthSessionValidity()
+        {
+            return this._authSessionValidity.HasValue; 
         }
 
         /// <summary>

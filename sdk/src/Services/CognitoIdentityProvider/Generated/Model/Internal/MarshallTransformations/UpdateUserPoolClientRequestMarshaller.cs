@@ -112,6 +112,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetAuthSessionValidity())
+                {
+                    context.Writer.WritePropertyName("AuthSessionValidity");
+                    context.Writer.Write(publicRequest.AuthSessionValidity);
+                }
+
                 if(publicRequest.IsSetCallbackURLs())
                 {
                     context.Writer.WritePropertyName("CallbackURLs");
