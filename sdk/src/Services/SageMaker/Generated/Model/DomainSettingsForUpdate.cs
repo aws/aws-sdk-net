@@ -33,7 +33,29 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class DomainSettingsForUpdate
     {
+        private ExecutionRoleIdentityConfig _executionRoleIdentityConfig;
         private RStudioServerProDomainSettingsForUpdate _rStudioServerProDomainSettingsForUpdate;
+
+        /// <summary>
+        /// Gets and sets the property ExecutionRoleIdentityConfig. 
+        /// <para>
+        /// The configuration for attaching a SageMaker user profile name to the execution role
+        /// as a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">
+        /// <code>sts:SourceIdentity</code> key</a>. This configuration can only be modified if
+        /// there are no apps in the <code>InService</code> or <code>Pending</code> state.
+        /// </para>
+        /// </summary>
+        public ExecutionRoleIdentityConfig ExecutionRoleIdentityConfig
+        {
+            get { return this._executionRoleIdentityConfig; }
+            set { this._executionRoleIdentityConfig = value; }
+        }
+
+        // Check to see if ExecutionRoleIdentityConfig property is set
+        internal bool IsSetExecutionRoleIdentityConfig()
+        {
+            return this._executionRoleIdentityConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property RStudioServerProDomainSettingsForUpdate. 

@@ -45,6 +45,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DomainSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetExecutionRoleIdentityConfig())
+            {
+                context.Writer.WritePropertyName("ExecutionRoleIdentityConfig");
+                context.Writer.Write(requestObject.ExecutionRoleIdentityConfig);
+            }
+
             if(requestObject.IsSetRStudioServerProDomainSettings())
             {
                 context.Writer.WritePropertyName("RStudioServerProDomainSettings");
