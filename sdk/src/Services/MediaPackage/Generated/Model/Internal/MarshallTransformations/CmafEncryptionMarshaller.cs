@@ -51,6 +51,12 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ConstantInitializationVector);
             }
 
+            if(requestObject.IsSetEncryptionMethod())
+            {
+                context.Writer.WritePropertyName("encryptionMethod");
+                context.Writer.Write(requestObject.EncryptionMethod);
+            }
+
             if(requestObject.IsSetKeyRotationIntervalSeconds())
             {
                 context.Writer.WritePropertyName("keyRotationIntervalSeconds");

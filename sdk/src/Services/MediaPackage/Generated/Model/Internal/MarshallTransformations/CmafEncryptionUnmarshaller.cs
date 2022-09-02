@@ -70,6 +70,12 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                     unmarshalledObject.ConstantInitializationVector = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("encryptionMethod", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EncryptionMethod = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("keyRotationIntervalSeconds", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

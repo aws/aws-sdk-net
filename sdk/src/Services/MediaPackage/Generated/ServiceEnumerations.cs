@@ -261,6 +261,56 @@ namespace Amazon.MediaPackage
 
 
     /// <summary>
+    /// Constants used for properties of type CmafEncryptionMethod.
+    /// </summary>
+    public class CmafEncryptionMethod : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AES_CTR for CmafEncryptionMethod
+        /// </summary>
+        public static readonly CmafEncryptionMethod AES_CTR = new CmafEncryptionMethod("AES_CTR");
+        /// <summary>
+        /// Constant SAMPLE_AES for CmafEncryptionMethod
+        /// </summary>
+        public static readonly CmafEncryptionMethod SAMPLE_AES = new CmafEncryptionMethod("SAMPLE_AES");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CmafEncryptionMethod(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CmafEncryptionMethod FindValue(string value)
+        {
+            return FindValue<CmafEncryptionMethod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CmafEncryptionMethod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EncryptionMethod.
     /// </summary>
     public class EncryptionMethod : ConstantClass
