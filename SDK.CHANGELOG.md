@@ -1,3 +1,16 @@
+### 3.7.349.0 (2022-09-02 18:22 UTC)
+* CognitoIdentityProvider (3.7.6.0)
+	* This release adds a new "AuthSessionValidity" field to the UserPoolClient in Cognito. Application admins can configure this value for their users' authentication duration, which is currently fixed at 3 minutes, up to 15 minutes. Setting this field will also apply to the SMS MFA authentication flow.
+* Connect (3.7.24.0)
+	* This release adds search APIs for Routing Profiles and Queues, which can be used to search for those resources within a Connect Instance.
+* MediaPackage (3.7.9.0)
+	* Added support for AES_CTR encryption to CMAF origin endpoints
+* SageMaker (3.7.45.0)
+	* This release enables administrators to attribute user activity and API calls from Studio notebooks, Data Wrangler and Canvas to specific users even when users share the same execution IAM role.  ExecutionRoleIdentityConfig at Sagemaker domain level enables this feature.
+* Core 3.7.12.29
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.348.0 (2022-09-01 18:24 UTC)
 * CodeGuruReviewer (3.7.6.49)
 	* Documentation updates to fix formatting issues in CLI and SDK documentation.
