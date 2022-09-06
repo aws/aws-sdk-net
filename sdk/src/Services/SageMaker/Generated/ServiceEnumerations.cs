@@ -9055,6 +9055,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly ResourceType FeatureMetadata = new ResourceType("FeatureMetadata");
         /// <summary>
+        /// Constant HyperParameterTuningJob for ResourceType
+        /// </summary>
+        public static readonly ResourceType HyperParameterTuningJob = new ResourceType("HyperParameterTuningJob");
+        /// <summary>
         /// Constant ModelPackage for ResourceType
         /// </summary>
         public static readonly ResourceType ModelPackage = new ResourceType("ModelPackage");
