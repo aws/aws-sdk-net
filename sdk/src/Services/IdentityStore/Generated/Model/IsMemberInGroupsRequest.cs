@@ -30,7 +30,8 @@ namespace Amazon.IdentityStore.Model
 {
     /// <summary>
     /// Container for the parameters to the IsMemberInGroups operation.
-    /// Returns if a member exists in specified groups.
+    /// Checks the user's membership in all requested groups and returns if the member exists
+    /// in all queried groups.
     /// </summary>
     public partial class IsMemberInGroupsRequest : AmazonIdentityStoreRequest
     {

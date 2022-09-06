@@ -40,7 +40,8 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property Primary. 
         /// <para>
-        /// A boolean representing whether this is the primary email for the associated resource.
+        /// A Boolean value representing whether this is the primary email address for the associated
+        /// resource.
         /// </para>
         /// </summary>
         public bool Primary

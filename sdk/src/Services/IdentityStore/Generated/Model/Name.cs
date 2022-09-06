@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityStore.Model
 {
     /// <summary>
-    /// The name of the user.
+    /// The full name of the user.
     /// </summary>
     public partial class Name
     {

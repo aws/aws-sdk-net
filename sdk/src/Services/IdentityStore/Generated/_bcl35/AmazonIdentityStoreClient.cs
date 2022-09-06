@@ -35,10 +35,18 @@ namespace Amazon.IdentityStore
     /// <summary>
     /// Implementation for accessing IdentityStore
     ///
-    /// The AWS Single Sign-On (SSO) Identity Store service provides a single place to retrieve
-    /// all of your identities (users and groups). For more information about AWS, see the
-    /// <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">AWS
-    /// Single Sign-On User Guide</a>.
+    /// The Identity Store service used by AWS IAM Identity Center (successor to AWS Single
+    /// Sign-On) provides a single place to retrieve all of your identities (users and groups).
+    /// For more information, see the <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">IAM
+    /// Identity Center User Guide</a>.
+    /// 
+    ///  <pre><code> &lt;note&gt; &lt;p&gt;Although AWS Single Sign-On was renamed, the &lt;code&gt;sso&lt;/code&gt;
+    /// and &lt;code&gt;identitystore&lt;/code&gt; API namespaces will continue to retain
+    /// their original name for backward compatibility purposes. For more information, see
+    /// &lt;a href=&quot;https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html#renamed&quot;&gt;IAM
+    /// Identity Center rename&lt;/a&gt;.&lt;/p&gt; &lt;/note&gt; &lt;p&gt;This reference
+    /// guide describes the identity store operations that you can call programatically and
+    /// includes detailed information on data types and errors.&lt;/p&gt; </code></pre>
     /// </summary>
     public partial class AmazonIdentityStoreClient : AmazonServiceClient, IAmazonIdentityStore
     {
@@ -849,7 +857,8 @@ namespace Amazon.IdentityStore
         #region  DescribeGroupMembership
 
         /// <summary>
-        /// Retrieves membership metadata and attributes from <code>MembershipId</code> in a group.
+        /// Retrieves membership metadata and attributes from <code>MembershipId</code> in an
+        /// identity store.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeGroupMembership service method.</param>
         /// 
@@ -1060,7 +1069,7 @@ namespace Amazon.IdentityStore
         #region  GetGroupMembershipId
 
         /// <summary>
-        /// Retrieves the <code>MembershipId</code> in a group.
+        /// Retrieves the <code>MembershipId</code> in an identity store.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetGroupMembershipId service method.</param>
         /// 
@@ -1200,7 +1209,8 @@ namespace Amazon.IdentityStore
         #region  IsMemberInGroups
 
         /// <summary>
-        /// Returns if a member exists in specified groups.
+        /// Checks the user's membership in all requested groups and returns if the member exists
+        /// in all queried groups.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the IsMemberInGroups service method.</param>
         /// 
@@ -1412,14 +1422,10 @@ namespace Amazon.IdentityStore
         #region  ListGroups
 
         /// <summary>
-        /// <i>Filtering for a group by the group <code>DisplayName</code> attribute is deprecated.
-        /// Instead, use the <code>GetGroupId</code> API action.</i> 
-        /// 
-        ///  
-        /// <para>
-        /// Lists all groups in the identity store. Returns a paginated list of complete <code>Group</code>
-        /// objects.
-        /// </para>
+        /// Lists the attribute name and value of the group that you specified in the search.
+        /// We only support <code>DisplayName</code> as a valid filter attribute path currently,
+        /// and filter is required. This API returns minimum attributes, including <code>GroupId</code>
+        /// and group <code>DisplayName</code> in the response.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGroups service method.</param>
         /// 
@@ -1489,14 +1495,10 @@ namespace Amazon.IdentityStore
         #region  ListUsers
 
         /// <summary>
-        /// <i>Filtering for a user by the <code>UserName</code> attribute is deprecated. Instead,
-        /// use the <code>GetUserId</code> API action.</i> 
-        /// 
-        ///  
-        /// <para>
-        /// Lists all users in the identity store. Returns a paginated list of complete <code>User</code>
-        /// objects.
-        /// </para>
+        /// Lists the attribute name and value of the user that you specified in the search. We
+        /// only support <code>UserName</code> as a valid filter attribute path currently, and
+        /// filter is required. This API returns minimum attributes, including <code>UserId</code>
+        /// and <code>UserName</code> in the response.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUsers service method.</param>
         /// 

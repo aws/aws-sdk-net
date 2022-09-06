@@ -59,7 +59,8 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property AttributeValue. 
         /// <para>
-        /// The value of the attribute.
+        /// The value of the attribute. This is a <code>Document</code> type. This type is not
+        /// supported by Java V1, Go V1, and older versions of the AWS CLI.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -100,7 +100,7 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property MembershipId. 
         /// <para>
-        /// The identifier for a <code>GroupMembership</code> object in the identity store.
+        /// The identifier for a <code>GroupMembership</code> object in an identity store.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=47)]

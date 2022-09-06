@@ -40,8 +40,8 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property AlternateIdentifier. 
         /// <para>
-        /// A unique identifier for the group value that is not the group's primary identifier.
-        /// This value can be an identifier from an external identity provider (IdP) that is associated
+        /// A unique identifier for an identity resource that is not the primary identifier. This
+        /// value can be an identifier from an external identity provider (IdP) that is associated
         /// with the group or a unique attribute. For example, a unique <code>GroupDisplayName</code>.
         /// </para>
         /// </summary>

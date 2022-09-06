@@ -38,7 +38,7 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property Results. 
         /// <para>
-        /// An object containing results of batch <code>IsMemberInGroups</code> call.
+        /// A list containing the results of membership existence checks.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

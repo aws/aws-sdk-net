@@ -30,7 +30,7 @@ namespace Amazon.IdentityStore.Model
 {
     /// <summary>
     /// Container for the parameters to the GetGroupMembershipId operation.
-    /// Retrieves the <code>MembershipId</code> in a group.
+    /// Retrieves the <code>MembershipId</code> in an identity store.
     /// </summary>
     public partial class GetGroupMembershipIdRequest : AmazonIdentityStoreRequest
     {

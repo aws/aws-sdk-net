@@ -319,10 +319,10 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// The user’s username value. The length limit is 128 characters. This value can consist
-        /// of letters, accented characters, symbols, numbers, and punctuation. The characters
-        /// <code>&lt;&gt;;:%</code> are excluded. This value is specified at the time the user
-        /// is created and stored as an attribute of the user object in the identity store.
+        /// A unique string used to identify the user. The length limit is 128 characters. This
+        /// value can consist of letters, accented characters, symbols, numbers, and punctuation.
+        /// This value is specified at the time the user is created and stored as an attribute
+        /// of the user object in the identity store.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

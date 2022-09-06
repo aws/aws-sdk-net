@@ -40,7 +40,7 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property AlternateIdentifier. 
         /// <para>
-        /// Any unique attribute associated with a user that is not the <code>UserId</code>.
+        /// A unique identifier for an identity resource that is not the primary identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -40,7 +40,7 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property Primary. 
         /// <para>
-        /// A boolean representing whether this is the primary phone number for the associated
+        /// A Boolean value representing whether this is the primary phone number for the associated
         /// resource.
         /// </para>
         /// </summary>

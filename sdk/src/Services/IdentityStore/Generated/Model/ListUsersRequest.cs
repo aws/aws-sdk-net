@@ -30,14 +30,10 @@ namespace Amazon.IdentityStore.Model
 {
     /// <summary>
     /// Container for the parameters to the ListUsers operation.
-    /// <i>Filtering for a user by the <code>UserName</code> attribute is deprecated. Instead,
-    /// use the <code>GetUserId</code> API action.</i> 
-    /// 
-    ///  
-    /// <para>
-    /// Lists all users in the identity store. Returns a paginated list of complete <code>User</code>
-    /// objects.
-    /// </para>
+    /// Lists the attribute name and value of the user that you specified in the search. We
+    /// only support <code>UserName</code> as a valid filter attribute path currently, and
+    /// filter is required. This API returns minimum attributes, including <code>UserId</code>
+    /// and <code>UserName</code> in the response.
     /// </summary>
     public partial class ListUsersRequest : AmazonIdentityStoreRequest
     {
@@ -49,8 +45,8 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// A list of <code>Filter</code> objects that is used in the <code>ListUsers</code> and
-        /// <code>ListGroups</code> requests.
+        /// A list of <code>Filter</code> objects, which is used in the <code>ListUsers</code>
+        /// and <code>ListGroups</code> requests. 
         /// </para>
         /// </summary>
         [Obsolete("Using filters with ListUsers API is deprecated, please use GetGroupId API instead.")]
