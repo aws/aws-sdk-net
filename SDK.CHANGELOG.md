@@ -1,3 +1,9 @@
+### 3.7.350.0 (2022-09-06 20:11 UTC)
+* IdentityStore (3.7.1.3)
+	* Documentation updates for the Identity Store CLI Reference.
+* SageMaker (3.7.46.0)
+	* This release adds HyperParameterTuningJob type in Search API.
+
 ### 3.7.349.0 (2022-09-02 18:22 UTC)
 * CognitoIdentityProvider (3.7.6.0)
 	* This release adds a new "AuthSessionValidity" field to the UserPoolClient in Cognito. Application admins can configure this value for their users' authentication duration, which is currently fixed at 3 minutes, up to 15 minutes. Setting this field will also apply to the SMS MFA authentication flow.
