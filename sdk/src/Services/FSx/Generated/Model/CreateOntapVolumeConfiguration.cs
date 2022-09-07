@@ -63,9 +63,12 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property SecurityStyle. 
         /// <para>
-        /// The security style for the volume. If a volume's security style is not specified,
-        /// it is automatically set to the root volume's security style. Specify one of the following
-        /// values:
+        /// Specifies the security style for the volume. If a volume's security style is not specified,
+        /// it is automatically set to the root volume's security style. The security style determines
+        /// the type of permissions that FSx for ONTAP uses to control data access. For more information,
+        /// see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-security-style">Volume
+        /// security style</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>. Specify one
+        /// of the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
