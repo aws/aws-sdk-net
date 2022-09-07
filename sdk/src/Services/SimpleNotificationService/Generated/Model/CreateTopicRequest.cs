@@ -40,6 +40,7 @@ namespace Amazon.SimpleNotificationService.Model
     public partial class CreateTopicRequest : AmazonSimpleNotificationServiceRequest
     {
         private Dictionary<string, string> _attributes = new Dictionary<string, string>();
+        private string _dataProtectionPolicy;
         private string _name;
         private List<Tag> _tags = new List<Tag>();
 
@@ -141,6 +142,36 @@ namespace Amazon.SimpleNotificationService.Model
         internal bool IsSetAttributes()
         {
             return this._attributes != null && this._attributes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataProtectionPolicy. 
+        /// <para>
+        /// The body of the policy document you want to use for this topic.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can only add one policy per topic.
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy must be in JSON string format.
+        /// </para>
+        ///  
+        /// <para>
+        /// Length Constraints: Maximum length of 30,720.
+        /// </para>
+        /// </summary>
+        public string DataProtectionPolicy
+        {
+            get { return this._dataProtectionPolicy; }
+            set { this._dataProtectionPolicy = value; }
+        }
+
+        // Check to see if DataProtectionPolicy property is set
+        internal bool IsSetDataProtectionPolicy()
+        {
+            return this._dataProtectionPolicy != null;
         }
 
         /// <summary>

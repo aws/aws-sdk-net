@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PublishBatch operation
+    /// Response Unmarshaller for GetDataProtectionPolicy operation
     /// </summary>  
-    public class PublishBatchResponseUnmarshaller : XmlResponseUnmarshaller
+    public class GetDataProtectionPolicyResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            PublishBatchResponse response = new PublishBatchResponse();
+            GetDataProtectionPolicyResponse response = new GetDataProtectionPolicyResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -51,7 +51,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
             {
                 if (context.IsStartElement)
                 {                    
-                    if(context.TestExpression("PublishBatchResult", 2))
+                    if(context.TestExpression("GetDataProtectionPolicyResult", 2))
                     {
                         UnmarshallResult(context, response);                        
                         continue;
@@ -67,7 +67,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
             return response;
         }
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context, PublishBatchResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context, GetDataProtectionPolicyResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -81,18 +81,10 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("Failed/member", targetDepth))
+                    if (context.TestExpression("DataProtectionPolicy", targetDepth))
                     {
-                        var unmarshaller = BatchResultErrorEntryUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        response.Failed.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("Successful/member", targetDepth))
-                    {
-                        var unmarshaller = PublishBatchResultEntryUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        response.Successful.Add(item);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.DataProtectionPolicy = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 
@@ -124,88 +116,28 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                 {
                     return AuthorizationErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("BatchEntryIdsNotDistinct"))
-                {
-                    return BatchEntryIdsNotDistinctExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("BatchRequestTooLong"))
-                {
-                    return BatchRequestTooLongExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("EmptyBatchRequest"))
-                {
-                    return EmptyBatchRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("EndpointDisabled"))
-                {
-                    return EndpointDisabledExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalError"))
                 {
                     return InternalErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidBatchEntryId"))
-                {
-                    return InvalidBatchEntryIdExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameter"))
                 {
                     return InvalidParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ParameterValueInvalid"))
-                {
-                    return InvalidParameterValueExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidSecurity"))
                 {
                     return InvalidSecurityExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("KMSAccessDenied"))
-                {
-                    return KMSAccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("KMSDisabled"))
-                {
-                    return KMSDisabledExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("KMSInvalidState"))
-                {
-                    return KMSInvalidStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("KMSNotFound"))
-                {
-                    return KMSNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("KMSOptInRequired"))
-                {
-                    return KMSOptInRequiredExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("KMSThrottling"))
-                {
-                    return KMSThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("NotFound"))
                 {
                     return NotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("PlatformApplicationDisabled"))
-                {
-                    return PlatformApplicationDisabledExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyEntriesInBatchRequest"))
-                {
-                    return TooManyEntriesInBatchRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
-                {
-                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
             }
             return new AmazonSimpleNotificationServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static PublishBatchResponseUnmarshaller _instance = new PublishBatchResponseUnmarshaller();        
+        private static GetDataProtectionPolicyResponseUnmarshaller _instance = new GetDataProtectionPolicyResponseUnmarshaller();        
 
-        internal static PublishBatchResponseUnmarshaller GetInstance()
+        internal static GetDataProtectionPolicyResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -213,7 +145,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PublishBatchResponseUnmarshaller Instance
+        public static GetDataProtectionPolicyResponseUnmarshaller Instance
         {
             get
             {

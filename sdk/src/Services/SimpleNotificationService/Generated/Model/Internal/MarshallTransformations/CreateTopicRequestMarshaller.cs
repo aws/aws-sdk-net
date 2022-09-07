@@ -73,6 +73,10 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                         mapIndex++;
                     }
                 }
+                if(publicRequest.IsSetDataProtectionPolicy())
+                {
+                    request.Parameters.Add("DataProtectionPolicy", StringUtils.FromString(publicRequest.DataProtectionPolicy));
+                }
                 if(publicRequest.IsSetName())
                 {
                     request.Parameters.Add("Name", StringUtils.FromString(publicRequest.Name));

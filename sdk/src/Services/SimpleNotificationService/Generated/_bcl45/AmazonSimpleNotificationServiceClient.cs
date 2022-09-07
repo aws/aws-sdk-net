@@ -1767,6 +1767,81 @@ namespace Amazon.SimpleNotificationService
 
         #endregion
         
+        #region  GetDataProtectionPolicy
+
+
+        /// <summary>
+        /// Retrieves the specified inline <code>DataProtectionPolicy</code> document that is
+        /// stored in the specified Amazon SNS topic.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataProtectionPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetDataProtectionPolicy service method, as returned by SimpleNotificationService.</returns>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
+        /// Indicates that the user has been denied access to the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
+        /// Indicates an internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
+        /// Indicates that a request parameter does not comply with the associated constraints.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidSecurityException">
+        /// The credential signature isn't valid. You must use an HTTPS endpoint and sign your
+        /// request using Signature Version 4.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
+        /// Indicates that the requested resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetDataProtectionPolicy">REST API Reference for GetDataProtectionPolicy Operation</seealso>
+        public virtual GetDataProtectionPolicyResponse GetDataProtectionPolicy(GetDataProtectionPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataProtectionPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataProtectionPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetDataProtectionPolicyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the specified inline <code>DataProtectionPolicy</code> document that is
+        /// stored in the specified Amazon SNS topic.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataProtectionPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDataProtectionPolicy service method, as returned by SimpleNotificationService.</returns>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
+        /// Indicates that the user has been denied access to the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
+        /// Indicates an internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
+        /// Indicates that a request parameter does not comply with the associated constraints.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidSecurityException">
+        /// The credential signature isn't valid. You must use an HTTPS endpoint and sign your
+        /// request using Signature Version 4.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
+        /// Indicates that the requested resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetDataProtectionPolicy">REST API Reference for GetDataProtectionPolicy Operation</seealso>
+        public virtual Task<GetDataProtectionPolicyResponse> GetDataProtectionPolicyAsync(GetDataProtectionPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataProtectionPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataProtectionPolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetDataProtectionPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetEndpointAttributes
 
 
@@ -3726,6 +3801,9 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.PlatformApplicationDisabledException">
         /// Exception error indicating platform application disabled.
         /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.ValidationException">
+        /// Indicates that a parameter in the request is invalid.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish">REST API Reference for Publish Operation</seealso>
         public virtual PublishResponse Publish(string topicArn, string message)
         {
@@ -3823,6 +3901,9 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.PlatformApplicationDisabledException">
         /// Exception error indicating platform application disabled.
         /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.ValidationException">
+        /// Indicates that a parameter in the request is invalid.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish">REST API Reference for Publish Operation</seealso>
         public virtual PublishResponse Publish(string topicArn, string message, string subject)
         {
@@ -3918,6 +3999,9 @@ namespace Amazon.SimpleNotificationService
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.PlatformApplicationDisabledException">
         /// Exception error indicating platform application disabled.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.ValidationException">
+        /// Indicates that a parameter in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish">REST API Reference for Publish Operation</seealso>
         public virtual PublishResponse Publish(PublishRequest request)
@@ -4019,6 +4103,9 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.PlatformApplicationDisabledException">
         /// Exception error indicating platform application disabled.
         /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.ValidationException">
+        /// Indicates that a parameter in the request is invalid.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish">REST API Reference for Publish Operation</seealso>
         public virtual Task<PublishResponse> PublishAsync(string topicArn, string message, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -4119,6 +4206,9 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.PlatformApplicationDisabledException">
         /// Exception error indicating platform application disabled.
         /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.ValidationException">
+        /// Indicates that a parameter in the request is invalid.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish">REST API Reference for Publish Operation</seealso>
         public virtual Task<PublishResponse> PublishAsync(string topicArn, string message, string subject, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -4217,6 +4307,9 @@ namespace Amazon.SimpleNotificationService
         /// </exception>
         /// <exception cref="Amazon.SimpleNotificationService.Model.PlatformApplicationDisabledException">
         /// Exception error indicating platform application disabled.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.ValidationException">
+        /// Indicates that a parameter in the request is invalid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish">REST API Reference for Publish Operation</seealso>
         public virtual Task<PublishResponse> PublishAsync(PublishRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4344,6 +4437,9 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.TooManyEntriesInBatchRequestException">
         /// The batch request contains more entries than permissible.
         /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.ValidationException">
+        /// Indicates that a parameter in the request is invalid.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/PublishBatch">REST API Reference for PublishBatch Operation</seealso>
         public virtual PublishBatchResponse PublishBatch(PublishBatchRequest request)
         {
@@ -4469,6 +4565,9 @@ namespace Amazon.SimpleNotificationService
         /// <exception cref="Amazon.SimpleNotificationService.Model.TooManyEntriesInBatchRequestException">
         /// The batch request contains more entries than permissible.
         /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.ValidationException">
+        /// Indicates that a parameter in the request is invalid.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/PublishBatch">REST API Reference for PublishBatch Operation</seealso>
         public virtual Task<PublishBatchResponse> PublishBatchAsync(PublishBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -4477,6 +4576,81 @@ namespace Amazon.SimpleNotificationService
             options.ResponseUnmarshaller = PublishBatchResponseUnmarshaller.Instance;
             
             return InvokeAsync<PublishBatchResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutDataProtectionPolicy
+
+
+        /// <summary>
+        /// Adds or updates an inline policy document that is stored in the specified Amazon SNS
+        /// topic.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutDataProtectionPolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutDataProtectionPolicy service method, as returned by SimpleNotificationService.</returns>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
+        /// Indicates that the user has been denied access to the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
+        /// Indicates an internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
+        /// Indicates that a request parameter does not comply with the associated constraints.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidSecurityException">
+        /// The credential signature isn't valid. You must use an HTTPS endpoint and sign your
+        /// request using Signature Version 4.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
+        /// Indicates that the requested resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/PutDataProtectionPolicy">REST API Reference for PutDataProtectionPolicy Operation</seealso>
+        public virtual PutDataProtectionPolicyResponse PutDataProtectionPolicy(PutDataProtectionPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutDataProtectionPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutDataProtectionPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutDataProtectionPolicyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Adds or updates an inline policy document that is stored in the specified Amazon SNS
+        /// topic.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutDataProtectionPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutDataProtectionPolicy service method, as returned by SimpleNotificationService.</returns>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.AuthorizationErrorException">
+        /// Indicates that the user has been denied access to the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InternalErrorException">
+        /// Indicates an internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidParameterException">
+        /// Indicates that a request parameter does not comply with the associated constraints.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.InvalidSecurityException">
+        /// The credential signature isn't valid. You must use an HTTPS endpoint and sign your
+        /// request using Signature Version 4.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleNotificationService.Model.NotFoundException">
+        /// Indicates that the requested resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/PutDataProtectionPolicy">REST API Reference for PutDataProtectionPolicy Operation</seealso>
+        public virtual Task<PutDataProtectionPolicyResponse> PutDataProtectionPolicyAsync(PutDataProtectionPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutDataProtectionPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutDataProtectionPolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutDataProtectionPolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
