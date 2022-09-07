@@ -129,6 +129,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly AddonStatus DELETING = new AddonStatus("DELETING");
         /// <summary>
+        /// Constant UPDATE_FAILED for AddonStatus
+        /// </summary>
+        public static readonly AddonStatus UPDATE_FAILED = new AddonStatus("UPDATE_FAILED");
+        /// <summary>
         /// Constant UPDATING for AddonStatus
         /// </summary>
         public static readonly AddonStatus UPDATING = new AddonStatus("UPDATING");
@@ -976,6 +980,10 @@ namespace Amazon.EKS
         /// Constant OVERWRITE for ResolveConflicts
         /// </summary>
         public static readonly ResolveConflicts OVERWRITE = new ResolveConflicts("OVERWRITE");
+        /// <summary>
+        /// Constant PRESERVE for ResolveConflicts
+        /// </summary>
+        public static readonly ResolveConflicts PRESERVE = new ResolveConflicts("PRESERVE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -30,7 +30,7 @@ namespace Amazon.EKS.Model
 {
     /// <summary>
     /// An object representing a node group launch template specification. The launch template
-    /// cannot include <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">
+    /// can't include <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">
     /// <code>SubnetId</code> </a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html">
     /// <code>IamInstanceProfile</code> </a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">
     /// <code>RequestSpotInstances</code> </a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html">
@@ -43,7 +43,8 @@ namespace Amazon.EKS.Model
     /// 
     ///  
     /// <para>
-    /// Specify either <code>name</code> or <code>id</code>, but not both.
+    /// You must specify either the launch template ID or the launch template name in the
+    /// request, but not both.
     /// </para>
     /// </summary>
     public partial class LaunchTemplateSpecification
@@ -56,6 +57,11 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property Id. 
         /// <para>
         /// The ID of the launch template.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must specify either the launch template ID or the launch template name in the
+        /// request, but not both.
         /// </para>
         /// </summary>
         public string Id
@@ -75,6 +81,11 @@ namespace Amazon.EKS.Model
         /// <para>
         /// The name of the launch template.
         /// </para>
+        ///  
+        /// <para>
+        /// You must specify either the launch template name or the launch template ID in the
+        /// request, but not both.
+        /// </para>
         /// </summary>
         public string Name
         {
@@ -91,8 +102,21 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The version of the launch template to use. If no version is specified, then the template's
-        /// default version is used.
+        /// The launch template version number, <code>$Latest</code>, or <code>$Default</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the value is <code>$Latest</code>, Amazon EKS uses the latest version of the launch
+        /// template.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the value is <code>$Default</code>, Amazon EKS uses the default version of the
+        /// launch template.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: The default version of the launch template.
         /// </para>
         /// </summary>
         public string Version
