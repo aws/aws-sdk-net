@@ -1,3 +1,21 @@
+### 3.7.351.0 (2022-09-07 18:24 UTC)
+* DataExchange (3.7.5.0)
+	* Documentation updates for AWS Data Exchange.
+* EC2 (3.7.84.0)
+	* Documentation updates for Amazon EC2.
+* EKS (3.7.15.0)
+	* Adds support for EKS Addons ResolveConflicts "preserve" flag. Also adds new update failed status for EKS Addons.
+* FSx (3.7.13.38)
+	* Documentation update for Amazon FSx.
+* Inspector2 (3.7.2.0)
+	* This release adds new fields like fixAvailable, fixedInVersion and remediation to the finding model. The requirement to have vulnerablePackages in the finding model has also been removed. The documentation has been updated to reflect these changes.
+* IoTSiteWise (3.7.14.0)
+	* Allow specifying units in Asset Properties
+* SageMaker (3.7.47.0)
+	* SageMaker Hosting now allows customization on ML instance storage volume size, model data download timeout and inference container startup ping health check timeout for each ProductionVariant in CreateEndpointConfig API.
+* SimpleNotificationService (3.7.4.0)
+	* Amazon SNS introduces the Data Protection Policy APIs, which enable customers to attach a data protection policy to an SNS topic. This allows topic owners to enable the new message data protection feature to audit and block sensitive data that is exchanged through their topics.
+
 ### 3.7.350.0 (2022-09-06 20:11 UTC)
 * IdentityStore (3.7.1.3)
 	* Documentation updates for the Identity Store CLI Reference.
