@@ -88,6 +88,12 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                     unmarshalledObject.FirstObservedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("fixAvailable", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FixAvailable = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("inspectorScore", targetDepth))
                 {
                     var unmarshaller = DoubleUnmarshaller.Instance;

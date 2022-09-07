@@ -49,6 +49,7 @@ namespace Amazon.Inspector2.Model
         private List<StringFilter> _findingStatus = new List<StringFilter>();
         private List<StringFilter> _findingType = new List<StringFilter>();
         private List<DateFilter> _firstObservedAt = new List<DateFilter>();
+        private List<StringFilter> _fixAvailable = new List<StringFilter>();
         private List<NumberFilter> _inspectorScore = new List<NumberFilter>();
         private List<DateFilter> _lastObservedAt = new List<DateFilter>();
         private List<StringFilter> _networkProtocol = new List<StringFilter>();
@@ -367,6 +368,28 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetFirstObservedAt()
         {
             return this._firstObservedAt != null && this._firstObservedAt.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FixAvailable. 
+        /// <para>
+        /// Details on whether a fix is available through a version update. This value can be
+        /// <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code>
+        /// fix means that some, but not all, of the packages identified in the finding have fixes
+        /// available through updated versions.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<StringFilter> FixAvailable
+        {
+            get { return this._fixAvailable; }
+            set { this._fixAvailable = value; }
+        }
+
+        // Check to see if FixAvailable property is set
+        internal bool IsSetFixAvailable()
+        {
+            return this._fixAvailable != null && this._fixAvailable.Count > 0; 
         }
 
         /// <summary>

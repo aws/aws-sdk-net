@@ -37,6 +37,7 @@ namespace Amazon.Inspector2.Model
         private string _description;
         private string _findingArn;
         private DateTime? _firstObservedAt;
+        private FixAvailable _fixAvailable;
         private double? _inspectorScore;
         private InspectorScoreDetails _inspectorScoreDetails;
         private DateTime? _lastObservedAt;
@@ -124,6 +125,27 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetFirstObservedAt()
         {
             return this._firstObservedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FixAvailable. 
+        /// <para>
+        /// Details on whether a fix is available through a version update. This value can be
+        /// <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code>
+        /// fix means that some, but not all, of the packages identified in the finding have fixes
+        /// available through updated versions.
+        /// </para>
+        /// </summary>
+        public FixAvailable FixAvailable
+        {
+            get { return this._fixAvailable; }
+            set { this._fixAvailable = value; }
+        }
+
+        // Check to see if FixAvailable property is set
+        internal bool IsSetFixAvailable()
+        {
+            return this._fixAvailable != null;
         }
 
         /// <summary>

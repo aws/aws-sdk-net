@@ -40,6 +40,7 @@ namespace Amazon.Inspector2.Model
         private string _name;
         private PackageManager _packageManager;
         private string _release;
+        private string _remediation;
         private string _sourceLayerHash;
         private string _version;
 
@@ -172,6 +173,25 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetRelease()
         {
             return this._release != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Remediation. 
+        /// <para>
+        /// The code to run in your environment to update packages with a fix available.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string Remediation
+        {
+            get { return this._remediation; }
+            set { this._remediation = value; }
+        }
+
+        // Check to see if Remediation property is set
+        internal bool IsSetRemediation()
+        {
+            return this._remediation != null;
         }
 
         /// <summary>

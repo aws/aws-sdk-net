@@ -301,6 +301,22 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetFixAvailable())
+            {
+                context.Writer.WritePropertyName("fixAvailable");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectFixAvailableListValue in requestObject.FixAvailable)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectFixAvailableListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetInspectorScore())
             {
                 context.Writer.WritePropertyName("inspectorScore");

@@ -702,6 +702,11 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Inspector2.Model.VulnerablePackage.Remediation</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Inspector2.Model.VulnerablePackage.SourceLayerHash</property>
     <min>71</min>
     <max>71</max>
