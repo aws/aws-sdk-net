@@ -13719,6 +13719,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly ResourceType VpnConnection = new ResourceType("vpn-connection");
         /// <summary>
+        /// Constant VpnConnectionDeviceType for ResourceType
+        /// </summary>
+        public static readonly ResourceType VpnConnectionDeviceType = new ResourceType("vpn-connection-device-type");
+        /// <summary>
         /// Constant VpnGateway for ResourceType
         /// </summary>
         public static readonly ResourceType VpnGateway = new ResourceType("vpn-gateway");
