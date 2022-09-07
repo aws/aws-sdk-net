@@ -873,18 +873,10 @@ namespace Amazon.IoTSiteWise
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This API operation is in preview release for IoT SiteWise and is subject to change.
-        /// We recommend that you use this operation only with test data, and not in production
-        /// environments.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Defines a job to ingest data to IoT SiteWise from Amazon S3. For more information,
         /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/CreateBulkImportJob.html">Create
         /// a bulk import job (CLI)</a> in the <i>Amazon Simple Storage Service User Guide</i>.
-        /// </para>
+        /// 
         ///  <important> 
         /// <para>
         /// You must enable IoT SiteWise to export data to Amazon S3 before you create a bulk
@@ -2076,18 +2068,9 @@ namespace Amazon.IoTSiteWise
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This API operation is in preview release for IoT SiteWise and is subject to change.
-        /// We recommend that you use this operation only with test data, and not in production
-        /// environments.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Retrieves information about a bulk import job request. For more information, see <a
         /// href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/DescribeBulkImportJob.html">Describe
         /// a bulk import job (CLI)</a> in the <i>Amazon Simple Storage Service User Guide</i>.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeBulkImportJob service method.</param>
         /// 
@@ -3534,18 +3517,9 @@ namespace Amazon.IoTSiteWise
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This API operation is in preview release for IoT SiteWise and is subject to change.
-        /// We recommend that you use this operation only with test data, and not in production
-        /// environments.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Retrieves a paginated list of bulk import job requests. For more information, see
         /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/ListBulkImportJobs.html">List
-        /// bulk import jobs (CLI)</a> in the <i>Amazon Simple Storage Service User Guide</i>.
-        /// </para>
+        /// bulk import jobs (CLI)</a> in the <i>IoT SiteWise User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListBulkImportJobs service method.</param>
         /// 

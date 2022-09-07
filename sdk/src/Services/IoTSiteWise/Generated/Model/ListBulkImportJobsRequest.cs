@@ -30,18 +30,9 @@ namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
     /// Container for the parameters to the ListBulkImportJobs operation.
-    /// <note> 
-    /// <para>
-    /// This API operation is in preview release for IoT SiteWise and is subject to change.
-    /// We recommend that you use this operation only with test data, and not in production
-    /// environments.
-    /// </para>
-    ///  </note> 
-    /// <para>
     /// Retrieves a paginated list of bulk import job requests. For more information, see
     /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/ListBulkImportJobs.html">List
-    /// bulk import jobs (CLI)</a> in the <i>Amazon Simple Storage Service User Guide</i>.
-    /// </para>
+    /// bulk import jobs (CLI)</a> in the <i>IoT SiteWise User Guide</i>.
     /// </summary>
     public partial class ListBulkImportJobsRequest : AmazonIoTSiteWiseRequest
     {

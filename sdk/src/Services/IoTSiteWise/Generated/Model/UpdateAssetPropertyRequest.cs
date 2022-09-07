@@ -47,6 +47,7 @@ namespace Amazon.IoTSiteWise.Model
         private string _propertyAlias;
         private string _propertyId;
         private PropertyNotificationState _propertyNotificationState;
+        private string _propertyUnit;
 
         /// <summary>
         /// Gets and sets the property AssetId. 
@@ -155,6 +156,27 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetPropertyNotificationState()
         {
             return this._propertyNotificationState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PropertyUnit. 
+        /// <para>
+        /// The unit of measure (such as Newtons or RPM) of the asset property. If you don't specify
+        /// a value for this parameter, the service uses the value of the <code>assetModelProperty</code>
+        /// in the asset model.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string PropertyUnit
+        {
+            get { return this._propertyUnit; }
+            set { this._propertyUnit = value; }
+        }
+
+        // Check to see if PropertyUnit property is set
+        internal bool IsSetPropertyUnit()
+        {
+            return this._propertyUnit != null;
         }
 
     }

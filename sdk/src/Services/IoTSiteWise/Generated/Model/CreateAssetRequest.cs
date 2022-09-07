@@ -82,7 +82,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property AssetName. 
         /// <para>
-        /// A unique, friendly name for the asset.
+        /// A friendly name for the asset.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

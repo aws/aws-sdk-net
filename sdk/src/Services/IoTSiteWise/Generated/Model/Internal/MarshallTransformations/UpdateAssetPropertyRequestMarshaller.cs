@@ -94,6 +94,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PropertyNotificationState);
                 }
 
+                if(publicRequest.IsSetPropertyUnit())
+                {
+                    context.Writer.WritePropertyName("propertyUnit");
+                    context.Writer.Write(publicRequest.PropertyUnit);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
