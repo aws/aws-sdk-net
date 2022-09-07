@@ -57,8 +57,10 @@ namespace Amazon.DataExchange.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags. A label that consists of a customer-defined key and
-        /// an optional value.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A label that consists of a customer-defined key and an optional value.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public Dictionary<string, string> Tags

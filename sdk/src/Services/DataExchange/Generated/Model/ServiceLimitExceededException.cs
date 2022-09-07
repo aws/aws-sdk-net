@@ -129,7 +129,7 @@ namespace Amazon.DataExchange.Model
         /// <summary>
         /// Gets and sets the property LimitName. 
         /// <para>
-        /// The name of the quota that was exceeded.
+        /// The name of the limit that was reached.
         /// </para>
         /// </summary>
         public LimitName LimitName
@@ -147,7 +147,7 @@ namespace Amazon.DataExchange.Model
         /// <summary>
         /// Gets and sets the property LimitValue. 
         /// <para>
-        /// The maximum value for the service-specific limit.
+        /// The value of the exceeded limit.
         /// </para>
         /// </summary>
         public double LimitValue

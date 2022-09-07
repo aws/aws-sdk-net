@@ -57,7 +57,10 @@ namespace Amazon.DataExchange.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TagKeys. The key tags.
+        /// Gets and sets the property TagKeys. 
+        /// <para>
+        /// The key tags.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> TagKeys

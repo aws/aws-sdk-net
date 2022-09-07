@@ -124,13 +124,10 @@ namespace Amazon.DataExchange.Model
         /// To publish a revision to a data set in a product, the revision must first be finalized.
         /// Finalizing a revision tells AWS Data Exchange that changes to the assets in the revision
         /// are complete. After it's in this read-only state, you can publish the revision to
-        /// your products.
-        /// </para>
-        ///  
-        /// <para>
-        /// Finalized revisions can be published through the AWS Data Exchange console or the
-        /// AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API
-        /// action. When using the API, revisions are uniquely identified by their ARN.
+        /// your products. Finalized revisions can be published through the AWS Data Exchange
+        /// console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace
+        /// Catalog API action. When using the API, revisions are uniquely identified by their
+        /// ARN.
         /// </para>
         /// </summary>
         public bool Finalized

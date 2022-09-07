@@ -60,11 +60,11 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 
             if (!publicRequest.IsSetResourceArn())
                 throw new AmazonDataExchangeException("Request object does not have required field ResourceArn set");
-            request.AddPathResource("{resource-arn}", StringUtils.FromString(publicRequest.ResourceArn));
+            request.AddPathResource("{ResourceArn}", StringUtils.FromString(publicRequest.ResourceArn));
             
             if (publicRequest.IsSetTagKeys())
                 request.ParameterCollection.Add("tagKeys", publicRequest.TagKeys);
-            request.ResourcePath = "/tags/{resource-arn}";
+            request.ResourcePath = "/tags/{ResourceArn}";
             request.UseQueryString = true;
 
             return request;

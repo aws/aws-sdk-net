@@ -98,7 +98,7 @@ namespace Amazon.DataExchange.Model
         /// <summary>
         /// Gets and sets the property ImportAssetFromApiGatewayApi. 
         /// <para>
-        /// Information about the import asset from API Gateway API request.
+        /// Details about the import from signed URL request.
         /// </para>
         /// </summary>
         public ImportAssetFromApiGatewayApiRequestDetails ImportAssetFromApiGatewayApi
@@ -116,7 +116,7 @@ namespace Amazon.DataExchange.Model
         /// <summary>
         /// Gets and sets the property ImportAssetFromSignedUrl. 
         /// <para>
-        /// Details about the import from signed URL request.
+        /// Details about the import from Amazon S3 request.
         /// </para>
         /// </summary>
         public ImportAssetFromSignedUrlRequestDetails ImportAssetFromSignedUrl
@@ -152,7 +152,7 @@ namespace Amazon.DataExchange.Model
         /// <summary>
         /// Gets and sets the property ImportAssetsFromS3. 
         /// <para>
-        /// Details about the import from Amazon S3 request.
+        /// Information about the import asset from API Gateway API request.
         /// </para>
         /// </summary>
         public ImportAssetsFromS3RequestDetails ImportAssetsFromS3

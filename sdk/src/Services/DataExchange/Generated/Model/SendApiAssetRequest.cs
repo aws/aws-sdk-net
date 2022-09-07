@@ -123,7 +123,7 @@ namespace Amazon.DataExchange.Model
         /// Gets and sets the property Path. 
         /// <para>
         /// URI path value for the API request. Alternatively, you can set the URI path directly
-        /// by invoking /v1/{pathValue}
+        /// by invoking /v1/{pathValue}.
         /// </para>
         /// </summary>
         public string Path
