@@ -36,13 +36,16 @@ namespace Amazon.SageMaker.Model
     public partial class ProductionVariant
     {
         private ProductionVariantAcceleratorType _acceleratorType;
+        private int? _containerStartupHealthCheckTimeoutInSeconds;
         private ProductionVariantCoreDumpConfig _coreDumpConfig;
         private int? _initialInstanceCount;
         private float? _initialVariantWeight;
         private ProductionVariantInstanceType _instanceType;
+        private int? _modelDataDownloadTimeoutInSeconds;
         private string _modelName;
         private ProductionVariantServerlessConfig _serverlessConfig;
         private string _variantName;
+        private int? _volumeSizeInGB;
 
         /// <summary>
         /// Gets and sets the property AcceleratorType. 
@@ -63,6 +66,27 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetAcceleratorType()
         {
             return this._acceleratorType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContainerStartupHealthCheckTimeoutInSeconds. 
+        /// <para>
+        /// The timeout value, in seconds, for the customer inference container to pass health
+        /// check by SageMaker Hosting. For more information on health check, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-inference-code.html#your-algorithms-inference-algo-ping-requests">How
+        /// Your Container Should Respond to Health Check (Ping) Requests</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=60, Max=3600)]
+        public int ContainerStartupHealthCheckTimeoutInSeconds
+        {
+            get { return this._containerStartupHealthCheckTimeoutInSeconds.GetValueOrDefault(); }
+            set { this._containerStartupHealthCheckTimeoutInSeconds = value; }
+        }
+
+        // Check to see if ContainerStartupHealthCheckTimeoutInSeconds property is set
+        internal bool IsSetContainerStartupHealthCheckTimeoutInSeconds()
+        {
+            return this._containerStartupHealthCheckTimeoutInSeconds.HasValue; 
         }
 
         /// <summary>
@@ -144,6 +168,26 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ModelDataDownloadTimeoutInSeconds. 
+        /// <para>
+        /// The timeout value, in seconds, to download and extract customer model artifact from
+        /// Amazon S3 to individual inference instance associated with this production variant.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=60, Max=3600)]
+        public int ModelDataDownloadTimeoutInSeconds
+        {
+            get { return this._modelDataDownloadTimeoutInSeconds.GetValueOrDefault(); }
+            set { this._modelDataDownloadTimeoutInSeconds = value; }
+        }
+
+        // Check to see if ModelDataDownloadTimeoutInSeconds property is set
+        internal bool IsSetModelDataDownloadTimeoutInSeconds()
+        {
+            return this._modelDataDownloadTimeoutInSeconds.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ModelName. 
         /// <para>
         /// The name of the model that you want to host. This is the name that you specified when
@@ -199,6 +243,27 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetVariantName()
         {
             return this._variantName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeSizeInGB. 
+        /// <para>
+        /// The size, in GB, of the ML storage volume attached to individual inference instance
+        /// associated with the production variant. Currenly only Amazon EBS gp2 storage volumes
+        /// are supported.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=512)]
+        public int VolumeSizeInGB
+        {
+            get { return this._volumeSizeInGB.GetValueOrDefault(); }
+            set { this._volumeSizeInGB = value; }
+        }
+
+        // Check to see if VolumeSizeInGB property is set
+        internal bool IsSetVolumeSizeInGB()
+        {
+            return this._volumeSizeInGB.HasValue; 
         }
 
     }

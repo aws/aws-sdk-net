@@ -51,6 +51,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AcceleratorType);
             }
 
+            if(requestObject.IsSetContainerStartupHealthCheckTimeoutInSeconds())
+            {
+                context.Writer.WritePropertyName("ContainerStartupHealthCheckTimeoutInSeconds");
+                context.Writer.Write(requestObject.ContainerStartupHealthCheckTimeoutInSeconds);
+            }
+
             if(requestObject.IsSetCoreDumpConfig())
             {
                 context.Writer.WritePropertyName("CoreDumpConfig");
@@ -80,6 +86,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.InstanceType);
             }
 
+            if(requestObject.IsSetModelDataDownloadTimeoutInSeconds())
+            {
+                context.Writer.WritePropertyName("ModelDataDownloadTimeoutInSeconds");
+                context.Writer.Write(requestObject.ModelDataDownloadTimeoutInSeconds);
+            }
+
             if(requestObject.IsSetModelName())
             {
                 context.Writer.WritePropertyName("ModelName");
@@ -101,6 +113,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("VariantName");
                 context.Writer.Write(requestObject.VariantName);
+            }
+
+            if(requestObject.IsSetVolumeSizeInGB())
+            {
+                context.Writer.WritePropertyName("VolumeSizeInGB");
+                context.Writer.Write(requestObject.VolumeSizeInGB);
             }
 
         }
