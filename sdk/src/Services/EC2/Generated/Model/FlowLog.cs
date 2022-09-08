@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     public partial class FlowLog
     {
         private DateTime? _creationTime;
+        private string _deliverCrossAccountRole;
         private string _deliverLogsErrorMessage;
         private string _deliverLogsPermissionArn;
         private string _deliverLogsStatus;
@@ -68,6 +69,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DeliverCrossAccountRole. 
+        /// <para>
+        /// The ARN of the IAM role that allows the service to publish flow logs across accounts.
+        /// </para>
+        /// </summary>
+        public string DeliverCrossAccountRole
+        {
+            get { return this._deliverCrossAccountRole; }
+            set { this._deliverCrossAccountRole = value; }
+        }
+
+        // Check to see if DeliverCrossAccountRole property is set
+        internal bool IsSetDeliverCrossAccountRole()
+        {
+            return this._deliverCrossAccountRole != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DeliverLogsErrorMessage. 
         /// <para>
         /// Information about the error that occurred. <code>Rate limited</code> indicates that
@@ -93,7 +112,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DeliverLogsPermissionArn. 
         /// <para>
-        /// The ARN of the IAM role that posts logs to CloudWatch Logs.
+        /// The ARN of the IAM role allows the service to publish logs to CloudWatch Logs.
         /// </para>
         /// </summary>
         public string DeliverLogsPermissionArn
@@ -147,7 +166,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property FlowLogId. 
         /// <para>
-        /// The flow log ID.
+        /// The ID of the flow log.
         /// </para>
         /// </summary>
         public string FlowLogId
@@ -183,11 +202,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LogDestination. 
         /// <para>
-        /// The destination to which the flow log data is published. Flow log data can be published
-        /// to an CloudWatch Logs log group or an Amazon S3 bucket. If the flow log publishes
-        /// to CloudWatch Logs, this element indicates the Amazon Resource Name (ARN) of the CloudWatch
-        /// Logs log group to which the data is published. If the flow log publishes to Amazon
-        /// S3, this element indicates the ARN of the Amazon S3 bucket to which the data is published.
+        /// The Amazon Resource Name (ARN) of the destination for the flow log data.
         /// </para>
         /// </summary>
         public string LogDestination
@@ -205,8 +220,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LogDestinationType. 
         /// <para>
-        /// The type of destination to which the flow log data is published. Flow log data can
-        /// be published to CloudWatch Logs or Amazon S3.
+        /// The type of destination for the flow log data.
         /// </para>
         /// </summary>
         public LogDestinationType LogDestinationType
@@ -289,7 +303,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The ID of the resource on which the flow log was created.
+        /// The ID of the resource being monitored.
         /// </para>
         /// </summary>
         public string ResourceId

@@ -56,6 +56,7 @@ namespace Amazon.EC2.Model
     public partial class CreateFlowLogsRequest : AmazonEC2Request
     {
         private string _clientToken;
+        private string _deliverCrossAccountRole;
         private string _deliverLogsPermissionArn;
         private DestinationOptionsRequest _destinationOptions;
         private string _logDestination;
@@ -89,15 +90,33 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DeliverCrossAccountRole. 
+        /// <para>
+        /// The ARN of the IAM role that allows Amazon EC2 to publish flow logs across accounts.
+        /// </para>
+        /// </summary>
+        public string DeliverCrossAccountRole
+        {
+            get { return this._deliverCrossAccountRole; }
+            set { this._deliverCrossAccountRole = value; }
+        }
+
+        // Check to see if DeliverCrossAccountRole property is set
+        internal bool IsSetDeliverCrossAccountRole()
+        {
+            return this._deliverCrossAccountRole != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DeliverLogsPermissionArn. 
         /// <para>
-        /// The ARN for the IAM role that permits Amazon EC2 to publish flow logs to a CloudWatch
+        /// The ARN of the IAM role that allows Amazon EC2 to publish flow logs to a CloudWatch
         /// Logs log group in your account.
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>LogDestinationType</code> as <code>s3</code>, do not specify
-        /// <code>DeliverLogsPermissionArn</code> or <code>LogGroupName</code>.
+        /// This parameter is required if the destination type is <code>cloud-watch-logs</code>
+        /// and unsupported otherwise.
         /// </para>
         /// </summary>
         public string DeliverLogsPermissionArn
@@ -133,26 +152,45 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LogDestination. 
         /// <para>
-        /// The destination to which the flow log data is to be published. Flow log data can be
-        /// published to a CloudWatch Logs log group or an Amazon S3 bucket. The value specified
-        /// for this parameter depends on the value specified for <code>LogDestinationType</code>.
+        /// The destination for the flow log data. The meaning of this parameter depends on the
+        /// destination type.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If the destination type is <code>cloud-watch-logs</code>, specify the ARN of a CloudWatch
+        /// Logs log group. For example:
         /// </para>
         ///  
         /// <para>
-        /// If <code>LogDestinationType</code> is not specified or <code>cloud-watch-logs</code>,
-        /// specify the Amazon Resource Name (ARN) of the CloudWatch Logs log group. For example,
-        /// to publish to a log group called <code>my-logs</code>, specify <code>arn:aws:logs:us-east-1:123456789012:log-group:my-logs</code>.
-        /// Alternatively, use <code>LogGroupName</code> instead.
+        /// arn:aws:logs:<i>region</i>:<i>account_id</i>:log-group:<i>my_group</i> 
         /// </para>
         ///  
         /// <para>
-        /// If LogDestinationType is <code>s3</code>, specify the ARN of the Amazon S3 bucket.
-        /// You can also specify a subfolder in the bucket. To specify a subfolder in the bucket,
-        /// use the following ARN format: <code>bucket_ARN/subfolder_name/</code>. For example,
-        /// to specify a subfolder named <code>my-logs</code> in a bucket named <code>my-bucket</code>,
-        /// use the following ARN: <code>arn:aws:s3:::my-bucket/my-logs/</code>. You cannot use
-        /// <code>AWSLogs</code> as a subfolder name. This is a reserved term.
+        /// Alternatively, use the <code>LogGroupName</code> parameter.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the destination type is <code>s3</code>, specify the ARN of an S3 bucket. For example:
+        /// </para>
+        ///  
+        /// <para>
+        /// arn:aws:s3:::<i>my_bucket</i>/<i>my_subfolder</i>/
+        /// </para>
+        ///  
+        /// <para>
+        /// The subfolder is optional. Note that you can't use <code>AWSLogs</code> as a subfolder
+        /// name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the destination type is <code>kinesis-data-firehose</code>, specify the ARN of
+        /// a Kinesis Data Firehose delivery stream. For example:
+        /// </para>
+        ///  
+        /// <para>
+        /// arn:aws:firehose:<i>region</i>:<i>account_id</i>:deliverystream:<i>my_stream</i> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string LogDestination
         {
@@ -169,15 +207,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LogDestinationType. 
         /// <para>
-        /// The type of destination to which the flow log data is to be published. Flow log data
-        /// can be published to CloudWatch Logs or Amazon S3. To publish flow log data to CloudWatch
-        /// Logs, specify <code>cloud-watch-logs</code>. To publish flow log data to Amazon S3,
-        /// specify <code>s3</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you specify <code>LogDestinationType</code> as <code>s3</code>, do not specify
-        /// <code>DeliverLogsPermissionArn</code> or <code>LogGroupName</code>.
+        /// The type of destination for the flow log data.
         /// </para>
         ///  
         /// <para>
@@ -199,10 +229,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LogFormat. 
         /// <para>
-        /// The fields to include in the flow log record, in the order in which they should appear.
-        /// For a list of available fields, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
+        /// The fields to include in the flow log record. List the fields in the order in which
+        /// they should appear. For more information about the available fields, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
         /// log records</a>. If you omit this parameter, the flow log is created using the default
-        /// format. If you specify this parameter, you must specify at least one field.
+        /// format. If you specify this parameter, you must include at least one field.
         /// </para>
         ///  
         /// <para>
@@ -231,8 +261,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>LogDestinationType</code> as <code>s3</code>, do not specify
-        /// <code>DeliverLogsPermissionArn</code> or <code>LogGroupName</code>.
+        /// This parameter is valid only if the destination type is <code>cloud-watch-logs</code>.
         /// </para>
         /// </summary>
         public string LogGroupName
@@ -279,8 +308,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ResourceIds. 
         /// <para>
-        /// The ID of the subnet, network interface, or VPC for which you want to create a flow
-        /// log.
+        /// The IDs of the resources to monitor. For example, if the resource type is <code>VPC</code>,
+        /// specify the IDs of the VPCs.
         /// </para>
         ///  
         /// <para>
@@ -303,9 +332,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of resource for which to create the flow log. For example, if you specified
-        /// a VPC ID for the <code>ResourceId</code> property, specify <code>VPC</code> for this
-        /// property.
+        /// The type of resource to monitor.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -342,8 +369,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TrafficType. 
         /// <para>
-        /// The type of traffic to log. You can log traffic that the resource accepts or rejects,
-        /// or all traffic.
+        /// The type of traffic to monitor (accepted traffic, rejected traffic, or all traffic).
         /// </para>
         /// </summary>
         public TrafficType TrafficType

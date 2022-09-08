@@ -11237,6 +11237,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly LogDestinationType CloudWatchLogs = new LogDestinationType("cloud-watch-logs");
         /// <summary>
+        /// Constant KinesisDataFirehose for LogDestinationType
+        /// </summary>
+        public static readonly LogDestinationType KinesisDataFirehose = new LogDestinationType("kinesis-data-firehose");
+        /// <summary>
         /// Constant S3 for LogDestinationType
         /// </summary>
         public static readonly LogDestinationType S3 = new LogDestinationType("s3");
