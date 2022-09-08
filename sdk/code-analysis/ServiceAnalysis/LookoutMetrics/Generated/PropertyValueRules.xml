@@ -794,6 +794,12 @@
     <pattern>arn:([a-z\d-]+):.*:.*:.*:.+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LookoutMetrics.Model.MetricSetDimensionFilter.Name</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9\-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LookoutMetrics.Model.MetricSetSummary.AnomalyDetectorArn</property>
     <max>256</max>
     <pattern>arn:([a-z\d-]+):.*:.*:.*:.+</pattern>

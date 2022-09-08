@@ -35,6 +35,7 @@ namespace Amazon.LookoutMetrics.Model
     {
         private string _anomalyDetectorArn;
         private DateTime? _creationTime;
+        private List<MetricSetDimensionFilter> _dimensionFilterList = new List<MetricSetDimensionFilter>();
         private List<string> _dimensionList = new List<string>();
         private DateTime? _lastModificationTime;
         private List<Metric> _metricList = new List<Metric>();
@@ -82,6 +83,24 @@ namespace Amazon.LookoutMetrics.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DimensionFilterList. 
+        /// <para>
+        /// The dimensions and their values that were used to filter the dataset.
+        /// </para>
+        /// </summary>
+        public List<MetricSetDimensionFilter> DimensionFilterList
+        {
+            get { return this._dimensionFilterList; }
+            set { this._dimensionFilterList = value; }
+        }
+
+        // Check to see if DimensionFilterList property is set
+        internal bool IsSetDimensionFilterList()
+        {
+            return this._dimensionFilterList != null && this._dimensionFilterList.Count > 0; 
         }
 
         /// <summary>

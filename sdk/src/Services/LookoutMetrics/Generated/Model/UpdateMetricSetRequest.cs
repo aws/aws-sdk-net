@@ -34,6 +34,7 @@ namespace Amazon.LookoutMetrics.Model
     /// </summary>
     public partial class UpdateMetricSetRequest : AmazonLookoutMetricsRequest
     {
+        private List<MetricSetDimensionFilter> _dimensionFilterList = new List<MetricSetDimensionFilter>();
         private List<string> _dimensionList = new List<string>();
         private List<Metric> _metricList = new List<Metric>();
         private string _metricSetArn;
@@ -42,6 +43,27 @@ namespace Amazon.LookoutMetrics.Model
         private MetricSource _metricSource;
         private int? _offset;
         private TimestampColumn _timestampColumn;
+
+        /// <summary>
+        /// Gets and sets the property DimensionFilterList. 
+        /// <para>
+        /// Describes a list of filters for choosing specific dimensions and specific values.
+        /// Each filter consists of the dimension and one of its values that you want to include.
+        /// When multiple dimensions or values are specified, the dimensions are joined with an
+        /// AND operation and the values are joined with an OR operation.
+        /// </para>
+        /// </summary>
+        public List<MetricSetDimensionFilter> DimensionFilterList
+        {
+            get { return this._dimensionFilterList; }
+            set { this._dimensionFilterList = value; }
+        }
+
+        // Check to see if DimensionFilterList property is set
+        internal bool IsSetDimensionFilterList()
+        {
+            return this._dimensionFilterList != null && this._dimensionFilterList.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property DimensionList. 

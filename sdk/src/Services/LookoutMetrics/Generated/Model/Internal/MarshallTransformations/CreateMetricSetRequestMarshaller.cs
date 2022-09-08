@@ -71,6 +71,22 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AnomalyDetectorArn);
                 }
 
+                if(publicRequest.IsSetDimensionFilterList())
+                {
+                    context.Writer.WritePropertyName("DimensionFilterList");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestDimensionFilterListListValue in publicRequest.DimensionFilterList)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MetricSetDimensionFilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequestDimensionFilterListListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetDimensionList())
                 {
                     context.Writer.WritePropertyName("DimensionList");
