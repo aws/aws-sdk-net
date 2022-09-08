@@ -48,7 +48,7 @@ namespace Amazon.EMRContainers.Model
         /// <summary>
         /// Gets and sets the property CertificateArn. 
         /// <para>
-        /// The certificate ARN provided by users for the managed endpoint. This fiedd is under
+        /// The certificate ARN provided by users for the managed endpoint. This field is under
         /// deprecation and will be removed in future releases.
         /// </para>
         /// </summary>

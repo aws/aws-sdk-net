@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// JobDriver Marshaller
+    /// SparkSqlJobDriver Marshaller
     /// </summary>
-    public class JobDriverMarshaller : IRequestMarshaller<JobDriver, JsonMarshallerContext> 
+    public class SparkSqlJobDriverMarshaller : IRequestMarshaller<SparkSqlJobDriver, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,28 +43,18 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(JobDriver requestObject, JsonMarshallerContext context)
+        public void Marshall(SparkSqlJobDriver requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetSparkSqlJobDriver())
+            if(requestObject.IsSetEntryPoint())
             {
-                context.Writer.WritePropertyName("sparkSqlJobDriver");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = SparkSqlJobDriverMarshaller.Instance;
-                marshaller.Marshall(requestObject.SparkSqlJobDriver, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("entryPoint");
+                context.Writer.Write(requestObject.EntryPoint);
             }
 
-            if(requestObject.IsSetSparkSubmitJobDriver())
+            if(requestObject.IsSetSparkSqlParameters())
             {
-                context.Writer.WritePropertyName("sparkSubmitJobDriver");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = SparkSubmitJobDriverMarshaller.Instance;
-                marshaller.Marshall(requestObject.SparkSubmitJobDriver, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("sparkSqlParameters");
+                context.Writer.Write(requestObject.SparkSqlParameters);
             }
 
         }
@@ -72,7 +62,7 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static JobDriverMarshaller Instance = new JobDriverMarshaller();
+        public readonly static SparkSqlJobDriverMarshaller Instance = new SparkSqlJobDriverMarshaller();
 
     }
 }

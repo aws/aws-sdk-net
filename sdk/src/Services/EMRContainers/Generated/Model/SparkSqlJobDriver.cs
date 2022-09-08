@@ -29,47 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EMRContainers.Model
 {
     /// <summary>
-    /// Specify the driver that the job runs on.
+    /// The job driver for job type.
     /// </summary>
-    public partial class JobDriver
+    public partial class SparkSqlJobDriver
     {
-        private SparkSqlJobDriver _sparkSqlJobDriver;
-        private SparkSubmitJobDriver _sparkSubmitJobDriver;
+        private string _entryPoint;
+        private string _sparkSqlParameters;
 
         /// <summary>
-        /// Gets and sets the property SparkSqlJobDriver. 
+        /// Gets and sets the property EntryPoint. 
         /// <para>
-        /// The job driver for job type.
+        /// The SQL file to be executed.
         /// </para>
         /// </summary>
-        public SparkSqlJobDriver SparkSqlJobDriver
+        [AWSProperty(Min=1, Max=256)]
+        public string EntryPoint
         {
-            get { return this._sparkSqlJobDriver; }
-            set { this._sparkSqlJobDriver = value; }
+            get { return this._entryPoint; }
+            set { this._entryPoint = value; }
         }
 
-        // Check to see if SparkSqlJobDriver property is set
-        internal bool IsSetSparkSqlJobDriver()
+        // Check to see if EntryPoint property is set
+        internal bool IsSetEntryPoint()
         {
-            return this._sparkSqlJobDriver != null;
+            return this._entryPoint != null;
         }
 
         /// <summary>
-        /// Gets and sets the property SparkSubmitJobDriver. 
+        /// Gets and sets the property SparkSqlParameters. 
         /// <para>
-        /// The job driver parameters specified for spark submit.
+        /// The Spark parameters to be included in the Spark SQL command.
         /// </para>
         /// </summary>
-        public SparkSubmitJobDriver SparkSubmitJobDriver
+        [AWSProperty(Min=1, Max=102400)]
+        public string SparkSqlParameters
         {
-            get { return this._sparkSubmitJobDriver; }
-            set { this._sparkSubmitJobDriver = value; }
+            get { return this._sparkSqlParameters; }
+            set { this._sparkSqlParameters = value; }
         }
 
-        // Check to see if SparkSubmitJobDriver property is set
-        internal bool IsSetSparkSubmitJobDriver()
+        // Check to see if SparkSqlParameters property is set
+        internal bool IsSetSparkSqlParameters()
         {
-            return this._sparkSubmitJobDriver != null;
+            return this._sparkSqlParameters != null;
         }
 
     }

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for JobDriver Object
+    /// Response Unmarshaller for SparkSqlJobDriver Object
     /// </summary>  
-    public class JobDriverUnmarshaller : IUnmarshaller<JobDriver, XmlUnmarshallerContext>, IUnmarshaller<JobDriver, JsonUnmarshallerContext>
+    public class SparkSqlJobDriverUnmarshaller : IUnmarshaller<SparkSqlJobDriver, XmlUnmarshallerContext>, IUnmarshaller<SparkSqlJobDriver, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        JobDriver IUnmarshaller<JobDriver, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SparkSqlJobDriver IUnmarshaller<SparkSqlJobDriver, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,27 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public JobDriver Unmarshall(JsonUnmarshallerContext context)
+        public SparkSqlJobDriver Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            JobDriver unmarshalledObject = new JobDriver();
+            SparkSqlJobDriver unmarshalledObject = new SparkSqlJobDriver();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("sparkSqlJobDriver", targetDepth))
+                if (context.TestExpression("entryPoint", targetDepth))
                 {
-                    var unmarshaller = SparkSqlJobDriverUnmarshaller.Instance;
-                    unmarshalledObject.SparkSqlJobDriver = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EntryPoint = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("sparkSubmitJobDriver", targetDepth))
+                if (context.TestExpression("sparkSqlParameters", targetDepth))
                 {
-                    var unmarshaller = SparkSubmitJobDriverUnmarshaller.Instance;
-                    unmarshalledObject.SparkSubmitJobDriver = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SparkSqlParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +82,12 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         }
 
 
-        private static JobDriverUnmarshaller _instance = new JobDriverUnmarshaller();        
+        private static SparkSqlJobDriverUnmarshaller _instance = new SparkSqlJobDriverUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static JobDriverUnmarshaller Instance
+        public static SparkSqlJobDriverUnmarshaller Instance
         {
             get
             {
