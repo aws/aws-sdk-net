@@ -22203,6 +22203,11 @@
             }
           }
         },
+        "managedblockchain": {
+          "endpoints": {
+            "us-gov-west-1": {}
+          }
+        },
         "mediaconvert": {
           "endpoints": {
             "us-gov-west-1": {
