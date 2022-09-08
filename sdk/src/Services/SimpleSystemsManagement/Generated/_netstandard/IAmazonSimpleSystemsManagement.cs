@@ -498,6 +498,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidScheduleException">
         /// The schedule is invalid. Verify your cron or rate expression and try again.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTagException">
+        /// The specified tag key or value is not valid.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTargetException">
         /// The target isn't valid or doesn't exist. It might not be configured for Systems Manager
         /// or you might not have permission to perform the operation.
@@ -581,6 +584,9 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidScheduleException">
         /// The schedule is invalid. Verify your cron or rate expression and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTagException">
+        /// The specified tag key or value is not valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTargetException">
         /// The target isn't valid or doesn't exist. It might not be configured for Systems Manager
@@ -702,7 +708,7 @@ namespace Amazon.SimpleSystemsManagement
         /// User Guide</i>.
         /// </summary>
         /// <param name="content">The content for the new SSM document in JSON or YAML format. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command. For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>. <ul> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a>  </li> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a>  </li> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a>  </li> </ul></param>
-        /// <param name="name">A name for the SSM document. <important> You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes: <ul> <li>  <code>aws-</code>  </li> <li>  <code>amazon</code>  </li> <li>  <code>amzn</code>  </li> </ul> </important></param>
+        /// <param name="name">A name for the SSM document. <important> You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes: <ul> <li>  <code>aws</code>  </li> <li>  <code>amazon</code>  </li> <li>  <code>amzn</code>  </li> </ul> </important></param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>

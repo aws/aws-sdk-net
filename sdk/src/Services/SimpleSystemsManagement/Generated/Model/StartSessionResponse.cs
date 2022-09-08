@@ -91,8 +91,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TokenValue. 
         /// <para>
-        /// An encrypted token value containing session and caller information. Used to authenticate
-        /// the connection to the managed node.
+        /// An encrypted token value containing session and caller information. This token is
+        /// used to authenticate the connection to the managed node, and is valid only long enough
+        /// to ensure the connection is successful. Never share your session's token.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=300)]
