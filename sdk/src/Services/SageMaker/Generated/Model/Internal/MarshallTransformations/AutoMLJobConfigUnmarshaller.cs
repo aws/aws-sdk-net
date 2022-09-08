@@ -82,6 +82,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.DataSplitConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Mode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Mode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SecurityConfig", targetDepth))
                 {
                     var unmarshaller = AutoMLSecurityConfigUnmarshaller.Instance;

@@ -3608,7 +3608,14 @@ namespace Amazon.SageMaker
         /// provided by SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
         /// 
         /// </para>
-        ///  </li> <li> 
+        ///  <important> 
+        /// <para>
+        /// You must not include any security-sensitive information, such as account access IDs,
+        /// secrets, and tokens, in the dictionary for configuring hyperparameters. SageMaker
+        /// rejects the training job request and returns an exception error for detected credentials,
+        /// if such user input is found.
+        /// </para>
+        ///  </important> </li> <li> 
         /// <para>
         ///  <code>InputDataConfig</code> - Describes the training dataset and the Amazon S3,
         /// EFS, or FSx location where it is stored.

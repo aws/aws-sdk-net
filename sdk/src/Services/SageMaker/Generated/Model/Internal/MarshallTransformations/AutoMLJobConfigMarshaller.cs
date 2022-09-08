@@ -78,6 +78,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetMode())
+            {
+                context.Writer.WritePropertyName("Mode");
+                context.Writer.Write(requestObject.Mode);
+            }
+
             if(requestObject.IsSetSecurityConfig())
             {
                 context.Writer.WritePropertyName("SecurityConfig");

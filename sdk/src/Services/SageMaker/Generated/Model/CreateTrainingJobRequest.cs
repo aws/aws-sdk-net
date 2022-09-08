@@ -56,7 +56,14 @@ namespace Amazon.SageMaker.Model
     /// provided by SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
     /// 
     /// </para>
-    ///  </li> <li> 
+    ///  <important> 
+    /// <para>
+    /// You must not include any security-sensitive information, such as account access IDs,
+    /// secrets, and tokens, in the dictionary for configuring hyperparameters. SageMaker
+    /// rejects the training job request and returns an exception error for detected credentials,
+    /// if such user input is found.
+    /// </para>
+    ///  </important> </li> <li> 
     /// <para>
     ///  <code>InputDataConfig</code> - Describes the training dataset and the Amazon S3,
     /// EFS, or FSx location where it is stored.
@@ -328,6 +335,14 @@ namespace Amazon.SageMaker.Model
         /// pair. Each key and value is limited to 256 characters, as specified by the <code>Length
         /// Constraint</code>. 
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must not include any security-sensitive information, such as account access IDs,
+        /// secrets, and tokens, in the dictionary for configuring hyperparameters. SageMaker
+        /// rejects the training job request and returns an exception error for detected credentials,
+        /// if such user input is found.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
         public Dictionary<string, string> HyperParameters
