@@ -1,3 +1,22 @@
+### 3.7.352.0 (2022-09-08 18:57 UTC)
+* EC2 (3.7.85.0)
+	* This release adds support to send VPC Flow Logs to kinesis-data-firehose as new destination type
+* EMRContainers (3.7.3.0)
+	* EMR on EKS now allows running Spark SQL using the newly introduced Spark SQL Job Driver in the Start Job Run API
+* LookoutMetrics (3.7.14.0)
+	* Release dimension value filtering feature to allow customers to define dimension filters for including only a subset of their dataset to be used by LookoutMetrics.
+* MediaLive (3.7.12.0)
+	* This change exposes API settings which allow Dolby Atmos and Dolby Vision to be used when running a channel using Elemental Media Live
+* Route53 (3.7.4.0)
+	* Amazon Route 53 now supports the Middle East (UAE) Region (me-central-1) for latency records, geoproximity records, and private DNS for Amazon VPCs in that region.
+* SageMaker (3.7.48.0)
+	* This release adds Mode to AutoMLJobConfig.
+* SimpleSystemsManagement (3.7.18.0)
+	* This release adds support for Systems Manager State Manager Association tagging.
+* Core 3.7.12.30
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.351.0 (2022-09-07 18:24 UTC)
 * DataExchange (3.7.5.0)
 	* Documentation updates for AWS Data Exchange.
