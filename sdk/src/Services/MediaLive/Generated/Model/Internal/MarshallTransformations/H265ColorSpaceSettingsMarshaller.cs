@@ -56,6 +56,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetDolbyVision81Settings())
+            {
+                context.Writer.WritePropertyName("dolbyVision81Settings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DolbyVision81SettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.DolbyVision81Settings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetHdr10Settings())
             {
                 context.Writer.WritePropertyName("hdr10Settings");

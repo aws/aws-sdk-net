@@ -67,6 +67,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetEac3AtmosSettings())
+            {
+                context.Writer.WritePropertyName("eac3AtmosSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = Eac3AtmosSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Eac3AtmosSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetEac3Settings())
             {
                 context.Writer.WritePropertyName("eac3Settings");

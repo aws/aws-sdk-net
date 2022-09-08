@@ -34,6 +34,7 @@ namespace Amazon.MediaLive.Model
     public partial class H265ColorSpaceSettings
     {
         private ColorSpacePassthroughSettings _colorSpacePassthroughSettings;
+        private DolbyVision81Settings _dolbyVision81Settings;
         private Hdr10Settings _hdr10Settings;
         private Rec601Settings _rec601Settings;
         private Rec709Settings _rec709Settings;
@@ -51,6 +52,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetColorSpacePassthroughSettings()
         {
             return this._colorSpacePassthroughSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DolbyVision81Settings.
+        /// </summary>
+        public DolbyVision81Settings DolbyVision81Settings
+        {
+            get { return this._dolbyVision81Settings; }
+            set { this._dolbyVision81Settings = value; }
+        }
+
+        // Check to see if DolbyVision81Settings property is set
+        internal bool IsSetDolbyVision81Settings()
+        {
+            return this._dolbyVision81Settings != null;
         }
 
         /// <summary>

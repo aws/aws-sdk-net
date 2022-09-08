@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AudioCodecSettings Object
+    /// Response Unmarshaller for Eac3AtmosSettings Object
     /// </summary>  
-    public class AudioCodecSettingsUnmarshaller : IUnmarshaller<AudioCodecSettings, XmlUnmarshallerContext>, IUnmarshaller<AudioCodecSettings, JsonUnmarshallerContext>
+    public class Eac3AtmosSettingsUnmarshaller : IUnmarshaller<Eac3AtmosSettings, XmlUnmarshallerContext>, IUnmarshaller<Eac3AtmosSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AudioCodecSettings IUnmarshaller<AudioCodecSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Eac3AtmosSettings IUnmarshaller<Eac3AtmosSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,57 +53,57 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AudioCodecSettings Unmarshall(JsonUnmarshallerContext context)
+        public Eac3AtmosSettings Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AudioCodecSettings unmarshalledObject = new AudioCodecSettings();
+            Eac3AtmosSettings unmarshalledObject = new Eac3AtmosSettings();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("aacSettings", targetDepth))
+                if (context.TestExpression("bitrate", targetDepth))
                 {
-                    var unmarshaller = AacSettingsUnmarshaller.Instance;
-                    unmarshalledObject.AacSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.Bitrate = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ac3Settings", targetDepth))
+                if (context.TestExpression("codingMode", targetDepth))
                 {
-                    var unmarshaller = Ac3SettingsUnmarshaller.Instance;
-                    unmarshalledObject.Ac3Settings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CodingMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("eac3AtmosSettings", targetDepth))
+                if (context.TestExpression("dialnorm", targetDepth))
                 {
-                    var unmarshaller = Eac3AtmosSettingsUnmarshaller.Instance;
-                    unmarshalledObject.Eac3AtmosSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Dialnorm = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("eac3Settings", targetDepth))
+                if (context.TestExpression("drcLine", targetDepth))
                 {
-                    var unmarshaller = Eac3SettingsUnmarshaller.Instance;
-                    unmarshalledObject.Eac3Settings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DrcLine = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("mp2Settings", targetDepth))
+                if (context.TestExpression("drcRf", targetDepth))
                 {
-                    var unmarshaller = Mp2SettingsUnmarshaller.Instance;
-                    unmarshalledObject.Mp2Settings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DrcRf = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("passThroughSettings", targetDepth))
+                if (context.TestExpression("heightTrim", targetDepth))
                 {
-                    var unmarshaller = PassThroughSettingsUnmarshaller.Instance;
-                    unmarshalledObject.PassThroughSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.HeightTrim = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("wavSettings", targetDepth))
+                if (context.TestExpression("surroundTrim", targetDepth))
                 {
-                    var unmarshaller = WavSettingsUnmarshaller.Instance;
-                    unmarshalledObject.WavSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.SurroundTrim = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -112,12 +112,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
 
 
-        private static AudioCodecSettingsUnmarshaller _instance = new AudioCodecSettingsUnmarshaller();        
+        private static Eac3AtmosSettingsUnmarshaller _instance = new Eac3AtmosSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AudioCodecSettingsUnmarshaller Instance
+        public static Eac3AtmosSettingsUnmarshaller Instance
         {
             get
             {
