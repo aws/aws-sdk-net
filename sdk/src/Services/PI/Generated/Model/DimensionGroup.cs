@@ -371,7 +371,7 @@ namespace Amazon.PI.Model
         /// The maximum number of items to fetch for this dimension group.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=10)]
+        [AWSProperty(Min=1, Max=25)]
         public int Limit
         {
             get { return this._limit.GetValueOrDefault(); }

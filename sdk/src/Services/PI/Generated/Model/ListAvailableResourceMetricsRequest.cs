@@ -69,7 +69,7 @@ namespace Amazon.PI.Model
         /// than the number of existing items, the response includes a pagination token. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=20)]
+        [AWSProperty(Min=0, Max=25)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

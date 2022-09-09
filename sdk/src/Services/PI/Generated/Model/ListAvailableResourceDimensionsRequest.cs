@@ -71,7 +71,7 @@ namespace Amazon.PI.Model
         /// so that the remaining results can be retrieved.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=20)]
+        [AWSProperty(Min=0, Max=25)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
