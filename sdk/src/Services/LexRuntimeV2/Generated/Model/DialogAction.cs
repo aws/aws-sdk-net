@@ -35,6 +35,7 @@ namespace Amazon.LexRuntimeV2.Model
     {
         private StyleType _slotElicitationStyle;
         private string _slotToElicit;
+        private ElicitSubSlot _subSlotToElicit;
         private DialogActionType _type;
 
         /// <summary>
@@ -89,6 +90,25 @@ namespace Amazon.LexRuntimeV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SubSlotToElicit. 
+        /// <para>
+        /// The name of the constituent sub slot of the composite slot specified in slotToElicit
+        /// that should be elicited from the user.
+        /// </para>
+        /// </summary>
+        public ElicitSubSlot SubSlotToElicit
+        {
+            get { return this._subSlotToElicit; }
+            set { this._subSlotToElicit = value; }
+        }
+
+        // Check to see if SubSlotToElicit property is set
+        internal bool IsSetSubSlotToElicit()
+        {
+            return this._subSlotToElicit != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
         /// The next action that the bot should take in its interaction with the user. The possible
@@ -107,6 +127,10 @@ namespace Amazon.LexRuntimeV2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>Delegate</code> - The next action is determined by Amazon Lex V2.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ElicitIntent</code> - The next action is to elicit an intent from the user.
         /// </para>
         ///  </li> <li> 
         /// <para>

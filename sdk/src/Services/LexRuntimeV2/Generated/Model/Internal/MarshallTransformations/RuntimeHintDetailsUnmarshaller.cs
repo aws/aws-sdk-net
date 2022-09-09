@@ -70,6 +70,12 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.RuntimeHintValues = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("subSlotHints", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, RuntimeHintDetails, StringUnmarshaller, RuntimeHintDetailsUnmarshaller>(StringUnmarshaller.Instance, RuntimeHintDetailsUnmarshaller.Instance);
+                    unmarshalledObject.SubSlotHints = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

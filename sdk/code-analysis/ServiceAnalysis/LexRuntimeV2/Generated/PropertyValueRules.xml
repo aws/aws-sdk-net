@@ -258,6 +258,10 @@
     <pattern>^[A-D0-9#*]{1}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LexRuntimeV2.Model.ElicitSubSlot.Name</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LexRuntimeV2.Model.HeartbeatEvent.EventId</property>
     <min>2</min>
     <max>100</max>

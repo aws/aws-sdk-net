@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DialogAction Marshaller
+    /// ElicitSubSlot Marshaller
     /// </summary>
-    public class DialogActionMarshaller : IRequestMarshaller<DialogAction, JsonMarshallerContext> 
+    public class ElicitSubSlotMarshaller : IRequestMarshaller<ElicitSubSlot, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,18 +43,12 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(DialogAction requestObject, JsonMarshallerContext context)
+        public void Marshall(ElicitSubSlot requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetSlotElicitationStyle())
+            if(requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("slotElicitationStyle");
-                context.Writer.Write(requestObject.SlotElicitationStyle);
-            }
-
-            if(requestObject.IsSetSlotToElicit())
-            {
-                context.Writer.WritePropertyName("slotToElicit");
-                context.Writer.Write(requestObject.SlotToElicit);
+                context.Writer.WritePropertyName("name");
+                context.Writer.Write(requestObject.Name);
             }
 
             if(requestObject.IsSetSubSlotToElicit())
@@ -68,18 +62,12 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetType())
-            {
-                context.Writer.WritePropertyName("type");
-                context.Writer.Write(requestObject.Type);
-            }
-
         }
 
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static DialogActionMarshaller Instance = new DialogActionMarshaller();
+        public readonly static ElicitSubSlotMarshaller Instance = new ElicitSubSlotMarshaller();
 
     }
 }

@@ -35,6 +35,7 @@ namespace Amazon.LexRuntimeV2.Model
     public partial class RuntimeHintDetails
     {
         private List<RuntimeHintValue> _runtimeHintValues = new List<RuntimeHintValue>();
+        private Dictionary<string, RuntimeHintDetails> _subSlotHints = new Dictionary<string, RuntimeHintDetails>();
 
         /// <summary>
         /// Gets and sets the property RuntimeHintValues. 
@@ -43,7 +44,7 @@ namespace Amazon.LexRuntimeV2.Model
         /// phrase is given preference when deciding on slot values.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=100)]
         public List<RuntimeHintValue> RuntimeHintValues
         {
             get { return this._runtimeHintValues; }
@@ -54,6 +55,28 @@ namespace Amazon.LexRuntimeV2.Model
         internal bool IsSetRuntimeHintValues()
         {
             return this._runtimeHintValues != null && this._runtimeHintValues.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubSlotHints. 
+        /// <para>
+        /// A map of constituent sub slot names inside a composite slot in the intent and the
+        /// phrases that should be added for each sub slot. Inside each composite slot hints,
+        /// this structure provides a mechanism to add granular sub slot phrases. Only sub slot
+        /// hints are supported for composite slots. The intent name, composite slot name and
+        /// the constituent sub slot names must exist.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, RuntimeHintDetails> SubSlotHints
+        {
+            get { return this._subSlotHints; }
+            set { this._subSlotHints = value; }
+        }
+
+        // Check to see if SubSlotHints property is set
+        internal bool IsSetSubSlotHints()
+        {
+            return this._subSlotHints != null && this._subSlotHints.Count > 0; 
         }
 
     }

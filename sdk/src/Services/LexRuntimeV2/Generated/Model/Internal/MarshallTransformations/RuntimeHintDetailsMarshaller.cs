@@ -61,6 +61,25 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetSubSlotHints())
+            {
+                context.Writer.WritePropertyName("subSlotHints");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectSubSlotHintsKvp in requestObject.SubSlotHints)
+                {
+                    context.Writer.WritePropertyName(requestObjectSubSlotHintsKvp.Key);
+                    var requestObjectSubSlotHintsValue = requestObjectSubSlotHintsKvp.Value;
+
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RuntimeHintDetailsMarshaller.Instance;
+                    marshaller.Marshall(requestObjectSubSlotHintsValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

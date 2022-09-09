@@ -41,8 +41,8 @@ namespace Amazon.LexRuntimeV2.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.xml">Using
-    /// hints to improve accuracy</a>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.html">Using
+    /// runtime hints to improve recognition of slot values</a>.
     /// </para>
     /// </summary>
     public partial class RuntimeHints
@@ -58,7 +58,7 @@ namespace Amazon.LexRuntimeV2.Model
         ///  
         /// <para>
         /// The first level of the <code>slotHints</code> map is the name of the intent. The second
-        /// level is the name of the slot within the intent. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.xml">Using
+        /// level is the name of the slot within the intent. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.html">Using
         /// hints to improve accuracy</a>.
         /// </para>
         ///  

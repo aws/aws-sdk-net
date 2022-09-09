@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DialogAction Object
+    /// Response Unmarshaller for ElicitSubSlot Object
     /// </summary>  
-    public class DialogActionUnmarshaller : IUnmarshaller<DialogAction, XmlUnmarshallerContext>, IUnmarshaller<DialogAction, JsonUnmarshallerContext>
+    public class ElicitSubSlotUnmarshaller : IUnmarshaller<ElicitSubSlot, XmlUnmarshallerContext>, IUnmarshaller<ElicitSubSlot, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DialogAction IUnmarshaller<DialogAction, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ElicitSubSlot IUnmarshaller<ElicitSubSlot, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,21 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DialogAction Unmarshall(JsonUnmarshallerContext context)
+        public ElicitSubSlot Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DialogAction unmarshalledObject = new DialogAction();
+            ElicitSubSlot unmarshalledObject = new ElicitSubSlot();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("slotElicitationStyle", targetDepth))
+                if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SlotElicitationStyle = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("slotToElicit", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SlotToElicit = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("subSlotToElicit", targetDepth))
@@ -82,24 +76,18 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.SubSlotToElicit = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
           
             return unmarshalledObject;
         }
 
 
-        private static DialogActionUnmarshaller _instance = new DialogActionUnmarshaller();        
+        private static ElicitSubSlotUnmarshaller _instance = new ElicitSubSlotUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DialogActionUnmarshaller Instance
+        public static ElicitSubSlotUnmarshaller Instance
         {
             get
             {
