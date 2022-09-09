@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// The AQUA (Advanced Query Accelerator) configuration of the cluster.
+    /// The operation that uses this structure is retired. Amazon Redshift automatically determines
+    /// whether to use AQUA (Advanced Query Accelerator).
     /// </summary>
     public partial class AquaConfiguration
     {
@@ -39,23 +40,9 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property AquaConfigurationStatus. 
         /// <para>
-        /// The value represents how the cluster is configured to use AQUA. Possible values include
-        /// the following.
+        /// This field is retired. Amazon Redshift automatically determines whether to use AQUA
+        /// (Advanced Query Accelerator).
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// enabled - Use AQUA if it is available for the current Amazon Web Services Region and
-        /// Amazon Redshift node type.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// disabled - Don't use AQUA. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// auto - Amazon Redshift determines whether to use AQUA.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public AquaConfigurationStatus AquaConfigurationStatus
         {
@@ -72,22 +59,9 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property AquaStatus. 
         /// <para>
-        /// The value indicates the status of AQUA on the cluster. Possible values include the
-        /// following.
+        /// This field is retired. Amazon Redshift automatically determines whether to use AQUA
+        /// (Advanced Query Accelerator).
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// enabled - AQUA is enabled.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// disabled - AQUA is not enabled. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// applying - AQUA status is being applied. 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public AquaStatus AquaStatus
         {

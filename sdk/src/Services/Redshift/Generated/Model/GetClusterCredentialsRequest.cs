@@ -175,8 +175,8 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Must contain only lowercase letters, numbers, underscore, plus sign, period (dot),
-        /// at symbol (@), or hyphen.
+        /// Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period
+        /// (dot), at symbol (@), or hyphen.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -233,8 +233,8 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Must contain only lowercase letters, numbers, underscore, plus sign, period (dot),
-        /// at symbol (@), or hyphen.
+        /// Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period
+        /// (dot), at symbol (@), or hyphen.
         /// </para>
         ///  </li> <li> 
         /// <para>

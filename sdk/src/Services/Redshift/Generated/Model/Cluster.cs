@@ -108,7 +108,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property AquaConfiguration. 
         /// <para>
-        /// The AQUA (Advanced Query Accelerator) configuration of the cluster.
+        /// This field is retired. Amazon Redshift automatically determines whether to use AQUA
+        /// (Advanced Query Accelerator).
         /// </para>
         /// </summary>
         public AquaConfiguration AquaConfiguration
