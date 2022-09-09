@@ -32,7 +32,7 @@ namespace Amazon.AmplifyUIBuilder
     public partial class AmazonAmplifyUIBuilderConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.55");
+            InternalSDKUtils.BuildUserAgentString("3.7.2.56");
 
         private string _userAgent = UserAgentString;
 

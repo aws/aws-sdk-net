@@ -1,3 +1,12 @@
+### 3.7.353.0 (2022-09-09 00:27 UTC)
+* Drs (3.7.3.0)
+	* Added public IsReplicationConfigurationTemplateIDsSet property for DescribeReplicationConfigurationTemplatesRequest.
+* DynamoDBv2 (3.7.4.9)
+	* Add ability to mock AsyncSearch (PR 2089). Make convert methods in DataModel abstraction public.
+* Core 3.7.13.0
+	* Add support for Bearer Token authentication; Added property setters in AssumeRoleWithWebIdentityCredentialsOptions class.
+	* All services packages updated to require new Core
+
 ### 3.7.352.0 (2022-09-08 18:57 UTC)
 * EC2 (3.7.85.0)
 	* This release adds support to send VPC Flow Logs to kinesis-data-firehose as new destination type
