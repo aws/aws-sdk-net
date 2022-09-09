@@ -29,22 +29,38 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListTrails operation.
-    /// Lists trails that are in the current account.
+    /// This is the response object from the ListChannels operation.
     /// </summary>
-    public partial class ListTrailsRequest : AmazonCloudTrailRequest
+    public partial class ListChannelsResponse : AmazonWebServiceResponse
     {
+        private List<Channel> _channels = new List<Channel>();
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property Channels. 
+        /// <para>
+        ///  The list of CloudTrail channels. 
+        /// </para>
+        /// </summary>
+        public List<Channel> Channels
+        {
+            get { return this._channels; }
+            set { this._channels = value; }
+        }
+
+        // Check to see if Channels property is set
+        internal bool IsSetChannels()
+        {
+            return this._channels != null && this._channels.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to use to get the next page of results after a previous API call. This token
-        /// must be passed in with the same parameters that were specified in the original call.
-        /// For example, if the original call specified an AttributeKey of 'Username' with a value
-        /// of 'root', the call with NextToken should include those same parameters.
+        ///  A token used to get the next page of results. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=4, Max=1000)]
         public string NextToken
         {
             get { return this._nextToken; }

@@ -29,32 +29,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListTrails operation.
-    /// Lists trails that are in the current account.
+    /// Container for the parameters to the GetChannel operation.
+    /// Returns the specified CloudTrail service-linked channel. Amazon Web Services services
+    /// create service-linked channels to view CloudTrail events.
     /// </summary>
-    public partial class ListTrailsRequest : AmazonCloudTrailRequest
+    public partial class GetChannelRequest : AmazonCloudTrailRequest
     {
-        private string _nextToken;
+        private string _channel;
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property Channel. 
         /// <para>
-        /// The token to use to get the next page of results after a previous API call. This token
-        /// must be passed in with the same parameters that were specified in the original call.
-        /// For example, if the original call specified an AttributeKey of 'Username' with a value
-        /// of 'root', the call with NextToken should include those same parameters.
+        ///  The Amazon Resource Name (ARN) of the CloudTrail service-linked channel. 
         /// </para>
         /// </summary>
-        public string NextToken
+        [AWSProperty(Required=true, Min=3, Max=256)]
+        public string Channel
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._channel; }
+            set { this._channel = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if Channel property is set
+        internal bool IsSetChannel()
         {
-            return this._nextToken != null;
+            return this._channel != null;
         }
 
     }

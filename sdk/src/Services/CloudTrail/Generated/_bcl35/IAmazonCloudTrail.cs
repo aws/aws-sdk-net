@@ -906,6 +906,59 @@ namespace Amazon.CloudTrail
 
         #endregion
         
+        #region  GetChannel
+
+
+        /// <summary>
+        /// Returns the specified CloudTrail service-linked channel. Amazon Web Services services
+        /// create service-linked channels to view CloudTrail events.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetChannel service method.</param>
+        /// 
+        /// <returns>The response from the GetChannel service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.ChannelARNInvalidException">
+        /// The specified channel ARN is not valid or does not map to a channel in your account.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.ChannelNotFoundException">
+        /// The specified channel was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetChannel">REST API Reference for GetChannel Operation</seealso>
+        GetChannelResponse GetChannel(GetChannelRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetChannel operation on AmazonCloudTrailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetChannel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetChannel">REST API Reference for GetChannel Operation</seealso>
+        IAsyncResult BeginGetChannel(GetChannelRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetChannel.</param>
+        /// 
+        /// <returns>Returns a  GetChannelResult from CloudTrail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetChannel">REST API Reference for GetChannel Operation</seealso>
+        GetChannelResponse EndGetChannel(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetEventDataStore
 
 
@@ -1376,6 +1429,56 @@ namespace Amazon.CloudTrail
         /// <returns>Returns a  GetTrailStatusResult from CloudTrail.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetTrailStatus">REST API Reference for GetTrailStatus Operation</seealso>
         GetTrailStatusResponse EndGetTrailStatus(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListChannels
+
+
+        /// <summary>
+        /// Returns all CloudTrail channels.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListChannels service method.</param>
+        /// 
+        /// <returns>The response from the ListChannels service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidNextTokenException">
+        /// A token that is not valid, or a token that was previously used in a request with different
+        /// parameters. This exception is thrown if the token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListChannels">REST API Reference for ListChannels Operation</seealso>
+        ListChannelsResponse ListChannels(ListChannelsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListChannels operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListChannels operation on AmazonCloudTrailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListChannels
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListChannels">REST API Reference for ListChannels Operation</seealso>
+        IAsyncResult BeginListChannels(ListChannelsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListChannels operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListChannels.</param>
+        /// 
+        /// <returns>Returns a  ListChannelsResult from CloudTrail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListChannels">REST API Reference for ListChannels Operation</seealso>
+        ListChannelsResponse EndListChannels(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2621,7 +2724,7 @@ namespace Amazon.CloudTrail
         /// Updates an event data store. The required <code>EventDataStore</code> value is an
         /// ARN or the ID portion of the ARN. Other parameters are optional, but at least one
         /// optional parameter must be specified, or CloudTrail throws an error. <code>RetentionPeriod</code>
-        /// is in days, and valid values are integers between 90 and 2555. By default, <code>TerminationProtection</code>
+        /// is in days, and valid values are integers between 90 and 2557. By default, <code>TerminationProtection</code>
         /// is enabled. <code>AdvancedEventSelectors</code> includes or excludes management and
         /// data events in your event data store; for more information about <code>AdvancedEventSelectors</code>,
         /// see <a>PutEventSelectorsRequest$AdvancedEventSelectors</a>.

@@ -95,7 +95,7 @@ namespace Amazon.CloudTrail.Model
         /// <para>
         ///  <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value
         /// of <code>true</code> or <code>false</code>. If you do not add this field, CloudTrail
-        /// logs both both <code>read</code> and <code>write</code> events. A value of <code>true</code>
+        /// logs both <code>read</code> and <code>write</code> events. A value of <code>true</code>
         /// logs only <code>read</code> events. A value of <code>false</code> logs only <code>write</code>
         /// events.
         /// </para>

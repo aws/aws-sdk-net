@@ -1648,6 +1648,73 @@ namespace Amazon.CloudTrail
 
         #endregion
         
+        #region  GetChannel
+
+
+        /// <summary>
+        /// Returns the specified CloudTrail service-linked channel. Amazon Web Services services
+        /// create service-linked channels to view CloudTrail events.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetChannel service method.</param>
+        /// 
+        /// <returns>The response from the GetChannel service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.ChannelARNInvalidException">
+        /// The specified channel ARN is not valid or does not map to a channel in your account.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.ChannelNotFoundException">
+        /// The specified channel was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetChannel">REST API Reference for GetChannel Operation</seealso>
+        public virtual GetChannelResponse GetChannel(GetChannelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetChannelResponseUnmarshaller.Instance;
+
+            return Invoke<GetChannelResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns the specified CloudTrail service-linked channel. Amazon Web Services services
+        /// create service-linked channels to view CloudTrail events.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetChannel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetChannel service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.ChannelARNInvalidException">
+        /// The specified channel ARN is not valid or does not map to a channel in your account.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.ChannelNotFoundException">
+        /// The specified channel was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetChannel">REST API Reference for GetChannel Operation</seealso>
+        public virtual Task<GetChannelResponse> GetChannelAsync(GetChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetChannelResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetChannelResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetEventDataStore
 
 
@@ -2356,6 +2423,67 @@ namespace Amazon.CloudTrail
             options.ResponseUnmarshaller = GetTrailStatusResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetTrailStatusResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListChannels
+
+
+        /// <summary>
+        /// Returns all CloudTrail channels.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListChannels service method.</param>
+        /// 
+        /// <returns>The response from the ListChannels service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidNextTokenException">
+        /// A token that is not valid, or a token that was previously used in a request with different
+        /// parameters. This exception is thrown if the token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListChannels">REST API Reference for ListChannels Operation</seealso>
+        public virtual ListChannelsResponse ListChannels(ListChannelsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListChannelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListChannelsResponseUnmarshaller.Instance;
+
+            return Invoke<ListChannelsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns all CloudTrail channels.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListChannels service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListChannels service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidNextTokenException">
+        /// A token that is not valid, or a token that was previously used in a request with different
+        /// parameters. This exception is thrown if the token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListChannels">REST API Reference for ListChannels Operation</seealso>
+        public virtual Task<ListChannelsResponse> ListChannelsAsync(ListChannelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListChannelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListChannelsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListChannelsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4330,7 +4458,7 @@ namespace Amazon.CloudTrail
         /// Updates an event data store. The required <code>EventDataStore</code> value is an
         /// ARN or the ID portion of the ARN. Other parameters are optional, but at least one
         /// optional parameter must be specified, or CloudTrail throws an error. <code>RetentionPeriod</code>
-        /// is in days, and valid values are integers between 90 and 2555. By default, <code>TerminationProtection</code>
+        /// is in days, and valid values are integers between 90 and 2557. By default, <code>TerminationProtection</code>
         /// is enabled. <code>AdvancedEventSelectors</code> includes or excludes management and
         /// data events in your event data store; for more information about <code>AdvancedEventSelectors</code>,
         /// see <a>PutEventSelectorsRequest$AdvancedEventSelectors</a>.
@@ -4400,7 +4528,7 @@ namespace Amazon.CloudTrail
         /// Updates an event data store. The required <code>EventDataStore</code> value is an
         /// ARN or the ID portion of the ARN. Other parameters are optional, but at least one
         /// optional parameter must be specified, or CloudTrail throws an error. <code>RetentionPeriod</code>
-        /// is in days, and valid values are integers between 90 and 2555. By default, <code>TerminationProtection</code>
+        /// is in days, and valid values are integers between 90 and 2557. By default, <code>TerminationProtection</code>
         /// is enabled. <code>AdvancedEventSelectors</code> includes or excludes management and
         /// data events in your event data store; for more information about <code>AdvancedEventSelectors</code>,
         /// see <a>PutEventSelectorsRequest$AdvancedEventSelectors</a>.

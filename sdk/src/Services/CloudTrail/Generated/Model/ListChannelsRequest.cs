@@ -29,22 +29,40 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListTrails operation.
-    /// Lists trails that are in the current account.
+    /// Container for the parameters to the ListChannels operation.
+    /// Returns all CloudTrail channels.
     /// </summary>
-    public partial class ListTrailsRequest : AmazonCloudTrailRequest
+    public partial class ListChannelsRequest : AmazonCloudTrailRequest
     {
+        private int? _maxResults;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        ///  The maximum number of CloudTrail channels to display on a single page. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
+        public int MaxResults
+        {
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to use to get the next page of results after a previous API call. This token
-        /// must be passed in with the same parameters that were specified in the original call.
-        /// For example, if the original call specified an AttributeKey of 'Username' with a value
-        /// of 'root', the call with NextToken should include those same parameters.
+        ///  A token you can use to get the next page of results. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=4, Max=1000)]
         public string NextToken
         {
             get { return this._nextToken; }

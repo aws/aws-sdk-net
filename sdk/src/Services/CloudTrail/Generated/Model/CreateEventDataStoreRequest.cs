@@ -123,7 +123,7 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property RetentionPeriod. 
         /// <para>
         /// The retention period of the event data store, in days. You can set a retention period
-        /// of up to 2555 days, the equivalent of seven years.
+        /// of up to 2557 days, the equivalent of seven years.
         /// </para>
         /// </summary>
         [AWSProperty(Min=7, Max=2557)]

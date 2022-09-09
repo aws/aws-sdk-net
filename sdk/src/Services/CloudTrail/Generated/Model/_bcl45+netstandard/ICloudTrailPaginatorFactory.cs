@@ -31,6 +31,11 @@ namespace Amazon.CloudTrail.Model
         IGetQueryResultsPaginator GetQueryResults(GetQueryResultsRequest request);
 
         /// <summary>
+        /// Paginator for ListChannels operation
+        ///</summary>
+        IListChannelsPaginator ListChannels(ListChannelsRequest request);
+
+        /// <summary>
         /// Paginator for ListEventDataStores operation
         ///</summary>
         IListEventDataStoresPaginator ListEventDataStores(ListEventDataStoresRequest request);
