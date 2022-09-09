@@ -1,3 +1,18 @@
+### 3.7.354.0 (2022-09-09 18:25 UTC)
+* CloudTrail (3.7.5.0)
+	* This release adds CloudTrail getChannel and listChannels APIs to allow customer to view the ServiceLinkedChannel configurations.
+* LexModelsV2 (3.7.16.0)
+	* This release is for supporting Composite Slot Type feature in AWS Lex V2. Composite Slot Type will help developer to logically group coherent slots and maintain their inter-relationships in runtime conversation.
+* LexRuntimeV2 (3.7.5.0)
+	* This release is for supporting Composite Slot Type feature in AWS Lex V2. Composite Slot Type will help developer to logically group coherent slots and maintain their inter-relationships in runtime conversation.
+* PI (3.7.3.0)
+	* Increases the maximum values of two RDS Performance Insights APIs. The maximum value of the Limit parameter of DimensionGroup is 25. The MaxResult maximum is now 25 for the following APIs: DescribeDimensionKeys, GetResourceMetrics, ListAvailableResourceDimensions, and ListAvailableResourceMetrics.
+* Redshift (3.7.17.25)
+	* This release updates documentation for AQUA features and other description updates.
+* Core 3.7.13.1
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.353.0 (2022-09-09 00:27 UTC)
 * Drs (3.7.3.0)
 	* Added public IsReplicationConfigurationTemplateIDsSet property for DescribeReplicationConfigurationTemplatesRequest.
