@@ -77,6 +77,17 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCompositeSlotTypeSetting())
+                {
+                    context.Writer.WritePropertyName("compositeSlotTypeSetting");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CompositeSlotTypeSettingMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CompositeSlotTypeSetting, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("description");

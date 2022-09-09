@@ -29,25 +29,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
-    /// Specifies the elicitation setting details for constituent sub slots of a composite
-    /// slot.
+    /// Subslot elicitation settings.
+    /// 
+    ///  
+    /// <para>
+    ///  <code>DefaultValueSpecification</code> is a list of default values for a constituent
+    /// sub slot in a composite slot. Default values are used when Amazon Lex hasn't determined
+    /// a value for a slot. You can specify default values from context variables, session
+    /// attributes, and defined values. This is similar to <code>DefaultValueSpecification</code>
+    /// for slots.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>PromptSpecification</code> is the prompt that Amazon Lex uses to elicit the
+    /// sub slot value from the user. This is similar to <code>PromptSpecification</code>
+    /// for slots.
+    /// </para>
     /// </summary>
-    public partial class SlotValueElicitationSetting
+    public partial class SubSlotValueElicitationSetting
     {
         private SlotDefaultValueSpecification _defaultValueSpecification;
         private PromptSpecification _promptSpecification;
         private List<SampleUtterance> _sampleUtterances = new List<SampleUtterance>();
-        private SlotCaptureSetting _slotCaptureSetting;
-        private SlotConstraint _slotConstraint;
         private WaitAndContinueSpecification _waitAndContinueSpecification;
 
         /// <summary>
-        /// Gets and sets the property DefaultValueSpecification. 
-        /// <para>
-        /// A list of default values for a slot. Default values are used when Amazon Lex hasn't
-        /// determined a value for a slot. You can specify default values from context variables,
-        /// session attributes, and defined values.
-        /// </para>
+        /// Gets and sets the property DefaultValueSpecification.
         /// </summary>
         public SlotDefaultValueSpecification DefaultValueSpecification
         {
@@ -62,11 +69,9 @@ namespace Amazon.LexModelsV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PromptSpecification. 
-        /// <para>
-        /// The prompt that Amazon Lex uses to elicit the slot value from the user.
-        /// </para>
+        /// Gets and sets the property PromptSpecification.
         /// </summary>
+        [AWSProperty(Required=true)]
         public PromptSpecification PromptSpecification
         {
             get { return this._promptSpecification; }
@@ -83,8 +88,9 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property SampleUtterances. 
         /// <para>
         /// If you know a specific pattern that users might respond to an Amazon Lex request for
-        /// a slot value, you can provide those utterances to improve accuracy. This is optional.
-        /// In most cases, Amazon Lex is capable of understanding user utterances.
+        /// a sub slot value, you can provide those utterances to improve accuracy. This is optional.
+        /// In most cases Amazon Lex is capable of understanding user utterances. This is similar
+        /// to <code>SampleUtterances</code> for slots.
         /// </para>
         /// </summary>
         public List<SampleUtterance> SampleUtterances
@@ -97,44 +103,6 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetSampleUtterances()
         {
             return this._sampleUtterances != null && this._sampleUtterances.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property SlotCaptureSetting. 
-        /// <para>
-        /// Specifies the settings that Amazon Lex uses when a slot value is successfully entered
-        /// by a user.
-        /// </para>
-        /// </summary>
-        public SlotCaptureSetting SlotCaptureSetting
-        {
-            get { return this._slotCaptureSetting; }
-            set { this._slotCaptureSetting = value; }
-        }
-
-        // Check to see if SlotCaptureSetting property is set
-        internal bool IsSetSlotCaptureSetting()
-        {
-            return this._slotCaptureSetting != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SlotConstraint. 
-        /// <para>
-        /// Specifies whether the slot is required or optional.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public SlotConstraint SlotConstraint
-        {
-            get { return this._slotConstraint; }
-            set { this._slotConstraint = value; }
-        }
-
-        // Check to see if SlotConstraint property is set
-        internal bool IsSetSlotConstraint()
-        {
-            return this._slotConstraint != null;
         }
 
         /// <summary>

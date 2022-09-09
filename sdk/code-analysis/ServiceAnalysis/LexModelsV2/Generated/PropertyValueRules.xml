@@ -2612,6 +2612,12 @@
     <max>300</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.Specifications.SlotTypeId</property>
+    <min>1</min>
+    <max>25</max>
+    <pattern>^((AMAZON\.)[a-zA-Z_]+?|[0-9a-zA-Z]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LexModelsV2.Model.SSMLMessage.Value</property>
     <min>1</min>
     <max>1000</max>
@@ -2625,5 +2631,23 @@
     <property>Amazon.LexModelsV2.Model.StillWaitingResponseSpecification.TimeoutInSeconds</property>
     <min>1</min>
     <max>900</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.SubSlotSetting.Expression</property>
+    <min>0</min>
+    <max>640</max>
+    <pattern>[0-9A-Za-z_\s\(\)]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.SubSlotTypeComposition.Name</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^([0-9a-zA-Z][_-]?)+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.SubSlotTypeComposition.SlotTypeId</property>
+    <min>1</min>
+    <max>25</max>
+    <pattern>^((AMAZON\.)[a-zA-Z_]+?|[0-9a-zA-Z]+)$</pattern>
   </property-value-rule>
 </property-value-rules>

@@ -123,6 +123,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     response.SlotTypeId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("subSlotSetting", targetDepth))
+                {
+                    var unmarshaller = SubSlotSettingUnmarshaller.Instance;
+                    response.SubSlotSetting = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("valueElicitationSetting", targetDepth))
                 {
                     var unmarshaller = SlotValueElicitationSettingUnmarshaller.Instance;

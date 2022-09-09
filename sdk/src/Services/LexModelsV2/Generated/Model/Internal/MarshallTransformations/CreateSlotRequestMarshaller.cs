@@ -117,6 +117,17 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SlotTypeId);
                 }
 
+                if(publicRequest.IsSetSubSlotSetting())
+                {
+                    context.Writer.WritePropertyName("subSlotSetting");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SubSlotSettingMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SubSlotSetting, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetValueElicitationSetting())
                 {
                     context.Writer.WritePropertyName("valueElicitationSetting");

@@ -35,6 +35,7 @@ namespace Amazon.LexModelsV2.Model
     {
         private string _botId;
         private string _botVersion;
+        private CompositeSlotTypeSetting _compositeSlotTypeSetting;
         private DateTime? _creationDateTime;
         private string _description;
         private ExternalSourceSetting _externalSourceSetting;
@@ -82,6 +83,24 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetBotVersion()
         {
             return this._botVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CompositeSlotTypeSetting. 
+        /// <para>
+        /// Specifications for a composite slot type.
+        /// </para>
+        /// </summary>
+        public CompositeSlotTypeSetting CompositeSlotTypeSetting
+        {
+            get { return this._compositeSlotTypeSetting; }
+            set { this._compositeSlotTypeSetting = value; }
+        }
+
+        // Check to see if CompositeSlotTypeSetting property is set
+        internal bool IsSetCompositeSlotTypeSetting()
+        {
+            return this._compositeSlotTypeSetting != null;
         }
 
         /// <summary>

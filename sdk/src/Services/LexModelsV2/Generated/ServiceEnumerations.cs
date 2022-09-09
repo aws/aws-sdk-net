@@ -2269,6 +2269,10 @@ namespace Amazon.LexModelsV2
     {
 
         /// <summary>
+        /// Constant Composite for SlotTypeCategory
+        /// </summary>
+        public static readonly SlotTypeCategory Composite = new SlotTypeCategory("Composite");
+        /// <summary>
         /// Constant Custom for SlotTypeCategory
         /// </summary>
         public static readonly SlotTypeCategory Custom = new SlotTypeCategory("Custom");
@@ -2472,6 +2476,10 @@ namespace Amazon.LexModelsV2
     public class SlotValueResolutionStrategy : ConstantClass
     {
 
+        /// <summary>
+        /// Constant Concatenation for SlotValueResolutionStrategy
+        /// </summary>
+        public static readonly SlotValueResolutionStrategy Concatenation = new SlotValueResolutionStrategy("Concatenation");
         /// <summary>
         /// Constant OriginalValue for SlotValueResolutionStrategy
         /// </summary>
