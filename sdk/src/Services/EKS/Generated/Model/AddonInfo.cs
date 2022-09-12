@@ -58,7 +58,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property AddonVersions. 
         /// <para>
-        /// An object that represents information about available add-on versions and compatible
+        /// An object representing information about available add-on versions and compatible
         /// Kubernetes versions.
         /// </para>
         /// </summary>

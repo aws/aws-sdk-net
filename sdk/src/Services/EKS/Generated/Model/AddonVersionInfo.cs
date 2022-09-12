@@ -76,7 +76,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Compatibilities. 
         /// <para>
-        /// An object that represents the compatibilities of a version.
+        /// An object representing the compatibilities of a version.
         /// </para>
         /// </summary>
         public List<Compatibility> Compatibilities

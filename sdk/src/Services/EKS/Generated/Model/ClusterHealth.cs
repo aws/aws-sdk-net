@@ -29,28 +29,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EKS.Model
 {
     /// <summary>
-    /// The full description of your identity configuration.
+    /// An object representing the health of your local Amazon EKS cluster on an Amazon Web
+    /// Services Outpost. You can't use this API with an Amazon EKS cluster on the Amazon
+    /// Web Services cloud.
     /// </summary>
-    public partial class IdentityProviderConfigResponse
+    public partial class ClusterHealth
     {
-        private OidcIdentityProviderConfig _oidc;
+        private List<ClusterIssue> _issues = new List<ClusterIssue>();
 
         /// <summary>
-        /// Gets and sets the property Oidc. 
+        /// Gets and sets the property Issues. 
         /// <para>
-        /// An object representing an OpenID Connect (OIDC) identity provider configuration.
+        /// An object representing the health issues of your local Amazon EKS cluster on an Amazon
+        /// Web Services Outpost.
         /// </para>
         /// </summary>
-        public OidcIdentityProviderConfig Oidc
+        public List<ClusterIssue> Issues
         {
-            get { return this._oidc; }
-            set { this._oidc = value; }
+            get { return this._issues; }
+            set { this._issues = value; }
         }
 
-        // Check to see if Oidc property is set
-        internal bool IsSetOidc()
+        // Check to see if Issues property is set
+        internal bool IsSetIssues()
         {
-            return this._oidc != null;
+            return this._issues != null && this._issues.Count > 0; 
         }
 
     }

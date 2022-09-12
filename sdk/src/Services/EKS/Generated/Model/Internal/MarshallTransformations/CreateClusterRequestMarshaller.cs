@@ -120,6 +120,17 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetOutpostConfig())
+                {
+                    context.Writer.WritePropertyName("outpostConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = OutpostConfigRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OutpostConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetResourcesVpcConfig())
                 {
                     context.Writer.WritePropertyName("resourcesVpcConfig");

@@ -82,7 +82,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property IdentityProviderConfig. 
         /// <para>
-        /// An object that represents an identity provider configuration.
+        /// An object representing an identity provider configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

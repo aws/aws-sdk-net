@@ -106,6 +106,18 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("health", targetDepth))
+                {
+                    var unmarshaller = ClusterHealthUnmarshaller.Instance;
+                    unmarshalledObject.Health = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("id", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("identity", targetDepth))
                 {
                     var unmarshaller = IdentityUnmarshaller.Instance;
@@ -128,6 +140,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("outpostConfig", targetDepth))
+                {
+                    var unmarshaller = OutpostConfigResponseUnmarshaller.Instance;
+                    unmarshalledObject.OutpostConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("platformVersion", targetDepth))

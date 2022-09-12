@@ -38,7 +38,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Issues. 
         /// <para>
-        /// An object that represents the add-on's health issues.
+        /// An object representing the health issues for an add-on.
         /// </para>
         /// </summary>
         public List<AddonIssue> Issues

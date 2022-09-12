@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EKS.Model
 {
     /// <summary>
-    /// An object that represents the configuration for an OpenID Connect (OIDC) identity
-    /// provider.
+    /// An object representing the configuration for an OpenID Connect (OIDC) identity provider.
     /// </summary>
     public partial class OidcIdentityProviderConfig
     {

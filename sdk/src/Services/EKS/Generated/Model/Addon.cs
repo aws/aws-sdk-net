@@ -139,7 +139,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Health. 
         /// <para>
-        /// An object that represents the health of the add-on.
+        /// An object representing the health of the add-on.
         /// </para>
         /// </summary>
         public AddonHealth Health
