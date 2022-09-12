@@ -1,3 +1,7 @@
+### 3.7.355.0 (2022-09-12 18:17 UTC)
+* EKS (3.7.16.0)
+	* Adding support for local Amazon EKS clusters on Outposts
+
 ### 3.7.354.0 (2022-09-09 18:25 UTC)
 * CloudTrail (3.7.5.0)
 	* This release adds CloudTrail getChannel and listChannels APIs to allow customer to view the ServiceLinkedChannel configurations.
