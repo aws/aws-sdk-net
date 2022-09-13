@@ -238,6 +238,18 @@
     <pattern>^c-([0-9a-f]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Transfer.Model.DeleteHostKeyRequest.HostKeyId</property>
+    <min>25</min>
+    <max>25</max>
+    <pattern>^hostkey-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.DeleteHostKeyRequest.ServerId</property>
+    <min>19</min>
+    <max>19</max>
+    <pattern>^s-([0-9a-f]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Transfer.Model.DeleteProfileRequest.ProfileId</property>
     <min>19</min>
     <max>19</max>
@@ -346,6 +358,18 @@
     <pattern>^w-([a-z0-9]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Transfer.Model.DescribeHostKeyRequest.HostKeyId</property>
+    <min>25</min>
+    <max>25</max>
+    <pattern>^hostkey-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.DescribeHostKeyRequest.ServerId</property>
+    <min>19</min>
+    <max>19</max>
+    <pattern>^s-([0-9a-f]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Transfer.Model.DescribeProfileRequest.ProfileId</property>
     <min>19</min>
     <max>19</max>
@@ -414,6 +438,33 @@
     <min>22</min>
     <max>22</max>
     <pattern>^cert-([0-9a-f]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.ImportHostKeyRequest.Description</property>
+    <min>0</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.ImportHostKeyRequest.HostKeyBody</property>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.ImportHostKeyRequest.ServerId</property>
+    <min>19</min>
+    <max>19</max>
+    <pattern>^s-([0-9a-f]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.ImportHostKeyResponse.HostKeyId</property>
+    <min>25</min>
+    <max>25</max>
+    <pattern>^hostkey-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.ImportHostKeyResponse.ServerId</property>
+    <min>19</min>
+    <max>19</max>
+    <pattern>^s-([0-9a-f]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ImportSshPublicKeyRequest.ServerId</property>
@@ -553,6 +604,33 @@
     <min>19</min>
     <max>19</max>
     <pattern>^w-([a-z0-9]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.ListHostKeysRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.ListHostKeysRequest.NextToken</property>
+    <min>1</min>
+    <max>6144</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.ListHostKeysRequest.ServerId</property>
+    <min>19</min>
+    <max>19</max>
+    <pattern>^s-([0-9a-f]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.ListHostKeysResponse.NextToken</property>
+    <min>1</min>
+    <max>6144</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.ListHostKeysResponse.ServerId</property>
+    <min>19</min>
+    <max>19</max>
+    <pattern>^s-([0-9a-f]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListProfilesRequest.MaxResults</property>
@@ -878,6 +956,35 @@
     <pattern>^c-([0-9a-f]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Transfer.Model.UpdateHostKeyRequest.Description</property>
+    <min>0</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.UpdateHostKeyRequest.HostKeyId</property>
+    <min>25</min>
+    <max>25</max>
+    <pattern>^hostkey-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.UpdateHostKeyRequest.ServerId</property>
+    <min>19</min>
+    <max>19</max>
+    <pattern>^s-([0-9a-f]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.UpdateHostKeyResponse.HostKeyId</property>
+    <min>25</min>
+    <max>25</max>
+    <pattern>^hostkey-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.UpdateHostKeyResponse.ServerId</property>
+    <min>19</min>
+    <max>19</max>
+    <pattern>^s-([0-9a-f]{17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Transfer.Model.UpdateProfileRequest.ProfileId</property>
     <min>19</min>
     <max>19</max>
@@ -1167,6 +1274,23 @@
     <pattern>arn:.*role/.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Transfer.Model.DescribedHostKey.Arn</property>
+    <min>20</min>
+    <max>1600</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.DescribedHostKey.Description</property>
+    <min>0</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.DescribedHostKey.HostKeyId</property>
+    <min>25</min>
+    <max>25</max>
+    <pattern>^hostkey-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedProfile.Arn</property>
     <min>20</min>
     <max>1600</max>
@@ -1412,6 +1536,23 @@
     <min>36</min>
     <max>36</max>
     <pattern>^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.ListedHostKey.Arn</property>
+    <min>20</min>
+    <max>1600</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.ListedHostKey.Description</property>
+    <min>0</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.ListedHostKey.HostKeyId</property>
+    <min>25</min>
+    <max>25</max>
+    <pattern>^hostkey-[0-9a-f]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.ListedProfile.Arn</property>
