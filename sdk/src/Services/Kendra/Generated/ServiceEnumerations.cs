@@ -2907,6 +2907,10 @@ namespace Amazon.Kendra
         /// </summary>
         public static readonly SharePointVersion SHAREPOINT_2016 = new SharePointVersion("SHAREPOINT_2016");
         /// <summary>
+        /// Constant SHAREPOINT_2019 for SharePointVersion
+        /// </summary>
+        public static readonly SharePointVersion SHAREPOINT_2019 = new SharePointVersion("SHAREPOINT_2019");
+        /// <summary>
         /// Constant SHAREPOINT_ONLINE for SharePointVersion
         /// </summary>
         public static readonly SharePointVersion SHAREPOINT_ONLINE = new SharePointVersion("SHAREPOINT_ONLINE");

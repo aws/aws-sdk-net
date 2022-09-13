@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Provides filtering the query results based on document attributes.
+    /// Provides filtering the query results based on document attributes or metadata fields.
     /// 
     ///  
     /// <para>
@@ -94,8 +94,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ContainsAll. 
         /// <para>
-        /// Returns true when a document contains all of the specified document attributes. This
-        /// filter is only applicable to <code>StringListValue</code> metadata.
+        /// Returns true when a document contains all of the specified document attributes or
+        /// metadata fields. This filter is only applicable to <code>StringListValue</code> metadata.
         /// </para>
         /// </summary>
         public DocumentAttribute ContainsAll
@@ -113,8 +113,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ContainsAny. 
         /// <para>
-        /// Returns true when a document contains any of the specified document attributes. This
-        /// filter is only applicable to <code>StringListValue</code> metadata.
+        /// Returns true when a document contains any of the specified document attributes or
+        /// metadata fields. This filter is only applicable to <code>StringListValue</code> metadata.
         /// </para>
         /// </summary>
         public DocumentAttribute ContainsAny
@@ -132,7 +132,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property EqualsTo. 
         /// <para>
-        /// Performs an equals operation on two document attributes.
+        /// Performs an equals operation on two document attributes or metadata fields.
         /// </para>
         /// </summary>
         public DocumentAttribute EqualsTo
@@ -150,8 +150,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property GreaterThan. 
         /// <para>
-        /// Performs a greater than operation on two document attributes. Use with a document
-        /// attribute of type <code>Date</code> or <code>Long</code>.
+        /// Performs a greater than operation on two document attributes or metadata fields. Use
+        /// with a document attribute of type <code>Date</code> or <code>Long</code>.
         /// </para>
         /// </summary>
         public DocumentAttribute GreaterThan
@@ -169,8 +169,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property GreaterThanOrEquals. 
         /// <para>
-        /// Performs a greater or equals than operation on two document attributes. Use with a
-        /// document attribute of type <code>Date</code> or <code>Long</code>.
+        /// Performs a greater or equals than operation on two document attributes or metadata
+        /// fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.
         /// </para>
         /// </summary>
         public DocumentAttribute GreaterThanOrEquals
@@ -188,8 +188,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property LessThan. 
         /// <para>
-        /// Performs a less than operation on two document attributes. Use with a document attribute
-        /// of type <code>Date</code> or <code>Long</code>.
+        /// Performs a less than operation on two document attributes or metadata fields. Use
+        /// with a document attribute of type <code>Date</code> or <code>Long</code>.
         /// </para>
         /// </summary>
         public DocumentAttribute LessThan
@@ -207,8 +207,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property LessThanOrEquals. 
         /// <para>
-        /// Performs a less than or equals operation on two document attributes. Use with a document
-        /// attribute of type <code>Date</code> or <code>Long</code>.
+        /// Performs a less than or equals operation on two document attributes or metadata fields.
+        /// Use with a document attribute of type <code>Date</code> or <code>Long</code>.
         /// </para>
         /// </summary>
         public DocumentAttribute LessThanOrEquals
