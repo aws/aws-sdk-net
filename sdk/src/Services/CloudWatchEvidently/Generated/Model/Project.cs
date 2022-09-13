@@ -37,6 +37,7 @@ namespace Amazon.CloudWatchEvidently.Model
     {
         private long? _activeExperimentCount;
         private long? _activeLaunchCount;
+        private ProjectAppConfigResource _appConfigResource;
         private string _arn;
         private DateTime? _createdTime;
         private ProjectDataDelivery _dataDelivery;
@@ -83,6 +84,25 @@ namespace Amazon.CloudWatchEvidently.Model
         internal bool IsSetActiveLaunchCount()
         {
             return this._activeLaunchCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AppConfigResource. 
+        /// <para>
+        /// This structure defines the configuration of how your application integrates with AppConfig
+        /// to run client-side evaluation.
+        /// </para>
+        /// </summary>
+        public ProjectAppConfigResource AppConfigResource
+        {
+            get { return this._appConfigResource; }
+            set { this._appConfigResource = value; }
+        }
+
+        // Check to see if AppConfigResource property is set
+        internal bool IsSetAppConfigResource()
+        {
+            return this._appConfigResource != null;
         }
 
         /// <summary>

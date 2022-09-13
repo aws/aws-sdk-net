@@ -50,8 +50,36 @@ namespace Amazon.CloudWatchEvidently.Model
     /// </summary>
     public partial class UpdateProjectRequest : AmazonCloudWatchEvidentlyRequest
     {
+        private ProjectAppConfigResourceConfig _appConfigResource;
         private string _description;
         private string _project;
+
+        /// <summary>
+        /// Gets and sets the property AppConfigResource. 
+        /// <para>
+        /// Use this parameter if the project will use client-side evaluation powered by AppConfig.
+        /// Client-side evaluation allows your application to assign variations to user sessions
+        /// locally instead of by calling the <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a>
+        /// operation. This mitigates the latency and availability risks that come with an API
+        /// call. allows you to
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is a structure that contains information about the AppConfig application
+        /// that will be used for client-side evaluation.
+        /// </para>
+        /// </summary>
+        public ProjectAppConfigResourceConfig AppConfigResource
+        {
+            get { return this._appConfigResource; }
+            set { this._appConfigResource = value; }
+        }
+
+        // Check to see if AppConfigResource property is set
+        internal bool IsSetAppConfigResource()
+        {
+            return this._appConfigResource != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 

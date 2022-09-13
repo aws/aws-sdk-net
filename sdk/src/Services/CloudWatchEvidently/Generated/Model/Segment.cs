@@ -179,7 +179,12 @@ namespace Amazon.CloudWatchEvidently.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Pattern.
+        /// Gets and sets the property Pattern. 
+        /// <para>
+        /// The pattern that defines the attributes to use to evalute whether a user session will
+        /// be in the segment. For more information about the pattern syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Segment
+        /// rule pattern syntax</a>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]
         public string Pattern

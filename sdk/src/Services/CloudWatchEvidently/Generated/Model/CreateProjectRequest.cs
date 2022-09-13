@@ -40,10 +40,44 @@ namespace Amazon.CloudWatchEvidently.Model
     /// </summary>
     public partial class CreateProjectRequest : AmazonCloudWatchEvidentlyRequest
     {
+        private ProjectAppConfigResourceConfig _appConfigResource;
         private ProjectDataDeliveryConfig _dataDelivery;
         private string _description;
         private string _name;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property AppConfigResource. 
+        /// <para>
+        /// Use this parameter if the project will use <i>client-side evaluation powered by AppConfig</i>.
+        /// Client-side evaluation allows your application to assign variations to user sessions
+        /// locally instead of by calling the <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a>
+        /// operation. This mitigates the latency and availability risks that come with an API
+        /// call. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-client-side-evaluation.html">
+        /// Client-side evaluation - powered by AppConfig.</a> 
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is a structure that contains information about the AppConfig application
+        /// and environment that will be used as for client-side evaluation.
+        /// </para>
+        ///  
+        /// <para>
+        /// To create a project that uses client-side evaluation, you must have the <code>evidently:ExportProjectAsConfiguration</code>
+        /// permission.
+        /// </para>
+        /// </summary>
+        public ProjectAppConfigResourceConfig AppConfigResource
+        {
+            get { return this._appConfigResource; }
+            set { this._appConfigResource = value; }
+        }
+
+        // Check to see if AppConfigResource property is set
+        internal bool IsSetAppConfigResource()
+        {
+            return this._appConfigResource != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DataDelivery. 

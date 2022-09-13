@@ -501,11 +501,11 @@ namespace Amazon.CloudWatchEvidently
         ///  
         /// <para>
         /// Using a segment in an experiment limits that experiment to evaluate only the users
-        /// who match the segment criteria. Using one or more segments in a launch allow you to
-        /// define different traffic splits for the different audience segments.
+        /// who match the segment criteria. Using one or more segments in a launch allows you
+        /// to define different traffic splits for the different audience segments.
         /// </para>
         ///  <pre><code> &lt;p&gt;For more information about segment pattern syntax, see &lt;a
-        /// href=&quot;https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments-syntax.html&quot;&gt;
+        /// href=&quot;https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html#CloudWatch-Evidently-segments-syntax.html&quot;&gt;
         /// Segment rule pattern syntax&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;The pattern that you define
         /// for a segment is matched against the value of &lt;code&gt;evaluationContext&lt;/code&gt;,
         /// which is passed into Evidently in the &lt;a href=&quot;https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html&quot;&gt;EvaluateFeature&lt;/a&gt;
@@ -540,11 +540,11 @@ namespace Amazon.CloudWatchEvidently
         ///  
         /// <para>
         /// Using a segment in an experiment limits that experiment to evaluate only the users
-        /// who match the segment criteria. Using one or more segments in a launch allow you to
-        /// define different traffic splits for the different audience segments.
+        /// who match the segment criteria. Using one or more segments in a launch allows you
+        /// to define different traffic splits for the different audience segments.
         /// </para>
         ///  <pre><code> &lt;p&gt;For more information about segment pattern syntax, see &lt;a
-        /// href=&quot;https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments-syntax.html&quot;&gt;
+        /// href=&quot;https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html#CloudWatch-Evidently-segments-syntax.html&quot;&gt;
         /// Segment rule pattern syntax&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;The pattern that you define
         /// for a segment is matched against the value of &lt;code&gt;evaluationContext&lt;/code&gt;,
         /// which is passed into Evidently in the &lt;a href=&quot;https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html&quot;&gt;EvaluateFeature&lt;/a&gt;
@@ -1063,7 +1063,10 @@ namespace Amazon.CloudWatchEvidently
         /// <summary>
         /// Retrieves the results of a running or completed experiment. No results are available
         /// until there have been 100 events for each variation and at least 10 minutes have passed
-        /// since the start of the experiment.
+        /// since the start of the experiment. To increase the statistical power, Evidently performs
+        /// an additional offline p-value analysis at the end of the experiment. Offline p-value
+        /// analysis can detect statistical significance in some cases where the anytime p-values
+        /// used during the experiment do not find statistical significance.
         /// 
         ///  
         /// <para>
@@ -1097,7 +1100,10 @@ namespace Amazon.CloudWatchEvidently
         /// <summary>
         /// Retrieves the results of a running or completed experiment. No results are available
         /// until there have been 100 events for each variation and at least 10 minutes have passed
-        /// since the start of the experiment.
+        /// since the start of the experiment. To increase the statistical power, Evidently performs
+        /// an additional offline p-value analysis at the end of the experiment. Offline p-value
+        /// analysis can detect statistical significance in some cases where the anytime p-values
+        /// used during the experiment do not find statistical significance.
         /// 
         ///  
         /// <para>

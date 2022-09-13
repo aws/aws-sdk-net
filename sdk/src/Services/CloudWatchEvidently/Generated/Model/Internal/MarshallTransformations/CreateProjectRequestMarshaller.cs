@@ -65,6 +65,17 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAppConfigResource())
+                {
+                    context.Writer.WritePropertyName("appConfigResource");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ProjectAppConfigResourceConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AppConfigResource, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDataDelivery())
                 {
                     context.Writer.WritePropertyName("dataDelivery");

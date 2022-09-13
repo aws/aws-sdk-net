@@ -898,6 +898,26 @@
     <pattern>^[-a-zA-Z0-9._]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchEvidently.Model.ProjectAppConfigResource.ApplicationId</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchEvidently.Model.ProjectAppConfigResource.ConfigurationProfileId</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchEvidently.Model.ProjectAppConfigResource.EnvironmentId</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchEvidently.Model.ProjectAppConfigResourceConfig.ApplicationId</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchEvidently.Model.ProjectAppConfigResourceConfig.EnvironmentId</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchEvidently.Model.ProjectSummary.Arn</property>
     <min>0</min>
     <max>2048</max>
