@@ -64,7 +64,7 @@ namespace Amazon.Drs.Model
         /// The amount of time that the Source Server has been replicating for.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=19, Max=32)]
+        [AWSProperty(Min=1, Max=64)]
         public string ElapsedReplicationDuration
         {
             get { return this._elapsedReplicationDuration; }

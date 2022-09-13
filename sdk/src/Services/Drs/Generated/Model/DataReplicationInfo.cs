@@ -119,7 +119,7 @@ namespace Amazon.Drs.Model
         /// Data replication lag duration.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=19, Max=32)]
+        [AWSProperty(Min=1, Max=64)]
         public string LagDuration
         {
             get { return this._lagDuration; }
