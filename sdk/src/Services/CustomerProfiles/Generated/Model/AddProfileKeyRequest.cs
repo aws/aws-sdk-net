@@ -30,8 +30,7 @@ namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
     /// Container for the parameters to the AddProfileKey operation.
-    /// Associates a new key value with a specific profile, such as a Contact Trace Record
-    /// (CTR) ContactId.
+    /// Associates a new key value with a specific profile, such as a Contact Record ContactId.
     /// 
     ///  
     /// <para>

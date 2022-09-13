@@ -37,6 +37,12 @@ namespace Amazon.CustomerProfiles.Model
     /// <para>
     /// An integration can belong to only one domain.
     /// </para>
+    ///  
+    /// <para>
+    /// To add or remove tags on an existing Integration, see <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_TagResource.html">
+    /// TagResource </a>/<a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UntagResource.html">
+    /// UntagResource</a>.
+    /// </para>
     /// </summary>
     public partial class PutIntegrationRequest : AmazonCustomerProfilesRequest
     {

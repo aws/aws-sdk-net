@@ -31,6 +31,12 @@ namespace Amazon.CustomerProfiles.Model
     /// <summary>
     /// Container for the parameters to the PutProfileObjectType operation.
     /// Defines a ProfileObjectType.
+    /// 
+    ///  
+    /// <para>
+    /// To add or remove tags on an existing ObjectType, see <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_TagResource.html">
+    /// TagResource</a>/<a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UntagResource.html">UntagResource</a>.
+    /// </para>
     /// </summary>
     public partial class PutProfileObjectTypeRequest : AmazonCustomerProfilesRequest
     {

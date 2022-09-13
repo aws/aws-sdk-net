@@ -35,6 +35,7 @@ namespace Amazon.CustomerProfiles.Model
     {
         private DateTime? _createdAt;
         private string _domainName;
+        private bool? _isUnstructured;
         private DateTime? _lastUpdatedAt;
         private string _objectTypeName;
         private Dictionary<string, string> _objectTypeNames = new Dictionary<string, string>();
@@ -78,6 +79,25 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetDomainName()
         {
             return this._domainName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsUnstructured. 
+        /// <para>
+        /// Boolean to indicate if the Flow associated with the Integration is created via Appflow
+        /// console or with ObjectTypeName equals _unstructured via API/CLI in flowDefinition
+        /// </para>
+        /// </summary>
+        public bool IsUnstructured
+        {
+            get { return this._isUnstructured.GetValueOrDefault(); }
+            set { this._isUnstructured = value; }
+        }
+
+        // Check to see if IsUnstructured property is set
+        internal bool IsSetIsUnstructured()
+        {
+            return this._isUnstructured.HasValue; 
         }
 
         /// <summary>

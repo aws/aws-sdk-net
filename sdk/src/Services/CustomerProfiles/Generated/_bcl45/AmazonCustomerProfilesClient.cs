@@ -261,8 +261,7 @@ namespace Amazon.CustomerProfiles
 
 
         /// <summary>
-        /// Associates a new key value with a specific profile, such as a Contact Trace Record
-        /// (CTR) ContactId.
+        /// Associates a new key value with a specific profile, such as a Contact Record ContactId.
         /// 
         ///  
         /// <para>
@@ -300,8 +299,7 @@ namespace Amazon.CustomerProfiles
 
 
         /// <summary>
-        /// Associates a new key value with a specific profile, such as a Contact Trace Record
-        /// (CTR) ContactId.
+        /// Associates a new key value with a specific profile, such as a Contact Record ContactId.
         /// 
         ///  
         /// <para>
@@ -2756,6 +2754,12 @@ namespace Amazon.CustomerProfiles
         /// <para>
         /// An integration can belong to only one domain.
         /// </para>
+        ///  
+        /// <para>
+        /// To add or remove tags on an existing Integration, see <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_TagResource.html">
+        /// TagResource </a>/<a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UntagResource.html">
+        /// UntagResource</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutIntegration service method.</param>
         /// 
@@ -2793,6 +2797,12 @@ namespace Amazon.CustomerProfiles
         ///  
         /// <para>
         /// An integration can belong to only one domain.
+        /// </para>
+        ///  
+        /// <para>
+        /// To add or remove tags on an existing Integration, see <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_TagResource.html">
+        /// TagResource </a>/<a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UntagResource.html">
+        /// UntagResource</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutIntegration service method.</param>
@@ -2836,10 +2846,10 @@ namespace Amazon.CustomerProfiles
         /// 
         ///  
         /// <para>
-        /// When adding a specific profile object, like a Contact Trace Record (CTR), an inferred
-        /// profile can get created if it is not mapped to an existing profile. The resulting
-        /// profile will only have a phone number populated in the standard ProfileObject. Any
-        /// additional CTRs with the same phone number will be mapped to the same inferred profile.
+        /// When adding a specific profile object, like a Contact Record, an inferred profile
+        /// can get created if it is not mapped to an existing profile. The resulting profile
+        /// will only have a phone number populated in the standard ProfileObject. Any additional
+        /// Contact Records with the same phone number will be mapped to the same inferred profile.
         /// </para>
         ///  
         /// <para>
@@ -2886,10 +2896,10 @@ namespace Amazon.CustomerProfiles
         /// 
         ///  
         /// <para>
-        /// When adding a specific profile object, like a Contact Trace Record (CTR), an inferred
-        /// profile can get created if it is not mapped to an existing profile. The resulting
-        /// profile will only have a phone number populated in the standard ProfileObject. Any
-        /// additional CTRs with the same phone number will be mapped to the same inferred profile.
+        /// When adding a specific profile object, like a Contact Record, an inferred profile
+        /// can get created if it is not mapped to an existing profile. The resulting profile
+        /// will only have a phone number populated in the standard ProfileObject. Any additional
+        /// Contact Records with the same phone number will be mapped to the same inferred profile.
         /// </para>
         ///  
         /// <para>
@@ -2940,6 +2950,12 @@ namespace Amazon.CustomerProfiles
 
         /// <summary>
         /// Defines a ProfileObjectType.
+        /// 
+        ///  
+        /// <para>
+        /// To add or remove tags on an existing ObjectType, see <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_TagResource.html">
+        /// TagResource</a>/<a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UntagResource.html">UntagResource</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutProfileObjectType service method.</param>
         /// 
@@ -2972,6 +2988,12 @@ namespace Amazon.CustomerProfiles
 
         /// <summary>
         /// Defines a ProfileObjectType.
+        /// 
+        ///  
+        /// <para>
+        /// To add or remove tags on an existing ObjectType, see <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_TagResource.html">
+        /// TagResource</a>/<a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UntagResource.html">UntagResource</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutProfileObjectType service method.</param>
         /// <param name="cancellationToken">
@@ -3265,6 +3287,11 @@ namespace Amazon.CustomerProfiles
         /// To prevent cross-service impersonation when you call this API, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html">Cross-service
         /// confused deputy prevention</a> for sample policies that you should apply. 
         /// </para>
+        ///  
+        /// <para>
+        /// To add or remove tags on an existing Domain, see <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_TagResource.html">TagResource</a>/<a
+        /// href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UntagResource.html">UntagResource</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDomain service method.</param>
         /// 
@@ -3313,6 +3340,11 @@ namespace Amazon.CustomerProfiles
         /// <para>
         /// To prevent cross-service impersonation when you call this API, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html">Cross-service
         /// confused deputy prevention</a> for sample policies that you should apply. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To add or remove tags on an existing Domain, see <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_TagResource.html">TagResource</a>/<a
+        /// href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UntagResource.html">UntagResource</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDomain service method.</param>
