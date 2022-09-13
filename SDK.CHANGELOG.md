@@ -1,3 +1,20 @@
+### 3.7.356.0 (2022-09-13 18:25 UTC)
+* CloudWatchEvidently (3.7.4.0)
+	* This release adds support for the client-side evaluation - powered by AWS AppConfig feature.
+* CustomerProfiles (3.7.8.0)
+	* Added isUnstructured in response for Customer Profiles Integration APIs
+* Drs (3.7.4.0)
+	* Fixed the data type of lagDuration that is returned in Describe Source Server API
+* EC2 (3.7.86.0)
+	* Two new features for local gateway route tables: support for static routes targeting Elastic Network Interfaces and direct VPC routing.
+* Kendra (3.7.26.0)
+	* This release enables our customer to choose the option of Sharepoint 2019 for the on-premise Sharepoint connector.
+* Transfer (3.7.14.0)
+	* This release introduces the ability to have multiple server host keys for any of your Transfer Family servers that use the SFTP protocol.
+* Core 3.7.13.2
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.355.0 (2022-09-12 18:17 UTC)
 * EKS (3.7.16.0)
 	* Adding support for local Amazon EKS clusters on Outposts

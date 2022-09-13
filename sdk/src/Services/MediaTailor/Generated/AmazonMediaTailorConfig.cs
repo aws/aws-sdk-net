@@ -32,7 +32,7 @@ namespace Amazon.MediaTailor
     public partial class AmazonMediaTailorConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.9.53");
+            InternalSDKUtils.BuildUserAgentString("3.7.9.54");
 
         private string _userAgent = UserAgentString;
 
