@@ -10381,6 +10381,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void ModifyLocalGatewayRouteMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyLocalGatewayRoute");
+
+            var request = InstantiateClassGenerator.Execute<ModifyLocalGatewayRouteRequest>();
+            var marshaller = new ModifyLocalGatewayRouteRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = ModifyLocalGatewayRouteResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyLocalGatewayRouteResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void ModifyManagedPrefixListMarshallTest()
         {
             var operation = service_model.FindOperation("ModifyManagedPrefixList");

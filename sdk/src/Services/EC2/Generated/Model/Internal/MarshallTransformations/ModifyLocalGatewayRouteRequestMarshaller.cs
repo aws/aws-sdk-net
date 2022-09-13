@@ -31,9 +31,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateLocalGatewayRoute Request Marshaller
+    /// ModifyLocalGatewayRoute Request Marshaller
     /// </summary>       
-    public class CreateLocalGatewayRouteRequestMarshaller : IMarshaller<IRequest, CreateLocalGatewayRouteRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ModifyLocalGatewayRouteRequestMarshaller : IMarshaller<IRequest, ModifyLocalGatewayRouteRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateLocalGatewayRouteRequest)input);
+            return this.Marshall((ModifyLocalGatewayRouteRequest)input);
         }
     
         /// <summary>
@@ -50,10 +50,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateLocalGatewayRouteRequest publicRequest)
+        public IRequest Marshall(ModifyLocalGatewayRouteRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
-            request.Parameters.Add("Action", "CreateLocalGatewayRoute");
+            request.Parameters.Add("Action", "ModifyLocalGatewayRoute");
             request.Parameters.Add("Version", "2016-11-15");
 
             if(publicRequest != null)
@@ -66,10 +66,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("LocalGatewayRouteTableId", StringUtils.FromString(publicRequest.LocalGatewayRouteTableId));
                 }
-                if(publicRequest.IsSetLocalGatewayVirtualInterfaceGroupId())
-                {
-                    request.Parameters.Add("LocalGatewayVirtualInterfaceGroupId", StringUtils.FromString(publicRequest.LocalGatewayVirtualInterfaceGroupId));
-                }
                 if(publicRequest.IsSetNetworkInterfaceId())
                 {
                     request.Parameters.Add("NetworkInterfaceId", StringUtils.FromString(publicRequest.NetworkInterfaceId));
@@ -77,9 +73,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             }
             return request;
         }
-                    private static CreateLocalGatewayRouteRequestMarshaller _instance = new CreateLocalGatewayRouteRequestMarshaller();        
+                    private static ModifyLocalGatewayRouteRequestMarshaller _instance = new ModifyLocalGatewayRouteRequestMarshaller();        
 
-        internal static CreateLocalGatewayRouteRequestMarshaller GetInstance()
+        internal static ModifyLocalGatewayRouteRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -87,7 +83,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateLocalGatewayRouteRequestMarshaller Instance
+        public static ModifyLocalGatewayRouteRequestMarshaller Instance
         {
             get
             {

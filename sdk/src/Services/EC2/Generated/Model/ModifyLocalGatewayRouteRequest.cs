@@ -29,32 +29,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateLocalGatewayRoute operation.
-    /// Creates a static route for the specified local gateway route table. You must specify
-    /// one of the following targets: 
-    /// 
-    ///  <ul> <li> 
-    /// <para>
-    ///  <code>LocalGatewayVirtualInterfaceGroupId</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>NetworkInterfaceId</code> 
-    /// </para>
-    ///  </li> </ul>
+    /// Container for the parameters to the ModifyLocalGatewayRoute operation.
+    /// Modifies the specified local gateway route.
     /// </summary>
-    public partial class CreateLocalGatewayRouteRequest : AmazonEC2Request
+    public partial class ModifyLocalGatewayRouteRequest : AmazonEC2Request
     {
         private string _destinationCidrBlock;
         private string _localGatewayRouteTableId;
-        private string _localGatewayVirtualInterfaceGroupId;
         private string _networkInterfaceId;
 
         /// <summary>
         /// Gets and sets the property DestinationCidrBlock. 
         /// <para>
-        /// The CIDR range used for destination matches. Routing decisions are based on the most
-        /// specific match.
+        /// The CIDR block used for destination matches. The value that you provide must match
+        /// the CIDR of an existing route in the table.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -90,29 +78,12 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LocalGatewayVirtualInterfaceGroupId. 
-        /// <para>
-        /// The ID of the virtual interface group.
-        /// </para>
-        /// </summary>
-        public string LocalGatewayVirtualInterfaceGroupId
-        {
-            get { return this._localGatewayVirtualInterfaceGroupId; }
-            set { this._localGatewayVirtualInterfaceGroupId = value; }
-        }
-
-        // Check to see if LocalGatewayVirtualInterfaceGroupId property is set
-        internal bool IsSetLocalGatewayVirtualInterfaceGroupId()
-        {
-            return this._localGatewayVirtualInterfaceGroupId != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property NetworkInterfaceId. 
         /// <para>
         /// The ID of the network interface.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string NetworkInterfaceId
         {
             get { return this._networkInterfaceId; }

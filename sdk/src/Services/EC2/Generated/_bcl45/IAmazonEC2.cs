@@ -4067,7 +4067,18 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a static route for the specified local gateway route table.
+        /// Creates a static route for the specified local gateway route table. You must specify
+        /// one of the following targets: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>LocalGatewayVirtualInterfaceGroupId</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NetworkInterfaceId</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocalGatewayRoute service method.</param>
         /// 
@@ -4078,7 +4089,18 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a static route for the specified local gateway route table.
+        /// Creates a static route for the specified local gateway route table. You must specify
+        /// one of the following targets: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>LocalGatewayVirtualInterfaceGroupId</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NetworkInterfaceId</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocalGatewayRoute service method.</param>
         /// <param name="cancellationToken">
@@ -21402,6 +21424,34 @@ namespace Amazon.EC2
         /// <returns>The response from the ModifyLaunchTemplate service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyLaunchTemplate">REST API Reference for ModifyLaunchTemplate Operation</seealso>
         Task<ModifyLaunchTemplateResponse> ModifyLaunchTemplateAsync(ModifyLaunchTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ModifyLocalGatewayRoute
+
+
+        /// <summary>
+        /// Modifies the specified local gateway route.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyLocalGatewayRoute service method.</param>
+        /// 
+        /// <returns>The response from the ModifyLocalGatewayRoute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyLocalGatewayRoute">REST API Reference for ModifyLocalGatewayRoute Operation</seealso>
+        ModifyLocalGatewayRouteResponse ModifyLocalGatewayRoute(ModifyLocalGatewayRouteRequest request);
+
+
+
+        /// <summary>
+        /// Modifies the specified local gateway route.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyLocalGatewayRoute service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyLocalGatewayRoute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyLocalGatewayRoute">REST API Reference for ModifyLocalGatewayRoute Operation</seealso>
+        Task<ModifyLocalGatewayRouteResponse> ModifyLocalGatewayRouteAsync(ModifyLocalGatewayRouteRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

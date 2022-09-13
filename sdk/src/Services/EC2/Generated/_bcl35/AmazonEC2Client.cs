@@ -5150,7 +5150,18 @@ namespace Amazon.EC2
         #region  CreateLocalGatewayRoute
 
         /// <summary>
-        /// Creates a static route for the specified local gateway route table.
+        /// Creates a static route for the specified local gateway route table. You must specify
+        /// one of the following targets: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>LocalGatewayVirtualInterfaceGroupId</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NetworkInterfaceId</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocalGatewayRoute service method.</param>
         /// 
@@ -28552,6 +28563,60 @@ namespace Amazon.EC2
         public virtual ModifyLaunchTemplateResponse EndModifyLaunchTemplate(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyLaunchTemplateResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ModifyLocalGatewayRoute
+
+        /// <summary>
+        /// Modifies the specified local gateway route.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyLocalGatewayRoute service method.</param>
+        /// 
+        /// <returns>The response from the ModifyLocalGatewayRoute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyLocalGatewayRoute">REST API Reference for ModifyLocalGatewayRoute Operation</seealso>
+        public virtual ModifyLocalGatewayRouteResponse ModifyLocalGatewayRoute(ModifyLocalGatewayRouteRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyLocalGatewayRouteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyLocalGatewayRouteResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyLocalGatewayRouteResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyLocalGatewayRoute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyLocalGatewayRoute operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyLocalGatewayRoute
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyLocalGatewayRoute">REST API Reference for ModifyLocalGatewayRoute Operation</seealso>
+        public virtual IAsyncResult BeginModifyLocalGatewayRoute(ModifyLocalGatewayRouteRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyLocalGatewayRouteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyLocalGatewayRouteResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyLocalGatewayRoute operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyLocalGatewayRoute.</param>
+        /// 
+        /// <returns>Returns a  ModifyLocalGatewayRouteResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyLocalGatewayRoute">REST API Reference for ModifyLocalGatewayRoute Operation</seealso>
+        public virtual ModifyLocalGatewayRouteResponse EndModifyLocalGatewayRoute(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyLocalGatewayRouteResponse>(asyncResult);
         }
 
         #endregion

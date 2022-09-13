@@ -72,6 +72,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.LocalGatewayRouteTableId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("mode", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Mode = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("outpostArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

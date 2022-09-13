@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
         private string _localGatewayId;
         private string _localGatewayRouteTableArn;
         private string _localGatewayRouteTableId;
+        private LocalGatewayRouteTableMode _mode;
         private string _outpostArn;
         private string _ownerId;
         private string _state;
@@ -94,6 +95,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetLocalGatewayRouteTableId()
         {
             return this._localGatewayRouteTableId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Mode. 
+        /// <para>
+        /// The mode of the local gateway route table.
+        /// </para>
+        /// </summary>
+        public LocalGatewayRouteTableMode Mode
+        {
+            get { return this._mode; }
+            set { this._mode = value; }
+        }
+
+        // Check to see if Mode property is set
+        internal bool IsSetMode()
+        {
+            return this._mode != null;
         }
 
         /// <summary>
