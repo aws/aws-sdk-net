@@ -1,3 +1,12 @@
+### 3.7.357.0 (2022-09-14 18:22 UTC)
+* AmplifyUIBuilder (3.7.3.0)
+	* Amplify Studio UIBuilder is introducing forms functionality. Forms can be configured from Data Store models, JSON, or from scratch. These forms can then be generated in your project and used like any other React components.
+* EC2 (3.7.87.0)
+	* This update introduces API operations to manage and create local gateway route tables, CoIP pools, and VIF group associations.
+* Core 3.7.13.3
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.356.0 (2022-09-13 18:25 UTC)
 * CloudWatchEvidently (3.7.4.0)
 	* This release adds support for the client-side evaluation - powered by AWS AppConfig feature.
