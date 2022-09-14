@@ -1700,6 +1700,42 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  CreateCoipCidr
+
+
+
+        /// <summary>
+        /// Creates a range of customer-owned IP addresses.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCoipCidr service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCoipCidr service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCoipCidr">REST API Reference for CreateCoipCidr Operation</seealso>
+        Task<CreateCoipCidrResponse> CreateCoipCidrAsync(CreateCoipCidrRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateCoipPool
+
+
+
+        /// <summary>
+        /// Creates a pool of customer-owned IP (CoIP) addresses.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCoipPool service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCoipPool service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCoipPool">REST API Reference for CreateCoipPool Operation</seealso>
+        Task<CreateCoipPoolResponse> CreateCoipPoolAsync(CreateCoipPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateCustomerGateway
 
 
@@ -2384,6 +2420,42 @@ namespace Amazon.EC2
         /// <returns>The response from the CreateLocalGatewayRoute service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRoute">REST API Reference for CreateLocalGatewayRoute Operation</seealso>
         Task<CreateLocalGatewayRouteResponse> CreateLocalGatewayRouteAsync(CreateLocalGatewayRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateLocalGatewayRouteTable
+
+
+
+        /// <summary>
+        /// Creates a local gateway route table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocalGatewayRouteTable service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLocalGatewayRouteTable service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRouteTable">REST API Reference for CreateLocalGatewayRouteTable Operation</seealso>
+        Task<CreateLocalGatewayRouteTableResponse> CreateLocalGatewayRouteTableAsync(CreateLocalGatewayRouteTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation
+
+
+
+        /// <summary>
+        /// Creates a local gateway route table virtual interface group association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation">REST API Reference for CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation Operation</seealso>
+        Task<CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse> CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationAsync(CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -3960,6 +4032,42 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  DeleteCoipCidr
+
+
+
+        /// <summary>
+        /// Deletes a range of customer-owned IP addresses.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCoipCidr service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCoipCidr service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCoipCidr">REST API Reference for DeleteCoipCidr Operation</seealso>
+        Task<DeleteCoipCidrResponse> DeleteCoipCidrAsync(DeleteCoipCidrRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteCoipPool
+
+
+
+        /// <summary>
+        /// Deletes a pool of customer-owned IP (CoIP) addresses.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCoipPool service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCoipPool service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCoipPool">REST API Reference for DeleteCoipPool Operation</seealso>
+        Task<DeleteCoipPoolResponse> DeleteCoipPoolAsync(DeleteCoipPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteCustomerGateway
 
 
@@ -4301,6 +4409,42 @@ namespace Amazon.EC2
         /// <returns>The response from the DeleteLocalGatewayRoute service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRoute">REST API Reference for DeleteLocalGatewayRoute Operation</seealso>
         Task<DeleteLocalGatewayRouteResponse> DeleteLocalGatewayRouteAsync(DeleteLocalGatewayRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteLocalGatewayRouteTable
+
+
+
+        /// <summary>
+        /// Deletes a local gateway route table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLocalGatewayRouteTable service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteLocalGatewayRouteTable service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRouteTable">REST API Reference for DeleteLocalGatewayRouteTable Operation</seealso>
+        Task<DeleteLocalGatewayRouteTableResponse> DeleteLocalGatewayRouteTableAsync(DeleteLocalGatewayRouteTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation
+
+
+
+        /// <summary>
+        /// Deletes a local gateway route table virtual interface group association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation">REST API Reference for DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation Operation</seealso>
+        Task<DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse> DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationAsync(DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

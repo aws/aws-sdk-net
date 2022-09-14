@@ -1297,6 +1297,54 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void CreateCoipCidrMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateCoipCidr");
+
+            var request = InstantiateClassGenerator.Execute<CreateCoipCidrRequest>();
+            var marshaller = new CreateCoipCidrRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = CreateCoipCidrResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateCoipCidrResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void CreateCoipPoolMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateCoipPool");
+
+            var request = InstantiateClassGenerator.Execute<CreateCoipPoolRequest>();
+            var marshaller = new CreateCoipPoolRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = CreateCoipPoolResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateCoipPoolResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void CreateCustomerGatewayMarshallTest()
         {
             var operation = service_model.FindOperation("CreateCustomerGateway");
@@ -1744,6 +1792,54 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = CreateLocalGatewayRouteResponseUnmarshaller.Instance.Unmarshall(context)
                 as CreateLocalGatewayRouteResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void CreateLocalGatewayRouteTableMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateLocalGatewayRouteTable");
+
+            var request = InstantiateClassGenerator.Execute<CreateLocalGatewayRouteTableRequest>();
+            var marshaller = new CreateLocalGatewayRouteTableRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = CreateLocalGatewayRouteTableResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateLocalGatewayRouteTableResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation");
+
+            var request = InstantiateClassGenerator.Execute<CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest>();
+            var marshaller = new CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -2962,6 +3058,54 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DeleteCoipCidrMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteCoipCidr");
+
+            var request = InstantiateClassGenerator.Execute<DeleteCoipCidrRequest>();
+            var marshaller = new DeleteCoipCidrRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DeleteCoipCidrResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteCoipCidrResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DeleteCoipPoolMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteCoipPool");
+
+            var request = InstantiateClassGenerator.Execute<DeleteCoipPoolRequest>();
+            var marshaller = new DeleteCoipPoolRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DeleteCoipPoolResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteCoipPoolResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DeleteCustomerGatewayMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteCustomerGateway");
@@ -3293,6 +3437,54 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = DeleteLocalGatewayRouteResponseUnmarshaller.Instance.Unmarshall(context)
                 as DeleteLocalGatewayRouteResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DeleteLocalGatewayRouteTableMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteLocalGatewayRouteTable");
+
+            var request = InstantiateClassGenerator.Execute<DeleteLocalGatewayRouteTableRequest>();
+            var marshaller = new DeleteLocalGatewayRouteTableRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DeleteLocalGatewayRouteTableResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteLocalGatewayRouteTableResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation");
+
+            var request = InstantiateClassGenerator.Execute<DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest>();
+            var marshaller = new DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

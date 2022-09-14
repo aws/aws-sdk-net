@@ -29,40 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Container for the parameters to the ModifyLocalGatewayRoute operation.
-    /// Modifies the specified local gateway route.
+    /// Container for the parameters to the CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation operation.
+    /// Creates a local gateway route table virtual interface group association.
     /// </summary>
-    public partial class ModifyLocalGatewayRouteRequest : AmazonEC2Request
+    public partial class CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest : AmazonEC2Request
     {
-        private string _destinationCidrBlock;
         private string _localGatewayRouteTableId;
         private string _localGatewayVirtualInterfaceGroupId;
-        private string _networkInterfaceId;
-
-        /// <summary>
-        /// Gets and sets the property DestinationCidrBlock. 
-        /// <para>
-        /// The CIDR block used for destination matches. The value that you provide must match
-        /// the CIDR of an existing route in the table.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string DestinationCidrBlock
-        {
-            get { return this._destinationCidrBlock; }
-            set { this._destinationCidrBlock = value; }
-        }
-
-        // Check to see if DestinationCidrBlock property is set
-        internal bool IsSetDestinationCidrBlock()
-        {
-            return this._destinationCidrBlock != null;
-        }
+        private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
 
         /// <summary>
         /// Gets and sets the property LocalGatewayRouteTableId. 
         /// <para>
-        /// The ID of the local gateway route table.
+        ///  The ID of the local gateway route table. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -81,9 +60,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LocalGatewayVirtualInterfaceGroupId. 
         /// <para>
-        ///  The ID of the virtual interface group. 
+        ///  The ID of the local gateway route table virtual interface group association. 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string LocalGatewayVirtualInterfaceGroupId
         {
             get { return this._localGatewayVirtualInterfaceGroupId; }
@@ -97,21 +77,22 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NetworkInterfaceId. 
+        /// Gets and sets the property TagSpecifications. 
         /// <para>
-        /// The ID of the network interface.
+        ///  The tags assigned to the local gateway route table virtual interface group association.
+        /// 
         /// </para>
         /// </summary>
-        public string NetworkInterfaceId
+        public List<TagSpecification> TagSpecifications
         {
-            get { return this._networkInterfaceId; }
-            set { this._networkInterfaceId = value; }
+            get { return this._tagSpecifications; }
+            set { this._tagSpecifications = value; }
         }
 
-        // Check to see if NetworkInterfaceId property is set
-        internal bool IsSetNetworkInterfaceId()
+        // Check to see if TagSpecifications property is set
+        internal bool IsSetTagSpecifications()
         {
-            return this._networkInterfaceId != null;
+            return this._tagSpecifications != null && this._tagSpecifications.Count > 0; 
         }
 
     }

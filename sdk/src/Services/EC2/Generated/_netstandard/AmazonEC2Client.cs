@@ -2793,6 +2793,74 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateCoipCidr
+
+        internal virtual CreateCoipCidrResponse CreateCoipCidr(CreateCoipCidrRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCoipCidrRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCoipCidrResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCoipCidrResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a range of customer-owned IP addresses.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCoipCidr service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCoipCidr service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCoipCidr">REST API Reference for CreateCoipCidr Operation</seealso>
+        public virtual Task<CreateCoipCidrResponse> CreateCoipCidrAsync(CreateCoipCidrRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCoipCidrRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCoipCidrResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateCoipCidrResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateCoipPool
+
+        internal virtual CreateCoipPoolResponse CreateCoipPool(CreateCoipPoolRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCoipPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCoipPoolResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCoipPoolResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a pool of customer-owned IP (CoIP) addresses.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCoipPool service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCoipPool service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCoipPool">REST API Reference for CreateCoipPool Operation</seealso>
+        public virtual Task<CreateCoipPoolResponse> CreateCoipPoolAsync(CreateCoipPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCoipPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCoipPoolResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateCoipPoolResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateCustomerGateway
 
         internal virtual CreateCustomerGatewayResponse CreateCustomerGateway(CreateCustomerGatewayRequest request)
@@ -3787,6 +3855,74 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = CreateLocalGatewayRouteResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateLocalGatewayRouteResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateLocalGatewayRouteTable
+
+        internal virtual CreateLocalGatewayRouteTableResponse CreateLocalGatewayRouteTable(CreateLocalGatewayRouteTableRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLocalGatewayRouteTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLocalGatewayRouteTableResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLocalGatewayRouteTableResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a local gateway route table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocalGatewayRouteTable service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLocalGatewayRouteTable service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRouteTable">REST API Reference for CreateLocalGatewayRouteTable Operation</seealso>
+        public virtual Task<CreateLocalGatewayRouteTableResponse> CreateLocalGatewayRouteTableAsync(CreateLocalGatewayRouteTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLocalGatewayRouteTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLocalGatewayRouteTableResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateLocalGatewayRouteTableResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation
+
+        internal virtual CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation(CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a local gateway route table virtual interface group association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation">REST API Reference for CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation Operation</seealso>
+        public virtual Task<CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse> CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationAsync(CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6180,6 +6316,74 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DeleteCoipCidr
+
+        internal virtual DeleteCoipCidrResponse DeleteCoipCidr(DeleteCoipCidrRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCoipCidrRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCoipCidrResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCoipCidrResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a range of customer-owned IP addresses.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCoipCidr service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCoipCidr service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCoipCidr">REST API Reference for DeleteCoipCidr Operation</seealso>
+        public virtual Task<DeleteCoipCidrResponse> DeleteCoipCidrAsync(DeleteCoipCidrRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCoipCidrRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCoipCidrResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteCoipCidrResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteCoipPool
+
+        internal virtual DeleteCoipPoolResponse DeleteCoipPool(DeleteCoipPoolRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCoipPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCoipPoolResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCoipPoolResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a pool of customer-owned IP (CoIP) addresses.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCoipPool service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCoipPool service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCoipPool">REST API Reference for DeleteCoipPool Operation</seealso>
+        public virtual Task<DeleteCoipPoolResponse> DeleteCoipPoolAsync(DeleteCoipPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCoipPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCoipPoolResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteCoipPoolResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteCustomerGateway
 
         internal virtual DeleteCustomerGatewayResponse DeleteCustomerGateway(DeleteCustomerGatewayRequest request)
@@ -6760,6 +6964,74 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = DeleteLocalGatewayRouteResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteLocalGatewayRouteResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteLocalGatewayRouteTable
+
+        internal virtual DeleteLocalGatewayRouteTableResponse DeleteLocalGatewayRouteTable(DeleteLocalGatewayRouteTableRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLocalGatewayRouteTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLocalGatewayRouteTableResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLocalGatewayRouteTableResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a local gateway route table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLocalGatewayRouteTable service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteLocalGatewayRouteTable service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRouteTable">REST API Reference for DeleteLocalGatewayRouteTable Operation</seealso>
+        public virtual Task<DeleteLocalGatewayRouteTableResponse> DeleteLocalGatewayRouteTableAsync(DeleteLocalGatewayRouteTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLocalGatewayRouteTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLocalGatewayRouteTableResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteLocalGatewayRouteTableResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation
+
+        internal virtual DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation(DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a local gateway route table virtual interface group association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation">REST API Reference for DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation Operation</seealso>
+        public virtual Task<DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse> DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationAsync(DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse>(request, options, cancellationToken);
         }
 
         #endregion

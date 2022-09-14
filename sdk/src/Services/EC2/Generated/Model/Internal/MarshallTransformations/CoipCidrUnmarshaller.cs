@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LocalGatewayRouteTable Object
+    /// Response Unmarshaller for CoipCidr Object
     /// </summary>  
-    public class LocalGatewayRouteTableUnmarshaller : IUnmarshaller<LocalGatewayRouteTable, XmlUnmarshallerContext>, IUnmarshaller<LocalGatewayRouteTable, JsonUnmarshallerContext>
+    public class CoipCidrUnmarshaller : IUnmarshaller<CoipCidr, XmlUnmarshallerContext>, IUnmarshaller<CoipCidr, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public LocalGatewayRouteTable Unmarshall(XmlUnmarshallerContext context)
+        public CoipCidr Unmarshall(XmlUnmarshallerContext context)
         {
-            LocalGatewayRouteTable unmarshalledObject = new LocalGatewayRouteTable();
+            CoipCidr unmarshalledObject = new CoipCidr();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,59 +54,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("localGatewayId", targetDepth))
+                    if (context.TestExpression("cidr", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.LocalGatewayId = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Cidr = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("localGatewayRouteTableArn", targetDepth))
+                    if (context.TestExpression("coipPoolId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.LocalGatewayRouteTableArn = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.CoipPoolId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("localGatewayRouteTableId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.LocalGatewayRouteTableId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("mode", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Mode = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("outpostArn", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.OutpostArn = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("ownerId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("state", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.State = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("stateReason", targetDepth))
-                    {
-                        var unmarshaller = StateReasonUnmarshaller.Instance;
-                        unmarshalledObject.StateReason = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("tagSet/item", targetDepth))
-                    {
-                        var unmarshaller = TagUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.Tags.Add(item);
                         continue;
                     }
                 }
@@ -124,18 +87,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public LocalGatewayRouteTable Unmarshall(JsonUnmarshallerContext context)
+        public CoipCidr Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static LocalGatewayRouteTableUnmarshaller _instance = new LocalGatewayRouteTableUnmarshaller();        
+        private static CoipCidrUnmarshaller _instance = new CoipCidrUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LocalGatewayRouteTableUnmarshaller Instance
+        public static CoipCidrUnmarshaller Instance
         {
             get
             {

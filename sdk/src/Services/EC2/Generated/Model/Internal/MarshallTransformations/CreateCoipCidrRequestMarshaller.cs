@@ -31,9 +31,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ModifyLocalGatewayRoute Request Marshaller
+    /// CreateCoipCidr Request Marshaller
     /// </summary>       
-    public class ModifyLocalGatewayRouteRequestMarshaller : IMarshaller<IRequest, ModifyLocalGatewayRouteRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class CreateCoipCidrRequestMarshaller : IMarshaller<IRequest, CreateCoipCidrRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ModifyLocalGatewayRouteRequest)input);
+            return this.Marshall((CreateCoipCidrRequest)input);
         }
     
         /// <summary>
@@ -50,36 +50,28 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ModifyLocalGatewayRouteRequest publicRequest)
+        public IRequest Marshall(CreateCoipCidrRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
-            request.Parameters.Add("Action", "ModifyLocalGatewayRoute");
+            request.Parameters.Add("Action", "CreateCoipCidr");
             request.Parameters.Add("Version", "2016-11-15");
 
             if(publicRequest != null)
             {
-                if(publicRequest.IsSetDestinationCidrBlock())
+                if(publicRequest.IsSetCidr())
                 {
-                    request.Parameters.Add("DestinationCidrBlock", StringUtils.FromString(publicRequest.DestinationCidrBlock));
+                    request.Parameters.Add("Cidr", StringUtils.FromString(publicRequest.Cidr));
                 }
-                if(publicRequest.IsSetLocalGatewayRouteTableId())
+                if(publicRequest.IsSetCoipPoolId())
                 {
-                    request.Parameters.Add("LocalGatewayRouteTableId", StringUtils.FromString(publicRequest.LocalGatewayRouteTableId));
-                }
-                if(publicRequest.IsSetLocalGatewayVirtualInterfaceGroupId())
-                {
-                    request.Parameters.Add("LocalGatewayVirtualInterfaceGroupId", StringUtils.FromString(publicRequest.LocalGatewayVirtualInterfaceGroupId));
-                }
-                if(publicRequest.IsSetNetworkInterfaceId())
-                {
-                    request.Parameters.Add("NetworkInterfaceId", StringUtils.FromString(publicRequest.NetworkInterfaceId));
+                    request.Parameters.Add("CoipPoolId", StringUtils.FromString(publicRequest.CoipPoolId));
                 }
             }
             return request;
         }
-                    private static ModifyLocalGatewayRouteRequestMarshaller _instance = new ModifyLocalGatewayRouteRequestMarshaller();        
+                    private static CreateCoipCidrRequestMarshaller _instance = new CreateCoipCidrRequestMarshaller();        
 
-        internal static ModifyLocalGatewayRouteRequestMarshaller GetInstance()
+        internal static CreateCoipCidrRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -87,7 +79,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ModifyLocalGatewayRouteRequestMarshaller Instance
+        public static CreateCoipCidrRequestMarshaller Instance
         {
             get
             {

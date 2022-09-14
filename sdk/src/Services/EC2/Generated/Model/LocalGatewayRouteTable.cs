@@ -40,6 +40,7 @@ namespace Amazon.EC2.Model
         private string _outpostArn;
         private string _ownerId;
         private string _state;
+        private StateReason _stateReason;
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
@@ -167,6 +168,21 @@ namespace Amazon.EC2.Model
         internal bool IsSetState()
         {
             return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StateReason.
+        /// </summary>
+        public StateReason StateReason
+        {
+            get { return this._stateReason; }
+            set { this._stateReason = value; }
+        }
+
+        // Check to see if StateReason property is set
+        internal bool IsSetStateReason()
+        {
+            return this._stateReason != null;
         }
 
         /// <summary>

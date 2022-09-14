@@ -3842,6 +3842,114 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateCoipCidr
+
+        /// <summary>
+        /// Creates a range of customer-owned IP addresses.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCoipCidr service method.</param>
+        /// 
+        /// <returns>The response from the CreateCoipCidr service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCoipCidr">REST API Reference for CreateCoipCidr Operation</seealso>
+        public virtual CreateCoipCidrResponse CreateCoipCidr(CreateCoipCidrRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCoipCidrRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCoipCidrResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCoipCidrResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateCoipCidr operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateCoipCidr operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCoipCidr
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCoipCidr">REST API Reference for CreateCoipCidr Operation</seealso>
+        public virtual IAsyncResult BeginCreateCoipCidr(CreateCoipCidrRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCoipCidrRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCoipCidrResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateCoipCidr operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCoipCidr.</param>
+        /// 
+        /// <returns>Returns a  CreateCoipCidrResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCoipCidr">REST API Reference for CreateCoipCidr Operation</seealso>
+        public virtual CreateCoipCidrResponse EndCreateCoipCidr(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateCoipCidrResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateCoipPool
+
+        /// <summary>
+        /// Creates a pool of customer-owned IP (CoIP) addresses.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCoipPool service method.</param>
+        /// 
+        /// <returns>The response from the CreateCoipPool service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCoipPool">REST API Reference for CreateCoipPool Operation</seealso>
+        public virtual CreateCoipPoolResponse CreateCoipPool(CreateCoipPoolRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCoipPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCoipPoolResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCoipPoolResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateCoipPool operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateCoipPool operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCoipPool
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCoipPool">REST API Reference for CreateCoipPool Operation</seealso>
+        public virtual IAsyncResult BeginCreateCoipPool(CreateCoipPoolRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCoipPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCoipPoolResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateCoipPool operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCoipPool.</param>
+        /// 
+        /// <returns>Returns a  CreateCoipPoolResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCoipPool">REST API Reference for CreateCoipPool Operation</seealso>
+        public virtual CreateCoipPoolResponse EndCreateCoipPool(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateCoipPoolResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateCustomerGateway
 
         /// <summary>
@@ -5208,6 +5316,114 @@ namespace Amazon.EC2
         public virtual CreateLocalGatewayRouteResponse EndCreateLocalGatewayRoute(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateLocalGatewayRouteResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateLocalGatewayRouteTable
+
+        /// <summary>
+        /// Creates a local gateway route table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocalGatewayRouteTable service method.</param>
+        /// 
+        /// <returns>The response from the CreateLocalGatewayRouteTable service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRouteTable">REST API Reference for CreateLocalGatewayRouteTable Operation</seealso>
+        public virtual CreateLocalGatewayRouteTableResponse CreateLocalGatewayRouteTable(CreateLocalGatewayRouteTableRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLocalGatewayRouteTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLocalGatewayRouteTableResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLocalGatewayRouteTableResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateLocalGatewayRouteTable operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocalGatewayRouteTable operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLocalGatewayRouteTable
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRouteTable">REST API Reference for CreateLocalGatewayRouteTable Operation</seealso>
+        public virtual IAsyncResult BeginCreateLocalGatewayRouteTable(CreateLocalGatewayRouteTableRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLocalGatewayRouteTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLocalGatewayRouteTableResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateLocalGatewayRouteTable operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLocalGatewayRouteTable.</param>
+        /// 
+        /// <returns>Returns a  CreateLocalGatewayRouteTableResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRouteTable">REST API Reference for CreateLocalGatewayRouteTable Operation</seealso>
+        public virtual CreateLocalGatewayRouteTableResponse EndCreateLocalGatewayRouteTable(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateLocalGatewayRouteTableResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation
+
+        /// <summary>
+        /// Creates a local gateway route table virtual interface group association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation service method.</param>
+        /// 
+        /// <returns>The response from the CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation">REST API Reference for CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation Operation</seealso>
+        public virtual CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation(CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation">REST API Reference for CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation Operation</seealso>
+        public virtual IAsyncResult BeginCreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation(CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation.</param>
+        /// 
+        /// <returns>Returns a  CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation">REST API Reference for CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation Operation</seealso>
+        public virtual CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse EndCreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse>(asyncResult);
         }
 
         #endregion
@@ -8621,6 +8837,114 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DeleteCoipCidr
+
+        /// <summary>
+        /// Deletes a range of customer-owned IP addresses.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCoipCidr service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCoipCidr service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCoipCidr">REST API Reference for DeleteCoipCidr Operation</seealso>
+        public virtual DeleteCoipCidrResponse DeleteCoipCidr(DeleteCoipCidrRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCoipCidrRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCoipCidrResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCoipCidrResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCoipCidr operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCoipCidr operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCoipCidr
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCoipCidr">REST API Reference for DeleteCoipCidr Operation</seealso>
+        public virtual IAsyncResult BeginDeleteCoipCidr(DeleteCoipCidrRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCoipCidrRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCoipCidrResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteCoipCidr operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCoipCidr.</param>
+        /// 
+        /// <returns>Returns a  DeleteCoipCidrResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCoipCidr">REST API Reference for DeleteCoipCidr Operation</seealso>
+        public virtual DeleteCoipCidrResponse EndDeleteCoipCidr(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteCoipCidrResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteCoipPool
+
+        /// <summary>
+        /// Deletes a pool of customer-owned IP (CoIP) addresses.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCoipPool service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCoipPool service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCoipPool">REST API Reference for DeleteCoipPool Operation</seealso>
+        public virtual DeleteCoipPoolResponse DeleteCoipPool(DeleteCoipPoolRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCoipPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCoipPoolResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCoipPoolResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCoipPool operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCoipPool operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCoipPool
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCoipPool">REST API Reference for DeleteCoipPool Operation</seealso>
+        public virtual IAsyncResult BeginDeleteCoipPool(DeleteCoipPoolRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCoipPoolRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCoipPoolResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteCoipPool operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCoipPool.</param>
+        /// 
+        /// <returns>Returns a  DeleteCoipPoolResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCoipPool">REST API Reference for DeleteCoipPool Operation</seealso>
+        public virtual DeleteCoipPoolResponse EndDeleteCoipPool(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteCoipPoolResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteCustomerGateway
 
         /// <summary>
@@ -9501,6 +9825,114 @@ namespace Amazon.EC2
         public virtual DeleteLocalGatewayRouteResponse EndDeleteLocalGatewayRoute(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteLocalGatewayRouteResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteLocalGatewayRouteTable
+
+        /// <summary>
+        /// Deletes a local gateway route table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLocalGatewayRouteTable service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLocalGatewayRouteTable service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRouteTable">REST API Reference for DeleteLocalGatewayRouteTable Operation</seealso>
+        public virtual DeleteLocalGatewayRouteTableResponse DeleteLocalGatewayRouteTable(DeleteLocalGatewayRouteTableRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLocalGatewayRouteTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLocalGatewayRouteTableResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLocalGatewayRouteTableResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteLocalGatewayRouteTable operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLocalGatewayRouteTable operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLocalGatewayRouteTable
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRouteTable">REST API Reference for DeleteLocalGatewayRouteTable Operation</seealso>
+        public virtual IAsyncResult BeginDeleteLocalGatewayRouteTable(DeleteLocalGatewayRouteTableRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLocalGatewayRouteTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLocalGatewayRouteTableResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteLocalGatewayRouteTable operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLocalGatewayRouteTable.</param>
+        /// 
+        /// <returns>Returns a  DeleteLocalGatewayRouteTableResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRouteTable">REST API Reference for DeleteLocalGatewayRouteTable Operation</seealso>
+        public virtual DeleteLocalGatewayRouteTableResponse EndDeleteLocalGatewayRouteTable(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteLocalGatewayRouteTableResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation
+
+        /// <summary>
+        /// Deletes a local gateway route table virtual interface group association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation">REST API Reference for DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation Operation</seealso>
+        public virtual DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation(DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation">REST API Reference for DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation Operation</seealso>
+        public virtual IAsyncResult BeginDeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation(DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation.</param>
+        /// 
+        /// <returns>Returns a  DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation">REST API Reference for DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation Operation</seealso>
+        public virtual DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse EndDeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse>(asyncResult);
         }
 
         #endregion

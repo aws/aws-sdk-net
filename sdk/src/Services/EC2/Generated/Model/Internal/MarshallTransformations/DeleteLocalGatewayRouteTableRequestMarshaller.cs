@@ -31,9 +31,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ModifyLocalGatewayRoute Request Marshaller
+    /// DeleteLocalGatewayRouteTable Request Marshaller
     /// </summary>       
-    public class ModifyLocalGatewayRouteRequestMarshaller : IMarshaller<IRequest, ModifyLocalGatewayRouteRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DeleteLocalGatewayRouteTableRequestMarshaller : IMarshaller<IRequest, DeleteLocalGatewayRouteTableRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ModifyLocalGatewayRouteRequest)input);
+            return this.Marshall((DeleteLocalGatewayRouteTableRequest)input);
         }
     
         /// <summary>
@@ -50,36 +50,24 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ModifyLocalGatewayRouteRequest publicRequest)
+        public IRequest Marshall(DeleteLocalGatewayRouteTableRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
-            request.Parameters.Add("Action", "ModifyLocalGatewayRoute");
+            request.Parameters.Add("Action", "DeleteLocalGatewayRouteTable");
             request.Parameters.Add("Version", "2016-11-15");
 
             if(publicRequest != null)
             {
-                if(publicRequest.IsSetDestinationCidrBlock())
-                {
-                    request.Parameters.Add("DestinationCidrBlock", StringUtils.FromString(publicRequest.DestinationCidrBlock));
-                }
                 if(publicRequest.IsSetLocalGatewayRouteTableId())
                 {
                     request.Parameters.Add("LocalGatewayRouteTableId", StringUtils.FromString(publicRequest.LocalGatewayRouteTableId));
                 }
-                if(publicRequest.IsSetLocalGatewayVirtualInterfaceGroupId())
-                {
-                    request.Parameters.Add("LocalGatewayVirtualInterfaceGroupId", StringUtils.FromString(publicRequest.LocalGatewayVirtualInterfaceGroupId));
-                }
-                if(publicRequest.IsSetNetworkInterfaceId())
-                {
-                    request.Parameters.Add("NetworkInterfaceId", StringUtils.FromString(publicRequest.NetworkInterfaceId));
-                }
             }
             return request;
         }
-                    private static ModifyLocalGatewayRouteRequestMarshaller _instance = new ModifyLocalGatewayRouteRequestMarshaller();        
+                    private static DeleteLocalGatewayRouteTableRequestMarshaller _instance = new DeleteLocalGatewayRouteTableRequestMarshaller();        
 
-        internal static ModifyLocalGatewayRouteRequestMarshaller GetInstance()
+        internal static DeleteLocalGatewayRouteTableRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -87,7 +75,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ModifyLocalGatewayRouteRequestMarshaller Instance
+        public static DeleteLocalGatewayRouteTableRequestMarshaller Instance
         {
             get
             {

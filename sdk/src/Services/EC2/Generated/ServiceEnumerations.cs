@@ -13509,6 +13509,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly ResourceType ClientVpnEndpoint = new ResourceType("client-vpn-endpoint");
         /// <summary>
+        /// Constant CoipPool for ResourceType
+        /// </summary>
+        public static readonly ResourceType CoipPool = new ResourceType("coip-pool");
+        /// <summary>
         /// Constant CustomerGateway for ResourceType
         /// </summary>
         public static readonly ResourceType CustomerGateway = new ResourceType("customer-gateway");
