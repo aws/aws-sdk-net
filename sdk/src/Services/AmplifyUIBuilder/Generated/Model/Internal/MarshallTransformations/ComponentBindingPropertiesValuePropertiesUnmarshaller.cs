@@ -100,6 +100,12 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
                     unmarshalledObject.Predicates = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("slotName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SlotName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("userAttribute", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

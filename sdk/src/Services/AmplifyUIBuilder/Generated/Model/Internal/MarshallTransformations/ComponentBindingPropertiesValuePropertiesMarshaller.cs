@@ -91,6 +91,12 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetSlotName())
+            {
+                context.Writer.WritePropertyName("slotName");
+                context.Writer.Write(requestObject.SlotName);
+            }
+
             if(requestObject.IsSetUserAttribute())
             {
                 context.Writer.WritePropertyName("userAttribute");

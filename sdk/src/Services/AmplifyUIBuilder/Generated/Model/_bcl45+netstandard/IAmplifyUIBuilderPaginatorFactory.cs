@@ -31,6 +31,11 @@ namespace Amazon.AmplifyUIBuilder.Model
         IExportComponentsPaginator ExportComponents(ExportComponentsRequest request);
 
         /// <summary>
+        /// Paginator for ExportForms operation
+        ///</summary>
+        IExportFormsPaginator ExportForms(ExportFormsRequest request);
+
+        /// <summary>
         /// Paginator for ExportThemes operation
         ///</summary>
         IExportThemesPaginator ExportThemes(ExportThemesRequest request);
@@ -39,6 +44,11 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// Paginator for ListComponents operation
         ///</summary>
         IListComponentsPaginator ListComponents(ListComponentsRequest request);
+
+        /// <summary>
+        /// Paginator for ListForms operation
+        ///</summary>
+        IListFormsPaginator ListForms(ListFormsRequest request);
 
         /// <summary>
         /// Paginator for ListThemes operation

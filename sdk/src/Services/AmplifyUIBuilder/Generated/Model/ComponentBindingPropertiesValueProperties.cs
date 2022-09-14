@@ -42,6 +42,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         private string _key;
         private string _model;
         private List<Predicate> _predicates = new List<Predicate>();
+        private string _slotName;
         private string _userAttribute;
 
         /// <summary>
@@ -150,6 +151,24 @@ namespace Amazon.AmplifyUIBuilder.Model
         internal bool IsSetPredicates()
         {
             return this._predicates != null && this._predicates.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SlotName. 
+        /// <para>
+        /// The name of a component slot.
+        /// </para>
+        /// </summary>
+        public string SlotName
+        {
+            get { return this._slotName; }
+            set { this._slotName = value; }
+        }
+
+        // Check to see if SlotName property is set
+        internal bool IsSetSlotName()
+        {
+            return this._slotName != null;
         }
 
         /// <summary>

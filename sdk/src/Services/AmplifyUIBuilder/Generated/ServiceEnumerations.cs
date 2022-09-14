@@ -25,6 +25,206 @@ namespace Amazon.AmplifyUIBuilder
 {
 
     /// <summary>
+    /// Constants used for properties of type FixedPosition.
+    /// </summary>
+    public class FixedPosition : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant First for FixedPosition
+        /// </summary>
+        public static readonly FixedPosition First = new FixedPosition("first");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FixedPosition(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FixedPosition FindValue(string value)
+        {
+            return FindValue<FixedPosition>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FixedPosition(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FormActionType.
+    /// </summary>
+    public class FormActionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Create for FormActionType
+        /// </summary>
+        public static readonly FormActionType Create = new FormActionType("create");
+        /// <summary>
+        /// Constant Update for FormActionType
+        /// </summary>
+        public static readonly FormActionType Update = new FormActionType("update");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FormActionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FormActionType FindValue(string value)
+        {
+            return FindValue<FormActionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FormActionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FormButtonsPosition.
+    /// </summary>
+    public class FormButtonsPosition : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Bottom for FormButtonsPosition
+        /// </summary>
+        public static readonly FormButtonsPosition Bottom = new FormButtonsPosition("bottom");
+        /// <summary>
+        /// Constant Top for FormButtonsPosition
+        /// </summary>
+        public static readonly FormButtonsPosition Top = new FormButtonsPosition("top");
+        /// <summary>
+        /// Constant Top_and_bottom for FormButtonsPosition
+        /// </summary>
+        public static readonly FormButtonsPosition Top_and_bottom = new FormButtonsPosition("top_and_bottom");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FormButtonsPosition(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FormButtonsPosition FindValue(string value)
+        {
+            return FindValue<FormButtonsPosition>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FormButtonsPosition(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FormDataSourceType.
+    /// </summary>
+    public class FormDataSourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Custom for FormDataSourceType
+        /// </summary>
+        public static readonly FormDataSourceType Custom = new FormDataSourceType("Custom");
+        /// <summary>
+        /// Constant DataStore for FormDataSourceType
+        /// </summary>
+        public static readonly FormDataSourceType DataStore = new FormDataSourceType("DataStore");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FormDataSourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FormDataSourceType FindValue(string value)
+        {
+            return FindValue<FormDataSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FormDataSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SortDirection.
     /// </summary>
     public class SortDirection : ConstantClass

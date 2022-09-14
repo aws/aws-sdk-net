@@ -323,6 +323,53 @@ namespace Amazon.AmplifyUIBuilder
 
         #endregion
         
+        #region  CreateForm
+
+        internal virtual CreateFormResponse CreateForm(CreateFormRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFormRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFormResponseUnmarshaller.Instance;
+
+            return Invoke<CreateFormResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new form for an Amplify app.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateForm service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateForm service method, as returned by AmplifyUIBuilder.</returns>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InternalServerException">
+        /// An internal error has occurred. Please retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InvalidParameterException">
+        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.ResourceConflictException">
+        /// The resource specified in the request conflicts with an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.ServiceQuotaExceededException">
+        /// You exceeded your service quota. Service quotas, also referred to as limits, are the
+        /// maximum number of service resources or operations for your Amazon Web Services account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/CreateForm">REST API Reference for CreateForm Operation</seealso>
+        public virtual Task<CreateFormResponse> CreateFormAsync(CreateFormRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFormRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFormResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateFormResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateTheme
 
         internal virtual CreateThemeResponse CreateTheme(CreateThemeRequest request)
@@ -409,6 +456,49 @@ namespace Amazon.AmplifyUIBuilder
             options.ResponseUnmarshaller = DeleteComponentResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteComponentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteForm
+
+        internal virtual DeleteFormResponse DeleteForm(DeleteFormRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFormRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFormResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFormResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a form from an Amplify app.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteForm service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteForm service method, as returned by AmplifyUIBuilder.</returns>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InternalServerException">
+        /// An internal error has occurred. Please retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InvalidParameterException">
+        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/DeleteForm">REST API Reference for DeleteForm Operation</seealso>
+        public virtual Task<DeleteFormResponse> DeleteFormAsync(DeleteFormRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFormRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFormResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteFormResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -534,6 +624,46 @@ namespace Amazon.AmplifyUIBuilder
 
         #endregion
         
+        #region  ExportForms
+
+        internal virtual ExportFormsResponse ExportForms(ExportFormsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportFormsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportFormsResponseUnmarshaller.Instance;
+
+            return Invoke<ExportFormsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Exports form configurations to code that is ready to integrate into an Amplify app.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportForms service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ExportForms service method, as returned by AmplifyUIBuilder.</returns>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InternalServerException">
+        /// An internal error has occurred. Please retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InvalidParameterException">
+        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ExportForms">REST API Reference for ExportForms Operation</seealso>
+        public virtual Task<ExportFormsResponse> ExportFormsAsync(ExportFormsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportFormsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportFormsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ExportFormsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ExportThemes
 
         internal virtual ExportThemesResponse ExportThemes(ExportThemesRequest request)
@@ -613,6 +743,89 @@ namespace Amazon.AmplifyUIBuilder
             options.ResponseUnmarshaller = GetComponentResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetComponentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetForm
+
+        internal virtual GetFormResponse GetForm(GetFormRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFormRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFormResponseUnmarshaller.Instance;
+
+            return Invoke<GetFormResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns an existing form for an Amplify app.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetForm service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetForm service method, as returned by AmplifyUIBuilder.</returns>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InternalServerException">
+        /// An internal error has occurred. Please retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InvalidParameterException">
+        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetForm">REST API Reference for GetForm Operation</seealso>
+        public virtual Task<GetFormResponse> GetFormAsync(GetFormRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFormRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFormResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetFormResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetMetadata
+
+        internal virtual GetMetadataResponse GetMetadata(GetMetadataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<GetMetadataResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns existing metadata for an Amplify app.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMetadata service method, as returned by AmplifyUIBuilder.</returns>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InvalidParameterException">
+        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.UnauthorizedException">
+        /// You don't have permission to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetMetadata">REST API Reference for GetMetadata Operation</seealso>
+        public virtual Task<GetMetadataResponse> GetMetadataAsync(GetMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMetadataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetMetadataResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -700,6 +913,46 @@ namespace Amazon.AmplifyUIBuilder
 
         #endregion
         
+        #region  ListForms
+
+        internal virtual ListFormsResponse ListForms(ListFormsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFormsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFormsResponseUnmarshaller.Instance;
+
+            return Invoke<ListFormsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a list of forms for a specified Amplify app and backend environment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListForms service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListForms service method, as returned by AmplifyUIBuilder.</returns>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InternalServerException">
+        /// An internal error has occurred. Please retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InvalidParameterException">
+        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListForms">REST API Reference for ListForms Operation</seealso>
+        public virtual Task<ListFormsResponse> ListFormsAsync(ListFormsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFormsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFormsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListFormsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListThemes
 
         internal virtual ListThemesResponse ListThemes(ListThemesRequest request)
@@ -736,6 +989,46 @@ namespace Amazon.AmplifyUIBuilder
             options.ResponseUnmarshaller = ListThemesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListThemesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutMetadataFlag
+
+        internal virtual PutMetadataFlagResponse PutMetadataFlag(PutMetadataFlagRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutMetadataFlagRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutMetadataFlagResponseUnmarshaller.Instance;
+
+            return Invoke<PutMetadataFlagResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Stores the metadata information about a feature on a form or view.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutMetadataFlag service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutMetadataFlag service method, as returned by AmplifyUIBuilder.</returns>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InvalidParameterException">
+        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.UnauthorizedException">
+        /// You don't have permission to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/PutMetadataFlag">REST API Reference for PutMetadataFlag Operation</seealso>
+        public virtual Task<PutMetadataFlagResponse> PutMetadataFlagAsync(PutMetadataFlagRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutMetadataFlagRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutMetadataFlagResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutMetadataFlagResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -816,6 +1109,49 @@ namespace Amazon.AmplifyUIBuilder
             options.ResponseUnmarshaller = UpdateComponentResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateComponentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateForm
+
+        internal virtual UpdateFormResponse UpdateForm(UpdateFormRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFormRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFormResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateFormResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an existing form.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateForm service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateForm service method, as returned by AmplifyUIBuilder.</returns>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InternalServerException">
+        /// An internal error has occurred. Please retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InvalidParameterException">
+        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.ResourceConflictException">
+        /// The resource specified in the request conflicts with an existing resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/UpdateForm">REST API Reference for UpdateForm Operation</seealso>
+        public virtual Task<UpdateFormResponse> UpdateFormAsync(UpdateFormRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFormRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFormResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateFormResponse>(request, options, cancellationToken);
         }
 
         #endregion
