@@ -180,7 +180,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PrivateDnsNames. 
         /// <para>
-        /// The private DNS names assigned to the VPC endpoint service. 
+        /// The private DNS names assigned to the VPC endpoint service.
         /// </para>
         /// </summary>
         public List<PrivateDnsDetails> PrivateDnsNames

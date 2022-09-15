@@ -13765,6 +13765,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly ResourceType VpcEndpoint = new ResourceType("vpc-endpoint");
         /// <summary>
+        /// Constant VpcEndpointConnection for ResourceType
+        /// </summary>
+        public static readonly ResourceType VpcEndpointConnection = new ResourceType("vpc-endpoint-connection");
+        /// <summary>
         /// Constant VpcEndpointConnectionDeviceType for ResourceType
         /// </summary>
         public static readonly ResourceType VpcEndpointConnectionDeviceType = new ResourceType("vpc-endpoint-connection-device-type");
@@ -13772,6 +13776,10 @@ namespace Amazon.EC2
         /// Constant VpcEndpointService for ResourceType
         /// </summary>
         public static readonly ResourceType VpcEndpointService = new ResourceType("vpc-endpoint-service");
+        /// <summary>
+        /// Constant VpcEndpointServicePermission for ResourceType
+        /// </summary>
+        public static readonly ResourceType VpcEndpointServicePermission = new ResourceType("vpc-endpoint-service-permission");
         /// <summary>
         /// Constant VpcFlowLog for ResourceType
         /// </summary>

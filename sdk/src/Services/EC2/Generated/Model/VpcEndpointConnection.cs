@@ -39,6 +39,8 @@ namespace Amazon.EC2.Model
         private IpAddressType _ipAddressType;
         private List<string> _networkLoadBalancerArns = new List<string>();
         private string _serviceId;
+        private List<Tag> _tags = new List<Tag>();
+        private string _vpcEndpointConnectionId;
         private string _vpcEndpointId;
         private string _vpcEndpointOwner;
         private State _vpcEndpointState;
@@ -149,6 +151,42 @@ namespace Amazon.EC2.Model
         internal bool IsSetServiceId()
         {
             return this._serviceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcEndpointConnectionId. 
+        /// <para>
+        /// The ID of the VPC endpoint connection.
+        /// </para>
+        /// </summary>
+        public string VpcEndpointConnectionId
+        {
+            get { return this._vpcEndpointConnectionId; }
+            set { this._vpcEndpointConnectionId = value; }
+        }
+
+        // Check to see if VpcEndpointConnectionId property is set
+        internal bool IsSetVpcEndpointConnectionId()
+        {
+            return this._vpcEndpointConnectionId != null;
         }
 
         /// <summary>

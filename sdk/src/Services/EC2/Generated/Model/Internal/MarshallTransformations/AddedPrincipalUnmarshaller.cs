@@ -32,77 +32,84 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ModifyVpcEndpointServicePermissions operation
+    /// Response Unmarshaller for AddedPrincipal Object
     /// </summary>  
-    public class ModifyVpcEndpointServicePermissionsResponseUnmarshaller : EC2ResponseUnmarshaller
+    public class AddedPrincipalUnmarshaller : IUnmarshaller<AddedPrincipal, XmlUnmarshallerContext>, IUnmarshaller<AddedPrincipal, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
-        /// </summary>
+        /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        public AddedPrincipal Unmarshall(XmlUnmarshallerContext context)
         {
-            ModifyVpcEndpointServicePermissionsResponse response = new ModifyVpcEndpointServicePermissionsResponse();
-
+            AddedPrincipal unmarshalledObject = new AddedPrincipal();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
-               targetDepth = 2;
-
+               targetDepth += 2;
+            
             while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-
-                    if (context.TestExpression("addedPrincipalSet/item", targetDepth))
+                    if (context.TestExpression("principal", targetDepth))
                     {
-                        var unmarshaller = AddedPrincipalUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        response.AddedPrincipals.Add(item);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Principal = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("return", targetDepth))
+                    if (context.TestExpression("principalType", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
-                        response.ReturnValue = unmarshaller.Unmarshall(context);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PrincipalType = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                } 
+                    if (context.TestExpression("serviceId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ServiceId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("servicePermissionId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ServicePermissionId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                }
+                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
+                {
+                    return unmarshalledObject;
+                }
             }
 
-            return response;
+            return unmarshalledObject;
         }
 
         /// <summary>
         /// Unmarshaller error response to exception.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="innerException"></param>
-        /// <param name="statusCode"></param>
         /// <returns></returns>
-        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public AddedPrincipal Unmarshall(JsonUnmarshallerContext context)
         {
-            ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            return new AmazonEC2Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            return null;
         }
-        private static ModifyVpcEndpointServicePermissionsResponseUnmarshaller _instance = new ModifyVpcEndpointServicePermissionsResponseUnmarshaller();        
 
-        internal static ModifyVpcEndpointServicePermissionsResponseUnmarshaller GetInstance()
-        {
-            return _instance;
-        }
+
+        private static AddedPrincipalUnmarshaller _instance = new AddedPrincipalUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ModifyVpcEndpointServicePermissionsResponseUnmarshaller Instance
+        public static AddedPrincipalUnmarshaller Instance
         {
             get
             {
                 return _instance;
             }
         }
-
     }
 }

@@ -33,7 +33,26 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ModifyVpcEndpointServicePermissionsResponse : AmazonWebServiceResponse
     {
+        private List<AddedPrincipal> _addedPrincipals = new List<AddedPrincipal>();
         private bool? _returnValue;
+
+        /// <summary>
+        /// Gets and sets the property AddedPrincipals. 
+        /// <para>
+        /// Information about the added principals.
+        /// </para>
+        /// </summary>
+        public List<AddedPrincipal> AddedPrincipals
+        {
+            get { return this._addedPrincipals; }
+            set { this._addedPrincipals = value; }
+        }
+
+        // Check to see if AddedPrincipals property is set
+        internal bool IsSetAddedPrincipals()
+        {
+            return this._addedPrincipals != null && this._addedPrincipals.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property ReturnValue. 
