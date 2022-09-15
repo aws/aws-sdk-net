@@ -199,7 +199,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property Strategy. 
         /// <para>
         /// Specifies the search strategy hyperparameter tuning uses to choose which hyperparameters
-        /// to use for each iteration. Currently, the only valid value is Bayesian.
+        /// to evaluate at each iteration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

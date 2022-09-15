@@ -70,10 +70,11 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// Defines the maximum number of data objects that can be labeled by human workers at
         /// the same time. Also referred to as batch size. Each object may have more than one
-        /// worker at one time. The default value is 1000 objects.
+        /// worker at one time. The default value is 1000 objects. To increase the maximum value
+        /// to 5000 objects, contact Amazon Web Services Support.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
+        [AWSProperty(Min=1, Max=5000)]
         public int MaxConcurrentTaskCount
         {
             get { return this._maxConcurrentTaskCount.GetValueOrDefault(); }

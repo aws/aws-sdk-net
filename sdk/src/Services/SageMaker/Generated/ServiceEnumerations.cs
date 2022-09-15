@@ -4369,6 +4369,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly HyperParameterTuningJobStrategyType Bayesian = new HyperParameterTuningJobStrategyType("Bayesian");
         /// <summary>
+        /// Constant Hyperband for HyperParameterTuningJobStrategyType
+        /// </summary>
+        public static readonly HyperParameterTuningJobStrategyType Hyperband = new HyperParameterTuningJobStrategyType("Hyperband");
+        /// <summary>
         /// Constant Random for HyperParameterTuningJobStrategyType
         /// </summary>
         public static readonly HyperParameterTuningJobStrategyType Random = new HyperParameterTuningJobStrategyType("Random");

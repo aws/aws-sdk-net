@@ -88,6 +88,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.Strategy = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("StrategyConfig", targetDepth))
+                {
+                    var unmarshaller = HyperParameterTuningJobStrategyConfigUnmarshaller.Instance;
+                    unmarshalledObject.StrategyConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TrainingJobEarlyStoppingType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

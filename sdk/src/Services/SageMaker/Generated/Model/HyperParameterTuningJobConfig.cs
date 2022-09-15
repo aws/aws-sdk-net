@@ -37,6 +37,7 @@ namespace Amazon.SageMaker.Model
         private ParameterRanges _parameterRanges;
         private ResourceLimits _resourceLimits;
         private HyperParameterTuningJobStrategyType _strategy;
+        private HyperParameterTuningJobStrategyConfig _strategyConfig;
         private TrainingJobEarlyStoppingType _trainingJobEarlyStoppingType;
         private TuningJobCompletionCriteria _tuningJobCompletionCriteria;
 
@@ -102,9 +103,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property Strategy. 
         /// <para>
         /// Specifies how hyperparameter tuning chooses the combinations of hyperparameter values
-        /// to use for the training job it launches. To use the Bayesian search strategy, set
-        /// this to <code>Bayesian</code>. To randomly search, set it to <code>Random</code>.
-        /// For information about search strategies, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
+        /// to use for the training job it launches. For information about search strategies,
+        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
         /// Hyperparameter Tuning Works</a>.
         /// </para>
         /// </summary>
@@ -122,10 +122,33 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StrategyConfig. 
+        /// <para>
+        /// The configuration for the <code>Hyperband</code> optimization strategy. This parameter
+        /// should be provided only if <code>Hyperband</code> is selected as the strategy for
+        /// <code>HyperParameterTuningJobConfig</code>.
+        /// </para>
+        /// </summary>
+        public HyperParameterTuningJobStrategyConfig StrategyConfig
+        {
+            get { return this._strategyConfig; }
+            set { this._strategyConfig = value; }
+        }
+
+        // Check to see if StrategyConfig property is set
+        internal bool IsSetStrategyConfig()
+        {
+            return this._strategyConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property TrainingJobEarlyStoppingType. 
         /// <para>
         /// Specifies whether to use early stopping for training jobs launched by the hyperparameter
-        /// tuning job. This can be one of the following values (the default value is <code>OFF</code>):
+        /// tuning job. Because the <code>Hyperband</code> strategy has its own advanced internal
+        /// early stopping mechanism, <code>TrainingJobEarlyStoppingType</code> must be <code>OFF</code>
+        /// to use <code>Hyperband</code>. This parameter can take on one of the following values
+        /// (the default value is <code>OFF</code>):
         /// </para>
         ///  <dl> <dt>OFF</dt> <dd> 
         /// <para>

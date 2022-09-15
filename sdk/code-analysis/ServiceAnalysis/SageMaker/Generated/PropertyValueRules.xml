@@ -6355,7 +6355,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.HumanTaskConfig.MaxConcurrentTaskCount</property>
     <min>1</min>
-    <max>1000</max>
+    <max>5000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.HumanTaskConfig.NumberOfHumanWorkersPerDataObject</property>
@@ -6402,6 +6402,14 @@
     <min>1</min>
     <max>63</max>
     <pattern>^[a-z0-9](-*[a-z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.HyperbandStrategyConfig.MaxResource</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.HyperbandStrategyConfig.MinResource</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.HyperParameterAlgorithmSpecification.AlgorithmName</property>

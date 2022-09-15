@@ -84,6 +84,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Strategy);
             }
 
+            if(requestObject.IsSetStrategyConfig())
+            {
+                context.Writer.WritePropertyName("StrategyConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = HyperParameterTuningJobStrategyConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.StrategyConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTrainingJobEarlyStoppingType())
             {
                 context.Writer.WritePropertyName("TrainingJobEarlyStoppingType");

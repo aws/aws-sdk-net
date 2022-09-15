@@ -42,8 +42,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property ExecutionRoleIdentityConfig. 
         /// <para>
         /// The configuration for attaching a SageMaker user profile name to the execution role
-        /// as a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">
-        /// <code>sts:SourceIdentity</code> key</a>.
+        /// as a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity
+        /// key</a>.
         /// </para>
         /// </summary>
         public ExecutionRoleIdentityConfig ExecutionRoleIdentityConfig
