@@ -366,7 +366,7 @@ namespace Amazon.DynamoDBv2.Model
         /// A list of cancellation reasons.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=25)]
+        [AWSProperty(Min=1, Max=100)]
         public List<CancellationReason> CancellationReasons
         {
             get { return this._cancellationReasons; }

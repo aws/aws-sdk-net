@@ -61,7 +61,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The response to a PartiQL transaction.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=25)]
+        [AWSProperty(Min=1, Max=100)]
         public List<ItemResponse> Responses
         {
             get { return this._responses; }
