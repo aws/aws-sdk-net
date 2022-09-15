@@ -21,12 +21,14 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
 using ThirdParty.Json.LitJson;
+using System.Collections.Concurrent;
 
 namespace Amazon.Internal
 {
     public class RegionEndpointV3 : IRegionEndpoint
     {
         private ServiceMap _serviceMap = new ServiceMap();
+        private readonly object _serviceMapLock = new object();
         public string RegionName { get; private set; }
         public string DisplayName { get; private set; }
         public string PartitionName
@@ -92,7 +94,7 @@ namespace Amazon.Internal
         {
             RegionEndpoint.Endpoint endpointObject = null;
 
-            lock (_serviceMap)
+            lock (_serviceMapLock)
             {
                 if (!_servicesLoaded)
                 {
@@ -239,7 +241,10 @@ namespace Amazon.Internal
             var signatureOverride = DetermineSignatureOverride(mergedEndpoint, serviceName);
 
             RegionEndpoint.Endpoint endpoint = new RegionEndpoint.Endpoint(hostname, authRegion, signatureOverride, dnsSuffix, deprecated);
-            _serviceMap.Add(serviceName, endpoint);
+            lock(_serviceMapLock)
+            {
+                _serviceMap.Add(serviceName, endpoint);
+            }
 
         }
 
@@ -280,7 +285,10 @@ namespace Amazon.Internal
                                      .Replace("{region}", regionName)
                                      .Replace("{dnsSuffix}", variantDnsSuffix);
 
-                _serviceMap.Add(serviceName, new RegionEndpoint.Endpoint(variantHostname, authRegion, signatureOverride, variantDnsSuffix, deprecated), tagsKey);
+                lock(_serviceMapLock)
+                {
+                    _serviceMap.Add(serviceName, new RegionEndpoint.Endpoint(variantHostname, authRegion, signatureOverride, variantDnsSuffix, deprecated), tagsKey);
+                }
             }
         }
 
@@ -348,12 +356,12 @@ namespace Amazon.Internal
             /// <summary>
             /// Stores the plain endpoints for each service in the current region
             /// </summary>
-            private Dictionary<string, RegionEndpoint.Endpoint> _serviceMap = new Dictionary<string, RegionEndpoint.Endpoint>();
+            private ConcurrentDictionary<string, RegionEndpoint.Endpoint> _serviceMap = new ConcurrentDictionary<string, RegionEndpoint.Endpoint>();
 
             /// <summary>
             /// Stores the variants for each service in the current region, identified by the set of variant tags.
             /// </summary>
-            private Dictionary<string, Dictionary<HashSet<string>, RegionEndpoint.Endpoint>> _variantMap = new Dictionary<string, Dictionary<HashSet<string>, RegionEndpoint.Endpoint>>();
+            private ConcurrentDictionary<string, Dictionary<HashSet<string>, RegionEndpoint.Endpoint>> _variantMap = new ConcurrentDictionary<string, Dictionary<HashSet<string>, RegionEndpoint.Endpoint>>();
 
             public bool ContainsKey(string serviceName)
             {
@@ -364,13 +372,13 @@ namespace Amazon.Internal
             {
                 if (variants == null || variants.Count == 0)
                 {
-                    _serviceMap.Add(serviceName, endpoint);
+                    _serviceMap.TryAdd(serviceName, endpoint);
                 }
                 else
                 {
                     if (!_variantMap.ContainsKey(serviceName) || _variantMap[serviceName] == null)
                     {
-                        _variantMap.Add(serviceName, new Dictionary<HashSet<string>, RegionEndpoint.Endpoint>(HashSet<string>.CreateSetComparer()));
+                        _variantMap.TryAdd(serviceName, new Dictionary<HashSet<string>, RegionEndpoint.Endpoint>(HashSet<string>.CreateSetComparer()));
                     }
                     _variantMap[serviceName].Add(variants, endpoint);
                 }
