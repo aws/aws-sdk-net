@@ -175,8 +175,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property DependsOn. 
         /// <para>
         /// The dependencies defined for container startup and shutdown. A container can contain
-        /// multiple dependencies. When a dependency is defined for container startup, for container
-        /// shutdown it is reversed.
+        /// multiple dependencies on other containers in a task definition. When a dependency
+        /// is defined for container startup, for container shutdown it is reversed.
         /// </para>
         ///  
         /// <para>
@@ -875,8 +875,13 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// The Docker daemon reserves a minimum of 4 MiB of memory for a container. Therefore,
-        /// we recommend that you specify fewer than 4 MiB of memory for your containers. 
+        /// The Docker 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container.
+        /// So, don't specify less than 6 MiB of memory for your containers. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of memory for
+        /// a container. So, don't specify less than 4 MiB of memory for your containers.
         /// </para>
         /// </summary>
         public int MemoryReservation

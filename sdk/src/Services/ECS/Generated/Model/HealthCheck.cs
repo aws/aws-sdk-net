@@ -127,9 +127,9 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Command. 
         /// <para>
         /// A string array representing the command that the container runs to determine if it
-        /// is healthy. The string array must start with <code>CMD</code> to execute the command
-        /// arguments directly, or <code>CMD-SHELL</code> to run the command with the container's
-        /// default shell. 
+        /// is healthy. The string array must start with <code>CMD</code> to run the command arguments
+        /// directly, or <code>CMD-SHELL</code> to run the command with the container's default
+        /// shell. 
         /// </para>
         ///  
         /// <para>

@@ -276,13 +276,29 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// 2048 (2 vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384
-        /// (16 GB) in increments of 1024 (1 GB)
+        /// 2048 (2 vCPU) - Available <code>memory</code> values: 4096 (4 GB) and 16384 (16 GB)
+        /// in increments of 1024 (1 GB)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// 4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8 GB) and 30720
-        /// (30 GB) in increments of 1024 (1 GB)
+        /// 4096 (4 vCPU) - Available <code>memory</code> values: 8192 (8 GB) and 30720 (30 GB)
+        /// in increments of 1024 (1 GB)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// 8192 (8 vCPU) - Available <code>memory</code> values: 16 GB and 60 GB in 4 GB increments
+        /// </para>
+        ///  
+        /// <para>
+        /// This option requires Linux platform <code>1.4.0</code> or later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// 16384 (16vCPU) - Available <code>memory</code> values: 32GB and 120 GB in 8 GB increments
+        /// </para>
+        ///  
+        /// <para>
+        /// This option requires Linux platform <code>1.4.0</code> or later.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -538,6 +554,24 @@ namespace Amazon.ECS.Model
         /// <para>
         /// Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code>
         /// values: 4096 (4 vCPU)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Between 16 GB and 60 GB in 4 GB increments - Available <code>cpu</code> values: 8192
+        /// (8 vCPU)
+        /// </para>
+        ///  
+        /// <para>
+        /// This option requires Linux platform <code>1.4.0</code> or later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Between 32GB and 120 GB in 8 GB increments - Available <code>cpu</code> values: 16384
+        /// (16 vCPU)
+        /// </para>
+        ///  
+        /// <para>
+        /// This option requires Linux platform <code>1.4.0</code> or later.
         /// </para>
         ///  </li> </ul>
         /// </summary>
