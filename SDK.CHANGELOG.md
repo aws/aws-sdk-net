@@ -1,3 +1,9 @@
+### 3.7.359.0 (2022-09-16 18:19 UTC)
+* CodeStarNotifications (3.7.1.0)
+	* This release adds tag based access control for the UntagResource API.
+* ECS (3.7.5.78)
+	* This release supports new task definition sizes.
+
 ### 3.7.358.0 (2022-09-15 18:24 UTC)
 * DynamoDBv2 (3.7.5.0)
 	* Increased DynamoDB transaction limit from 25 to 100.
