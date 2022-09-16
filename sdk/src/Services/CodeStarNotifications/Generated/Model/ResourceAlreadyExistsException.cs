@@ -30,7 +30,7 @@ namespace Amazon.CodeStarNotifications.Model
 {
     /// <summary>
     /// A resource with the same name or ID already exists. Notification rule names must be
-    /// unique in your AWS account.
+    /// unique in your Amazon Web Services account.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

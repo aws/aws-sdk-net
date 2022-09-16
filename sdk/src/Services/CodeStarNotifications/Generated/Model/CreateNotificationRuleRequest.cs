@@ -31,8 +31,8 @@ namespace Amazon.CodeStarNotifications.Model
     /// <summary>
     /// Container for the parameters to the CreateNotificationRule operation.
     /// Creates a notification rule for a resource. The rule specifies the events you want
-    /// notifications about and the targets (such as SNS topics) where you want to receive
-    /// them.
+    /// notifications about and the targets (such as Chatbot topics or Chatbot clients configured
+    /// for Slack) where you want to receive them.
     /// </summary>
     public partial class CreateNotificationRuleRequest : AmazonCodeStarNotificationsRequest
     {
@@ -55,8 +55,8 @@ namespace Amazon.CodeStarNotifications.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency
-        /// token is created for you.
+        /// The Amazon Web Services SDKs prepopulate client request tokens. If you are using an
+        /// Amazon Web Services SDK, an idempotency token is created for you.
         /// </para>
         ///  </note>
         /// </summary>
@@ -76,10 +76,10 @@ namespace Amazon.CodeStarNotifications.Model
         /// <summary>
         /// Gets and sets the property DetailType. 
         /// <para>
-        /// The level of detail to include in the notifications for this resource. BASIC will
-        /// include only the contents of the event as it would appear in AWS CloudWatch. FULL
-        /// will include any supplemental information provided by AWS CodeStar Notifications and/or
-        /// the service for the resource for which the notification is created.
+        /// The level of detail to include in the notifications for this resource. <code>BASIC</code>
+        /// will include only the contents of the event as it would appear in Amazon CloudWatch.
+        /// <code>FULL</code> will include any supplemental information provided by AWS CodeStar
+        /// Notifications and/or the service for the resource for which the notification is created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -118,8 +118,8 @@ namespace Amazon.CodeStarNotifications.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name for the notification rule. Notifictaion rule names must be unique in your
-        /// AWS account.
+        /// The name for the notification rule. Notification rule names must be unique in your
+        /// Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -139,8 +139,8 @@ namespace Amazon.CodeStarNotifications.Model
         /// Gets and sets the property Resource. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the resource to associate with the notification
-        /// rule. Supported resources include pipelines in AWS CodePipeline, repositories in AWS
-        /// CodeCommit, and build projects in AWS CodeBuild.
+        /// rule. Supported resources include pipelines in CodePipeline, repositories in CodeCommit,
+        /// and build projects in CodeBuild.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -159,8 +159,9 @@ namespace Amazon.CodeStarNotifications.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the notification rule. The default value is ENABLED. If the status is
-        /// set to DISABLED, notifications aren't sent for the notification rule.
+        /// The status of the notification rule. The default value is <code>ENABLED</code>. If
+        /// the status is set to <code>DISABLED</code>, notifications aren't sent for the notification
+        /// rule.
         /// </para>
         /// </summary>
         public NotificationRuleStatus Status
@@ -178,7 +179,7 @@ namespace Amazon.CodeStarNotifications.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of tags to apply to this notification rule. Key names cannot start with "aws".
+        /// A list of tags to apply to this notification rule. Key names cannot start with "<code>aws</code>".
         /// 
         /// </para>
         /// </summary>
@@ -197,8 +198,8 @@ namespace Amazon.CodeStarNotifications.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// A list of Amazon Resource Names (ARNs) of SNS topics to associate with the notification
-        /// rule.
+        /// A list of Amazon Resource Names (ARNs) of Amazon Simple Notification Service topics
+        /// and Chatbot clients to associate with the notification rule.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=10)]

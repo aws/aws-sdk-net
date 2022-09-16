@@ -72,7 +72,7 @@ namespace Amazon.CodeStarNotifications.Model
         /// Gets and sets the property DetailType. 
         /// <para>
         /// The level of detail to include in the notifications for this resource. BASIC will
-        /// include only the contents of the event as it would appear in AWS CloudWatch. FULL
+        /// include only the contents of the event as it would appear in Amazon CloudWatch. FULL
         /// will include any supplemental information provided by AWS CodeStar Notifications and/or
         /// the service for the resource for which the notification is created.
         /// </para>
@@ -92,7 +92,9 @@ namespace Amazon.CodeStarNotifications.Model
         /// <summary>
         /// Gets and sets the property EventTypeIds. 
         /// <para>
-        /// A list of event types associated with this notification rule.
+        /// A list of event types associated with this notification rule. For a complete list
+        /// of event types and IDs, see <a href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification
+        /// concepts</a> in the <i>Developer Tools Console User Guide</i>.
         /// </para>
         /// </summary>
         public List<string> EventTypeIds

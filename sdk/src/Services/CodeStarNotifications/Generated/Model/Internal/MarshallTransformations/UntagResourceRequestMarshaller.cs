@@ -59,34 +59,14 @@ namespace Amazon.CodeStarNotifications.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-10-15";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/untagResource";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
-            {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetArn())
-                {
-                    context.Writer.WritePropertyName("Arn");
-                    context.Writer.Write(publicRequest.Arn);
-                }
-
-                if(publicRequest.IsSetTagKeys())
-                {
-                    context.Writer.WritePropertyName("TagKeys");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagKeysListValue in publicRequest.TagKeys)
-                    {
-                            context.Writer.Write(publicRequestTagKeysListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-            }
-
+            if (!publicRequest.IsSetArn())
+                throw new AmazonCodeStarNotificationsException("Request object does not have required field Arn set");
+            request.AddPathResource("{resourceArn}", StringUtils.FromString(publicRequest.Arn));
+            
+            if (publicRequest.IsSetTagKeys())
+                request.ParameterCollection.Add("tagKeys", publicRequest.TagKeys);
+            request.ResourcePath = "/untagResource/{resourceArn}";
+            request.UseQueryString = true;
 
             return request;
         }

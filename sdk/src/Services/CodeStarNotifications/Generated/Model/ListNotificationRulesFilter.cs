@@ -61,10 +61,10 @@ namespace Amazon.CodeStarNotifications.Model
         /// <para>
         /// The value of the attribute you want to use to filter the returned notification rules.
         /// For example, if you specify filtering by <i>RESOURCE</i> in Name, you might specify
-        /// the ARN of a pipeline in AWS CodePipeline for the value.
+        /// the ARN of a pipeline in CodePipeline for the value.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2048)]
         public string Value
         {
             get { return this._value; }

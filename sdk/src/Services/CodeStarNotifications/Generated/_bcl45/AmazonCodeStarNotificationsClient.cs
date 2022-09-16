@@ -84,8 +84,8 @@ namespace Amazon.CodeStarNotifications
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>DeleteTarget</a>, which removes a notification rule target (SNS topic) from a
-    /// notification rule. 
+    ///  <a>DeleteTarget</a>, which removes a notification rule target from a notification
+    /// rule. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -122,8 +122,8 @@ namespace Amazon.CodeStarNotifications
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  For information about how to use AWS CodeStar Notifications, see link in the CodeStarNotifications
-    /// User Guide. 
+    ///  For information about how to use AWS CodeStar Notifications, see the <a href="https://docs.aws.amazon.com/dtconsole/latest/userguide/what-is-dtconsole.html">Amazon
+    /// Web Services Developer Tools Console User Guide</a>. 
     /// </para>
     /// </summary>
     public partial class AmazonCodeStarNotificationsClient : AmazonServiceClient, IAmazonCodeStarNotifications
@@ -345,8 +345,8 @@ namespace Amazon.CodeStarNotifications
 
         /// <summary>
         /// Creates a notification rule for a resource. The rule specifies the events you want
-        /// notifications about and the targets (such as SNS topics) where you want to receive
-        /// them.
+        /// notifications about and the targets (such as Chatbot topics or Chatbot clients configured
+        /// for Slack) where you want to receive them.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNotificationRule service method.</param>
         /// 
@@ -369,7 +369,7 @@ namespace Amazon.CodeStarNotifications
         /// </exception>
         /// <exception cref="Amazon.CodeStarNotifications.Model.ResourceAlreadyExistsException">
         /// A resource with the same name or ID already exists. Notification rule names must be
-        /// unique in your AWS account.
+        /// unique in your Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CodeStarNotifications.Model.ValidationException">
         /// One or more parameter values are not valid.
@@ -387,8 +387,8 @@ namespace Amazon.CodeStarNotifications
 
         /// <summary>
         /// Creates a notification rule for a resource. The rule specifies the events you want
-        /// notifications about and the targets (such as SNS topics) where you want to receive
-        /// them.
+        /// notifications about and the targets (such as Chatbot topics or Chatbot clients configured
+        /// for Slack) where you want to receive them.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNotificationRule service method.</param>
         /// <param name="cancellationToken">
@@ -414,7 +414,7 @@ namespace Amazon.CodeStarNotifications
         /// </exception>
         /// <exception cref="Amazon.CodeStarNotifications.Model.ResourceAlreadyExistsException">
         /// A resource with the same name or ID already exists. Notification rule names must be
-        /// unique in your AWS account.
+        /// unique in your Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CodeStarNotifications.Model.ValidationException">
         /// One or more parameter values are not valid.
@@ -655,7 +655,7 @@ namespace Amazon.CodeStarNotifications
 
 
         /// <summary>
-        /// Returns a list of the notification rules for an AWS account.
+        /// Returns a list of the notification rules for an Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListNotificationRules service method.</param>
         /// 
@@ -679,7 +679,7 @@ namespace Amazon.CodeStarNotifications
 
 
         /// <summary>
-        /// Returns a list of the notification rules for an AWS account.
+        /// Returns a list of the notification rules for an Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListNotificationRules service method.</param>
         /// <param name="cancellationToken">
@@ -763,7 +763,7 @@ namespace Amazon.CodeStarNotifications
 
 
         /// <summary>
-        /// Returns a list of the notification rule targets for an AWS account.
+        /// Returns a list of the notification rule targets for an Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTargets service method.</param>
         /// 
@@ -787,7 +787,7 @@ namespace Amazon.CodeStarNotifications
 
 
         /// <summary>
-        /// Returns a list of the notification rule targets for an AWS account.
+        /// Returns a list of the notification rule targets for an Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTargets service method.</param>
         /// <param name="cancellationToken">
@@ -818,12 +818,16 @@ namespace Amazon.CodeStarNotifications
 
 
         /// <summary>
-        /// Creates an association between a notification rule and an SNS topic so that the associated
-        /// target can receive notifications when the events described in the rule are triggered.
+        /// Creates an association between a notification rule and an Chatbot topic or Chatbot
+        /// client so that the associated target can receive notifications when the events described
+        /// in the rule are triggered.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Subscribe service method.</param>
         /// 
         /// <returns>The response from the Subscribe service method, as returned by CodeStarNotifications.</returns>
+        /// <exception cref="Amazon.CodeStarNotifications.Model.ConfigurationException">
+        /// Some or all of the configuration is incomplete, missing, or not valid.
+        /// </exception>
         /// <exception cref="Amazon.CodeStarNotifications.Model.ResourceNotFoundException">
         /// AWS CodeStar Notifications can't find a resource that matches the provided ARN.
         /// </exception>
@@ -842,8 +846,9 @@ namespace Amazon.CodeStarNotifications
 
 
         /// <summary>
-        /// Creates an association between a notification rule and an SNS topic so that the associated
-        /// target can receive notifications when the events described in the rule are triggered.
+        /// Creates an association between a notification rule and an Chatbot topic or Chatbot
+        /// client so that the associated target can receive notifications when the events described
+        /// in the rule are triggered.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Subscribe service method.</param>
         /// <param name="cancellationToken">
@@ -851,6 +856,9 @@ namespace Amazon.CodeStarNotifications
         /// </param>
         /// 
         /// <returns>The response from the Subscribe service method, as returned by CodeStarNotifications.</returns>
+        /// <exception cref="Amazon.CodeStarNotifications.Model.ConfigurationException">
+        /// Some or all of the configuration is incomplete, missing, or not valid.
+        /// </exception>
         /// <exception cref="Amazon.CodeStarNotifications.Model.ResourceNotFoundException">
         /// AWS CodeStar Notifications can't find a resource that matches the provided ARN.
         /// </exception>
@@ -882,6 +890,11 @@ namespace Amazon.CodeStarNotifications
         /// AWS CodeStar Notifications can't complete the request because the resource is being
         /// modified by another process. Wait a few minutes and try again.
         /// </exception>
+        /// <exception cref="Amazon.CodeStarNotifications.Model.LimitExceededException">
+        /// One of the AWS CodeStar Notifications limits has been exceeded. Limits apply to accounts,
+        /// notification rules, notifications, resources, and targets. For more information, see
+        /// Limits.
+        /// </exception>
         /// <exception cref="Amazon.CodeStarNotifications.Model.ResourceNotFoundException">
         /// AWS CodeStar Notifications can't find a resource that matches the provided ARN.
         /// </exception>
@@ -912,6 +925,11 @@ namespace Amazon.CodeStarNotifications
         /// AWS CodeStar Notifications can't complete the request because the resource is being
         /// modified by another process. Wait a few minutes and try again.
         /// </exception>
+        /// <exception cref="Amazon.CodeStarNotifications.Model.LimitExceededException">
+        /// One of the AWS CodeStar Notifications limits has been exceeded. Limits apply to accounts,
+        /// notification rules, notifications, resources, and targets. For more information, see
+        /// Limits.
+        /// </exception>
         /// <exception cref="Amazon.CodeStarNotifications.Model.ResourceNotFoundException">
         /// AWS CodeStar Notifications can't find a resource that matches the provided ARN.
         /// </exception>
@@ -934,9 +952,9 @@ namespace Amazon.CodeStarNotifications
 
 
         /// <summary>
-        /// Removes an association between a notification rule and an Amazon SNS topic so that
-        /// subscribers to that topic stop receiving notifications when the events described in
-        /// the rule are triggered.
+        /// Removes an association between a notification rule and an Chatbot topic so that subscribers
+        /// to that topic stop receiving notifications when the events described in the rule are
+        /// triggered.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Unsubscribe service method.</param>
         /// 
@@ -956,9 +974,9 @@ namespace Amazon.CodeStarNotifications
 
 
         /// <summary>
-        /// Removes an association between a notification rule and an Amazon SNS topic so that
-        /// subscribers to that topic stop receiving notifications when the events described in
-        /// the rule are triggered.
+        /// Removes an association between a notification rule and an Chatbot topic so that subscribers
+        /// to that topic stop receiving notifications when the events described in the rule are
+        /// triggered.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Unsubscribe service method.</param>
         /// <param name="cancellationToken">
@@ -994,6 +1012,11 @@ namespace Amazon.CodeStarNotifications
         /// AWS CodeStar Notifications can't complete the request because the resource is being
         /// modified by another process. Wait a few minutes and try again.
         /// </exception>
+        /// <exception cref="Amazon.CodeStarNotifications.Model.LimitExceededException">
+        /// One of the AWS CodeStar Notifications limits has been exceeded. Limits apply to accounts,
+        /// notification rules, notifications, resources, and targets. For more information, see
+        /// Limits.
+        /// </exception>
         /// <exception cref="Amazon.CodeStarNotifications.Model.ResourceNotFoundException">
         /// AWS CodeStar Notifications can't find a resource that matches the provided ARN.
         /// </exception>
@@ -1023,6 +1046,11 @@ namespace Amazon.CodeStarNotifications
         /// <exception cref="Amazon.CodeStarNotifications.Model.ConcurrentModificationException">
         /// AWS CodeStar Notifications can't complete the request because the resource is being
         /// modified by another process. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarNotifications.Model.LimitExceededException">
+        /// One of the AWS CodeStar Notifications limits has been exceeded. Limits apply to accounts,
+        /// notification rules, notifications, resources, and targets. For more information, see
+        /// Limits.
         /// </exception>
         /// <exception cref="Amazon.CodeStarNotifications.Model.ResourceNotFoundException">
         /// AWS CodeStar Notifications can't find a resource that matches the provided ARN.
@@ -1059,6 +1087,9 @@ namespace Amazon.CodeStarNotifications
         /// <param name="request">Container for the necessary parameters to execute the UpdateNotificationRule service method.</param>
         /// 
         /// <returns>The response from the UpdateNotificationRule service method, as returned by CodeStarNotifications.</returns>
+        /// <exception cref="Amazon.CodeStarNotifications.Model.ConfigurationException">
+        /// Some or all of the configuration is incomplete, missing, or not valid.
+        /// </exception>
         /// <exception cref="Amazon.CodeStarNotifications.Model.ResourceNotFoundException">
         /// AWS CodeStar Notifications can't find a resource that matches the provided ARN.
         /// </exception>
@@ -1093,6 +1124,9 @@ namespace Amazon.CodeStarNotifications
         /// </param>
         /// 
         /// <returns>The response from the UpdateNotificationRule service method, as returned by CodeStarNotifications.</returns>
+        /// <exception cref="Amazon.CodeStarNotifications.Model.ConfigurationException">
+        /// Some or all of the configuration is incomplete, missing, or not valid.
+        /// </exception>
         /// <exception cref="Amazon.CodeStarNotifications.Model.ResourceNotFoundException">
         /// AWS CodeStar Notifications can't find a resource that matches the provided ARN.
         /// </exception>

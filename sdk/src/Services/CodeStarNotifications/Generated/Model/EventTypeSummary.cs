@@ -41,7 +41,9 @@ namespace Amazon.CodeStarNotifications.Model
         /// <summary>
         /// Gets and sets the property EventTypeId. 
         /// <para>
-        /// The system-generated ID of the event.
+        /// The system-generated ID of the event. For a complete list of event types and IDs,
+        /// see <a href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification
+        /// concepts</a> in the <i>Developer Tools Console User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]

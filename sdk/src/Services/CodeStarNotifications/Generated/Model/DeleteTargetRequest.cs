@@ -40,9 +40,9 @@ namespace Amazon.CodeStarNotifications.Model
         /// <summary>
         /// Gets and sets the property ForceUnsubscribeAll. 
         /// <para>
-        /// A Boolean value that can be used to delete all associations with this SNS topic. The
-        /// default value is FALSE. If set to TRUE, all associations between that target and every
-        /// notification rule in your AWS account are deleted.
+        /// A Boolean value that can be used to delete all associations with this Chatbot topic.
+        /// The default value is FALSE. If set to TRUE, all associations between that target and
+        /// every notification rule in your Amazon Web Services account are deleted.
         /// </para>
         /// </summary>
         public bool ForceUnsubscribeAll
@@ -60,7 +60,7 @@ namespace Amazon.CodeStarNotifications.Model
         /// <summary>
         /// Gets and sets the property TargetAddress. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the SNS topic to delete.
+        /// The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=320)]

@@ -40,7 +40,7 @@ namespace Amazon.CodeStarNotifications.Model
         /// <summary>
         /// Gets and sets the property TargetAddress. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the SNS topic.
+        /// The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=320)]
@@ -77,8 +77,17 @@ namespace Amazon.CodeStarNotifications.Model
         /// <summary>
         /// Gets and sets the property TargetType. 
         /// <para>
-        /// The type of the target (for example, SNS).
+        /// The type of the target (for example, <code>SNS</code>).
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Chatbot topics are specified as <code>SNS</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Chatbot clients are specified as <code>AWSChatbotSlack</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string TargetType
         {

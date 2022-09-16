@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeStarNotifications.Model
 {
     /// <summary>
-    /// Information about the SNS topics associated with a notification rule.
+    /// Information about the Chatbot topics or Chatbot clients associated with a notification
+    /// rule.
     /// </summary>
     public partial class Target
     {
@@ -39,7 +40,7 @@ namespace Amazon.CodeStarNotifications.Model
         /// <summary>
         /// Gets and sets the property TargetAddress. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the SNS topic.
+        /// The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=320)]
@@ -58,8 +59,17 @@ namespace Amazon.CodeStarNotifications.Model
         /// <summary>
         /// Gets and sets the property TargetType. 
         /// <para>
-        /// The target type. Can be an Amazon SNS topic.
+        /// The target type. Can be an Chatbot topic or Chatbot client.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Chatbot topics are specified as <code>SNS</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Chatbot clients are specified as <code>AWSChatbotSlack</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string TargetType
         {

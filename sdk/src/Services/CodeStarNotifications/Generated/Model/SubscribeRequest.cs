@@ -30,8 +30,9 @@ namespace Amazon.CodeStarNotifications.Model
 {
     /// <summary>
     /// Container for the parameters to the Subscribe operation.
-    /// Creates an association between a notification rule and an SNS topic so that the associated
-    /// target can receive notifications when the events described in the rule are triggered.
+    /// Creates an association between a notification rule and an Chatbot topic or Chatbot
+    /// client so that the associated target can receive notifications when the events described
+    /// in the rule are triggered.
     /// </summary>
     public partial class SubscribeRequest : AmazonCodeStarNotificationsRequest
     {
