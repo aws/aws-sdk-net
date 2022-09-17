@@ -26,8 +26,6 @@ using System.Xml.Serialization;
 
 using Amazon.DocumentTypesTest.Model;
 using Amazon.Runtime;
-using Amazon.Runtime.Documents;
-using Amazon.Runtime.Documents.Internal.Transform;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
@@ -35,7 +33,7 @@ using ThirdParty.Json.LitJson;
 
 namespace Amazon.DocumentTypesTest.Model.Internal.MarshallTransformations
 {
-   /// <summary>
+    /// <summary>
     /// Response Unmarshaller for ExecuteQuery operation
     /// </summary>  
     public class ExecuteQueryResponseUnmarshaller : JsonResponseUnmarshaller
@@ -61,19 +59,19 @@ namespace Amazon.DocumentTypesTest.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("queryList", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Amazon.Runtime.Documents.Document,DocumentUnmarshaller>(DocumentUnmarshaller.Instance);
+                    var unmarshaller = new ListUnmarshaller<Amazon.Runtime.Documents.Document, Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller>(Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance);
                     response.QueryList = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("queryListOfMap", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Dictionary<string, Amazon.Runtime.Documents.Document>, DictionaryUnmarshaller<string, Amazon.Runtime.Documents.Document, StringUnmarshaller, DocumentUnmarshaller>>(new DictionaryUnmarshaller<string, Amazon.Runtime.Documents.Document, StringUnmarshaller, DocumentUnmarshaller>(StringUnmarshaller.Instance, Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance));
+                    var unmarshaller = new ListUnmarshaller<Dictionary<string, Amazon.Runtime.Documents.Document>, DictionaryUnmarshaller<string, Amazon.Runtime.Documents.Document, StringUnmarshaller, Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller>>(new DictionaryUnmarshaller<string, Amazon.Runtime.Documents.Document, StringUnmarshaller, Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller>(StringUnmarshaller.Instance, Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance));
                     response.QueryListOfMap = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("queryMap", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, Amazon.Runtime.Documents.Document, StringUnmarshaller, DocumentUnmarshaller>(StringUnmarshaller.Instance, Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance);
+                    var unmarshaller = new DictionaryUnmarshaller<string, Amazon.Runtime.Documents.Document, StringUnmarshaller, Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller>(StringUnmarshaller.Instance, Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance);
                     response.QueryMap = unmarshaller.Unmarshall(context);
                     continue;
                 }
