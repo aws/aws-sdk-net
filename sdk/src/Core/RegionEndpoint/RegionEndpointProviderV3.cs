@@ -21,7 +21,6 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
 using ThirdParty.Json.LitJson;
-using System.Collections.Concurrent;
 
 namespace Amazon.Internal
 {
@@ -356,12 +355,15 @@ namespace Amazon.Internal
             /// <summary>
             /// Stores the plain endpoints for each service in the current region
             /// </summary>
-            private ConcurrentDictionary<string, RegionEndpoint.Endpoint> _serviceMap = new ConcurrentDictionary<string, RegionEndpoint.Endpoint>();
+            private Dictionary<string, RegionEndpoint.Endpoint> _serviceMap = new Dictionary<string, RegionEndpoint.Endpoint>();
 
             /// <summary>
             /// Stores the variants for each service in the current region, identified by the set of variant tags.
             /// </summary>
-            private ConcurrentDictionary<string, Dictionary<HashSet<string>, RegionEndpoint.Endpoint>> _variantMap = new ConcurrentDictionary<string, Dictionary<HashSet<string>, RegionEndpoint.Endpoint>>();
+            private Dictionary<string, Dictionary<HashSet<string>, RegionEndpoint.Endpoint>> _variantMap = new Dictionary<string, Dictionary<HashSet<string>, RegionEndpoint.Endpoint>>();
+            
+            private object _serviceMapLock = new object();
+            private object _variantMapLock = new object();
 
             public bool ContainsKey(string serviceName)
             {
@@ -372,15 +374,21 @@ namespace Amazon.Internal
             {
                 if (variants == null || variants.Count == 0)
                 {
-                    _serviceMap.TryAdd(serviceName, endpoint);
+                    lock (_serviceMapLock)
+                    {
+                        _serviceMap.Add(serviceName, endpoint);
+                    }
                 }
                 else
                 {
-                    if (!_variantMap.ContainsKey(serviceName) || _variantMap[serviceName] == null)
+                    lock (_variantMapLock)
                     {
-                        _variantMap.TryAdd(serviceName, new Dictionary<HashSet<string>, RegionEndpoint.Endpoint>(HashSet<string>.CreateSetComparer()));
+                        if (!_variantMap.ContainsKey(serviceName) || _variantMap[serviceName] == null)
+                        {
+                            _variantMap.Add(serviceName, new Dictionary<HashSet<string>, RegionEndpoint.Endpoint>(HashSet<string>.CreateSetComparer()));
+                        }
+                        _variantMap[serviceName].Add(variants, endpoint);
                     }
-                    _variantMap[serviceName].Add(variants, endpoint);
                 }
             }
 
@@ -388,18 +396,24 @@ namespace Amazon.Internal
             {
                 if (variants == null || variants.Count == 0)
                 {
-                    return _serviceMap.TryGetValue(serviceName, out endpoint);
+                    lock (_serviceMapLock)
+                    {
+                        return _serviceMap.TryGetValue(serviceName, out endpoint);
+                    }
                 }
                 else
                 {
-                    if (!_variantMap.ContainsKey(serviceName))
+                    lock (_variantMapLock)
                     {
-                        endpoint = default(RegionEndpoint.Endpoint);
-                        return false;
-                    }
-                    else
-                    {
-                        return _variantMap[serviceName].TryGetValue(variants, out endpoint);
+                        if (!_variantMap.ContainsKey(serviceName))
+                        {
+                            endpoint = default(RegionEndpoint.Endpoint);
+                            return false;
+                        }
+                        else
+                        {
+                            return _variantMap[serviceName].TryGetValue(variants, out endpoint);
+                        }
                     }
                 }
             }
