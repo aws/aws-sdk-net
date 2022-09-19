@@ -178,7 +178,8 @@ namespace Amazon.RDS.Model
         /// database network protocol the proxy recognizes when it interprets network traffic
         /// to and from the database. <code>MYSQL</code> supports Aurora MySQL, RDS for MariaDB,
         /// and RDS for MySQL databases. <code>POSTGRESQL</code> supports Aurora PostgreSQL and
-        /// RDS for PostgreSQL databases.
+        /// RDS for PostgreSQL databases. <code>SQLSERVER</code> supports RDS for Microsoft SQL
+        /// Server databases.
         /// </para>
         /// </summary>
         public string EngineFamily

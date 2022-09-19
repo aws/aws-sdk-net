@@ -116,7 +116,7 @@ namespace Amazon.RDS.Model
         /// database network protocol the proxy recognizes when it interprets network traffic
         /// to and from the database. For Aurora MySQL, RDS for MariaDB, and RDS for MySQL databases,
         /// specify <code>MYSQL</code>. For Aurora PostgreSQL and RDS for PostgreSQL databases,
-        /// specify <code>POSTGRESQL</code>.
+        /// specify <code>POSTGRESQL</code>. For RDS for Microsoft SQL Server, specify <code>SQLSERVER</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

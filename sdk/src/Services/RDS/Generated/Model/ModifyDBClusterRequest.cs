@@ -393,7 +393,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBClusterInstanceClass. 
         /// <para>
         /// The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for
-        /// example db.m6g.xlarge. Not all DB instance classes are available in all Amazon Web
+        /// example db.m6gd.xlarge. Not all DB instance classes are available in all Amazon Web
         /// Services Regions, or for all database engines.
         /// </para>
         ///  

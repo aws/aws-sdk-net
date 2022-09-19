@@ -103,11 +103,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: 100
+        /// Default: 10 for RDS for Microsoft SQL Server, and 100 for all other engines
         /// </para>
         ///  
         /// <para>
-        /// Constraints: between 1 and 100
+        /// Constraints: Must be between 1 and 100.
         /// </para>
         /// </summary>
         public int MaxConnectionsPercent
@@ -133,11 +133,15 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: 50
+        /// Default: The default value is half of the value of <code>MaxConnectionsPercent</code>.
+        /// For example, if <code>MaxConnectionsPercent</code> is 80, then the default value of
+        /// <code>MaxIdleConnectionsPercent</code> is 40. If the value of <code>MaxConnectionsPercent</code>
+        /// isn't specified, then for SQL Server, <code>MaxIdleConnectionsPercent</code> is 5,
+        /// and for all other engines, the default is 50.
         /// </para>
         ///  
         /// <para>
-        /// Constraints: between 0 and <code>MaxConnectionsPercent</code> 
+        /// Constraints: Must be between 0 and the value of <code>MaxConnectionsPercent</code>.
         /// </para>
         /// </summary>
         public int MaxIdleConnectionsPercent

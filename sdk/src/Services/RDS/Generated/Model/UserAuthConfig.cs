@@ -82,7 +82,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property IAMAuth. 
         /// <para>
         /// Whether to require or disallow Amazon Web Services Identity and Access Management
-        /// (IAM) authentication for connections to the proxy.
+        /// (IAM) authentication for connections to the proxy. The <code>ENABLED</code> value
+        /// is valid only for proxies with RDS for Microsoft SQL Server.
         /// </para>
         /// </summary>
         public IAMAuthMode IAMAuth

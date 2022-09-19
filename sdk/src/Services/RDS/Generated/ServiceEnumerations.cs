@@ -648,6 +648,10 @@ namespace Amazon.RDS
         /// Constant POSTGRESQL for EngineFamily
         /// </summary>
         public static readonly EngineFamily POSTGRESQL = new EngineFamily("POSTGRESQL");
+        /// <summary>
+        /// Constant SQLSERVER for EngineFamily
+        /// </summary>
+        public static readonly EngineFamily SQLSERVER = new EngineFamily("SQLSERVER");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -748,6 +752,10 @@ namespace Amazon.RDS
         /// Constant DISABLED for IAMAuthMode
         /// </summary>
         public static readonly IAMAuthMode DISABLED = new IAMAuthMode("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for IAMAuthMode
+        /// </summary>
+        public static readonly IAMAuthMode ENABLED = new IAMAuthMode("ENABLED");
         /// <summary>
         /// Constant REQUIRED for IAMAuthMode
         /// </summary>

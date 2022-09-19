@@ -829,8 +829,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// It must begin with a letter or an underscore. Subsequent characters can be letters,
-        /// underscores, or digits (0 to 9).
+        /// It must begin with a letter. Subsequent characters can be letters, underscores, or
+        /// digits (0 to 9).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -867,15 +867,15 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must be 1 to 255 letters, numbers, or hyphens.
+        /// It must be 1 to 255 letters, numbers, or hyphens.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// First character must be a letter
+        /// The first character must be a letter.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can't end with a hyphen or contain two consecutive hyphens
+        /// It can't end with a hyphen or contain two consecutive hyphens.
         /// </para>
         ///  </li> </ul>
         /// </summary>
