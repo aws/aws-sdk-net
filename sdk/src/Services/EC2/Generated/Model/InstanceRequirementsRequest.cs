@@ -34,14 +34,14 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// When you specify multiple parameters, you get instance types that satisfy all of the
-    /// specified parameters. If you specify multiple values for a parameter, you get instance
+    /// When you specify multiple attributes, you get instance types that satisfy all of the
+    /// specified attributes. If you specify multiple values for an attribute, you get instance
     /// types that satisfy any of the specified values.
     /// </para>
     ///  <note> 
     /// <para>
-    /// You must specify <code>VCpuCount</code> and <code>MemoryMiB</code>. All other parameters
-    /// are optional. Any unspecified optional parameter is set to its default.
+    /// You must specify <code>VCpuCount</code> and <code>MemoryMiB</code>. All other attributes
+    /// are optional. Any unspecified optional attribute is set to its default.
     /// </para>
     ///  </note> 
     /// <para>
@@ -172,6 +172,14 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         /// For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For instance types with Amazon Web Services Inferentia GPUs, specify <code>inferentia</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -383,10 +391,14 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ExcludedInstanceTypes. 
         /// <para>
-        /// The instance types to exclude. You can use strings with one or more wild cards, represented
-        /// by an asterisk (<code>*</code>), to exclude an instance family, type, size, or generation.
-        /// The following are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
-        /// <code>r*</code>, <code>*3*</code>.
+        /// The instance types to exclude.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>),
+        /// to exclude an instance family, type, size, or generation. The following are examples:
+        /// <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>,
+        /// <code>*3*</code>.
         /// </para>
         ///  
         /// <para>

@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
         private string _availabilityZone;
         private string _availabilityZoneId;
         private int? _availableInstanceCount;
+        private List<CapacityAllocation> _capacityAllocations = new List<CapacityAllocation>();
         private string _capacityReservationArn;
         private string _capacityReservationFleetId;
         private string _capacityReservationId;
@@ -109,6 +110,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetAvailableInstanceCount()
         {
             return this._availableInstanceCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CapacityAllocations. 
+        /// <para>
+        /// Information about instance capacity usage.
+        /// </para>
+        /// </summary>
+        public List<CapacityAllocation> CapacityAllocations
+        {
+            get { return this._capacityAllocations; }
+            set { this._capacityAllocations = value; }
+        }
+
+        // Check to see if CapacityAllocations property is set
+        internal bool IsSetCapacityAllocations()
+        {
+            return this._capacityAllocations != null && this._capacityAllocations.Count > 0; 
         }
 
         /// <summary>

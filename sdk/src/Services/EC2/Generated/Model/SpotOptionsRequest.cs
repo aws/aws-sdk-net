@@ -46,12 +46,18 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property AllocationStrategy. 
         /// <para>
         /// The strategy that determines how to allocate the target Spot Instance capacity across
-        /// the Spot Instance pools specified by the EC2 Fleet.
+        /// the Spot Instance pools specified by the EC2 Fleet launch configuration. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation
+        /// strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        ///  <code>lowest-price</code> - EC2 Fleet launches instances from the Spot Instance pools
-        /// with the lowest price.
+        ///  <code>lowest-price</code> - EC2 Fleet launches instances from the lowest-price Spot
+        /// Instance pool that has available capacity. If the cheapest pool doesn't have available
+        /// capacity, the Spot Instances come from the next cheapest pool that has available capacity.
+        /// If a pool runs out of capacity before fulfilling your desired capacity, EC2 Fleet
+        /// will continue to fulfill your request by drawing from the next cheapest pool. To ensure
+        /// that your desired capacity is met, you might receive Spot Instances from several pools.
         /// </para>
         ///  
         /// <para>

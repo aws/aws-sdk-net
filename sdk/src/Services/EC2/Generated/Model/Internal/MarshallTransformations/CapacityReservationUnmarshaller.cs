@@ -72,6 +72,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.AvailableInstanceCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("capacityAllocationSet/item", targetDepth))
+                    {
+                        var unmarshaller = CapacityAllocationUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.CapacityAllocations.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("capacityReservationArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
