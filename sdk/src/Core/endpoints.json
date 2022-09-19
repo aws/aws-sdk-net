@@ -7401,12 +7401,7 @@
         },
         "fsx": {
           "endpoints": {
-            "af-south-1": {},
-            "ap-east-1": {},
             "ap-northeast-1": {},
-            "ap-northeast-2": {},
-            "ap-northeast-3": {},
-            "ap-south-1": {},
             "ap-southeast-1": {},
             "ap-southeast-2": {},
             "ca-central-1": {
@@ -7420,11 +7415,8 @@
               ]
             },
             "eu-central-1": {},
-            "eu-north-1": {},
-            "eu-south-1": {},
             "eu-west-1": {},
             "eu-west-2": {},
-            "eu-west-3": {},
             "fips-ca-central-1": {
               "credentialScope": {
                 "region": "ca-central-1"
@@ -7453,13 +7445,6 @@
               "deprecated": true,
               "hostname": "fsx-fips.us-east-2.amazonaws.com"
             },
-            "fips-prod-us-west-1": {
-              "credentialScope": {
-                "region": "us-west-1"
-              },
-              "deprecated": true,
-              "hostname": "fsx-fips.us-west-1.amazonaws.com"
-            },
             "fips-prod-us-west-2": {
               "credentialScope": {
                 "region": "us-west-2"
@@ -7481,13 +7466,6 @@
               "deprecated": true,
               "hostname": "fsx-fips.us-east-2.amazonaws.com"
             },
-            "fips-us-west-1": {
-              "credentialScope": {
-                "region": "us-west-1"
-              },
-              "deprecated": true,
-              "hostname": "fsx-fips.us-west-1.amazonaws.com"
-            },
             "fips-us-west-2": {
               "credentialScope": {
                 "region": "us-west-2"
@@ -7495,7 +7473,6 @@
               "deprecated": true,
               "hostname": "fsx-fips.us-west-2.amazonaws.com"
             },
-            "me-south-1": {},
             "prod-ca-central-1": {
               "credentialScope": {
                 "region": "ca-central-1"
@@ -7538,20 +7515,6 @@
                 }
               ]
             },
-            "prod-us-west-1": {
-              "credentialScope": {
-                "region": "us-west-1"
-              },
-              "deprecated": true,
-              "variants": [
-                {
-                  "hostname": "fsx-fips.us-west-1.amazonaws.com",
-                  "tags": [
-                    "fips"
-                  ]
-                }
-              ]
-            },
             "prod-us-west-2": {
               "credentialScope": {
                 "region": "us-west-2"
@@ -7566,7 +7529,6 @@
                 }
               ]
             },
-            "sa-east-1": {},
             "us-east-1": {
               "variants": [
                 {
@@ -7581,16 +7543,6 @@
               "variants": [
                 {
                   "hostname": "fsx-fips.us-east-2.amazonaws.com",
-                  "tags": [
-                    "fips"
-                  ]
-                }
-              ]
-            },
-            "us-west-1": {
-              "variants": [
-                {
-                  "hostname": "fsx-fips.us-west-1.amazonaws.com",
                   "tags": [
                     "fips"
                   ]
