@@ -32,7 +32,7 @@ namespace Amazon.SSMContacts
     public partial class AmazonSSMContactsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.159");
+            InternalSDKUtils.BuildUserAgentString("3.7.2.160");
 
         private string _userAgent = UserAgentString;
 

@@ -1,3 +1,16 @@
+### 3.7.360.0 (2022-09-19 18:21 UTC)
+* CloudTrail (3.7.6.0)
+	* This release includes support for importing existing trails into CloudTrail Lake.
+* EC2 (3.7.89.0)
+	* This release adds CapacityAllocations field to DescribeCapacityReservations
+* MediaConnect (3.7.6.0)
+	* This change allows the customer to use the SRT Caller protocol as part of their flows
+* RDS (3.7.18.0)
+	* This release adds support for Amazon RDS Proxy with SQL Server compatibility.
+* Core 3.7.13.5
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.359.0 (2022-09-16 18:19 UTC)
 * CodeStarNotifications (3.7.1.0)
 	* This release adds tag based access control for the UntagResource API.
