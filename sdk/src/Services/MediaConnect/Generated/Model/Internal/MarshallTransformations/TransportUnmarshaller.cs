@@ -124,6 +124,18 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.SmoothingLatency = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("sourceListenerAddress", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceListenerAddress = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("sourceListenerPort", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.SourceListenerPort = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("streamId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

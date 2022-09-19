@@ -703,6 +703,10 @@ namespace Amazon.MediaConnect
         /// </summary>
         public static readonly Protocol RtpFec = new Protocol("rtp-fec");
         /// <summary>
+        /// Constant SrtCaller for Protocol
+        /// </summary>
+        public static readonly Protocol SrtCaller = new Protocol("srt-caller");
+        /// <summary>
         /// Constant SrtListener for Protocol
         /// </summary>
         public static readonly Protocol SrtListener = new Protocol("srt-listener");

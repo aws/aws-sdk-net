@@ -46,6 +46,8 @@ namespace Amazon.MediaConnect.Model
         private Protocol _protocol;
         private int? _senderControlPort;
         private string _senderIpAddress;
+        private string _sourceListenerAddress;
+        private int? _sourceListenerPort;
         private string _streamId;
         private string _vpcInterfaceName;
         private string _whitelistCidr;
@@ -258,6 +260,37 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetSenderIpAddress()
         {
             return this._senderIpAddress != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceListenerAddress. Source IP or domain name for SRT-caller
+        /// protocol.
+        /// </summary>
+        public string SourceListenerAddress
+        {
+            get { return this._sourceListenerAddress; }
+            set { this._sourceListenerAddress = value; }
+        }
+
+        // Check to see if SourceListenerAddress property is set
+        internal bool IsSetSourceListenerAddress()
+        {
+            return this._sourceListenerAddress != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceListenerPort. Source port for SRT-caller protocol.
+        /// </summary>
+        public int SourceListenerPort
+        {
+            get { return this._sourceListenerPort.GetValueOrDefault(); }
+            set { this._sourceListenerPort = value; }
+        }
+
+        // Check to see if SourceListenerPort property is set
+        internal bool IsSetSourceListenerPort()
+        {
+            return this._sourceListenerPort.HasValue; 
         }
 
         /// <summary>

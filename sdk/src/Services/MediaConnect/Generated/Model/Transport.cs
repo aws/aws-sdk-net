@@ -43,6 +43,8 @@ namespace Amazon.MediaConnect.Model
         private int? _senderControlPort;
         private string _senderIpAddress;
         private int? _smoothingLatency;
+        private string _sourceListenerAddress;
+        private int? _sourceListenerPort;
         private string _streamId;
 
         /// <summary>
@@ -206,6 +208,37 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetSmoothingLatency()
         {
             return this._smoothingLatency.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceListenerAddress. Source IP or domain name for SRT-caller
+        /// protocol.
+        /// </summary>
+        public string SourceListenerAddress
+        {
+            get { return this._sourceListenerAddress; }
+            set { this._sourceListenerAddress = value; }
+        }
+
+        // Check to see if SourceListenerAddress property is set
+        internal bool IsSetSourceListenerAddress()
+        {
+            return this._sourceListenerAddress != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceListenerPort. Source port for SRT-caller protocol.
+        /// </summary>
+        public int SourceListenerPort
+        {
+            get { return this._sourceListenerPort.GetValueOrDefault(); }
+            set { this._sourceListenerPort = value; }
+        }
+
+        // Check to see if SourceListenerPort property is set
+        internal bool IsSetSourceListenerPort()
+        {
+            return this._sourceListenerPort.HasValue; 
         }
 
         /// <summary>

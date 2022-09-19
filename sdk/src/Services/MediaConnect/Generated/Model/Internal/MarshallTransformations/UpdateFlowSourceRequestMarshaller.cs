@@ -158,6 +158,18 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SenderIpAddress);
                 }
 
+                if(publicRequest.IsSetSourceListenerAddress())
+                {
+                    context.Writer.WritePropertyName("sourceListenerAddress");
+                    context.Writer.Write(publicRequest.SourceListenerAddress);
+                }
+
+                if(publicRequest.IsSetSourceListenerPort())
+                {
+                    context.Writer.WritePropertyName("sourceListenerPort");
+                    context.Writer.Write(publicRequest.SourceListenerPort);
+                }
+
                 if(publicRequest.IsSetStreamId())
                 {
                     context.Writer.WritePropertyName("streamId");
