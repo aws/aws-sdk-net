@@ -92,7 +92,14 @@ namespace Amazon.Internal
         {
             RegionEndpoint.Endpoint endpointObject = null;
 
-            lock (_serviceMap)
+            // lock on _partitionJsonData because:
+            // a) ParseAllServices() will mutate _partitionJsonData, so it needs to be run inside a critical section.
+            // b) RegionEndpointV3 objects are exclusively built by RegionEndpointProviderV3, which will
+            //    constructor inject the _same instance_ of _servicesJsonData and _partitionJsonData into all 
+            //    RegionEndpointProviderV3.
+            // c) This provides thread-safety if multiple RegionEndpointV3 instances were to be initialized at 
+            //    the same time: https://github.com/aws/aws-sdk-net/issues/1939
+            lock (_partitionJsonData)
             {
                 if (!_servicesLoaded)
                 {
