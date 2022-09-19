@@ -383,10 +383,15 @@ namespace Amazon.Internal
                 {
                     lock (_variantMapLock)
                     {
-                        if (!_variantMap.ContainsKey(serviceName) || _variantMap[serviceName] == null)
+                        if (!_variantMap.ContainsKey(serviceName))
                         {
                             _variantMap.Add(serviceName, new Dictionary<HashSet<string>, RegionEndpoint.Endpoint>(HashSet<string>.CreateSetComparer()));
                         }
+                        if(_variantMap[serviceName] == null)
+                        {
+                            _variantMap[serviceName] = new Dictionary<HashSet<string>, RegionEndpoint.Endpoint>(HashSet<string>.CreateSetComparer());
+                        }
+
                         _variantMap[serviceName].Add(variants, endpoint);
                     }
                 }
