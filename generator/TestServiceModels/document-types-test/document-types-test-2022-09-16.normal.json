@@ -1,0 +1,78 @@
+{
+    "version":"2.0",
+    "metadata":{
+      "apiVersion":"2022-09-16",
+      "endpointPrefix":"document-types-test",
+      "jsonVersion":"1.1",
+      "protocol":"rest-json",
+      "serviceAbbreviation":"Document-Types-Test",
+      "serviceFullName":"Document Types Test",
+      "serviceId":"Document-Types-Test",
+      "signatureVersion":"v4",
+      "signingName":"Document-Types-Test",
+      "uid":"document-types-test-2022-09-16"
+    },
+    "operations":{
+      "ExecuteQuery":{
+        "name":"ExecuteQuery",
+        "http":{
+          "method":"GET",
+          "requestUri":"/"
+        },
+        "input":{"shape":"ExecuteQueryRequest"},
+        "output":{"shape":"ExecuteQueryResponse"},
+        "errors":[],
+        "documentation":"<p> Execute Query </p>"
+      },
+    },
+    "shapes":{      
+		"String":{"type":"string"},
+		"ExecuteQueryRequest":{
+			"type":"structure",
+			"required":[],
+			"members":{
+			  "testId":{
+				"shape":"String",
+				"documentation":"<p> The unique ID for a test. </p>",
+				"location":"header",
+				"locationName":"x-amz-test-id"
+			  }
+			},
+			"documentation":"<p> The request structure for a execute query request. </p>"
+		},
+	  
+		"ExecuteQueryResponse":{
+		  "type":"structure",
+		  "required":["results"],
+		  "members":{
+			"queryList":{"shape":"QueryList"}
+			"queryListOfMap":{"shape":"QueryResults"}
+			"queryMap": {"shape":"QueryResult"}
+			"queryDocument":{"shape":"QueryResultValue"}
+		  },
+		},
+		"QueryList" :{
+			"type":"list",
+			"member":{"shape":"QueryResultValue"}
+		},
+		"QueryResults":{
+			"type":"list",
+			"member":{"shape":"QueryResult"}
+		},
+		"QueryResult":{
+			"type":"map",
+			"key":{"shape":"QueryResultField"},
+			"value":{"shape":"QueryResultValue"}
+		},
+		"QueryResultField":{
+			"type":"string",
+			"pattern":".*"
+		},
+		"QueryResultValue":{
+			"type":"structure",
+			"members":{
+			},
+			"document":true
+		}      
+    }
+  }
