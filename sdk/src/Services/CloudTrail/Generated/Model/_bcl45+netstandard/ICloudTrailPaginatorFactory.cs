@@ -41,6 +41,16 @@ namespace Amazon.CloudTrail.Model
         IListEventDataStoresPaginator ListEventDataStores(ListEventDataStoresRequest request);
 
         /// <summary>
+        /// Paginator for ListImportFailures operation
+        ///</summary>
+        IListImportFailuresPaginator ListImportFailures(ListImportFailuresRequest request);
+
+        /// <summary>
+        /// Paginator for ListImports operation
+        ///</summary>
+        IListImportsPaginator ListImports(ListImportsRequest request);
+
+        /// <summary>
         /// Paginator for ListPublicKeys operation
         ///</summary>
         IListPublicKeysPaginator ListPublicKeys(ListPublicKeysRequest request);

@@ -51,7 +51,8 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property AdvancedEventSelectors. 
         /// <para>
-        /// The advanced event selectors used to select events for the event data store.
+        /// The advanced event selectors used to select events for the event data store. You can
+        /// configure up to five advanced event selectors for each event data store.
         /// </para>
         /// </summary>
         public List<AdvancedEventSelector> AdvancedEventSelectors

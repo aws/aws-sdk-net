@@ -142,6 +142,10 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 {
                     return EventDataStoreARNInvalidExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("EventDataStoreHasOngoingImportException"))
+                {
+                    return EventDataStoreHasOngoingImportExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("EventDataStoreNotFoundException"))
                 {
                     return EventDataStoreNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

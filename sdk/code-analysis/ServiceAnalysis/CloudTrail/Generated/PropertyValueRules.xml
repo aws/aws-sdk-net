@@ -130,6 +130,18 @@
     <max>2557</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudTrail.Model.GetImportRequest.ImportId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-f0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.GetImportResponse.ImportId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-f0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudTrail.Model.GetQueryResultsRequest.EventDataStore</property>
     <min>3</min>
     <max>256</max>
@@ -199,6 +211,52 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudTrail.Model.ListImportFailuresRequest.ImportId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-f0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.ListImportFailuresRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.ListImportFailuresRequest.NextToken</property>
+    <min>4</min>
+    <max>1000</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.ListImportFailuresResponse.NextToken</property>
+    <min>4</min>
+    <max>1000</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.ListImportsRequest.Destination</property>
+    <min>3</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.ListImportsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.ListImportsRequest.NextToken</property>
+    <min>4</min>
+    <max>1000</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.ListImportsResponse.NextToken</property>
+    <min>4</min>
+    <max>1000</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudTrail.Model.ListQueriesRequest.EventDataStore</property>
     <min>3</min>
     <max>256</max>
@@ -250,6 +308,18 @@
     <max>2557</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudTrail.Model.StartImportRequest.ImportId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-f0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.StartImportResponse.ImportId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-f0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudTrail.Model.StartQueryRequest.QueryStatement</property>
     <min>1</min>
     <max>10000</max>
@@ -257,6 +327,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudTrail.Model.StartQueryResponse.QueryId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-f0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.StopImportRequest.ImportId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-f0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.StopImportResponse.ImportId</property>
     <min>36</min>
     <max>36</max>
     <pattern>^[a-f0-9\-]+$</pattern>
@@ -341,6 +423,12 @@
     <property>Amazon.CloudTrail.Model.EventDataStore.RetentionPeriod</property>
     <min>7</min>
     <max>2557</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.ImportsListItem.ImportId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-f0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudTrail.Model.Query.QueryId</property>

@@ -60,6 +60,22 @@ namespace Amazon.CloudTrail.Model
         }
 
         /// <summary>
+        /// Paginator for ListImportFailures operation
+        ///</summary>
+        public IListImportFailuresPaginator ListImportFailures(ListImportFailuresRequest request) 
+        {
+            return new ListImportFailuresPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListImports operation
+        ///</summary>
+        public IListImportsPaginator ListImports(ListImportsRequest request) 
+        {
+            return new ListImportsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListPublicKeys operation
         ///</summary>
         public IListPublicKeysPaginator ListPublicKeys(ListPublicKeysRequest request) 

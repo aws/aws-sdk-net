@@ -180,7 +180,7 @@ namespace Amazon.CloudTrail.Model
         ///  <ul> <li> 
         /// <para>
         /// To log data events for all objects in all S3 buckets in your Amazon Web Services account,
-        /// specify the prefix as <code>arn:aws:s3:::</code>.
+        /// specify the prefix as <code>arn:aws:s3</code>.
         /// </para>
         ///  <note> 
         /// <para>

@@ -830,6 +830,10 @@ namespace Amazon.CloudTrail
         /// The specified event data store ARN is not valid or does not map to an event data store
         /// in your account.
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreHasOngoingImportException">
+        /// This exception is thrown when you try to update or delete an event data store that
+        /// currently has an import in progress.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreNotFoundException">
         /// The specified event data store was not found.
         /// </exception>
@@ -1392,9 +1396,20 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html">Logging
-        /// Data and Management Events for Trails </a> in the <i>CloudTrail User Guide</i>.
+        /// For more information about logging management and data events, see the following topics
+        /// in the <i>CloudTrail User Guide</i>:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Logging
+        /// management events for trails </a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
+        /// data events for trails </a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEventSelectors service method.</param>
         /// 
@@ -1478,6 +1493,72 @@ namespace Amazon.CloudTrail
         public virtual GetEventSelectorsResponse EndGetEventSelectors(IAsyncResult asyncResult)
         {
             return EndInvoke<GetEventSelectorsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetImport
+
+        /// <summary>
+        /// Returns information for the specified import.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetImport service method.</param>
+        /// 
+        /// <returns>The response from the GetImport service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.ImportNotFoundException">
+        /// The specified import was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
+        /// The request includes a parameter that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetImport">REST API Reference for GetImport Operation</seealso>
+        public virtual GetImportResponse GetImport(GetImportRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetImportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetImportResponseUnmarshaller.Instance;
+
+            return Invoke<GetImportResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetImport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetImport operation on AmazonCloudTrailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetImport
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetImport">REST API Reference for GetImport Operation</seealso>
+        public virtual IAsyncResult BeginGetImport(GetImportRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetImportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetImportResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetImport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetImport.</param>
+        /// 
+        /// <returns>Returns a  GetImportResult from CloudTrail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetImport">REST API Reference for GetImport Operation</seealso>
+        public virtual GetImportResponse EndGetImport(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetImportResponse>(asyncResult);
         }
 
         #endregion
@@ -1983,6 +2064,142 @@ namespace Amazon.CloudTrail
         public virtual ListEventDataStoresResponse EndListEventDataStores(IAsyncResult asyncResult)
         {
             return EndInvoke<ListEventDataStoresResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListImportFailures
+
+        /// <summary>
+        /// Returns a list of failures for the specified import.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImportFailures service method.</param>
+        /// 
+        /// <returns>The response from the ListImportFailures service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidNextTokenException">
+        /// A token that is not valid, or a token that was previously used in a request with different
+        /// parameters. This exception is thrown if the token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListImportFailures">REST API Reference for ListImportFailures Operation</seealso>
+        public virtual ListImportFailuresResponse ListImportFailures(ListImportFailuresRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListImportFailuresRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImportFailuresResponseUnmarshaller.Instance;
+
+            return Invoke<ListImportFailuresResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListImportFailures operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListImportFailures operation on AmazonCloudTrailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListImportFailures
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListImportFailures">REST API Reference for ListImportFailures Operation</seealso>
+        public virtual IAsyncResult BeginListImportFailures(ListImportFailuresRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListImportFailuresRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImportFailuresResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListImportFailures operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListImportFailures.</param>
+        /// 
+        /// <returns>Returns a  ListImportFailuresResult from CloudTrail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListImportFailures">REST API Reference for ListImportFailures Operation</seealso>
+        public virtual ListImportFailuresResponse EndListImportFailures(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListImportFailuresResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListImports
+
+        /// <summary>
+        /// Returns information on all imports, or a select set of imports by <code>ImportStatus</code>
+        /// or <code>Destination</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImports service method.</param>
+        /// 
+        /// <returns>The response from the ListImports service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreARNInvalidException">
+        /// The specified event data store ARN is not valid or does not map to an event data store
+        /// in your account.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidNextTokenException">
+        /// A token that is not valid, or a token that was previously used in a request with different
+        /// parameters. This exception is thrown if the token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
+        /// The request includes a parameter that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListImports">REST API Reference for ListImports Operation</seealso>
+        public virtual ListImportsResponse ListImports(ListImportsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListImportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImportsResponseUnmarshaller.Instance;
+
+            return Invoke<ListImportsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListImports operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListImports operation on AmazonCloudTrailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListImports
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListImports">REST API Reference for ListImports Operation</seealso>
+        public virtual IAsyncResult BeginListImports(ListImportsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListImportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImportsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListImports operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListImports.</param>
+        /// 
+        /// <returns>Returns a  ListImportsResult from CloudTrail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListImports">REST API Reference for ListImports Operation</seealso>
+        public virtual ListImportsResponse EndListImports(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListImportsResponse>(asyncResult);
         }
 
         #endregion
@@ -2524,8 +2741,9 @@ namespace Amazon.CloudTrail
         ///  
         /// <para>
         /// You can configure up to five event selectors for each trail. For more information,
-        /// see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html">Logging
-        /// data and management events for trails </a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Quotas
+        /// see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Logging
+        /// management events for trails </a>, <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
+        /// data events for trails </a>, and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Quotas
         /// in CloudTrail</a> in the <i>CloudTrail User Guide</i>.
         /// </para>
         ///  
@@ -3030,6 +3248,110 @@ namespace Amazon.CloudTrail
 
         #endregion
         
+        #region  StartImport
+
+        /// <summary>
+        /// Starts an import of logged trail events from a source S3 bucket to a destination
+        /// event data store. 
+        /// 
+        ///  
+        /// <para>
+        ///  When you start a new import, the <code>Destinations</code> and <code>ImportSource</code>
+        /// parameters are required. Before starting a new import, disable any access control
+        /// lists (ACLs) attached to the source S3 bucket. For more information about disabling
+        /// ACLs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling
+        /// ownership of objects and disabling ACLs for your bucket</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  When you retry an import, the <code>ImportID</code> parameter is required. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartImport service method.</param>
+        /// 
+        /// <returns>The response from the StartImport service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.AccountHasOngoingImportException">
+        /// This exception is thrown when you start a new import and a previous import is still
+        /// in progress.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreARNInvalidException">
+        /// The specified event data store ARN is not valid or does not map to an event data store
+        /// in your account.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreNotFoundException">
+        /// The specified event data store was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.ImportNotFoundException">
+        /// The specified import was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InactiveEventDataStoreException">
+        /// The event data store is inactive.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidEventDataStoreCategoryException">
+        /// This exception is thrown when the event data store category is not valid for the
+        /// import.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidEventDataStoreStatusException">
+        /// The event data store is not in a status that supports the operation.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidImportSourceException">
+        /// This exception is thrown when the provided source S3 bucket is not valid for import.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
+        /// The request includes a parameter that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartImport">REST API Reference for StartImport Operation</seealso>
+        public virtual StartImportResponse StartImport(StartImportRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartImportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartImportResponseUnmarshaller.Instance;
+
+            return Invoke<StartImportResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartImport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartImport operation on AmazonCloudTrailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartImport
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartImport">REST API Reference for StartImport Operation</seealso>
+        public virtual IAsyncResult BeginStartImport(StartImportRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartImportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartImportResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartImport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartImport.</param>
+        /// 
+        /// <returns>Returns a  StartImportResult from CloudTrail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartImport">REST API Reference for StartImport Operation</seealso>
+        public virtual StartImportResponse EndStartImport(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartImportResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartLogging
 
         /// <summary>
@@ -3224,6 +3546,72 @@ namespace Amazon.CloudTrail
 
         #endregion
         
+        #region  StopImport
+
+        /// <summary>
+        /// Stops a specified import.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopImport service method.</param>
+        /// 
+        /// <returns>The response from the StopImport service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.ImportNotFoundException">
+        /// The specified import was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
+        /// The request includes a parameter that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopImport">REST API Reference for StopImport Operation</seealso>
+        public virtual StopImportResponse StopImport(StopImportRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopImportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopImportResponseUnmarshaller.Instance;
+
+            return Invoke<StopImportResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopImport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopImport operation on AmazonCloudTrailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopImport
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopImport">REST API Reference for StopImport Operation</seealso>
+        public virtual IAsyncResult BeginStopImport(StopImportRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopImportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopImportResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopImport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopImport.</param>
+        /// 
+        /// <returns>Returns a  StopImportResult from CloudTrail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopImport">REST API Reference for StopImport Operation</seealso>
+        public virtual StopImportResponse EndStopImport(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopImportResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StopLogging
 
         /// <summary>
@@ -3360,6 +3748,10 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreARNInvalidException">
         /// The specified event data store ARN is not valid or does not map to an event data store
         /// in your account.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreHasOngoingImportException">
+        /// This exception is thrown when you try to update or delete an event data store that
+        /// currently has an import in progress.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreNotFoundException">
         /// The specified event data store was not found.

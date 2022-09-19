@@ -175,6 +175,122 @@ namespace Amazon.CloudTrail
 
 
     /// <summary>
+    /// Constants used for properties of type ImportFailureStatus.
+    /// </summary>
+    public class ImportFailureStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for ImportFailureStatus
+        /// </summary>
+        public static readonly ImportFailureStatus FAILED = new ImportFailureStatus("FAILED");
+        /// <summary>
+        /// Constant RETRY for ImportFailureStatus
+        /// </summary>
+        public static readonly ImportFailureStatus RETRY = new ImportFailureStatus("RETRY");
+        /// <summary>
+        /// Constant SUCCEEDED for ImportFailureStatus
+        /// </summary>
+        public static readonly ImportFailureStatus SUCCEEDED = new ImportFailureStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImportFailureStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImportFailureStatus FindValue(string value)
+        {
+            return FindValue<ImportFailureStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImportFailureStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImportStatus.
+    /// </summary>
+    public class ImportStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus COMPLETED = new ImportStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus FAILED = new ImportStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus IN_PROGRESS = new ImportStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant INITIALIZING for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus INITIALIZING = new ImportStatus("INITIALIZING");
+        /// <summary>
+        /// Constant STOPPED for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus STOPPED = new ImportStatus("STOPPED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImportStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImportStatus FindValue(string value)
+        {
+            return FindValue<ImportStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImportStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InsightType.
     /// </summary>
     public class InsightType : ConstantClass
