@@ -32,6 +32,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             ListBucketInventoryConfigurationsResponse response = new ListBucketInventoryConfigurationsResponse();
+            context.AllowEmptyElementLookup.Add("SSE-S3");
 
             while (context.Read())
             {
