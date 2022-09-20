@@ -1,3 +1,10 @@
+### 3.7.361.0 (2022-09-20 18:20 UTC)
+* EC2 (3.7.90.0)
+	* This release adds support for blocked paths to Amazon VPC Reachability Analyzer.
+* Core 3.7.13.6
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.360.0 (2022-09-19 18:21 UTC)
 * CloudTrail (3.7.6.0)
 	* This release includes support for importing existing trails into CloudTrail Lake.
