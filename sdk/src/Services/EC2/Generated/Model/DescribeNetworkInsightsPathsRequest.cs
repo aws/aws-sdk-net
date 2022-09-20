@@ -46,23 +46,19 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Destination - The ID of the resource.
+        /// destination - The ID of the resource.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DestinationPort - The destination port.
+        /// destination-port - The destination port.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Name - The path name.
+        /// protocol - The protocol.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Protocol - The protocol.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Source - The ID of the resource.
+        /// source - The ID of the resource.
         /// </para>
         ///  </li> </ul>
         /// </summary>

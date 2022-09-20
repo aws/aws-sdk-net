@@ -44,6 +44,8 @@ namespace Amazon.EC2.Model
         private List<string> _cidrs = new List<string>();
         private AnalysisLoadBalancerListener _classicLoadBalancerListener;
         private AnalysisComponent _component;
+        private string _componentAccount;
+        private string _componentRegion;
         private AnalysisComponent _customerGateway;
         private AnalysisComponent _destination;
         private AnalysisComponent _destinationVpc;
@@ -246,6 +248,42 @@ namespace Amazon.EC2.Model
         internal bool IsSetComponent()
         {
             return this._component != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComponentAccount. 
+        /// <para>
+        /// The Amazon Web Services account for the component.
+        /// </para>
+        /// </summary>
+        public string ComponentAccount
+        {
+            get { return this._componentAccount; }
+            set { this._componentAccount = value; }
+        }
+
+        // Check to see if ComponentAccount property is set
+        internal bool IsSetComponentAccount()
+        {
+            return this._componentAccount != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComponentRegion. 
+        /// <para>
+        /// The Region for the component.
+        /// </para>
+        /// </summary>
+        public string ComponentRegion
+        {
+            get { return this._componentRegion; }
+            set { this._componentRegion = value; }
+        }
+
+        // Check to see if ComponentRegion property is set
+        internal bool IsSetComponentRegion()
+        {
+            return this._componentRegion != null;
         }
 
         /// <summary>

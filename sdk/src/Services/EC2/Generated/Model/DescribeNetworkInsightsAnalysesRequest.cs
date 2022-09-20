@@ -85,11 +85,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// PathFound - A Boolean value that indicates whether a feasible path is found.
+        /// path-found - A Boolean value that indicates whether a feasible path is found.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Status - The status of the analysis (running | succeeded | failed).
+        /// status - The status of the analysis (running | succeeded | failed).
         /// </para>
         ///  </li> </ul>
         /// </summary>

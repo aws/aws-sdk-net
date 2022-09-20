@@ -706,6 +706,14 @@
     <pattern>^([0-9]{1,3}.){3}[0-9]{1,3}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.Explanation.ComponentAccount</property>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.Explanation.ComponentRegion</property>
+    <pattern>[a-z]{2}-[a-z]+-[1-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.Explanation.LoadBalancerArn</property>
     <min>1</min>
     <max>1283</max>

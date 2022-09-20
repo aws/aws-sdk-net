@@ -41,6 +41,7 @@ namespace Amazon.EC2.Model
         private string _natGatewayId;
         private string _networkInterfaceId;
         private string _origin;
+        private string _state;
         private string _transitGatewayId;
         private string _vpcPeeringConnectionId;
 
@@ -199,6 +200,33 @@ namespace Amazon.EC2.Model
         internal bool IsSetOrigin()
         {
             return this._origin != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property State. 
+        /// <para>
+        /// The state. The following are the possible values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// active
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// blackhole
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string State
+        {
+            get { return this._state; }
+            set { this._state = value; }
+        }
+
+        // Check to see if State property is set
+        internal bool IsSetState()
+        {
+            return this._state != null;
         }
 
         /// <summary>

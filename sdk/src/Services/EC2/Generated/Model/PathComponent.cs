@@ -38,6 +38,8 @@ namespace Amazon.EC2.Model
         private AnalysisComponent _attachedTo;
         private AnalysisComponent _component;
         private AnalysisComponent _destinationVpc;
+        private AnalysisComponent _elasticLoadBalancerListener;
+        private List<Explanation> _explanations = new List<Explanation>();
         private AnalysisPacketHeader _inboundHeader;
         private AnalysisPacketHeader _outboundHeader;
         private AnalysisRouteTableRoute _routeTableRoute;
@@ -137,6 +139,42 @@ namespace Amazon.EC2.Model
         internal bool IsSetDestinationVpc()
         {
             return this._destinationVpc != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ElasticLoadBalancerListener. 
+        /// <para>
+        /// The load balancer listener.
+        /// </para>
+        /// </summary>
+        public AnalysisComponent ElasticLoadBalancerListener
+        {
+            get { return this._elasticLoadBalancerListener; }
+            set { this._elasticLoadBalancerListener = value; }
+        }
+
+        // Check to see if ElasticLoadBalancerListener property is set
+        internal bool IsSetElasticLoadBalancerListener()
+        {
+            return this._elasticLoadBalancerListener != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Explanations. 
+        /// <para>
+        /// The explanation codes.
+        /// </para>
+        /// </summary>
+        public List<Explanation> Explanations
+        {
+            get { return this._explanations; }
+            set { this._explanations = value; }
+        }
+
+        // Check to see if Explanations property is set
+        internal bool IsSetExplanations()
+        {
+            return this._explanations != null && this._explanations.Count > 0; 
         }
 
         /// <summary>

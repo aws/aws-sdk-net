@@ -85,6 +85,19 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.DestinationVpc = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("elasticLoadBalancerListener", targetDepth))
+                    {
+                        var unmarshaller = AnalysisComponentUnmarshaller.Instance;
+                        unmarshalledObject.ElasticLoadBalancerListener = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("explanationSet/item", targetDepth))
+                    {
+                        var unmarshaller = ExplanationUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Explanations.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("inboundHeader", targetDepth))
                     {
                         var unmarshaller = AnalysisPacketHeaderUnmarshaller.Instance;

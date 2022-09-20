@@ -111,6 +111,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Component = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("componentAccount", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ComponentAccount = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("componentRegion", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ComponentRegion = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("customerGateway", targetDepth))
                     {
                         var unmarshaller = AnalysisComponentUnmarshaller.Instance;
