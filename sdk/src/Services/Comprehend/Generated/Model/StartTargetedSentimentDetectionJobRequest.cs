@@ -125,7 +125,7 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language of the input documents. Currently, English is the only valid language.
+        /// The language of the input documents. Currently, English is the only supported language.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

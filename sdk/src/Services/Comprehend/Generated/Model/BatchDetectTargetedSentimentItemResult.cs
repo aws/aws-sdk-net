@@ -29,28 +29,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
-    /// This is the response object from the DetectEntities operation.
+    /// Analysis results for one of the documents in the batch.
     /// </summary>
-    public partial class DetectEntitiesResponse : AmazonWebServiceResponse
+    public partial class BatchDetectTargetedSentimentItemResult
     {
-        private List<Entity> _entities = new List<Entity>();
+        private List<TargetedSentimentEntity> _entities = new List<TargetedSentimentEntity>();
+        private int? _index;
 
         /// <summary>
         /// Gets and sets the property Entities. 
         /// <para>
-        /// A collection of entities identified in the input text. For each entity, the response
-        /// provides the entity text, entity type, where the entity text begins and ends, and
-        /// the level of confidence that Amazon Comprehend has in the detection. 
-        /// </para>
-        ///  
-        /// <para>
-        /// If your request uses a custom entity recognition model, Amazon Comprehend detects
-        /// the entities that the model is trained to recognize. Otherwise, it detects the default
-        /// entity types. For a list of default entity types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a>
-        /// in the Comprehend Developer Guide. 
+        /// An array of targeted sentiment entities.
         /// </para>
         /// </summary>
-        public List<Entity> Entities
+        public List<TargetedSentimentEntity> Entities
         {
             get { return this._entities; }
             set { this._entities = value; }
@@ -60,6 +52,24 @@ namespace Amazon.Comprehend.Model
         internal bool IsSetEntities()
         {
             return this._entities != null && this._entities.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Index. 
+        /// <para>
+        /// The zero-based index of this result in the input list.
+        /// </para>
+        /// </summary>
+        public int Index
+        {
+            get { return this._index.GetValueOrDefault(); }
+            set { this._index = value; }
+        }
+
+        // Check to see if Index property is set
+        internal bool IsSetIndex()
+        {
+            return this._index.HasValue; 
         }
 
     }

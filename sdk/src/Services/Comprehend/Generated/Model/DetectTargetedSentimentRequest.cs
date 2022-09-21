@@ -29,26 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
-    /// Container for the parameters to the DetectSyntax operation.
-    /// Inspects text for syntax and the part of speech of words in the document. For more
-    /// information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a>
-    /// in the Comprehend Developer Guide.
+    /// Container for the parameters to the DetectTargetedSentiment operation.
+    /// Inspects the input text and returns a sentiment analysis for each entity identified
+    /// in the text.
+    /// 
+    ///  
+    /// <para>
+    /// For more information about targeted sentiment, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html">Targeted
+    /// sentiment</a>.
+    /// </para>
     /// </summary>
-    public partial class DetectSyntaxRequest : AmazonComprehendRequest
+    public partial class DetectTargetedSentimentRequest : AmazonComprehendRequest
     {
-        private SyntaxLanguageCode _languageCode;
+        private LanguageCode _languageCode;
         private string _text;
 
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language code of the input documents. You can specify any of the following languages
-        /// supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French
-        /// ("fr"), Italian ("it"), or Portuguese ("pt").
+        /// The language of the input documents. Currently, English is the only supported language.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public SyntaxLanguageCode LanguageCode
+        public LanguageCode LanguageCode
         {
             get { return this._languageCode; }
             set { this._languageCode = value; }
@@ -63,7 +66,7 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property Text. 
         /// <para>
-        /// A UTF-8 string. The maximum string size is 5 KB.
+        /// A UTF-8 text string. The maximum string length is 5 KB.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

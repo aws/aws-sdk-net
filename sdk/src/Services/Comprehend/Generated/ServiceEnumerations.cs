@@ -1367,4 +1367,114 @@ namespace Amazon.Comprehend
         }
     }
 
+
+    /// <summary>
+    /// Constants used for properties of type TargetedSentimentEntityType.
+    /// </summary>
+    public class TargetedSentimentEntityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ATTRIBUTE for TargetedSentimentEntityType
+        /// </summary>
+        public static readonly TargetedSentimentEntityType ATTRIBUTE = new TargetedSentimentEntityType("ATTRIBUTE");
+        /// <summary>
+        /// Constant BOOK for TargetedSentimentEntityType
+        /// </summary>
+        public static readonly TargetedSentimentEntityType BOOK = new TargetedSentimentEntityType("BOOK");
+        /// <summary>
+        /// Constant BRAND for TargetedSentimentEntityType
+        /// </summary>
+        public static readonly TargetedSentimentEntityType BRAND = new TargetedSentimentEntityType("BRAND");
+        /// <summary>
+        /// Constant COMMERCIAL_ITEM for TargetedSentimentEntityType
+        /// </summary>
+        public static readonly TargetedSentimentEntityType COMMERCIAL_ITEM = new TargetedSentimentEntityType("COMMERCIAL_ITEM");
+        /// <summary>
+        /// Constant DATE for TargetedSentimentEntityType
+        /// </summary>
+        public static readonly TargetedSentimentEntityType DATE = new TargetedSentimentEntityType("DATE");
+        /// <summary>
+        /// Constant EVENT for TargetedSentimentEntityType
+        /// </summary>
+        public static readonly TargetedSentimentEntityType EVENT = new TargetedSentimentEntityType("EVENT");
+        /// <summary>
+        /// Constant FACILITY for TargetedSentimentEntityType
+        /// </summary>
+        public static readonly TargetedSentimentEntityType FACILITY = new TargetedSentimentEntityType("FACILITY");
+        /// <summary>
+        /// Constant GAME for TargetedSentimentEntityType
+        /// </summary>
+        public static readonly TargetedSentimentEntityType GAME = new TargetedSentimentEntityType("GAME");
+        /// <summary>
+        /// Constant LOCATION for TargetedSentimentEntityType
+        /// </summary>
+        public static readonly TargetedSentimentEntityType LOCATION = new TargetedSentimentEntityType("LOCATION");
+        /// <summary>
+        /// Constant MOVIE for TargetedSentimentEntityType
+        /// </summary>
+        public static readonly TargetedSentimentEntityType MOVIE = new TargetedSentimentEntityType("MOVIE");
+        /// <summary>
+        /// Constant MUSIC for TargetedSentimentEntityType
+        /// </summary>
+        public static readonly TargetedSentimentEntityType MUSIC = new TargetedSentimentEntityType("MUSIC");
+        /// <summary>
+        /// Constant ORGANIZATION for TargetedSentimentEntityType
+        /// </summary>
+        public static readonly TargetedSentimentEntityType ORGANIZATION = new TargetedSentimentEntityType("ORGANIZATION");
+        /// <summary>
+        /// Constant OTHER for TargetedSentimentEntityType
+        /// </summary>
+        public static readonly TargetedSentimentEntityType OTHER = new TargetedSentimentEntityType("OTHER");
+        /// <summary>
+        /// Constant PERSON for TargetedSentimentEntityType
+        /// </summary>
+        public static readonly TargetedSentimentEntityType PERSON = new TargetedSentimentEntityType("PERSON");
+        /// <summary>
+        /// Constant PERSONAL_TITLE for TargetedSentimentEntityType
+        /// </summary>
+        public static readonly TargetedSentimentEntityType PERSONAL_TITLE = new TargetedSentimentEntityType("PERSONAL_TITLE");
+        /// <summary>
+        /// Constant QUANTITY for TargetedSentimentEntityType
+        /// </summary>
+        public static readonly TargetedSentimentEntityType QUANTITY = new TargetedSentimentEntityType("QUANTITY");
+        /// <summary>
+        /// Constant SOFTWARE for TargetedSentimentEntityType
+        /// </summary>
+        public static readonly TargetedSentimentEntityType SOFTWARE = new TargetedSentimentEntityType("SOFTWARE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TargetedSentimentEntityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TargetedSentimentEntityType FindValue(string value)
+        {
+            return FindValue<TargetedSentimentEntityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TargetedSentimentEntityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 }

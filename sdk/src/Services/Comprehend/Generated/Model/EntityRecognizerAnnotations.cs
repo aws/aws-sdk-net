@@ -59,9 +59,8 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property TestS3Uri. 
         /// <para>
-        /// This specifies the Amazon S3 location where the test annotations for an entity recognizer
-        /// are located. The URI must be in the same AWS Region as the API endpoint that you are
-        /// calling.
+        ///  Specifies the Amazon S3 location where the test annotations for an entity recognizer
+        /// are located. The URI must be in the same region as the API endpoint that you are calling.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

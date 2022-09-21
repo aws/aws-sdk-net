@@ -29,26 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
-    /// Container for the parameters to the DetectSyntax operation.
-    /// Inspects text for syntax and the part of speech of words in the document. For more
-    /// information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a>
-    /// in the Comprehend Developer Guide.
+    /// Container for the parameters to the BatchDetectTargetedSentiment operation.
+    /// Inspects a batch of documents and returns a sentiment analysis for each entity identified
+    /// in the documents.
+    /// 
+    ///  
+    /// <para>
+    /// For more information about targeted sentiment, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html">Targeted
+    /// sentiment</a>.
+    /// </para>
     /// </summary>
-    public partial class DetectSyntaxRequest : AmazonComprehendRequest
+    public partial class BatchDetectTargetedSentimentRequest : AmazonComprehendRequest
     {
-        private SyntaxLanguageCode _languageCode;
-        private string _text;
+        private LanguageCode _languageCode;
+        private List<string> _textList = new List<string>();
 
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language code of the input documents. You can specify any of the following languages
-        /// supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French
-        /// ("fr"), Italian ("it"), or Portuguese ("pt").
+        /// The language of the input documents. Currently, English is the only supported language.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public SyntaxLanguageCode LanguageCode
+        public LanguageCode LanguageCode
         {
             get { return this._languageCode; }
             set { this._languageCode = value; }
@@ -61,22 +64,23 @@ namespace Amazon.Comprehend.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Text. 
+        /// Gets and sets the property TextList. 
         /// <para>
-        /// A UTF-8 string. The maximum string size is 5 KB.
+        /// A list containing the UTF-8 encoded text of the input documents. The list can contain
+        /// a maximum of 25 documents. The maximum size of each document is 5 KB.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public string Text
+        public List<string> TextList
         {
-            get { return this._text; }
-            set { this._text = value; }
+            get { return this._textList; }
+            set { this._textList = value; }
         }
 
-        // Check to see if Text property is set
-        internal bool IsSetText()
+        // Check to see if TextList property is set
+        internal bool IsSetTextList()
         {
-            return this._text != null;
+            return this._textList != null && this._textList.Count > 0; 
         }
 
     }

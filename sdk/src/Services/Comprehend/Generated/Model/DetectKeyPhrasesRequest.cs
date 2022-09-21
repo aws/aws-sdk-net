@@ -60,8 +60,7 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property Text. 
         /// <para>
-        /// A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded
-        /// characters.
+        /// A UTF-8 text string. The string must contain less than 100 KB of UTF-8 encoded characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

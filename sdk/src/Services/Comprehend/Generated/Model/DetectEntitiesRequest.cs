@@ -31,7 +31,8 @@ namespace Amazon.Comprehend.Model
     /// <summary>
     /// Container for the parameters to the DetectEntities operation.
     /// Inspects text for named entities, and returns information about them. For more information,
-    /// about named entities, see <a>how-entities</a>.
+    /// about named entities, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a>
+    /// in the Comprehend Developer Guide.
     /// </summary>
     public partial class DetectEntitiesRequest : AmazonComprehendRequest
     {
@@ -98,8 +99,7 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property Text. 
         /// <para>
-        /// A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded
-        /// characters.
+        /// A UTF-8 text string. The maximum string size is 100 KB.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

@@ -29,26 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
-    /// Provides information about an entity. 
+    /// Information about one mention of an entity. The mention information includes the location
+    /// of the mention in the text and the sentiment of the mention.
     /// 
     ///  
     /// <para>
-    ///  
+    /// For more information about targeted sentiment, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html">Targeted
+    /// sentiment</a>.
     /// </para>
     /// </summary>
-    public partial class Entity
+    public partial class TargetedSentimentMention
     {
         private int? _beginOffset;
         private int? _endOffset;
+        private float? _groupScore;
+        private MentionSentiment _mentionSentiment;
         private float? _score;
         private string _text;
-        private EntityType _type;
+        private TargetedSentimentEntityType _type;
 
         /// <summary>
         /// Gets and sets the property BeginOffset. 
         /// <para>
-        /// The zero-based offset from the beginning of the source text to the first character
-        /// in the entity.
+        /// The offset into the document text where the mention begins.
         /// </para>
         /// </summary>
         public int BeginOffset
@@ -66,8 +69,7 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property EndOffset. 
         /// <para>
-        /// The zero-based offset from the beginning of the source text to the last character
-        /// in the entity.
+        /// The offset into the document text where the mention ends.
         /// </para>
         /// </summary>
         public int EndOffset
@@ -83,9 +85,46 @@ namespace Amazon.Comprehend.Model
         }
 
         /// <summary>
+        /// Gets and sets the property GroupScore. 
+        /// <para>
+        /// The confidence that all the entities mentioned in the group relate to the same entity.
+        /// </para>
+        /// </summary>
+        public float GroupScore
+        {
+            get { return this._groupScore.GetValueOrDefault(); }
+            set { this._groupScore = value; }
+        }
+
+        // Check to see if GroupScore property is set
+        internal bool IsSetGroupScore()
+        {
+            return this._groupScore.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MentionSentiment. 
+        /// <para>
+        /// Contains the sentiment and sentiment score for the mention.
+        /// </para>
+        /// </summary>
+        public MentionSentiment MentionSentiment
+        {
+            get { return this._mentionSentiment; }
+            set { this._mentionSentiment = value; }
+        }
+
+        // Check to see if MentionSentiment property is set
+        internal bool IsSetMentionSentiment()
+        {
+            return this._mentionSentiment != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Score. 
         /// <para>
-        /// The level of confidence that Amazon Comprehend has in the accuracy of the detection.
+        /// Model confidence that the entity is relevant. Value range is zero to one, where one
+        /// is highest confidence.
         /// </para>
         /// </summary>
         public float Score
@@ -103,7 +142,7 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property Text. 
         /// <para>
-        /// The text of the entity.
+        /// The text in the document that identifies the entity.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -122,10 +161,11 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The entity's type.
+        /// The type of the entity. Amazon Comprehend supports a variety of <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html#how-targeted-sentiment-entities">entity
+        /// types</a>.
         /// </para>
         /// </summary>
-        public EntityType Type
+        public TargetedSentimentEntityType Type
         {
             get { return this._type; }
             set { this._type = value; }

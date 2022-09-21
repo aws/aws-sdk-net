@@ -31,7 +31,8 @@ namespace Amazon.Comprehend.Model
     /// <summary>
     /// Container for the parameters to the BatchDetectEntities operation.
     /// Inspects the text of a batch of documents for named entities and returns information
-    /// about them. For more information about named entities, see <a>how-entities</a>
+    /// about them. For more information about named entities, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a>
+    /// in the Comprehend Developer Guide.
     /// </summary>
     public partial class BatchDetectEntitiesRequest : AmazonComprehendRequest
     {
@@ -61,9 +62,8 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property TextList. 
         /// <para>
-        /// A list containing the text of the input documents. The list can contain a maximum
-        /// of 25 documents. Each document must contain fewer than 5,000 bytes of UTF-8 encoded
-        /// characters.
+        /// A list containing the UTF-8 encoded text of the input documents. The list can contain
+        /// a maximum of 25 documents. The maximum size of each document is 5 KB.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

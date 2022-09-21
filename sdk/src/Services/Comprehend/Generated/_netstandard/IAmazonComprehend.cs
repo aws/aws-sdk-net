@@ -84,7 +84,8 @@ namespace Amazon.Comprehend
 
         /// <summary>
         /// Inspects the text of a batch of documents for named entities and returns information
-        /// about them. For more information about named entities, see <a>how-entities</a>
+        /// about them. For more information about named entities, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a>
+        /// in the Comprehend Developer Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDetectEntities service method.</param>
         /// <param name="cancellationToken">
@@ -108,7 +109,8 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
         /// Amazon Comprehend can't process the language of the input text. For custom entity
         /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
-        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
+        /// accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
+        /// languages</a> in the Comprehend Developer Guide.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectEntities">REST API Reference for BatchDetectEntities Operation</seealso>
         Task<BatchDetectEntitiesResponse> BatchDetectEntitiesAsync(BatchDetectEntitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -144,7 +146,8 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
         /// Amazon Comprehend can't process the language of the input text. For custom entity
         /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
-        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
+        /// accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
+        /// languages</a> in the Comprehend Developer Guide.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectKeyPhrases">REST API Reference for BatchDetectKeyPhrases Operation</seealso>
         Task<BatchDetectKeyPhrasesResponse> BatchDetectKeyPhrasesAsync(BatchDetectKeyPhrasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -182,7 +185,8 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
         /// Amazon Comprehend can't process the language of the input text. For custom entity
         /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
-        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
+        /// accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
+        /// languages</a> in the Comprehend Developer Guide.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectSentiment">REST API Reference for BatchDetectSentiment Operation</seealso>
         Task<BatchDetectSentimentResponse> BatchDetectSentimentAsync(BatchDetectSentimentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -196,7 +200,8 @@ namespace Amazon.Comprehend
         /// <summary>
         /// Inspects the text of a batch of documents for the syntax and part of speech of the
         /// words in the document and returns information about them. For more information, see
-        /// <a>how-syntax</a>.
+        /// <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a>
+        /// in the Comprehend Developer Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDetectSyntax service method.</param>
         /// <param name="cancellationToken">
@@ -220,10 +225,55 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
         /// Amazon Comprehend can't process the language of the input text. For custom entity
         /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
-        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
+        /// accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
+        /// languages</a> in the Comprehend Developer Guide.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectSyntax">REST API Reference for BatchDetectSyntax Operation</seealso>
         Task<BatchDetectSyntaxResponse> BatchDetectSyntaxAsync(BatchDetectSyntaxRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  BatchDetectTargetedSentiment
+
+
+
+        /// <summary>
+        /// Inspects a batch of documents and returns a sentiment analysis for each entity identified
+        /// in the documents.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about targeted sentiment, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html">Targeted
+        /// sentiment</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDetectTargetedSentiment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchDetectTargetedSentiment service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.BatchSizeLimitExceededException">
+        /// The number of documents in the request exceeds the limit of 25. Try your request again
+        /// with fewer documents.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TextSizeLimitExceededException">
+        /// The size of the input text exceeds the limit. Use a smaller document.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
+        /// Amazon Comprehend can't process the language of the input text. For custom entity
+        /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
+        /// accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
+        /// languages</a> in the Comprehend Developer Guide.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectTargetedSentiment">REST API Reference for BatchDetectTargetedSentiment Operation</seealso>
+        Task<BatchDetectTargetedSentimentResponse> BatchDetectTargetedSentimentAsync(BatchDetectTargetedSentimentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -285,7 +335,8 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
         /// Amazon Comprehend can't process the language of the input text. For custom entity
         /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
-        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
+        /// accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
+        /// languages</a> in the Comprehend Developer Guide.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ContainsPiiEntities">REST API Reference for ContainsPiiEntities Operation</seealso>
         Task<ContainsPiiEntitiesResponse> ContainsPiiEntitiesAsync(ContainsPiiEntitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -300,7 +351,8 @@ namespace Amazon.Comprehend
         /// Creates a new document classifier that you can use to categorize documents. To create
         /// a classifier, you provide a set of training documents that labeled with the categories
         /// that you want to use. After the classifier is trained you can use it to categorize
-        /// a set of labeled documents into the categories. For more information, see <a>how-document-classification</a>.
+        /// a set of labeled documents into the categories. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-document-classification.html">Document
+        /// Classification</a> in the Comprehend Developer Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDocumentClassifier service method.</param>
         /// <param name="cancellationToken">
@@ -337,7 +389,8 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
         /// Amazon Comprehend can't process the language of the input text. For custom entity
         /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
-        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
+        /// accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
+        /// languages</a> in the Comprehend Developer Guide.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateDocumentClassifier">REST API Reference for CreateDocumentClassifier Operation</seealso>
         Task<CreateDocumentClassifierResponse> CreateDocumentClassifierAsync(CreateDocumentClassifierRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -435,7 +488,8 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
         /// Amazon Comprehend can't process the language of the input text. For custom entity
         /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
-        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
+        /// accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
+        /// languages</a> in the Comprehend Developer Guide.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateEntityRecognizer">REST API Reference for CreateEntityRecognizer Operation</seealso>
         Task<CreateEntityRecognizerResponse> CreateEntityRecognizerAsync(CreateEntityRecognizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1040,7 +1094,8 @@ namespace Amazon.Comprehend
 
         /// <summary>
         /// Inspects text for named entities, and returns information about them. For more information,
-        /// about named entities, see <a>how-entities</a>.
+        /// about named entities, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a>
+        /// in the Comprehend Developer Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetectEntities service method.</param>
         /// <param name="cancellationToken">
@@ -1063,7 +1118,8 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
         /// Amazon Comprehend can't process the language of the input text. For custom entity
         /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
-        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
+        /// accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
+        /// languages</a> in the Comprehend Developer Guide.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectEntities">REST API Reference for DetectEntities Operation</seealso>
         Task<DetectEntitiesResponse> DetectEntitiesAsync(DetectEntitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1095,7 +1151,8 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
         /// Amazon Comprehend can't process the language of the input text. For custom entity
         /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
-        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
+        /// accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
+        /// languages</a> in the Comprehend Developer Guide.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectKeyPhrases">REST API Reference for DetectKeyPhrases Operation</seealso>
         Task<DetectKeyPhrasesResponse> DetectKeyPhrasesAsync(DetectKeyPhrasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1128,7 +1185,8 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
         /// Amazon Comprehend can't process the language of the input text. For custom entity
         /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
-        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
+        /// accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
+        /// languages</a> in the Comprehend Developer Guide.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectPiiEntities">REST API Reference for DetectPiiEntities Operation</seealso>
         Task<DetectPiiEntitiesResponse> DetectPiiEntitiesAsync(DetectPiiEntitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1161,7 +1219,8 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
         /// Amazon Comprehend can't process the language of the input text. For custom entity
         /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
-        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
+        /// accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
+        /// languages</a> in the Comprehend Developer Guide.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectSentiment">REST API Reference for DetectSentiment Operation</seealso>
         Task<DetectSentimentResponse> DetectSentimentAsync(DetectSentimentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1174,7 +1233,8 @@ namespace Amazon.Comprehend
 
         /// <summary>
         /// Inspects text for syntax and the part of speech of words in the document. For more
-        /// information, <a>how-syntax</a>.
+        /// information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a>
+        /// in the Comprehend Developer Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetectSyntax service method.</param>
         /// <param name="cancellationToken">
@@ -1194,10 +1254,51 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
         /// Amazon Comprehend can't process the language of the input text. For custom entity
         /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
-        /// accepted. For a list of supported languages, see <a>supported-languages</a>.
+        /// accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
+        /// languages</a> in the Comprehend Developer Guide.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectSyntax">REST API Reference for DetectSyntax Operation</seealso>
         Task<DetectSyntaxResponse> DetectSyntaxAsync(DetectSyntaxRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DetectTargetedSentiment
+
+
+
+        /// <summary>
+        /// Inspects the input text and returns a sentiment analysis for each entity identified
+        /// in the text.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about targeted sentiment, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html">Targeted
+        /// sentiment</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetectTargetedSentiment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DetectTargetedSentiment service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TextSizeLimitExceededException">
+        /// The size of the input text exceeds the limit. Use a smaller document.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
+        /// Amazon Comprehend can't process the language of the input text. For custom entity
+        /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are
+        /// accepted. For a list of supported languages, <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
+        /// languages</a> in the Comprehend Developer Guide.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectTargetedSentiment">REST API Reference for DetectTargetedSentiment Operation</seealso>
+        Task<DetectTargetedSentimentResponse> DetectTargetedSentimentAsync(DetectTargetedSentimentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

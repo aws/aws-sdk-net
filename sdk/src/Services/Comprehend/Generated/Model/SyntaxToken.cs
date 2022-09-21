@@ -82,7 +82,9 @@ namespace Amazon.Comprehend.Model
         /// Gets and sets the property PartOfSpeech. 
         /// <para>
         /// Provides the part of speech label and the confidence level that Amazon Comprehend
-        /// has that the part of speech was correctly identified. For more information, see <a>how-syntax</a>.
+        /// has that the part of speech was correctly identified. For more information, see <a
+        /// href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a>
+        /// in the Comprehend Developer Guide. 
         /// </para>
         /// </summary>
         public PartOfSpeechTag PartOfSpeech

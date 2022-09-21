@@ -266,6 +266,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Comprehend.Model.DetectTargetedSentimentRequest.Text</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Comprehend.Model.ImportModelRequest.DataAccessRoleArn</property>
     <min>20</min>
     <max>2048</max>
@@ -1470,6 +1474,10 @@
   <property-value-rule>
     <property>Amazon.Comprehend.Model.TargetedSentimentDetectionJobProperties.VolumeKmsKeyId</property>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.TargetedSentimentMention.Text</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Comprehend.Model.TopicsDetectionJobFilter.JobName</property>

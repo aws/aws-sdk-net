@@ -61,8 +61,7 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property Text. 
         /// <para>
-        /// Creates a new document classification request to analyze a single document in real-time,
-        /// returning personally identifiable information (PII) entity labels.
+        /// A UTF-8 text string. The maximum string size is 100 KB.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

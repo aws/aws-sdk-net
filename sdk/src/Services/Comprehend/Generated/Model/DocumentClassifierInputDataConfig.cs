@@ -33,8 +33,8 @@ namespace Amazon.Comprehend.Model
     /// 
     ///  
     /// <para>
-    /// For more information on how the input file is formatted, see <a>prep-classifier-data</a>.
-    /// 
+    /// For more information on how the input file is formatted, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/prep-classifier-data.html">Preparing
+    /// training data</a> in the Comprehend Developer Guide. 
     /// </para>
     /// </summary>
     public partial class DocumentClassifierInputDataConfig
@@ -167,9 +167,9 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property TestS3Uri. 
         /// <para>
-        /// The Amazon S3 URI for the input data. The Amazon S3 bucket must be in the same AWS
-        /// Region as the API endpoint that you are calling. The URI can point to a single input
-        /// file or it can provide the prefix for a collection of input files. 
+        /// This specifies the Amazon S3 location where the test annotations for an entity recognizer
+        /// are located. The URI must be in the same AWS Region as the API endpoint that you are
+        /// calling. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

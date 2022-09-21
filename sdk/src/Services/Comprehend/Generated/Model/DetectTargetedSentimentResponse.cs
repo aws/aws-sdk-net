@@ -29,28 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
-    /// This is the response object from the DetectEntities operation.
+    /// This is the response object from the DetectTargetedSentiment operation.
     /// </summary>
-    public partial class DetectEntitiesResponse : AmazonWebServiceResponse
+    public partial class DetectTargetedSentimentResponse : AmazonWebServiceResponse
     {
-        private List<Entity> _entities = new List<Entity>();
+        private List<TargetedSentimentEntity> _entities = new List<TargetedSentimentEntity>();
 
         /// <summary>
         /// Gets and sets the property Entities. 
         /// <para>
-        /// A collection of entities identified in the input text. For each entity, the response
-        /// provides the entity text, entity type, where the entity text begins and ends, and
-        /// the level of confidence that Amazon Comprehend has in the detection. 
-        /// </para>
-        ///  
-        /// <para>
-        /// If your request uses a custom entity recognition model, Amazon Comprehend detects
-        /// the entities that the model is trained to recognize. Otherwise, it detects the default
-        /// entity types. For a list of default entity types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a>
-        /// in the Comprehend Developer Guide. 
+        /// Targeted sentiment analysis for each of the entities identified in the input text.
         /// </para>
         /// </summary>
-        public List<Entity> Entities
+        public List<TargetedSentimentEntity> Entities
         {
             get { return this._entities; }
             set { this._entities = value; }
