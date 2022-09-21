@@ -141,7 +141,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SingleSignOnUserIdentifier. 
         /// <para>
-        /// The Amazon Web Services SSO user identifier.
+        /// The IAM Identity Center user identifier.
         /// </para>
         /// </summary>
         public string SingleSignOnUserIdentifier
@@ -159,7 +159,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SingleSignOnUserValue. 
         /// <para>
-        /// The Amazon Web Services SSO user value.
+        /// The IAM Identity Center user value.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

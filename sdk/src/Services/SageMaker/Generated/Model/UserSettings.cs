@@ -42,6 +42,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class UserSettings
     {
+        private CanvasAppSettings _canvasAppSettings;
         private string _executionRole;
         private JupyterServerAppSettings _jupyterServerAppSettings;
         private KernelGatewayAppSettings _kernelGatewayAppSettings;
@@ -50,6 +51,24 @@ namespace Amazon.SageMaker.Model
         private List<string> _securityGroups = new List<string>();
         private SharingSettings _sharingSettings;
         private TensorBoardAppSettings _tensorBoardAppSettings;
+
+        /// <summary>
+        /// Gets and sets the property CanvasAppSettings. 
+        /// <para>
+        /// The Canvas app settings.
+        /// </para>
+        /// </summary>
+        public CanvasAppSettings CanvasAppSettings
+        {
+            get { return this._canvasAppSettings; }
+            set { this._canvasAppSettings = value; }
+        }
+
+        // Check to see if CanvasAppSettings property is set
+        internal bool IsSetCanvasAppSettings()
+        {
+            return this._canvasAppSettings != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ExecutionRole. 

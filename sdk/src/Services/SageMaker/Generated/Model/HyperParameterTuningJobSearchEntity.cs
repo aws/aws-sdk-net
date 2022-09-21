@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// An entity having characteristics over which a user can search for a hyperparameter
-    /// tuning job.
+    /// An entity returned by the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SearchRecord.html">SearchRecord</a>
+    /// API containing the properties of a hyperparameter tuning job.
     /// </summary>
     public partial class HyperParameterTuningJobSearchEntity
     {
