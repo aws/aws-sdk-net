@@ -60,7 +60,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// A generic descritpion of the error condition in English.
+        /// A generic description of the error condition in English.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

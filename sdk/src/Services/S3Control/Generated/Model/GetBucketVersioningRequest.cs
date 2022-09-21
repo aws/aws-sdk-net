@@ -29,27 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetBucket operation.
-    /// Gets an Amazon S3 on Outposts bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">
-    /// Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
-    /// 
-    ///  
+    /// Container for the parameters to the GetBucketVersioning operation.
+    /// <note> 
     /// <para>
-    /// If you are using an identity other than the root user of the Amazon Web Services account
-    /// that owns the Outposts bucket, the calling identity must have the <code>s3-outposts:GetBucket</code>
-    /// permissions on the specified Outposts bucket and belong to the Outposts bucket owner's
-    /// account in order to use this action. Only users from Outposts bucket owner account
-    /// with the right permissions can perform actions on an Outposts bucket. 
+    /// This operation returns the versioning state only for S3 on Outposts buckets. To return
+    /// the versioning state for an S3 bucket, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketVersioning.html">GetBucketVersioning</a>
+    /// in the <i>Amazon S3 API Reference</i>. 
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// Returns the versioning state for an S3 on Outposts bucket. With versioning, you can
+    /// save multiple distinct copies of your data and recover from unintended user actions
+    /// and application failures.
     /// </para>
     ///  
     /// <para>
-    ///  If you don't have <code>s3-outposts:GetBucket</code> permissions or you're not using
-    /// an identity that belongs to the bucket owner's account, Amazon S3 returns a <code>403
-    /// Access Denied</code> error.
+    /// If you've never set versioning on your bucket, it has no versioning state. In that
+    /// case, the <code>GetBucketVersioning</code> request does not return a versioning state
+    /// value.
     /// </para>
     ///  
     /// <para>
-    /// The following actions are related to <code>GetBucket</code> for Amazon S3 on Outposts:
+    /// For more information about versioning, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html">Versioning</a>
+    /// in the <i>Amazon S3 User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -58,27 +60,32 @@ namespace Amazon.S3Control.Model
     /// you must use an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>.
     /// For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on
     /// Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived by
-    /// using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucket.html#API_control_GetBucket_Examples">Examples</a>
+    /// using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketVersioning.html#API_control_GetBucketVersioning_Examples">Examples</a>
     /// section.
+    /// </para>
+    ///  
+    /// <para>
+    /// The following operations are related to <code>GetBucketVersioning</code> for S3 on
+    /// Outposts.
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketVersioning.html">PutBucketVersioning</a>
     /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html">CreateBucket</a>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>
     /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucket.html">DeleteBucket</a>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketLifecycleConfiguration.html">GetBucketLifecycleConfiguration</a>
     /// 
     /// </para>
     ///  </li> </ul>
     /// </summary>
-    public partial class GetBucketRequest : AmazonS3ControlRequest
+    public partial class GetBucketVersioningRequest : AmazonS3ControlRequest
     {
         private string _accountId;
         private string _bucket;
@@ -86,7 +93,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The Amazon Web Services account ID of the Outposts bucket.
+        /// The Amazon Web Services account ID of the S3 on Outposts bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]
@@ -105,21 +112,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property Bucket. 
         /// <para>
-        /// Specifies the bucket.
-        /// </para>
-        ///  
-        /// <para>
-        /// For using this parameter with Amazon S3 on Outposts with the REST API, you must specify
-        /// the name and the x-amz-outpost-id as well.
-        /// </para>
-        ///  
-        /// <para>
-        /// For using this parameter with S3 on Outposts with the Amazon Web Services SDK and
-        /// CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>.
-        /// For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code>
-        /// owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the
-        /// URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>.
-        /// The value must be URL encoded. 
+        /// The S3 on Outposts bucket to return the versioning state for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=255)]

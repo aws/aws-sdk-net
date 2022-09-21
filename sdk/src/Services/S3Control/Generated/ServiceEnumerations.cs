@@ -223,6 +223,56 @@ namespace Amazon.S3Control
 
 
     /// <summary>
+    /// Constants used for properties of type BucketVersioningStatus.
+    /// </summary>
+    public class BucketVersioningStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Enabled for BucketVersioningStatus
+        /// </summary>
+        public static readonly BucketVersioningStatus Enabled = new BucketVersioningStatus("Enabled");
+        /// <summary>
+        /// Constant Suspended for BucketVersioningStatus
+        /// </summary>
+        public static readonly BucketVersioningStatus Suspended = new BucketVersioningStatus("Suspended");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BucketVersioningStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BucketVersioningStatus FindValue(string value)
+        {
+            return FindValue<BucketVersioningStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BucketVersioningStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ExpirationStatus.
     /// </summary>
     public class ExpirationStatus : ConstantClass
@@ -660,6 +710,106 @@ namespace Amazon.S3Control
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator JobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MFADelete.
+    /// </summary>
+    public class MFADelete : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for MFADelete
+        /// </summary>
+        public static readonly MFADelete Disabled = new MFADelete("Disabled");
+        /// <summary>
+        /// Constant Enabled for MFADelete
+        /// </summary>
+        public static readonly MFADelete Enabled = new MFADelete("Enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MFADelete(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MFADelete FindValue(string value)
+        {
+            return FindValue<MFADelete>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MFADelete(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MFADeleteStatus.
+    /// </summary>
+    public class MFADeleteStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for MFADeleteStatus
+        /// </summary>
+        public static readonly MFADeleteStatus Disabled = new MFADeleteStatus("Disabled");
+        /// <summary>
+        /// Constant Enabled for MFADeleteStatus
+        /// </summary>
+        public static readonly MFADeleteStatus Enabled = new MFADeleteStatus("Enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MFADeleteStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MFADeleteStatus FindValue(string value)
+        {
+            return FindValue<MFADeleteStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MFADeleteStatus(string value)
         {
             return FindValue(value);
         }

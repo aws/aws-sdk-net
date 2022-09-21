@@ -101,6 +101,14 @@
       "field": "Bucket",
       "containsArnField": true
     },
+    "GetBucketVersioningRequest": {
+      "field": "Bucket",
+      "containsArnField": true
+    },
+    "PutBucketVersioningRequest": {
+      "field": "Bucket",
+      "containsArnField": true
+    },
     "CreateBucketRequest": {
       "containsArnField": false
     },
@@ -161,76 +169,76 @@
     "DeleteStorageLensConfigurationRequest": {
       "containsArnField": false
     },
-    "GetStorageLensConfigurationRequest":{
+    "GetStorageLensConfigurationRequest": {
       "containsArnField": false
     },
-    "ListStorageLensConfigurationsRequest":{
+    "ListStorageLensConfigurationsRequest": {
       "containsArnField": false
     },
-    "PutStorageLensConfigurationRequest":{
+    "PutStorageLensConfigurationRequest": {
       "containsArnField": false
     },
-    "DeleteStorageLensConfigurationTaggingRequest":{
+    "DeleteStorageLensConfigurationTaggingRequest": {
       "containsArnField": false
     },
-    "GetStorageLensConfigurationTaggingRequest":{
+    "GetStorageLensConfigurationTaggingRequest": {
       "containsArnField": false
     },
-    "PutStorageLensConfigurationTaggingRequest":{
+    "PutStorageLensConfigurationTaggingRequest": {
       "containsArnField": false
     },
-    "CreateAccessPointForObjectLambdaRequest":{
+    "CreateAccessPointForObjectLambdaRequest": {
       "containsArnField": false
     },
-    "GetAccessPointForObjectLambdaRequest":{
+    "GetAccessPointForObjectLambdaRequest": {
       "containsArnField": false
     },
-    "DeleteAccessPointForObjectLambdaRequest":{
+    "DeleteAccessPointForObjectLambdaRequest": {
       "containsArnField": false
     },
-    "ListAccessPointsForObjectLambdaRequest":{
+    "ListAccessPointsForObjectLambdaRequest": {
       "containsArnField": false
     },
-    "PutAccessPointPolicyForObjectLambdaRequest":{
+    "PutAccessPointPolicyForObjectLambdaRequest": {
       "containsArnField": false
     },
-    "GetAccessPointPolicyForObjectLambdaRequest":{
+    "GetAccessPointPolicyForObjectLambdaRequest": {
       "containsArnField": false
     },
-    "DeleteAccessPointPolicyForObjectLambdaRequest":{
+    "DeleteAccessPointPolicyForObjectLambdaRequest": {
       "containsArnField": false
     },
-    "GetAccessPointPolicyStatusForObjectLambdaRequest":{
+    "GetAccessPointPolicyStatusForObjectLambdaRequest": {
       "containsArnField": false
     },
-    "PutAccessPointConfigurationForObjectLambdaRequest":{
+    "PutAccessPointConfigurationForObjectLambdaRequest": {
       "containsArnField": false
     },
-    "GetAccessPointConfigurationForObjectLambdaRequest":{
+    "GetAccessPointConfigurationForObjectLambdaRequest": {
       "containsArnField": false
     },
-    "CreateMultiRegionAccessPointRequest":{
+    "CreateMultiRegionAccessPointRequest": {
       "containsArnField": false
     },
-    "DeleteMultiRegionAccessPointRequest":{
+    "DeleteMultiRegionAccessPointRequest": {
       "containsArnField": false
     },
-    "DescribeMultiRegionAccessPointOperationRequest":{
+    "DescribeMultiRegionAccessPointOperationRequest": {
       "containsArnField": false
     },
-    "GetMultiRegionAccessPointRequest":{
+    "GetMultiRegionAccessPointRequest": {
       "containsArnField": false
     },
-    "GetMultiRegionAccessPointPolicyRequest":{
+    "GetMultiRegionAccessPointPolicyRequest": {
       "containsArnField": false
     },
-    "GetMultiRegionAccessPointPolicyStatusRequest":{
+    "GetMultiRegionAccessPointPolicyStatusRequest": {
       "containsArnField": false
     },
-    "ListMultiRegionAccessPointsRequest":{
+    "ListMultiRegionAccessPointsRequest": {
       "containsArnField": false
     },
-    "PutMultiRegionAccessPointPolicyRequest":{
+    "PutMultiRegionAccessPointPolicyRequest": {
       "containsArnField": false
     }
   }

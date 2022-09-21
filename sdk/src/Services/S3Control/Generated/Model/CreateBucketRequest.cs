@@ -328,7 +328,7 @@ namespace Amazon.S3Control.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This is required by Amazon S3 on Outposts buckets.
+        /// This ID is required by Amazon S3 on Outposts buckets.
         /// </para>
         ///  </note>
         /// </summary>

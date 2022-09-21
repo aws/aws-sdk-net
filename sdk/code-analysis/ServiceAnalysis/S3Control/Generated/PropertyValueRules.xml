@@ -404,6 +404,16 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Control.Model.GetBucketVersioningRequest.AccountId</property>
+    <max>64</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.GetBucketVersioningRequest.Bucket</property>
+    <min>3</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Control.Model.GetJobTaggingRequest.AccountId</property>
     <max>64</max>
     <pattern>^\d{12}$</pattern>
@@ -644,6 +654,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.PutBucketTaggingRequest.Bucket</property>
+    <min>3</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.PutBucketVersioningRequest.AccountId</property>
+    <max>64</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.PutBucketVersioningRequest.Bucket</property>
     <min>3</min>
     <max>255</max>
   </property-value-rule>

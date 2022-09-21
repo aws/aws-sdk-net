@@ -29,32 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// Configuration for the use of SSE-KMS to encrypt generated manifest objects.
+    /// This is the response object from the PutBucketVersioning operation.
     /// </summary>
-    public partial class SSEKMSEncryption
+    public partial class PutBucketVersioningResponse : AmazonWebServiceResponse
     {
-        private string _keyId;
-
-        /// <summary>
-        /// Gets and sets the property KeyId. 
-        /// <para>
-        /// Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services
-        /// KMS) symmetric encryption customer managed key to use for encrypting generated manifest
-        /// objects.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2000)]
-        public string KeyId
-        {
-            get { return this._keyId; }
-            set { this._keyId = value; }
-        }
-
-        // Check to see if KeyId property is set
-        internal bool IsSetKeyId()
-        {
-            return this._keyId != null;
-        }
 
     }
 }
