@@ -37,6 +37,7 @@ namespace Amazon.DeviceFarm.Model
         private DateTime? _created;
         private int? _defaultJobTimeoutMinutes;
         private string _name;
+        private VpcConfig _vpcConfig;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -111,6 +112,24 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfig. 
+        /// <para>
+        /// The VPC security groups and subnets that are attached to a project.
+        /// </para>
+        /// </summary>
+        public VpcConfig VpcConfig
+        {
+            get { return this._vpcConfig; }
+            set { this._vpcConfig = value; }
+        }
+
+        // Check to see if VpcConfig property is set
+        internal bool IsSetVpcConfig()
+        {
+            return this._vpcConfig != null;
         }
 
     }

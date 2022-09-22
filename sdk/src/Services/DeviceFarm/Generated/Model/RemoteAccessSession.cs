@@ -54,6 +54,7 @@ namespace Amazon.DeviceFarm.Model
         private DateTime? _started;
         private ExecutionStatus _status;
         private DateTime? _stopped;
+        private VpcConfig _vpcConfig;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -451,7 +452,7 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do
+        /// For more information about how Device Farm re-signs your apps, see <a href="http://aws.amazon.com/device-farm/faqs/">Do
         /// you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
         /// </para>
         /// </summary>
@@ -556,6 +557,24 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetStopped()
         {
             return this._stopped.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfig. 
+        /// <para>
+        /// The VPC security groups and subnets that are attached to a project.
+        /// </para>
+        /// </summary>
+        public VpcConfig VpcConfig
+        {
+            get { return this._vpcConfig; }
+            set { this._vpcConfig = value; }
+        }
+
+        // Check to see if VpcConfig property is set
+        internal bool IsSetVpcConfig()
+        {
+            return this._vpcConfig != null;
         }
 
     }

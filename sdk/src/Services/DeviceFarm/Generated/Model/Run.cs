@@ -64,6 +64,7 @@ namespace Amazon.DeviceFarm.Model
         private string _testSpecArn;
         private int? _totalJobs;
         private TestType _type;
+        private VpcConfig _vpcConfig;
         private string _webUrl;
 
         /// <summary>
@@ -552,7 +553,7 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about how Device Farm re-signs your apps, see <a href="https://aws.amazon.com/device-farm/faq/">Do
+        /// For more information about how Device Farm re-signs your apps, see <a href="http://aws.amazon.com/device-farm/faqs/">Do
         /// you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
         /// </para>
         /// </summary>
@@ -798,6 +799,24 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetType()
         {
             return this._type != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfig. 
+        /// <para>
+        /// The VPC security groups and subnets that are attached to a project.
+        /// </para>
+        /// </summary>
+        public VpcConfig VpcConfig
+        {
+            get { return this._vpcConfig; }
+            set { this._vpcConfig = value; }
+        }
+
+        // Check to see if VpcConfig property is set
+        internal bool IsSetVpcConfig()
+        {
+            return this._vpcConfig != null;
         }
 
         /// <summary>
