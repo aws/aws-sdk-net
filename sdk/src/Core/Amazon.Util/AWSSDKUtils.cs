@@ -295,6 +295,7 @@ namespace Amazon.Util
         /// path will follow suit.
         /// </remarks>
         /// <returns>Canonicalized resource path for the endpoint</returns>
+        [Obsolete("Use CanonicalizeResourcePathV2 instead")]
         public static string CanonicalizeResourcePath(Uri endpoint, string resourcePath)
         {
             // This overload is kept for backward compatibility in existing code bases.
@@ -313,6 +314,7 @@ namespace Amazon.Util
         /// path will follow suit.
         /// </remarks>
         /// <returns>Canonicalized resource path for the endpoint</returns>
+        [Obsolete("Use CanonicalizeResourcePathV2 instead")]
         public static string CanonicalizeResourcePath(Uri endpoint, string resourcePath, bool detectPreEncode)
         {
             // This overload is kept for backward compatibility in existing code bases.
@@ -333,6 +335,7 @@ namespace Amazon.Util
         /// path will follow suit.
         /// </remarks>
         /// <returns>Canonicalized resource path for the endpoint</returns>
+        [Obsolete("Use CanonicalizeResourcePathV2 instead")]
         public static string CanonicalizeResourcePath(Uri endpoint, string resourcePath, bool detectPreEncode, IDictionary<string, string> pathResources, int marshallerVersion)
         {
             if (endpoint != null)
@@ -369,6 +372,59 @@ namespace Amazon.Util
                     
                     pathWasPreEncoded = true;
                 }
+            }
+
+            var canonicalizedResourcePath = AWSSDKUtils.JoinResourcePathSegments(encodedSegments, false);
+
+            // Get the logger each time (it's cached) because we shouldn't store it in a static variable.
+            Logger.GetLogger(typeof(AWSSDKUtils)).DebugFormat("{0} encoded {1}{2} for canonicalization: {3}",
+                pathWasPreEncoded ? "Double" : "Single",
+                resourcePath,
+                endpoint == null ? "" : " with endpoint " + endpoint.AbsoluteUri,
+                canonicalizedResourcePath);
+
+            return canonicalizedResourcePath;
+        }
+
+        /// <summary>
+        /// Returns the canonicalized resource path for the service endpoint.
+        /// </summary>
+        /// <param name="endpoint">Endpoint URL for the request.</param>
+        /// <param name="resourcePath">Resource path for the request.</param>
+        /// <param name="encode">If true will URL-encode path segments including "/". "S3" is currently the only service that does not expect pre URL-encoded segments.</param>
+        /// <param name="pathResources">Dictionary of key/value parameters containing the values for the ResourcePath key replacements.</param>
+        /// <remarks>If resourcePath begins or ends with slash, the resulting canonicalized path will follow suit.</remarks>
+        /// <returns>Canonicalized resource path for the endpoint.</returns>
+        public static string CanonicalizeResourcePathV2(Uri endpoint, string resourcePath, bool encode, IDictionary<string, string> pathResources)
+        {
+            if (endpoint != null)
+            {
+                var path = endpoint.AbsolutePath;
+                if (string.IsNullOrEmpty(path) || string.Equals(path, Slash, StringComparison.Ordinal))
+                    path = string.Empty;
+
+                if (!string.IsNullOrEmpty(resourcePath) && resourcePath.StartsWith(Slash, StringComparison.Ordinal))
+                    resourcePath = resourcePath.Substring(1);
+
+                if (!string.IsNullOrEmpty(resourcePath))
+                    path = path + Slash + resourcePath;
+
+                resourcePath = path;
+            }
+
+            if (string.IsNullOrEmpty(resourcePath))
+                return Slash;
+
+            IEnumerable<string> encodedSegments = AWSSDKUtils.SplitResourcePathIntoSegments(resourcePath, pathResources);
+
+            var pathWasPreEncoded = false;
+            if (encode)
+            {
+                if (endpoint == null)
+                    throw new ArgumentNullException(nameof(endpoint), "A non-null endpoint is necessary to decide whether or not to pre URL encode.");
+
+                encodedSegments = encodedSegments.Select(segment => UrlEncode(segment, true).Replace(Slash, EncodedSlash));
+                pathWasPreEncoded = true;
             }
 
             var canonicalizedResourcePath = AWSSDKUtils.JoinResourcePathSegments(encodedSegments, false);

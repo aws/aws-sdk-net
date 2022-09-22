@@ -234,10 +234,7 @@ namespace <#=this.Config.Namespace#>
             return new <#=GeneratorHelpers.DetermineSigner(this.Config.ServiceModel.SignatureVersion, this.Config.ClassName)#>();
         }
 
-<#
-        if(this.Config.ServiceModel.Customizations.PipelineOverride != null)
-        {
-#>
+<# if(this.Config.ServiceModel.Customizations.PipelineOverride != null || this.Config.EndpointsRuleSet != null) { #>
         /// <summary>
         /// Customize the pipeline
         /// </summary>
@@ -245,11 +242,13 @@ namespace <#=this.Config.Namespace#>
         protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
         {
 <#
-            var pipelineOverrides = this.Config.ServiceModel.Customizations.PipelineOverride;
-            foreach(var o in pipelineOverrides.Overrides )
+    var pipelineOverrides = this.Config.ServiceModel.Customizations.PipelineOverride;
+    if (pipelineOverrides != null) 
+    {
+        foreach(var o in pipelineOverrides.Overrides)
+        {
+            if(!string.IsNullOrEmpty(o.Condition))
             {
-                if(!string.IsNullOrEmpty(o.Condition))
-                {
 #>
             if(<#=o.Condition#>)
             {
@@ -281,10 +280,15 @@ namespace <#=this.Config.Namespace#>
 #>
             pipeline.<#=o.FormattedOverrideMethod#>(new <#=o.NewType#>(<#=o.ConstructorInput#>));
 <#
-                }
             }
+        }
+    }
 #>
-        }	
+<# if (this.Config.EndpointsRuleSet != null) { #>
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new Amazon<#=this.Config.ClassName#>EndpointResolver());
+<# } #>
+        }
 <#
         }
 #>

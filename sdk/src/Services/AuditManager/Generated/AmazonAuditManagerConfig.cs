@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the auditmanager-2017-07-25.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.AuditManager.Internal;
 
 namespace Amazon.AuditManager
 {
@@ -32,7 +30,7 @@ namespace Amazon.AuditManager
     public partial class AmazonAuditManagerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.11.40");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.AuditManager
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAuditManagerDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "auditmanager";
+            this.EndpointProvider = new AmazonAuditManagerEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.AuditManager
                 return _userAgent;
             }
         }
+
     }
 }

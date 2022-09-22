@@ -25,7 +25,8 @@ namespace AWSSDK.CSM.IntegrationTests
             AmazonS3Config config = new AmazonS3Config
             {
                 RegionEndpoint = Amazon.RegionEndpoint.USEast1,
-                MaxErrorRetry = 2
+                MaxErrorRetry = 2,
+                ForcePathStyle = true
             };
             CSMTestUtilities testUtils = new CSMTestUtilities
             {

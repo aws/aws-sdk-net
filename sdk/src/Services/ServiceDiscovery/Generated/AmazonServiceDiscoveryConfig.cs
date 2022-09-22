@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the servicediscovery-2017-03-14.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.ServiceDiscovery.Internal;
 
 namespace Amazon.ServiceDiscovery
 {
@@ -32,7 +30,7 @@ namespace Amazon.ServiceDiscovery
     public partial class AmazonServiceDiscoveryConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.4.2");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.ServiceDiscovery
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonServiceDiscoveryDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "servicediscovery";
+            this.EndpointProvider = new AmazonServiceDiscoveryEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.ServiceDiscovery
                 return _userAgent;
             }
         }
+
     }
 }

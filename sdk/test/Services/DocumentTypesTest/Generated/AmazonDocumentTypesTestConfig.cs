@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the document-types-test-2022-09-16.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.DocumentTypesTest.Internal;
 
 namespace Amazon.DocumentTypesTest
 {
@@ -77,5 +75,6 @@ namespace Amazon.DocumentTypesTest
                 return _userAgent;
             }
         }
+
     }
 }

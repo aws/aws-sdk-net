@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the billingconductor-2021-07-30.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.BillingConductor.Internal;
 
 namespace Amazon.BillingConductor
 {
@@ -32,7 +30,7 @@ namespace Amazon.BillingConductor
     public partial class AmazonBillingConductorConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.88");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.BillingConductor
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonBillingConductorDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "billingconductor";
+            this.EndpointProvider = new AmazonBillingConductorEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.BillingConductor
                 return _userAgent;
             }
         }
+
     }
 }

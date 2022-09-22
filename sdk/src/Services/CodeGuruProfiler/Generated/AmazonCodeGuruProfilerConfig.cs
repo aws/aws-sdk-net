@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the codeguruprofiler-2019-07-18.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.CodeGuruProfiler.Internal;
 
 namespace Amazon.CodeGuruProfiler
 {
@@ -32,7 +30,7 @@ namespace Amazon.CodeGuruProfiler
     public partial class AmazonCodeGuruProfilerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.226");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.CodeGuruProfiler
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCodeGuruProfilerDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "codeguru-profiler";
+            this.EndpointProvider = new AmazonCodeGuruProfilerEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.CodeGuruProfiler
                 return _userAgent;
             }
         }
+
     }
 }

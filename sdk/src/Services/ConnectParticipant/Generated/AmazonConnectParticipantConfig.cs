@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the connectparticipant-2018-09-07.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.ConnectParticipant.Internal;
 
 namespace Amazon.ConnectParticipant
 {
@@ -32,7 +30,7 @@ namespace Amazon.ConnectParticipant
     public partial class AmazonConnectParticipantConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.134");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.ConnectParticipant
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonConnectParticipantDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "execute-api";
+            this.EndpointProvider = new AmazonConnectParticipantEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.ConnectParticipant
                 return _userAgent;
             }
         }
+
     }
 }

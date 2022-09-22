@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Globalization;
+using ServiceClientGenerator.Endpoints;
 
 namespace ServiceClientGenerator
 {
@@ -1086,6 +1087,18 @@ namespace ServiceClientGenerator
                         throw new InvalidOperationException(
                             "Encountered unknown model type (protocol): " + serviceType);
                 }
+            }
+        }
+
+        /// <summary>
+        /// Gets request member context parameter, used to drive endpoint resolution
+        /// </summary>
+        public ContextParameter ContextParameter
+        {
+            get
+            {
+                var parameter = data.SafeGet("contextParam");
+                return parameter == null ? null : new ContextParameter { name = parameter.SafeGetString("name") };
             }
         }
     }

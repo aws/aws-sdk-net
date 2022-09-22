@@ -15,6 +15,7 @@
 using System;
 using System.Net;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.Endpoints;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Util;
 #if NETSTANDARD
@@ -61,6 +62,14 @@ namespace Amazon.Runtime
         /// instead setting the region with the RegionEndpoint property.
         /// </summary>
         string ServiceURL { get; }
+
+        /// <summary>
+        /// Gets and sets of the EndpointProvider property.
+        /// This property is used for endpoints resolution.
+        /// During service client creation it is set to service's default generated EndpointProvider,
+        /// but can be changed to use custom user supplied EndpointProvider.
+        /// </summary>
+        IEndpointProvider EndpointProvider { get; }
 
         /// <summary>
         /// Gets the UseHttp property.
@@ -241,11 +250,13 @@ namespace Amazon.Runtime
         /// Using either the RegionEndpoint or the ServiceURL determine what the URL to the service is.
         /// </summary>
         /// <returns>The URL to the service.</returns>
+        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint.")]
         string DetermineServiceURL();
 
         /// <summary>
         /// Given this client configuration, return a DNS suffix for service endpoint url.
         /// </summary>
+        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint.")]
         string DetermineDnsSuffix();
 
         /// <summary>

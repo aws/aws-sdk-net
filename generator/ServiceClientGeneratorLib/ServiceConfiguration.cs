@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ServiceClientGenerator.Endpoints;
+using ServiceClientGenerator.Endpoints.Tests;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Remoting.Messaging;
@@ -362,6 +364,9 @@ namespace ServiceClientGenerator
         }
         
         public bool IsTestService { get; set; }
+
+        public RuleSet EndpointsRuleSet { get; set; }
+        public EndpointTests EndpointTests { get; set; }
 
         public override string ToString()
         {

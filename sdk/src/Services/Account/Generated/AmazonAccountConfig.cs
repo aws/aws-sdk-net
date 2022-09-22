@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the account-2021-02-01.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.Account.Internal;
 
 namespace Amazon.Account
 {
@@ -32,7 +30,7 @@ namespace Amazon.Account
     public partial class AmazonAccountConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.41");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.Account
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAccountDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "account";
+            this.EndpointProvider = new AmazonAccountEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.Account
                 return _userAgent;
             }
         }
+
     }
 }

@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the elasticloadbalancingv2-2015-12-01.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.ElasticLoadBalancingV2.Internal;
 
 namespace Amazon.ElasticLoadBalancingV2
 {
@@ -32,7 +30,7 @@ namespace Amazon.ElasticLoadBalancingV2
     public partial class AmazonElasticLoadBalancingV2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.3.144");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.ElasticLoadBalancingV2
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonElasticLoadBalancingV2DefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "elasticloadbalancing";
+            this.EndpointProvider = new AmazonElasticLoadBalancingV2EndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.ElasticLoadBalancingV2
                 return _userAgent;
             }
         }
+
     }
 }

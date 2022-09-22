@@ -43,7 +43,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (string.IsNullOrEmpty(deleteBucketAnalyticsConfigurationRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "DeleteBucketAnalyticsConfigurationRequest.BucketName");
 
-			request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(deleteBucketAnalyticsConfigurationRequest.BucketName));
+            request.ResourcePath = "/";
             request.AddSubResource("analytics");
             request.AddSubResource("id", deleteBucketAnalyticsConfigurationRequest.AnalyticsId);
             request.UseQueryString = true;

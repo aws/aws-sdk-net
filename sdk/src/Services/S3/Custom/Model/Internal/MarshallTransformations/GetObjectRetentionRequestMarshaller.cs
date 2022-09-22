@@ -57,7 +57,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "AmazonS3");
             request.HttpMethod = "GET";
-            string uriResourcePath = "/{Bucket}/{Key+}";
+            string uriResourcePath = "/{Key+}";
             request.AddSubResource("retention");
         
             if(publicRequest.IsSetRequestPayer())
@@ -68,7 +68,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             if (!publicRequest.IsSetBucketName())
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "publicRequest.BucketName");
-            uriResourcePath = uriResourcePath.Replace("{Bucket}", StringUtils.FromString(publicRequest.BucketName));
             if (!publicRequest.IsSetKey())
                 throw new System.ArgumentException("Key is a required property and must be set before making this call.", "publicRequest.Key");
             uriResourcePath = uriResourcePath.Replace("{Key+}", StringUtils.FromString(publicRequest.Key));

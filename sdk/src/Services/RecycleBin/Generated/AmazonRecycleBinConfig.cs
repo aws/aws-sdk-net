@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the rbin-2021-06-15.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.RecycleBin.Internal;
 
 namespace Amazon.RecycleBin
 {
@@ -32,7 +30,7 @@ namespace Amazon.RecycleBin
     public partial class AmazonRecycleBinConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.105");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.RecycleBin
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonRecycleBinDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "rbin";
+            this.EndpointProvider = new AmazonRecycleBinEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.RecycleBin
                 return _userAgent;
             }
         }
+
     }
 }

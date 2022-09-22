@@ -23,6 +23,7 @@ using Amazon.Runtime.Internal.Auth;
 using Amazon.Util;
 using System.Globalization;
 using Amazon.Internal;
+using Amazon.Runtime.Endpoints;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
 
@@ -171,10 +172,6 @@ namespace Amazon.Runtime
                 this.regionEndpoint = value;
                 this.probeForRegionEndpoint = this.regionEndpoint == null;
 
-                var defaultEndpoint = regionEndpoint?.GetEndpointForService(RegionEndpointServiceName, new GetEndpointForServiceOptions());
-                if (defaultEndpoint?.Deprecated == true)
-                    Logger.GetLogger(GetType()).InfoFormat($"Endpoint {defaultEndpoint.Hostname} is deprecated.");
-
                 // legacy support for initial pseudo regions - convert to base Region 
                 // and set FIPSEndpoint to true
                 if (!string.IsNullOrEmpty(value?.SystemName) && 
@@ -262,6 +259,7 @@ namespace Amazon.Runtime
         /// <summary>
         /// Given this client configuration, return a string form ofthe service endpoint url.
         /// </summary>
+        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint.")]
         public virtual string DetermineServiceURL()
         {
             string url;
@@ -280,6 +278,7 @@ namespace Amazon.Runtime
         /// <summary>
         /// Given this client configuration, return a DNS suffix for service endpoint url.
         /// </summary>
+        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint.")]
         public virtual string DetermineDnsSuffix()
         {
             var endpoint = regionEndpoint.GetEndpointForService(this);
@@ -954,5 +953,13 @@ namespace Amazon.Runtime
                 this.readWriteTimeout = value;
             }
         }
+
+        /// <summary>
+        /// Gets and sets of the EndpointProvider property.
+        /// This property is used for endpoints resolution.
+        /// During service client creation it is set to service's default generated EndpointProvider,
+        /// but can be changed to use custom user supplied EndpointProvider.
+        /// </summary>
+        public IEndpointProvider EndpointProvider { get; set; }
     }
 }

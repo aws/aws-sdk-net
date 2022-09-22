@@ -50,6 +50,31 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>VsixTestProfileFile.tt</DependentUpon>
     </Compile>
+    <Compile Update="Generators\Endpoints\PartitionsTemplate.cs">
+      <DependentUpon>PartitionsTemplate.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Generators\Endpoints\EndpointParameters.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EndpointParameters.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generators\Endpoints\EndpointProvider.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EndpointProvider.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generators\Endpoints\EndpointProviderTests.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EndpointProviderTests.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generators\Endpoints\EndpointResolver.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EndpointResolver.tt</DependentUpon>
+    </Compile>
     <Compile Update="Generators\Examples\ExampleCode.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -396,6 +421,30 @@
     <None Update="Generators\Component\GettingStarted.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>GettingStarted.cs</LastGenOutput>
+    </None>
+    <None Update="Generators\Endpoints\PartitionsTemplate.tt">
+      <LastGenOutput>PartitionsTemplate.cs</LastGenOutput>
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+    </None>
+    <None Update="Generators\Endpoints\EndpointProvider.tt">
+      <LastGenOutput>EndpointProvider.cs</LastGenOutput>
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+    </None>
+    <None Update="Generators\Endpoints\EndpointParameters.tt">
+      <LastGenOutput>EndpointParameters.cs</LastGenOutput>
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+    </None>
+    <None Update="Generators\Endpoints\EndpointProviderTests.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>EndpointProviderTests.cs</LastGenOutput>
+    </None>
+    <None Update="Generators\Endpoints\EndpointResolver.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>EndpointResolver.cs</LastGenOutput>
+    </None>
+    <None Update="Generators\Endpoints\RestMarshallingTests.tt">
+      <LastGenOutput>RestMarshallingTests.cs</LastGenOutput>
+      <Generator>TextTemplatingFilePreprocessor</Generator>
     </None>
     <None Update="Generators\Marshallers\AWSQueryExceptionUnmarshaller.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>

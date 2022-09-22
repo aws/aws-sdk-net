@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the chime-sdk-identity-2021-04-20.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.ChimeSDKIdentity.Internal;
 
 namespace Amazon.ChimeSDKIdentity
 {
@@ -32,7 +30,7 @@ namespace Amazon.ChimeSDKIdentity
     public partial class AmazonChimeSDKIdentityConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.139");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.ChimeSDKIdentity
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonChimeSDKIdentityDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "chime";
+            this.EndpointProvider = new AmazonChimeSDKIdentityEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.ChimeSDKIdentity
                 return _userAgent;
             }
         }
+
     }
 }

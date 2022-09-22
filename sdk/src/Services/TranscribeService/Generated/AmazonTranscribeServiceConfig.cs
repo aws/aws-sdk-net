@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the transcribe-2017-10-26.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.TranscribeService.Internal;
 
 namespace Amazon.TranscribeService
 {
@@ -32,7 +30,7 @@ namespace Amazon.TranscribeService
     public partial class AmazonTranscribeServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.14.41");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.TranscribeService
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonTranscribeServiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "transcribe";
+            this.EndpointProvider = new AmazonTranscribeServiceEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.TranscribeService
                 return _userAgent;
             }
         }
+
     }
 }

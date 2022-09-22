@@ -44,7 +44,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (string.IsNullOrEmpty(getBucketIntelligentTieringConfigurationRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "GetBucketInventoryConfigurationRequest.BucketName");
 
-            request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(getBucketIntelligentTieringConfigurationRequest.BucketName));
+            request.ResourcePath = "/";
             request.AddSubResource("intelligent-tiering");
             request.AddSubResource("id", getBucketIntelligentTieringConfigurationRequest.IntelligentTieringId);
             request.UseQueryString = true;

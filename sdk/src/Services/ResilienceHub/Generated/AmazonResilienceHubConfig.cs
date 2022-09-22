@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the resiliencehub-2020-04-30.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.ResilienceHub.Internal;
 
 namespace Amazon.ResilienceHub
 {
@@ -32,7 +30,7 @@ namespace Amazon.ResilienceHub
     public partial class AmazonResilienceHubConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.0");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.ResilienceHub
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonResilienceHubDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "resiliencehub";
+            this.EndpointProvider = new AmazonResilienceHubEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.ResilienceHub
                 return _userAgent;
             }
         }
+
     }
 }

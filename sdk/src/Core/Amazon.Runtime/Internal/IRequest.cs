@@ -373,5 +373,10 @@ namespace Amazon.Runtime.Internal
         /// after this request's content.
         /// </summary>
         IDictionary<string, string> TrailingHeaders { get; }
+
+        /// <summary>
+        /// Determine whether to use double encoding for request's signer.
+        /// </summary>
+        bool UseDoubleEncoding { get; set; }
     }
 }

@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the license-manager-2018-08-01.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.LicenseManager.Internal;
 
 namespace Amazon.LicenseManager
 {
@@ -32,7 +30,7 @@ namespace Amazon.LicenseManager
     public partial class AmazonLicenseManagerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.5.154");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.LicenseManager
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonLicenseManagerDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "license-manager";
+            this.EndpointProvider = new AmazonLicenseManagerEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.LicenseManager
                 return _userAgent;
             }
         }
+
     }
 }

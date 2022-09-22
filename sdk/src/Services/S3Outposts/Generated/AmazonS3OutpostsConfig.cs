@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the s3outposts-2017-07-25.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.S3Outposts.Internal;
 
 namespace Amazon.S3Outposts
 {
@@ -32,7 +30,7 @@ namespace Amazon.S3Outposts
     public partial class AmazonS3OutpostsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.88");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.S3Outposts
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonS3OutpostsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "s3-outposts";
+            this.EndpointProvider = new AmazonS3OutpostsEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.S3Outposts
                 return _userAgent;
             }
         }
+
     }
 }

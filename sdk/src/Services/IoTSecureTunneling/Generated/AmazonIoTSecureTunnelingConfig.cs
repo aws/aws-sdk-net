@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the iotsecuretunneling-2018-10-05.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.IoTSecureTunneling.Internal;
 
 namespace Amazon.IoTSecureTunneling
 {
@@ -32,7 +30,7 @@ namespace Amazon.IoTSecureTunneling
     public partial class AmazonIoTSecureTunnelingConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.71");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.IoTSecureTunneling
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIoTSecureTunnelingDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "IoTSecuredTunneling";
+            this.EndpointProvider = new AmazonIoTSecureTunnelingEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.IoTSecureTunneling
                 return _userAgent;
             }
         }
+
     }
 }

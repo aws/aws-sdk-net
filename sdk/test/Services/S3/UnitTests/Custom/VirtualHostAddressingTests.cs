@@ -42,13 +42,13 @@ namespace AWSSDK.UnitTests
                 new object[] {"bucket-name", RegionEndpoint.USWest1, null, false, false, S3UsEast1RegionalEndpointValue.Regional, "https://bucket-name.s3.us-west-1.amazonaws.com" },
                 new object[] {"bucket-with-number-1", RegionEndpoint.USWest1, null, false, false, S3UsEast1RegionalEndpointValue.Legacy, "https://bucket-with-number-1.s3.us-west-1.amazonaws.com" },
                 new object[] {"bucket-name", RegionEndpoint.CNNorth1, null, false, false, S3UsEast1RegionalEndpointValue.Legacy, "https://bucket-name.s3.cn-north-1.amazonaws.com.cn" },
-                new object[] {"BucketName", RegionEndpoint.USEast1, null, false, false, S3UsEast1RegionalEndpointValue.Legacy, "https://s3.amazonaws.com/BucketName" },
-                new object[] {"bucket_name", RegionEndpoint.USWest1, null, false, false, S3UsEast1RegionalEndpointValue.Legacy, "https://s3.us-west-1.amazonaws.com/bucket_name" },
-                new object[] {"bucket.name", RegionEndpoint.USWest1, null, false, false, S3UsEast1RegionalEndpointValue.Legacy, "https://s3.us-west-1.amazonaws.com/bucket.name" },
-                new object[] {"-bucket-name", RegionEndpoint.USWest1, null, false, false, S3UsEast1RegionalEndpointValue.Legacy, "https://s3.us-west-1.amazonaws.com/-bucket-name" },
-                new object[] {"bucket-name-", RegionEndpoint.USWest1, null, false, false, S3UsEast1RegionalEndpointValue.Legacy, "https://s3.us-west-1.amazonaws.com/bucket-name-" },
-                new object[] {"aa", RegionEndpoint.USWest1, null, false, false, S3UsEast1RegionalEndpointValue.Legacy, "https://s3.us-west-1.amazonaws.com/aa" },
-                new object[] {new string('a',64), RegionEndpoint.USWest1, null, false, false, S3UsEast1RegionalEndpointValue.Legacy, "https://s3.us-west-1.amazonaws.com/" + new string('a', 64)},
+                new object[] {"BucketName", RegionEndpoint.USEast1, null, false, false, S3UsEast1RegionalEndpointValue.Legacy, "https://s3.amazonaws.com/BucketName/" },
+                new object[] {"bucket_name", RegionEndpoint.USWest1, null, false, false, S3UsEast1RegionalEndpointValue.Legacy, "https://s3.us-west-1.amazonaws.com/bucket_name/" },
+                new object[] {"bucket.name", RegionEndpoint.USWest1, null, false, false, S3UsEast1RegionalEndpointValue.Legacy, "https://s3.us-west-1.amazonaws.com/bucket.name/" },
+                new object[] {"-bucket-name", RegionEndpoint.USWest1, null, false, false, S3UsEast1RegionalEndpointValue.Legacy, "https://s3.us-west-1.amazonaws.com/-bucket-name/" },
+                new object[] {"bucket-name-", RegionEndpoint.USWest1, null, false, false, S3UsEast1RegionalEndpointValue.Legacy, "https://s3.us-west-1.amazonaws.com/bucket-name-/" },
+                new object[] {"aa", RegionEndpoint.USWest1, null, false, false, S3UsEast1RegionalEndpointValue.Legacy, "https://s3.us-west-1.amazonaws.com/aa/" },
+                new object[] {new string('a',64), RegionEndpoint.USWest1, null, false, false, S3UsEast1RegionalEndpointValue.Legacy, "https://s3.us-west-1.amazonaws.com/" + new string('a', 64) + "/"},
                 new object[] {"bucket-name", RegionEndpoint.USEast1, null, true, false, S3UsEast1RegionalEndpointValue.Legacy, "https://bucket-name.s3-accelerate.amazonaws.com" },
                 // Flag set to Regional, but accelerate is true, so the endpoint should stay at s3-accelerate.amazonaws.com
                 new object[] {"bucket-name", RegionEndpoint.USEast1, null, true, false, S3UsEast1RegionalEndpointValue.Regional, "https://bucket-name.s3-accelerate.amazonaws.com" },
@@ -59,14 +59,14 @@ namespace AWSSDK.UnitTests
                 // Flag set to Regional so the region should be present.
                 new object[] {"bucket-name", RegionEndpoint.USEast1, null, false, true, S3UsEast1RegionalEndpointValue.Regional, "https://bucket-name.s3.dualstack.us-east-1.amazonaws.com" },
                 new object[] {"bucket-name", RegionEndpoint.USWest2, null, false, true, S3UsEast1RegionalEndpointValue.Legacy, "https://bucket-name.s3.dualstack.us-west-2.amazonaws.com" },
-                new object[] {"bucket.name", RegionEndpoint.USWest2, null, false, true, S3UsEast1RegionalEndpointValue.Legacy, "https://s3.dualstack.us-west-2.amazonaws.com/bucket.name" },
+                new object[] {"bucket.name", RegionEndpoint.USWest2, null, false, true, S3UsEast1RegionalEndpointValue.Legacy, "https://s3.dualstack.us-west-2.amazonaws.com/bucket.name/" },
                 new object[] {"bucket-name", RegionEndpoint.USEast1, null, true, true, S3UsEast1RegionalEndpointValue.Legacy, "https://bucket-name.s3-accelerate.dualstack.amazonaws.com" },
                 // Flag set to Regional on accelerate and dual stack, no impact
                 new object[] {"bucket-name", RegionEndpoint.USEast1, null, true, true, S3UsEast1RegionalEndpointValue.Regional, "https://bucket-name.s3-accelerate.dualstack.amazonaws.com" },
                 // Flag not set, on accelerate and dual stack, no impact
                 new object[] {"bucket-name", RegionEndpoint.USEast1, null, true, true, null, "https://bucket-name.s3-accelerate.dualstack.amazonaws.com" },
-                new object[] {"bucket-name", RegionEndpoint.USEast1, true, false, false, S3UsEast1RegionalEndpointValue.Legacy, "https://s3.amazonaws.com/bucket-name" },
-                new object[] {"bucket-name", RegionEndpoint.USEast1, true, false, true, S3UsEast1RegionalEndpointValue.Legacy, "https://s3.dualstack.us-east-1.amazonaws.com/bucket-name" }
+                new object[] {"bucket-name", RegionEndpoint.USEast1, true, false, false, S3UsEast1RegionalEndpointValue.Legacy, "https://s3.amazonaws.com/bucket-name/" },
+                new object[] {"bucket-name", RegionEndpoint.USEast1, true, false, true, S3UsEast1RegionalEndpointValue.Legacy, "https://s3.dualstack.us-east-1.amazonaws.com/bucket-name/" }
             };
 
         

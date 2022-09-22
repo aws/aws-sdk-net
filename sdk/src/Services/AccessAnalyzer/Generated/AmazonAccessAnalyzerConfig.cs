@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the accessanalyzer-2019-11-01.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.AccessAnalyzer.Internal;
 
 namespace Amazon.AccessAnalyzer
 {
@@ -32,7 +30,7 @@ namespace Amazon.AccessAnalyzer
     public partial class AmazonAccessAnalyzerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.3.8");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.AccessAnalyzer
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAccessAnalyzerDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "access-analyzer";
+            this.EndpointProvider = new AmazonAccessAnalyzerEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.AccessAnalyzer
                 return _userAgent;
             }
         }
+
     }
 }

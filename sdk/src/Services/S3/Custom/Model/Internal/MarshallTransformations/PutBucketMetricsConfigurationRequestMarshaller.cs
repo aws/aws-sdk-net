@@ -49,7 +49,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (string.IsNullOrEmpty(PutBucketMetricsConfigurationRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "PutBucketMetricsConfigurationRequest.BucketName");
 
-			request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(PutBucketMetricsConfigurationRequest.BucketName));
+            request.ResourcePath = "/";
 
             request.AddSubResource("metrics");
 

@@ -562,6 +562,20 @@ namespace Amazon.Runtime
             if (errorMessages.Contains(exception.Message))
                 return true;
             return ContainErrorMessage(exception.InnerException, errorMessages);
-        }                
+        }
+
+        /// <summary>
+        /// Creates a key for storing retry capacity data.
+        /// Key is based on service's url (we store retry capacity per service's url variant).
+        /// If ClientConfig's ServiceURL override is set we use it as a key,
+        /// otherwise we construct key based on ClientConfig's schema, region, service, fips, dualstack parameters.
+        /// This value is unique key per real service's url variant.
+        /// </summary>
+        protected static string GetRetryCapacityKey(IClientConfig config)
+        {
+            return config.ServiceURL != null ? config.ServiceURL :
+                $"http:{config.UseHttp}//region:{config.RegionEndpoint?.SystemName}.service:{config.RegionEndpointServiceName}.fips:{config.UseFIPSEndpoint}.ipv6:{config.UseDualstackEndpoint}";
+        }
+
     }
 }

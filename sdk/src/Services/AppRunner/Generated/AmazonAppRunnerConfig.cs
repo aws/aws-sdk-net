@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the apprunner-2020-05-15.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.AppRunner.Internal;
 
 namespace Amazon.AppRunner
 {
@@ -32,7 +30,7 @@ namespace Amazon.AppRunner
     public partial class AmazonAppRunnerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.5.14");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.AppRunner
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAppRunnerDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "apprunner";
+            this.EndpointProvider = new AmazonAppRunnerEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.AppRunner
                 return _userAgent;
             }
         }
+
     }
 }

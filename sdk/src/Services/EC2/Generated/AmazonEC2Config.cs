@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.EC2.Internal;
 
 namespace Amazon.EC2
 {
@@ -32,7 +30,7 @@ namespace Amazon.EC2
     public partial class AmazonEC2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.95.7");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.EC2
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonEC2DefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "ec2";
+            this.EndpointProvider = new AmazonEC2EndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.EC2
                 return _userAgent;
             }
         }
+
     }
 }

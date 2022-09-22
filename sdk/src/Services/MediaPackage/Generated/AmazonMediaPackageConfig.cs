@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the mediapackage-2017-10-12.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.MediaPackage.Internal;
 
 namespace Amazon.MediaPackage
 {
@@ -32,7 +30,7 @@ namespace Amazon.MediaPackage
     public partial class AmazonMediaPackageConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.9.25");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.MediaPackage
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMediaPackageDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "mediapackage";
+            this.EndpointProvider = new AmazonMediaPackageEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.MediaPackage
                 return _userAgent;
             }
         }
+
     }
 }

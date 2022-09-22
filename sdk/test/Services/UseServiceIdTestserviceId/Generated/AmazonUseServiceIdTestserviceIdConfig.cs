@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the use-service-id-2022-07-12.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.UseServiceIdTestserviceId.Internal;
 
 namespace Amazon.UseServiceIdTestserviceId
 {
@@ -77,5 +75,6 @@ namespace Amazon.UseServiceIdTestserviceId
                 return _userAgent;
             }
         }
+
     }
 }

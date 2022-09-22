@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the mediaconvert-2017-08-29.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.MediaConvert.Internal;
 
 namespace Amazon.MediaConvert
 {
@@ -32,7 +30,7 @@ namespace Amazon.MediaConvert
     public partial class AmazonMediaConvertConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.18.3");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.MediaConvert
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMediaConvertDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "mediaconvert";
+            this.EndpointProvider = new AmazonMediaConvertEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.MediaConvert
                 return _userAgent;
             }
         }
+
     }
 }

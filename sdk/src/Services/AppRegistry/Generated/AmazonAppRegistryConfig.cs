@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the servicecatalog-appregistry-2020-06-24.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.AppRegistry.Internal;
 
 namespace Amazon.AppRegistry
 {
@@ -32,7 +30,7 @@ namespace Amazon.AppRegistry
     public partial class AmazonAppRegistryConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.3.53");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.AppRegistry
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAppRegistryDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "servicecatalog";
+            this.EndpointProvider = new AmazonAppRegistryEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.AppRegistry
                 return _userAgent;
             }
         }
+
     }
 }

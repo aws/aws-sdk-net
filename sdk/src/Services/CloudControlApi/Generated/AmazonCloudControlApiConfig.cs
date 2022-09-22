@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the cloudcontrol-2021-09-30.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.CloudControlApi.Internal;
 
 namespace Amazon.CloudControlApi
 {
@@ -32,7 +30,7 @@ namespace Amazon.CloudControlApi
     public partial class AmazonCloudControlApiConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.67");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.CloudControlApi
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloudControlApiDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "cloudcontrolapi";
+            this.EndpointProvider = new AmazonCloudControlApiEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.CloudControlApi
                 return _userAgent;
             }
         }
+
     }
 }

@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the polly-2016-06-10.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.Polly.Internal;
 
 namespace Amazon.Polly
 {
@@ -32,7 +30,7 @@ namespace Amazon.Polly
     public partial class AmazonPollyConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.8.10");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.Polly
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonPollyDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "polly";
+            this.EndpointProvider = new AmazonPollyEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.Polly
                 return _userAgent;
             }
         }
+
     }
 }

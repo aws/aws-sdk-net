@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the rest-json-test-2016-04-12.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.RestJsonTest.Internal;
 
 namespace Amazon.RestJsonTest
 {
@@ -77,5 +75,6 @@ namespace Amazon.RestJsonTest
                 return _userAgent;
             }
         }
+
     }
 }

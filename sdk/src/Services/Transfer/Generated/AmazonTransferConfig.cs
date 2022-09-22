@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the transfer-2018-11-05.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.Transfer.Internal;
 
 namespace Amazon.Transfer
 {
@@ -32,7 +30,7 @@ namespace Amazon.Transfer
     public partial class AmazonTransferConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.15.4");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.Transfer
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonTransferDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "transfer";
+            this.EndpointProvider = new AmazonTransferEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.Transfer
                 return _userAgent;
             }
         }
+
     }
 }

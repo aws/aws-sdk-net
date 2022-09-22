@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the route53-recovery-control-config-2020-11-02.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.Route53RecoveryControlConfig.Internal;
 
 namespace Amazon.Route53RecoveryControlConfig
 {
@@ -32,7 +30,7 @@ namespace Amazon.Route53RecoveryControlConfig
     public partial class AmazonRoute53RecoveryControlConfigConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.119");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.Route53RecoveryControlConfig
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonRoute53RecoveryControlConfigDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "route53-recovery-control-config";
+            this.EndpointProvider = new AmazonRoute53RecoveryControlConfigEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.Route53RecoveryControlConfig
                 return _userAgent;
             }
         }
+
     }
 }

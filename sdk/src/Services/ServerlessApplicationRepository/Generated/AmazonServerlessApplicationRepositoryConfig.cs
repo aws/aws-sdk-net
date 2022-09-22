@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the serverlessrepo-2017-09-08.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.ServerlessApplicationRepository.Internal;
 
 namespace Amazon.ServerlessApplicationRepository
 {
@@ -32,7 +30,7 @@ namespace Amazon.ServerlessApplicationRepository
     public partial class AmazonServerlessApplicationRepositoryConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.225");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.ServerlessApplicationRepository
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonServerlessApplicationRepositoryDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "serverlessrepo";
+            this.EndpointProvider = new AmazonServerlessApplicationRepositoryEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.ServerlessApplicationRepository
                 return _userAgent;
             }
         }
+
     }
 }

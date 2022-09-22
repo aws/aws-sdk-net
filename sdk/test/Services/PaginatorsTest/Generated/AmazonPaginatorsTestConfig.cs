@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the paginators-test-2022-03-14.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.PaginatorsTest.Internal;
 
 namespace Amazon.PaginatorsTest
 {
@@ -77,5 +75,6 @@ namespace Amazon.PaginatorsTest
                 return _userAgent;
             }
         }
+
     }
 }

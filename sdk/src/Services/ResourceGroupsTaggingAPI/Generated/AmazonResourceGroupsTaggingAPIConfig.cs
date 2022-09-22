@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the resourcegroupstaggingapi-2017-01-26.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.ResourceGroupsTaggingAPI.Internal;
 
 namespace Amazon.ResourceGroupsTaggingAPI
 {
@@ -32,7 +30,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
     public partial class AmazonResourceGroupsTaggingAPIConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.226");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonResourceGroupsTaggingAPIDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "tagging";
+            this.EndpointProvider = new AmazonResourceGroupsTaggingAPIEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.ResourceGroupsTaggingAPI
                 return _userAgent;
             }
         }
+
     }
 }

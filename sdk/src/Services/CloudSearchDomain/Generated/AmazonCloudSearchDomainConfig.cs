@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the cloudsearchdomain-2013-01-01.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.CloudSearchDomain.Internal;
 
 namespace Amazon.CloudSearchDomain
 {
@@ -32,7 +30,7 @@ namespace Amazon.CloudSearchDomain
     public partial class AmazonCloudSearchDomainConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.227");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.CloudSearchDomain
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloudSearchDomainDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "cloudsearch";
+            this.EndpointProvider = new AmazonCloudSearchDomainEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.CloudSearchDomain
                 return _userAgent;
             }
         }
+
     }
 }

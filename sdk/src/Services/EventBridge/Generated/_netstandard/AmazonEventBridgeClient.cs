@@ -244,7 +244,8 @@ namespace Amazon.EventBridge
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
         protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
         {
-            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new Amazon.EventBridge.Internal.AmazonEventBridgePostMarshallHandler());
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonEventBridgeEndpointResolver());
         }
         /// <summary>
         /// Capture metadata for the service.

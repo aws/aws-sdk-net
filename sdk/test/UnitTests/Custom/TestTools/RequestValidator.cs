@@ -59,7 +59,11 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
             ValidateHeaders(type.GetProperties());
             ValidateQueryParameters(type.GetProperties());
             ValidateUriParameters(type.GetProperties());
-            ValidateHostPrefixParameters(type.GetProperties());
+            // we override standard host prefix logic for S3 and S3 Control
+            if (ServiceModel.ServiceId != "S3" && ServiceModel.ServiceId != "S3 Control")
+            {
+                ValidateHostPrefixParameters(type.GetProperties());
+            }
             ValidateStreamingContent();
             ValidateBody();
         }

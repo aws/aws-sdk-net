@@ -44,7 +44,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (string.IsNullOrEmpty(getInventoryConfigurationRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "GetBucketInventoryConfigurationRequest.BucketName");
 
-			request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(getInventoryConfigurationRequest.BucketName));
+            request.ResourcePath = "/";
             request.AddSubResource("inventory");
             request.AddSubResource("id", getInventoryConfigurationRequest.InventoryId);
             request.UseQueryString = true;

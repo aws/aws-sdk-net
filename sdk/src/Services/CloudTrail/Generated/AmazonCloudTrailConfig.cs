@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the cloudtrail-2013-11-01.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.CloudTrail.Internal;
 
 namespace Amazon.CloudTrail
 {
@@ -32,7 +30,7 @@ namespace Amazon.CloudTrail
     public partial class AmazonCloudTrailConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.7.1");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.CloudTrail
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloudTrailDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "cloudtrail";
+            this.EndpointProvider = new AmazonCloudTrailEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.CloudTrail
                 return _userAgent;
             }
         }
+
     }
 }

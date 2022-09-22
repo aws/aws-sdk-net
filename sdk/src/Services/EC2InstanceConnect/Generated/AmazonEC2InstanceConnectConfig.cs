@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the ec2-instance-connect-2018-04-02.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.EC2InstanceConnect.Internal;
 
 namespace Amazon.EC2InstanceConnect
 {
@@ -32,7 +30,7 @@ namespace Amazon.EC2InstanceConnect
     public partial class AmazonEC2InstanceConnectConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.3.42");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.EC2InstanceConnect
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonEC2InstanceConnectDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "ec2-instance-connect";
+            this.EndpointProvider = new AmazonEC2InstanceConnectEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.EC2InstanceConnect
                 return _userAgent;
             }
         }
+
     }
 }

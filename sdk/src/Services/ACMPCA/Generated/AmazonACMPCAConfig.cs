@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the acm-pca-2017-08-22.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.ACMPCA.Internal;
 
 namespace Amazon.ACMPCA
 {
@@ -32,7 +30,7 @@ namespace Amazon.ACMPCA
     public partial class AmazonACMPCAConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.4.88");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.ACMPCA
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonACMPCADefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "acm-pca";
+            this.EndpointProvider = new AmazonACMPCAEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.ACMPCA
                 return _userAgent;
             }
         }
+
     }
 }

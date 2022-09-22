@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the forecast-2018-06-26.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.ForecastService.Internal;
 
 namespace Amazon.ForecastService
 {
@@ -32,7 +30,7 @@ namespace Amazon.ForecastService
     public partial class AmazonForecastServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.11.30");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.ForecastService
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonForecastServiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "forecast";
+            this.EndpointProvider = new AmazonForecastServiceEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.ForecastService
                 return _userAgent;
             }
         }
+
     }
 }

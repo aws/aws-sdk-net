@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the wisdom-2020-10-19.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.ConnectWisdomService.Internal;
 
 namespace Amazon.ConnectWisdomService
 {
@@ -32,7 +30,7 @@ namespace Amazon.ConnectWisdomService
     public partial class AmazonConnectWisdomServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.3.4");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.ConnectWisdomService
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonConnectWisdomServiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "wisdom";
+            this.EndpointProvider = new AmazonConnectWisdomServiceEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.ConnectWisdomService
                 return _userAgent;
             }
         }
+
     }
 }

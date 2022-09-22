@@ -299,8 +299,10 @@
 <#
     }
 #>
+
 </Project>
 
 <#+
     public Project Project { get; set; }
+    public ServiceConfiguration ServiceConfiguration { get; set; }
 #>

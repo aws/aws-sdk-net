@@ -184,25 +184,5 @@ namespace Amazon.SecurityToken
                 throw exception;
             }
         }
-
-        /// <summary>
-        /// Customizes the runtime pipeline by replacing the default retry handler with a custom one that retries certain STS errors.
-        /// </summary>
-        /// <param name="pipeline">The client runtime pipeline</param>
-        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
-        {
-            if(this.Config.RetryMode == RequestRetryMode.Legacy)
-            {
-                pipeline.ReplaceHandler<RetryHandler>(new RetryHandler(new SecurityTokenServiceRetryPolicy(this.Config)));
-            }
-            else if (this.Config.RetryMode == RequestRetryMode.Standard)
-            {
-                pipeline.ReplaceHandler<RetryHandler>(new RetryHandler(new SecurityTokenServiceStandardRetryPolicy(this.Config)));
-            }
-            else if (this.Config.RetryMode == RequestRetryMode.Adaptive)
-            {
-                pipeline.ReplaceHandler<RetryHandler>(new RetryHandler(new SecurityTokenServiceAdaptiveRetryPolicy(this.Config)));
-            }
-        }
     }
 }

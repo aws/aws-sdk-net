@@ -37,6 +37,8 @@ namespace ServiceClientGenerator
         /// </summary>
         public string ModelsFolder { get; set; }
 
+        public string TestModelsFolder { get; set; }
+
         /// <summary>
         /// The root folder beneath which the code for the SDK is arranged. Source code exists under
         /// a .\src folder, which is further partitioned into core runtime (.\Core) and service code 
@@ -94,6 +96,7 @@ namespace ServiceClientGenerator
             Manifest = Path.Combine("..", "..", "..", "ServiceModels", "_manifest.json");
             Versions = Path.Combine("..", "..", "..", "ServiceModels", "_sdk-versions.json");
             ModelsFolder = Path.Combine("..", "..", "..", "ServiceModels");
+            TestModelsFolder = Path.Combine("..", "..", "..", "TestServiceModels");
             SdkRootFolder = Path.Combine("..", "..", "..", "..", "sdk");
             ServiceModels = string.Empty; // process all services
             CompileCustomizations = true;

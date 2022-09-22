@@ -7,12 +7,10 @@
     AddLicenseHeader();
 #>
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using <#=this.Config.Namespace#>.Internal;
 
 namespace <#=this.Config.Namespace#>
 {
@@ -53,6 +51,14 @@ namespace <#=this.Config.Namespace#>
 <#
             }
 #>
+<#
+            if (this.Config.EndpointsRuleSet != null)
+            {
+#>
+            this.EndpointProvider = new Amazon<#=this.Config.ClassName#>EndpointProvider();
+<#
+            }
+#>
         }
 
         /// <summary>
@@ -87,5 +93,15 @@ namespace <#=this.Config.Namespace#>
                 return _userAgent;
             }
         }
+
+<# if (this.Config.EndpointsRuleSet != null)
+       foreach(var parameter in this.Config.ServiceModel.ClientContextParameters) {
+#>
+        /// <summary>
+        /// <#=parameter.documentation#>
+        /// </summary>
+        public <#=parameter.nativeType#> <#=parameter.name#> { get; set; }
+
+<#}#>
     }
 }

@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the medialive-2017-10-14.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.MediaLive.Internal;
 
 namespace Amazon.MediaLive
 {
@@ -32,7 +30,7 @@ namespace Amazon.MediaLive
     public partial class AmazonMediaLiveConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.13.4");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.MediaLive
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMediaLiveDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "medialive";
+            this.EndpointProvider = new AmazonMediaLiveEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.MediaLive
                 return _userAgent;
             }
         }
+
     }
 }

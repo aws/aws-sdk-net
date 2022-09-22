@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the service-quotas-2019-06-24.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.ServiceQuotas.Internal;
 
 namespace Amazon.ServiceQuotas
 {
@@ -32,7 +30,7 @@ namespace Amazon.ServiceQuotas
     public partial class AmazonServiceQuotasConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.225");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.ServiceQuotas
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonServiceQuotasDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "servicequotas";
+            this.EndpointProvider = new AmazonServiceQuotasEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.ServiceQuotas
                 return _userAgent;
             }
         }
+
     }
 }

@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the mturk-requester-2017-01-17.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.MTurk.Internal;
 
 namespace Amazon.MTurk
 {
@@ -32,7 +30,7 @@ namespace Amazon.MTurk
     public partial class AmazonMTurkConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.226");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.MTurk
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMTurkDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "mturk-requester";
+            this.EndpointProvider = new AmazonMTurkEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.MTurk
                 return _userAgent;
             }
         }
+
     }
 }

@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the codestar-connections-2019-12-01.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.CodeStarconnections.Internal;
 
 namespace Amazon.CodeStarconnections
 {
@@ -32,7 +30,7 @@ namespace Amazon.CodeStarconnections
     public partial class AmazonCodeStarconnectionsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.214");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.CodeStarconnections
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCodeStarconnectionsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "codestar-connections";
+            this.EndpointProvider = new AmazonCodeStarconnectionsEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.CodeStarconnections
                 return _userAgent;
             }
         }
+
     }
 }

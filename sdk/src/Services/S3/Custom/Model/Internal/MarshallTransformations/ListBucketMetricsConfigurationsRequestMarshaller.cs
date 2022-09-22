@@ -44,7 +44,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (string.IsNullOrEmpty(listBucketMetricsConfigurationRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "ListBucketMetricsConfigurationsRequest.BucketName");
 
-			request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(listBucketMetricsConfigurationRequest.BucketName));
+            request.ResourcePath = "/";
             request.AddSubResource("metrics");
             if (listBucketMetricsConfigurationRequest.IsSetContinuationToken())
             {

@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the redshift-2012-12-01.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.Redshift.Internal;
 
 namespace Amazon.Redshift
 {
@@ -32,7 +30,7 @@ namespace Amazon.Redshift
     public partial class AmazonRedshiftConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.17.47");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.Redshift
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonRedshiftDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "redshift";
+            this.EndpointProvider = new AmazonRedshiftEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.Redshift
                 return _userAgent;
             }
         }
+
     }
 }

@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the elastictranscoder-2012-09-25.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.ElasticTranscoder.Internal;
 
 namespace Amazon.ElasticTranscoder
 {
@@ -32,7 +30,7 @@ namespace Amazon.ElasticTranscoder
     public partial class AmazonElasticTranscoderConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.225");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.ElasticTranscoder
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonElasticTranscoderDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "elastictranscoder";
+            this.EndpointProvider = new AmazonElasticTranscoderEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.ElasticTranscoder
                 return _userAgent;
             }
         }
+
     }
 }

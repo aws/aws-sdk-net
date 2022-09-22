@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the kinesisanalyticsv2-2018-05-23.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.KinesisAnalyticsV2.Internal;
 
 namespace Amazon.KinesisAnalyticsV2
 {
@@ -32,7 +30,7 @@ namespace Amazon.KinesisAnalyticsV2
     public partial class AmazonKinesisAnalyticsV2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.5.144");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.KinesisAnalyticsV2
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonKinesisAnalyticsV2DefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "kinesisanalytics";
+            this.EndpointProvider = new AmazonKinesisAnalyticsV2EndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.KinesisAnalyticsV2
                 return _userAgent;
             }
         }
+
     }
 }

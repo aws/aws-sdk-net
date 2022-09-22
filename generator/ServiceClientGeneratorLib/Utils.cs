@@ -150,5 +150,26 @@ namespace ServiceClientGenerator
                 ? null
                 : data.ToString();
         }
+
+        public static List<string> GetServiceDirectories(GeneratorOptions options)
+        {
+            var serviceDirectories = new List<string>();
+            if (string.IsNullOrEmpty(options.ServiceModels))
+            {
+                serviceDirectories.AddRange(Directory.GetDirectories(options.ModelsFolder));
+                serviceDirectories.AddRange(Directory.GetDirectories(options.TestModelsFolder));
+            }
+            else
+            {
+                var services = options.ServiceModels.Split(';');
+                // only get specified models folders
+                foreach (var service in services)
+                {
+                    serviceDirectories.AddRange(Directory.GetDirectories(options.ModelsFolder, service));
+                    serviceDirectories.AddRange(Directory.GetDirectories(options.TestModelsFolder, service));
+                }
+            }
+            return serviceDirectories;
+        }
     }
 }

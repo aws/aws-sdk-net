@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the greengrass-2017-06-07.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.Greengrass.Internal;
 
 namespace Amazon.Greengrass
 {
@@ -32,7 +30,7 @@ namespace Amazon.Greengrass
     public partial class AmazonGreengrassConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.3");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.Greengrass
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonGreengrassDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "greengrass";
+            this.EndpointProvider = new AmazonGreengrassEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.Greengrass
                 return _userAgent;
             }
         }
+
     }
 }

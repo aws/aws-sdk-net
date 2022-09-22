@@ -103,10 +103,10 @@ namespace AWSSDK.UnitTests
             {
                 Bucket = outpostAccessPointName,
             };
-            var exception = Assert.ThrowsException<AmazonS3ControlException>(() => {
+            var exception = Assert.ThrowsException<AmazonClientException>(() => {
                 S3ControlArnTestUtils.RunMockRequest(getBucketRequest, GetBucketRequestMarshaller.Instance, s3ControlConfig);
             });
-            Assert.AreEqual("AccountId can only contain alphanumeric characters and dashes and must be between 1 and 63 characters long.", exception.Message);
+            Assert.AreEqual("AccountId is required but not set", exception.Message);
         }
 
         [TestMethod]
@@ -128,7 +128,7 @@ namespace AWSSDK.UnitTests
             {
                 S3ControlArnTestUtils.RunMockRequest(getAccessPointRequest, GetAccessPointRequestMarshaller.Instance, s3ControlConfig);
             });
-            Assert.AreEqual("Invalid ARN, Account ID not set", exception.Message);
+            Assert.AreEqual("Invalid ARN: missing account ID", exception.Message);
         }
 
         [TestMethod]
@@ -151,7 +151,7 @@ namespace AWSSDK.UnitTests
             {
                 S3ControlArnTestUtils.RunMockRequest(getAccessPointRequest, GetAccessPointRequestMarshaller.Instance, s3ControlConfig);
             });
-            Assert.AreEqual("Account ID mismatch, the Account ID cannot be specified in an ARN and in the accountId field", exception.Message);
+            Assert.AreEqual("Invalid ARN: the accountId specified in the ARN (`123456789012`) does not match the parameter (`923456789012`)", exception.Message);
         }
     }
 }

@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the connect-2017-08-08.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.Connect.Internal;
 
 namespace Amazon.Connect
 {
@@ -32,7 +30,7 @@ namespace Amazon.Connect
     public partial class AmazonConnectConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.27.1");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.Connect
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonConnectDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "connect";
+            this.EndpointProvider = new AmazonConnectEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.Connect
                 return _userAgent;
             }
         }
+
     }
 }

@@ -60,9 +60,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 			if (!intelligentTieringConfiguration.IsSetTieringList())
 				throw new System.ArgumentException("TieringList is a required property and must be set before making this call.", "IntelligentTieringConfiguration.TieringList");
 
-			request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(PutBucketIntelligentTieringConfigurationRequest.BucketName));
+            request.ResourcePath = "/";
 
-			request.AddSubResource("intelligent-tiering");
+            request.AddSubResource("intelligent-tiering");
 
 			request.AddSubResource("id", PutBucketIntelligentTieringConfigurationRequest.IntelligentTieringId);
 

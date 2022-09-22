@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the dataexchange-2017-07-25.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.DataExchange.Internal;
 
 namespace Amazon.DataExchange
 {
@@ -32,7 +30,7 @@ namespace Amazon.DataExchange
     public partial class AmazonDataExchangeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.5.25");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.DataExchange
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDataExchangeDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "dataexchange";
+            this.EndpointProvider = new AmazonDataExchangeEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.DataExchange
                 return _userAgent;
             }
         }
+
     }
 }

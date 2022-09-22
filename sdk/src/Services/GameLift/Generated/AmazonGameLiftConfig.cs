@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the gamelift-2015-10-01.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.GameLift.Internal;
 
 namespace Amazon.GameLift
 {
@@ -32,7 +30,7 @@ namespace Amazon.GameLift
     public partial class AmazonGameLiftConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.29");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.GameLift
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonGameLiftDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "gamelift";
+            this.EndpointProvider = new AmazonGameLiftEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.GameLift
                 return _userAgent;
             }
         }
+
     }
 }

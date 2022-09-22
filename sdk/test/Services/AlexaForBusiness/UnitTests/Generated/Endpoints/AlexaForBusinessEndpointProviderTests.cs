@@ -1,0 +1,139 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the alexaforbusiness-2017-11-09.normal.json service model.
+ */
+
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Amazon.Runtime;
+using Amazon.AlexaForBusiness.Endpoints;
+using Amazon.AlexaForBusiness.Internal;
+
+namespace AWSSDK_DotNet35.UnitTests.Endpoints
+{
+    [TestClass]
+    public partial class AlexaForBusinessEndpointsTests
+    {
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AlexaForBusiness")]
+        [Description("For region us-east-1 with FIPS enabled and DualStack enabled")]
+        public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_30e20e4a99b649b09940120ee73aff21_Test()
+        {
+            var parameters = new AlexaForBusinessEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = true;
+            var endpoint = new AmazonAlexaForBusinessEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://a4b-fips.us-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AlexaForBusiness")]
+        [Description("For region us-east-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_a85c31138b3846f9b7564eb01fae5625_Test()
+        {
+            var parameters = new AlexaForBusinessEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = true;
+            var endpoint = new AmazonAlexaForBusinessEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://a4b-fips.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AlexaForBusiness")]
+        [Description("For region us-east-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_3ca3626c08b643b8acac7210ea3f4dbe_Test()
+        {
+            var parameters = new AlexaForBusinessEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = false;
+            var endpoint = new AmazonAlexaForBusinessEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://a4b.us-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AlexaForBusiness")]
+        [Description("For region us-east-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_ab68aaae28374ab097b79ca6df5bf172_Test()
+        {
+            var parameters = new AlexaForBusinessEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            var endpoint = new AmazonAlexaForBusinessEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://a4b.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AlexaForBusiness")]
+        [Description("For custom endpoint with fips disabled and dualstack disabled")]
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_696b8660c74d42eaa290faee5e15a89a_Test()
+        {
+            var parameters = new AlexaForBusinessEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            parameters["Endpoint"] = "https://example.com";
+            var endpoint = new AmazonAlexaForBusinessEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://example.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AlexaForBusiness")]
+        [Description("For custom endpoint with fips enabled and dualstack disabled")]
+        [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: FIPS and custom endpoint are not supported")]
+        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_d6aafa495f7c4a5ab259ec9dc320509a_Test()
+        {
+            var parameters = new AlexaForBusinessEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = true;
+            parameters["Endpoint"] = "https://example.com";
+            var endpoint = new AmazonAlexaForBusinessEndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AlexaForBusiness")]
+        [Description("For custom endpoint with fips disabled and dualstack enabled")]
+        [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: Dualstack and custom endpoint are not supported")]
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_9ffd00261a894485b0b7ee6c24e4b4ff_Test()
+        {
+            var parameters = new AlexaForBusinessEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = false;
+            parameters["Endpoint"] = "https://example.com";
+            var endpoint = new AmazonAlexaForBusinessEndpointProvider().ResolveEndpoint(parameters);
+        }
+
+    }
+}

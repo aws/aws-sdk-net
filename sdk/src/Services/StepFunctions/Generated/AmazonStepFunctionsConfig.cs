@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the states-2016-11-23.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.StepFunctions.Internal;
 
 namespace Amazon.StepFunctions
 {
@@ -32,7 +30,7 @@ namespace Amazon.StepFunctions
     public partial class AmazonStepFunctionsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.225");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.StepFunctions
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonStepFunctionsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "states";
+            this.EndpointProvider = new AmazonStepFunctionsEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.StepFunctions
                 return _userAgent;
             }
         }
+
     }
 }

@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the gamesparks-2021-08-17.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.GameSparks.Internal;
 
 namespace Amazon.GameSparks
 {
@@ -32,7 +30,7 @@ namespace Amazon.GameSparks
     public partial class AmazonGameSparksConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.65");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.GameSparks
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonGameSparksDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "gamesparks";
+            this.EndpointProvider = new AmazonGameSparksEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.GameSparks
                 return _userAgent;
             }
         }
+
     }
 }

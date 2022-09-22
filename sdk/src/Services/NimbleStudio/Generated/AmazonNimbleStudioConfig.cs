@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the nimble-2020-08-01.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.NimbleStudio.Internal;
 
 namespace Amazon.NimbleStudio
 {
@@ -32,7 +30,7 @@ namespace Amazon.NimbleStudio
     public partial class AmazonNimbleStudioConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.6.14");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.NimbleStudio
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonNimbleStudioDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "nimble";
+            this.EndpointProvider = new AmazonNimbleStudioEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.NimbleStudio
                 return _userAgent;
             }
         }
+
     }
 }

@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the backup-2018-11-15.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.Backup.Internal;
 
 namespace Amazon.Backup
 {
@@ -32,7 +30,7 @@ namespace Amazon.Backup
     public partial class AmazonBackupConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.8.48");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.Backup
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonBackupDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "backup";
+            this.EndpointProvider = new AmazonBackupEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.Backup
                 return _userAgent;
             }
         }
+
     }
 }

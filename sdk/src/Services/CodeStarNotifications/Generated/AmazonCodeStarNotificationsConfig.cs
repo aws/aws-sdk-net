@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the codestar-notifications-2019-10-15.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.CodeStarNotifications.Internal;
 
 namespace Amazon.CodeStarNotifications
 {
@@ -32,7 +30,7 @@ namespace Amazon.CodeStarNotifications
     public partial class AmazonCodeStarNotificationsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.19");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.CodeStarNotifications
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCodeStarNotificationsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "codestar-notifications";
+            this.EndpointProvider = new AmazonCodeStarNotificationsEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.CodeStarNotifications
                 return _userAgent;
             }
         }
+
     }
 }

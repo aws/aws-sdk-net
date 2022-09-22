@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the events-2015-10-07.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.CloudWatchEvents.Internal;
 
 namespace Amazon.CloudWatchEvents
 {
@@ -32,7 +30,7 @@ namespace Amazon.CloudWatchEvents
     public partial class AmazonCloudWatchEventsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.4.170");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.CloudWatchEvents
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloudWatchEventsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "events";
+            this.EndpointProvider = new AmazonCloudWatchEventsEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.CloudWatchEvents
                 return _userAgent;
             }
         }
+
     }
 }

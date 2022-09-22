@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the iotfleetwise-2021-06-17.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.IoTFleetWise.Internal;
 
 namespace Amazon.IoTFleetWise
 {
@@ -32,7 +30,7 @@ namespace Amazon.IoTFleetWise
     public partial class AmazonIoTFleetWiseConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.13");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.IoTFleetWise
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIoTFleetWiseDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "iotfleetwise";
+            this.EndpointProvider = new AmazonIoTFleetWiseEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.IoTFleetWise
                 return _userAgent;
             }
         }
+
     }
 }

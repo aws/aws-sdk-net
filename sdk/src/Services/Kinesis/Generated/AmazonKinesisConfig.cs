@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the kinesis-2013-12-02.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.Kinesis.Internal;
 
 namespace Amazon.Kinesis
 {
@@ -32,7 +30,7 @@ namespace Amazon.Kinesis
     public partial class AmazonKinesisConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.122");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.Kinesis
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonKinesisDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "kinesis";
+            this.EndpointProvider = new AmazonKinesisEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.Kinesis
                 return _userAgent;
             }
         }
+
     }
 }

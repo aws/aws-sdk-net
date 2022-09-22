@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the waf-regional-2016-11-28.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.WAFRegional.Internal;
 
 namespace Amazon.WAFRegional
 {
@@ -32,7 +30,7 @@ namespace Amazon.WAFRegional
     public partial class AmazonWAFRegionalConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.225");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.WAFRegional
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonWAFRegionalDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "waf-regional";
+            this.EndpointProvider = new AmazonWAFRegionalEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.WAFRegional
                 return _userAgent;
             }
         }
+
     }
 }

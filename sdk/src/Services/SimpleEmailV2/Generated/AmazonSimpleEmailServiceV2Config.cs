@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the sesv2-2019-09-27.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.SimpleEmailV2.Internal;
 
 namespace Amazon.SimpleEmailV2
 {
@@ -32,7 +30,7 @@ namespace Amazon.SimpleEmailV2
     public partial class AmazonSimpleEmailServiceV2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.2");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.SimpleEmailV2
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSimpleEmailServiceV2DefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "ses";
+            this.EndpointProvider = new AmazonSimpleEmailServiceV2EndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.SimpleEmailV2
                 return _userAgent;
             }
         }
+
     }
 }

@@ -40,17 +40,16 @@ namespace AWSSDK.UnitTests
                 @"
                 | arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket | us-west-2 | none | no  | s3-outposts.us-west-2.amazonaws.com | x-amz-outpost-id: ""op-01234567890123456"", x-amz-account-id: ""123456789012"" | s3-outposts |
                 | arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket | us-west-2 | none | yes | s3-outposts.us-east-1.amazonaws.com | x-amz-outpost-id: ""op-01234567890123456"", x-amz-account-id: ""123456789012"" | s3-outposts |
-                | arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket | us-west-2 | none | no  | Invalid configuration, cross region Outpost bucket | - | - |
-                | arn:aws-cn:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:bucket:mybucket | us-west-2  | none | yes | Invalid configuration, cross partition Outpost bucket | - | - |
+                | arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket | us-west-2 | none | no  | Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false` | - | - |
+                | arn:aws-cn:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:bucket:mybucket | us-west-2  | none | yes | Client was configured for partition `aws` but ARN has `aws-cn` | - | - |
                 | arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket | us-gov-east-1  | none | yes | s3-outposts.us-gov-east-1.amazonaws.com | x-amz-outpost-id: ""op-01234567890123456"", x-amz-account-id: ""123456789012"" | s3-outposts |
                 | arn:aws-us-gov:s3-outposts:us-gov-west-1:123456789012:outpost:op-01234567890123456:bucket:mybucket | us-gov-west-1 | fips | no | s3-outposts-fips.us-gov-west-1.amazonaws.com |  x-amz-outpost-id: ""op-01234567890123456"", x-amz-account-id: ""123456789012"" | s3-outposts |
                 | arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket | us-gov-west-1 | fips | yes | s3-outposts-fips.us-gov-east-1.amazonaws.com |  x-amz-outpost-id: ""op-01234567890123456"", x-amz-account-id: ""123456789012"" | s3-outposts |
-                | arn:aws:s3-outposts:us-gov-west-1-fips:123456789012:outpost:op-01234567890123456:bucket:mybucket | n/a | none | n/a | Invalid ARN, FIPS region not allowed in ARN | - | - |
-                | arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket | us-west-2 | dualstack | n/a | Invalid configuration Outpost buckets do not support dualstack | - | - |
-                | arn:aws:s3-outposts:us-west-2:123456789012:outpost | us-west-2 | n/a  | n/a | Invalid ARN, outpost resource format is incorrect | - | - |
-                | arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456 | us-west-2 | n/a  | n/a | Invalid ARN, outpost resource format is incorrect | - | - |
-                | arn:aws:s3-outposts:us-west-2:123456789012:outpost:bucket | us-west-2 | n/a  | n/a | Invalid ARN, outpost resource format is incorrect | - | - |
-                | arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket | us-west-2 | n/a  | n/a | Invalid ARN, outpost resource format is incorrect | - | - |
+                | arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket | us-west-2 | dualstack | n/a | Invalid configuration: Outpost buckets do not support dual-stack | - | - |
+                | arn:aws:s3-outposts:us-west-2:123456789012:outpost | us-west-2 | n/a  | n/a | Invalid ARN: The Outpost Id was not set | - | - |
+                | arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456 | us-west-2 | n/a  | n/a | Invalid ARN: Expected a 4-component resource | - | - |
+                | arn:aws:s3-outposts:us-west-2:123456789012:outpost:bucket | us-west-2 | n/a  | n/a | Invalid ARN: Expected a 4-component resource | - | - |
+                | arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket | us-west-2 | n/a  | n/a | Invalid ARN: expected a bucket name | - | - |
                 ";
 
             var data = testDataFromSpecMarkDown
@@ -124,7 +123,7 @@ namespace AWSSDK.UnitTests
                 Assert.IsNull(s3Request);
                 Assert.IsNotNull(exception);
                 // reminder, expectedEndpoint also contains expected error message.
-                AssertExtensions.AssertAreSameWithEmbellishments(expectedEndpoint, exception.Message);
+                Assert.AreEqual(expectedEndpoint, exception.Message);
             }
         }
 
@@ -189,7 +188,7 @@ namespace AWSSDK.UnitTests
             {
                 S3ControlArnTestUtils.RunMockRequest(getBucketRequest, GetBucketRequestMarshaller.Instance, s3ControlConfig);
             });
-            Assert.AreEqual("Invalid configuration, cross region Outpost Bucket ARN", exception.Message);
+            Assert.AreEqual("Invalid configuration: region from ARN `us-gov-east-1` does not match client region `us-gov-west-1` and UseArnRegion is `false`", exception.Message);
         }
     }
 }

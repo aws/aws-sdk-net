@@ -172,6 +172,7 @@ namespace Amazon.S3
         /// Given this client configuration, returns the service url
         /// </summary>
         /// <returns>The service url in the form of a string</returns>
+        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint.")]
         public override string DetermineServiceURL()
         {
             if (this.ServiceURL != null)

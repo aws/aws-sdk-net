@@ -62,4 +62,5 @@
     <EmbeddedResource Include="Custom\TestTools\ComparerTest.json"/>
     <EmbeddedResource Include="..\Services\CloudFront\UnitTests\Custom\EmbeddedResource\sample.rsa.private.key.txt"/>
   </ItemGroup>
+
 </Project>

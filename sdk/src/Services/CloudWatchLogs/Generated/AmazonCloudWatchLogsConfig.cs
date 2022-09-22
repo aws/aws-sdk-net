@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the logs-2014-03-28.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.CloudWatchLogs.Internal;
 
 namespace Amazon.CloudWatchLogs
 {
@@ -32,7 +30,7 @@ namespace Amazon.CloudWatchLogs
     public partial class AmazonCloudWatchLogsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.120");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.CloudWatchLogs
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloudWatchLogsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "logs";
+            this.EndpointProvider = new AmazonCloudWatchLogsEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.CloudWatchLogs
                 return _userAgent;
             }
         }
+
     }
 }

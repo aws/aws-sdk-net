@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the lookoutmetrics-2017-07-25.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.LookoutMetrics.Internal;
 
 namespace Amazon.LookoutMetrics
 {
@@ -32,7 +30,7 @@ namespace Amazon.LookoutMetrics
     public partial class AmazonLookoutMetricsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.14.24");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.LookoutMetrics
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonLookoutMetricsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "lookoutmetrics";
+            this.EndpointProvider = new AmazonLookoutMetricsEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.LookoutMetrics
                 return _userAgent;
             }
         }
+
     }
 }

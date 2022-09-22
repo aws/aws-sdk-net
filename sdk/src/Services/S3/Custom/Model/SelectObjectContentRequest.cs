@@ -171,10 +171,21 @@ namespace Amazon.S3.Model
         /// <summary>
         /// The S3 Bucket.
         /// </summary>
-        public string Bucket { get; set; }
+        [Obsolete("Use BucketName instead")]
+        public string Bucket
+        {
+            get { return BucketName; }
+            set { BucketName = value; }
+        }
+
+        /// <summary>
+        /// The S3 Bucket name.
+        /// </summary>
+        public string BucketName { get; set; }
+
         private string expectedBucketOwner;
 
-        internal bool IsSetBucket() => Bucket != null;
+        internal bool IsSetBucket() => BucketName != null;
 
         /// <summary>
         /// The Object Key.

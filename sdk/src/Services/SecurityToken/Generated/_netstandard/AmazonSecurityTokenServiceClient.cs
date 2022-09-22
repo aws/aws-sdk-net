@@ -222,6 +222,27 @@ namespace Amazon.SecurityToken
         } 
 
         /// <summary>
+        /// Customizes the runtime pipeline.
+        /// </summary>
+        /// <param name="pipeline">Runtime pipeline for the current client.</param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            if(this.Config.RetryMode == RequestRetryMode.Legacy)
+            {
+                pipeline.ReplaceHandler<Amazon.Runtime.Internal.RetryHandler>(new Amazon.Runtime.Internal.RetryHandler(new SecurityTokenServiceRetryPolicy(this.Config)));
+            }
+            if(this.Config.RetryMode == RequestRetryMode.Standard)
+            {
+                pipeline.ReplaceHandler<Amazon.Runtime.Internal.RetryHandler>(new Amazon.Runtime.Internal.RetryHandler(new SecurityTokenServiceStandardRetryPolicy(this.Config)));
+            }
+            if(this.Config.RetryMode == RequestRetryMode.Adaptive)
+            {
+                pipeline.ReplaceHandler<Amazon.Runtime.Internal.RetryHandler>(new Amazon.Runtime.Internal.RetryHandler(new SecurityTokenServiceAdaptiveRetryPolicy(this.Config)));
+            }
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSecurityTokenServiceEndpointResolver());
+        }
+        /// <summary>
         /// Capture metadata for the service.
         /// </summary>
         protected override IServiceMetadata ServiceMetadata

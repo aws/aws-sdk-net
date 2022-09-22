@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the kinesisvideo-2017-09-30.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.KinesisVideo.Internal;
 
 namespace Amazon.KinesisVideo
 {
@@ -32,7 +30,7 @@ namespace Amazon.KinesisVideo
     public partial class AmazonKinesisVideoConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.72");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.KinesisVideo
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonKinesisVideoDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "kinesisvideo";
+            this.EndpointProvider = new AmazonKinesisVideoEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.KinesisVideo
                 return _userAgent;
             }
         }
+
     }
 }

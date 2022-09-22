@@ -160,7 +160,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                         client.PutObject(putObjectRequest);
                     };
 
-                    AssertExtensions.ExpectException(action, typeof(AmazonClientException));
+                    AssertExtensions.ExpectException(action, typeof(AmazonS3Exception));
                 }
                 finally
                 {

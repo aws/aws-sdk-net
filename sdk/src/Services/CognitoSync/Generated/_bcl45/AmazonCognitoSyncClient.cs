@@ -244,6 +244,8 @@ namespace Amazon.CognitoSync
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.CredentialsRetriever>();
             pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Marshaller>(new Amazon.CognitoSync.Internal.CognitoCredentialsRetriever(this.Credentials));
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCognitoSyncEndpointResolver());
         }    
         /// <summary>
         /// Capture metadata for the service.

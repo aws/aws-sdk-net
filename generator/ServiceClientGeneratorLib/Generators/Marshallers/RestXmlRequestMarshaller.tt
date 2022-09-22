@@ -42,7 +42,6 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 			request.HttpMethod = "<#=this.Operation.HttpMethod#>";
 <#
 	}
-	GetArnFieldNamesForOperation(this.Operation);
 	var requestStructure = this.Operation.RequestStructure;
     var payload = this.Operation.RequestPayloadMember;
     var shouldMarshallPayload = (payload != null && payload.IsStructure);
@@ -71,7 +70,8 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 			request.UseQueryString = true;
 <#	}	
 
-	if(!string.IsNullOrEmpty(this.Operation.EndpointHostPrefix))
+	// We skip endpoint host prefix handling for S3 and S3 Control as it's implemented by endpoint rules.
+	if(!string.IsNullOrEmpty(this.Operation.EndpointHostPrefix) && this.Config.ServiceId != "S3" && this.Config.ServiceId != "S3 Control")
 	{
 		ProcessEndpointHostPrefixMembers("publicRequest", this.Operation);
 	}

@@ -56,13 +56,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3Control");
             request.HttpMethod = "DELETE";
-            if (Arn.IsArn(publicRequest.Name))
-            {
-                publicRequest.AccountId = Amazon.S3Control.Internal.S3ArnUtils.GetAccountIdBasedOnArn(
-                    publicRequest.AccountId,
-                    Arn.Parse(publicRequest.Name).AccountId
-                );
-            }
         
             if (publicRequest.IsSetAccountId()) 
             {
@@ -74,16 +67,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             request.ResourcePath = "/v20180820/accesspoint/{name}";
 
 
-
-            var hostPrefixLabels = new
-            {
-                AccountId = StringUtils.FromString(publicRequest.AccountId),
-            };
-
-            if (!HostPrefixUtils.IsValidLabelValue(hostPrefixLabels.AccountId))
-                throw new AmazonS3ControlException("AccountId can only contain alphanumeric characters and dashes and must be between 1 and 63 characters long.");        
-            
-            request.HostPrefix = $"{hostPrefixLabels.AccountId}.";
             return request;
         }
         private static DeleteAccessPointRequestMarshaller _instance = new DeleteAccessPointRequestMarshaller();        

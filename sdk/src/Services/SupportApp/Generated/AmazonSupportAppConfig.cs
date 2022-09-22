@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the support-app-2021-08-20.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.SupportApp.Internal;
 
 namespace Amazon.SupportApp
 {
@@ -32,7 +30,7 @@ namespace Amazon.SupportApp
     public partial class AmazonSupportAppConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.1");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.SupportApp
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSupportAppDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "supportapp";
+            this.EndpointProvider = new AmazonSupportAppEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.SupportApp
                 return _userAgent;
             }
         }
+
     }
 }

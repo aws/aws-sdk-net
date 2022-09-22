@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the docdb-2014-10-31.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.DocDB.Internal;
 
 namespace Amazon.DocDB
 {
@@ -32,7 +30,7 @@ namespace Amazon.DocDB
     public partial class AmazonDocDBConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.4.42");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.DocDB
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDocDBDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "rds";
+            this.EndpointProvider = new AmazonDocDBEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.DocDB
                 return _userAgent;
             }
         }
+
     }
 }

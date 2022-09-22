@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the sts-2011-06-15.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.SecurityToken.Internal;
 
 namespace Amazon.SecurityToken
 {
@@ -32,7 +30,7 @@ namespace Amazon.SecurityToken
     public partial class AmazonSecurityTokenServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.218");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -45,6 +43,7 @@ namespace Amazon.SecurityToken
             this.AuthenticationServiceName = "sts";
             var region = FallbackRegionFactory.GetRegionEndpoint(false);
             this.RegionEndpoint = region ?? RegionEndpoint.USEast1;
+            this.EndpointProvider = new AmazonSecurityTokenServiceEndpointProvider();
         }
 
         /// <summary>
@@ -79,5 +78,6 @@ namespace Amazon.SecurityToken
                 return _userAgent;
             }
         }
+
     }
 }

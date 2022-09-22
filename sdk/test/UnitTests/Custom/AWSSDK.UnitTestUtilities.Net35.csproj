@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <Compile Remove="**\**" />
+    <Compile Include="EndpointsStandardLibraryTests.cs" />
     <Compile Include="Runtime\DeprecatedCodeTest.cs" />
     <Compile Include="Runtime\EC2InstanceMetadataServlet.cs" />
     <Compile Include="Runtime\HttpHandlerTests.cs" />

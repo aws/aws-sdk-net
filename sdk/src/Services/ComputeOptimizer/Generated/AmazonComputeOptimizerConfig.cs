@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the compute-optimizer-2019-11-01.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.ComputeOptimizer.Internal;
 
 namespace Amazon.ComputeOptimizer
 {
@@ -32,7 +30,7 @@ namespace Amazon.ComputeOptimizer
     public partial class AmazonComputeOptimizerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.5.113");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.ComputeOptimizer
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonComputeOptimizerDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "compute-optimizer";
+            this.EndpointProvider = new AmazonComputeOptimizerEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.ComputeOptimizer
                 return _userAgent;
             }
         }
+
     }
 }

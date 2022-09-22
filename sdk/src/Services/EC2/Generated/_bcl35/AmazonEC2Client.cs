@@ -287,7 +287,9 @@ namespace Amazon.EC2
             {
                 pipeline.ReplaceHandler<Amazon.Runtime.Internal.RetryHandler>(new Amazon.Runtime.Internal.RetryHandler(new Amazon.EC2.Internal.EC2AdaptiveRetryPolicy(this.Config)));
             }
-        }    
+            pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonEC2EndpointResolver());
+        }
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

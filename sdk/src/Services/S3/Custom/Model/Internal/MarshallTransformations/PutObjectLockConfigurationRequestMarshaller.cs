@@ -58,7 +58,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "AmazonS3");
             request.HttpMethod = "PUT";
-            string uriResourcePath = "/{Bucket}";
+            string uriResourcePath = "/";
             request.AddSubResource("object-lock");
 
             if (publicRequest.IsSetChecksumAlgorithm())
@@ -73,7 +73,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(publicRequest.ExpectedBucketOwner));
             if (!publicRequest.IsSetBucketName())
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "publicRequest.BucketName");
-            uriResourcePath = uriResourcePath.Replace("{Bucket}", StringUtils.FromString(publicRequest.BucketName));
             
 			request.ResourcePath = uriResourcePath;
 

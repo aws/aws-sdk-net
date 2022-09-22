@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the batch-2016-08-10.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.Batch.Internal;
 
 namespace Amazon.Batch
 {
@@ -32,7 +30,7 @@ namespace Amazon.Batch
     public partial class AmazonBatchConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.5.77");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.Batch
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonBatchDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "batch";
+            this.EndpointProvider = new AmazonBatchEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.Batch
                 return _userAgent;
             }
         }
+
     }
 }

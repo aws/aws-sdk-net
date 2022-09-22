@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the signer-2017-08-25.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.Signer.Internal;
 
 namespace Amazon.Signer
 {
@@ -32,7 +30,7 @@ namespace Amazon.Signer
     public partial class AmazonSignerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.225");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.Signer
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSignerDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "signer";
+            this.EndpointProvider = new AmazonSignerEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.Signer
                 return _userAgent;
             }
         }
+
     }
 }

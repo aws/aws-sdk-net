@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the dlm-2018-01-12.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.DLM.Internal;
 
 namespace Amazon.DLM
 {
@@ -32,7 +30,7 @@ namespace Amazon.DLM
     public partial class AmazonDLMConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.3.9");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.DLM
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDLMDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "dlm";
+            this.EndpointProvider = new AmazonDLMEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.DLM
                 return _userAgent;
             }
         }
+
     }
 }

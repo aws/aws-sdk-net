@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the appintegrations-2020-07-29.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.AppIntegrationsService.Internal;
 
 namespace Amazon.AppIntegrationsService
 {
@@ -32,7 +30,7 @@ namespace Amazon.AppIntegrationsService
     public partial class AmazonAppIntegrationsServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.153");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.AppIntegrationsService
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAppIntegrationsServiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "app-integrations";
+            this.EndpointProvider = new AmazonAppIntegrationsServiceEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.AppIntegrationsService
                 return _userAgent;
             }
         }
+
     }
 }

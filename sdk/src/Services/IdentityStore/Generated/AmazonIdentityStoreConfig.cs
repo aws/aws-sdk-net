@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the identitystore-2020-06-15.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.IdentityStore.Internal;
 
 namespace Amazon.IdentityStore
 {
@@ -32,7 +30,7 @@ namespace Amazon.IdentityStore
     public partial class AmazonIdentityStoreConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.28");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.IdentityStore
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIdentityStoreDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "identitystore";
+            this.EndpointProvider = new AmazonIdentityStoreEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.IdentityStore
                 return _userAgent;
             }
         }
+
     }
 }

@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the cloudhsm-2014-05-30.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.CloudHSM.Internal;
 
 namespace Amazon.CloudHSM
 {
@@ -32,7 +30,7 @@ namespace Amazon.CloudHSM
     public partial class AmazonCloudHSMConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.221");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.CloudHSM
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloudHSMDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "cloudhsm";
+            this.EndpointProvider = new AmazonCloudHSMEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.CloudHSM
                 return _userAgent;
             }
         }
+
     }
 }

@@ -12,6 +12,8 @@ using StructureGenerator = ServiceClientGenerator.Generators.SourceFiles.Structu
 
 using Json.LitJson;
 using System.Collections.Concurrent;
+using ServiceClientGenerator.Generators.Endpoints;
+using ServiceClientGenerator.Endpoints.Partitions;
 
 namespace ServiceClientGenerator
 {
@@ -86,7 +88,7 @@ namespace ServiceClientGenerator
         private const string MobileSubFolder = "_mobile";
         private const string UnitySubFolder = "_unity";
         private string PaginatorsSubFolder = string.Format("Model{0}_bcl45+netstandard", Path.DirectorySeparatorChar);
-        private string MarshallingTestsSubFolder = string.Format("UnitTests{0}Generated{0}Marshalling", Path.DirectorySeparatorChar);
+        private string GeneratedTestsSubFolder = string.Format("UnitTests{0}Generated", Path.DirectorySeparatorChar);
         private string CustomizationTestsSubFolder = string.Format("UnitTests{0}Generated{0}Customizations", Path.DirectorySeparatorChar);
         private string PaginatorTestsSubFolder = string.Format("UnitTests{0}Generated{0}_bcl45+netstandard{0}Paginators", Path.DirectorySeparatorChar);
 
@@ -100,7 +102,6 @@ namespace ServiceClientGenerator
         public const string CommonTestSubFoldername = "Common";
         public const string UnitTestsSubFoldername = "UnitTests";
         public const string IntegrationTestsSubFolderName = "IntegrationTests";
-
 
         // Records any new project files we produce as part of generation. If this collection is
         // not empty when we've processed all source, we must update the solution files to add
@@ -189,6 +190,17 @@ namespace ServiceClientGenerator
             ExecuteGenerator(new ServiceConfig(), "Amazon" + Configuration.ClassName + "Config.cs");
             ExecuteGenerator(new ServiceMetadata(), "Amazon" + Configuration.ClassName + "Metadata.cs", "Internal");
 
+            if (Configuration.EndpointsRuleSet != null)
+            {
+                ExecuteGenerator(new EndpointParameters(), "Amazon" + Configuration.ClassName + "EndpointParameters.cs");
+                ExecuteGenerator(new EndpointProvider(), "Amazon" + Configuration.ClassName + "EndpointProvider.cs", "Internal");
+                ExecuteGenerator(new EndpointResolver(), "Amazon" + Configuration.ClassName + "EndpointResolver.cs", "Internal");
+            }
+            if (Configuration.EndpointTests != null)
+            {
+                ExecuteTestGenerator(new EndpointProviderTests(), Configuration.ClassName + "EndpointProviderTests.cs", "Endpoints");
+            }
+
             if (Configuration.Namespace == "Amazon.S3")
             {
                 ExecuteProjectFileGenerators();
@@ -250,22 +262,22 @@ namespace ServiceClientGenerator
 
             // Generate tests based on the type of request it is
             if (Configuration.ServiceModel.Type == ServiceType.Json)
-                ExecuteTestGenerator(new JsonMarshallingTests(), fileName);
+                ExecuteTestGenerator(new JsonMarshallingTests(), fileName, "Marshalling");
             else if (Configuration.ServiceModel.Type == ServiceType.Query)
             {
                 if (Configuration.ServiceModel.IsEC2Protocol)
-                    ExecuteTestGenerator(new AWSQueryEC2MarshallingTests(), fileName);
+                    ExecuteTestGenerator(new AWSQueryEC2MarshallingTests(), fileName, "Marshalling");
                 else
-                    ExecuteTestGenerator(new AWSQueryMarshallingTests(), fileName);
+                    ExecuteTestGenerator(new AWSQueryMarshallingTests(), fileName, "Marshalling");
             }
             else if (Configuration.ServiceModel.Type == ServiceType.Rest_Xml || Configuration.ServiceModel.Type == ServiceType.Rest_Json)
-                ExecuteTestGenerator(new RestMarshallingTests(), fileName);
+                ExecuteTestGenerator(new RestMarshallingTests(), fileName, "Marshalling");
 
             //Generate endpoint discovery tests for classes that have an endpoint operation
             if(Configuration.ServiceModel.FindEndpointOperation() != null)
             {
                 fileName = string.Format("{0}EndpointDiscoveryMarshallingTests.cs", Configuration.ClassName);
-                ExecuteTestGenerator(new EndpointDiscoveryMarshallingTests(), fileName);
+                ExecuteTestGenerator(new EndpointDiscoveryMarshallingTests(), fileName, "Marshalling");
             }
 
             // Test that simple customizations were generated correctly
@@ -772,6 +784,30 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
+        /// Generates partial Partition class used to retrieve partition-specific data.
+        /// </summary>
+        public static void GeneratePartitions(GeneratorOptions options)
+        {
+            Console.WriteLine("Generate Partition class.");
+            var coreFilesRoot = Path.Combine(options.SdkRootFolder, "src", "core");
+            var writeToFolder = Path.Combine(coreFilesRoot, "Amazon.Runtime", "Internal", "Endpoints", "StandardLibrary");
+            var partitionsFile = Path.Combine(coreFilesRoot, "partitions.json");
+
+            var json = File.ReadAllText(partitionsFile);
+            var partitions = JsonMapper.ToObject<Partitions>(json);
+
+            var generator = new PartitionsTemplate
+            {
+                Session = new Dictionary<string, object> {
+                    ["partitions"] = partitions
+                }
+            };
+            generator.Initialize();
+            var text = generator.TransformText();
+            WriteFile(writeToFolder, null, "Partition.generated.cs", text);
+        }
+
+        /// <summary>
         /// Method to create/update legacy unit test projects
         /// </summary>
         public static void UpdateUnitTestProjects(GenerationManifest generationManifest, GeneratorOptions options)
@@ -1128,7 +1164,7 @@ namespace ServiceClientGenerator
         {
             generator.Config = this.Configuration;
             var text = generator.TransformText();
-            var outputSubFolder = subNamespace == null ? MarshallingTestsSubFolder : Path.Combine(MarshallingTestsSubFolder, subNamespace);
+            var outputSubFolder = subNamespace == null ? GeneratedTestsSubFolder : Path.Combine(GeneratedTestsSubFolder, subNamespace);
             WriteFile(ServiceUnitTestFilesRoot, outputSubFolder, fileName, text);
         }
 

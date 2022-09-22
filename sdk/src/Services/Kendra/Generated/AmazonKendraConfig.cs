@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the kendra-2019-02-03.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.Kendra.Internal;
 
 namespace Amazon.Kendra
 {
@@ -32,7 +30,7 @@ namespace Amazon.Kendra
     public partial class AmazonKendraConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.27.11");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.Kendra
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonKendraDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "kendra";
+            this.EndpointProvider = new AmazonKendraEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.Kendra
                 return _userAgent;
             }
         }
+
     }
 }

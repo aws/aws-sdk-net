@@ -53,7 +53,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (string.IsNullOrEmpty(putPutPublicAccessBlockRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "putPutPublicAccessBlockRequest.BucketName");
 
-			request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(putPutPublicAccessBlockRequest.BucketName));
+            request.ResourcePath = "/";
 
             request.AddSubResource("publicAccessBlock");
 

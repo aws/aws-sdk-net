@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the cognito-idp-2016-04-18.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.CognitoIdentityProvider.Internal;
 
 namespace Amazon.CognitoIdentityProvider
 {
@@ -32,7 +30,7 @@ namespace Amazon.CognitoIdentityProvider
     public partial class AmazonCognitoIdentityProviderConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.6.25");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.CognitoIdentityProvider
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCognitoIdentityProviderDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "cognito-idp";
+            this.EndpointProvider = new AmazonCognitoIdentityProviderEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.CognitoIdentityProvider
                 return _userAgent;
             }
         }
+
     }
 }

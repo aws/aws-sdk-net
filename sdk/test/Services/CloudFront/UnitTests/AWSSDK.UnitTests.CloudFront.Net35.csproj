@@ -54,4 +54,5 @@
   <ItemGroup>
     <EmbeddedResource Include="Custom\EmbeddedResource\*"/>
   </ItemGroup>
+
 </Project>

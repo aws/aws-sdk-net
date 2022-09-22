@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the controltower-2018-05-10.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.ControlTower.Internal;
 
 namespace Amazon.ControlTower
 {
@@ -32,7 +30,7 @@ namespace Amazon.ControlTower
     public partial class AmazonControlTowerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.26");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.ControlTower
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonControlTowerDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "controltower";
+            this.EndpointProvider = new AmazonControlTowerEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.ControlTower
                 return _userAgent;
             }
         }
+
     }
 }

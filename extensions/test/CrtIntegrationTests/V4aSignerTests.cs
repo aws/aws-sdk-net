@@ -177,6 +177,9 @@ namespace CrtIntegrationTests
             var signer = new CrtAWS4aSigner();
 
             var request = BuildHeaderRequestToSign(resourcePath);
+
+            request.UseDoubleEncoding = service != "s3";
+
             var clientConfig = BuildSigningClientConfig(service);
 
             var result = signer.SignRequest(request, clientConfig, null, SigningTestCredentials);

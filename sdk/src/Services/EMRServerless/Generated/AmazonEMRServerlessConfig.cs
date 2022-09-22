@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the emr-serverless-2021-07-13.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.EMRServerless.Internal;
 
 namespace Amazon.EMRServerless
 {
@@ -32,7 +30,7 @@ namespace Amazon.EMRServerless
     public partial class AmazonEMRServerlessConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.10");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.EMRServerless
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonEMRServerlessDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "emr-serverless";
+            this.EndpointProvider = new AmazonEMRServerlessEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.EMRServerless
                 return _userAgent;
             }
         }
+
     }
 }

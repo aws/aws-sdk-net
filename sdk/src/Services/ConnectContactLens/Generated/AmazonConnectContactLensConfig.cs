@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the connect-contact-lens-2020-08-21.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.ConnectContactLens.Internal;
 
 namespace Amazon.ConnectContactLens
 {
@@ -32,7 +30,7 @@ namespace Amazon.ConnectContactLens
     public partial class AmazonConnectContactLensConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.225");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.ConnectContactLens
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonConnectContactLensDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "connect";
+            this.EndpointProvider = new AmazonConnectContactLensEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.ConnectContactLens
                 return _userAgent;
             }
         }
+
     }
 }

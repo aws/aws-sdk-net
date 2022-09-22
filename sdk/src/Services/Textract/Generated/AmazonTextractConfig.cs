@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the textract-2018-06-27.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.Textract.Internal;
 
 namespace Amazon.Textract
 {
@@ -32,7 +30,7 @@ namespace Amazon.Textract
     public partial class AmazonTextractConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.5.76");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.Textract
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonTextractDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "textract";
+            this.EndpointProvider = new AmazonTextractEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.Textract
                 return _userAgent;
             }
         }
+
     }
 }

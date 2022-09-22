@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.StorageGateway.Internal;
 
 namespace Amazon.StorageGateway
 {
@@ -32,7 +30,7 @@ namespace Amazon.StorageGateway
     public partial class AmazonStorageGatewayConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.5.75");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.StorageGateway
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonStorageGatewayDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "storagegateway";
+            this.EndpointProvider = new AmazonStorageGatewayEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.StorageGateway
                 return _userAgent;
             }
         }
+
     }
 }

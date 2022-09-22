@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the inspector2-2020-06-08.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.Inspector2.Internal;
 
 namespace Amazon.Inspector2
 {
@@ -32,7 +30,7 @@ namespace Amazon.Inspector2
     public partial class AmazonInspector2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.25");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.Inspector2
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonInspector2DefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "inspector2";
+            this.EndpointProvider = new AmazonInspector2EndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.Inspector2
                 return _userAgent;
             }
         }
+
     }
 }

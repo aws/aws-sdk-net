@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the application-insights-2018-11-25.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.ApplicationInsights.Internal;
 
 namespace Amazon.ApplicationInsights
 {
@@ -32,7 +30,7 @@ namespace Amazon.ApplicationInsights
     public partial class AmazonApplicationInsightsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.3.58");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.ApplicationInsights
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonApplicationInsightsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "applicationinsights";
+            this.EndpointProvider = new AmazonApplicationInsightsEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.ApplicationInsights
                 return _userAgent;
             }
         }
+
     }
 }

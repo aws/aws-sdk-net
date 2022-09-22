@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the connectcampaigns-2021-01-30.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.ConnectCampaignService.Internal;
 
 namespace Amazon.ConnectCampaignService
 {
@@ -32,7 +30,7 @@ namespace Amazon.ConnectCampaignService
     public partial class AmazonConnectCampaignServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.32");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.ConnectCampaignService
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonConnectCampaignServiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "connect-campaigns";
+            this.EndpointProvider = new AmazonConnectCampaignServiceEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.ConnectCampaignService
                 return _userAgent;
             }
         }
+
     }
 }

@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the comprehendmedical-2018-10-30.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.ComprehendMedical.Internal;
 
 namespace Amazon.ComprehendMedical
 {
@@ -32,7 +30,7 @@ namespace Amazon.ComprehendMedical
     public partial class AmazonComprehendMedicalConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.119");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.ComprehendMedical
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonComprehendMedicalDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "comprehendmedical";
+            this.EndpointProvider = new AmazonComprehendMedicalEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.ComprehendMedical
                 return _userAgent;
             }
         }
+
     }
 }

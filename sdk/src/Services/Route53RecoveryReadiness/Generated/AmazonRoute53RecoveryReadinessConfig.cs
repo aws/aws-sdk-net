@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the route53-recovery-readiness-2019-12-02.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.Route53RecoveryReadiness.Internal;
 
 namespace Amazon.Route53RecoveryReadiness
 {
@@ -32,7 +30,7 @@ namespace Amazon.Route53RecoveryReadiness
     public partial class AmazonRoute53RecoveryReadinessConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.181");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.Route53RecoveryReadiness
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonRoute53RecoveryReadinessDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "route53-recovery-readiness";
+            this.EndpointProvider = new AmazonRoute53RecoveryReadinessEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.Route53RecoveryReadiness
                 return _userAgent;
             }
         }
+
     }
 }

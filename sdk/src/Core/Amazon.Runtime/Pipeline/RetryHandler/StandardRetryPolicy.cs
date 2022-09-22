@@ -64,8 +64,7 @@ namespace Amazon.Runtime.Internal
             this.MaxRetries = config.MaxErrorRetry;
             if (config.ThrottleRetries)
             {
-                string serviceURL = config.DetermineServiceURL();
-                RetryCapacity = CapacityManagerInstance.GetRetryCapacity(serviceURL);
+                RetryCapacity = CapacityManagerInstance.GetRetryCapacity(GetRetryCapacityKey(config));
             } 
         }
 

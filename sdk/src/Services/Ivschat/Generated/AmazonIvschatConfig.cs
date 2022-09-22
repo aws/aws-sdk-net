@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the ivschat-2020-07-14.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.Ivschat.Internal;
 
 namespace Amazon.Ivschat
 {
@@ -32,7 +30,7 @@ namespace Amazon.Ivschat
     public partial class AmazonIvschatConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.76");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.Ivschat
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIvschatDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "ivschat";
+            this.EndpointProvider = new AmazonIvschatEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.Ivschat
                 return _userAgent;
             }
         }
+
     }
 }

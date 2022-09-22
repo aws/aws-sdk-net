@@ -70,9 +70,17 @@ namespace AWSSDK.UnitTests
             var modelsFolder = @"..\..\..\ServiceModels";
             var compileCustomizations = true;
 
+            GeneratorOptions options = new GeneratorOptions
+            {
+                ModelsFolder = modelsFolder,
+                Manifest = manifestPath,
+                Versions = versionsPath,
+                CompileCustomizations = compileCustomizations
+            };
+
             if (compileCustomizations) // Compile all servicename.customizations*.json files into one json file in bin
-                CustomizationCompiler.CompileServiceCustomizations(modelsFolder);
-            var configs = ServiceClientGenerator.GenerationManifest.Load(manifestPath, versionsPath, modelsFolder).ServiceConfigurations.ToList();
+                CustomizationCompiler.CompileServiceCustomizations(options);
+            var configs = ServiceClientGenerator.GenerationManifest.Load(options).ServiceConfigurations.ToList();
             var baseClientType = typeof(AmazonServiceClient);
 
             foreach(var config in configs)

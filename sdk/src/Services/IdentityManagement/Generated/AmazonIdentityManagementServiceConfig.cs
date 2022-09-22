@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the iam-2010-05-08.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.IdentityManagement.Internal;
 
 namespace Amazon.IdentityManagement
 {
@@ -32,7 +30,7 @@ namespace Amazon.IdentityManagement
     public partial class AmazonIdentityManagementServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.206");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -45,6 +43,7 @@ namespace Amazon.IdentityManagement
             this.AuthenticationServiceName = "iam";
             var region = FallbackRegionFactory.GetRegionEndpoint(false);
             this.RegionEndpoint = region ?? RegionEndpoint.USEast1;
+            this.EndpointProvider = new AmazonIdentityManagementServiceEndpointProvider();
         }
 
         /// <summary>
@@ -79,5 +78,6 @@ namespace Amazon.IdentityManagement
                 return _userAgent;
             }
         }
+
     }
 }

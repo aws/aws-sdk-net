@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the ssm-incidents-2018-05-10.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.SSMIncidents.Internal;
 
 namespace Amazon.SSMIncidents
 {
@@ -32,7 +30,7 @@ namespace Amazon.SSMIncidents
     public partial class AmazonSSMIncidentsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.7.4");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.SSMIncidents
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSSMIncidentsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "ssm-incidents";
+            this.EndpointProvider = new AmazonSSMIncidentsEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.SSMIncidents
                 return _userAgent;
             }
         }
+
     }
 }

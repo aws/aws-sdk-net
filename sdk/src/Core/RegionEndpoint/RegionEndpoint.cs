@@ -19,12 +19,10 @@
  *
  */
 using Amazon.Internal;
-using Amazon.Runtime.Internal.Auth;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
-using System.Linq;
 using System.Threading;
 using ThirdParty.Json.LitJson;
 
@@ -46,11 +44,6 @@ namespace Amazon
         /// For signing purposes. Map is keyed by region SystemName.
         /// </summary>
         private static Dictionary<string, RegionEndpoint> _hashRegionEndpointOverride = new Dictionary<string, RegionEndpoint>();
-
-        static RegionEndpoint()
-        {
-            ResetRegionEndpointOverride();
-        }
 
         /// <summary>
         /// Enumerate through all the regions.
@@ -83,6 +76,7 @@ namespace Amazon
         /// </summary>
         /// <param name="regionEndpoint">The region endpoint to find the possible override for</param>
         /// <returns></returns>
+        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint.")]
         public static RegionEndpoint GetRegionEndpointOverride(RegionEndpoint regionEndpoint)
         {
             try
@@ -123,6 +117,7 @@ namespace Amazon
         /// </summary>
         /// <param name="stream">Stream containing an Endpoints manifest to reload in the SDK.
         /// Pass null in to reset the SDK, so that it uses its built-in manifest instead.</param>
+        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint.")]
         public static void Reload(Stream stream)
         {
             if (stream == null)
@@ -184,6 +179,7 @@ namespace Amazon
         /// </summary>
         /// <param name="partition">partition</param>
         /// <returns>DNS suffix for the given partition, empty string if a matching partition was not found</returns>
+        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint.")]
         public static string GetDnsSuffixForPartition(string partition)
         {
             return RegionEndpointProvider.GetDnsSuffixForPartition(partition);
@@ -330,6 +326,7 @@ namespace Amazon
         /// endpoint will point to a valid service endpoint.
         /// </param>
         /// <returns></returns>
+        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint.")]
         public Endpoint GetEndpointForService(string serviceName)
         {
             return GetEndpointForService(serviceName, new GetEndpointForServiceOptions());
@@ -371,6 +368,7 @@ namespace Amazon
         /// <param name="options">
         /// Specify additional requirements on the <see cref="Endpoint"/> to be returned.
         /// </param>
+        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint.")]
         public Endpoint GetEndpointForService(string serviceName, GetEndpointForServiceOptions options)
         {
             return InternedRegionEndpoint.GetEndpointForService(serviceName, options);
@@ -384,6 +382,7 @@ namespace Amazon
         /// <summary>
         /// This class defines an endpoints hostname and which protocols it supports.
         /// </summary>
+        [Obsolete("This class is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint.")]
         public class Endpoint
         {
             internal Endpoint(string hostname, string authregion, string signatureVersionOverride, string dnsSuffix, bool deprecated)

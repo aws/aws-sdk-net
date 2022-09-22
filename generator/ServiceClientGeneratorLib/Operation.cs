@@ -1,4 +1,5 @@
 ﻿using Json.LitJson;
+using ServiceClientGenerator.Endpoints;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -938,5 +939,30 @@ namespace ServiceClientGenerator
         public bool UnsupportedPaginatorConfig { get; set; }
 
         private static ConcurrentDictionary<string, bool> _checkedService = new ConcurrentDictionary<string, bool>();
+
+        /// <summary>
+        /// Gets list of static context parameters, used on operation to drive endpoint resolution
+        /// </summary>
+        public List<StaticContextParameter> StaticContextParameters
+        {
+            get
+            {
+                var result = new List<StaticContextParameter>();
+                var parameters = data.SafeGet("staticContextParams");
+                if (parameters != null)
+                {
+                    foreach (var param in parameters.GetMap())
+                    {
+                        result.Add(new StaticContextParameter
+                        {
+                            name = param.Key,
+                            value = param.Value["value"]
+                        });
+                    }
+                }
+                return result;
+            }
+        }
+
     }
 }

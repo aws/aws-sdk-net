@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the m2-2021-04-28.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.MainframeModernization.Internal;
 
 namespace Amazon.MainframeModernization
 {
@@ -32,7 +30,7 @@ namespace Amazon.MainframeModernization
     public partial class AmazonMainframeModernizationConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.55");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.MainframeModernization
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMainframeModernizationDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "m2";
+            this.EndpointProvider = new AmazonMainframeModernizationEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.MainframeModernization
                 return _userAgent;
             }
         }
+
     }
 }

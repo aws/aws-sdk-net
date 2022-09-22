@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the rekognition-2016-06-27.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.Rekognition.Internal;
 
 namespace Amazon.Rekognition
 {
@@ -32,7 +30,7 @@ namespace Amazon.Rekognition
     public partial class AmazonRekognitionConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.10.32");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.Rekognition
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonRekognitionDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "rekognition";
+            this.EndpointProvider = new AmazonRekognitionEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.Rekognition
                 return _userAgent;
             }
         }
+
     }
 }

@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the migration-hub-refactor-spaces-2021-10-26.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.MigrationHubRefactorSpaces.Internal;
 
 namespace Amazon.MigrationHubRefactorSpaces
 {
@@ -32,7 +30,7 @@ namespace Amazon.MigrationHubRefactorSpaces
     public partial class AmazonMigrationHubRefactorSpacesConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.51");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.MigrationHubRefactorSpaces
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMigrationHubRefactorSpacesDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "refactor-spaces";
+            this.EndpointProvider = new AmazonMigrationHubRefactorSpacesEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.MigrationHubRefactorSpaces
                 return _userAgent;
             }
         }
+
     }
 }

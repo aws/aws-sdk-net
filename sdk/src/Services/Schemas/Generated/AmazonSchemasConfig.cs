@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the schemas-2019-12-02.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.Schemas.Internal;
 
 namespace Amazon.Schemas
 {
@@ -32,7 +30,7 @@ namespace Amazon.Schemas
     public partial class AmazonSchemasConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.147");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.Schemas
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSchemasDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "schemas";
+            this.EndpointProvider = new AmazonSchemasEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.Schemas
                 return _userAgent;
             }
         }
+
     }
 }

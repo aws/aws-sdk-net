@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the kms-2014-11-01.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.KeyManagementService.Internal;
 
 namespace Amazon.KeyManagementService
 {
@@ -32,7 +30,7 @@ namespace Amazon.KeyManagementService
     public partial class AmazonKeyManagementServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.4.43");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.KeyManagementService
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonKeyManagementServiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "kms";
+            this.EndpointProvider = new AmazonKeyManagementServiceEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.KeyManagementService
                 return _userAgent;
             }
         }
+
     }
 }

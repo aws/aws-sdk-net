@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the bearer-token-auth-test-2022-03-21.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.BearerTokenAuthTest.Internal;
 
 namespace Amazon.BearerTokenAuthTest
 {
@@ -77,5 +75,6 @@ namespace Amazon.BearerTokenAuthTest
                 return _userAgent;
             }
         }
+
     }
 }

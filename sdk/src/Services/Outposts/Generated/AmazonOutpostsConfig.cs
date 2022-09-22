@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the outposts-2019-12-03.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.Outposts.Internal;
 
 namespace Amazon.Outposts
 {
@@ -32,7 +30,7 @@ namespace Amazon.Outposts
     public partial class AmazonOutpostsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.12.7");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.Outposts
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonOutpostsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "outposts";
+            this.EndpointProvider = new AmazonOutpostsEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.Outposts
                 return _userAgent;
             }
         }
+
     }
 }

@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the chime-sdk-media-pipelines-2021-07-15.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.ChimeSDKMediaPipelines.Internal;
 
 namespace Amazon.ChimeSDKMediaPipelines
 {
@@ -32,7 +30,7 @@ namespace Amazon.ChimeSDKMediaPipelines
     public partial class AmazonChimeSDKMediaPipelinesConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.32");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.ChimeSDKMediaPipelines
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonChimeSDKMediaPipelinesDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "chime";
+            this.EndpointProvider = new AmazonChimeSDKMediaPipelinesEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.ChimeSDKMediaPipelines
                 return _userAgent;
             }
         }
+
     }
 }

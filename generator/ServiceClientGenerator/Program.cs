@@ -33,14 +33,15 @@ namespace ServiceClientGenerator
             try
             {
                 if (options.CompileCustomizations) // Compile all servicename.customizations*.json files into one json file in bin
-                    CustomizationCompiler.CompileServiceCustomizations(options.ModelsFolder);
+                    CustomizationCompiler.CompileServiceCustomizations(options);
 
-                var generationManifest = GenerationManifest.Load(options.Manifest, options.Versions, options.ModelsFolder);
+                var generationManifest = GenerationManifest.Load(options);
 
                 if (string.IsNullOrEmpty(options.SelfServiceModel))
                 {
                     ConcurrentDictionary<string, string> generatedFiles = new ConcurrentDictionary<string, string>();
                     GeneratorDriver.GenerateCoreProjects(generationManifest, options);
+                    GeneratorDriver.GeneratePartitions(options);
                     Parallel.ForEach(generationManifest.ServiceConfigurations, new ParallelOptions { MaxDegreeOfParallelism = 16 }, (serviceConfig, state) =>
                     {
                         if (modelsToProcess.Any() && !modelsToProcess.Contains(serviceConfig.ModelName))

@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the sagemaker-2017-07-24.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.SageMaker.Internal;
 
 namespace Amazon.SageMaker
 {
@@ -32,7 +30,7 @@ namespace Amazon.SageMaker
     public partial class AmazonSageMakerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.54.2");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.SageMaker
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSageMakerDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "sagemaker";
+            this.EndpointProvider = new AmazonSageMakerEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.SageMaker
                 return _userAgent;
             }
         }
+
     }
 }

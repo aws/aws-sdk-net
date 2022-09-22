@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the finspace-2021-03-12.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.Finspace.Internal;
 
 namespace Amazon.Finspace
 {
@@ -32,7 +30,7 @@ namespace Amazon.Finspace
     public partial class AmazonFinspaceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.134");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.Finspace
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonFinspaceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "finspace";
+            this.EndpointProvider = new AmazonFinspaceEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.Finspace
                 return _userAgent;
             }
         }
+
     }
 }

@@ -53,7 +53,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
             request.HttpMethod = "GET";
-            string uriResourcePath = "/{Bucket}/{Key+}";
+            string uriResourcePath = "/{Key+}";
             request.AddSubResource("attributes");
 
             if (publicRequest.IsSetExpectedBucketOwner())
@@ -82,7 +82,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             if (!publicRequest.IsSetBucketName())
                 throw new AmazonS3Exception("Request object does not have required field BucketName set");
-            uriResourcePath = uriResourcePath.Replace("{Bucket}", StringUtils.FromString(publicRequest.BucketName));
 
             if (!publicRequest.IsSetKey())
                 throw new AmazonS3Exception("Request object does not have required field Key set");

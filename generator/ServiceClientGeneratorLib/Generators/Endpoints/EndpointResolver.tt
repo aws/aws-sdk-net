@@ -1,0 +1,106 @@
+﻿<#@ template language="C#" inherits="BaseGenerator" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="ServiceClientGenerator.Endpoints" #>
+<#
+    AddLicenseHeader();
+#>
+
+using System;
+using Amazon.<#=Config.ServiceNameRoot#>.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Endpoints;
+using Amazon.Util;
+using <#=Config.Namespace#>.Endpoints;
+
+#pragma warning disable 1591
+
+namespace <#=Config.Namespace#>.Internal
+{
+    /// <summary>
+    /// Amazon <#=this.Config.ClassName#> endpoint resolver.
+    /// Custom PipelineHandler responsible for resolving endpoint and setting authentication parameters for <#=this.Config.ClassName#> service requests.
+    /// Collects values for <#=this.Config.ClassName#>EndpointParameters and then tries to resolve endpoint by calling 
+    /// ResolveEndpoint method on GlobalEndpoints.Provider if present, otherwise uses <#=this.Config.ClassName#>EndpointProvider.
+    /// Responsible for setting authentication and http headers provided by resolved endpoint.
+    /// </summary>
+    public class Amazon<#=Config.ClassName#>EndpointResolver : BaseEndpointResolver
+    {
+        protected override void ServiceSpecificHandler(IExecutionContext executionContext, EndpointParameters parameters)
+        {
+<# if (Config.ServiceId == "S3") {#>
+            // Special handling of SigV2 for S3
+            if (parameters["Bucket"] != null)
+            {
+                // SigV2 support, CanonicalResourcePrefix required for proper signing
+                executionContext.RequestContext.Request.CanonicalResourcePrefix = "/" + parameters["Bucket"];
+            }
+
+            // Special handling of SigV2
+            if (executionContext.RequestContext.ClientConfig.SignatureVersion == "2")
+            {
+                executionContext.RequestContext.Request.SignatureVersion = SignatureVersion.SigV2;
+            }
+
+            // If the marshalled request has the SSE header and it is set to KMS, force SigV4 for this request.
+            // Current operations that may set this header: CopyObject, CopyPart, InitiateMultipart, PutObject
+            string sseHeaderValue;
+            if (executionContext.RequestContext.Request.Headers.TryGetValue(HeaderKeys.XAmzServerSideEncryptionHeader, out sseHeaderValue) &&
+                string.Equals(sseHeaderValue, ServerSideEncryptionMethod.AWSKMS.Value, StringComparison.Ordinal))
+            {
+                executionContext.RequestContext.Request.SignatureVersion = SignatureVersion.SigV4;
+            }
+<# } #>
+
+<# if (!this.dontInjectHostPrefixForServices.Contains(Config.ServiceId)) {#>
+            InjectHostPrefix(executionContext.RequestContext);
+<# } #>
+        }
+
+        protected override EndpointParameters MapEndpointsParameters(IRequestContext requestContext)
+        {
+            var config = (Amazon<#=Config.ClassName#>Config)requestContext.ClientConfig;
+            var result = new <#=Config.ClassName#>EndpointParameters();
+<#=this.AssignBuiltins()#>
+<#=this.AssignClientContext()#>
+<#if (Config.EndpointsRuleSet.parameters.ContainsKey("Region")) {#>
+            // The region needs to be determined from the ServiceURL if not set.
+            var regionEndpoint = config.RegionEndpoint;
+            if (regionEndpoint == null && !string.IsNullOrEmpty(config.ServiceURL))
+            {
+                var regionName = AWSSDKUtils.DetermineRegion(config.ServiceURL);
+                result.Region = RegionEndpoint.GetBySystemName(regionName).SystemName;
+            }
+
+            // To support legacy endpoint overridding rules in the endpoints.json
+            if (result.Region == "us-east-1-regional")
+            {
+                result.Region = "us-east-1";
+            }
+
+            // Use AlternateEndpoint region override if set
+            if (requestContext.Request.AlternateEndpoint != null)
+            {
+                result.Region = requestContext.Request.AlternateEndpoint.SystemName;
+            }
+
+<#}#>
+<#if (Config.ClassName == "S3") {#>
+            // Special handling of GetPreSignedUrlRequest
+            if (requestContext.Request.RequestName == "GetPreSignedUrlRequest")
+            {
+                var request = (GetPreSignedUrlRequest)requestContext.Request.OriginalRequest;
+                result.Bucket = request.BucketName;
+                return result;
+            }
+<#}#>
+
+            // Assign staticContextParams and contextParam per operation
+<#=this.AssignOperationContext()#>
+            return result;
+        }
+    }
+}

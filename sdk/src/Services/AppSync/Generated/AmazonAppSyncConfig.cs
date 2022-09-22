@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the appsync-2017-07-25.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.AppSync.Internal;
 
 namespace Amazon.AppSync
 {
@@ -32,7 +30,7 @@ namespace Amazon.AppSync
     public partial class AmazonAppSyncConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.5.41");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.AppSync
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAppSyncDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "appsync";
+            this.EndpointProvider = new AmazonAppSyncEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.AppSync
                 return _userAgent;
             }
         }
+
     }
 }

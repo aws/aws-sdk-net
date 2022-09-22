@@ -213,8 +213,7 @@ namespace Amazon.Runtime.Internal.Auth
                                                        canonicalParameters,
                                                        bodyHash,
                                                        request.PathResources,
-                                                       request.MarshallerVersion,
-                                                       serviceSigningName);
+                                                       request.UseDoubleEncoding);
             if (metrics != null)
                 metrics.AddProperty(Metric.CanonicalRequest, canonicalRequest);
 
@@ -715,7 +714,7 @@ namespace Amazon.Runtime.Internal.Auth
                                                     string canonicalQueryString,
                                                     string precomputedBodyHash)
         {
-            return CanonicalizeRequest(endpoint, resourcePath, httpMethod, sortedHeaders, canonicalQueryString, precomputedBodyHash, null, 1);
+            return CanonicalizeRequest(endpoint, resourcePath, httpMethod, sortedHeaders, canonicalQueryString, precomputedBodyHash, null);
         }
 
         /// <summary>
@@ -731,7 +730,6 @@ namespace Amazon.Runtime.Internal.Auth
         /// The hash of the binary request body if present. If not supplied, the routine
         /// will look for the hash as a header on the request.
         /// </param>
-        /// <param name="marshallerVersion">The version of the marshaller that constructed the request object.</param>
         /// <returns>Canonicalised request as a string</returns>
         protected static string CanonicalizeRequest(Uri endpoint,
                                                     string resourcePath,
@@ -739,8 +737,7 @@ namespace Amazon.Runtime.Internal.Auth
                                                     IDictionary<string, string> sortedHeaders,
                                                     string canonicalQueryString,
                                                     string precomputedBodyHash,
-                                                    IDictionary<string, string> pathResources,
-                                                    int marshallerVersion)
+                                                    IDictionary<string, string> pathResources)
         {
             return CanonicalizeRequestHelper(endpoint,
                 resourcePath,
@@ -749,7 +746,6 @@ namespace Amazon.Runtime.Internal.Auth
                 canonicalQueryString,
                 precomputedBodyHash,
                 pathResources,
-                marshallerVersion,
                 true);
         }
 
@@ -766,8 +762,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// The hash of the binary request body if present. If not supplied, the routine
         /// will look for the hash as a header on the request.
         /// </param>
-        /// <param name="marshallerVersion">The version of the marshaller that constructed the request object.</param>
-        /// <param name="service">The service being called for the request</param>
+        /// <param name="doubleEncode">Encode "/" when canonicalize resource path</param>
         /// <returns>Canonicalised request as a string</returns>
         protected static string CanonicalizeRequest(Uri endpoint,
                                                     string resourcePath,
@@ -776,8 +771,7 @@ namespace Amazon.Runtime.Internal.Auth
                                                     string canonicalQueryString,
                                                     string precomputedBodyHash,
                                                     IDictionary<string, string> pathResources,
-                                                    int marshallerVersion,
-                                                    string service)
+                                                    bool doubleEncode)
         {
             return CanonicalizeRequestHelper(endpoint,
                 resourcePath,
@@ -786,8 +780,7 @@ namespace Amazon.Runtime.Internal.Auth
                 canonicalQueryString,
                 precomputedBodyHash,
                 pathResources,
-                marshallerVersion,
-                !(service == "s3"));
+                doubleEncode);
         }
 
         private static string CanonicalizeRequestHelper(Uri endpoint,
@@ -797,12 +790,11 @@ namespace Amazon.Runtime.Internal.Auth
                                                     string canonicalQueryString,
                                                     string precomputedBodyHash,
                                                     IDictionary<string, string> pathResources,
-                                                    int marshallerVersion,
-                                                    bool detectPreEncode)
+                                                    bool doubleEncode)
         {
             var canonicalRequest = new StringBuilder();
             canonicalRequest.AppendFormat("{0}\n", httpMethod);
-            canonicalRequest.AppendFormat("{0}\n", AWSSDKUtils.CanonicalizeResourcePath(endpoint, resourcePath, detectPreEncode, pathResources, marshallerVersion));
+            canonicalRequest.AppendFormat("{0}\n", AWSSDKUtils.CanonicalizeResourcePathV2(endpoint, resourcePath, doubleEncode, pathResources));
             canonicalRequest.AppendFormat("{0}\n", canonicalQueryString);
 
             canonicalRequest.AppendFormat("{0}\n", CanonicalizeHeaders(sortedHeaders));
@@ -1254,8 +1246,7 @@ namespace Amazon.Runtime.Internal.Auth
                                                        canonicalQueryParams,
                                                        ServicesUsingUnsignedPayload.Contains(service) ? UnsignedPayload : EmptyBodySha256,
                                                        request.PathResources,
-                                                       request.MarshallerVersion,
-                                                       service);
+                                                       request.UseDoubleEncoding);
             if (metrics != null)
                 metrics.AddProperty(Metric.CanonicalRequest, canonicalRequest);
 

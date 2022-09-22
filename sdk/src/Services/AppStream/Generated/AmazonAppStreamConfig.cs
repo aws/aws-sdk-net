@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the appstream-2016-12-01.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.AppStream.Internal;
 
 namespace Amazon.AppStream
 {
@@ -32,7 +30,7 @@ namespace Amazon.AppStream
     public partial class AmazonAppStreamConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.6.49");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.AppStream
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAppStreamDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "appstream";
+            this.EndpointProvider = new AmazonAppStreamEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.AppStream
                 return _userAgent;
             }
         }
+
     }
 }

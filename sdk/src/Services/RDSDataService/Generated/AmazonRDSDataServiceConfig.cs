@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the rds-data-2018-08-01.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.RDSDataService.Internal;
 
 namespace Amazon.RDSDataService
 {
@@ -32,7 +30,7 @@ namespace Amazon.RDSDataService
     public partial class AmazonRDSDataServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.76");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.RDSDataService
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonRDSDataServiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "rds-data";
+            this.EndpointProvider = new AmazonRDSDataServiceEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.RDSDataService
                 return _userAgent;
             }
         }
+
     }
 }

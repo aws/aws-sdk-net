@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the devicefarm-2015-06-23.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.DeviceFarm.Internal;
 
 namespace Amazon.DeviceFarm
 {
@@ -32,7 +30,7 @@ namespace Amazon.DeviceFarm
     public partial class AmazonDeviceFarmConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.15");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.DeviceFarm
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDeviceFarmDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "devicefarm";
+            this.EndpointProvider = new AmazonDeviceFarmEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.DeviceFarm
                 return _userAgent;
             }
         }
+
     }
 }

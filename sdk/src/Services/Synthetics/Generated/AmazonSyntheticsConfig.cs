@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the synthetics-2017-10-11.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.Synthetics.Internal;
 
 namespace Amazon.Synthetics
 {
@@ -32,7 +30,7 @@ namespace Amazon.Synthetics
     public partial class AmazonSyntheticsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.6.48");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.Synthetics
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSyntheticsDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "synthetics";
+            this.EndpointProvider = new AmazonSyntheticsEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.Synthetics
                 return _userAgent;
             }
         }
+
     }
 }

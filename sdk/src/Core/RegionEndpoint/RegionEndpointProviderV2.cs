@@ -38,6 +38,7 @@ using System.Linq;
 
 namespace Amazon.Internal
 {
+    [Obsolete("This class is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint.")]
     public class RegionEndpointProviderV2 : IRegionEndpointProvider
     {
         /// <summary>

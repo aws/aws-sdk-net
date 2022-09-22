@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the autoscaling-plans-2018-01-06.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.AutoScalingPlans.Internal;
 
 namespace Amazon.AutoScalingPlans
 {
@@ -32,7 +30,7 @@ namespace Amazon.AutoScalingPlans
     public partial class AmazonAutoScalingPlansConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.225");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.AutoScalingPlans
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAutoScalingPlansDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "autoscaling-plans";
+            this.EndpointProvider = new AmazonAutoScalingPlansEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.AutoScalingPlans
                 return _userAgent;
             }
         }
+
     }
 }

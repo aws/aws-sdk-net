@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the sso-oidc-2019-06-10.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.SSOOIDC.Internal;
 
 namespace Amazon.SSOOIDC
 {
@@ -32,7 +30,7 @@ namespace Amazon.SSOOIDC
     public partial class AmazonSSOOIDCConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.29");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.SSOOIDC
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSSOOIDCDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "awsssooidc";
+            this.EndpointProvider = new AmazonSSOOIDCEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.SSOOIDC
                 return _userAgent;
             }
         }
+
     }
 }

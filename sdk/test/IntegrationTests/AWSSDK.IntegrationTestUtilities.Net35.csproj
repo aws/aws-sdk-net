@@ -30,6 +30,10 @@
     <None Remove="Config\**" />
     <None Remove="obj/**" />
   </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Tests\ListObjectsResponse.xml" />
+  </ItemGroup>
   
   <ItemGroup>
     <PackageReference Include="MSTest.TestAdapter" Version="1.1.18" />

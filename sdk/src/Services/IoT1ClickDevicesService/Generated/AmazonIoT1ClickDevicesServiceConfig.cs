@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the iot1click-devices-2018-05-14.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.IoT1ClickDevicesService.Internal;
 
 namespace Amazon.IoT1ClickDevicesService
 {
@@ -32,7 +30,7 @@ namespace Amazon.IoT1ClickDevicesService
     public partial class AmazonIoT1ClickDevicesServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.225");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.IoT1ClickDevicesService
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIoT1ClickDevicesServiceDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "iot1click";
+            this.EndpointProvider = new AmazonIoT1ClickDevicesServiceEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.IoT1ClickDevicesService
                 return _userAgent;
             }
         }
+
     }
 }

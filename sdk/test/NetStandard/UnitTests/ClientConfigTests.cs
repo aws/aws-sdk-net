@@ -55,7 +55,8 @@ namespace UnitTests
             "UseAlternateUserAgentHeader",
             "IsMaxErrorRetrySet",
             "RetryMode",
-            "FastFailRequests"
+            "FastFailRequests",
+            "EndpointProvider"
         };
 
         [Fact]

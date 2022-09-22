@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the snow-device-management-2021-08-04.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.SnowDeviceManagement.Internal;
 
 namespace Amazon.SnowDeviceManagement
 {
@@ -32,7 +30,7 @@ namespace Amazon.SnowDeviceManagement
     public partial class AmazonSnowDeviceManagementConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.175");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.SnowDeviceManagement
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSnowDeviceManagementDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "snow-device-management";
+            this.EndpointProvider = new AmazonSnowDeviceManagementEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.SnowDeviceManagement
                 return _userAgent;
             }
         }
+
     }
 }

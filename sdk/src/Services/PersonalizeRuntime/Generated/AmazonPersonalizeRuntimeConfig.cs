@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the personalize-runtime-2018-05-22.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.PersonalizeRuntime.Internal;
 
 namespace Amazon.PersonalizeRuntime
 {
@@ -32,7 +30,7 @@ namespace Amazon.PersonalizeRuntime
     public partial class AmazonPersonalizeRuntimeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.33");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.PersonalizeRuntime
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonPersonalizeRuntimeDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "personalize";
+            this.EndpointProvider = new AmazonPersonalizeRuntimeEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.PersonalizeRuntime
                 return _userAgent;
             }
         }
+
     }
 }

@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the connectcases-2022-10-03.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.ConnectCases.Internal;
 
 namespace Amazon.ConnectCases
 {
@@ -32,7 +30,7 @@ namespace Amazon.ConnectCases
     public partial class AmazonConnectCasesConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.7");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.ConnectCases
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonConnectCasesDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "cases";
+            this.EndpointProvider = new AmazonConnectCasesEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.ConnectCases
                 return _userAgent;
             }
         }
+
     }
 }

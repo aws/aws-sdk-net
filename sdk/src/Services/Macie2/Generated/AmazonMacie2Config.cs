@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the macie2-2020-01-01.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.Macie2.Internal;
 
 namespace Amazon.Macie2
 {
@@ -32,7 +30,7 @@ namespace Amazon.Macie2
     public partial class AmazonMacie2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.10.27");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.Macie2
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMacie2DefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "macie2";
+            this.EndpointProvider = new AmazonMacie2EndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.Macie2
                 return _userAgent;
             }
         }
+
     }
 }

@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the iotevents-data-2018-10-23.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.IoTEventsData.Internal;
 
 namespace Amazon.IoTEventsData
 {
@@ -32,7 +30,7 @@ namespace Amazon.IoTEventsData
     public partial class AmazonIoTEventsDataConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.66");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.IoTEventsData
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIoTEventsDataDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "ioteventsdata";
+            this.EndpointProvider = new AmazonIoTEventsDataEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.IoTEventsData
                 return _userAgent;
             }
         }
+
     }
 }

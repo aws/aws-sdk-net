@@ -74,8 +74,8 @@ namespace Amazon.Runtime.Internal
         protected void PreInvoke(IExecutionContext executionContext)
         {
             var requestContext = executionContext.RequestContext;
-            if(requestContext.Request.Endpoint == null)
-                requestContext.Request.Endpoint = DetermineEndpoint(executionContext.RequestContext);
+            if (requestContext.Request.Endpoint == null)
+                requestContext.Request.Endpoint = DetermineEndpoint(requestContext);
         }
 
         /// <summary>

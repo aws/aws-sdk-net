@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the servicecatalog-2015-12-10.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.ServiceCatalog.Internal;
 
 namespace Amazon.ServiceCatalog
 {
@@ -32,7 +30,7 @@ namespace Amazon.ServiceCatalog
     public partial class AmazonServiceCatalogConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.83");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.ServiceCatalog
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonServiceCatalogDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "servicecatalog";
+            this.EndpointProvider = new AmazonServiceCatalogEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.ServiceCatalog
                 return _userAgent;
             }
         }
+
     }
 }

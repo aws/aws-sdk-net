@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the migrationhuborchestrator-2021-08-28.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.MigrationHubOrchestrator.Internal;
 
 namespace Amazon.MigrationHubOrchestrator
 {
@@ -32,7 +30,7 @@ namespace Amazon.MigrationHubOrchestrator
     public partial class AmazonMigrationHubOrchestratorConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.10");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.MigrationHubOrchestrator
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMigrationHubOrchestratorDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "migrationhub-orchestrator";
+            this.EndpointProvider = new AmazonMigrationHubOrchestratorEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.MigrationHubOrchestrator
                 return _userAgent;
             }
         }
+
     }
 }

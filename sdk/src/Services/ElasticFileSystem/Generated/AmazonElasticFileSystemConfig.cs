@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the elasticfilesystem-2015-02-01.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.ElasticFileSystem.Internal;
 
 namespace Amazon.ElasticFileSystem
 {
@@ -32,7 +30,7 @@ namespace Amazon.ElasticFileSystem
     public partial class AmazonElasticFileSystemConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.5.78");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.ElasticFileSystem
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonElasticFileSystemDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "elasticfilesystem";
+            this.EndpointProvider = new AmazonElasticFileSystemEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.ElasticFileSystem
                 return _userAgent;
             }
         }
+
     }
 }

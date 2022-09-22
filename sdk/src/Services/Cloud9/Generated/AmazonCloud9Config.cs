@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the cloud9-2017-09-23.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.Cloud9.Internal;
 
 namespace Amazon.Cloud9
 {
@@ -32,7 +30,7 @@ namespace Amazon.Cloud9
     public partial class AmazonCloud9Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.2.173");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.Cloud9
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloud9DefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "cloud9";
+            this.EndpointProvider = new AmazonCloud9EndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.Cloud9
                 return _userAgent;
             }
         }
+
     }
 }

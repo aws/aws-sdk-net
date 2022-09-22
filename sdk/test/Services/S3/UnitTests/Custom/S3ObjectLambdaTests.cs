@@ -34,34 +34,34 @@ namespace AWSSDK.UnitTests
                 |arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:mybanner | us-west-2 | none | no  | null | mybanner-123456789012.s3-object-lambda.us-west-2.amazonaws.com|
                 |arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner | us-west-2 | none | yes | null | mybanner-123456789012.s3-object-lambda.us-east-1.amazonaws.com|
                 |arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner | s3-external-1 | none | yes | null | mybanner-123456789012.s3-object-lambda.us-east-1.amazonaws.com|
-                |arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner | s3-external-1 | none | no | null | Invalid configuration, client region is not a regional endpoint|
+                |arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner | s3-external-1 | none | no | null | Invalid configuration: region from ARN `us-east-1` does not match client region `s3-external-1` and UseArnRegion is `false`|
                 |arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner | aws-global | none | yes | null | mybanner-123456789012.s3-object-lambda.us-east-1.amazonaws.com|
-                |arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner | aws-global | none | no | null | Invalid configuration, client region is not a regional endpoint|
-                |arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner | us-west-2 | none | no  | null | Invalid configuration, cross region Access Point ARN|
-                |arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint/mybanner | us-west-2 | dualstack | yes | null | Invalid configuration Banner Access Points do not support dualstack|
-                |arn:aws-cn:s3-object-lambda:cn-north-1:123456789012:accesspoint/mybanner     | us-west-2  | none | yes | null | Invalid configuration, cross partition Access Point ARN|
+                |arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner | aws-global | none | no | null | Invalid configuration: region from ARN `us-east-1` does not match client region `aws-global` and UseArnRegion is `false`|
+                |arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner | us-west-2 | none | no  | null | Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`|
+                |arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint/mybanner | us-west-2 | dualstack | yes | null | S3 Object Lambda does not support Dual-stack|
+                |arn:aws-cn:s3-object-lambda:cn-north-1:123456789012:accesspoint/mybanner     | us-west-2  | none | yes | null | Client was configured for partition `aws` but ARN (`arn:aws-cn:s3-object-lambda:cn-north-1:123456789012:accesspoint/mybanner`) has `aws-cn`|
                 |arn:aws-cn:s3-object-lambda:cn-north-1:123456789012:accesspoint/mybanner     | cn-north-1 | none | yes | null | mybanner-123456789012.s3-object-lambda.cn-north-1.amazonaws.com.cn|
                 |arn:aws-cn:s3-object-lambda:cn-north-1:123456789012:accesspoint/mybanner     | cn-north-1 | none | no  | null | mybanner-123456789012.s3-object-lambda.cn-north-1.amazonaws.com.cn|
                 |arn:aws-cn:s3-object-lambda:cn-northwest-1:123456789012:accesspoint/mybanner | cn-north-1 | none | yes | null | mybanner-123456789012.s3-object-lambda.cn-northwest-1.amazonaws.com.cn|
                 |arn:aws-us-gov:s3-object-lambda:us-gov-east-1:123456789012:accesspoint/mybanner | us-gov-east-1  | none      | yes | null | mybanner-123456789012.s3-object-lambda.us-gov-east-1.amazonaws.com|
                 |arn:aws-us-gov:s3-object-lambda:us-gov-east-1:123456789012:accesspoint/mybanner | fips-us-gov-east-1 | none | no | null | mybanner-123456789012.s3-object-lambda-fips.us-gov-east-1.amazonaws.com|
                 |arn:aws-us-gov:s3-object-lambda:us-gov-east-1:123456789012:accesspoint/mybanner | fips-us-gov-east-1 | none | yes | null | mybanner-123456789012.s3-object-lambda-fips.us-gov-east-1.amazonaws.com|
-                |arn:aws-us-gov:s3-object-lambda:us-gov-west-1:123456789012:accesspoint/mybanner | fips-us-gov-east-1 | none | no | null | Invalid configuration, cross region Access Point ARN|
+                |arn:aws-us-gov:s3-object-lambda:us-gov-west-1:123456789012:accesspoint/mybanner | fips-us-gov-east-1 | none | no | null | Invalid configuration: region from ARN `us-gov-west-1` does not match client region `us-gov-east-1` and UseArnRegion is `false`|
                 |arn:aws-us-gov:s3-object-lambda:us-gov-west-1:123456789012:accesspoint/mybanner | fips-us-gov-east-1 | none | yes | null | mybanner-123456789012.s3-object-lambda-fips.us-gov-west-1.amazonaws.com |
                 |arn:aws-us-gov:s3-object-lambda:us-gov-east-1:123456789012:accesspoint/mybanner | us-gov-east-1 | fips | no | null | mybanner-123456789012.s3-object-lambda-fips.us-gov-east-1.amazonaws.com |
                 |arn:aws-us-gov:s3-object-lambda:us-gov-west-1:123456789012:accesspoint/mybanner | us-gov-east-1 | fips | yes | null | mybanner-123456789012.s3-object-lambda-fips.us-gov-west-1.amazonaws.com |
-                |arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint/mybanner | us-west-2 | accelerate | n/a | null | Invalid configuration Access Points do not support accelerate|
-                |arn:aws:sqs:us-west-2:123456789012:someresource          | us-west-2 | n/a  | n/a | null | Invalid ARN not S3 Access Point ARN|
-                |arn:aws:s3-object-lambda:us-west-2:123456789012:bucket_name:mybucket | us-west-2 | n/a | n/a | null | Invalid ARN not S3 Access Point ARN|
-                |arn:aws:s3-object-lambda::123456789012:accesspoint/mybanner          | us-west-2 | none | n/a | null | Invalid ARN, missing region|
-                |arn:aws-us-gov:s3-object-lambda:fips-us-gov-west-1:123456789012:accesspoint/myendpoint | n/a | n/a | n/a | null | Invalid ARN, FIPS region not allowed in ARN|
-                |arn:aws-us-gov:s3-object-lambda:us-gov-west-1-fips:123456789012:accesspoint/myendpoint | n/a | n/a | n/a | null | Invalid ARN, FIPS region not allowed in ARN|
-                |arn:aws:s3-object-lambda:us-west-2::accesspoint/mybanner             | us-west-2 | none | n/a | null | Invalid ARN, missing account-id|
-                |arn:aws:s3-object-lambda:us-west-2:123.45678.9012:accesspoint:mybucket | us-west-2 | n/a  | n/a | null | Invalid ARN, account-id contains invalid character, `.`.|
-                |arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint            | us-west-2 | n/a  | n/a | null | Invalid ARN, missing Access Point name|
-                |arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:*          | us-west-2 | n/a  | n/a | null | Invalid ARN, Access Point Name contains invalid character, `*`|
-                |arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:my.bucket  | us-west-2 | n/a  | n/a | null | Invalid ARN, Access Point Name contains invalid character, `.`|
-                |arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:mybucket:object:foo | us-west-2 | n/a | n/a | null | Invalid ARN, Access Point ARN contains sub resources|
+                |arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint/mybanner | us-west-2 | accelerate | n/a | null | S3 Object Lambda does not support S3 Accelerate|
+                |arn:aws:sqs:us-west-2:123456789012:someresource          | us-west-2 | n/a  | n/a | null | Invalid ARN: Unrecognized format: arn:aws:sqs:us-west-2:123456789012:someresource (type: someresource)|
+                |arn:aws:s3-object-lambda:us-west-2:123456789012:bucket_name:mybucket | us-west-2 | n/a | n/a | null | Invalid ARN: Object Lambda ARNs only support `accesspoint` arn types, but found: `bucket_name`|
+                |arn:aws:s3-object-lambda::123456789012:accesspoint/mybanner          | us-west-2 | none | n/a | null | Invalid ARN: bucket ARN is missing a region|
+                |arn:aws-us-gov:s3-object-lambda:fips-us-gov-west-1:123456789012:accesspoint/myendpoint | n/a | n/a | n/a | null | Invalid configuration: region from ARN `fips-us-gov-west-1` does not match client region `us-west-2` and UseArnRegion is `false`|
+                |arn:aws-us-gov:s3-object-lambda:us-gov-west-1-fips:123456789012:accesspoint/myendpoint | n/a | n/a | n/a | null | Invalid configuration: region from ARN `us-gov-west-1-fips` does not match client region `us-west-2` and UseArnRegion is `false`|
+                |arn:aws:s3-object-lambda:us-west-2::accesspoint/mybanner             | us-west-2 | none | n/a | null | Invalid ARN: Missing account id|
+                |arn:aws:s3-object-lambda:us-west-2:123.45678.9012:accesspoint:mybucket | us-west-2 | n/a  | n/a | null | Invalid ARN: The account id may only contain a-z, A-Z, 0-9 and `-`. Found: `123.45678.9012`|
+                |arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint            | us-west-2 | n/a  | n/a | null | Invalid ARN: Expected a resource of the format `accesspoint:<accesspoint name>` but no name was provided|
+                |arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:*          | us-west-2 | n/a  | n/a | null | Invalid ARN: The access point name may only contain a-z, A-Z, 0-9 and `-`. Found: `*`|
+                |arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:my.bucket  | us-west-2 | n/a  | n/a | null | Invalid ARN: The access point name may only contain a-z, A-Z, 0-9 and `-`. Found: `my.bucket`|
+                |arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:mybucket:object:foo | us-west-2 | n/a | n/a | null | Invalid ARN: The ARN may only contain a single resource component after `accesspoint`.|
                 ";
 
             // account for known exception message deviations
@@ -156,7 +156,7 @@ namespace AWSSDK.UnitTests
                 Assert.IsNull(s3Request, s3Request?.Endpoint.ToString());
                 Assert.IsNotNull(exception);
                 // reminder, expectedEndpoint also contains expected error message.
-                AssertExtensions.AssertAreSameWithEmbellishments(expectedEndpoint, exception.Message);
+                Assert.AreEqual(expectedEndpoint, exception.Message);
             }
         }
 

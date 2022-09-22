@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the eks-2017-11-01.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.EKS.Internal;
 
 namespace Amazon.EKS
 {
@@ -32,7 +30,7 @@ namespace Amazon.EKS
     public partial class AmazonEKSConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.16.22");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.EKS
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonEKSDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "eks";
+            this.EndpointProvider = new AmazonEKSEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.EKS
                 return _userAgent;
             }
         }
+
     }
 }

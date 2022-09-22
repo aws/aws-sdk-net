@@ -2,7 +2,6 @@
     "runtimePipelineOverride": {
         "overrides": [
             { "operation": "addBefore", "newType": "Amazon.S3.Internal.AmazonS3PreMarshallHandler", "targetType": "Amazon.Runtime.Internal.Marshaller" },
-            { "operation": "addAfter", "newType": "Amazon.S3.Internal.AmazonS3PostMarshallHandler", "targetType": "Amazon.Runtime.Internal.Marshaller" },
             { "operation": "addAfter", "newType": "Amazon.S3.Internal.AmazonS3KmsHandler", "targetType": "Amazon.Runtime.Internal.EndpointResolver" },
             { "operation": "addBefore", "newType": "Amazon.S3.Internal.AmazonS3ResponseHandler", "targetType": "Amazon.Runtime.Internal.Unmarshaller" },
             { "operation": "addAfter", "newType": "Amazon.S3.Internal.AmazonS3ExceptionHandler", "targetType": "Amazon.Runtime.Internal.ErrorCallbackHandler" },
@@ -61,9 +60,13 @@
             ]
         },
         "CopyObjectRequest": {
+            "modify": [
+                {
+                    "Bucket": { "emitPropertyName": "DestinationBucket" }
+                }
+            ],
             "exclude": [
                 "CopySource",
-                "Bucket",
                 "Key"
             ],
             "inject": [

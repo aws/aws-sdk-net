@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the codepipeline-2015-07-09.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.CodePipeline.Internal;
 
 namespace Amazon.CodePipeline
 {
@@ -32,7 +30,7 @@ namespace Amazon.CodePipeline
     public partial class AmazonCodePipelineConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.0.225");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.CodePipeline
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCodePipelineDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "codepipeline";
+            this.EndpointProvider = new AmazonCodePipelineEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.CodePipeline
                 return _userAgent;
             }
         }
+
     }
 }

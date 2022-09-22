@@ -17,12 +17,10 @@
  * Do not modify this file. This file is generated from the ssm-2014-11-06.normal.json service model.
  */
 
-
 using System;
-
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-
+using Amazon.SimpleSystemsManagement.Internal;
 
 namespace Amazon.SimpleSystemsManagement
 {
@@ -32,7 +30,7 @@ namespace Amazon.SimpleSystemsManagement
     public partial class AmazonSimpleSystemsManagementConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.21.4");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.0");
 
         private string _userAgent = UserAgentString;
 
@@ -43,6 +41,7 @@ namespace Amazon.SimpleSystemsManagement
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSimpleSystemsManagementDefaultConfiguration.GetAllConfigurations()))
         {
             this.AuthenticationServiceName = "ssm";
+            this.EndpointProvider = new AmazonSimpleSystemsManagementEndpointProvider();
         }
 
         /// <summary>
@@ -77,5 +76,6 @@ namespace Amazon.SimpleSystemsManagement
                 return _userAgent;
             }
         }
+
     }
 }

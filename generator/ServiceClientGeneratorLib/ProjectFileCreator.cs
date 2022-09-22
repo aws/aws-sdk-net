@@ -298,6 +298,7 @@ namespace ServiceClientGenerator
 
             var projectJsonTemplate = new VS2017ProjectFile();
             projectJsonTemplate.Project = projectProperties;
+            projectJsonTemplate.ServiceConfiguration = serviceConfiguration;
 
             var content = projectJsonTemplate.TransformText();
 
