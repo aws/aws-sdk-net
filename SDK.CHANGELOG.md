@@ -1,3 +1,18 @@
+### 3.7.363.0 (2022-09-22 18:21 UTC)
+* BackupGateway (3.7.2.0)
+	* Changes include: new GetVirtualMachineApi to fetch a single user's VM, improving ListVirtualMachines to fetch filtered VMs as well as all VMs, and improving GetGatewayApi to now also return the gateway's MaintenanceStartTime.
+* DeviceFarm (3.7.2.0)
+	* This release adds the support for VPC-ENI based connectivity for private devices on AWS Device Farm.
+* EC2 (3.7.91.0)
+	* Documentation updates for Amazon EC2.
+* Glue (3.7.24.0)
+	* Added support for S3 Event Notifications for Catalog Target Crawlers.
+* IdentityStore (3.7.1.13)
+	* Documentation updates for the Identity Store CLI Reference.
+* Core 3.7.13.8
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.362.0 (2022-09-21 18:28 UTC)
 * Comprehend (3.7.8.0)
 	* Amazon Comprehend now supports synchronous mode for targeted sentiment API operations.
