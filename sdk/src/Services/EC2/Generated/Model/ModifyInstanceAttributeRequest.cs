@@ -76,7 +76,7 @@ namespace Amazon.EC2.Model
         /// Instantiates ModifyInstanceAttributeRequest with the parameterized properties
         /// </summary>
         /// <param name="instanceId">The ID of the instance.</param>
-        /// <param name="attribute">The name of the attribute.</param>
+        /// <param name="attribute">The name of the attribute to modify. <important> You can modify the following attributes only: <code>disableApiTermination</code> | <code>instanceType</code> | <code>kernel</code> | <code>ramdisk</code> | <code>instanceInitiatedShutdownBehavior</code> | <code>blockDeviceMapping</code> | <code>userData</code> | <code>sourceDestCheck</code> | <code>groupSet</code> | <code>ebsOptimized</code> | <code>sriovNetSupport</code> | <code>enaSupport</code> | <code>nvmeSupport</code> | <code>disableApiStop</code> | <code>enclaveOptions</code>  </important></param>
         public ModifyInstanceAttributeRequest(string instanceId, InstanceAttributeName attribute)
         {
             _instanceId = instanceId;
@@ -86,8 +86,18 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Attribute. 
         /// <para>
-        /// The name of the attribute.
+        /// The name of the attribute to modify.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You can modify the following attributes only: <code>disableApiTermination</code> |
+        /// <code>instanceType</code> | <code>kernel</code> | <code>ramdisk</code> | <code>instanceInitiatedShutdownBehavior</code>
+        /// | <code>blockDeviceMapping</code> | <code>userData</code> | <code>sourceDestCheck</code>
+        /// | <code>groupSet</code> | <code>ebsOptimized</code> | <code>sriovNetSupport</code>
+        /// | <code>enaSupport</code> | <code>nvmeSupport</code> | <code>disableApiStop</code>
+        /// | <code>enclaveOptions</code> 
+        /// </para>
+        ///  </important>
         /// </summary>
         public InstanceAttributeName Attribute
         {

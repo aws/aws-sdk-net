@@ -106,7 +106,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NetworkInterfacePermissionIds. 
         /// <para>
-        /// One or more network interface permission IDs.
+        /// The network interface permission IDs.
         /// </para>
         /// </summary>
         public List<string> NetworkInterfacePermissionIds

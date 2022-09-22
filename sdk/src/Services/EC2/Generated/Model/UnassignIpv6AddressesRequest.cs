@@ -60,7 +60,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv6Prefixes. 
         /// <para>
-        /// One or more IPv6 prefixes to unassign from the network interface.
+        /// The IPv6 prefixes to unassign from the network interface.
         /// </para>
         /// </summary>
         public List<string> Ipv6Prefixes

@@ -32,9 +32,14 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the CreateSnapshots operation.
     /// Creates crash-consistent snapshots of multiple EBS volumes and stores the data in
     /// S3. Volumes are chosen by specifying an instance. Any attached volumes will produce
-    /// one snapshot each that is crash-consistent across the instance. Boot volumes can be
-    /// excluded by changing the parameters. 
+    /// one snapshot each that is crash-consistent across the instance.
     /// 
+    ///  
+    /// <para>
+    /// You can include all of the volumes currently attached to the instance, or you can
+    /// exclude the root volume or specific data (non-root) volumes from the multi-volume
+    /// snapshot set.
+    /// </para>
     ///  
     /// <para>
     /// You can create multi-volume snapshots of instances in a Region and instances on an

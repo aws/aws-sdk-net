@@ -56,7 +56,16 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ExcludeDataVolumeIds.
+        /// Gets and sets the property ExcludeDataVolumeIds. 
+        /// <para>
+        /// The IDs of the data (non-root) volumes to exclude from the multi-volume snapshot set.
+        /// If you specify the ID of the root volume, the request fails. To exclude the root volume,
+        /// use <b>ExcludeBootVolume</b>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify up to 40 volume IDs per request.
+        /// </para>
         /// </summary>
         public List<string> ExcludeDataVolumeIds
         {

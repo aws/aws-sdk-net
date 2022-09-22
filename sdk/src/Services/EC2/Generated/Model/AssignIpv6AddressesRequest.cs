@@ -85,8 +85,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv6Addresses. 
         /// <para>
-        /// One or more specific IPv6 addresses to be assigned to the network interface. You can't
-        /// use this option if you're specifying a number of IPv6 addresses.
+        /// The IPv6 addresses to be assigned to the network interface. You can't use this option
+        /// if you're specifying a number of IPv6 addresses.
         /// </para>
         /// </summary>
         public List<string> Ipv6Addresses

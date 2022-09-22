@@ -58,7 +58,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PrivateIpAddress. 
         /// <para>
-        /// The private IPv4 addresses.
+        /// The private IPv4 address.
         /// </para>
         /// </summary>
         public string PrivateIpAddress

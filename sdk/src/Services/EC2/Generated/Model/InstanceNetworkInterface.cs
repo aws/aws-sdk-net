@@ -109,7 +109,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Groups. 
         /// <para>
-        /// One or more security groups.
+        /// The security groups.
         /// </para>
         /// </summary>
         public List<GroupIdentifier> Groups
@@ -167,7 +167,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv6Addresses. 
         /// <para>
-        /// One or more IPv6 addresses associated with the network interface.
+        /// The IPv6 addresses associated with the network interface.
         /// </para>
         /// </summary>
         public List<InstanceIpv6Address> Ipv6Addresses
@@ -293,7 +293,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PrivateIpAddresses. 
         /// <para>
-        /// One or more private IPv4 addresses associated with the network interface.
+        /// The private IPv4 addresses associated with the network interface.
         /// </para>
         /// </summary>
         public List<InstancePrivateIpAddress> PrivateIpAddresses

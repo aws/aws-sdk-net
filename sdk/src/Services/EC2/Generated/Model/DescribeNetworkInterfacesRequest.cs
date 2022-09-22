@@ -260,7 +260,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NetworkInterfaceIds. 
         /// <para>
-        /// One or more network interface IDs.
+        /// The network interface IDs.
         /// </para>
         ///  
         /// <para>

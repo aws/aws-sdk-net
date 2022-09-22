@@ -155,9 +155,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PrivateIpAddresses. 
         /// <para>
-        /// One or more IP addresses to be assigned as a secondary private IP address to the network
-        /// interface. You can't specify this parameter when also specifying a number of secondary
-        /// IP addresses.
+        /// The IP addresses to be assigned as a secondary private IP address to the network interface.
+        /// You can't specify this parameter when also specifying a number of secondary IP addresses.
         /// </para>
         ///  
         /// <para>

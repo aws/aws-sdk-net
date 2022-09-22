@@ -118,7 +118,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DisallowedCidrs. 
         /// <para>
-        /// Exclude a particular CIDR range from being returned by the pool.
+        /// Exclude a particular CIDR range from being returned by the pool. Disallowed CIDRs
+        /// are only allowed if using netmask length for allocation.
         /// </para>
         /// </summary>
         public List<string> DisallowedCidrs

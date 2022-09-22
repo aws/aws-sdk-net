@@ -225,8 +225,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv4Prefixes. 
         /// <para>
-        /// One or more IPv4 delegated prefixes to be assigned to the network interface. You cannot
-        /// use this option if you use the <code>Ipv4PrefixCount</code> option.
+        /// The IPv4 delegated prefixes to be assigned to the network interface. You cannot use
+        /// this option if you use the <code>Ipv4PrefixCount</code> option.
         /// </para>
         /// </summary>
         public List<Ipv4PrefixSpecificationRequest> Ipv4Prefixes
@@ -265,10 +265,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv6Addresses. 
         /// <para>
-        /// One or more IPv6 addresses to assign to the network interface. You cannot specify
-        /// this option and the option to assign a number of IPv6 addresses in the same request.
-        /// You cannot specify this option if you've specified a minimum number of instances to
-        /// launch.
+        /// The IPv6 addresses to assign to the network interface. You cannot specify this option
+        /// and the option to assign a number of IPv6 addresses in the same request. You cannot
+        /// specify this option if you've specified a minimum number of instances to launch.
         /// </para>
         /// </summary>
         public List<InstanceIpv6Address> Ipv6Addresses
@@ -305,8 +304,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv6Prefixes. 
         /// <para>
-        /// One or more IPv6 delegated prefixes to be assigned to the network interface. You cannot
-        /// use this option if you use the <code>Ipv6PrefixCount</code> option.
+        /// The IPv6 delegated prefixes to be assigned to the network interface. You cannot use
+        /// this option if you use the <code>Ipv6PrefixCount</code> option.
         /// </para>
         /// </summary>
         public List<Ipv6PrefixSpecificationRequest> Ipv6Prefixes
@@ -394,9 +393,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PrivateIpAddresses. 
         /// <para>
-        /// One or more private IPv4 addresses to assign to the network interface. Only one private
-        /// IPv4 address can be designated as primary. You cannot specify this option if you're
-        /// launching more than one instance in a <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
+        /// The private IPv4 addresses to assign to the network interface. Only one private IPv4
+        /// address can be designated as primary. You cannot specify this option if you're launching
+        /// more than one instance in a <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
         /// request.
         /// </para>
         /// </summary>

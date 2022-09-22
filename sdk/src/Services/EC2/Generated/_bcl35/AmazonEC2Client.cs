@@ -778,8 +778,8 @@ namespace Amazon.EC2
         /// </para>
         ///  <note> 
         /// <para>
-        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
-        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
         /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  </note>
@@ -833,8 +833,8 @@ namespace Amazon.EC2
         /// </para>
         ///  <note> 
         /// <para>
-        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
-        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
         /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  </note>
@@ -1266,8 +1266,8 @@ namespace Amazon.EC2
         /// </para>
         ///  </important> <note> 
         /// <para>
-        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
-        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
         /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  </note>
@@ -1466,9 +1466,9 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// When the IAM role is associated with the ACM certificate, the certificate, certificate
-        /// chain, and encrypted private key are placed in an Amazon S3 bucket that only the associated
-        /// IAM role can access. The private key of the certificate is encrypted with an Amazon
-        /// Web Services managed key that has an attached attestation-based key policy.
+        /// chain, and encrypted private key are placed in an Amazon S3 location that only the
+        /// associated IAM role can access. The private key of the certificate is encrypted with
+        /// an Amazon Web Services managed key that has an attached attestation-based key policy.
         /// </para>
         ///  
         /// <para>
@@ -2588,8 +2588,8 @@ namespace Amazon.EC2
         /// </para>
         ///  <note> 
         /// <para>
-        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
-        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
         /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  </note>
@@ -5879,8 +5879,15 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
+        /// The number of IP addresses you can assign to a network interface varies by instance
+        /// type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP
+        /// Addresses Per ENI Per Instance Type</a> in the <i>Amazon Virtual Private Cloud User
+        /// Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
         /// For more information about network interfaces, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
-        /// Network Interfaces</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// network interfaces</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNetworkInterface service method.</param>
@@ -6521,8 +6528,8 @@ namespace Amazon.EC2
         /// </para>
         ///  <note> 
         /// <para>
-        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
-        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
         /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  </note>
@@ -6684,9 +6691,14 @@ namespace Amazon.EC2
         /// <summary>
         /// Creates crash-consistent snapshots of multiple EBS volumes and stores the data in
         /// S3. Volumes are chosen by specifying an instance. Any attached volumes will produce
-        /// one snapshot each that is crash-consistent across the instance. Boot volumes can be
-        /// excluded by changing the parameters. 
+        /// one snapshot each that is crash-consistent across the instance.
         /// 
+        ///  
+        /// <para>
+        /// You can include all of the volumes currently attached to the instance, or you can
+        /// exclude the root volume or specific data (non-root) volumes from the multi-volume
+        /// snapshot set.
+        /// </para>
         ///  
         /// <para>
         /// You can create multi-volume snapshots of instances in a Region and instances on an
@@ -10826,8 +10838,8 @@ namespace Amazon.EC2
         /// </para>
         ///  <note> 
         /// <para>
-        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
-        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
         /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  </note>
@@ -13151,8 +13163,8 @@ namespace Amazon.EC2
         /// </para>
         ///  <note> 
         /// <para>
-        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
-        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
         /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  </note>
@@ -13176,8 +13188,8 @@ namespace Amazon.EC2
         /// </para>
         ///  <note> 
         /// <para>
-        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
-        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
         /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  </note>
@@ -18891,8 +18903,8 @@ namespace Amazon.EC2
         /// </para>
         ///  <note> 
         /// <para>
-        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
-        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
         /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  </note>
@@ -18918,8 +18930,8 @@ namespace Amazon.EC2
         /// </para>
         ///  <note> 
         /// <para>
-        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
-        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
         /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  </note>
@@ -22915,8 +22927,8 @@ namespace Amazon.EC2
         /// </para>
         ///  <note> 
         /// <para>
-        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
-        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
         /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  </note> 
@@ -26800,7 +26812,14 @@ namespace Amazon.EC2
         /// Import single or multi-volume disk images or EBS snapshots into an Amazon Machine
         /// Image (AMI).
         /// 
-        ///  
+        ///  <important> 
+        /// <para>
+        /// Amazon Web Services VM Import/Export strongly recommends specifying a value for either
+        /// the <code>--license-type</code> or <code>--usage-operation</code> parameter when you
+        /// create a new VM Import task. This ensures your operating system is licensed appropriately
+        /// and your billing is optimized.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html">Importing
         /// a VM as an image using VM Import/Export</a> in the <i>VM Import/Export User Guide</i>.
@@ -30957,8 +30976,8 @@ namespace Amazon.EC2
         /// 
         ///  <note> 
         /// <para>
-        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
-        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
         /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  </note>
@@ -32161,8 +32180,8 @@ namespace Amazon.EC2
         /// </para>
         ///  <note> 
         /// <para>
-        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
-        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
         /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  </note> 
@@ -33379,8 +33398,8 @@ namespace Amazon.EC2
         /// 
         ///  <note> 
         /// <para>
-        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
-        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
         /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  </note>
@@ -33832,8 +33851,8 @@ namespace Amazon.EC2
         /// </para>
         ///  <note> 
         /// <para>
-        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
-        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
         /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  </note>

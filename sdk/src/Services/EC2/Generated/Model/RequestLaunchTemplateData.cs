@@ -400,7 +400,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>InstanceTypes</code>, you can't specify <code>InstanceRequirements</code>.
+        /// If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.
         /// </para>
         /// </summary>
         public InstanceType InstanceType

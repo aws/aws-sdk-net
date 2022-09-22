@@ -57,8 +57,8 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
-    /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
+    /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
     /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     ///  </note>
@@ -78,7 +78,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates AuthorizeSecurityGroupIngressRequest with the parameterized properties
         /// </summary>
-        /// <param name="groupName">[EC2-Classic, default VPC] The name of the security group. You must specify either the security group ID or the security group name in the request.</param>
+        /// <param name="groupName">[EC2-Classic, default VPC] The name of the security group. You must specify either the security group ID or the security group name in the request. For security groups in a nondefault VPC, you must specify the security group ID.</param>
         /// <param name="ipPermissions">The sets of IP permissions.</param>
         public AuthorizeSecurityGroupIngressRequest(string groupName, List<IpPermission> ipPermissions)
         {
@@ -110,7 +110,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property GroupName. 
         /// <para>
         /// [EC2-Classic, default VPC] The name of the security group. You must specify either
-        /// the security group ID or the security group name in the request.
+        /// the security group ID or the security group name in the request. For security groups
+        /// in a nondefault VPC, you must specify the security group ID.
         /// </para>
         /// </summary>
         public string GroupName
