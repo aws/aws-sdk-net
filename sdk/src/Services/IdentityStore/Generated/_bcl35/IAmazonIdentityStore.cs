@@ -1002,10 +1002,9 @@ namespace Amazon.IdentityStore
 
 
         /// <summary>
-        /// Lists the attribute name and value of the group that you specified in the search.
-        /// We only support <code>DisplayName</code> as a valid filter attribute path currently,
-        /// and filter is required. This API returns minimum attributes, including <code>GroupId</code>
-        /// and group <code>DisplayName</code> in the response.
+        /// Lists all groups in the identity store. Returns a paginated list of complete <code>Group</code>
+        /// objects. Filtering for a <code>Group</code> by the <code>DisplayName</code> attribute
+        /// is deprecated. Instead, use the <code>GetGroupId</code> API action.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGroups service method.</param>
         /// 
@@ -1061,10 +1060,9 @@ namespace Amazon.IdentityStore
 
 
         /// <summary>
-        /// Lists the attribute name and value of the user that you specified in the search. We
-        /// only support <code>UserName</code> as a valid filter attribute path currently, and
-        /// filter is required. This API returns minimum attributes, including <code>UserId</code>
-        /// and <code>UserName</code> in the response.
+        /// Lists all users in the identity store. Returns a paginated list of complete <code>User</code>
+        /// objects. Filtering for a <code>User</code> by the <code>UserName</code> attribute
+        /// is deprecated. Instead, use the <code>GetUserId</code> API action.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUsers service method.</param>
         /// 
