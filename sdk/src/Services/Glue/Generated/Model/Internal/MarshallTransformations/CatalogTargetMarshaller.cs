@@ -57,6 +57,18 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DatabaseName);
             }
 
+            if(requestObject.IsSetDlqEventQueueArn())
+            {
+                context.Writer.WritePropertyName("DlqEventQueueArn");
+                context.Writer.Write(requestObject.DlqEventQueueArn);
+            }
+
+            if(requestObject.IsSetEventQueueArn())
+            {
+                context.Writer.WritePropertyName("EventQueueArn");
+                context.Writer.Write(requestObject.EventQueueArn);
+            }
+
             if(requestObject.IsSetTables())
             {
                 context.Writer.WritePropertyName("Tables");
