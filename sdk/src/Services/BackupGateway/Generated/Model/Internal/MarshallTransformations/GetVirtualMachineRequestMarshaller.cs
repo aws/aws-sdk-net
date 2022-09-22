@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListVirtualMachines Request Marshaller
+    /// GetVirtualMachine Request Marshaller
     /// </summary>       
-    public class ListVirtualMachinesRequestMarshaller : IMarshaller<IRequest, ListVirtualMachinesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetVirtualMachineRequestMarshaller : IMarshaller<IRequest, GetVirtualMachineRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListVirtualMachinesRequest)input);
+            return this.Marshall((GetVirtualMachineRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListVirtualMachinesRequest publicRequest)
+        public IRequest Marshall(GetVirtualMachineRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.BackupGateway");
-            string target = "BackupOnPremises_v20210101.ListVirtualMachines";
+            string target = "BackupOnPremises_v20210101.GetVirtualMachine";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-01-01";
@@ -67,22 +67,10 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetHypervisorArn())
+                if(publicRequest.IsSetResourceArn())
                 {
-                    context.Writer.WritePropertyName("HypervisorArn");
-                    context.Writer.Write(publicRequest.HypervisorArn);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
+                    context.Writer.WritePropertyName("ResourceArn");
+                    context.Writer.Write(publicRequest.ResourceArn);
                 }
 
                 writer.WriteObjectEnd();
@@ -93,9 +81,9 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static ListVirtualMachinesRequestMarshaller _instance = new ListVirtualMachinesRequestMarshaller();        
+        private static GetVirtualMachineRequestMarshaller _instance = new GetVirtualMachineRequestMarshaller();        
 
-        internal static ListVirtualMachinesRequestMarshaller GetInstance()
+        internal static GetVirtualMachineRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -103,7 +91,7 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListVirtualMachinesRequestMarshaller Instance
+        public static GetVirtualMachineRequestMarshaller Instance
         {
             get
             {

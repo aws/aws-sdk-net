@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GatewayDetails Object
+    /// Response Unmarshaller for VirtualMachineDetails Object
     /// </summary>  
-    public class GatewayDetailsUnmarshaller : IUnmarshaller<GatewayDetails, XmlUnmarshallerContext>, IUnmarshaller<GatewayDetails, JsonUnmarshallerContext>
+    public class VirtualMachineDetailsUnmarshaller : IUnmarshaller<VirtualMachineDetails, XmlUnmarshallerContext>, IUnmarshaller<VirtualMachineDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        GatewayDetails IUnmarshaller<GatewayDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        VirtualMachineDetails IUnmarshaller<VirtualMachineDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,21 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public GatewayDetails Unmarshall(JsonUnmarshallerContext context)
+        public VirtualMachineDetails Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            GatewayDetails unmarshalledObject = new GatewayDetails();
+            VirtualMachineDetails unmarshalledObject = new VirtualMachineDetails();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("GatewayArn", targetDepth))
+                if (context.TestExpression("HostName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GatewayArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("GatewayDisplayName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GatewayDisplayName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("GatewayType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GatewayType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HostName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("HypervisorId", targetDepth))
@@ -88,28 +76,28 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
                     unmarshalledObject.HypervisorId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("LastSeenTime", targetDepth))
+                if (context.TestExpression("LastBackupDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastSeenTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastBackupDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("MaintenanceStartTime", targetDepth))
-                {
-                    var unmarshaller = MaintenanceStartTimeUnmarshaller.Instance;
-                    unmarshalledObject.MaintenanceStartTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("NextUpdateAvailabilityTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.NextUpdateAvailabilityTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("VpcEndpoint", targetDepth))
+                if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VpcEndpoint = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Path", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Path = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ResourceArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -118,12 +106,12 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
         }
 
 
-        private static GatewayDetailsUnmarshaller _instance = new GatewayDetailsUnmarshaller();        
+        private static VirtualMachineDetailsUnmarshaller _instance = new VirtualMachineDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GatewayDetailsUnmarshaller Instance
+        public static VirtualMachineDetailsUnmarshaller Instance
         {
             get
             {

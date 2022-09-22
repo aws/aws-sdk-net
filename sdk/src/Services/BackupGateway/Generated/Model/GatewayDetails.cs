@@ -38,6 +38,7 @@ namespace Amazon.BackupGateway.Model
         private GatewayType _gatewayType;
         private string _hypervisorId;
         private DateTime? _lastSeenTime;
+        private MaintenanceStartTime _maintenanceStartTime;
         private DateTime? _nextUpdateAvailabilityTime;
         private string _vpcEndpoint;
 
@@ -134,6 +135,26 @@ namespace Amazon.BackupGateway.Model
         internal bool IsSetLastSeenTime()
         {
             return this._lastSeenTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaintenanceStartTime. 
+        /// <para>
+        /// Returns your gateway's weekly maintenance start time including the day and time of
+        /// the week. Note that values are in terms of the gateway's time zone. Can be weekly
+        /// or monthly.
+        /// </para>
+        /// </summary>
+        public MaintenanceStartTime MaintenanceStartTime
+        {
+            get { return this._maintenanceStartTime; }
+            set { this._maintenanceStartTime = value; }
+        }
+
+        // Check to see if MaintenanceStartTime property is set
+        internal bool IsSetMaintenanceStartTime()
+        {
+            return this._maintenanceStartTime != null;
         }
 
         /// <summary>

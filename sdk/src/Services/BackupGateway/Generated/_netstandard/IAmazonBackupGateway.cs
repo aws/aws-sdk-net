@@ -85,6 +85,10 @@ namespace Amazon.BackupGateway
         /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
         /// The operation did not succeed because an internal error occurred. Try again later.
         /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
+        /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
         /// </exception>
@@ -109,6 +113,10 @@ namespace Amazon.BackupGateway
         /// <returns>The response from the CreateGateway service method, as returned by BackupGateway.</returns>
         /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
         /// The operation did not succeed because an internal error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
         /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
@@ -136,6 +144,10 @@ namespace Amazon.BackupGateway
         /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
         /// A resource that is required for the action wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
         /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
@@ -166,6 +178,10 @@ namespace Amazon.BackupGateway
         /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
         /// A resource that is required for the action wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
         /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
@@ -198,6 +214,10 @@ namespace Amazon.BackupGateway
         /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
         /// A resource that is required for the action wasn't found.
         /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
+        /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
         /// </exception>
@@ -225,11 +245,46 @@ namespace Amazon.BackupGateway
         /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
         /// A resource that is required for the action wasn't found.
         /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
+        /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetGateway">REST API Reference for GetGateway Operation</seealso>
         Task<GetGatewayResponse> GetGatewayAsync(GetGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetVirtualMachine
+
+
+
+        /// <summary>
+        /// By providing the ARN (Amazon Resource Name), this API returns the virtual machine.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVirtualMachine service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetVirtualMachine service method, as returned by BackupGateway.</returns>
+        /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
+        /// The operation did not succeed because an internal error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
+        /// A resource that is required for the action wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
+        /// The operation did not succeed because a validation error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetVirtualMachine">REST API Reference for GetVirtualMachine Operation</seealso>
+        Task<GetVirtualMachineResponse> GetVirtualMachineAsync(GetVirtualMachineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -251,6 +306,10 @@ namespace Amazon.BackupGateway
         /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
         /// The operation did not succeed because an internal error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
         /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
@@ -277,6 +336,10 @@ namespace Amazon.BackupGateway
         /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
         /// The operation did not succeed because an internal error occurred. Try again later.
         /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
+        /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
         /// </exception>
@@ -300,6 +363,10 @@ namespace Amazon.BackupGateway
         /// <returns>The response from the ListHypervisors service method, as returned by BackupGateway.</returns>
         /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
         /// The operation did not succeed because an internal error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
         /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
@@ -328,6 +395,10 @@ namespace Amazon.BackupGateway
         /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
         /// A resource that is required for the action wasn't found.
         /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
+        /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
         /// </exception>
@@ -351,6 +422,10 @@ namespace Amazon.BackupGateway
         /// <returns>The response from the ListVirtualMachines service method, as returned by BackupGateway.</returns>
         /// <exception cref="Amazon.BackupGateway.Model.InternalServerException">
         /// The operation did not succeed because an internal error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
         /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
@@ -382,6 +457,10 @@ namespace Amazon.BackupGateway
         /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
         /// A resource that is required for the action wasn't found.
         /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
+        /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
         /// </exception>
@@ -408,6 +487,10 @@ namespace Amazon.BackupGateway
         /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
         /// A resource that is required for the action wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
         /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
@@ -440,6 +523,10 @@ namespace Amazon.BackupGateway
         /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
         /// A resource that is required for the action wasn't found.
         /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
+        /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
         /// </exception>
@@ -466,6 +553,10 @@ namespace Amazon.BackupGateway
         /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
         /// A resource that is required for the action wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
         /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
@@ -497,6 +588,10 @@ namespace Amazon.BackupGateway
         /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
         /// A resource that is required for the action wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
         /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
@@ -533,6 +628,10 @@ namespace Amazon.BackupGateway
         /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
         /// A resource that is required for the action wasn't found.
         /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
+        /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.
         /// </exception>
@@ -564,6 +663,10 @@ namespace Amazon.BackupGateway
         /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ResourceNotFoundException">
         /// A resource that is required for the action wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.BackupGateway.Model.ThrottlingException">
+        /// TPS has been limited to protect against intentional or unintentional high request
+        /// volumes.
         /// </exception>
         /// <exception cref="Amazon.BackupGateway.Model.ValidationException">
         /// The operation did not succeed because a validation error occurred.

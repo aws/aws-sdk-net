@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TagResource operation
+    /// Response Unmarshaller for GetVirtualMachine operation
     /// </summary>  
-    public class TagResourceResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetVirtualMachineResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,16 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            TagResourceResponse response = new TagResourceResponse();
+            GetVirtualMachineResponse response = new GetVirtualMachineResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ResourceARN", targetDepth))
+                if (context.TestExpression("VirtualMachine", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ResourceARN = unmarshaller.Unmarshall(context);
+                    var unmarshaller = VirtualMachineDetailsUnmarshaller.Instance;
+                    response.VirtualMachine = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,9 +100,9 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
             return new AmazonBackupGatewayException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static TagResourceResponseUnmarshaller _instance = new TagResourceResponseUnmarshaller();        
+        private static GetVirtualMachineResponseUnmarshaller _instance = new GetVirtualMachineResponseUnmarshaller();        
 
-        internal static TagResourceResponseUnmarshaller GetInstance()
+        internal static GetVirtualMachineResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -110,7 +110,7 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TagResourceResponseUnmarshaller Instance
+        public static GetVirtualMachineResponseUnmarshaller Instance
         {
             get
             {
