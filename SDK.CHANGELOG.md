@@ -1,3 +1,22 @@
+### 3.7.364.0 (2022-09-23 18:20 UTC)
+* AppRunner (3.7.5.0)
+	* AWS App Runner adds a Node.js 16 runtime.
+* EC2 (3.7.92.0)
+	* Letting external AWS customers provide ImageId as a Launch Template override in FleetLaunchTemplateOverridesRequest
+* LexModelsV2 (3.7.17.0)
+	* This release introduces additional optional parameters promptAttemptsSpecification to PromptSpecification, which enables the users to configure interrupt setting and Audio, DTMF and Text input configuration for the initial and retry prompt played by the Bot
+* Lightsail (3.7.10.0)
+	* This release adds Instance Metadata Service (IMDS) support for Lightsail instances.
+* NimbleStudio (3.7.6.0)
+	* Amazon Nimble Studio adds support for on-demand Amazon Elastic Compute Cloud (EC2) G3 and G5 instances, allowing customers to utilize additional GPU instance types for their creative projects.
+* SimpleSystemsManagement (3.7.19.0)
+	* This release adds new SSM document types ConformancePackTemplate and CloudFormation
+* WAFV2 (3.7.13.23)
+	* Add the default specification for ResourceType in ListResourcesForWebACL.
+* Core 3.7.13.9
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.363.0 (2022-09-22 18:21 UTC)
 * BackupGateway (3.7.2.0)
 	* Changes include: new GetVirtualMachineApi to fetch a single user's VM, improving ListVirtualMachines to fetch filtered VMs as well as all VMs, and improving GetGatewayApi to now also return the gateway's MaintenanceStartTime.
