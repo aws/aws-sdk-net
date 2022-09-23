@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     public partial class FleetLaunchTemplateOverridesRequest
     {
         private string _availabilityZone;
+        private string _imageId;
         private InstanceRequirementsRequest _instanceRequirements;
         private InstanceType _instanceType;
         private string _maxPrice;
@@ -58,6 +59,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetAvailabilityZone()
         {
             return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageId. 
+        /// <para>
+        /// The ID of the AMI. An AMI is required to launch an instance. The AMI ID must be specified
+        /// here or in the launch template.
+        /// </para>
+        /// </summary>
+        public string ImageId
+        {
+            get { return this._imageId; }
+            set { this._imageId = value; }
+        }
+
+        // Check to see if ImageId property is set
+        internal bool IsSetImageId()
+        {
+            return this._imageId != null;
         }
 
         /// <summary>

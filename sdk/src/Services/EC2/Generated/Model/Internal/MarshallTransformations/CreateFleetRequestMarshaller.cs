@@ -99,6 +99,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 {
                                     request.Parameters.Add("LaunchTemplateConfigs" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "AvailabilityZone", StringUtils.FromString(publicRequestlistValuelistValue.AvailabilityZone));
                                 }
+                                if(publicRequestlistValuelistValue.IsSetImageId())
+                                {
+                                    request.Parameters.Add("LaunchTemplateConfigs" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "ImageId", StringUtils.FromString(publicRequestlistValuelistValue.ImageId));
+                                }
                                 if(publicRequestlistValuelistValue.IsSetInstanceRequirements())
                                 {
                                     if(publicRequestlistValuelistValue.InstanceRequirements.IsSetAcceleratorCount())
