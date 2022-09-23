@@ -1977,9 +1977,17 @@ namespace Amazon.SimpleSystemsManagement
         /// </summary>
         public static readonly DocumentType ChangeCalendar = new DocumentType("ChangeCalendar");
         /// <summary>
+        /// Constant CloudFormation for DocumentType
+        /// </summary>
+        public static readonly DocumentType CloudFormation = new DocumentType("CloudFormation");
+        /// <summary>
         /// Constant Command for DocumentType
         /// </summary>
         public static readonly DocumentType Command = new DocumentType("Command");
+        /// <summary>
+        /// Constant ConformancePackTemplate for DocumentType
+        /// </summary>
+        public static readonly DocumentType ConformancePackTemplate = new DocumentType("ConformancePackTemplate");
         /// <summary>
         /// Constant DeploymentStrategy for DocumentType
         /// </summary>
