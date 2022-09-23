@@ -1645,6 +1645,156 @@ namespace Amazon.Lightsail
 
 
     /// <summary>
+    /// Constants used for properties of type HttpEndpoint.
+    /// </summary>
+    public class HttpEndpoint : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for HttpEndpoint
+        /// </summary>
+        public static readonly HttpEndpoint Disabled = new HttpEndpoint("disabled");
+        /// <summary>
+        /// Constant Enabled for HttpEndpoint
+        /// </summary>
+        public static readonly HttpEndpoint Enabled = new HttpEndpoint("enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HttpEndpoint(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HttpEndpoint FindValue(string value)
+        {
+            return FindValue<HttpEndpoint>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HttpEndpoint(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HttpProtocolIpv6.
+    /// </summary>
+    public class HttpProtocolIpv6 : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for HttpProtocolIpv6
+        /// </summary>
+        public static readonly HttpProtocolIpv6 Disabled = new HttpProtocolIpv6("disabled");
+        /// <summary>
+        /// Constant Enabled for HttpProtocolIpv6
+        /// </summary>
+        public static readonly HttpProtocolIpv6 Enabled = new HttpProtocolIpv6("enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HttpProtocolIpv6(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HttpProtocolIpv6 FindValue(string value)
+        {
+            return FindValue<HttpProtocolIpv6>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HttpProtocolIpv6(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HttpTokens.
+    /// </summary>
+    public class HttpTokens : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Optional for HttpTokens
+        /// </summary>
+        public static readonly HttpTokens Optional = new HttpTokens("optional");
+        /// <summary>
+        /// Constant Required for HttpTokens
+        /// </summary>
+        public static readonly HttpTokens Required = new HttpTokens("required");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HttpTokens(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HttpTokens FindValue(string value)
+        {
+            return FindValue<HttpTokens>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HttpTokens(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InstanceAccessProtocol.
     /// </summary>
     public class InstanceAccessProtocol : ConstantClass
@@ -1847,6 +1997,56 @@ namespace Amazon.Lightsail
 
 
     /// <summary>
+    /// Constants used for properties of type InstanceMetadataState.
+    /// </summary>
+    public class InstanceMetadataState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Applied for InstanceMetadataState
+        /// </summary>
+        public static readonly InstanceMetadataState Applied = new InstanceMetadataState("applied");
+        /// <summary>
+        /// Constant Pending for InstanceMetadataState
+        /// </summary>
+        public static readonly InstanceMetadataState Pending = new InstanceMetadataState("pending");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstanceMetadataState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceMetadataState FindValue(string value)
+        {
+            return FindValue<InstanceMetadataState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceMetadataState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InstanceMetricName.
     /// </summary>
     public class InstanceMetricName : ConstantClass
@@ -1864,6 +2064,10 @@ namespace Amazon.Lightsail
         /// Constant CPUUtilization for InstanceMetricName
         /// </summary>
         public static readonly InstanceMetricName CPUUtilization = new InstanceMetricName("CPUUtilization");
+        /// <summary>
+        /// Constant MetadataNoToken for InstanceMetricName
+        /// </summary>
+        public static readonly InstanceMetricName MetadataNoToken = new InstanceMetricName("MetadataNoToken");
         /// <summary>
         /// Constant NetworkIn for InstanceMetricName
         /// </summary>
@@ -3452,6 +3656,10 @@ namespace Amazon.Lightsail
         /// Constant UpdateDomainEntry for OperationType
         /// </summary>
         public static readonly OperationType UpdateDomainEntry = new OperationType("UpdateDomainEntry");
+        /// <summary>
+        /// Constant UpdateInstanceMetadataOptions for OperationType
+        /// </summary>
+        public static readonly OperationType UpdateInstanceMetadataOptions = new OperationType("UpdateInstanceMetadataOptions");
         /// <summary>
         /// Constant UpdateLoadBalancerAttribute for OperationType
         /// </summary>

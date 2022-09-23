@@ -44,6 +44,7 @@ namespace Amazon.Lightsail.Model
         private List<string> _ipv6Addresses = new List<string>();
         private bool? _isStaticIp;
         private ResourceLocation _location;
+        private InstanceMetadataOptions _metadataOptions;
         private string _name;
         private InstanceNetworking _networking;
         private string _privateIpAddress;
@@ -257,6 +258,24 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetLocation()
         {
             return this._location != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetadataOptions. 
+        /// <para>
+        /// The metadata options for the Amazon Lightsail instance.
+        /// </para>
+        /// </summary>
+        public InstanceMetadataOptions MetadataOptions
+        {
+            get { return this._metadataOptions; }
+            set { this._metadataOptions = value; }
+        }
+
+        // Check to see if MetadataOptions property is set
+        internal bool IsSetMetadataOptions()
+        {
+            return this._metadataOptions != null;
         }
 
         /// <summary>

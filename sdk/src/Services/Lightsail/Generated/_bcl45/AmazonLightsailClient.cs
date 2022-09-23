@@ -17715,6 +17715,125 @@ namespace Amazon.Lightsail
 
         #endregion
         
+        #region  UpdateInstanceMetadataOptions
+
+
+        /// <summary>
+        /// Modifies the Amazon Lightsail instance metadata parameters on a running or stopped
+        /// instance. When you modify the parameters on a running instance, the <code>GetInstance</code>
+        /// or <code>GetInstances</code> API operation initially responds with a state of <code>pending</code>.
+        /// After the parameter modifications are successfully applied, the state changes to <code>applied</code>
+        /// in subsequent <code>GetInstance</code> or <code>GetInstances</code> API calls. For
+        /// more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-instance-metadata-service">Use
+        /// IMDSv2 with an Amazon Lightsail instance</a> in the <i>Amazon Lightsail Developer
+        /// Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInstanceMetadataOptions service method.</param>
+        /// 
+        /// <returns>The response from the UpdateInstanceMetadataOptions service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.AccountSetupInProgressException">
+        /// Lightsail throws this exception when an account is still in the setup in progress
+        /// state.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>)
+        /// Amazon Web Services Region. Please set your Amazon Web Services Region configuration
+        /// to <code>us-east-1</code> to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
+        /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateInstanceMetadataOptions">REST API Reference for UpdateInstanceMetadataOptions Operation</seealso>
+        public virtual UpdateInstanceMetadataOptionsResponse UpdateInstanceMetadataOptions(UpdateInstanceMetadataOptionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateInstanceMetadataOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateInstanceMetadataOptionsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateInstanceMetadataOptionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Modifies the Amazon Lightsail instance metadata parameters on a running or stopped
+        /// instance. When you modify the parameters on a running instance, the <code>GetInstance</code>
+        /// or <code>GetInstances</code> API operation initially responds with a state of <code>pending</code>.
+        /// After the parameter modifications are successfully applied, the state changes to <code>applied</code>
+        /// in subsequent <code>GetInstance</code> or <code>GetInstances</code> API calls. For
+        /// more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-instance-metadata-service">Use
+        /// IMDSv2 with an Amazon Lightsail instance</a> in the <i>Amazon Lightsail Developer
+        /// Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInstanceMetadataOptions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateInstanceMetadataOptions service method, as returned by Lightsail.</returns>
+        /// <exception cref="Amazon.Lightsail.Model.AccessDeniedException">
+        /// Lightsail throws this exception when the user cannot be authenticated or uses invalid
+        /// credentials to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.AccountSetupInProgressException">
+        /// Lightsail throws this exception when an account is still in the setup in progress
+        /// state.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.InvalidInputException">
+        /// Lightsail throws this exception when user input does not conform to the validation
+        /// rules of an input field.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>)
+        /// Amazon Web Services Region. Please set your Amazon Web Services Region configuration
+        /// to <code>us-east-1</code> to create, view, or edit these resources.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.NotFoundException">
+        /// Lightsail throws this exception when it cannot find a resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.OperationFailureException">
+        /// Lightsail throws this exception when an operation fails to execute.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.ServiceException">
+        /// A general service exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
+        /// Lightsail throws this exception when the user has not been authenticated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateInstanceMetadataOptions">REST API Reference for UpdateInstanceMetadataOptions Operation</seealso>
+        public virtual Task<UpdateInstanceMetadataOptionsResponse> UpdateInstanceMetadataOptionsAsync(UpdateInstanceMetadataOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateInstanceMetadataOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateInstanceMetadataOptionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateInstanceMetadataOptionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateLoadBalancerAttribute
 
 
