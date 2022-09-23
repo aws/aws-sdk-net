@@ -707,6 +707,10 @@ namespace Amazon.AppRunner
         /// </summary>
         public static readonly Runtime NODEJS_14 = new Runtime("NODEJS_14");
         /// <summary>
+        /// Constant NODEJS_16 for Runtime
+        /// </summary>
+        public static readonly Runtime NODEJS_16 = new Runtime("NODEJS_16");
+        /// <summary>
         /// Constant PYTHON_3 for Runtime
         /// </summary>
         public static readonly Runtime PYTHON_3 = new Runtime("PYTHON_3");
