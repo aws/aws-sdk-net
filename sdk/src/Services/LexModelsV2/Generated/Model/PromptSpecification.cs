@@ -37,6 +37,7 @@ namespace Amazon.LexModelsV2.Model
         private int? _maxRetries;
         private List<MessageGroup> _messageGroups = new List<MessageGroup>();
         private MessageSelectionStrategy _messageSelectionStrategy;
+        private Dictionary<string, PromptAttemptSpecification> _promptAttemptsSpecification = new Dictionary<string, PromptAttemptSpecification>();
 
         /// <summary>
         /// Gets and sets the property AllowInterrupt. 
@@ -112,6 +113,24 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetMessageSelectionStrategy()
         {
             return this._messageSelectionStrategy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PromptAttemptsSpecification. 
+        /// <para>
+        /// Specifies the advanced settings on each attempt of the prompt.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, PromptAttemptSpecification> PromptAttemptsSpecification
+        {
+            get { return this._promptAttemptsSpecification; }
+            set { this._promptAttemptsSpecification = value; }
+        }
+
+        // Check to see if PromptAttemptsSpecification property is set
+        internal bool IsSetPromptAttemptsSpecification()
+        {
+            return this._promptAttemptsSpecification != null && this._promptAttemptsSpecification.Count > 0; 
         }
 
     }

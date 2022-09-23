@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PromptSpecification Object
+    /// Response Unmarshaller for AudioAndDTMFInputSpecification Object
     /// </summary>  
-    public class PromptSpecificationUnmarshaller : IUnmarshaller<PromptSpecification, XmlUnmarshallerContext>, IUnmarshaller<PromptSpecification, JsonUnmarshallerContext>
+    public class AudioAndDTMFInputSpecificationUnmarshaller : IUnmarshaller<AudioAndDTMFInputSpecification, XmlUnmarshallerContext>, IUnmarshaller<AudioAndDTMFInputSpecification, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PromptSpecification IUnmarshaller<PromptSpecification, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AudioAndDTMFInputSpecification IUnmarshaller<AudioAndDTMFInputSpecification, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,33 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public PromptSpecification Unmarshall(JsonUnmarshallerContext context)
+        public AudioAndDTMFInputSpecification Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PromptSpecification unmarshalledObject = new PromptSpecification();
+            AudioAndDTMFInputSpecification unmarshalledObject = new AudioAndDTMFInputSpecification();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("allowInterrupt", targetDepth))
+                if (context.TestExpression("audioSpecification", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.AllowInterrupt = unmarshaller.Unmarshall(context);
+                    var unmarshaller = AudioSpecificationUnmarshaller.Instance;
+                    unmarshalledObject.AudioSpecification = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("maxRetries", targetDepth))
+                if (context.TestExpression("dtmfSpecification", targetDepth))
+                {
+                    var unmarshaller = DTMFSpecificationUnmarshaller.Instance;
+                    unmarshalledObject.DtmfSpecification = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("startTimeoutMs", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.MaxRetries = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("messageGroups", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<MessageGroup, MessageGroupUnmarshaller>(MessageGroupUnmarshaller.Instance);
-                    unmarshalledObject.MessageGroups = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("messageSelectionStrategy", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MessageSelectionStrategy = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("promptAttemptsSpecification", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, PromptAttemptSpecification, StringUnmarshaller, PromptAttemptSpecificationUnmarshaller>(StringUnmarshaller.Instance, PromptAttemptSpecificationUnmarshaller.Instance);
-                    unmarshalledObject.PromptAttemptsSpecification = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StartTimeoutMs = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +88,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static PromptSpecificationUnmarshaller _instance = new PromptSpecificationUnmarshaller();        
+        private static AudioAndDTMFInputSpecificationUnmarshaller _instance = new AudioAndDTMFInputSpecificationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PromptSpecificationUnmarshaller Instance
+        public static AudioAndDTMFInputSpecificationUnmarshaller Instance
         {
             get
             {

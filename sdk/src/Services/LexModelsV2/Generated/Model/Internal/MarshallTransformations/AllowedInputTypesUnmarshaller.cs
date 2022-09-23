@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PromptSpecification Object
+    /// Response Unmarshaller for AllowedInputTypes Object
     /// </summary>  
-    public class PromptSpecificationUnmarshaller : IUnmarshaller<PromptSpecification, XmlUnmarshallerContext>, IUnmarshaller<PromptSpecification, JsonUnmarshallerContext>
+    public class AllowedInputTypesUnmarshaller : IUnmarshaller<AllowedInputTypes, XmlUnmarshallerContext>, IUnmarshaller<AllowedInputTypes, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PromptSpecification IUnmarshaller<PromptSpecification, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AllowedInputTypes IUnmarshaller<AllowedInputTypes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,27 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public PromptSpecification Unmarshall(JsonUnmarshallerContext context)
+        public AllowedInputTypes Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PromptSpecification unmarshalledObject = new PromptSpecification();
+            AllowedInputTypes unmarshalledObject = new AllowedInputTypes();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("allowInterrupt", targetDepth))
+                if (context.TestExpression("allowAudioInput", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.AllowInterrupt = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AllowAudioInput = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("maxRetries", targetDepth))
+                if (context.TestExpression("allowDTMFInput", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.MaxRetries = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("messageGroups", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<MessageGroup, MessageGroupUnmarshaller>(MessageGroupUnmarshaller.Instance);
-                    unmarshalledObject.MessageGroups = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("messageSelectionStrategy", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MessageSelectionStrategy = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("promptAttemptsSpecification", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, PromptAttemptSpecification, StringUnmarshaller, PromptAttemptSpecificationUnmarshaller>(StringUnmarshaller.Instance, PromptAttemptSpecificationUnmarshaller.Instance);
-                    unmarshalledObject.PromptAttemptsSpecification = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.AllowDTMFInput = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +82,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static PromptSpecificationUnmarshaller _instance = new PromptSpecificationUnmarshaller();        
+        private static AllowedInputTypesUnmarshaller _instance = new AllowedInputTypesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PromptSpecificationUnmarshaller Instance
+        public static AllowedInputTypesUnmarshaller Instance
         {
             get
             {

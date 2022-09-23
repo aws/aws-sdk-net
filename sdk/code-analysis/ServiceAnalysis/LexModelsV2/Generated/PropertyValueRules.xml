@@ -2079,6 +2079,18 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.AudioAndDTMFInputSpecification.StartTimeoutMs</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.AudioSpecification.EndTimeoutMs</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.AudioSpecification.MaxLengthMs</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LexModelsV2.Model.BotAliasHistoryEvent.BotVersion</property>
     <min>1</min>
     <max>5</max>
@@ -2313,6 +2325,23 @@
     <min>1</min>
     <max>100</max>
     <pattern>^([0-9a-zA-Z][_-]?)+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.DTMFSpecification.DeletionCharacter</property>
+    <pattern>^[A-D0-9#*]{1}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.DTMFSpecification.EndCharacter</property>
+    <pattern>^[A-D0-9#*]{1}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.DTMFSpecification.EndTimeoutMs</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.DTMFSpecification.MaxLength</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.ElicitationCodeHookInvocationSetting.InvocationLabel</property>
@@ -2636,7 +2665,7 @@
     <property>Amazon.LexModelsV2.Model.SubSlotSetting.Expression</property>
     <min>0</min>
     <max>640</max>
-    <pattern>[0-9A-Za-z_\s\(\)]+</pattern>
+    <pattern>[0-9A-Za-z_\-\s\(\)]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.SubSlotTypeComposition.Name</property>
@@ -2649,5 +2678,9 @@
     <min>1</min>
     <max>25</max>
     <pattern>^((AMAZON\.)[a-zA-Z_]+?|[0-9a-zA-Z]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.TextInputSpecification.StartTimeoutMs</property>
+    <min>1</min>
   </property-value-rule>
 </property-value-rules>
