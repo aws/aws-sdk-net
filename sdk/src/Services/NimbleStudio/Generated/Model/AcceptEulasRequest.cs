@@ -80,7 +80,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property StudioId. 
         /// <para>
-        /// A collection of EULA IDs.
+        /// The studio ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

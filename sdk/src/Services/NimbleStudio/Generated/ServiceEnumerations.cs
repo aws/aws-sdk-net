@@ -213,6 +213,14 @@ namespace Amazon.NimbleStudio
         /// </summary>
         public static readonly LaunchProfileStatusCode INTERNAL_ERROR = new LaunchProfileStatusCode("INTERNAL_ERROR");
         /// <summary>
+        /// Constant INVALID_INSTANCE_TYPES_PROVIDED for LaunchProfileStatusCode
+        /// </summary>
+        public static readonly LaunchProfileStatusCode INVALID_INSTANCE_TYPES_PROVIDED = new LaunchProfileStatusCode("INVALID_INSTANCE_TYPES_PROVIDED");
+        /// <summary>
+        /// Constant INVALID_SUBNETS_COMBINATION for LaunchProfileStatusCode
+        /// </summary>
+        public static readonly LaunchProfileStatusCode INVALID_SUBNETS_COMBINATION = new LaunchProfileStatusCode("INVALID_SUBNETS_COMBINATION");
+        /// <summary>
         /// Constant INVALID_SUBNETS_PROVIDED for LaunchProfileStatusCode
         /// </summary>
         public static readonly LaunchProfileStatusCode INVALID_SUBNETS_PROVIDED = new LaunchProfileStatusCode("INVALID_SUBNETS_PROVIDED");
@@ -733,6 +741,14 @@ namespace Amazon.NimbleStudio
     {
 
         /// <summary>
+        /// Constant G34xlarge for StreamingInstanceType
+        /// </summary>
+        public static readonly StreamingInstanceType G34xlarge = new StreamingInstanceType("g3.4xlarge");
+        /// <summary>
+        /// Constant G3sXlarge for StreamingInstanceType
+        /// </summary>
+        public static readonly StreamingInstanceType G3sXlarge = new StreamingInstanceType("g3s.xlarge");
+        /// <summary>
         /// Constant G4dn12xlarge for StreamingInstanceType
         /// </summary>
         public static readonly StreamingInstanceType G4dn12xlarge = new StreamingInstanceType("g4dn.12xlarge");
@@ -756,6 +772,26 @@ namespace Amazon.NimbleStudio
         /// Constant G4dnXlarge for StreamingInstanceType
         /// </summary>
         public static readonly StreamingInstanceType G4dnXlarge = new StreamingInstanceType("g4dn.xlarge");
+        /// <summary>
+        /// Constant G516xlarge for StreamingInstanceType
+        /// </summary>
+        public static readonly StreamingInstanceType G516xlarge = new StreamingInstanceType("g5.16xlarge");
+        /// <summary>
+        /// Constant G52xlarge for StreamingInstanceType
+        /// </summary>
+        public static readonly StreamingInstanceType G52xlarge = new StreamingInstanceType("g5.2xlarge");
+        /// <summary>
+        /// Constant G54xlarge for StreamingInstanceType
+        /// </summary>
+        public static readonly StreamingInstanceType G54xlarge = new StreamingInstanceType("g5.4xlarge");
+        /// <summary>
+        /// Constant G58xlarge for StreamingInstanceType
+        /// </summary>
+        public static readonly StreamingInstanceType G58xlarge = new StreamingInstanceType("g5.8xlarge");
+        /// <summary>
+        /// Constant G5Xlarge for StreamingInstanceType
+        /// </summary>
+        public static readonly StreamingInstanceType G5Xlarge = new StreamingInstanceType("g5.xlarge");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

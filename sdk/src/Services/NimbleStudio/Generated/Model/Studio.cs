@@ -41,7 +41,7 @@ namespace Amazon.NimbleStudio.Model
     /// <para>
     /// When creating a studio, you must provides two IAM roles for use with the Nimble Studio
     /// portal. These roles are assumed by your users when they log in to the Nimble Studio
-    /// portal via Amazon Web Services SSO and your identity source.
+    /// portal via IAM Identity Center and your identity source.
     /// </para>
     ///  
     /// <para>
@@ -175,8 +175,8 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property SsoClientId. 
         /// <para>
-        /// The Amazon Web Services SSO application client ID used to integrate with Amazon Web
-        /// Services SSO to enable Amazon Web Services SSO users to log in to Nimble Studio portal.
+        /// The IAM Identity Center application client ID used to integrate with IAM Identity
+        /// Center to enable IAM Identity Center users to log in to Nimble Studio portal.
         /// </para>
         /// </summary>
         public string SsoClientId
