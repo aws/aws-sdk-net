@@ -96,7 +96,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Count. 
         /// <para>
-        /// Instructs WAF to count the web request and allow it.
+        /// Instructs WAF to count the web request and then continue evaluating the request using
+        /// the remaining rules in the web ACL.
         /// </para>
         /// </summary>
         public CountAction Count

@@ -46,6 +46,15 @@ namespace Amazon.WAFV2.Model
         /// can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync
         /// GraphQL API, or an Amazon Cognito user pool. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you don't provide a resource type, the call uses the resource type <code>APPLICATION_LOAD_BALANCER</code>.
+        /// 
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Default: <code>APPLICATION_LOAD_BALANCER</code> 
+        /// </para>
         /// </summary>
         public ResourceType ResourceType
         {
