@@ -34,6 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class StartAutomationExecutionRequest : AmazonSimpleSystemsManagementRequest
     {
+        private AlarmConfiguration _alarmConfiguration;
         private string _clientToken;
         private string _documentName;
         private string _documentVersion;
@@ -46,6 +47,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         private List<Dictionary<string, List<string>>> _targetMaps = new List<Dictionary<string, List<string>>>();
         private string _targetParameterName;
         private List<Target> _targets = new List<Target>();
+
+        /// <summary>
+        /// Gets and sets the property AlarmConfiguration. 
+        /// <para>
+        /// The CloudWatch alarm you want to apply to your automation.
+        /// </para>
+        /// </summary>
+        public AlarmConfiguration AlarmConfiguration
+        {
+            get { return this._alarmConfiguration; }
+            set { this._alarmConfiguration = value; }
+        }
+
+        // Check to see if AlarmConfiguration property is set
+        internal bool IsSetAlarmConfiguration()
+        {
+            return this._alarmConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClientToken. 

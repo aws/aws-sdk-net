@@ -34,6 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class SendCommandRequest : AmazonSimpleSystemsManagementRequest
     {
+        private AlarmConfiguration _alarmConfiguration;
         private CloudWatchOutputConfig _cloudWatchOutputConfig;
         private string _comment;
         private string _documentHash;
@@ -66,6 +67,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         {
             _documentName = documentName;
             _instanceIds = instanceIds;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AlarmConfiguration. 
+        /// <para>
+        /// The CloudWatch alarm you want to apply to your command.
+        /// </para>
+        /// </summary>
+        public AlarmConfiguration AlarmConfiguration
+        {
+            get { return this._alarmConfiguration; }
+            set { this._alarmConfiguration = value; }
+        }
+
+        // Check to see if AlarmConfiguration property is set
+        internal bool IsSetAlarmConfiguration()
+        {
+            return this._alarmConfiguration != null;
         }
 
         /// <summary>

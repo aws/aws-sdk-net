@@ -45,6 +45,17 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CreateAssociationBatchRequestEntry requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAlarmConfiguration())
+            {
+                context.Writer.WritePropertyName("AlarmConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AlarmConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.AlarmConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetApplyOnlyAtCronInterval())
             {
                 context.Writer.WritePropertyName("ApplyOnlyAtCronInterval");

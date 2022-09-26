@@ -34,6 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class CreateAssociationBatchRequestEntry
     {
+        private AlarmConfiguration _alarmConfiguration;
         private bool? _applyOnlyAtCronInterval;
         private string _associationName;
         private string _automationTargetParameterName;
@@ -52,6 +53,21 @@ namespace Amazon.SimpleSystemsManagement.Model
         private List<TargetLocation> _targetLocations = new List<TargetLocation>();
         private List<Dictionary<string, List<string>>> _targetMaps = new List<Dictionary<string, List<string>>>();
         private List<Target> _targets = new List<Target>();
+
+        /// <summary>
+        /// Gets and sets the property AlarmConfiguration.
+        /// </summary>
+        public AlarmConfiguration AlarmConfiguration
+        {
+            get { return this._alarmConfiguration; }
+            set { this._alarmConfiguration = value; }
+        }
+
+        // Check to see if AlarmConfiguration property is set
+        internal bool IsSetAlarmConfiguration()
+        {
+            return this._alarmConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ApplyOnlyAtCronInterval. 

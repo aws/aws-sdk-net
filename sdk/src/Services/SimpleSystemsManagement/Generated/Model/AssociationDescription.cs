@@ -33,6 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class AssociationDescription
     {
+        private AlarmConfiguration _alarmConfiguration;
         private bool? _applyOnlyAtCronInterval;
         private string _associationId;
         private string _associationName;
@@ -59,6 +60,22 @@ namespace Amazon.SimpleSystemsManagement.Model
         private List<TargetLocation> _targetLocations = new List<TargetLocation>();
         private List<Dictionary<string, List<string>>> _targetMaps = new List<Dictionary<string, List<string>>>();
         private List<Target> _targets = new List<Target>();
+        private List<AlarmStateInformation> _triggeredAlarms = new List<AlarmStateInformation>();
+
+        /// <summary>
+        /// Gets and sets the property AlarmConfiguration.
+        /// </summary>
+        public AlarmConfiguration AlarmConfiguration
+        {
+            get { return this._alarmConfiguration; }
+            set { this._alarmConfiguration = value; }
+        }
+
+        // Check to see if AlarmConfiguration property is set
+        internal bool IsSetAlarmConfiguration()
+        {
+            return this._alarmConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ApplyOnlyAtCronInterval. 
@@ -582,6 +599,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetTargets()
         {
             return this._targets != null && this._targets.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TriggeredAlarms. 
+        /// <para>
+        /// The CloudWatch alarm that was invoked during the association.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<AlarmStateInformation> TriggeredAlarms
+        {
+            get { return this._triggeredAlarms; }
+            set { this._triggeredAlarms = value; }
+        }
+
+        // Check to see if TriggeredAlarms property is set
+        internal bool IsSetTriggeredAlarms()
+        {
+            return this._triggeredAlarms != null && this._triggeredAlarms.Count > 0; 
         }
 
     }

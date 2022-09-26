@@ -33,6 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class Command
     {
+        private AlarmConfiguration _alarmConfiguration;
         private CloudWatchOutputConfig _cloudWatchOutputConfig;
         private string _commandId;
         private string _comment;
@@ -57,6 +58,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         private int? _targetCount;
         private List<Target> _targets = new List<Target>();
         private int? _timeoutSeconds;
+        private List<AlarmStateInformation> _triggeredAlarms = new List<AlarmStateInformation>();
+
+        /// <summary>
+        /// Gets and sets the property AlarmConfiguration. 
+        /// <para>
+        /// The details for the CloudWatch alarm applied to your command.
+        /// </para>
+        /// </summary>
+        public AlarmConfiguration AlarmConfiguration
+        {
+            get { return this._alarmConfiguration; }
+            set { this._alarmConfiguration = value; }
+        }
+
+        // Check to see if AlarmConfiguration property is set
+        internal bool IsSetAlarmConfiguration()
+        {
+            return this._alarmConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CloudWatchOutputConfig. 
@@ -581,6 +601,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetTimeoutSeconds()
         {
             return this._timeoutSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TriggeredAlarms. 
+        /// <para>
+        /// The CloudWatch alarm that was invoked by the command.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<AlarmStateInformation> TriggeredAlarms
+        {
+            get { return this._triggeredAlarms; }
+            set { this._triggeredAlarms = value; }
+        }
+
+        // Check to see if TriggeredAlarms property is set
+        internal bool IsSetTriggeredAlarms()
+        {
+            return this._triggeredAlarms != null && this._triggeredAlarms.Count > 0; 
         }
 
     }

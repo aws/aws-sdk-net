@@ -89,6 +89,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class UpdateMaintenanceWindowTaskRequest : AmazonSimpleSystemsManagementRequest
     {
+        private AlarmConfiguration _alarmConfiguration;
         private MaintenanceWindowTaskCutoffBehavior _cutoffBehavior;
         private string _description;
         private LoggingInfo _loggingInfo;
@@ -104,6 +105,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         private Dictionary<string, MaintenanceWindowTaskParameterValueExpression> _taskParameters = new Dictionary<string, MaintenanceWindowTaskParameterValueExpression>();
         private string _windowId;
         private string _windowTaskId;
+
+        /// <summary>
+        /// Gets and sets the property AlarmConfiguration. 
+        /// <para>
+        /// The CloudWatch alarm you want to apply to your maintenance window task.
+        /// </para>
+        /// </summary>
+        public AlarmConfiguration AlarmConfiguration
+        {
+            get { return this._alarmConfiguration; }
+            set { this._alarmConfiguration = value; }
+        }
+
+        // Check to see if AlarmConfiguration property is set
+        internal bool IsSetAlarmConfiguration()
+        {
+            return this._alarmConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CutoffBehavior. 

@@ -33,6 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class MaintenanceWindowExecutionTaskIdentity
     {
+        private AlarmConfiguration _alarmConfiguration;
         private DateTime? _endTime;
         private DateTime? _startTime;
         private MaintenanceWindowExecutionStatus _status;
@@ -40,7 +41,26 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _taskArn;
         private string _taskExecutionId;
         private MaintenanceWindowTaskType _taskType;
+        private List<AlarmStateInformation> _triggeredAlarms = new List<AlarmStateInformation>();
         private string _windowExecutionId;
+
+        /// <summary>
+        /// Gets and sets the property AlarmConfiguration. 
+        /// <para>
+        /// The details for the CloudWatch alarm applied to your maintenance window task.
+        /// </para>
+        /// </summary>
+        public AlarmConfiguration AlarmConfiguration
+        {
+            get { return this._alarmConfiguration; }
+            set { this._alarmConfiguration = value; }
+        }
+
+        // Check to see if AlarmConfiguration property is set
+        internal bool IsSetAlarmConfiguration()
+        {
+            return this._alarmConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EndTime. 
@@ -170,6 +190,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetTaskType()
         {
             return this._taskType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TriggeredAlarms. 
+        /// <para>
+        /// The CloudWatch alarm that was invoked by the maintenance window task.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<AlarmStateInformation> TriggeredAlarms
+        {
+            get { return this._triggeredAlarms; }
+            set { this._triggeredAlarms = value; }
+        }
+
+        // Check to see if TriggeredAlarms property is set
+        internal bool IsSetTriggeredAlarms()
+        {
+            return this._triggeredAlarms != null && this._triggeredAlarms.Count > 0; 
         }
 
         /// <summary>

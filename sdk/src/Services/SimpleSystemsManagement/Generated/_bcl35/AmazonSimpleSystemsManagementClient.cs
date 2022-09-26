@@ -895,7 +895,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The schedule is invalid. Verify your cron or rate expression and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTagException">
-        /// The specified tag key or value is not valid.
+        /// The tag key or value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTargetException">
         /// The target isn't valid or doesn't exist. It might not be configured for Systems Manager
@@ -985,7 +985,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The schedule is invalid. Verify your cron or rate expression and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTagException">
-        /// The specified tag key or value is not valid.
+        /// The tag key or value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTargetException">
         /// The target isn't valid or doesn't exist. It might not be configured for Systems Manager

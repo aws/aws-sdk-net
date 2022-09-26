@@ -2099,6 +2099,56 @@ namespace Amazon.SimpleSystemsManagement
 
 
     /// <summary>
+    /// Constants used for properties of type ExternalAlarmState.
+    /// </summary>
+    public class ExternalAlarmState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALARM for ExternalAlarmState
+        /// </summary>
+        public static readonly ExternalAlarmState ALARM = new ExternalAlarmState("ALARM");
+        /// <summary>
+        /// Constant UNKNOWN for ExternalAlarmState
+        /// </summary>
+        public static readonly ExternalAlarmState UNKNOWN = new ExternalAlarmState("UNKNOWN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExternalAlarmState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExternalAlarmState FindValue(string value)
+        {
+            return FindValue<ExternalAlarmState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExternalAlarmState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Fault.
     /// </summary>
     public class Fault : ConstantClass

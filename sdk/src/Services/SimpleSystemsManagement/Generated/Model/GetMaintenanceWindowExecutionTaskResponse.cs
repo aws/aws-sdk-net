@@ -33,6 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class GetMaintenanceWindowExecutionTaskResponse : AmazonWebServiceResponse
     {
+        private AlarmConfiguration _alarmConfiguration;
         private DateTime? _endTime;
         private string _maxConcurrency;
         private string _maxErrors;
@@ -44,8 +45,27 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _taskArn;
         private string _taskExecutionId;
         private List<Dictionary<string, MaintenanceWindowTaskParameterValueExpression>> _taskParameters = new List<Dictionary<string, MaintenanceWindowTaskParameterValueExpression>>();
+        private List<AlarmStateInformation> _triggeredAlarms = new List<AlarmStateInformation>();
         private MaintenanceWindowTaskType _type;
         private string _windowExecutionId;
+
+        /// <summary>
+        /// Gets and sets the property AlarmConfiguration. 
+        /// <para>
+        /// The details for the CloudWatch alarm you applied to your maintenance window task.
+        /// </para>
+        /// </summary>
+        public AlarmConfiguration AlarmConfiguration
+        {
+            get { return this._alarmConfiguration; }
+            set { this._alarmConfiguration = value; }
+        }
+
+        // Check to see if AlarmConfiguration property is set
+        internal bool IsSetAlarmConfiguration()
+        {
+            return this._alarmConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EndTime. 
@@ -270,6 +290,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetTaskParameters()
         {
             return this._taskParameters != null && this._taskParameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TriggeredAlarms. 
+        /// <para>
+        /// The CloudWatch alarms that were invoked by the maintenance window task.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<AlarmStateInformation> TriggeredAlarms
+        {
+            get { return this._triggeredAlarms; }
+            set { this._triggeredAlarms = value; }
+        }
+
+        // Check to see if TriggeredAlarms property is set
+        internal bool IsSetTriggeredAlarms()
+        {
+            return this._triggeredAlarms != null && this._triggeredAlarms.Count > 0; 
         }
 
         /// <summary>

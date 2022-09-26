@@ -51,6 +51,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AlarmConfiguration", targetDepth))
+                {
+                    var unmarshaller = AlarmConfigurationUnmarshaller.Instance;
+                    response.AlarmConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EndTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -115,6 +121,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<Dictionary<string, MaintenanceWindowTaskParameterValueExpression>, DictionaryUnmarshaller<string, MaintenanceWindowTaskParameterValueExpression, StringUnmarshaller, MaintenanceWindowTaskParameterValueExpressionUnmarshaller>>(new DictionaryUnmarshaller<string, MaintenanceWindowTaskParameterValueExpression, StringUnmarshaller, MaintenanceWindowTaskParameterValueExpressionUnmarshaller>(StringUnmarshaller.Instance, MaintenanceWindowTaskParameterValueExpressionUnmarshaller.Instance));
                     response.TaskParameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TriggeredAlarms", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AlarmStateInformation, AlarmStateInformationUnmarshaller>(AlarmStateInformationUnmarshaller.Instance);
+                    response.TriggeredAlarms = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Type", targetDepth))

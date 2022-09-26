@@ -33,6 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class GetMaintenanceWindowTaskResponse : AmazonWebServiceResponse
     {
+        private AlarmConfiguration _alarmConfiguration;
         private MaintenanceWindowTaskCutoffBehavior _cutoffBehavior;
         private string _description;
         private LoggingInfo _loggingInfo;
@@ -48,6 +49,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         private MaintenanceWindowTaskType _taskType;
         private string _windowId;
         private string _windowTaskId;
+
+        /// <summary>
+        /// Gets and sets the property AlarmConfiguration. 
+        /// <para>
+        /// The details for the CloudWatch alarm you applied to your maintenance window task.
+        /// </para>
+        /// </summary>
+        public AlarmConfiguration AlarmConfiguration
+        {
+            get { return this._alarmConfiguration; }
+            set { this._alarmConfiguration = value; }
+        }
+
+        // Check to see if AlarmConfiguration property is set
+        internal bool IsSetAlarmConfiguration()
+        {
+            return this._alarmConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CutoffBehavior. 

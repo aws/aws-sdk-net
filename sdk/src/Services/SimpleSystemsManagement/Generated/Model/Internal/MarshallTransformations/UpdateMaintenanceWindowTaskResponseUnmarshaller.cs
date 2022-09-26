@@ -51,6 +51,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AlarmConfiguration", targetDepth))
+                {
+                    var unmarshaller = AlarmConfigurationUnmarshaller.Instance;
+                    response.AlarmConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CutoffBehavior", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

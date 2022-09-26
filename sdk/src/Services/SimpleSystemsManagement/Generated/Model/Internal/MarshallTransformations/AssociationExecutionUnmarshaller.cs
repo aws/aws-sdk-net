@@ -64,6 +64,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AlarmConfiguration", targetDepth))
+                {
+                    var unmarshaller = AlarmConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.AlarmConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AssociationId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -110,6 +116,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TriggeredAlarms", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AlarmStateInformation, AlarmStateInformationUnmarshaller>(AlarmStateInformationUnmarshaller.Instance);
+                    unmarshalledObject.TriggeredAlarms = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
