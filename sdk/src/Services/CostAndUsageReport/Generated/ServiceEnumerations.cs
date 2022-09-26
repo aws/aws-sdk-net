@@ -117,6 +117,10 @@ namespace Amazon.CostAndUsageReport
         /// </summary>
         public static readonly AWSRegion ApSoutheast2 = new AWSRegion("ap-southeast-2");
         /// <summary>
+        /// Constant ApSoutheast3 for AWSRegion
+        /// </summary>
+        public static readonly AWSRegion ApSoutheast3 = new AWSRegion("ap-southeast-3");
+        /// <summary>
         /// Constant CaCentral1 for AWSRegion
         /// </summary>
         public static readonly AWSRegion CaCentral1 = new AWSRegion("ca-central-1");
@@ -141,6 +145,10 @@ namespace Amazon.CostAndUsageReport
         /// </summary>
         public static readonly AWSRegion EuSouth1 = new AWSRegion("eu-south-1");
         /// <summary>
+        /// Constant EuSouth2 for AWSRegion
+        /// </summary>
+        public static readonly AWSRegion EuSouth2 = new AWSRegion("eu-south-2");
+        /// <summary>
         /// Constant EuWest1 for AWSRegion
         /// </summary>
         public static readonly AWSRegion EuWest1 = new AWSRegion("eu-west-1");
@@ -152,6 +160,10 @@ namespace Amazon.CostAndUsageReport
         /// Constant EuWest3 for AWSRegion
         /// </summary>
         public static readonly AWSRegion EuWest3 = new AWSRegion("eu-west-3");
+        /// <summary>
+        /// Constant MeCentral1 for AWSRegion
+        /// </summary>
+        public static readonly AWSRegion MeCentral1 = new AWSRegion("me-central-1");
         /// <summary>
         /// Constant MeSouth1 for AWSRegion
         /// </summary>
