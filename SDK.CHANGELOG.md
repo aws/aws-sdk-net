@@ -1,3 +1,14 @@
+### 3.7.365.0 (2022-09-26 18:19 UTC)
+* CostAndUsageReport (3.7.1.0)
+	* This release adds two new support regions(me-central-1/eu-south-2) for OSG.
+* IoTFleetWise (3.7.0.0)
+	* General availability (GA) for AWS IoT Fleetwise. It adds AWS IoT Fleetwise to AWS SDK. For more information, see https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/Welcome.html.
+* SimpleSystemsManagement (3.7.20.0)
+	* This release includes support for applying a CloudWatch alarm to Systems Manager capabilities like Automation, Run Command, State Manager, and Maintenance Windows.
+* Core 3.7.13.10
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.364.0 (2022-09-23 18:20 UTC)
 * AppRunner (3.7.5.0)
 	* AWS App Runner adds a Node.js 16 runtime.
