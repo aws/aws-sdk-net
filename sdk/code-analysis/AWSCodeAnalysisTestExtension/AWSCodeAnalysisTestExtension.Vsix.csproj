@@ -672,6 +672,10 @@
       <Project>{7473EA8B-E5A7-4964-93AE-21E3935A7490}</Project>
       <Name>AWSSDK.IoTFleetHub.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/IoTFleetWise/AWSSDK.IoTFleetWise.CodeAnalysis.csproj">
+      <Project>{8A2B2868-F9D0-4762-8782-04E1259038E9}</Project>
+      <Name>AWSSDK.IoTFleetWise.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/IoTJobsDataPlane/AWSSDK.IoTJobsDataPlane.CodeAnalysis.csproj">
       <Project>{1FF0B940-2F0B-4D80-90CC-AB3795ACE6E0}</Project>
       <Name>AWSSDK.IoTJobsDataPlane.CodeAnalysis</Name>
