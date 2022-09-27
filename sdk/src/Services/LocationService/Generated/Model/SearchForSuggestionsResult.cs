@@ -34,7 +34,33 @@ namespace Amazon.LocationService.Model
     /// </summary>
     public partial class SearchForSuggestionsResult
     {
+        private string _placeId;
         private string _text;
+
+        /// <summary>
+        /// Gets and sets the property PlaceId. 
+        /// <para>
+        /// The unique identifier of the place. You can use this with the <code>GetPlace</code>
+        /// operation to find the place again later.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code>
+        /// is returned by place indexes that use HERE or Esri as data providers.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string PlaceId
+        {
+            get { return this._placeId; }
+            set { this._placeId = value; }
+        }
+
+        // Check to see if PlaceId property is set
+        internal bool IsSetPlaceId()
+        {
+            return this._placeId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Text. 

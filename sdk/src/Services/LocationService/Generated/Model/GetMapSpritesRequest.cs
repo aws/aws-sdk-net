@@ -54,7 +54,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For the JSON document contain image offsets. Use the following ﬁle names:
+        /// For the JSON document containing image offsets. Use the following ﬁle names:
         /// </para>
         ///  <ul> <li> 
         /// <para>

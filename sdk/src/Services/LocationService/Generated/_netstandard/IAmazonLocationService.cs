@@ -1448,6 +1448,61 @@ namespace Amazon.LocationService
 
         #endregion
                 
+        #region  GetPlace
+
+
+
+        /// <summary>
+        /// Finds a place by its unique ID. A <code>PlaceId</code> is returned by other search
+        /// operations.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// A PlaceId is valid only if all of the following are the same in the original search
+        /// request and the call to <code>GetPlace</code>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Customer AWS account
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// AWS Region
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Data provider specified in the place index resource
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPlace service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPlace service method, as returned by LocationService.</returns>
+        /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.InternalServerException">
+        /// The request has failed to process because of an unknown server error, exception, or
+        /// failure.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ResourceNotFoundException">
+        /// The resource that you've entered was not found in your AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
+        /// The request was denied because of request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ValidationException">
+        /// The input failed to meet the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/GetPlace">REST API Reference for GetPlace Operation</seealso>
+        Task<GetPlaceResponse> GetPlaceAsync(GetPlaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListDevicePositions
 
 

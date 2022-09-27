@@ -136,6 +136,18 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.TimeZone = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("UnitNumber", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UnitNumber = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UnitType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UnitType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

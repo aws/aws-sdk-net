@@ -35,6 +35,7 @@ namespace Amazon.LocationService.Model
     {
         private double? _distance;
         private Place _place;
+        private string _placeId;
         private double? _relevance;
 
         /// <summary>
@@ -81,6 +82,31 @@ namespace Amazon.LocationService.Model
         internal bool IsSetPlace()
         {
             return this._place != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlaceId. 
+        /// <para>
+        /// The unique identifier of the place. You can use this with the <code>GetPlace</code>
+        /// operation to find the place again later.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// For <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is returned
+        /// only by place indexes that use HERE as a data provider.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string PlaceId
+        {
+            get { return this._placeId; }
+            set { this._placeId = value; }
+        }
+
+        // Check to see if PlaceId property is set
+        internal bool IsSetPlaceId()
+        {
+            return this._placeId != null;
         }
 
         /// <summary>

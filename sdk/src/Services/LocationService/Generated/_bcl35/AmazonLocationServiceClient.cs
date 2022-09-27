@@ -2813,6 +2813,97 @@ namespace Amazon.LocationService
 
         #endregion
         
+        #region  GetPlace
+
+        /// <summary>
+        /// Finds a place by its unique ID. A <code>PlaceId</code> is returned by other search
+        /// operations.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// A PlaceId is valid only if all of the following are the same in the original search
+        /// request and the call to <code>GetPlace</code>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Customer AWS account
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// AWS Region
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Data provider specified in the place index resource
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPlace service method.</param>
+        /// 
+        /// <returns>The response from the GetPlace service method, as returned by LocationService.</returns>
+        /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.InternalServerException">
+        /// The request has failed to process because of an unknown server error, exception, or
+        /// failure.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ResourceNotFoundException">
+        /// The resource that you've entered was not found in your AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
+        /// The request was denied because of request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ValidationException">
+        /// The input failed to meet the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/GetPlace">REST API Reference for GetPlace Operation</seealso>
+        public virtual GetPlaceResponse GetPlace(GetPlaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPlaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPlaceResponseUnmarshaller.Instance;
+
+            return Invoke<GetPlaceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPlace operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPlace operation on AmazonLocationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPlace
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/GetPlace">REST API Reference for GetPlace Operation</seealso>
+        public virtual IAsyncResult BeginGetPlace(GetPlaceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPlaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPlaceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPlace operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPlace.</param>
+        /// 
+        /// <returns>Returns a  GetPlaceResult from LocationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/GetPlace">REST API Reference for GetPlace Operation</seealso>
+        public virtual GetPlaceResponse EndGetPlace(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetPlaceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListDevicePositions
 
         /// <summary>

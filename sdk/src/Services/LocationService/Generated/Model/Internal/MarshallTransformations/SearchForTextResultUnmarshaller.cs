@@ -76,6 +76,12 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.Place = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PlaceId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PlaceId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Relevance", targetDepth))
                 {
                     var unmarshaller = DoubleUnmarshaller.Instance;
