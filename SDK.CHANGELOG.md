@@ -1,3 +1,14 @@
+### 3.7.366.0 (2022-09-27 18:23 UTC)
+* CostExplorer (3.7.7.0)
+	* This release is to support retroactive Cost Categories. The new field will enable you to retroactively apply new and existing cost category rules to previous months.
+* Kendra (3.7.27.0)
+	* My AWS Service (placeholder) - Amazon Kendra now provides a data source connector for DropBox. For more information, see https://docs.aws.amazon.com/kendra/latest/dg/data-source-dropbox.html
+* LocationService (3.7.12.0)
+	* This release adds place IDs, which are unique identifiers of places, along with a new GetPlace operation, which can be used with place IDs to find a place again later. UnitNumber and UnitType are also added as new properties of places.
+* Core 3.7.13.12
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.365.1 (2022-09-26 23:08 UTC)
 * S3 (3.7.9.60)
 	* Fix unmarshalling of empty SSES3 shape in ListBucketInventoryConfigurations

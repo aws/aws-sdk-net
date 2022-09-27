@@ -32,7 +32,7 @@ namespace Amazon.NimbleStudio
     public partial class AmazonNimbleStudioConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.6.2");
+            InternalSDKUtils.BuildUserAgentString("3.7.6.3");
 
         private string _userAgent = UserAgentString;
 

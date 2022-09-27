@@ -32,7 +32,7 @@ namespace Amazon.DevOpsGuru
     public partial class AmazonDevOpsGuruConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.10.31");
+            InternalSDKUtils.BuildUserAgentString("3.7.10.32");
 
         private string _userAgent = UserAgentString;
 
