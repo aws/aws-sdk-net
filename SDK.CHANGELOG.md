@@ -1,3 +1,10 @@
+### 3.7.365.1 (2022-09-26 23:08 UTC)
+* S3 (3.7.9.60)
+	* Fix unmarshalling of empty SSES3 shape in ListBucketInventoryConfigurations
+* Core 3.7.13.11
+	* Add support for Collections of Documents and fix concurrency issue when setting up region endpoints
+	* All services packages updated to require new Core
+
 ### 3.7.365.0 (2022-09-26 18:19 UTC)
 * CostAndUsageReport (3.7.1.0)
 	* This release adds two new support regions(me-central-1/eu-south-2) for OSG.
