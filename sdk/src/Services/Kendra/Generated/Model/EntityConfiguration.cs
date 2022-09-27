@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Provides the configuration information for users or groups in your Amazon Web Services
-    /// SSO identity source to grant access your Amazon Kendra experience.
+    /// Provides the configuration information for users or groups in your IAM Identity Center
+    /// identity source to grant access your Amazon Kendra experience.
     /// </summary>
     public partial class EntityConfiguration
     {
@@ -40,8 +40,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property EntityId. 
         /// <para>
-        /// The identifier of a user or group in your Amazon Web Services SSO identity source.
-        /// For example, a user ID could be an email.
+        /// The identifier of a user or group in your IAM Identity Center identity source. For
+        /// example, a user ID could be an email.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=47)]

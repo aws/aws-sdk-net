@@ -326,7 +326,7 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property UserGroupResolutionConfiguration. 
         /// <para>
         /// Whether you have enabled the configuration for fetching access levels of groups and
-        /// users from an Amazon Web Services Single Sign On identity source.
+        /// users from an IAM Identity Center (successor to Single Sign-On) identity source.
         /// </para>
         /// </summary>
         public UserGroupResolutionConfiguration UserGroupResolutionConfiguration

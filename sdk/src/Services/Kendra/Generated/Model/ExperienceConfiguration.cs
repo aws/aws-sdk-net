@@ -61,8 +61,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property UserIdentityConfiguration. 
         /// <para>
-        /// The Amazon Web Services SSO field name that contains the identifiers of your users,
-        /// such as their emails.
+        /// The IAM Identity Center field name that contains the identifiers of your users, such
+        /// as their emails.
         /// </para>
         /// </summary>
         public UserIdentityConfiguration UserIdentityConfiguration

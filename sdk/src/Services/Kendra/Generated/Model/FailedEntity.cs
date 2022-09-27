@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Information on the users or groups in your Amazon Web Services SSO identity source
-    /// that failed to properly configure with your Amazon Kendra experience.
+    /// Information on the users or groups in your IAM Identity Center identity source that
+    /// failed to properly configure with your Amazon Kendra experience.
     /// </summary>
     public partial class FailedEntity
     {
@@ -40,8 +40,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property EntityId. 
         /// <para>
-        /// The identifier of the user or group in your Amazon Web Services SSO identity source.
-        /// For example, a user ID could be an email.
+        /// The identifier of the user or group in your IAM Identity Center identity source. For
+        /// example, a user ID could be an email.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=47)]
@@ -60,8 +60,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// The reason the user or group in your Amazon Web Services SSO identity source failed
-        /// to properly configure with your Amazon Kendra experience.
+        /// The reason the user or group in your IAM Identity Center identity source failed to
+        /// properly configure with your Amazon Kendra experience.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

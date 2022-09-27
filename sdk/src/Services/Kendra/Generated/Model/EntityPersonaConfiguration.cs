@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Provides the configuration information for users or groups in your Amazon Web Services
-    /// SSO identity source for access to your Amazon Kendra experience. Specific permissions
+    /// Provides the configuration information for users or groups in your IAM Identity Center
+    /// identity source for access to your Amazon Kendra experience. Specific permissions
     /// are defined for each user or group once they are granted access to your Amazon Kendra
     /// experience.
     /// </summary>
@@ -42,8 +42,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property EntityId. 
         /// <para>
-        /// The identifier of a user or group in your Amazon Web Services SSO identity source.
-        /// For example, a user ID could be an email.
+        /// The identifier of a user or group in your IAM Identity Center identity source. For
+        /// example, a user ID could be an email.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=47)]
@@ -62,8 +62,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Persona. 
         /// <para>
-        /// The persona that defines the specific permissions of the user or group in your Amazon
-        /// Web Services SSO identity source. The available personas or access roles are <code>Owner</code>
+        /// The persona that defines the specific permissions of the user or group in your IAM
+        /// Identity Center identity source. The available personas or access roles are <code>Owner</code>
         /// and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing
         /// access to your search page</a>.
         /// </para>

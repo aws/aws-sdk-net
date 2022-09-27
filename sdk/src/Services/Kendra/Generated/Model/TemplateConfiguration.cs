@@ -38,18 +38,13 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Template. 
         /// <para>
-        /// The template schema used for the data source.
+        /// The template schema used for the data source, where templates schemas are supported.
         /// </para>
         ///  
         /// <para>
-        /// The following links to the template schema for data sources where templates are supported:
+        /// See <a href="https://docs.aws.amazon.com/kendra/latest/dg/ds-schemas.html">Data source
+        /// template schemas</a>.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-zendesk.html#zendesk-template-schema">Zendesk
-        /// template schema</a> 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public Amazon.Runtime.Documents.Document Template
         {

@@ -258,7 +258,7 @@ namespace Amazon.Kendra
         #region  AssociateEntitiesToExperience
 
         /// <summary>
-        /// Grants users or groups in your Amazon Web Services SSO identity source access to your
+        /// Grants users or groups in your IAM Identity Center identity source access to your
         /// Amazon Kendra experience. You can create an Amazon Kendra experience such as a search
         /// application. For more information on creating a search application experience, see
         /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
@@ -334,10 +334,10 @@ namespace Amazon.Kendra
         #region  AssociatePersonasToEntities
 
         /// <summary>
-        /// Defines the specific permissions of users or groups in your Amazon Web Services SSO
-        /// identity source with access to your Amazon Kendra experience. You can create an Amazon
-        /// Kendra experience such as a search application. For more information on creating a
-        /// search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+        /// Defines the specific permissions of users or groups in your IAM Identity Center identity
+        /// source with access to your Amazon Kendra experience. You can create an Amazon Kendra
+        /// experience such as a search application. For more information on creating a search
+        /// application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
         /// a search experience with no code</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociatePersonasToEntities service method.</param>
@@ -2672,7 +2672,7 @@ namespace Amazon.Kendra
         #region  DisassociateEntitiesFromExperience
 
         /// <summary>
-        /// Prevents users or groups in your Amazon Web Services SSO identity source from accessing
+        /// Prevents users or groups in your IAM Identity Center identity source from accessing
         /// your Amazon Kendra experience. You can create an Amazon Kendra experience such as
         /// a search application. For more information on creating a search application experience,
         /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
@@ -2745,10 +2745,10 @@ namespace Amazon.Kendra
         #region  DisassociatePersonasFromEntities
 
         /// <summary>
-        /// Removes the specific permissions of users or groups in your Amazon Web Services SSO
-        /// identity source with access to your Amazon Kendra experience. You can create an Amazon
-        /// Kendra experience such as a search application. For more information on creating a
-        /// search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
+        /// Removes the specific permissions of users or groups in your IAM Identity Center identity
+        /// source with access to your Amazon Kendra experience. You can create an Amazon Kendra
+        /// experience such as a search application. For more information on creating a search
+        /// application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
         /// a search experience with no code</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociatePersonasFromEntities service method.</param>
@@ -3247,7 +3247,7 @@ namespace Amazon.Kendra
         #region  ListExperienceEntities
 
         /// <summary>
-        /// Lists users or groups in your Amazon Web Services SSO identity source that are granted
+        /// Lists users or groups in your IAM Identity Center identity source that are granted
         /// access to your Amazon Kendra experience. You can create an Amazon Kendra experience
         /// such as a search application. For more information on creating a search application
         /// experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building

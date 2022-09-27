@@ -38,7 +38,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property FailedEntityList. 
         /// <para>
-        /// Lists the users or groups in your Amazon Web Services SSO identity source that failed
+        /// Lists the users or groups in your IAM Identity Center identity source that failed
         /// to properly configure with your Amazon Kendra experience.
         /// </para>
         /// </summary>

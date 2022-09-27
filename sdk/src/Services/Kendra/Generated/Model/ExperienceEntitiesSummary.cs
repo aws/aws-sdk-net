@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Summary information for users or groups in your Amazon Web Services SSO identity source
+    /// Summary information for users or groups in your IAM Identity Center identity source
     /// with granted access to your Amazon Kendra experience. You can create an Amazon Kendra
     /// experience such as a search application. For more information on creating a search
     /// application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building
@@ -62,8 +62,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property EntityId. 
         /// <para>
-        /// The identifier of a user or group in your Amazon Web Services SSO identity source.
-        /// For example, a user ID could be an email.
+        /// The identifier of a user or group in your IAM Identity Center identity source. For
+        /// example, a user ID could be an email.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=47)]
