@@ -35,6 +35,7 @@ namespace Amazon.CostExplorer.Model
     public partial class CreateCostCategoryDefinitionRequest : AmazonCostExplorerRequest
     {
         private string _defaultValue;
+        private string _effectiveStart;
         private string _name;
         private List<ResourceTag> _resourceTags = new List<ResourceTag>();
         private List<CostCategoryRule> _rules = new List<CostCategoryRule>();
@@ -55,6 +56,27 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetDefaultValue()
         {
             return this._defaultValue != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EffectiveStart. 
+        /// <para>
+        /// The Cost Category's effective start date. It can only be a billing start date (first
+        /// day of the month). If the date isn't provided, it's the first day of the current month.
+        /// Dates can't be before the previous twelve months, or in the future.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=25)]
+        public string EffectiveStart
+        {
+            get { return this._effectiveStart; }
+            set { this._effectiveStart = value; }
+        }
+
+        // Check to see if EffectiveStart property is set
+        internal bool IsSetEffectiveStart()
+        {
+            return this._effectiveStart != null;
         }
 
         /// <summary>

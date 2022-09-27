@@ -79,6 +79,12 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DefaultValue);
                 }
 
+                if(publicRequest.IsSetEffectiveStart())
+                {
+                    context.Writer.WritePropertyName("EffectiveStart");
+                    context.Writer.Write(publicRequest.EffectiveStart);
+                }
+
                 if(publicRequest.IsSetRules())
                 {
                     context.Writer.WritePropertyName("Rules");

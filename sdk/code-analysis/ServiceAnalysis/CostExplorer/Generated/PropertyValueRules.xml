@@ -19,6 +19,12 @@
     <pattern>^(?! )[\p{L}\p{N}\p{Z}-_]*(?&lt;! )$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CostExplorer.Model.CreateCostCategoryDefinitionRequest.EffectiveStart</property>
+    <min>20</min>
+    <max>25</max>
+    <pattern>^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CostExplorer.Model.CreateCostCategoryDefinitionRequest.Name</property>
     <min>1</min>
     <max>50</max>
@@ -489,6 +495,12 @@
     <min>1</min>
     <max>50</max>
     <pattern>^(?! )[\p{L}\p{N}\p{Z}-_]*(?&lt;! )$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.UpdateCostCategoryDefinitionRequest.EffectiveStart</property>
+    <min>20</min>
+    <max>25</max>
+    <pattern>^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CostExplorer.Model.UpdateCostCategoryDefinitionResponse.CostCategoryArn</property>

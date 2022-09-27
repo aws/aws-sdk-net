@@ -42,7 +42,8 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property Key. 
         /// <para>
         /// The names of the metadata types that you can use to filter and group your results.
-        /// For example, <code>AZ</code> returns a list of Availability Zones.
+        /// For example, <code>AZ</code> returns a list of Availability Zones. <code>LINK_ACCOUNT_NAME</code>
+        /// and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html">CostCategoryRule</a>.
         /// </para>
         /// </summary>
         public Dimension Key

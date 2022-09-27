@@ -283,7 +283,9 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property Dimension. 
         /// <para>
         /// The name of the dimension. Each <code>Dimension</code> is available for a different
-        /// <code>Context</code>. For more information, see <code>Context</code>. 
+        /// <code>Context</code>. For more information, see <code>Context</code>. <code>LINK_ACCOUNT_NAME</code>
+        /// and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html">CostCategoryRule</a>.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

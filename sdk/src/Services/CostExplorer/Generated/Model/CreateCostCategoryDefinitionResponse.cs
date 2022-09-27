@@ -58,7 +58,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EffectiveStart. 
         /// <para>
-        /// The Cost Category's effective start date. 
+        /// The Cost Category's effective start date. It can only be a billing start date (first
+        /// day of the month).
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=25)]

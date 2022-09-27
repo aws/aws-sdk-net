@@ -82,7 +82,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EffectiveEnd. 
         /// <para>
-        /// The effective end data of your Cost Category.
+        /// The effective end date of your Cost Category.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=25)]
@@ -101,7 +101,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EffectiveStart. 
         /// <para>
-        /// The effective state data of your Cost Category.
+        /// The effective start date of your Cost Category.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=25)]
