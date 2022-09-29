@@ -298,7 +298,7 @@ namespace Amazon.Translate.Model
         /// supported by Amazon Translate.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1)]
+        [AWSProperty(Min=1)]
         public List<string> TargetLanguageCodes
         {
             get { return this._targetLanguageCodes; }

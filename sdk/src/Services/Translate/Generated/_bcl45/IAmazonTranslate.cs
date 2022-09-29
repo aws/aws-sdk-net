@@ -54,6 +54,10 @@ namespace Amazon.Translate
         /// <param name="request">Container for the necessary parameters to execute the CreateParallelData service method.</param>
         /// 
         /// <returns>The response from the CreateParallelData service method, as returned by Translate.</returns>
+        /// <exception cref="Amazon.Translate.Model.ConcurrentModificationException">
+        /// Another modification is being made. That modification must complete before you can
+        /// make your change.
+        /// </exception>
         /// <exception cref="Amazon.Translate.Model.ConflictException">
         /// There was a conflict processing the request. Try your request again.
         /// </exception>
@@ -75,6 +79,9 @@ namespace Amazon.Translate
         /// <exception cref="Amazon.Translate.Model.TooManyRequestsException">
         /// You have made too many requests within a short period of time. Wait for a short time
         /// and then try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.TooManyTagsException">
+        /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/CreateParallelData">REST API Reference for CreateParallelData Operation</seealso>
         CreateParallelDataResponse CreateParallelData(CreateParallelDataRequest request);
@@ -93,6 +100,10 @@ namespace Amazon.Translate
         /// </param>
         /// 
         /// <returns>The response from the CreateParallelData service method, as returned by Translate.</returns>
+        /// <exception cref="Amazon.Translate.Model.ConcurrentModificationException">
+        /// Another modification is being made. That modification must complete before you can
+        /// make your change.
+        /// </exception>
         /// <exception cref="Amazon.Translate.Model.ConflictException">
         /// There was a conflict processing the request. Try your request again.
         /// </exception>
@@ -114,6 +125,9 @@ namespace Amazon.Translate
         /// <exception cref="Amazon.Translate.Model.TooManyRequestsException">
         /// You have made too many requests within a short period of time. Wait for a short time
         /// and then try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.TooManyTagsException">
+        /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/CreateParallelData">REST API Reference for CreateParallelData Operation</seealso>
         Task<CreateParallelDataResponse> CreateParallelDataAsync(CreateParallelDataRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -434,6 +448,10 @@ namespace Amazon.Translate
         /// <param name="request">Container for the necessary parameters to execute the ImportTerminology service method.</param>
         /// 
         /// <returns>The response from the ImportTerminology service method, as returned by Translate.</returns>
+        /// <exception cref="Amazon.Translate.Model.ConcurrentModificationException">
+        /// Another modification is being made. That modification must complete before you can
+        /// make your change.
+        /// </exception>
         /// <exception cref="Amazon.Translate.Model.InternalServerException">
         /// An internal server error occurred. Retry your request.
         /// </exception>
@@ -448,6 +466,9 @@ namespace Amazon.Translate
         /// <exception cref="Amazon.Translate.Model.TooManyRequestsException">
         /// You have made too many requests within a short period of time. Wait for a short time
         /// and then try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.TooManyTagsException">
+        /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ImportTerminology">REST API Reference for ImportTerminology Operation</seealso>
         ImportTerminologyResponse ImportTerminology(ImportTerminologyRequest request);
@@ -474,6 +495,10 @@ namespace Amazon.Translate
         /// </param>
         /// 
         /// <returns>The response from the ImportTerminology service method, as returned by Translate.</returns>
+        /// <exception cref="Amazon.Translate.Model.ConcurrentModificationException">
+        /// Another modification is being made. That modification must complete before you can
+        /// make your change.
+        /// </exception>
         /// <exception cref="Amazon.Translate.Model.InternalServerException">
         /// An internal server error occurred. Retry your request.
         /// </exception>
@@ -488,6 +513,9 @@ namespace Amazon.Translate
         /// <exception cref="Amazon.Translate.Model.TooManyRequestsException">
         /// You have made too many requests within a short period of time. Wait for a short time
         /// and then try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.TooManyTagsException">
+        /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ImportTerminology">REST API Reference for ImportTerminology Operation</seealso>
         Task<ImportTerminologyResponse> ImportTerminologyAsync(ImportTerminologyRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -597,6 +625,58 @@ namespace Amazon.Translate
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ListParallelData">REST API Reference for ListParallelData Operation</seealso>
         Task<ListParallelDataResponse> ListParallelDataAsync(ListParallelDataRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by Translate.</returns>
+        /// <exception cref="Amazon.Translate.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.InvalidParameterValueException">
+        /// The value of the parameter is not valid. Review the value of the parameter you are
+        /// using to correct it, and then retry your operation.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.ResourceNotFoundException">
+        /// The resource you are looking for has not been found. Review the resource you're looking
+        /// for and see if a different resource will accomplish your needs before retrying the
+        /// revised request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by Translate.</returns>
+        /// <exception cref="Amazon.Translate.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.InvalidParameterValueException">
+        /// The value of the parameter is not valid. Review the value of the parameter you are
+        /// using to correct it, and then retry your operation.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.ResourceNotFoundException">
+        /// The resource you are looking for has not been found. Review the resource you're looking
+        /// for and see if a different resource will accomplish your needs before retrying the
+        /// revised request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -892,6 +972,72 @@ namespace Amazon.Translate
 
         #endregion
         
+        #region  TagResource
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by Translate.</returns>
+        /// <exception cref="Amazon.Translate.Model.ConcurrentModificationException">
+        /// Another modification is being made. That modification must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.InvalidParameterValueException">
+        /// The value of the parameter is not valid. Review the value of the parameter you are
+        /// using to correct it, and then retry your operation.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.ResourceNotFoundException">
+        /// The resource you are looking for has not been found. Review the resource you're looking
+        /// for and see if a different resource will accomplish your needs before retrying the
+        /// revised request.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.TooManyTagsException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse TagResource(TagResourceRequest request);
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by Translate.</returns>
+        /// <exception cref="Amazon.Translate.Model.ConcurrentModificationException">
+        /// Another modification is being made. That modification must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.InvalidParameterValueException">
+        /// The value of the parameter is not valid. Review the value of the parameter you are
+        /// using to correct it, and then retry your operation.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.ResourceNotFoundException">
+        /// The resource you are looking for has not been found. Review the resource you're looking
+        /// for and see if a different resource will accomplish your needs before retrying the
+        /// revised request.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.TooManyTagsException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  TranslateText
 
 
@@ -989,6 +1135,66 @@ namespace Amazon.Translate
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/TranslateText">REST API Reference for TranslateText Operation</seealso>
         Task<TranslateTextResponse> TranslateTextAsync(TranslateTextRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by Translate.</returns>
+        /// <exception cref="Amazon.Translate.Model.ConcurrentModificationException">
+        /// Another modification is being made. That modification must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.InvalidParameterValueException">
+        /// The value of the parameter is not valid. Review the value of the parameter you are
+        /// using to correct it, and then retry your operation.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.ResourceNotFoundException">
+        /// The resource you are looking for has not been found. Review the resource you're looking
+        /// for and see if a different resource will accomplish your needs before retrying the
+        /// revised request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by Translate.</returns>
+        /// <exception cref="Amazon.Translate.Model.ConcurrentModificationException">
+        /// Another modification is being made. That modification must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.InvalidParameterValueException">
+        /// The value of the parameter is not valid. Review the value of the parameter you are
+        /// using to correct it, and then retry your operation.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.ResourceNotFoundException">
+        /// The resource you are looking for has not been found. Review the resource you're looking
+        /// for and see if a different resource will accomplish your needs before retrying the
+        /// revised request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

@@ -247,7 +247,7 @@ namespace Amazon.Translate.Model
         /// The language code of the output language.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1)]
+        [AWSProperty(Required=true, Min=1)]
         public List<string> TargetLanguageCodes
         {
             get { return this._targetLanguageCodes; }

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Translate.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateParallelData operation
+    /// Response Unmarshaller for ListTagsForResource operation
     /// </summary>  
-    public class CreateParallelDataResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListTagsForResourceResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,22 +45,16 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateParallelDataResponse response = new CreateParallelDataResponse();
+            ListTagsForResourceResponse response = new ListTagsForResourceResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Tags", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Status = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
+                    response.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -86,14 +80,6 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConcurrentModificationException"))
-                {
-                    return ConcurrentModificationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
-                {
-                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -102,29 +88,17 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
                 {
                     return InvalidParameterValueExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequestException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
-                    return InvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
-                {
-                    return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyRequestsException"))
-                {
-                    return TooManyRequestsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyTagsException"))
-                {
-                    return TooManyTagsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonTranslateException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreateParallelDataResponseUnmarshaller _instance = new CreateParallelDataResponseUnmarshaller();        
+        private static ListTagsForResourceResponseUnmarshaller _instance = new ListTagsForResourceResponseUnmarshaller();        
 
-        internal static CreateParallelDataResponseUnmarshaller GetInstance()
+        internal static ListTagsForResourceResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -132,7 +106,7 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateParallelDataResponseUnmarshaller Instance
+        public static ListTagsForResourceResponseUnmarshaller Instance
         {
             get
             {
