@@ -14761,7 +14761,8 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Update a model training job to request a new Debugger profiling configuration.
+        /// Update a model training job to request a new Debugger profiling configuration or to
+        /// change warm pool retention length.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTrainingJob service method.</param>
         /// 
@@ -14781,7 +14782,8 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Update a model training job to request a new Debugger profiling configuration.
+        /// Update a model training job to request a new Debugger profiling configuration or to
+        /// change warm pool retention length.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTrainingJob service method.</param>
         /// <param name="cancellationToken">

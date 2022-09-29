@@ -94,6 +94,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetResourceConfig())
+                {
+                    context.Writer.WritePropertyName("ResourceConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ResourceConfigForUpdateMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ResourceConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTrainingJobName())
                 {
                     context.Writer.WritePropertyName("TrainingJobName");

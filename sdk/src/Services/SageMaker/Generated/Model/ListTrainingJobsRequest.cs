@@ -76,6 +76,7 @@ namespace Amazon.SageMaker.Model
         private SortBy _sortBy;
         private SortOrder _sortOrder;
         private TrainingJobStatus _statusEquals;
+        private WarmPoolResourceStatus _warmPoolStatusEquals;
 
         /// <summary>
         /// Gets and sets the property CreationTimeAfter. 
@@ -261,6 +262,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetStatusEquals()
         {
             return this._statusEquals != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WarmPoolStatusEquals. 
+        /// <para>
+        /// A filter that retrieves only training jobs with a specific warm pool status.
+        /// </para>
+        /// </summary>
+        public WarmPoolResourceStatus WarmPoolStatusEquals
+        {
+            get { return this._warmPoolStatusEquals; }
+            set { this._warmPoolStatusEquals = value; }
+        }
+
+        // Check to see if WarmPoolStatusEquals property is set
+        internal bool IsSetWarmPoolStatusEquals()
+        {
+            return this._warmPoolStatusEquals != null;
         }
 
     }

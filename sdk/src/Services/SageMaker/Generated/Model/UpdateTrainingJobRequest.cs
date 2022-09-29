@@ -30,12 +30,14 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateTrainingJob operation.
-    /// Update a model training job to request a new Debugger profiling configuration.
+    /// Update a model training job to request a new Debugger profiling configuration or to
+    /// change warm pool retention length.
     /// </summary>
     public partial class UpdateTrainingJobRequest : AmazonSageMakerRequest
     {
         private ProfilerConfigForUpdate _profilerConfig;
         private List<ProfilerRuleConfiguration> _profilerRuleConfigurations = new List<ProfilerRuleConfiguration>();
+        private ResourceConfigForUpdate _resourceConfig;
         private string _trainingJobName;
 
         /// <summary>
@@ -74,6 +76,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetProfilerRuleConfigurations()
         {
             return this._profilerRuleConfigurations != null && this._profilerRuleConfigurations.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceConfig. 
+        /// <para>
+        /// The training job <code>ResourceConfig</code> to update warm pool retention length.
+        /// </para>
+        /// </summary>
+        public ResourceConfigForUpdate ResourceConfig
+        {
+            get { return this._resourceConfig; }
+            set { this._resourceConfig = value; }
+        }
+
+        // Check to see if ResourceConfig property is set
+        internal bool IsSetResourceConfig()
+        {
+            return this._resourceConfig != null;
         }
 
         /// <summary>

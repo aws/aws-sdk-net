@@ -12199,6 +12199,64 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type WarmPoolResourceStatus.
+    /// </summary>
+    public class WarmPoolResourceStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Available for WarmPoolResourceStatus
+        /// </summary>
+        public static readonly WarmPoolResourceStatus Available = new WarmPoolResourceStatus("Available");
+        /// <summary>
+        /// Constant InUse for WarmPoolResourceStatus
+        /// </summary>
+        public static readonly WarmPoolResourceStatus InUse = new WarmPoolResourceStatus("InUse");
+        /// <summary>
+        /// Constant Reused for WarmPoolResourceStatus
+        /// </summary>
+        public static readonly WarmPoolResourceStatus Reused = new WarmPoolResourceStatus("Reused");
+        /// <summary>
+        /// Constant Terminated for WarmPoolResourceStatus
+        /// </summary>
+        public static readonly WarmPoolResourceStatus Terminated = new WarmPoolResourceStatus("Terminated");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WarmPoolResourceStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WarmPoolResourceStatus FindValue(string value)
+        {
+            return FindValue<WarmPoolResourceStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WarmPoolResourceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type WorkforceStatus.
     /// </summary>
     public class WorkforceStatus : ConstantClass

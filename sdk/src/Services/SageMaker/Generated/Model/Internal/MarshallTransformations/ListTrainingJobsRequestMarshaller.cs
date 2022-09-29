@@ -127,6 +127,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.StatusEquals);
                 }
 
+                if(publicRequest.IsSetWarmPoolStatusEquals())
+                {
+                    context.Writer.WritePropertyName("WarmPoolStatusEquals");
+                    context.Writer.Write(publicRequest.WarmPoolStatusEquals);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

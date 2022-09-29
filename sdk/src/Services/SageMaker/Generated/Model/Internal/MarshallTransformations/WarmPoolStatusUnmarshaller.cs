@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ResourceConfig Object
+    /// Response Unmarshaller for WarmPoolStatus Object
     /// </summary>  
-    public class ResourceConfigUnmarshaller : IUnmarshaller<ResourceConfig, XmlUnmarshallerContext>, IUnmarshaller<ResourceConfig, JsonUnmarshallerContext>
+    public class WarmPoolStatusUnmarshaller : IUnmarshaller<WarmPoolStatus, XmlUnmarshallerContext>, IUnmarshaller<WarmPoolStatus, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ResourceConfig IUnmarshaller<ResourceConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        WarmPoolStatus IUnmarshaller<WarmPoolStatus, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,33 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ResourceConfig Unmarshall(JsonUnmarshallerContext context)
+        public WarmPoolStatus Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ResourceConfig unmarshalledObject = new ResourceConfig();
+            WarmPoolStatus unmarshalledObject = new WarmPoolStatus();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("InstanceCount", targetDepth))
+                if (context.TestExpression("ResourceRetainedBillableTimeInSeconds", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.InstanceCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourceRetainedBillableTimeInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("InstanceGroups", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<InstanceGroup, InstanceGroupUnmarshaller>(InstanceGroupUnmarshaller.Instance);
-                    unmarshalledObject.InstanceGroups = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("InstanceType", targetDepth))
+                if (context.TestExpression("ReusedByJob", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReusedByJob = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("KeepAlivePeriodInSeconds", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.KeepAlivePeriodInSeconds = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("VolumeKmsKeyId", targetDepth))
+                if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VolumeKmsKeyId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("VolumeSizeInGB", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.VolumeSizeInGB = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +88,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static ResourceConfigUnmarshaller _instance = new ResourceConfigUnmarshaller();        
+        private static WarmPoolStatusUnmarshaller _instance = new WarmPoolStatusUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ResourceConfigUnmarshaller Instance
+        public static WarmPoolStatusUnmarshaller Instance
         {
             get
             {

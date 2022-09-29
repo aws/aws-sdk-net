@@ -37,6 +37,7 @@ namespace Amazon.SageMaker.Model
         private int? _instanceCount;
         private List<InstanceGroup> _instanceGroups = new List<InstanceGroup>();
         private TrainingInstanceType _instanceType;
+        private int? _keepAlivePeriodInSeconds;
         private string _volumeKmsKeyId;
         private int? _volumeSizeInGB;
 
@@ -95,6 +96,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetInstanceType()
         {
             return this._instanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KeepAlivePeriodInSeconds. 
+        /// <para>
+        /// The duration of time in seconds to retain configured resources in a warm pool for
+        /// subsequent training jobs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=3600)]
+        public int KeepAlivePeriodInSeconds
+        {
+            get { return this._keepAlivePeriodInSeconds.GetValueOrDefault(); }
+            set { this._keepAlivePeriodInSeconds = value; }
+        }
+
+        // Check to see if KeepAlivePeriodInSeconds property is set
+        internal bool IsSetKeepAlivePeriodInSeconds()
+        {
+            return this._keepAlivePeriodInSeconds.HasValue; 
         }
 
         /// <summary>

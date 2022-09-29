@@ -73,6 +73,7 @@ namespace Amazon.SageMaker.Model
         private int? _trainingTimeInSeconds;
         private string _tuningJobArn;
         private VpcConfig _vpcConfig;
+        private WarmPoolStatus _warmPoolStatus;
 
         /// <summary>
         /// Gets and sets the property AlgorithmSpecification. 
@@ -956,6 +957,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetVpcConfig()
         {
             return this._vpcConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WarmPoolStatus. 
+        /// <para>
+        /// The status of the warm pool associated with the training job.
+        /// </para>
+        /// </summary>
+        public WarmPoolStatus WarmPoolStatus
+        {
+            get { return this._warmPoolStatus; }
+            set { this._warmPoolStatus = value; }
+        }
+
+        // Check to see if WarmPoolStatus property is set
+        internal bool IsSetWarmPoolStatus()
+        {
+            return this._warmPoolStatus != null;
         }
 
     }
