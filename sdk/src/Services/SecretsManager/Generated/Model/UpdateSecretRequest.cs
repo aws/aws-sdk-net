@@ -50,8 +50,9 @@ namespace Amazon.SecretsManager.Model
     ///  
     /// <para>
     /// If you include <code>SecretString</code> or <code>SecretBinary</code> to create a
-    /// new secret version, Secrets Manager automatically attaches the staging label <code>AWSCURRENT</code>
-    /// to the new version. 
+    /// new secret version, Secrets Manager automatically moves the staging label <code>AWSCURRENT</code>
+    /// to the new version. Then it attaches the label <code>AWSPREVIOUS</code> to the version
+    /// that <code>AWSCURRENT</code> was removed from.
     /// </para>
     ///  
     /// <para>
@@ -59,6 +60,14 @@ namespace Amazon.SecretsManager.Model
     /// existing version's <code>VersionId</code>, the operation results in an error. You
     /// can't modify an existing version, you can only create a new version. To remove a version,
     /// remove all staging labels from it. See <a>UpdateSecretVersionStage</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// Secrets Manager generates a CloudTrail log entry when you call this action. Do not
+    /// include sensitive information in request parameters except <code>SecretBinary</code>
+    /// or <code>SecretString</code> because it might be logged. For more information, see
+    /// <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
+    /// Secrets Manager events with CloudTrail</a>.
     /// </para>
     ///  
     /// <para>

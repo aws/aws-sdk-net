@@ -50,13 +50,10 @@ namespace Amazon.SecretsManager.Model
     /// If you don't include <code>VersionStages</code>, then Secrets Manager automatically
     /// moves the staging label <code>AWSCURRENT</code> to this version. If this operation
     /// creates the first version for the secret, then Secrets Manager automatically attaches
-    /// the staging label <code>AWSCURRENT</code> to it .
-    /// </para>
-    ///  
-    /// <para>
-    /// If this operation moves the staging label <code>AWSCURRENT</code> from another version
-    /// to this version, then Secrets Manager also automatically moves the staging label <code>AWSPREVIOUS</code>
-    /// to the version that <code>AWSCURRENT</code> was removed from.
+    /// the staging label <code>AWSCURRENT</code> to it. If this operation moves the staging
+    /// label <code>AWSCURRENT</code> from another version to this version, then Secrets Manager
+    /// also automatically moves the staging label <code>AWSPREVIOUS</code> to the version
+    /// that <code>AWSCURRENT</code> was removed from.
     /// </para>
     ///  
     /// <para>
@@ -65,6 +62,14 @@ namespace Amazon.SecretsManager.Model
     /// the operation succeeds but does nothing. However, if the secret data is different,
     /// then the operation fails because you can't modify an existing version; you can only
     /// create new ones.
+    /// </para>
+    ///  
+    /// <para>
+    /// Secrets Manager generates a CloudTrail log entry when you call this action. Do not
+    /// include sensitive information in request parameters except <code>SecretBinary</code>
+    /// or <code>SecretString</code> because it might be logged. For more information, see
+    /// <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
+    /// Secrets Manager events with CloudTrail</a>.
     /// </para>
     ///  
     /// <para>
