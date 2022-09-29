@@ -101,6 +101,18 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
+                if(publicRequest.IsSetSortBy())
+                {
+                    context.Writer.WritePropertyName("SortBy");
+                    context.Writer.Write(publicRequest.SortBy);
+                }
+
+                if(publicRequest.IsSetSortOrder())
+                {
+                    context.Writer.WritePropertyName("SortOrder");
+                    context.Writer.Write(publicRequest.SortOrder);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -70,10 +70,106 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.CertificateArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CreatedAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DomainName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DomainName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Exported", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Exported = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ExtendedKeyUsages", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ExtendedKeyUsages = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("HasAdditionalSubjectAlternativeNames", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.HasAdditionalSubjectAlternativeNames = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ImportedAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.ImportedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("InUse", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.InUse = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IssuedAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.IssuedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("KeyAlgorithm", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KeyAlgorithm = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("KeyUsages", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.KeyUsages = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NotAfter", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.NotAfter = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NotBefore", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.NotBefore = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RenewalEligibility", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RenewalEligibility = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RevokedAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.RevokedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SubjectAlternativeNameSummaries", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SubjectAlternativeNameSummaries = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Type", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

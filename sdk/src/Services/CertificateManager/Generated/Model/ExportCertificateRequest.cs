@@ -75,9 +75,17 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property Passphrase. 
         /// <para>
-        /// Passphrase to associate with the encrypted exported private key. If you want to later
-        /// decrypt the private key, you must have the passphrase. You can use the following OpenSSL
-        /// command to decrypt a private key: 
+        /// Passphrase to associate with the encrypted exported private key. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// When creating your passphrase, you can use any ASCII character except #, $, or %.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// If you want to later decrypt the private key, you must have the passphrase. You can
+        /// use the following OpenSSL command to decrypt a private key. After entering the command,
+        /// you are prompted for the passphrase.
         /// </para>
         ///  
         /// <para>

@@ -85,8 +85,8 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property CertificateAuthorityArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the ACM PCA private certificate authority (CA) that
-        /// issued the certificate. This has the following format: 
+        /// The Amazon Resource Name (ARN) of the private certificate authority (CA) that issued
+        /// the certificate. This has the following format: 
         /// </para>
         ///  
         /// <para>
@@ -190,8 +190,7 @@ namespace Amazon.CertificateManager.Model
         /// <para>
         /// The reason the certificate request failed. This value exists only when the certificate
         /// status is <code>FAILED</code>. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
-        /// Request Failed</a> in the <i>Amazon Web Services Certificate Manager User Guide</i>.
-        /// 
+        /// Request Failed</a> in the <i>Certificate Manager User Guide</i>. 
         /// </para>
         /// </summary>
         public FailureReason FailureReason
@@ -209,8 +208,8 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property ImportedAt. 
         /// <para>
-        /// The date and time at which the certificate was imported. This value exists only when
-        /// the certificate type is <code>IMPORTED</code>. 
+        /// The date and time when the certificate was imported. This value exists only when the
+        /// certificate type is <code>IMPORTED</code>. 
         /// </para>
         /// </summary>
         public DateTime ImportedAt
@@ -494,6 +493,17 @@ namespace Amazon.CertificateManager.Model
         /// <para>
         /// The status of the certificate.
         /// </para>
+        ///  
+        /// <para>
+        /// A certificate enters status PENDING_VALIDATION upon being requested, unless it fails
+        /// for any of the reasons given in the troubleshooting topic <a href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting-failed.html">Certificate
+        /// request fails</a>. ACM makes repeated attempts to validate a certificate for 72 hours
+        /// and then times out. If a certificate shows status FAILED or VALIDATION_TIMED_OUT,
+        /// delete the request, correct the issue with <a href="https://docs.aws.amazon.com/acm/latest/userguide/dns-validation.html">DNS
+        /// validation</a> or <a href="https://docs.aws.amazon.com/acm/latest/userguide/email-validation.html">Email
+        /// validation</a>, and try again. If validation succeeds, the certificate enters status
+        /// ISSUED. 
+        /// </para>
         /// </summary>
         public CertificateStatus Status
         {
@@ -556,8 +566,7 @@ namespace Amazon.CertificateManager.Model
         /// ACM does not provide <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
         /// renewal</a> for imported certificates. For more information about the differences
         /// between certificates that you import and those that ACM provides, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-        /// Certificates</a> in the <i>Amazon Web Services Certificate Manager User Guide</i>.
-        /// 
+        /// Certificates</a> in the <i>Certificate Manager User Guide</i>. 
         /// </para>
         /// </summary>
         public CertificateType Type

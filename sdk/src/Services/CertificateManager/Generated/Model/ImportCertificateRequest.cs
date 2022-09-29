@@ -30,14 +30,13 @@ namespace Amazon.CertificateManager.Model
 {
     /// <summary>
     /// Container for the parameters to the ImportCertificate operation.
-    /// Imports a certificate into Amazon Web Services Certificate Manager (ACM) to use with
-    /// services that are integrated with ACM. Note that <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-services.html">integrated
+    /// Imports a certificate into Certificate Manager (ACM) to use with services that are
+    /// integrated with ACM. Note that <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-services.html">integrated
     /// services</a> allow only certificate types and keys they support to be associated with
     /// their resources. Further, their support differs depending on whether the certificate
     /// is imported into IAM or into ACM. For more information, see the documentation for
     /// each service. For more information about importing certificates into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-    /// Certificates</a> in the <i>Amazon Web Services Certificate Manager User Guide</i>.
-    /// 
+    /// Certificates</a> in the <i>Certificate Manager User Guide</i>. 
     /// 
     ///  <note> 
     /// <para>
