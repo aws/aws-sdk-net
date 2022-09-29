@@ -62,7 +62,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 var configuration = putCORSConfigurationRequest.Configuration;
                 if (configuration != null)
                 {
-                    xmlWriter.WriteStartElement("CORSConfiguration", "");
+                    xmlWriter.WriteStartElement("CORSConfiguration", S3Constants.S3RequestXmlNamespace);
 
                     if (configuration != null)
                     {
@@ -71,7 +71,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         {
                             foreach (var cORSConfigurationCORSConfigurationcORSRulesListValue in cORSConfigurationCORSConfigurationcORSRulesList)
                             {
-                                xmlWriter.WriteStartElement("CORSRule", "");
+                                xmlWriter.WriteStartElement("CORSRule");
 
                                 if (cORSConfigurationCORSConfigurationcORSRulesListValue != null)
                                 {
@@ -80,7 +80,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                     {
                                         foreach (string cORSRuleMemberallowedMethodsListValue in cORSRuleMemberallowedMethodsList)
                                         {
-                                            xmlWriter.WriteStartElement("AllowedMethod", "");
+                                            xmlWriter.WriteStartElement("AllowedMethod");
                                             xmlWriter.WriteValue(cORSRuleMemberallowedMethodsListValue);
                                             xmlWriter.WriteEndElement();
                                         }
@@ -94,7 +94,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                     {
                                         foreach (string cORSRuleMemberallowedOriginsListValue in cORSRuleMemberallowedOriginsList)
                                         {
-                                            xmlWriter.WriteStartElement("AllowedOrigin", "");
+                                            xmlWriter.WriteStartElement("AllowedOrigin");
                                             xmlWriter.WriteValue(cORSRuleMemberallowedOriginsListValue);
                                             xmlWriter.WriteEndElement();
                                         }
@@ -108,7 +108,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                     {
                                         foreach (string cORSRuleMemberexposeHeadersListValue in cORSRuleMemberexposeHeadersList)
                                         {
-                                            xmlWriter.WriteStartElement("ExposeHeader", "");
+                                            xmlWriter.WriteStartElement("ExposeHeader");
                                             xmlWriter.WriteValue(cORSRuleMemberexposeHeadersListValue);
                                             xmlWriter.WriteEndElement();
                                         }
@@ -122,7 +122,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                     {
                                         foreach (string cORSRuleMemberallowedHeadersListValue in cORSRuleMemberallowedHeadersList)
                                         {
-                                            xmlWriter.WriteStartElement("AllowedHeader", "");
+                                            xmlWriter.WriteStartElement("AllowedHeader");
                                             xmlWriter.WriteValue(cORSRuleMemberallowedHeadersListValue);
                                             xmlWriter.WriteEndElement();
                                         }
@@ -131,12 +131,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
                                 if (cORSConfigurationCORSConfigurationcORSRulesListValue.IsSetMaxAgeSeconds())
                                 {
-                                    xmlWriter.WriteElementString("MaxAgeSeconds", "", S3Transforms.ToXmlStringValue(cORSConfigurationCORSConfigurationcORSRulesListValue.MaxAgeSeconds));
+                                    xmlWriter.WriteElementString("MaxAgeSeconds", S3Transforms.ToXmlStringValue(cORSConfigurationCORSConfigurationcORSRulesListValue.MaxAgeSeconds));
                                 }
 
                                 if (cORSConfigurationCORSConfigurationcORSRulesListValue.IsSetId())
                                 {
-                                    xmlWriter.WriteElementString("ID", "", S3Transforms.ToXmlStringValue(cORSConfigurationCORSConfigurationcORSRulesListValue.Id));
+                                    xmlWriter.WriteElementString("ID", S3Transforms.ToXmlStringValue(cORSConfigurationCORSConfigurationcORSRulesListValue.Id));
                                 }
 
                                 xmlWriter.WriteEndElement();

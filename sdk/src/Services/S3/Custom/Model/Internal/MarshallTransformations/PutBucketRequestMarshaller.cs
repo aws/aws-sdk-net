@@ -80,8 +80,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
                 if (regionCode != null)
                 {
-                    xmlWriter.WriteStartElement("CreateBucketConfiguration", "");
-                    xmlWriter.WriteElementString("LocationConstraint", "", regionCode);
+                    xmlWriter.WriteStartElement("CreateBucketConfiguration", S3Constants.S3RequestXmlNamespace);
+                    xmlWriter.WriteElementString("LocationConstraint", regionCode);
                     xmlWriter.WriteEndElement();
                 }
             }

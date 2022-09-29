@@ -63,32 +63,32 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 if (putBucketEncryptionRequest.IsSetServerSideEncryptionConfiguration())
                 {
                     var sseConfiguration = putBucketEncryptionRequest.ServerSideEncryptionConfiguration;
-                    xmlWriter.WriteStartElement("ServerSideEncryptionConfiguration", "");
+                    xmlWriter.WriteStartElement("ServerSideEncryptionConfiguration", S3Constants.S3RequestXmlNamespace);
                     if (sseConfiguration != null)
                     {
                         foreach(var serverSideEncryptionRule in sseConfiguration.ServerSideEncryptionRules)
                         {
-                            xmlWriter.WriteStartElement("Rule", "");
+                            xmlWriter.WriteStartElement("Rule");
                             if (serverSideEncryptionRule != null)
                             {
                                 if (serverSideEncryptionRule.IsSetServerSideEncryptionByDefault())
                                 {
-                                    xmlWriter.WriteStartElement("ApplyServerSideEncryptionByDefault", "");
+                                    xmlWriter.WriteStartElement("ApplyServerSideEncryptionByDefault");
                                     var sseDefault = serverSideEncryptionRule.ServerSideEncryptionByDefault;
                                     if(sseDefault.IsSetServerSideEncryptionAlgorithm())
                                     {
-                                        xmlWriter.WriteElementString("SSEAlgorithm", "", S3Transforms.ToXmlStringValue(sseDefault.ServerSideEncryptionAlgorithm));
+                                        xmlWriter.WriteElementString("SSEAlgorithm", S3Transforms.ToXmlStringValue(sseDefault.ServerSideEncryptionAlgorithm));
                                     }
                                     if (sseDefault.IsSetServerSideEncryptionKeyManagementServiceKeyId())
                                     {
-                                        xmlWriter.WriteElementString("KMSMasterKeyID", "", S3Transforms.ToXmlStringValue(sseDefault.ServerSideEncryptionKeyManagementServiceKeyId));
+                                        xmlWriter.WriteElementString("KMSMasterKeyID", S3Transforms.ToXmlStringValue(sseDefault.ServerSideEncryptionKeyManagementServiceKeyId));
                                     }
                                     xmlWriter.WriteEndElement();
                                 }
 
                                 if (serverSideEncryptionRule.IsSetBucketKeyEnabled())
                                 {
-                                    xmlWriter.WriteElementString("BucketKeyEnabled", "", S3Transforms.ToXmlStringValue(serverSideEncryptionRule.BucketKeyEnabled));
+                                    xmlWriter.WriteElementString("BucketKeyEnabled", S3Transforms.ToXmlStringValue(serverSideEncryptionRule.BucketKeyEnabled));
                                 }
                             }
                             xmlWriter.WriteEndElement();

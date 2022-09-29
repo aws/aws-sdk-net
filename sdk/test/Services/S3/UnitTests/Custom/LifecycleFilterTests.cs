@@ -26,7 +26,7 @@ namespace AWSSDK.UnitTests
     [TestClass]
     public class LifecycleFilterTests
     {
-        private readonly string ExpectedRequestFormat = "<LifecycleConfiguration><Rule><Transition><Days>1</Days><StorageClass>GLACIER" +
+        private readonly string ExpectedRequestFormat = "<LifecycleConfiguration xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\"><Rule><Transition><Days>1</Days><StorageClass>GLACIER" +
             "</StorageClass></Transition>{0}<Status>Disabled</Status></Rule></LifecycleConfiguration>";
 
         [TestMethod]

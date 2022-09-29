@@ -123,7 +123,7 @@ namespace AWSSDK.UnitTests
                     ServerSideEncryptionRules = new List<ServerSideEncryptionRule>() { new ServerSideEncryptionRule { BucketKeyEnabled = true } }
                 }
             };
-            var expectedPayload = "<ServerSideEncryptionConfiguration><Rule><BucketKeyEnabled>true</BucketKeyEnabled></Rule></ServerSideEncryptionConfiguration>";
+            var expectedPayload = "<ServerSideEncryptionConfiguration xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\"><Rule><BucketKeyEnabled>true</BucketKeyEnabled></Rule></ServerSideEncryptionConfiguration>";
             var payloadChecksum = Amazon.Util.AWSSDKUtils.GenerateChecksumForContent(expectedPayload, true);
             var response = S3ArnTestUtils.RunMockRequest(request, PutBucketEncryptionRequestMarshaller.Instance);
             Assert.IsTrue(response.Headers.ContainsKey(Amazon.Util.HeaderKeys.ContentMD5Header));

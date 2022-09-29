@@ -82,30 +82,30 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {   
                 if (publicRequest.IsSetObjectLockConfiguration())
                 {
-                    xmlWriter.WriteStartElement("ObjectLockConfiguration", "http://s3.amazonaws.com/doc/2006-03-01/");
+                    xmlWriter.WriteStartElement("ObjectLockConfiguration", S3Constants.S3RequestXmlNamespace);
                     if(publicRequest.ObjectLockConfiguration.IsSetObjectLockEnabled())
-                        xmlWriter.WriteElementString("ObjectLockEnabled", "http://s3.amazonaws.com/doc/2006-03-01/", StringUtils.FromString(publicRequest.ObjectLockConfiguration.ObjectLockEnabled));
+                        xmlWriter.WriteElementString("ObjectLockEnabled", StringUtils.FromString(publicRequest.ObjectLockConfiguration.ObjectLockEnabled));
 
 
                     if (publicRequest.ObjectLockConfiguration.Rule != null) 
                     {
                         
-                        xmlWriter.WriteStartElement("Rule", "http://s3.amazonaws.com/doc/2006-03-01/");            
+                        xmlWriter.WriteStartElement("Rule");            
                         
                         
                         if (publicRequest.ObjectLockConfiguration.Rule.DefaultRetention != null) 
                         {
                             
-                            xmlWriter.WriteStartElement("DefaultRetention", "http://s3.amazonaws.com/doc/2006-03-01/");            
+                            xmlWriter.WriteStartElement("DefaultRetention");            
                             
                             if(publicRequest.ObjectLockConfiguration.Rule.DefaultRetention.IsSetDays())
-                                xmlWriter.WriteElementString("Days", "http://s3.amazonaws.com/doc/2006-03-01/", StringUtils.FromInt(publicRequest.ObjectLockConfiguration.Rule.DefaultRetention.Days));                 
+                                xmlWriter.WriteElementString("Days", StringUtils.FromInt(publicRequest.ObjectLockConfiguration.Rule.DefaultRetention.Days));                 
             
                             if(publicRequest.ObjectLockConfiguration.Rule.DefaultRetention.IsSetMode())
-                                xmlWriter.WriteElementString("Mode", "http://s3.amazonaws.com/doc/2006-03-01/", StringUtils.FromString(publicRequest.ObjectLockConfiguration.Rule.DefaultRetention.Mode));                 
+                                xmlWriter.WriteElementString("Mode", StringUtils.FromString(publicRequest.ObjectLockConfiguration.Rule.DefaultRetention.Mode));                 
             
                             if(publicRequest.ObjectLockConfiguration.Rule.DefaultRetention.IsSetYears())
-                                xmlWriter.WriteElementString("Years", "http://s3.amazonaws.com/doc/2006-03-01/", StringUtils.FromInt(publicRequest.ObjectLockConfiguration.Rule.DefaultRetention.Years));                 
+                                xmlWriter.WriteElementString("Years", StringUtils.FromInt(publicRequest.ObjectLockConfiguration.Rule.DefaultRetention.Years));                 
             
                             xmlWriter.WriteEndElement();
                         }

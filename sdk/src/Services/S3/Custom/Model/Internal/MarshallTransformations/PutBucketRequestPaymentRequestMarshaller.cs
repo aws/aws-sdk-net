@@ -62,10 +62,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 var requestPaymentConfigurationRequestPaymentConfiguration = putBucketRequestPaymentRequest.RequestPaymentConfiguration;
                 if (requestPaymentConfigurationRequestPaymentConfiguration != null)
                 {
-                    xmlWriter.WriteStartElement("RequestPaymentConfiguration", "");
+                    xmlWriter.WriteStartElement("RequestPaymentConfiguration", S3Constants.S3RequestXmlNamespace);
+
                     if (requestPaymentConfigurationRequestPaymentConfiguration.IsSetPayer())
                     {
-                        xmlWriter.WriteElementString("Payer", "", S3Transforms.ToXmlStringValue(requestPaymentConfigurationRequestPaymentConfiguration.Payer));
+                        xmlWriter.WriteElementString("Payer", S3Transforms.ToXmlStringValue(requestPaymentConfigurationRequestPaymentConfiguration.Payer));
                     }
                     xmlWriter.WriteEndElement();
                 }

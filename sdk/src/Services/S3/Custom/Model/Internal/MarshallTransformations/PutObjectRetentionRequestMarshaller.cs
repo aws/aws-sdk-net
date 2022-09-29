@@ -87,12 +87,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {   
                 if (publicRequest.IsSetRetention())
                 {
-                    xmlWriter.WriteStartElement("Retention", "http://s3.amazonaws.com/doc/2006-03-01/");
+                    xmlWriter.WriteStartElement("Retention", S3Constants.S3RequestXmlNamespace);
                     if(publicRequest.Retention.IsSetMode())
-                        xmlWriter.WriteElementString("Mode", "http://s3.amazonaws.com/doc/2006-03-01/", StringUtils.FromString(publicRequest.Retention.Mode));                    
+                        xmlWriter.WriteElementString("Mode", StringUtils.FromString(publicRequest.Retention.Mode));                    
     
                     if(publicRequest.Retention.IsSetRetainUntilDate())
-                        xmlWriter.WriteElementString("RetainUntilDate", "http://s3.amazonaws.com/doc/2006-03-01/", StringUtils.FromDateTimeToISO8601(publicRequest.Retention.RetainUntilDate));                    
+                        xmlWriter.WriteElementString("RetainUntilDate", StringUtils.FromDateTimeToISO8601(publicRequest.Retention.RetainUntilDate));                    
     
     
                     xmlWriter.WriteEndElement();

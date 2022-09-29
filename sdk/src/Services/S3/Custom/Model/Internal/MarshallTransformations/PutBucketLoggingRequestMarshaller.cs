@@ -60,7 +60,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {
-                xmlWriter.WriteStartElement("BucketLoggingStatus", "");
+                xmlWriter.WriteStartElement("BucketLoggingStatus", S3Constants.S3RequestXmlNamespace);
                 var bucketLoggingStatusBucketLoggingStatus = putBucketLoggingRequest.LoggingConfig;
                 if (bucketLoggingStatusBucketLoggingStatus != null)
                 {
@@ -69,48 +69,48 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         var loggingEnabledLoggingEnabled = bucketLoggingStatusBucketLoggingStatus;
                         if (loggingEnabledLoggingEnabled != null && loggingEnabledLoggingEnabled.IsSetTargetBucket())
                         {
-                            xmlWriter.WriteStartElement("LoggingEnabled", "");
-                            xmlWriter.WriteElementString("TargetBucket", "", S3Transforms.ToXmlStringValue(loggingEnabledLoggingEnabled.TargetBucketName));
+                            xmlWriter.WriteStartElement("LoggingEnabled");
+                            xmlWriter.WriteElementString("TargetBucket", S3Transforms.ToXmlStringValue(loggingEnabledLoggingEnabled.TargetBucketName));
 
                             var loggingEnabledLoggingEnabledtargetGrantsList = loggingEnabledLoggingEnabled.Grants;
                             if (loggingEnabledLoggingEnabledtargetGrantsList != null && loggingEnabledLoggingEnabledtargetGrantsList.Count > 0)
                             {
-                                xmlWriter.WriteStartElement("TargetGrants", "");
+                                xmlWriter.WriteStartElement("TargetGrants");
                                 foreach (var loggingEnabledLoggingEnabledtargetGrantsListValue in loggingEnabledLoggingEnabledtargetGrantsList)
                                 {
-                                    xmlWriter.WriteStartElement("Grant", "");
+                                    xmlWriter.WriteStartElement("Grant");
                                     if (loggingEnabledLoggingEnabledtargetGrantsListValue != null)
                                     {
                                         var granteeGrantee = loggingEnabledLoggingEnabledtargetGrantsListValue.Grantee;
                                         if (granteeGrantee != null)
                                         {
-                                            xmlWriter.WriteStartElement("Grantee", "");
+                                            xmlWriter.WriteStartElement("Grantee");
                                             if (granteeGrantee.IsSetType())
                                             {
                                                 xmlWriter.WriteAttributeString("xsi", "type", "http://www.w3.org/2001/XMLSchema-instance", granteeGrantee.Type.ToString());
                                             }
                                             if (granteeGrantee.IsSetDisplayName())
                                             {
-                                                xmlWriter.WriteElementString("DisplayName", "", S3Transforms.ToXmlStringValue(granteeGrantee.DisplayName));
+                                                xmlWriter.WriteElementString("DisplayName", S3Transforms.ToXmlStringValue(granteeGrantee.DisplayName));
                                             }
                                             if (granteeGrantee.IsSetEmailAddress())
                                             {
-                                                xmlWriter.WriteElementString("EmailAddress", "", S3Transforms.ToXmlStringValue(granteeGrantee.EmailAddress));
+                                                xmlWriter.WriteElementString("EmailAddress", S3Transforms.ToXmlStringValue(granteeGrantee.EmailAddress));
                                             }
                                             if (granteeGrantee.IsSetCanonicalUser())
                                             {
-                                                xmlWriter.WriteElementString("ID", "", S3Transforms.ToXmlStringValue(granteeGrantee.CanonicalUser));
+                                                xmlWriter.WriteElementString("ID", S3Transforms.ToXmlStringValue(granteeGrantee.CanonicalUser));
                                             }
                                             if (granteeGrantee.IsSetURI())
                                             {
-                                                xmlWriter.WriteElementString("URI", "", S3Transforms.ToXmlStringValue(granteeGrantee.URI));
+                                                xmlWriter.WriteElementString("URI", S3Transforms.ToXmlStringValue(granteeGrantee.URI));
                                             }
                                             xmlWriter.WriteEndElement();
                                         }
 
                                         if (loggingEnabledLoggingEnabledtargetGrantsListValue.IsSetPermission())
                                         {
-                                            xmlWriter.WriteElementString("Permission", "", S3Transforms.ToXmlStringValue(loggingEnabledLoggingEnabledtargetGrantsListValue.Permission));
+                                            xmlWriter.WriteElementString("Permission", S3Transforms.ToXmlStringValue(loggingEnabledLoggingEnabledtargetGrantsListValue.Permission));
                                         }
                                     }
 
@@ -120,7 +120,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                             }
                             if (loggingEnabledLoggingEnabled.IsSetTargetPrefix())
                             {
-                                xmlWriter.WriteElementString("TargetPrefix", "", S3Transforms.ToXmlStringValue(loggingEnabledLoggingEnabled.TargetPrefix));
+                                xmlWriter.WriteElementString("TargetPrefix", S3Transforms.ToXmlStringValue(loggingEnabledLoggingEnabled.TargetPrefix));
                             }
                             else
                             {

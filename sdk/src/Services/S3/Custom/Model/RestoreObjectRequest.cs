@@ -18,6 +18,7 @@ using System.Xml;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.S3.Model.Internal.MarshallTransformations;
+using Amazon.S3.Util;
 
 namespace Amazon.S3.Model
 {
@@ -563,7 +564,7 @@ namespace Amazon.S3.Model
 
         internal void Marshall(string propertyName, XmlWriter xmlWriter)
         {
-            xmlWriter.WriteStartElement(propertyName);
+            xmlWriter.WriteStartElement(propertyName, S3Constants.S3RequestXmlNamespace);
             {
                 if (IsSetRetrievalTier())
                     xmlWriter.WriteElementString("Tier", S3Transforms.ToXmlStringValue(RetrievalTier));

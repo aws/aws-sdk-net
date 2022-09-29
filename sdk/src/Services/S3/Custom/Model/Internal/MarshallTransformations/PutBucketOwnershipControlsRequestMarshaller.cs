@@ -62,7 +62,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
                 if (ownershipControls != null)
                 {
-                    xmlWriter.WriteStartElement("OwnershipControls", "");
+                    xmlWriter.WriteStartElement("OwnershipControls", S3Constants.S3RequestXmlNamespace);
 
                     if (ownershipControls.Rules != null)
                     {
@@ -71,7 +71,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                             xmlWriter.WriteStartElement("Rule");
                             if (rule.IsSetObjectOwnership())
                             {
-                                xmlWriter.WriteElementString("ObjectOwnership", "", S3Transforms.ToXmlStringValue(rule.ObjectOwnership));
+                                xmlWriter.WriteElementString("ObjectOwnership", S3Transforms.ToXmlStringValue(rule.ObjectOwnership));
                             }
                             xmlWriter.WriteEndElement();
                         }

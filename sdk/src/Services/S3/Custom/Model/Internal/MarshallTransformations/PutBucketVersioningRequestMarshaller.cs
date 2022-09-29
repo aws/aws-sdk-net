@@ -65,14 +65,15 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 var versioningConfigurationVersioningConfiguration = putBucketVersioningRequest.VersioningConfig;
                 if (versioningConfigurationVersioningConfiguration != null)
                 {
-                    xmlWriter.WriteStartElement("VersioningConfiguration", "");
+                    xmlWriter.WriteStartElement("VersioningConfiguration", S3Constants.S3RequestXmlNamespace);
+
                     if (versioningConfigurationVersioningConfiguration.IsSetEnableMfaDelete())
                     {
-                        xmlWriter.WriteElementString("MfaDelete", "", versioningConfigurationVersioningConfiguration.EnableMfaDelete ? "Enabled" : "Disabled");
+                        xmlWriter.WriteElementString("MfaDelete", versioningConfigurationVersioningConfiguration.EnableMfaDelete ? "Enabled" : "Disabled");
                     }
                     if (versioningConfigurationVersioningConfiguration.IsSetStatus())
                     {
-                        xmlWriter.WriteElementString("Status", "", S3Transforms.ToXmlStringValue(versioningConfigurationVersioningConfiguration.Status));
+                        xmlWriter.WriteElementString("Status", S3Transforms.ToXmlStringValue(versioningConfigurationVersioningConfiguration.Status));
                     }
                     xmlWriter.WriteEndElement();
                 }

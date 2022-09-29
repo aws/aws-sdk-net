@@ -69,11 +69,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 var accelerateConfiguration = putBucketAccelerateRequest.AccelerateConfiguration;
                 if (accelerateConfiguration != null)
                 {
-                    xmlWriter.WriteStartElement("AccelerateConfiguration", "");
+                    xmlWriter.WriteStartElement("AccelerateConfiguration", S3Constants.S3RequestXmlNamespace);
+
                     var accelerateConfigurationStatus = accelerateConfiguration.Status;
                     if (accelerateConfiguration.IsSetBucketAccelerateStatus() && accelerateConfigurationStatus != null)
                     {
-                        xmlWriter.WriteElementString("Status", "", S3Transforms.ToXmlStringValue(accelerateConfiguration.Status));
+                        xmlWriter.WriteElementString("Status", S3Transforms.ToXmlStringValue(accelerateConfiguration.Status));
                     }
                     xmlWriter.WriteEndElement();
                 }

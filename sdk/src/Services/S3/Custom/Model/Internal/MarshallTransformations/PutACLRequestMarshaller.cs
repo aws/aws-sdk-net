@@ -79,7 +79,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 var accessControlPolicyAccessControlPolicy = putObjectAclRequest.AccessControlList;
                 if (accessControlPolicyAccessControlPolicy != null)
                 {
-                    xmlWriter.WriteStartElement("AccessControlPolicy", "");
+                    xmlWriter.WriteStartElement("AccessControlPolicy", S3Constants.S3RequestXmlNamespace);
+
                     var accessControlPolicyAccessControlPolicygrantsList = accessControlPolicyAccessControlPolicy.Grants;
                     if (accessControlPolicyAccessControlPolicygrantsList != null &&
                         accessControlPolicyAccessControlPolicygrantsList.Count > 0)
@@ -89,15 +90,15 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         var ownerOwner = accessControlPolicyAccessControlPolicy.Owner;
                         if (ownerOwner != null)
                         {
-                            xmlWriter.WriteStartElement("Owner", "");
+                            xmlWriter.WriteStartElement("Owner");
                             if (ownerOwner.IsSetDisplayName())
                             {
-                                xmlWriter.WriteElementString("DisplayName", "",
+                                xmlWriter.WriteElementString("DisplayName", 
                                                              S3Transforms.ToXmlStringValue(ownerOwner.DisplayName));
                             }
                             if (ownerOwner.IsSetId())
                             {
-                                xmlWriter.WriteElementString("ID", "", S3Transforms.ToXmlStringValue(ownerOwner.Id));
+                                xmlWriter.WriteElementString("ID", S3Transforms.ToXmlStringValue(ownerOwner.Id));
                             }
                             xmlWriter.WriteEndElement();
                         }

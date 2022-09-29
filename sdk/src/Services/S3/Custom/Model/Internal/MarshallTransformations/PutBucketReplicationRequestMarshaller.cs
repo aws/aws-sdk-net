@@ -66,10 +66,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
                 if (replicationConfiguration != null)
                 {
-                    xmlWriter.WriteStartElement("ReplicationConfiguration", "");
+                    xmlWriter.WriteStartElement("ReplicationConfiguration", S3Constants.S3RequestXmlNamespace);
+
                     if (replicationConfiguration.Role != null)
                     {
-                        xmlWriter.WriteElementString("Role", "", S3Transforms.ToXmlStringValue(replicationConfiguration.Role));
+                        xmlWriter.WriteElementString("Role", S3Transforms.ToXmlStringValue(replicationConfiguration.Role));
                     }
                     if (replicationConfiguration.Rules != null)
                     {
@@ -78,15 +79,15 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                             xmlWriter.WriteStartElement("Rule");
                             if (rule.IsSetId())
                             {
-                                xmlWriter.WriteElementString("ID", "", S3Transforms.ToXmlStringValue(rule.Id));
+                                xmlWriter.WriteElementString("ID", S3Transforms.ToXmlStringValue(rule.Id));
                             }
                             if (rule.IsSetPriority())
                             {
-                                xmlWriter.WriteElementString("Priority", "", S3Transforms.ToXmlStringValue(rule.Priority));
+                                xmlWriter.WriteElementString("Priority", S3Transforms.ToXmlStringValue(rule.Priority));
                             }
                             if (rule.IsSetPrefix())
                             {
-                                xmlWriter.WriteElementString("Prefix", "", S3Transforms.ToXmlStringValue(rule.Prefix));
+                                xmlWriter.WriteElementString("Prefix", S3Transforms.ToXmlStringValue(rule.Prefix));
                             }
 
                             if (rule.IsSetFilter())
@@ -94,7 +95,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteStartElement("Filter", "");
                                 if (rule.Filter.IsSetPrefix())
                                 {
-                                    xmlWriter.WriteElementString("Prefix", "", S3Transforms.ToXmlStringValue(rule.Filter.Prefix));
+                                    xmlWriter.WriteElementString("Prefix", S3Transforms.ToXmlStringValue(rule.Filter.Prefix));
                                 }
                                 if (rule.Filter.IsSetTag())
                                 {
@@ -105,7 +106,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteStartElement("And");
                                     if (rule.Filter.And.IsSetPrefix())
                                     {
-                                        xmlWriter.WriteElementString("Prefix", "", S3Transforms.ToXmlStringValue(rule.Filter.And.Prefix));
+                                        xmlWriter.WriteElementString("Prefix", S3Transforms.ToXmlStringValue(rule.Filter.And.Prefix));
                                     }
                                     if (rule.Filter.And.IsSetTags())
                                     {
@@ -121,7 +122,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
                             if (rule.IsSetStatus())
                             {
-                                xmlWriter.WriteElementString("Status", "", S3Transforms.ToXmlStringValue(rule.Status.ToString()));
+                                xmlWriter.WriteElementString("Status", S3Transforms.ToXmlStringValue(rule.Status.ToString()));
                             }
                             if (rule.IsSetSourceSelectionCriteria())
                             {
@@ -131,7 +132,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteStartElement("SseKmsEncryptedObjects");
                                     if (rule.SourceSelectionCriteria.SseKmsEncryptedObjects.IsSetSseKmsEncryptedObjectsStatus())
                                     {
-                                        xmlWriter.WriteElementString("Status", "", rule.SourceSelectionCriteria.SseKmsEncryptedObjects.SseKmsEncryptedObjectsStatus);
+                                        xmlWriter.WriteElementString("Status", rule.SourceSelectionCriteria.SseKmsEncryptedObjects.SseKmsEncryptedObjectsStatus);
                                     }
                                     xmlWriter.WriteEndElement();
                                 }
@@ -140,7 +141,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteStartElement("ReplicaModifications");
                                     if (rule.SourceSelectionCriteria.ReplicaModifications.IsSetStatus())
                                     {
-                                        xmlWriter.WriteElementString("Status", "", rule.SourceSelectionCriteria.ReplicaModifications.Status);
+                                        xmlWriter.WriteElementString("Status", rule.SourceSelectionCriteria.ReplicaModifications.Status);
                                     }
                                     xmlWriter.WriteEndElement();
                                 }
@@ -151,7 +152,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteStartElement("ExistingObjectReplication");
                                 if (rule.ExistingObjectReplication.IsSetExistingObjectReplicationStatus())
                                 {
-                                    xmlWriter.WriteElementString("Status", "", rule.ExistingObjectReplication.Status);
+                                    xmlWriter.WriteElementString("Status", rule.ExistingObjectReplication.Status);
                                 }
                                 xmlWriter.WriteEndElement();
                             }
@@ -160,7 +161,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteStartElement("DeleteMarkerReplication");
                                 if (rule.DeleteMarkerReplication.IsSetStatus())
                                 {
-                                    xmlWriter.WriteElementString("Status", "", rule.DeleteMarkerReplication.Status);
+                                    xmlWriter.WriteElementString("Status", rule.DeleteMarkerReplication.Status);
                                 }
                                 xmlWriter.WriteEndElement();
                             }
@@ -169,22 +170,22 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteStartElement("Destination", "");
                                 if (rule.Destination.IsSetBucketArn())
                                 {
-                                    xmlWriter.WriteElementString("Bucket", "", rule.Destination.BucketArn);
+                                    xmlWriter.WriteElementString("Bucket", rule.Destination.BucketArn);
                                 }
                                 if (rule.Destination.IsSetStorageClass())
                                 {
-                                    xmlWriter.WriteElementString("StorageClass", "", rule.Destination.StorageClass);
+                                    xmlWriter.WriteElementString("StorageClass", rule.Destination.StorageClass);
                                 }
                                 if (rule.Destination.IsSetAccountId())
                                 {
-                                    xmlWriter.WriteElementString("Account", "", S3Transforms.ToXmlStringValue(rule.Destination.AccountId));
+                                    xmlWriter.WriteElementString("Account", S3Transforms.ToXmlStringValue(rule.Destination.AccountId));
                                 }
                                 if (rule.Destination.IsSetEncryptionConfiguration())
                                 {
                                     xmlWriter.WriteStartElement("EncryptionConfiguration");
                                     if (rule.Destination.EncryptionConfiguration.isSetReplicaKmsKeyID())
                                     {
-                                        xmlWriter.WriteElementString("ReplicaKmsKeyID", "", S3Transforms.ToXmlStringValue(rule.Destination.EncryptionConfiguration.ReplicaKmsKeyID));
+                                        xmlWriter.WriteElementString("ReplicaKmsKeyID", S3Transforms.ToXmlStringValue(rule.Destination.EncryptionConfiguration.ReplicaKmsKeyID));
                                     }
                                     xmlWriter.WriteEndElement();
                                 }
@@ -193,14 +194,14 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteStartElement("Metrics");
                                     if (rule.Destination.Metrics.IsSetStatus())
                                     {
-                                        xmlWriter.WriteElementString("Status", "", S3Transforms.ToXmlStringValue(rule.Destination.Metrics.Status));
+                                        xmlWriter.WriteElementString("Status", S3Transforms.ToXmlStringValue(rule.Destination.Metrics.Status));
                                     }
                                     if (rule.Destination.Metrics.IsSetEventThreshold())
                                     {
                                         xmlWriter.WriteStartElement("EventThreshold");
                                         if (rule.Destination.Metrics.EventThreshold.IsSetMinutes())
                                         {
-                                            xmlWriter.WriteElementString("Minutes", "", S3Transforms.ToXmlStringValue(rule.Destination.Metrics.EventThreshold.Minutes));
+                                            xmlWriter.WriteElementString("Minutes", S3Transforms.ToXmlStringValue(rule.Destination.Metrics.EventThreshold.Minutes));
                                         }
                                         xmlWriter.WriteEndElement();
                                     }
@@ -211,14 +212,14 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteStartElement("ReplicationTime");
                                     if (rule.Destination.ReplicationTime.IsSetStatus())
                                     {
-                                        xmlWriter.WriteElementString("Status", "", S3Transforms.ToXmlStringValue(rule.Destination.ReplicationTime.Status));
+                                        xmlWriter.WriteElementString("Status", S3Transforms.ToXmlStringValue(rule.Destination.ReplicationTime.Status));
                                     }
                                     if (rule.Destination.ReplicationTime.IsSetTime())
                                     {
                                         xmlWriter.WriteStartElement("Time");
                                         if (rule.Destination.ReplicationTime.Time.IsSetMinutes())
                                         {
-                                            xmlWriter.WriteElementString("Minutes", "", S3Transforms.ToXmlStringValue(rule.Destination.ReplicationTime.Time.Minutes));
+                                            xmlWriter.WriteElementString("Minutes", S3Transforms.ToXmlStringValue(rule.Destination.ReplicationTime.Time.Minutes));
                                         }
                                         xmlWriter.WriteEndElement();
                                     }
@@ -229,7 +230,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteStartElement("AccessControlTranslation");
                                     if (rule.Destination.AccessControlTranslation.IsSetOwner())
                                     {
-                                        xmlWriter.WriteElementString("Owner", "", S3Transforms.ToXmlStringValue(rule.Destination.AccessControlTranslation.Owner));
+                                        xmlWriter.WriteElementString("Owner", S3Transforms.ToXmlStringValue(rule.Destination.AccessControlTranslation.Owner));
                                     }
                                     xmlWriter.WriteEndElement();
                                 }

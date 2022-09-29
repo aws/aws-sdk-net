@@ -125,5 +125,8 @@ namespace Amazon.S3.Util
             ResponseHeaderOverrides.RESPONSE_CONTENT_TYPE,
             ResponseHeaderOverrides.RESPONSE_EXPIRES
         };
+
+        // S3 Request xmlns sttribute value
+        internal const string S3RequestXmlNamespace = "http://s3.amazonaws.com/doc/2006-03-01/";
     }
 }

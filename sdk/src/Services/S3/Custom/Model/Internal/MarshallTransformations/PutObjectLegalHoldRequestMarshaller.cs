@@ -85,10 +85,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {   
                 if (publicRequest.IsSetLegalHold())
                 {
-                    xmlWriter.WriteStartElement("LegalHold", "http://s3.amazonaws.com/doc/2006-03-01/");
+                    xmlWriter.WriteStartElement("LegalHold", S3Constants.S3RequestXmlNamespace);
                     if(publicRequest.LegalHold.IsSetStatus())
-                        xmlWriter.WriteElementString("Status", "http://s3.amazonaws.com/doc/2006-03-01/", StringUtils.FromString(publicRequest.LegalHold.Status));
-    
+                        xmlWriter.WriteElementString("Status", StringUtils.FromString(publicRequest.LegalHold.Status));
     
                     xmlWriter.WriteEndElement();
                 }
