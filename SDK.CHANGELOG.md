@@ -1,3 +1,30 @@
+### 3.7.367.0 (2022-09-29 18:26 UTC)
+* CertificateManager (3.7.2.0)
+	* This update returns additional certificate details such as certificate SANs and allows sorting in the ListCertificates API.
+* EC2 (3.7.93.0)
+	* u-3tb1 instances are powered by Intel Xeon Platinum 8176M (Skylake) processors and are purpose-built to run large in-memory databases.
+* EMRServerless (3.7.1.0)
+	* This release adds API support to debug Amazon EMR Serverless jobs in real-time with live application UIs
+* FSx (3.7.14.0)
+	* This release adds support for Amazon File Cache.
+* MigrationHubOrchestrator (3.7.0.0)
+	* Introducing AWS MigrationHubOrchestrator. This is the first public release of AWS MigrationHubOrchestrator.
+* Polly (3.7.8.0)
+	* Added support for the new Cantonese voice - Hiujin. Hiujin is available as a Neural voice only.
+* Proton (3.7.5.0)
+	* This release adds an option to delete pipeline provisioning repositories using the UpdateAccountSettings API
+* SageMaker (3.7.51.0)
+	* SageMaker Training Managed Warm Pools let you retain provisioned infrastructure to reduce latency for repetitive training workloads.
+* SecretsManager (3.7.2.100)
+	* Documentation updates for Secrets Manager
+* Translate (3.7.6.0)
+	* This release enables customers to access control rights on Translate resources like Parallel Data and Custom Terminology using Tag Based Authorization.
+* WorkSpaces (3.7.11.0)
+	* This release includes diagnostic log uploading feature. If it is enabled, the log files of WorkSpaces Windows client will be sent to Amazon WorkSpaces automatically for troubleshooting. You can use modifyClientProperty api to enable/disable this feature.
+* Core 3.7.13.13
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.366.0 (2022-09-27 18:23 UTC)
 * CostExplorer (3.7.7.0)
 	* This release is to support retroactive Cost Categories. The new field will enable you to retroactively apply new and existing cost category rules to previous months.
