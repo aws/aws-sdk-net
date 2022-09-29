@@ -78,6 +78,23 @@
     <pattern>[0-9a-z]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EMRServerless.Model.GetDashboardForJobRunRequest.ApplicationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.GetDashboardForJobRunRequest.JobRunId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.GetDashboardForJobRunResponse.Url</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EMRServerless.Model.GetJobRunRequest.ApplicationId</property>
     <min>1</min>
     <max>64</max>

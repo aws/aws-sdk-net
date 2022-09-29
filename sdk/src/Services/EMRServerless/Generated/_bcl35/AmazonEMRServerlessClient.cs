@@ -536,6 +536,69 @@ namespace Amazon.EMRServerless
 
         #endregion
         
+        #region  GetDashboardForJobRun
+
+        /// <summary>
+        /// Returns a URL to access the job run dashboard.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDashboardForJobRun service method.</param>
+        /// 
+        /// <returns>The response from the GetDashboardForJobRun service method, as returned by EMRServerless.</returns>
+        /// <exception cref="Amazon.EMRServerless.Model.InternalServerException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.EMRServerless.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.EMRServerless.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/GetDashboardForJobRun">REST API Reference for GetDashboardForJobRun Operation</seealso>
+        public virtual GetDashboardForJobRunResponse GetDashboardForJobRun(GetDashboardForJobRunRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDashboardForJobRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDashboardForJobRunResponseUnmarshaller.Instance;
+
+            return Invoke<GetDashboardForJobRunResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDashboardForJobRun operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDashboardForJobRun operation on AmazonEMRServerlessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDashboardForJobRun
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/GetDashboardForJobRun">REST API Reference for GetDashboardForJobRun Operation</seealso>
+        public virtual IAsyncResult BeginGetDashboardForJobRun(GetDashboardForJobRunRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDashboardForJobRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDashboardForJobRunResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDashboardForJobRun operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDashboardForJobRun.</param>
+        /// 
+        /// <returns>Returns a  GetDashboardForJobRunResult from EMRServerless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/GetDashboardForJobRun">REST API Reference for GetDashboardForJobRun Operation</seealso>
+        public virtual GetDashboardForJobRunResponse EndGetDashboardForJobRun(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetDashboardForJobRunResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetJobRun
 
         /// <summary>
