@@ -31,12 +31,13 @@ namespace Amazon.FSx.Model
     /// <summary>
     /// Describes the data repository association's automatic import policy. The AutoImportPolicy
     /// defines how Amazon FSx keeps your file metadata and directory listings up to date
-    /// by importing changes to your file system as you modify objects in a linked S3 bucket.
+    /// by importing changes to your Amazon FSx for Lustre file system as you modify objects
+    /// in a linked S3 bucket.
     /// 
     ///  
     /// <para>
-    /// This <code>AutoImportPolicy</code> is supported only for file systems with the <code>Persistent_2</code>
-    /// deployment type.
+    /// The <code>AutoImportPolicy</code> is supported only for Amazon FSx for Lustre file
+    /// systems with the <code>Persistent_2</code> deployment type.
     /// </para>
     /// </summary>
     public partial class AutoImportPolicy

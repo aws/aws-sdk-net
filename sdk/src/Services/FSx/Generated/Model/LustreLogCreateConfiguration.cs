@@ -30,25 +30,14 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// The Lustre logging configuration used when creating or updating an Amazon FSx for
-    /// Lustre file system. Lustre logging writes the enabled logging events for your file
-    /// system to Amazon CloudWatch Logs.
+    /// Lustre file system. An Amazon File Cache is created with Lustre logging enabled by
+    /// default, with a setting of <code>WARN_ERROR</code> for the logging events. which can't
+    /// be changed.
     /// 
     ///  
     /// <para>
-    /// Error and warning events can be logged from the following data repository operations:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// Automatic export
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Data repository tasks
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// To learn more about Lustre logging, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/cw-event-logging.html">Logging
-    /// to Amazon CloudWatch Logs</a>.
+    /// Lustre logging writes the enabled logging events for your file system or cache to
+    /// Amazon CloudWatch Logs.
     /// </para>
     /// </summary>
     public partial class LustreLogCreateConfiguration
@@ -80,7 +69,8 @@ namespace Amazon.FSx.Model
         ///  </li> <li> 
         /// <para>
         /// If you do not provide a destination, Amazon FSx will create and use a log stream in
-        /// the CloudWatch Logs <code>/aws/fsx/lustre</code> log group.
+        /// the CloudWatch Logs <code>/aws/fsx/lustre</code> log group (for Amazon FSx for Lustre)
+        /// or <code>/aws/fsx/filecache</code> (for Amazon File Cache).
         /// </para>
         ///  </li> <li> 
         /// <para>

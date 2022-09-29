@@ -30,13 +30,17 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// A description of the data repository task. You use data repository tasks to perform
-    /// bulk transfer operations between your Amazon FSx file system and a linked data repository.
+    /// bulk transfer operations between an Amazon FSx for Lustre file system and a linked
+    /// data repository. An Amazon File Cache resource uses a task to automatically release
+    /// files from the cache.
     /// </summary>
     public partial class DataRepositoryTask
     {
+        private long? _capacityToRelease;
         private DateTime? _creationTime;
         private DateTime? _endTime;
         private DataRepositoryTaskFailureDetails _failureDetails;
+        private string _fileCacheId;
         private string _fileSystemId;
         private DataRepositoryTaskLifecycle _lifecycle;
         private List<string> _paths = new List<string>();
@@ -47,6 +51,26 @@ namespace Amazon.FSx.Model
         private List<Tag> _tags = new List<Tag>();
         private string _taskId;
         private DataRepositoryTaskType _type;
+
+        /// <summary>
+        /// Gets and sets the property CapacityToRelease. 
+        /// <para>
+        /// Specifies the amount of data to release, in GiB, by an Amazon File Cache AUTO_RELEASE_DATA
+        /// task that automatically releases files from the cache.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2147483647)]
+        public long CapacityToRelease
+        {
+            get { return this._capacityToRelease.GetValueOrDefault(); }
+            set { this._capacityToRelease = value; }
+        }
+
+        // Check to see if CapacityToRelease property is set
+        internal bool IsSetCapacityToRelease()
+        {
+            return this._capacityToRelease.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property CreationTime.
@@ -67,8 +91,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The time that Amazon FSx completed processing the task, populated after the task is
-        /// complete.
+        /// The time the system completed processing the task, populated after the task is complete.
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -103,9 +126,31 @@ namespace Amazon.FSx.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FileSystemId.
+        /// Gets and sets the property FileCacheId. 
+        /// <para>
+        /// The system-generated, unique ID of the cache.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=11, Max=21)]
+        [AWSProperty(Min=11, Max=21)]
+        public string FileCacheId
+        {
+            get { return this._fileCacheId; }
+            set { this._fileCacheId = value; }
+        }
+
+        // Check to see if FileCacheId property is set
+        internal bool IsSetFileCacheId()
+        {
+            return this._fileCacheId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FileSystemId. 
+        /// <para>
+        /// The globally unique ID of the file system.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=11, Max=21)]
         public string FileSystemId
         {
             get { return this._fileSystemId; }
@@ -125,29 +170,29 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PENDING</code> - Amazon FSx has not started the task.
+        ///  <code>PENDING</code> - The task has not started.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EXECUTING</code> - Amazon FSx is processing the task.
+        ///  <code>EXECUTING</code> - The task is in process.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> - Amazon FSx was not able to complete the task. For example,
-        /// there may be files the task failed to process. The <a>DataRepositoryTaskFailureDetails</a>
-        /// property provides more information about task failures.
+        ///  <code>FAILED</code> - The task was not able to be completed. For example, there may
+        /// be files the task failed to process. The <a>DataRepositoryTaskFailureDetails</a> property
+        /// provides more information about task failures.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SUCCEEDED</code> - FSx completed the task successfully.
+        ///  <code>SUCCEEDED</code> - The task has completed successfully.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CANCELED</code> - Amazon FSx canceled the task and it did not complete.
+        ///  <code>CANCELED</code> - The task was canceled and it did not complete.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CANCELING</code> - FSx is in process of canceling the task.
+        ///  <code>CANCELING</code> - The task is in process of being canceled.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -176,9 +221,9 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Paths. 
         /// <para>
-        /// An array of paths on the Amazon FSx for Lustre file system that specify the data for
-        /// the data repository task to process. For example, in an EXPORT_TO_REPOSITORY task,
-        /// the paths specify which data to export to the linked data repository.
+        /// An array of paths that specify the data for the data repository task to process. For
+        /// example, in an EXPORT_TO_REPOSITORY task, the paths specify which data to export to
+        /// the linked data repository.
         /// </para>
         ///  
         /// <para>
@@ -233,7 +278,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The time that Amazon FSx began processing the task.
+        /// The time the system began processing the task.
         /// </para>
         /// </summary>
         public DateTime StartTime
@@ -309,13 +354,18 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The <code>EXPORT_TO_REPOSITORY</code> data repository task exports from your Lustre
-        /// file system from to a linked S3 bucket.
+        ///  <code>EXPORT_TO_REPOSITORY</code> tasks export from your Amazon FSx for Lustre file
+        /// system to a linked data repository.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <code>IMPORT_METADATA_FROM_REPOSITORY</code> data repository task imports metadata
-        /// changes from a linked S3 bucket to your Lustre file system.
+        ///  <code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from a
+        /// linked S3 bucket to your Amazon FSx for Lustre file system.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File
+        /// Cache resource.
         /// </para>
         ///  </li> </ul>
         /// </summary>

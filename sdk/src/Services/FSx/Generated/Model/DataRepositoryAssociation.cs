@@ -30,8 +30,9 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// The configuration of a data repository association that links an Amazon FSx for Lustre
-    /// file system to an Amazon S3 bucket. The data repository association configuration
-    /// object is returned in the response of the following operations:
+    /// file system to an Amazon S3 bucket or an Amazon File Cache resource to an Amazon S3
+    /// bucket or an NFS file system. The data repository association configuration object
+    /// is returned in the response of the following operations:
     /// 
     ///  <ul> <li> 
     /// <para>
@@ -47,8 +48,9 @@ namespace Amazon.FSx.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Data repository associations are supported only for file systems with the <code>Persistent_2</code>
-    /// deployment type.
+    /// Data repository associations are supported only for an Amazon FSx for Lustre file
+    /// system with the <code>Persistent_2</code> deployment type and for an Amazon File Cache
+    /// resource.
     /// </para>
     /// </summary>
     public partial class DataRepositoryAssociation
@@ -57,11 +59,15 @@ namespace Amazon.FSx.Model
         private bool? _batchImportMetaDataOnCreate;
         private DateTime? _creationTime;
         private string _dataRepositoryPath;
+        private List<string> _dataRepositorySubdirectories = new List<string>();
         private DataRepositoryFailureDetails _failureDetails;
+        private string _fileCacheId;
+        private string _fileCachePath;
         private string _fileSystemId;
         private string _fileSystemPath;
         private int? _importedFileChunkSize;
         private DataRepositoryLifecycle _lifecycle;
+        private NFSDataRepositoryConfiguration _nfs;
         private string _resourceARN;
         private S3DataRepositoryConfiguration _s3;
         private List<Tag> _tags = new List<Tag>();
@@ -92,6 +98,12 @@ namespace Amazon.FSx.Model
         /// should run after the data repository association is created. The task runs if this
         /// flag is set to <code>true</code>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <code>BatchImportMetaDataOnCreate</code> is not supported for data repositories linked
+        /// to an Amazon File Cache resource.
+        /// </para>
+        ///  </note>
         /// </summary>
         public bool BatchImportMetaDataOnCreate
         {
@@ -123,11 +135,35 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property DataRepositoryPath. 
         /// <para>
-        /// The path to the Amazon S3 data repository that will be linked to the file system.
-        /// The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.
-        /// This path specifies where in the S3 data repository files will be imported from or
-        /// exported to.
+        /// The path to the data repository that will be linked to the cache or file system.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For Amazon File Cache, the path can be an NFS data repository that will be linked
+        /// to the cache. The path can be in one of two formats:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you are not using the <code>DataRepositorySubdirectories</code> parameter, the
+        /// path is to an NFS Export directory (or one of its subdirectories) in the format <code>nsf://nfs-domain-name/exportpath</code>.
+        /// You can therefore link a single NFS Export to a single data repository association.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using the <code>DataRepositorySubdirectories</code> parameter, the path
+        /// is the domain name of the NFS file system in the format <code>nfs://filer-domain-name</code>,
+        /// which indicates the root of the subdirectories specified with the <code>DataRepositorySubdirectories</code>
+        /// parameter.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// For Amazon File Cache, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon FSx for Lustre, the path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=3, Max=4357)]
         public string DataRepositoryPath
@@ -143,6 +179,30 @@ namespace Amazon.FSx.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DataRepositorySubdirectories. 
+        /// <para>
+        /// For Amazon File Cache, a list of NFS Exports that will be linked with an NFS data
+        /// repository association. All the subdirectories must be on a single NFS file system.
+        /// The Export paths are in the format <code>/exportpath1</code>. To use this parameter,
+        /// you must configure <code>DataRepositoryPath</code> as the domain name of the NFS file
+        /// system. The NFS file system domain name in effect is the root of the subdirectories.
+        /// Note that <code>DataRepositorySubdirectories</code> is not supported for S3 data repositories.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=500)]
+        public List<string> DataRepositorySubdirectories
+        {
+            get { return this._dataRepositorySubdirectories; }
+            set { this._dataRepositorySubdirectories = value; }
+        }
+
+        // Check to see if DataRepositorySubdirectories property is set
+        internal bool IsSetDataRepositorySubdirectories()
+        {
+            return this._dataRepositorySubdirectories != null && this._dataRepositorySubdirectories.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property FailureDetails.
         /// </summary>
         public DataRepositoryFailureDetails FailureDetails
@@ -155,6 +215,66 @@ namespace Amazon.FSx.Model
         internal bool IsSetFailureDetails()
         {
             return this._failureDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FileCacheId. 
+        /// <para>
+        /// The globally unique ID of the Amazon File Cache resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=11, Max=21)]
+        public string FileCacheId
+        {
+            get { return this._fileCacheId; }
+            set { this._fileCacheId = value; }
+        }
+
+        // Check to see if FileCacheId property is set
+        internal bool IsSetFileCacheId()
+        {
+            return this._fileCacheId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FileCachePath. 
+        /// <para>
+        /// A path on the Amazon File Cache that points to a high-level directory (such as <code>/ns1/</code>)
+        /// or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>.
+        /// The leading forward slash in the path is required. Two data repository associations
+        /// cannot have overlapping cache paths. For example, if a data repository is associated
+        /// with cache path <code>/ns1/</code>, then you cannot link another data repository with
+        /// cache path <code>/ns1/ns2</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This path specifies the directory in your cache where files will be exported from.
+        /// This cache directory can be linked to only one data repository (S3 or NFS) and no
+        /// other data repository can be linked to the directory.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The cache path can only be set to root (/) on an NFS DRA when <code>DataRepositorySubdirectories</code>
+        /// is specified. If you specify root (/) as the cache path, you can create only one DRA
+        /// on the cache.
+        /// </para>
+        ///  
+        /// <para>
+        /// The cache path cannot be set to root (/) for an S3 DRA.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=4096)]
+        public string FileCachePath
+        {
+            get { return this._fileCachePath; }
+            set { this._fileCachePath = value; }
+        }
+
+        // Check to see if FileCachePath property is set
+        internal bool IsSetFileCachePath()
+        {
+            return this._fileCachePath != null;
         }
 
         /// <summary>
@@ -176,12 +296,13 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property FileSystemPath. 
         /// <para>
-        /// A path on the file system that points to a high-level directory (such as <code>/ns1/</code>)
-        /// or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>.
-        /// The leading forward slash in the name is required. Two data repository associations
-        /// cannot have overlapping file system paths. For example, if a data repository is associated
-        /// with file system path <code>/ns1/</code>, then you cannot link another data repository
-        /// with file system path <code>/ns1/ns2</code>.
+        /// A path on the Amazon FSx for Lustre file system that points to a high-level directory
+        /// (such as <code>/ns1/</code>) or subdirectory (such as <code>/ns1/subdir/</code>) that
+        /// will be mapped 1-1 with <code>DataRepositoryPath</code>. The leading forward slash
+        /// in the name is required. Two data repository associations cannot have overlapping
+        /// file system paths. For example, if a data repository is associated with file system
+        /// path <code>/ns1/</code>, then you cannot link another data repository with file system
+        /// path <code>/ns1/ns2</code>.
         /// </para>
         ///  
         /// <para>
@@ -192,8 +313,8 @@ namespace Amazon.FSx.Model
         ///  <note> 
         /// <para>
         /// If you specify only a forward slash (<code>/</code>) as the file system path, you
-        /// can link only 1 data repository to the file system. You can only specify "/" as the
-        /// file system path for the first data repository associated with a file system.
+        /// can link only one data repository to the file system. You can only specify "/" as
+        /// the file system path for the first data repository associated with a file system.
         /// </para>
         ///  </note>
         /// </summary>
@@ -216,7 +337,7 @@ namespace Amazon.FSx.Model
         /// For files imported from a data repository, this value determines the stripe count
         /// and maximum amount of data per file (in MiB) stored on a single physical disk. The
         /// maximum number of disks that a single file can be striped across is limited by the
-        /// total number of disks that make up the file system.
+        /// total number of disks that make up the file system or cache.
         /// </para>
         ///  
         /// <para>
@@ -245,8 +366,8 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATING</code> - The data repository association between the FSx file system
-        /// and the S3 data repository is being created. The data repository is unavailable.
+        ///  <code>CREATING</code> - The data repository association between the file system or
+        /// cache and the data repository is being created. The data repository is unavailable.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -254,9 +375,9 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MISCONFIGURED</code> - Amazon FSx cannot automatically import updates from
-        /// the S3 bucket or automatically export updates to the S3 bucket until the data repository
-        /// association configuration is corrected.
+        ///  <code>MISCONFIGURED</code> - The data repository association is misconfigured. Until
+        /// the configuration is corrected, automatic import and automatic export will not work
+        /// (only for Amazon FSx for Lustre).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -288,6 +409,25 @@ namespace Amazon.FSx.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NFS. 
+        /// <para>
+        /// The configuration for an NFS data repository linked to an Amazon File Cache resource
+        /// with a data repository association.
+        /// </para>
+        /// </summary>
+        public NFSDataRepositoryConfiguration NFS
+        {
+            get { return this._nfs; }
+            set { this._nfs = value; }
+        }
+
+        // Check to see if NFS property is set
+        internal bool IsSetNFS()
+        {
+            return this._nfs != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ResourceARN.
         /// </summary>
         [AWSProperty(Min=8, Max=512)]
@@ -306,11 +446,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property S3. 
         /// <para>
-        /// The configuration for an Amazon S3 data repository linked to an Amazon FSx Lustre
-        /// file system with a data repository association. The configuration defines which file
-        /// events (new, changed, or deleted files or directories) are automatically imported
-        /// from the linked data repository to the file system or automatically exported from
-        /// the file system to the data repository.
+        /// The configuration for an Amazon S3 data repository linked to an Amazon FSx for Lustre
+        /// file system with a data repository association.
         /// </para>
         /// </summary>
         public S3DataRepositoryConfiguration S3

@@ -43,12 +43,33 @@ namespace Amazon.FSx.Model
     /// </summary>
     public partial class CreateDataRepositoryTaskRequest : AmazonFSxRequest
     {
+        private long? _capacityToRelease;
         private string _clientRequestToken;
         private string _fileSystemId;
         private List<string> _paths = new List<string>();
         private CompletionReport _report;
         private List<Tag> _tags = new List<Tag>();
         private DataRepositoryTaskType _type;
+
+        /// <summary>
+        /// Gets and sets the property CapacityToRelease. 
+        /// <para>
+        /// Specifies the amount of data to release, in GiB, by an Amazon File Cache <code>AUTO_RELEASE_DATA</code>
+        /// task that automatically releases files from the cache.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2147483647)]
+        public long CapacityToRelease
+        {
+            get { return this._capacityToRelease.GetValueOrDefault(); }
+            set { this._capacityToRelease = value; }
+        }
+
+        // Check to see if CapacityToRelease property is set
+        internal bool IsSetCapacityToRelease()
+        {
+            return this._capacityToRelease.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken.

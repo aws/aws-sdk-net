@@ -44,6 +44,13 @@ namespace Amazon.FSx.Model
     /// learn more about linking a data repository to your file system, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/create-dra-linked-data-repo.html">Linking
     /// your file system to an S3 bucket</a>.
     /// </para>
+    ///  <note> 
+    /// <para>
+    ///  <code>CreateDataRepositoryAssociation</code> isn't supported on Amazon File Cache
+    /// resources. To create a DRA on Amazon File Cache, use the <code>CreateFileCache</code>
+    /// operation.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateDataRepositoryAssociationRequest : AmazonFSxRequest
     {
@@ -149,12 +156,12 @@ namespace Amazon.FSx.Model
         ///  <note> 
         /// <para>
         /// If you specify only a forward slash (<code>/</code>) as the file system path, you
-        /// can link only 1 data repository to the file system. You can only specify "/" as the
-        /// file system path for the first data repository associated with a file system.
+        /// can link only one data repository to the file system. You can only specify "/" as
+        /// the file system path for the first data repository associated with a file system.
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=4096)]
+        [AWSProperty(Min=1, Max=4096)]
         public string FileSystemPath
         {
             get { return this._fileSystemPath; }

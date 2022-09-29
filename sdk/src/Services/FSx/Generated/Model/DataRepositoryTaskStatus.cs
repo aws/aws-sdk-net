@@ -37,6 +37,7 @@ namespace Amazon.FSx.Model
     {
         private long? _failedCount;
         private DateTime? _lastUpdatedTime;
+        private long? _releasedCapacity;
         private long? _succeededCount;
         private long? _totalCount;
 
@@ -74,6 +75,25 @@ namespace Amazon.FSx.Model
         internal bool IsSetLastUpdatedTime()
         {
             return this._lastUpdatedTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReleasedCapacity. 
+        /// <para>
+        /// The total amount of data, in GiB, released by an Amazon File Cache AUTO_RELEASE_DATA
+        /// task that automatically releases files from the cache.
+        /// </para>
+        /// </summary>
+        public long ReleasedCapacity
+        {
+            get { return this._releasedCapacity.GetValueOrDefault(); }
+            set { this._releasedCapacity = value; }
+        }
+
+        // Check to see if ReleasedCapacity property is set
+        internal bool IsSetReleasedCapacity()
+        {
+            return this._releasedCapacity.HasValue; 
         }
 
         /// <summary>

@@ -88,10 +88,28 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     unmarshalledObject.DataRepositoryPath = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DataRepositorySubdirectories", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.DataRepositorySubdirectories = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FailureDetails", targetDepth))
                 {
                     var unmarshaller = DataRepositoryFailureDetailsUnmarshaller.Instance;
                     unmarshalledObject.FailureDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FileCacheId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FileCacheId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FileCachePath", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FileCachePath = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("FileSystemId", targetDepth))
@@ -116,6 +134,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Lifecycle = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NFS", targetDepth))
+                {
+                    var unmarshaller = NFSDataRepositoryConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.NFS = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ResourceARN", targetDepth))

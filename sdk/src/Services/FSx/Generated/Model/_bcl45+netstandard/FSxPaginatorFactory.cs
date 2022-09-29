@@ -60,6 +60,14 @@ namespace Amazon.FSx.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeFileCaches operation
+        ///</summary>
+        public IDescribeFileCachesPaginator DescribeFileCaches(DescribeFileCachesRequest request) 
+        {
+            return new DescribeFileCachesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeFileSystemAliases operation
         ///</summary>
         public IDescribeFileSystemAliasesPaginator DescribeFileSystemAliases(DescribeFileSystemAliasesRequest request) 

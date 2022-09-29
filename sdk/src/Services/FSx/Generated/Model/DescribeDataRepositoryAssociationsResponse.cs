@@ -39,7 +39,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Associations. 
         /// <para>
-        /// An array of one ore more data repository association descriptions.
+        /// An array of one or more data repository association descriptions.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]

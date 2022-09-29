@@ -85,7 +85,6 @@ namespace Amazon.FSx.Model
         /// the data repository association.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public bool DeleteDataInFileSystem
         {
             get { return this._deleteDataInFileSystem.GetValueOrDefault(); }

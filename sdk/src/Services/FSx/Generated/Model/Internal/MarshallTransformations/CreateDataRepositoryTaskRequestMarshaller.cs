@@ -67,6 +67,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCapacityToRelease())
+                {
+                    context.Writer.WritePropertyName("CapacityToRelease");
+                    context.Writer.Write(publicRequest.CapacityToRelease);
+                }
+
                 if(publicRequest.IsSetClientRequestToken())
                 {
                     context.Writer.WritePropertyName("ClientRequestToken");
