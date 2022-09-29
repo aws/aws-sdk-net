@@ -9105,6 +9105,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType U24tb1Metal = new InstanceType("u-24tb1.metal");
         /// <summary>
+        /// Constant U3tb156xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType U3tb156xlarge = new InstanceType("u-3tb1.56xlarge");
+        /// <summary>
         /// Constant U6tb1112xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType U6tb1112xlarge = new InstanceType("u-6tb1.112xlarge");
