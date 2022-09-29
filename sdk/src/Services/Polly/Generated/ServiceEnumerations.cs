@@ -262,6 +262,10 @@ namespace Amazon.Polly
         /// Constant TrTR for LanguageCode
         /// </summary>
         public static readonly LanguageCode TrTR = new LanguageCode("tr-TR");
+        /// <summary>
+        /// Constant YueCN for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode YueCN = new LanguageCode("yue-CN");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -640,6 +644,10 @@ namespace Amazon.Polly
         /// Constant Hans for VoiceId
         /// </summary>
         public static readonly VoiceId Hans = new VoiceId("Hans");
+        /// <summary>
+        /// Constant Hiujin for VoiceId
+        /// </summary>
+        public static readonly VoiceId Hiujin = new VoiceId("Hiujin");
         /// <summary>
         /// Constant Ines for VoiceId
         /// </summary>
