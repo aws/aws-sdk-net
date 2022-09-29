@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Proton.Model
 {
     /// <summary>
-    /// Detail input data for a repository branch.
+    /// Detail input data for a linked repository branch.
     /// </summary>
     public partial class RepositoryBranchInput
     {

@@ -42,8 +42,8 @@ namespace Amazon.Proton.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information about ABAC, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags">ABAC</a>
-    /// in the <i>Proton Administrator Guide</i>.
+    /// For more information about ABAC, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags">ABAC</a>
+    /// in the <i>Proton User Guide</i>.
     /// </para>
     ///  </note>
     /// </summary>

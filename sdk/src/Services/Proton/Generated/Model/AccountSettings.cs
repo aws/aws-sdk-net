@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Proton.Model
 {
     /// <summary>
-    /// The Proton pipeline service role and repository data shared across the Amazon Web
-    /// Services account.
+    /// Proton settings that are used for multiple services in the Amazon Web Services account.
     /// </summary>
     public partial class AccountSettings
     {
@@ -40,9 +39,10 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property PipelineProvisioningRepository. 
         /// <para>
-        /// The repository configured in the Amazon Web Services account for pipeline provisioning.
-        /// Required it if you have environments configured for self-managed provisioning with
-        /// services that include pipelines.
+        /// The linked repository for pipeline provisioning. Required if you have environments
+        /// configured for self-managed provisioning with services that include pipelines. A linked
+        /// repository is a repository that has been registered with Proton. For more information,
+        /// see <a>CreateRepository</a>.
         /// </para>
         /// </summary>
         public RepositoryBranch PipelineProvisioningRepository

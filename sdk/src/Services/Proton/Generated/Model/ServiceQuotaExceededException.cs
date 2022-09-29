@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Proton.Model
 {
     /// <summary>
-    /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-    /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+    /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+    /// Quotas</a> in the <i>Proton User Guide</i>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -30,12 +30,18 @@ namespace Amazon.Proton.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateTemplateSyncConfig operation.
-    /// Set up a template to create new template versions automatically. When a commit is
-    /// pushed to your registered <a href="https://docs.aws.amazon.com/proton/latest/APIReference/API_Repository.html">repository</a>,
-    /// Proton checks for changes to your repository template bundles. If it detects a template
-    /// bundle change, a new major or minor version of its template is created, if the version
-    /// doesn’t already exist. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-sync-configs.html">Template
-    /// sync configurations</a> in the <i>Proton Administrator Guide</i>.
+    /// Set up a template to create new template versions automatically by tracking a linked
+    /// repository. A linked repository is a repository that has been registered with Proton.
+    /// For more information, see <a>CreateRepository</a>.
+    /// 
+    ///  
+    /// <para>
+    /// When a commit is pushed to your linked repository, Proton checks for changes to your
+    /// repository template bundles. If it detects a template bundle change, a new major or
+    /// minor version of its template is created, if the version doesn’t already exist. For
+    /// more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-template-sync-configs.html">Template
+    /// sync configurations</a> in the <i>Proton User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class CreateTemplateSyncConfigRequest : AmazonProtonRequest
     {
@@ -49,7 +55,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property Branch. 
         /// <para>
-        /// The branch of the registered repository for your template.
+        /// The repository branch for your template.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]
@@ -68,7 +74,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property RepositoryName. 
         /// <para>
-        /// The name of your repository (for example, <code>myrepos/myrepo</code>).
+        /// The repository name (for example, <code>myrepos/myrepo</code>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

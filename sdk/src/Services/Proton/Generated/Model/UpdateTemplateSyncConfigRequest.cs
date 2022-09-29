@@ -31,7 +31,9 @@ namespace Amazon.Proton.Model
     /// <summary>
     /// Container for the parameters to the UpdateTemplateSyncConfig operation.
     /// Update template sync configuration parameters, except for the <code>templateName</code>
-    /// and <code>templateType</code>.
+    /// and <code>templateType</code>. Repository details (branch, name, and provider) should
+    /// be of a linked repository. A linked repository is a repository that has been registered
+    /// with Proton. For more information, see <a>CreateRepository</a>.
     /// </summary>
     public partial class UpdateTemplateSyncConfigRequest : AmazonProtonRequest
     {
@@ -45,7 +47,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property Branch. 
         /// <para>
-        /// The repository branch.
+        /// The repository branch for your template.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]
@@ -64,7 +66,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property RepositoryName. 
         /// <para>
-        /// The name of the repository (for example, <code>myrepos/myrepo</code>).
+        /// The repository name (for example, <code>myrepos/myrepo</code>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

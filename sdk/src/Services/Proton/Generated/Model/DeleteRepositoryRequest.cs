@@ -40,7 +40,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the repository.
+        /// The repository name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

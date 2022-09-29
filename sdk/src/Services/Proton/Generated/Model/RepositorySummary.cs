@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Proton.Model
 {
     /// <summary>
-    /// Summary data of a repository that has been registered with Proton.
+    /// Summary data of a linked repository—a repository that has been registered with Proton.
     /// </summary>
     public partial class RepositorySummary
     {
@@ -40,7 +40,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for a repository.
+        /// The Amazon Resource Name (ARN) of the linked repository.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -30,7 +30,7 @@ namespace Amazon.Proton.Model
 {
     /// <summary>
     /// Container for the parameters to the ListRepositories operation.
-    /// List repositories with detail data.
+    /// List linked repositories with detail data.
     /// </summary>
     public partial class ListRepositoriesRequest : AmazonProtonRequest
     {

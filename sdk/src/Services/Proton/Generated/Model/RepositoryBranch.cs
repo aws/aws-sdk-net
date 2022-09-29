@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Proton.Model
 {
     /// <summary>
-    /// Detail data for a repository branch.
+    /// Detail data for a linked repository branch.
     /// </summary>
     public partial class RepositoryBranch
     {
@@ -41,7 +41,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the repository branch.
+        /// The Amazon Resource Name (ARN) of the linked repository.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

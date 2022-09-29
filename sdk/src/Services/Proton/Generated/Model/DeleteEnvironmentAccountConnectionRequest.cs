@@ -42,8 +42,8 @@ namespace Amazon.Proton.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-    /// account connections</a> in the <i>Proton Administrator guide</i>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
+    /// account connections</a> in the <i>Proton User guide</i>.
     /// </para>
     /// </summary>
     public partial class DeleteEnvironmentAccountConnectionRequest : AmazonProtonRequest

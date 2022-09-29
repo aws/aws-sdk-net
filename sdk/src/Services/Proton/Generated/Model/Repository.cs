@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Proton.Model
 {
     /// <summary>
-    /// Detailed data of a repository that has been registered with Proton.
+    /// Detailed data of a linked repository—a repository that has been registered with Proton.
     /// </summary>
     public partial class Repository
     {
@@ -42,7 +42,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The repository Amazon Resource Name (ARN).
+        /// The Amazon Resource Name (ARN) of the linked repository.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,8 +61,8 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property ConnectionArn. 
         /// <para>
-        /// The repository Amazon Web Services CodeStar connection that connects Proton to your
-        /// repository.
+        /// The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton
+        /// to your repository provider account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

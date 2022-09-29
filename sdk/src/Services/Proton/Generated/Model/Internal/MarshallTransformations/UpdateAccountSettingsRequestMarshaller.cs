@@ -67,6 +67,12 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDeletePipelineProvisioningRepository())
+                {
+                    context.Writer.WritePropertyName("deletePipelineProvisioningRepository");
+                    context.Writer.Write(publicRequest.DeletePipelineProvisioningRepository);
+                }
+
                 if(publicRequest.IsSetPipelineProvisioningRepository())
                 {
                     context.Writer.WritePropertyName("pipelineProvisioningRepository");

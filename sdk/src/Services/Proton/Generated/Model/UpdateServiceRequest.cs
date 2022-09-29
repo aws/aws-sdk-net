@@ -52,8 +52,8 @@ namespace Amazon.Proton.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-    /// components</a> in the <i>Proton Administrator Guide</i>.
+    /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+    /// components</a> in the <i>Proton User Guide</i>.
     /// </para>
     ///  </note>
     /// </summary>
@@ -106,10 +106,8 @@ namespace Amazon.Proton.Model
         /// <para>
         /// Lists the service instances to add and the existing service instances to remain. Omit
         /// the existing service instances to delete from the list. <i>Don't</i> include edits
-        /// to the existing service instances or pipeline. For more information, see <i>Edit a
-        /// service</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton
-        /// Administrator Guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton
-        /// User Guide</a>.
+        /// to the existing service instances or pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-update.html">Edit
+        /// a service</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=51200)]

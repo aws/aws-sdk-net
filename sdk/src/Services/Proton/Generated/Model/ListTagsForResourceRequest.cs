@@ -30,10 +30,8 @@ namespace Amazon.Proton.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// List tags for a resource. For more information, see <i>Proton resources and tagging</i>
-    /// in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-    /// Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
-    /// User Guide</a>.
+    /// List tags for a resource. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+    /// resources and tagging</a> in the <i>Proton User Guide</i>.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonProtonRequest
     {

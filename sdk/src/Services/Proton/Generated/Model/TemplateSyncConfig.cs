@@ -62,7 +62,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property RepositoryName. 
         /// <para>
-        /// The name of the repository, for example <code>myrepos/myrepo</code>.
+        /// The repository name (for example, <code>myrepos/myrepo</code>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

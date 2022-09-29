@@ -58,7 +58,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property Repositories. 
         /// <para>
-        /// An array of repositories.
+        /// An array of repository links.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

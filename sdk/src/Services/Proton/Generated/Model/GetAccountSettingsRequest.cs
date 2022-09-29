@@ -30,7 +30,7 @@ namespace Amazon.Proton.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAccountSettings operation.
-    /// Get detail data for the Proton pipeline service role.
+    /// Get detail data for Proton account-wide settings.
     /// </summary>
     public partial class GetAccountSettingsRequest : AmazonProtonRequest
     {

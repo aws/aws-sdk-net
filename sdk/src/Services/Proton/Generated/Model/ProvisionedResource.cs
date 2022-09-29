@@ -84,8 +84,8 @@ namespace Amazon.Proton.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
-        /// provisioning</a> in the <i>Proton Administrator Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
+        /// provisioning</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
         public ProvisionedResourceEngine ProvisioningEngine

@@ -75,13 +75,7 @@ namespace Amazon.Proton
     /// </para>
     ///  
     /// <para>
-    /// To learn more about Proton administration, see the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/Welcome.html">Proton
-    /// Administrator Guide</a>.
-    /// </para>
-    ///  
-    /// <para>
-    /// To learn more about deploying serverless and containerized applications on Proton,
-    /// see the <a href="https://docs.aws.amazon.com/proton/latest/userguide/Welcome.html">Proton
+    /// To learn more about Proton, see the <a href="https://docs.aws.amazon.com/proton/latest/userguide/Welcome.html">Proton
     /// User Guide</a>.
     /// </para>
     ///  
@@ -511,8 +505,8 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-        /// account connections</a> in the <i>Proton Administrator guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
+        /// account connections</a> in the <i>Proton User guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AcceptEnvironmentAccountConnection service method.</param>
@@ -555,8 +549,8 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-        /// account connections</a> in the <i>Proton Administrator guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
+        /// account connections</a> in the <i>Proton User guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AcceptEnvironmentAccountConnection service method.</param>
@@ -604,8 +598,8 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-        /// components</a> in the <i>Proton Administrator Guide</i>.
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelComponentDeployment service method.</param>
@@ -646,8 +640,8 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-        /// components</a> in the <i>Proton Administrator Guide</i>.
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelComponentDeployment service method.</param>
@@ -691,8 +685,8 @@ namespace Amazon.Proton
 
         /// <summary>
         /// Attempts to cancel an environment deployment on an <a>UpdateEnvironment</a> action,
-        /// if the deployment is <code>IN_PROGRESS</code>. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-update.html">Update
-        /// an environment</a> in the <i>Proton Administrator guide</i>.
+        /// if the deployment is <code>IN_PROGRESS</code>. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-update.html">Update
+        /// an environment</a> in the <i>Proton User guide</i>.
         /// 
         ///  
         /// <para>
@@ -748,8 +742,8 @@ namespace Amazon.Proton
 
         /// <summary>
         /// Attempts to cancel an environment deployment on an <a>UpdateEnvironment</a> action,
-        /// if the deployment is <code>IN_PROGRESS</code>. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-update.html">Update
-        /// an environment</a> in the <i>Proton Administrator guide</i>.
+        /// if the deployment is <code>IN_PROGRESS</code>. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-update.html">Update
+        /// an environment</a> in the <i>Proton User guide</i>.
         /// 
         ///  
         /// <para>
@@ -812,10 +806,9 @@ namespace Amazon.Proton
 
         /// <summary>
         /// Attempts to cancel a service instance deployment on an <a>UpdateServiceInstance</a>
-        /// action, if the deployment is <code>IN_PROGRESS</code>. For more information, see <i>Update
-        /// a service instance</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-instance-update.html">Proton
-        /// Administrator guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-instance-update.html">Proton
-        /// User guide</a>.
+        /// action, if the deployment is <code>IN_PROGRESS</code>. For more information, see <a
+        /// href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-instance-update.html">Update
+        /// a service instance</a> in the <i>Proton User guide</i>.
         /// 
         ///  
         /// <para>
@@ -871,10 +864,9 @@ namespace Amazon.Proton
 
         /// <summary>
         /// Attempts to cancel a service instance deployment on an <a>UpdateServiceInstance</a>
-        /// action, if the deployment is <code>IN_PROGRESS</code>. For more information, see <i>Update
-        /// a service instance</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-instance-update.html">Proton
-        /// Administrator guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-instance-update.html">Proton
-        /// User guide</a>.
+        /// action, if the deployment is <code>IN_PROGRESS</code>. For more information, see <a
+        /// href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-instance-update.html">Update
+        /// a service instance</a> in the <i>Proton User guide</i>.
         /// 
         ///  
         /// <para>
@@ -937,10 +929,9 @@ namespace Amazon.Proton
 
         /// <summary>
         /// Attempts to cancel a service pipeline deployment on an <a>UpdateServicePipeline</a>
-        /// action, if the deployment is <code>IN_PROGRESS</code>. For more information, see <i>Update
-        /// a service pipeline</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-pipeline-update.html">Proton
-        /// Administrator guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-pipeline-update.html">Proton
-        /// User guide</a>.
+        /// action, if the deployment is <code>IN_PROGRESS</code>. For more information, see <a
+        /// href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-pipeline-update.html">Update
+        /// a service pipeline</a> in the <i>Proton User guide</i>.
         /// 
         ///  
         /// <para>
@@ -996,10 +987,9 @@ namespace Amazon.Proton
 
         /// <summary>
         /// Attempts to cancel a service pipeline deployment on an <a>UpdateServicePipeline</a>
-        /// action, if the deployment is <code>IN_PROGRESS</code>. For more information, see <i>Update
-        /// a service pipeline</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-pipeline-update.html">Proton
-        /// Administrator guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-pipeline-update.html">Proton
-        /// User guide</a>.
+        /// action, if the deployment is <code>IN_PROGRESS</code>. For more information, see <a
+        /// href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-pipeline-update.html">Update
+        /// a service pipeline</a> in the <i>Proton User guide</i>.
         /// 
         ///  
         /// <para>
@@ -1066,8 +1056,8 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-        /// components</a> in the <i>Proton Administrator Guide</i>.
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateComponent service method.</param>
@@ -1086,8 +1076,8 @@ namespace Amazon.Proton
         /// The requested resource <i>wasn't</i> found.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1112,8 +1102,8 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-        /// components</a> in the <i>Proton Administrator Guide</i>.
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateComponent service method.</param>
@@ -1135,8 +1125,8 @@ namespace Amazon.Proton
         /// The requested resource <i>wasn't</i> found.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1179,9 +1169,9 @@ namespace Amazon.Proton
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
-        /// and <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html">Provisioning
-        /// methods</a> in the <i>Proton Administrator Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-environments.html">Environments</a>
+        /// and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html">Provisioning
+        /// methods</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEnvironment service method.</param>
@@ -1200,8 +1190,8 @@ namespace Amazon.Proton
         /// The requested resource <i>wasn't</i> found.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1240,9 +1230,9 @@ namespace Amazon.Proton
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
-        /// and <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html">Provisioning
-        /// methods</a> in the <i>Proton Administrator Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-environments.html">Environments</a>
+        /// and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html">Provisioning
+        /// methods</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEnvironment service method.</param>
@@ -1264,8 +1254,8 @@ namespace Amazon.Proton
         /// The requested resource <i>wasn't</i> found.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1297,8 +1287,8 @@ namespace Amazon.Proton
         /// <para>
         /// An environment account connection is a secure bi-directional connection between a
         /// <i>management account</i> and an <i>environment account</i> that maintains authorization
-        /// and permissions. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-        /// account connections</a> in the <i>Proton Administrator guide</i>.
+        /// and permissions. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
+        /// account connections</a> in the <i>Proton User guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEnvironmentAccountConnection service method.</param>
@@ -1314,8 +1304,8 @@ namespace Amazon.Proton
         /// The request failed to register with the service.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1343,8 +1333,8 @@ namespace Amazon.Proton
         /// <para>
         /// An environment account connection is a secure bi-directional connection between a
         /// <i>management account</i> and an <i>environment account</i> that maintains authorization
-        /// and permissions. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-        /// account connections</a> in the <i>Proton Administrator guide</i>.
+        /// and permissions. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
+        /// account connections</a> in the <i>Proton User guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEnvironmentAccountConnection service method.</param>
@@ -1363,8 +1353,8 @@ namespace Amazon.Proton
         /// The request failed to register with the service.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1388,8 +1378,8 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Create an environment template for Proton. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-templates.html">Environment
-        /// Templates</a> in the <i>Proton Administrator Guide</i>.
+        /// Create an environment template for Proton. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-templates.html">Environment
+        /// Templates</a> in the <i>Proton User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -1407,8 +1397,8 @@ namespace Amazon.Proton
         /// manage your existing provisioned infrastructure. To create an environment template
         /// for customer provisioned and managed infrastructure, include the <code>provisioning</code>
         /// parameter and set the value to <code>CUSTOMER_MANAGED</code>. For more information,
-        /// see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/template-create.html">Register
-        /// and publish an environment template</a> in the <i>Proton Administrator Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/proton/latest/userguide/template-create.html">Register
+        /// and publish an environment template</a> in the <i>Proton User Guide</i>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1425,8 +1415,8 @@ namespace Amazon.Proton
         /// The request failed to register with the service.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1446,8 +1436,8 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Create an environment template for Proton. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-templates.html">Environment
-        /// Templates</a> in the <i>Proton Administrator Guide</i>.
+        /// Create an environment template for Proton. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-templates.html">Environment
+        /// Templates</a> in the <i>Proton User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -1465,8 +1455,8 @@ namespace Amazon.Proton
         /// manage your existing provisioned infrastructure. To create an environment template
         /// for customer provisioned and managed infrastructure, include the <code>provisioning</code>
         /// parameter and set the value to <code>CUSTOMER_MANAGED</code>. For more information,
-        /// see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/template-create.html">Register
-        /// and publish an environment template</a> in the <i>Proton Administrator Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/proton/latest/userguide/template-create.html">Register
+        /// and publish an environment template</a> in the <i>Proton User Guide</i>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1486,8 +1476,8 @@ namespace Amazon.Proton
         /// The request failed to register with the service.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1532,8 +1522,8 @@ namespace Amazon.Proton
         /// The requested resource <i>wasn't</i> found.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1577,8 +1567,8 @@ namespace Amazon.Proton
         /// The requested resource <i>wasn't</i> found.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1602,17 +1592,19 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Create and register a link to a repository that can be used with self-managed provisioning
-        /// (infrastructure or pipelines) or for template sync configurations. When you create
-        /// a repository link, Proton creates a <a href="https://docs.aws.amazon.com/proton/latest/adminguide/using-service-linked-roles.html">service-linked
+        /// Create and register a link to a repository. Proton uses the link to repeatedly access
+        /// the repository, to either push to it (self-managed provisioning) or pull from it (template
+        /// sync). You can share a linked repository across multiple resources (like environments
+        /// using self-managed provisioning, or synced templates). When you create a repository
+        /// link, Proton creates a <a href="https://docs.aws.amazon.com/proton/latest/userguide/using-service-linked-roles.html">service-linked
         /// role</a> for you.
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
-        /// provisioning</a>, <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Template
-        /// bundles</a>, and <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-sync-configs.html">Template
-        /// sync configurations</a> in the <i>Proton Administrator Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
+        /// provisioning</a>, <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-template-authoring.html#ag-template-bundles">Template
+        /// bundles</a>, and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-template-sync-configs.html">Template
+        /// sync configurations</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRepository service method.</param>
@@ -1628,8 +1620,8 @@ namespace Amazon.Proton
         /// The request failed to register with the service.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1649,17 +1641,19 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Create and register a link to a repository that can be used with self-managed provisioning
-        /// (infrastructure or pipelines) or for template sync configurations. When you create
-        /// a repository link, Proton creates a <a href="https://docs.aws.amazon.com/proton/latest/adminguide/using-service-linked-roles.html">service-linked
+        /// Create and register a link to a repository. Proton uses the link to repeatedly access
+        /// the repository, to either push to it (self-managed provisioning) or pull from it (template
+        /// sync). You can share a linked repository across multiple resources (like environments
+        /// using self-managed provisioning, or synced templates). When you create a repository
+        /// link, Proton creates a <a href="https://docs.aws.amazon.com/proton/latest/userguide/using-service-linked-roles.html">service-linked
         /// role</a> for you.
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
-        /// provisioning</a>, <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Template
-        /// bundles</a>, and <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-sync-configs.html">Template
-        /// sync configurations</a> in the <i>Proton Administrator Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
+        /// provisioning</a>, <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-template-authoring.html#ag-template-bundles">Template
+        /// bundles</a>, and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-template-sync-configs.html">Template
+        /// sync configurations</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRepository service method.</param>
@@ -1678,8 +1672,8 @@ namespace Amazon.Proton
         /// The request failed to register with the service.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1705,8 +1699,7 @@ namespace Amazon.Proton
         /// <summary>
         /// Create an Proton service. An Proton service is an instantiation of a service template
         /// and often includes several service instances and pipeline. For more information, see
-        /// <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-services.html">Services</a>
-        /// in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-service.html">Services</a>
+        /// <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-services.html">Services</a>
         /// in the <i>Proton User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateService service method.</param>
@@ -1725,8 +1718,8 @@ namespace Amazon.Proton
         /// The requested resource <i>wasn't</i> found.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1748,8 +1741,7 @@ namespace Amazon.Proton
         /// <summary>
         /// Create an Proton service. An Proton service is an instantiation of a service template
         /// and often includes several service instances and pipeline. For more information, see
-        /// <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-services.html">Services</a>
-        /// in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-service.html">Services</a>
+        /// <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-services.html">Services</a>
         /// in the <i>Proton User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateService service method.</param>
@@ -1771,8 +1763,8 @@ namespace Amazon.Proton
         /// The requested resource <i>wasn't</i> found.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1801,8 +1793,8 @@ namespace Amazon.Proton
         /// turn, select the service template from Proton. If the selected service template includes
         /// a service pipeline definition, they provide a link to their source code repository.
         /// Proton then deploys and manages the infrastructure defined by the selected service
-        /// template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/managing-svc-templates.html">Service
-        /// Templates</a> in the <i>Proton Administrator Guide</i>.
+        /// template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-templates.html">Proton
+        /// templates</a> in the <i>Proton User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateServiceTemplate service method.</param>
         /// 
@@ -1817,8 +1809,8 @@ namespace Amazon.Proton
         /// The request failed to register with the service.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1843,8 +1835,8 @@ namespace Amazon.Proton
         /// turn, select the service template from Proton. If the selected service template includes
         /// a service pipeline definition, they provide a link to their source code repository.
         /// Proton then deploys and manages the infrastructure defined by the selected service
-        /// template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/managing-svc-templates.html">Service
-        /// Templates</a> in the <i>Proton Administrator Guide</i>.
+        /// template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-templates.html">Proton
+        /// templates</a> in the <i>Proton User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateServiceTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -1862,8 +1854,8 @@ namespace Amazon.Proton
         /// The request failed to register with the service.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1907,8 +1899,8 @@ namespace Amazon.Proton
         /// The requested resource <i>wasn't</i> found.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1951,8 +1943,8 @@ namespace Amazon.Proton
         /// The requested resource <i>wasn't</i> found.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1976,12 +1968,18 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Set up a template to create new template versions automatically. When a commit is
-        /// pushed to your registered <a href="https://docs.aws.amazon.com/proton/latest/APIReference/API_Repository.html">repository</a>,
-        /// Proton checks for changes to your repository template bundles. If it detects a template
-        /// bundle change, a new major or minor version of its template is created, if the version
-        /// doesn’t already exist. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-sync-configs.html">Template
-        /// sync configurations</a> in the <i>Proton Administrator Guide</i>.
+        /// Set up a template to create new template versions automatically by tracking a linked
+        /// repository. A linked repository is a repository that has been registered with Proton.
+        /// For more information, see <a>CreateRepository</a>.
+        /// 
+        ///  
+        /// <para>
+        /// When a commit is pushed to your linked repository, Proton checks for changes to your
+        /// repository template bundles. If it detects a template bundle change, a new major or
+        /// minor version of its template is created, if the version doesn’t already exist. For
+        /// more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-template-sync-configs.html">Template
+        /// sync configurations</a> in the <i>Proton User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTemplateSyncConfig service method.</param>
         /// 
@@ -1996,8 +1994,8 @@ namespace Amazon.Proton
         /// The request failed to register with the service.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -2017,12 +2015,18 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Set up a template to create new template versions automatically. When a commit is
-        /// pushed to your registered <a href="https://docs.aws.amazon.com/proton/latest/APIReference/API_Repository.html">repository</a>,
-        /// Proton checks for changes to your repository template bundles. If it detects a template
-        /// bundle change, a new major or minor version of its template is created, if the version
-        /// doesn’t already exist. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-sync-configs.html">Template
-        /// sync configurations</a> in the <i>Proton Administrator Guide</i>.
+        /// Set up a template to create new template versions automatically by tracking a linked
+        /// repository. A linked repository is a repository that has been registered with Proton.
+        /// For more information, see <a>CreateRepository</a>.
+        /// 
+        ///  
+        /// <para>
+        /// When a commit is pushed to your linked repository, Proton checks for changes to your
+        /// repository template bundles. If it detects a template bundle change, a new major or
+        /// minor version of its template is created, if the version doesn’t already exist. For
+        /// more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-template-sync-configs.html">Template
+        /// sync configurations</a> in the <i>Proton User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTemplateSyncConfig service method.</param>
         /// <param name="cancellationToken">
@@ -2040,8 +2044,8 @@ namespace Amazon.Proton
         /// The request failed to register with the service.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -2069,8 +2073,8 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-        /// components</a> in the <i>Proton Administrator Guide</i>.
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteComponent service method.</param>
@@ -2110,8 +2114,8 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-        /// components</a> in the <i>Proton Administrator Guide</i>.
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteComponent service method.</param>
@@ -2243,8 +2247,8 @@ namespace Amazon.Proton
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-        /// account connections</a> in the <i>Proton Administrator guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
+        /// account connections</a> in the <i>Proton User guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironmentAccountConnection service method.</param>
@@ -2292,8 +2296,8 @@ namespace Amazon.Proton
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-        /// account connections</a> in the <i>Proton Administrator guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
+        /// account connections</a> in the <i>Proton User guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironmentAccountConnection service method.</param>
@@ -2602,8 +2606,8 @@ namespace Amazon.Proton
         /// </para>
         ///  
         /// <para>
-        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-        /// components</a> in the <i>Proton Administrator Guide</i>.
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2649,8 +2653,8 @@ namespace Amazon.Proton
         /// </para>
         ///  
         /// <para>
-        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-        /// components</a> in the <i>Proton Administrator Guide</i>.
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2951,7 +2955,7 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Get detail data for the Proton pipeline service role.
+        /// Get detail data for Proton account-wide settings.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccountSettings service method.</param>
         /// 
@@ -2983,7 +2987,7 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Get detail data for the Proton pipeline service role.
+        /// Get detail data for Proton account-wide settings.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccountSettings service method.</param>
         /// <param name="cancellationToken">
@@ -3026,8 +3030,8 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-        /// components</a> in the <i>Proton Administrator Guide</i>.
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetComponent service method.</param>
@@ -3064,8 +3068,8 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-        /// components</a> in the <i>Proton Administrator Guide</i>.
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetComponent service method.</param>
@@ -3180,8 +3184,8 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-        /// account connections</a> in the <i>Proton Administrator guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
+        /// account connections</a> in the <i>Proton User guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEnvironmentAccountConnection service method.</param>
@@ -3218,8 +3222,8 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-        /// account connections</a> in the <i>Proton Administrator guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
+        /// account connections</a> in the <i>Proton User guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEnvironmentAccountConnection service method.</param>
@@ -3401,7 +3405,7 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Get detail data for a repository.
+        /// Get detail data for a linked repository.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRepository service method.</param>
         /// 
@@ -3433,7 +3437,7 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Get detail data for a repository.
+        /// Get detail data for a linked repository.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRepository service method.</param>
         /// <param name="cancellationToken">
@@ -3484,8 +3488,8 @@ namespace Amazon.Proton
         /// </para>
         ///  
         /// <para>
-        /// For more information about ABAC, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags">ABAC</a>
-        /// in the <i>Proton Administrator Guide</i>.
+        /// For more information about ABAC, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags">ABAC</a>
+        /// in the <i>Proton User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3531,8 +3535,8 @@ namespace Amazon.Proton
         /// </para>
         ///  
         /// <para>
-        /// For more information about ABAC, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags">ABAC</a>
-        /// in the <i>Proton Administrator Guide</i>.
+        /// For more information about ABAC, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags">ABAC</a>
+        /// in the <i>Proton User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -4005,8 +4009,8 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-        /// components</a> in the <i>Proton Administrator Guide</i>.
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListComponentOutputs service method.</param>
@@ -4043,8 +4047,8 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-        /// components</a> in the <i>Proton Administrator Guide</i>.
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListComponentOutputs service method.</param>
@@ -4088,8 +4092,8 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-        /// components</a> in the <i>Proton Administrator Guide</i>.
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListComponentProvisionedResources service method.</param>
@@ -4126,8 +4130,8 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-        /// components</a> in the <i>Proton Administrator Guide</i>.
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListComponentProvisionedResources service method.</param>
@@ -4172,8 +4176,8 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-        /// components</a> in the <i>Proton Administrator Guide</i>.
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListComponents service method.</param>
@@ -4208,8 +4212,8 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-        /// components</a> in the <i>Proton Administrator Guide</i>.
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListComponents service method.</param>
@@ -4250,8 +4254,8 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-        /// account connections</a> in the <i>Proton Administrator guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
+        /// account connections</a> in the <i>Proton User guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEnvironmentAccountConnections service method.</param>
@@ -4285,8 +4289,8 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-        /// account connections</a> in the <i>Proton Administrator guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
+        /// account connections</a> in the <i>Proton User guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEnvironmentAccountConnections service method.</param>
@@ -4672,7 +4676,7 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// List repositories with detail data.
+        /// List linked repositories with detail data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRepositories service method.</param>
         /// 
@@ -4704,7 +4708,7 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// List repositories with detail data.
+        /// List linked repositories with detail data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRepositories service method.</param>
         /// <param name="cancellationToken">
@@ -5364,10 +5368,8 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// List tags for a resource. For more information, see <i>Proton resources and tagging</i>
-        /// in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-        /// Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
-        /// User Guide</a>.
+        /// List tags for a resource. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+        /// resources and tagging</a> in the <i>Proton User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -5399,10 +5401,8 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// List tags for a resource. For more information, see <i>Proton resources and tagging</i>
-        /// in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-        /// Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
-        /// User Guide</a>.
+        /// List tags for a resource. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+        /// resources and tagging</a> in the <i>Proton User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -5446,8 +5446,8 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
-        /// provisioning</a> in the <i>Proton Administrator Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
+        /// provisioning</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the NotifyResourceDeploymentStatusChange service method.</param>
@@ -5466,8 +5466,8 @@ namespace Amazon.Proton
         /// The requested resource <i>wasn't</i> found.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -5492,8 +5492,8 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
-        /// provisioning</a> in the <i>Proton Administrator Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
+        /// provisioning</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the NotifyResourceDeploymentStatusChange service method.</param>
@@ -5515,8 +5515,8 @@ namespace Amazon.Proton
         /// The requested resource <i>wasn't</i> found.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -5554,8 +5554,8 @@ namespace Amazon.Proton
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-        /// account connections</a> in the <i>Proton Administrator guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
+        /// account connections</a> in the <i>Proton User guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RejectEnvironmentAccountConnection service method.</param>
@@ -5605,8 +5605,8 @@ namespace Amazon.Proton
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-        /// account connections</a> in the <i>Proton Administrator guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
+        /// account connections</a> in the <i>Proton User guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RejectEnvironmentAccountConnection service method.</param>
@@ -5654,9 +5654,8 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-        /// Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
-        /// User Guide</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+        /// resources and tagging</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
@@ -5697,9 +5696,8 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-        /// Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
-        /// User Guide</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+        /// resources and tagging</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
@@ -5747,9 +5745,8 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-        /// Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
-        /// User Guide</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+        /// resources and tagging</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
@@ -5790,9 +5787,8 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-        /// Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
-        /// User Guide</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+        /// resources and tagging</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
@@ -5835,7 +5831,8 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Update the Proton service pipeline role or repository settings.
+        /// Update Proton settings that are used for multiple services in the Amazon Web Services
+        /// account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAccountSettings service method.</param>
         /// 
@@ -5867,7 +5864,8 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Update the Proton service pipeline role or repository settings.
+        /// Update Proton settings that are used for multiple services in the Amazon Web Services
+        /// account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAccountSettings service method.</param>
         /// <param name="cancellationToken">
@@ -5920,8 +5918,8 @@ namespace Amazon.Proton
         /// </para>
         ///  </note> 
         /// <para>
-        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-        /// components</a> in the <i>Proton Administrator Guide</i>.
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateComponent service method.</param>
@@ -5940,8 +5938,8 @@ namespace Amazon.Proton
         /// The requested resource <i>wasn't</i> found.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -5975,8 +5973,8 @@ namespace Amazon.Proton
         /// </para>
         ///  </note> 
         /// <para>
-        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-        /// components</a> in the <i>Proton Administrator Guide</i>.
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateComponent service method.</param>
@@ -5998,8 +5996,8 @@ namespace Amazon.Proton
         /// The requested resource <i>wasn't</i> found.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -6062,9 +6060,9 @@ namespace Amazon.Proton
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
-        /// and <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html">Provisioning
-        /// methods</a> in the <i>Proton Administrator Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-environments.html">Environments</a>
+        /// and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html">Provisioning
+        /// methods</a> in the <i>Proton User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -6185,9 +6183,9 @@ namespace Amazon.Proton
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
-        /// and <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html">Provisioning
-        /// methods</a> in the <i>Proton Administrator Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-environments.html">Environments</a>
+        /// and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html">Provisioning
+        /// methods</a> in the <i>Proton User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -6281,8 +6279,8 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-        /// account connections</a> in the <i>Proton Administrator guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
+        /// account connections</a> in the <i>Proton User guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEnvironmentAccountConnection service method.</param>
@@ -6323,8 +6321,8 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-        /// account connections</a> in the <i>Proton Administrator guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
+        /// account connections</a> in the <i>Proton User guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEnvironmentAccountConnection service method.</param>
@@ -6543,8 +6541,8 @@ namespace Amazon.Proton
         /// </para>
         ///  
         /// <para>
-        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-        /// components</a> in the <i>Proton Administrator Guide</i>.
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -6564,8 +6562,8 @@ namespace Amazon.Proton
         /// The requested resource <i>wasn't</i> found.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -6607,8 +6605,8 @@ namespace Amazon.Proton
         /// </para>
         ///  
         /// <para>
-        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-        /// components</a> in the <i>Proton Administrator Guide</i>.
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -6631,8 +6629,8 @@ namespace Amazon.Proton
         /// The requested resource <i>wasn't</i> found.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
-        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton
-        /// Quotas</a> in the <i>Proton Administrator Guide</i>.
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Proton.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -6670,8 +6668,8 @@ namespace Amazon.Proton
         /// </para>
         ///  
         /// <para>
-        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-        /// components</a> in the <i>Proton Administrator Guide</i>.
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -6722,8 +6720,8 @@ namespace Amazon.Proton
         /// </para>
         ///  
         /// <para>
-        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-        /// components</a> in the <i>Proton Administrator Guide</i>.
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -7093,7 +7091,9 @@ namespace Amazon.Proton
 
         /// <summary>
         /// Update template sync configuration parameters, except for the <code>templateName</code>
-        /// and <code>templateType</code>.
+        /// and <code>templateType</code>. Repository details (branch, name, and provider) should
+        /// be of a linked repository. A linked repository is a repository that has been registered
+        /// with Proton. For more information, see <a>CreateRepository</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTemplateSyncConfig service method.</param>
         /// 
@@ -7129,7 +7129,9 @@ namespace Amazon.Proton
 
         /// <summary>
         /// Update template sync configuration parameters, except for the <code>templateName</code>
-        /// and <code>templateType</code>.
+        /// and <code>templateType</code>. Repository details (branch, name, and provider) should
+        /// be of a linked repository. A linked repository is a repository that has been registered
+        /// with Proton. For more information, see <a>CreateRepository</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTemplateSyncConfig service method.</param>
         /// <param name="cancellationToken">

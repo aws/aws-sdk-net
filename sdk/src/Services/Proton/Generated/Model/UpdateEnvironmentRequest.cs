@@ -69,9 +69,9 @@ namespace Amazon.Proton.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
-    /// and <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html">Provisioning
-    /// methods</a> in the <i>Proton Administrator Guide</i>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-environments.html">Environments</a>
+    /// and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html">Provisioning
+    /// methods</a> in the <i>Proton User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -147,8 +147,8 @@ namespace Amazon.Proton.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-        /// components</a> in the <i>Proton Administrator Guide</i>.
+        /// For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+        /// components</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -310,8 +310,9 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property ProvisioningRepository. 
         /// <para>
-        /// The infrastructure repository that you use to host your rendered infrastructure templates
-        /// for self-managed provisioning.
+        /// The linked repository that you use to host your rendered infrastructure templates
+        /// for self-managed provisioning. A linked repository is a repository that has been registered
+        /// with Proton. For more information, see <a>CreateRepository</a>.
         /// </para>
         /// </summary>
         public RepositoryBranchInput ProvisioningRepository

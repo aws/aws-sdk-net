@@ -30,18 +30,46 @@ namespace Amazon.Proton.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAccountSettings operation.
-    /// Update the Proton service pipeline role or repository settings.
+    /// Update Proton settings that are used for multiple services in the Amazon Web Services
+    /// account.
     /// </summary>
     public partial class UpdateAccountSettingsRequest : AmazonProtonRequest
     {
+        private bool? _deletePipelineProvisioningRepository;
         private RepositoryBranchInput _pipelineProvisioningRepository;
         private string _pipelineServiceRoleArn;
 
         /// <summary>
+        /// Gets and sets the property DeletePipelineProvisioningRepository. 
+        /// <para>
+        /// Set to <code>true</code> to remove a configured pipeline repository from the account
+        /// settings. Don't set this field if you are updating the configured pipeline repository.
+        /// </para>
+        /// </summary>
+        public bool DeletePipelineProvisioningRepository
+        {
+            get { return this._deletePipelineProvisioningRepository.GetValueOrDefault(); }
+            set { this._deletePipelineProvisioningRepository = value; }
+        }
+
+        // Check to see if DeletePipelineProvisioningRepository property is set
+        internal bool IsSetDeletePipelineProvisioningRepository()
+        {
+            return this._deletePipelineProvisioningRepository.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property PipelineProvisioningRepository. 
         /// <para>
-        /// A repository for pipeline provisioning. Specify it if you have environments configured
-        /// for self-managed provisioning with services that include pipelines.
+        /// A linked repository for pipeline provisioning. Specify it if you have environments
+        /// configured for self-managed provisioning with services that include pipelines. A linked
+        /// repository is a repository that has been registered with Proton. For more information,
+        /// see <a>CreateRepository</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To remove a previously configured repository, set <code>deletePipelineProvisioningRepository</code>
+        /// to <code>true</code>, and don't set <code>pipelineProvisioningRepository</code>.
         /// </para>
         /// </summary>
         public RepositoryBranchInput PipelineProvisioningRepository
@@ -62,6 +90,10 @@ namespace Amazon.Proton.Model
         /// The Amazon Resource Name (ARN) of the service role you want to use for provisioning
         /// pipelines. Assumed by Proton for Amazon Web Services-managed provisioning, and by
         /// customer-owned automation for self-managed provisioning.
+        /// </para>
+        ///  
+        /// <para>
+        /// To remove a previously configured ARN, specify an empty string.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]

@@ -38,7 +38,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property Repository. 
         /// <para>
-        /// The repository detail data that's returned by Proton.
+        /// The repository link's detail data that's returned by Proton.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

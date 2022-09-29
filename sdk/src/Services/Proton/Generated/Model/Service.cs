@@ -183,9 +183,8 @@ namespace Amazon.Proton.Model
         /// Gets and sets the property RepositoryConnectionArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the repository connection. For more information,
-        /// see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
-        /// up a repository connection</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
-        /// up with Proton</a> in the <i>Proton User Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting
+        /// up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
