@@ -30,13 +30,47 @@ namespace Amazon.DLM.Model
 {
     /// <summary>
     /// <b>[Snapshot and AMI policies only]</b> Specifies a retention rule for snapshots
-    /// created by snapshot policies or for AMIs created by AMI policies. You can retain snapshots
-    /// based on either a count or a time interval.
+    /// created by snapshot policies, or for AMIs created by AMI policies.
     /// 
+    ///  <note> 
+    /// <para>
+    /// For snapshot policies that have an <a>ArchiveRule</a>, this retention rule applies
+    /// to standard tier retention. When the retention threshold is met, snapshots are moved
+    /// from the standard to the archive tier.
+    /// </para>
     ///  
     /// <para>
-    /// You must specify either <b>Count</b>, or <b>Interval</b> and <b>IntervalUnit</b>.
+    /// For snapshot policies that do not have an <b>ArchiveRule</b>, snapshots are permanently
+    /// deleted when this retention threshold is met.
     /// </para>
+    ///  </note> 
+    /// <para>
+    /// You can retain snapshots based on either a count or a time interval.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <b>Count-based retention</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// You must specify <b>Count</b>. If you specify an <a>ArchiveRule</a> for the schedule,
+    /// then you can specify a retention count of <code>0</code> to archive snapshots immediately
+    /// after creation. If you specify a <a>FastRestoreRule</a>, <a>ShareRule</a>, or a <a>CrossRegionCopyRule</a>,
+    /// then you must specify a retention count of <code>1</code> or more.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>Age-based retention</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// You must specify <b>Interval</b> and <b>IntervalUnit</b>. If you specify an <a>ArchiveRule</a>
+    /// for the schedule, then you can specify a retention interval of <code>0</code> days
+    /// to archive snapshots immediately after creation. If you specify a <a>FastRestoreRule</a>,
+    /// <a>ShareRule</a>, or a <a>CrossRegionCopyRule</a>, then you must specify a retention
+    /// interval of <code>1</code> day or more.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class RetainRule
     {
@@ -47,10 +81,13 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property Count. 
         /// <para>
-        /// The number of snapshots to retain for each volume, up to a maximum of 1000.
+        /// The number of snapshots to retain for each volume, up to a maximum of 1000. For example
+        /// if you want to retain a maximum of three snapshots, specify <code>3</code>. When the
+        /// fourth snapshot is created, the oldest retained snapshot is deleted, or it is moved
+        /// to the archive tier if you have specified an <a>ArchiveRule</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
+        [AWSProperty(Min=0, Max=1000)]
         public int Count
         {
             get { return this._count.GetValueOrDefault(); }
@@ -70,7 +107,7 @@ namespace Amazon.DLM.Model
         /// to 1200 months, 5200 weeks, or 36500 days.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=0)]
         public int Interval
         {
             get { return this._interval.GetValueOrDefault(); }
@@ -86,7 +123,10 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property IntervalUnit. 
         /// <para>
-        /// The unit of time for time-based retention.
+        /// The unit of time for time-based retention. For example, to retain snapshots for 3
+        /// months, specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>. Once
+        /// the snapshot has been retained for 3 months, it is deleted, or it is moved to the
+        /// archive tier if you have specified an <a>ArchiveRule</a>.
         /// </para>
         /// </summary>
         public RetentionIntervalUnitValues IntervalUnit

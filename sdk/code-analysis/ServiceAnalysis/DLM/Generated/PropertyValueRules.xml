@@ -196,11 +196,20 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DLM.Model.RetainRule.Count</property>
-    <min>1</min>
+    <min>0</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DLM.Model.RetainRule.Interval</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DLM.Model.RetentionArchiveTier.Count</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DLM.Model.RetentionArchiveTier.Interval</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>

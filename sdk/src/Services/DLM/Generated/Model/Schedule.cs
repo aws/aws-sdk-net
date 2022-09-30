@@ -34,6 +34,7 @@ namespace Amazon.DLM.Model
     /// </summary>
     public partial class Schedule
     {
+        private ArchiveRule _archiveRule;
         private bool? _copyTags;
         private CreateRule _createRule;
         private List<CrossRegionCopyRule> _crossRegionCopyRules = new List<CrossRegionCopyRule>();
@@ -44,6 +45,33 @@ namespace Amazon.DLM.Model
         private List<ShareRule> _shareRules = new List<ShareRule>();
         private List<Tag> _tagsToAdd = new List<Tag>();
         private List<Tag> _variableTags = new List<Tag>();
+
+        /// <summary>
+        /// Gets and sets the property ArchiveRule. 
+        /// <para>
+        ///  <b>[Snapshot policies that target volumes only]</b> The snapshot archiving rule for
+        /// the schedule. When you specify an archiving rule, snapshots are automatically moved
+        /// from the standard tier to the archive tier once the schedule's retention threshold
+        /// is met. Snapshots are then retained in the archive tier for the archive retention
+        /// period that you specify. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about using snapshot archiving, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-ami-policy.html#dlm-archive">Considerations
+        /// for snapshot lifecycle policies</a>.
+        /// </para>
+        /// </summary>
+        public ArchiveRule ArchiveRule
+        {
+            get { return this._archiveRule; }
+            set { this._archiveRule = value; }
+        }
+
+        // Check to see if ArchiveRule property is set
+        internal bool IsSetArchiveRule()
+        {
+            return this._archiveRule != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CopyTags. 

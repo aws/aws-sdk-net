@@ -32,12 +32,17 @@ namespace Amazon.DLM.Model
     /// <b>[Snapshot and AMI policies only]</b> Specifies when the policy should create snapshots
     /// or AMIs.
     /// 
-    ///  <important> 
+    ///  <note> <ul> <li> 
     /// <para>
-    /// You must specify either a Cron expression or an interval, interval unit, and start
-    /// time. You cannot specify both.
+    /// You must specify either <b>CronExpression</b>, or <b>Interval</b>, <b>IntervalUnit</b>,
+    /// and <b>Times</b>.
     /// </para>
-    ///  </important>
+    ///  </li> <li> 
+    /// <para>
+    /// If you need to specify an <a>ArchiveRule</a> for the schedule, then you must specify
+    /// a creation frequency of at least 28 days.
+    /// </para>
+    ///  </li> </ul> </note>
     /// </summary>
     public partial class CreateRule
     {
@@ -143,7 +148,8 @@ namespace Amazon.DLM.Model
         ///  
         /// <para>
         /// The operation occurs within a one-hour window following the specified time. If you
-        /// do not specify a time, Amazon DLM selects a time within the next 24 hours.
+        /// do not specify a time, Amazon Data Lifecycle Manager selects a time within the next
+        /// 24 hours.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1)]

@@ -29,37 +29,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DLM.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteLifecyclePolicy operation.
-    /// Deletes the specified lifecycle policy and halts the automated operations that the
-    /// policy specified.
-    /// 
-    ///  
-    /// <para>
-    /// For more information about deleting a policy, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/view-modify-delete.html#delete">Delete
-    /// lifecycle policies</a>.
-    /// </para>
+    /// <b>[Snapshot policies only]</b> Specifies information about the archive storage tier
+    /// retention period.
     /// </summary>
-    public partial class DeleteLifecyclePolicyRequest : AmazonDLMRequest
+    public partial class ArchiveRetainRule
     {
-        private string _policyId;
+        private RetentionArchiveTier _retentionArchiveTier;
 
         /// <summary>
-        /// Gets and sets the property PolicyId. 
+        /// Gets and sets the property RetentionArchiveTier. 
         /// <para>
-        /// The identifier of the lifecycle policy.
+        /// Information about retention period in the Amazon EBS Snapshots Archive. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/snapshot-archive.html">Archive
+        /// Amazon EBS snapshots</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=64)]
-        public string PolicyId
+        [AWSProperty(Required=true)]
+        public RetentionArchiveTier RetentionArchiveTier
         {
-            get { return this._policyId; }
-            set { this._policyId = value; }
+            get { return this._retentionArchiveTier; }
+            set { this._retentionArchiveTier = value; }
         }
 
-        // Check to see if PolicyId property is set
-        internal bool IsSetPolicyId()
+        // Check to see if RetentionArchiveTier property is set
+        internal bool IsSetRetentionArchiveTier()
         {
-            return this._policyId != null;
+            return this._retentionArchiveTier != null;
         }
 
     }

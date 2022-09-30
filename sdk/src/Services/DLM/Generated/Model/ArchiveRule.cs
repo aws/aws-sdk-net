@@ -29,37 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DLM.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteLifecyclePolicy operation.
-    /// Deletes the specified lifecycle policy and halts the automated operations that the
-    /// policy specified.
-    /// 
-    ///  
-    /// <para>
-    /// For more information about deleting a policy, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/view-modify-delete.html#delete">Delete
-    /// lifecycle policies</a>.
-    /// </para>
+    /// <b>[Snapshot policies only]</b> Specifies a snapshot archiving rule for a schedule.
     /// </summary>
-    public partial class DeleteLifecyclePolicyRequest : AmazonDLMRequest
+    public partial class ArchiveRule
     {
-        private string _policyId;
+        private ArchiveRetainRule _retainRule;
 
         /// <summary>
-        /// Gets and sets the property PolicyId. 
+        /// Gets and sets the property RetainRule. 
         /// <para>
-        /// The identifier of the lifecycle policy.
+        /// Information about the retention period for the snapshot archiving rule.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=64)]
-        public string PolicyId
+        [AWSProperty(Required=true)]
+        public ArchiveRetainRule RetainRule
         {
-            get { return this._policyId; }
-            set { this._policyId = value; }
+            get { return this._retainRule; }
+            set { this._retainRule = value; }
         }
 
-        // Check to see if PolicyId property is set
-        internal bool IsSetPolicyId()
+        // Check to see if RetainRule property is set
+        internal bool IsSetRetainRule()
         {
-            return this._policyId != null;
+            return this._retainRule != null;
         }
 
     }

@@ -29,40 +29,39 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DLM.Model
 {
     /// <summary>
-    /// <b>[Snapshot policies only]</b> Specifies a rule for enabling fast snapshot restore
-    /// for snapshots created by snapshot policies. You can enable fast snapshot restore based
-    /// on either a count or a time interval.
+    /// <b>[Snapshot policies only]</b> Describes the retention rule for archived snapshots.
+    /// Once the archive retention threshold is met, the snapshots are permanently deleted
+    /// from the archive tier.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// The archive retention rule must retain snapshots in the archive tier for a minimum
+    /// of 90 days.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// For <b>count-based schedules</b>, you must specify <b>Count</b>. For <b>age-based
+    /// schedules</b>, you must specify <b>Interval</b> and <b> IntervalUnit</b>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information about using snapshot archiving, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-ami-policy.html#dlm-archive">Considerations
+    /// for snapshot lifecycle policies</a>.
+    /// </para>
     /// </summary>
-    public partial class FastRestoreRule
+    public partial class RetentionArchiveTier
     {
-        private List<string> _availabilityZones = new List<string>();
         private int? _count;
         private int? _interval;
         private RetentionIntervalUnitValues _intervalUnit;
 
         /// <summary>
-        /// Gets and sets the property AvailabilityZones. 
-        /// <para>
-        /// The Availability Zones in which to enable fast snapshot restore.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=10)]
-        public List<string> AvailabilityZones
-        {
-            get { return this._availabilityZones; }
-            set { this._availabilityZones = value; }
-        }
-
-        // Check to see if AvailabilityZones property is set
-        internal bool IsSetAvailabilityZones()
-        {
-            return this._availabilityZones != null && this._availabilityZones.Count > 0; 
-        }
-
-        /// <summary>
         /// Gets and sets the property Count. 
         /// <para>
-        /// The number of snapshots to be enabled with fast snapshot restore.
+        /// The maximum number of snapshots to retain in the archive storage tier for each volume.
+        /// The count must ensure that each snapshot remains in the archive tier for at least
+        /// 90 days. For example, if the schedule creates snapshots every 30 days, you must specify
+        /// a count of 3 or more to ensure that each snapshot is archived for at least 90 days.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -81,8 +80,8 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property Interval. 
         /// <para>
-        /// The amount of time to enable fast snapshot restore. The maximum is 100 years. This
-        /// is equivalent to 1200 months, 5200 weeks, or 36500 days.
+        /// Specifies the period of time to retain snapshots in the archive tier. After this period
+        /// expires, the snapshot is permanently deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -101,7 +100,8 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property IntervalUnit. 
         /// <para>
-        /// The unit of time for enabling fast snapshot restore.
+        /// The unit of time in which to measure the <b>Interval</b>. For example, to retain a
+        /// snapshots in the archive tier for 6 months, specify <code>Interval=6</code> and <code>IntervalUnit=MONTHS</code>.
         /// </para>
         /// </summary>
         public RetentionIntervalUnitValues IntervalUnit
