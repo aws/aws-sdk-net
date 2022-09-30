@@ -1,3 +1,20 @@
+### 3.7.368.0 (2022-09-30 18:22 UTC)
+* CodeDeploy (3.7.1.0)
+	* This release allows you to override the alarm configurations when creating a deployment.
+* DevOpsGuru (3.7.11.0)
+	* This release adds filter feature on AddNotificationChannel API, enable customer to configure the SNS notification messages by Severity or MessageTypes
+* DLM (3.7.3.0)
+	* This release adds support for archival of single-volume snapshots created by Amazon Data Lifecycle Manager policies
+* SageMaker (3.7.52.0)
+	* A new parameter called ExplainerConfig is added to CreateEndpointConfig API to enable SageMaker Clarify online explainability feature.
+* SageMakerRuntime (3.7.3.0)
+	* A new parameter called EnableExplanations is added to InvokeEndpoint API to enable on-demand SageMaker Clarify online explainability requests.
+* SSOOIDC (3.7.1.20)
+	* Documentation updates for the IAM Identity Center OIDC CLI Reference.
+* Core 3.7.13.14
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.367.0 (2022-09-29 18:26 UTC)
 * CertificateManager (3.7.2.0)
 	* This update returns additional certificate details such as certificate SANs and allows sorting in the ListCertificates API.
