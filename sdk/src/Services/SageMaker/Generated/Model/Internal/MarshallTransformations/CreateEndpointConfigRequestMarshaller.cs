@@ -95,6 +95,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EndpointConfigName);
                 }
 
+                if(publicRequest.IsSetExplainerConfig())
+                {
+                    context.Writer.WritePropertyName("ExplainerConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ExplainerConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ExplainerConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetKmsKeyId())
                 {
                     context.Writer.WritePropertyName("KmsKeyId");

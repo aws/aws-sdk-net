@@ -40,6 +40,7 @@ namespace Amazon.SageMaker.Model
         private string _endpointConfigName;
         private string _endpointName;
         private EndpointStatus _endpointStatus;
+        private ExplainerConfig _explainerConfig;
         private string _failureReason;
         private DeploymentConfig _lastDeploymentConfig;
         private DateTime? _lastModifiedTime;
@@ -217,6 +218,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetEndpointStatus()
         {
             return this._endpointStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExplainerConfig. 
+        /// <para>
+        /// The configuration parameters for an explainer.
+        /// </para>
+        /// </summary>
+        public ExplainerConfig ExplainerConfig
+        {
+            get { return this._explainerConfig; }
+            set { this._explainerConfig = value; }
+        }
+
+        // Check to see if ExplainerConfig property is set
+        internal bool IsSetExplainerConfig()
+        {
+            return this._explainerConfig != null;
         }
 
         /// <summary>

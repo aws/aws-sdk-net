@@ -75,6 +75,7 @@ namespace Amazon.SageMaker.Model
         private AsyncInferenceConfig _asyncInferenceConfig;
         private DataCaptureConfig _dataCaptureConfig;
         private string _endpointConfigName;
+        private ExplainerConfig _explainerConfig;
         private string _kmsKeyId;
         private List<ProductionVariant> _productionVariants = new List<ProductionVariant>();
         private List<Tag> _tags = new List<Tag>();
@@ -131,6 +132,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetEndpointConfigName()
         {
             return this._endpointConfigName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExplainerConfig. 
+        /// <para>
+        /// A member of <code>CreateEndpointConfig</code> that enables explainers.
+        /// </para>
+        /// </summary>
+        public ExplainerConfig ExplainerConfig
+        {
+            get { return this._explainerConfig; }
+            set { this._explainerConfig = value; }
+        }
+
+        // Check to see if ExplainerConfig property is set
+        internal bool IsSetExplainerConfig()
+        {
+            return this._explainerConfig != null;
         }
 
         /// <summary>

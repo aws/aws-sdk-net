@@ -5388,6 +5388,73 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.ClarifyExplainerConfig.EnableExplanations</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ClarifyInferenceConfig.ContentTemplate</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ClarifyInferenceConfig.FeaturesAttribute</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ClarifyInferenceConfig.LabelAttribute</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ClarifyInferenceConfig.LabelIndex</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ClarifyInferenceConfig.MaxPayloadInMB</property>
+    <min>1</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ClarifyInferenceConfig.MaxRecordCount</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ClarifyInferenceConfig.ProbabilityAttribute</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ClarifyInferenceConfig.ProbabilityIndex</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ClarifyShapBaselineConfig.MimeType</property>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*\/[a-zA-Z0-9](-*[a-zA-Z0-9+.])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ClarifyShapBaselineConfig.ShapBaseline</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>[\s\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ClarifyShapBaselineConfig.ShapBaselineUri</property>
+    <max>1024</max>
+    <pattern>^(https|s3)://([^/]+)/?(.*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ClarifyShapConfig.NumberOfSamples</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.CodeRepositorySummary.CodeRepositoryArn</property>
     <min>1</min>
     <max>2048</max>

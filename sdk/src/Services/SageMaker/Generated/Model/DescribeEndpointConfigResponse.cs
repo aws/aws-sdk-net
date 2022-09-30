@@ -38,6 +38,7 @@ namespace Amazon.SageMaker.Model
         private DataCaptureConfig _dataCaptureConfig;
         private string _endpointConfigArn;
         private string _endpointConfigName;
+        private ExplainerConfig _explainerConfig;
         private string _kmsKeyId;
         private List<ProductionVariant> _productionVariants = new List<ProductionVariant>();
 
@@ -130,6 +131,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetEndpointConfigName()
         {
             return this._endpointConfigName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExplainerConfig. 
+        /// <para>
+        /// The configuration parameters for an explainer.
+        /// </para>
+        /// </summary>
+        public ExplainerConfig ExplainerConfig
+        {
+            get { return this._explainerConfig; }
+            set { this._explainerConfig = value; }
+        }
+
+        // Check to see if ExplainerConfig property is set
+        internal bool IsSetExplainerConfig()
+        {
+            return this._explainerConfig != null;
         }
 
         /// <summary>

@@ -2239,6 +2239,396 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type ClarifyFeatureType.
+    /// </summary>
+    public class ClarifyFeatureType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Categorical for ClarifyFeatureType
+        /// </summary>
+        public static readonly ClarifyFeatureType Categorical = new ClarifyFeatureType("categorical");
+        /// <summary>
+        /// Constant Numerical for ClarifyFeatureType
+        /// </summary>
+        public static readonly ClarifyFeatureType Numerical = new ClarifyFeatureType("numerical");
+        /// <summary>
+        /// Constant Text for ClarifyFeatureType
+        /// </summary>
+        public static readonly ClarifyFeatureType Text = new ClarifyFeatureType("text");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClarifyFeatureType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClarifyFeatureType FindValue(string value)
+        {
+            return FindValue<ClarifyFeatureType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClarifyFeatureType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ClarifyTextGranularity.
+    /// </summary>
+    public class ClarifyTextGranularity : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Paragraph for ClarifyTextGranularity
+        /// </summary>
+        public static readonly ClarifyTextGranularity Paragraph = new ClarifyTextGranularity("paragraph");
+        /// <summary>
+        /// Constant Sentence for ClarifyTextGranularity
+        /// </summary>
+        public static readonly ClarifyTextGranularity Sentence = new ClarifyTextGranularity("sentence");
+        /// <summary>
+        /// Constant Token for ClarifyTextGranularity
+        /// </summary>
+        public static readonly ClarifyTextGranularity Token = new ClarifyTextGranularity("token");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClarifyTextGranularity(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClarifyTextGranularity FindValue(string value)
+        {
+            return FindValue<ClarifyTextGranularity>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClarifyTextGranularity(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ClarifyTextLanguage.
+    /// </summary>
+    public class ClarifyTextLanguage : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Af for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Af = new ClarifyTextLanguage("af");
+        /// <summary>
+        /// Constant Ar for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Ar = new ClarifyTextLanguage("ar");
+        /// <summary>
+        /// Constant Bg for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Bg = new ClarifyTextLanguage("bg");
+        /// <summary>
+        /// Constant Bn for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Bn = new ClarifyTextLanguage("bn");
+        /// <summary>
+        /// Constant Ca for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Ca = new ClarifyTextLanguage("ca");
+        /// <summary>
+        /// Constant Cs for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Cs = new ClarifyTextLanguage("cs");
+        /// <summary>
+        /// Constant Da for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Da = new ClarifyTextLanguage("da");
+        /// <summary>
+        /// Constant De for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage De = new ClarifyTextLanguage("de");
+        /// <summary>
+        /// Constant El for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage El = new ClarifyTextLanguage("el");
+        /// <summary>
+        /// Constant En for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage En = new ClarifyTextLanguage("en");
+        /// <summary>
+        /// Constant Es for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Es = new ClarifyTextLanguage("es");
+        /// <summary>
+        /// Constant Et for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Et = new ClarifyTextLanguage("et");
+        /// <summary>
+        /// Constant Eu for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Eu = new ClarifyTextLanguage("eu");
+        /// <summary>
+        /// Constant Fa for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Fa = new ClarifyTextLanguage("fa");
+        /// <summary>
+        /// Constant Fi for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Fi = new ClarifyTextLanguage("fi");
+        /// <summary>
+        /// Constant Fr for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Fr = new ClarifyTextLanguage("fr");
+        /// <summary>
+        /// Constant Ga for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Ga = new ClarifyTextLanguage("ga");
+        /// <summary>
+        /// Constant Gu for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Gu = new ClarifyTextLanguage("gu");
+        /// <summary>
+        /// Constant He for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage He = new ClarifyTextLanguage("he");
+        /// <summary>
+        /// Constant Hi for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Hi = new ClarifyTextLanguage("hi");
+        /// <summary>
+        /// Constant Hr for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Hr = new ClarifyTextLanguage("hr");
+        /// <summary>
+        /// Constant Hu for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Hu = new ClarifyTextLanguage("hu");
+        /// <summary>
+        /// Constant Hy for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Hy = new ClarifyTextLanguage("hy");
+        /// <summary>
+        /// Constant Id for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Id = new ClarifyTextLanguage("id");
+        /// <summary>
+        /// Constant Is for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Is = new ClarifyTextLanguage("is");
+        /// <summary>
+        /// Constant It for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage It = new ClarifyTextLanguage("it");
+        /// <summary>
+        /// Constant Kn for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Kn = new ClarifyTextLanguage("kn");
+        /// <summary>
+        /// Constant Ky for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Ky = new ClarifyTextLanguage("ky");
+        /// <summary>
+        /// Constant Lb for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Lb = new ClarifyTextLanguage("lb");
+        /// <summary>
+        /// Constant Lij for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Lij = new ClarifyTextLanguage("lij");
+        /// <summary>
+        /// Constant Lt for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Lt = new ClarifyTextLanguage("lt");
+        /// <summary>
+        /// Constant Lv for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Lv = new ClarifyTextLanguage("lv");
+        /// <summary>
+        /// Constant Mk for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Mk = new ClarifyTextLanguage("mk");
+        /// <summary>
+        /// Constant Ml for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Ml = new ClarifyTextLanguage("ml");
+        /// <summary>
+        /// Constant Mr for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Mr = new ClarifyTextLanguage("mr");
+        /// <summary>
+        /// Constant Nb for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Nb = new ClarifyTextLanguage("nb");
+        /// <summary>
+        /// Constant Ne for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Ne = new ClarifyTextLanguage("ne");
+        /// <summary>
+        /// Constant Nl for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Nl = new ClarifyTextLanguage("nl");
+        /// <summary>
+        /// Constant Pl for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Pl = new ClarifyTextLanguage("pl");
+        /// <summary>
+        /// Constant Pt for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Pt = new ClarifyTextLanguage("pt");
+        /// <summary>
+        /// Constant Ro for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Ro = new ClarifyTextLanguage("ro");
+        /// <summary>
+        /// Constant Ru for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Ru = new ClarifyTextLanguage("ru");
+        /// <summary>
+        /// Constant Sa for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Sa = new ClarifyTextLanguage("sa");
+        /// <summary>
+        /// Constant Si for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Si = new ClarifyTextLanguage("si");
+        /// <summary>
+        /// Constant Sk for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Sk = new ClarifyTextLanguage("sk");
+        /// <summary>
+        /// Constant Sl for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Sl = new ClarifyTextLanguage("sl");
+        /// <summary>
+        /// Constant Sq for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Sq = new ClarifyTextLanguage("sq");
+        /// <summary>
+        /// Constant Sr for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Sr = new ClarifyTextLanguage("sr");
+        /// <summary>
+        /// Constant Sv for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Sv = new ClarifyTextLanguage("sv");
+        /// <summary>
+        /// Constant Ta for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Ta = new ClarifyTextLanguage("ta");
+        /// <summary>
+        /// Constant Te for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Te = new ClarifyTextLanguage("te");
+        /// <summary>
+        /// Constant Tl for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Tl = new ClarifyTextLanguage("tl");
+        /// <summary>
+        /// Constant Tn for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Tn = new ClarifyTextLanguage("tn");
+        /// <summary>
+        /// Constant Tr for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Tr = new ClarifyTextLanguage("tr");
+        /// <summary>
+        /// Constant Tt for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Tt = new ClarifyTextLanguage("tt");
+        /// <summary>
+        /// Constant Uk for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Uk = new ClarifyTextLanguage("uk");
+        /// <summary>
+        /// Constant Ur for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Ur = new ClarifyTextLanguage("ur");
+        /// <summary>
+        /// Constant Xx for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Xx = new ClarifyTextLanguage("xx");
+        /// <summary>
+        /// Constant Yo for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Yo = new ClarifyTextLanguage("yo");
+        /// <summary>
+        /// Constant Zh for ClarifyTextLanguage
+        /// </summary>
+        public static readonly ClarifyTextLanguage Zh = new ClarifyTextLanguage("zh");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClarifyTextLanguage(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClarifyTextLanguage FindValue(string value)
+        {
+            return FindValue<ClarifyTextLanguage>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClarifyTextLanguage(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CodeRepositorySortBy.
     /// </summary>
     public class CodeRepositorySortBy : ConstantClass

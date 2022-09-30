@@ -93,6 +93,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.EndpointStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ExplainerConfig", targetDepth))
+                {
+                    var unmarshaller = ExplainerConfigUnmarshaller.Instance;
+                    response.ExplainerConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FailureReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
