@@ -72,6 +72,7 @@ namespace Amazon.SageMakerRuntime.Model
         private MemoryStream _body;
         private string _contentType;
         private string _customAttributes;
+        private string _enableExplanations;
         private string _endpointName;
         private string _inferenceId;
         private string _targetContainerHostname;
@@ -177,6 +178,27 @@ namespace Amazon.SageMakerRuntime.Model
         internal bool IsSetCustomAttributes()
         {
             return this._customAttributes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableExplanations. 
+        /// <para>
+        /// An optional JMESPath expression used to override the <code>EnableExplanations</code>
+        /// parameter of the <code>ClarifyExplainerConfig</code> API. See the <a href="https://docs.aws.amazon.com/clarify-online-explainability-create-endpoint.html#clarify-online-exaplainability-create-endpoint-enable">EnableExplanations</a>
+        /// section in the developer guide for more information. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string EnableExplanations
+        {
+            get { return this._enableExplanations; }
+            set { this._enableExplanations = value; }
+        }
+
+        // Check to see if EnableExplanations property is set
+        internal bool IsSetEnableExplanations()
+        {
+            return this._enableExplanations != null;
         }
 
         /// <summary>
