@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// NotificationChannelConfig Marshaller
+    /// NotificationFilterConfig Marshaller
     /// </summary>
-    public class NotificationChannelConfigMarshaller : IRequestMarshaller<NotificationChannelConfig, JsonMarshallerContext> 
+    public class NotificationFilterConfigMarshaller : IRequestMarshaller<NotificationFilterConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,28 +43,28 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(NotificationChannelConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(NotificationFilterConfig requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetFilters())
+            if(requestObject.IsSetMessageTypes())
             {
-                context.Writer.WritePropertyName("Filters");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = NotificationFilterConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.Filters, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("MessageTypes");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectMessageTypesListValue in requestObject.MessageTypes)
+                {
+                        context.Writer.Write(requestObjectMessageTypesListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
-            if(requestObject.IsSetSns())
+            if(requestObject.IsSetSeverities())
             {
-                context.Writer.WritePropertyName("Sns");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = SnsChannelConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.Sns, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("Severities");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectSeveritiesListValue in requestObject.Severities)
+                {
+                        context.Writer.Write(requestObjectSeveritiesListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
         }
@@ -72,7 +72,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static NotificationChannelConfigMarshaller Instance = new NotificationChannelConfigMarshaller();
+        public readonly static NotificationFilterConfigMarshaller Instance = new NotificationFilterConfigMarshaller();
 
     }
 }

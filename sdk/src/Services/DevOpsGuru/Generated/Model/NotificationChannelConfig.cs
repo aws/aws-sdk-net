@@ -34,7 +34,29 @@ namespace Amazon.DevOpsGuru.Model
     /// </summary>
     public partial class NotificationChannelConfig
     {
+        private NotificationFilterConfig _filters;
         private SnsChannelConfig _sns;
+
+        /// <summary>
+        /// Gets and sets the property Filters. 
+        /// <para>
+        ///  The filter configurations for the Amazon SNS notification topic you use with DevOps
+        /// Guru. If you do not provide filter configurations, the default configurations are
+        /// to receive notifications for all message types of <code>High</code> or <code>Medium</code>
+        /// severity. 
+        /// </para>
+        /// </summary>
+        public NotificationFilterConfig Filters
+        {
+            get { return this._filters; }
+            set { this._filters = value; }
+        }
+
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
+        {
+            return this._filters != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Sns. 

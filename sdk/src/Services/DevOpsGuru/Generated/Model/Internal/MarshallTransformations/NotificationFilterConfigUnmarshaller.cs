@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for NotificationChannelConfig Object
+    /// Response Unmarshaller for NotificationFilterConfig Object
     /// </summary>  
-    public class NotificationChannelConfigUnmarshaller : IUnmarshaller<NotificationChannelConfig, XmlUnmarshallerContext>, IUnmarshaller<NotificationChannelConfig, JsonUnmarshallerContext>
+    public class NotificationFilterConfigUnmarshaller : IUnmarshaller<NotificationFilterConfig, XmlUnmarshallerContext>, IUnmarshaller<NotificationFilterConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        NotificationChannelConfig IUnmarshaller<NotificationChannelConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        NotificationFilterConfig IUnmarshaller<NotificationFilterConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,27 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public NotificationChannelConfig Unmarshall(JsonUnmarshallerContext context)
+        public NotificationFilterConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            NotificationChannelConfig unmarshalledObject = new NotificationChannelConfig();
+            NotificationFilterConfig unmarshalledObject = new NotificationFilterConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Filters", targetDepth))
+                if (context.TestExpression("MessageTypes", targetDepth))
                 {
-                    var unmarshaller = NotificationFilterConfigUnmarshaller.Instance;
-                    unmarshalledObject.Filters = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.MessageTypes = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Sns", targetDepth))
+                if (context.TestExpression("Severities", targetDepth))
                 {
-                    var unmarshaller = SnsChannelConfigUnmarshaller.Instance;
-                    unmarshalledObject.Sns = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Severities = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +82,12 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
         }
 
 
-        private static NotificationChannelConfigUnmarshaller _instance = new NotificationChannelConfigUnmarshaller();        
+        private static NotificationFilterConfigUnmarshaller _instance = new NotificationFilterConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static NotificationChannelConfigUnmarshaller Instance
+        public static NotificationFilterConfigUnmarshaller Instance
         {
             get
             {

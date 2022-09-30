@@ -945,6 +945,68 @@ namespace Amazon.DevOpsGuru
 
 
     /// <summary>
+    /// Constants used for properties of type NotificationMessageType.
+    /// </summary>
+    public class NotificationMessageType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLOSED_INSIGHT for NotificationMessageType
+        /// </summary>
+        public static readonly NotificationMessageType CLOSED_INSIGHT = new NotificationMessageType("CLOSED_INSIGHT");
+        /// <summary>
+        /// Constant NEW_ASSOCIATION for NotificationMessageType
+        /// </summary>
+        public static readonly NotificationMessageType NEW_ASSOCIATION = new NotificationMessageType("NEW_ASSOCIATION");
+        /// <summary>
+        /// Constant NEW_INSIGHT for NotificationMessageType
+        /// </summary>
+        public static readonly NotificationMessageType NEW_INSIGHT = new NotificationMessageType("NEW_INSIGHT");
+        /// <summary>
+        /// Constant NEW_RECOMMENDATION for NotificationMessageType
+        /// </summary>
+        public static readonly NotificationMessageType NEW_RECOMMENDATION = new NotificationMessageType("NEW_RECOMMENDATION");
+        /// <summary>
+        /// Constant SEVERITY_UPGRADED for NotificationMessageType
+        /// </summary>
+        public static readonly NotificationMessageType SEVERITY_UPGRADED = new NotificationMessageType("SEVERITY_UPGRADED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NotificationMessageType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NotificationMessageType FindValue(string value)
+        {
+            return FindValue<NotificationMessageType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NotificationMessageType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OptInStatus.
     /// </summary>
     public class OptInStatus : ConstantClass
