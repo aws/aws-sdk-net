@@ -44,12 +44,12 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>EC2/On-premises</b>: Each target object is an EC2 or on-premises instance. 
+        ///  <b>EC2/On-premises</b>: Each target object is an Amazon EC2 or on-premises instance.
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>AWS Lambda</b>: The target object is a specific version of an AWS Lambda function.
-        /// 
+        ///  <b>Lambda</b>: The target object is a specific version of an Lambda function. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -57,7 +57,7 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>CloudFormation</b>: The target object is an AWS CloudFormation blue/green deployment.
+        ///  <b>CloudFormation</b>: The target object is an CloudFormation blue/green deployment.
         /// 
         /// </para>
         ///  </li> </ul>

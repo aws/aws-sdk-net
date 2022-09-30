@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// A revision for an AWS Lambda deployment that is a YAML-formatted or JSON-formatted
-    /// string. For AWS Lambda deployments, the revision is the same as the AppSpec file.
+    /// A revision for an Lambda deployment that is a YAML-formatted or JSON-formatted string.
+    /// For Lambda deployments, the revision is the same as the AppSpec file.
     /// </summary>
     [Obsolete("RawString and String revision type are deprecated, use AppSpecContent type instead.")]
     public partial class RawString

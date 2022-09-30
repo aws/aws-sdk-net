@@ -29,11 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment. An Amazon
+    /// Information about a set of Amazon ECS tasks in an CodeDeploy deployment. An Amazon
     /// ECS task set includes details such as the desired number of tasks, how many tasks
-    /// are running, and whether the task set serves production traffic. An AWS CodeDeploy
-    /// application that uses the Amazon ECS compute platform deploys a containerized application
-    /// in an Amazon ECS service as a task set.
+    /// are running, and whether the task set serves production traffic. An CodeDeploy application
+    /// that uses the Amazon ECS compute platform deploys a containerized application in an
+    /// Amazon ECS service as a task set.
     /// </summary>
     public partial class ECSTaskSet
     {
@@ -162,7 +162,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property TargetGroup. 
         /// <para>
-        ///  The target group associated with the task set. The target group is used by AWS CodeDeploy
+        ///  The target group associated with the task set. The target group is used by CodeDeploy
         /// to manage traffic to a task set. 
         /// </para>
         /// </summary>

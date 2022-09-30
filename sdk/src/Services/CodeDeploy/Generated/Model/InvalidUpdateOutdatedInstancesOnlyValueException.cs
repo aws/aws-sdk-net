@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// The UpdateOutdatedInstancesOnly value is invalid. For AWS Lambda deployments, <code>false</code>
+    /// The UpdateOutdatedInstancesOnly value is invalid. For Lambda deployments, <code>false</code>
     /// is expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code>
     /// is expected.
     /// </summary>

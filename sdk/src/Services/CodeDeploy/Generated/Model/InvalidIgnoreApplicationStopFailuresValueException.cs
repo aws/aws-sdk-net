@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// The IgnoreApplicationStopFailures value is invalid. For AWS Lambda deployments, <code>false</code>
+    /// The IgnoreApplicationStopFailures value is invalid. For Lambda deployments, <code>false</code>
     /// is expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code>
     /// is expected.
     /// </summary>

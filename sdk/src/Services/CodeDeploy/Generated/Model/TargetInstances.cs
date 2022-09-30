@@ -60,9 +60,9 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property Ec2TagSet. 
         /// <para>
-        /// Information about the groups of EC2 instance tags that an instance must be identified
-        /// by in order for it to be included in the replacement environment for a blue/green
-        /// deployment. Cannot be used in the same call as <code>tagFilters</code>.
+        /// Information about the groups of Amazon EC2 instance tags that an instance must be
+        /// identified by in order for it to be included in the replacement environment for a
+        /// blue/green deployment. Cannot be used in the same call as <code>tagFilters</code>.
         /// </para>
         /// </summary>
         public EC2TagSet Ec2TagSet

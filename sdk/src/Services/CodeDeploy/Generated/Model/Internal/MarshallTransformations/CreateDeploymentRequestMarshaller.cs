@@ -114,6 +114,17 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.IgnoreApplicationStopFailures);
                 }
 
+                if(publicRequest.IsSetOverrideAlarmConfiguration())
+                {
+                    context.Writer.WritePropertyName("overrideAlarmConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AlarmConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OverrideAlarmConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetRevision())
                 {
                     context.Writer.WritePropertyName("revision");

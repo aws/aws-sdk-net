@@ -42,7 +42,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property AppSpecContent. 
         /// <para>
-        ///  The content of an AppSpec file for an AWS Lambda or Amazon ECS deployment. The content
+        ///  The content of an AppSpec file for an Lambda or Amazon ECS deployment. The content
         /// is formatted as JSON or YAML and stored as a RawString. 
         /// </para>
         /// </summary>
@@ -91,13 +91,13 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// String: A YAML-formatted or JSON-formatted string (AWS Lambda deployments only).
+        /// String: A YAML-formatted or JSON-formatted string (Lambda deployments only).
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// AppSpecContent: An <code>AppSpecContent</code> object that contains the contents of
-        /// an AppSpec file for an AWS Lambda or Amazon ECS deployment. The content is formatted
-        /// as JSON or YAML stored as a RawString.
+        /// an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as
+        /// JSON or YAML stored as a RawString.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -134,7 +134,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property String. 
         /// <para>
-        /// Information about the location of an AWS Lambda deployment revision stored as a RawString.
+        /// Information about the location of an Lambda deployment revision stored as a RawString.
         /// </para>
         /// </summary>
         public RawString String

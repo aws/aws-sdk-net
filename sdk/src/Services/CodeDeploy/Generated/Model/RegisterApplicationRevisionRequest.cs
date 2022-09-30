@@ -30,7 +30,7 @@ namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterApplicationRevision operation.
-    /// Registers with AWS CodeDeploy a revision for the specified application.
+    /// Registers with CodeDeploy a revision for the specified application.
     /// </summary>
     public partial class RegisterApplicationRevisionRequest : AmazonCodeDeployRequest
     {
@@ -41,7 +41,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
+        /// The name of an CodeDeploy application associated with the IAM user or Amazon Web Services
+        /// account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

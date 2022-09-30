@@ -114,7 +114,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property LambdaTarget. 
         /// <para>
-        ///  Information about the target for a deployment that uses the AWS Lambda compute platform.
+        ///  Information about the target for a deployment that uses the Lambda compute platform.
         /// 
         /// </para>
         /// </summary>

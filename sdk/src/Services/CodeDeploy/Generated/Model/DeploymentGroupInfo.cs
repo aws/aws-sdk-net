@@ -264,9 +264,9 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property Ec2TagSet. 
         /// <para>
-        /// Information about groups of tags applied to an EC2 instance. The deployment group
-        /// includes only EC2 instances identified by all of the tag groups. Cannot be used in
-        /// the same call as ec2TagFilters.
+        /// Information about groups of tags applied to an Amazon EC2 instance. The deployment
+        /// group includes only Amazon EC2 instances identified by all of the tag groups. Cannot
+        /// be used in the same call as ec2TagFilters.
         /// </para>
         /// </summary>
         public EC2TagSet Ec2TagSet
@@ -398,19 +398,20 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property OutdatedInstancesStrategy. 
         /// <para>
-        /// Indicates what happens when new EC2 instances are launched mid-deployment and do not
-        /// receive the deployed application revision.
+        /// Indicates what happens when new Amazon EC2 instances are launched mid-deployment and
+        /// do not receive the deployed application revision.
         /// </para>
         ///  
         /// <para>
         /// If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates
         /// one or more 'auto-update outdated instances' deployments to apply the deployed application
-        /// revision to the new EC2 instances.
+        /// revision to the new Amazon EC2 instances.
         /// </para>
         ///  
         /// <para>
         /// If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment
-        /// to update the new EC2 instances. This may result in instances having different revisions.
+        /// to update the new Amazon EC2 instances. This may result in instances having different
+        /// revisions.
         /// </para>
         /// </summary>
         public OutdatedInstancesStrategy OutdatedInstancesStrategy
@@ -429,8 +430,9 @@ namespace Amazon.CodeDeploy.Model
         /// Gets and sets the property ServiceRoleArn. 
         /// <para>
         /// A service role Amazon Resource Name (ARN) that grants CodeDeploy permission to make
-        /// calls to AWS services on your behalf. For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-create-service-role.html">Create
-        /// a Service Role for AWS CodeDeploy</a> in the <i>AWS CodeDeploy User Guide</i>.
+        /// calls to Amazon Web Services services on your behalf. For more information, see <a
+        /// href="https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-create-service-role.html">Create
+        /// a Service Role for CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.
         /// </para>
         /// </summary>
         public string ServiceRoleArn

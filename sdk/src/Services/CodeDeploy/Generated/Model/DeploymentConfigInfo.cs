@@ -136,7 +136,7 @@ namespace Amazon.CodeDeploy.Model
         /// Gets and sets the property TrafficRoutingConfig. 
         /// <para>
         /// The configuration that specifies how the deployment traffic is routed. Used for deployments
-        /// with a Lambda or ECS compute platform only.
+        /// with a Lambda or Amazon ECS compute platform only.
         /// </para>
         /// </summary>
         public TrafficRoutingConfig TrafficRoutingConfig

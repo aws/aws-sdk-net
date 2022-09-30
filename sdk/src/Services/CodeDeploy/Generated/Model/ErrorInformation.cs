@@ -40,8 +40,8 @@ namespace Amazon.CodeDeploy.Model
         /// Gets and sets the property Code. 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error
-        /// Codes for AWS CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS
-        /// CodeDeploy User Guide</a>.
+        /// Codes for CodeDeploy</a> in the <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">CodeDeploy
+        /// User Guide</a>.
         /// </para>
         ///  
         /// <para>
@@ -95,7 +95,7 @@ namespace Amazon.CodeDeploy.Model
         ///  </li> <li> 
         /// <para>
         /// THROTTLED: The operation was throttled because the calling account exceeded the throttling
-        /// limits of one or more AWS services.
+        /// limits of one or more Amazon Web Services services.
         /// </para>
         ///  </li> <li> 
         /// <para>

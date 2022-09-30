@@ -45,8 +45,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        ///  The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
-        /// 
+        ///  The name of an CodeDeploy application associated with the IAM user or Amazon Web
+        /// Services account. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -162,8 +162,7 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>registerTime</code>: Sort by the time the revisions were registered with AWS
-        /// CodeDeploy.
+        ///  <code>registerTime</code>: Sort by the time the revisions were registered with CodeDeploy.
         /// </para>
         ///  </li> <li> 
         /// <para>

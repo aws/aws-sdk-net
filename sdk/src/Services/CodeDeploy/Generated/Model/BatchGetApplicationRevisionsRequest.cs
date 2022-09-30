@@ -41,7 +41,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// The name of an AWS CodeDeploy application about which to get revision information.
+        /// The name of an CodeDeploy application about which to get revision information.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

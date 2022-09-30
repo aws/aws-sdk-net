@@ -30,8 +30,8 @@ namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDeploymentGroups operation.
-    /// Lists the deployment groups for an application registered with the IAM user or AWS
-    /// account.
+    /// Lists the deployment groups for an application registered with the IAM user or Amazon
+    /// Web Services account.
     /// </summary>
     public partial class ListDeploymentGroupsRequest : AmazonCodeDeployRequest
     {
@@ -41,7 +41,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
+        /// The name of an CodeDeploy application associated with the IAM user or Amazon Web Services
+        /// account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

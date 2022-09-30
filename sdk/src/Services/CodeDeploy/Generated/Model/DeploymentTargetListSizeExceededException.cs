@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// The maximum number of targets that can be associated with an Amazon ECS or AWS Lambda
+    /// The maximum number of targets that can be associated with an Amazon ECS or Lambda
     /// deployment was exceeded. The target list of both types of deployments must have exactly
     /// one item. This exception does not apply to EC2/On-premises deployments.
     /// </summary>

@@ -80,6 +80,10 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("AlarmsLimitExceededException"))
+                {
+                    return AlarmsLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ApplicationDoesNotExistException"))
                 {
                     return ApplicationDoesNotExistExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -107,6 +111,10 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("DescriptionTooLongException"))
                 {
                     return DescriptionTooLongExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidAlarmConfigException"))
+                {
+                    return InvalidAlarmConfigExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidApplicationNameException"))
                 {

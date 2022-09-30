@@ -78,7 +78,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property FirstUsedTime. 
         /// <para>
-        /// When the revision was first used by AWS CodeDeploy.
+        /// When the revision was first used by CodeDeploy.
         /// </para>
         /// </summary>
         public DateTime FirstUsedTime
@@ -96,7 +96,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property LastUsedTime. 
         /// <para>
-        /// When the revision was last used by AWS CodeDeploy.
+        /// When the revision was last used by CodeDeploy.
         /// </para>
         /// </summary>
         public DateTime LastUsedTime
@@ -114,7 +114,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property RegisterTime. 
         /// <para>
-        /// When the revision was registered with AWS CodeDeploy.
+        /// When the revision was registered with CodeDeploy.
         /// </para>
         /// </summary>
         public DateTime RegisterTime

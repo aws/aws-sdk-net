@@ -30,7 +30,7 @@ namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDeploymentConfigs operation.
-    /// Lists the deployment configurations with the IAM user or AWS account.
+    /// Lists the deployment configurations with the IAM user or Amazon Web Services account.
     /// </summary>
     public partial class ListDeploymentConfigsRequest : AmazonCodeDeployRequest
     {

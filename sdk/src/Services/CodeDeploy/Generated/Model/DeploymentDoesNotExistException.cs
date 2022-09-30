@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// The deployment with the IAM user or AWS account does not exist.
+    /// The deployment with the IAM user or Amazon Web Services account does not exist.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

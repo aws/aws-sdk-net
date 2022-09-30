@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// The deployment configuration does not exist with the IAM user or AWS account.
+    /// The deployment configuration does not exist with the IAM user or Amazon Web Services
+    /// account.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
