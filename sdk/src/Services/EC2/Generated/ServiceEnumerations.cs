@@ -6001,6 +6001,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly ImageAttributeName Description = new ImageAttributeName("description");
         /// <summary>
+        /// Constant ImdsSupport for ImageAttributeName
+        /// </summary>
+        public static readonly ImageAttributeName ImdsSupport = new ImageAttributeName("imdsSupport");
+        /// <summary>
         /// Constant Kernel for ImageAttributeName
         /// </summary>
         public static readonly ImageAttributeName Kernel = new ImageAttributeName("kernel");
@@ -6186,6 +6190,52 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ImageTypeValues(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImdsSupportValues.
+    /// </summary>
+    public class ImdsSupportValues : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant V20 for ImdsSupportValues
+        /// </summary>
+        public static readonly ImdsSupportValues V20 = new ImdsSupportValues("v2.0");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImdsSupportValues(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImdsSupportValues FindValue(string value)
+        {
+            return FindValue<ImdsSupportValues>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImdsSupportValues(string value)
         {
             return FindValue(value);
         }

@@ -63,7 +63,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.CreateNetworkInsightsPathRequest.DestinationPort</property>
-    <min>1</min>
+    <min>0</min>
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
@@ -658,12 +658,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.AnalysisLoadBalancerListener.InstancePort</property>
-    <min>1</min>
+    <min>0</min>
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.AnalysisLoadBalancerListener.LoadBalancerPort</property>
-    <min>1</min>
+    <min>0</min>
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
@@ -674,7 +674,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.AnalysisLoadBalancerTarget.Port</property>
-    <min>1</min>
+    <min>0</min>
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
@@ -720,17 +720,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.Explanation.LoadBalancerListenerPort</property>
-    <min>1</min>
+    <min>0</min>
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.Explanation.LoadBalancerTargetPort</property>
-    <min>1</min>
+    <min>0</min>
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.Explanation.Port</property>
-    <min>1</min>
+    <min>0</min>
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>

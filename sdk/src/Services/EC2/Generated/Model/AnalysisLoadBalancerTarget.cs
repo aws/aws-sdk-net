@@ -99,7 +99,7 @@ namespace Amazon.EC2.Model
         /// The port on which the target is listening.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=65535)]
+        [AWSProperty(Min=0, Max=65535)]
         public int Port
         {
             get { return this._port.GetValueOrDefault(); }

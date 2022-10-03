@@ -115,6 +115,7 @@ namespace Amazon.EC2.Model
         private string _description;
         private bool? _enaSupport;
         private string _imageLocation;
+        private ImdsSupportValues _imdsSupport;
         private string _kernelId;
         private string _name;
         private string _ramdiskId;
@@ -293,6 +294,35 @@ namespace Amazon.EC2.Model
         internal bool IsSetImageLocation()
         {
             return this._imageLocation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImdsSupport. 
+        /// <para>
+        /// Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI. Instances
+        /// launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code>
+        /// so that, by default, the instance requires that IMDSv2 is used when requesting instance
+        /// metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
+        /// the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you set the value to <code>v2.0</code>, make sure that your AMI software can support
+        /// IMDSv2.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public ImdsSupportValues ImdsSupport
+        {
+            get { return this._imdsSupport; }
+            set { this._imdsSupport = value; }
+        }
+
+        // Check to see if ImdsSupport property is set
+        internal bool IsSetImdsSupport()
+        {
+            return this._imdsSupport != null;
         }
 
         /// <summary>

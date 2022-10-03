@@ -115,7 +115,7 @@ namespace Amazon.EC2.Model
         /// The destination port.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=65535)]
+        [AWSProperty(Min=0, Max=65535)]
         public int DestinationPort
         {
             get { return this._destinationPort.GetValueOrDefault(); }

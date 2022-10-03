@@ -146,6 +146,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ImageLocation", StringUtils.FromString(publicRequest.ImageLocation));
                 }
+                if(publicRequest.IsSetImdsSupport())
+                {
+                    request.Parameters.Add("ImdsSupport", StringUtils.FromString(publicRequest.ImdsSupport));
+                }
                 if(publicRequest.IsSetKernelId())
                 {
                     request.Parameters.Add("KernelId", StringUtils.FromString(publicRequest.KernelId));
