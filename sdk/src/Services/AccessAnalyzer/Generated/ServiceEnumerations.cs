@@ -1103,6 +1103,10 @@ namespace Amazon.AccessAnalyzer
     {
 
         /// <summary>
+        /// Constant AWSIAMAssumeRolePolicyDocument for ValidatePolicyResourceType
+        /// </summary>
+        public static readonly ValidatePolicyResourceType AWSIAMAssumeRolePolicyDocument = new ValidatePolicyResourceType("AWS::IAM::AssumeRolePolicyDocument");
+        /// <summary>
         /// Constant AWSS3AccessPoint for ValidatePolicyResourceType
         /// </summary>
         public static readonly ValidatePolicyResourceType AWSS3AccessPoint = new ValidatePolicyResourceType("AWS::S3::AccessPoint");
