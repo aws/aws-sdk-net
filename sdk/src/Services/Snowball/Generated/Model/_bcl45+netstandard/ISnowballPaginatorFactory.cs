@@ -31,8 +31,28 @@ namespace Amazon.Snowball.Model
         IDescribeAddressesPaginator DescribeAddresses(DescribeAddressesRequest request);
 
         /// <summary>
+        /// Paginator for ListClusterJobs operation
+        ///</summary>
+        IListClusterJobsPaginator ListClusterJobs(ListClusterJobsRequest request);
+
+        /// <summary>
+        /// Paginator for ListClusters operation
+        ///</summary>
+        IListClustersPaginator ListClusters(ListClustersRequest request);
+
+        /// <summary>
+        /// Paginator for ListCompatibleImages operation
+        ///</summary>
+        IListCompatibleImagesPaginator ListCompatibleImages(ListCompatibleImagesRequest request);
+
+        /// <summary>
         /// Paginator for ListJobs operation
         ///</summary>
         IListJobsPaginator ListJobs(ListJobsRequest request);
+
+        /// <summary>
+        /// Paginator for ListLongTermPricing operation
+        ///</summary>
+        IListLongTermPricingPaginator ListLongTermPricing(ListLongTermPricingRequest request);
     }
 }

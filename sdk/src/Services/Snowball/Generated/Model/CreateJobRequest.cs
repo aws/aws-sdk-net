@@ -50,7 +50,7 @@ namespace Amazon.Snowball.Model
     /// about Region availability, see <a href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&amp;loc=4">Amazon
     /// Web Services Regional Services</a>.
     /// </para>
-    ///  </note>  <p class="title"> <b>Snow Family Devices and their capacities.</b> 
+    ///  </note>  <p class="title"> <b>Snow Family devices and their capacities.</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -123,6 +123,18 @@ namespace Amazon.Snowball.Model
     ///  </li> <li> 
     /// <para>
     /// Description: Snowball Edge Storage Optimized with EC2 Compute
+    /// </para>
+    ///  </li> </ul>  </li> <li> 
+    /// <para>
+    /// Device type: <b>V3_5C</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Capacity: T32
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Description: Snowball Edge Compute Optimized without GPU
     /// </para>
     ///  </li> </ul>  </li> <li> 
     /// <para>
@@ -523,7 +535,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property SnowballType. 
         /// <para>
-        /// The type of Snow Family Devices to use for this job. 
+        /// The type of Snow Family devices to use for this job. 
         /// </para>
         ///  <note> 
         /// <para>

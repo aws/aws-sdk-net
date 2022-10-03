@@ -304,7 +304,7 @@ namespace Amazon.Snowball
         /// about Region availability, see <a href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&amp;loc=4">Amazon
         /// Web Services Regional Services</a>.
         /// </para>
-        ///  </note>  <p class="title"> <b>Snow Family Devices and their capacities.</b> 
+        ///  </note>  <p class="title"> <b>Snow Family devices and their capacities.</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -377,6 +377,18 @@ namespace Amazon.Snowball
         ///  </li> <li> 
         /// <para>
         /// Description: Snowball Edge Storage Optimized with EC2 Compute
+        /// </para>
+        ///  </li> </ul>  </li> <li> 
+        /// <para>
+        /// Device type: <b>V3_5C</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Capacity: T32
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Description: Snowball Edge Compute Optimized without GPU
         /// </para>
         ///  </li> </ul>  </li> <li> 
         /// <para>
@@ -465,7 +477,7 @@ namespace Amazon.Snowball
         /// about Region availability, see <a href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&amp;loc=4">Amazon
         /// Web Services Regional Services</a>.
         /// </para>
-        ///  </note>  <p class="title"> <b>Snow Family Devices and their capacities.</b> 
+        ///  </note>  <p class="title"> <b>Snow Family devices and their capacities.</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -538,6 +550,18 @@ namespace Amazon.Snowball
         ///  </li> <li> 
         /// <para>
         /// Description: Snowball Edge Storage Optimized with EC2 Compute
+        /// </para>
+        ///  </li> </ul>  </li> <li> 
+        /// <para>
+        /// Device type: <b>V3_5C</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Capacity: T32
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Description: Snowball Edge Compute Optimized without GPU
         /// </para>
         ///  </li> </ul>  </li> <li> 
         /// <para>
@@ -953,9 +977,12 @@ namespace Amazon.Snowball
         ///  
         /// <para>
         /// The manifest is an encrypted file that you can download after your job enters the
-        /// <code>WithCustomer</code> status. The manifest is decrypted by using the <code>UnlockCode</code>
-        /// code value, when you pass both values to the Snow device through the Snowball client
-        /// when the client is started for the first time.
+        /// <code>WithCustomer</code> status. This is the only valid status for calling this API
+        /// as the manifest and <code>UnlockCode</code> code value are used for securing your
+        /// device and should only be used when you have the device. The manifest is decrypted
+        /// by using the <code>UnlockCode</code> code value, when you pass both values to the
+        /// Snow device through the Snowball client when the client is started for the first time.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -996,9 +1023,12 @@ namespace Amazon.Snowball
         ///  
         /// <para>
         /// The manifest is an encrypted file that you can download after your job enters the
-        /// <code>WithCustomer</code> status. The manifest is decrypted by using the <code>UnlockCode</code>
-        /// code value, when you pass both values to the Snow device through the Snowball client
-        /// when the client is started for the first time.
+        /// <code>WithCustomer</code> status. This is the only valid status for calling this API
+        /// as the manifest and <code>UnlockCode</code> code value are used for securing your
+        /// device and should only be used when you have the device. The manifest is decrypted
+        /// by using the <code>UnlockCode</code> code value, when you pass both values to the
+        /// Snow device through the Snowball client when the client is started for the first time.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -1045,7 +1075,9 @@ namespace Amazon.Snowball
         /// The <code>UnlockCode</code> value is a 29-character code with 25 alphanumeric characters
         /// and 4 hyphens. This code is used to decrypt the manifest file when it is passed along
         /// with the manifest to the Snow device through the Snowball client when the client is
-        /// started for the first time.
+        /// started for the first time. The only valid status for calling this API is <code>WithCustomer</code>
+        /// as the manifest and <code>Unlock</code> code values are used for securing your device
+        /// and should only be used when you have the device.
         /// </para>
         ///  
         /// <para>
@@ -1081,7 +1113,9 @@ namespace Amazon.Snowball
         /// The <code>UnlockCode</code> value is a 29-character code with 25 alphanumeric characters
         /// and 4 hyphens. This code is used to decrypt the manifest file when it is passed along
         /// with the manifest to the Snow device through the Snowball client when the client is
-        /// started for the first time.
+        /// started for the first time. The only valid status for calling this API is <code>WithCustomer</code>
+        /// as the manifest and <code>Unlock</code> code values are used for securing your device
+        /// and should only be used when you have the device.
         /// </para>
         ///  
         /// <para>

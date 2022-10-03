@@ -321,7 +321,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property SnowballType. 
         /// <para>
-        /// The type of Snow Family Devices to use for this cluster. 
+        /// The type of Snow Family devices to use for this cluster. 
         /// </para>
         ///  <note> 
         /// <para>
