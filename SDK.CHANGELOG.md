@@ -1,3 +1,14 @@
+### 3.7.369.0 (2022-10-03 18:20 UTC)
+* AccessAnalyzer (3.7.3.0)
+	* AWS IAM Access Analyzer policy validation introduces new checks for role trust policies. As customers author a policy, IAM Access Analyzer policy validation evaluates the policy for any issues to make it easier for customers to author secure policies.
+* EC2 (3.7.94.0)
+	* Adding an imdsSupport attribute to EC2 AMIs
+* Snowball (3.7.5.0)
+	* Adds support for V3_5C. This is a refreshed AWS Snowball Edge Compute Optimized device type with 28TB SSD, 104 vCPU and 416GB memory (customer usable).
+* Core 3.7.13.15
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.368.0 (2022-09-30 18:22 UTC)
 * CodeDeploy (3.7.1.0)
 	* This release allows you to override the alarm configurations when creating a deployment.

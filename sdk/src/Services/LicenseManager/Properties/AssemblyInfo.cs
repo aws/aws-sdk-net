@@ -42,7 +42,7 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("3.3")]
-[assembly: AssemblyFileVersion("3.7.5.145")]
+[assembly: AssemblyFileVersion("3.7.5.146")]
 
 [assembly: System.CLSCompliant(true)]
 
