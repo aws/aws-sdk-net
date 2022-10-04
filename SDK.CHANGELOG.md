@@ -1,3 +1,20 @@
+### 3.7.370.0 (2022-10-04 18:23 UTC)
+* Connect (3.7.25.0)
+	* Updated the CreateIntegrationAssociation API to support the CASES_DOMAIN IntegrationType.
+* ConnectCases (3.7.0.0)
+	* This release adds APIs for Amazon Connect Cases. Cases allows your agents to quickly track and manage customer issues that require multiple interactions, follow-up tasks, and teams in your contact center.  For more information, see https://docs.aws.amazon.com/cases/latest/APIReference/Welcome.html
+* EC2 (3.7.95.0)
+	* Added EnableNetworkAddressUsageMetrics flag for ModifyVpcAttribute, DescribeVpcAttribute APIs.
+* ECS (3.7.5.90)
+	* Documentation updates to address various Amazon ECS tickets.
+* S3Control (3.7.8.0)
+	* S3 Object Lambda adds support to allow customers to intercept HeadObject and ListObjects requests and introduce their own compute. These requests were previously proxied to S3.
+* WorkMail (3.7.7.0)
+	* This release adds support for impersonation roles in Amazon WorkMail.
+* Core 3.7.13.16
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.369.0 (2022-10-03 18:20 UTC)
 * AccessAnalyzer (3.7.3.0)
 	* AWS IAM Access Analyzer policy validation introduces new checks for role trust policies. As customers author a policy, IAM Access Analyzer policy validation evaluates the policy for any issues to make it easier for customers to author secure policies.

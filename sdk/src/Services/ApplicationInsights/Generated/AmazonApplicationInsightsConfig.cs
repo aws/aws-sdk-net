@@ -32,7 +32,7 @@ namespace Amazon.ApplicationInsights
     public partial class AmazonApplicationInsightsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.3.50");
+            InternalSDKUtils.BuildUserAgentString("3.7.3.51");
 
         private string _userAgent = UserAgentString;
 
