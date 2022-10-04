@@ -32,7 +32,7 @@ namespace Amazon.WorkMail.Model
     /// Container for the parameters to the GetMobileDeviceAccessEffect operation.
     /// Simulates the effect of the mobile device access rules for the given attributes of
     /// a sample access event. Use this method to test the effects of the current set of mobile
-    /// device access rules for the Amazon WorkMail organization for a particular user's attributes.
+    /// device access rules for the WorkMail organization for a particular user's attributes.
     /// </summary>
     public partial class GetMobileDeviceAccessEffectRequest : AmazonWorkMailRequest
     {
@@ -121,7 +121,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property OrganizationId. 
         /// <para>
-        /// The Amazon WorkMail organization to simulate the access effect for.
+        /// The WorkMail organization to simulate the access effect for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=34, Max=34)]

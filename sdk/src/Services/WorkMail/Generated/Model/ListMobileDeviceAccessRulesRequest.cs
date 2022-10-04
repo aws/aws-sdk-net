@@ -30,7 +30,7 @@ namespace Amazon.WorkMail.Model
 {
     /// <summary>
     /// Container for the parameters to the ListMobileDeviceAccessRules operation.
-    /// Lists the mobile device access rules for the specified Amazon WorkMail organization.
+    /// Lists the mobile device access rules for the specified WorkMail organization.
     /// </summary>
     public partial class ListMobileDeviceAccessRulesRequest : AmazonWorkMailRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property OrganizationId. 
         /// <para>
-        /// The Amazon WorkMail organization for which to list the rules.
+        /// The WorkMail organization for which to list the rules.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=34, Max=34)]

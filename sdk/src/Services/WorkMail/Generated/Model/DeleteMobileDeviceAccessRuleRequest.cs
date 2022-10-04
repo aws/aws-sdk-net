@@ -30,7 +30,7 @@ namespace Amazon.WorkMail.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteMobileDeviceAccessRule operation.
-    /// Deletes a mobile device access rule for the specified Amazon WorkMail organization.
+    /// Deletes a mobile device access rule for the specified WorkMail organization.
     /// 
     ///  <note> 
     /// <para>
@@ -66,7 +66,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property OrganizationId. 
         /// <para>
-        /// The Amazon WorkMail organization under which the rule will be deleted.
+        /// The WorkMail organization under which the rule will be deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=34, Max=34)]

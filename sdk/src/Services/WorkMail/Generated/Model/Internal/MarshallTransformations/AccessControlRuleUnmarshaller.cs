@@ -94,6 +94,12 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
                     unmarshalledObject.Effect = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ImpersonationRoleIds", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ImpersonationRoleIds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("IpRanges", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
@@ -110,6 +116,12 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.NotActions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NotImpersonationRoleIds", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.NotImpersonationRoleIds = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NotIpRanges", targetDepth))

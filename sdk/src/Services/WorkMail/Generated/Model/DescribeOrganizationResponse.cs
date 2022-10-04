@@ -122,7 +122,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property DirectoryId. 
         /// <para>
-        /// The identifier for the directory associated with an Amazon WorkMail organization.
+        /// The identifier for the directory associated with an WorkMail organization.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

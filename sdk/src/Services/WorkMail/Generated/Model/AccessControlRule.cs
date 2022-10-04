@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkMail.Model
 {
     /// <summary>
-    /// A rule that controls access to an Amazon WorkMail organization.
+    /// A rule that controls access to an WorkMail organization.
     /// </summary>
     public partial class AccessControlRule
     {
@@ -38,9 +38,11 @@ namespace Amazon.WorkMail.Model
         private DateTime? _dateModified;
         private string _description;
         private AccessControlRuleEffect _effect;
+        private List<string> _impersonationRoleIds = new List<string>();
         private List<string> _ipRanges = new List<string>();
         private string _name;
         private List<string> _notActions = new List<string>();
+        private List<string> _notImpersonationRoleIds = new List<string>();
         private List<string> _notIpRanges = new List<string>();
         private List<string> _notUserIds = new List<string>();
         private List<string> _userIds = new List<string>();
@@ -140,6 +142,25 @@ namespace Amazon.WorkMail.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ImpersonationRoleIds. 
+        /// <para>
+        /// Impersonation role IDs to include in the rule.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<string> ImpersonationRoleIds
+        {
+            get { return this._impersonationRoleIds; }
+            set { this._impersonationRoleIds = value; }
+        }
+
+        // Check to see if ImpersonationRoleIds property is set
+        internal bool IsSetImpersonationRoleIds()
+        {
+            return this._impersonationRoleIds != null && this._impersonationRoleIds.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property IpRanges. 
         /// <para>
         /// IPv4 CIDR ranges to include in the rule.
@@ -196,6 +217,25 @@ namespace Amazon.WorkMail.Model
         internal bool IsSetNotActions()
         {
             return this._notActions != null && this._notActions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NotImpersonationRoleIds. 
+        /// <para>
+        /// Impersonation role IDs to exclude from the rule.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<string> NotImpersonationRoleIds
+        {
+            get { return this._notImpersonationRoleIds; }
+            set { this._notImpersonationRoleIds = value; }
+        }
+
+        // Check to see if NotImpersonationRoleIds property is set
+        internal bool IsSetNotImpersonationRoleIds()
+        {
+            return this._notImpersonationRoleIds != null && this._notImpersonationRoleIds.Count > 0; 
         }
 
         /// <summary>

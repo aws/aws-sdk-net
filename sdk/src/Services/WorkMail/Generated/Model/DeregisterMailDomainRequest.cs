@@ -30,10 +30,10 @@ namespace Amazon.WorkMail.Model
 {
     /// <summary>
     /// Container for the parameters to the DeregisterMailDomain operation.
-    /// Removes a domain from Amazon WorkMail, stops email routing to WorkMail, and removes
-    /// the authorization allowing WorkMail use. SES keeps the domain because other applications
-    /// may use it. You must first remove any email address used by WorkMail entities before
-    /// you remove the domain.
+    /// Removes a domain from WorkMail, stops email routing to WorkMail, and removes the authorization
+    /// allowing WorkMail use. SES keeps the domain because other applications may use it.
+    /// You must first remove any email address used by WorkMail entities before you remove
+    /// the domain.
     /// </summary>
     public partial class DeregisterMailDomainRequest : AmazonWorkMailRequest
     {
@@ -43,7 +43,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The domain to deregister in WorkMail and SES. 
+        /// The domain to deregister in WorkMail and SES.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=209)]
@@ -62,7 +62,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property OrganizationId. 
         /// <para>
-        /// The Amazon WorkMail organization for which the domain will be deregistered.
+        /// The WorkMail organization for which the domain will be deregistered.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=34, Max=34)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkMail.Model
 {
     /// <summary>
-    /// A rule that controls access to mobile devices for an Amazon WorkMail group.
+    /// A rule that controls access to mobile devices for an WorkMail group.
     /// </summary>
     public partial class MobileDeviceAccessRule
     {
@@ -144,7 +144,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property DeviceTypes. 
         /// <para>
-        /// Device types that a rule will match. 
+        /// Device types that a rule will match.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -200,7 +200,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property MobileDeviceAccessRuleId. 
         /// <para>
-        /// The ID assigned to a mobile access rule. 
+        /// The ID assigned to a mobile access rule.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

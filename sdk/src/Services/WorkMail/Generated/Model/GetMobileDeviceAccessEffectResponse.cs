@@ -40,8 +40,8 @@ namespace Amazon.WorkMail.Model
         /// Gets and sets the property Effect. 
         /// <para>
         /// The effect of the simulated access, <code>ALLOW</code> or <code>DENY</code>, after
-        /// evaluating mobile device access rules in the Amazon WorkMail organization for the
-        /// simulated user parameters.
+        /// evaluating mobile device access rules in the WorkMail organization for the simulated
+        /// user parameters.
         /// </para>
         /// </summary>
         public MobileDeviceAccessRuleEffect Effect

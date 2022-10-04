@@ -30,7 +30,7 @@ namespace Amazon.WorkMail.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateUser operation.
-    /// Creates a user who can be used in Amazon WorkMail by calling the <a>RegisterToWorkMail</a>
+    /// Creates a user who can be used in WorkMail by calling the <a>RegisterToWorkMail</a>
     /// operation.
     /// </summary>
     public partial class CreateUserRequest : AmazonWorkMailRequest

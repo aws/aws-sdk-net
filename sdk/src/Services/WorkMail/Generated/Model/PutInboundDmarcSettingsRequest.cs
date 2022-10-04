@@ -59,7 +59,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property OrganizationId. 
         /// <para>
-        /// The ID of the organization that you are applying the DMARC policy to. 
+        /// The ID of the organization that you are applying the DMARC policy to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=34, Max=34)]

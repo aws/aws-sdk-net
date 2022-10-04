@@ -75,6 +75,56 @@ namespace Amazon.WorkMail
 
 
     /// <summary>
+    /// Constants used for properties of type AccessEffect.
+    /// </summary>
+    public class AccessEffect : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALLOW for AccessEffect
+        /// </summary>
+        public static readonly AccessEffect ALLOW = new AccessEffect("ALLOW");
+        /// <summary>
+        /// Constant DENY for AccessEffect
+        /// </summary>
+        public static readonly AccessEffect DENY = new AccessEffect("DENY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AccessEffect(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccessEffect FindValue(string value)
+        {
+            return FindValue<AccessEffect>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccessEffect(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AvailabilityProviderType.
     /// </summary>
     public class AvailabilityProviderType : ConstantClass
@@ -288,6 +338,56 @@ namespace Amazon.WorkMail
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FolderName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImpersonationRoleType.
+    /// </summary>
+    public class ImpersonationRoleType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FULL_ACCESS for ImpersonationRoleType
+        /// </summary>
+        public static readonly ImpersonationRoleType FULL_ACCESS = new ImpersonationRoleType("FULL_ACCESS");
+        /// <summary>
+        /// Constant READ_ONLY for ImpersonationRoleType
+        /// </summary>
+        public static readonly ImpersonationRoleType READ_ONLY = new ImpersonationRoleType("READ_ONLY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImpersonationRoleType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImpersonationRoleType FindValue(string value)
+        {
+            return FindValue<ImpersonationRoleType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImpersonationRoleType(string value)
         {
             return FindValue(value);
         }

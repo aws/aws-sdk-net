@@ -30,7 +30,7 @@ namespace Amazon.WorkMail.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateMobileDeviceAccessRule operation.
-    /// Updates a mobile device access rule for the specified Amazon WorkMail organization.
+    /// Updates a mobile device access rule for the specified WorkMail organization.
     /// </summary>
     public partial class UpdateMobileDeviceAccessRuleRequest : AmazonWorkMailRequest
     {
@@ -283,7 +283,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property OrganizationId. 
         /// <para>
-        /// The Amazon WorkMail organization under which the rule will be updated.
+        /// The WorkMail organization under which the rule will be updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=34, Max=34)]

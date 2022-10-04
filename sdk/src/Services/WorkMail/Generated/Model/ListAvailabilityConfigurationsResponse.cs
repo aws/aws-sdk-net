@@ -40,7 +40,7 @@ namespace Amazon.WorkMail.Model
         /// Gets and sets the property AvailabilityConfigurations. 
         /// <para>
         /// The list of <code>AvailabilityConfiguration</code>'s that exist for the specified
-        /// Amazon WorkMail organization.
+        /// WorkMail organization.
         /// </para>
         /// </summary>
         public List<AvailabilityConfiguration> AvailabilityConfigurations

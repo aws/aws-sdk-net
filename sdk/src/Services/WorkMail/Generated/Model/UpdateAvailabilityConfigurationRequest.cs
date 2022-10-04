@@ -102,8 +102,8 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property OrganizationId. 
         /// <para>
-        /// The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code>
-        /// will be updated.
+        /// The WorkMail organization for which the <code>AvailabilityConfiguration</code> will
+        /// be updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=34, Max=34)]

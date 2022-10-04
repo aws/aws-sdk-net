@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkMail.Model
 {
     /// <summary>
-    /// You SES configuration has customizations that Amazon WorkMail cannot save. The error
-    /// message lists the invalid setting. For examples of invalid settings, refer to <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptRule.html">CreateReceiptRule</a>.
+    /// You SES configuration has customizations that WorkMail cannot save. The error message
+    /// lists the invalid setting. For examples of invalid settings, refer to <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptRule.html">CreateReceiptRule</a>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

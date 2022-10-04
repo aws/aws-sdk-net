@@ -43,7 +43,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property DisabledDate. 
         /// <para>
-        /// The date indicating when the member was disabled from Amazon WorkMail use.
+        /// The date indicating when the member was disabled from WorkMail use.
         /// </para>
         /// </summary>
         public DateTime DisabledDate
@@ -61,7 +61,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property EnabledDate. 
         /// <para>
-        /// The date indicating when the member was enabled for Amazon WorkMail use.
+        /// The date indicating when the member was enabled for WorkMail use.
         /// </para>
         /// </summary>
         public DateTime EnabledDate

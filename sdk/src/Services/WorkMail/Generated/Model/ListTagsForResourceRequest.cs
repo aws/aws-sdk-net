@@ -30,7 +30,7 @@ namespace Amazon.WorkMail.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Lists the tags applied to an Amazon WorkMail organization resource.
+    /// Lists the tags applied to an WorkMail organization resource.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonWorkMailRequest
     {

@@ -68,6 +68,14 @@ namespace Amazon.WorkMail.Model
         }
 
         /// <summary>
+        /// Paginator for ListImpersonationRoles operation
+        ///</summary>
+        public IListImpersonationRolesPaginator ListImpersonationRoles(ListImpersonationRolesRequest request) 
+        {
+            return new ListImpersonationRolesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListMailboxExportJobs operation
         ///</summary>
         public IListMailboxExportJobsPaginator ListMailboxExportJobs(ListMailboxExportJobsRequest request) 

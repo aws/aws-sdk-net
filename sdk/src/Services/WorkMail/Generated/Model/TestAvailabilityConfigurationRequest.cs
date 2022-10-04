@@ -42,7 +42,7 @@ namespace Amazon.WorkMail.Model
     /// The request must contain either one provider definition (<code>EwsProvider</code>
     /// or <code>LambdaProvider</code>) or the <code>DomainName</code> parameter. If the <code>DomainName</code>
     /// parameter is provided, the configuration stored under the <code>DomainName</code>
-    /// will be tested. 
+    /// will be tested.
     /// </para>
     ///  </note>
     /// </summary>
@@ -106,7 +106,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property OrganizationId. 
         /// <para>
-        /// The Amazon WorkMail organization where the availability provider will be tested.
+        /// The WorkMail organization where the availability provider will be tested.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=34, Max=34)]

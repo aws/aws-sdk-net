@@ -30,7 +30,7 @@ namespace Amazon.WorkMail.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAlias operation.
-    /// Adds an alias to the set of a given member (user or group) of Amazon WorkMail.
+    /// Adds an alias to the set of a given member (user or group) of WorkMail.
     /// </summary>
     public partial class CreateAliasRequest : AmazonWorkMailRequest
     {

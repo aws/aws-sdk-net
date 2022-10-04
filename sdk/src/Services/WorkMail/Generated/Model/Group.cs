@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkMail.Model
 {
     /// <summary>
-    /// The representation of an Amazon WorkMail group.
+    /// The representation of an WorkMail group.
     /// </summary>
     public partial class Group
     {
@@ -43,7 +43,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property DisabledDate. 
         /// <para>
-        /// The date indicating when the group was disabled from Amazon WorkMail use.
+        /// The date indicating when the group was disabled from WorkMail use.
         /// </para>
         /// </summary>
         public DateTime DisabledDate
@@ -80,7 +80,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property EnabledDate. 
         /// <para>
-        /// The date indicating when the group was enabled for Amazon WorkMail use.
+        /// The date indicating when the group was enabled for WorkMail use.
         /// </para>
         /// </summary>
         public DateTime EnabledDate

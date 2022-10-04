@@ -30,7 +30,7 @@ namespace Amazon.WorkMail.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateGroup operation.
-    /// Creates a group that can be used in Amazon WorkMail by calling the <a>RegisterToWorkMail</a>
+    /// Creates a group that can be used in WorkMail by calling the <a>RegisterToWorkMail</a>
     /// operation.
     /// </summary>
     public partial class CreateGroupRequest : AmazonWorkMailRequest

@@ -34,6 +34,24 @@
     <pattern>^m-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkMail.Model.AssumeImpersonationRoleRequest.ImpersonationRoleId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.AssumeImpersonationRoleRequest.OrganizationId</property>
+    <min>34</min>
+    <max>34</max>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.AssumeImpersonationRoleResponse.Token</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[\x21-\x7e]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkMail.Model.CancelMailboxExportJobRequest.ClientToken</property>
     <min>1</min>
     <max>128</max>
@@ -102,6 +120,36 @@
     <property>Amazon.WorkMail.Model.CreateGroupResponse.GroupId</property>
     <min>12</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.CreateImpersonationRoleRequest.ClientToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\x21-\x7e]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.CreateImpersonationRoleRequest.Description</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[^\x00-\x09\x0B\x0C\x0E-\x1F\x7F\x3C\x3E\x5C]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.CreateImpersonationRoleRequest.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[^\x00-\x1F\x7F\x3C\x3E\x5C]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.CreateImpersonationRoleRequest.OrganizationId</property>
+    <min>34</min>
+    <max>34</max>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.CreateImpersonationRoleResponse.ImpersonationRoleId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.CreateMobileDeviceAccessRuleRequest.ClientToken</property>
@@ -261,6 +309,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.DeleteGroupRequest.OrganizationId</property>
+    <min>34</min>
+    <max>34</max>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.DeleteImpersonationRoleRequest.ImpersonationRoleId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.DeleteImpersonationRoleRequest.OrganizationId</property>
     <min>34</min>
     <max>34</max>
     <pattern>^m-[0-9a-f]{32}$</pattern>
@@ -650,6 +710,12 @@
     <pattern>[a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkMail.Model.GetAccessControlEffectRequest.ImpersonationRoleId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkMail.Model.GetAccessControlEffectRequest.IpAddress</property>
     <min>1</min>
     <max>15</max>
@@ -687,6 +753,54 @@
     <min>1</min>
     <max>64</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.GetImpersonationRoleRequest.ImpersonationRoleId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.GetImpersonationRoleRequest.OrganizationId</property>
+    <min>34</min>
+    <max>34</max>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.GetImpersonationRoleResponse.Description</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[^\x00-\x09\x0B\x0C\x0E-\x1F\x7F\x3C\x3E\x5C]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.GetImpersonationRoleResponse.ImpersonationRoleId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.GetImpersonationRoleResponse.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[^\x00-\x1F\x7F\x3C\x3E\x5C]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.GetImpersonationRoleEffectRequest.ImpersonationRoleId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.GetImpersonationRoleEffectRequest.OrganizationId</property>
+    <min>34</min>
+    <max>34</max>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.GetImpersonationRoleEffectRequest.TargetUser</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9._%+@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.GetMailboxDetailsRequest.OrganizationId</property>
@@ -888,6 +1002,29 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.ListGroupsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[\S\s]*|[a-zA-Z0-9/+=]{1,1024}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.ListImpersonationRolesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.ListImpersonationRolesRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[\S\s]*|[a-zA-Z0-9/+=]{1,1024}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.ListImpersonationRolesRequest.OrganizationId</property>
+    <min>34</min>
+    <max>34</max>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.ListImpersonationRolesResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
     <pattern>[\S\s]*|[a-zA-Z0-9/+=]{1,1024}</pattern>
@@ -1361,6 +1498,30 @@
     <pattern>^m-[0-9a-f]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkMail.Model.UpdateImpersonationRoleRequest.Description</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[^\x00-\x09\x0B\x0C\x0E-\x1F\x7F\x3C\x3E\x5C]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.UpdateImpersonationRoleRequest.ImpersonationRoleId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.UpdateImpersonationRoleRequest.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[^\x00-\x1F\x7F\x3C\x3E\x5C]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.UpdateImpersonationRoleRequest.OrganizationId</property>
+    <min>34</min>
+    <max>34</max>
+    <pattern>^m-[0-9a-f]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkMail.Model.UpdateMailboxQuotaRequest.MailboxQuota</property>
     <min>1</min>
   </property-value-rule>
@@ -1516,6 +1677,48 @@
     <min>1</min>
     <max>256</max>
     <pattern>[\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.ImpersonationMatchedRule.ImpersonationRuleId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.ImpersonationMatchedRule.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[^\x00-\x1F\x7F\x3C\x3E\x5C]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.ImpersonationRole.ImpersonationRoleId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.ImpersonationRole.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[^\x00-\x1F\x7F\x3C\x3E\x5C]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.ImpersonationRule.Description</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[^\x00-\x09\x0B\x0C\x0E-\x1F\x7F\x3C\x3E\x5C]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.ImpersonationRule.ImpersonationRuleId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkMail.Model.ImpersonationRule.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[^\x00-\x1F\x7F\x3C\x3E\x5C]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkMail.Model.LambdaAvailabilityProvider.LambdaArn</property>

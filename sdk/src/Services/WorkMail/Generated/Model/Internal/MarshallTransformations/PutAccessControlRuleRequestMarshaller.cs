@@ -90,6 +90,17 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Effect);
                 }
 
+                if(publicRequest.IsSetImpersonationRoleIds())
+                {
+                    context.Writer.WritePropertyName("ImpersonationRoleIds");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestImpersonationRoleIdsListValue in publicRequest.ImpersonationRoleIds)
+                    {
+                            context.Writer.Write(publicRequestImpersonationRoleIdsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetIpRanges())
                 {
                     context.Writer.WritePropertyName("IpRanges");
@@ -114,6 +125,17 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
                     foreach(var publicRequestNotActionsListValue in publicRequest.NotActions)
                     {
                             context.Writer.Write(publicRequestNotActionsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetNotImpersonationRoleIds())
+                {
+                    context.Writer.WritePropertyName("NotImpersonationRoleIds");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestNotImpersonationRoleIdsListValue in publicRequest.NotImpersonationRoleIds)
+                    {
+                            context.Writer.Write(publicRequestNotImpersonationRoleIdsListValue);
                     }
                     context.Writer.WriteArrayEnd();
                 }

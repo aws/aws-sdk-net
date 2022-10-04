@@ -30,7 +30,7 @@ namespace Amazon.WorkMail.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateResource operation.
-    /// Creates a new Amazon WorkMail resource.
+    /// Creates a new WorkMail resource.
     /// </summary>
     public partial class CreateResourceRequest : AmazonWorkMailRequest
     {

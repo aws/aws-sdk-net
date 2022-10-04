@@ -99,7 +99,7 @@ namespace Amazon.WorkMail.Model
         /// Gets and sets the property EwsProvider. 
         /// <para>
         /// If <code>ProviderType</code> is <code>EWS</code>, then this field contains <code>RedactedEwsAvailabilityProvider</code>.
-        /// Otherwise, it is not requried.
+        /// Otherwise, it is not required.
         /// </para>
         /// </summary>
         public RedactedEwsAvailabilityProvider EwsProvider

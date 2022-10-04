@@ -60,7 +60,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property OrganizationId. 
         /// <para>
-        /// The Amazon WorkMail organization for which the domain is retrieved.
+        /// The WorkMail organization for which the domain is retrieved.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=34, Max=34)]

@@ -30,7 +30,7 @@ namespace Amazon.WorkMail.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteGroup operation.
-    /// Deletes a group from Amazon WorkMail.
+    /// Deletes a group from WorkMail.
     /// </summary>
     public partial class DeleteGroupRequest : AmazonWorkMailRequest
     {

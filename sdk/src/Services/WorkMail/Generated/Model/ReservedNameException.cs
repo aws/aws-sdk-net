@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkMail.Model
 {
     /// <summary>
-    /// This user, group, or resource name is not allowed in Amazon WorkMail.
+    /// This user, group, or resource name is not allowed in WorkMail.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

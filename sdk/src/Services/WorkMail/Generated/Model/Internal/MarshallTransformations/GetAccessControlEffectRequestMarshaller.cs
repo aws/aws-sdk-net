@@ -73,6 +73,12 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Action);
                 }
 
+                if(publicRequest.IsSetImpersonationRoleId())
+                {
+                    context.Writer.WritePropertyName("ImpersonationRoleId");
+                    context.Writer.Write(publicRequest.ImpersonationRoleId);
+                }
+
                 if(publicRequest.IsSetIpAddress())
                 {
                     context.Writer.WritePropertyName("IpAddress");
