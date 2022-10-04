@@ -1315,6 +1315,10 @@ namespace Amazon.Connect
     {
 
         /// <summary>
+        /// Constant CASES_DOMAIN for IntegrationType
+        /// </summary>
+        public static readonly IntegrationType CASES_DOMAIN = new IntegrationType("CASES_DOMAIN");
+        /// <summary>
         /// Constant EVENT for IntegrationType
         /// </summary>
         public static readonly IntegrationType EVENT = new IntegrationType("EVENT");
