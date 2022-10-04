@@ -756,7 +756,7 @@ namespace Amazon.ECS.Model
         ///  <note> 
         /// <para>
         /// The <code>host</code> and <code>sourcePath</code> parameters aren't supported for
-        /// tasks run on Fargate.
+        /// tasks run on Fargate. 
         /// </para>
         ///  </note>
         /// </summary>

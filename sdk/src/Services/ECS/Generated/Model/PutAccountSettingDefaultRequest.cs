@@ -49,6 +49,13 @@ namespace Amazon.ECS.Model
         /// instances is affected. If <code>containerInsights</code> is specified, the default
         /// setting for CloudWatch Container Insights for your clusters is affected.
         /// </para>
+        ///  
+        /// <para>
+        /// Fargate is transitioning from task count-based quotas to vCPU-based quotas. You can
+        /// set the name to <code>fargateVCPULimit</code> to opt in or opt out of the vCPU-based
+        /// quotas. For information about the opt in timeline, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#fargate-quota-timeline">Fargate
+        /// vCPU-based quotas timeline</a> in the <i>Amazon ECS Developer Guide</i>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public SettingName Name
