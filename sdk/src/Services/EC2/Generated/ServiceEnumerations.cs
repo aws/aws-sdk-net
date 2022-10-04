@@ -17882,6 +17882,10 @@ namespace Amazon.EC2
         /// Constant EnableDnsSupport for VpcAttributeName
         /// </summary>
         public static readonly VpcAttributeName EnableDnsSupport = new VpcAttributeName("enableDnsSupport");
+        /// <summary>
+        /// Constant EnableNetworkAddressUsageMetrics for VpcAttributeName
+        /// </summary>
+        public static readonly VpcAttributeName EnableNetworkAddressUsageMetrics = new VpcAttributeName("enableNetworkAddressUsageMetrics");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

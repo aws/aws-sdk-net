@@ -66,6 +66,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("EnableDnsSupport.Value", StringUtils.FromBool(publicRequest.EnableDnsSupport));
                 }
+                if(publicRequest.IsSetEnableNetworkAddressUsageMetrics())
+                {
+                    request.Parameters.Add("EnableNetworkAddressUsageMetrics.Value", StringUtils.FromBool(publicRequest.EnableNetworkAddressUsageMetrics));
+                }
                 if(publicRequest.IsSetVpcId())
                 {
                     request.Parameters.Add("VpcId", StringUtils.FromString(publicRequest.VpcId));
