@@ -946,6 +946,14 @@ namespace Amazon.S3Control
         /// Constant GetObjectRange for ObjectLambdaAllowedFeature
         /// </summary>
         public static readonly ObjectLambdaAllowedFeature GetObjectRange = new ObjectLambdaAllowedFeature("GetObject-Range");
+        /// <summary>
+        /// Constant HeadObjectPartNumber for ObjectLambdaAllowedFeature
+        /// </summary>
+        public static readonly ObjectLambdaAllowedFeature HeadObjectPartNumber = new ObjectLambdaAllowedFeature("HeadObject-PartNumber");
+        /// <summary>
+        /// Constant HeadObjectRange for ObjectLambdaAllowedFeature
+        /// </summary>
+        public static readonly ObjectLambdaAllowedFeature HeadObjectRange = new ObjectLambdaAllowedFeature("HeadObject-Range");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -992,6 +1000,18 @@ namespace Amazon.S3Control
         /// Constant GetObject for ObjectLambdaTransformationConfigurationAction
         /// </summary>
         public static readonly ObjectLambdaTransformationConfigurationAction GetObject = new ObjectLambdaTransformationConfigurationAction("GetObject");
+        /// <summary>
+        /// Constant HeadObject for ObjectLambdaTransformationConfigurationAction
+        /// </summary>
+        public static readonly ObjectLambdaTransformationConfigurationAction HeadObject = new ObjectLambdaTransformationConfigurationAction("HeadObject");
+        /// <summary>
+        /// Constant ListObjects for ObjectLambdaTransformationConfigurationAction
+        /// </summary>
+        public static readonly ObjectLambdaTransformationConfigurationAction ListObjects = new ObjectLambdaTransformationConfigurationAction("ListObjects");
+        /// <summary>
+        /// Constant ListObjectsV2 for ObjectLambdaTransformationConfigurationAction
+        /// </summary>
+        public static readonly ObjectLambdaTransformationConfigurationAction ListObjectsV2 = new ObjectLambdaTransformationConfigurationAction("ListObjectsV2");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
