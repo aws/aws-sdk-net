@@ -368,6 +368,10 @@
       <Project>{A24C0514-952A-4B14-9DB1-D877EFECA384}</Project>
       <Name>AWSSDK.ConnectCampaignService.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/ConnectCases/AWSSDK.ConnectCases.CodeAnalysis.csproj">
+      <Project>{349F5805-E1A7-48F0-A7F2-366D81137AFA}</Project>
+      <Name>AWSSDK.ConnectCases.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/ConnectContactLens/AWSSDK.ConnectContactLens.CodeAnalysis.csproj">
       <Project>{D6283E41-B330-46FF-8497-EFB7F15D3222}</Project>
       <Name>AWSSDK.ConnectContactLens.CodeAnalysis</Name>

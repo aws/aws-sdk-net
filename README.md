@@ -262,6 +262,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon Connect is a self-service, cloud-based contact center service that makes it easy for any business to deliver better customer service at lower cost.
 * [AWSSDK.ConnectCampaignService](https://www.nuget.org/packages/AWSSDK.ConnectCampaignService/)
 	* Added Amazon Connect high volume outbound communications SDK.
+* [AWSSDK.ConnectCases](https://www.nuget.org/packages/AWSSDK.ConnectCases/)
+	* This release adds APIs for Amazon Connect Cases. Cases allows your agents to quickly track and manage customer issues that require multiple interactions, follow-up tasks, and teams in your contact center.  For more information, see https://docs.aws.amazon.com/cases/latest/APIReference/Welcome.html
 * [AWSSDK.ConnectContactLens](https://www.nuget.org/packages/AWSSDK.ConnectContactLens/)
 	* Contact Lens for Amazon Connect analyzes conversations, both real-time and post-call. The ListRealtimeContactAnalysisSegments API returns a list of analysis segments for a real-time analysis session.
 * [AWSSDK.ConnectParticipant](https://www.nuget.org/packages/AWSSDK.ConnectParticipant/)
