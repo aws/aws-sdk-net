@@ -51,6 +51,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.RuleOrder);
             }
 
+            if(requestObject.IsSetStreamExceptionPolicy())
+            {
+                context.Writer.WritePropertyName("StreamExceptionPolicy");
+                context.Writer.Write(requestObject.StreamExceptionPolicy);
+            }
+
         }
 
         /// <summary>

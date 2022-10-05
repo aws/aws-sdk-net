@@ -70,6 +70,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                     unmarshalledObject.RuleOrder = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("StreamExceptionPolicy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StreamExceptionPolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

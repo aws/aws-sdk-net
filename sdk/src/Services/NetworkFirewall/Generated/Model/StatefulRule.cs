@@ -32,8 +32,7 @@ namespace Amazon.NetworkFirewall.Model
     /// A single Suricata rules specification, for use in a stateful rule group. Use this
     /// option to specify a simple Suricata rule with protocol, source and destination, ports,
     /// direction, and rule options. For information about the Suricata <code>Rules</code>
-    /// format, see <a href="https://suricata.readthedocs.io/en/suricata-5.0.0/rules/intro.html#">Rules
-    /// Format</a>.
+    /// format, see <a href="https://suricata.readthedocs.io/rules/intro.html#">Rules Format</a>.
     /// </summary>
     public partial class StatefulRule
     {

@@ -35,6 +35,7 @@ namespace Amazon.NetworkFirewall.Model
     public partial class StatefulEngineOptions
     {
         private RuleOrder _ruleOrder;
+        private StreamExceptionPolicy _streamExceptionPolicy;
 
         /// <summary>
         /// Gets and sets the property RuleOrder. 
@@ -56,6 +57,43 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetRuleOrder()
         {
             return this._ruleOrder != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StreamExceptionPolicy. 
+        /// <para>
+        /// Configures how Network Firewall processes traffic when a network connection breaks
+        /// midstream. Network connections can break due to disruptions in external networks or
+        /// within the firewall itself.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>DROP</code> - Network Firewall fails closed and drops all subsequent traffic
+        /// going to the firewall. This is the default behavior.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CONTINUE</code> - Network Firewall continues to apply rules to the subsequent
+        /// traffic without context from traffic before the break. This impacts the behavior of
+        /// rules that depend on this context. For example, if you have a stateful rule to <code>drop
+        /// http</code> traffic, Network Firewall won't match the traffic for this rule because
+        /// the service won't have the context from session initialization defining the application
+        /// layer protocol as HTTP. However, this behavior is rule dependent—a TCP-layer rule
+        /// using a <code>flow:stateless</code> rule would still match, as would the <code>aws:drop_strict</code>
+        /// default action.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public StreamExceptionPolicy StreamExceptionPolicy
+        {
+            get { return this._streamExceptionPolicy; }
+            set { this._streamExceptionPolicy = value; }
+        }
+
+        // Check to see if StreamExceptionPolicy property is set
+        internal bool IsSetStreamExceptionPolicy()
+        {
+            return this._streamExceptionPolicy != null;
         }
 
     }
