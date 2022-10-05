@@ -196,6 +196,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.SecurityConfiguration);
             }
 
+            if(requestObject.IsSetSourceControlDetails())
+            {
+                context.Writer.WritePropertyName("SourceControlDetails");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SourceControlDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.SourceControlDetails, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTimeout())
             {
                 context.Writer.WritePropertyName("Timeout");

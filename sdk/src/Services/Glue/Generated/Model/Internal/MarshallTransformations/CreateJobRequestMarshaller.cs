@@ -224,6 +224,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SecurityConfiguration);
                 }
 
+                if(publicRequest.IsSetSourceControlDetails())
+                {
+                    context.Writer.WritePropertyName("SourceControlDetails");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SourceControlDetailsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SourceControlDetails, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");

@@ -3633,6 +3633,106 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type SourceControlAuthStrategy.
+    /// </summary>
+    public class SourceControlAuthStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_SECRETS_MANAGER for SourceControlAuthStrategy
+        /// </summary>
+        public static readonly SourceControlAuthStrategy AWS_SECRETS_MANAGER = new SourceControlAuthStrategy("AWS_SECRETS_MANAGER");
+        /// <summary>
+        /// Constant PERSONAL_ACCESS_TOKEN for SourceControlAuthStrategy
+        /// </summary>
+        public static readonly SourceControlAuthStrategy PERSONAL_ACCESS_TOKEN = new SourceControlAuthStrategy("PERSONAL_ACCESS_TOKEN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SourceControlAuthStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SourceControlAuthStrategy FindValue(string value)
+        {
+            return FindValue<SourceControlAuthStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SourceControlAuthStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SourceControlProvider.
+    /// </summary>
+    public class SourceControlProvider : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_CODE_COMMIT for SourceControlProvider
+        /// </summary>
+        public static readonly SourceControlProvider AWS_CODE_COMMIT = new SourceControlProvider("AWS_CODE_COMMIT");
+        /// <summary>
+        /// Constant GITHUB for SourceControlProvider
+        /// </summary>
+        public static readonly SourceControlProvider GITHUB = new SourceControlProvider("GITHUB");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SourceControlProvider(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SourceControlProvider FindValue(string value)
+        {
+            return FindValue<SourceControlProvider>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SourceControlProvider(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type StartingPosition.
     /// </summary>
     public class StartingPosition : ConstantClass

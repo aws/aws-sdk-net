@@ -53,6 +53,7 @@ namespace Amazon.Glue.Model
         private int? _numberOfWorkers;
         private string _role;
         private string _securityConfiguration;
+        private SourceControlDetails _sourceControlDetails;
         private int? _timeout;
         private WorkerType _workerType;
 
@@ -504,6 +505,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetSecurityConfiguration()
         {
             return this._securityConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceControlDetails. 
+        /// <para>
+        /// The details for a source control configuration for a job, allowing synchronization
+        /// of job artifacts to or from a remote repository.
+        /// </para>
+        /// </summary>
+        public SourceControlDetails SourceControlDetails
+        {
+            get { return this._sourceControlDetails; }
+            set { this._sourceControlDetails = value; }
+        }
+
+        // Check to see if SourceControlDetails property is set
+        internal bool IsSetSourceControlDetails()
+        {
+            return this._sourceControlDetails != null;
         }
 
         /// <summary>
