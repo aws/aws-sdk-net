@@ -1,3 +1,11 @@
+### 3.7.371.0 (2022-10-05 18:21 UTC)
+* Glue (3.7.25.0)
+	* This SDK release adds support to sync glue jobs with source control provider. Additionally, a new parameter called SourceControlDetails will be added to Job model.
+* NetworkFirewall (3.7.6.0)
+	* StreamExceptionPolicy configures how AWS Network Firewall processes traffic when a network connection breaks midstream
+* Outposts (3.7.12.0)
+	* This release adds the Asset state information to the ListAssets response. The ListAssets request supports filtering on Asset state.
+
 ### 3.7.370.0 (2022-10-04 18:23 UTC)
 * Connect (3.7.25.0)
 	* Updated the CreateIntegrationAssociation API to support the CASES_DOMAIN IntegrationType.
