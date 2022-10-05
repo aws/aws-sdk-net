@@ -30,14 +30,14 @@ namespace Amazon.Outposts.Model
 {
     /// <summary>
     /// Container for the parameters to the ListCatalogItems operation.
-    /// Lists the items in the catalog. Add filters to your request to return a more specific
-    /// list of results. Use filters to match an item class, storage option, or EC2 family.
-    /// 
+    /// Lists the items in the catalog.
     /// 
     ///  
     /// <para>
-    /// If you specify multiple filters, the filters are joined with an <code>AND</code>,
-    /// and the request returns only results that match all of the specified filters.
+    /// Use filters to return specific results. If you specify multiple filters, the results
+    /// include only the resources that match all of the specified filters. For a filter where
+    /// you can specify multiple values, the results include items that match any of the values
+    /// that you specify for the filter.
     /// </para>
     /// </summary>
     public partial class ListCatalogItemsRequest : AmazonOutpostsRequest
@@ -51,13 +51,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property EC2FamilyFilter. 
         /// <para>
-        ///  A filter for EC2 family options for items in the catalog. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Filter values are case sensitive. If you specify multiple values for a filter, the
-        /// values are joined with an <code>OR</code>, and the request returns all results that
-        /// match any of the specified values.
+        /// Filters the results by EC2 family (for example, M5).
         /// </para>
         /// </summary>
         public List<string> EC2FamilyFilter
@@ -75,13 +69,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property ItemClassFilter. 
         /// <para>
-        ///  A filter for the class of items in the catalog. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Filter values are case sensitive. If you specify multiple values for a filter, the
-        /// values are joined with an <code>OR</code>, and the request returns all results that
-        /// match any of the specified values.
+        /// Filters the results by item class.
         /// </para>
         /// </summary>
         public List<string> ItemClassFilter
@@ -131,13 +119,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property SupportedStorageFilter. 
         /// <para>
-        ///  A filter for the storage options of items in the catalog. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Filter values are case sensitive. If you specify multiple values for a filter, the
-        /// values are joined with an <code>OR</code>, and the request returns all results that
-        /// match any of the specified values.
+        /// Filters the results by storage option.
         /// </para>
         /// </summary>
         public List<string> SupportedStorageFilter

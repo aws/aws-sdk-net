@@ -163,7 +163,7 @@ namespace Amazon.Outposts.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To
-        /// get more details, see the <code>LineItem</code> status.
+        /// get more details, see the line item status.
         /// </para>
         ///  </li> <li> 
         /// <para>

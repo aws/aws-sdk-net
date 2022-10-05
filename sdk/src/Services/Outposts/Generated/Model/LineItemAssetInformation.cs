@@ -58,7 +58,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property MacAddressList. 
         /// <para>
-        ///  MAC addresses of the asset. 
+        ///  The MAC addresses of the asset. 
         /// </para>
         /// </summary>
         public List<string> MacAddressList

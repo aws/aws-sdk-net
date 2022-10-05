@@ -30,7 +30,7 @@ namespace Amazon.Outposts.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteOutpost operation.
-    /// Deletes the Outpost.
+    /// Deletes the specified Outpost.
     /// </summary>
     public partial class DeleteOutpostRequest : AmazonOutpostsRequest
     {
@@ -41,14 +41,6 @@ namespace Amazon.Outposts.Model
         /// <para>
         ///  The ID or the Amazon Resource Name (ARN) of the Outpost. 
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or
-        /// an ID for Outposts and sites throughout the Outposts Query API. To address backwards
-        /// compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain
-        /// in use. Despite the parameter name, you can make the request with an ARN.
-        /// </para>
-        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=180)]
         public string OutpostId

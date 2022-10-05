@@ -39,7 +39,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property Assets. 
         /// <para>
-        ///  Information about hardware assets. 
+        /// Information about the hardware assets.
         /// </para>
         /// </summary>
         public List<AssetInfo> Assets

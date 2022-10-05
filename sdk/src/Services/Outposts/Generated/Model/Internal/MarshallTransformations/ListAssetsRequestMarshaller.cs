@@ -70,6 +70,9 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
+            
+            if (publicRequest.IsSetStatusFilter())
+                request.ParameterCollection.Add("StatusFilter", publicRequest.StatusFilter);
             request.ResourcePath = "/outposts/{OutpostId}/assets";
             request.UseQueryString = true;
 

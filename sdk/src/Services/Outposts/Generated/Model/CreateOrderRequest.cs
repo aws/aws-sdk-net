@@ -80,7 +80,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property PaymentOption. 
         /// <para>
-        /// The payment option for the order.
+        /// The payment option.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -99,7 +99,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property PaymentTerm. 
         /// <para>
-        /// The payment terms for the order.
+        /// The payment terms.
         /// </para>
         /// </summary>
         public PaymentTerm PaymentTerm

@@ -70,6 +70,12 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
                     unmarshalledObject.HostId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("State", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

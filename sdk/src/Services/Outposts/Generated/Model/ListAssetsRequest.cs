@@ -30,9 +30,15 @@ namespace Amazon.Outposts.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAssets operation.
-    /// Lists the hardware assets in an Outpost. If you are using Dedicated Hosts on Amazon
-    /// Web Services Outposts, you can filter your request by host ID to return a list of
-    /// hardware assets that allocate resources for Dedicated Hosts.
+    /// Lists the hardware assets for the specified Outpost.
+    /// 
+    ///  
+    /// <para>
+    /// Use filters to return specific results. If you specify multiple filters, the results
+    /// include only the resources that match all of the specified filters. For a filter where
+    /// you can specify multiple values, the results include items that match any of the values
+    /// that you specify for the filter.
+    /// </para>
     /// </summary>
     public partial class ListAssetsRequest : AmazonOutpostsRequest
     {
@@ -40,17 +46,12 @@ namespace Amazon.Outposts.Model
         private int? _maxResults;
         private string _nextToken;
         private string _outpostIdentifier;
+        private List<string> _statusFilter = new List<string>();
 
         /// <summary>
         /// Gets and sets the property HostIdFilter. 
         /// <para>
-        ///  A filter for the host ID of Dedicated Hosts on the Outpost. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Filter values are case sensitive. If you specify multiple values for a filter, the
-        /// values are joined with an <code>OR</code>, and the request returns all results that
-        /// match any of the specified values.
+        /// Filters the results by the host ID of a Dedicated Host.
         /// </para>
         /// </summary>
         public List<string> HostIdFilter
@@ -114,6 +115,25 @@ namespace Amazon.Outposts.Model
         internal bool IsSetOutpostIdentifier()
         {
             return this._outpostIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusFilter. 
+        /// <para>
+        /// Filters the results by state.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2)]
+        public List<string> StatusFilter
+        {
+            get { return this._statusFilter; }
+            set { this._statusFilter = value; }
+        }
+
+        // Check to see if StatusFilter property is set
+        internal bool IsSetStatusFilter()
+        {
+            return this._statusFilter != null && this._statusFilter.Count > 0; 
         }
 
     }

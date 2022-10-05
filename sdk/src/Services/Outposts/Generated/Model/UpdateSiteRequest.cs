@@ -30,7 +30,7 @@ namespace Amazon.Outposts.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateSite operation.
-    /// Updates the site.
+    /// Updates the specified site.
     /// </summary>
     public partial class UpdateSiteRequest : AmazonOutpostsRequest
     {
@@ -74,7 +74,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property Notes. 
         /// <para>
-        ///  Notes about a site. 
+        /// Notes about a site.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2000)]
@@ -95,14 +95,6 @@ namespace Amazon.Outposts.Model
         /// <para>
         ///  The ID or the Amazon Resource Name (ARN) of the site. 
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or
-        /// an ID for Outposts and sites throughout the Outposts Query API. To address backwards
-        /// compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain
-        /// in use. Despite the parameter name, you can make the request with an ARN.
-        /// </para>
-        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string SiteId

@@ -34,11 +34,12 @@ namespace Amazon.Outposts.Model
     public partial class ComputeAttributes
     {
         private string _hostId;
+        private ComputeAssetState _state;
 
         /// <summary>
         /// Gets and sets the property HostId. 
         /// <para>
-        ///  The host ID of any Dedicated Hosts on the asset. 
+        ///  The host ID of the Dedicated Host on the asset. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -52,6 +53,40 @@ namespace Amazon.Outposts.Model
         internal bool IsSetHostId()
         {
             return this._hostId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property State. 
+        /// <para>
+        /// The state.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// ACTIVE - The asset is available and can provide capacity for new compute resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ISOLATED - The asset is undergoing maintenance and can't provide capacity for new
+        /// compute resources. Existing compute resources on the asset are not affected.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// RETIRING - The underlying hardware for the asset is degraded. Capacity for new compute
+        /// resources is reduced. Amazon Web Services sends notifications for resources that must
+        /// be stopped before the asset can be replaced.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ComputeAssetState State
+        {
+            get { return this._state; }
+            set { this._state = value; }
+        }
+
+        // Check to see if State property is set
+        internal bool IsSetState()
+        {
+            return this._state != null;
         }
 
     }

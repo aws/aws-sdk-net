@@ -30,15 +30,14 @@ namespace Amazon.Outposts.Model
 {
     /// <summary>
     /// Container for the parameters to the ListOutposts operation.
-    /// Lists the Outposts for your Amazon Web Services account. Add filters to your request
-    /// to return a more specific list of results. Use filters to match an Outpost lifecycle
-    /// status, Availability Zone (<code>us-east-1a</code>), and AZ ID (<code>use1-az1</code>).
-    /// 
+    /// Lists the Outposts for your Amazon Web Services account.
     /// 
     ///  
     /// <para>
-    /// If you specify multiple filters, the filters are joined with an <code>AND</code>,
-    /// and the request returns only results that match all of the specified filters.
+    /// Use filters to return specific results. If you specify multiple filters, the results
+    /// include only the resources that match all of the specified filters. For a filter where
+    /// you can specify multiple values, the results include items that match any of the values
+    /// that you specify for the filter.
     /// </para>
     /// </summary>
     public partial class ListOutpostsRequest : AmazonOutpostsRequest
@@ -52,13 +51,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZoneFilter. 
         /// <para>
-        ///  A filter for the Availability Zone (<code>us-east-1a</code>) of the Outpost. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Filter values are case sensitive. If you specify multiple values for a filter, the
-        /// values are joined with an <code>OR</code>, and the request returns all results that
-        /// match any of the specified values.
+        /// Filters the results by Availability Zone (for example, <code>us-east-1a</code>).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
@@ -77,13 +70,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZoneIdFilter. 
         /// <para>
-        ///  A filter for the AZ IDs (<code>use1-az1</code>) of the Outpost. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Filter values are case sensitive. If you specify multiple values for a filter, the
-        /// values are joined with an <code>OR</code>, and the request returns all results that
-        /// match any of the specified values.
+        /// Filters the results by AZ ID (for example, <code>use1-az1</code>).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
@@ -102,13 +89,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property LifeCycleStatusFilter. 
         /// <para>
-        ///  A filter for the lifecycle status of the Outpost. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Filter values are case sensitive. If you specify multiple values for a filter, the
-        /// values are joined with an <code>OR</code>, and the request returns all results that
-        /// match any of the specified values.
+        /// Filters the results by the lifecycle status.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]

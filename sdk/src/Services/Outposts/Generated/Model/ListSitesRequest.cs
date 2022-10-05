@@ -30,14 +30,15 @@ namespace Amazon.Outposts.Model
 {
     /// <summary>
     /// Container for the parameters to the ListSites operation.
-    /// Lists the Outpost sites for your Amazon Web Services account. Add operating address
-    /// filters to your request to return a more specific list of results. Use filters to
-    /// match site city, country code, or state/region of the operating address. 
+    /// Lists the Outpost sites for your Amazon Web Services account. Use filters to return
+    /// specific results.
     /// 
     ///  
     /// <para>
-    /// If you specify multiple filters, the filters are joined with an <code>AND</code>,
-    /// and the request returns only results that match all of the specified filters.
+    /// Use filters to return specific results. If you specify multiple filters, the results
+    /// include only the resources that match all of the specified filters. For a filter where
+    /// you can specify multiple values, the results include items that match any of the values
+    /// that you specify for the filter.
     /// </para>
     /// </summary>
     public partial class ListSitesRequest : AmazonOutpostsRequest
@@ -83,13 +84,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property OperatingAddressCityFilter. 
         /// <para>
-        ///  A filter for the city of the Outpost site. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Filter values are case sensitive. If you specify multiple values for a filter, the
-        /// values are joined with an <code>OR</code>, and the request returns all results that
-        /// match any of the specified values.
+        /// Filters the results by city.
         /// </para>
         /// </summary>
         public List<string> OperatingAddressCityFilter
@@ -107,13 +102,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property OperatingAddressCountryCodeFilter. 
         /// <para>
-        ///  A filter for the country code of the Outpost site. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Filter values are case sensitive. If you specify multiple values for a filter, the
-        /// values are joined with an <code>OR</code>, and the request returns all results that
-        /// match any of the specified values.
+        /// Filters the results by country code.
         /// </para>
         /// </summary>
         public List<string> OperatingAddressCountryCodeFilter
@@ -131,13 +120,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property OperatingAddressStateOrRegionFilter. 
         /// <para>
-        ///  A filter for the state/region of the Outpost site. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Filter values are case sensitive. If you specify multiple values for a filter, the
-        /// values are joined with an <code>OR</code>, and the request returns all results that
-        /// match any of the specified values.
+        /// Filters the results by state or region.
         /// </para>
         /// </summary>
         public List<string> OperatingAddressStateOrRegionFilter

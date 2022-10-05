@@ -36,7 +36,7 @@ namespace Amazon.Outposts.Model
     /// </para>
     ///  </note> 
     /// <para>
-    ///  Gets information about a specified connection. 
+    ///  Gets information about the specified connection. 
     /// </para>
     ///  
     /// <para>
@@ -54,7 +54,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property ConnectionId. 
         /// <para>
-        ///  The ID of the connection you request. 
+        ///  The ID of the connection. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

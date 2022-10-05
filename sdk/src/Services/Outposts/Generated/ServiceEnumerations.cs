@@ -75,6 +75,56 @@ namespace Amazon.Outposts
 
 
     /// <summary>
+    /// Constants used for properties of type AssetState.
+    /// </summary>
+    public class AssetState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for AssetState
+        /// </summary>
+        public static readonly AssetState ACTIVE = new AssetState("ACTIVE");
+        /// <summary>
+        /// Constant RETIRING for AssetState
+        /// </summary>
+        public static readonly AssetState RETIRING = new AssetState("RETIRING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssetState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssetState FindValue(string value)
+        {
+            return FindValue<AssetState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssetState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AssetType.
     /// </summary>
     public class AssetType : ConstantClass
@@ -214,6 +264,60 @@ namespace Amazon.Outposts
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CatalogItemStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ComputeAssetState.
+    /// </summary>
+    public class ComputeAssetState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ComputeAssetState
+        /// </summary>
+        public static readonly ComputeAssetState ACTIVE = new ComputeAssetState("ACTIVE");
+        /// <summary>
+        /// Constant ISOLATED for ComputeAssetState
+        /// </summary>
+        public static readonly ComputeAssetState ISOLATED = new ComputeAssetState("ISOLATED");
+        /// <summary>
+        /// Constant RETIRING for ComputeAssetState
+        /// </summary>
+        public static readonly ComputeAssetState RETIRING = new ComputeAssetState("RETIRING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ComputeAssetState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ComputeAssetState FindValue(string value)
+        {
+            return FindValue<ComputeAssetState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ComputeAssetState(string value)
         {
             return FindValue(value);
         }
@@ -692,6 +796,10 @@ namespace Amazon.Outposts
     public class PaymentTerm : ConstantClass
     {
 
+        /// <summary>
+        /// Constant ONE_YEAR for PaymentTerm
+        /// </summary>
+        public static readonly PaymentTerm ONE_YEAR = new PaymentTerm("ONE_YEAR");
         /// <summary>
         /// Constant THREE_YEARS for PaymentTerm
         /// </summary>

@@ -58,7 +58,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property AddressType. 
         /// <para>
-        ///  The type of the address you receive. 
+        /// The type of the address you receive. 
         /// </para>
         /// </summary>
         public AddressType AddressType

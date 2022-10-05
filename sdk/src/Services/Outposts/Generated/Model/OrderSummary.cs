@@ -62,7 +62,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property OrderFulfilledDate. 
         /// <para>
-        ///  Fulfilment date for the order. 
+        ///  The fulfilment date for the order. 
         /// </para>
         /// </summary>
         public DateTime OrderFulfilledDate
@@ -99,7 +99,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property OrderSubmissionDate. 
         /// <para>
-        ///  Submission date for the order. 
+        ///  The submission date for the order. 
         /// </para>
         /// </summary>
         public DateTime OrderSubmissionDate

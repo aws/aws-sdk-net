@@ -34,7 +34,7 @@ namespace Amazon.Outposts.Model
     /// 
     ///  
     /// <para>
-    /// You can specify <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code>.
+    /// You can specify either an Availability one or an AZ ID.
     /// </para>
     /// </summary>
     public partial class CreateOutpostRequest : AmazonOutpostsRequest
@@ -116,14 +116,6 @@ namespace Amazon.Outposts.Model
         /// <para>
         ///  The ID or the Amazon Resource Name (ARN) of the site. 
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// In requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or
-        /// an ID for Outposts and sites throughout the Outposts Query API. To address backwards
-        /// compatibility, the parameter names <code>OutpostID</code> or <code>SiteID</code> remain
-        /// in use. Despite the parameter name, you can make the request with an ARN.
-        /// </para>
-        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string SiteId

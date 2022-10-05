@@ -30,8 +30,7 @@ namespace Amazon.Outposts.Model
 {
     /// <summary>
     /// Container for the parameters to the ListOrders operation.
-    /// Lists the Outpost orders for your Amazon Web Services account. You can filter your
-    /// request by Outpost to return a more specific list of results.
+    /// Lists the Outpost orders for your Amazon Web Services account.
     /// </summary>
     public partial class ListOrdersRequest : AmazonOutpostsRequest
     {
