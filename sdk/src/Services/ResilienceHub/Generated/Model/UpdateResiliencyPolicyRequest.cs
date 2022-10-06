@@ -66,6 +66,12 @@ namespace Amazon.ResilienceHub.Model
         /// The type of resiliency policy to be created, including the recovery time objective
         /// (RTO) and recovery point objective (RPO) in seconds.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you do not want to specify regional targets for a regional policy, you must set
+        /// the values of <code>rpoInSecs</code> and <code>rtoInSecs</code> to <code>-1</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public Dictionary<string, FailurePolicy> Policy
         {
