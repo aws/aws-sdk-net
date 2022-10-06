@@ -1,3 +1,10 @@
+### 3.7.371.1 (2022-10-06 18:33 UTC)
+* ResilienceHub (3.7.1.61)
+	* Documentation change for AWS Resilience Hub. Doc-only update to fix Documentation layout
+* Core 3.7.13.17
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.371.0 (2022-10-05 18:21 UTC)
 * Glue (3.7.25.0)
 	* This SDK release adds support to sync glue jobs with source control provider. Additionally, a new parameter called SourceControlDetails will be added to Job model.
