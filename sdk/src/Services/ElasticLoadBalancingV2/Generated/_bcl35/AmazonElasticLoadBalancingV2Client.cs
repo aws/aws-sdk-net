@@ -2633,8 +2633,7 @@ namespace Amazon.ElasticLoadBalancingV2
         #region  SetIpAddressType
 
         /// <summary>
-        /// Sets the type of IP addresses used by the subnets of the specified Application Load
-        /// Balancer or Network Load Balancer.
+        /// Sets the type of IP addresses used by the subnets of the specified load balancer.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetIpAddressType service method.</param>
         /// 

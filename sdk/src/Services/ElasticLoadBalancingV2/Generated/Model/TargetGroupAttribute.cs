@@ -70,16 +70,16 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>lb_cookie</code> and <code>app_cookie</code> for Application Load Balancers
+        ///  <code>lb_cookie</code> and <code>app_cookie</code> for Application Load Balancers.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>source_ip</code> for Network Load Balancers
+        ///  <code>source_ip</code> for Network Load Balancers.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>source_ip_dest_ip</code> and <code>source_ip_dest_ip_proto</code> for Gateway
-        /// Load Balancers
+        /// Load Balancers.
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
@@ -119,6 +119,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// during which requests from a client should be routed to the same target. After this
         /// time period expires, the load balancer-generated cookie is considered stale. The range
         /// is 1 second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).
+        /// 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -156,7 +157,29 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <para>
         ///  <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version
         /// 2 is enabled. The value is <code>true</code> or <code>false</code>. The default is
-        /// <code>false</code>.
+        /// <code>false</code>. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The following attributes are supported only by Gateway Load Balancers:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>target_failover.on_deregistration</code> - Indicates how the Gateway Load Balancer
+        /// handles existing flows when a target is deregistered. The possible values are <code>rebalance</code>
+        /// and <code>no_rebalance</code>. The default is <code>no_rebalance</code>. The two attributes
+        /// (<code>target_failover.on_deregistration</code> and <code>target_failover.on_unhealthy</code>)
+        /// can't be set independently. The value you set for both attributes must be the same.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>target_failover.on_unhealthy</code> - Indicates how the Gateway Load Balancer
+        /// handles existing flows when a target is unhealthy. The possible values are <code>rebalance</code>
+        /// and <code>no_rebalance</code>. The default is <code>no_rebalance</code>. The two attributes
+        /// (<code>target_failover.on_deregistration</code> and <code>target_failover.on_unhealthy</code>)
+        /// cannot be set independently. The value you set for both attributes must be the same.
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
