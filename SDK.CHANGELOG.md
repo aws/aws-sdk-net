@@ -1,3 +1,16 @@
+### 3.7.372.0 (2022-10-07 18:23 UTC)
+* CodeGuruReviewer (3.7.6.70)
+	* Documentation update to replace broken link.
+* ElasticLoadBalancingV2 (3.7.3.139)
+	* Gateway Load Balancer adds a new feature (target_failover) for customers to rebalance existing flows to a healthy target after marked unhealthy or deregistered. This allows graceful patching/upgrades of target appliances during maintenance windows, and helps reduce unhealthy target failover time.
+* GreengrassV2 (3.7.7.0)
+	* This release adds error status details for deployments and components that failed on a device and adds features to improve visibility into component installation.
+* QuickSight (3.7.14.0)
+	* Amazon QuickSight now supports SecretsManager Secret ARN in place of CredentialPair for DataSource creation and update. This release also has some minor documentation updates and removes CountryCode as a required parameter in GeoSpatialColumnGroup
+* Core 3.7.13.18
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.371.1 (2022-10-06 18:33 UTC)
 * ResilienceHub (3.7.1.61)
 	* Documentation change for AWS Resilience Hub. Doc-only update to fix Documentation layout
