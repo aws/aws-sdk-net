@@ -421,6 +421,10 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GreengrassV2.Model.InstalledComponent.LastInstallationSource</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GreengrassV2.Model.InstalledComponent.LifecycleStateDetails</property>
     <min>1</min>
     <max>1000</max>

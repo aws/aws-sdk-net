@@ -43,6 +43,7 @@ namespace Amazon.GreengrassV2.Model
         private string _iotJobId;
         private DateTime? _modifiedTimestamp;
         private string _reason;
+        private EffectiveDeploymentStatusDetails _statusDetails;
         private string _targetArn;
 
         /// <summary>
@@ -213,6 +214,25 @@ namespace Amazon.GreengrassV2.Model
         internal bool IsSetReason()
         {
             return this._reason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusDetails. 
+        /// <para>
+        /// The status details that explain why a deployment has an error. This response will
+        /// be null if the deployment is in a success state.
+        /// </para>
+        /// </summary>
+        public EffectiveDeploymentStatusDetails StatusDetails
+        {
+            get { return this._statusDetails; }
+            set { this._statusDetails = value; }
+        }
+
+        // Check to see if StatusDetails property is set
+        internal bool IsSetStatusDetails()
+        {
+            return this._statusDetails != null;
         }
 
         /// <summary>

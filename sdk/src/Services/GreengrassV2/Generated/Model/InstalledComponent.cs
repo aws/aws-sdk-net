@@ -36,9 +36,12 @@ namespace Amazon.GreengrassV2.Model
         private string _componentName;
         private string _componentVersion;
         private bool? _isRoot;
+        private string _lastInstallationSource;
+        private DateTime? _lastReportedTimestamp;
         private DateTime? _lastStatusChangeTimestamp;
         private InstalledComponentLifecycleState _lifecycleState;
         private string _lifecycleStateDetails;
+        private List<string> _lifecycleStatusCodes = new List<string>();
 
         /// <summary>
         /// Gets and sets the property ComponentName. 
@@ -97,6 +100,50 @@ namespace Amazon.GreengrassV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LastInstallationSource. 
+        /// <para>
+        /// The most recent deployment source that brought the component to the Greengrass core
+        /// device. For a thing group deployment or thing deployment, the source will be the The
+        /// ID of the deployment. and for local deployments it will be <code>LOCAL</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public string LastInstallationSource
+        {
+            get { return this._lastInstallationSource; }
+            set { this._lastInstallationSource = value; }
+        }
+
+        // Check to see if LastInstallationSource property is set
+        internal bool IsSetLastInstallationSource()
+        {
+            return this._lastInstallationSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastReportedTimestamp. 
+        /// <para>
+        /// The last time the Greengrass core device sent a message containing a certain component
+        /// to the Amazon Web Services Cloud.
+        /// </para>
+        ///  
+        /// <para>
+        /// A component does not need to see a state change for this field to update.
+        /// </para>
+        /// </summary>
+        public DateTime LastReportedTimestamp
+        {
+            get { return this._lastReportedTimestamp.GetValueOrDefault(); }
+            set { this._lastReportedTimestamp = value; }
+        }
+
+        // Check to see if LastReportedTimestamp property is set
+        internal bool IsSetLastReportedTimestamp()
+        {
+            return this._lastReportedTimestamp.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property LastStatusChangeTimestamp. 
         /// <para>
         /// The status of how current the data is.
@@ -141,7 +188,8 @@ namespace Amazon.GreengrassV2.Model
         /// <summary>
         /// Gets and sets the property LifecycleStateDetails. 
         /// <para>
-        /// The details about the lifecycle state of the component.
+        /// A detailed response about the lifecycle state of the component that explains the reason
+        /// why a component has an error or is broken.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -155,6 +203,31 @@ namespace Amazon.GreengrassV2.Model
         internal bool IsSetLifecycleStateDetails()
         {
             return this._lifecycleStateDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LifecycleStatusCodes. 
+        /// <para>
+        /// The status codes that indicate the reason for failure whenever the <code>lifecycleState</code>
+        /// has an error or is in a broken state.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lifecycleStatusCodes</code>
+        /// response. This response can be inaccurate in earlier Greengrass nucleus versions.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public List<string> LifecycleStatusCodes
+        {
+            get { return this._lifecycleStatusCodes; }
+            set { this._lifecycleStatusCodes = value; }
+        }
+
+        // Check to see if LifecycleStatusCodes property is set
+        internal bool IsSetLifecycleStatusCodes()
+        {
+            return this._lifecycleStatusCodes != null && this._lifecycleStatusCodes.Count > 0; 
         }
 
     }

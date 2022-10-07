@@ -118,6 +118,12 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.Reason = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("statusDetails", targetDepth))
+                {
+                    var unmarshaller = EffectiveDeploymentStatusDetailsUnmarshaller.Instance;
+                    unmarshalledObject.StatusDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("targetArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
