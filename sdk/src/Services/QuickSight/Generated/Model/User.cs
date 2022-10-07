@@ -265,9 +265,10 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// The user's user name. In the output, the value for <code>UserName</code> is <code>N/A</code>
-        /// when the value for <code>IdentityType</code> is <code>IAM</code> and the corresponding
-        /// IAM user is deleted.
+        /// The user's user name. This value is required if you are registering a user that will
+        /// be managed in Amazon QuickSight. In the output, the value for <code>UserName</code>
+        /// is <code>N/A</code> when the value for <code>IdentityType</code> is <code>IAM</code>
+        /// and the corresponding IAM user is deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

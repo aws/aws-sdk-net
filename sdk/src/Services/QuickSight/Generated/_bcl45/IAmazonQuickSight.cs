@@ -8839,7 +8839,7 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Updates a dataset. This operation doesn't support datasets that include uploaded files
-        /// as a source.
+        /// as a source. Partial updates are not supported by this operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDataSet service method.</param>
         /// 
@@ -8881,7 +8881,7 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Updates a dataset. This operation doesn't support datasets that include uploaded files
-        /// as a source.
+        /// as a source. Partial updates are not supported by this operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDataSet service method.</param>
         /// <param name="cancellationToken">

@@ -36,6 +36,7 @@ namespace Amazon.QuickSight.Model
     {
         private string _copySourceArn;
         private CredentialPair _credentialPair;
+        private string _secretArn;
 
         /// <summary>
         /// Gets and sets the property CopySourceArn. 
@@ -75,6 +76,26 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetCredentialPair()
         {
             return this._credentialPair != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecretArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the secret associated with the data source in Amazon
+        /// Secrets Manager.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string SecretArn
+        {
+            get { return this._secretArn; }
+            set { this._secretArn = value; }
+        }
+
+        // Check to see if SecretArn property is set
+        internal bool IsSetSecretArn()
+        {
+            return this._secretArn != null;
         }
 
     }
