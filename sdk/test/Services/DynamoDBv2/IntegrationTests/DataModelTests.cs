@@ -18,7 +18,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
     {
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public void TestContext()
+        public void TestContextWithEmptyStringEnabled()
         {
             // It is a known bug that this test currently fails due to an AOT-compilation
             // issue, on iOS using mono2x.
@@ -30,9 +30,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 CleanupTables();
 
                 // Recreate context
-                CreateContext(conversion, true);
+                bool isEmptyStringEnabled = true;
+                CreateContext(conversion, isEmptyStringEnabled);
 
-                TestEmptyString();
+                TestEmptyStringsWithFeatureEnabled();
 
                 TestEnumHashKeyObjects();
 
@@ -51,7 +52,26 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             }
         }
 
-        private static void TestEmptyString()
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void TestContextWithEmptyStringDisabled()
+        {
+            // It is a known bug that this test currently fails due to an AOT-compilation
+            // issue, on iOS using mono2x.
+
+            TableCache.Clear();
+
+            // Cleanup existing data
+            CleanupTables();
+
+            // Recreate context
+            bool isEmptyStringEnabled = false;
+            CreateContext(DynamoDBEntryConversion.V2, isEmptyStringEnabled);
+
+            TestEmptyStringsWithFeatureDisabled();
+        }
+
+        private static void TestEmptyStringsWithFeatureEnabled()
         {
             var product = new Product
             {
@@ -84,6 +104,60 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.AreEqual(string.Empty, savedProduct.Map["Position"]);
             Assert.AreEqual(string.Empty, savedProduct.Components[0]);
             Assert.AreEqual(string.Empty, savedProduct.CompanyInfo.AllProducts[0].Name);
+        }
+
+        private static void TestEmptyStringsWithFeatureDisabled()
+        {
+            var product1 = new Product
+            {
+                Id = 1,
+                Name = string.Empty, // S
+                Components = new List<string> // L
+                {
+                    string.Empty
+                }
+            };
+
+            Context.Save(product1);
+            var savedProduct1 = Context.Load<Product>(1);
+
+            Assert.AreEqual(1, savedProduct1.Id);
+            Assert.AreEqual(0, savedProduct1.Components.Count());
+            Assert.AreEqual(null, savedProduct1.Name);
+
+
+            var product2 = new Product
+            {
+                Id = 2,
+                Components = new List<string> // L
+                {
+                    string.Empty, "test2"
+                }
+            };
+
+            Context.Save(product2);
+            var savedProduct2 = Context.Load<Product>(2);
+
+            Assert.AreEqual(2, savedProduct2.Id);
+            Assert.AreEqual(1, savedProduct2.Components.Count());
+            Assert.AreEqual("test2", savedProduct2.Components[0]);
+
+
+            var product3 = new Product
+            {
+                Id = 3,
+                Components = new List<string> // L
+                {
+                    string.Empty, "test3", string.Empty
+                }
+            };
+
+            Context.Save(product3);
+            var savedProduct3 = Context.Load<Product>(3);
+
+            Assert.AreEqual(3, savedProduct3.Id);
+            Assert.AreEqual(1, savedProduct3.Components.Count());
+            Assert.AreEqual("test3", savedProduct3.Components[0]);
         }
 
         private static void TestUnsupportedTypes()
