@@ -44,7 +44,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property FileSystemId. 
         /// <para>
-        /// The ID of the file system, assigned by Amazon EFS.
+        /// The identifier of the file system, assigned by Amazon EFS.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]

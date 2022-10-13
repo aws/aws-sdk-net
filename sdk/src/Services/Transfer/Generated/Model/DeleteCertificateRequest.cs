@@ -39,7 +39,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property CertificateId. 
         /// <para>
-        /// The ID of the certificate object that you are deleting.
+        /// The identifier of the certificate object that you are deleting.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=22, Max=22)]

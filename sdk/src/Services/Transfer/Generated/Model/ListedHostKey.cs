@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Transfer.Model
 {
     /// <summary>
-    /// Returns properties of the host key that is specified.
+    /// Returns properties of the host key that's specified.
     /// </summary>
     public partial class ListedHostKey
     {
@@ -43,7 +43,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// Specifies the unique Amazon Resource Name (ARN) of the host key.
+        /// The unique Amazon Resource Name (ARN) of the host key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=1600)]
@@ -117,7 +117,10 @@ namespace Amazon.Transfer.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HostKeyId.
+        /// Gets and sets the property HostKeyId. 
+        /// <para>
+        /// A unique identifier for the host key.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=25, Max=25)]
         public string HostKeyId
@@ -135,28 +138,28 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The encryption algorithm used for the host key. The <code>Type</code> is one of the
-        /// following values:
+        /// The encryption algorithm that is used for the host key. The <code>Type</code> parameter
+        /// is specified by using one of the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// ssh-rsa
+        ///  <code>ssh-rsa</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ssh-ed25519
+        ///  <code>ssh-ed25519</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ecdsa-sha2-nistp256 
+        ///  <code>ecdsa-sha2-nistp256</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ecdsa-sha2-nistp384
+        ///  <code>ecdsa-sha2-nistp384</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ecdsa-sha2-nistp521
+        ///  <code>ecdsa-sha2-nistp521</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

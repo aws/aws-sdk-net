@@ -453,8 +453,9 @@ namespace Amazon.Transfer
 
         /// <summary>
         /// Creates the connector, which captures the parameters for an outbound connection for
-        /// the AS2 protocol. The connector is required for sending files from a customer's non
-        /// Amazon Web Services server.
+        /// the AS2 protocol. The connector is required for sending files to an externally hosted
+        /// AS2 server. For more details about connectors, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html#configure-as2-connector">Create
+        /// AS2 connectors</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateConnector service method.</param>
         /// 
@@ -490,8 +491,9 @@ namespace Amazon.Transfer
 
         /// <summary>
         /// Creates the connector, which captures the parameters for an outbound connection for
-        /// the AS2 protocol. The connector is required for sending files from a customer's non
-        /// Amazon Web Services server.
+        /// the AS2 protocol. The connector is required for sending files to an externally hosted
+        /// AS2 server. For more details about connectors, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html#configure-as2-connector">Create
+        /// AS2 connectors</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateConnector service method.</param>
         /// <param name="cancellationToken">
@@ -533,8 +535,7 @@ namespace Amazon.Transfer
 
 
         /// <summary>
-        /// Creates the profile for the AS2 process. The agreement is between the partner and
-        /// the AS2 process.
+        /// Creates the local or partner profile to use for AS2 transfers.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProfile service method.</param>
         /// 
@@ -566,8 +567,7 @@ namespace Amazon.Transfer
 
 
         /// <summary>
-        /// Creates the profile for the AS2 process. The agreement is between the partner and
-        /// the AS2 process.
+        /// Creates the local or partner profile to use for AS2 transfers.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProfile service method.</param>
         /// <param name="cancellationToken">
@@ -2549,7 +2549,7 @@ namespace Amazon.Transfer
 
 
         /// <summary>
-        /// Adds a host key to the server specified by the <code>ServerId</code> parameter.
+        /// Adds a host key to the server that's specified by the <code>ServerId</code> parameter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportHostKey service method.</param>
         /// 
@@ -2587,7 +2587,7 @@ namespace Amazon.Transfer
 
 
         /// <summary>
-        /// Adds a host key to the server specified by the <code>ServerId</code> parameter.
+        /// Adds a host key to the server that's specified by the <code>ServerId</code> parameter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportHostKey service method.</param>
         /// <param name="cancellationToken">
@@ -3132,8 +3132,8 @@ namespace Amazon.Transfer
 
 
         /// <summary>
-        /// Returns a list of host keys for the server specified by the <code>ServerId</code>
-        /// paramter.
+        /// Returns a list of host keys for the server that's specified by the <code>ServerId</code>
+        /// parameter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHostKeys service method.</param>
         /// 
@@ -3168,8 +3168,8 @@ namespace Amazon.Transfer
 
 
         /// <summary>
-        /// Returns a list of host keys for the server specified by the <code>ServerId</code>
-        /// paramter.
+        /// Returns a list of host keys for the server that's specified by the <code>ServerId</code>
+        /// parameter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHostKeys service method.</param>
         /// <param name="cancellationToken">
@@ -3752,8 +3752,8 @@ namespace Amazon.Transfer
 
 
         /// <summary>
-        /// Begins an outbound file transfer. You specify the <code>ConnectorId</code> and the
-        /// file paths for where to send the files.
+        /// Begins an outbound file transfer to a remote AS2 server. You specify the <code>ConnectorId</code>
+        /// and the file paths for where to send the files.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartFileTransfer service method.</param>
         /// 
@@ -3788,8 +3788,8 @@ namespace Amazon.Transfer
 
 
         /// <summary>
-        /// Begins an outbound file transfer. You specify the <code>ConnectorId</code> and the
-        /// file paths for where to send the files.
+        /// Begins an outbound file transfer to a remote AS2 server. You specify the <code>ConnectorId</code>
+        /// and the file paths for where to send the files.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartFileTransfer service method.</param>
         /// <param name="cancellationToken">
@@ -4684,7 +4684,7 @@ namespace Amazon.Transfer
 
 
         /// <summary>
-        /// Updates the description for the host key specified by the specified by the <code>ServerId</code>
+        /// Updates the description for the host key that's specified by the <code>ServerId</code>
         /// and <code>HostKeyId</code> parameters.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateHostKey service method.</param>
@@ -4720,7 +4720,7 @@ namespace Amazon.Transfer
 
 
         /// <summary>
-        /// Updates the description for the host key specified by the specified by the <code>ServerId</code>
+        /// Updates the description for the host key that's specified by the <code>ServerId</code>
         /// and <code>HostKeyId</code> parameters.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateHostKey service method.</param>

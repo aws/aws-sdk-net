@@ -212,7 +212,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property HostKey. 
         /// <para>
-        /// The RSA, ECDSA, or ED25519 private key to use for your server.
+        /// The RSA, ECDSA, or ED25519 private key to use for your SFTP-enabled server. You can
+        /// add multiple host keys, in case you want to rotate keys, or have a set of active keys
+        /// that use different algorithms.
         /// </para>
         ///  
         /// <para>
@@ -260,8 +262,8 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  </important> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-        /// the host key for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Update
+        /// host keys for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4096)]
@@ -569,6 +571,12 @@ namespace Amazon.Transfer.Model
         /// <para>
         /// Specifies the workflow ID for the workflow to assign and the execution role that's
         /// used for executing the workflow.
+        /// </para>
+        ///  
+        /// <para>
+        /// In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code>
+        /// can also contain a workflow ID (and execution role) for a workflow to execute on partial
+        /// upload. A partial upload occurs when a file is open when the session disconnects.
         /// </para>
         /// </summary>
         public WorkflowDetails WorkflowDetails

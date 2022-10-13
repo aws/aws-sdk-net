@@ -30,8 +30,8 @@ namespace Amazon.Transfer.Model
 {
     /// <summary>
     /// Container for the parameters to the ListHostKeys operation.
-    /// Returns a list of host keys for the server specified by the <code>ServerId</code>
-    /// paramter.
+    /// Returns a list of host keys for the server that's specified by the <code>ServerId</code>
+    /// parameter.
     /// </summary>
     public partial class ListHostKeysRequest : AmazonTransferRequest
     {
@@ -82,7 +82,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property ServerId. 
         /// <para>
-        /// Provide the ID of the server that contains the host keys that you want to view.
+        /// The identifier of the server that contains the host keys that you want to view.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=19)]

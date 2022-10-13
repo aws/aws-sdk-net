@@ -39,8 +39,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property ExternalId. 
         /// <para>
-        /// The external ID of the group whose users have access to your Amazon S3 or Amazon EFS
-        /// resources over the enabled protocols using Transfer Family.
+        /// The external identifier of the group whose users have access to your Amazon S3 or
+        /// Amazon EFS resources over the enabled protocols using Transfer Family.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -59,7 +59,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property ServerId. 
         /// <para>
-        /// The ID of the server that the user is attached to.
+        /// The identifier of the server that the user is attached to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=19)]

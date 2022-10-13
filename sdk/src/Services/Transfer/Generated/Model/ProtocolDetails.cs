@@ -66,13 +66,12 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code> aws transfer update-server --protocol-details PassiveIp=<i>0.0.0.0</i> </code>
-        /// 
+        ///  <code>aws transfer update-server --protocol-details PassiveIp=0.0.0.0</code> 
         /// </para>
         ///  
         /// <para>
-        /// Replace <code> <i>0.0.0.0</i> </code> in the example above with the actual IP address
-        /// you want to use.
+        /// Replace <code>0.0.0.0</code> in the example above with the actual IP address you want
+        /// to use.
         /// </para>
         ///  <note> 
         /// <para>
@@ -81,7 +80,26 @@ namespace Amazon.Transfer.Model
         /// mode (PASV) in a NAT environment, see <a href="http://aws.amazon.com/blogs/storage/configuring-your-ftps-server-behind-a-firewall-or-nat-with-aws-transfer-family/">Configuring
         /// your FTPS server behind a firewall or NAT with Transfer Family</a>. 
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        ///  <i>Special values</i> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>AUTO</code> and <code>0.0.0.0</code> are special values for the <code>PassiveIp</code>
+        /// parameter. The value <code>PassiveIp=AUTO</code> is assigned by default to FTP and
+        /// FTPS type servers. In this case, the server automatically responds with one of the
+        /// endpoint IPs within the PASV response. <code>PassiveIp=0.0.0.0</code> has a more unique
+        /// application for its usage. For example, if you have a High Availability (HA) Network
+        /// Load Balancer (NLB) environment, where you have 3 subnets, you can only specify a
+        /// single IP address using the <code>PassiveIp</code> parameter. This reduces the effectiveness
+        /// of having High Availability. In this case, you can specify <code>PassiveIp=0.0.0.0</code>.
+        /// This tells the client to use the same IP address as the Control connection and utilize
+        /// all AZs for their connections. Note, however, that not all FTP clients support the
+        /// <code>PassiveIp=0.0.0.0</code> response. FileZilla and WinSCP do support it. If you
+        /// are using other clients, check to see if your client supports the <code>PassiveIp=0.0.0.0</code>
+        /// response.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=15)]
         public string PassiveIp

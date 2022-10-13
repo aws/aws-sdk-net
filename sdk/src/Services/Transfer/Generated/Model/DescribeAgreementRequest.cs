@@ -60,7 +60,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property ServerId. 
         /// <para>
-        /// The server ID that's associated with the agreement.
+        /// The server identifier that's associated with the agreement.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=19)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Transfer.Model
 {
     /// <summary>
-    /// The details for a local or partner AS2 profile. profile.
+    /// The details for a local or partner AS2 profile.
     /// </summary>
     public partial class DescribedProfile
     {

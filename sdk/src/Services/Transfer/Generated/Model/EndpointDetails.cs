@@ -139,7 +139,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property VpcEndpointId. 
         /// <para>
-        /// The ID of the VPC endpoint.
+        /// The identifier of the VPC endpoint.
         /// </para>
         ///  <note> 
         /// <para>
@@ -167,7 +167,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        /// The VPC ID of the VPC in which a server's endpoint will be hosted.
+        /// The VPC identifier of the VPC in which a server's endpoint will be hosted.
         /// </para>
         ///  <note> 
         /// <para>

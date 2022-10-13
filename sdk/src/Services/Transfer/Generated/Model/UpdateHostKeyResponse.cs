@@ -39,7 +39,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property HostKeyId. 
         /// <para>
-        /// Returns the host key ID for the updated host key.
+        /// Returns the host key identifier for the updated host key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=25, Max=25)]
@@ -58,7 +58,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property ServerId. 
         /// <para>
-        /// Returns the server ID for the server that contains the updated host key.
+        /// Returns the server identifier for the server that contains the updated host key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=19)]

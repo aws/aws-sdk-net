@@ -30,7 +30,7 @@ namespace Amazon.Transfer.Model
 {
     /// <summary>
     /// Container for the parameters to the ImportHostKey operation.
-    /// Adds a host key to the server specified by the <code>ServerId</code> parameter.
+    /// Adds a host key to the server that's specified by the <code>ServerId</code> parameter.
     /// </summary>
     public partial class ImportHostKeyRequest : AmazonTransferRequest
     {
@@ -42,7 +42,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Enter a text description to identify this host key.
+        /// The text description that identifies this host key.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
@@ -84,7 +84,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property ServerId. 
         /// <para>
-        /// Provide the ID of the server that contains the host key that you are importing.
+        /// The identifier of the server that contains the host key that you are importing.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=19)]

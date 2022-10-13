@@ -60,7 +60,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property ServerId. 
         /// <para>
-        /// The server ID associated with the agreement that you are deleting.
+        /// The server identifier associated with the agreement that you are deleting.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=19)]

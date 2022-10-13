@@ -79,7 +79,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property ServerId. 
         /// <para>
-        /// Returns the server ID that contains the listed host keys.
+        /// Returns the server identifier that contains the listed host keys.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=19)]

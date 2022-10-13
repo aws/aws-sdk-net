@@ -157,28 +157,28 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The encryption algorithm used for the host key. The <code>Type</code> is one of the
-        /// following values:
+        /// The encryption algorithm that is used for the host key. The <code>Type</code> parameter
+        /// is specified by using one of the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// ssh-rsa
+        ///  <code>ssh-rsa</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ssh-ed25519
+        ///  <code>ssh-ed25519</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ecdsa-sha2-nistp256 
+        ///  <code>ecdsa-sha2-nistp256</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ecdsa-sha2-nistp384
+        ///  <code>ecdsa-sha2-nistp384</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ecdsa-sha2-nistp521
+        ///  <code>ecdsa-sha2-nistp521</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

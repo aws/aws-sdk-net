@@ -34,7 +34,32 @@ namespace Amazon.Transfer.Model
     /// </summary>
     public partial class WorkflowDetails
     {
+        private List<WorkflowDetail> _onPartialUpload = new List<WorkflowDetail>();
         private List<WorkflowDetail> _onUpload = new List<WorkflowDetail>();
+
+        /// <summary>
+        /// Gets and sets the property OnPartialUpload. 
+        /// <para>
+        /// A trigger that starts a workflow if a file is only partially uploaded. You can attach
+        /// a workflow to a server that executes whenever there is a partial upload.
+        /// </para>
+        ///  
+        /// <para>
+        /// A <i>partial upload</i> occurs when a file is open when the session disconnects.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public List<WorkflowDetail> OnPartialUpload
+        {
+            get { return this._onPartialUpload; }
+            set { this._onPartialUpload = value; }
+        }
+
+        // Check to see if OnPartialUpload property is set
+        internal bool IsSetOnPartialUpload()
+        {
+            return this._onPartialUpload != null && this._onPartialUpload.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property OnUpload. 
@@ -52,7 +77,7 @@ namespace Amazon.Transfer.Model
         /// '{"OnUpload":[]}'</code> 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=1)]
+        [AWSProperty(Max=1)]
         public List<WorkflowDetail> OnUpload
         {
             get { return this._onUpload; }

@@ -30,8 +30,7 @@ namespace Amazon.Transfer.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateProfile operation.
-    /// Creates the profile for the AS2 process. The agreement is between the partner and
-    /// the AS2 process.
+    /// Creates the local or partner profile to use for AS2 transfers.
     /// </summary>
     public partial class CreateProfileRequest : AmazonTransferRequest
     {
@@ -85,9 +84,19 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property ProfileType. 
         /// <para>
-        /// Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code>
-        /// type profiles. If not supplied in the request, the command lists all types of profiles.
+        /// Determines the type of profile to create:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Specify <code>LOCAL</code> to create a local profile. A local profile represents the
+        /// AS2-enabled Transfer Family server organization or party.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Specify <code>PARTNER</code> to create a partner profile. A partner profile represents
+        /// a remote organization, external to Transfer Family.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public ProfileType ProfileType

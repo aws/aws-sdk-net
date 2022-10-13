@@ -30,7 +30,7 @@ namespace Amazon.Transfer.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateHostKey operation.
-    /// Updates the description for the host key specified by the specified by the <code>ServerId</code>
+    /// Updates the description for the host key that's specified by the <code>ServerId</code>
     /// and <code>HostKeyId</code> parameters.
     /// </summary>
     public partial class UpdateHostKeyRequest : AmazonTransferRequest
@@ -42,7 +42,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Provide an updated description for the host key.
+        /// An updated description for the host key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=200)]
@@ -61,7 +61,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property HostKeyId. 
         /// <para>
-        /// Provide the ID of the host key that you are updating.
+        /// The identifier of the host key that you are updating.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=25, Max=25)]
@@ -80,7 +80,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property ServerId. 
         /// <para>
-        /// Provide the ID of the server that contains the host key that you are updating.
+        /// The identifier of the server that contains the host key that you are updating.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=19)]
