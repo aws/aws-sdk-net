@@ -1,3 +1,42 @@
+### 3.7.373.0 (2022-10-13 18:34 UTC)
+* AmplifyUIBuilder (3.7.4.0)
+	* We are releasing the ability for fields to be configured as arrays.
+* Appflow (3.7.10.0)
+	* With this update, you can choose which Salesforce API is used by Amazon AppFlow to transfer data to or from your Salesforce account. You can choose the Salesforce REST API or Bulk API 2.0. You can also choose for Amazon AppFlow to pick the API automatically.
+* Connect (3.7.26.0)
+	* This release adds support for a secondary email and a mobile number for Amazon Connect instance users.
+* ConnectWisdomService (3.7.3.0)
+	* This release updates the GetRecommendations API to include a trigger event list for classifying and grouping recommendations.
+* DirectoryService (3.7.3.0)
+	* This release adds support for describing and updating AWS Managed Microsoft AD set up.
+* ECS (3.7.5.93)
+	* Documentation update to address tickets.
+* GuardDuty (3.7.5.0)
+	* Add UnprocessedDataSources to CreateDetectorResponse which specifies the data sources that couldn't be enabled during the CreateDetector request. In addition, update documentations.
+* IdentityManagement (3.7.2.202)
+	* Documentation updates for the AWS Identity and Access Management API Reference.
+* IoTFleetWise (3.7.0.9)
+	* Documentation update for AWS IoT FleetWise
+* MediaLive (3.7.13.0)
+	* AWS Elemental MediaLive now supports forwarding SCTE-35 messages through the Event Signaling and Management (ESAM) API, and can read those SCTE-35 messages from an inactive source.
+* MediaPackageVod (3.7.6.0)
+	* This release adds SPEKE v2 support for MediaPackage VOD. Speke v2 is an upgrade to the existing SPEKE API to support multiple encryption keys, based on an encryption contract selected by the customer.
+* Panorama (3.7.4.0)
+	* Pause and resume camera stream processing with SignalApplicationInstanceNodeInstances. Reboot an appliance with CreateJobForDevices. More application state information in DescribeApplicationInstance response.
+* RDSDataService (3.7.1.72)
+	* Doc update to reflect no support for schema parameter on BatchExecuteStatement API
+* SimpleSystemsManagement (3.7.21.0)
+	* Support of AmazonLinux2022 by Patch Manager
+* SSMIncidents (3.7.7.0)
+	* Update RelatedItem enum to support Tasks
+* Transfer (3.7.15.0)
+	* This release adds an option for customers to configure workflows that are triggered when files are only partially received from a client due to premature session disconnect.
+* Translate (3.7.6.6)
+	* This release enables customers to specify multiple target languages in asynchronous batch translation requests.
+* Core 3.7.13.19
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.372.0 (2022-10-07 18:23 UTC)
 * CodeGuruReviewer (3.7.6.70)
 	* Documentation update to replace broken link.
