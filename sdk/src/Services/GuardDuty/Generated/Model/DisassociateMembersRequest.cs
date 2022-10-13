@@ -30,8 +30,8 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateMembers operation.
-    /// Disassociates GuardDuty member accounts (to the current GuardDuty administrator account)
-    /// specified by the account IDs.
+    /// Disassociates GuardDuty member accounts (to the current administrator account) specified
+    /// by the account IDs.
     /// </summary>
     public partial class DisassociateMembersRequest : AmazonGuardDutyRequest
     {

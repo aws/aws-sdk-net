@@ -33,7 +33,27 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class EbsVolumesResult
     {
+        private string _reason;
         private DataSourceStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property Reason. 
+        /// <para>
+        /// Specifies the reason why scanning EBS volumes (Malware Protection) was not enabled
+        /// as a data source.
+        /// </para>
+        /// </summary>
+        public string Reason
+        {
+            get { return this._reason; }
+            set { this._reason = value; }
+        }
+
+        // Check to see if Reason property is set
+        internal bool IsSetReason()
+        {
+            return this._reason != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Status. 

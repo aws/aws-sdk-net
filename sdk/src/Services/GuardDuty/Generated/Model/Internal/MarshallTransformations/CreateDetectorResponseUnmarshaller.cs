@@ -57,6 +57,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     response.DetectorId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("unprocessedDataSources", targetDepth))
+                {
+                    var unmarshaller = UnprocessedDataSourcesResultUnmarshaller.Instance;
+                    response.UnprocessedDataSources = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

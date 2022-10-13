@@ -44,7 +44,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property CloudTrail. 
         /// <para>
-        /// Describes whether any AWS CloudTrail management event logs are enabled as data sources.
+        /// Describes whether any Amazon Web Services CloudTrail management event logs are enabled
+        /// as data sources.
         /// </para>
         /// </summary>
         public DataSourceFreeTrial CloudTrail

@@ -39,13 +39,14 @@ namespace Amazon.GuardDuty
     /// Implementation for accessing GuardDuty
     ///
     /// Amazon GuardDuty is a continuous security monitoring service that analyzes and processes
-    /// the following data sources: VPC Flow Logs, AWS CloudTrail management event logs, CloudTrail
-    /// S3 data event logs, EKS audit logs, and DNS logs. It uses threat intelligence feeds
-    /// (such as lists of malicious IPs and domains) and machine learning to identify unexpected,
-    /// potentially unauthorized, and malicious activity within your Amazon Web Services environment.
-    /// This can include issues like escalations of privileges, uses of exposed credentials,
-    /// or communication with malicious IPs, URLs, or domains. For example, GuardDuty can
-    /// detect compromised EC2 instances that serve malware or mine bitcoin. 
+    /// the following data sources: VPC flow logs, Amazon Web Services CloudTrail management
+    /// event logs, CloudTrail S3 data event logs, EKS audit logs, and DNS logs. It uses threat
+    /// intelligence feeds (such as lists of malicious IPs and domains) and machine learning
+    /// to identify unexpected, potentially unauthorized, and malicious activity within your
+    /// Amazon Web Services environment. This can include issues like escalations of privileges,
+    /// uses of exposed credentials, or communication with malicious IPs, URLs, or domains.
+    /// For example, GuardDuty can detect compromised EC2 instances that serve malware or
+    /// mine bitcoin. 
     /// 
     ///  
     /// <para>
@@ -1316,7 +1317,9 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Returns a list of malware scans.
+        /// Returns a list of malware scans. Each member account can view the malware scans for
+        /// their own accounts. An administrator can view the malware scans for all the member
+        /// accounts.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMalwareScans service method.</param>
         /// 
@@ -1339,7 +1342,9 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Returns a list of malware scans.
+        /// Returns a list of malware scans. Each member account can view the malware scans for
+        /// their own accounts. An administrator can view the malware scans for all the member
+        /// accounts.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMalwareScans service method.</param>
         /// <param name="cancellationToken">
@@ -1640,8 +1645,8 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Disassociates GuardDuty member accounts (to the current GuardDuty administrator account)
-        /// specified by the account IDs.
+        /// Disassociates GuardDuty member accounts (to the current administrator account) specified
+        /// by the account IDs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateMembers service method.</param>
         /// 
@@ -1664,8 +1669,8 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Disassociates GuardDuty member accounts (to the current GuardDuty administrator account)
-        /// specified by the account IDs.
+        /// Disassociates GuardDuty member accounts (to the current administrator account) specified
+        /// by the account IDs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateMembers service method.</param>
         /// <param name="cancellationToken">

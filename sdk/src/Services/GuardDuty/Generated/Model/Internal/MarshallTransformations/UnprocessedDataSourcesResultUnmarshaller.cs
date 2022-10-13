@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for EbsVolumesResult Object
+    /// Response Unmarshaller for UnprocessedDataSourcesResult Object
     /// </summary>  
-    public class EbsVolumesResultUnmarshaller : IUnmarshaller<EbsVolumesResult, XmlUnmarshallerContext>, IUnmarshaller<EbsVolumesResult, JsonUnmarshallerContext>
+    public class UnprocessedDataSourcesResultUnmarshaller : IUnmarshaller<UnprocessedDataSourcesResult, XmlUnmarshallerContext>, IUnmarshaller<UnprocessedDataSourcesResult, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        EbsVolumesResult IUnmarshaller<EbsVolumesResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        UnprocessedDataSourcesResult IUnmarshaller<UnprocessedDataSourcesResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,21 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public EbsVolumesResult Unmarshall(JsonUnmarshallerContext context)
+        public UnprocessedDataSourcesResult Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            EbsVolumesResult unmarshalledObject = new EbsVolumesResult();
+            UnprocessedDataSourcesResult unmarshalledObject = new UnprocessedDataSourcesResult();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("reason", targetDepth))
+                if (context.TestExpression("malwareProtection", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Reason = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    var unmarshaller = MalwareProtectionConfigurationResultUnmarshaller.Instance;
+                    unmarshalledObject.MalwareProtection = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +76,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         }
 
 
-        private static EbsVolumesResultUnmarshaller _instance = new EbsVolumesResultUnmarshaller();        
+        private static UnprocessedDataSourcesResultUnmarshaller _instance = new UnprocessedDataSourcesResultUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EbsVolumesResultUnmarshaller Instance
+        public static UnprocessedDataSourcesResultUnmarshaller Instance
         {
             get
             {
