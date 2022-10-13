@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Panorama.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeDeviceJob operation
+    /// Response Unmarshaller for SignalApplicationInstanceNodeInstances operation
     /// </summary>  
-    public class DescribeDeviceJobResponseUnmarshaller : JsonResponseUnmarshaller
+    public class SignalApplicationInstanceNodeInstancesResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,64 +45,16 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeDeviceJobResponse response = new DescribeDeviceJobResponse();
+            SignalApplicationInstanceNodeInstancesResponse response = new SignalApplicationInstanceNodeInstancesResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CreatedTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CreatedTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DeviceArn", targetDepth))
+                if (context.TestExpression("ApplicationInstanceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.DeviceArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DeviceId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DeviceId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DeviceName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DeviceName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DeviceType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DeviceType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ImageVersion", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ImageVersion = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("JobId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.JobId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("JobType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.JobType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Status = unmarshaller.Unmarshall(context);
+                    response.ApplicationInstanceId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -132,17 +84,13 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
-                {
-                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceQuotaExceededException"))
                 {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ServiceQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
                 {
@@ -152,9 +100,9 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
             return new AmazonPanoramaException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DescribeDeviceJobResponseUnmarshaller _instance = new DescribeDeviceJobResponseUnmarshaller();        
+        private static SignalApplicationInstanceNodeInstancesResponseUnmarshaller _instance = new SignalApplicationInstanceNodeInstancesResponseUnmarshaller();        
 
-        internal static DescribeDeviceJobResponseUnmarshaller GetInstance()
+        internal static SignalApplicationInstanceNodeInstancesResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -162,7 +110,7 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeDeviceJobResponseUnmarshaller Instance
+        public static SignalApplicationInstanceNodeInstancesResponseUnmarshaller Instance
         {
             get
             {

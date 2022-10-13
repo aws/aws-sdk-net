@@ -37,6 +37,7 @@ namespace Amazon.Panorama.Model
         private string _deviceId;
         private string _deviceName;
         private string _jobId;
+        private JobType _jobType;
 
         /// <summary>
         /// Gets and sets the property CreatedTime. 
@@ -111,6 +112,24 @@ namespace Amazon.Panorama.Model
         internal bool IsSetJobId()
         {
             return this._jobId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobType. 
+        /// <para>
+        /// The job's type.
+        /// </para>
+        /// </summary>
+        public JobType JobType
+        {
+            get { return this._jobType; }
+            set { this._jobType = value; }
+        }
+
+        // Check to see if JobType property is set
+        internal bool IsSetJobType()
+        {
+            return this._jobType != null;
         }
 
     }

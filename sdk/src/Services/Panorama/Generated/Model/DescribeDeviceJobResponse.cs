@@ -40,6 +40,7 @@ namespace Amazon.Panorama.Model
         private DeviceType _deviceType;
         private string _imageVersion;
         private string _jobId;
+        private JobType _jobType;
         private UpdateProgress _status;
 
         /// <summary>
@@ -171,6 +172,24 @@ namespace Amazon.Panorama.Model
         internal bool IsSetJobId()
         {
             return this._jobId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobType. 
+        /// <para>
+        /// The job's type.
+        /// </para>
+        /// </summary>
+        public JobType JobType
+        {
+            get { return this._jobType; }
+            set { this._jobType = value; }
+        }
+
+        // Check to see if JobType property is set
+        internal bool IsSetJobType()
+        {
+            return this._jobType != null;
         }
 
         /// <summary>

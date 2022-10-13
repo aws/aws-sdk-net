@@ -30,7 +30,8 @@ namespace Amazon.Panorama.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateJobForDevices operation.
-    /// Creates a job to run on one or more devices.
+    /// Creates a job to run on one or more devices. A job can update a device's software
+    /// or reboot it.
     /// </summary>
     public partial class CreateJobForDevicesRequest : AmazonPanoramaRequest
     {
@@ -60,10 +61,9 @@ namespace Amazon.Panorama.Model
         /// <summary>
         /// Gets and sets the property DeviceJobConfig. 
         /// <para>
-        /// Configuration settings for the job.
+        /// Configuration settings for a software update job.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public DeviceJobConfig DeviceJobConfig
         {
             get { return this._deviceJobConfig; }

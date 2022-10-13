@@ -329,7 +329,8 @@ namespace Amazon.Panorama
 
 
         /// <summary>
-        /// Creates a job to run on one or more devices.
+        /// Creates a job to run on one or more devices. A job can update a device's software
+        /// or reboot it.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateJobForDevices service method.</param>
         /// <param name="cancellationToken">
@@ -1674,6 +1675,52 @@ namespace Amazon.Panorama
             options.ResponseUnmarshaller = RemoveApplicationInstanceResponseUnmarshaller.Instance;
 
             return InvokeAsync<RemoveApplicationInstanceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SignalApplicationInstanceNodeInstances
+
+        internal virtual SignalApplicationInstanceNodeInstancesResponse SignalApplicationInstanceNodeInstances(SignalApplicationInstanceNodeInstancesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SignalApplicationInstanceNodeInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SignalApplicationInstanceNodeInstancesResponseUnmarshaller.Instance;
+
+            return Invoke<SignalApplicationInstanceNodeInstancesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Signal camera nodes to stop or resume.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SignalApplicationInstanceNodeInstances service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SignalApplicationInstanceNodeInstances service method, as returned by Panorama.</returns>
+        /// <exception cref="Amazon.Panorama.Model.AccessDeniedException">
+        /// The requestor does not have permission to access the target action or resource.
+        /// </exception>
+        /// <exception cref="Amazon.Panorama.Model.InternalServerException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Panorama.Model.ServiceQuotaExceededException">
+        /// The request would cause a limit to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Panorama.Model.ValidationException">
+        /// The request contains an invalid parameter value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/SignalApplicationInstanceNodeInstances">REST API Reference for SignalApplicationInstanceNodeInstances Operation</seealso>
+        public virtual Task<SignalApplicationInstanceNodeInstancesResponse> SignalApplicationInstanceNodeInstancesAsync(SignalApplicationInstanceNodeInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SignalApplicationInstanceNodeInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SignalApplicationInstanceNodeInstancesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SignalApplicationInstanceNodeInstancesResponse>(request, options, cancellationToken);
         }
 
         #endregion

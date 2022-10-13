@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Panorama.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LatestDeviceJob Object
+    /// Response Unmarshaller for ReportedRuntimeContextState Object
     /// </summary>  
-    public class LatestDeviceJobUnmarshaller : IUnmarshaller<LatestDeviceJob, XmlUnmarshallerContext>, IUnmarshaller<LatestDeviceJob, JsonUnmarshallerContext>
+    public class ReportedRuntimeContextStateUnmarshaller : IUnmarshaller<ReportedRuntimeContextState, XmlUnmarshallerContext>, IUnmarshaller<ReportedRuntimeContextState, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        LatestDeviceJob IUnmarshaller<LatestDeviceJob, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ReportedRuntimeContextState IUnmarshaller<ReportedRuntimeContextState, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,39 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public LatestDeviceJob Unmarshall(JsonUnmarshallerContext context)
+        public ReportedRuntimeContextState Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            LatestDeviceJob unmarshalledObject = new LatestDeviceJob();
+            ReportedRuntimeContextState unmarshalledObject = new ReportedRuntimeContextState();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ImageVersion", targetDepth))
+                if (context.TestExpression("DesiredState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ImageVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DesiredState = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("JobType", targetDepth))
+                if (context.TestExpression("DeviceReportedStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.JobType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeviceReportedStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("DeviceReportedTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.DeviceReportedTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RuntimeContextName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RuntimeContextName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +94,12 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
         }
 
 
-        private static LatestDeviceJobUnmarshaller _instance = new LatestDeviceJobUnmarshaller();        
+        private static ReportedRuntimeContextStateUnmarshaller _instance = new ReportedRuntimeContextStateUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LatestDeviceJobUnmarshaller Instance
+        public static ReportedRuntimeContextStateUnmarshaller Instance
         {
             get
             {

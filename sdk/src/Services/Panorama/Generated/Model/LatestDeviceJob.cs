@@ -34,6 +34,7 @@ namespace Amazon.Panorama.Model
     public partial class LatestDeviceJob
     {
         private string _imageVersion;
+        private JobType _jobType;
         private UpdateProgress _status;
 
         /// <summary>
@@ -53,6 +54,24 @@ namespace Amazon.Panorama.Model
         internal bool IsSetImageVersion()
         {
             return this._imageVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobType. 
+        /// <para>
+        /// The job's type.
+        /// </para>
+        /// </summary>
+        public JobType JobType
+        {
+            get { return this._jobType; }
+            set { this._jobType = value; }
+        }
+
+        // Check to see if JobType property is set
+        internal bool IsSetJobType()
+        {
+            return this._jobType != null;
         }
 
         /// <summary>
