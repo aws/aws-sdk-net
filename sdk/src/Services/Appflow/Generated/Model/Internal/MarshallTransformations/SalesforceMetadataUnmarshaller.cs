@@ -64,6 +64,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("dataTransferApis", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.DataTransferApis = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("oAuthScopes", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

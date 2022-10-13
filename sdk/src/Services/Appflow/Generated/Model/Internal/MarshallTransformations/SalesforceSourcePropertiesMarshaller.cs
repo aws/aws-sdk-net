@@ -45,6 +45,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SalesforceSourceProperties requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetDataTransferApi())
+            {
+                context.Writer.WritePropertyName("dataTransferApi");
+                context.Writer.Write(requestObject.DataTransferApi);
+            }
+
             if(requestObject.IsSetEnableDynamicFieldUpdate())
             {
                 context.Writer.WritePropertyName("enableDynamicFieldUpdate");

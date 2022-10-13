@@ -1343,6 +1343,10 @@ namespace Amazon.Appflow
         /// </summary>
         public static readonly OperatorPropertiesKeys EXCLUDE_SOURCE_FIELDS_LIST = new OperatorPropertiesKeys("EXCLUDE_SOURCE_FIELDS_LIST");
         /// <summary>
+        /// Constant INCLUDE_NEW_FIELDS for OperatorPropertiesKeys
+        /// </summary>
+        public static readonly OperatorPropertiesKeys INCLUDE_NEW_FIELDS = new OperatorPropertiesKeys("INCLUDE_NEW_FIELDS");
+        /// <summary>
         /// Constant LOWER_BOUND for OperatorPropertiesKeys
         /// </summary>
         public static readonly OperatorPropertiesKeys LOWER_BOUND = new OperatorPropertiesKeys("LOWER_BOUND");
@@ -2072,6 +2076,60 @@ namespace Amazon.Appflow
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SalesforceConnectorOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SalesforceDataTransferApi.
+    /// </summary>
+    public class SalesforceDataTransferApi : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTOMATIC for SalesforceDataTransferApi
+        /// </summary>
+        public static readonly SalesforceDataTransferApi AUTOMATIC = new SalesforceDataTransferApi("AUTOMATIC");
+        /// <summary>
+        /// Constant BULKV2 for SalesforceDataTransferApi
+        /// </summary>
+        public static readonly SalesforceDataTransferApi BULKV2 = new SalesforceDataTransferApi("BULKV2");
+        /// <summary>
+        /// Constant REST_SYNC for SalesforceDataTransferApi
+        /// </summary>
+        public static readonly SalesforceDataTransferApi REST_SYNC = new SalesforceDataTransferApi("REST_SYNC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SalesforceDataTransferApi(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SalesforceDataTransferApi FindValue(string value)
+        {
+            return FindValue<SalesforceDataTransferApi>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SalesforceDataTransferApi(string value)
         {
             return FindValue(value);
         }

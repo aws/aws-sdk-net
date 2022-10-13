@@ -33,7 +33,27 @@ namespace Amazon.Appflow.Model
     /// </summary>
     public partial class SalesforceMetadata
     {
+        private List<string> _dataTransferApis = new List<string>();
         private List<string> _oAuthScopes = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property DataTransferApis. 
+        /// <para>
+        /// The Salesforce APIs that you can have Amazon AppFlow use when your flows transfers
+        /// data to or from Salesforce.
+        /// </para>
+        /// </summary>
+        public List<string> DataTransferApis
+        {
+            get { return this._dataTransferApis; }
+            set { this._dataTransferApis = value; }
+        }
+
+        // Check to see if DataTransferApis property is set
+        internal bool IsSetDataTransferApis()
+        {
+            return this._dataTransferApis != null && this._dataTransferApis.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property OAuthScopes. 
