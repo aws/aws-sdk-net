@@ -607,56 +607,6 @@ namespace Amazon.ConnectWisdomService
 
 
     /// <summary>
-    /// Constants used for properties of type Relevance.
-    /// </summary>
-    public class Relevance : ConstantClass
-    {
-
-        /// <summary>
-        /// Constant HELPFUL for Relevance
-        /// </summary>
-        public static readonly Relevance HELPFUL = new Relevance("HELPFUL");
-        /// <summary>
-        /// Constant NOT_HELPFUL for Relevance
-        /// </summary>
-        public static readonly Relevance NOT_HELPFUL = new Relevance("NOT_HELPFUL");
-
-        /// <summary>
-        /// This constant constructor does not need to be called if the constant
-        /// you are attempting to use is already defined as a static instance of 
-        /// this class.
-        /// This constructor should be used to construct constants that are not
-        /// defined as statics, for instance if attempting to use a feature that is
-        /// newer than the current version of the SDK.
-        /// </summary>
-        public Relevance(string value)
-            : base(value)
-        {
-        }
-
-        /// <summary>
-        /// Finds the constant for the unique value.
-        /// </summary>
-        /// <param name="value">The unique value for the constant</param>
-        /// <returns>The constant for the unique value</returns>
-        public static Relevance FindValue(string value)
-        {
-            return FindValue<Relevance>(value);
-        }
-
-        /// <summary>
-        /// Utility method to convert strings to the constant class.
-        /// </summary>
-        /// <param name="value">The string value to convert to the constant class.</param>
-        /// <returns></returns>
-        public static implicit operator Relevance(string value)
-        {
-            return FindValue(value);
-        }
-    }
-
-
-    /// <summary>
     /// Constants used for properties of type RelevanceLevel.
     /// </summary>
     public class RelevanceLevel : ConstantClass
@@ -704,56 +654,6 @@ namespace Amazon.ConnectWisdomService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RelevanceLevel(string value)
-        {
-            return FindValue(value);
-        }
-    }
-
-
-    /// <summary>
-    /// Constants used for properties of type TargetType.
-    /// </summary>
-    public class TargetType : ConstantClass
-    {
-
-        /// <summary>
-        /// Constant RECOMMENDATION for TargetType
-        /// </summary>
-        public static readonly TargetType RECOMMENDATION = new TargetType("RECOMMENDATION");
-        /// <summary>
-        /// Constant RESULT for TargetType
-        /// </summary>
-        public static readonly TargetType RESULT = new TargetType("RESULT");
-
-        /// <summary>
-        /// This constant constructor does not need to be called if the constant
-        /// you are attempting to use is already defined as a static instance of 
-        /// this class.
-        /// This constructor should be used to construct constants that are not
-        /// defined as statics, for instance if attempting to use a feature that is
-        /// newer than the current version of the SDK.
-        /// </summary>
-        public TargetType(string value)
-            : base(value)
-        {
-        }
-
-        /// <summary>
-        /// Finds the constant for the unique value.
-        /// </summary>
-        /// <param name="value">The unique value for the constant</param>
-        /// <returns>The constant for the unique value</returns>
-        public static TargetType FindValue(string value)
-        {
-            return FindValue<TargetType>(value);
-        }
-
-        /// <summary>
-        /// Utility method to convert strings to the constant class.
-        /// </summary>
-        /// <param name="value">The string value to convert to the constant class.</param>
-        /// <returns></returns>
-        public static implicit operator TargetType(string value)
         {
             return FindValue(value);
         }

@@ -1197,58 +1197,6 @@ namespace Amazon.ConnectWisdomService
 
         #endregion
         
-        #region  PutFeedback
-
-
-        /// <summary>
-        /// Submits feedback to Wisdom. The feedback is used to improve future recommendations
-        /// from <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetRecommendations.html">GetRecommendations</a>
-        /// or results from <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_QueryAssistant.html">QueryAssistant</a>.
-        /// Feedback can be resubmitted up to 6 hours after submission.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the PutFeedback service method.</param>
-        /// 
-        /// <returns>The response from the PutFeedback service method, as returned by ConnectWisdomService.</returns>
-        /// <exception cref="Amazon.ConnectWisdomService.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
-        /// </exception>
-        /// <exception cref="Amazon.ConnectWisdomService.Model.ResourceNotFoundException">
-        /// The specified resource does not exist.
-        /// </exception>
-        /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by a service.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/PutFeedback">REST API Reference for PutFeedback Operation</seealso>
-        PutFeedbackResponse PutFeedback(PutFeedbackRequest request);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the PutFeedback operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the PutFeedback operation on AmazonConnectWisdomServiceClient.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutFeedback
-        ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/PutFeedback">REST API Reference for PutFeedback Operation</seealso>
-        IAsyncResult BeginPutFeedback(PutFeedbackRequest request, AsyncCallback callback, object state);
-
-
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  PutFeedback operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutFeedback.</param>
-        /// 
-        /// <returns>Returns a  PutFeedbackResult from ConnectWisdomService.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/PutFeedback">REST API Reference for PutFeedback Operation</seealso>
-        PutFeedbackResponse EndPutFeedback(IAsyncResult asyncResult);
-
-        #endregion
-        
         #region  QueryAssistant
 
 

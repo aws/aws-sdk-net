@@ -1279,52 +1279,6 @@ namespace Amazon.ConnectWisdomService
 
         #endregion
         
-        #region  PutFeedback
-
-        internal virtual PutFeedbackResponse PutFeedback(PutFeedbackRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = PutFeedbackRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = PutFeedbackResponseUnmarshaller.Instance;
-
-            return Invoke<PutFeedbackResponse>(request, options);
-        }
-
-
-
-        /// <summary>
-        /// Submits feedback to Wisdom. The feedback is used to improve future recommendations
-        /// from <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetRecommendations.html">GetRecommendations</a>
-        /// or results from <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_QueryAssistant.html">QueryAssistant</a>.
-        /// Feedback can be resubmitted up to 6 hours after submission.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the PutFeedback service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the PutFeedback service method, as returned by ConnectWisdomService.</returns>
-        /// <exception cref="Amazon.ConnectWisdomService.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
-        /// </exception>
-        /// <exception cref="Amazon.ConnectWisdomService.Model.ResourceNotFoundException">
-        /// The specified resource does not exist.
-        /// </exception>
-        /// <exception cref="Amazon.ConnectWisdomService.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by a service.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/PutFeedback">REST API Reference for PutFeedback Operation</seealso>
-        public virtual Task<PutFeedbackResponse> PutFeedbackAsync(PutFeedbackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = PutFeedbackRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = PutFeedbackResponseUnmarshaller.Instance;
-
-            return InvokeAsync<PutFeedbackResponse>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
         #region  QueryAssistant
 
         internal virtual QueryAssistantResponse QueryAssistant(QueryAssistantRequest request)
