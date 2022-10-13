@@ -160,9 +160,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property DeploymentController. 
         /// <para>
-        /// The deployment controller type the service is using. When using the DescribeServices
-        /// API, this field is omitted if the service uses the <code>ECS</code> deployment controller
-        /// type.
+        /// The deployment controller type the service is using. 
         /// </para>
         /// </summary>
         public DeploymentController DeploymentController
