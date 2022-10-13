@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AmplifyUIBuilder.Model
 {
     /// <summary>
-    /// Describes the call to action button configuration for the form..
+    /// Describes the call to action button configuration for the form.
     /// </summary>
     public partial class FormCTA
     {

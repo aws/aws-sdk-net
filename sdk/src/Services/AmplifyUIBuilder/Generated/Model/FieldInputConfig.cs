@@ -37,6 +37,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         private string _defaultCountryCode;
         private string _defaultValue;
         private string _descriptiveText;
+        private bool? _isArray;
         private float? _maxValue;
         private float? _minValue;
         private string _name;
@@ -118,6 +119,25 @@ namespace Amazon.AmplifyUIBuilder.Model
         internal bool IsSetDescriptiveText()
         {
             return this._descriptiveText != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsArray. 
+        /// <para>
+        /// Specifies whether to render the field as an array. This property is ignored if the
+        /// <code>dataSourceType</code> for the form is a Data Store.
+        /// </para>
+        /// </summary>
+        public bool IsArray
+        {
+            get { return this._isArray.GetValueOrDefault(); }
+            set { this._isArray = value; }
+        }
+
+        // Check to see if IsArray property is set
+        internal bool IsSetIsArray()
+        {
+            return this._isArray.HasValue; 
         }
 
         /// <summary>

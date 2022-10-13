@@ -69,6 +69,12 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DescriptiveText);
             }
 
+            if(requestObject.IsSetIsArray())
+            {
+                context.Writer.WritePropertyName("isArray");
+                context.Writer.Write(requestObject.IsArray);
+            }
+
             if(requestObject.IsSetMaxValue())
             {
                 context.Writer.WritePropertyName("maxValue");
