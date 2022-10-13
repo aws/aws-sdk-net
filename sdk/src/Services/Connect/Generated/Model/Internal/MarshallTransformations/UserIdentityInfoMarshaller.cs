@@ -63,6 +63,18 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.LastName);
             }
 
+            if(requestObject.IsSetMobile())
+            {
+                context.Writer.WritePropertyName("Mobile");
+                context.Writer.Write(requestObject.Mobile);
+            }
+
+            if(requestObject.IsSetSecondaryEmail())
+            {
+                context.Writer.WritePropertyName("SecondaryEmail");
+                context.Writer.Write(requestObject.SecondaryEmail);
+            }
+
         }
 
         /// <summary>

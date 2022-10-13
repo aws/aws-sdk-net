@@ -82,6 +82,18 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Mobile", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Mobile = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SecondaryEmail", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SecondaryEmail = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

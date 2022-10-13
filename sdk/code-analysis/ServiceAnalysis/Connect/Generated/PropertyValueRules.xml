@@ -2314,6 +2314,10 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.UserIdentityInfo.Mobile</property>
+    <pattern>\\+[1-9]\\d{1,14}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.UserIdentityInfoLite.FirstName</property>
     <min>1</min>
     <max>100</max>
