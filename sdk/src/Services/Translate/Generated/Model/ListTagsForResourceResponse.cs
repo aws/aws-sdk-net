@@ -36,7 +36,13 @@ namespace Amazon.Translate.Model
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Tags associated with the Amazon Translate resource being queried. A tag is a key-value
+        /// pair that adds as a metadata to a resource used by Amazon Translate. For example,
+        /// a tag with "Sales" as the key might be added to a resource to indicate its use by
+        /// the sales department. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
         public List<Tag> Tags

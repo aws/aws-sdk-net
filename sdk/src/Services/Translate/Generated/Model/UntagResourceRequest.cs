@@ -30,7 +30,9 @@ namespace Amazon.Translate.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// 
+    /// Removes a specific tag associated with an Amazon Translate resource. For more information,
+    /// see <a href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging
+    /// your resources</a>.
     /// </summary>
     public partial class UntagResourceRequest : AmazonTranslateRequest
     {
@@ -38,7 +40,11 @@ namespace Amazon.Translate.Model
         private List<string> _tagKeys = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property ResourceArn.
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the given Amazon Translate resource from which
+        /// you want to remove the tags. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]
         public string ResourceArn
@@ -54,7 +60,11 @@ namespace Amazon.Translate.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TagKeys.
+        /// Gets and sets the property TagKeys. 
+        /// <para>
+        /// The initial part of a key-value pair that forms a tag being removed from a given resource.
+        /// Keys must be unique and cannot be duplicated for a particular resource. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=200)]
         public List<string> TagKeys

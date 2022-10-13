@@ -30,9 +30,12 @@ namespace Amazon.Translate.Model
 {
     /// <summary>
     /// Container for the parameters to the StartTextTranslationJob operation.
-    /// Starts an asynchronous batch translation job. Batch translation jobs can be used to
-    /// translate large volumes of text across multiple documents at once. For more information,
-    /// see <a>async</a>.
+    /// Starts an asynchronous batch translation job. Use batch translation jobs to translate
+    /// large volumes of text across multiple documents at once. For batch translation, the
+    /// input documents must share the same source language. You can specify one or more target
+    /// languages. Batch translation translates each input document into each of the target
+    /// languages. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/async.html">Asynchronous
+    /// batch processing</a> 
     /// 
     ///  
     /// <para>
@@ -85,7 +88,8 @@ namespace Amazon.Translate.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role
         /// that grants Amazon Translate read access to your input data. For more information,
-        /// see <a>identity-and-access-management</a>.
+        /// see <a href="https://docs.aws.amazon.com/translate/latest/dg/identity-and-access-management.html">Identity
+        /// and access management </a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -162,8 +166,13 @@ namespace Amazon.Translate.Model
         /// Gets and sets the property ParallelDataNames. 
         /// <para>
         /// The name of a parallel data resource to add to the translation job. This resource
-        /// consists of examples that show how you want segments of text to be translated. When
-        /// you add parallel data to a translation job, you create an <i>Active Custom Translation</i>
+        /// consists of examples that show how you want segments of text to be translated. If
+        /// you specify multiple target languages for the job, the parallel data file must include
+        /// translations for all the target languages.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you add parallel data to a translation job, you create an <i>Active Custom Translation</i>
         /// job. 
         /// </para>
         ///  
@@ -182,7 +191,8 @@ namespace Amazon.Translate.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a>customizing-translations-parallel-data</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-parallel-data.html">
+        /// Customizing your translations with parallel data</a>.
         /// </para>
         /// </summary>
         public List<string> ParallelDataNames
@@ -200,9 +210,8 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Gets and sets the property Settings. 
         /// <para>
-        /// Settings to configure your translation output, including the option to mask profane
-        /// words and phrases. <code>StartTextTranslationJob</code> does not support the formality
-        /// setting.
+        /// Settings to configure your translation output, including the option to set the formality
+        /// level of the output text and the option to mask profane words and phrases.
         /// </para>
         /// </summary>
         public TranslationSettings Settings
@@ -220,7 +229,8 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Gets and sets the property SourceLanguageCode. 
         /// <para>
-        /// The language code of the input language. For a list of language codes, see <a>what-is-languages</a>.
+        /// The language code of the input language. For a list of language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+        /// languages</a>.
         /// </para>
         ///  
         /// <para>
@@ -244,7 +254,14 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Gets and sets the property TargetLanguageCodes. 
         /// <para>
-        /// The language code of the output language.
+        /// The target languages of the translation job. Enter up to 10 language codes. Each input
+        /// file is translated into each target language.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each language code is two or five characters long. For a list of language codes, see
+        /// <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+        /// languages</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -272,12 +289,19 @@ namespace Amazon.Translate.Model
         /// </para>
         ///  
         /// <para>
+        /// If you specify multiple target languages for the job, translate uses the designated
+        /// terminology for each requested target language that has an entry for the source term
+        /// in the terminology file.
+        /// </para>
+        ///  
+        /// <para>
         /// For a list of available custom terminology resources, use the <a>ListTerminologies</a>
         /// operation.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a>how-custom-terminology</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom
+        /// terminology</a>.
         /// </para>
         /// </summary>
         public List<string> TerminologyNames

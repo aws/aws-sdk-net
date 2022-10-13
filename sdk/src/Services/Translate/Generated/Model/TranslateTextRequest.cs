@@ -31,7 +31,8 @@ namespace Amazon.Translate.Model
     /// <summary>
     /// Container for the parameters to the TranslateText operation.
     /// Translates input text from the source language to the target language. For a list
-    /// of available languages and language codes, see <a>what-is-languages</a>.
+    /// of available languages and language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+    /// languages</a>.
     /// </summary>
     public partial class TranslateTextRequest : AmazonTranslateRequest
     {
@@ -64,7 +65,8 @@ namespace Amazon.Translate.Model
         /// Gets and sets the property SourceLanguageCode. 
         /// <para>
         /// The language code for the language of the source text. The language must be a language
-        /// supported by Amazon Translate. For a list of language codes, see <a>what-is-languages</a>.
+        /// supported by Amazon Translate. For a list of language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+        /// languages</a>.
         /// </para>
         ///  
         /// <para>

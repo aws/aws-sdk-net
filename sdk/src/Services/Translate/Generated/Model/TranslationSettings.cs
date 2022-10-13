@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Translate.Model
 {
     /// <summary>
-    /// Settings that configure the translation output.
+    /// Optional settings that configure the translation output. Use these settings for real
+    /// time translations and asynchronous translation jobs.
     /// </summary>
     public partial class TranslationSettings
     {
@@ -39,23 +40,22 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Gets and sets the property Formality. 
         /// <para>
-        /// You can optionally specify the desired level of formality for real-time translations
-        /// to supported target languages. The formality setting controls the level of formal
-        /// language usage (also known as <a href="https://en.wikipedia.org/wiki/Register_(sociolinguistics)">register</a>)
+        /// You can optionally specify the desired level of formality for translations to supported
+        /// target languages. The formality setting controls the level of formal language usage
+        /// (also known as <a href="https://en.wikipedia.org/wiki/Register_(sociolinguistics)">register</a>)
         /// in the translation output. You can set the value to informal or formal. If you don't
         /// specify a value for formality, or if the target language doesn't support formality,
         /// the translation will ignore the formality setting.
         /// </para>
         ///  
         /// <para>
-        /// Note that asynchronous translation jobs don't support formality. If you provide a
-        /// value for formality, the <code>StartTextTranslationJob</code> API throws an exception
-        /// (InvalidRequestException).
+        ///  If you specify multiple target languages for the job, translate ignores the formality
+        /// setting for any unsupported target language.
         /// </para>
         ///  
         /// <para>
-        /// For target languages that support formality, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is.html">Supported
-        /// Languages and Language Codes in the Amazon Translate Developer Guide</a>.
+        /// For a list of target languages that support formality, see <a href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-formality.html">Setting
+        /// Formality</a> in the Amazon Translate Developer Guide.
         /// </para>
         /// </summary>
         public Formality Formality
@@ -85,8 +85,14 @@ namespace Amazon.Translate.Model
         ///  
         /// <para>
         /// Amazon Translate doesn't detect profanity in all of its supported languages. For languages
-        /// that support profanity detection, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is.html">Supported
-        /// Languages and Language Codes in the Amazon Translate Developer Guide</a>.
+        /// that support profanity detection, see <a href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-profanity.html">Masking
+        /// profanity</a> in the Amazon Translate Developer Guide.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify multiple target languages for the job, all the target languages must
+        /// support profanity masking. If any of the target languages don't support profanity
+        /// masking, the translation job won't mask profanity for any target language.
         /// </para>
         /// </summary>
         public Profanity Profanity

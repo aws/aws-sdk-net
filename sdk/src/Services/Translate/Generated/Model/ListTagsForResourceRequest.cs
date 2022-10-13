@@ -30,14 +30,20 @@ namespace Amazon.Translate.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// 
+    /// Lists all tags associated with a given Amazon Translate resource. For more information,
+    /// see <a href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging
+    /// your resources</a>.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonTranslateRequest
     {
         private string _resourceArn;
 
         /// <summary>
-        /// Gets and sets the property ResourceArn.
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the given Amazon Translate resource you are querying.
+        /// 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]
         public string ResourceArn

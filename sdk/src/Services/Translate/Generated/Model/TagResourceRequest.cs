@@ -30,7 +30,9 @@ namespace Amazon.Translate.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// 
+    /// Associates a specific tag with a resource. A tag is a key-value pair that adds as
+    /// a metadata to a resource. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html">
+    /// Tagging your resources</a>.
     /// </summary>
     public partial class TagResourceRequest : AmazonTranslateRequest
     {
@@ -38,7 +40,11 @@ namespace Amazon.Translate.Model
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
-        /// Gets and sets the property ResourceArn.
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the given Amazon Translate resource to which you
+        /// want to associate the tags. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]
         public string ResourceArn
@@ -54,7 +60,11 @@ namespace Amazon.Translate.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Tags being associated with a specific Amazon Translate resource. There can be a maximum
+        /// of 50 tags (both existing and pending) associated with a specific resource.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=200)]
         public List<Tag> Tags

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Translate.Model
 {
     /// <summary>
-    /// 
+    /// You have added too many tags to this resource. The maximum is 50 tags.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

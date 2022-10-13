@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Translate.Model
 {
     /// <summary>
-    /// 
+    /// A key-value pair that adds as a metadata to a resource used by Amazon Translate.
     /// </summary>
     public partial class Tag
     {
@@ -37,7 +37,11 @@ namespace Amazon.Translate.Model
         private string _value;
 
         /// <summary>
-        /// Gets and sets the property Key.
+        /// Gets and sets the property Key. 
+        /// <para>
+        /// The initial part of a key-value pair that forms a tag associated with a given resource.
+        /// 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
         public string Key
@@ -53,7 +57,10 @@ namespace Amazon.Translate.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Value.
+        /// Gets and sets the property Value. 
+        /// <para>
+        ///  The second part of a key-value pair that forms a tag associated with a given resource.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]
         public string Value
