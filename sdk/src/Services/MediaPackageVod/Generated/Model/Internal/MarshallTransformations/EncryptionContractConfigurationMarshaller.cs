@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SpekeKeyProvider Marshaller
+    /// EncryptionContractConfiguration Marshaller
     /// </summary>
-    public class SpekeKeyProviderMarshaller : IRequestMarshaller<SpekeKeyProvider, JsonMarshallerContext> 
+    public class EncryptionContractConfigurationMarshaller : IRequestMarshaller<EncryptionContractConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,40 +43,18 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SpekeKeyProvider requestObject, JsonMarshallerContext context)
+        public void Marshall(EncryptionContractConfiguration requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetEncryptionContractConfiguration())
+            if(requestObject.IsSetPresetSpeke20Audio())
             {
-                context.Writer.WritePropertyName("encryptionContractConfiguration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = EncryptionContractConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.EncryptionContractConfiguration, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("presetSpeke20Audio");
+                context.Writer.Write(requestObject.PresetSpeke20Audio);
             }
 
-            if(requestObject.IsSetRoleArn())
+            if(requestObject.IsSetPresetSpeke20Video())
             {
-                context.Writer.WritePropertyName("roleArn");
-                context.Writer.Write(requestObject.RoleArn);
-            }
-
-            if(requestObject.IsSetSystemIds())
-            {
-                context.Writer.WritePropertyName("systemIds");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectSystemIdsListValue in requestObject.SystemIds)
-                {
-                        context.Writer.Write(requestObjectSystemIdsListValue);
-                }
-                context.Writer.WriteArrayEnd();
-            }
-
-            if(requestObject.IsSetUrl())
-            {
-                context.Writer.WritePropertyName("url");
-                context.Writer.Write(requestObject.Url);
+                context.Writer.WritePropertyName("presetSpeke20Video");
+                context.Writer.Write(requestObject.PresetSpeke20Video);
             }
 
         }
@@ -84,7 +62,7 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static SpekeKeyProviderMarshaller Instance = new SpekeKeyProviderMarshaller();
+        public readonly static EncryptionContractConfigurationMarshaller Instance = new EncryptionContractConfigurationMarshaller();
 
     }
 }
