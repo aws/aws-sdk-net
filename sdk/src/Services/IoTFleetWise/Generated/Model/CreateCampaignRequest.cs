@@ -112,6 +112,13 @@ namespace Amazon.IoTFleetWise.Model
         /// </para>
         ///  
         /// <para>
+        /// Enrich the data with specified vehicle attributes. For example, add <code>make</code>
+        /// and <code>model</code> to the campaign, and Amazon Web Services IoT FleetWise will
+        /// associate the data with those attributes as dimensions in Amazon Timestream. You can
+        /// then query the data against <code>make</code> and <code>model</code>.
+        /// </para>
+        ///  
+        /// <para>
         /// Default: An empty array
         /// </para>
         /// </summary>
