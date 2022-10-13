@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AvailSettings Object
+    /// Response Unmarshaller for Esam Object
     /// </summary>  
-    public class AvailSettingsUnmarshaller : IUnmarshaller<AvailSettings, XmlUnmarshallerContext>, IUnmarshaller<AvailSettings, JsonUnmarshallerContext>
+    public class EsamUnmarshaller : IUnmarshaller<Esam, XmlUnmarshallerContext>, IUnmarshaller<Esam, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AvailSettings IUnmarshaller<AvailSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Esam IUnmarshaller<Esam, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,51 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AvailSettings Unmarshall(JsonUnmarshallerContext context)
+        public Esam Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AvailSettings unmarshalledObject = new AvailSettings();
+            Esam unmarshalledObject = new Esam();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("esam", targetDepth))
+                if (context.TestExpression("acquisitionPointId", targetDepth))
                 {
-                    var unmarshaller = EsamUnmarshaller.Instance;
-                    unmarshalledObject.Esam = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AcquisitionPointId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("scte35SpliceInsert", targetDepth))
+                if (context.TestExpression("adAvailOffset", targetDepth))
                 {
-                    var unmarshaller = Scte35SpliceInsertUnmarshaller.Instance;
-                    unmarshalledObject.Scte35SpliceInsert = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.AdAvailOffset = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("scte35TimeSignalApos", targetDepth))
+                if (context.TestExpression("passwordParam", targetDepth))
                 {
-                    var unmarshaller = Scte35TimeSignalAposUnmarshaller.Instance;
-                    unmarshalledObject.Scte35TimeSignalApos = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PasswordParam = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("poisEndpoint", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PoisEndpoint = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("username", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Username = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("zoneIdentity", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ZoneIdentity = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +106,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
 
 
-        private static AvailSettingsUnmarshaller _instance = new AvailSettingsUnmarshaller();        
+        private static EsamUnmarshaller _instance = new EsamUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AvailSettingsUnmarshaller Instance
+        public static EsamUnmarshaller Instance
         {
             get
             {

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AvailSettings Object
+    /// Response Unmarshaller for Scte35InputScheduleActionSettings Object
     /// </summary>  
-    public class AvailSettingsUnmarshaller : IUnmarshaller<AvailSettings, XmlUnmarshallerContext>, IUnmarshaller<AvailSettings, JsonUnmarshallerContext>
+    public class Scte35InputScheduleActionSettingsUnmarshaller : IUnmarshaller<Scte35InputScheduleActionSettings, XmlUnmarshallerContext>, IUnmarshaller<Scte35InputScheduleActionSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AvailSettings IUnmarshaller<AvailSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Scte35InputScheduleActionSettings IUnmarshaller<Scte35InputScheduleActionSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AvailSettings Unmarshall(JsonUnmarshallerContext context)
+        public Scte35InputScheduleActionSettings Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AvailSettings unmarshalledObject = new AvailSettings();
+            Scte35InputScheduleActionSettings unmarshalledObject = new Scte35InputScheduleActionSettings();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("esam", targetDepth))
+                if (context.TestExpression("inputAttachmentNameReference", targetDepth))
                 {
-                    var unmarshaller = EsamUnmarshaller.Instance;
-                    unmarshalledObject.Esam = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InputAttachmentNameReference = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("scte35SpliceInsert", targetDepth))
+                if (context.TestExpression("mode", targetDepth))
                 {
-                    var unmarshaller = Scte35SpliceInsertUnmarshaller.Instance;
-                    unmarshalledObject.Scte35SpliceInsert = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("scte35TimeSignalApos", targetDepth))
-                {
-                    var unmarshaller = Scte35TimeSignalAposUnmarshaller.Instance;
-                    unmarshalledObject.Scte35TimeSignalApos = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Mode = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +82,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
 
 
-        private static AvailSettingsUnmarshaller _instance = new AvailSettingsUnmarshaller();        
+        private static Scte35InputScheduleActionSettingsUnmarshaller _instance = new Scte35InputScheduleActionSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AvailSettingsUnmarshaller Instance
+        public static Scte35InputScheduleActionSettingsUnmarshaller Instance
         {
             get
             {

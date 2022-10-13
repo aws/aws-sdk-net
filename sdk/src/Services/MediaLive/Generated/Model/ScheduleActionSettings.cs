@@ -40,6 +40,7 @@ namespace Amazon.MediaLive.Model
         private MotionGraphicsActivateScheduleActionSettings _motionGraphicsImageActivateSettings;
         private MotionGraphicsDeactivateScheduleActionSettings _motionGraphicsImageDeactivateSettings;
         private PauseStateScheduleActionSettings _pauseStateSettings;
+        private Scte35InputScheduleActionSettings _scte35InputSettings;
         private Scte35ReturnToNetworkScheduleActionSettings _scte35ReturnToNetworkSettings;
         private Scte35SpliceInsertScheduleActionSettings _scte35SpliceInsertSettings;
         private Scte35TimeSignalScheduleActionSettings _scte35TimeSignalSettings;
@@ -154,6 +155,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetPauseStateSettings()
         {
             return this._pauseStateSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Scte35InputSettings. Action to specify scte35 input
+        /// </summary>
+        public Scte35InputScheduleActionSettings Scte35InputSettings
+        {
+            get { return this._scte35InputSettings; }
+            set { this._scte35InputSettings = value; }
+        }
+
+        // Check to see if Scte35InputSettings property is set
+        internal bool IsSetScte35InputSettings()
+        {
+            return this._scte35InputSettings != null;
         }
 
         /// <summary>

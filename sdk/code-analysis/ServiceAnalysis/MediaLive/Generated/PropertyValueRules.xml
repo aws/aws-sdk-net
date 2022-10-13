@@ -264,6 +264,19 @@
     <max>5</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.Esam.AcquisitionPointId</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.Esam.AdAvailOffset</property>
+    <min>-1000</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.Esam.ZoneIdentity</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.FecOutputSettings.ColumnDepth</property>
     <min>4</min>
     <max>20</max>

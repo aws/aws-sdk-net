@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AvailSettings Marshaller
+    /// Esam Marshaller
     /// </summary>
-    public class AvailSettingsMarshaller : IRequestMarshaller<AvailSettings, JsonMarshallerContext> 
+    public class EsamMarshaller : IRequestMarshaller<Esam, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,39 +43,42 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AvailSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(Esam requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetEsam())
+            if(requestObject.IsSetAcquisitionPointId())
             {
-                context.Writer.WritePropertyName("esam");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = EsamMarshaller.Instance;
-                marshaller.Marshall(requestObject.Esam, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("acquisitionPointId");
+                context.Writer.Write(requestObject.AcquisitionPointId);
             }
 
-            if(requestObject.IsSetScte35SpliceInsert())
+            if(requestObject.IsSetAdAvailOffset())
             {
-                context.Writer.WritePropertyName("scte35SpliceInsert");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = Scte35SpliceInsertMarshaller.Instance;
-                marshaller.Marshall(requestObject.Scte35SpliceInsert, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("adAvailOffset");
+                context.Writer.Write(requestObject.AdAvailOffset);
             }
 
-            if(requestObject.IsSetScte35TimeSignalApos())
+            if(requestObject.IsSetPasswordParam())
             {
-                context.Writer.WritePropertyName("scte35TimeSignalApos");
-                context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("passwordParam");
+                context.Writer.Write(requestObject.PasswordParam);
+            }
 
-                var marshaller = Scte35TimeSignalAposMarshaller.Instance;
-                marshaller.Marshall(requestObject.Scte35TimeSignalApos, context);
+            if(requestObject.IsSetPoisEndpoint())
+            {
+                context.Writer.WritePropertyName("poisEndpoint");
+                context.Writer.Write(requestObject.PoisEndpoint);
+            }
 
-                context.Writer.WriteObjectEnd();
+            if(requestObject.IsSetUsername())
+            {
+                context.Writer.WritePropertyName("username");
+                context.Writer.Write(requestObject.Username);
+            }
+
+            if(requestObject.IsSetZoneIdentity())
+            {
+                context.Writer.WritePropertyName("zoneIdentity");
+                context.Writer.Write(requestObject.ZoneIdentity);
             }
 
         }
@@ -83,7 +86,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static AvailSettingsMarshaller Instance = new AvailSettingsMarshaller();
+        public readonly static EsamMarshaller Instance = new EsamMarshaller();
 
     }
 }

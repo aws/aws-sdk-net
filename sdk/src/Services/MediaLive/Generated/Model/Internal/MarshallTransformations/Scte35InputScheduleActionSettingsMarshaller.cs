@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AvailSettings Marshaller
+    /// Scte35InputScheduleActionSettings Marshaller
     /// </summary>
-    public class AvailSettingsMarshaller : IRequestMarshaller<AvailSettings, JsonMarshallerContext> 
+    public class Scte35InputScheduleActionSettingsMarshaller : IRequestMarshaller<Scte35InputScheduleActionSettings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,39 +43,18 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AvailSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(Scte35InputScheduleActionSettings requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetEsam())
+            if(requestObject.IsSetInputAttachmentNameReference())
             {
-                context.Writer.WritePropertyName("esam");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = EsamMarshaller.Instance;
-                marshaller.Marshall(requestObject.Esam, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("inputAttachmentNameReference");
+                context.Writer.Write(requestObject.InputAttachmentNameReference);
             }
 
-            if(requestObject.IsSetScte35SpliceInsert())
+            if(requestObject.IsSetMode())
             {
-                context.Writer.WritePropertyName("scte35SpliceInsert");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = Scte35SpliceInsertMarshaller.Instance;
-                marshaller.Marshall(requestObject.Scte35SpliceInsert, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetScte35TimeSignalApos())
-            {
-                context.Writer.WritePropertyName("scte35TimeSignalApos");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = Scte35TimeSignalAposMarshaller.Instance;
-                marshaller.Marshall(requestObject.Scte35TimeSignalApos, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("mode");
+                context.Writer.Write(requestObject.Mode);
             }
 
         }
@@ -83,7 +62,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static AvailSettingsMarshaller Instance = new AvailSettingsMarshaller();
+        public readonly static Scte35InputScheduleActionSettingsMarshaller Instance = new Scte35InputScheduleActionSettingsMarshaller();
 
     }
 }
