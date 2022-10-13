@@ -57,7 +57,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// This field is null if no IAM entities attempted to access the service within the <a
-        /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+        /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
         /// period</a>.
         /// </para>
         /// </summary>
@@ -82,7 +82,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// This field is null if no IAM entities attempted to access the service within the <a
-        /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+        /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
         /// period</a>.
         /// </para>
         /// </summary>
@@ -108,7 +108,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// This field is null if no IAM entities attempted to access the service within the <a
-        /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+        /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
         /// period</a>.
         /// </para>
         /// </summary>
@@ -180,7 +180,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// This field is null if no principals attempted to access the service within the <a
-        /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+        /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
         /// period</a>.
         /// </para>
         /// </summary>
@@ -205,7 +205,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// This field is null if there no tracked actions or if the principal did not use the
-        /// tracked actions within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting
+        /// tracked actions within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
         /// period</a>. This field is also null if the report was generated at the service level
         /// and not the action level. For more information, see the <code>Granularity</code> field
         /// in <a>GenerateServiceLastAccessedDetails</a>.

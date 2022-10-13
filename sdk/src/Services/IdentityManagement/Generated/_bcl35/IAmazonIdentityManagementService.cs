@@ -2063,9 +2063,8 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Deletes the password for the specified IAM user, which terminates the user's ability
-        /// to access Amazon Web Services services through the Amazon Web Services Management
-        /// Console.
+        /// Deletes the password for the specified IAM user, For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_passwords_admin-change-user.html">Managing
+        /// passwords for IAM users</a>.
         /// 
         ///  
         /// <para>
@@ -2076,11 +2075,10 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  <important> 
         /// <para>
-        ///  Deleting a user's password does not prevent a user from accessing Amazon Web Services
+        /// Deleting a user's password does not prevent a user from accessing Amazon Web Services
         /// through the command line interface or the API. To prevent all user access, you must
         /// also either make any access keys inactive or delete them. For more information about
         /// making keys inactive or deleting them, see <a>UpdateAccessKey</a> and <a>DeleteAccessKey</a>.
-        /// 
         /// </para>
         ///  </important>
         /// </summary>
