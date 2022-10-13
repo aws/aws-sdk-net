@@ -112,6 +112,10 @@ namespace Amazon.SSMIncidents
         /// Constant PARENT for ItemType
         /// </summary>
         public static readonly ItemType PARENT = new ItemType("PARENT");
+        /// <summary>
+        /// Constant TASK for ItemType
+        /// </summary>
+        public static readonly ItemType TASK = new ItemType("TASK");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
