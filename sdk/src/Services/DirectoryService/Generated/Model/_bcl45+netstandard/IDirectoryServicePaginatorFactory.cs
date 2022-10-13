@@ -26,8 +26,73 @@ namespace Amazon.DirectoryService.Model
     {
 
         /// <summary>
+        /// Paginator for DescribeClientAuthenticationSettings operation
+        ///</summary>
+        IDescribeClientAuthenticationSettingsPaginator DescribeClientAuthenticationSettings(DescribeClientAuthenticationSettingsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeDirectories operation
+        ///</summary>
+        IDescribeDirectoriesPaginator DescribeDirectories(DescribeDirectoriesRequest request);
+
+        /// <summary>
         /// Paginator for DescribeDomainControllers operation
         ///</summary>
         IDescribeDomainControllersPaginator DescribeDomainControllers(DescribeDomainControllersRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeLDAPSSettings operation
+        ///</summary>
+        IDescribeLDAPSSettingsPaginator DescribeLDAPSSettings(DescribeLDAPSSettingsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeRegions operation
+        ///</summary>
+        IDescribeRegionsPaginator DescribeRegions(DescribeRegionsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeSharedDirectories operation
+        ///</summary>
+        IDescribeSharedDirectoriesPaginator DescribeSharedDirectories(DescribeSharedDirectoriesRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeSnapshots operation
+        ///</summary>
+        IDescribeSnapshotsPaginator DescribeSnapshots(DescribeSnapshotsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeTrusts operation
+        ///</summary>
+        IDescribeTrustsPaginator DescribeTrusts(DescribeTrustsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeUpdateDirectory operation
+        ///</summary>
+        IDescribeUpdateDirectoryPaginator DescribeUpdateDirectory(DescribeUpdateDirectoryRequest request);
+
+        /// <summary>
+        /// Paginator for ListCertificates operation
+        ///</summary>
+        IListCertificatesPaginator ListCertificates(ListCertificatesRequest request);
+
+        /// <summary>
+        /// Paginator for ListIpRoutes operation
+        ///</summary>
+        IListIpRoutesPaginator ListIpRoutes(ListIpRoutesRequest request);
+
+        /// <summary>
+        /// Paginator for ListLogSubscriptions operation
+        ///</summary>
+        IListLogSubscriptionsPaginator ListLogSubscriptions(ListLogSubscriptionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListSchemaExtensions operation
+        ///</summary>
+        IListSchemaExtensionsPaginator ListSchemaExtensions(ListSchemaExtensionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListTagsForResource operation
+        ///</summary>
+        IListTagsForResourcePaginator ListTagsForResource(ListTagsForResourceRequest request);
     }
 }

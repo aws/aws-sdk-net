@@ -43,6 +43,7 @@ namespace Amazon.DirectoryService.Model
         private DirectoryEdition _edition;
         private DateTime? _launchTime;
         private string _name;
+        private OSVersion _osVersion;
         private OwnerDirectoryDescription _ownerDirectoryDescription;
         private RadiusSettings _radiusSettings;
         private RadiusStatus _radiusStatus;
@@ -251,6 +252,24 @@ namespace Amazon.DirectoryService.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OsVersion. 
+        /// <para>
+        /// The operating system (OS) version of the directory.
+        /// </para>
+        /// </summary>
+        public OSVersion OsVersion
+        {
+            get { return this._osVersion; }
+            set { this._osVersion = value; }
+        }
+
+        // Check to see if OsVersion property is set
+        internal bool IsSetOsVersion()
+        {
+            return this._osVersion != null;
         }
 
         /// <summary>

@@ -327,6 +327,15 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DirectoryService.Model.DescribeUpdateDirectoryRequest.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.DescribeUpdateDirectoryRequest.RegionName</property>
+    <min>8</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DirectoryService.Model.DisableClientAuthenticationRequest.DirectoryId</property>
     <pattern>^d-[0-9a-f]{10}$</pattern>
   </property-value-rule>
@@ -533,6 +542,10 @@
     <pattern>^([a-zA-Z0-9]+[\\.-])+([a-zA-Z0-9])+[.]?$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DirectoryService.Model.UpdateDirectorySetupRequest.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DirectoryService.Model.UpdateNumberOfDomainControllersRequest.DesiredNumber</property>
     <min>2</min>
   </property-value-rule>
@@ -702,6 +715,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.DirectoryDoesNotExistException.RequestId</property>
+    <pattern>^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.DirectoryInDesiredStateException.RequestId</property>
     <pattern>^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1074,6 +1091,11 @@
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.UnsupportedSettingsException.RequestId</property>
     <pattern>^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.UpdateInfoEntry.Region</property>
+    <min>8</min>
+    <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.UserDoesNotExistException.RequestId</property>
