@@ -80,10 +80,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property CriticalNonCompliantCount. 
         /// <para>
-        /// The number of managed nodes where patches that are specified as <code>Critical</code>
-        /// for compliance reporting in the patch baseline aren't installed. These patches might
-        /// be missing, have failed installation, were rejected, or were installed but awaiting
-        /// a required managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.
+        /// The number of patches per node that are specified as <code>Critical</code> for compliance
+        /// reporting in the patch baseline aren't installed. These patches might be missing,
+        /// have failed installation, were rejected, or were installed but awaiting a required
+        /// managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.
         /// </para>
         /// </summary>
         public int CriticalNonCompliantCount
@@ -376,9 +376,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property OtherNonCompliantCount. 
         /// <para>
-        /// The number of managed nodes with patches installed that are specified as other than
-        /// <code>Critical</code> or <code>Security</code> but aren't compliant with the patch
-        /// baseline. The status of these managed nodes is <code>NON_COMPLIANT</code>.
+        /// The number of patches per node that are specified as other than <code>Critical</code>
+        /// or <code>Security</code> but aren't compliant with the patch baseline. The status
+        /// of these managed nodes is <code>NON_COMPLIANT</code>.
         /// </para>
         /// </summary>
         public int OtherNonCompliantCount
@@ -471,10 +471,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property SecurityNonCompliantCount. 
         /// <para>
-        /// The number of managed nodes where patches that are specified as <code>Security</code>
-        /// in a patch advisory aren't installed. These patches might be missing, have failed
-        /// installation, were rejected, or were installed but awaiting a required managed node
-        /// reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.
+        /// The number of patches per node that are specified as <code>Security</code> in a patch
+        /// advisory aren't installed. These patches might be missing, have failed installation,
+        /// were rejected, or were installed but awaiting a required managed node reboot. The
+        /// status of these managed nodes is <code>NON_COMPLIANT</code>.
         /// </para>
         /// </summary>
         public int SecurityNonCompliantCount

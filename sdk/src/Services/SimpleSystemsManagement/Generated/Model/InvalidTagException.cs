@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The tag key or value isn't valid.
+    /// The specified tag key or value isn't valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

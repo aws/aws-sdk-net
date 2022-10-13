@@ -1095,7 +1095,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The schedule is invalid. Verify your cron or rate expression and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTagException">
-        /// The tag key or value isn't valid.
+        /// The specified tag key or value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTargetException">
         /// The target isn't valid or doesn't exist. It might not be configured for Systems Manager
@@ -1185,7 +1185,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The schedule is invalid. Verify your cron or rate expression and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTagException">
-        /// The tag key or value isn't valid.
+        /// The specified tag key or value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTargetException">
         /// The target isn't valid or doesn't exist. It might not be configured for Systems Manager
@@ -1280,7 +1280,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The schedule is invalid. Verify your cron or rate expression and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTagException">
-        /// The tag key or value isn't valid.
+        /// The specified tag key or value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTargetException">
         /// The target isn't valid or doesn't exist. It might not be configured for Systems Manager
@@ -1373,7 +1373,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The schedule is invalid. Verify your cron or rate expression and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTagException">
-        /// The tag key or value isn't valid.
+        /// The specified tag key or value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTargetException">
         /// The target isn't valid or doesn't exist. It might not be configured for Systems Manager
@@ -9986,8 +9986,18 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DocumentPermissionLimitException">
         /// The document can't be shared with more Amazon Web Services user accounts. You can
-        /// share a document with a maximum of 20 accounts. You can publicly share up to five
-        /// documents. If you need to increase this limit, contact Amazon Web Services Support.
+        /// specify a maximum of 20 accounts per API operation to share a private document.
+        /// 
+        ///  
+        /// <para>
+        /// By default, you can share a private document with a maximum of 1,000 accounts and
+        /// publicly share up to five documents.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you need to increase the quota for privately or publicly shared Systems Manager
+        /// documents, contact Amazon Web Services Support.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
@@ -10027,8 +10037,18 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DocumentPermissionLimitException">
         /// The document can't be shared with more Amazon Web Services user accounts. You can
-        /// share a document with a maximum of 20 accounts. You can publicly share up to five
-        /// documents. If you need to increase this limit, contact Amazon Web Services Support.
+        /// specify a maximum of 20 accounts per API operation to share a private document.
+        /// 
+        ///  
+        /// <para>
+        /// By default, you can share a private document with a maximum of 1,000 accounts and
+        /// publicly share up to five documents.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you need to increase the quota for privately or publicly shared Systems Manager
+        /// documents, contact Amazon Web Services Support.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.

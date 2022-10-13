@@ -2967,6 +2967,10 @@ namespace Amazon.SimpleSystemsManagement
         /// </summary>
         public static readonly OperatingSystem AMAZON_LINUX_2 = new OperatingSystem("AMAZON_LINUX_2");
         /// <summary>
+        /// Constant AMAZON_LINUX_2022 for OperatingSystem
+        /// </summary>
+        public static readonly OperatingSystem AMAZON_LINUX_2022 = new OperatingSystem("AMAZON_LINUX_2022");
+        /// <summary>
         /// Constant CENTOS for OperatingSystem
         /// </summary>
         public static readonly OperatingSystem CENTOS = new OperatingSystem("CENTOS");

@@ -30,8 +30,18 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// The document can't be shared with more Amazon Web Services user accounts. You can
-    /// share a document with a maximum of 20 accounts. You can publicly share up to five
-    /// documents. If you need to increase this limit, contact Amazon Web Services Support.
+    /// specify a maximum of 20 accounts per API operation to share a private document.
+    /// 
+    ///  
+    /// <para>
+    /// By default, you can share a private document with a maximum of 1,000 accounts and
+    /// publicly share up to five documents.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you need to increase the quota for privately or publicly shared Systems Manager
+    /// documents, contact Amazon Web Services Support.
+    /// </para>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
