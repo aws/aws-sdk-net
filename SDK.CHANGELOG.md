@@ -1,3 +1,10 @@
+### 3.7.374.0 (2022-10-14 18:18 UTC)
+* MediaConvert (3.7.18.0)
+	* MediaConvert now supports specifying the minimum percentage of the HRD buffer available at the end of each encoded video segment.
+* Core 3.7.13.20
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.373.0 (2022-10-13 18:34 UTC)
 * AmplifyUIBuilder (3.7.4.0)
 	* We are releasing the ability for fields to be configured as arrays.

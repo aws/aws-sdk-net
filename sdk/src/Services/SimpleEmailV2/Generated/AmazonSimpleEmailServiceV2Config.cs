@@ -32,7 +32,7 @@ namespace Amazon.SimpleEmailV2
     public partial class AmazonSimpleEmailServiceV2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.1.148");
+            InternalSDKUtils.BuildUserAgentString("3.7.1.149");
 
         private string _userAgent = UserAgentString;
 
