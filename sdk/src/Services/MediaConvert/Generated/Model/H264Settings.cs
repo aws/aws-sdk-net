@@ -50,6 +50,7 @@ namespace Amazon.MediaConvert.Model
         private int? _gopClosedCadence;
         private double? _gopSize;
         private H264GopSizeUnits _gopSizeUnits;
+        private int? _hrdBufferFinalFillPercentage;
         private int? _hrdBufferInitialFillPercentage;
         private int? _hrdBufferSize;
         private H264InterlaceMode _interlaceMode;
@@ -403,6 +404,25 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetGopSizeUnits()
         {
             return this._gopSizeUnits != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HrdBufferFinalFillPercentage. If your downstream systems
+        /// have strict buffer requirements: Specify the minimum percentage of the HRD buffer
+        /// that's available at the end of each encoded video segment. For the best video quality:
+        /// Set to 0 or leave blank to automatically determine the final buffer fill percentage.
+        /// </summary>
+        [AWSProperty(Min=0, Max=100)]
+        public int HrdBufferFinalFillPercentage
+        {
+            get { return this._hrdBufferFinalFillPercentage.GetValueOrDefault(); }
+            set { this._hrdBufferFinalFillPercentage = value; }
+        }
+
+        // Check to see if HrdBufferFinalFillPercentage property is set
+        internal bool IsSetHrdBufferFinalFillPercentage()
+        {
+            return this._hrdBufferFinalFillPercentage.HasValue; 
         }
 
         /// <summary>

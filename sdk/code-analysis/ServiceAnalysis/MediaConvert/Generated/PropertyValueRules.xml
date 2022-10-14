@@ -648,6 +648,11 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.H264Settings.HrdBufferFinalFillPercentage</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.H264Settings.HrdBufferInitialFillPercentage</property>
     <min>0</min>
     <max>100</max>
@@ -726,6 +731,11 @@
     <property>Amazon.MediaConvert.Model.H265Settings.GopClosedCadence</property>
     <min>0</min>
     <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.H265Settings.HrdBufferFinalFillPercentage</property>
+    <min>0</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.H265Settings.HrdBufferInitialFillPercentage</property>
@@ -1391,6 +1401,11 @@
     <property>Amazon.MediaConvert.Model.Mpeg2Settings.GopClosedCadence</property>
     <min>0</min>
     <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.Mpeg2Settings.HrdBufferFinalFillPercentage</property>
+    <min>0</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.Mpeg2Settings.HrdBufferInitialFillPercentage</property>

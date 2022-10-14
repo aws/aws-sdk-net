@@ -154,6 +154,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.GopSizeUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("hrdBufferFinalFillPercentage", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.HrdBufferFinalFillPercentage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("hrdBufferInitialFillPercentage", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

@@ -135,6 +135,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.GopSizeUnits);
             }
 
+            if(requestObject.IsSetHrdBufferFinalFillPercentage())
+            {
+                context.Writer.WritePropertyName("hrdBufferFinalFillPercentage");
+                context.Writer.Write(requestObject.HrdBufferFinalFillPercentage);
+            }
+
             if(requestObject.IsSetHrdBufferInitialFillPercentage())
             {
                 context.Writer.WritePropertyName("hrdBufferInitialFillPercentage");
