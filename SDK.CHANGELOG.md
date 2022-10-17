@@ -1,3 +1,9 @@
+### 3.7.375.0 (2022-10-17 18:18 UTC)
+* Greengrass (3.7.1.0)
+	* This change allows customers to specify FunctionRuntimeOverride in FunctionDefinitionVersion. This configuration can be used if the runtime on the device is different from the AWS Lambda runtime specified for that function.
+* SageMaker (3.7.53.0)
+	* This release adds support for C7g, C6g, C6gd, C6gn, M6g, M6gd, R6g, and R6gn Graviton instance types in Amazon SageMaker Inference.
+
 ### 3.7.374.0 (2022-10-14 18:18 UTC)
 * MediaConvert (3.7.18.0)
 	* MediaConvert now supports specifying the minimum percentage of the HRD buffer available at the end of each encoded video segment.
