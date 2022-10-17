@@ -161,7 +161,7 @@
             DestinationFolder="$(Deployment)" />
     </Target>
 
-    <Target Name="build-sdk-service" DependsOnTargets="populate-deployment;build-sdk-desktop-service;build-code-analysis;copy-assemblies;copy-dependencies">
+    <Target Name="build-sdk-service" DependsOnTargets="populate-deployment;build-sdk-desktop-service;build-code-analysis;sign-sdk-artifacts;copy-assemblies;copy-dependencies">
         <Copy
             SourceFiles="..\generator\ServiceModels\_sdk-versions.json"
             DestinationFolder="$(Deployment)" />
@@ -213,7 +213,7 @@
             Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File $(InternalBuildTools)\BuildScripts\Test-Signature.ps1 -folder ..\Deployment\ -pattern AWSSDK*.dll"/>
     </Target>
 
-    <Target Name="sign-sdk-artifacts" Condition="'$(CodeSigning)'=='true'" DependsOnTargets="build-buildtools;build-extensions">
+    <Target Name="sign-sdk-artifacts" Condition="Exists('$(InternalBuildTools)\references.targets') And $(CodeSigning)" DependsOnTargets="build-tools;build-buildtools;build-extensions">
         <!-- Configure project specfic code sign properties -->
         <ItemGroup>
             <!-- SDK items -->
