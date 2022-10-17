@@ -88,6 +88,12 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
                     unmarshalledObject.Executable = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FunctionRuntimeOverride", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FunctionRuntimeOverride = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MemorySize", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

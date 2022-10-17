@@ -74,6 +74,12 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Executable);
             }
 
+            if(requestObject.IsSetFunctionRuntimeOverride())
+            {
+                context.Writer.WritePropertyName("FunctionRuntimeOverride");
+                context.Writer.Write(requestObject.FunctionRuntimeOverride);
+            }
+
             if(requestObject.IsSetMemorySize())
             {
                 context.Writer.WritePropertyName("MemorySize");
