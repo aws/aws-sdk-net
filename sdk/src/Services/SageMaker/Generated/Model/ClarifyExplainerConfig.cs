@@ -41,7 +41,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property EnableExplanations. 
         /// <para>
         /// A JMESPath boolean expression used to filter which records to explain. Explanations
-        /// are activated by default. See <a href="https://docs.aws.amazon.com/sagemaker-dg/src/AWSIronmanApiDoc/build/server-root/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html#clarify-online-explainability-create-endpoint-enable">
+        /// are activated by default. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html#clarify-online-explainability-create-endpoint-enable">
         /// <code>EnableExplanations</code> </a>for additional information.
         /// </para>
         /// </summary>

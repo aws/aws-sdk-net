@@ -95,7 +95,7 @@ namespace Amazon.SageMaker.Model
         /// Provides the JMESPath expression to extract the features from a model container input
         /// in JSON Lines format. For example, if <code>FeaturesAttribute</code> is the JMESPath
         /// expression <code>'myfeatures'</code>, it extracts a list of features <code>[1,2,3]</code>
-        /// from request data <code>'{"myfeatures":[1,2,3}'</code>.
+        /// from request data <code>'{"myfeatures":[1,2,3]}'</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

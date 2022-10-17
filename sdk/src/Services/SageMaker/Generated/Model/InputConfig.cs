@@ -354,8 +354,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property FrameworkVersion. 
         /// <para>
-        /// Specifies the framework version to use. This API field is only supported for the PyTorch
-        /// and TensorFlow frameworks.
+        /// Specifies the framework version to use. This API field is only supported for the MXNet,
+        /// PyTorch, TensorFlow and TensorFlow Lite frameworks.
         /// </para>
         ///  
         /// <para>
