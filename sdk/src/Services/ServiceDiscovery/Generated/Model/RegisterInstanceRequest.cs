@@ -104,17 +104,22 @@ namespace Amazon.ServiceDiscovery.Model
         /// <para>
         /// For each attribute, the applicable value.
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// Do not include sensitive information in the attributes if the namespace is discoverable
+        /// by public DNS queries.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Supported attribute keys include the following:
         /// </para>
         ///  <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> 
         /// <para>
-        /// If you want Cloud Map to create an Amazon Route 53 alias record that routes traffic
+        /// If you want Cloud Map to create an Amazon Route 53 alias record that routes traffic
         /// to an Elastic Load Balancing load balancer, specify the DNS name that's associated
         /// with the load balancer. For information about how to get the DNS name, see "DNSName"
         /// in the topic <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>
-        /// in the <i>Route 53 API Reference</i>.
+        /// in the <i>Route 53 API Reference</i>.
         /// </para>
         ///  
         /// <para>
@@ -133,7 +138,7 @@ namespace Amazon.ServiceDiscovery.Model
         ///  </li> <li> 
         /// <para>
         /// If the service that's specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code>
-        /// settings, Cloud Map will create the Route 53 health check, but it doesn't associate
+        /// settings, Cloud Map will create the Route 53 health check, but it doesn't associate
         /// the health check with the alias record.
         /// </para>
         ///  </li> <li> 
@@ -164,7 +169,7 @@ namespace Amazon.ServiceDiscovery.Model
         ///  </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> 
         /// <para>
         /// If the service configuration includes a <code>CNAME</code> record, the domain name
-        /// that you want Route 53 to return in response to DNS queries (for example, <code>example.com</code>).
+        /// that you want Route 53 to return in response to DNS queries (for example, <code>example.com</code>).
         /// </para>
         ///  
         /// <para>
@@ -174,7 +179,7 @@ namespace Amazon.ServiceDiscovery.Model
         ///  </dd> <dt>AWS_INSTANCE_IPV4</dt> <dd> 
         /// <para>
         /// If the service configuration includes an <code>A</code> record, the IPv4 address that
-        /// you want Route 53 to return in response to DNS queries (for example, <code>192.0.2.44</code>).
+        /// you want Route 53 to return in response to DNS queries (for example, <code>192.0.2.44</code>).
         /// </para>
         ///  
         /// <para>
@@ -186,7 +191,7 @@ namespace Amazon.ServiceDiscovery.Model
         ///  </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> 
         /// <para>
         /// If the service configuration includes an <code>AAAA</code> record, the IPv6 address
-        /// that you want Route 53 to return in response to DNS queries (for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).
+        /// that you want Route 53 to return in response to DNS queries (for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).
         /// </para>
         ///  
         /// <para>
@@ -197,18 +202,18 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  </dd> <dt>AWS_INSTANCE_PORT</dt> <dd> 
         /// <para>
-        /// If the service includes an <code>SRV</code> record, the value that you want Route
-        /// 53 to return for the port.
+        /// If the service includes an <code>SRV</code> record, the value that you want Route 53
+        /// to return for the port.
         /// </para>
         ///  
         /// <para>
         /// If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that
-        /// you want Route 53 to send requests to. 
+        /// you want Route 53 to send requests to. 
         /// </para>
         ///  
         /// <para>
         /// This value is required if you specified settings for an <code>SRV</code> record or
-        /// a Route 53 health check when you created the service.
+        /// a Route 53 health check when you created the service.
         /// </para>
         ///  </dd> <dt>Custom attributes</dt> <dd> 
         /// <para>
@@ -288,7 +293,14 @@ namespace Amazon.ServiceDiscovery.Model
         /// The health check isn't deleted immediately, so it will still appear for a while if
         /// you submit a <code>ListHealthChecks</code> request, for example.
         /// </para>
-        ///  </note> </li> </ul>
+        ///  </note> </li> </ul> <note> 
+        /// <para>
+        /// Do not include sensitive information in <code>InstanceId</code> if the namespace is
+        /// discoverable by public DNS queries and any <code>Type</code> member of <code>DnsRecord</code>
+        /// for the service contains <code>SRV</code> because the <code>InstanceId</code> is discoverable
+        /// by public DNS queries.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]
         public string InstanceId

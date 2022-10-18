@@ -36,7 +36,8 @@ namespace Amazon.ServiceDiscovery.Model
     /// the resulting DNS name for the service is <code>backend.example.com</code>. Service
     /// instances that are registered using a private DNS namespace can be discovered using
     /// either a <code>DiscoverInstances</code> request or using DNS. For the current quota
-    /// on the number of namespaces that you can create using the same account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud
+    /// on the number of namespaces that you can create using the same Amazon Web Services
+    /// account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud
     /// Map quotas</a> in the <i>Cloud Map Developer Guide</i>.
     /// </summary>
     public partial class CreatePrivateDnsNamespaceRequest : AmazonServiceDiscoveryRequest
@@ -92,11 +93,11 @@ namespace Amazon.ServiceDiscovery.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// The name that you want to assign to this namespace. When you create a private DNS
-        /// namespace, Cloud Map automatically creates an Amazon Route 53 private hosted zone
+        /// namespace, Cloud Map automatically creates an Amazon Route 53 private hosted zone
         /// that has the same name as the namespace.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=1024)]
+        [AWSProperty(Required=true, Max=253)]
         public string Name
         {
             get { return this._name; }

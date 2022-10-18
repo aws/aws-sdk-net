@@ -104,7 +104,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property DnsConfig. 
         /// <para>
-        /// Information about the Route 53 DNS records that you want Cloud Map to create when
+        /// Information about the Route 53 DNS records that you want Cloud Map to create when
         /// you register an instance.
         /// </para>
         /// </summary>

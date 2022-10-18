@@ -63,7 +63,7 @@ namespace Amazon.ServiceDiscovery
         ///  
         /// <para>
         /// For the current quota on the number of namespaces that you can create using the same
-        /// account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud
+        /// Amazon Web Services account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud
         /// Map quotas</a> in the <i>Cloud Map Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -129,7 +129,8 @@ namespace Amazon.ServiceDiscovery
         /// the resulting DNS name for the service is <code>backend.example.com</code>. Service
         /// instances that are registered using a private DNS namespace can be discovered using
         /// either a <code>DiscoverInstances</code> request or using DNS. For the current quota
-        /// on the number of namespaces that you can create using the same account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud
+        /// on the number of namespaces that you can create using the same Amazon Web Services
+        /// account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud
         /// Map quotas</a> in the <i>Cloud Map Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePrivateDnsNamespace service method.</param>
@@ -194,8 +195,15 @@ namespace Amazon.ServiceDiscovery
         /// is <code>backend.example.com</code>. You can discover instances that were registered
         /// with a public DNS namespace by using either a <code>DiscoverInstances</code> request
         /// or using DNS. For the current quota on the number of namespaces that you can create
-        /// using the same account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud
+        /// using the same Amazon Web Services account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud
         /// Map quotas</a> in the <i>Cloud Map Developer Guide</i>.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// The <code>CreatePublicDnsNamespace</code> API operation is not supported in the Amazon
+        /// Web Services GovCloud (US) Regions.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePublicDnsNamespace service method.</param>
         /// 
@@ -258,7 +266,7 @@ namespace Amazon.ServiceDiscovery
         ///  <ul> <li> 
         /// <para>
         /// For public and private DNS namespaces, one of the following combinations of DNS records
-        /// in Amazon Route 53:
+        /// in Amazon Route 53:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -462,7 +470,7 @@ namespace Amazon.ServiceDiscovery
 
 
         /// <summary>
-        /// Deletes the Amazon Route 53 DNS records and health check, if any, that Cloud Map created
+        /// Deletes the Amazon Route 53 DNS records and health check, if any, that Cloud Map created
         /// for the specified instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterInstance service method.</param>
@@ -892,7 +900,8 @@ namespace Amazon.ServiceDiscovery
 
 
         /// <summary>
-        /// Lists summary information about the namespaces that were created by the current account.
+        /// Lists summary information about the namespaces that were created by the current Amazon
+        /// Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListNamespaces service method.</param>
         /// 
@@ -1347,7 +1356,7 @@ namespace Amazon.ServiceDiscovery
         /// <para>
         /// You can use <code>UpdateInstanceCustomHealthStatus</code> to change the status only
         /// for custom health checks, which you define using <code>HealthCheckCustomConfig</code>
-        /// when you create a service. You can't use it to change the status for Route 53 health
+        /// when you create a service. You can't use it to change the status for Route 53 health
         /// checks, which you define using <code>HealthCheckConfig</code>.
         /// </para>
         ///  
