@@ -52,12 +52,8 @@ namespace Amazon.S3.Transfer
         }
 
         /// <summary>
-        /// Gets or sets the minimum part size for upload parts in bytes. The default is 16 MB.
-        /// Decreasing the minimum part size causes 
-        /// multipart uploads to be split into a larger number
-        /// of smaller parts. Setting this value too low has a negative effect
-        /// on transfer speeds, causing extra latency and network
-        /// communication for each part.
+        /// Gets or sets the minimum size required (in bytes) to enable multi-part upload. The default is 16 MB.
+        /// If the file size is greater than or equal to MinSizeBeforePartUpload, multi-part upload will be used.
         /// </summary>
         public long MinSizeBeforePartUpload
         {
