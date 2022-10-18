@@ -1,3 +1,16 @@
+### 3.7.376.0 (2022-10-18 18:23 UTC)
+* FraudDetector (3.7.7.40)
+	* Documentation Updates for Amazon Fraud Detector
+* SageMaker (3.7.54.0)
+	* This change allows customers to enable data capturing while running a batch transform job, and configure monitoring schedule to monitoring the captured data.
+* ServiceDiscovery (3.7.4.0)
+	* Updated the ListNamespaces API to support the NAME and HTTP_NAME filters, and the BEGINS_WITH filter condition.
+* SimpleEmailV2 (3.7.2.0)
+	* This release allows subscribers to enable Dedicated IPs (managed) to send email via a fully managed dedicated IP experience. It also adds identities' VerificationStatus in the response of GetEmailIdentity and ListEmailIdentities APIs, and ImportJobs counts in the response of ListImportJobs API.
+* Core 3.7.13.21
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.375.0 (2022-10-17 18:18 UTC)
 * Greengrass (3.7.1.0)
 	* This change allows customers to specify FunctionRuntimeOverride in FunctionDefinitionVersion. This configuration can be used if the runtime on the device is different from the AWS Lambda runtime specified for that function.
