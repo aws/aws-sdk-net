@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// MonitoringInput Marshaller
+    /// MonitoringParquetDatasetFormat Marshaller
     /// </summary>
-    public class MonitoringInputMarshaller : IRequestMarshaller<MonitoringInput, JsonMarshallerContext> 
+    public class MonitoringParquetDatasetFormatMarshaller : IRequestMarshaller<MonitoringParquetDatasetFormat, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,36 +43,14 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MonitoringInput requestObject, JsonMarshallerContext context)
+        public void Marshall(MonitoringParquetDatasetFormat requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetBatchTransformInput())
-            {
-                context.Writer.WritePropertyName("BatchTransformInput");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = BatchTransformInputMarshaller.Instance;
-                marshaller.Marshall(requestObject.BatchTransformInput, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetEndpointInput())
-            {
-                context.Writer.WritePropertyName("EndpointInput");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = EndpointInputMarshaller.Instance;
-                marshaller.Marshall(requestObject.EndpointInput, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
         }
 
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static MonitoringInputMarshaller Instance = new MonitoringInputMarshaller();
+        public readonly static MonitoringParquetDatasetFormatMarshaller Instance = new MonitoringParquetDatasetFormatMarshaller();
 
     }
 }

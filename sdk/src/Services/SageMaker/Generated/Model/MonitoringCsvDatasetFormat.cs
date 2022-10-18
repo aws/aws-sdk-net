@@ -29,44 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Inputs for the model explainability job.
+    /// Represents the CSV dataset format used when running a monitoring job.
     /// </summary>
-    public partial class ModelExplainabilityJobInput
+    public partial class MonitoringCsvDatasetFormat
     {
-        private BatchTransformInput _batchTransformInput;
-        private EndpointInput _endpointInput;
+        private bool? _header;
 
         /// <summary>
-        /// Gets and sets the property BatchTransformInput. 
+        /// Gets and sets the property Header. 
         /// <para>
-        /// Input object for the batch transform job.
+        /// Indicates if the CSV data has a header.
         /// </para>
         /// </summary>
-        public BatchTransformInput BatchTransformInput
+        public bool Header
         {
-            get { return this._batchTransformInput; }
-            set { this._batchTransformInput = value; }
+            get { return this._header.GetValueOrDefault(); }
+            set { this._header = value; }
         }
 
-        // Check to see if BatchTransformInput property is set
-        internal bool IsSetBatchTransformInput()
+        // Check to see if Header property is set
+        internal bool IsSetHeader()
         {
-            return this._batchTransformInput != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property EndpointInput.
-        /// </summary>
-        public EndpointInput EndpointInput
-        {
-            get { return this._endpointInput; }
-            set { this._endpointInput = value; }
-        }
-
-        // Check to see if EndpointInput property is set
-        internal bool IsSetEndpointInput()
-        {
-            return this._endpointInput != null;
+            return this._header.HasValue; 
         }
 
     }

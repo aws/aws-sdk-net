@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ModelExplainabilityJobInput Object
+    /// Response Unmarshaller for BatchDataCaptureConfig Object
     /// </summary>  
-    public class ModelExplainabilityJobInputUnmarshaller : IUnmarshaller<ModelExplainabilityJobInput, XmlUnmarshallerContext>, IUnmarshaller<ModelExplainabilityJobInput, JsonUnmarshallerContext>
+    public class BatchDataCaptureConfigUnmarshaller : IUnmarshaller<BatchDataCaptureConfig, XmlUnmarshallerContext>, IUnmarshaller<BatchDataCaptureConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ModelExplainabilityJobInput IUnmarshaller<ModelExplainabilityJobInput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        BatchDataCaptureConfig IUnmarshaller<BatchDataCaptureConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,33 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ModelExplainabilityJobInput Unmarshall(JsonUnmarshallerContext context)
+        public BatchDataCaptureConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ModelExplainabilityJobInput unmarshalledObject = new ModelExplainabilityJobInput();
+            BatchDataCaptureConfig unmarshalledObject = new BatchDataCaptureConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("BatchTransformInput", targetDepth))
+                if (context.TestExpression("DestinationS3Uri", targetDepth))
                 {
-                    var unmarshaller = BatchTransformInputUnmarshaller.Instance;
-                    unmarshalledObject.BatchTransformInput = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DestinationS3Uri = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("EndpointInput", targetDepth))
+                if (context.TestExpression("GenerateInferenceId", targetDepth))
                 {
-                    var unmarshaller = EndpointInputUnmarshaller.Instance;
-                    unmarshalledObject.EndpointInput = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.GenerateInferenceId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("KmsKeyId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +88,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static ModelExplainabilityJobInputUnmarshaller _instance = new ModelExplainabilityJobInputUnmarshaller();        
+        private static BatchDataCaptureConfigUnmarshaller _instance = new BatchDataCaptureConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ModelExplainabilityJobInputUnmarshaller Instance
+        public static BatchDataCaptureConfigUnmarshaller Instance
         {
             get
             {

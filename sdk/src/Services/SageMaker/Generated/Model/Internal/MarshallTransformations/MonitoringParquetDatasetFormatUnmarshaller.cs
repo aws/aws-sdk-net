@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ModelExplainabilityJobInput Object
+    /// Response Unmarshaller for MonitoringParquetDatasetFormat Object
     /// </summary>  
-    public class ModelExplainabilityJobInputUnmarshaller : IUnmarshaller<ModelExplainabilityJobInput, XmlUnmarshallerContext>, IUnmarshaller<ModelExplainabilityJobInput, JsonUnmarshallerContext>
+    public class MonitoringParquetDatasetFormatUnmarshaller : IUnmarshaller<MonitoringParquetDatasetFormat, XmlUnmarshallerContext>, IUnmarshaller<MonitoringParquetDatasetFormat, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ModelExplainabilityJobInput IUnmarshaller<ModelExplainabilityJobInput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MonitoringParquetDatasetFormat IUnmarshaller<MonitoringParquetDatasetFormat, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,41 +53,29 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ModelExplainabilityJobInput Unmarshall(JsonUnmarshallerContext context)
+        public MonitoringParquetDatasetFormat Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ModelExplainabilityJobInput unmarshalledObject = new ModelExplainabilityJobInput();
+            MonitoringParquetDatasetFormat unmarshalledObject = new MonitoringParquetDatasetFormat();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("BatchTransformInput", targetDepth))
-                {
-                    var unmarshaller = BatchTransformInputUnmarshaller.Instance;
-                    unmarshalledObject.BatchTransformInput = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EndpointInput", targetDepth))
-                {
-                    var unmarshaller = EndpointInputUnmarshaller.Instance;
-                    unmarshalledObject.EndpointInput = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
           
             return unmarshalledObject;
         }
 
 
-        private static ModelExplainabilityJobInputUnmarshaller _instance = new ModelExplainabilityJobInputUnmarshaller();        
+        private static MonitoringParquetDatasetFormatUnmarshaller _instance = new MonitoringParquetDatasetFormatUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ModelExplainabilityJobInputUnmarshaller Instance
+        public static MonitoringParquetDatasetFormatUnmarshaller Instance
         {
             get
             {

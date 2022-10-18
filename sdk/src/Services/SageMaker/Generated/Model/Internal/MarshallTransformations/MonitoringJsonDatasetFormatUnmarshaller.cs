@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ModelExplainabilityJobInput Object
+    /// Response Unmarshaller for MonitoringJsonDatasetFormat Object
     /// </summary>  
-    public class ModelExplainabilityJobInputUnmarshaller : IUnmarshaller<ModelExplainabilityJobInput, XmlUnmarshallerContext>, IUnmarshaller<ModelExplainabilityJobInput, JsonUnmarshallerContext>
+    public class MonitoringJsonDatasetFormatUnmarshaller : IUnmarshaller<MonitoringJsonDatasetFormat, XmlUnmarshallerContext>, IUnmarshaller<MonitoringJsonDatasetFormat, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ModelExplainabilityJobInput IUnmarshaller<ModelExplainabilityJobInput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MonitoringJsonDatasetFormat IUnmarshaller<MonitoringJsonDatasetFormat, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,21 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ModelExplainabilityJobInput Unmarshall(JsonUnmarshallerContext context)
+        public MonitoringJsonDatasetFormat Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ModelExplainabilityJobInput unmarshalledObject = new ModelExplainabilityJobInput();
+            MonitoringJsonDatasetFormat unmarshalledObject = new MonitoringJsonDatasetFormat();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("BatchTransformInput", targetDepth))
+                if (context.TestExpression("Line", targetDepth))
                 {
-                    var unmarshaller = BatchTransformInputUnmarshaller.Instance;
-                    unmarshalledObject.BatchTransformInput = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EndpointInput", targetDepth))
-                {
-                    var unmarshaller = EndpointInputUnmarshaller.Instance;
-                    unmarshalledObject.EndpointInput = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Line = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +76,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static ModelExplainabilityJobInputUnmarshaller _instance = new ModelExplainabilityJobInputUnmarshaller();        
+        private static MonitoringJsonDatasetFormatUnmarshaller _instance = new MonitoringJsonDatasetFormatUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ModelExplainabilityJobInputUnmarshaller Instance
+        public static MonitoringJsonDatasetFormatUnmarshaller Instance
         {
             get
             {

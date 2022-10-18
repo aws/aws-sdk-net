@@ -73,6 +73,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.BatchStrategy);
                 }
 
+                if(publicRequest.IsSetDataCaptureConfig())
+                {
+                    context.Writer.WritePropertyName("DataCaptureConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = BatchDataCaptureConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DataCaptureConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDataProcessing())
                 {
                     context.Writer.WritePropertyName("DataProcessing");

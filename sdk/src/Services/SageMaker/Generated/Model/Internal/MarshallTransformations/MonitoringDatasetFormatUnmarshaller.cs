@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ModelExplainabilityJobInput Object
+    /// Response Unmarshaller for MonitoringDatasetFormat Object
     /// </summary>  
-    public class ModelExplainabilityJobInputUnmarshaller : IUnmarshaller<ModelExplainabilityJobInput, XmlUnmarshallerContext>, IUnmarshaller<ModelExplainabilityJobInput, JsonUnmarshallerContext>
+    public class MonitoringDatasetFormatUnmarshaller : IUnmarshaller<MonitoringDatasetFormat, XmlUnmarshallerContext>, IUnmarshaller<MonitoringDatasetFormat, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ModelExplainabilityJobInput IUnmarshaller<ModelExplainabilityJobInput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MonitoringDatasetFormat IUnmarshaller<MonitoringDatasetFormat, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,33 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ModelExplainabilityJobInput Unmarshall(JsonUnmarshallerContext context)
+        public MonitoringDatasetFormat Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ModelExplainabilityJobInput unmarshalledObject = new ModelExplainabilityJobInput();
+            MonitoringDatasetFormat unmarshalledObject = new MonitoringDatasetFormat();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("BatchTransformInput", targetDepth))
+                if (context.TestExpression("Csv", targetDepth))
                 {
-                    var unmarshaller = BatchTransformInputUnmarshaller.Instance;
-                    unmarshalledObject.BatchTransformInput = unmarshaller.Unmarshall(context);
+                    var unmarshaller = MonitoringCsvDatasetFormatUnmarshaller.Instance;
+                    unmarshalledObject.Csv = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("EndpointInput", targetDepth))
+                if (context.TestExpression("Json", targetDepth))
                 {
-                    var unmarshaller = EndpointInputUnmarshaller.Instance;
-                    unmarshalledObject.EndpointInput = unmarshaller.Unmarshall(context);
+                    var unmarshaller = MonitoringJsonDatasetFormatUnmarshaller.Instance;
+                    unmarshalledObject.Json = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Parquet", targetDepth))
+                {
+                    var unmarshaller = MonitoringParquetDatasetFormatUnmarshaller.Instance;
+                    unmarshalledObject.Parquet = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +88,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static ModelExplainabilityJobInputUnmarshaller _instance = new ModelExplainabilityJobInputUnmarshaller();        
+        private static MonitoringDatasetFormatUnmarshaller _instance = new MonitoringDatasetFormatUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ModelExplainabilityJobInputUnmarshaller Instance
+        public static MonitoringDatasetFormatUnmarshaller Instance
         {
             get
             {

@@ -29,44 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Inputs for the model explainability job.
+    /// Represents the JSON dataset format used when running a monitoring job.
     /// </summary>
-    public partial class ModelExplainabilityJobInput
+    public partial class MonitoringJsonDatasetFormat
     {
-        private BatchTransformInput _batchTransformInput;
-        private EndpointInput _endpointInput;
+        private bool? _line;
 
         /// <summary>
-        /// Gets and sets the property BatchTransformInput. 
+        /// Gets and sets the property Line. 
         /// <para>
-        /// Input object for the batch transform job.
+        /// Indicates if the file should be read as a json object per line. 
         /// </para>
         /// </summary>
-        public BatchTransformInput BatchTransformInput
+        public bool Line
         {
-            get { return this._batchTransformInput; }
-            set { this._batchTransformInput = value; }
+            get { return this._line.GetValueOrDefault(); }
+            set { this._line = value; }
         }
 
-        // Check to see if BatchTransformInput property is set
-        internal bool IsSetBatchTransformInput()
+        // Check to see if Line property is set
+        internal bool IsSetLine()
         {
-            return this._batchTransformInput != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property EndpointInput.
-        /// </summary>
-        public EndpointInput EndpointInput
-        {
-            get { return this._endpointInput; }
-            set { this._endpointInput = value; }
-        }
-
-        // Check to see if EndpointInput property is set
-        internal bool IsSetEndpointInput()
-        {
-            return this._endpointInput != null;
+            return this._line.HasValue; 
         }
 
     }

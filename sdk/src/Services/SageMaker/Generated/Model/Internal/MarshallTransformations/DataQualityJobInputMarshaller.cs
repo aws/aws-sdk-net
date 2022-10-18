@@ -45,6 +45,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DataQualityJobInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetBatchTransformInput())
+            {
+                context.Writer.WritePropertyName("BatchTransformInput");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = BatchTransformInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.BatchTransformInput, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetEndpointInput())
             {
                 context.Writer.WritePropertyName("EndpointInput");

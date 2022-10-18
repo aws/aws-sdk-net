@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// MonitoringInput Marshaller
+    /// BatchDataCaptureConfig Marshaller
     /// </summary>
-    public class MonitoringInputMarshaller : IRequestMarshaller<MonitoringInput, JsonMarshallerContext> 
+    public class BatchDataCaptureConfigMarshaller : IRequestMarshaller<BatchDataCaptureConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,28 +43,24 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MonitoringInput requestObject, JsonMarshallerContext context)
+        public void Marshall(BatchDataCaptureConfig requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetBatchTransformInput())
+            if(requestObject.IsSetDestinationS3Uri())
             {
-                context.Writer.WritePropertyName("BatchTransformInput");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = BatchTransformInputMarshaller.Instance;
-                marshaller.Marshall(requestObject.BatchTransformInput, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("DestinationS3Uri");
+                context.Writer.Write(requestObject.DestinationS3Uri);
             }
 
-            if(requestObject.IsSetEndpointInput())
+            if(requestObject.IsSetGenerateInferenceId())
             {
-                context.Writer.WritePropertyName("EndpointInput");
-                context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("GenerateInferenceId");
+                context.Writer.Write(requestObject.GenerateInferenceId);
+            }
 
-                var marshaller = EndpointInputMarshaller.Instance;
-                marshaller.Marshall(requestObject.EndpointInput, context);
-
-                context.Writer.WriteObjectEnd();
+            if(requestObject.IsSetKmsKeyId())
+            {
+                context.Writer.WritePropertyName("KmsKeyId");
+                context.Writer.Write(requestObject.KmsKeyId);
             }
 
         }
@@ -72,7 +68,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static MonitoringInputMarshaller Instance = new MonitoringInputMarshaller();
+        public readonly static BatchDataCaptureConfigMarshaller Instance = new BatchDataCaptureConfigMarshaller();
 
     }
 }

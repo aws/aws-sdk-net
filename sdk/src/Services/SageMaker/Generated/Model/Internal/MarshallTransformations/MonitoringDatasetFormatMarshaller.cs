@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// MonitoringInput Marshaller
+    /// MonitoringDatasetFormat Marshaller
     /// </summary>
-    public class MonitoringInputMarshaller : IRequestMarshaller<MonitoringInput, JsonMarshallerContext> 
+    public class MonitoringDatasetFormatMarshaller : IRequestMarshaller<MonitoringDatasetFormat, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,26 +43,37 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MonitoringInput requestObject, JsonMarshallerContext context)
+        public void Marshall(MonitoringDatasetFormat requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetBatchTransformInput())
+            if(requestObject.IsSetCsv())
             {
-                context.Writer.WritePropertyName("BatchTransformInput");
+                context.Writer.WritePropertyName("Csv");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = BatchTransformInputMarshaller.Instance;
-                marshaller.Marshall(requestObject.BatchTransformInput, context);
+                var marshaller = MonitoringCsvDatasetFormatMarshaller.Instance;
+                marshaller.Marshall(requestObject.Csv, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetEndpointInput())
+            if(requestObject.IsSetJson())
             {
-                context.Writer.WritePropertyName("EndpointInput");
+                context.Writer.WritePropertyName("Json");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = EndpointInputMarshaller.Instance;
-                marshaller.Marshall(requestObject.EndpointInput, context);
+                var marshaller = MonitoringJsonDatasetFormatMarshaller.Instance;
+                marshaller.Marshall(requestObject.Json, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetParquet())
+            {
+                context.Writer.WritePropertyName("Parquet");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = MonitoringParquetDatasetFormatMarshaller.Instance;
+                marshaller.Marshall(requestObject.Parquet, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -72,7 +83,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static MonitoringInputMarshaller Instance = new MonitoringInputMarshaller();
+        public readonly static MonitoringDatasetFormatMarshaller Instance = new MonitoringDatasetFormatMarshaller();
 
     }
 }

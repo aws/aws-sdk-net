@@ -33,7 +33,26 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class MonitoringInput
     {
+        private BatchTransformInput _batchTransformInput;
         private EndpointInput _endpointInput;
+
+        /// <summary>
+        /// Gets and sets the property BatchTransformInput. 
+        /// <para>
+        /// Input object for the batch transform job.
+        /// </para>
+        /// </summary>
+        public BatchTransformInput BatchTransformInput
+        {
+            get { return this._batchTransformInput; }
+            set { this._batchTransformInput = value; }
+        }
+
+        // Check to see if BatchTransformInput property is set
+        internal bool IsSetBatchTransformInput()
+        {
+            return this._batchTransformInput != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EndpointInput. 
@@ -41,7 +60,6 @@ namespace Amazon.SageMaker.Model
         /// The endpoint for a monitoring job.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public EndpointInput EndpointInput
         {
             get { return this._endpointInput; }
