@@ -82,8 +82,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property SubscriptionStartDate. 
         /// <para>
-        /// The date, in Unix time format, when you enabled the Deliverability dashboard for the
-        /// domain.
+        /// The date when you enabled the Deliverability dashboard for the domain.
         /// </para>
         /// </summary>
         public DateTime SubscriptionStartDate

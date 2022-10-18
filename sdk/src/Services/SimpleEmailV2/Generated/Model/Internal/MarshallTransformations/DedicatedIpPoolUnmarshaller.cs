@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ImportJobSummary Object
+    /// Response Unmarshaller for DedicatedIpPool Object
     /// </summary>  
-    public class ImportJobSummaryUnmarshaller : IUnmarshaller<ImportJobSummary, XmlUnmarshallerContext>, IUnmarshaller<ImportJobSummary, JsonUnmarshallerContext>
+    public class DedicatedIpPoolUnmarshaller : IUnmarshaller<DedicatedIpPool, XmlUnmarshallerContext>, IUnmarshaller<DedicatedIpPool, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ImportJobSummary IUnmarshaller<ImportJobSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DedicatedIpPool IUnmarshaller<DedicatedIpPool, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,27 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ImportJobSummary Unmarshall(JsonUnmarshallerContext context)
+        public DedicatedIpPool Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ImportJobSummary unmarshalledObject = new ImportJobSummary();
+            DedicatedIpPool unmarshalledObject = new DedicatedIpPool();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CreatedTimestamp", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedTimestamp = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("FailedRecordsCount", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.FailedRecordsCount = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ImportDestination", targetDepth))
-                {
-                    var unmarshaller = ImportDestinationUnmarshaller.Instance;
-                    unmarshalledObject.ImportDestination = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("JobId", targetDepth))
+                if (context.TestExpression("PoolName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.JobId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PoolName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("JobStatus", targetDepth))
+                if (context.TestExpression("ScalingMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.JobStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ProcessedRecordsCount", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.ProcessedRecordsCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScalingMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +82,12 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static ImportJobSummaryUnmarshaller _instance = new ImportJobSummaryUnmarshaller();        
+        private static DedicatedIpPoolUnmarshaller _instance = new DedicatedIpPoolUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ImportJobSummaryUnmarshaller Instance
+        public static DedicatedIpPoolUnmarshaller Instance
         {
             get
             {

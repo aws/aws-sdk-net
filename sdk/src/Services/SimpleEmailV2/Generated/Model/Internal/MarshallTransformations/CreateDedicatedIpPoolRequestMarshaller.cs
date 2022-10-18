@@ -71,6 +71,12 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PoolName);
                 }
 
+                if(publicRequest.IsSetScalingMode())
+                {
+                    context.Writer.WritePropertyName("ScalingMode");
+                    context.Writer.Write(publicRequest.ScalingMode);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");

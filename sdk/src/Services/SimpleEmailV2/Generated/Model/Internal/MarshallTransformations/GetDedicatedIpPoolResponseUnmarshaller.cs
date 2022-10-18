@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetEmailIdentity operation
+    /// Response Unmarshaller for GetDedicatedIpPool operation
     /// </summary>  
-    public class GetEmailIdentityResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetDedicatedIpPoolResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,64 +45,16 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetEmailIdentityResponse response = new GetEmailIdentityResponse();
+            GetDedicatedIpPoolResponse response = new GetDedicatedIpPoolResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ConfigurationSetName", targetDepth))
+                if (context.TestExpression("DedicatedIpPool", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ConfigurationSetName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DkimAttributes", targetDepth))
-                {
-                    var unmarshaller = DkimAttributesUnmarshaller.Instance;
-                    response.DkimAttributes = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("FeedbackForwardingStatus", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.FeedbackForwardingStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("IdentityType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.IdentityType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MailFromAttributes", targetDepth))
-                {
-                    var unmarshaller = MailFromAttributesUnmarshaller.Instance;
-                    response.MailFromAttributes = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Policies", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.Policies = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Tags", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
-                    response.Tags = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("VerificationStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.VerificationStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("VerifiedForSendingStatus", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.VerifiedForSendingStatus = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DedicatedIpPoolUnmarshaller.Instance;
+                    response.DedicatedIpPool = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -144,9 +96,9 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             return new AmazonSimpleEmailServiceV2Exception(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetEmailIdentityResponseUnmarshaller _instance = new GetEmailIdentityResponseUnmarshaller();        
+        private static GetDedicatedIpPoolResponseUnmarshaller _instance = new GetDedicatedIpPoolResponseUnmarshaller();        
 
-        internal static GetEmailIdentityResponseUnmarshaller GetInstance()
+        internal static GetDedicatedIpPoolResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -154,7 +106,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetEmailIdentityResponseUnmarshaller Instance
+        public static GetDedicatedIpPoolResponseUnmarshaller Instance
         {
             get
             {

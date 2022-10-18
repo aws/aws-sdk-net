@@ -47,8 +47,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// It can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes
-        /// (-).
+        /// Can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes
+        /// (-), at signs (@), and periods (.).
         /// </para>
         ///  </li> <li> 
         /// <para>

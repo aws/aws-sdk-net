@@ -34,9 +34,11 @@ namespace Amazon.SimpleEmailV2.Model
     public partial class ImportJobSummary
     {
         private DateTime? _createdTimestamp;
+        private int? _failedRecordsCount;
         private ImportDestination _importDestination;
         private string _jobId;
         private JobStatus _jobStatus;
+        private int? _processedRecordsCount;
 
         /// <summary>
         /// Gets and sets the property CreatedTimestamp. 
@@ -54,6 +56,24 @@ namespace Amazon.SimpleEmailV2.Model
         internal bool IsSetCreatedTimestamp()
         {
             return this._createdTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FailedRecordsCount. 
+        /// <para>
+        /// The number of records that failed processing because of invalid input or other reasons.
+        /// </para>
+        /// </summary>
+        public int FailedRecordsCount
+        {
+            get { return this._failedRecordsCount.GetValueOrDefault(); }
+            set { this._failedRecordsCount = value; }
+        }
+
+        // Check to see if FailedRecordsCount property is set
+        internal bool IsSetFailedRecordsCount()
+        {
+            return this._failedRecordsCount.HasValue; 
         }
 
         /// <summary>
@@ -100,6 +120,24 @@ namespace Amazon.SimpleEmailV2.Model
         internal bool IsSetJobStatus()
         {
             return this._jobStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProcessedRecordsCount. 
+        /// <para>
+        /// The current number of records processed.
+        /// </para>
+        /// </summary>
+        public int ProcessedRecordsCount
+        {
+            get { return this._processedRecordsCount.GetValueOrDefault(); }
+            set { this._processedRecordsCount = value; }
+        }
+
+        // Check to see if ProcessedRecordsCount property is set
+        internal bool IsSetProcessedRecordsCount()
+        {
+            return this._processedRecordsCount.HasValue; 
         }
 
     }

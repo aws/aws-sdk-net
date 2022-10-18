@@ -36,6 +36,7 @@ namespace Amazon.SimpleEmailV2.Model
         private string _identityName;
         private IdentityType _identityType;
         private bool? _sendingEnabled;
+        private VerificationStatus _verificationStatus;
 
         /// <summary>
         /// Gets and sets the property IdentityName. 
@@ -97,6 +98,48 @@ namespace Amazon.SimpleEmailV2.Model
         internal bool IsSetSendingEnabled()
         {
             return this._sendingEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VerificationStatus. 
+        /// <para>
+        /// The verification status of the identity. The status can be one of the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't
+        /// yet been able to verify the identity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SUCCESS</code> – The verification process completed successfully.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>FAILED</code> – The verification process failed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from
+        /// determining the verification status of the identity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NOT_STARTED</code> – The verification process hasn't been initiated for the
+        /// identity.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public VerificationStatus VerificationStatus
+        {
+            get { return this._verificationStatus; }
+            set { this._verificationStatus = value; }
+        }
+
+        // Check to see if VerificationStatus property is set
+        internal bool IsSetVerificationStatus()
+        {
+            return this._verificationStatus != null;
         }
 
     }

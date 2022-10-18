@@ -1053,6 +1053,56 @@ namespace Amazon.SimpleEmailV2
 
 
     /// <summary>
+    /// Constants used for properties of type ScalingMode.
+    /// </summary>
+    public class ScalingMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MANAGED for ScalingMode
+        /// </summary>
+        public static readonly ScalingMode MANAGED = new ScalingMode("MANAGED");
+        /// <summary>
+        /// Constant STANDARD for ScalingMode
+        /// </summary>
+        public static readonly ScalingMode STANDARD = new ScalingMode("STANDARD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScalingMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScalingMode FindValue(string value)
+        {
+            return FindValue<ScalingMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScalingMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SubscriptionStatus.
     /// </summary>
     public class SubscriptionStatus : ConstantClass
@@ -1246,6 +1296,68 @@ namespace Amazon.SimpleEmailV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TlsPolicy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VerificationStatus.
+    /// </summary>
+    public class VerificationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for VerificationStatus
+        /// </summary>
+        public static readonly VerificationStatus FAILED = new VerificationStatus("FAILED");
+        /// <summary>
+        /// Constant NOT_STARTED for VerificationStatus
+        /// </summary>
+        public static readonly VerificationStatus NOT_STARTED = new VerificationStatus("NOT_STARTED");
+        /// <summary>
+        /// Constant PENDING for VerificationStatus
+        /// </summary>
+        public static readonly VerificationStatus PENDING = new VerificationStatus("PENDING");
+        /// <summary>
+        /// Constant SUCCESS for VerificationStatus
+        /// </summary>
+        public static readonly VerificationStatus SUCCESS = new VerificationStatus("SUCCESS");
+        /// <summary>
+        /// Constant TEMPORARY_FAILURE for VerificationStatus
+        /// </summary>
+        public static readonly VerificationStatus TEMPORARY_FAILURE = new VerificationStatus("TEMPORARY_FAILURE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VerificationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VerificationStatus FindValue(string value)
+        {
+            return FindValue<VerificationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VerificationStatus(string value)
         {
             return FindValue(value);
         }

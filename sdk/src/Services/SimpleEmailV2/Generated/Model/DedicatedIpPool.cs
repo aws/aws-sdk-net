@@ -29,17 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateDedicatedIpPool operation.
-    /// Create a new pool of dedicated IP addresses. A pool can include one or more dedicated
-    /// IP addresses that are associated with your Amazon Web Services account. You can associate
-    /// a pool with a configuration set. When you send an email that uses that configuration
-    /// set, the message is sent from one of the addresses in the associated pool.
+    /// Contains information about a dedicated IP pool.
     /// </summary>
-    public partial class CreateDedicatedIpPoolRequest : AmazonSimpleEmailServiceV2Request
+    public partial class DedicatedIpPool
     {
         private string _poolName;
         private ScalingMode _scalingMode;
-        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property PoolName. 
@@ -63,9 +58,21 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property ScalingMode. 
         /// <para>
-        /// The type of scaling mode.
+        /// The type of the dedicated IP pool.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>STANDARD</code> – A dedicated IP pool where the customer can control which
+        /// IPs are part of the pool.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>MANAGED</code> – A dedicated IP pool where the reputation and number of IPs
+        /// is automatically managed by Amazon SES.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ScalingMode ScalingMode
         {
             get { return this._scalingMode; }
@@ -76,25 +83,6 @@ namespace Amazon.SimpleEmailV2.Model
         internal bool IsSetScalingMode()
         {
             return this._scalingMode != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// An object that defines the tags (keys and values) that you want to associate with
-        /// the pool.
-        /// </para>
-        /// </summary>
-        public List<Tag> Tags
-        {
-            get { return this._tags; }
-            set { this._tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

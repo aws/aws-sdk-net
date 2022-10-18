@@ -205,8 +205,8 @@ namespace Amazon.SimpleEmailV2
         /// 
         ///  
         /// <para>
-        /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using
-        /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+        /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using
+        /// custom verification email templates</a> in the <i>Amazon SES Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -661,8 +661,8 @@ namespace Amazon.SimpleEmailV2
         /// 
         ///  
         /// <para>
-        /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using
-        /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+        /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using
+        /// custom verification email templates</a> in the <i>Amazon SES Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1043,8 +1043,8 @@ namespace Amazon.SimpleEmailV2
         /// 
         ///  
         /// <para>
-        /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using
-        /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+        /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using
+        /// custom verification email templates</a> in the <i>Amazon SES Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1097,6 +1097,33 @@ namespace Amazon.SimpleEmailV2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetDedicatedIp">REST API Reference for GetDedicatedIp Operation</seealso>
         Task<GetDedicatedIpResponse> GetDedicatedIpAsync(GetDedicatedIpRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetDedicatedIpPool
+
+
+
+        /// <summary>
+        /// Retrieve information about the dedicated pool.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDedicatedIpPool service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDedicatedIpPool service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetDedicatedIpPool">REST API Reference for GetDedicatedIpPool Operation</seealso>
+        Task<GetDedicatedIpPoolResponse> GetDedicatedIpPoolAsync(GetDedicatedIpPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1507,8 +1534,8 @@ namespace Amazon.SimpleEmailV2
         /// 
         ///  
         /// <para>
-        /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using
-        /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+        /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using
+        /// custom verification email templates</a> in the <i>Amazon SES Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -2362,8 +2389,8 @@ namespace Amazon.SimpleEmailV2
         /// <para>
         /// To use this operation, you must first create a custom verification email template.
         /// For more information about creating and using custom verification email templates,
-        /// see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using
-        /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using
+        /// custom verification email templates</a> in the <i>Amazon SES Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -2678,8 +2705,8 @@ namespace Amazon.SimpleEmailV2
         /// 
         ///  
         /// <para>
-        /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using
-        /// Custom Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+        /// For more information about custom verification email templates, see <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using
+        /// custom verification email templates</a> in the <i>Amazon SES Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
