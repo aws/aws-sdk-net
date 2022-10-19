@@ -50,15 +50,16 @@ namespace Amazon.ConfigService.Model
     ///  </li> <li> 
     /// <para>
     /// For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot
-    /// be created because you do not have permissions: 
+    /// be created because you do not have the following permissions: 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// To call IAM <code>GetRole</code> action or create a service-linked role.
+    /// You do not have permission to call IAM <code>GetRole</code> action or create a service-linked
+    /// role.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// To read Amazon S3 bucket or call SSM:GetDocument.
+    /// You do not have permission to read Amazon S3 bucket or call SSM:GetDocument.
     /// </para>
     ///  </li> </ul> </li> </ul>
     /// </summary>

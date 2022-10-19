@@ -117,13 +117,14 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property OrganizationRuleStatus. 
         /// <para>
-        /// Indicates deployment status of an organization Config rule. When master account calls
-        /// PutOrganizationConfigRule action for the first time, Config rule status is created
-        /// in all the member accounts. When master account calls PutOrganizationConfigRule action
-        /// for the second time, Config rule status is updated in all the member accounts. Additionally,
-        /// Config rule status is updated when one or more member accounts join or leave an organization.
-        /// Config rule status is deleted when the master account deletes OrganizationConfigRule
-        /// in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.
+        /// Indicates deployment status of an organization Config rule. When management account
+        /// calls PutOrganizationConfigRule action for the first time, Config rule status is created
+        /// in all the member accounts. When management account calls PutOrganizationConfigRule
+        /// action for the second time, Config rule status is updated in all the member accounts.
+        /// Additionally, Config rule status is updated when one or more member accounts join
+        /// or leave an organization. Config rule status is deleted when the management account
+        /// deletes OrganizationConfigRule in all the member accounts and disables service access
+        /// for <code>config-multiaccountsetup.amazonaws.com</code>.
         /// </para>
         ///  
         /// <para>

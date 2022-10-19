@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// The specified Amazon S3 key prefix is not valid.
+    /// The specified Amazon S3 key prefix is invalid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

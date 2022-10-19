@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// The specified delivery channel name is not valid.
+    /// The specified delivery channel name is invalid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// The specified Amazon KMS Key ARN is not valid.
+    /// The specified Amazon KMS Key ARN is invalid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

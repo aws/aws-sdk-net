@@ -34,7 +34,7 @@ namespace Amazon.ConfigService.Model
     /// of the number of compliant rule-resource combinations in a conformance pack compared
     /// to the number of total possible rule-resource combinations in the conformance pack.
     /// This metric provides you with a high-level view of the compliance state of your conformance
-    /// packs, and can be used to identify, investigate, and understand the level of compliance
+    /// packs. You can use it to identify, investigate, and understand the level of compliance
     /// in your conformance packs.
     /// 
     ///  <note> 
@@ -115,9 +115,9 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  
         /// <para>
-        /// By default, conformance pack compliance scores are sorted in ascending order by compliance
-        /// score and alphabetically by name of the conformance pack if there is more than one
-        /// conformance pack with the same compliance score.
+        /// By default, conformance pack compliance scores are sorted in alphabetical order by
+        /// name of the conformance pack. Enter <code>SCORE</code>, to sort conformance pack compliance
+        /// scores by the numerical value of the compliance score.
         /// </para>
         /// </summary>
         public SortBy SortBy
@@ -140,8 +140,17 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  
         /// <para>
-        /// Conformance packs with a compliance score of <code>INSUFFICIENT_DATA</code> will be
-        /// first when sorting by ascending order and last when sorting by descending order.
+        /// By default, conformance pack compliance scores are sorted in alphabetical order by
+        /// name of the conformance pack. Conformance pack compliance scores are sorted in reverse
+        /// alphabetical order if you enter <code>DESCENDING</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can sort conformance pack compliance scores by the numerical value of the compliance
+        /// score by entering <code>SCORE</code> in the <code>SortBy</code> action. When compliance
+        /// scores are sorted by <code>SCORE</code>, conformance packs with a compliance score
+        /// of <code>INSUFFICIENT_DATA</code> will be last when sorting by ascending order and
+        /// first when sorting by descending order.
         /// </para>
         /// </summary>
         public SortOrder SortOrder

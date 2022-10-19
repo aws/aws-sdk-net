@@ -31,9 +31,8 @@ namespace Amazon.ConfigService.Model
     /// <summary>
     /// Container for the parameters to the PutConformancePack operation.
     /// Creates or updates a conformance pack. A conformance pack is a collection of Config
-    /// rules that can be easily deployed in an account and a region and across Amazon Web
-    /// Services Organization. For information on how many conformance packs you can have
-    /// per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
+    /// rules that can be easily deployed in an account and a region and across an organization.
+    /// For information on how many conformance packs you can have per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
     /// <b>Service Limits</b> </a> in the Config Developer Guide.
     /// 
     ///  
@@ -44,8 +43,8 @@ namespace Amazon.ConfigService.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// You must specify one and only one of the<code>TemplateS3Uri</code>, <code>TemplateBody</code>
-    /// or <code>TemplateSSMDocumentDetails</code> parameters.
+    /// You must specify only one of the follow parameters: <code>TemplateS3Uri</code>, <code>TemplateBody</code>
+    /// or <code>TemplateSSMDocumentDetails</code>.
     /// </para>
     ///  </note>
     /// </summary>
@@ -153,7 +152,7 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// You can only use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>)
+        /// You can use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>)
         /// and remediation action (<code>AWS::Config::RemediationConfiguration</code>).
         /// </para>
         ///  </note>
@@ -176,7 +175,7 @@ namespace Amazon.ConfigService.Model
         /// <para>
         /// The location of the file containing the template body (<code>s3://bucketname/prefix</code>).
         /// The uri must point to a conformance pack template (max size: 300 KB) that is located
-        /// in an Amazon S3 bucket in the same region as the conformance pack. 
+        /// in an Amazon S3 bucket in the same Region as the conformance pack. 
         /// </para>
         ///  <note> 
         /// <para>

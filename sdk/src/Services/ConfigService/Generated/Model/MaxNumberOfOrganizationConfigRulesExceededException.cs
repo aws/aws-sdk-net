@@ -30,6 +30,8 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// You have reached the limit of the number of organization Config rules you can create.
+    /// For more information, see see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
+    /// <b>Service Limits</b> </a> in the Config Developer Guide.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

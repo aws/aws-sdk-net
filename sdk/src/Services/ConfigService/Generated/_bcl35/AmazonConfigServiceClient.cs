@@ -303,7 +303,7 @@ namespace Amazon.ConfigService
         /// You have specified a configuration aggregator that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
-        /// The requested action is not valid.
+        /// The requested action is invalid.
         /// 
         ///  
         /// <para>
@@ -390,7 +390,7 @@ namespace Amazon.ConfigService
         /// your resources. Create a configuration recorder.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
-        /// The requested action is not valid.
+        /// The requested action is invalid.
         /// 
         ///  
         /// <para>
@@ -529,7 +529,7 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the DeleteConfigRule service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// The Config rule in the request is not valid. Verify that the rule is an Config Custom
+        /// The Config rule in the request is invalid. Verify that the rule is an Config Custom
         /// Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs)
         /// are used before trying again.
         /// </exception>
@@ -958,7 +958,7 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the DeleteEvaluationResults service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// The Config rule in the request is not valid. Verify that the rule is an Config Custom
+        /// The Config rule in the request is invalid. Verify that the rule is an Config Custom
         /// Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs)
         /// are used before trying again.
         /// </exception>
@@ -1056,7 +1056,7 @@ namespace Amazon.ConfigService
         /// 
         ///  
         /// <para>
-        /// Only a master account and a delegated administrator account can delete an organization
+        /// Only a management account and a delegated administrator account can delete an organization
         /// Config rule. When calling this API with a delegated administrator, you must ensure
         /// Organizations <code>ListDelegatedAdministrator</code> permissions are added.
         /// </para>
@@ -1070,7 +1070,7 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the DeleteOrganizationConfigRule service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConfigRuleException">
-        /// The Config rule in the request is not valid. Verify that the rule is an organization
+        /// The Config rule in the request is invalid. Verify that the rule is an organization
         /// Config Custom Policy rule, that the rule name is correct, and that valid Amazon Resouce
         /// Names (ARNs) are used before trying again.
         /// </exception>
@@ -1105,7 +1105,7 @@ namespace Amazon.ConfigService
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
         /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
-        /// must be called from organization master account.
+        /// must be called from organization management account.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
@@ -1202,7 +1202,7 @@ namespace Amazon.ConfigService
         /// 
         ///  
         /// <para>
-        ///  Only a master account or a delegated administrator account can delete an organization
+        ///  Only a management account or a delegated administrator account can delete an organization
         /// conformance pack. When calling this API with a delegated administrator, you must ensure
         /// Organizations <code>ListDelegatedAdministrator</code> permissions are added.
         /// </para>
@@ -1255,7 +1255,7 @@ namespace Amazon.ConfigService
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
         /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
-        /// must be called from organization master account.
+        /// must be called from organization management account.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
@@ -1433,15 +1433,16 @@ namespace Amazon.ConfigService
         ///  </li> <li> 
         /// <para>
         /// For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot
-        /// be created because you do not have permissions: 
+        /// be created because you do not have the following permissions: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To call IAM <code>GetRole</code> action or create a service-linked role.
+        /// You do not have permission to call IAM <code>GetRole</code> action or create a service-linked
+        /// role.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To read Amazon S3 bucket or call SSM:GetDocument.
+        /// You do not have permission to read Amazon S3 bucket or call SSM:GetDocument.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </exception>
@@ -1581,7 +1582,7 @@ namespace Amazon.ConfigService
         /// There is no configuration recorder running.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
-        /// The requested action is not valid.
+        /// The requested action is invalid.
         /// 
         ///  
         /// <para>
@@ -1715,7 +1716,7 @@ namespace Amazon.ConfigService
         /// You have specified a resource that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
-        /// The requested action is not valid.
+        /// The requested action is invalid.
         /// 
         ///  
         /// <para>
@@ -1924,7 +1925,7 @@ namespace Amazon.ConfigService
         /// You have specified a configuration aggregator that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
-        /// The requested action is not valid.
+        /// The requested action is invalid.
         /// 
         ///  
         /// <para>
@@ -2013,7 +2014,7 @@ namespace Amazon.ConfigService
         /// You have specified a configuration aggregator that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
-        /// The requested action is not valid.
+        /// The requested action is invalid.
         /// 
         ///  
         /// <para>
@@ -2187,7 +2188,7 @@ namespace Amazon.ConfigService
         /// valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// The Config rule in the request is not valid. Verify that the rule is an Config Custom
+        /// The Config rule in the request is invalid. Verify that the rule is an Config Custom
         /// Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs)
         /// are used before trying again.
         /// </exception>
@@ -2351,7 +2352,7 @@ namespace Amazon.ConfigService
         /// valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// The Config rule in the request is not valid. Verify that the rule is an Config Custom
+        /// The Config rule in the request is invalid. Verify that the rule is an Config Custom
         /// Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs)
         /// are used before trying again.
         /// </exception>
@@ -2414,7 +2415,7 @@ namespace Amazon.ConfigService
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// The Config rule in the request is not valid. Verify that the rule is an Config Custom
+        /// The Config rule in the request is invalid. Verify that the rule is an Config Custom
         /// Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs)
         /// are used before trying again.
         /// </exception>
@@ -3212,7 +3213,7 @@ namespace Amazon.ConfigService
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConfigRuleException">
-        /// The Config rule in the request is not valid. Verify that the rule is an organization
+        /// The Config rule in the request is invalid. Verify that the rule is an organization
         /// Config Custom Policy rule, that the rule name is correct, and that valid Amazon Resouce
         /// Names (ARNs) are used before trying again.
         /// </exception>
@@ -3247,7 +3248,7 @@ namespace Amazon.ConfigService
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
         /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
-        /// must be called from organization master account.
+        /// must be called from organization management account.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRules">REST API Reference for DescribeOrganizationConfigRules Operation</seealso>
@@ -3325,7 +3326,7 @@ namespace Amazon.ConfigService
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConfigRuleException">
-        /// The Config rule in the request is not valid. Verify that the rule is an organization
+        /// The Config rule in the request is invalid. Verify that the rule is an organization
         /// Config Custom Policy rule, that the rule name is correct, and that valid Amazon Resouce
         /// Names (ARNs) are used before trying again.
         /// </exception>
@@ -3360,7 +3361,7 @@ namespace Amazon.ConfigService
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
         /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
-        /// must be called from organization master account.
+        /// must be called from organization management account.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRuleStatuses">REST API Reference for DescribeOrganizationConfigRuleStatuses Operation</seealso>
@@ -3492,7 +3493,7 @@ namespace Amazon.ConfigService
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
         /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
-        /// must be called from organization master account.
+        /// must be called from organization management account.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConformancePacks">REST API Reference for DescribeOrganizationConformancePacks Operation</seealso>
@@ -3609,7 +3610,7 @@ namespace Amazon.ConfigService
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
         /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
-        /// must be called from organization master account.
+        /// must be called from organization management account.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConformancePackStatuses">REST API Reference for DescribeOrganizationConformancePackStatuses Operation</seealso>
@@ -4029,7 +4030,7 @@ namespace Amazon.ConfigService
         /// You have specified a configuration aggregator that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
-        /// The requested action is not valid.
+        /// The requested action is invalid.
         /// 
         ///  
         /// <para>
@@ -4116,7 +4117,7 @@ namespace Amazon.ConfigService
         /// You have specified a configuration aggregator that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
-        /// The requested action is not valid.
+        /// The requested action is invalid.
         /// 
         ///  
         /// <para>
@@ -4204,7 +4205,7 @@ namespace Amazon.ConfigService
         /// You have specified a configuration aggregator that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
-        /// The requested action is not valid.
+        /// The requested action is invalid.
         /// 
         ///  
         /// <para>
@@ -4292,7 +4293,7 @@ namespace Amazon.ConfigService
         /// You have specified a configuration aggregator that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
-        /// The requested action is not valid.
+        /// The requested action is invalid.
         /// 
         ///  
         /// <para>
@@ -4371,7 +4372,7 @@ namespace Amazon.ConfigService
         /// You have specified a resource that is either unknown or has not been discovered.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
-        /// The requested action is not valid.
+        /// The requested action is invalid.
         /// 
         ///  
         /// <para>
@@ -4450,7 +4451,7 @@ namespace Amazon.ConfigService
         /// valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// The Config rule in the request is not valid. Verify that the rule is an Config Custom
+        /// The Config rule in the request is invalid. Verify that the rule is an Config Custom
         /// Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs)
         /// are used before trying again.
         /// </exception>
@@ -4821,7 +4822,7 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the GetCustomRulePolicy service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// The Config rule in the request is not valid. Verify that the rule is an Config Custom
+        /// The Config rule in the request is invalid. Verify that the rule is an Config Custom
         /// Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs)
         /// are used before trying again.
         /// </exception>
@@ -4944,7 +4945,7 @@ namespace Amazon.ConfigService
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
-        /// The requested action is not valid.
+        /// The requested action is invalid.
         /// 
         ///  
         /// <para>
@@ -5021,7 +5022,7 @@ namespace Amazon.ConfigService
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConfigRuleException">
-        /// The Config rule in the request is not valid. Verify that the rule is an organization
+        /// The Config rule in the request is invalid. Verify that the rule is an organization
         /// Config Custom Policy rule, that the rule name is correct, and that valid Amazon Resouce
         /// Names (ARNs) are used before trying again.
         /// </exception>
@@ -5056,7 +5057,7 @@ namespace Amazon.ConfigService
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
         /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
-        /// must be called from organization master account.
+        /// must be called from organization management account.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConfigRuleDetailedStatus">REST API Reference for GetOrganizationConfigRuleDetailedStatus Operation</seealso>
@@ -5161,7 +5162,7 @@ namespace Amazon.ConfigService
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
         /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
-        /// must be called from organization master account.
+        /// must be called from organization management account.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConformancePackDetailedStatus">REST API Reference for GetOrganizationConformancePackDetailedStatus Operation</seealso>
@@ -5220,7 +5221,7 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the GetOrganizationCustomRulePolicy service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchOrganizationConfigRuleException">
-        /// The Config rule in the request is not valid. Verify that the rule is an organization
+        /// The Config rule in the request is invalid. Verify that the rule is an organization
         /// Config Custom Policy rule, that the rule name is correct, and that valid Amazon Resouce
         /// Names (ARNs) are used before trying again.
         /// </exception>
@@ -5255,7 +5256,7 @@ namespace Amazon.ConfigService
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
         /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
-        /// must be called from organization master account.
+        /// must be called from organization management account.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationCustomRulePolicy">REST API Reference for GetOrganizationCustomRulePolicy Operation</seealso>
@@ -5339,7 +5340,7 @@ namespace Amazon.ConfigService
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidTimeRangeException">
-        /// The specified time range is not valid. The earlier time is not chronologically before
+        /// The specified time range is invalid. The earlier time is not chronologically before
         /// the later time.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoAvailableConfigurationRecorderException">
@@ -5350,7 +5351,7 @@ namespace Amazon.ConfigService
         /// You have specified a resource that is either unknown or has not been discovered.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
-        /// The requested action is not valid.
+        /// The requested action is invalid.
         /// 
         ///  
         /// <para>
@@ -5422,7 +5423,7 @@ namespace Amazon.ConfigService
         /// You have specified a resource that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
-        /// The requested action is not valid.
+        /// The requested action is invalid.
         /// 
         ///  
         /// <para>
@@ -5512,7 +5513,7 @@ namespace Amazon.ConfigService
         /// You have specified a configuration aggregator that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
-        /// The requested action is not valid.
+        /// The requested action is invalid.
         /// 
         ///  
         /// <para>
@@ -5579,7 +5580,7 @@ namespace Amazon.ConfigService
         /// of the number of compliant rule-resource combinations in a conformance pack compared
         /// to the number of total possible rule-resource combinations in the conformance pack.
         /// This metric provides you with a high-level view of the compliance state of your conformance
-        /// packs, and can be used to identify, investigate, and understand the level of compliance
+        /// packs. You can use it to identify, investigate, and understand the level of compliance
         /// in your conformance packs.
         /// 
         ///  <note> 
@@ -5685,7 +5686,7 @@ namespace Amazon.ConfigService
         /// your resources. Create a configuration recorder.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
-        /// The requested action is not valid.
+        /// The requested action is invalid.
         /// 
         ///  
         /// <para>
@@ -5759,7 +5760,7 @@ namespace Amazon.ConfigService
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
-        /// The requested action is not valid.
+        /// The requested action is invalid.
         /// 
         ///  
         /// <para>
@@ -5838,7 +5839,7 @@ namespace Amazon.ConfigService
         /// You have specified a resource that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
-        /// The requested action is not valid.
+        /// The requested action is invalid.
         /// 
         ///  
         /// <para>
@@ -6035,15 +6036,16 @@ namespace Amazon.ConfigService
         ///  </li> <li> 
         /// <para>
         /// For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot
-        /// be created because you do not have permissions: 
+        /// be created because you do not have the following permissions: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To call IAM <code>GetRole</code> action or create a service-linked role.
+        /// You do not have permission to call IAM <code>GetRole</code> action or create a service-linked
+        /// role.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To read Amazon S3 bucket or call SSM:GetDocument.
+        /// You do not have permission to read Amazon S3 bucket or call SSM:GetDocument.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </exception>
@@ -6232,7 +6234,7 @@ namespace Amazon.ConfigService
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
         /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
-        /// must be called from organization master account.
+        /// must be called from organization management account.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationAllFeaturesNotEnabledException">
@@ -6373,9 +6375,8 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Creates or updates a conformance pack. A conformance pack is a collection of Config
-        /// rules that can be easily deployed in an account and a region and across Amazon Web
-        /// Services Organization. For information on how many conformance packs you can have
-        /// per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
+        /// rules that can be easily deployed in an account and a region and across an organization.
+        /// For information on how many conformance packs you can have per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
         /// <b>Service Limits</b> </a> in the Config Developer Guide.
         /// 
         ///  
@@ -6386,8 +6387,8 @@ namespace Amazon.ConfigService
         /// </para>
         ///  <note> 
         /// <para>
-        /// You must specify one and only one of the<code>TemplateS3Uri</code>, <code>TemplateBody</code>
-        /// or <code>TemplateSSMDocumentDetails</code> parameters.
+        /// You must specify only one of the follow parameters: <code>TemplateS3Uri</code>, <code>TemplateBody</code>
+        /// or <code>TemplateSSMDocumentDetails</code>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -6395,7 +6396,7 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the PutConformancePack service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.ConformancePackTemplateValidationException">
-        /// You have specified a template that is not valid or supported.
+        /// You have specified a template that is invalid or supported.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InsufficientPermissionsException">
         /// Indicates one of the following errors:
@@ -6419,15 +6420,16 @@ namespace Amazon.ConfigService
         ///  </li> <li> 
         /// <para>
         /// For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot
-        /// be created because you do not have permissions: 
+        /// be created because you do not have the following permissions: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To call IAM <code>GetRole</code> action or create a service-linked role.
+        /// You do not have permission to call IAM <code>GetRole</code> action or create a service-linked
+        /// role.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To read Amazon S3 bucket or call SSM:GetDocument.
+        /// You do not have permission to read Amazon S3 bucket or call SSM:GetDocument.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </exception>
@@ -6436,8 +6438,9 @@ namespace Amazon.ConfigService
         /// valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfConformancePacksExceededException">
-        /// You have reached the limit (6) of the number of conformance packs in an account (6
-        /// conformance pack with 25 Config rules per pack).
+        /// You have reached the limit of the number of conformance packs you can create in an
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
+        /// <b>Service Limits</b> </a> in the Config Developer Guide.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
         /// You see this exception in the following cases: 
@@ -6556,13 +6559,13 @@ namespace Amazon.ConfigService
         /// Your Amazon S3 bucket policy does not permit Config to write to it.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidDeliveryChannelNameException">
-        /// The specified delivery channel name is not valid.
+        /// The specified delivery channel name is invalid.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidS3KeyPrefixException">
-        /// The specified Amazon S3 key prefix is not valid.
+        /// The specified Amazon S3 key prefix is invalid.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidS3KmsKeyArnException">
-        /// The specified Amazon KMS Key ARN is not valid.
+        /// The specified Amazon KMS Key ARN is invalid.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidSNSTopicARNException">
         /// The specified Amazon SNS topic does not exist.
@@ -6640,7 +6643,7 @@ namespace Amazon.ConfigService
         /// The specified <code>ResultToken</code> is invalid.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// The Config rule in the request is not valid. Verify that the rule is an Config Custom
+        /// The Config rule in the request is invalid. Verify that the rule is an Config Custom
         /// Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs)
         /// are used before trying again.
         /// </exception>
@@ -6704,7 +6707,7 @@ namespace Amazon.ConfigService
         /// valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// The Config rule in the request is not valid. Verify that the rule is an Config Custom
+        /// The Config rule in the request is invalid. Verify that the rule is an Config Custom
         /// Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs)
         /// are used before trying again.
         /// </exception>
@@ -6764,7 +6767,7 @@ namespace Amazon.ConfigService
         /// 
         ///  
         /// <para>
-        ///  Only a master account and a delegated administrator can create or update an organization
+        ///  Only a management account and a delegated administrator can create or update an organization
         /// Config rule. When calling this API with a delegated administrator, you must ensure
         /// Organizations <code>ListDelegatedAdministrator</code> permissions are added. An organization
         /// can have up to 3 delegated administrators.
@@ -6773,7 +6776,7 @@ namespace Amazon.ConfigService
         /// <para>
         /// This API enables organization service access through the <code>EnableAWSServiceAccess</code>
         /// action and creates a service-linked role <code>AWSServiceRoleForConfigMultiAccountSetup</code>
-        /// in the master or delegated administrator account of your organization. The service-linked
+        /// in the management or delegated administrator account of your organization. The service-linked
         /// role is created only when the role does not exist in the caller account. Config verifies
         /// the existence of role with <code>GetRole</code> action.
         /// </para>
@@ -6796,7 +6799,7 @@ namespace Amazon.ConfigService
         /// GitHub Repository</a>) is a policy-as-code language that allows you to write policies
         /// that are enforced by Config Custom Policy rules. Lambda uses custom code that you
         /// upload to evaluate a custom rule. If you are adding a new Custom Lambda rule, you
-        /// first need to create an Lambda function in the master account or a delegated administrator
+        /// first need to create an Lambda function in the management account or a delegated administrator
         /// that the rule invokes to evaluate your resources. You also need to create an IAM role
         /// in the managed account that can be assumed by the Lambda function. When you use <code>PutOrganizationConfigRule</code>
         /// to add a Custom Lambda rule to Config, you must specify the Amazon Resource Name (ARN)
@@ -6847,15 +6850,16 @@ namespace Amazon.ConfigService
         ///  </li> <li> 
         /// <para>
         /// For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot
-        /// be created because you do not have permissions: 
+        /// be created because you do not have the following permissions: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To call IAM <code>GetRole</code> action or create a service-linked role.
+        /// You do not have permission to call IAM <code>GetRole</code> action or create a service-linked
+        /// role.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To read Amazon S3 bucket or call SSM:GetDocument.
+        /// You do not have permission to read Amazon S3 bucket or call SSM:GetDocument.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </exception>
@@ -6865,6 +6869,8 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfOrganizationConfigRulesExceededException">
         /// You have reached the limit of the number of organization Config rules you can create.
+        /// For more information, see see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
+        /// <b>Service Limits</b> </a> in the Config Developer Guide.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoAvailableOrganizationException">
         /// Organization is no longer available.
@@ -6900,7 +6906,7 @@ namespace Amazon.ConfigService
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
         /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
-        /// must be called from organization master account.
+        /// must be called from organization management account.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationAllFeaturesNotEnabledException">
@@ -6948,7 +6954,7 @@ namespace Amazon.ConfigService
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
-        /// The requested action is not valid.
+        /// The requested action is invalid.
         /// 
         ///  
         /// <para>
@@ -7018,7 +7024,7 @@ namespace Amazon.ConfigService
         /// 
         ///  
         /// <para>
-        /// Only a master account and a delegated administrator can call this API. When calling
+        /// Only a management account and a delegated administrator can call this API. When calling
         /// this API with a delegated administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code>
         /// permissions are added. An organization can have up to 3 delegated administrators.
         /// </para>
@@ -7026,7 +7032,7 @@ namespace Amazon.ConfigService
         /// <para>
         /// This API enables organization service access for <code>config-multiaccountsetup.amazonaws.com</code>
         /// through the <code>EnableAWSServiceAccess</code> action and creates a service-linked
-        /// role <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master or delegated
+        /// role <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the management or delegated
         /// administrator account of your organization. The service-linked role is created only
         /// when the role does not exist in the caller account. To use this API with delegated
         /// administrator, register a delegated administrator by calling Amazon Web Services Organization
@@ -7076,21 +7082,23 @@ namespace Amazon.ConfigService
         ///  </li> <li> 
         /// <para>
         /// For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot
-        /// be created because you do not have permissions: 
+        /// be created because you do not have the following permissions: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To call IAM <code>GetRole</code> action or create a service-linked role.
+        /// You do not have permission to call IAM <code>GetRole</code> action or create a service-linked
+        /// role.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To read Amazon S3 bucket or call SSM:GetDocument.
+        /// You do not have permission to read Amazon S3 bucket or call SSM:GetDocument.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfOrganizationConformancePacksExceededException">
-        /// You have reached the limit (6) of the number of organization conformance packs in
-        /// an account (6 conformance pack with 25 Config rules per pack per account).
+        /// You have reached the limit of the number of organization conformance packs you can
+        /// create in an account. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
+        /// <b>Service Limits</b> </a> in the Config Developer Guide.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoAvailableOrganizationException">
         /// Organization is no longer available.
@@ -7126,7 +7134,7 @@ namespace Amazon.ConfigService
         /// <para>
         /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
         /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
-        /// must be called from organization master account.
+        /// must be called from organization management account.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationAllFeaturesNotEnabledException">
@@ -7134,7 +7142,7 @@ namespace Amazon.ConfigService
         /// enabled.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.OrganizationConformancePackTemplateValidationException">
-        /// You have specified a template that is not valid or supported.
+        /// You have specified a template that is invalid or supported.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
         /// You see this exception in the following cases: 
@@ -7177,7 +7185,7 @@ namespace Amazon.ConfigService
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
-        /// The requested action is not valid.
+        /// The requested action is invalid.
         /// 
         ///  
         /// <para>
@@ -7296,15 +7304,16 @@ namespace Amazon.ConfigService
         ///  </li> <li> 
         /// <para>
         /// For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot
-        /// be created because you do not have permissions: 
+        /// be created because you do not have the following permissions: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To call IAM <code>GetRole</code> action or create a service-linked role.
+        /// You do not have permission to call IAM <code>GetRole</code> action or create a service-linked
+        /// role.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To read Amazon S3 bucket or call SSM:GetDocument.
+        /// You do not have permission to read Amazon S3 bucket or call SSM:GetDocument.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </exception>
@@ -7398,15 +7407,16 @@ namespace Amazon.ConfigService
         ///  </li> <li> 
         /// <para>
         /// For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot
-        /// be created because you do not have permissions: 
+        /// be created because you do not have the following permissions: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To call IAM <code>GetRole</code> action or create a service-linked role.
+        /// You do not have permission to call IAM <code>GetRole</code> action or create a service-linked
+        /// role.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To read Amazon S3 bucket or call SSM:GetDocument.
+        /// You do not have permission to read Amazon S3 bucket or call SSM:GetDocument.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </exception>
@@ -7511,27 +7521,29 @@ namespace Amazon.ConfigService
         ///  </li> <li> 
         /// <para>
         /// For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot
-        /// be created because you do not have permissions: 
+        /// be created because you do not have the following permissions: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To call IAM <code>GetRole</code> action or create a service-linked role.
+        /// You do not have permission to call IAM <code>GetRole</code> action or create a service-linked
+        /// role.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To read Amazon S3 bucket or call SSM:GetDocument.
+        /// You do not have permission to read Amazon S3 bucket or call SSM:GetDocument.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.MaxActiveResourcesExceededException">
-        /// You have reached the limit (100,000) of active custom resource types in your account.
-        /// Delete unused resources using <code>DeleteResourceConfig</code>.
+        /// You have reached the limit of active custom resource types in your account. There
+        /// is a limit of 100,000. Delete unused resources using <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteResourceConfig.html">DeleteResourceConfig</a>
+        /// <code/>.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoRunningConfigurationRecorderException">
         /// There is no configuration recorder running.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
-        /// The requested action is not valid.
+        /// The requested action is invalid.
         /// 
         ///  
         /// <para>
@@ -7679,11 +7691,12 @@ namespace Amazon.ConfigService
         /// and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.TooManyTagsException">
-        /// You have reached the limit of the number of tags you can use. You have more than 50
-        /// tags.
+        /// You have reached the limit of the number of tags you can use. For more information,
+        /// see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
+        /// <b>Service Limits</b> </a> in the Config Developer Guide.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
-        /// The requested action is not valid.
+        /// The requested action is invalid.
         /// 
         ///  
         /// <para>
@@ -7979,7 +7992,7 @@ namespace Amazon.ConfigService
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
-        /// The Config rule in the request is not valid. Verify that the rule is an Config Custom
+        /// The Config rule in the request is invalid. Verify that the rule is an Config Custom
         /// Policy rule, that the rule name is correct, and that valid Amazon Resouce Names (ARNs)
         /// are used before trying again.
         /// </exception>
@@ -8202,15 +8215,16 @@ namespace Amazon.ConfigService
         ///  </li> <li> 
         /// <para>
         /// For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot
-        /// be created because you do not have permissions: 
+        /// be created because you do not have the following permissions: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To call IAM <code>GetRole</code> action or create a service-linked role.
+        /// You do not have permission to call IAM <code>GetRole</code> action or create a service-linked
+        /// role.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To read Amazon S3 bucket or call SSM:GetDocument.
+        /// You do not have permission to read Amazon S3 bucket or call SSM:GetDocument.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </exception>
@@ -8359,11 +8373,12 @@ namespace Amazon.ConfigService
         /// You have specified a resource that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.TooManyTagsException">
-        /// You have reached the limit of the number of tags you can use. You have more than 50
-        /// tags.
+        /// You have reached the limit of the number of tags you can use. For more information,
+        /// see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
+        /// <b>Service Limits</b> </a> in the Config Developer Guide.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
-        /// The requested action is not valid.
+        /// The requested action is invalid.
         /// 
         ///  
         /// <para>
@@ -8435,7 +8450,7 @@ namespace Amazon.ConfigService
         /// You have specified a resource that does not exist.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
-        /// The requested action is not valid.
+        /// The requested action is invalid.
         /// 
         ///  
         /// <para>

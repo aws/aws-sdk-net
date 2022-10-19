@@ -29,8 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// You have reached the limit (6) of the number of organization conformance packs in
-    /// an account (6 conformance pack with 25 Config rules per pack per account).
+    /// You have reached the limit of the number of organization conformance packs you can
+    /// create in an account. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
+    /// <b>Service Limits</b> </a> in the Config Developer Guide.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

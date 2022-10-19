@@ -29,8 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// You have reached the limit of the number of tags you can use. You have more than 50
-    /// tags.
+    /// You have reached the limit of the number of tags you can use. For more information,
+    /// see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
+    /// <b>Service Limits</b> </a> in the Config Developer Guide.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
