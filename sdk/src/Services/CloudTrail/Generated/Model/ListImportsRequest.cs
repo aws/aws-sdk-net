@@ -43,7 +43,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property Destination. 
         /// <para>
-        ///  The destination event data store. 
+        ///  The ARN of the destination event data store. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=256)]

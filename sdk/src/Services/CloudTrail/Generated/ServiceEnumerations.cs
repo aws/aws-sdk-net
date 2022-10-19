@@ -25,6 +25,84 @@ namespace Amazon.CloudTrail
 {
 
     /// <summary>
+    /// Constants used for properties of type DeliveryStatus.
+    /// </summary>
+    public class DeliveryStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCESS_DENIED for DeliveryStatus
+        /// </summary>
+        public static readonly DeliveryStatus ACCESS_DENIED = new DeliveryStatus("ACCESS_DENIED");
+        /// <summary>
+        /// Constant ACCESS_DENIED_SIGNING_FILE for DeliveryStatus
+        /// </summary>
+        public static readonly DeliveryStatus ACCESS_DENIED_SIGNING_FILE = new DeliveryStatus("ACCESS_DENIED_SIGNING_FILE");
+        /// <summary>
+        /// Constant CANCELLED for DeliveryStatus
+        /// </summary>
+        public static readonly DeliveryStatus CANCELLED = new DeliveryStatus("CANCELLED");
+        /// <summary>
+        /// Constant FAILED for DeliveryStatus
+        /// </summary>
+        public static readonly DeliveryStatus FAILED = new DeliveryStatus("FAILED");
+        /// <summary>
+        /// Constant FAILED_SIGNING_FILE for DeliveryStatus
+        /// </summary>
+        public static readonly DeliveryStatus FAILED_SIGNING_FILE = new DeliveryStatus("FAILED_SIGNING_FILE");
+        /// <summary>
+        /// Constant PENDING for DeliveryStatus
+        /// </summary>
+        public static readonly DeliveryStatus PENDING = new DeliveryStatus("PENDING");
+        /// <summary>
+        /// Constant RESOURCE_NOT_FOUND for DeliveryStatus
+        /// </summary>
+        public static readonly DeliveryStatus RESOURCE_NOT_FOUND = new DeliveryStatus("RESOURCE_NOT_FOUND");
+        /// <summary>
+        /// Constant SUCCESS for DeliveryStatus
+        /// </summary>
+        public static readonly DeliveryStatus SUCCESS = new DeliveryStatus("SUCCESS");
+        /// <summary>
+        /// Constant UNKNOWN for DeliveryStatus
+        /// </summary>
+        public static readonly DeliveryStatus UNKNOWN = new DeliveryStatus("UNKNOWN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeliveryStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeliveryStatus FindValue(string value)
+        {
+            return FindValue<DeliveryStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeliveryStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DestinationType.
     /// </summary>
     public class DestinationType : ConstantClass

@@ -30,8 +30,10 @@ namespace Amazon.CloudTrail.Model
 {
     /// <summary>
     /// Container for the parameters to the GetChannel operation.
-    /// Returns the specified CloudTrail service-linked channel. Amazon Web Services services
-    /// create service-linked channels to view CloudTrail events.
+    /// Returns information about a specific channel. Amazon Web Services services create
+    /// service-linked channels to get information about CloudTrail events on your behalf.
+    /// For more information about service-linked channels, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/viewing-service-linked-channels.html">Viewing
+    /// service-linked channels for CloudTrail by using the CLI.</a>.
     /// </summary>
     public partial class GetChannelRequest : AmazonCloudTrailRequest
     {
@@ -40,7 +42,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property Channel. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the CloudTrail service-linked channel. 
+        /// The ARN or <code>UUID</code> of a channel.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=256)]

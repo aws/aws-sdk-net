@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// This exception is thrown when the event data store category is not valid for the
-    /// import.
+    /// This exception is thrown when event categories of specified event data stores are
+    /// not valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

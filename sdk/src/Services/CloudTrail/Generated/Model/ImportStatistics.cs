@@ -29,7 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// Provides statistics for the specified <code>ImportID</code>.
+    /// Provides statistics for the specified <code>ImportID</code>. CloudTrail does not
+    /// update import statistics in real-time. Returned values for parameters such as <code>EventsCompleted</code>
+    /// may be lower than the actual value, because CloudTrail updates statistics incrementally
+    /// over the course of the import.
     /// </summary>
     public partial class ImportStatistics
     {
@@ -42,7 +45,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property EventsCompleted. 
         /// <para>
-        ///  The number of trail events imported. 
+        ///  The number of trail events imported into the event data store. 
         /// </para>
         /// </summary>
         public long EventsCompleted
@@ -78,7 +81,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property FilesCompleted. 
         /// <para>
-        /// The number of files that completed import.
+        /// The number of log files that completed import.
         /// </para>
         /// </summary>
         public long FilesCompleted

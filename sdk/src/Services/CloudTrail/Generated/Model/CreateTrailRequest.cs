@@ -180,8 +180,8 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value
-        /// can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully
-        /// specified ARN to a key, or a globally unique identifier.
+        /// can be an alias name prefixed by <code>alias/</code>, a fully specified ARN to an
+        /// alias, a fully specified ARN to a key, or a globally unique identifier.
         /// </para>
         ///  
         /// <para>
@@ -195,19 +195,20 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// alias/MyAliasName
+        ///  <code>alias/MyAliasName</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// arn:aws:kms:us-east-2:123456789012:alias/MyAliasName
+        ///  <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012
+        ///  <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// 12345678-1234-1234-1234-123456789012
+        ///  <code>12345678-1234-1234-1234-123456789012</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

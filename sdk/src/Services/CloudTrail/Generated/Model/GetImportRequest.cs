@@ -30,7 +30,7 @@ namespace Amazon.CloudTrail.Model
 {
     /// <summary>
     /// Container for the parameters to the GetImport operation.
-    /// Returns information for the specified import.
+    /// Returns information about a specific import.
     /// </summary>
     public partial class GetImportRequest : AmazonCloudTrailRequest
     {

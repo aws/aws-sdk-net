@@ -31,11 +31,32 @@ namespace Amazon.CloudTrail.Model
     /// <summary>
     /// Container for the parameters to the StartQuery operation.
     /// Starts a CloudTrail Lake query. The required <code>QueryStatement</code> parameter
-    /// provides your SQL query, enclosed in single quotation marks.
+    /// provides your SQL query, enclosed in single quotation marks. Use the optional <code>DeliveryS3Uri</code>
+    /// parameter to deliver the query results to an S3 bucket.
     /// </summary>
     public partial class StartQueryRequest : AmazonCloudTrailRequest
     {
+        private string _deliveryS3Uri;
         private string _queryStatement;
+
+        /// <summary>
+        /// Gets and sets the property DeliveryS3Uri. 
+        /// <para>
+        ///  The URI for the S3 bucket where CloudTrail delivers the query results. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1024)]
+        public string DeliveryS3Uri
+        {
+            get { return this._deliveryS3Uri; }
+            set { this._deliveryS3Uri = value; }
+        }
+
+        // Check to see if DeliveryS3Uri property is set
+        internal bool IsSetDeliveryS3Uri()
+        {
+            return this._deliveryS3Uri != null;
+        }
 
         /// <summary>
         /// Gets and sets the property QueryStatement. 

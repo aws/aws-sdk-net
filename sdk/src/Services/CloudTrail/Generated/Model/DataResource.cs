@@ -124,7 +124,7 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The following resource types are also availble through <i>advanced</i> event selectors.
+        /// The following resource types are also available through <i>advanced</i> event selectors.
         /// Basic event selector resource types are valid in advanced event selectors, but advanced
         /// event selector resource types are not valid in basic event selectors. For more information,
         /// see <a>AdvancedFieldSelector$Field</a>.

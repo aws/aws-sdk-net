@@ -33,11 +33,50 @@ namespace Amazon.CloudTrail.Model
     /// </summary>
     public partial class DescribeQueryResponse : AmazonWebServiceResponse
     {
+        private string _deliveryS3Uri;
+        private DeliveryStatus _deliveryStatus;
         private string _errorMessage;
         private string _queryId;
         private QueryStatisticsForDescribeQuery _queryStatistics;
         private QueryStatus _queryStatus;
         private string _queryString;
+
+        /// <summary>
+        /// Gets and sets the property DeliveryS3Uri. 
+        /// <para>
+        /// The URI for the S3 bucket where CloudTrail delivered query results, if applicable.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1024)]
+        public string DeliveryS3Uri
+        {
+            get { return this._deliveryS3Uri; }
+            set { this._deliveryS3Uri = value; }
+        }
+
+        // Check to see if DeliveryS3Uri property is set
+        internal bool IsSetDeliveryS3Uri()
+        {
+            return this._deliveryS3Uri != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeliveryStatus. 
+        /// <para>
+        /// The delivery status.
+        /// </para>
+        /// </summary>
+        public DeliveryStatus DeliveryStatus
+        {
+            get { return this._deliveryStatus; }
+            set { this._deliveryStatus = value; }
+        }
+
+        // Check to see if DeliveryStatus property is set
+        internal bool IsSetDeliveryStatus()
+        {
+            return this._deliveryStatus != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ErrorMessage. 

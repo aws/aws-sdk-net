@@ -783,7 +783,8 @@ namespace Amazon.CloudTrail
         /// in a required service.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientEncryptionPolicyException">
-        /// This exception is thrown when the policy on the S3 bucket or KMS key is not sufficient.
+        /// This exception is thrown when the policy on the S3 bucket or KMS key does not have
+        /// sufficient permissions for the operation.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientS3BucketPolicyException">
         /// This exception is thrown when the policy on the S3 bucket is not sufficient.
@@ -938,7 +939,8 @@ namespace Amazon.CloudTrail
         /// in a required service.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientEncryptionPolicyException">
-        /// This exception is thrown when the policy on the S3 bucket or KMS key is not sufficient.
+        /// This exception is thrown when the policy on the S3 bucket or KMS key does not have
+        /// sufficient permissions for the operation.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientS3BucketPolicyException">
         /// This exception is thrown when the policy on the S3 bucket is not sufficient.
@@ -1660,14 +1662,17 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Returns the specified CloudTrail service-linked channel. Amazon Web Services services
-        /// create service-linked channels to view CloudTrail events.
+        /// Returns information about a specific channel. Amazon Web Services services create
+        /// service-linked channels to get information about CloudTrail events on your behalf.
+        /// For more information about service-linked channels, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/viewing-service-linked-channels.html">Viewing
+        /// service-linked channels for CloudTrail by using the CLI.</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetChannel service method.</param>
         /// 
         /// <returns>The response from the GetChannel service method, as returned by CloudTrail.</returns>
         /// <exception cref="Amazon.CloudTrail.Model.ChannelARNInvalidException">
-        /// The specified channel ARN is not valid or does not map to a channel in your account.
+        /// This exception is thrown when the specified value of <code>ChannelARN</code> is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.ChannelNotFoundException">
         /// The specified channel was not found.
@@ -1690,8 +1695,10 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Returns the specified CloudTrail service-linked channel. Amazon Web Services services
-        /// create service-linked channels to view CloudTrail events.
+        /// Returns information about a specific channel. Amazon Web Services services create
+        /// service-linked channels to get information about CloudTrail events on your behalf.
+        /// For more information about service-linked channels, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/viewing-service-linked-channels.html">Viewing
+        /// service-linked channels for CloudTrail by using the CLI.</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetChannel service method.</param>
         /// <param name="cancellationToken">
@@ -1700,7 +1707,8 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>The response from the GetChannel service method, as returned by CloudTrail.</returns>
         /// <exception cref="Amazon.CloudTrail.Model.ChannelARNInvalidException">
-        /// The specified channel ARN is not valid or does not map to a channel in your account.
+        /// This exception is thrown when the specified value of <code>ChannelARN</code> is not
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.ChannelNotFoundException">
         /// The specified channel was not found.
@@ -1981,7 +1989,7 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Returns information for the specified import.
+        /// Returns information about a specific import.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetImport service method.</param>
         /// 
@@ -2010,7 +2018,7 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Returns information for the specified import.
+        /// Returns information about a specific import.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetImport service method.</param>
         /// <param name="cancellationToken">
@@ -2526,7 +2534,10 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Returns all CloudTrail channels.
+        /// Lists the channels in the current account, and their source names. Amazon Web Services
+        /// services create service-linked channels get information about CloudTrail events on
+        /// your behalf. For more information about service-linked channels, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/viewing-service-linked-channels.html">Viewing
+        /// service-linked channels for CloudTrail by using the CLI</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListChannels service method.</param>
         /// 
@@ -2553,7 +2564,10 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Returns all CloudTrail channels.
+        /// Lists the channels in the current account, and their source names. Amazon Web Services
+        /// services create service-linked channels get information about CloudTrail events on
+        /// your behalf. For more information about service-linked channels, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/viewing-service-linked-channels.html">Viewing
+        /// service-linked channels for CloudTrail by using the CLI</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListChannels service method.</param>
         /// <param name="cancellationToken">
@@ -3784,7 +3798,8 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>The response from the PutInsightSelectors service method, as returned by CloudTrail.</returns>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientEncryptionPolicyException">
-        /// This exception is thrown when the policy on the S3 bucket or KMS key is not sufficient.
+        /// This exception is thrown when the policy on the S3 bucket or KMS key does not have
+        /// sufficient permissions for the operation.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientS3BucketPolicyException">
         /// This exception is thrown when the policy on the S3 bucket is not sufficient.
@@ -3875,7 +3890,8 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>The response from the PutInsightSelectors service method, as returned by CloudTrail.</returns>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientEncryptionPolicyException">
-        /// This exception is thrown when the policy on the S3 bucket or KMS key is not sufficient.
+        /// This exception is thrown when the policy on the S3 bucket or KMS key does not have
+        /// sufficient permissions for the operation.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientS3BucketPolicyException">
         /// This exception is thrown when the policy on the S3 bucket is not sufficient.
@@ -4278,7 +4294,13 @@ namespace Amazon.CloudTrail
 
         /// <summary>
         /// Starts an import of logged trail events from a source S3 bucket to a destination
-        /// event data store. 
+        /// event data store. By default, CloudTrail only imports events contained in the S3 bucket's
+        /// <code>CloudTrail</code> prefix and the prefixes inside the <code>CloudTrail</code>
+        /// prefix, and does not check prefixes for other Amazon Web Services services. If you
+        /// want to import CloudTrail events contained in another prefix, you must include the
+        /// prefix in the <code>S3LocationUri</code>. For more considerations about importing
+        /// trail events, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-copy-trail-to-lake.html#cloudtrail-trail-copy-considerations">Considerations</a>.
+        /// 
         /// 
         ///  
         /// <para>
@@ -4314,8 +4336,8 @@ namespace Amazon.CloudTrail
         /// The event data store is inactive.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidEventDataStoreCategoryException">
-        /// This exception is thrown when the event data store category is not valid for the
-        /// import.
+        /// This exception is thrown when event categories of specified event data stores are
+        /// not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidEventDataStoreStatusException">
         /// The event data store is not in a status that supports the operation.
@@ -4345,7 +4367,13 @@ namespace Amazon.CloudTrail
 
         /// <summary>
         /// Starts an import of logged trail events from a source S3 bucket to a destination
-        /// event data store. 
+        /// event data store. By default, CloudTrail only imports events contained in the S3 bucket's
+        /// <code>CloudTrail</code> prefix and the prefixes inside the <code>CloudTrail</code>
+        /// prefix, and does not check prefixes for other Amazon Web Services services. If you
+        /// want to import CloudTrail events contained in another prefix, you must include the
+        /// prefix in the <code>S3LocationUri</code>. For more considerations about importing
+        /// trail events, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-copy-trail-to-lake.html#cloudtrail-trail-copy-considerations">Considerations</a>.
+        /// 
         /// 
         ///  
         /// <para>
@@ -4384,8 +4412,8 @@ namespace Amazon.CloudTrail
         /// The event data store is inactive.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidEventDataStoreCategoryException">
-        /// This exception is thrown when the event data store category is not valid for the
-        /// import.
+        /// This exception is thrown when event categories of specified event data stores are
+        /// not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidEventDataStoreStatusException">
         /// The event data store is not in a status that supports the operation.
@@ -4574,7 +4602,8 @@ namespace Amazon.CloudTrail
 
         /// <summary>
         /// Starts a CloudTrail Lake query. The required <code>QueryStatement</code> parameter
-        /// provides your SQL query, enclosed in single quotation marks.
+        /// provides your SQL query, enclosed in single quotation marks. Use the optional <code>DeliveryS3Uri</code>
+        /// parameter to deliver the query results to an S3 bucket.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartQuery service method.</param>
         /// 
@@ -4589,6 +4618,9 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.InactiveEventDataStoreException">
         /// The event data store is inactive.
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InsufficientS3BucketPolicyException">
+        /// This exception is thrown when the policy on the S3 bucket is not sufficient.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
         /// The request includes a parameter that is not valid.
         /// </exception>
@@ -4597,12 +4629,21 @@ namespace Amazon.CloudTrail
         /// keywords. For more information about writing a query, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-create-edit-query.html">Create
         /// or edit a query</a> in the <i>CloudTrail User Guide</i>.
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidS3BucketNameException">
+        /// This exception is thrown when the provided S3 bucket name is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidS3PrefixException">
+        /// This exception is thrown when the provided S3 prefix is not valid.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.MaxConcurrentQueriesException">
         /// You are already running the maximum number of concurrent queries. Wait a minute for
         /// some queries to finish, and then run the query again.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.S3BucketDoesNotExistException">
+        /// This exception is thrown when the specified S3 bucket does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
         /// This exception is thrown when the requested operation is not supported.
@@ -4620,7 +4661,8 @@ namespace Amazon.CloudTrail
 
         /// <summary>
         /// Starts a CloudTrail Lake query. The required <code>QueryStatement</code> parameter
-        /// provides your SQL query, enclosed in single quotation marks.
+        /// provides your SQL query, enclosed in single quotation marks. Use the optional <code>DeliveryS3Uri</code>
+        /// parameter to deliver the query results to an S3 bucket.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartQuery service method.</param>
         /// <param name="cancellationToken">
@@ -4638,6 +4680,9 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.InactiveEventDataStoreException">
         /// The event data store is inactive.
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InsufficientS3BucketPolicyException">
+        /// This exception is thrown when the policy on the S3 bucket is not sufficient.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
         /// The request includes a parameter that is not valid.
         /// </exception>
@@ -4646,12 +4691,21 @@ namespace Amazon.CloudTrail
         /// keywords. For more information about writing a query, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-create-edit-query.html">Create
         /// or edit a query</a> in the <i>CloudTrail User Guide</i>.
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidS3BucketNameException">
+        /// This exception is thrown when the provided S3 bucket name is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidS3PrefixException">
+        /// This exception is thrown when the provided S3 prefix is not valid.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.MaxConcurrentQueriesException">
         /// You are already running the maximum number of concurrent queries. Wait a minute for
         /// some queries to finish, and then run the query again.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.S3BucketDoesNotExistException">
+        /// This exception is thrown when the specified S3 bucket does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
         /// This exception is thrown when the requested operation is not supported.
@@ -5081,7 +5135,8 @@ namespace Amazon.CloudTrail
         /// in a required service.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientEncryptionPolicyException">
-        /// This exception is thrown when the policy on the S3 bucket or KMS key is not sufficient.
+        /// This exception is thrown when the policy on the S3 bucket or KMS key does not have
+        /// sufficient permissions for the operation.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientS3BucketPolicyException">
         /// This exception is thrown when the policy on the S3 bucket is not sufficient.
@@ -5268,7 +5323,8 @@ namespace Amazon.CloudTrail
         /// in a required service.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientEncryptionPolicyException">
-        /// This exception is thrown when the policy on the S3 bucket or KMS key is not sufficient.
+        /// This exception is thrown when the policy on the S3 bucket or KMS key does not have
+        /// sufficient permissions for the operation.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientS3BucketPolicyException">
         /// This exception is thrown when the policy on the S3 bucket is not sufficient.

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// Contains configuration information about the service-linked channel.
+    /// Contains configuration information about the channel.
     /// </summary>
     public partial class SourceConfig
     {
@@ -39,7 +39,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property AdvancedEventSelectors. 
         /// <para>
-        ///  The advanced event selectors configured for the service-linked channel. 
+        ///  The advanced event selectors that are configured for the channel.
         /// </para>
         /// </summary>
         public List<AdvancedEventSelector> AdvancedEventSelectors
@@ -57,8 +57,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property ApplyToAllRegions. 
         /// <para>
-        ///  Specifies whether the service-linked channel applies to one region or all regions.
-        /// 
+        ///  Specifies whether the channel applies to a single region or to all regions.
         /// </para>
         /// </summary>
         public bool ApplyToAllRegions

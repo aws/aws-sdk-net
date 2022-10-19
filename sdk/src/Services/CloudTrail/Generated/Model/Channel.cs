@@ -39,7 +39,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property ChannelArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the channel. 
+        /// The Amazon Resource Name (ARN) of a channel.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=256)]

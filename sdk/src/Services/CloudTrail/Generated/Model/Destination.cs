@@ -39,8 +39,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        ///  The location of the service. For service-linked channels, this is the name of the
-        /// Amazon Web Services service. 
+        /// For service-linked channels, the value is the name of the Amazon Web Services service.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=1024)]
@@ -59,8 +58,8 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        ///  The type of service. For service-linked channels, the value is <code>AWS_SERVICE</code>.
-        /// 
+        /// The type of destination for events arriving from a channel. For service-linked channels,
+        /// the value is <code>AWS_SERVICE</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

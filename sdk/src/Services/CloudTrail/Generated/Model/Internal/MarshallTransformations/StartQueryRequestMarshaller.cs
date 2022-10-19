@@ -67,6 +67,12 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDeliveryS3Uri())
+                {
+                    context.Writer.WritePropertyName("DeliveryS3Uri");
+                    context.Writer.Write(publicRequest.DeliveryS3Uri);
+                }
+
                 if(publicRequest.IsSetQueryStatement())
                 {
                     context.Writer.WritePropertyName("QueryStatement");

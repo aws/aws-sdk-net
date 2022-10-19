@@ -39,7 +39,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property Channels. 
         /// <para>
-        ///  The list of CloudTrail channels. 
+        ///  The list of channels in the account. 
         /// </para>
         /// </summary>
         public List<Channel> Channels
@@ -57,7 +57,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  A token used to get the next page of results. 
+        /// The token to use to get the next page of results after a previous API call.
         /// </para>
         /// </summary>
         [AWSProperty(Min=4, Max=1000)]

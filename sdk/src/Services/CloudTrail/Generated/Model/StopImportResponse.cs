@@ -64,7 +64,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property Destinations. 
         /// <para>
-        ///  The destination event data store. 
+        ///  The ARN of the destination event data store. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
@@ -122,7 +122,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property ImportSource. 
         /// <para>
-        ///  The source S3 bucket. 
+        ///  The source S3 bucket for the import. 
         /// </para>
         /// </summary>
         public ImportSource ImportSource

@@ -65,6 +65,11 @@
     <pattern>^[a-f0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudTrail.Model.DescribeQueryResponse.DeliveryS3Uri</property>
+    <max>1024</max>
+    <pattern>s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudTrail.Model.DescribeQueryResponse.ErrorMessage</property>
     <min>4</min>
     <max>1000</max>
@@ -318,6 +323,11 @@
     <min>36</min>
     <max>36</max>
     <pattern>^[a-f0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.StartQueryRequest.DeliveryS3Uri</property>
+    <max>1024</max>
+    <pattern>s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudTrail.Model.StartQueryRequest.QueryStatement</property>
