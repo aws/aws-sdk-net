@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Information about phone numbers that have been claimed to your Amazon Connect instance.
+    /// Information about phone numbers that have been claimed to your Amazon Connect instance
+    /// or traffic distribution group.
     /// </summary>
     public partial class ListPhoneNumbersSummary
     {
@@ -134,8 +135,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property TargetArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are
-        /// claimed to.
+        /// The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution
+        /// groups that phone numbers are claimed to.
         /// </para>
         /// </summary>
         public string TargetArn

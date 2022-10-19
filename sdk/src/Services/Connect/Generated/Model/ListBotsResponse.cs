@@ -39,8 +39,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property LexBots. 
         /// <para>
-        /// The names and Regions of the Amazon Lex or Amazon Lex V2 bots associated with the
-        /// specified instance.
+        /// The names and Amazon Web Services Regions of the Amazon Lex or Amazon Lex V2 bots
+        /// associated with the specified instance.
         /// </para>
         /// </summary>
         public List<LexBotConfig> LexBots

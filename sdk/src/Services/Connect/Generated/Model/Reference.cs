@@ -40,7 +40,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the reference.
+        /// The type of the reference. <code>DATE</code> must be of type Epoch timestamp. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

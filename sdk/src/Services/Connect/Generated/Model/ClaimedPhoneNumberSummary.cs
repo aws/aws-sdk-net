@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Information about a phone number that has been claimed to your Amazon Connect instance.
+    /// Information about a phone number that has been claimed to your Amazon Connect instance
+    /// or traffic distribution group.
     /// </summary>
     public partial class ClaimedPhoneNumberSummary
     {
@@ -140,6 +141,36 @@ namespace Amazon.Connect.Model
         /// <para>
         /// The status of the phone number.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>CLAIMED</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a>
+        /// or <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
+        /// operation succeeded.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>IN_PROGRESS</code> means a <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a>
+        /// or <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
+        /// operation is still in progress and has not yet completed. You can call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a>
+        /// at a later time to verify if the previous operation has completed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>FAILED</code> indicates that the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a>
+        /// or <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
+        /// operation has failed. It will include a message indicating the failure reason. A common
+        /// reason for a failure may be that the <code>TargetArn</code> value you are claiming
+        /// or updating a phone number to has reached its limit of total claimed numbers. If you
+        /// received a <code>FAILED</code> status from a <code>ClaimPhoneNumber</code> API call,
+        /// you have one day to retry claiming the phone number before the number is released
+        /// back to the inventory for other customers to claim.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// You will not be billed for the phone number during the 1-day period if number claiming
+        /// fails. 
+        /// </para>
+        ///  </note>
         /// </summary>
         public PhoneNumberStatus PhoneNumberStatus
         {
@@ -194,8 +225,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property TargetArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are
-        /// claimed to.
+        /// The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution
+        /// groups that phone numbers are claimed to.
         /// </para>
         /// </summary>
         public string TargetArn

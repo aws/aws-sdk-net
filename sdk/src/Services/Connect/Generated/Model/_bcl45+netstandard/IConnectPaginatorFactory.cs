@@ -171,6 +171,11 @@ namespace Amazon.Connect.Model
         IListTaskTemplatesPaginator ListTaskTemplates(ListTaskTemplatesRequest request);
 
         /// <summary>
+        /// Paginator for ListTrafficDistributionGroups operation
+        ///</summary>
+        IListTrafficDistributionGroupsPaginator ListTrafficDistributionGroups(ListTrafficDistributionGroupsRequest request);
+
+        /// <summary>
         /// Paginator for ListUseCases operation
         ///</summary>
         IListUseCasesPaginator ListUseCases(ListUseCasesRequest request);

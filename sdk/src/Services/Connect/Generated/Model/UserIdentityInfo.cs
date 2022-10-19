@@ -120,8 +120,13 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property SecondaryEmail. 
         /// <para>
         /// The user's secondary email address. If you provide a secondary email, the user receives
-        /// email notifications -- other than password reset notifications -- to this email address
+        /// email notifications - other than password reset notifications - to this email address
         /// instead of to their primary email address.
+        /// </para>
+        ///  
+        /// <para>
+        /// Pattern: <code>(?=^.{0,265}$)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}</code>
+        /// 
         /// </para>
         /// </summary>
         public string SecondaryEmail

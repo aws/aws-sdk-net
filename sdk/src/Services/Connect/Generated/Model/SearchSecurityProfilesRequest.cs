@@ -107,8 +107,13 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property SearchCriteria. 
         /// <para>
-        /// The search criteria to be used to return security profiles.
+        /// The search criteria to be used to return security profiles. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The currently supported value for <code>FieldName</code>: <code>name</code> 
+        /// </para>
+        ///  </note>
         /// </summary>
         public SecurityProfileSearchCriteria SearchCriteria
         {

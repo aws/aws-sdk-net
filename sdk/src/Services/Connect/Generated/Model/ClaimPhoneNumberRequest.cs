@@ -30,7 +30,17 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the ClaimPhoneNumber operation.
-    /// Claims an available phone number to your Amazon Connect instance.
+    /// Claims an available phone number to your Amazon Connect instance or traffic distribution
+    /// group. You can call this API only in the same Amazon Web Services Region where the
+    /// Amazon Connect instance or traffic distribution group was created.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// You can call the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a>
+    /// API to verify the status of a previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimPhoneNumber.html">ClaimPhoneNumber</a>
+    /// operation.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class ClaimPhoneNumberRequest : AmazonConnectRequest
     {
@@ -44,7 +54,9 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
-        /// the request.
+        /// the request. If not provided, the Amazon Web Services SDK populates this field. For
+        /// more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+        /// retries safe with idempotent APIs</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=500)]
@@ -122,8 +134,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property TargetArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are
-        /// claimed to.
+        /// The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution
+        /// groups that phone numbers are claimed to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

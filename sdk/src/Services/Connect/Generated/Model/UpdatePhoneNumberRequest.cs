@@ -30,8 +30,17 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdatePhoneNumber operation.
-    /// Updates your claimed phone number from its current Amazon Connect instance to another
-    /// Amazon Connect instance in the same Region.
+    /// Updates your claimed phone number from its current Amazon Connect instance or traffic
+    /// distribution group to another Amazon Connect instance or traffic distribution group
+    /// in the same Amazon Web Services Region.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// You can call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a>
+    /// API to verify the status of a previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
+    /// operation.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class UpdatePhoneNumberRequest : AmazonConnectRequest
     {
@@ -43,7 +52,9 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
-        /// the request.
+        /// the request. If not provided, the Amazon Web Services SDK populates this field. For
+        /// more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+        /// retries safe with idempotent APIs</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=500)]
@@ -81,8 +92,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property TargetArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are
-        /// claimed to.
+        /// The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution
+        /// groups that phone numbers are claimed to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -31,6 +31,12 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Container for the parameters to the SearchUsers operation.
     /// Searches users in an Amazon Connect instance, with optional filtering.
+    /// 
+    ///  <note> 
+    /// <para>
+    ///  <code>AfterContactWorkTimeLimit</code> is returned in milliseconds. 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class SearchUsersRequest : AmazonConnectRequest
     {

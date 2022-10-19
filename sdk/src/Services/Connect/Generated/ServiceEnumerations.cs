@@ -3377,6 +3377,72 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type TrafficDistributionGroupStatus.
+    /// </summary>
+    public class TrafficDistributionGroupStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for TrafficDistributionGroupStatus
+        /// </summary>
+        public static readonly TrafficDistributionGroupStatus ACTIVE = new TrafficDistributionGroupStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATION_FAILED for TrafficDistributionGroupStatus
+        /// </summary>
+        public static readonly TrafficDistributionGroupStatus CREATION_FAILED = new TrafficDistributionGroupStatus("CREATION_FAILED");
+        /// <summary>
+        /// Constant CREATION_IN_PROGRESS for TrafficDistributionGroupStatus
+        /// </summary>
+        public static readonly TrafficDistributionGroupStatus CREATION_IN_PROGRESS = new TrafficDistributionGroupStatus("CREATION_IN_PROGRESS");
+        /// <summary>
+        /// Constant DELETION_FAILED for TrafficDistributionGroupStatus
+        /// </summary>
+        public static readonly TrafficDistributionGroupStatus DELETION_FAILED = new TrafficDistributionGroupStatus("DELETION_FAILED");
+        /// <summary>
+        /// Constant PENDING_DELETION for TrafficDistributionGroupStatus
+        /// </summary>
+        public static readonly TrafficDistributionGroupStatus PENDING_DELETION = new TrafficDistributionGroupStatus("PENDING_DELETION");
+        /// <summary>
+        /// Constant UPDATE_IN_PROGRESS for TrafficDistributionGroupStatus
+        /// </summary>
+        public static readonly TrafficDistributionGroupStatus UPDATE_IN_PROGRESS = new TrafficDistributionGroupStatus("UPDATE_IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TrafficDistributionGroupStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TrafficDistributionGroupStatus FindValue(string value)
+        {
+            return FindValue<TrafficDistributionGroupStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TrafficDistributionGroupStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TrafficType.
     /// </summary>
     public class TrafficType : ConstantClass

@@ -121,7 +121,7 @@ namespace Amazon.Connect.Model
         /// <para>
         /// A map of maximum slots by channel. The key is a channel name. The value is an integer:
         /// the maximum number of slots. This is calculated from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_MediaConcurrency.html">MediaConcurrency</a>
-        /// of the RoutingProfile assigned to the agent. 
+        /// of the <code>RoutingProfile</code> assigned to the agent. 
         /// </para>
         /// </summary>
         public Dictionary<string, int> MaxSlotsByChannel
@@ -176,8 +176,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property User. 
         /// <para>
-        /// Information about the user for the data that is returned. It contains resourceId and
-        /// ARN of the user. 
+        /// Information about the user for the data that is returned. It contains the <code>resourceId</code>
+        /// and ARN of the user. 
         /// </para>
         /// </summary>
         public UserReference User

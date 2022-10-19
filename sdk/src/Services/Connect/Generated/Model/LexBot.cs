@@ -39,7 +39,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property LexRegion. 
         /// <para>
-        /// The Region that the Amazon Lex bot was created in.
+        /// The Amazon Web Services Region where the Amazon Lex bot was created.
         /// </para>
         /// </summary>
         [AWSProperty(Max=60)]

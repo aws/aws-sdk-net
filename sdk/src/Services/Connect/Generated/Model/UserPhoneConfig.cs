@@ -43,6 +43,12 @@ namespace Amazon.Connect.Model
         /// <para>
         /// The After Call Work (ACW) timeout setting, in seconds.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// When returned by a <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code>
+        /// is returned in milliseconds. 
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=0)]
         public int AfterContactWorkTimeLimit

@@ -468,6 +468,19 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Associates a flow with a phone number claimed to your Amazon Connect instance.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// If the number is claimed to a traffic distribution group, and you are calling this
+        /// API using an instance in the Amazon Web Services Region where the traffic distribution
+        /// group was created, you can use either a full phone number ARN or UUID value for the
+        /// <code>PhoneNumberId</code> URI request parameter. However, if the number is claimed
+        /// to a traffic distribution group and you are calling this API using an instance in
+        /// the alternate Amazon Web Services Region associated with the traffic distribution
+        /// group, you must provide a full phone number ARN. If a UUID is provided in this scenario,
+        /// you will receive a <code>ResourceNotFoundException</code>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociatePhoneNumberContactFlow service method.</param>
         /// 
@@ -706,7 +719,17 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Claims an available phone number to your Amazon Connect instance.
+        /// Claims an available phone number to your Amazon Connect instance or traffic distribution
+        /// group. You can call this API only in the same Amazon Web Services Region where the
+        /// Amazon Connect instance or traffic distribution group was created.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// You can call the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a>
+        /// API to verify the status of a previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimPhoneNumber.html">ClaimPhoneNumber</a>
+        /// operation.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ClaimPhoneNumber service method.</param>
         /// 
@@ -1168,6 +1191,18 @@ namespace Amazon.Connect
         /// <para>
         /// Creates a new queue for the specified Amazon Connect instance.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If the number being used in the input is claimed to a traffic distribution group,
+        /// and you are calling this API using an instance in the Amazon Web Services Region where
+        /// the traffic distribution group was created, you can use either a full phone number
+        /// ARN or UUID value for the <code>OutboundCallerIdNumberId</code> value of the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_OutboundCallerConfig">OutboundCallerConfig</a>
+        /// request body parameter. However, if the number is claimed to a traffic distribution
+        /// group and you are calling this API using an instance in the alternate Amazon Web Services
+        /// Region associated with the traffic distribution group, you must provide a full phone
+        /// number ARN. If a UUID is provided in this scenario, you will receive a <code>ResourceNotFoundException</code>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateQueue service method.</param>
         /// 
@@ -1467,6 +1502,78 @@ namespace Amazon.Connect
         /// <returns>Returns a  CreateTaskTemplateResult from Connect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateTaskTemplate">REST API Reference for CreateTaskTemplate Operation</seealso>
         CreateTaskTemplateResponse EndCreateTaskTemplate(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateTrafficDistributionGroup
+
+
+        /// <summary>
+        /// Creates a traffic distribution group given an Amazon Connect instance that has been
+        /// replicated. 
+        /// 
+        ///  
+        /// <para>
+        /// For more information about creating traffic distribution groups, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-traffic-distribution-groups.html">Set
+        /// up traffic distribution groups</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrafficDistributionGroup service method.</param>
+        /// 
+        /// <returns>The response from the CreateTrafficDistributionGroup service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotReadyException">
+        /// The resource is not ready.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateTrafficDistributionGroup">REST API Reference for CreateTrafficDistributionGroup Operation</seealso>
+        CreateTrafficDistributionGroupResponse CreateTrafficDistributionGroup(CreateTrafficDistributionGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTrafficDistributionGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrafficDistributionGroup operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTrafficDistributionGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateTrafficDistributionGroup">REST API Reference for CreateTrafficDistributionGroup Operation</seealso>
+        IAsyncResult BeginCreateTrafficDistributionGroup(CreateTrafficDistributionGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTrafficDistributionGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTrafficDistributionGroup.</param>
+        /// 
+        /// <returns>Returns a  CreateTrafficDistributionGroupResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateTrafficDistributionGroup">REST API Reference for CreateTrafficDistributionGroup Operation</seealso>
+        CreateTrafficDistributionGroupResponse EndCreateTrafficDistributionGroup(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2182,6 +2289,68 @@ namespace Amazon.Connect
         /// <returns>Returns a  DeleteTaskTemplateResult from Connect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteTaskTemplate">REST API Reference for DeleteTaskTemplate Operation</seealso>
         DeleteTaskTemplateResponse EndDeleteTaskTemplate(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteTrafficDistributionGroup
+
+
+        /// <summary>
+        /// Deletes a traffic distribution group. This API can be called only in the Region where
+        /// the traffic distribution group is created.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about deleting traffic distribution groups, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/delete-traffic-distribution-groups.html">Delete
+        /// traffic distribution groups</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrafficDistributionGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTrafficDistributionGroup service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
+        /// That resource is already in use. Please try another.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteTrafficDistributionGroup">REST API Reference for DeleteTrafficDistributionGroup Operation</seealso>
+        DeleteTrafficDistributionGroupResponse DeleteTrafficDistributionGroup(DeleteTrafficDistributionGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTrafficDistributionGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrafficDistributionGroup operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTrafficDistributionGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteTrafficDistributionGroup">REST API Reference for DeleteTrafficDistributionGroup Operation</seealso>
+        IAsyncResult BeginDeleteTrafficDistributionGroup(DeleteTrafficDistributionGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTrafficDistributionGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTrafficDistributionGroup.</param>
+        /// 
+        /// <returns>Returns a  DeleteTrafficDistributionGroupResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteTrafficDistributionGroup">REST API Reference for DeleteTrafficDistributionGroup Operation</seealso>
+        DeleteTrafficDistributionGroupResponse EndDeleteTrafficDistributionGroup(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2916,6 +3085,19 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Gets details and status of a phone number that’s claimed to your Amazon Connect instance
+        /// or traffic distribution group.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// If the number is claimed to a traffic distribution group, and you are calling in the
+        /// Amazon Web Services Region where the traffic distribution group was created, you can
+        /// use either a phone number ARN or UUID value for the <code>PhoneNumberId</code> URI
+        /// request parameter. However, if the number is claimed to a traffic distribution group
+        /// and you are calling this API in the alternate Amazon Web Services Region associated
+        /// with the traffic distribution group, you must provide a full phone number ARN. If
+        /// a UUID is provided in this scenario, you will receive a <code>ResourceNotFoundException</code>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePhoneNumber service method.</param>
         /// 
@@ -3193,6 +3375,61 @@ namespace Amazon.Connect
         /// <returns>Returns a  DescribeSecurityProfileResult from Connect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeSecurityProfile">REST API Reference for DescribeSecurityProfile Operation</seealso>
         DescribeSecurityProfileResponse EndDescribeSecurityProfile(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeTrafficDistributionGroup
+
+
+        /// <summary>
+        /// Gets details and status of a traffic distribution group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrafficDistributionGroup service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTrafficDistributionGroup service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeTrafficDistributionGroup">REST API Reference for DescribeTrafficDistributionGroup Operation</seealso>
+        DescribeTrafficDistributionGroupResponse DescribeTrafficDistributionGroup(DescribeTrafficDistributionGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTrafficDistributionGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrafficDistributionGroup operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTrafficDistributionGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeTrafficDistributionGroup">REST API Reference for DescribeTrafficDistributionGroup Operation</seealso>
+        IAsyncResult BeginDescribeTrafficDistributionGroup(DescribeTrafficDistributionGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeTrafficDistributionGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTrafficDistributionGroup.</param>
+        /// 
+        /// <returns>Returns a  DescribeTrafficDistributionGroupResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeTrafficDistributionGroup">REST API Reference for DescribeTrafficDistributionGroup Operation</seealso>
+        DescribeTrafficDistributionGroupResponse EndDescribeTrafficDistributionGroup(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3723,8 +3960,20 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Removes the flow association from a phone number claimed to your Amazon Connect instance,
-        /// if a flow association exists.
+        /// Removes the flow association from a phone number claimed to your Amazon Connect instance.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// If the number is claimed to a traffic distribution group, and you are calling this
+        /// API using an instance in the Amazon Web Services Region where the traffic distribution
+        /// group was created, you can use either a full phone number ARN or UUID value for the
+        /// <code>PhoneNumberId</code> URI request parameter. However, if the number is claimed
+        /// to a traffic distribution group and you are calling this API using an instance in
+        /// the alternate Amazon Web Services Region associated with the traffic distribution
+        /// group, you must provide a full phone number ARN. If a UUID is provided in this scenario,
+        /// you will receive a <code>ResourceNotFoundException</code>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociatePhoneNumberContactFlow service method.</param>
         /// 
@@ -4298,6 +4547,61 @@ namespace Amazon.Connect
         /// <returns>Returns a  GetTaskTemplateResult from Connect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetTaskTemplate">REST API Reference for GetTaskTemplate Operation</seealso>
         GetTaskTemplateResponse EndGetTaskTemplate(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetTrafficDistribution
+
+
+        /// <summary>
+        /// Retrieves the current traffic distribution for a given traffic distribution group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTrafficDistribution service method.</param>
+        /// 
+        /// <returns>The response from the GetTrafficDistribution service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetTrafficDistribution">REST API Reference for GetTrafficDistribution Operation</seealso>
+        GetTrafficDistributionResponse GetTrafficDistribution(GetTrafficDistributionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTrafficDistribution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTrafficDistribution operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTrafficDistribution
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetTrafficDistribution">REST API Reference for GetTrafficDistribution Operation</seealso>
+        IAsyncResult BeginGetTrafficDistribution(GetTrafficDistributionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTrafficDistribution operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTrafficDistribution.</param>
+        /// 
+        /// <returns>Returns a  GetTrafficDistributionResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetTrafficDistribution">REST API Reference for GetTrafficDistribution Operation</seealso>
+        GetTrafficDistributionResponse EndGetTrafficDistribution(IAsyncResult asyncResult);
 
         #endregion
         
@@ -5142,6 +5446,15 @@ namespace Amazon.Connect
         /// Up Phone Numbers for Your Contact Center</a> in the <i>Amazon Connect Administrator
         /// Guide</i>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// The phone number <code>Arn</code> value that is returned from each of the items in
+        /// the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbers.html#connect-ListPhoneNumbers-response-PhoneNumberSummaryList">PhoneNumberSummaryList</a>
+        /// cannot be used to tag phone number resources. It will fail with a <code>ResourceNotFoundException</code>.
+        /// Instead, use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
+        /// API. It returns the new phone number ARN that can be used to tag phone number resources.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPhoneNumbers service method.</param>
         /// 
@@ -5196,7 +5509,10 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Lists phone numbers claimed to your Amazon Connect instance. 
+        /// Lists phone numbers claimed to your Amazon Connect instance or traffic distribution
+        /// group. If the provided <code>TargetArn</code> is a traffic distribution group, you
+        /// can call this API in both Amazon Web Services Regions associated with traffic distribution
+        /// group.
         /// 
         ///  
         /// <para>
@@ -5908,6 +6224,58 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ListTrafficDistributionGroups
+
+
+        /// <summary>
+        /// Lists traffic distribution groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTrafficDistributionGroups service method.</param>
+        /// 
+        /// <returns>The response from the ListTrafficDistributionGroups service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTrafficDistributionGroups">REST API Reference for ListTrafficDistributionGroups Operation</seealso>
+        ListTrafficDistributionGroupsResponse ListTrafficDistributionGroups(ListTrafficDistributionGroupsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTrafficDistributionGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTrafficDistributionGroups operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTrafficDistributionGroups
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTrafficDistributionGroups">REST API Reference for ListTrafficDistributionGroups Operation</seealso>
+        IAsyncResult BeginListTrafficDistributionGroups(ListTrafficDistributionGroupsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTrafficDistributionGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTrafficDistributionGroups.</param>
+        /// 
+        /// <returns>Returns a  ListTrafficDistributionGroupsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTrafficDistributionGroups">REST API Reference for ListTrafficDistributionGroups Operation</seealso>
+        ListTrafficDistributionGroupsResponse EndListTrafficDistributionGroups(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListUseCases
 
 
@@ -6147,7 +6515,22 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Releases a phone number previously claimed to an Amazon Connect instance.
+        /// Releases a phone number previously claimed to an Amazon Connect instance or traffic
+        /// distribution group. You can call this API only in the Amazon Web Services Region where
+        /// the number was claimed.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// To release phone numbers from a traffic distribution group, use the <code>ReleasePhoneNumber</code>
+        /// API, not the Amazon Connect console.
+        /// </para>
+        ///  
+        /// <para>
+        /// After releasing a phone number, the phone number enters into a cooldown period of
+        /// 30 days. It cannot be searched for or claimed again until the period has ended. If
+        /// you accidentally release a phone number, contact Amazon Web Services Support.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ReleasePhoneNumber service method.</param>
         /// 
@@ -6201,6 +6584,77 @@ namespace Amazon.Connect
         /// <returns>Returns a  ReleasePhoneNumberResult from Connect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ReleasePhoneNumber">REST API Reference for ReleasePhoneNumber Operation</seealso>
         ReleasePhoneNumberResponse EndReleasePhoneNumber(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ReplicateInstance
+
+
+        /// <summary>
+        /// Replicates an Amazon Connect instance in the specified Amazon Web Services Region.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about replicating an Amazon Connect instance, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-replica-connect-instance.html">Create
+        /// a replica of your existing Amazon Connect instance</a> in the <i>Amazon Connect Administrator
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReplicateInstance service method.</param>
+        /// 
+        /// <returns>The response from the ReplicateInstance service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotReadyException">
+        /// The resource is not ready.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ReplicateInstance">REST API Reference for ReplicateInstance Operation</seealso>
+        ReplicateInstanceResponse ReplicateInstance(ReplicateInstanceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ReplicateInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ReplicateInstance operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndReplicateInstance
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ReplicateInstance">REST API Reference for ReplicateInstance Operation</seealso>
+        IAsyncResult BeginReplicateInstance(ReplicateInstanceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ReplicateInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginReplicateInstance.</param>
+        /// 
+        /// <returns>Returns a  ReplicateInstanceResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ReplicateInstance">REST API Reference for ReplicateInstance Operation</seealso>
+        ReplicateInstanceResponse EndReplicateInstance(IAsyncResult asyncResult);
 
         #endregion
         
@@ -6263,7 +6717,10 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches for available phone numbers that you can claim to your Amazon Connect instance.
+        /// Searches for available phone numbers that you can claim to your Amazon Connect instance
+        /// or traffic distribution group. If the provided <code>TargetArn</code> is a traffic
+        /// distribution group, you can call this API in both Amazon Web Services Regions associated
+        /// with the traffic distribution group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchAvailablePhoneNumbers service method.</param>
         /// 
@@ -6496,6 +6953,12 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Searches users in an Amazon Connect instance, with optional filtering.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  <code>AfterContactWorkTimeLimit</code> is returned in milliseconds. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchUsers service method.</param>
         /// 
@@ -8189,8 +8652,17 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Updates your claimed phone number from its current Amazon Connect instance to another
-        /// Amazon Connect instance in the same Region.
+        /// Updates your claimed phone number from its current Amazon Connect instance or traffic
+        /// distribution group to another Amazon Connect instance or traffic distribution group
+        /// in the same Amazon Web Services Region.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// You can call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a>
+        /// API to verify the status of a previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
+        /// operation.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePhoneNumber service method.</param>
         /// 
@@ -8443,6 +8915,18 @@ namespace Amazon.Connect
         /// Updates the outbound caller ID name, number, and outbound whisper flow for a specified
         /// queue.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If the number being used in the input is claimed to a traffic distribution group,
+        /// and you are calling this API using an instance in the Amazon Web Services Region where
+        /// the traffic distribution group was created, you can use either a full phone number
+        /// ARN or UUID value for the <code>OutboundCallerIdNumberId</code> value of the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_OutboundCallerConfig">OutboundCallerConfig</a>
+        /// request body parameter. However, if the number is claimed to a traffic distribution
+        /// group and you are calling this API using an instance in the alternate Amazon Web Services
+        /// Region associated with the traffic distribution group, you must provide a full phone
+        /// number ARN. If a UUID is provided in this scenario, you will receive a <code>ResourceNotFoundException</code>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateQueueOutboundCallerConfig service method.</param>
         /// 
@@ -9008,6 +9492,67 @@ namespace Amazon.Connect
         /// <returns>Returns a  UpdateTaskTemplateResult from Connect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateTaskTemplate">REST API Reference for UpdateTaskTemplate Operation</seealso>
         UpdateTaskTemplateResponse EndUpdateTaskTemplate(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateTrafficDistribution
+
+
+        /// <summary>
+        /// Updates the traffic distribution for a given traffic distribution group. For more
+        /// information about updating a traffic distribution group see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/update-telephony-traffic-distribution.html">Update
+        /// telephony traffic distribution across Amazon Web Services Regions </a> in the <i>Amazon
+        /// Connect Administrator Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTrafficDistribution service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTrafficDistribution service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateTrafficDistribution">REST API Reference for UpdateTrafficDistribution Operation</seealso>
+        UpdateTrafficDistributionResponse UpdateTrafficDistribution(UpdateTrafficDistributionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTrafficDistribution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTrafficDistribution operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTrafficDistribution
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateTrafficDistribution">REST API Reference for UpdateTrafficDistribution Operation</seealso>
+        IAsyncResult BeginUpdateTrafficDistribution(UpdateTrafficDistributionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateTrafficDistribution operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateTrafficDistribution.</param>
+        /// 
+        /// <returns>Returns a  UpdateTrafficDistributionResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateTrafficDistribution">REST API Reference for UpdateTrafficDistribution Operation</seealso>
+        UpdateTrafficDistributionResponse EndUpdateTrafficDistribution(IAsyncResult asyncResult);
 
         #endregion
         

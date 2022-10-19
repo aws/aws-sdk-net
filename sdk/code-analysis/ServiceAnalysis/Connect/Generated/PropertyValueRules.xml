@@ -310,6 +310,36 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.CreateTrafficDistributionGroupRequest.ClientToken</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateTrafficDistributionGroupRequest.Description</property>
+    <min>1</min>
+    <max>250</max>
+    <pattern>(^[\S].*[\S]$)|(^[\S]$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateTrafficDistributionGroupRequest.InstanceId</property>
+    <min>1</min>
+    <max>250</max>
+    <pattern>^(arn:(aws|aws-us-gov):connect:[a-z]{2}-[a-z]+-[0-9]{1}:[0-9]{1,20}:instance/)?[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateTrafficDistributionGroupRequest.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>(^[\S].*[\S]$)|(^[\S]$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateTrafficDistributionGroupResponse.Arn</property>
+    <pattern>^arn:(aws|aws-us-gov):connect:[a-z]{2}-[a-z]+-[0-9]{1}:[0-9]{1,20}:traffic-distribution-group/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateTrafficDistributionGroupResponse.Id</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.CreateUseCaseRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -426,6 +456,10 @@
     <property>Amazon.Connect.Model.DeleteTaskTemplateRequest.TaskTemplateId</property>
     <min>1</min>
     <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DeleteTrafficDistributionGroupRequest.TrafficDistributionGroupId</property>
+    <pattern>^(arn:(aws|aws-us-gov):connect:[a-z]{2}-[a-z-]+-[0-9]{1}:[0-9]{1,20}:traffic-distribution-group/)?[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DeleteUseCaseRequest.InstanceId</property>
@@ -545,6 +579,10 @@
     <property>Amazon.Connect.Model.DescribeSecurityProfileRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DescribeTrafficDistributionGroupRequest.TrafficDistributionGroupId</property>
+    <pattern>^(arn:(aws|aws-us-gov):connect:[a-z]{2}-[a-z-]+-[0-9]{1}:[0-9]{1,20}:traffic-distribution-group/)?[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DescribeUserRequest.InstanceId</property>
@@ -726,6 +764,18 @@
     <property>Amazon.Connect.Model.GetTaskTemplateResponse.Name</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.GetTrafficDistributionRequest.Id</property>
+    <pattern>^(arn:(aws|aws-us-gov):connect:[a-z]{2}-[a-z-]+-[0-9]{1}:[0-9]{1,20}:traffic-distribution-group/)?[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.GetTrafficDistributionResponse.Arn</property>
+    <pattern>^arn:(aws|aws-us-gov):connect:[a-z]{2}-[a-z]+-[0-9]{1}:[0-9]{1,20}:traffic-distribution-group/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.GetTrafficDistributionResponse.Id</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListAgentStatusesRequest.InstanceId</property>
@@ -1009,6 +1059,17 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.ListTrafficDistributionGroupsRequest.InstanceId</property>
+    <min>1</min>
+    <max>250</max>
+    <pattern>^(arn:(aws|aws-us-gov):connect:[a-z]{2}-[a-z]+-[0-9]{1}:[0-9]{1,20}:instance/)?[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListTrafficDistributionGroupsRequest.MaxResults</property>
+    <min>1</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.ListUseCasesRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -1051,6 +1112,33 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.ReleasePhoneNumberRequest.ClientToken</property>
     <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ReplicateInstanceRequest.ClientToken</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ReplicateInstanceRequest.InstanceId</property>
+    <min>1</min>
+    <max>250</max>
+    <pattern>^(arn:(aws|aws-us-gov):connect:[a-z]{2}-[a-z]+-[0-9]{1}:[0-9]{1,20}:instance/)?[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ReplicateInstanceRequest.ReplicaAlias</property>
+    <min>1</min>
+    <max>62</max>
+    <pattern>^(?!d-)([\da-zA-Z]+)([-]*[\da-zA-Z])*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ReplicateInstanceRequest.ReplicaRegion</property>
+    <min>8</min>
+    <max>31</max>
+    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ReplicateInstanceResponse.Id</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ResumeContactRecordingRequest.ContactId</property>
@@ -1736,6 +1824,10 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateTrafficDistributionRequest.Id</property>
+    <pattern>^(arn:(aws|aws-us-gov):connect:[a-z]{2}-[a-z-]+-[0-9]{1}:[0-9]{1,20}:traffic-distribution-group/)?[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.UpdateUserHierarchyRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -1943,6 +2035,17 @@
     <min>1</min>
     <max>140</max>
     <pattern>^[0-9a-zA-Z._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.Distribution.Percentage</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.Distribution.Region</property>
+    <min>8</min>
+    <max>31</max>
+    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.EmailReference.Name</property>
@@ -2282,6 +2385,48 @@
     <property>Amazon.Connect.Model.TaskTemplateMetadata.Name</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.TrafficDistributionGroup.Arn</property>
+    <pattern>^arn:(aws|aws-us-gov):connect:[a-z]{2}-[a-z]+-[0-9]{1}:[0-9]{1,20}:traffic-distribution-group/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.TrafficDistributionGroup.Description</property>
+    <min>1</min>
+    <max>250</max>
+    <pattern>(^[\S].*[\S]$)|(^[\S]$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.TrafficDistributionGroup.Id</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.TrafficDistributionGroup.InstanceArn</property>
+    <pattern>arn:(aws|aws-us-gov):connect:[a-z]{2}-[a-z]+-[0-9-]{1}:[0-9]{1,20}:instance/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.TrafficDistributionGroup.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>(^[\S].*[\S]$)|(^[\S]$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.TrafficDistributionGroupSummary.Arn</property>
+    <pattern>^arn:(aws|aws-us-gov):connect:[a-z]{2}-[a-z]+-[0-9]{1}:[0-9]{1,20}:traffic-distribution-group/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.TrafficDistributionGroupSummary.Id</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.TrafficDistributionGroupSummary.InstanceArn</property>
+    <pattern>arn:(aws|aws-us-gov):connect:[a-z]{2}-[a-z]+-[0-9-]{1}:[0-9]{1,20}:instance/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.TrafficDistributionGroupSummary.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>(^[\S].*[\S]$)|(^[\S]$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UrlReference.Name</property>

@@ -30,7 +30,10 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the SearchAvailablePhoneNumbers operation.
-    /// Searches for available phone numbers that you can claim to your Amazon Connect instance.
+    /// Searches for available phone numbers that you can claim to your Amazon Connect instance
+    /// or traffic distribution group. If the provided <code>TargetArn</code> is a traffic
+    /// distribution group, you can call this API in both Amazon Web Services Regions associated
+    /// with the traffic distribution group.
     /// </summary>
     public partial class SearchAvailablePhoneNumbersRequest : AmazonConnectRequest
     {
@@ -140,8 +143,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property TargetArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for Amazon Connect instances that phone numbers are
-        /// claimed to.
+        /// The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution
+        /// groups that phone numbers are claimed to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

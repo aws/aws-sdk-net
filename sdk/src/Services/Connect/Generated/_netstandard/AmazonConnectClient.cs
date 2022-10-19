@@ -656,6 +656,19 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Associates a flow with a phone number claimed to your Amazon Connect instance.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// If the number is claimed to a traffic distribution group, and you are calling this
+        /// API using an instance in the Amazon Web Services Region where the traffic distribution
+        /// group was created, you can use either a full phone number ARN or UUID value for the
+        /// <code>PhoneNumberId</code> URI request parameter. However, if the number is claimed
+        /// to a traffic distribution group and you are calling this API using an instance in
+        /// the alternate Amazon Web Services Region associated with the traffic distribution
+        /// group, you must provide a full phone number ARN. If a UUID is provided in this scenario,
+        /// you will receive a <code>ResourceNotFoundException</code>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociatePhoneNumberContactFlow service method.</param>
         /// <param name="cancellationToken">
@@ -870,7 +883,17 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Claims an available phone number to your Amazon Connect instance.
+        /// Claims an available phone number to your Amazon Connect instance or traffic distribution
+        /// group. You can call this API only in the same Amazon Web Services Region where the
+        /// Amazon Connect instance or traffic distribution group was created.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// You can call the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a>
+        /// API to verify the status of a previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimPhoneNumber.html">ClaimPhoneNumber</a>
+        /// operation.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ClaimPhoneNumber service method.</param>
         /// <param name="cancellationToken">
@@ -1290,6 +1313,18 @@ namespace Amazon.Connect
         /// <para>
         /// Creates a new queue for the specified Amazon Connect instance.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If the number being used in the input is claimed to a traffic distribution group,
+        /// and you are calling this API using an instance in the Amazon Web Services Region where
+        /// the traffic distribution group was created, you can use either a full phone number
+        /// ARN or UUID value for the <code>OutboundCallerIdNumberId</code> value of the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_OutboundCallerConfig">OutboundCallerConfig</a>
+        /// request body parameter. However, if the number is claimed to a traffic distribution
+        /// group and you are calling this API using an instance in the alternate Amazon Web Services
+        /// Region associated with the traffic distribution group, you must provide a full phone
+        /// number ARN. If a UUID is provided in this scenario, you will receive a <code>ResourceNotFoundException</code>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateQueue service method.</param>
         /// <param name="cancellationToken">
@@ -1548,6 +1583,72 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = CreateTaskTemplateResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateTaskTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateTrafficDistributionGroup
+
+        internal virtual CreateTrafficDistributionGroupResponse CreateTrafficDistributionGroup(CreateTrafficDistributionGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTrafficDistributionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTrafficDistributionGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTrafficDistributionGroupResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a traffic distribution group given an Amazon Connect instance that has been
+        /// replicated. 
+        /// 
+        ///  
+        /// <para>
+        /// For more information about creating traffic distribution groups, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-traffic-distribution-groups.html">Set
+        /// up traffic distribution groups</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrafficDistributionGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTrafficDistributionGroup service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotReadyException">
+        /// The resource is not ready.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateTrafficDistributionGroup">REST API Reference for CreateTrafficDistributionGroup Operation</seealso>
+        public virtual Task<CreateTrafficDistributionGroupResponse> CreateTrafficDistributionGroupAsync(CreateTrafficDistributionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTrafficDistributionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTrafficDistributionGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateTrafficDistributionGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2191,6 +2292,62 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = DeleteTaskTemplateResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteTaskTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteTrafficDistributionGroup
+
+        internal virtual DeleteTrafficDistributionGroupResponse DeleteTrafficDistributionGroup(DeleteTrafficDistributionGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTrafficDistributionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTrafficDistributionGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTrafficDistributionGroupResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a traffic distribution group. This API can be called only in the Region where
+        /// the traffic distribution group is created.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about deleting traffic distribution groups, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/delete-traffic-distribution-groups.html">Delete
+        /// traffic distribution groups</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrafficDistributionGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTrafficDistributionGroup service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
+        /// That resource is already in use. Please try another.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteTrafficDistributionGroup">REST API Reference for DeleteTrafficDistributionGroup Operation</seealso>
+        public virtual Task<DeleteTrafficDistributionGroupResponse> DeleteTrafficDistributionGroupAsync(DeleteTrafficDistributionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTrafficDistributionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTrafficDistributionGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteTrafficDistributionGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2864,6 +3021,19 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Gets details and status of a phone number that’s claimed to your Amazon Connect instance
+        /// or traffic distribution group.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// If the number is claimed to a traffic distribution group, and you are calling in the
+        /// Amazon Web Services Region where the traffic distribution group was created, you can
+        /// use either a phone number ARN or UUID value for the <code>PhoneNumberId</code> URI
+        /// request parameter. However, if the number is claimed to a traffic distribution group
+        /// and you are calling this API in the alternate Amazon Web Services Region associated
+        /// with the traffic distribution group, you must provide a full phone number ARN. If
+        /// a UUID is provided in this scenario, you will receive a <code>ResourceNotFoundException</code>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePhoneNumber service method.</param>
         /// <param name="cancellationToken">
@@ -3100,6 +3270,55 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = DescribeSecurityProfileResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeSecurityProfileResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeTrafficDistributionGroup
+
+        internal virtual DescribeTrafficDistributionGroupResponse DescribeTrafficDistributionGroup(DescribeTrafficDistributionGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTrafficDistributionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTrafficDistributionGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTrafficDistributionGroupResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets details and status of a traffic distribution group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrafficDistributionGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTrafficDistributionGroup service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeTrafficDistributionGroup">REST API Reference for DescribeTrafficDistributionGroup Operation</seealso>
+        public virtual Task<DescribeTrafficDistributionGroupResponse> DescribeTrafficDistributionGroupAsync(DescribeTrafficDistributionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTrafficDistributionGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTrafficDistributionGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeTrafficDistributionGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3587,8 +3806,20 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Removes the flow association from a phone number claimed to your Amazon Connect instance,
-        /// if a flow association exists.
+        /// Removes the flow association from a phone number claimed to your Amazon Connect instance.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// If the number is claimed to a traffic distribution group, and you are calling this
+        /// API using an instance in the Amazon Web Services Region where the traffic distribution
+        /// group was created, you can use either a full phone number ARN or UUID value for the
+        /// <code>PhoneNumberId</code> URI request parameter. However, if the number is claimed
+        /// to a traffic distribution group and you are calling this API using an instance in
+        /// the alternate Amazon Web Services Region associated with the traffic distribution
+        /// group, you must provide a full phone number ARN. If a UUID is provided in this scenario,
+        /// you will receive a <code>ResourceNotFoundException</code>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociatePhoneNumberContactFlow service method.</param>
         /// <param name="cancellationToken">
@@ -4091,6 +4322,55 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = GetTaskTemplateResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetTaskTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetTrafficDistribution
+
+        internal virtual GetTrafficDistributionResponse GetTrafficDistribution(GetTrafficDistributionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTrafficDistributionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTrafficDistributionResponseUnmarshaller.Instance;
+
+            return Invoke<GetTrafficDistributionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the current traffic distribution for a given traffic distribution group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTrafficDistribution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTrafficDistribution service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetTrafficDistribution">REST API Reference for GetTrafficDistribution Operation</seealso>
+        public virtual Task<GetTrafficDistributionResponse> GetTrafficDistributionAsync(GetTrafficDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTrafficDistributionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTrafficDistributionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetTrafficDistributionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4862,6 +5142,15 @@ namespace Amazon.Connect
         /// Up Phone Numbers for Your Contact Center</a> in the <i>Amazon Connect Administrator
         /// Guide</i>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// The phone number <code>Arn</code> value that is returned from each of the items in
+        /// the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbers.html#connect-ListPhoneNumbers-response-PhoneNumberSummaryList">PhoneNumberSummaryList</a>
+        /// cannot be used to tag phone number resources. It will fail with a <code>ResourceNotFoundException</code>.
+        /// Instead, use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
+        /// API. It returns the new phone number ARN that can be used to tag phone number resources.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPhoneNumbers service method.</param>
         /// <param name="cancellationToken">
@@ -4910,7 +5199,10 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Lists phone numbers claimed to your Amazon Connect instance. 
+        /// Lists phone numbers claimed to your Amazon Connect instance or traffic distribution
+        /// group. If the provided <code>TargetArn</code> is a traffic distribution group, you
+        /// can call this API in both Amazon Web Services Regions associated with traffic distribution
+        /// group.
         /// 
         ///  
         /// <para>
@@ -5540,6 +5832,52 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ListTrafficDistributionGroups
+
+        internal virtual ListTrafficDistributionGroupsResponse ListTrafficDistributionGroups(ListTrafficDistributionGroupsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTrafficDistributionGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTrafficDistributionGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<ListTrafficDistributionGroupsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists traffic distribution groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTrafficDistributionGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTrafficDistributionGroups service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTrafficDistributionGroups">REST API Reference for ListTrafficDistributionGroups Operation</seealso>
+        public virtual Task<ListTrafficDistributionGroupsResponse> ListTrafficDistributionGroupsAsync(ListTrafficDistributionGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTrafficDistributionGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTrafficDistributionGroupsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTrafficDistributionGroupsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListUseCases
 
         internal virtual ListUseCasesResponse ListUseCases(ListUseCasesRequest request)
@@ -5765,7 +6103,22 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Releases a phone number previously claimed to an Amazon Connect instance.
+        /// Releases a phone number previously claimed to an Amazon Connect instance or traffic
+        /// distribution group. You can call this API only in the Amazon Web Services Region where
+        /// the number was claimed.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// To release phone numbers from a traffic distribution group, use the <code>ReleasePhoneNumber</code>
+        /// API, not the Amazon Connect console.
+        /// </para>
+        ///  
+        /// <para>
+        /// After releasing a phone number, the phone number enters into a cooldown period of
+        /// 30 days. It cannot be searched for or claimed again until the period has ended. If
+        /// you accidentally release a phone number, contact Amazon Web Services Support.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ReleasePhoneNumber service method.</param>
         /// <param name="cancellationToken">
@@ -5802,6 +6155,71 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = ReleasePhoneNumberResponseUnmarshaller.Instance;
 
             return InvokeAsync<ReleasePhoneNumberResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ReplicateInstance
+
+        internal virtual ReplicateInstanceResponse ReplicateInstance(ReplicateInstanceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ReplicateInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReplicateInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<ReplicateInstanceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Replicates an Amazon Connect instance in the specified Amazon Web Services Region.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about replicating an Amazon Connect instance, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-replica-connect-instance.html">Create
+        /// a replica of your existing Amazon Connect instance</a> in the <i>Amazon Connect Administrator
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReplicateInstance service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ReplicateInstance service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotReadyException">
+        /// The resource is not ready.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ReplicateInstance">REST API Reference for ReplicateInstance Operation</seealso>
+        public virtual Task<ReplicateInstanceResponse> ReplicateInstanceAsync(ReplicateInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ReplicateInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReplicateInstanceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ReplicateInstanceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5869,7 +6287,10 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches for available phone numbers that you can claim to your Amazon Connect instance.
+        /// Searches for available phone numbers that you can claim to your Amazon Connect instance
+        /// or traffic distribution group. If the provided <code>TargetArn</code> is a traffic
+        /// distribution group, you can call this API in both Amazon Web Services Regions associated
+        /// with the traffic distribution group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchAvailablePhoneNumbers service method.</param>
         /// <param name="cancellationToken">
@@ -6078,6 +6499,12 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Searches users in an Amazon Connect instance, with optional filtering.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  <code>AfterContactWorkTimeLimit</code> is returned in milliseconds. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchUsers service method.</param>
         /// <param name="cancellationToken">
@@ -7615,8 +8042,17 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Updates your claimed phone number from its current Amazon Connect instance to another
-        /// Amazon Connect instance in the same Region.
+        /// Updates your claimed phone number from its current Amazon Connect instance or traffic
+        /// distribution group to another Amazon Connect instance or traffic distribution group
+        /// in the same Amazon Web Services Region.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// You can call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a>
+        /// API to verify the status of a previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
+        /// operation.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePhoneNumber service method.</param>
         /// <param name="cancellationToken">
@@ -7845,6 +8281,18 @@ namespace Amazon.Connect
         /// Updates the outbound caller ID name, number, and outbound whisper flow for a specified
         /// queue.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If the number being used in the input is claimed to a traffic distribution group,
+        /// and you are calling this API using an instance in the Amazon Web Services Region where
+        /// the traffic distribution group was created, you can use either a full phone number
+        /// ARN or UUID value for the <code>OutboundCallerIdNumberId</code> value of the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_OutboundCallerConfig">OutboundCallerConfig</a>
+        /// request body parameter. However, if the number is claimed to a traffic distribution
+        /// group and you are calling this API using an instance in the alternate Amazon Web Services
+        /// Region associated with the traffic distribution group, you must provide a full phone
+        /// number ARN. If a UUID is provided in this scenario, you will receive a <code>ResourceNotFoundException</code>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateQueueOutboundCallerConfig service method.</param>
         /// <param name="cancellationToken">
@@ -8339,6 +8787,61 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = UpdateTaskTemplateResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateTaskTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateTrafficDistribution
+
+        internal virtual UpdateTrafficDistributionResponse UpdateTrafficDistribution(UpdateTrafficDistributionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTrafficDistributionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTrafficDistributionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTrafficDistributionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the traffic distribution for a given traffic distribution group. For more
+        /// information about updating a traffic distribution group see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/update-telephony-traffic-distribution.html">Update
+        /// telephony traffic distribution across Amazon Web Services Regions </a> in the <i>Amazon
+        /// Connect Administrator Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTrafficDistribution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateTrafficDistribution service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateTrafficDistribution">REST API Reference for UpdateTrafficDistribution Operation</seealso>
+        public virtual Task<UpdateTrafficDistributionResponse> UpdateTrafficDistributionAsync(UpdateTrafficDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTrafficDistributionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTrafficDistributionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateTrafficDistributionResponse>(request, options, cancellationToken);
         }
 
         #endregion

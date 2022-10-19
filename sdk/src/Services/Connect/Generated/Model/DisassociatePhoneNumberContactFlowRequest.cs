@@ -30,8 +30,20 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociatePhoneNumberContactFlow operation.
-    /// Removes the flow association from a phone number claimed to your Amazon Connect instance,
-    /// if a flow association exists.
+    /// Removes the flow association from a phone number claimed to your Amazon Connect instance.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// If the number is claimed to a traffic distribution group, and you are calling this
+    /// API using an instance in the Amazon Web Services Region where the traffic distribution
+    /// group was created, you can use either a full phone number ARN or UUID value for the
+    /// <code>PhoneNumberId</code> URI request parameter. However, if the number is claimed
+    /// to a traffic distribution group and you are calling this API using an instance in
+    /// the alternate Amazon Web Services Region associated with the traffic distribution
+    /// group, you must provide a full phone number ARN. If a UUID is provided in this scenario,
+    /// you will receive a <code>ResourceNotFoundException</code>.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class DisassociatePhoneNumberContactFlowRequest : AmazonConnectRequest
     {
