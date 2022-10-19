@@ -1,3 +1,9 @@
+### 3.7.376.1 (2022-10-19 13:49 UTC)
+* DynamoDBv2 (3.7.5.18)
+	* Fixed NullReferenceException bug caused by empty strings in DynamoDB Lists. This bug used to occur when flag isEmptyStringValueEnabled was set to false.
+* S3 (3.7.9.71)
+	* Fixed S3 request marshallers to include xmlns attribute in root XML element to make it consistent with S3 API.
+
 ### 3.7.376.0 (2022-10-18 18:23 UTC)
 * FraudDetector (3.7.7.40)
 	* Documentation Updates for Amazon Fraud Detector
