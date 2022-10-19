@@ -152,19 +152,44 @@ namespace Amazon.SupportApp.Model
         /// <para>
         /// The case severity for a support case that you want to receive notifications.
         /// </para>
-        ///  <pre><code> &lt;p&gt;If you specify &lt;code&gt;high&lt;/code&gt; or &lt;code&gt;all&lt;/code&gt;,
-        /// you must specify &lt;code&gt;true&lt;/code&gt; for at least one of the following parameters:&lt;/p&gt;
-        /// &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnAddCorrespondenceToCase&lt;/code&gt;
-        /// &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnCreateOrReopenCase&lt;/code&gt;
-        /// &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnResolveCase&lt;/code&gt;
-        /// &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;If you specify &lt;code&gt;none&lt;/code&gt;,
-        /// the following parameters must be null or &lt;code&gt;false&lt;/code&gt;:&lt;/p&gt;
-        /// &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnAddCorrespondenceToCase&lt;/code&gt;
-        /// &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnCreateOrReopenCase&lt;/code&gt;
-        /// &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnResolveCase&lt;/code&gt;
-        /// &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;note&gt; &lt;p&gt;If you don't specify these
-        /// parameters in your request, they default to &lt;code&gt;false&lt;/code&gt;.&lt;/p&gt;
-        /// &lt;/note&gt; </code></pre>
+        ///  
+        /// <para>
+        /// If you specify <code>high</code> or <code>all</code>, you must specify <code>true</code>
+        /// for at least one of the following parameters:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>notifyOnAddCorrespondenceToCase</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>notifyOnCreateOrReopenCase</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>notifyOnResolveCase</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you specify <code>none</code>, the following parameters must be null or <code>false</code>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>notifyOnAddCorrespondenceToCase</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>notifyOnCreateOrReopenCase</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>notifyOnResolveCase</code> 
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// If you don't specify these parameters in your request, they default to <code>false</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public NotificationSeverityLevel NotifyOnCaseSeverity
@@ -218,7 +243,7 @@ namespace Amazon.SupportApp.Model
         /// <summary>
         /// Gets and sets the property TeamId. 
         /// <para>
-        /// The team ID in Slack. This ID uniquely identifies a Slack workspace.
+        /// The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

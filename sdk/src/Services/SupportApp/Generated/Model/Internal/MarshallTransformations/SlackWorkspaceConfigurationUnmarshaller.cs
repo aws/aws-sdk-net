@@ -64,10 +64,22 @@ namespace Amazon.SupportApp.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("allowOrganizationMemberAccount", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.AllowOrganizationMemberAccount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("teamId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TeamId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("teamName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TeamName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

@@ -29,13 +29,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SupportApp.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteSlackWorkspaceConfiguration operation.
-    /// Deletes a Slack workspace configuration from your Amazon Web Services account. This
-    /// operation doesn't delete your Slack workspace.
+    /// This is the response object from the RegisterSlackWorkspaceForOrganization operation.
     /// </summary>
-    public partial class DeleteSlackWorkspaceConfigurationRequest : AmazonSupportAppRequest
+    public partial class RegisterSlackWorkspaceForOrganizationResponse : AmazonWebServiceResponse
     {
+        private AccountType _accountType;
         private string _teamId;
+        private string _teamName;
+
+        /// <summary>
+        /// Gets and sets the property AccountType. 
+        /// <para>
+        /// Whether the Amazon Web Services account is a management or member account that's part
+        /// of an organization in Organizations.
+        /// </para>
+        /// </summary>
+        public AccountType AccountType
+        {
+            get { return this._accountType; }
+            set { this._accountType = value; }
+        }
+
+        // Check to see if AccountType property is set
+        internal bool IsSetAccountType()
+        {
+            return this._accountType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property TeamId. 
@@ -43,7 +62,7 @@ namespace Amazon.SupportApp.Model
         /// The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Min=1, Max=256)]
         public string TeamId
         {
             get { return this._teamId; }
@@ -54,6 +73,25 @@ namespace Amazon.SupportApp.Model
         internal bool IsSetTeamId()
         {
             return this._teamId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TeamName. 
+        /// <para>
+        /// The name of the Slack workspace.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string TeamName
+        {
+            get { return this._teamName; }
+            set { this._teamName = value; }
+        }
+
+        // Check to see if TeamName property is set
+        internal bool IsSetTeamName()
+        {
+            return this._teamName != null;
         }
 
     }

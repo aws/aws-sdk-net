@@ -51,6 +51,16 @@ namespace Amazon.SupportApp.Model
     /// Delete a Slack workspace from your Amazon Web Services account that has an active
     /// live chat channel.
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Call the <code>RegisterSlackWorkspaceForOrganization</code> API from an Amazon Web
+    /// Services account that doesn't belong to an organization.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Call the <code>RegisterSlackWorkspaceForOrganization</code> API from a member account,
+    /// but the management account hasn't registered that workspace yet for the organization.
+    /// </para>
     ///  </li> </ul>
     /// </summary>
     #if !NETSTANDARD

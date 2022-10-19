@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SupportApp.Model
 {
     /// <summary>
-    /// The specified resource is missing or doesn't exist, such as an account alias or Slack
-    /// channel configuration.
+    /// The specified resource is missing or doesn't exist, such as an account alias, Slack
+    /// channel configuration, or Slack workspace configuration.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

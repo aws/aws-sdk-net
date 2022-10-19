@@ -33,12 +33,33 @@ namespace Amazon.SupportApp.Model
     /// </summary>
     public partial class SlackWorkspaceConfiguration
     {
+        private bool? _allowOrganizationMemberAccount;
         private string _teamId;
+        private string _teamName;
+
+        /// <summary>
+        /// Gets and sets the property AllowOrganizationMemberAccount. 
+        /// <para>
+        /// Whether to allow member accounts to authorize Slack workspaces. Member accounts must
+        /// be part of an organization in Organizations.
+        /// </para>
+        /// </summary>
+        public bool AllowOrganizationMemberAccount
+        {
+            get { return this._allowOrganizationMemberAccount.GetValueOrDefault(); }
+            set { this._allowOrganizationMemberAccount = value; }
+        }
+
+        // Check to see if AllowOrganizationMemberAccount property is set
+        internal bool IsSetAllowOrganizationMemberAccount()
+        {
+            return this._allowOrganizationMemberAccount.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property TeamId. 
         /// <para>
-        /// The team ID in Slack. This ID uniquely identifies a Slack workspace.
+        /// The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -52,6 +73,25 @@ namespace Amazon.SupportApp.Model
         internal bool IsSetTeamId()
         {
             return this._teamId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TeamName. 
+        /// <para>
+        /// The name of the Slack workspace.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string TeamName
+        {
+            get { return this._teamName; }
+            set { this._teamName = value; }
+        }
+
+        // Check to see if TeamName property is set
+        internal bool IsSetTeamName()
+        {
+            return this._teamName != null;
         }
 
     }

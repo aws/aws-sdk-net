@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SupportApp.Model
 {
     /// <summary>
-    /// The configuration for a Slack channel that you added to an Amazon Web Services account.
+    /// The configuration for a Slack channel that you added for your Amazon Web Services
+    /// account.
     /// </summary>
     public partial class SlackChannelConfiguration
     {
@@ -65,7 +66,7 @@ namespace Amazon.SupportApp.Model
         /// Gets and sets the property ChannelName. 
         /// <para>
         /// The name of the Slack channel that you configured with the Amazon Web Services Support
-        /// App.
+        /// App for your Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -178,7 +179,7 @@ namespace Amazon.SupportApp.Model
         /// <summary>
         /// Gets and sets the property TeamId. 
         /// <para>
-        /// The team ID in Slack. This ID uniquely identifies a Slack workspace.
+        /// The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
