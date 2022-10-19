@@ -44,6 +44,7 @@ namespace Amazon.WorkSpacesWeb.Model
         private RendererType _rendererType;
         private string _statusReason;
         private string _trustStoreArn;
+        private string _userAccessLoggingSettingsArn;
         private string _userSettingsArn;
 
         /// <summary>
@@ -252,9 +253,28 @@ namespace Amazon.WorkSpacesWeb.Model
         }
 
         /// <summary>
+        /// Gets and sets the property UserAccessLoggingSettingsArn. 
+        /// <para>
+        /// The ARN of the user access logging settings that is associated with the web portal.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string UserAccessLoggingSettingsArn
+        {
+            get { return this._userAccessLoggingSettingsArn; }
+            set { this._userAccessLoggingSettingsArn = value; }
+        }
+
+        // Check to see if UserAccessLoggingSettingsArn property is set
+        internal bool IsSetUserAccessLoggingSettingsArn()
+        {
+            return this._userAccessLoggingSettingsArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property UserSettingsArn. 
         /// <para>
-        /// The ARN of the trust store that is associated with the web portal.
+        /// The ARN of the user settings that is associated with the web portal.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

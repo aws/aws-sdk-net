@@ -84,6 +84,14 @@ namespace Amazon.WorkSpacesWeb.Model
         }
 
         /// <summary>
+        /// Paginator for ListUserAccessLoggingSettings operation
+        ///</summary>
+        public IListUserAccessLoggingSettingsPaginator ListUserAccessLoggingSettings(ListUserAccessLoggingSettingsRequest request) 
+        {
+            return new ListUserAccessLoggingSettingsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListUserSettings operation
         ///</summary>
         public IListUserSettingsPaginator ListUserSettings(ListUserSettingsRequest request) 

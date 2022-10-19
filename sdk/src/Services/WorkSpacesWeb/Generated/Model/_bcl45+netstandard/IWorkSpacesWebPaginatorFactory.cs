@@ -56,6 +56,11 @@ namespace Amazon.WorkSpacesWeb.Model
         IListTrustStoresPaginator ListTrustStores(ListTrustStoresRequest request);
 
         /// <summary>
+        /// Paginator for ListUserAccessLoggingSettings operation
+        ///</summary>
+        IListUserAccessLoggingSettingsPaginator ListUserAccessLoggingSettings(ListUserAccessLoggingSettingsRequest request);
+
+        /// <summary>
         /// Paginator for ListUserSettings operation
         ///</summary>
         IListUserSettingsPaginator ListUserSettings(ListUserSettingsRequest request);

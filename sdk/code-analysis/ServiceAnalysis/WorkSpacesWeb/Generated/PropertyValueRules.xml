@@ -73,6 +73,30 @@
     <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36})+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.AssociateUserAccessLoggingSettingsRequest.PortalArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36})+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.AssociateUserAccessLoggingSettingsRequest.UserAccessLoggingSettingsArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36})+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.AssociateUserAccessLoggingSettingsResponse.PortalArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36})+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.AssociateUserAccessLoggingSettingsResponse.UserAccessLoggingSettingsArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36})+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpacesWeb.Model.AssociateUserSettingsRequest.PortalArn</property>
     <min>20</min>
     <max>2048</max>
@@ -200,6 +224,23 @@
     <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36})+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.CreateUserAccessLoggingSettingsRequest.ClientToken</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.CreateUserAccessLoggingSettingsRequest.KinesisStreamArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:[\w+=/,.@-]+:kinesis:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:stream/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.CreateUserAccessLoggingSettingsResponse.UserAccessLoggingSettingsArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36})+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpacesWeb.Model.CreateUserSettingsRequest.ClientToken</property>
     <min>1</min>
     <max>512</max>
@@ -251,6 +292,12 @@
     <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36})+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.DeleteUserAccessLoggingSettingsRequest.UserAccessLoggingSettingsArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36})+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpacesWeb.Model.DeleteUserSettingsRequest.UserSettingsArn</property>
     <min>20</min>
     <max>2048</max>
@@ -270,6 +317,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesWeb.Model.DisassociateTrustStoreRequest.PortalArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36})+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.DisassociateUserAccessLoggingSettingsRequest.PortalArn</property>
     <min>20</min>
     <max>2048</max>
     <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36})+$</pattern>
@@ -342,6 +395,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesWeb.Model.GetTrustStoreCertificateResponse.TrustStoreArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36})+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.GetUserAccessLoggingSettingsRequest.UserAccessLoggingSettingsArn</property>
     <min>20</min>
     <max>2048</max>
     <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36})+$</pattern>
@@ -473,6 +532,22 @@
     <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.ListUserAccessLoggingSettingsRequest.MaxResults</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.ListUserAccessLoggingSettingsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.ListUserAccessLoggingSettingsResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpacesWeb.Model.ListUserSettingsRequest.MaxResults</property>
     <min>1</min>
   </property-value-rule>
@@ -581,6 +656,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesWeb.Model.UpdateTrustStoreResponse.TrustStoreArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36})+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.UpdateUserAccessLoggingSettingsRequest.ClientToken</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.UpdateUserAccessLoggingSettingsRequest.KinesisStreamArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:[\w+=/,.@-]+:kinesis:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:stream/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.UpdateUserAccessLoggingSettingsRequest.UserAccessLoggingSettingsArn</property>
     <min>20</min>
     <max>2048</max>
     <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36})+$</pattern>
@@ -751,6 +843,12 @@
     <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36})+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.Portal.UserAccessLoggingSettingsArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36})+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpacesWeb.Model.Portal.UserSettingsArn</property>
     <min>20</min>
     <max>2048</max>
@@ -793,6 +891,12 @@
     <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36})+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.PortalSummary.UserAccessLoggingSettingsArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36})+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpacesWeb.Model.PortalSummary.UserSettingsArn</property>
     <min>20</min>
     <max>2048</max>
@@ -824,6 +928,30 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesWeb.Model.TrustStoreSummary.TrustStoreArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36})+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.UserAccessLoggingSettings.KinesisStreamArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:[\w+=/,.@-]+:kinesis:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:stream/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.UserAccessLoggingSettings.UserAccessLoggingSettingsArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36})+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.UserAccessLoggingSettingsSummary.KinesisStreamArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:[\w+=/,.@-]+:kinesis:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:stream/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.UserAccessLoggingSettingsSummary.UserAccessLoggingSettingsArn</property>
     <min>20</min>
     <max>2048</max>
     <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36})+$</pattern>

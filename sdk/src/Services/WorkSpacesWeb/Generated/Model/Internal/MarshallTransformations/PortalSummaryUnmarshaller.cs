@@ -124,6 +124,12 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                     unmarshalledObject.TrustStoreArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("userAccessLoggingSettingsArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UserAccessLoggingSettingsArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("userSettingsArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

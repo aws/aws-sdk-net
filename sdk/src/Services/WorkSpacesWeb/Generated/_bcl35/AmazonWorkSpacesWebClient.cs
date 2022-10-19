@@ -473,6 +473,78 @@ namespace Amazon.WorkSpacesWeb
 
         #endregion
         
+        #region  AssociateUserAccessLoggingSettings
+
+        /// <summary>
+        /// Associates a user access logging settings resource with a web portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateUserAccessLoggingSettings service method.</param>
+        /// 
+        /// <returns>The response from the AssociateUserAccessLoggingSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ConflictException">
+        /// There is a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/AssociateUserAccessLoggingSettings">REST API Reference for AssociateUserAccessLoggingSettings Operation</seealso>
+        public virtual AssociateUserAccessLoggingSettingsResponse AssociateUserAccessLoggingSettings(AssociateUserAccessLoggingSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateUserAccessLoggingSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateUserAccessLoggingSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateUserAccessLoggingSettingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateUserAccessLoggingSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateUserAccessLoggingSettings operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateUserAccessLoggingSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/AssociateUserAccessLoggingSettings">REST API Reference for AssociateUserAccessLoggingSettings Operation</seealso>
+        public virtual IAsyncResult BeginAssociateUserAccessLoggingSettings(AssociateUserAccessLoggingSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateUserAccessLoggingSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateUserAccessLoggingSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateUserAccessLoggingSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateUserAccessLoggingSettings.</param>
+        /// 
+        /// <returns>Returns a  AssociateUserAccessLoggingSettingsResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/AssociateUserAccessLoggingSettings">REST API Reference for AssociateUserAccessLoggingSettings Operation</seealso>
+        public virtual AssociateUserAccessLoggingSettingsResponse EndAssociateUserAccessLoggingSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateUserAccessLoggingSettingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  AssociateUserSettings
 
         /// <summary>
@@ -923,6 +995,79 @@ namespace Amazon.WorkSpacesWeb
 
         #endregion
         
+        #region  CreateUserAccessLoggingSettings
+
+        /// <summary>
+        /// Creates a user access logging settings resource that can be associated with a web
+        /// portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUserAccessLoggingSettings service method.</param>
+        /// 
+        /// <returns>The response from the CreateUserAccessLoggingSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ConflictException">
+        /// There is a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreateUserAccessLoggingSettings">REST API Reference for CreateUserAccessLoggingSettings Operation</seealso>
+        public virtual CreateUserAccessLoggingSettingsResponse CreateUserAccessLoggingSettings(CreateUserAccessLoggingSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateUserAccessLoggingSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUserAccessLoggingSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<CreateUserAccessLoggingSettingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateUserAccessLoggingSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateUserAccessLoggingSettings operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateUserAccessLoggingSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreateUserAccessLoggingSettings">REST API Reference for CreateUserAccessLoggingSettings Operation</seealso>
+        public virtual IAsyncResult BeginCreateUserAccessLoggingSettings(CreateUserAccessLoggingSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateUserAccessLoggingSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUserAccessLoggingSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateUserAccessLoggingSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateUserAccessLoggingSettings.</param>
+        /// 
+        /// <returns>Returns a  CreateUserAccessLoggingSettingsResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreateUserAccessLoggingSettings">REST API Reference for CreateUserAccessLoggingSettings Operation</seealso>
+        public virtual CreateUserAccessLoggingSettingsResponse EndCreateUserAccessLoggingSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateUserAccessLoggingSettingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateUserSettings
 
         /// <summary>
@@ -1342,6 +1487,75 @@ namespace Amazon.WorkSpacesWeb
 
         #endregion
         
+        #region  DeleteUserAccessLoggingSettings
+
+        /// <summary>
+        /// Deletes user access logging settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUserAccessLoggingSettings service method.</param>
+        /// 
+        /// <returns>The response from the DeleteUserAccessLoggingSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ConflictException">
+        /// There is a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeleteUserAccessLoggingSettings">REST API Reference for DeleteUserAccessLoggingSettings Operation</seealso>
+        public virtual DeleteUserAccessLoggingSettingsResponse DeleteUserAccessLoggingSettings(DeleteUserAccessLoggingSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteUserAccessLoggingSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUserAccessLoggingSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteUserAccessLoggingSettingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteUserAccessLoggingSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUserAccessLoggingSettings operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteUserAccessLoggingSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeleteUserAccessLoggingSettings">REST API Reference for DeleteUserAccessLoggingSettings Operation</seealso>
+        public virtual IAsyncResult BeginDeleteUserAccessLoggingSettings(DeleteUserAccessLoggingSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteUserAccessLoggingSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUserAccessLoggingSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteUserAccessLoggingSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteUserAccessLoggingSettings.</param>
+        /// 
+        /// <returns>Returns a  DeleteUserAccessLoggingSettingsResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeleteUserAccessLoggingSettings">REST API Reference for DeleteUserAccessLoggingSettings Operation</seealso>
+        public virtual DeleteUserAccessLoggingSettingsResponse EndDeleteUserAccessLoggingSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteUserAccessLoggingSettingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteUserSettings
 
         /// <summary>
@@ -1614,6 +1828,75 @@ namespace Amazon.WorkSpacesWeb
         public virtual DisassociateTrustStoreResponse EndDisassociateTrustStore(IAsyncResult asyncResult)
         {
             return EndInvoke<DisassociateTrustStoreResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DisassociateUserAccessLoggingSettings
+
+        /// <summary>
+        /// Disassociates user access logging settings from a web portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateUserAccessLoggingSettings service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateUserAccessLoggingSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DisassociateUserAccessLoggingSettings">REST API Reference for DisassociateUserAccessLoggingSettings Operation</seealso>
+        public virtual DisassociateUserAccessLoggingSettingsResponse DisassociateUserAccessLoggingSettings(DisassociateUserAccessLoggingSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateUserAccessLoggingSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateUserAccessLoggingSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateUserAccessLoggingSettingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateUserAccessLoggingSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateUserAccessLoggingSettings operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateUserAccessLoggingSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DisassociateUserAccessLoggingSettings">REST API Reference for DisassociateUserAccessLoggingSettings Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateUserAccessLoggingSettings(DisassociateUserAccessLoggingSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateUserAccessLoggingSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateUserAccessLoggingSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateUserAccessLoggingSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateUserAccessLoggingSettings.</param>
+        /// 
+        /// <returns>Returns a  DisassociateUserAccessLoggingSettingsResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DisassociateUserAccessLoggingSettings">REST API Reference for DisassociateUserAccessLoggingSettings Operation</seealso>
+        public virtual DisassociateUserAccessLoggingSettingsResponse EndDisassociateUserAccessLoggingSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateUserAccessLoggingSettingsResponse>(asyncResult);
         }
 
         #endregion
@@ -2170,6 +2453,75 @@ namespace Amazon.WorkSpacesWeb
 
         #endregion
         
+        #region  GetUserAccessLoggingSettings
+
+        /// <summary>
+        /// Gets user access logging settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUserAccessLoggingSettings service method.</param>
+        /// 
+        /// <returns>The response from the GetUserAccessLoggingSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetUserAccessLoggingSettings">REST API Reference for GetUserAccessLoggingSettings Operation</seealso>
+        public virtual GetUserAccessLoggingSettingsResponse GetUserAccessLoggingSettings(GetUserAccessLoggingSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetUserAccessLoggingSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetUserAccessLoggingSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<GetUserAccessLoggingSettingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetUserAccessLoggingSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetUserAccessLoggingSettings operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetUserAccessLoggingSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetUserAccessLoggingSettings">REST API Reference for GetUserAccessLoggingSettings Operation</seealso>
+        public virtual IAsyncResult BeginGetUserAccessLoggingSettings(GetUserAccessLoggingSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetUserAccessLoggingSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetUserAccessLoggingSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetUserAccessLoggingSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetUserAccessLoggingSettings.</param>
+        /// 
+        /// <returns>Returns a  GetUserAccessLoggingSettingsResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetUserAccessLoggingSettings">REST API Reference for GetUserAccessLoggingSettings Operation</seealso>
+        public virtual GetUserAccessLoggingSettingsResponse EndGetUserAccessLoggingSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetUserAccessLoggingSettingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetUserSettings
 
         /// <summary>
@@ -2703,6 +3055,72 @@ namespace Amazon.WorkSpacesWeb
         public virtual ListTrustStoresResponse EndListTrustStores(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTrustStoresResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListUserAccessLoggingSettings
+
+        /// <summary>
+        /// Retrieves a list of user access logging settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUserAccessLoggingSettings service method.</param>
+        /// 
+        /// <returns>The response from the ListUserAccessLoggingSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListUserAccessLoggingSettings">REST API Reference for ListUserAccessLoggingSettings Operation</seealso>
+        public virtual ListUserAccessLoggingSettingsResponse ListUserAccessLoggingSettings(ListUserAccessLoggingSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUserAccessLoggingSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUserAccessLoggingSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<ListUserAccessLoggingSettingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListUserAccessLoggingSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListUserAccessLoggingSettings operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListUserAccessLoggingSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListUserAccessLoggingSettings">REST API Reference for ListUserAccessLoggingSettings Operation</seealso>
+        public virtual IAsyncResult BeginListUserAccessLoggingSettings(ListUserAccessLoggingSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUserAccessLoggingSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUserAccessLoggingSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListUserAccessLoggingSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListUserAccessLoggingSettings.</param>
+        /// 
+        /// <returns>Returns a  ListUserAccessLoggingSettingsResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListUserAccessLoggingSettings">REST API Reference for ListUserAccessLoggingSettings Operation</seealso>
+        public virtual ListUserAccessLoggingSettingsResponse EndListUserAccessLoggingSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListUserAccessLoggingSettingsResponse>(asyncResult);
         }
 
         #endregion
@@ -3258,6 +3676,75 @@ namespace Amazon.WorkSpacesWeb
         public virtual UpdateTrustStoreResponse EndUpdateTrustStore(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateTrustStoreResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateUserAccessLoggingSettings
+
+        /// <summary>
+        /// Updates the user access logging settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUserAccessLoggingSettings service method.</param>
+        /// 
+        /// <returns>The response from the UpdateUserAccessLoggingSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdateUserAccessLoggingSettings">REST API Reference for UpdateUserAccessLoggingSettings Operation</seealso>
+        public virtual UpdateUserAccessLoggingSettingsResponse UpdateUserAccessLoggingSettings(UpdateUserAccessLoggingSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateUserAccessLoggingSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserAccessLoggingSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateUserAccessLoggingSettingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateUserAccessLoggingSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUserAccessLoggingSettings operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateUserAccessLoggingSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdateUserAccessLoggingSettings">REST API Reference for UpdateUserAccessLoggingSettings Operation</seealso>
+        public virtual IAsyncResult BeginUpdateUserAccessLoggingSettings(UpdateUserAccessLoggingSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateUserAccessLoggingSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserAccessLoggingSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateUserAccessLoggingSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateUserAccessLoggingSettings.</param>
+        /// 
+        /// <returns>Returns a  UpdateUserAccessLoggingSettingsResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdateUserAccessLoggingSettings">REST API Reference for UpdateUserAccessLoggingSettings Operation</seealso>
+        public virtual UpdateUserAccessLoggingSettingsResponse EndUpdateUserAccessLoggingSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateUserAccessLoggingSettingsResponse>(asyncResult);
         }
 
         #endregion
