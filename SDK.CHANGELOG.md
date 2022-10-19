@@ -1,3 +1,28 @@
+### 3.7.377.0 (2022-10-19 18:25 UTC)
+* ChimeSDKMessaging (3.7.5.32)
+	* Documentation updates for Chime Messaging SDK
+* CloudTrail (3.7.7.0)
+	* This release includes support for exporting CloudTrail Lake query results to an Amazon S3 bucket.
+* ConfigService (3.7.14.0)
+	* This release adds resourceType enums for AppConfig, AppSync, DataSync, EC2, EKS, Glue, GuardDuty, SageMaker, ServiceDiscovery, SES, Route53 types.
+* Connect (3.7.27.0)
+	* This release adds API support for managing phone numbers that can be used across multiple AWS regions through telephony traffic distribution.
+* EventBridge (3.7.6.0)
+	* Updates internal logic for constructing API endpoints. We have added rule-based endpoints and internal model parameters.
+* ManagedBlockchain (3.7.2.0)
+	* Adding new Accessor APIs for Amazon Managed Blockchain
+* S3 (3.7.10.0)
+	* Updates internal logic for constructing API endpoints. We have added rule-based endpoints and internal model parameters.
+* S3Control (3.7.9.0)
+	* Updates internal logic for constructing API endpoints. We have added rule-based endpoints and internal model parameters.
+* SupportApp (3.7.1.0)
+	* This release adds the RegisterSlackWorkspaceForOrganization API. You can use the API to register a Slack workspace for an AWS account that is part of an organization.
+* WorkSpacesWeb (3.7.2.0)
+	* WorkSpaces Web now supports user access logging for recording session start, stop, and URL navigation.
+* Core 3.7.13.22
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.376.1 (2022-10-19 13:49 UTC)
 * DynamoDBv2 (3.7.5.18)
 	* Fixed NullReferenceException bug caused by empty strings in DynamoDB Lists. This bug used to occur when flag isEmptyStringValueEnabled was set to false.
