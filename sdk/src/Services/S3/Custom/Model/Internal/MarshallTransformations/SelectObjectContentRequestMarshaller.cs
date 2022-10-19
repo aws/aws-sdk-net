@@ -121,7 +121,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 };
                 using (var xmlWriter = XmlWriter.Create(stringWriter, xmlWriterSettings))
                 {
-                    xmlWriter.WriteStartElement("SelectRequest", S3Constants.S3RequestXmlNamespace);
+                    xmlWriter.WriteStartElement("SelectObjectContentRequest", S3Constants.S3RequestXmlNamespace);
                     xmlWriter.WriteElementString("Expression",
                         S3Transforms.ToXmlStringValue(selectObjectContentRequest.Expression));
                     xmlWriter.WriteElementString("ExpressionType",
