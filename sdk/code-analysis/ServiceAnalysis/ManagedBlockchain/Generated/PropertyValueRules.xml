@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.ManagedBlockchain.Model.CreateAccessorRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedBlockchain.Model.CreateAccessorResponse.AccessorId</property>
+    <min>1</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedBlockchain.Model.CreateAccessorResponse.BillingToken</property>
+    <min>42</min>
+    <max>42</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ManagedBlockchain.Model.CreateMemberRequest.ClientRequestToken</property>
     <min>1</min>
     <max>64</max>
@@ -95,6 +110,11 @@
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ManagedBlockchain.Model.DeleteAccessorRequest.AccessorId</property>
+    <min>1</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ManagedBlockchain.Model.DeleteMemberRequest.MemberId</property>
     <min>1</min>
     <max>32</max>
@@ -116,6 +136,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ManagedBlockchain.Model.DeleteNodeRequest.NodeId</property>
+    <min>1</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedBlockchain.Model.GetAccessorRequest.AccessorId</property>
     <min>1</min>
     <max>32</max>
   </property-value-rule>
@@ -158,6 +183,19 @@
     <property>Amazon.ManagedBlockchain.Model.GetProposalRequest.ProposalId</property>
     <min>1</min>
     <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedBlockchain.Model.ListAccessorsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedBlockchain.Model.ListAccessorsRequest.NextToken</property>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedBlockchain.Model.ListAccessorsResponse.NextToken</property>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ManagedBlockchain.Model.ListInvitationsRequest.MaxResults</property>
@@ -327,6 +365,33 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ManagedBlockchain.Model.VoteOnProposalRequest.VoterMemberId</property>
+    <min>1</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedBlockchain.Model.Accessor.Arn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^arn:.+:.+:.+:.+:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedBlockchain.Model.Accessor.BillingToken</property>
+    <min>42</min>
+    <max>42</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedBlockchain.Model.Accessor.Id</property>
+    <min>1</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedBlockchain.Model.AccessorSummary.Arn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^arn:.+:.+:.+:.+:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedBlockchain.Model.AccessorSummary.Id</property>
     <min>1</min>
     <max>32</max>
   </property-value-rule>

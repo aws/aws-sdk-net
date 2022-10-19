@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
-    /// An invitation to an AWS account to create a member and join the network.
+    /// An invitation to an Amazon Web Services account to create a member and join the network.
     /// 
     ///  
     /// <para>
@@ -50,7 +50,7 @@ namespace Amazon.ManagedBlockchain.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the invitation. For more information about ARNs
         /// and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+        /// Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1011)]
@@ -146,13 +146,13 @@ namespace Amazon.ManagedBlockchain.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PENDING</code> - The invitee has not created a member to join the network,
-        /// and the invitation has not yet expired.
+        ///  <code>PENDING</code> - The invitee hasn't created a member to join the network, and
+        /// the invitation hasn't yet expired.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ACCEPTING</code> - The invitee has begun creating a member, and creation has
-        /// not yet completed.
+        ///  <code>ACCEPTING</code> - The invitee has begun creating a member, and creation hasn't
+        /// yet completed.
         /// </para>
         ///  </li> <li> 
         /// <para>

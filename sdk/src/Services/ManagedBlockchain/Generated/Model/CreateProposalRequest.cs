@@ -76,7 +76,7 @@ namespace Amazon.ManagedBlockchain.Model
         /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
         /// the operation. An idempotent operation completes no more than one time. This identifier
         /// is required only if you make a service request directly using an HTTP client. It is
-        /// generated automatically if you use an AWS SDK or the AWS CLI.
+        /// generated automatically if you use an Amazon Web Services SDK or the CLI.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -117,7 +117,7 @@ namespace Amazon.ManagedBlockchain.Model
         /// <para>
         /// The unique identifier of the member that is creating the proposal. This identifier
         /// is especially useful for identifying the member making the proposal when multiple
-        /// members exist in a single AWS account.
+        /// members exist in a single Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]

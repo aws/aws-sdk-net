@@ -52,10 +52,11 @@ namespace Amazon.ManagedBlockchain.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
-        /// the operation. An idempotent operation completes no more than one time. This identifier
+        /// This is a unique, case-sensitive identifier that you provide to ensure the idempotency
+        /// of the operation. An idempotent operation completes no more than once. This identifier
         /// is required only if you make a service request directly using an HTTP client. It is
-        /// generated automatically if you use an AWS SDK or the AWS CLI.
+        /// generated automatically if you use an Amazon Web Services SDK or the Amazon Web Services
+        /// CLI. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

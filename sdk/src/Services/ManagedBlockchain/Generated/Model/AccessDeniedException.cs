@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
-    /// You do not have sufficient access to perform this action.
+    /// You don't have sufficient access to perform this action.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

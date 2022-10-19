@@ -26,6 +26,11 @@ namespace Amazon.ManagedBlockchain.Model
     {
 
         /// <summary>
+        /// Paginator for ListAccessors operation
+        ///</summary>
+        IListAccessorsPaginator ListAccessors(ListAccessorsRequest request);
+
+        /// <summary>
         /// Paginator for ListInvitations operation
         ///</summary>
         IListInvitationsPaginator ListInvitations(ListInvitationsRequest request);

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
-    /// The requested resource exists but is not in a status that can complete the operation.
+    /// The requested resource exists but isn't in a status that can complete the operation.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

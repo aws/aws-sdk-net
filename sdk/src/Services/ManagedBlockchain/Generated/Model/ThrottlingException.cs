@@ -29,10 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
-    /// The request or operation could not be performed because a service is throttling requests.
-    /// The most common source of throttling errors is launching EC2 instances such that your
-    /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
-    /// resources if possible.
+    /// The request or operation couldn't be performed because a service is throttling requests.
+    /// The most common source of throttling errors is creating resources that exceed your
+    /// service limit for this resource type. Request a limit increase or delete unused resources
+    /// if possible.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
