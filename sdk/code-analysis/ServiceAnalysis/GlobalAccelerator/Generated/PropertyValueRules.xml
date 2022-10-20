@@ -9,6 +9,14 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GlobalAccelerator.Model.AddEndpointsRequest.EndpointGroupArn</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GlobalAccelerator.Model.AddEndpointsResponse.EndpointGroupArn</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.AdvertiseByoipCidrRequest.Cidr</property>
     <max>255</max>
   </property-value-rule>
@@ -332,6 +340,10 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GlobalAccelerator.Model.RemoveEndpointsRequest.EndpointGroupArn</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.TagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>
@@ -596,6 +608,10 @@
     <property>Amazon.GlobalAccelerator.Model.EndpointGroup.TrafficDialPercentage</property>
     <min>0</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GlobalAccelerator.Model.EndpointIdentifier.EndpointId</property>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.IpSet.IpFamily</property>

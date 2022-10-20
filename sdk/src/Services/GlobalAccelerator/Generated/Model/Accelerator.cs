@@ -98,14 +98,14 @@ namespace Amazon.GlobalAccelerator.Model
         /// </para>
         ///  
         /// <para>
-        /// If you have a dual-stack accelerator, you also have a second DNS name, DualStackDnsName,
+        /// If you have a dual-stack accelerator, you also have a second DNS name, <code>DualStackDnsName</code>,
         /// that points to both the A record and the AAAA record for all four static addresses
-        /// for the accelerator (two IPv4 addresses and two IPv6 addresses).
+        /// for the accelerator: two IPv4 addresses and two IPv6 addresses.
         /// </para>
         ///  
         /// <para>
         /// For more information about the default DNS name, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/dns-addressing-custom-domains.dns-addressing.html">
-        /// Support for DNS Addressing in Global Accelerator</a> in the <i>Global Accelerator
+        /// Support for DNS addressing in Global Accelerator</a> in the <i>Global Accelerator
         /// Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -137,13 +137,13 @@ namespace Amazon.GlobalAccelerator.Model
         /// </para>
         ///  
         /// <para>
-        /// Note: Global Accelerator also assigns a default DNS name, DnsName, to your accelerator
-        /// that points just to the static IPv4 addresses. 
+        /// Note: Global Accelerator also assigns a default DNS name, <code>DnsName</code>, to
+        /// your accelerator that points just to the static IPv4 addresses. 
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing">
-        /// Support for DNS Addressing in Global Accelerator</a> in the <i>Global Accelerator
+        /// Support for DNS addressing in Global Accelerator</a> in the <i>Global Accelerator
         /// Developer Guide</i>.
         /// </para>
         /// </summary>

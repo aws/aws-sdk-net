@@ -202,6 +202,85 @@ namespace Amazon.GlobalAccelerator
 
         #endregion
         
+        #region  AddEndpoints
+
+
+        /// <summary>
+        /// Add endpoints to an endpoint group. The <code>AddEndpoints</code> API operation is
+        /// the recommended option for adding endpoints. The alternative options are to add endpoints
+        /// when you create an endpoint group (with the <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_CreateEndpointGroup.html">CreateEndpointGroup</a>
+        /// API) or when you update an endpoint group (with the <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateEndpointGroup.html">UpdateEndpointGroup</a>
+        /// API). 
+        /// 
+        ///  
+        /// <para>
+        /// There are two advantages to using <code>AddEndpoints</code> to add endpoints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// It's faster, because Global Accelerator only has to resolve the new endpoints that
+        /// you're adding.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// It's more convenient, because you don't need to specify all of the current endpoints
+        /// that are already in the endpoint group in addition to the new endpoints that you want
+        /// to add.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddEndpoints service method.</param>
+        /// 
+        /// <returns>The response from the AddEndpoints service method, as returned by GlobalAccelerator.</returns>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.AccessDeniedException">
+        /// You don't have access permission.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.EndpointGroupNotFoundException">
+        /// The endpoint group that you specified doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
+        /// There was an internal error for Global Accelerator.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
+        /// An argument that you specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.LimitExceededException">
+        /// Processing your request would cause you to exceed an Global Accelerator limit.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.TransactionInProgressException">
+        /// There's already a transaction in progress. Another transaction can't be processed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/AddEndpoints">REST API Reference for AddEndpoints Operation</seealso>
+        AddEndpointsResponse AddEndpoints(AddEndpointsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddEndpoints operation on AmazonGlobalAcceleratorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddEndpoints
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/AddEndpoints">REST API Reference for AddEndpoints Operation</seealso>
+        IAsyncResult BeginAddEndpoints(AddEndpointsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AddEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddEndpoints.</param>
+        /// 
+        /// <returns>Returns a  AddEndpointsResult from GlobalAccelerator.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/AddEndpoints">REST API Reference for AddEndpoints Operation</seealso>
+        AddEndpointsResponse EndAddEndpoints(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  AdvertiseByoipCidr
 
 
@@ -2250,6 +2329,84 @@ namespace Amazon.GlobalAccelerator
         /// <returns>Returns a  RemoveCustomRoutingEndpointsResult from GlobalAccelerator.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/RemoveCustomRoutingEndpoints">REST API Reference for RemoveCustomRoutingEndpoints Operation</seealso>
         RemoveCustomRoutingEndpointsResponse EndRemoveCustomRoutingEndpoints(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  RemoveEndpoints
+
+
+        /// <summary>
+        /// Remove endpoints from an endpoint group. 
+        /// 
+        ///  
+        /// <para>
+        /// The <code>RemoveEndpoints</code> API operation is the recommended option for removing
+        /// endpoints. The alternative is to remove endpoints by updating an endpoint group by
+        /// using the <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateEndpointGroup.html">UpdateEndpointGroup</a>
+        /// API operation. There are two advantages to using <code>AddEndpoints</code> to remove
+        /// endpoints instead:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// It's more convenient, because you only need to specify the endpoints that you want
+        /// to remove. With the <code>UpdateEndpointGroup</code> API operation, you must specify
+        /// all of the endpoints in the endpoint group except the ones that you want to remove
+        /// from the group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// It's faster, because Global Accelerator doesn't need to resolve any endpoints. With
+        /// the <code>UpdateEndpointGroup</code> API operation, Global Accelerator must resolve
+        /// all of the endpoints that remain in the group.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveEndpoints service method.</param>
+        /// 
+        /// <returns>The response from the RemoveEndpoints service method, as returned by GlobalAccelerator.</returns>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.AccessDeniedException">
+        /// You don't have access permission.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.EndpointGroupNotFoundException">
+        /// The endpoint group that you specified doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InternalServiceErrorException">
+        /// There was an internal error for Global Accelerator.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.InvalidArgumentException">
+        /// An argument that you specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.GlobalAccelerator.Model.TransactionInProgressException">
+        /// There's already a transaction in progress. Another transaction can't be processed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/RemoveEndpoints">REST API Reference for RemoveEndpoints Operation</seealso>
+        RemoveEndpointsResponse RemoveEndpoints(RemoveEndpointsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveEndpoints operation on AmazonGlobalAcceleratorClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveEndpoints
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/RemoveEndpoints">REST API Reference for RemoveEndpoints Operation</seealso>
+        IAsyncResult BeginRemoveEndpoints(RemoveEndpointsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RemoveEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveEndpoints.</param>
+        /// 
+        /// <returns>Returns a  RemoveEndpointsResult from GlobalAccelerator.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/RemoveEndpoints">REST API Reference for RemoveEndpoints Operation</seealso>
+        RemoveEndpointsResponse EndRemoveEndpoints(IAsyncResult asyncResult);
 
         #endregion
         
