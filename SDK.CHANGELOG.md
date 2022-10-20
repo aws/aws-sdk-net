@@ -1,3 +1,16 @@
+### 3.7.378.0 (2022-10-20 18:57 UTC)
+* CloudWatchRUM (3.7.1.0)
+	* CloudWatch RUM now supports Extended CloudWatch Metrics with Additional Dimensions
+* DevOpsGuru (3.7.12.0)
+	* This release adds information about the resources DevOps Guru is analyzing.
+* GlobalAccelerator (3.7.2.0)
+	* Global Accelerator now supports AddEndpoints and RemoveEndpoints operations for standard endpoint groups.
+* ResilienceHub (3.7.2.0)
+	* In this release, we are introducing support for regional optimization for AWS Resilience Hub applications. It also includes a few documentation updates to improve clarity.
+* Core 3.7.13.23
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.377.0 (2022-10-19 18:25 UTC)
 * ChimeSDKMessaging (3.7.5.32)
 	* Documentation updates for Chime Messaging SDK
