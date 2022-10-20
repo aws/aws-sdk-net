@@ -40,6 +40,7 @@ namespace Amazon.ResilienceHub.Model
         private string _description;
         private string _name;
         private double? _resiliencyScore;
+        private AppStatusType _status;
 
         /// <summary>
         /// Gets and sets the property AppArn. 
@@ -171,6 +172,24 @@ namespace Amazon.ResilienceHub.Model
         internal bool IsSetResiliencyScore()
         {
             return this._resiliencyScore.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the application.
+        /// </para>
+        /// </summary>
+        public AppStatusType Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
     }

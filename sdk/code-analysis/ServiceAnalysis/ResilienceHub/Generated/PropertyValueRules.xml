@@ -174,7 +174,7 @@
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.DescribeAppVersionTemplateResponse.AppTemplateBody</property>
     <min>0</min>
-    <max>51200</max>
+    <max>204800</max>
     <pattern>^[\w\s:,-\.'{}\[\]:"]+$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -519,7 +519,7 @@
   <property-value-rule>
     <property>Amazon.ResilienceHub.Model.PutDraftAppVersionTemplateRequest.AppTemplateBody</property>
     <min>0</min>
-    <max>51200</max>
+    <max>204800</max>
     <pattern>^[\w\s:,-\.'{}\[\]:"]+$</pattern>
   </property-value-rule>
   <property-value-rule>

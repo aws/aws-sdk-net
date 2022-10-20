@@ -238,7 +238,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the action.
+        /// The status of the application.
         /// </para>
         /// </summary>
         public AppStatusType Status

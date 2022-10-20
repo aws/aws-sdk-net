@@ -417,6 +417,10 @@ namespace Amazon.ResilienceHub
         /// </summary>
         public static readonly ConfigRecommendationOptimizationType BestAZRecovery = new ConfigRecommendationOptimizationType("BestAZRecovery");
         /// <summary>
+        /// Constant BestRegionRecovery for ConfigRecommendationOptimizationType
+        /// </summary>
+        public static readonly ConfigRecommendationOptimizationType BestRegionRecovery = new ConfigRecommendationOptimizationType("BestRegionRecovery");
+        /// <summary>
         /// Constant LeastChange for ConfigRecommendationOptimizationType
         /// </summary>
         public static readonly ConfigRecommendationOptimizationType LeastChange = new ConfigRecommendationOptimizationType("LeastChange");

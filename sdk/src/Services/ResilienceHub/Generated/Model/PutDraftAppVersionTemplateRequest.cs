@@ -64,7 +64,7 @@ namespace Amazon.ResilienceHub.Model
         /// A JSON string that contains the body of the app template.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=51200)]
+        [AWSProperty(Required=true, Min=0, Max=204800)]
         public string AppTemplateBody
         {
             get { return this._appTemplateBody; }
