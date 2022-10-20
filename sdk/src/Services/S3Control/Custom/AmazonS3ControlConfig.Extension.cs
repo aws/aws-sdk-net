@@ -27,7 +27,14 @@ namespace Amazon.S3Control
         private const string AwsProfileEnvironmentVariable = "AWS_PROFILE";
         private const string DefaultProfileName = "default";
         private static CredentialProfileStoreChain credentialProfileChain = new CredentialProfileStoreChain();
+
+        // we cache this per execution process to avoid excessive file I/O
+        private static CredentialProfile _profile;
+        private static object _triedToResolveProfileLock = new object();
+        private static bool _triedToResolveProfile = false;
+
         bool? _useArnRegion;
+        private object _useArnRegionLock = new object();
         /// <summary>
         /// If set to true and the service package supports it the region identified in the arn for a resource
         /// will be used when making the service request.
@@ -36,33 +43,58 @@ namespace Amazon.S3Control
         {
             get
             {
-                if (!this._useArnRegion.HasValue)
+                if (_useArnRegion.HasValue)
                 {
-                    var profileName = Environment.GetEnvironmentVariable(AwsProfileEnvironmentVariable) ?? DefaultProfileName;
-                    if (credentialProfileChain.TryGetProfile(profileName, out var profile))
-                    {
-                        this._useArnRegion = profile.S3UseArnRegion;
-                    }
+                    return _useArnRegion.GetValueOrDefault();
+                }
 
-                    if (!this._useArnRegion.HasValue && !string.IsNullOrEmpty(Environment.GetEnvironmentVariable(UseArnRegionEnvName)))
+                if (!_triedToResolveProfile)
+                {
+                    lock (_triedToResolveProfileLock)
                     {
-                        if (bool.TryParse(Environment.GetEnvironmentVariable(UseArnRegionEnvName), out var value))
+                        if (!_triedToResolveProfile)
                         {
-                            this._useArnRegion = value;
+                            var profileName = Environment.GetEnvironmentVariable(AwsProfileEnvironmentVariable) ?? DefaultProfileName;
+                            credentialProfileChain.TryGetProfile(profileName, out _profile);
+                            _triedToResolveProfile = true;
                         }
-                    }
-
-                    if (!this._useArnRegion.HasValue)
-                    {
-                        // To maintain consistency with buckets default UseArnRegion to true when client configured for us-east-1.
-                        this._useArnRegion = this.RegionEndpoint?.SystemName == RegionEndpoint.USEast1.SystemName;
                     }
                 }
 
-                return this._useArnRegion.GetValueOrDefault();
+                lock (_useArnRegionLock)
+                {
+                    if (_useArnRegion.HasValue)
+                    {
+                        return _useArnRegion.Value;
+                    }
+
+                    _useArnRegion = _profile?.S3UseArnRegion;
+
+                    if (!_useArnRegion.HasValue && !string.IsNullOrEmpty(Environment.GetEnvironmentVariable(UseArnRegionEnvName)))
+                    {
+                        if (bool.TryParse(Environment.GetEnvironmentVariable(UseArnRegionEnvName), out var value))
+                        {
+                            _useArnRegion = value;
+                        }
+                    }
+
+                    if (!_useArnRegion.HasValue)
+                    {
+                        // To maintain consistency with buckets default UseArnRegion to true when client configured for us-east-1.
+                        _useArnRegion = RegionEndpoint?.SystemName == RegionEndpoint.USEast1.SystemName;
+                    }
+
+                    return _useArnRegion.Value;
+                }
             }
 
-            set { this._useArnRegion = value; }
+            set
+            {
+                lock (_useArnRegionLock)
+                {
+                    _useArnRegion = value;
+                }
+            }
         }
     }
 }
