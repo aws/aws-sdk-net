@@ -46,7 +46,6 @@ namespace Amazon.DevOpsGuru.Model
         /// by resource type or resource permission status. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ListMonitoredResourcesFilters Filters
         {
             get { return this._filters; }

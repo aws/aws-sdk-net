@@ -64,10 +64,22 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("LastUpdated", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastUpdated = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MonitoredResourceName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MonitoredResourceName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ResourceCollection", targetDepth))
+                {
+                    var unmarshaller = ResourceCollectionUnmarshaller.Instance;
+                    unmarshalledObject.ResourceCollection = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ResourcePermission", targetDepth))

@@ -1806,9 +1806,9 @@ namespace Amazon.DevOpsGuru
 
         /// <summary>
         /// Returns a list of insights in your Amazon Web Services account. You can specify which
-        /// insights are returned by their start time, one or more statuses (<code>ONGOING</code>,
-        /// <code>CLOSED</code>, and <code>CLOSED</code>), one or more severities (<code>LOW</code>,
-        /// <code>MEDIUM</code>, and <code>HIGH</code>), and type (<code>REACTIVE</code> or <code>PROACTIVE</code>).
+        /// insights are returned by their start time, one or more statuses (<code>ONGOING</code>
+        /// or <code>CLOSED</code>), one or more severities (<code>LOW</code>, <code>MEDIUM</code>,
+        /// and <code>HIGH</code>), and type (<code>REACTIVE</code> or <code>PROACTIVE</code>).
         /// 
         /// 
         ///  
@@ -1844,9 +1844,9 @@ namespace Amazon.DevOpsGuru
 
         /// <summary>
         /// Returns a list of insights in your Amazon Web Services account. You can specify which
-        /// insights are returned by their start time, one or more statuses (<code>ONGOING</code>,
-        /// <code>CLOSED</code>, and <code>CLOSED</code>), one or more severities (<code>LOW</code>,
-        /// <code>MEDIUM</code>, and <code>HIGH</code>), and type (<code>REACTIVE</code> or <code>PROACTIVE</code>).
+        /// insights are returned by their start time, one or more statuses (<code>ONGOING</code>
+        /// or <code>CLOSED</code>), one or more severities (<code>LOW</code>, <code>MEDIUM</code>,
+        /// and <code>HIGH</code>), and type (<code>REACTIVE</code> or <code>PROACTIVE</code>).
         /// 
         /// 
         ///  

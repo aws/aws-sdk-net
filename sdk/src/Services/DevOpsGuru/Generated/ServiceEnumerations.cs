@@ -1225,9 +1225,113 @@ namespace Amazon.DevOpsGuru
     {
 
         /// <summary>
+        /// Constant CLOUDFRONT_DISTRIBUTION for ResourceTypeFilter
+        /// </summary>
+        public static readonly ResourceTypeFilter CLOUDFRONT_DISTRIBUTION = new ResourceTypeFilter("CLOUDFRONT_DISTRIBUTION");
+        /// <summary>
+        /// Constant DYNAMODB_TABLE for ResourceTypeFilter
+        /// </summary>
+        public static readonly ResourceTypeFilter DYNAMODB_TABLE = new ResourceTypeFilter("DYNAMODB_TABLE");
+        /// <summary>
+        /// Constant EC2_NAT_GATEWAY for ResourceTypeFilter
+        /// </summary>
+        public static readonly ResourceTypeFilter EC2_NAT_GATEWAY = new ResourceTypeFilter("EC2_NAT_GATEWAY");
+        /// <summary>
+        /// Constant ECS_CLUSTER for ResourceTypeFilter
+        /// </summary>
+        public static readonly ResourceTypeFilter ECS_CLUSTER = new ResourceTypeFilter("ECS_CLUSTER");
+        /// <summary>
+        /// Constant ECS_SERVICE for ResourceTypeFilter
+        /// </summary>
+        public static readonly ResourceTypeFilter ECS_SERVICE = new ResourceTypeFilter("ECS_SERVICE");
+        /// <summary>
+        /// Constant EKS_CLUSTER for ResourceTypeFilter
+        /// </summary>
+        public static readonly ResourceTypeFilter EKS_CLUSTER = new ResourceTypeFilter("EKS_CLUSTER");
+        /// <summary>
+        /// Constant ELASTIC_BEANSTALK_ENVIRONMENT for ResourceTypeFilter
+        /// </summary>
+        public static readonly ResourceTypeFilter ELASTIC_BEANSTALK_ENVIRONMENT = new ResourceTypeFilter("ELASTIC_BEANSTALK_ENVIRONMENT");
+        /// <summary>
+        /// Constant ELASTIC_LOAD_BALANCER_LOAD_BALANCER for ResourceTypeFilter
+        /// </summary>
+        public static readonly ResourceTypeFilter ELASTIC_LOAD_BALANCER_LOAD_BALANCER = new ResourceTypeFilter("ELASTIC_LOAD_BALANCER_LOAD_BALANCER");
+        /// <summary>
+        /// Constant ELASTIC_LOAD_BALANCING_V2_LOAD_BALANCER for ResourceTypeFilter
+        /// </summary>
+        public static readonly ResourceTypeFilter ELASTIC_LOAD_BALANCING_V2_LOAD_BALANCER = new ResourceTypeFilter("ELASTIC_LOAD_BALANCING_V2_LOAD_BALANCER");
+        /// <summary>
+        /// Constant ELASTIC_LOAD_BALANCING_V2_TARGET_GROUP for ResourceTypeFilter
+        /// </summary>
+        public static readonly ResourceTypeFilter ELASTIC_LOAD_BALANCING_V2_TARGET_GROUP = new ResourceTypeFilter("ELASTIC_LOAD_BALANCING_V2_TARGET_GROUP");
+        /// <summary>
+        /// Constant ELASTICACHE_CACHE_CLUSTER for ResourceTypeFilter
+        /// </summary>
+        public static readonly ResourceTypeFilter ELASTICACHE_CACHE_CLUSTER = new ResourceTypeFilter("ELASTICACHE_CACHE_CLUSTER");
+        /// <summary>
+        /// Constant ELASTICSEARCH_DOMAIN for ResourceTypeFilter
+        /// </summary>
+        public static readonly ResourceTypeFilter ELASTICSEARCH_DOMAIN = new ResourceTypeFilter("ELASTICSEARCH_DOMAIN");
+        /// <summary>
+        /// Constant KINESIS_STREAM for ResourceTypeFilter
+        /// </summary>
+        public static readonly ResourceTypeFilter KINESIS_STREAM = new ResourceTypeFilter("KINESIS_STREAM");
+        /// <summary>
+        /// Constant LAMBDA_FUNCTION for ResourceTypeFilter
+        /// </summary>
+        public static readonly ResourceTypeFilter LAMBDA_FUNCTION = new ResourceTypeFilter("LAMBDA_FUNCTION");
+        /// <summary>
         /// Constant LOG_GROUPS for ResourceTypeFilter
         /// </summary>
         public static readonly ResourceTypeFilter LOG_GROUPS = new ResourceTypeFilter("LOG_GROUPS");
+        /// <summary>
+        /// Constant OPEN_SEARCH_SERVICE_DOMAIN for ResourceTypeFilter
+        /// </summary>
+        public static readonly ResourceTypeFilter OPEN_SEARCH_SERVICE_DOMAIN = new ResourceTypeFilter("OPEN_SEARCH_SERVICE_DOMAIN");
+        /// <summary>
+        /// Constant RDS_DB_CLUSTER for ResourceTypeFilter
+        /// </summary>
+        public static readonly ResourceTypeFilter RDS_DB_CLUSTER = new ResourceTypeFilter("RDS_DB_CLUSTER");
+        /// <summary>
+        /// Constant RDS_DB_INSTANCE for ResourceTypeFilter
+        /// </summary>
+        public static readonly ResourceTypeFilter RDS_DB_INSTANCE = new ResourceTypeFilter("RDS_DB_INSTANCE");
+        /// <summary>
+        /// Constant REDSHIFT_CLUSTER for ResourceTypeFilter
+        /// </summary>
+        public static readonly ResourceTypeFilter REDSHIFT_CLUSTER = new ResourceTypeFilter("REDSHIFT_CLUSTER");
+        /// <summary>
+        /// Constant ROUTE53_HEALTH_CHECK for ResourceTypeFilter
+        /// </summary>
+        public static readonly ResourceTypeFilter ROUTE53_HEALTH_CHECK = new ResourceTypeFilter("ROUTE53_HEALTH_CHECK");
+        /// <summary>
+        /// Constant ROUTE53_HOSTED_ZONE for ResourceTypeFilter
+        /// </summary>
+        public static readonly ResourceTypeFilter ROUTE53_HOSTED_ZONE = new ResourceTypeFilter("ROUTE53_HOSTED_ZONE");
+        /// <summary>
+        /// Constant S3_BUCKET for ResourceTypeFilter
+        /// </summary>
+        public static readonly ResourceTypeFilter S3_BUCKET = new ResourceTypeFilter("S3_BUCKET");
+        /// <summary>
+        /// Constant SAGEMAKER_ENDPOINT for ResourceTypeFilter
+        /// </summary>
+        public static readonly ResourceTypeFilter SAGEMAKER_ENDPOINT = new ResourceTypeFilter("SAGEMAKER_ENDPOINT");
+        /// <summary>
+        /// Constant SNS_TOPIC for ResourceTypeFilter
+        /// </summary>
+        public static readonly ResourceTypeFilter SNS_TOPIC = new ResourceTypeFilter("SNS_TOPIC");
+        /// <summary>
+        /// Constant SQS_QUEUE for ResourceTypeFilter
+        /// </summary>
+        public static readonly ResourceTypeFilter SQS_QUEUE = new ResourceTypeFilter("SQS_QUEUE");
+        /// <summary>
+        /// Constant STEP_FUNCTIONS_ACTIVITY for ResourceTypeFilter
+        /// </summary>
+        public static readonly ResourceTypeFilter STEP_FUNCTIONS_ACTIVITY = new ResourceTypeFilter("STEP_FUNCTIONS_ACTIVITY");
+        /// <summary>
+        /// Constant STEP_FUNCTIONS_STATE_MACHINE for ResourceTypeFilter
+        /// </summary>
+        public static readonly ResourceTypeFilter STEP_FUNCTIONS_STATE_MACHINE = new ResourceTypeFilter("STEP_FUNCTIONS_STATE_MACHINE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

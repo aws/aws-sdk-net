@@ -35,9 +35,29 @@ namespace Amazon.DevOpsGuru.Model
     /// </summary>
     public partial class MonitoredResourceIdentifier
     {
+        private DateTime? _lastUpdated;
         private string _monitoredResourceName;
+        private ResourceCollection _resourceCollection;
         private ResourcePermission _resourcePermission;
         private string _type;
+
+        /// <summary>
+        /// Gets and sets the property LastUpdated. 
+        /// <para>
+        ///  The time at which DevOps Guru last updated this resource. 
+        /// </para>
+        /// </summary>
+        public DateTime LastUpdated
+        {
+            get { return this._lastUpdated.GetValueOrDefault(); }
+            set { this._lastUpdated = value; }
+        }
+
+        // Check to see if LastUpdated property is set
+        internal bool IsSetLastUpdated()
+        {
+            return this._lastUpdated.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property MonitoredResourceName. 
@@ -56,6 +76,21 @@ namespace Amazon.DevOpsGuru.Model
         internal bool IsSetMonitoredResourceName()
         {
             return this._monitoredResourceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceCollection.
+        /// </summary>
+        public ResourceCollection ResourceCollection
+        {
+            get { return this._resourceCollection; }
+            set { this._resourceCollection = value; }
+        }
+
+        // Check to see if ResourceCollection property is set
+        internal bool IsSetResourceCollection()
+        {
+            return this._resourceCollection != null;
         }
 
         /// <summary>

@@ -33,8 +33,28 @@ namespace Amazon.DevOpsGuru.Model
     /// </summary>
     public partial class ServiceHealth
     {
+        private long? _analyzedResourceCount;
         private ServiceInsightHealth _insight;
         private ServiceName _serviceName;
+
+        /// <summary>
+        /// Gets and sets the property AnalyzedResourceCount. 
+        /// <para>
+        ///  Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services
+        /// service. 
+        /// </para>
+        /// </summary>
+        public long AnalyzedResourceCount
+        {
+            get { return this._analyzedResourceCount.GetValueOrDefault(); }
+            set { this._analyzedResourceCount = value; }
+        }
+
+        // Check to see if AnalyzedResourceCount property is set
+        internal bool IsSetAnalyzedResourceCount()
+        {
+            return this._analyzedResourceCount.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Insight. 
