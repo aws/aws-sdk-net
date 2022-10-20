@@ -29,38 +29,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchRUM.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListAppMonitors operation.
-    /// Returns a list of the Amazon CloudWatch RUM app monitors in the account.
+    /// This is the response object from the BatchGetRumMetricDefinitions operation.
     /// </summary>
-    public partial class ListAppMonitorsRequest : AmazonCloudWatchRUMRequest
+    public partial class BatchGetRumMetricDefinitionsResponse : AmazonWebServiceResponse
     {
-        private int? _maxResults;
+        private List<MetricDefinition> _metricDefinitions = new List<MetricDefinition>();
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
+        /// Gets and sets the property MetricDefinitions. 
         /// <para>
-        /// The maximum number of results to return in one operation. The default is 50. The maximum
-        /// that you can specify is 100.
+        /// An array of structures that display information about the metrics that are sent by
+        /// the specified app monitor to the specified destination.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        public List<MetricDefinition> MetricDefinitions
         {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
+            get { return this._metricDefinitions; }
+            set { this._metricDefinitions = value; }
         }
 
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
+        // Check to see if MetricDefinitions property is set
+        internal bool IsSetMetricDefinitions()
         {
-            return this._maxResults.HasValue; 
+            return this._metricDefinitions != null && this._metricDefinitions.Count > 0; 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Use the token returned by the previous operation to request the next page of results.
+        /// A token that you can use in a subsequent operation to retrieve the next set of results.
         /// </para>
         /// </summary>
         public string NextToken

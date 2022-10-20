@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateAppMonitor operation
+    /// Response Unmarshaller for BatchCreateRumMetricDefinitions operation
     /// </summary>  
-    public class CreateAppMonitorResponseUnmarshaller : JsonResponseUnmarshaller
+    public class BatchCreateRumMetricDefinitionsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,22 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateAppMonitorResponse response = new CreateAppMonitorResponse();
+            BatchCreateRumMetricDefinitionsResponse response = new BatchCreateRumMetricDefinitionsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("Errors", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Id = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<BatchCreateRumMetricDefinitionsError, BatchCreateRumMetricDefinitionsErrorUnmarshaller>(BatchCreateRumMetricDefinitionsErrorUnmarshaller.Instance);
+                    response.Errors = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MetricDefinitions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<MetricDefinition, MetricDefinitionUnmarshaller>(MetricDefinitionUnmarshaller.Instance);
+                    response.MetricDefinitions = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -112,9 +118,9 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
             return new AmazonCloudWatchRUMException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreateAppMonitorResponseUnmarshaller _instance = new CreateAppMonitorResponseUnmarshaller();        
+        private static BatchCreateRumMetricDefinitionsResponseUnmarshaller _instance = new BatchCreateRumMetricDefinitionsResponseUnmarshaller();        
 
-        internal static CreateAppMonitorResponseUnmarshaller GetInstance()
+        internal static BatchCreateRumMetricDefinitionsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -122,7 +128,7 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateAppMonitorResponseUnmarshaller Instance
+        public static BatchCreateRumMetricDefinitionsResponseUnmarshaller Instance
         {
             get
             {

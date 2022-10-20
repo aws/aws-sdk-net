@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateAppMonitor operation
+    /// Response Unmarshaller for ListRumMetricsDestinations operation
     /// </summary>  
-    public class CreateAppMonitorResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListRumMetricsDestinationsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,22 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateAppMonitorResponse response = new CreateAppMonitorResponse();
+            ListRumMetricsDestinationsResponse response = new ListRumMetricsDestinationsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("Destinations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<MetricDestinationSummary, MetricDestinationSummaryUnmarshaller>(MetricDestinationSummaryUnmarshaller.Instance);
+                    response.Destinations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Id = unmarshaller.Unmarshall(context);
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -84,10 +90,6 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
-                {
-                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -95,14 +97,6 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceQuotaExceededException"))
-                {
-                    return ServiceQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
-                {
-                    return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
                 {
@@ -112,9 +106,9 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
             return new AmazonCloudWatchRUMException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreateAppMonitorResponseUnmarshaller _instance = new CreateAppMonitorResponseUnmarshaller();        
+        private static ListRumMetricsDestinationsResponseUnmarshaller _instance = new ListRumMetricsDestinationsResponseUnmarshaller();        
 
-        internal static CreateAppMonitorResponseUnmarshaller GetInstance()
+        internal static ListRumMetricsDestinationsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -122,7 +116,7 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateAppMonitorResponseUnmarshaller Instance
+        public static ListRumMetricsDestinationsResponseUnmarshaller Instance
         {
             get
             {

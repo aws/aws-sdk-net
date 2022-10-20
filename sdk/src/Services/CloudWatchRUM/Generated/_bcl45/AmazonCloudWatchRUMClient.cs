@@ -264,6 +264,319 @@ namespace Amazon.CloudWatchRUM
         #endregion
 
 
+        #region  BatchCreateRumMetricDefinitions
+
+
+        /// <summary>
+        /// Specifies the extended metrics that you want a CloudWatch RUM app monitor to send
+        /// to a destination. Valid destinations include CloudWatch and Evidently.
+        /// 
+        ///  
+        /// <para>
+        /// By default, RUM app monitors send some metrics to CloudWatch. These default metrics
+        /// are listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-metrics.html">CloudWatch
+        /// metrics that you can collect with CloudWatch RUM</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you also send extended metrics, you can send metrics to Evidently as well as CloudWatch,
+        /// and you can also optionally send the metrics with additional dimensions. The valid
+        /// dimension names for the additional dimensions are <code>BrowserName</code>, <code>CountryCode</code>,
+        /// <code>DeviceType</code>, <code>FileType</code>, <code>OSName</code>, and <code>PageId</code>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-vended-metrics.html">
+        /// Extended metrics that you can send to CloudWatch and CloudWatch Evidently</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The maximum number of metric definitions that you can specify in one <code>BatchCreateRumMetricDefinitions</code>
+        /// operation is 200.
+        /// </para>
+        ///  <pre><code> &lt;p&gt;The maximum number of metric definitions that one destination
+        /// can contain is 2000.&lt;/p&gt; &lt;p&gt;Extended metrics sent are charged as CloudWatch
+        /// custom metrics. Each combination of additional dimension name and dimension value
+        /// counts as a custom metric. For more information, see &lt;a href=&quot;https://aws.amazon.com/cloudwatch/pricing/&quot;&gt;Amazon
+        /// CloudWatch Pricing&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;You must have already created a destination
+        /// for the metrics before you send them. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_PutRumMetricsDestination.html&quot;&gt;PutRumMetricsDestination&lt;/a&gt;.&lt;/p&gt;
+        /// &lt;p&gt;If some metric definitions specified in a &lt;code&gt;BatchCreateRumMetricDefinitions&lt;/code&gt;
+        /// operations are not valid, those metric definitions fail and return errors, but all
+        /// valid metric definitions in the same operation still succeed.&lt;/p&gt; </code></pre>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchCreateRumMetricDefinitions service method.</param>
+        /// 
+        /// <returns>The response from the BatchCreateRumMetricDefinitions service method, as returned by CloudWatchRUM.</returns>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ConflictException">
+        /// This operation attempted to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.InternalServerException">
+        /// Internal service exception.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ServiceQuotaExceededException">
+        /// This request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ValidationException">
+        /// One of the arguments for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/BatchCreateRumMetricDefinitions">REST API Reference for BatchCreateRumMetricDefinitions Operation</seealso>
+        public virtual BatchCreateRumMetricDefinitionsResponse BatchCreateRumMetricDefinitions(BatchCreateRumMetricDefinitionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchCreateRumMetricDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchCreateRumMetricDefinitionsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchCreateRumMetricDefinitionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Specifies the extended metrics that you want a CloudWatch RUM app monitor to send
+        /// to a destination. Valid destinations include CloudWatch and Evidently.
+        /// 
+        ///  
+        /// <para>
+        /// By default, RUM app monitors send some metrics to CloudWatch. These default metrics
+        /// are listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-metrics.html">CloudWatch
+        /// metrics that you can collect with CloudWatch RUM</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you also send extended metrics, you can send metrics to Evidently as well as CloudWatch,
+        /// and you can also optionally send the metrics with additional dimensions. The valid
+        /// dimension names for the additional dimensions are <code>BrowserName</code>, <code>CountryCode</code>,
+        /// <code>DeviceType</code>, <code>FileType</code>, <code>OSName</code>, and <code>PageId</code>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-vended-metrics.html">
+        /// Extended metrics that you can send to CloudWatch and CloudWatch Evidently</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The maximum number of metric definitions that you can specify in one <code>BatchCreateRumMetricDefinitions</code>
+        /// operation is 200.
+        /// </para>
+        ///  <pre><code> &lt;p&gt;The maximum number of metric definitions that one destination
+        /// can contain is 2000.&lt;/p&gt; &lt;p&gt;Extended metrics sent are charged as CloudWatch
+        /// custom metrics. Each combination of additional dimension name and dimension value
+        /// counts as a custom metric. For more information, see &lt;a href=&quot;https://aws.amazon.com/cloudwatch/pricing/&quot;&gt;Amazon
+        /// CloudWatch Pricing&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;You must have already created a destination
+        /// for the metrics before you send them. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_PutRumMetricsDestination.html&quot;&gt;PutRumMetricsDestination&lt;/a&gt;.&lt;/p&gt;
+        /// &lt;p&gt;If some metric definitions specified in a &lt;code&gt;BatchCreateRumMetricDefinitions&lt;/code&gt;
+        /// operations are not valid, those metric definitions fail and return errors, but all
+        /// valid metric definitions in the same operation still succeed.&lt;/p&gt; </code></pre>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchCreateRumMetricDefinitions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchCreateRumMetricDefinitions service method, as returned by CloudWatchRUM.</returns>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ConflictException">
+        /// This operation attempted to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.InternalServerException">
+        /// Internal service exception.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ServiceQuotaExceededException">
+        /// This request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ValidationException">
+        /// One of the arguments for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/BatchCreateRumMetricDefinitions">REST API Reference for BatchCreateRumMetricDefinitions Operation</seealso>
+        public virtual Task<BatchCreateRumMetricDefinitionsResponse> BatchCreateRumMetricDefinitionsAsync(BatchCreateRumMetricDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchCreateRumMetricDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchCreateRumMetricDefinitionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchCreateRumMetricDefinitionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchDeleteRumMetricDefinitions
+
+
+        /// <summary>
+        /// Removes the specified metrics from being sent to an extended metrics destination.
+        /// 
+        ///  
+        /// <para>
+        /// If some metric definition IDs specified in a <code>BatchDeleteRumMetricDefinitions</code>
+        /// operations are not valid, those metric definitions fail and return errors, but all
+        /// valid metric definition IDs in the same operation are still deleted.
+        /// </para>
+        ///  
+        /// <para>
+        /// The maximum number of metric definitions that you can specify in one <code>BatchDeleteRumMetricDefinitions</code>
+        /// operation is 200.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteRumMetricDefinitions service method.</param>
+        /// 
+        /// <returns>The response from the BatchDeleteRumMetricDefinitions service method, as returned by CloudWatchRUM.</returns>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ConflictException">
+        /// This operation attempted to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.InternalServerException">
+        /// Internal service exception.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ValidationException">
+        /// One of the arguments for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/BatchDeleteRumMetricDefinitions">REST API Reference for BatchDeleteRumMetricDefinitions Operation</seealso>
+        public virtual BatchDeleteRumMetricDefinitionsResponse BatchDeleteRumMetricDefinitions(BatchDeleteRumMetricDefinitionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteRumMetricDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteRumMetricDefinitionsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDeleteRumMetricDefinitionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Removes the specified metrics from being sent to an extended metrics destination.
+        /// 
+        ///  
+        /// <para>
+        /// If some metric definition IDs specified in a <code>BatchDeleteRumMetricDefinitions</code>
+        /// operations are not valid, those metric definitions fail and return errors, but all
+        /// valid metric definition IDs in the same operation are still deleted.
+        /// </para>
+        ///  
+        /// <para>
+        /// The maximum number of metric definitions that you can specify in one <code>BatchDeleteRumMetricDefinitions</code>
+        /// operation is 200.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteRumMetricDefinitions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchDeleteRumMetricDefinitions service method, as returned by CloudWatchRUM.</returns>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ConflictException">
+        /// This operation attempted to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.InternalServerException">
+        /// Internal service exception.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ValidationException">
+        /// One of the arguments for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/BatchDeleteRumMetricDefinitions">REST API Reference for BatchDeleteRumMetricDefinitions Operation</seealso>
+        public virtual Task<BatchDeleteRumMetricDefinitionsResponse> BatchDeleteRumMetricDefinitionsAsync(BatchDeleteRumMetricDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteRumMetricDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteRumMetricDefinitionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchDeleteRumMetricDefinitionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchGetRumMetricDefinitions
+
+
+        /// <summary>
+        /// Retrieves the list of metrics and dimensions that a RUM app monitor is sending to
+        /// a single destination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetRumMetricDefinitions service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetRumMetricDefinitions service method, as returned by CloudWatchRUM.</returns>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.InternalServerException">
+        /// Internal service exception.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ValidationException">
+        /// One of the arguments for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/BatchGetRumMetricDefinitions">REST API Reference for BatchGetRumMetricDefinitions Operation</seealso>
+        public virtual BatchGetRumMetricDefinitionsResponse BatchGetRumMetricDefinitions(BatchGetRumMetricDefinitionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetRumMetricDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetRumMetricDefinitionsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetRumMetricDefinitionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the list of metrics and dimensions that a RUM app monitor is sending to
+        /// a single destination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetRumMetricDefinitions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetRumMetricDefinitions service method, as returned by CloudWatchRUM.</returns>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.InternalServerException">
+        /// Internal service exception.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ValidationException">
+        /// One of the arguments for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/BatchGetRumMetricDefinitions">REST API Reference for BatchGetRumMetricDefinitions Operation</seealso>
+        public virtual Task<BatchGetRumMetricDefinitionsResponse> BatchGetRumMetricDefinitionsAsync(BatchGetRumMetricDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetRumMetricDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetRumMetricDefinitionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchGetRumMetricDefinitionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateAppMonitor
 
 
@@ -297,6 +610,9 @@ namespace Amazon.CloudWatchRUM
         /// </exception>
         /// <exception cref="Amazon.CloudWatchRUM.Model.InternalServerException">
         /// Internal service exception.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ResourceNotFoundException">
+        /// Resource not found.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchRUM.Model.ServiceQuotaExceededException">
         /// This request exceeds a service quota.
@@ -351,6 +667,9 @@ namespace Amazon.CloudWatchRUM
         /// </exception>
         /// <exception cref="Amazon.CloudWatchRUM.Model.InternalServerException">
         /// Internal service exception.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ResourceNotFoundException">
+        /// Resource not found.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchRUM.Model.ServiceQuotaExceededException">
         /// This request exceeds a service quota.
@@ -446,6 +765,85 @@ namespace Amazon.CloudWatchRUM
             options.ResponseUnmarshaller = DeleteAppMonitorResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteAppMonitorResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteRumMetricsDestination
+
+
+        /// <summary>
+        /// Deletes a destination for CloudWatch RUM extended metrics, so that the specified app
+        /// monitor stops sending extended metrics to that destination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRumMetricsDestination service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRumMetricsDestination service method, as returned by CloudWatchRUM.</returns>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ConflictException">
+        /// This operation attempted to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.InternalServerException">
+        /// Internal service exception.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ValidationException">
+        /// One of the arguments for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/DeleteRumMetricsDestination">REST API Reference for DeleteRumMetricsDestination Operation</seealso>
+        public virtual DeleteRumMetricsDestinationResponse DeleteRumMetricsDestination(DeleteRumMetricsDestinationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRumMetricsDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRumMetricsDestinationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRumMetricsDestinationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a destination for CloudWatch RUM extended metrics, so that the specified app
+        /// monitor stops sending extended metrics to that destination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRumMetricsDestination service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRumMetricsDestination service method, as returned by CloudWatchRUM.</returns>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ConflictException">
+        /// This operation attempted to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.InternalServerException">
+        /// Internal service exception.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ValidationException">
+        /// One of the arguments for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/DeleteRumMetricsDestination">REST API Reference for DeleteRumMetricsDestination Operation</seealso>
+        public virtual Task<DeleteRumMetricsDestinationResponse> DeleteRumMetricsDestinationAsync(DeleteRumMetricsDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRumMetricsDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRumMetricsDestinationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteRumMetricsDestinationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -659,6 +1057,83 @@ namespace Amazon.CloudWatchRUM
 
         #endregion
         
+        #region  ListRumMetricsDestinations
+
+
+        /// <summary>
+        /// Returns a list of destinations that you have created to receive RUM extended metrics,
+        /// for the specified app monitor.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about extended metrics, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_AddRumMetrcs.html">AddRumMetrics</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRumMetricsDestinations service method.</param>
+        /// 
+        /// <returns>The response from the ListRumMetricsDestinations service method, as returned by CloudWatchRUM.</returns>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.InternalServerException">
+        /// Internal service exception.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ValidationException">
+        /// One of the arguments for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/ListRumMetricsDestinations">REST API Reference for ListRumMetricsDestinations Operation</seealso>
+        public virtual ListRumMetricsDestinationsResponse ListRumMetricsDestinations(ListRumMetricsDestinationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRumMetricsDestinationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRumMetricsDestinationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListRumMetricsDestinationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a list of destinations that you have created to receive RUM extended metrics,
+        /// for the specified app monitor.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about extended metrics, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_AddRumMetrcs.html">AddRumMetrics</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRumMetricsDestinations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRumMetricsDestinations service method, as returned by CloudWatchRUM.</returns>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.InternalServerException">
+        /// Internal service exception.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ValidationException">
+        /// One of the arguments for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/ListRumMetricsDestinations">REST API Reference for ListRumMetricsDestinations Operation</seealso>
+        public virtual Task<ListRumMetricsDestinationsResponse> ListRumMetricsDestinationsAsync(ListRumMetricsDestinationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRumMetricsDestinationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRumMetricsDestinationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListRumMetricsDestinationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
 
@@ -801,6 +1276,95 @@ namespace Amazon.CloudWatchRUM
             options.ResponseUnmarshaller = PutRumEventsResponseUnmarshaller.Instance;
             
             return InvokeAsync<PutRumEventsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutRumMetricsDestination
+
+
+        /// <summary>
+        /// Creates or updates a destination to receive extended metrics from CloudWatch RUM.
+        /// You can send extended metrics to CloudWatch or to a CloudWatch Evidently experiment.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about extended metrics, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_AddRumMetrics.html">AddRumMetrics</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutRumMetricsDestination service method.</param>
+        /// 
+        /// <returns>The response from the PutRumMetricsDestination service method, as returned by CloudWatchRUM.</returns>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ConflictException">
+        /// This operation attempted to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.InternalServerException">
+        /// Internal service exception.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ValidationException">
+        /// One of the arguments for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/PutRumMetricsDestination">REST API Reference for PutRumMetricsDestination Operation</seealso>
+        public virtual PutRumMetricsDestinationResponse PutRumMetricsDestination(PutRumMetricsDestinationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutRumMetricsDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutRumMetricsDestinationResponseUnmarshaller.Instance;
+
+            return Invoke<PutRumMetricsDestinationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates or updates a destination to receive extended metrics from CloudWatch RUM.
+        /// You can send extended metrics to CloudWatch or to a CloudWatch Evidently experiment.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about extended metrics, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_AddRumMetrics.html">AddRumMetrics</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutRumMetricsDestination service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutRumMetricsDestination service method, as returned by CloudWatchRUM.</returns>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ConflictException">
+        /// This operation attempted to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.InternalServerException">
+        /// Internal service exception.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ValidationException">
+        /// One of the arguments for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/PutRumMetricsDestination">REST API Reference for PutRumMetricsDestination Operation</seealso>
+        public virtual Task<PutRumMetricsDestinationResponse> PutRumMetricsDestinationAsync(PutRumMetricsDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutRumMetricsDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutRumMetricsDestinationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutRumMetricsDestinationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1094,6 +1658,91 @@ namespace Amazon.CloudWatchRUM
             options.ResponseUnmarshaller = UpdateAppMonitorResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateAppMonitorResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateRumMetricDefinition
+
+
+        /// <summary>
+        /// Modifies one existing metric definition for CloudWatch RUM extended metrics. For more
+        /// information about extended metrics, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_BatchCreateRumMetricsDefinitions.html">BatchCreateRumMetricsDefinitions</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRumMetricDefinition service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRumMetricDefinition service method, as returned by CloudWatchRUM.</returns>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ConflictException">
+        /// This operation attempted to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.InternalServerException">
+        /// Internal service exception.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ServiceQuotaExceededException">
+        /// This request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ValidationException">
+        /// One of the arguments for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/UpdateRumMetricDefinition">REST API Reference for UpdateRumMetricDefinition Operation</seealso>
+        public virtual UpdateRumMetricDefinitionResponse UpdateRumMetricDefinition(UpdateRumMetricDefinitionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRumMetricDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRumMetricDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRumMetricDefinitionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Modifies one existing metric definition for CloudWatch RUM extended metrics. For more
+        /// information about extended metrics, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_BatchCreateRumMetricsDefinitions.html">BatchCreateRumMetricsDefinitions</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRumMetricDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRumMetricDefinition service method, as returned by CloudWatchRUM.</returns>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ConflictException">
+        /// This operation attempted to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.InternalServerException">
+        /// Internal service exception.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ServiceQuotaExceededException">
+        /// This request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchRUM.Model.ValidationException">
+        /// One of the arguments for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/UpdateRumMetricDefinition">REST API Reference for UpdateRumMetricDefinition Operation</seealso>
+        public virtual Task<UpdateRumMetricDefinitionResponse> UpdateRumMetricDefinitionAsync(UpdateRumMetricDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRumMetricDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRumMetricDefinitionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateRumMetricDefinitionResponse>(request, options, cancellationToken);
         }
 
         #endregion

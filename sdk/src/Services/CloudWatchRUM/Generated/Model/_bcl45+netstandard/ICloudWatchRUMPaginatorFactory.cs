@@ -26,6 +26,11 @@ namespace Amazon.CloudWatchRUM.Model
     {
 
         /// <summary>
+        /// Paginator for BatchGetRumMetricDefinitions operation
+        ///</summary>
+        IBatchGetRumMetricDefinitionsPaginator BatchGetRumMetricDefinitions(BatchGetRumMetricDefinitionsRequest request);
+
+        /// <summary>
         /// Paginator for GetAppMonitorData operation
         ///</summary>
         IGetAppMonitorDataPaginator GetAppMonitorData(GetAppMonitorDataRequest request);
@@ -34,5 +39,10 @@ namespace Amazon.CloudWatchRUM.Model
         /// Paginator for ListAppMonitors operation
         ///</summary>
         IListAppMonitorsPaginator ListAppMonitors(ListAppMonitorsRequest request);
+
+        /// <summary>
+        /// Paginator for ListRumMetricsDestinations operation
+        ///</summary>
+        IListRumMetricsDestinationsPaginator ListRumMetricsDestinations(ListRumMetricsDestinationsRequest request);
     }
 }

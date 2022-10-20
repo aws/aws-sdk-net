@@ -29,19 +29,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchRUM.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListAppMonitors operation.
-    /// Returns a list of the Amazon CloudWatch RUM app monitors in the account.
+    /// Container for the parameters to the ListRumMetricsDestinations operation.
+    /// Returns a list of destinations that you have created to receive RUM extended metrics,
+    /// for the specified app monitor.
+    /// 
+    ///  
+    /// <para>
+    /// For more information about extended metrics, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_AddRumMetrcs.html">AddRumMetrics</a>.
+    /// </para>
     /// </summary>
-    public partial class ListAppMonitorsRequest : AmazonCloudWatchRUMRequest
+    public partial class ListRumMetricsDestinationsRequest : AmazonCloudWatchRUMRequest
     {
+        private string _appMonitorName;
         private int? _maxResults;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property AppMonitorName. 
+        /// <para>
+        /// The name of the app monitor associated with the destinations that you want to retrieve.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
+        public string AppMonitorName
+        {
+            get { return this._appMonitorName; }
+            set { this._appMonitorName = value; }
+        }
+
+        // Check to see if AppMonitorName property is set
+        internal bool IsSetAppMonitorName()
+        {
+            return this._appMonitorName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to return in one operation. The default is 50. The maximum
         /// that you can specify is 100.
+        /// </para>
+        ///  
+        /// <para>
+        /// To retrieve the remaining results, make another call with the returned <code>NextToken</code>
+        /// value. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
