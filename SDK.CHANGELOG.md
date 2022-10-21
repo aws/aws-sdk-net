@@ -1,3 +1,11 @@
+### 3.7.401.0 (2022-10-21 20:42 UTC)
+* CognitoIdentityProvider (3.7.101.0)
+	* This release adds a new "DeletionProtection" field to the UserPool in Cognito. Application admins can configure this value with either ACTIVE or INACTIVE value. Setting this field to ACTIVE will prevent a user pool from accidental deletion.
+* S3 (3.7.101.0)
+	* S3 on Outposts launches support for automatic bucket-style alias. You can use the automatic access point alias instead of an access point ARN for any object-level operation in an Outposts bucket.
+* SageMaker (3.7.101.0)
+	* CreateInferenceRecommenderjob API now supports passing endpoint details directly, that will help customers to identify the max invocation and max latency they can achieve for their model and the associated endpoint along with getting recommendations on other instances.
+
 ### 3.7.400.0 (2022-10-21 01:00 UTC)
 * All (Core and Services) updated to version 3.7.100.0
     * Updates internal logic for constructing API endpoints.
