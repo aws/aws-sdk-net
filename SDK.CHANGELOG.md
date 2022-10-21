@@ -1,3 +1,8 @@
+### 3.7.400.0 (2022-10-21 01:00 UTC)
+* All (Core and Services) updated to version 3.7.100.0
+    * Updates internal logic for constructing API endpoints.
+    * We have added rule-based endpoint providers. Additionally there are new interfaces for endpoint providers and parameters at the service client level.
+
 ### 3.7.378.0 (2022-10-20 18:57 UTC)
 * CloudWatchRUM (3.7.1.0)
 	* CloudWatch RUM now supports Extended CloudWatch Metrics with Additional Dimensions
