@@ -82,6 +82,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The default time unit for <code>AccessTokenValidity</code> in an API request is hours.
         /// <i>Valid range</i> is displayed below in seconds.
         /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify otherwise in the configuration of your app client, your access
+        /// tokens are valid for one hour.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=86400)]
         public int AccessTokenValidity
@@ -388,47 +393,54 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ExplicitAuthFlows. 
         /// <para>
-        /// The authentication flows that are supported by the user pool clients. Flow names without
-        /// the <code>ALLOW_</code> prefix are no longer supported, in favor of new names with
-        /// the <code>ALLOW_</code> prefix.
+        /// The authentication flows that you want your user pool client to support. For each
+        /// app client in your user pool, you can sign in your users with any combination of one
+        /// or more flows, including with a user name and Secure Remote Password (SRP), a user
+        /// name and password, or a custom authentication process that you define with Lambda
+        /// functions.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Values with <code>ALLOW_</code> prefix must be used only along with the <code>ALLOW_</code>
-        /// prefix.
+        /// If you don't specify a value for <code>ExplicitAuthFlows</code>, your user client
+        /// supports <code>ALLOW_REFRESH_TOKEN_AUTH</code>, <code>ALLOW_USER_SRP_AUTH</code>,
+        /// and <code>ALLOW_CUSTOM_AUTH</code>.
         /// </para>
         ///  </note> 
         /// <para>
         /// Valid values include:
         /// </para>
-        ///  <dl> <dt>ALLOW_ADMIN_USER_PASSWORD_AUTH</dt> <dd> 
+        ///  <ul> <li> 
         /// <para>
-        /// Enable admin based user password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>.
-        /// This setting replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication
-        /// flow, Amazon Cognito receives the password in the request instead of using the Secure
-        /// Remote Password (SRP) protocol to verify passwords.
+        ///  <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password authentication
+        /// flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces the <code>ADMIN_NO_SRP_AUTH</code>
+        /// setting. With this authentication flow, your app passes a user name and password to
+        /// Amazon Cognito in the request, instead of using the Secure Remote Password (SRP) protocol
+        /// to securely transmit the password.
         /// </para>
-        ///  </dd> <dt>ALLOW_CUSTOM_AUTH</dt> <dd> 
+        ///  </li> <li> 
         /// <para>
-        /// Enable Lambda trigger based authentication.
+        ///  <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.
         /// </para>
-        ///  </dd> <dt>ALLOW_USER_PASSWORD_AUTH</dt> <dd> 
+        ///  </li> <li> 
         /// <para>
-        /// Enable user password-based authentication. In this flow, Amazon Cognito receives the
-        /// password in the request instead of using the SRP protocol to verify passwords.
+        ///  <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based authentication.
+        /// In this flow, Amazon Cognito receives the password in the request instead of using
+        /// the SRP protocol to verify passwords.
         /// </para>
-        ///  </dd> <dt>ALLOW_USER_SRP_AUTH</dt> <dd> 
+        ///  </li> <li> 
         /// <para>
-        /// Enable SRP-based authentication.
+        ///  <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.
         /// </para>
-        ///  </dd> <dt>ALLOW_REFRESH_TOKEN_AUTH</dt> <dd> 
+        ///  </li> <li> 
         /// <para>
-        /// Enable the authflow that refreshes tokens.
+        ///  <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.
         /// </para>
-        ///  </dd> </dl> 
+        ///  </li> </ul> 
         /// <para>
-        /// If you don't specify a value for <code>ExplicitAuthFlows</code>, your user client
-        /// supports <code>ALLOW_USER_SRP_AUTH</code> and <code>ALLOW_CUSTOM_AUTH</code>.
+        /// In some environments, you will see the values <code>ADMIN_NO_SRP_AUTH</code>, <code>CUSTOM_AUTH_FLOW_ONLY</code>,
+        /// or <code>USER_PASSWORD_AUTH</code>. You can't assign these legacy <code>ExplicitAuthFlows</code>
+        /// values to user pool clients at the same time as values that begin with <code>ALLOW_</code>,
+        /// like <code>ALLOW_USER_SRP_AUTH</code>.
         /// </para>
         /// </summary>
         public List<string> ExplicitAuthFlows
@@ -480,6 +492,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// The default time unit for <code>AccessTokenValidity</code> in an API request is hours.
         /// <i>Valid range</i> is displayed below in seconds.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify otherwise in the configuration of your app client, your ID tokens
+        /// are valid for one hour.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=86400)]
@@ -590,6 +607,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// You can't set <code>RefreshTokenValidity</code> to 0. If you do, Amazon Cognito overrides
         /// the value with the default value of 30 days. <i>Valid range</i> is displayed below
         /// in seconds.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify otherwise in the configuration of your app client, your refresh
+        /// tokens are valid for 30 days.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=315360000)]

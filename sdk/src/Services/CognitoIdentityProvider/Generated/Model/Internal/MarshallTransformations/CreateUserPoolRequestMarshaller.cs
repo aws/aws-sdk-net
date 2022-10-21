@@ -111,6 +111,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetDeletionProtection())
+                {
+                    context.Writer.WritePropertyName("DeletionProtection");
+                    context.Writer.Write(publicRequest.DeletionProtection);
+                }
+
                 if(publicRequest.IsSetDeviceConfiguration())
                 {
                     context.Writer.WritePropertyName("DeviceConfiguration");

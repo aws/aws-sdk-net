@@ -38,7 +38,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property IdentityProvider. 
         /// <para>
-        /// The IdP that was deleted.
+        /// The identity provider details.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

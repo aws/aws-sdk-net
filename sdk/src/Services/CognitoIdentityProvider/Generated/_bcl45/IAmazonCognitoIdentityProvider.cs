@@ -866,11 +866,14 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Disables the specified user.
+        /// Deactivates a user and revokes all access tokens for the user. A deactivated user
+        /// can't sign in, but still appears in the responses to <code>GetUser</code> and <code>ListUsers</code>
+        /// API requests.
         /// 
         ///  
         /// <para>
-        /// Calling this action requires developer credentials.
+        /// You must make this API request with Amazon Web Services credentials that have <code>cognito-idp:AdminDisableUser</code>
+        /// permissions.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminDisableUser service method.</param>
@@ -901,11 +904,14 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Disables the specified user.
+        /// Deactivates a user and revokes all access tokens for the user. A deactivated user
+        /// can't sign in, but still appears in the responses to <code>GetUser</code> and <code>ListUsers</code>
+        /// API requests.
         /// 
         ///  
         /// <para>
-        /// Calling this action requires developer credentials.
+        /// You must make this API request with Amazon Web Services credentials that have <code>cognito-idp:AdminDisableUser</code>
+        /// permissions.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminDisableUser service method.</param>
@@ -4277,6 +4283,9 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="request">Container for the necessary parameters to execute the DeleteIdentityProvider service method.</param>
         /// 
         /// <returns>The response from the DeleteIdentityProvider service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ConcurrentModificationException">
+        /// This exception is thrown if two or more modifications are happening concurrently.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -4310,6 +4319,9 @@ namespace Amazon.CognitoIdentityProvider
         /// </param>
         /// 
         /// <returns>The response from the DeleteIdentityProvider service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ConcurrentModificationException">
+        /// This exception is thrown if two or more modifications are happening concurrently.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -4643,6 +4655,9 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="request">Container for the necessary parameters to execute the DeleteUserPoolClient service method.</param>
         /// 
         /// <returns>The response from the DeleteUserPoolClient service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ConcurrentModificationException">
+        /// This exception is thrown if two or more modifications are happening concurrently.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -4673,6 +4688,9 @@ namespace Amazon.CognitoIdentityProvider
         /// </param>
         /// 
         /// <returns>The response from the DeleteUserPoolClient service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ConcurrentModificationException">
+        /// This exception is thrown if two or more modifications are happening concurrently.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -5756,7 +5774,15 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// This method takes a user pool ID, and returns the signing certificate.
+        /// This method takes a user pool ID, and returns the signing certificate. The issued
+        /// certificate is valid for 10 years from the date of issue.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon Cognito issues and assigns a new signing certificate annually. This process
+        /// returns a new value in the response to <code>GetSigningCertificate</code>, but doesn't
+        /// invalidate the original certificate.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSigningCertificate service method.</param>
         /// 
@@ -5777,7 +5803,15 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// This method takes a user pool ID, and returns the signing certificate.
+        /// This method takes a user pool ID, and returns the signing certificate. The issued
+        /// certificate is valid for 10 years from the date of issue.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon Cognito issues and assigns a new signing certificate annually. This process
+        /// returns a new value in the response to <code>GetSigningCertificate</code>, but doesn't
+        /// invalidate the original certificate.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSigningCertificate service method.</param>
         /// <param name="cancellationToken">
@@ -6217,10 +6251,8 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Signs out users from all devices. It also invalidates all refresh tokens that Amazon
-        /// Cognito has issued to a user. The user's current access and ID tokens remain valid
-        /// until their expiry. By default, access and ID tokens expire one hour after Amazon
-        /// Cognito issues them. A user can still use a hosted UI cookie to retrieve new tokens
-        /// for the duration of the cookie validity period of 1 hour.
+        /// Cognito has issued to a user. A user can still use a hosted UI cookie to retrieve
+        /// new tokens for the duration of the 1-hour cookie validity period.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GlobalSignOut service method.</param>
         /// 
@@ -6258,10 +6290,8 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Signs out users from all devices. It also invalidates all refresh tokens that Amazon
-        /// Cognito has issued to a user. The user's current access and ID tokens remain valid
-        /// until their expiry. By default, access and ID tokens expire one hour after Amazon
-        /// Cognito issues them. A user can still use a hosted UI cookie to retrieve new tokens
-        /// for the duration of the cookie validity period of 1 hour.
+        /// Cognito has issued to a user. A user can still use a hosted UI cookie to retrieve
+        /// new tokens for the duration of the 1-hour cookie validity period.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GlobalSignOut service method.</param>
         /// <param name="cancellationToken">
@@ -7568,9 +7598,9 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Revokes all of the access tokens generated by the specified refresh token. After the
-        /// token is revoked, you can't use the revoked token to access Amazon Cognito authenticated
-        /// APIs.
+        /// Revokes all of the access tokens generated by, and at the same time as, the specified
+        /// refresh token. After a token is revoked, you can't use the revoked token to access
+        /// Amazon Cognito user APIs, or to authorize access to your resource server.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RevokeToken service method.</param>
         /// 
@@ -7605,9 +7635,9 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Revokes all of the access tokens generated by the specified refresh token. After the
-        /// token is revoked, you can't use the revoked token to access Amazon Cognito authenticated
-        /// APIs.
+        /// Revokes all of the access tokens generated by, and at the same time as, the specified
+        /// refresh token. After a token is revoked, you can't use the revoked token to access
+        /// Amazon Cognito user APIs, or to authorize access to your resource server.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RevokeToken service method.</param>
         /// <param name="cancellationToken">
@@ -8873,6 +8903,9 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="request">Container for the necessary parameters to execute the UpdateIdentityProvider service method.</param>
         /// 
         /// <returns>The response from the UpdateIdentityProvider service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ConcurrentModificationException">
+        /// This exception is thrown if two or more modifications are happening concurrently.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -8906,6 +8939,9 @@ namespace Amazon.CognitoIdentityProvider
         /// </param>
         /// 
         /// <returns>The response from the UpdateIdentityProvider service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ConcurrentModificationException">
+        /// This exception is thrown if two or more modifications are happening concurrently.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>

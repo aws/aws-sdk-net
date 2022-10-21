@@ -43,7 +43,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of authentication events to return.
+        /// The maximum number of authentication events to return. Returns 60 events if you set
+        /// <code>MaxResults</code> to 0, or if you don't include a <code>MaxResults</code> parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=60)]

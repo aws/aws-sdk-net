@@ -30,7 +30,15 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the GetSigningCertificate operation.
-    /// This method takes a user pool ID, and returns the signing certificate.
+    /// This method takes a user pool ID, and returns the signing certificate. The issued
+    /// certificate is valid for 10 years from the date of issue.
+    /// 
+    ///  
+    /// <para>
+    /// Amazon Cognito issues and assigns a new signing certificate annually. This process
+    /// returns a new value in the response to <code>GetSigningCertificate</code>, but doesn't
+    /// invalidate the original certificate.
+    /// </para>
     /// </summary>
     public partial class GetSigningCertificateRequest : AmazonCognitoIdentityProviderRequest
     {

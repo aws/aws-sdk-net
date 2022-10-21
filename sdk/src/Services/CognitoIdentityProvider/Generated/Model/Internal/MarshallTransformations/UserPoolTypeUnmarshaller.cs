@@ -106,6 +106,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     unmarshalledObject.CustomDomain = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DeletionProtection", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DeletionProtection = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DeviceConfiguration", targetDepth))
                 {
                     var unmarshaller = DeviceConfigurationTypeUnmarshaller.Instance;

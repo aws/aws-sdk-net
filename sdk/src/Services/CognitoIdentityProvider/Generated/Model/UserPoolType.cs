@@ -40,6 +40,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         private List<string> _autoVerifiedAttributes = new List<string>();
         private DateTime? _creationDate;
         private string _customDomain;
+        private DeletionProtectionType _deletionProtection;
         private DeviceConfigurationType _deviceConfiguration;
         private string _domain;
         private EmailConfigurationType _emailConfiguration;
@@ -204,6 +205,33 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetCustomDomain()
         {
             return this._customDomain != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeletionProtection. 
+        /// <para>
+        /// When active, <code>DeletionProtection</code> prevents accidental deletion of your
+        /// user pool. Before you can delete a user pool that you have protected against deletion,
+        /// you must deactivate this feature.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you try to delete a protected user pool in a <code>DeleteUserPool</code> API
+        /// request, Amazon Cognito returns an <code>InvalidParameterException</code> error. To
+        /// delete a protected user pool, send a new <code>DeleteUserPool</code> request after
+        /// you deactivate deletion protection in an <code>UpdateUserPool</code> API request.
+        /// </para>
+        /// </summary>
+        public DeletionProtectionType DeletionProtection
+        {
+            get { return this._deletionProtection; }
+            set { this._deletionProtection = value; }
+        }
+
+        // Check to see if DeletionProtection property is set
+        internal bool IsSetDeletionProtection()
+        {
+            return this._deletionProtection != null;
         }
 
         /// <summary>

@@ -30,11 +30,14 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the AdminDisableUser operation.
-    /// Disables the specified user.
+    /// Deactivates a user and revokes all access tokens for the user. A deactivated user
+    /// can't sign in, but still appears in the responses to <code>GetUser</code> and <code>ListUsers</code>
+    /// API requests.
     /// 
     ///  
     /// <para>
-    /// Calling this action requires developer credentials.
+    /// You must make this API request with Amazon Web Services credentials that have <code>cognito-idp:AdminDisableUser</code>
+    /// permissions.
     /// </para>
     /// </summary>
     public partial class AdminDisableUserRequest : AmazonCognitoIdentityProviderRequest
