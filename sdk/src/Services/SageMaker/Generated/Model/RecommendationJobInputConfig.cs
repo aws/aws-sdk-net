@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     {
         private RecommendationJobContainerConfig _containerConfig;
         private List<EndpointInputConfiguration> _endpointConfigurations = new List<EndpointInputConfiguration>();
+        private List<EndpointInfo> _endpoints = new List<EndpointInfo>();
         private int? _jobDurationInSeconds;
         private string _modelPackageVersionArn;
         private RecommendationJobResourceLimit _resourceLimit;
@@ -77,6 +78,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetEndpointConfigurations()
         {
             return this._endpointConfigurations != null && this._endpointConfigurations.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Endpoints. 
+        /// <para>
+        /// Existing customer endpoints on which to run an Inference Recommender job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public List<EndpointInfo> Endpoints
+        {
+            get { return this._endpoints; }
+            set { this._endpoints = value; }
+        }
+
+        // Check to see if Endpoints property is set
+        internal bool IsSetEndpoints()
+        {
+            return this._endpoints != null && this._endpoints.Count > 0; 
         }
 
         /// <summary>

@@ -383,7 +383,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("outpost access points do not support dualstack@us-west-2")]
-        [ExpectedException(typeof(AmazonClientException), "Invalid configuration: Outpost Access Points do not support dual-stack")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid configuration: Outpost Access Points do not support dual-stack")]
         public void Outpost_access_points_do_not_support_dualstackuswest2_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -401,7 +401,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("outpost access points do not support dualstack@cn-north-1")]
-        [ExpectedException(typeof(AmazonClientException), "Invalid configuration: Outpost Access Points do not support dual-stack")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid configuration: Outpost Access Points do not support dual-stack")]
         public void Outpost_access_points_do_not_support_dualstackcnnorth1_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -419,7 +419,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("outpost access points do not support dualstack@af-south-1")]
-        [ExpectedException(typeof(AmazonClientException), "Invalid configuration: Outpost Access Points do not support dual-stack")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid configuration: Outpost Access Points do not support dual-stack")]
         public void Outpost_access_points_do_not_support_dualstackafsouth1_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -437,7 +437,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("invalid ARN: must be include outpost ID@us-west-2")]
-        [ExpectedException(typeof(AmazonClientException), "Invalid ARN: The Outpost Id was not set")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: The Outpost Id was not set")]
         public void Invalid_ARN_must_be_include_outpost_IDuswest2_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -455,7 +455,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("invalid ARN: must specify access point@us-west-2")]
-        [ExpectedException(typeof(AmazonClientException), "Invalid ARN: Expected a 4-component resource")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: Expected a 4-component resource")]
         public void Invalid_ARN_must_specify_access_pointuswest2_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -472,7 +472,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("invalid ARN@us-west-2")]
-        [ExpectedException(typeof(AmazonClientException), "Invalid ARN: Expected a 4-component resource")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: Expected a 4-component resource")]
         public void Invalid_ARNuswest2_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -526,7 +526,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("Account ID set inline and in ARN and they do not match@us-west-2")]
-        [ExpectedException(typeof(AmazonClientException), "Invalid ARN: the accountId specified in the ARN (`123456789012`) does not match the parameter (`9999999`)")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: the accountId specified in the ARN (`123456789012`) does not match the parameter (`9999999`)")]
         public void Account_ID_set_inline_and_in_ARN_and_they_do_not_matchuswest2_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -585,7 +585,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("access point name with a bucket arn@us-west-2")]
-        [ExpectedException(typeof(AmazonClientException), "Expected an outpost type `accesspoint`, found `bucket`")]
+        [ExpectedException(typeof(AmazonClientException), @"Expected an outpost type `accesspoint`, found `bucket`")]
         public void Access_point_name_with_a_bucket_arnuswest2_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -604,7 +604,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("bucket arn with access point name@us-west-2")]
-        [ExpectedException(typeof(AmazonClientException), "Invalid ARN: Expected an outpost type `bucket`, found `accesspoint`")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: Expected an outpost type `bucket`, found `accesspoint`")]
         public void Bucket_arn_with_access_point_nameuswest2_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -722,7 +722,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("dualstack cannot be used with outposts when an endpoint URL is set@us-west-2.")]
-        [ExpectedException(typeof(AmazonClientException), "Invalid configuration: Outpost Access Points do not support dual-stack")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid configuration: Outpost Access Points do not support dual-stack")]
         public void Dualstack_cannot_be_used_with_outposts_when_an_endpoint_URL_is_setuswest2_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -741,7 +741,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("Dual-stack cannot be used with outposts@us-west-2")]
-        [ExpectedException(typeof(AmazonClientException), "Invalid configuration: Outposts do not support dual-stack")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid configuration: Outposts do not support dual-stack")]
         public void Dualstack_cannot_be_used_with_outpostsuswest2_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -849,7 +849,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("Outposts do not support dualstack@us-west-2")]
-        [ExpectedException(typeof(AmazonClientException), "Invalid configuration: Outpost buckets do not support dual-stack")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid configuration: Outpost buckets do not support dual-stack")]
         public void Outposts_do_not_support_dualstackuswest2_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -954,7 +954,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("Outposts do not support dualstack@us-west-2")]
-        [ExpectedException(typeof(AmazonClientException), "Invalid configuration: Outpost buckets do not support dual-stack")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid configuration: Outpost buckets do not support dual-stack")]
         public void Outposts_do_not_support_dualstackuswest2_1_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1059,7 +1059,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("Outposts do not support dualstack@us-west-2")]
-        [ExpectedException(typeof(AmazonClientException), "Invalid configuration: Outpost buckets do not support dual-stack")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid configuration: Outpost buckets do not support dual-stack")]
         public void Outposts_do_not_support_dualstackuswest2_2_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1076,7 +1076,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("Invalid ARN: missing outpost id and bucket@us-west-2")]
-        [ExpectedException(typeof(AmazonClientException), "Invalid ARN: The Outpost Id was not set")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: The Outpost Id was not set")]
         public void Invalid_ARN_missing_outpost_id_and_bucketuswest2_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1093,7 +1093,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("Invalid ARN: missing bucket@us-west-2")]
-        [ExpectedException(typeof(AmazonClientException), "Invalid ARN: Expected a 4-component resource")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: Expected a 4-component resource")]
         public void Invalid_ARN_missing_bucketuswest2_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1110,7 +1110,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("Invalid ARN: missing outpost and bucket ids@us-west-2")]
-        [ExpectedException(typeof(AmazonClientException), "Invalid ARN: Expected a 4-component resource")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: Expected a 4-component resource")]
         public void Invalid_ARN_missing_outpost_and_bucket_idsuswest2_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1127,7 +1127,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("Invalid ARN: missing bucket id@us-west-2")]
-        [ExpectedException(typeof(AmazonClientException), "Invalid ARN: expected a bucket name")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: expected a bucket name")]
         public void Invalid_ARN_missing_bucket_iduswest2_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1281,7 +1281,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("fips @ cn-north-1")]
-        [ExpectedException(typeof(AmazonClientException), "Partition does not support FIPS")]
+        [ExpectedException(typeof(AmazonClientException), @"Partition does not support FIPS")]
         public void Fips_cnnorth1_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1313,7 +1313,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("invalid account id prefix @us-east-1")]
-        [ExpectedException(typeof(AmazonClientException), "AccountId must only contain a-z, A-Z, 0-9 and `-`.")]
+        [ExpectedException(typeof(AmazonClientException), @"AccountId must only contain a-z, A-Z, 0-9 and `-`.")]
         public void Invalid_account_id_prefix_useast1_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1380,7 +1380,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("RequiresAccountId with AccountId unset")]
-        [ExpectedException(typeof(AmazonClientException), "AccountId is required but not set")]
+        [ExpectedException(typeof(AmazonClientException), @"AccountId is required but not set")]
         public void RequiresAccountId_with_AccountId_unset_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1394,7 +1394,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("RequiresAccountId with AccountId unset and custom endpoint")]
-        [ExpectedException(typeof(AmazonClientException), "AccountId is required but not set")]
+        [ExpectedException(typeof(AmazonClientException), @"AccountId is required but not set")]
         public void RequiresAccountId_with_AccountId_unset_and_custom_endpoint_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1409,7 +1409,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("RequiresAccountId with invalid AccountId and custom endpoint")]
-        [ExpectedException(typeof(AmazonClientException), "AccountId must only contain a-z, A-Z, 0-9 and `-`.")]
+        [ExpectedException(typeof(AmazonClientException), @"AccountId must only contain a-z, A-Z, 0-9 and `-`.")]
         public void RequiresAccountId_with_invalid_AccountId_and_custom_endpoint_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1491,7 +1491,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("region not set")]
-        [ExpectedException(typeof(AmazonClientException), "Region must be set")]
+        [ExpectedException(typeof(AmazonClientException), @"Region must be set")]
         public void Region_not_set_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1503,7 +1503,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("invalid partition")]
-        [ExpectedException(typeof(AmazonClientException), "Invalid region: region was not a valid DNS name.")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid region: region was not a valid DNS name.")]
         public void Invalid_partition_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1516,7 +1516,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("ListRegionalBuckets + OutpostId without accountId set.")]
-        [ExpectedException(typeof(AmazonClientException), "AccountId is required but not set")]
+        [ExpectedException(typeof(AmazonClientException), @"AccountId is required but not set")]
         public void ListRegionalBuckets_OutpostId_without_accountId_set_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1534,7 +1534,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("ListRegionalBuckets + OutpostId with invalid accountId set.")]
-        [ExpectedException(typeof(AmazonClientException), "AccountId must only contain a-z, A-Z, 0-9 and `-`.")]
+        [ExpectedException(typeof(AmazonClientException), @"AccountId must only contain a-z, A-Z, 0-9 and `-`.")]
         public void ListRegionalBuckets_OutpostId_with_invalid_accountId_set_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1553,7 +1553,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("accesspoint set but missing accountId")]
-        [ExpectedException(typeof(AmazonClientException), "AccountId is required but not set")]
+        [ExpectedException(typeof(AmazonClientException), @"AccountId is required but not set")]
         public void Accesspoint_set_but_missing_accountId_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1570,7 +1570,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("outpost accesspoint ARN with missing accountId")]
-        [ExpectedException(typeof(AmazonClientException), "Invalid ARN: missing account ID")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: missing account ID")]
         public void Outpost_accesspoint_ARN_with_missing_accountId_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1587,7 +1587,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("bucket ARN with missing accountId")]
-        [ExpectedException(typeof(AmazonClientException), "Invalid ARN: missing account ID")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: missing account ID")]
         public void Bucket_ARN_with_missing_accountId_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1643,7 +1643,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("Dualstack + Custom endpoint is not supported(non-arn)")]
-        [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: Dualstack and custom endpoint are not supported")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Dualstack and custom endpoint are not supported")]
         public void Dualstack_Custom_endpoint_is_not_supportednonarn_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1663,7 +1663,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("get bucket with endpoint_url and dualstack is not supported@us-west-2")]
-        [ExpectedException(typeof(AmazonClientException), "Invalid configuration: Outpost buckets do not support dual-stack")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid configuration: Outpost buckets do not support dual-stack")]
         public void Get_bucket_with_endpoint_url_and_dualstack_is_not_supporteduswest2_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1682,7 +1682,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("ListRegionalBuckets + OutpostId with fips in CN.")]
-        [ExpectedException(typeof(AmazonClientException), "Partition does not support FIPS")]
+        [ExpectedException(typeof(AmazonClientException), @"Partition does not support FIPS")]
         public void ListRegionalBuckets_OutpostId_with_fips_in_CN_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1701,7 +1701,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("ListRegionalBuckets + invalid OutpostId.")]
-        [ExpectedException(typeof(AmazonClientException), "OutpostId must only contain a-z, A-Z, 0-9 and `-`.")]
+        [ExpectedException(typeof(AmazonClientException), @"OutpostId must only contain a-z, A-Z, 0-9 and `-`.")]
         public void ListRegionalBuckets_invalid_OutpostId_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1720,7 +1720,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("bucket ARN with mismatched accountId")]
-        [ExpectedException(typeof(AmazonClientException), "Invalid ARN: the accountId specified in the ARN (`999999`) does not match the parameter (`0123456789012`)")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: the accountId specified in the ARN (`999999`) does not match the parameter (`0123456789012`)")]
         public void Bucket_ARN_with_mismatched_accountId_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1738,7 +1738,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("OutpostId with invalid region")]
-        [ExpectedException(typeof(AmazonClientException), "Invalid region: region was not a valid DNS name.")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid region: region was not a valid DNS name.")]
         public void OutpostId_with_invalid_region_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1774,7 +1774,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("Outpost Accesspoint ARN with arn region and client region mismatch with UseArnRegion=false")]
-        [ExpectedException(typeof(AmazonClientException), "Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`")]
         public void Outpost_Accesspoint_ARN_with_arn_region_and_client_region_mismatch_with_UseArnRegionfalse_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1793,7 +1793,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("Outpost Bucket ARN with arn region and client region mismatch with UseArnRegion=false")]
-        [ExpectedException(typeof(AmazonClientException), "Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`")]
         public void Outpost_Bucket_ARN_with_arn_region_and_client_region_mismatch_with_UseArnRegionfalse_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1848,7 +1848,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("Outpost Bucket ARN with partition mismatch with UseArnRegion=true")]
-        [ExpectedException(typeof(AmazonClientException), "Client was configured for partition `aws` but ARN has `aws-cn`")]
+        [ExpectedException(typeof(AmazonClientException), @"Client was configured for partition `aws` but ARN has `aws-cn`")]
         public void Outpost_Bucket_ARN_with_partition_mismatch_with_UseArnRegiontrue_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1867,7 +1867,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("Accesspoint ARN with partition mismatch and UseArnRegion=true")]
-        [ExpectedException(typeof(AmazonClientException), "Client was configured for partition `aws` but ARN has `aws-cn`")]
+        [ExpectedException(typeof(AmazonClientException), @"Client was configured for partition `aws` but ARN has `aws-cn`")]
         public void Accesspoint_ARN_with_partition_mismatch_and_UseArnRegiontrue_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1886,7 +1886,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("Accesspoint ARN with region mismatch, UseArnRegion=false and custom endpoint")]
-        [ExpectedException(typeof(AmazonClientException), "Invalid configuration: region from ARN `cn-north-1` does not match client region `us-west-2` and UseArnRegion is `false`")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid configuration: region from ARN `cn-north-1` does not match client region `us-west-2` and UseArnRegion is `false`")]
         public void Accesspoint_ARN_with_region_mismatch_UseArnRegionfalse_and_custom_endpoint_Test()
         {
             var parameters = new S3ControlEndpointParameters();

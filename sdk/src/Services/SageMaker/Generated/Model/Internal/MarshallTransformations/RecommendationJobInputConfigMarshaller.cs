@@ -72,6 +72,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetEndpoints())
+            {
+                context.Writer.WritePropertyName("Endpoints");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectEndpointsListValue in requestObject.Endpoints)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EndpointInfoMarshaller.Instance;
+                    marshaller.Marshall(requestObjectEndpointsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetJobDurationInSeconds())
             {
                 context.Writer.WritePropertyName("JobDurationInSeconds");

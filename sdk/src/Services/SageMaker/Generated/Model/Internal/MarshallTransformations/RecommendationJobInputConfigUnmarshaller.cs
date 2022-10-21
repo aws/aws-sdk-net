@@ -76,6 +76,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.EndpointConfigurations = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Endpoints", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<EndpointInfo, EndpointInfoUnmarshaller>(EndpointInfoUnmarshaller.Instance);
+                    unmarshalledObject.Endpoints = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("JobDurationInSeconds", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

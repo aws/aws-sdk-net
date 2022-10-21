@@ -512,7 +512,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("EventBridge")]
         [Description("For region us-iso-west-1 with FIPS enabled and DualStack enabled")]
-        [ExpectedException(typeof(AmazonClientException), "FIPS and DualStack are enabled, but this partition does not support one or both")]
+        [ExpectedException(typeof(AmazonClientException), @"FIPS and DualStack are enabled, but this partition does not support one or both")]
         public void For_region_usisowest1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new EventBridgeEndpointParameters();
@@ -542,7 +542,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("EventBridge")]
         [Description("For region us-iso-west-1 with FIPS disabled and DualStack enabled")]
-        [ExpectedException(typeof(AmazonClientException), "DualStack is enabled but this partition does not support DualStack")]
+        [ExpectedException(typeof(AmazonClientException), @"DualStack is enabled but this partition does not support DualStack")]
         public void For_region_usisowest1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new EventBridgeEndpointParameters();
@@ -1652,7 +1652,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("EventBridge")]
         [Description("For region us-iso-east-1 with FIPS enabled and DualStack enabled")]
-        [ExpectedException(typeof(AmazonClientException), "FIPS and DualStack are enabled, but this partition does not support one or both")]
+        [ExpectedException(typeof(AmazonClientException), @"FIPS and DualStack are enabled, but this partition does not support one or both")]
         public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new EventBridgeEndpointParameters();
@@ -1682,7 +1682,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("EventBridge")]
         [Description("For region us-iso-east-1 with FIPS disabled and DualStack enabled")]
-        [ExpectedException(typeof(AmazonClientException), "DualStack is enabled but this partition does not support DualStack")]
+        [ExpectedException(typeof(AmazonClientException), @"DualStack is enabled but this partition does not support DualStack")]
         public void For_region_usisoeast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new EventBridgeEndpointParameters();
@@ -2012,7 +2012,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("EventBridge")]
         [Description("For region us-isob-east-1 with FIPS enabled and DualStack enabled")]
-        [ExpectedException(typeof(AmazonClientException), "FIPS and DualStack are enabled, but this partition does not support one or both")]
+        [ExpectedException(typeof(AmazonClientException), @"FIPS and DualStack are enabled, but this partition does not support one or both")]
         public void For_region_usisobeast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new EventBridgeEndpointParameters();
@@ -2042,7 +2042,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("EventBridge")]
         [Description("For region us-isob-east-1 with FIPS disabled and DualStack enabled")]
-        [ExpectedException(typeof(AmazonClientException), "DualStack is enabled but this partition does not support DualStack")]
+        [ExpectedException(typeof(AmazonClientException), @"DualStack is enabled but this partition does not support DualStack")]
         public void For_region_usisobeast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new EventBridgeEndpointParameters();
@@ -2088,7 +2088,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("EventBridge")]
         [Description("For custom endpoint with fips enabled and dualstack disabled")]
-        [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: FIPS and custom endpoint are not supported")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
         public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new EventBridgeEndpointParameters();
@@ -2104,7 +2104,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("EventBridge")]
         [Description("For custom endpoint with fips disabled and dualstack enabled")]
-        [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: Dualstack and custom endpoint are not supported")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Dualstack and custom endpoint are not supported")]
         public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new EventBridgeEndpointParameters();
@@ -2136,7 +2136,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("EventBridge")]
         [Description("Valid EndpointId with dualstack disabled and fips enabled")]
-        [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: FIPS is not supported with EventBridge multi-region endpoints.")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS is not supported with EventBridge multi-region endpoints.")]
         public void Valid_EndpointId_with_dualstack_disabled_and_fips_enabled_Test()
         {
             var parameters = new EventBridgeEndpointParameters();
@@ -2152,7 +2152,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("EventBridge")]
         [Description("Valid EndpointId with dualstack enabled and fips enabled")]
-        [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: FIPS is not supported with EventBridge multi-region endpoints.")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS is not supported with EventBridge multi-region endpoints.")]
         public void Valid_EndpointId_with_dualstack_enabled_and_fips_enabled_Test()
         {
             var parameters = new EventBridgeEndpointParameters();
@@ -2168,7 +2168,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("EventBridge")]
         [Description("Invalid EndpointId")]
-        [ExpectedException(typeof(AmazonClientException), "EndpointId must be a valid host label.")]
+        [ExpectedException(typeof(AmazonClientException), @"EndpointId must be a valid host label.")]
         public void Invalid_EndpointId_Test()
         {
             var parameters = new EventBridgeEndpointParameters();
@@ -2184,7 +2184,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("EventBridge")]
         [Description("Invalid EndpointId (empty)")]
-        [ExpectedException(typeof(AmazonClientException), "EndpointId must be a valid host label.")]
+        [ExpectedException(typeof(AmazonClientException), @"EndpointId must be a valid host label.")]
         public void Invalid_EndpointId_empty_Test()
         {
             var parameters = new EventBridgeEndpointParameters();

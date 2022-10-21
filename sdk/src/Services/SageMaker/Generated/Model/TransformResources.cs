@@ -41,8 +41,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property InstanceCount. 
         /// <para>
-        /// The number of ML compute instances to use in the transform job. For distributed transform
-        /// jobs, specify a value greater than 1. The default value is <code>1</code>.
+        /// The number of ML compute instances to use in the transform job. The default value
+        /// is <code>1</code>, and the maximum is <code>100</code>. For distributed transform
+        /// jobs, specify a value greater than <code>1</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

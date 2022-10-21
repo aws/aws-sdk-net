@@ -71,7 +71,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Ep2hostlabel")]
         [Description("a space is never a valid hostlabel")]
-        [ExpectedException(typeof(AmazonClientException), "Invalid hostlabel")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid hostlabel")]
         public void A_space_is_never_a_valid_hostlabel_Test()
         {
             var parameters = new Ep2hostlabelEndpointParameters();
@@ -84,7 +84,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Ep2hostlabel")]
         [Description("an empty string is not a valid hostlabel")]
-        [ExpectedException(typeof(AmazonClientException), "Invalid hostlabel")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid hostlabel")]
         public void An_empty_string_is_not_a_valid_hostlabel_Test()
         {
             var parameters = new Ep2hostlabelEndpointParameters();
