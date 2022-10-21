@@ -32,7 +32,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ConnectContactLens")]
         [Description("For region ap-south-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_apsouth1_with_FIPS_enabled_and_DualStack_enabled_4f82dad27d3446c39108a56d05c2df0e_Test()
+        public void For_region_apsouth1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new ConnectContactLensEndpointParameters();
             parameters["Region"] = "ap-south-1";
@@ -47,7 +47,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ConnectContactLens")]
         [Description("For region ap-south-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_apsouth1_with_FIPS_enabled_and_DualStack_disabled_e1c2c7f13e024b05a1554e44141590ed_Test()
+        public void For_region_apsouth1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new ConnectContactLensEndpointParameters();
             parameters["Region"] = "ap-south-1";
@@ -62,7 +62,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ConnectContactLens")]
         [Description("For region ap-south-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_apsouth1_with_FIPS_disabled_and_DualStack_enabled_d2bb13164bcd45d29da11e01ab92f557_Test()
+        public void For_region_apsouth1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new ConnectContactLensEndpointParameters();
             parameters["Region"] = "ap-south-1";
@@ -77,7 +77,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ConnectContactLens")]
         [Description("For region ap-south-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_apsouth1_with_FIPS_disabled_and_DualStack_disabled_d0787b83d34249d8a9d34417053aa462_Test()
+        public void For_region_apsouth1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new ConnectContactLensEndpointParameters();
             parameters["Region"] = "ap-south-1";
@@ -92,7 +92,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ConnectContactLens")]
         [Description("For region ca-central-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_cacentral1_with_FIPS_enabled_and_DualStack_enabled_c6de36a97aba48ff9ef9ebdd22d4d138_Test()
+        public void For_region_cacentral1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new ConnectContactLensEndpointParameters();
             parameters["Region"] = "ca-central-1";
@@ -107,7 +107,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ConnectContactLens")]
         [Description("For region ca-central-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_cacentral1_with_FIPS_enabled_and_DualStack_disabled_ce8ea411ed474776a5134f30c60c3c83_Test()
+        public void For_region_cacentral1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new ConnectContactLensEndpointParameters();
             parameters["Region"] = "ca-central-1";
@@ -122,7 +122,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ConnectContactLens")]
         [Description("For region ca-central-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_cacentral1_with_FIPS_disabled_and_DualStack_enabled_a487ad4c38bf4918ba717684cd83690e_Test()
+        public void For_region_cacentral1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new ConnectContactLensEndpointParameters();
             parameters["Region"] = "ca-central-1";
@@ -137,7 +137,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ConnectContactLens")]
         [Description("For region ca-central-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_cacentral1_with_FIPS_disabled_and_DualStack_disabled_0c2629653b5140d482146db257cc73bc_Test()
+        public void For_region_cacentral1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new ConnectContactLensEndpointParameters();
             parameters["Region"] = "ca-central-1";
@@ -152,7 +152,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ConnectContactLens")]
         [Description("For region eu-central-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_eucentral1_with_FIPS_enabled_and_DualStack_enabled_a2ff05c925be4376bd1f7f5f71d4db97_Test()
+        public void For_region_eucentral1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new ConnectContactLensEndpointParameters();
             parameters["Region"] = "eu-central-1";
@@ -167,7 +167,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ConnectContactLens")]
         [Description("For region eu-central-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_eucentral1_with_FIPS_enabled_and_DualStack_disabled_060a17d0a5a94b3d8420fe8f9bb6f41a_Test()
+        public void For_region_eucentral1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new ConnectContactLensEndpointParameters();
             parameters["Region"] = "eu-central-1";
@@ -182,7 +182,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ConnectContactLens")]
         [Description("For region eu-central-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_enabled_05de81978ee34e05b3932832054e892b_Test()
+        public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new ConnectContactLensEndpointParameters();
             parameters["Region"] = "eu-central-1";
@@ -197,7 +197,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ConnectContactLens")]
         [Description("For region eu-central-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_disabled_19a0e9f4aa3a498889819b95f172ec09_Test()
+        public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new ConnectContactLensEndpointParameters();
             parameters["Region"] = "eu-central-1";
@@ -212,7 +212,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ConnectContactLens")]
         [Description("For region us-west-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_enabled_7000aa8315f84d358fe40ea8f9c6d039_Test()
+        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new ConnectContactLensEndpointParameters();
             parameters["Region"] = "us-west-2";
@@ -227,7 +227,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ConnectContactLens")]
         [Description("For region us-west-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_disabled_a4be12b6704d4e81a870f7bbe7191288_Test()
+        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new ConnectContactLensEndpointParameters();
             parameters["Region"] = "us-west-2";
@@ -242,7 +242,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ConnectContactLens")]
         [Description("For region us-west-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_enabled_55a0a1daf20a4f5fa78d05a20a20d856_Test()
+        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new ConnectContactLensEndpointParameters();
             parameters["Region"] = "us-west-2";
@@ -257,7 +257,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ConnectContactLens")]
         [Description("For region us-west-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_disabled_7139fba8899c45b998649b27c8f825fd_Test()
+        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new ConnectContactLensEndpointParameters();
             parameters["Region"] = "us-west-2";
@@ -272,7 +272,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ConnectContactLens")]
         [Description("For region eu-west-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_euwest2_with_FIPS_enabled_and_DualStack_enabled_dd0f7d4f6c874dbfb1e699982edb8f13_Test()
+        public void For_region_euwest2_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new ConnectContactLensEndpointParameters();
             parameters["Region"] = "eu-west-2";
@@ -287,7 +287,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ConnectContactLens")]
         [Description("For region eu-west-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_euwest2_with_FIPS_enabled_and_DualStack_disabled_a82616772eba4585b8b9f13ec6677d88_Test()
+        public void For_region_euwest2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new ConnectContactLensEndpointParameters();
             parameters["Region"] = "eu-west-2";
@@ -302,7 +302,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ConnectContactLens")]
         [Description("For region eu-west-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_euwest2_with_FIPS_disabled_and_DualStack_enabled_a9d18b1856644edb82e394043ca40c66_Test()
+        public void For_region_euwest2_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new ConnectContactLensEndpointParameters();
             parameters["Region"] = "eu-west-2";
@@ -317,7 +317,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ConnectContactLens")]
         [Description("For region eu-west-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_euwest2_with_FIPS_disabled_and_DualStack_disabled_62224770829846c596b0297eedab6f15_Test()
+        public void For_region_euwest2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new ConnectContactLensEndpointParameters();
             parameters["Region"] = "eu-west-2";
@@ -332,7 +332,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ConnectContactLens")]
         [Description("For region ap-northeast-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_apnortheast2_with_FIPS_enabled_and_DualStack_enabled_7760451faa514cc0ae7acc0d609440ce_Test()
+        public void For_region_apnortheast2_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new ConnectContactLensEndpointParameters();
             parameters["Region"] = "ap-northeast-2";
@@ -347,7 +347,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ConnectContactLens")]
         [Description("For region ap-northeast-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_apnortheast2_with_FIPS_enabled_and_DualStack_disabled_25581e6c81b24f0c970888956bd20e5f_Test()
+        public void For_region_apnortheast2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new ConnectContactLensEndpointParameters();
             parameters["Region"] = "ap-northeast-2";
@@ -362,7 +362,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ConnectContactLens")]
         [Description("For region ap-northeast-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_apnortheast2_with_FIPS_disabled_and_DualStack_enabled_0b88ae98e45049c9b8b51e90aa35edd8_Test()
+        public void For_region_apnortheast2_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new ConnectContactLensEndpointParameters();
             parameters["Region"] = "ap-northeast-2";
@@ -377,7 +377,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ConnectContactLens")]
         [Description("For region ap-northeast-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_apnortheast2_with_FIPS_disabled_and_DualStack_disabled_034eb649741a4aceb899a1237fa08f62_Test()
+        public void For_region_apnortheast2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new ConnectContactLensEndpointParameters();
             parameters["Region"] = "ap-northeast-2";
@@ -392,7 +392,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ConnectContactLens")]
         [Description("For region ap-northeast-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_enabled_1f9d1ec409ce4b38b7561a6b392b1509_Test()
+        public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new ConnectContactLensEndpointParameters();
             parameters["Region"] = "ap-northeast-1";
@@ -407,7 +407,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ConnectContactLens")]
         [Description("For region ap-northeast-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_disabled_c0216dc976894a17bc9231c8c3c6d9a6_Test()
+        public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new ConnectContactLensEndpointParameters();
             parameters["Region"] = "ap-northeast-1";
@@ -422,7 +422,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ConnectContactLens")]
         [Description("For region ap-northeast-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_enabled_5e34145e793b492d9f8939572789e03d_Test()
+        public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new ConnectContactLensEndpointParameters();
             parameters["Region"] = "ap-northeast-1";
@@ -437,7 +437,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ConnectContactLens")]
         [Description("For region ap-northeast-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_disabled_886646ed7a9e4d11914554607abc9594_Test()
+        public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new ConnectContactLensEndpointParameters();
             parameters["Region"] = "ap-northeast-1";
@@ -452,7 +452,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ConnectContactLens")]
         [Description("For region ap-southeast-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_apsoutheast1_with_FIPS_enabled_and_DualStack_enabled_b946209efb5e4b738f6693431dadbd15_Test()
+        public void For_region_apsoutheast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new ConnectContactLensEndpointParameters();
             parameters["Region"] = "ap-southeast-1";
@@ -467,7 +467,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ConnectContactLens")]
         [Description("For region ap-southeast-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_apsoutheast1_with_FIPS_enabled_and_DualStack_disabled_b4c91c1ca76f4f5395f53d5e3bc5fc84_Test()
+        public void For_region_apsoutheast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new ConnectContactLensEndpointParameters();
             parameters["Region"] = "ap-southeast-1";
@@ -482,7 +482,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ConnectContactLens")]
         [Description("For region ap-southeast-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_apsoutheast1_with_FIPS_disabled_and_DualStack_enabled_3cec33ddcac24c07b78c0a69422dd7b5_Test()
+        public void For_region_apsoutheast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new ConnectContactLensEndpointParameters();
             parameters["Region"] = "ap-southeast-1";
@@ -497,7 +497,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ConnectContactLens")]
         [Description("For region ap-southeast-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_apsoutheast1_with_FIPS_disabled_and_DualStack_disabled_d60897f329524fbab8cba80d0bb04ffe_Test()
+        public void For_region_apsoutheast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new ConnectContactLensEndpointParameters();
             parameters["Region"] = "ap-southeast-1";
@@ -512,7 +512,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ConnectContactLens")]
         [Description("For region ap-southeast-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_apsoutheast2_with_FIPS_enabled_and_DualStack_enabled_f76f6d89241f4348b5a34edec4824e28_Test()
+        public void For_region_apsoutheast2_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new ConnectContactLensEndpointParameters();
             parameters["Region"] = "ap-southeast-2";
@@ -527,7 +527,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ConnectContactLens")]
         [Description("For region ap-southeast-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_apsoutheast2_with_FIPS_enabled_and_DualStack_disabled_1f9e6aaceb9348f2902044a58578962a_Test()
+        public void For_region_apsoutheast2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new ConnectContactLensEndpointParameters();
             parameters["Region"] = "ap-southeast-2";
@@ -542,7 +542,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ConnectContactLens")]
         [Description("For region ap-southeast-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_apsoutheast2_with_FIPS_disabled_and_DualStack_enabled_3d1ce41baf5843fcbebba5383f6a936b_Test()
+        public void For_region_apsoutheast2_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new ConnectContactLensEndpointParameters();
             parameters["Region"] = "ap-southeast-2";
@@ -557,7 +557,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ConnectContactLens")]
         [Description("For region ap-southeast-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_apsoutheast2_with_FIPS_disabled_and_DualStack_disabled_6ee39dd6d2054e308be8f038508eb74a_Test()
+        public void For_region_apsoutheast2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new ConnectContactLensEndpointParameters();
             parameters["Region"] = "ap-southeast-2";
@@ -572,7 +572,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ConnectContactLens")]
         [Description("For region us-east-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_5b9856b75f0641c19c11f8d6d82895b8_Test()
+        public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new ConnectContactLensEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -587,7 +587,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ConnectContactLens")]
         [Description("For region us-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_cb5c0e68b9ef402e82b579c30dd444b3_Test()
+        public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new ConnectContactLensEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -602,7 +602,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ConnectContactLens")]
         [Description("For region us-east-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_fe9632d6ca6048518c3539e97a19231b_Test()
+        public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new ConnectContactLensEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -617,7 +617,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ConnectContactLens")]
         [Description("For region us-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_7775deb28426411eab4e18cf8b0b9c6b_Test()
+        public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new ConnectContactLensEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -632,7 +632,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ConnectContactLens")]
         [Description("For custom endpoint with fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_f845266d15c648629c47368857f8cc27_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new ConnectContactLensEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -649,7 +649,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("ConnectContactLens")]
         [Description("For custom endpoint with fips enabled and dualstack disabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: FIPS and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_25bf9a52d2fd4d249337f46d0ecdb4c2_Test()
+        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new ConnectContactLensEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -665,7 +665,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("ConnectContactLens")]
         [Description("For custom endpoint with fips disabled and dualstack enabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: Dualstack and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_308d29364a6347959b7600b94ea1b682_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new ConnectContactLensEndpointParameters();
             parameters["Region"] = "us-east-1";

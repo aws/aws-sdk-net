@@ -32,7 +32,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DeviceFarm")]
         [Description("For region us-west-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_enabled_5906caf1b53a49b38f48e4c3c2e6d290_Test()
+        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new DeviceFarmEndpointParameters();
             parameters["Region"] = "us-west-2";
@@ -47,7 +47,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DeviceFarm")]
         [Description("For region us-west-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_disabled_0a16d644dda840d6af6adbfd403d602e_Test()
+        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new DeviceFarmEndpointParameters();
             parameters["Region"] = "us-west-2";
@@ -62,7 +62,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DeviceFarm")]
         [Description("For region us-west-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_enabled_2d47c7b4297749be9193ad21dc6d79d9_Test()
+        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new DeviceFarmEndpointParameters();
             parameters["Region"] = "us-west-2";
@@ -77,7 +77,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DeviceFarm")]
         [Description("For region us-west-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_disabled_74751a13305647549a28d4281af35091_Test()
+        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new DeviceFarmEndpointParameters();
             parameters["Region"] = "us-west-2";
@@ -92,7 +92,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DeviceFarm")]
         [Description("For custom endpoint with fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_6f5fad7e7ab0478bae8d3961918403b8_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new DeviceFarmEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -109,7 +109,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("DeviceFarm")]
         [Description("For custom endpoint with fips enabled and dualstack disabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: FIPS and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_c7bc88685a4541bf9eb3004ceb20ec82_Test()
+        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new DeviceFarmEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -125,7 +125,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("DeviceFarm")]
         [Description("For custom endpoint with fips disabled and dualstack enabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: Dualstack and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_844273dd481f4d14b2f1205fb52ce0c3_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new DeviceFarmEndpointParameters();
             parameters["Region"] = "us-east-1";

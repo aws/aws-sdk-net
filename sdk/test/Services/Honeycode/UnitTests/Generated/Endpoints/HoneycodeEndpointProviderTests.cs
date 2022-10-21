@@ -32,7 +32,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Honeycode")]
         [Description("For region us-west-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_enabled_1023695f362f4ec4b7aa0848015fb287_Test()
+        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new HoneycodeEndpointParameters();
             parameters["Region"] = "us-west-2";
@@ -47,7 +47,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Honeycode")]
         [Description("For region us-west-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_disabled_824263756903453aabe1e4783aef5c52_Test()
+        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new HoneycodeEndpointParameters();
             parameters["Region"] = "us-west-2";
@@ -62,7 +62,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Honeycode")]
         [Description("For region us-west-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_enabled_dc97a6a94baa4f6a903ee617e3b15936_Test()
+        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new HoneycodeEndpointParameters();
             parameters["Region"] = "us-west-2";
@@ -77,7 +77,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Honeycode")]
         [Description("For region us-west-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_disabled_0c5e4b18e7bb40d98c895b3efba2be7d_Test()
+        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new HoneycodeEndpointParameters();
             parameters["Region"] = "us-west-2";
@@ -92,7 +92,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Honeycode")]
         [Description("For custom endpoint with fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_518e9c38e06b4eaf9b0e64759e37f000_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new HoneycodeEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -109,7 +109,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Honeycode")]
         [Description("For custom endpoint with fips enabled and dualstack disabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: FIPS and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_709175e7d0c34f88ad25319772b161ed_Test()
+        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new HoneycodeEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -125,7 +125,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Honeycode")]
         [Description("For custom endpoint with fips disabled and dualstack enabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: Dualstack and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_84cb4038001a44139b59acba59199811_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new HoneycodeEndpointParameters();
             parameters["Region"] = "us-east-1";

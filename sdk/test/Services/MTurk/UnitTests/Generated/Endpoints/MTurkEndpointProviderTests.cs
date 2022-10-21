@@ -32,7 +32,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("MTurk")]
         [Description("For region us-east-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_895cf2894fbf4fe8982a5a1f250d3e05_Test()
+        public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new MTurkEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -47,7 +47,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("MTurk")]
         [Description("For region us-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_21c37a913f1e433c87bd0a52b98bc876_Test()
+        public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new MTurkEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -62,7 +62,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("MTurk")]
         [Description("For region us-east-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_e0e96f0ff8a14c9fa1d32b4560d9e560_Test()
+        public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new MTurkEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -77,7 +77,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("MTurk")]
         [Description("For region us-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_daf70a76d87e4ab58914c2d954fdb09d_Test()
+        public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new MTurkEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -92,7 +92,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("MTurk")]
         [Description("For custom endpoint with fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_3c1a508664884d068eb25de838cc0534_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new MTurkEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -109,7 +109,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("MTurk")]
         [Description("For custom endpoint with fips enabled and dualstack disabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: FIPS and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_272d9ab5aa754f3a8277f0e4420f329b_Test()
+        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new MTurkEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -125,7 +125,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("MTurk")]
         [Description("For custom endpoint with fips disabled and dualstack enabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: Dualstack and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_8f04b4e4c06b4480b09aa14249a61c5e_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new MTurkEndpointParameters();
             parameters["Region"] = "us-east-1";

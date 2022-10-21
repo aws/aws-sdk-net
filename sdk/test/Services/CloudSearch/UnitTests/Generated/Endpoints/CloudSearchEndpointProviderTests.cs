@@ -32,7 +32,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudSearch")]
         [Description("For region eu-central-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_eucentral1_with_FIPS_enabled_and_DualStack_enabled_982b38478f9446d788a7262f49d34578_Test()
+        public void For_region_eucentral1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new CloudSearchEndpointParameters();
             parameters["Region"] = "eu-central-1";
@@ -47,7 +47,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudSearch")]
         [Description("For region eu-central-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_eucentral1_with_FIPS_enabled_and_DualStack_disabled_58fa86f2a9a94c239cac3c660af9926d_Test()
+        public void For_region_eucentral1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new CloudSearchEndpointParameters();
             parameters["Region"] = "eu-central-1";
@@ -62,7 +62,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudSearch")]
         [Description("For region eu-central-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_enabled_c1cd5644dd8948dea5a0a4ff6a961b57_Test()
+        public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new CloudSearchEndpointParameters();
             parameters["Region"] = "eu-central-1";
@@ -77,7 +77,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudSearch")]
         [Description("For region eu-central-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_disabled_8e2395fa3da14fc198fca9075174af7d_Test()
+        public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new CloudSearchEndpointParameters();
             parameters["Region"] = "eu-central-1";
@@ -92,7 +92,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudSearch")]
         [Description("For region us-west-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_uswest1_with_FIPS_enabled_and_DualStack_enabled_29001864ba3d4ba9909c539720f18ee2_Test()
+        public void For_region_uswest1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new CloudSearchEndpointParameters();
             parameters["Region"] = "us-west-1";
@@ -107,7 +107,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudSearch")]
         [Description("For region us-west-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_uswest1_with_FIPS_enabled_and_DualStack_disabled_a9c6cc9f4ba2415ab1d1afdc0644114d_Test()
+        public void For_region_uswest1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new CloudSearchEndpointParameters();
             parameters["Region"] = "us-west-1";
@@ -122,7 +122,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudSearch")]
         [Description("For region us-west-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_uswest1_with_FIPS_disabled_and_DualStack_enabled_668e8eceedf944cd8724d95bc54b869d_Test()
+        public void For_region_uswest1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new CloudSearchEndpointParameters();
             parameters["Region"] = "us-west-1";
@@ -137,7 +137,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudSearch")]
         [Description("For region us-west-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_uswest1_with_FIPS_disabled_and_DualStack_disabled_400d3c343d504c7fa846607f7afc5fec_Test()
+        public void For_region_uswest1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new CloudSearchEndpointParameters();
             parameters["Region"] = "us-west-1";
@@ -152,7 +152,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudSearch")]
         [Description("For region us-west-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_enabled_53f528636962496b9a3b71666176ccfd_Test()
+        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new CloudSearchEndpointParameters();
             parameters["Region"] = "us-west-2";
@@ -167,7 +167,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudSearch")]
         [Description("For region us-west-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_disabled_05d81a6c2e68471fa63f5f53302b64e0_Test()
+        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new CloudSearchEndpointParameters();
             parameters["Region"] = "us-west-2";
@@ -182,7 +182,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudSearch")]
         [Description("For region us-west-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_enabled_a44b42bb6f6c4d10b2828f365cebb4ab_Test()
+        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new CloudSearchEndpointParameters();
             parameters["Region"] = "us-west-2";
@@ -197,7 +197,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudSearch")]
         [Description("For region us-west-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_disabled_15eb7e2f6efb435090efa2597ab3a291_Test()
+        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new CloudSearchEndpointParameters();
             parameters["Region"] = "us-west-2";
@@ -212,7 +212,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudSearch")]
         [Description("For region eu-west-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_euwest1_with_FIPS_enabled_and_DualStack_enabled_cb1ff9d724d04a0fb620f9d08e09eca3_Test()
+        public void For_region_euwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new CloudSearchEndpointParameters();
             parameters["Region"] = "eu-west-1";
@@ -227,7 +227,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudSearch")]
         [Description("For region eu-west-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_euwest1_with_FIPS_enabled_and_DualStack_disabled_0b73a341c3204c8c940ce0a4694a7db5_Test()
+        public void For_region_euwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new CloudSearchEndpointParameters();
             parameters["Region"] = "eu-west-1";
@@ -242,7 +242,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudSearch")]
         [Description("For region eu-west-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_euwest1_with_FIPS_disabled_and_DualStack_enabled_b2043b0e045f4f1abc5df7de81d88b12_Test()
+        public void For_region_euwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new CloudSearchEndpointParameters();
             parameters["Region"] = "eu-west-1";
@@ -257,7 +257,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudSearch")]
         [Description("For region eu-west-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_euwest1_with_FIPS_disabled_and_DualStack_disabled_e20d5645349e4b77bfe652b53f582a93_Test()
+        public void For_region_euwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new CloudSearchEndpointParameters();
             parameters["Region"] = "eu-west-1";
@@ -272,7 +272,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudSearch")]
         [Description("For region ap-northeast-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_apnortheast2_with_FIPS_enabled_and_DualStack_enabled_8c9f0438c13546b6a9398b7e3ea7d7ed_Test()
+        public void For_region_apnortheast2_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new CloudSearchEndpointParameters();
             parameters["Region"] = "ap-northeast-2";
@@ -287,7 +287,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudSearch")]
         [Description("For region ap-northeast-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_apnortheast2_with_FIPS_enabled_and_DualStack_disabled_c87da98085924049a51fa10bbe8a45eb_Test()
+        public void For_region_apnortheast2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new CloudSearchEndpointParameters();
             parameters["Region"] = "ap-northeast-2";
@@ -302,7 +302,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudSearch")]
         [Description("For region ap-northeast-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_apnortheast2_with_FIPS_disabled_and_DualStack_enabled_c1d04b4cf1314bf483faff7f530d32e5_Test()
+        public void For_region_apnortheast2_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new CloudSearchEndpointParameters();
             parameters["Region"] = "ap-northeast-2";
@@ -317,7 +317,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudSearch")]
         [Description("For region ap-northeast-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_apnortheast2_with_FIPS_disabled_and_DualStack_disabled_e447e8df2c2a473c9670dde3f6b2125d_Test()
+        public void For_region_apnortheast2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new CloudSearchEndpointParameters();
             parameters["Region"] = "ap-northeast-2";
@@ -332,7 +332,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudSearch")]
         [Description("For region ap-northeast-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_enabled_b0c25da6b728467385beed8adc1a163a_Test()
+        public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new CloudSearchEndpointParameters();
             parameters["Region"] = "ap-northeast-1";
@@ -347,7 +347,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudSearch")]
         [Description("For region ap-northeast-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_disabled_910bfa7f06b848e19ad91d58cb1e1ee1_Test()
+        public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new CloudSearchEndpointParameters();
             parameters["Region"] = "ap-northeast-1";
@@ -362,7 +362,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudSearch")]
         [Description("For region ap-northeast-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_enabled_1a3f3e60f9364e5abc81162f50dcd045_Test()
+        public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new CloudSearchEndpointParameters();
             parameters["Region"] = "ap-northeast-1";
@@ -377,7 +377,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudSearch")]
         [Description("For region ap-northeast-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_disabled_3f5f74e11b3543109b944722a2ea8d03_Test()
+        public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new CloudSearchEndpointParameters();
             parameters["Region"] = "ap-northeast-1";
@@ -392,7 +392,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudSearch")]
         [Description("For region sa-east-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_saeast1_with_FIPS_enabled_and_DualStack_enabled_ee4813353f004994835f6c5e467af52e_Test()
+        public void For_region_saeast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new CloudSearchEndpointParameters();
             parameters["Region"] = "sa-east-1";
@@ -407,7 +407,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudSearch")]
         [Description("For region sa-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_saeast1_with_FIPS_enabled_and_DualStack_disabled_687017210659482bab627189589829e6_Test()
+        public void For_region_saeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new CloudSearchEndpointParameters();
             parameters["Region"] = "sa-east-1";
@@ -422,7 +422,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudSearch")]
         [Description("For region sa-east-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_saeast1_with_FIPS_disabled_and_DualStack_enabled_f2404f14bae04a85ae63a0f4d33e1275_Test()
+        public void For_region_saeast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new CloudSearchEndpointParameters();
             parameters["Region"] = "sa-east-1";
@@ -437,7 +437,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudSearch")]
         [Description("For region sa-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_saeast1_with_FIPS_disabled_and_DualStack_disabled_505ac62344484848bad5a0faf36d223e_Test()
+        public void For_region_saeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new CloudSearchEndpointParameters();
             parameters["Region"] = "sa-east-1";
@@ -452,7 +452,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudSearch")]
         [Description("For region ap-southeast-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_apsoutheast1_with_FIPS_enabled_and_DualStack_enabled_4a2765822c484e2faa22677a3c5ae86f_Test()
+        public void For_region_apsoutheast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new CloudSearchEndpointParameters();
             parameters["Region"] = "ap-southeast-1";
@@ -467,7 +467,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudSearch")]
         [Description("For region ap-southeast-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_apsoutheast1_with_FIPS_enabled_and_DualStack_disabled_f55f3f47ea4149d6860100fc4c5fde84_Test()
+        public void For_region_apsoutheast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new CloudSearchEndpointParameters();
             parameters["Region"] = "ap-southeast-1";
@@ -482,7 +482,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudSearch")]
         [Description("For region ap-southeast-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_apsoutheast1_with_FIPS_disabled_and_DualStack_enabled_a31e1e9011b1480382ca9b21f6ce4018_Test()
+        public void For_region_apsoutheast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new CloudSearchEndpointParameters();
             parameters["Region"] = "ap-southeast-1";
@@ -497,7 +497,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudSearch")]
         [Description("For region ap-southeast-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_apsoutheast1_with_FIPS_disabled_and_DualStack_disabled_6cd02b484bea4e8699b2cde2d6104f94_Test()
+        public void For_region_apsoutheast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new CloudSearchEndpointParameters();
             parameters["Region"] = "ap-southeast-1";
@@ -512,7 +512,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudSearch")]
         [Description("For region ap-southeast-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_apsoutheast2_with_FIPS_enabled_and_DualStack_enabled_98b3fda054ef4681b30272f85e2350b1_Test()
+        public void For_region_apsoutheast2_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new CloudSearchEndpointParameters();
             parameters["Region"] = "ap-southeast-2";
@@ -527,7 +527,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudSearch")]
         [Description("For region ap-southeast-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_apsoutheast2_with_FIPS_enabled_and_DualStack_disabled_7d046ae30ff54dd2961f830c2ba4bb60_Test()
+        public void For_region_apsoutheast2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new CloudSearchEndpointParameters();
             parameters["Region"] = "ap-southeast-2";
@@ -542,7 +542,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudSearch")]
         [Description("For region ap-southeast-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_apsoutheast2_with_FIPS_disabled_and_DualStack_enabled_9b15adc4d97c4a2799672e4223b948fc_Test()
+        public void For_region_apsoutheast2_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new CloudSearchEndpointParameters();
             parameters["Region"] = "ap-southeast-2";
@@ -557,7 +557,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudSearch")]
         [Description("For region ap-southeast-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_apsoutheast2_with_FIPS_disabled_and_DualStack_disabled_35a57908b5ff45df8ab530175af82bbe_Test()
+        public void For_region_apsoutheast2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new CloudSearchEndpointParameters();
             parameters["Region"] = "ap-southeast-2";
@@ -572,7 +572,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudSearch")]
         [Description("For region us-east-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_a2c5f44ac8964f429f1dc87be3b0599d_Test()
+        public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new CloudSearchEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -587,7 +587,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudSearch")]
         [Description("For region us-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_8fd97709907940c4a4311b4279ea94df_Test()
+        public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new CloudSearchEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -602,7 +602,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudSearch")]
         [Description("For region us-east-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_16a77ce66aff450589543c5f8c11d348_Test()
+        public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new CloudSearchEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -617,7 +617,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudSearch")]
         [Description("For region us-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_74c7752fab2646b788cb84f8996fb717_Test()
+        public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new CloudSearchEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -632,7 +632,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudSearch")]
         [Description("For custom endpoint with fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_9cee625f439b4952b0ec5c7f47b4121c_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new CloudSearchEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -649,7 +649,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("CloudSearch")]
         [Description("For custom endpoint with fips enabled and dualstack disabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: FIPS and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_15fe1012e37c44a1b412ab6f758497a1_Test()
+        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new CloudSearchEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -665,7 +665,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("CloudSearch")]
         [Description("For custom endpoint with fips disabled and dualstack enabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: Dualstack and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_0570d6b869b84e5aa15d00945bb9abe6_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new CloudSearchEndpointParameters();
             parameters["Region"] = "us-east-1";

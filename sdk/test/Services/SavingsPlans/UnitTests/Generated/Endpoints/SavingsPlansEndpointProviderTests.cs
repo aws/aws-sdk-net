@@ -32,7 +32,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("SavingsPlans")]
         [Description("For region aws-global with FIPS disabled and DualStack disabled")]
-        public void For_region_awsglobal_with_FIPS_disabled_and_DualStack_disabled_345b23ff7b2d4d54b95a84cd8365dc6a_Test()
+        public void For_region_awsglobal_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new SavingsPlansEndpointParameters();
             parameters["Region"] = "aws-global";
@@ -47,7 +47,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("SavingsPlans")]
         [Description("For custom endpoint with fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_d80a0894a8db4c7eb23b6a599bd876f2_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new SavingsPlansEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -64,7 +64,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("SavingsPlans")]
         [Description("For custom endpoint with fips enabled and dualstack disabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: FIPS and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_c614c82db84847db95f34e9395cd9bc3_Test()
+        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new SavingsPlansEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -80,7 +80,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("SavingsPlans")]
         [Description("For custom endpoint with fips disabled and dualstack enabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: Dualstack and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_df38067eac2d4157a81d0a27414b2b7e_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new SavingsPlansEndpointParameters();
             parameters["Region"] = "us-east-1";

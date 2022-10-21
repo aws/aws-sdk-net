@@ -32,7 +32,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("AWSHealth")]
         [Description("For region aws-global with FIPS disabled and DualStack disabled")]
-        public void For_region_awsglobal_with_FIPS_disabled_and_DualStack_disabled_6f075c4c7af94bca9ac091ca573b718b_Test()
+        public void For_region_awsglobal_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new AWSHealthEndpointParameters();
             parameters["Region"] = "aws-global";
@@ -47,7 +47,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("AWSHealth")]
         [Description("For region us-gov-west-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_enabled_11d3b26244bc417fb1c42b391246a15b_Test()
+        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new AWSHealthEndpointParameters();
             parameters["Region"] = "us-gov-west-1";
@@ -62,7 +62,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("AWSHealth")]
         [Description("For region us-gov-west-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_disabled_063ca1fe39c6419c9158fce4225635b6_Test()
+        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new AWSHealthEndpointParameters();
             parameters["Region"] = "us-gov-west-1";
@@ -77,7 +77,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("AWSHealth")]
         [Description("For region us-gov-west-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_enabled_2eb2fdb802e84b48a600a75c4411750c_Test()
+        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new AWSHealthEndpointParameters();
             parameters["Region"] = "us-gov-west-1";
@@ -92,7 +92,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("AWSHealth")]
         [Description("For region us-gov-west-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_disabled_799765a80e0c4a5ebcb38a551166a5e2_Test()
+        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new AWSHealthEndpointParameters();
             parameters["Region"] = "us-gov-west-1";
@@ -107,7 +107,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("AWSHealth")]
         [Description("For custom endpoint with fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_a963188d917946149c1a1e847ed442f1_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new AWSHealthEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -124,7 +124,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("AWSHealth")]
         [Description("For custom endpoint with fips enabled and dualstack disabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: FIPS and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_6893c170cca74564ae3922872a625e90_Test()
+        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new AWSHealthEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -140,7 +140,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("AWSHealth")]
         [Description("For custom endpoint with fips disabled and dualstack enabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: Dualstack and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_e10e2390cf2c4f40a7c9e1754bd2cfc2_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new AWSHealthEndpointParameters();
             parameters["Region"] = "us-east-1";

@@ -32,7 +32,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Private5G")]
         [Description("For custom endpoint with fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_489c4996dfdf491887d73122937b0b01_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new Private5GEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Private5G")]
         [Description("For custom endpoint with fips enabled and dualstack disabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: FIPS and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_ff086e54fa544ccb91a46e110d60796e_Test()
+        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new Private5GEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -65,7 +65,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Private5G")]
         [Description("For custom endpoint with fips disabled and dualstack enabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: Dualstack and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_8a42606a55894f5ab596c44ab550185e_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new Private5GEndpointParameters();
             parameters["Region"] = "us-east-1";

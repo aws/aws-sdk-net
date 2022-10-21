@@ -32,7 +32,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("WorkLink")]
         [Description("For custom endpoint with fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_fe654540bcf44d6480ee4f0eb5f43c20_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new WorkLinkEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("WorkLink")]
         [Description("For custom endpoint with fips enabled and dualstack disabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: FIPS and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_ec02bd90f210447da7325afcbbff0c26_Test()
+        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new WorkLinkEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -65,7 +65,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("WorkLink")]
         [Description("For custom endpoint with fips disabled and dualstack enabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: Dualstack and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_6c70ce9e495542648af0f4d6e1028e4d_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new WorkLinkEndpointParameters();
             parameters["Region"] = "us-east-1";

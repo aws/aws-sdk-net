@@ -32,7 +32,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Imagebuilder")]
         [Description("For custom endpoint with fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_94a0c20bf6084fe483143871c3d89808_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new ImagebuilderEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Imagebuilder")]
         [Description("For custom endpoint with fips enabled and dualstack disabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: FIPS and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_11b6243b6b264ba2900da18f9b3927d8_Test()
+        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new ImagebuilderEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -65,7 +65,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Imagebuilder")]
         [Description("For custom endpoint with fips disabled and dualstack enabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: Dualstack and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_4d2771c2116840d8a09916b246330223_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new ImagebuilderEndpointParameters();
             parameters["Region"] = "us-east-1";

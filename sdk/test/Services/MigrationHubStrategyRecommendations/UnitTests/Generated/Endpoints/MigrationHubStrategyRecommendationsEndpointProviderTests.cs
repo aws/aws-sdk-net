@@ -32,7 +32,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("MigrationHubStrategyRecommendations")]
         [Description("For region eu-central-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_eucentral1_with_FIPS_enabled_and_DualStack_enabled_e0dfba35283d4a4d9487332a75cb98b8_Test()
+        public void For_region_eucentral1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new MigrationHubStrategyRecommendationsEndpointParameters();
             parameters["Region"] = "eu-central-1";
@@ -47,7 +47,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("MigrationHubStrategyRecommendations")]
         [Description("For region eu-central-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_eucentral1_with_FIPS_enabled_and_DualStack_disabled_814588cc09b84473b34815da56ec0add_Test()
+        public void For_region_eucentral1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new MigrationHubStrategyRecommendationsEndpointParameters();
             parameters["Region"] = "eu-central-1";
@@ -62,7 +62,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("MigrationHubStrategyRecommendations")]
         [Description("For region eu-central-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_enabled_528492dd2b1f470d925bb8e5545963c6_Test()
+        public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new MigrationHubStrategyRecommendationsEndpointParameters();
             parameters["Region"] = "eu-central-1";
@@ -77,7 +77,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("MigrationHubStrategyRecommendations")]
         [Description("For region eu-central-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_disabled_5b3dd8d88b164a8485dd1f2bbdc744b9_Test()
+        public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new MigrationHubStrategyRecommendationsEndpointParameters();
             parameters["Region"] = "eu-central-1";
@@ -92,7 +92,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("MigrationHubStrategyRecommendations")]
         [Description("For region us-west-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_enabled_b2153a545e744e34951caa2f461b4b04_Test()
+        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new MigrationHubStrategyRecommendationsEndpointParameters();
             parameters["Region"] = "us-west-2";
@@ -107,7 +107,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("MigrationHubStrategyRecommendations")]
         [Description("For region us-west-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_disabled_5ca014899db240068b28af596127be0d_Test()
+        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new MigrationHubStrategyRecommendationsEndpointParameters();
             parameters["Region"] = "us-west-2";
@@ -122,7 +122,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("MigrationHubStrategyRecommendations")]
         [Description("For region us-west-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_enabled_f5d39750c962406897d68ee928b4bb3a_Test()
+        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new MigrationHubStrategyRecommendationsEndpointParameters();
             parameters["Region"] = "us-west-2";
@@ -137,7 +137,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("MigrationHubStrategyRecommendations")]
         [Description("For region us-west-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_disabled_85966f77c79b480fb181b1335c9328ec_Test()
+        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new MigrationHubStrategyRecommendationsEndpointParameters();
             parameters["Region"] = "us-west-2";
@@ -152,7 +152,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("MigrationHubStrategyRecommendations")]
         [Description("For region eu-west-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_euwest2_with_FIPS_enabled_and_DualStack_enabled_0faa1b6978b24fa1a01bda704c261746_Test()
+        public void For_region_euwest2_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new MigrationHubStrategyRecommendationsEndpointParameters();
             parameters["Region"] = "eu-west-2";
@@ -167,7 +167,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("MigrationHubStrategyRecommendations")]
         [Description("For region eu-west-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_euwest2_with_FIPS_enabled_and_DualStack_disabled_7b3ec8f18157410f85c5815344807921_Test()
+        public void For_region_euwest2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new MigrationHubStrategyRecommendationsEndpointParameters();
             parameters["Region"] = "eu-west-2";
@@ -182,7 +182,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("MigrationHubStrategyRecommendations")]
         [Description("For region eu-west-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_euwest2_with_FIPS_disabled_and_DualStack_enabled_673940ad1f3846ae8a8792ed10c26b8b_Test()
+        public void For_region_euwest2_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new MigrationHubStrategyRecommendationsEndpointParameters();
             parameters["Region"] = "eu-west-2";
@@ -197,7 +197,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("MigrationHubStrategyRecommendations")]
         [Description("For region eu-west-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_euwest2_with_FIPS_disabled_and_DualStack_disabled_f59ffeff262f4149b00e41a970ad5fc4_Test()
+        public void For_region_euwest2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new MigrationHubStrategyRecommendationsEndpointParameters();
             parameters["Region"] = "eu-west-2";
@@ -212,7 +212,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("MigrationHubStrategyRecommendations")]
         [Description("For region eu-west-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_euwest1_with_FIPS_enabled_and_DualStack_enabled_cb08c5f7e0364b1b90c37c052ca27a89_Test()
+        public void For_region_euwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new MigrationHubStrategyRecommendationsEndpointParameters();
             parameters["Region"] = "eu-west-1";
@@ -227,7 +227,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("MigrationHubStrategyRecommendations")]
         [Description("For region eu-west-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_euwest1_with_FIPS_enabled_and_DualStack_disabled_9373ed814fd040939b3126031c7d35ab_Test()
+        public void For_region_euwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new MigrationHubStrategyRecommendationsEndpointParameters();
             parameters["Region"] = "eu-west-1";
@@ -242,7 +242,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("MigrationHubStrategyRecommendations")]
         [Description("For region eu-west-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_euwest1_with_FIPS_disabled_and_DualStack_enabled_21521e83fdea498f9e3550ade7466df5_Test()
+        public void For_region_euwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new MigrationHubStrategyRecommendationsEndpointParameters();
             parameters["Region"] = "eu-west-1";
@@ -257,7 +257,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("MigrationHubStrategyRecommendations")]
         [Description("For region eu-west-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_euwest1_with_FIPS_disabled_and_DualStack_disabled_28dfa74e6d7f4448b43d2aff154afaa7_Test()
+        public void For_region_euwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new MigrationHubStrategyRecommendationsEndpointParameters();
             parameters["Region"] = "eu-west-1";
@@ -272,7 +272,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("MigrationHubStrategyRecommendations")]
         [Description("For region ap-northeast-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_enabled_d6a8c51ff08948f5835dd0b70ed5c1e2_Test()
+        public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new MigrationHubStrategyRecommendationsEndpointParameters();
             parameters["Region"] = "ap-northeast-1";
@@ -287,7 +287,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("MigrationHubStrategyRecommendations")]
         [Description("For region ap-northeast-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_disabled_d49dc9d36c814691b742d7f75be80082_Test()
+        public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new MigrationHubStrategyRecommendationsEndpointParameters();
             parameters["Region"] = "ap-northeast-1";
@@ -302,7 +302,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("MigrationHubStrategyRecommendations")]
         [Description("For region ap-northeast-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_enabled_7bdee7fda3694529b4e6e1c34443e701_Test()
+        public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new MigrationHubStrategyRecommendationsEndpointParameters();
             parameters["Region"] = "ap-northeast-1";
@@ -317,7 +317,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("MigrationHubStrategyRecommendations")]
         [Description("For region ap-northeast-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_disabled_16565258e25b484cb03b5be8859127ea_Test()
+        public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new MigrationHubStrategyRecommendationsEndpointParameters();
             parameters["Region"] = "ap-northeast-1";
@@ -332,7 +332,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("MigrationHubStrategyRecommendations")]
         [Description("For region ap-southeast-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_apsoutheast2_with_FIPS_enabled_and_DualStack_enabled_df0ae4e465da4bcbbd63f69ae010393a_Test()
+        public void For_region_apsoutheast2_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new MigrationHubStrategyRecommendationsEndpointParameters();
             parameters["Region"] = "ap-southeast-2";
@@ -347,7 +347,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("MigrationHubStrategyRecommendations")]
         [Description("For region ap-southeast-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_apsoutheast2_with_FIPS_enabled_and_DualStack_disabled_ca7d61456ad1489eb9000aa2731a7a79_Test()
+        public void For_region_apsoutheast2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new MigrationHubStrategyRecommendationsEndpointParameters();
             parameters["Region"] = "ap-southeast-2";
@@ -362,7 +362,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("MigrationHubStrategyRecommendations")]
         [Description("For region ap-southeast-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_apsoutheast2_with_FIPS_disabled_and_DualStack_enabled_16c5cbfd6d164acf8db9d31846d6397c_Test()
+        public void For_region_apsoutheast2_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new MigrationHubStrategyRecommendationsEndpointParameters();
             parameters["Region"] = "ap-southeast-2";
@@ -377,7 +377,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("MigrationHubStrategyRecommendations")]
         [Description("For region ap-southeast-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_apsoutheast2_with_FIPS_disabled_and_DualStack_disabled_9a913ac787a94778bf29f68afe948168_Test()
+        public void For_region_apsoutheast2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new MigrationHubStrategyRecommendationsEndpointParameters();
             parameters["Region"] = "ap-southeast-2";
@@ -392,7 +392,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("MigrationHubStrategyRecommendations")]
         [Description("For region us-east-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_67360690c4ee4842834bf9c4bd65213d_Test()
+        public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new MigrationHubStrategyRecommendationsEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -407,7 +407,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("MigrationHubStrategyRecommendations")]
         [Description("For region us-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_be8e196967254bfab1d7d3b3c2476a85_Test()
+        public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new MigrationHubStrategyRecommendationsEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -422,7 +422,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("MigrationHubStrategyRecommendations")]
         [Description("For region us-east-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_48d78126f987421ab18cd36852cbdbe5_Test()
+        public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new MigrationHubStrategyRecommendationsEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -437,7 +437,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("MigrationHubStrategyRecommendations")]
         [Description("For region us-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_02367cab37b8405bb66bcb85141250f7_Test()
+        public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new MigrationHubStrategyRecommendationsEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -452,7 +452,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("MigrationHubStrategyRecommendations")]
         [Description("For custom endpoint with fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_a6e0b11c58ca450884b50920197d6c7b_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new MigrationHubStrategyRecommendationsEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -469,7 +469,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("MigrationHubStrategyRecommendations")]
         [Description("For custom endpoint with fips enabled and dualstack disabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: FIPS and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_bd7dbfbb55ca45019779c58d23be8831_Test()
+        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new MigrationHubStrategyRecommendationsEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -485,7 +485,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("MigrationHubStrategyRecommendations")]
         [Description("For custom endpoint with fips disabled and dualstack enabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: Dualstack and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_0a5d51eefa48419bbf10327faac06909_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new MigrationHubStrategyRecommendationsEndpointParameters();
             parameters["Region"] = "us-east-1";

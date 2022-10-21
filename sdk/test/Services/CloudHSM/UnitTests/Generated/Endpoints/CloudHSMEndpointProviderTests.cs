@@ -32,7 +32,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudHSM")]
         [Description("For region us-gov-west-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_enabled_18be2508e0f940c1a0a8ef47ff4101b0_Test()
+        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new CloudHSMEndpointParameters();
             parameters["Region"] = "us-gov-west-1";
@@ -47,7 +47,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudHSM")]
         [Description("For region us-gov-west-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_disabled_a2bad8c41cab450a87171349a5864658_Test()
+        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new CloudHSMEndpointParameters();
             parameters["Region"] = "us-gov-west-1";
@@ -62,7 +62,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudHSM")]
         [Description("For region us-gov-west-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_enabled_262a307f0ad749d0bd033d634b152ef6_Test()
+        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new CloudHSMEndpointParameters();
             parameters["Region"] = "us-gov-west-1";
@@ -77,7 +77,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudHSM")]
         [Description("For region us-gov-west-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_disabled_19e31239ccd346b8b44f2e981f868b9f_Test()
+        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new CloudHSMEndpointParameters();
             parameters["Region"] = "us-gov-west-1";
@@ -92,7 +92,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudHSM")]
         [Description("For region us-east-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_9df5f896b79240d982298425d79c712f_Test()
+        public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new CloudHSMEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -107,7 +107,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudHSM")]
         [Description("For region us-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_b1e3499e671d4309ab089c832e898ac0_Test()
+        public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new CloudHSMEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -122,7 +122,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudHSM")]
         [Description("For region us-east-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_2c8a359ed42d4add81a3b95d87cf4caf_Test()
+        public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new CloudHSMEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -137,7 +137,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudHSM")]
         [Description("For region us-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_461d4aa54fe5400a9a3909bb1a1f51f3_Test()
+        public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new CloudHSMEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -152,7 +152,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudHSM")]
         [Description("For custom endpoint with fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_2f179fabe02f42aeb3b1c8770d9ad70c_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new CloudHSMEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -169,7 +169,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("CloudHSM")]
         [Description("For custom endpoint with fips enabled and dualstack disabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: FIPS and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_5de30fe40c174faca522b69fda3848b6_Test()
+        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new CloudHSMEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -185,7 +185,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("CloudHSM")]
         [Description("For custom endpoint with fips disabled and dualstack enabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: Dualstack and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_fb4be8b915e14a58ab03ec1194891304_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new CloudHSMEndpointParameters();
             parameters["Region"] = "us-east-1";

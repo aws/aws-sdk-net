@@ -32,7 +32,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TimestreamQuery")]
         [Description("For custom endpoint with fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_3ad914c8e5154c098c1fdc005ccf9fed_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new TimestreamQueryEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("TimestreamQuery")]
         [Description("For custom endpoint with fips enabled and dualstack disabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: FIPS and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_c35fbd1ddf554870a0db4cf369c027b0_Test()
+        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new TimestreamQueryEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -65,7 +65,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("TimestreamQuery")]
         [Description("For custom endpoint with fips disabled and dualstack enabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: Dualstack and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_328a93cd334f43ca972fde1d1ff228a0_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new TimestreamQueryEndpointParameters();
             parameters["Region"] = "us-east-1";

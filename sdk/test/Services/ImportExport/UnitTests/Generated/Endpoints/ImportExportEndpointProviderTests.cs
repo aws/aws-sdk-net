@@ -32,7 +32,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ImportExport")]
         [Description("For region aws-global with FIPS disabled and DualStack disabled")]
-        public void For_region_awsglobal_with_FIPS_disabled_and_DualStack_disabled_ed1c7c24ae294cd48e2c7df26f52f506_Test()
+        public void For_region_awsglobal_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new ImportExportEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -47,7 +47,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ImportExport")]
         [Description("For custom endpoint with fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_cfe73617d2294a2caea065a292a60dff_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new ImportExportEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -64,7 +64,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("ImportExport")]
         [Description("For custom endpoint with fips enabled and dualstack disabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: FIPS and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_16b5c294edaf4dc6bed74e839d3b52d5_Test()
+        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new ImportExportEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -80,7 +80,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("ImportExport")]
         [Description("For custom endpoint with fips disabled and dualstack enabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: Dualstack and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_16c82d7bff684e298dcc47e1f6394369_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new ImportExportEndpointParameters();
             parameters["UseFIPS"] = false;

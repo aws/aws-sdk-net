@@ -32,7 +32,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("NetworkManager")]
         [Description("For region aws-global with FIPS disabled and DualStack disabled")]
-        public void For_region_awsglobal_with_FIPS_disabled_and_DualStack_disabled_374bcf244e7846c9b7070d218e1307b3_Test()
+        public void For_region_awsglobal_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new NetworkManagerEndpointParameters();
             parameters["Region"] = "aws-global";
@@ -47,7 +47,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("NetworkManager")]
         [Description("For region aws-us-gov-global with FIPS disabled and DualStack disabled")]
-        public void For_region_awsusgovglobal_with_FIPS_disabled_and_DualStack_disabled_52f05e480c6e42fb899ba43fa1818e22_Test()
+        public void For_region_awsusgovglobal_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new NetworkManagerEndpointParameters();
             parameters["Region"] = "aws-us-gov-global";
@@ -62,7 +62,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("NetworkManager")]
         [Description("For custom endpoint with fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_9dd706279cd745d1808173308f444db5_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new NetworkManagerEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -79,7 +79,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("NetworkManager")]
         [Description("For custom endpoint with fips enabled and dualstack disabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: FIPS and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_23d587c0a1f24c8bb135b0650feba1d9_Test()
+        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new NetworkManagerEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -95,7 +95,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("NetworkManager")]
         [Description("For custom endpoint with fips disabled and dualstack enabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: Dualstack and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_b9ed620e16174bcb862eb8df0b0929b5_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new NetworkManagerEndpointParameters();
             parameters["Region"] = "us-east-1";

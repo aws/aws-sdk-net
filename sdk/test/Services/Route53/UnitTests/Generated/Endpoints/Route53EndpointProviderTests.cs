@@ -32,7 +32,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Route53")]
         [Description("For region aws-cn-global with FIPS disabled and DualStack disabled")]
-        public void For_region_awscnglobal_with_FIPS_disabled_and_DualStack_disabled_35c8a416c076417d82d4ba6aa498719c_Test()
+        public void For_region_awscnglobal_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new Route53EndpointParameters();
             parameters["Region"] = "aws-cn-global";
@@ -47,7 +47,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Route53")]
         [Description("For region aws-global with FIPS disabled and DualStack disabled")]
-        public void For_region_awsglobal_with_FIPS_disabled_and_DualStack_disabled_0df4fbdc40724c1999247d013f426681_Test()
+        public void For_region_awsglobal_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new Route53EndpointParameters();
             parameters["Region"] = "aws-global";
@@ -62,7 +62,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Route53")]
         [Description("For region aws-iso-global with FIPS disabled and DualStack disabled")]
-        public void For_region_awsisoglobal_with_FIPS_disabled_and_DualStack_disabled_51f9dec415ee43ae8807f2850b5fba1a_Test()
+        public void For_region_awsisoglobal_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new Route53EndpointParameters();
             parameters["Region"] = "aws-iso-global";
@@ -77,7 +77,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Route53")]
         [Description("For region aws-iso-b-global with FIPS disabled and DualStack disabled")]
-        public void For_region_awsisobglobal_with_FIPS_disabled_and_DualStack_disabled_cf48ccf23bbc4d089bb97ba49717b68f_Test()
+        public void For_region_awsisobglobal_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new Route53EndpointParameters();
             parameters["Region"] = "aws-iso-b-global";
@@ -92,7 +92,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Route53")]
         [Description("For region aws-us-gov-global with FIPS disabled and DualStack disabled")]
-        public void For_region_awsusgovglobal_with_FIPS_disabled_and_DualStack_disabled_7026d615253d4d99bbfde2fef45d29ef_Test()
+        public void For_region_awsusgovglobal_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new Route53EndpointParameters();
             parameters["Region"] = "aws-us-gov-global";
@@ -107,7 +107,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Route53")]
         [Description("For custom endpoint with fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_697f019842d44a2a83ce42c2f2311e1e_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new Route53EndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -124,7 +124,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Route53")]
         [Description("For custom endpoint with fips enabled and dualstack disabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: FIPS and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_0cb8ffb5644e451e8433c38091ff6fa2_Test()
+        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new Route53EndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -140,7 +140,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Route53")]
         [Description("For custom endpoint with fips disabled and dualstack enabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: Dualstack and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_1712b7515aef4f868422bfe2b1cd7ea6_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new Route53EndpointParameters();
             parameters["Region"] = "us-east-1";

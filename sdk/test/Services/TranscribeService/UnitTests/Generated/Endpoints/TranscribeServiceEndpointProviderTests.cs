@@ -32,7 +32,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region ap-south-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_apsouth1_with_FIPS_enabled_and_DualStack_enabled_a58870554e3c4e08869b851c9e6413a1_Test()
+        public void For_region_apsouth1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "ap-south-1";
@@ -47,7 +47,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region ap-south-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_apsouth1_with_FIPS_enabled_and_DualStack_disabled_01df83dd00614f75a2726842fc7020f3_Test()
+        public void For_region_apsouth1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "ap-south-1";
@@ -62,7 +62,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region ap-south-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_apsouth1_with_FIPS_disabled_and_DualStack_enabled_fe69efdcf3dd4edb9d215b072863e14e_Test()
+        public void For_region_apsouth1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "ap-south-1";
@@ -77,7 +77,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region ap-south-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_apsouth1_with_FIPS_disabled_and_DualStack_disabled_456c38be88d440d48b9e49bd3df6083c_Test()
+        public void For_region_apsouth1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "ap-south-1";
@@ -92,7 +92,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region us-gov-east-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_enabled_4934a5a24dcd4b97844d2a95b2bb25a8_Test()
+        public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "us-gov-east-1";
@@ -107,7 +107,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region us-gov-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_disabled_988f6405881a4980ad340db14b48f07f_Test()
+        public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "us-gov-east-1";
@@ -122,7 +122,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region us-gov-east-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_usgoveast1_with_FIPS_disabled_and_DualStack_enabled_e1c4f415331f42a6b78185c22a5bc282_Test()
+        public void For_region_usgoveast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "us-gov-east-1";
@@ -137,7 +137,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region us-gov-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_usgoveast1_with_FIPS_disabled_and_DualStack_disabled_7c359030fa374642b13ac4d70784c88b_Test()
+        public void For_region_usgoveast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "us-gov-east-1";
@@ -152,7 +152,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region ca-central-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_cacentral1_with_FIPS_enabled_and_DualStack_enabled_afa08c26e3404e569baacc7b78b2188c_Test()
+        public void For_region_cacentral1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "ca-central-1";
@@ -167,7 +167,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region ca-central-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_cacentral1_with_FIPS_enabled_and_DualStack_disabled_c33d03c9df914e688fde7c284ef771ac_Test()
+        public void For_region_cacentral1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "ca-central-1";
@@ -182,7 +182,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region ca-central-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_cacentral1_with_FIPS_disabled_and_DualStack_enabled_ed167ee903484951ac1d914f3050a969_Test()
+        public void For_region_cacentral1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "ca-central-1";
@@ -197,7 +197,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region ca-central-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_cacentral1_with_FIPS_disabled_and_DualStack_disabled_e7645c5955ea4167aee8d1979a45460b_Test()
+        public void For_region_cacentral1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "ca-central-1";
@@ -212,7 +212,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region eu-central-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_eucentral1_with_FIPS_enabled_and_DualStack_enabled_b72ebf15ca51493e8e7a78e5d52e7bbf_Test()
+        public void For_region_eucentral1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "eu-central-1";
@@ -227,7 +227,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region eu-central-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_eucentral1_with_FIPS_enabled_and_DualStack_disabled_7a49e985ac2f49b4ac2c7e38d000ce1f_Test()
+        public void For_region_eucentral1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "eu-central-1";
@@ -242,7 +242,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region eu-central-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_enabled_7f6d0277763d4a6c89f0e076619b6514_Test()
+        public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "eu-central-1";
@@ -257,7 +257,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region eu-central-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_disabled_3acc9702c65949c0a309083cce1fc0cc_Test()
+        public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "eu-central-1";
@@ -272,7 +272,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region us-west-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_uswest1_with_FIPS_enabled_and_DualStack_enabled_c9aa868311af4ff8b88b9236a0123967_Test()
+        public void For_region_uswest1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "us-west-1";
@@ -287,7 +287,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region us-west-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_uswest1_with_FIPS_enabled_and_DualStack_disabled_1e247d4d1c3b4480a32a4a57c45eb480_Test()
+        public void For_region_uswest1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "us-west-1";
@@ -302,7 +302,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region us-west-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_uswest1_with_FIPS_disabled_and_DualStack_enabled_218f013c80ce4ffd80352dc8fbdcad02_Test()
+        public void For_region_uswest1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "us-west-1";
@@ -317,7 +317,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region us-west-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_uswest1_with_FIPS_disabled_and_DualStack_disabled_5978e9ab534f40d69e1b32a76f57ae4c_Test()
+        public void For_region_uswest1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "us-west-1";
@@ -332,7 +332,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region us-west-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_enabled_2c001015370f44628c569de91a53e99f_Test()
+        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "us-west-2";
@@ -347,7 +347,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region us-west-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_disabled_ef9efcea911d4c8c83a047d556f95ec8_Test()
+        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "us-west-2";
@@ -362,7 +362,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region us-west-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_enabled_a2cb2fe87b9d4edabca8d2071521a310_Test()
+        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "us-west-2";
@@ -377,7 +377,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region us-west-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_disabled_a8f3b0c9f0e14692acaec0ab3266db5e_Test()
+        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "us-west-2";
@@ -392,7 +392,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region af-south-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_afsouth1_with_FIPS_enabled_and_DualStack_enabled_84b0623173fe4625bf9da16796711c1f_Test()
+        public void For_region_afsouth1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "af-south-1";
@@ -407,7 +407,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region af-south-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_afsouth1_with_FIPS_enabled_and_DualStack_disabled_7c8d73d92bd1464db8ef813c956da431_Test()
+        public void For_region_afsouth1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "af-south-1";
@@ -422,7 +422,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region af-south-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_afsouth1_with_FIPS_disabled_and_DualStack_enabled_73827621e3374351931b42f33288a5be_Test()
+        public void For_region_afsouth1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "af-south-1";
@@ -437,7 +437,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region af-south-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_afsouth1_with_FIPS_disabled_and_DualStack_disabled_18ec3e15e9714537b67bde7d89391a57_Test()
+        public void For_region_afsouth1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "af-south-1";
@@ -452,7 +452,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region eu-north-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_eunorth1_with_FIPS_enabled_and_DualStack_enabled_cafc67becb844e62b563202cb6127713_Test()
+        public void For_region_eunorth1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "eu-north-1";
@@ -467,7 +467,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region eu-north-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_eunorth1_with_FIPS_enabled_and_DualStack_disabled_5d7fc7a1581a4094b62ca2a1eb86363d_Test()
+        public void For_region_eunorth1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "eu-north-1";
@@ -482,7 +482,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region eu-north-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_eunorth1_with_FIPS_disabled_and_DualStack_enabled_13b527130a8c4781badafed686e58e7e_Test()
+        public void For_region_eunorth1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "eu-north-1";
@@ -497,7 +497,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region eu-north-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_eunorth1_with_FIPS_disabled_and_DualStack_disabled_8241d108bada49938d65749038a17276_Test()
+        public void For_region_eunorth1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "eu-north-1";
@@ -512,7 +512,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region eu-west-3 with FIPS enabled and DualStack enabled")]
-        public void For_region_euwest3_with_FIPS_enabled_and_DualStack_enabled_e1d200bf60ad479182f73193f3529701_Test()
+        public void For_region_euwest3_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "eu-west-3";
@@ -527,7 +527,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region eu-west-3 with FIPS enabled and DualStack disabled")]
-        public void For_region_euwest3_with_FIPS_enabled_and_DualStack_disabled_301be5673e0e468ba55af275e03816bc_Test()
+        public void For_region_euwest3_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "eu-west-3";
@@ -542,7 +542,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region eu-west-3 with FIPS disabled and DualStack enabled")]
-        public void For_region_euwest3_with_FIPS_disabled_and_DualStack_enabled_43daf77185564f508e9ada75246315c9_Test()
+        public void For_region_euwest3_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "eu-west-3";
@@ -557,7 +557,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region eu-west-3 with FIPS disabled and DualStack disabled")]
-        public void For_region_euwest3_with_FIPS_disabled_and_DualStack_disabled_df2202a0087e482d94988310cde3396c_Test()
+        public void For_region_euwest3_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "eu-west-3";
@@ -572,7 +572,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region eu-west-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_euwest2_with_FIPS_enabled_and_DualStack_enabled_ae42b6ff6d3e4e38801ae70145176c5b_Test()
+        public void For_region_euwest2_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "eu-west-2";
@@ -587,7 +587,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region eu-west-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_euwest2_with_FIPS_enabled_and_DualStack_disabled_b35c984ae9c3437c991f479b00ced3ab_Test()
+        public void For_region_euwest2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "eu-west-2";
@@ -602,7 +602,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region eu-west-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_euwest2_with_FIPS_disabled_and_DualStack_enabled_a04b08f67513457ba2e6a509a08d7b16_Test()
+        public void For_region_euwest2_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "eu-west-2";
@@ -617,7 +617,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region eu-west-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_euwest2_with_FIPS_disabled_and_DualStack_disabled_0d4430467a2c454e8c194e6f7275353e_Test()
+        public void For_region_euwest2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "eu-west-2";
@@ -632,7 +632,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region eu-west-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_euwest1_with_FIPS_enabled_and_DualStack_enabled_a5c305026ebb45a3b2124614bfb5a7bb_Test()
+        public void For_region_euwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "eu-west-1";
@@ -647,7 +647,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region eu-west-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_euwest1_with_FIPS_enabled_and_DualStack_disabled_3606213a185c4b679ea2f13b4dc28485_Test()
+        public void For_region_euwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "eu-west-1";
@@ -662,7 +662,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region eu-west-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_euwest1_with_FIPS_disabled_and_DualStack_enabled_5eb3f88e87154c84b23c9c9999348aed_Test()
+        public void For_region_euwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "eu-west-1";
@@ -677,7 +677,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region eu-west-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_euwest1_with_FIPS_disabled_and_DualStack_disabled_80dc8bf4720c45b58cb35b333be6985e_Test()
+        public void For_region_euwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "eu-west-1";
@@ -692,7 +692,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region ap-northeast-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_apnortheast2_with_FIPS_enabled_and_DualStack_enabled_8bef9e7a18fd4897ac9372f8e55fd011_Test()
+        public void For_region_apnortheast2_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "ap-northeast-2";
@@ -707,7 +707,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region ap-northeast-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_apnortheast2_with_FIPS_enabled_and_DualStack_disabled_e216d7f7f9eb4113a7fb36d9f8116893_Test()
+        public void For_region_apnortheast2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "ap-northeast-2";
@@ -722,7 +722,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region ap-northeast-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_apnortheast2_with_FIPS_disabled_and_DualStack_enabled_1cbbb257e8e14af8ae1b6e09edd8fa76_Test()
+        public void For_region_apnortheast2_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "ap-northeast-2";
@@ -737,7 +737,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region ap-northeast-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_apnortheast2_with_FIPS_disabled_and_DualStack_disabled_34ff8356e9d54b2bbd6ab794c78bb14d_Test()
+        public void For_region_apnortheast2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "ap-northeast-2";
@@ -752,7 +752,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region ap-northeast-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_enabled_7c51723ec3d94b149123f9904c362809_Test()
+        public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "ap-northeast-1";
@@ -767,7 +767,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region ap-northeast-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_disabled_aee6c462f7504e43b48b2ffbbb6de9f0_Test()
+        public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "ap-northeast-1";
@@ -782,7 +782,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region ap-northeast-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_enabled_6c2565716be74a77a44ff28c756971c3_Test()
+        public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "ap-northeast-1";
@@ -797,7 +797,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region ap-northeast-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_disabled_f20db5fdddf7442f815a0690e073ebb3_Test()
+        public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "ap-northeast-1";
@@ -812,7 +812,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region me-south-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_mesouth1_with_FIPS_enabled_and_DualStack_enabled_f20278952bf846cbb66cd71f7209f878_Test()
+        public void For_region_mesouth1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "me-south-1";
@@ -827,7 +827,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region me-south-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_mesouth1_with_FIPS_enabled_and_DualStack_disabled_196fef92f93d40edb1b364f29bd47894_Test()
+        public void For_region_mesouth1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "me-south-1";
@@ -842,7 +842,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region me-south-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_mesouth1_with_FIPS_disabled_and_DualStack_enabled_e47a1c71b10848f0b0fca130a1896e57_Test()
+        public void For_region_mesouth1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "me-south-1";
@@ -857,7 +857,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region me-south-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_mesouth1_with_FIPS_disabled_and_DualStack_disabled_943f6b85ac104544a7eef0c2940a799f_Test()
+        public void For_region_mesouth1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "me-south-1";
@@ -872,7 +872,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region sa-east-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_saeast1_with_FIPS_enabled_and_DualStack_enabled_2cd298fd5e2b4dc2b5fc5a4b702fd92f_Test()
+        public void For_region_saeast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "sa-east-1";
@@ -887,7 +887,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region sa-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_saeast1_with_FIPS_enabled_and_DualStack_disabled_2c0dd130fd36476e83473b00c7de575c_Test()
+        public void For_region_saeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "sa-east-1";
@@ -902,7 +902,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region sa-east-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_saeast1_with_FIPS_disabled_and_DualStack_enabled_2bf1fe760bdc470cb38ea94ea60a1f56_Test()
+        public void For_region_saeast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "sa-east-1";
@@ -917,7 +917,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region sa-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_saeast1_with_FIPS_disabled_and_DualStack_disabled_d9fcc5744c284d6284f055205b39f943_Test()
+        public void For_region_saeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "sa-east-1";
@@ -932,7 +932,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region ap-east-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_apeast1_with_FIPS_enabled_and_DualStack_enabled_54e6d29a15d44cab8a59a24dc416daa1_Test()
+        public void For_region_apeast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "ap-east-1";
@@ -947,7 +947,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region ap-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_apeast1_with_FIPS_enabled_and_DualStack_disabled_23c5409013874a9297fc3d2c0e60cdc5_Test()
+        public void For_region_apeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "ap-east-1";
@@ -962,7 +962,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region ap-east-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_apeast1_with_FIPS_disabled_and_DualStack_enabled_5acb93759c994da381d6cd51bfea192a_Test()
+        public void For_region_apeast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "ap-east-1";
@@ -977,7 +977,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region ap-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_apeast1_with_FIPS_disabled_and_DualStack_disabled_804f778f85d942a68699c259dd7a3c46_Test()
+        public void For_region_apeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "ap-east-1";
@@ -992,7 +992,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region cn-north-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_cnnorth1_with_FIPS_enabled_and_DualStack_enabled_ef565a4740a143e8b770eaa1d8c7e6e9_Test()
+        public void For_region_cnnorth1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "cn-north-1";
@@ -1007,7 +1007,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region cn-north-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_cnnorth1_with_FIPS_enabled_and_DualStack_disabled_8fab2604f38e41cd90f6e0310f84aa59_Test()
+        public void For_region_cnnorth1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "cn-north-1";
@@ -1022,7 +1022,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region cn-north-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_cnnorth1_with_FIPS_disabled_and_DualStack_enabled_0f8942d7efbe411ebf47a26ad7687ee1_Test()
+        public void For_region_cnnorth1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "cn-north-1";
@@ -1037,7 +1037,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region cn-north-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_cnnorth1_with_FIPS_disabled_and_DualStack_disabled_48e7b585b60b418c868826c18f409616_Test()
+        public void For_region_cnnorth1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "cn-north-1";
@@ -1052,7 +1052,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region us-gov-west-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_enabled_b440e2a8f52b4d71829f221eb3f5e26c_Test()
+        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "us-gov-west-1";
@@ -1067,7 +1067,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region us-gov-west-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_disabled_a12463128c144f24a788261337c81209_Test()
+        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "us-gov-west-1";
@@ -1082,7 +1082,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region us-gov-west-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_enabled_49bdc065f92d49759d632428fd77c097_Test()
+        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "us-gov-west-1";
@@ -1097,7 +1097,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region us-gov-west-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_disabled_31f02289615341cba217b34b6b2fd138_Test()
+        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "us-gov-west-1";
@@ -1112,7 +1112,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region ap-southeast-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_apsoutheast1_with_FIPS_enabled_and_DualStack_enabled_d8f6edbeaf184db88fa9e576d0fad896_Test()
+        public void For_region_apsoutheast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "ap-southeast-1";
@@ -1127,7 +1127,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region ap-southeast-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_apsoutheast1_with_FIPS_enabled_and_DualStack_disabled_7f5cb9c5fa014eb586f04224f8f494e5_Test()
+        public void For_region_apsoutheast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "ap-southeast-1";
@@ -1142,7 +1142,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region ap-southeast-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_apsoutheast1_with_FIPS_disabled_and_DualStack_enabled_cfe6d1fe7e2c4ef181a108375458506d_Test()
+        public void For_region_apsoutheast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "ap-southeast-1";
@@ -1157,7 +1157,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region ap-southeast-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_apsoutheast1_with_FIPS_disabled_and_DualStack_disabled_0b4b6c5d2b27423b97fb8acb576dd679_Test()
+        public void For_region_apsoutheast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "ap-southeast-1";
@@ -1172,7 +1172,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region ap-southeast-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_apsoutheast2_with_FIPS_enabled_and_DualStack_enabled_c9569686b65b41b2be0cec87af7114cb_Test()
+        public void For_region_apsoutheast2_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "ap-southeast-2";
@@ -1187,7 +1187,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region ap-southeast-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_apsoutheast2_with_FIPS_enabled_and_DualStack_disabled_dcf5edbcf1dd4a0db3372c0b2f7e5977_Test()
+        public void For_region_apsoutheast2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "ap-southeast-2";
@@ -1202,7 +1202,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region ap-southeast-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_apsoutheast2_with_FIPS_disabled_and_DualStack_enabled_4b9a51edc8ac414eaf3bc80635a0f8b1_Test()
+        public void For_region_apsoutheast2_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "ap-southeast-2";
@@ -1217,7 +1217,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region ap-southeast-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_apsoutheast2_with_FIPS_disabled_and_DualStack_disabled_1390addb30f6431796a4dbce8b265e04_Test()
+        public void For_region_apsoutheast2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "ap-southeast-2";
@@ -1233,7 +1233,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("TranscribeService")]
         [Description("For region us-iso-east-1 with FIPS enabled and DualStack enabled")]
         [ExpectedException(typeof(AmazonClientException), "FIPS and DualStack are enabled, but this partition does not support one or both")]
-        public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_enabled_5ed2503bafba4ebaa8d21382bcf3d6ae_Test()
+        public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "us-iso-east-1";
@@ -1247,7 +1247,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region us-iso-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_disabled_bd87eb33107b4820868217c90fa13c35_Test()
+        public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "us-iso-east-1";
@@ -1263,7 +1263,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("TranscribeService")]
         [Description("For region us-iso-east-1 with FIPS disabled and DualStack enabled")]
         [ExpectedException(typeof(AmazonClientException), "DualStack is enabled but this partition does not support DualStack")]
-        public void For_region_usisoeast1_with_FIPS_disabled_and_DualStack_enabled_03a9b3d2bce2471d9ef19c0e3bfaf7dc_Test()
+        public void For_region_usisoeast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "us-iso-east-1";
@@ -1277,7 +1277,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region us-iso-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_usisoeast1_with_FIPS_disabled_and_DualStack_disabled_e9b6ee3de1074ab3bc2765bcceb945c3_Test()
+        public void For_region_usisoeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "us-iso-east-1";
@@ -1292,7 +1292,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region us-east-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_28e7cf1b8a984c01af14127b24ee3157_Test()
+        public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -1307,7 +1307,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region us-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_4246c249da4a413093fb917975d3453e_Test()
+        public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -1322,7 +1322,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region us-east-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_679719d688af467291aa71b3668d3c1e_Test()
+        public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -1337,7 +1337,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region us-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_5b7421de924e4d93b1633b9d7fea2ff2_Test()
+        public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -1352,7 +1352,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region us-east-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_useast2_with_FIPS_enabled_and_DualStack_enabled_0773068b0a8a45fc9e6210e4160ee5c8_Test()
+        public void For_region_useast2_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "us-east-2";
@@ -1367,7 +1367,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region us-east-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_useast2_with_FIPS_enabled_and_DualStack_disabled_e38e61d803c0464ba19be1d2dc7556de_Test()
+        public void For_region_useast2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "us-east-2";
@@ -1382,7 +1382,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region us-east-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_useast2_with_FIPS_disabled_and_DualStack_enabled_b5a45d97f69a4b3db343ae42030ada4e_Test()
+        public void For_region_useast2_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "us-east-2";
@@ -1397,7 +1397,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region us-east-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_useast2_with_FIPS_disabled_and_DualStack_disabled_dcb1ef54128b4627aabdca8e5022c580_Test()
+        public void For_region_useast2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "us-east-2";
@@ -1412,7 +1412,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region cn-northwest-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_cnnorthwest1_with_FIPS_enabled_and_DualStack_enabled_229b5809f6144377b386537874cbc436_Test()
+        public void For_region_cnnorthwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "cn-northwest-1";
@@ -1427,7 +1427,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region cn-northwest-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_cnnorthwest1_with_FIPS_enabled_and_DualStack_disabled_6155560bdc8043b7a0341c3c0a708f68_Test()
+        public void For_region_cnnorthwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "cn-northwest-1";
@@ -1442,7 +1442,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region cn-northwest-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_cnnorthwest1_with_FIPS_disabled_and_DualStack_enabled_a17c193dd8a44349b477dee8b93b8444_Test()
+        public void For_region_cnnorthwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "cn-northwest-1";
@@ -1457,7 +1457,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For region cn-northwest-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_cnnorthwest1_with_FIPS_disabled_and_DualStack_disabled_6e10bf95270545a8a7fe226b6da2f2f2_Test()
+        public void For_region_cnnorthwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "cn-northwest-1";
@@ -1472,7 +1472,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("TranscribeService")]
         [Description("For custom endpoint with fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_4ed511f4bef7475b9b584339899a39d5_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -1489,7 +1489,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("TranscribeService")]
         [Description("For custom endpoint with fips enabled and dualstack disabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: FIPS and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_06d46dc33e9c42e38a66e35864906c59_Test()
+        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -1505,7 +1505,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("TranscribeService")]
         [Description("For custom endpoint with fips disabled and dualstack enabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: Dualstack and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_704580067c5f42dea527921652c07a13_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new TranscribeServiceEndpointParameters();
             parameters["Region"] = "us-east-1";

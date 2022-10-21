@@ -32,7 +32,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("IdentityManagement")]
         [Description("For region aws-cn-global with FIPS disabled and DualStack disabled")]
-        public void For_region_awscnglobal_with_FIPS_disabled_and_DualStack_disabled_04a9a199977f475f916ab805e5a4f536_Test()
+        public void For_region_awscnglobal_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new IdentityManagementServiceEndpointParameters();
             parameters["Region"] = "aws-cn-global";
@@ -47,7 +47,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("IdentityManagement")]
         [Description("For region aws-global with FIPS disabled and DualStack disabled")]
-        public void For_region_awsglobal_with_FIPS_disabled_and_DualStack_disabled_a9c37a2e120d44a387b9bd4a4911519a_Test()
+        public void For_region_awsglobal_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new IdentityManagementServiceEndpointParameters();
             parameters["Region"] = "aws-global";
@@ -62,7 +62,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("IdentityManagement")]
         [Description("For region aws-iso-global with FIPS disabled and DualStack disabled")]
-        public void For_region_awsisoglobal_with_FIPS_disabled_and_DualStack_disabled_8d125299939a46aeb9eed2afc6c6a080_Test()
+        public void For_region_awsisoglobal_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new IdentityManagementServiceEndpointParameters();
             parameters["Region"] = "aws-iso-global";
@@ -77,7 +77,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("IdentityManagement")]
         [Description("For region aws-iso-b-global with FIPS disabled and DualStack disabled")]
-        public void For_region_awsisobglobal_with_FIPS_disabled_and_DualStack_disabled_b9adc1ee65e94ac89bfda3def42f0b79_Test()
+        public void For_region_awsisobglobal_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new IdentityManagementServiceEndpointParameters();
             parameters["Region"] = "aws-iso-b-global";
@@ -92,7 +92,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("IdentityManagement")]
         [Description("For region aws-us-gov-global with FIPS disabled and DualStack disabled")]
-        public void For_region_awsusgovglobal_with_FIPS_disabled_and_DualStack_disabled_e84e6df2af3f443f98798eb136a7252a_Test()
+        public void For_region_awsusgovglobal_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new IdentityManagementServiceEndpointParameters();
             parameters["Region"] = "aws-us-gov-global";
@@ -107,7 +107,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("IdentityManagement")]
         [Description("For custom endpoint with fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_bab6ba5cf15c41d2bc61cb42c153fef1_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new IdentityManagementServiceEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -124,7 +124,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("IdentityManagement")]
         [Description("For custom endpoint with fips enabled and dualstack disabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: FIPS and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_db1f6e024d8a4eae8b22ca651c646926_Test()
+        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new IdentityManagementServiceEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -140,7 +140,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("IdentityManagement")]
         [Description("For custom endpoint with fips disabled and dualstack enabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: Dualstack and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_62a0a8d166b7489ba246e4d0b3ea8cdb_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new IdentityManagementServiceEndpointParameters();
             parameters["Region"] = "us-east-1";

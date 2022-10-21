@@ -32,7 +32,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("IoT1ClickDevicesService")]
         [Description("For region us-west-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_enabled_bab525ce002446c093dd672a08dc4847_Test()
+        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new IoT1ClickDevicesServiceEndpointParameters();
             parameters["Region"] = "us-west-2";
@@ -47,7 +47,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("IoT1ClickDevicesService")]
         [Description("For region us-west-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_disabled_2c244087a07f474996b17440d00fe304_Test()
+        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new IoT1ClickDevicesServiceEndpointParameters();
             parameters["Region"] = "us-west-2";
@@ -62,7 +62,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("IoT1ClickDevicesService")]
         [Description("For region us-west-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_enabled_a0a78f8d2b6445bf92bd8620140c0c0a_Test()
+        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new IoT1ClickDevicesServiceEndpointParameters();
             parameters["Region"] = "us-west-2";
@@ -77,7 +77,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("IoT1ClickDevicesService")]
         [Description("For region us-west-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_disabled_4b911ea54f92478b8f315ad672676b8d_Test()
+        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new IoT1ClickDevicesServiceEndpointParameters();
             parameters["Region"] = "us-west-2";
@@ -92,7 +92,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("IoT1ClickDevicesService")]
         [Description("For custom endpoint with fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_5d31a40f46474305bcb1b89844bcb6cf_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new IoT1ClickDevicesServiceEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -109,7 +109,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("IoT1ClickDevicesService")]
         [Description("For custom endpoint with fips enabled and dualstack disabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: FIPS and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_f72156ff10b34bdab5e27f4d77cea14b_Test()
+        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new IoT1ClickDevicesServiceEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -125,7 +125,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("IoT1ClickDevicesService")]
         [Description("For custom endpoint with fips disabled and dualstack enabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: Dualstack and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_778965f78bfa4f35a7c2296e16d8736b_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new IoT1ClickDevicesServiceEndpointParameters();
             parameters["Region"] = "us-east-1";

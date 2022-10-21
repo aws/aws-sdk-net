@@ -32,7 +32,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("IoTDeviceAdvisor")]
         [Description("For region us-west-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_enabled_0e1dfa58ef52461f93b9b29fde0d30f4_Test()
+        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new IoTDeviceAdvisorEndpointParameters();
             parameters["Region"] = "us-west-2";
@@ -47,7 +47,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("IoTDeviceAdvisor")]
         [Description("For region us-west-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_disabled_da284bdc8e70449dbe49b33e0f79a9ef_Test()
+        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new IoTDeviceAdvisorEndpointParameters();
             parameters["Region"] = "us-west-2";
@@ -62,7 +62,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("IoTDeviceAdvisor")]
         [Description("For region us-west-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_enabled_4b5a7a8d848c4f47809c934729b82a10_Test()
+        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new IoTDeviceAdvisorEndpointParameters();
             parameters["Region"] = "us-west-2";
@@ -77,7 +77,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("IoTDeviceAdvisor")]
         [Description("For region us-west-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_disabled_bdc1b641538d43eba99a1cbad4b4035a_Test()
+        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new IoTDeviceAdvisorEndpointParameters();
             parameters["Region"] = "us-west-2";
@@ -92,7 +92,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("IoTDeviceAdvisor")]
         [Description("For region eu-west-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_euwest1_with_FIPS_enabled_and_DualStack_enabled_dc6860e59537402d9babd0ef68d60269_Test()
+        public void For_region_euwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new IoTDeviceAdvisorEndpointParameters();
             parameters["Region"] = "eu-west-1";
@@ -107,7 +107,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("IoTDeviceAdvisor")]
         [Description("For region eu-west-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_euwest1_with_FIPS_enabled_and_DualStack_disabled_eb59eb1265d04c9fb683cee4a4233958_Test()
+        public void For_region_euwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new IoTDeviceAdvisorEndpointParameters();
             parameters["Region"] = "eu-west-1";
@@ -122,7 +122,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("IoTDeviceAdvisor")]
         [Description("For region eu-west-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_euwest1_with_FIPS_disabled_and_DualStack_enabled_e29b493728cd4c159d71f704993658a7_Test()
+        public void For_region_euwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new IoTDeviceAdvisorEndpointParameters();
             parameters["Region"] = "eu-west-1";
@@ -137,7 +137,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("IoTDeviceAdvisor")]
         [Description("For region eu-west-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_euwest1_with_FIPS_disabled_and_DualStack_disabled_e3bc02713dcd4fa3b3958ea8c0114ddf_Test()
+        public void For_region_euwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new IoTDeviceAdvisorEndpointParameters();
             parameters["Region"] = "eu-west-1";
@@ -152,7 +152,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("IoTDeviceAdvisor")]
         [Description("For region ap-northeast-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_enabled_938486cee6f947a38e32a88096268369_Test()
+        public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new IoTDeviceAdvisorEndpointParameters();
             parameters["Region"] = "ap-northeast-1";
@@ -167,7 +167,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("IoTDeviceAdvisor")]
         [Description("For region ap-northeast-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_disabled_868b17a213a942a4a6ea41705c7aa949_Test()
+        public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new IoTDeviceAdvisorEndpointParameters();
             parameters["Region"] = "ap-northeast-1";
@@ -182,7 +182,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("IoTDeviceAdvisor")]
         [Description("For region ap-northeast-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_enabled_34180ea20acf4ac29510f3ccc4ca8a15_Test()
+        public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new IoTDeviceAdvisorEndpointParameters();
             parameters["Region"] = "ap-northeast-1";
@@ -197,7 +197,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("IoTDeviceAdvisor")]
         [Description("For region ap-northeast-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_disabled_9057db7c6d384d1cbf43fc5ca5b90161_Test()
+        public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new IoTDeviceAdvisorEndpointParameters();
             parameters["Region"] = "ap-northeast-1";
@@ -212,7 +212,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("IoTDeviceAdvisor")]
         [Description("For region us-east-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_df0af10af7e64d2e868a099cb4111162_Test()
+        public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new IoTDeviceAdvisorEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -227,7 +227,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("IoTDeviceAdvisor")]
         [Description("For region us-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_aa15ed85801245c9b19236724e505fd0_Test()
+        public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new IoTDeviceAdvisorEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -242,7 +242,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("IoTDeviceAdvisor")]
         [Description("For region us-east-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_6edb9431d58d4999a1d6a7260d5ec960_Test()
+        public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new IoTDeviceAdvisorEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -257,7 +257,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("IoTDeviceAdvisor")]
         [Description("For region us-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_1f632daf84404d1e9d00e05ccfc75ebb_Test()
+        public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new IoTDeviceAdvisorEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -272,7 +272,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("IoTDeviceAdvisor")]
         [Description("For custom endpoint with fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_efca88f7153248b1a0250e895823fe47_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new IoTDeviceAdvisorEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -289,7 +289,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("IoTDeviceAdvisor")]
         [Description("For custom endpoint with fips enabled and dualstack disabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: FIPS and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_c99d52919dbc46719fc4db2212976a95_Test()
+        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new IoTDeviceAdvisorEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -305,7 +305,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("IoTDeviceAdvisor")]
         [Description("For custom endpoint with fips disabled and dualstack enabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: Dualstack and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_8de661be13e9422b99833396a821d34d_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new IoTDeviceAdvisorEndpointParameters();
             parameters["Region"] = "us-east-1";

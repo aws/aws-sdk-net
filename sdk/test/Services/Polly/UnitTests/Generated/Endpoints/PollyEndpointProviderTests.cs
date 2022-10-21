@@ -32,7 +32,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region ap-south-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_apsouth1_with_FIPS_enabled_and_DualStack_enabled_3cf53d030fc74a1fabb2831e9b2ad88a_Test()
+        public void For_region_apsouth1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "ap-south-1";
@@ -47,7 +47,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region ap-south-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_apsouth1_with_FIPS_enabled_and_DualStack_disabled_709dbfb9994140659ee5cd6f5c6f9a5e_Test()
+        public void For_region_apsouth1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "ap-south-1";
@@ -62,7 +62,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region ap-south-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_apsouth1_with_FIPS_disabled_and_DualStack_enabled_3e08ecba365747e984fe884bdec7848a_Test()
+        public void For_region_apsouth1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "ap-south-1";
@@ -77,7 +77,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region ap-south-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_apsouth1_with_FIPS_disabled_and_DualStack_disabled_0017e68884b14730b4d3c474cfd94efb_Test()
+        public void For_region_apsouth1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "ap-south-1";
@@ -92,7 +92,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region ca-central-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_cacentral1_with_FIPS_enabled_and_DualStack_enabled_f0ec9aaeb5804675a81a7965551c4428_Test()
+        public void For_region_cacentral1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "ca-central-1";
@@ -107,7 +107,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region ca-central-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_cacentral1_with_FIPS_enabled_and_DualStack_disabled_aa139fd36f2e48ba8f0356d66d55bfb0_Test()
+        public void For_region_cacentral1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "ca-central-1";
@@ -122,7 +122,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region ca-central-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_cacentral1_with_FIPS_disabled_and_DualStack_enabled_906e17400287437ba4922b5138e74805_Test()
+        public void For_region_cacentral1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "ca-central-1";
@@ -137,7 +137,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region ca-central-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_cacentral1_with_FIPS_disabled_and_DualStack_disabled_1ed605e4a7474a9bb650f159cd35e518_Test()
+        public void For_region_cacentral1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "ca-central-1";
@@ -152,7 +152,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region eu-central-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_eucentral1_with_FIPS_enabled_and_DualStack_enabled_d46d8f67be404f14afb8189d3fc97dfd_Test()
+        public void For_region_eucentral1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "eu-central-1";
@@ -167,7 +167,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region eu-central-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_eucentral1_with_FIPS_enabled_and_DualStack_disabled_a1e8b14b45ea45aaae78f6333e266892_Test()
+        public void For_region_eucentral1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "eu-central-1";
@@ -182,7 +182,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region eu-central-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_enabled_583bb5914727417ab36b65ed2f5d960c_Test()
+        public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "eu-central-1";
@@ -197,7 +197,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region eu-central-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_disabled_4c09c65c1c6147f391731d7800fd986c_Test()
+        public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "eu-central-1";
@@ -212,7 +212,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region us-west-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_uswest1_with_FIPS_enabled_and_DualStack_enabled_4d9c7e6dd05343cd996082404b7f72a3_Test()
+        public void For_region_uswest1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "us-west-1";
@@ -227,7 +227,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region us-west-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_uswest1_with_FIPS_enabled_and_DualStack_disabled_eab9ad22452646e2bdf83d2d8e547189_Test()
+        public void For_region_uswest1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "us-west-1";
@@ -242,7 +242,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region us-west-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_uswest1_with_FIPS_disabled_and_DualStack_enabled_e235165f1fde4bd195e19b0fce79ffe2_Test()
+        public void For_region_uswest1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "us-west-1";
@@ -257,7 +257,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region us-west-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_uswest1_with_FIPS_disabled_and_DualStack_disabled_69bdc2dc89394f41980b5a62e38b9d69_Test()
+        public void For_region_uswest1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "us-west-1";
@@ -272,7 +272,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region us-west-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_enabled_c409ec07d39246629178787eb0120eaf_Test()
+        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "us-west-2";
@@ -287,7 +287,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region us-west-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_disabled_00773fb2757c4b3594dd6cdb7fb5eebb_Test()
+        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "us-west-2";
@@ -302,7 +302,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region us-west-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_enabled_59df1615e16347079244de2bba324c56_Test()
+        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "us-west-2";
@@ -317,7 +317,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region us-west-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_disabled_da5bcb6ac0a644d6a698ee8542cbeed7_Test()
+        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "us-west-2";
@@ -332,7 +332,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region af-south-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_afsouth1_with_FIPS_enabled_and_DualStack_enabled_89bc5ae3530446adb4735fe3162f393b_Test()
+        public void For_region_afsouth1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "af-south-1";
@@ -347,7 +347,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region af-south-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_afsouth1_with_FIPS_enabled_and_DualStack_disabled_14549af0a4e046e29ace8e34975de709_Test()
+        public void For_region_afsouth1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "af-south-1";
@@ -362,7 +362,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region af-south-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_afsouth1_with_FIPS_disabled_and_DualStack_enabled_ed947b95b1c741be946faf85303bb579_Test()
+        public void For_region_afsouth1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "af-south-1";
@@ -377,7 +377,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region af-south-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_afsouth1_with_FIPS_disabled_and_DualStack_disabled_8b1ffefb9d0e48e89f69b92ebef14650_Test()
+        public void For_region_afsouth1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "af-south-1";
@@ -392,7 +392,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region eu-north-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_eunorth1_with_FIPS_enabled_and_DualStack_enabled_ec55e43d8f8d4c9eb634853b6475d4a9_Test()
+        public void For_region_eunorth1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "eu-north-1";
@@ -407,7 +407,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region eu-north-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_eunorth1_with_FIPS_enabled_and_DualStack_disabled_522b832b65ef47efa0957c098a36df4a_Test()
+        public void For_region_eunorth1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "eu-north-1";
@@ -422,7 +422,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region eu-north-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_eunorth1_with_FIPS_disabled_and_DualStack_enabled_0ff7bb645f674dee84eb62d3e6e3fd8e_Test()
+        public void For_region_eunorth1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "eu-north-1";
@@ -437,7 +437,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region eu-north-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_eunorth1_with_FIPS_disabled_and_DualStack_disabled_e0efad21146f41908ce0bc992990b02b_Test()
+        public void For_region_eunorth1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "eu-north-1";
@@ -452,7 +452,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region eu-west-3 with FIPS enabled and DualStack enabled")]
-        public void For_region_euwest3_with_FIPS_enabled_and_DualStack_enabled_aa065f65079f4ff581fa0d971842ba92_Test()
+        public void For_region_euwest3_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "eu-west-3";
@@ -467,7 +467,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region eu-west-3 with FIPS enabled and DualStack disabled")]
-        public void For_region_euwest3_with_FIPS_enabled_and_DualStack_disabled_4752db2477da43bda185432581963e38_Test()
+        public void For_region_euwest3_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "eu-west-3";
@@ -482,7 +482,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region eu-west-3 with FIPS disabled and DualStack enabled")]
-        public void For_region_euwest3_with_FIPS_disabled_and_DualStack_enabled_e5113842f5ad41e98f155ba76f926977_Test()
+        public void For_region_euwest3_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "eu-west-3";
@@ -497,7 +497,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region eu-west-3 with FIPS disabled and DualStack disabled")]
-        public void For_region_euwest3_with_FIPS_disabled_and_DualStack_disabled_f7f8a78c5f044bd99c2a64147af8fe97_Test()
+        public void For_region_euwest3_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "eu-west-3";
@@ -512,7 +512,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region eu-west-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_euwest2_with_FIPS_enabled_and_DualStack_enabled_3df16ec645614f98b076e35883ed3758_Test()
+        public void For_region_euwest2_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "eu-west-2";
@@ -527,7 +527,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region eu-west-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_euwest2_with_FIPS_enabled_and_DualStack_disabled_dcdd893d165b4428b7fe640de680c039_Test()
+        public void For_region_euwest2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "eu-west-2";
@@ -542,7 +542,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region eu-west-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_euwest2_with_FIPS_disabled_and_DualStack_enabled_23eef2b522e8432f99ac5a21e93e7cfc_Test()
+        public void For_region_euwest2_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "eu-west-2";
@@ -557,7 +557,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region eu-west-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_euwest2_with_FIPS_disabled_and_DualStack_disabled_368a1027a9254fbf930c861772cb2e3d_Test()
+        public void For_region_euwest2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "eu-west-2";
@@ -572,7 +572,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region eu-west-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_euwest1_with_FIPS_enabled_and_DualStack_enabled_870c723a10ed44b6bbef9e46c02f40a2_Test()
+        public void For_region_euwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "eu-west-1";
@@ -587,7 +587,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region eu-west-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_euwest1_with_FIPS_enabled_and_DualStack_disabled_f54f8eafefec4d27954d786c309be7c5_Test()
+        public void For_region_euwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "eu-west-1";
@@ -602,7 +602,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region eu-west-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_euwest1_with_FIPS_disabled_and_DualStack_enabled_2e108b6de2774507944d884f99064a48_Test()
+        public void For_region_euwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "eu-west-1";
@@ -617,7 +617,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region eu-west-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_euwest1_with_FIPS_disabled_and_DualStack_disabled_222c2bd276554aa0a955251bd8448c7c_Test()
+        public void For_region_euwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "eu-west-1";
@@ -632,7 +632,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region ap-northeast-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_apnortheast2_with_FIPS_enabled_and_DualStack_enabled_73a88035a1e349d9a5601fbfd05d6c1c_Test()
+        public void For_region_apnortheast2_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "ap-northeast-2";
@@ -647,7 +647,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region ap-northeast-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_apnortheast2_with_FIPS_enabled_and_DualStack_disabled_f3598fbfeeb749469bf3d1561262a418_Test()
+        public void For_region_apnortheast2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "ap-northeast-2";
@@ -662,7 +662,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region ap-northeast-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_apnortheast2_with_FIPS_disabled_and_DualStack_enabled_cab4ebce383d47158bbb9cdb55329c9f_Test()
+        public void For_region_apnortheast2_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "ap-northeast-2";
@@ -677,7 +677,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region ap-northeast-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_apnortheast2_with_FIPS_disabled_and_DualStack_disabled_6f20d59429934599b222ba82a0f3839e_Test()
+        public void For_region_apnortheast2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "ap-northeast-2";
@@ -692,7 +692,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region ap-northeast-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_enabled_2f1762964d0e4e11aaa6e667b785def1_Test()
+        public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "ap-northeast-1";
@@ -707,7 +707,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region ap-northeast-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_disabled_5a80b3b32dd84c689033eac5145bb012_Test()
+        public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "ap-northeast-1";
@@ -722,7 +722,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region ap-northeast-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_enabled_1bebbd4533f44059b4bd68af64387d2b_Test()
+        public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "ap-northeast-1";
@@ -737,7 +737,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region ap-northeast-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_disabled_757f5895c6b246a5b5d729e354489b07_Test()
+        public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "ap-northeast-1";
@@ -752,7 +752,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region me-south-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_mesouth1_with_FIPS_enabled_and_DualStack_enabled_1532dc8f1f9f41bf9ba3316207c8ddc0_Test()
+        public void For_region_mesouth1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "me-south-1";
@@ -767,7 +767,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region me-south-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_mesouth1_with_FIPS_enabled_and_DualStack_disabled_9c5d82a22ad24cabbd8b4cdf08204579_Test()
+        public void For_region_mesouth1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "me-south-1";
@@ -782,7 +782,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region me-south-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_mesouth1_with_FIPS_disabled_and_DualStack_enabled_0357a62b270d48a5af8c027c9658376f_Test()
+        public void For_region_mesouth1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "me-south-1";
@@ -797,7 +797,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region me-south-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_mesouth1_with_FIPS_disabled_and_DualStack_disabled_f8964f4cd55a42438bc0309818b25a95_Test()
+        public void For_region_mesouth1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "me-south-1";
@@ -812,7 +812,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region sa-east-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_saeast1_with_FIPS_enabled_and_DualStack_enabled_4710a4c0e7814e608c49fb9f283cd1df_Test()
+        public void For_region_saeast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "sa-east-1";
@@ -827,7 +827,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region sa-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_saeast1_with_FIPS_enabled_and_DualStack_disabled_2dd3f2339005441dbe4737aeae838da1_Test()
+        public void For_region_saeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "sa-east-1";
@@ -842,7 +842,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region sa-east-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_saeast1_with_FIPS_disabled_and_DualStack_enabled_9a6da06da8554b92a5a72ba0f83b02d7_Test()
+        public void For_region_saeast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "sa-east-1";
@@ -857,7 +857,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region sa-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_saeast1_with_FIPS_disabled_and_DualStack_disabled_55c0ba09cfda423982eafc461ba62776_Test()
+        public void For_region_saeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "sa-east-1";
@@ -872,7 +872,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region ap-east-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_apeast1_with_FIPS_enabled_and_DualStack_enabled_9d4f3f44303d4a89aa7248e1a936d62c_Test()
+        public void For_region_apeast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "ap-east-1";
@@ -887,7 +887,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region ap-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_apeast1_with_FIPS_enabled_and_DualStack_disabled_2f955f19f8a94dc2b1f56e68db256029_Test()
+        public void For_region_apeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "ap-east-1";
@@ -902,7 +902,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region ap-east-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_apeast1_with_FIPS_disabled_and_DualStack_enabled_bce48362d3b14ffdadda5d694b7b0578_Test()
+        public void For_region_apeast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "ap-east-1";
@@ -917,7 +917,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region ap-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_apeast1_with_FIPS_disabled_and_DualStack_disabled_46f98cd4d2c943c58652e2ac8ff9b87b_Test()
+        public void For_region_apeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "ap-east-1";
@@ -932,7 +932,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region us-gov-west-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_enabled_c3f95c193ccb4f489607b76200932f88_Test()
+        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "us-gov-west-1";
@@ -947,7 +947,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region us-gov-west-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_disabled_cb44e3429e6b4fc29d3dc1a759d2db18_Test()
+        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "us-gov-west-1";
@@ -962,7 +962,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region us-gov-west-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_enabled_48983861976f46a4998e6d5312cbd509_Test()
+        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "us-gov-west-1";
@@ -977,7 +977,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region us-gov-west-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_disabled_e7a578b87e9f41c19f9e3a0826dc1742_Test()
+        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "us-gov-west-1";
@@ -992,7 +992,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region ap-southeast-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_apsoutheast1_with_FIPS_enabled_and_DualStack_enabled_db6c03a31e4f4fef94933fa0d0e8dfa2_Test()
+        public void For_region_apsoutheast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "ap-southeast-1";
@@ -1007,7 +1007,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region ap-southeast-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_apsoutheast1_with_FIPS_enabled_and_DualStack_disabled_41419d752ce34af9b21701ee96e1f4cb_Test()
+        public void For_region_apsoutheast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "ap-southeast-1";
@@ -1022,7 +1022,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region ap-southeast-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_apsoutheast1_with_FIPS_disabled_and_DualStack_enabled_bcff20f7096d4784ad55f90673ec2fff_Test()
+        public void For_region_apsoutheast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "ap-southeast-1";
@@ -1037,7 +1037,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region ap-southeast-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_apsoutheast1_with_FIPS_disabled_and_DualStack_disabled_6be37a27336f44edbe15cb3ce4a5265c_Test()
+        public void For_region_apsoutheast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "ap-southeast-1";
@@ -1052,7 +1052,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region ap-southeast-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_apsoutheast2_with_FIPS_enabled_and_DualStack_enabled_45f4fcd94b5c4779a2ffde454e21cc77_Test()
+        public void For_region_apsoutheast2_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "ap-southeast-2";
@@ -1067,7 +1067,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region ap-southeast-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_apsoutheast2_with_FIPS_enabled_and_DualStack_disabled_32064e84890f4cfeb6e15bfe1cfee944_Test()
+        public void For_region_apsoutheast2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "ap-southeast-2";
@@ -1082,7 +1082,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region ap-southeast-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_apsoutheast2_with_FIPS_disabled_and_DualStack_enabled_0245974cfeeb4cc5a23a7d44998cae06_Test()
+        public void For_region_apsoutheast2_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "ap-southeast-2";
@@ -1097,7 +1097,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region ap-southeast-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_apsoutheast2_with_FIPS_disabled_and_DualStack_disabled_88e64e8922c8407cabd8c60fdc6e8681_Test()
+        public void For_region_apsoutheast2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "ap-southeast-2";
@@ -1112,7 +1112,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region us-east-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_6e42eeedff364f68a3cf6dbb2ad95a7b_Test()
+        public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -1127,7 +1127,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region us-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_90a80bbc023b4169b1a200567d7582cf_Test()
+        public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -1142,7 +1142,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region us-east-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_eb9abaa0926e404687eb67f9df662c9f_Test()
+        public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -1157,7 +1157,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region us-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_b40b2975dd904fd792371e26d865ad93_Test()
+        public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -1172,7 +1172,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region us-east-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_useast2_with_FIPS_enabled_and_DualStack_enabled_bf399f0c1e7f4e658810af26582d1bed_Test()
+        public void For_region_useast2_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "us-east-2";
@@ -1187,7 +1187,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region us-east-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_useast2_with_FIPS_enabled_and_DualStack_disabled_d731daf361f94ef5842cd8d0454cbef0_Test()
+        public void For_region_useast2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "us-east-2";
@@ -1202,7 +1202,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region us-east-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_useast2_with_FIPS_disabled_and_DualStack_enabled_a207ef82d9324489aee2e780dfa48080_Test()
+        public void For_region_useast2_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "us-east-2";
@@ -1217,7 +1217,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region us-east-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_useast2_with_FIPS_disabled_and_DualStack_disabled_afbfd6525d1040aca2283a2d5320872c_Test()
+        public void For_region_useast2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "us-east-2";
@@ -1232,7 +1232,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region cn-northwest-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_cnnorthwest1_with_FIPS_enabled_and_DualStack_enabled_51152f4f2ef04125b09ce9155d646f76_Test()
+        public void For_region_cnnorthwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "cn-northwest-1";
@@ -1247,7 +1247,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region cn-northwest-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_cnnorthwest1_with_FIPS_enabled_and_DualStack_disabled_f2644a956ac4464c862f8b99910955dd_Test()
+        public void For_region_cnnorthwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "cn-northwest-1";
@@ -1262,7 +1262,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region cn-northwest-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_cnnorthwest1_with_FIPS_disabled_and_DualStack_enabled_2482ffd5a95d47ffa59c2bf0257a167a_Test()
+        public void For_region_cnnorthwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "cn-northwest-1";
@@ -1277,7 +1277,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For region cn-northwest-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_cnnorthwest1_with_FIPS_disabled_and_DualStack_disabled_14552428e4cd44ac93da256968fb84fd_Test()
+        public void For_region_cnnorthwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "cn-northwest-1";
@@ -1292,7 +1292,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Polly")]
         [Description("For custom endpoint with fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_af12a9d4e7a04b37b4a1df99c6573c34_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -1309,7 +1309,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Polly")]
         [Description("For custom endpoint with fips enabled and dualstack disabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: FIPS and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_c9ef204ad4174572b8d089452014835d_Test()
+        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -1325,7 +1325,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Polly")]
         [Description("For custom endpoint with fips disabled and dualstack enabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: Dualstack and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_2312882824e5478c9e81bfa7bdc42188_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new PollyEndpointParameters();
             parameters["Region"] = "us-east-1";

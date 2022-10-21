@@ -32,7 +32,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ManagedBlockchain")]
         [Description("For region eu-west-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_euwest2_with_FIPS_enabled_and_DualStack_enabled_86fee653645544d1a7026d51c321cf92_Test()
+        public void For_region_euwest2_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -47,7 +47,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ManagedBlockchain")]
         [Description("For region eu-west-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_euwest2_with_FIPS_enabled_and_DualStack_disabled_e2ade368c89a4878a15269219c0c7aee_Test()
+        public void For_region_euwest2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -62,7 +62,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ManagedBlockchain")]
         [Description("For region eu-west-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_euwest2_with_FIPS_disabled_and_DualStack_enabled_24d14e501e704b79b31905cc976493be_Test()
+        public void For_region_euwest2_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -77,7 +77,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ManagedBlockchain")]
         [Description("For region eu-west-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_euwest2_with_FIPS_disabled_and_DualStack_disabled_656e2dc725f24908a17803ead2392fac_Test()
+        public void For_region_euwest2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -92,7 +92,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ManagedBlockchain")]
         [Description("For region eu-west-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_euwest1_with_FIPS_enabled_and_DualStack_enabled_db5d4cf16791457583a0aca01eeb1572_Test()
+        public void For_region_euwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -107,7 +107,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ManagedBlockchain")]
         [Description("For region eu-west-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_euwest1_with_FIPS_enabled_and_DualStack_disabled_47c3b711a5244085880f6dc4e3c7045d_Test()
+        public void For_region_euwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -122,7 +122,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ManagedBlockchain")]
         [Description("For region eu-west-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_euwest1_with_FIPS_disabled_and_DualStack_enabled_921ceb9fd2a74609b10631e5124e5636_Test()
+        public void For_region_euwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -137,7 +137,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ManagedBlockchain")]
         [Description("For region eu-west-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_euwest1_with_FIPS_disabled_and_DualStack_disabled_aa305b765fe24c5d81380d73126f999e_Test()
+        public void For_region_euwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -152,7 +152,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ManagedBlockchain")]
         [Description("For region ap-northeast-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_apnortheast2_with_FIPS_enabled_and_DualStack_enabled_b6ca461761a54353b5c2f0ebf214e234_Test()
+        public void For_region_apnortheast2_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -167,7 +167,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ManagedBlockchain")]
         [Description("For region ap-northeast-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_apnortheast2_with_FIPS_enabled_and_DualStack_disabled_07809aa389ea4bfca5548bd9b586aa8b_Test()
+        public void For_region_apnortheast2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -182,7 +182,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ManagedBlockchain")]
         [Description("For region ap-northeast-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_apnortheast2_with_FIPS_disabled_and_DualStack_enabled_8155c500b7004161831882027b9780c4_Test()
+        public void For_region_apnortheast2_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -197,7 +197,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ManagedBlockchain")]
         [Description("For region ap-northeast-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_apnortheast2_with_FIPS_disabled_and_DualStack_disabled_5f48f225751a4ea9a1cde23609bf4c9e_Test()
+        public void For_region_apnortheast2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -212,7 +212,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ManagedBlockchain")]
         [Description("For region ap-northeast-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_enabled_28d5cb75ad31449a861946c2f7e6d659_Test()
+        public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -227,7 +227,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ManagedBlockchain")]
         [Description("For region ap-northeast-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_disabled_08cc61b73dcf4939981fb4c3bd08b286_Test()
+        public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -242,7 +242,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ManagedBlockchain")]
         [Description("For region ap-northeast-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_enabled_4eb7cacbcb5447c396795848471445c3_Test()
+        public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -257,7 +257,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ManagedBlockchain")]
         [Description("For region ap-northeast-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_disabled_3f1c94d2fe7a4291bbff460a641b38f8_Test()
+        public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -272,7 +272,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ManagedBlockchain")]
         [Description("For region us-gov-west-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_enabled_5dff236246324bf98c959cab581680dc_Test()
+        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -287,7 +287,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ManagedBlockchain")]
         [Description("For region us-gov-west-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_disabled_28e2a609cd084dc69ef63bbc52cbfaab_Test()
+        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -302,7 +302,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ManagedBlockchain")]
         [Description("For region us-gov-west-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_enabled_c7fb823f398d4b918f7098dc4441cc44_Test()
+        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -317,7 +317,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ManagedBlockchain")]
         [Description("For region us-gov-west-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_disabled_584aa0edb7db4616af1d1de1d4f064df_Test()
+        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -332,7 +332,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ManagedBlockchain")]
         [Description("For region ap-southeast-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_apsoutheast1_with_FIPS_enabled_and_DualStack_enabled_79d903f1fb0c49849af20e6ccdbb2fa8_Test()
+        public void For_region_apsoutheast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -347,7 +347,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ManagedBlockchain")]
         [Description("For region ap-southeast-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_apsoutheast1_with_FIPS_enabled_and_DualStack_disabled_a873a05ae2014ee7a0c808014cffac05_Test()
+        public void For_region_apsoutheast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -362,7 +362,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ManagedBlockchain")]
         [Description("For region ap-southeast-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_apsoutheast1_with_FIPS_disabled_and_DualStack_enabled_ebd7394ac9f747f2b8ed83aef55d6dd9_Test()
+        public void For_region_apsoutheast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -377,7 +377,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ManagedBlockchain")]
         [Description("For region ap-southeast-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_apsoutheast1_with_FIPS_disabled_and_DualStack_disabled_1facdf27627c46029694510317081870_Test()
+        public void For_region_apsoutheast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -392,7 +392,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ManagedBlockchain")]
         [Description("For region us-east-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_f9eb30250d294ef9acd29830ce2d1d4a_Test()
+        public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -407,7 +407,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ManagedBlockchain")]
         [Description("For region us-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_64694206a9df4222913f8f1af452b10d_Test()
+        public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -422,7 +422,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ManagedBlockchain")]
         [Description("For region us-east-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_d29bac451c524f1486dcb10d21cd3b2b_Test()
+        public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -437,7 +437,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ManagedBlockchain")]
         [Description("For region us-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_cd6bae8d2e914fcb9ac5882484b8a6ca_Test()
+        public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -452,7 +452,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ManagedBlockchain")]
         [Description("For custom endpoint with fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_2d55db2db9f54194a369eb7e6ffe432b_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -469,7 +469,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("ManagedBlockchain")]
         [Description("For custom endpoint with fips enabled and dualstack disabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: FIPS and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_058bf23f5e7e44c1b97c2f62dcd8ed90_Test()
+        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -485,7 +485,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("ManagedBlockchain")]
         [Description("For custom endpoint with fips disabled and dualstack enabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: Dualstack and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_0ecdd205908c423c90ff3bb2292063f0_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
             parameters["UseFIPS"] = false;

@@ -32,7 +32,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CostAndUsageReport")]
         [Description("For region us-east-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_29de01afa88d44f785509c25a38e180e_Test()
+        public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new CostAndUsageReportEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -47,7 +47,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CostAndUsageReport")]
         [Description("For region us-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_902910f585b441a7982fde74c66c6c93_Test()
+        public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new CostAndUsageReportEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -62,7 +62,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CostAndUsageReport")]
         [Description("For region us-east-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_84b6ce5c297343a0bf1553ce6018458f_Test()
+        public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new CostAndUsageReportEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -77,7 +77,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CostAndUsageReport")]
         [Description("For region us-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_c1134bbf09ba4998b060da4de4e6b334_Test()
+        public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new CostAndUsageReportEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -92,7 +92,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CostAndUsageReport")]
         [Description("For region cn-northwest-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_cnnorthwest1_with_FIPS_enabled_and_DualStack_enabled_39aebe0b420441aca9bfd038d7695f20_Test()
+        public void For_region_cnnorthwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new CostAndUsageReportEndpointParameters();
             parameters["Region"] = "cn-northwest-1";
@@ -107,7 +107,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CostAndUsageReport")]
         [Description("For region cn-northwest-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_cnnorthwest1_with_FIPS_enabled_and_DualStack_disabled_31ed6ab0f2f842b9a03d6f7497ba480b_Test()
+        public void For_region_cnnorthwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new CostAndUsageReportEndpointParameters();
             parameters["Region"] = "cn-northwest-1";
@@ -122,7 +122,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CostAndUsageReport")]
         [Description("For region cn-northwest-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_cnnorthwest1_with_FIPS_disabled_and_DualStack_enabled_5af36896111a47d9b284039250160511_Test()
+        public void For_region_cnnorthwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new CostAndUsageReportEndpointParameters();
             parameters["Region"] = "cn-northwest-1";
@@ -137,7 +137,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CostAndUsageReport")]
         [Description("For region cn-northwest-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_cnnorthwest1_with_FIPS_disabled_and_DualStack_disabled_fe8486e381024e868d6bfac7829eb132_Test()
+        public void For_region_cnnorthwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new CostAndUsageReportEndpointParameters();
             parameters["Region"] = "cn-northwest-1";
@@ -152,7 +152,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CostAndUsageReport")]
         [Description("For custom endpoint with fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_1e91ae3c58c7472681ae4c12fce8aeb6_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new CostAndUsageReportEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -169,7 +169,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("CostAndUsageReport")]
         [Description("For custom endpoint with fips enabled and dualstack disabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: FIPS and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_49becb1d7b2b48a99fc17ca31b5f37e0_Test()
+        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new CostAndUsageReportEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -185,7 +185,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("CostAndUsageReport")]
         [Description("For custom endpoint with fips disabled and dualstack enabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: Dualstack and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_568c107f228c4aaeb14fb9997e78256c_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new CostAndUsageReportEndpointParameters();
             parameters["Region"] = "us-east-1";

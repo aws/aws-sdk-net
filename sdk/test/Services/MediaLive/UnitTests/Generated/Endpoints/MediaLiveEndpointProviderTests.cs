@@ -33,7 +33,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("MediaLive")]
         [Description("For region us-iso-east-1 with FIPS enabled and DualStack enabled")]
         [ExpectedException(typeof(AmazonClientException), "FIPS and DualStack are enabled, but this partition does not support one or both")]
-        public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_enabled_d6f5c5986acd4cbcab989959e0611ab2_Test()
+        public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new MediaLiveEndpointParameters();
             parameters["Region"] = "us-iso-east-1";
@@ -47,7 +47,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("MediaLive")]
         [Description("For region us-iso-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_disabled_29613d4d5a3d4f6e88f6a9e7212072af_Test()
+        public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new MediaLiveEndpointParameters();
             parameters["Region"] = "us-iso-east-1";
@@ -63,7 +63,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("MediaLive")]
         [Description("For region us-iso-east-1 with FIPS disabled and DualStack enabled")]
         [ExpectedException(typeof(AmazonClientException), "DualStack is enabled but this partition does not support DualStack")]
-        public void For_region_usisoeast1_with_FIPS_disabled_and_DualStack_enabled_c739e5de0e8042c181a04cea69829af0_Test()
+        public void For_region_usisoeast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new MediaLiveEndpointParameters();
             parameters["Region"] = "us-iso-east-1";
@@ -77,7 +77,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("MediaLive")]
         [Description("For region us-iso-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_usisoeast1_with_FIPS_disabled_and_DualStack_disabled_67af11e280d44f64b07f086f18680305_Test()
+        public void For_region_usisoeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new MediaLiveEndpointParameters();
             parameters["Region"] = "us-iso-east-1";
@@ -92,7 +92,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("MediaLive")]
         [Description("For custom endpoint with fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_2e7e8297271a4d7faf0c9971fa0c0d0d_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new MediaLiveEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -109,7 +109,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("MediaLive")]
         [Description("For custom endpoint with fips enabled and dualstack disabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: FIPS and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_dae90c8f601644e69410da6df6d5d7de_Test()
+        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new MediaLiveEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -125,7 +125,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("MediaLive")]
         [Description("For custom endpoint with fips disabled and dualstack enabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: Dualstack and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_171e1fb8c6664c15b5929ca49118783c_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new MediaLiveEndpointParameters();
             parameters["Region"] = "us-east-1";

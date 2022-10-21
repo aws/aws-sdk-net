@@ -32,7 +32,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Ep2hostlabel")]
         [Description("standard region is a valid hostlabel")]
-        public void Standard_region_is_a_valid_hostlabel_acee14c8dade4c8db47f26b42d6ae29b_Test()
+        public void Standard_region_is_a_valid_hostlabel_Test()
         {
             var parameters = new Ep2hostlabelEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -45,7 +45,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Ep2hostlabel")]
         [Description("starting with a number is a valid hostlabel")]
-        public void Starting_with_a_number_is_a_valid_hostlabel_a72360f49f894b63877f9879687c1ff1_Test()
+        public void Starting_with_a_number_is_a_valid_hostlabel_Test()
         {
             var parameters = new Ep2hostlabelEndpointParameters();
             parameters["Region"] = "3aws4";
@@ -58,7 +58,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Ep2hostlabel")]
         [Description("when there are dots, only match if subdomains are allowed")]
-        public void When_there_are_dots_only_match_if_subdomains_are_allowed_3ef0497e4d3247fb9300959c3b847d4d_Test()
+        public void When_there_are_dots_only_match_if_subdomains_are_allowed_Test()
         {
             var parameters = new Ep2hostlabelEndpointParameters();
             parameters["Region"] = "part1.part2";
@@ -72,7 +72,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Ep2hostlabel")]
         [Description("a space is never a valid hostlabel")]
         [ExpectedException(typeof(AmazonClientException), "Invalid hostlabel")]
-        public void A_space_is_never_a_valid_hostlabel_08704a44d865424e9024216dcb1394d4_Test()
+        public void A_space_is_never_a_valid_hostlabel_Test()
         {
             var parameters = new Ep2hostlabelEndpointParameters();
             parameters["Region"] = "part1 part2";
@@ -85,7 +85,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Ep2hostlabel")]
         [Description("an empty string is not a valid hostlabel")]
         [ExpectedException(typeof(AmazonClientException), "Invalid hostlabel")]
-        public void An_empty_string_is_not_a_valid_hostlabel_c38ca27edc544db2af15fa6b8b037c40_Test()
+        public void An_empty_string_is_not_a_valid_hostlabel_Test()
         {
             var parameters = new Ep2hostlabelEndpointParameters();
             parameters["Region"] = "";

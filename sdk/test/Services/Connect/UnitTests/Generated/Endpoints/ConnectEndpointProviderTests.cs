@@ -32,7 +32,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region ap-south-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_apsouth1_with_FIPS_enabled_and_DualStack_enabled_c0bdb36ed4fe4e12b962e976f799ee58_Test()
+        public void For_region_apsouth1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -47,7 +47,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region ap-south-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_apsouth1_with_FIPS_enabled_and_DualStack_disabled_0a39a435e72d43369afeae2a71cb3a0b_Test()
+        public void For_region_apsouth1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -62,7 +62,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region ap-south-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_apsouth1_with_FIPS_disabled_and_DualStack_enabled_1aefad39aba34dc59fae4e0a449b462d_Test()
+        public void For_region_apsouth1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -77,7 +77,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region ap-south-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_apsouth1_with_FIPS_disabled_and_DualStack_disabled_802e320ca07d4e17a6ae58c8c3f6de70_Test()
+        public void For_region_apsouth1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -92,7 +92,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region ca-central-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_cacentral1_with_FIPS_enabled_and_DualStack_enabled_3b8acb1e90ae430688a818c99001dfc7_Test()
+        public void For_region_cacentral1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -107,7 +107,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region ca-central-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_cacentral1_with_FIPS_enabled_and_DualStack_disabled_ee49061f4e474c9695fef95afcc3d9cb_Test()
+        public void For_region_cacentral1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -122,7 +122,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region ca-central-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_cacentral1_with_FIPS_disabled_and_DualStack_enabled_1bf01c915eee42278b0448f5091cc5b0_Test()
+        public void For_region_cacentral1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -137,7 +137,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region ca-central-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_cacentral1_with_FIPS_disabled_and_DualStack_disabled_0483e73a2e164d638d992326deacf4b1_Test()
+        public void For_region_cacentral1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -152,7 +152,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region eu-central-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_eucentral1_with_FIPS_enabled_and_DualStack_enabled_896e51ef296d4e95a47940098188a6d5_Test()
+        public void For_region_eucentral1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -167,7 +167,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region eu-central-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_eucentral1_with_FIPS_enabled_and_DualStack_disabled_9341bd3209da472bb915eb39a124b569_Test()
+        public void For_region_eucentral1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -182,7 +182,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region eu-central-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_enabled_b478edc21fca4bc591f6a2bf920608db_Test()
+        public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -197,7 +197,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region eu-central-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_disabled_d20f3bf6eea64123affc36c7c2c5a5dd_Test()
+        public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -212,7 +212,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region us-west-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_enabled_785013833c3a46cd8fcdc82ef410b75c_Test()
+        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -227,7 +227,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region us-west-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_disabled_455e2fd6199f436c9fe9ebefaa366895_Test()
+        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -242,7 +242,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region us-west-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_enabled_6b159e3479d44a168151dc10ff924449_Test()
+        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -257,7 +257,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region us-west-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_disabled_918181c778ff4fb091f329bd40bbe9cd_Test()
+        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -272,7 +272,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region af-south-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_afsouth1_with_FIPS_enabled_and_DualStack_enabled_c62ebc431c7547b6a9e085b37dcd7da6_Test()
+        public void For_region_afsouth1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -287,7 +287,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region af-south-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_afsouth1_with_FIPS_enabled_and_DualStack_disabled_ce72997c37ed425682aa39fa6b44119b_Test()
+        public void For_region_afsouth1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -302,7 +302,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region af-south-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_afsouth1_with_FIPS_disabled_and_DualStack_enabled_073a75987dc347808f529784b5aa6337_Test()
+        public void For_region_afsouth1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -317,7 +317,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region af-south-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_afsouth1_with_FIPS_disabled_and_DualStack_disabled_f302d3afd3e14ca4bfbab20a987425c8_Test()
+        public void For_region_afsouth1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -332,7 +332,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region eu-west-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_euwest2_with_FIPS_enabled_and_DualStack_enabled_a4dcaaefb64d4971a09d2bd1c4ae4d5c_Test()
+        public void For_region_euwest2_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -347,7 +347,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region eu-west-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_euwest2_with_FIPS_enabled_and_DualStack_disabled_d1e3ae4b6fe94583b02a5347ec407458_Test()
+        public void For_region_euwest2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -362,7 +362,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region eu-west-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_euwest2_with_FIPS_disabled_and_DualStack_enabled_99f2f02c03d34db29a9ed699f7ac6d0e_Test()
+        public void For_region_euwest2_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -377,7 +377,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region eu-west-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_euwest2_with_FIPS_disabled_and_DualStack_disabled_40edf9de182743d8bfac74a8cc7fdf16_Test()
+        public void For_region_euwest2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -392,7 +392,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region ap-northeast-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_apnortheast2_with_FIPS_enabled_and_DualStack_enabled_b6df878fae7843bda82b7d6ad4f52661_Test()
+        public void For_region_apnortheast2_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -407,7 +407,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region ap-northeast-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_apnortheast2_with_FIPS_enabled_and_DualStack_disabled_fe7cd12fe6024d539763d883b8ed456e_Test()
+        public void For_region_apnortheast2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -422,7 +422,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region ap-northeast-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_apnortheast2_with_FIPS_disabled_and_DualStack_enabled_16a5704c36d54e6fa0bc1da4a05eeac8_Test()
+        public void For_region_apnortheast2_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -437,7 +437,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region ap-northeast-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_apnortheast2_with_FIPS_disabled_and_DualStack_disabled_e2e439ccd1ec4f70b1d70e4e809e6a77_Test()
+        public void For_region_apnortheast2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -452,7 +452,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region ap-northeast-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_enabled_14f3180cd0534d8385e25b9f7d255b60_Test()
+        public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -467,7 +467,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region ap-northeast-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_disabled_aa17623de88c4979ba9e18d61fd91fec_Test()
+        public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -482,7 +482,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region ap-northeast-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_enabled_00a7205d0ac248dbbc1fb49581942305_Test()
+        public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -497,7 +497,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region ap-northeast-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_disabled_25a0013c1ecb4079b4f5ed66d0f9ee3e_Test()
+        public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -512,7 +512,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region us-gov-west-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_enabled_88f3cc1a3f0f465db2e20fe565f911a1_Test()
+        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -527,7 +527,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region us-gov-west-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_disabled_8a9fbfb828fe4b83a7b1d8710263c7c1_Test()
+        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -542,7 +542,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region us-gov-west-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_enabled_7320bd8540de4a759b4cec4e468bc915_Test()
+        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -557,7 +557,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region us-gov-west-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_disabled_c73a3fce439c482089f18f3f4f4c9f29_Test()
+        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -572,7 +572,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region ap-southeast-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_apsoutheast1_with_FIPS_enabled_and_DualStack_enabled_74a7d4c8acc2427f89c160ebe9e7c4f4_Test()
+        public void For_region_apsoutheast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -587,7 +587,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region ap-southeast-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_apsoutheast1_with_FIPS_enabled_and_DualStack_disabled_9bf26f015f5d4d8499e991ea28a66b29_Test()
+        public void For_region_apsoutheast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -602,7 +602,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region ap-southeast-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_apsoutheast1_with_FIPS_disabled_and_DualStack_enabled_0f5668709ac84922923f032774128f1a_Test()
+        public void For_region_apsoutheast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -617,7 +617,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region ap-southeast-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_apsoutheast1_with_FIPS_disabled_and_DualStack_disabled_8c96817b594743db8a984fbc32a905f5_Test()
+        public void For_region_apsoutheast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -632,7 +632,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region ap-southeast-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_apsoutheast2_with_FIPS_enabled_and_DualStack_enabled_9690f84f77d4484f99149d4d151f82d6_Test()
+        public void For_region_apsoutheast2_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -647,7 +647,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region ap-southeast-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_apsoutheast2_with_FIPS_enabled_and_DualStack_disabled_3b098c3965e541bd81e1a3dbd025ec18_Test()
+        public void For_region_apsoutheast2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -662,7 +662,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region ap-southeast-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_apsoutheast2_with_FIPS_disabled_and_DualStack_enabled_0d71e816aa5c452f9d7b089153d294c2_Test()
+        public void For_region_apsoutheast2_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -677,7 +677,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region ap-southeast-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_apsoutheast2_with_FIPS_disabled_and_DualStack_disabled_ad97c717aa084b1ab1672e75aeec99f8_Test()
+        public void For_region_apsoutheast2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -692,7 +692,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region us-east-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_ff94b9f2ab2a462fb746203b0914e025_Test()
+        public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -707,7 +707,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region us-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_5525fd0fb048420ab82c5ed3a438b180_Test()
+        public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -722,7 +722,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region us-east-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_352b3853edfe4a89bae90b8d3fb0c65e_Test()
+        public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -737,7 +737,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For region us-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_f3abbc239a4c44ad98dab41ccb2ce5e3_Test()
+        public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -752,7 +752,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Connect")]
         [Description("For custom endpoint with fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_4715cb7a69cd40de8153aa5389da2dda_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -769,7 +769,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Connect")]
         [Description("For custom endpoint with fips enabled and dualstack disabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: FIPS and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_8e997628b7fb43849d3335c8fddeb32e_Test()
+        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -785,7 +785,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Connect")]
         [Description("For custom endpoint with fips disabled and dualstack enabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: Dualstack and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_89a08015977e4862889778f5d34a6d21_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new ConnectEndpointParameters();
             parameters["UseFIPS"] = false;

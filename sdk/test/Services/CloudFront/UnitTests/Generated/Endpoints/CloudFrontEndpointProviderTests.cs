@@ -32,7 +32,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudFront")]
         [Description("For region aws-cn-global with FIPS disabled and DualStack disabled")]
-        public void For_region_awscnglobal_with_FIPS_disabled_and_DualStack_disabled_f66eb3e214a94ae18753e81f1b6d1571_Test()
+        public void For_region_awscnglobal_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new CloudFrontEndpointParameters();
             parameters["Region"] = "aws-cn-global";
@@ -47,7 +47,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudFront")]
         [Description("For region aws-global with FIPS disabled and DualStack disabled")]
-        public void For_region_awsglobal_with_FIPS_disabled_and_DualStack_disabled_d968c3e804b14b6cb09291e003811602_Test()
+        public void For_region_awsglobal_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new CloudFrontEndpointParameters();
             parameters["Region"] = "aws-global";
@@ -62,7 +62,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudFront")]
         [Description("For custom endpoint with fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_f48455e3418a46efa16497beb0f7d940_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new CloudFrontEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -79,7 +79,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("CloudFront")]
         [Description("For custom endpoint with fips enabled and dualstack disabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: FIPS and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_07d4ad2ee8b8462480fd1a6adf57a99c_Test()
+        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new CloudFrontEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -95,7 +95,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("CloudFront")]
         [Description("For custom endpoint with fips disabled and dualstack enabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: Dualstack and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_7abd544c9a354d18b28ecf218bbf1d46_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new CloudFrontEndpointParameters();
             parameters["Region"] = "us-east-1";

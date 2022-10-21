@@ -32,7 +32,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region ap-south-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_apsouth1_with_FIPS_enabled_and_DualStack_enabled_564736d0b80e410db9d5fac2df986679_Test()
+        public void For_region_apsouth1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -47,7 +47,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region ap-south-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_apsouth1_with_FIPS_enabled_and_DualStack_disabled_909500bd25c3486c8359445bac2b717d_Test()
+        public void For_region_apsouth1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -62,7 +62,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region ap-south-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_apsouth1_with_FIPS_disabled_and_DualStack_enabled_9871262517874463b42a5f21f53099ac_Test()
+        public void For_region_apsouth1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -77,7 +77,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region ap-south-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_apsouth1_with_FIPS_disabled_and_DualStack_disabled_e6af064e2c8c42d5b11634f031c3e761_Test()
+        public void For_region_apsouth1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -92,7 +92,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region us-gov-east-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_enabled_8e8b68f9e18c4907bb16ceb7b1efe4e2_Test()
+        public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -107,7 +107,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region us-gov-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_disabled_464383e255ab489caa07786b68352bec_Test()
+        public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -122,7 +122,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region us-gov-east-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_usgoveast1_with_FIPS_disabled_and_DualStack_enabled_5d703e6507ed47689e0c1ee050b81a94_Test()
+        public void For_region_usgoveast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -137,7 +137,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region us-gov-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_usgoveast1_with_FIPS_disabled_and_DualStack_disabled_21d64ed5324d4898a4d99bd7de45339d_Test()
+        public void For_region_usgoveast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -152,7 +152,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region ca-central-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_cacentral1_with_FIPS_enabled_and_DualStack_enabled_672166f1eeb244bdb1157c90fdb2d5d6_Test()
+        public void For_region_cacentral1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -167,7 +167,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region ca-central-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_cacentral1_with_FIPS_enabled_and_DualStack_disabled_913322d7360a4165a4849896208ce487_Test()
+        public void For_region_cacentral1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -182,7 +182,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region ca-central-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_cacentral1_with_FIPS_disabled_and_DualStack_enabled_cf32d5b2552a4c348891cfc3c6d04985_Test()
+        public void For_region_cacentral1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -197,7 +197,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region ca-central-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_cacentral1_with_FIPS_disabled_and_DualStack_disabled_803d109829fc42eea9926ad82c473978_Test()
+        public void For_region_cacentral1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -212,7 +212,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region eu-central-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_eucentral1_with_FIPS_enabled_and_DualStack_enabled_5ebe5201e6da4c4cbc13b84bb7c39f87_Test()
+        public void For_region_eucentral1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -227,7 +227,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region eu-central-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_eucentral1_with_FIPS_enabled_and_DualStack_disabled_6fab9ff6ec3943c6ae98f0370b8b2261_Test()
+        public void For_region_eucentral1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -242,7 +242,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region eu-central-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_enabled_087fc0e1bb7b4afcb7d55403a7bca764_Test()
+        public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -257,7 +257,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region eu-central-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_disabled_53521da9411c449991ab2dc5ab3874df_Test()
+        public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -272,7 +272,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region us-west-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_uswest1_with_FIPS_enabled_and_DualStack_enabled_13aedd421a294c83ab7d9961da8a4b69_Test()
+        public void For_region_uswest1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -287,7 +287,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region us-west-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_uswest1_with_FIPS_enabled_and_DualStack_disabled_a31dc74f0bec4ec88f04c8047a2530f3_Test()
+        public void For_region_uswest1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -302,7 +302,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region us-west-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_uswest1_with_FIPS_disabled_and_DualStack_enabled_3c6e769321ea4da0bb2dab25de5e3fd1_Test()
+        public void For_region_uswest1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -317,7 +317,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region us-west-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_uswest1_with_FIPS_disabled_and_DualStack_disabled_c40dd4b289b743f2b77a40c0521d8b61_Test()
+        public void For_region_uswest1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -332,7 +332,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region us-west-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_enabled_069f58e0bdcf4c9384744fbc02c2e049_Test()
+        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -347,7 +347,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region us-west-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_disabled_14442245cca0465f96d4eaae297d9a23_Test()
+        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -362,7 +362,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region us-west-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_enabled_8e37813bf8bf4c3da6a5629266695e3d_Test()
+        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -377,7 +377,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region us-west-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_disabled_2e9ca8715adb4776b7ad97dd1dc24c6c_Test()
+        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -392,7 +392,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region eu-west-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_euwest2_with_FIPS_enabled_and_DualStack_enabled_28d35b1aa5b444fea05ffc9aff19b2ab_Test()
+        public void For_region_euwest2_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -407,7 +407,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region eu-west-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_euwest2_with_FIPS_enabled_and_DualStack_disabled_dfda044b9a7b4b7e862ed3a96a3c1000_Test()
+        public void For_region_euwest2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -422,7 +422,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region eu-west-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_euwest2_with_FIPS_disabled_and_DualStack_enabled_d317126da7d642ee93c7fe52b0e8b0e8_Test()
+        public void For_region_euwest2_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -437,7 +437,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region eu-west-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_euwest2_with_FIPS_disabled_and_DualStack_disabled_f763ae33bf8b4e3cbc17d163988d8e88_Test()
+        public void For_region_euwest2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -452,7 +452,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region eu-west-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_euwest1_with_FIPS_enabled_and_DualStack_enabled_c72d510450a446dfb02b7f9caa7c8644_Test()
+        public void For_region_euwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -467,7 +467,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region eu-west-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_euwest1_with_FIPS_enabled_and_DualStack_disabled_3a2bb27cd0944c7c94336f039d5ac4fd_Test()
+        public void For_region_euwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -482,7 +482,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region eu-west-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_euwest1_with_FIPS_disabled_and_DualStack_enabled_3ee50b8468674639851acddc15fd59b8_Test()
+        public void For_region_euwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -497,7 +497,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region eu-west-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_euwest1_with_FIPS_disabled_and_DualStack_disabled_813e4685600243f58ad3cfb668ef030a_Test()
+        public void For_region_euwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -512,7 +512,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region ap-northeast-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_apnortheast2_with_FIPS_enabled_and_DualStack_enabled_e7b73345ccb64e8b867f6fb44f831589_Test()
+        public void For_region_apnortheast2_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -527,7 +527,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region ap-northeast-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_apnortheast2_with_FIPS_enabled_and_DualStack_disabled_2fd4cdb0626144fb885d08542da8f37b_Test()
+        public void For_region_apnortheast2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -542,7 +542,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region ap-northeast-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_apnortheast2_with_FIPS_disabled_and_DualStack_enabled_206eca53bed64edbad376698a36f2d81_Test()
+        public void For_region_apnortheast2_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -557,7 +557,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region ap-northeast-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_apnortheast2_with_FIPS_disabled_and_DualStack_disabled_3b2c588a02864512bd6f1c075d218cc5_Test()
+        public void For_region_apnortheast2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -572,7 +572,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region ap-northeast-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_enabled_460a79ab20584a39ae1dc6cd2f86fd64_Test()
+        public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -587,7 +587,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region ap-northeast-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_disabled_6439b98f321a4e748d978e669fac586f_Test()
+        public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -602,7 +602,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region ap-northeast-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_enabled_d76e470b409848c2b3fcd4c5de478e0e_Test()
+        public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -617,7 +617,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region ap-northeast-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_disabled_7c6838846b074883a9c53476f91dd0ef_Test()
+        public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -632,7 +632,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region cn-north-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_cnnorth1_with_FIPS_enabled_and_DualStack_enabled_63c9f04d7fe3405c86c895c2f52959b5_Test()
+        public void For_region_cnnorth1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -647,7 +647,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region cn-north-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_cnnorth1_with_FIPS_enabled_and_DualStack_disabled_33ad77b93cd14251b086fd841c9514fd_Test()
+        public void For_region_cnnorth1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -662,7 +662,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region cn-north-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_cnnorth1_with_FIPS_disabled_and_DualStack_enabled_52cec098dd0541bf84dca9cea0cdc84f_Test()
+        public void For_region_cnnorth1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -677,7 +677,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region cn-north-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_cnnorth1_with_FIPS_disabled_and_DualStack_disabled_1507accf59444970bf56f7cdf28ea105_Test()
+        public void For_region_cnnorth1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -692,7 +692,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region us-gov-west-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_enabled_7863b9d5d08f40cd95dde0122ea05283_Test()
+        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -707,7 +707,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region us-gov-west-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_disabled_6675ae68e59f4adc907078c06d73183f_Test()
+        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -722,7 +722,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region us-gov-west-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_enabled_280b5b0b4e2f45a68264755778ed9f17_Test()
+        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -737,7 +737,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region us-gov-west-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_disabled_6115e0e8d03f47749658919747775be1_Test()
+        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -752,7 +752,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region ap-southeast-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_apsoutheast1_with_FIPS_enabled_and_DualStack_enabled_3b4a13731d2646da907e0fea789ea19d_Test()
+        public void For_region_apsoutheast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -767,7 +767,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region ap-southeast-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_apsoutheast1_with_FIPS_enabled_and_DualStack_disabled_a32213c4d87143c6807944e221d11351_Test()
+        public void For_region_apsoutheast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -782,7 +782,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region ap-southeast-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_apsoutheast1_with_FIPS_disabled_and_DualStack_enabled_4312135c4e2846a5a4f2a39055ae9a9b_Test()
+        public void For_region_apsoutheast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -797,7 +797,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region ap-southeast-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_apsoutheast1_with_FIPS_disabled_and_DualStack_disabled_415a8232760b4e779fc46bbe1c16527b_Test()
+        public void For_region_apsoutheast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -812,7 +812,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region ap-southeast-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_apsoutheast2_with_FIPS_enabled_and_DualStack_enabled_8fcf259976de41efa4f95fe5fb0c3ff4_Test()
+        public void For_region_apsoutheast2_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -827,7 +827,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region ap-southeast-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_apsoutheast2_with_FIPS_enabled_and_DualStack_disabled_57196e2867de42a8a96fca0a894be596_Test()
+        public void For_region_apsoutheast2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -842,7 +842,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region ap-southeast-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_apsoutheast2_with_FIPS_disabled_and_DualStack_enabled_d3e86257e78b444eba36809f4ae2a89b_Test()
+        public void For_region_apsoutheast2_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -857,7 +857,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region ap-southeast-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_apsoutheast2_with_FIPS_disabled_and_DualStack_disabled_ba0a7708677f4d3ab58b2b76538e5513_Test()
+        public void For_region_apsoutheast2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -873,7 +873,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Greengrass")]
         [Description("For region us-iso-east-1 with FIPS enabled and DualStack enabled")]
         [ExpectedException(typeof(AmazonClientException), "FIPS and DualStack are enabled, but this partition does not support one or both")]
-        public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_enabled_e60d4aaeb42a42b58448da71c2d86ffd_Test()
+        public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -887,7 +887,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region us-iso-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_disabled_f6ca0e9490234afda77641e7da28e9c8_Test()
+        public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -903,7 +903,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Greengrass")]
         [Description("For region us-iso-east-1 with FIPS disabled and DualStack enabled")]
         [ExpectedException(typeof(AmazonClientException), "DualStack is enabled but this partition does not support DualStack")]
-        public void For_region_usisoeast1_with_FIPS_disabled_and_DualStack_enabled_34523275e8284faea4ad9106f1725441_Test()
+        public void For_region_usisoeast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -917,7 +917,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region us-iso-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_usisoeast1_with_FIPS_disabled_and_DualStack_disabled_2cc4370dd32946ccb2b43ba9fc69b053_Test()
+        public void For_region_usisoeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -932,7 +932,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region us-east-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_666fe1a51cfd4d369166dfa2ce2d8eb3_Test()
+        public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -947,7 +947,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region us-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_2b00bae5ee5541fcb31111acc20ff232_Test()
+        public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -962,7 +962,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region us-east-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_adbafcfaeb5b4cd3bbd92ac00888f17f_Test()
+        public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -977,7 +977,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region us-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_6bbc18279cc041a2a2d1147360eb365b_Test()
+        public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -992,7 +992,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region us-east-2 with FIPS enabled and DualStack enabled")]
-        public void For_region_useast2_with_FIPS_enabled_and_DualStack_enabled_5d8e7b978c374236a7bb94e95d2efe5a_Test()
+        public void For_region_useast2_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -1007,7 +1007,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region us-east-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_useast2_with_FIPS_enabled_and_DualStack_disabled_55b2130869d849d3a886425cec6a2e9b_Test()
+        public void For_region_useast2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -1022,7 +1022,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region us-east-2 with FIPS disabled and DualStack enabled")]
-        public void For_region_useast2_with_FIPS_disabled_and_DualStack_enabled_fdbd6e22e7724b4b969548dcad647522_Test()
+        public void For_region_useast2_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -1037,7 +1037,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region us-east-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_useast2_with_FIPS_disabled_and_DualStack_disabled_3c25ac188fb44badb91cd55c10325785_Test()
+        public void For_region_useast2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -1053,7 +1053,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Greengrass")]
         [Description("For region us-isob-east-1 with FIPS enabled and DualStack enabled")]
         [ExpectedException(typeof(AmazonClientException), "FIPS and DualStack are enabled, but this partition does not support one or both")]
-        public void For_region_usisobeast1_with_FIPS_enabled_and_DualStack_enabled_c64459d07b2d499abe43ad4a980e6342_Test()
+        public void For_region_usisobeast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -1067,7 +1067,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region us-isob-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_usisobeast1_with_FIPS_enabled_and_DualStack_disabled_3359d6e9133c42cd9490bf2a6f2e7d89_Test()
+        public void For_region_usisobeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -1083,7 +1083,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Greengrass")]
         [Description("For region us-isob-east-1 with FIPS disabled and DualStack enabled")]
         [ExpectedException(typeof(AmazonClientException), "DualStack is enabled but this partition does not support DualStack")]
-        public void For_region_usisobeast1_with_FIPS_disabled_and_DualStack_enabled_3b3c3e20dfc54abca8f5c64063056b31_Test()
+        public void For_region_usisobeast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -1097,7 +1097,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For region us-isob-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_usisobeast1_with_FIPS_disabled_and_DualStack_disabled_be33633f7a8a4296bfded73a36176e4b_Test()
+        public void For_region_usisobeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -1112,7 +1112,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Greengrass")]
         [Description("For custom endpoint with fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_c2167e6cad764d78add8344dd549f456_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = false;
@@ -1129,7 +1129,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Greengrass")]
         [Description("For custom endpoint with fips enabled and dualstack disabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: FIPS and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_6ac985e896a4477089a0a6d8d7d0292b_Test()
+        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = true;
@@ -1145,7 +1145,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Greengrass")]
         [Description("For custom endpoint with fips disabled and dualstack enabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: Dualstack and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_f73ab1c7bc5540fc8f9a7c208398b900_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new GreengrassEndpointParameters();
             parameters["UseFIPS"] = false;

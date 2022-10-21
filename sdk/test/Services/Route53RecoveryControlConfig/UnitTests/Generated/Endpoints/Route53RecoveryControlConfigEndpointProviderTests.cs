@@ -32,7 +32,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Route53RecoveryControlConfig")]
         [Description("For region aws-global with FIPS disabled and DualStack disabled")]
-        public void For_region_awsglobal_with_FIPS_disabled_and_DualStack_disabled_3b7404ebbdc84dc487261bc274285373_Test()
+        public void For_region_awsglobal_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new Route53RecoveryControlConfigEndpointParameters();
             parameters["Region"] = "aws-global";
@@ -47,7 +47,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Route53RecoveryControlConfig")]
         [Description("For custom endpoint with fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_2435718de3d342ad8b1d4be8980b95c4_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new Route53RecoveryControlConfigEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -64,7 +64,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Route53RecoveryControlConfig")]
         [Description("For custom endpoint with fips enabled and dualstack disabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: FIPS and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_67526f289a8b44d1a8a28130cf44a9f4_Test()
+        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new Route53RecoveryControlConfigEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -80,7 +80,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Route53RecoveryControlConfig")]
         [Description("For custom endpoint with fips disabled and dualstack enabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: Dualstack and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_39e964d4780244a9905f23c5bdcabb69_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new Route53RecoveryControlConfigEndpointParameters();
             parameters["Region"] = "us-east-1";

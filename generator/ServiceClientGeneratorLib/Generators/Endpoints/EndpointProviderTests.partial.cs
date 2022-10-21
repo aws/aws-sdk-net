@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -8,6 +9,7 @@ namespace ServiceClientGenerator.Generators.Endpoints
     {
         // all non-alphanumeric and undescores
         private static readonly Regex regex = new Regex("[^a-zA-Z0-9_]");
+        private readonly Dictionary<string, uint> _versions = new Dictionary<string, uint>();
 
         /// <summary>
         /// Converts test's documentation to a valid unique test function name.
@@ -16,15 +18,28 @@ namespace ServiceClientGenerator.Generators.Endpoints
         /// </summary>
         public string ToTestName(string documentation)
         {
-            documentation = documentation.Trim().Replace(" ", "_") + "_" + Guid.NewGuid();
+            documentation = documentation.Trim().Replace(" ", "_");
             if (char.IsDigit(documentation.First()))
             {
                 documentation = "_" + documentation;
             }
-            return regex
+            
+            var name = regex
                 .Replace(documentation, string.Empty)
                 .Replace("__", "_")
                 .ToUpperFirstCharacter();
+
+            if (!_versions.ContainsKey(name))
+            {
+                _versions.Add(name, 0);
+            }
+            else
+            {
+                var version = _versions[name] + 1;
+                _versions[name] = version;
+                name = $"{name}_{version}";
+            }
+            return name;
         }
     }
 }

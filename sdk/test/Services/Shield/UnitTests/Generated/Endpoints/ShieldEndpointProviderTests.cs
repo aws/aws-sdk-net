@@ -32,7 +32,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Shield")]
         [Description("For region aws-global with FIPS disabled and DualStack disabled")]
-        public void For_region_awsglobal_with_FIPS_disabled_and_DualStack_disabled_e7c393fa78a946e8a3318abe3a5b9774_Test()
+        public void For_region_awsglobal_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new ShieldEndpointParameters();
             parameters["Region"] = "aws-global";
@@ -47,7 +47,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Shield")]
         [Description("For custom endpoint with fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_9c9ea37dc1584d3b8e36f7102717f96a_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new ShieldEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -64,7 +64,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Shield")]
         [Description("For custom endpoint with fips enabled and dualstack disabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: FIPS and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_f1262652cd01470eb4cef6fa073ebd34_Test()
+        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new ShieldEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -80,7 +80,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("Shield")]
         [Description("For custom endpoint with fips disabled and dualstack enabled")]
         [ExpectedException(typeof(AmazonClientException), "Invalid Configuration: Dualstack and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_31bcdbe81949481985d4311945fddf73_Test()
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new ShieldEndpointParameters();
             parameters["Region"] = "us-east-1";
