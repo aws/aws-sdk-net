@@ -92,7 +92,7 @@ if (test.expect.error != null) {
             
             #line default
             #line hidden
-            this.Write("        [ExpectedException(typeof(AmazonClientException), \"");
+            this.Write("        [ExpectedException(typeof(AmazonClientException), @\"");
             
             #line 31 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\EndpointProviderTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(test.expect.error.SanitizeQuotes()));

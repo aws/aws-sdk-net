@@ -28,7 +28,7 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("<#=this.Config.TestCategory#>")]
         [Description("<#=test.documentation#>")]
 <#if (test.expect.error != null) {#>
-        [ExpectedException(typeof(AmazonClientException), "<#=test.expect.error.SanitizeQuotes()#>")]
+        [ExpectedException(typeof(AmazonClientException), @"<#=test.expect.error.SanitizeQuotes()#>")]
 <#}#>
         public void <#=ToTestName(test.documentation)#>_Test()
         {
