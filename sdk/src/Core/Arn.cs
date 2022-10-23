@@ -79,7 +79,7 @@ namespace Amazon
         /// <returns></returns>
         public static bool IsArn(string arn)
         {
-            return arn != null && arn.StartsWith("arn:");
+            return arn != null && arn.StartsWith("arn:", StringComparison.Ordinal);
         }
 
         /// <summary>
