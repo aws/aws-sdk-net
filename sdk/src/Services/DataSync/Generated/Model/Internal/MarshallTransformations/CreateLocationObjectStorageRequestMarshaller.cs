@@ -96,6 +96,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SecretKey);
                 }
 
+                if(publicRequest.IsSetServerCertificate())
+                {
+                    context.Writer.WritePropertyName("ServerCertificate");
+                    context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.ServerCertificate));
+                }
+
                 if(publicRequest.IsSetServerHostname())
                 {
                     context.Writer.WritePropertyName("ServerHostname");

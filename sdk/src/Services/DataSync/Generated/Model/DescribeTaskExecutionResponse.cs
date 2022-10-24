@@ -33,6 +33,7 @@ namespace Amazon.DataSync.Model
     /// </summary>
     public partial class DescribeTaskExecutionResponse : AmazonWebServiceResponse
     {
+        private long? _bytesCompressed;
         private long? _bytesTransferred;
         private long? _bytesWritten;
         private long? _estimatedBytesToTransfer;
@@ -45,6 +46,25 @@ namespace Amazon.DataSync.Model
         private DateTime? _startTime;
         private TaskExecutionStatus _status;
         private string _taskExecutionArn;
+
+        /// <summary>
+        /// Gets and sets the property BytesCompressed. 
+        /// <para>
+        /// The physical number of bytes transferred over the network after compression was applied.
+        /// In most cases, this number is less than <code>BytesTransferred</code>.
+        /// </para>
+        /// </summary>
+        public long BytesCompressed
+        {
+            get { return this._bytesCompressed.GetValueOrDefault(); }
+            set { this._bytesCompressed = value; }
+        }
+
+        // Check to see if BytesCompressed property is set
+        internal bool IsSetBytesCompressed()
+        {
+            return this._bytesCompressed.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property BytesTransferred. 
@@ -131,10 +151,6 @@ namespace Amazon.DataSync.Model
         /// patterns are delimited by "|" (that is, a pipe), for example: <code>"/folder1|/folder2"</code>
         /// 
         /// </para>
-        ///  
-        /// <para>
-        ///  
-        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
         public List<FilterRule> Excludes
@@ -183,10 +199,6 @@ namespace Amazon.DataSync.Model
         /// The list should contain a single filter string that consists of the patterns to include.
         /// The patterns are delimited by "|" (that is, a pipe), for example: <code>"/folder1|/folder2"</code>
         /// 
-        /// </para>
-        ///  
-        /// <para>
-        ///  
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]

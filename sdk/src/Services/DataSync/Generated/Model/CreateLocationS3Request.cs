@@ -30,7 +30,7 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLocationS3 operation.
-    /// Creates an endpoint for an Amazon S3 bucket.
+    /// Creates an endpoint for an Amazon S3 bucket that DataSync can access for a transfer.
     /// 
     ///  
     /// <para>

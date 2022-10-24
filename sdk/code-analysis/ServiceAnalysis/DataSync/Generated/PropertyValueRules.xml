@@ -205,6 +205,10 @@
     <pattern>^.+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataSync.Model.CreateLocationObjectStorageRequest.ServerCertificate</property>
+    <max>32768</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationObjectStorageRequest.ServerHostname</property>
     <max>255</max>
     <pattern>^(([a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9\-]*[A-Za-z0-9])$</pattern>
@@ -511,6 +515,10 @@
     <pattern>^(efs|nfs|s3|smb|hdfs|fsx[a-z0-9-]+)://[a-zA-Z0-9.:/\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataSync.Model.DescribeLocationObjectStorageResponse.ServerCertificate</property>
+    <max>32768</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataSync.Model.DescribeLocationObjectStorageResponse.ServerPort</property>
     <min>1</min>
     <max>65536</max>
@@ -789,6 +797,10 @@
     <min>8</min>
     <max>200</max>
     <pattern>^.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataSync.Model.UpdateLocationObjectStorageRequest.ServerCertificate</property>
+    <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.UpdateLocationObjectStorageRequest.ServerPort</property>

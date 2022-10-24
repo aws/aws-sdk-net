@@ -38,6 +38,7 @@ namespace Amazon.DataSync.Model
         private DateTime? _creationTime;
         private string _locationArn;
         private string _locationUri;
+        private MemoryStream _serverCertificate;
         private int? _serverPort;
         private ObjectStorageServerProtocol _serverProtocol;
 
@@ -45,7 +46,7 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property AccessKey. 
         /// <para>
         /// The access key (for example, a user name) required to authenticate with the object
-        /// storage server.
+        /// storage system.
         /// </para>
         /// </summary>
         [AWSProperty(Min=8, Max=200)]
@@ -137,6 +138,26 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ServerCertificate. 
+        /// <para>
+        /// The self-signed certificate that DataSync uses to securely authenticate with your
+        /// object storage system.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=32768)]
+        public MemoryStream ServerCertificate
+        {
+            get { return this._serverCertificate; }
+            set { this._serverCertificate = value; }
+        }
+
+        // Check to see if ServerCertificate property is set
+        internal bool IsSetServerCertificate()
+        {
+            return this._serverCertificate != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ServerPort. 
         /// <para>
         /// The port that your object storage server accepts inbound network traffic on (for example,
@@ -159,7 +180,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property ServerProtocol. 
         /// <para>
-        /// The protocol that your object storage server uses to communicate.
+        /// The protocol that your object storage system uses to communicate.
         /// </para>
         /// </summary>
         public ObjectStorageServerProtocol ServerProtocol

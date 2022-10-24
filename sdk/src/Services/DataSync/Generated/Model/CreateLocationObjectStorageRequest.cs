@@ -40,6 +40,7 @@ namespace Amazon.DataSync.Model
         private List<string> _agentArns = new List<string>();
         private string _bucketName;
         private string _secretKey;
+        private MemoryStream _serverCertificate;
         private string _serverHostname;
         private int? _serverPort;
         private ObjectStorageServerProtocol _serverProtocol;
@@ -123,6 +124,32 @@ namespace Amazon.DataSync.Model
         internal bool IsSetSecretKey()
         {
             return this._secretKey != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServerCertificate. 
+        /// <para>
+        /// Specifies a certificate to authenticate with an object storage system that uses a
+        /// private or self-signed certificate authority (CA). You must specify a Base64-encoded
+        /// <code>.pem</code> file (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>).
+        /// The certificate can be up to 32768 bytes (before Base64 encoding).
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=32768)]
+        public MemoryStream ServerCertificate
+        {
+            get { return this._serverCertificate; }
+            set { this._serverCertificate = value; }
+        }
+
+        // Check to see if ServerCertificate property is set
+        internal bool IsSetServerCertificate()
+        {
+            return this._serverCertificate != null;
         }
 
         /// <summary>

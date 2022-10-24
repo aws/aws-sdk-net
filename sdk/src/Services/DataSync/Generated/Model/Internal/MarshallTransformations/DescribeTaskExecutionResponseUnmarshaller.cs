@@ -51,6 +51,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("BytesCompressed", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    response.BytesCompressed = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("BytesTransferred", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;

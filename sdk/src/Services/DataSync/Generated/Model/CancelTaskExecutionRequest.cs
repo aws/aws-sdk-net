@@ -30,17 +30,16 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the CancelTaskExecution operation.
-    /// Cancels execution of a task. 
+    /// Stops an DataSync task execution that's in progress. The transfer of some files are
+    /// abruptly interrupted. File contents that're transferred to the destination might be
+    /// incomplete or inconsistent with the source files.
     /// 
     ///  
     /// <para>
-    /// When you cancel a task execution, the transfer of some files is abruptly interrupted.
-    /// The contents of files that are transferred to the destination might be incomplete
-    /// or inconsistent with the source files. However, if you start a new task execution
-    /// on the same task and you allow the task execution to complete, file content on the
-    /// destination is complete and consistent. This applies to other unexpected failures
-    /// that interrupt a task execution. In all of these cases, DataSync successfully complete
-    /// the transfer when you start the next task execution.
+    /// However, if you start a new task execution using the same task and allow it to finish,
+    /// file content on the destination will be complete and consistent. This applies to other
+    /// unexpected failures that interrupt a task execution. In all of these cases, DataSync
+    /// successfully completes the transfer when you start the next task execution.
     /// </para>
     /// </summary>
     public partial class CancelTaskExecutionRequest : AmazonDataSyncRequest
@@ -50,7 +49,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property TaskExecutionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the task execution to cancel.
+        /// The Amazon Resource Name (ARN) of the task execution to stop.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]

@@ -81,6 +81,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                     response.LocationUri = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ServerCertificate", targetDepth))
+                {
+                    var unmarshaller = MemoryStreamUnmarshaller.Instance;
+                    response.ServerCertificate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ServerPort", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

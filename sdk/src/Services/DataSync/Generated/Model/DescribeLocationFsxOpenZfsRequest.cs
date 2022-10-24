@@ -30,8 +30,15 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLocationFsxOpenZfs operation.
-    /// Returns metadata about an Amazon FSx for OpenZFS location, such as information about
-    /// its path.
+    /// Provides details about how an DataSync location for an Amazon FSx for OpenZFS file
+    /// system is configured.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Response elements related to <code>SMB</code> aren't supported with the <code>DescribeLocationFsxOpenZfs</code>
+    /// operation.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeLocationFsxOpenZfsRequest : AmazonDataSyncRequest
     {

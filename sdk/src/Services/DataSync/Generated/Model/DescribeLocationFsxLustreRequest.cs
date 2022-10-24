@@ -30,8 +30,8 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLocationFsxLustre operation.
-    /// Returns metadata about an Amazon FSx for Lustre location, such as information about
-    /// its path.
+    /// Provides details about how an DataSync location for an Amazon FSx for Lustre file
+    /// system is configured.
     /// </summary>
     public partial class DescribeLocationFsxLustreRequest : AmazonDataSyncRequest
     {
