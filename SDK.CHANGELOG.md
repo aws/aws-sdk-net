@@ -1,3 +1,16 @@
+### 3.7.402.0 (2022-10-24 19:07 UTC)
+* ACMPCA (3.7.101.0)
+	* AWS Private Certificate Authority (AWS Private CA) now offers usage modes which are combination of features to address specific use cases.
+* Batch (3.7.101.0)
+	* This release adds support for AWS Batch on Amazon EKS.
+* DataSync (3.7.101.0)
+	* Added support for self-signed certificates when using object storage locations; added BytesCompressed to the TaskExecution response.
+* SageMaker (3.7.102.0)
+	* SageMaker Inference Recommender now supports a new API ListInferenceRecommendationJobSteps to return the details of all the benchmark we create for an inference recommendation job.
+* Core 3.7.100.1
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.401.0 (2022-10-21 20:42 UTC)
 * CognitoIdentityProvider (3.7.101.0)
 	* This release adds a new "DeletionProtection" field to the UserPool in Cognito. Application admins can configure this value with either ACTIVE or INACTIVE value. Setting this field to ACTIVE will prevent a user pool from accidental deletion.
