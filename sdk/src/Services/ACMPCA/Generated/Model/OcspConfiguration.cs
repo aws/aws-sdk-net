@@ -78,8 +78,8 @@ namespace Amazon.ACMPCA.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/ocsp-customize.html">Customizing
-        /// Online Certificate Status Protocol (OCSP) </a> in the <i>Certificate Manager Private
-        /// Certificate Authority (PCA) User Guide</i>.
+        /// Online Certificate Status Protocol (OCSP) </a> in the <i>Private Certificate Authority
+        /// (PCA) User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=253)]

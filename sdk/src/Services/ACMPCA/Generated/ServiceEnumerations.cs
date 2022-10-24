@@ -357,6 +357,56 @@ namespace Amazon.ACMPCA
 
 
     /// <summary>
+    /// Constants used for properties of type CertificateAuthorityUsageMode.
+    /// </summary>
+    public class CertificateAuthorityUsageMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GENERAL_PURPOSE for CertificateAuthorityUsageMode
+        /// </summary>
+        public static readonly CertificateAuthorityUsageMode GENERAL_PURPOSE = new CertificateAuthorityUsageMode("GENERAL_PURPOSE");
+        /// <summary>
+        /// Constant SHORT_LIVED_CERTIFICATE for CertificateAuthorityUsageMode
+        /// </summary>
+        public static readonly CertificateAuthorityUsageMode SHORT_LIVED_CERTIFICATE = new CertificateAuthorityUsageMode("SHORT_LIVED_CERTIFICATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CertificateAuthorityUsageMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CertificateAuthorityUsageMode FindValue(string value)
+        {
+            return FindValue<CertificateAuthorityUsageMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CertificateAuthorityUsageMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ExtendedKeyUsageType.
     /// </summary>
     public class ExtendedKeyUsageType : ConstantClass

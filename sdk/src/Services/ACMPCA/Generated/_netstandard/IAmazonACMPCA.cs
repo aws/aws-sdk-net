@@ -31,10 +31,9 @@ namespace Amazon.ACMPCA
     /// <summary>
     /// Interface for accessing ACMPCA
     ///
-    /// This is the <i>Certificate Manager Private Certificate Authority (PCA) API Reference</i>.
-    /// It provides descriptions, syntax, and usage examples for each of the actions and data
-    /// types involved in creating and managing a private certificate authority (CA) for your
-    /// organization.
+    /// This is the <i>Private Certificate Authority (PCA) API Reference</i>. It provides
+    /// descriptions, syntax, and usage examples for each of the actions and data types involved
+    /// in creating and managing a private certificate authority (CA) for your organization.
     /// 
     ///  
     /// <para>

@@ -137,8 +137,8 @@ namespace Amazon.ACMPCA.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/crl-planning.html">Planning
-    /// a certificate revocation list (CRL)</a> in the <i>Certificate Manager Private Certificate
-    /// Authority (PCA) User Guide</i> 
+    /// a certificate revocation list (CRL)</a> in the <i>Private Certificate Authority (PCA)
+    /// User Guide</i> 
     /// </para>
     /// </summary>
     public partial class CrlConfiguration

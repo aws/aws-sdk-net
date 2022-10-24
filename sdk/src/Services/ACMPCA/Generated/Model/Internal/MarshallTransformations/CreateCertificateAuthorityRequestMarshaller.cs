@@ -123,6 +123,12 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetUsageMode())
+                {
+                    context.Writer.WritePropertyName("UsageMode");
+                    context.Writer.Write(publicRequest.UsageMode);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

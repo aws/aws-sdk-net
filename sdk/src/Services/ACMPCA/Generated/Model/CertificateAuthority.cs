@@ -55,6 +55,7 @@ namespace Amazon.ACMPCA.Model
         private string _serial;
         private CertificateAuthorityStatus _status;
         private CertificateAuthorityType _type;
+        private CertificateAuthorityUsageMode _usageMode;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -325,6 +326,31 @@ namespace Amazon.ACMPCA.Model
         internal bool IsSetType()
         {
             return this._type != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UsageMode. 
+        /// <para>
+        /// Specifies whether the CA issues general-purpose certificates that typically require
+        /// a revocation mechanism, or short-lived certificates that may optionally omit revocation
+        /// because they expire quickly. Short-lived certificate validity is limited to seven
+        /// days.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is GENERAL_PURPOSE.
+        /// </para>
+        /// </summary>
+        public CertificateAuthorityUsageMode UsageMode
+        {
+            get { return this._usageMode; }
+            set { this._usageMode = value; }
+        }
+
+        // Check to see if UsageMode property is set
+        internal bool IsSetUsageMode()
+        {
+            return this._usageMode != null;
         }
 
     }

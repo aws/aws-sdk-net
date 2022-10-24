@@ -37,8 +37,8 @@ namespace Amazon.ACMPCA.Model
     /// a CRL contains an updated list of certificates revoked by your CA. For more information,
     /// see <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_RevokeCertificate.html">RevokeCertificate</a>
     /// and <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/revocation-setup.html">Setting
-    /// up a certificate revocation method</a> in the <i>Certificate Manager Private Certificate
-    /// Authority (PCA) User Guide</i>.
+    /// up a certificate revocation method</a> in the <i>Private Certificate Authority (PCA)
+    /// User Guide</i>.
     /// </summary>
     public partial class RevocationConfiguration
     {

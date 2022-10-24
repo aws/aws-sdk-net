@@ -65,6 +65,7 @@ namespace Amazon.ACMPCA.Model
         private KeyStorageSecurityStandard _keyStorageSecurityStandard;
         private RevocationConfiguration _revocationConfiguration;
         private List<Tag> _tags = new List<Tag>();
+        private CertificateAuthorityUsageMode _usageMode;
 
         /// <summary>
         /// Gets and sets the property CertificateAuthorityConfiguration. 
@@ -216,6 +217,31 @@ namespace Amazon.ACMPCA.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UsageMode. 
+        /// <para>
+        /// Specifies whether the CA issues general-purpose certificates that typically require
+        /// a revocation mechanism, or short-lived certificates that may optionally omit revocation
+        /// because they expire quickly. Short-lived certificate validity is limited to seven
+        /// days.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is GENERAL_PURPOSE.
+        /// </para>
+        /// </summary>
+        public CertificateAuthorityUsageMode UsageMode
+        {
+            get { return this._usageMode; }
+            set { this._usageMode = value; }
+        }
+
+        // Check to see if UsageMode property is set
+        internal bool IsSetUsageMode()
+        {
+            return this._usageMode != null;
         }
 
     }
