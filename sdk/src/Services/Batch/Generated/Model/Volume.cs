@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// A data volume used in a job's container properties.
+    /// A data volume that's used in a job's container properties.
     /// </summary>
     public partial class Volume
     {
@@ -40,9 +40,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property EfsVolumeConfiguration. 
         /// <para>
-        /// This parameter is specified when you are using an Amazon Elastic File System file
-        /// system for job storage. Jobs that are running on Fargate resources must specify a
-        /// <code>platformVersion</code> of at least <code>1.4.0</code>.
+        /// This parameter is specified when you're using an Amazon Elastic File System file system
+        /// for job storage. Jobs that are running on Fargate resources must specify a <code>platformVersion</code>
+        /// of at least <code>1.4.0</code>.
         /// </para>
         /// </summary>
         public EFSVolumeConfiguration EfsVolumeConfiguration
@@ -61,10 +61,10 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property Host. 
         /// <para>
         /// The contents of the <code>host</code> parameter determine whether your data volume
-        /// persists on the host container instance and where it is stored. If the host parameter
+        /// persists on the host container instance and where it's stored. If the host parameter
         /// is empty, then the Docker daemon assigns a host path for your data volume. However,
-        /// the data isn't guaranteed to persist after the containers associated with it stop
-        /// running.
+        /// the data isn't guaranteed to persist after the containers that are associated with
+        /// it stop running.
         /// </para>
         ///  <note> 
         /// <para>
@@ -88,7 +88,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the volume. It can be up to 255 letters long. It can contain uppercase
+        /// The name of the volume. It can be up to 255 characters long. It can contain uppercase
         /// and lowercase letters, numbers, hyphens (-), and underscores (_). This name is referenced
         /// in the <code>sourceVolume</code> parameter of container definition <code>mountPoints</code>.
         /// </para>

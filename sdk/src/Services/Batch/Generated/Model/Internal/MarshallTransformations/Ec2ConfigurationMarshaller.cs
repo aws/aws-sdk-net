@@ -51,6 +51,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ImageIdOverride);
             }
 
+            if(requestObject.IsSetImageKubernetesVersion())
+            {
+                context.Writer.WritePropertyName("imageKubernetesVersion");
+                context.Writer.Write(requestObject.ImageKubernetesVersion);
+            }
+
             if(requestObject.IsSetImageType())
             {
                 context.Writer.WritePropertyName("imageType");

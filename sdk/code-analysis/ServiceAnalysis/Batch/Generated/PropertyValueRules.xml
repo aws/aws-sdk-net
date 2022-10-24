@@ -6,7 +6,17 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Batch.Model.Ec2Configuration.ImageKubernetesVersion</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Batch.Model.Ec2Configuration.ImageType</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Batch.Model.EksEmptyDir.SizeLimit</property>
     <min>1</min>
     <max>256</max>
   </property-value-rule>

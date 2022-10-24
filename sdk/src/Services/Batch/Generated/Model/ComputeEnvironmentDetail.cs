@@ -29,14 +29,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// An object representing an Batch compute environment.
+    /// An object that represents an Batch compute environment.
     /// </summary>
     public partial class ComputeEnvironmentDetail
     {
         private string _computeEnvironmentArn;
         private string _computeEnvironmentName;
         private ComputeResource _computeResources;
+        private OrchestrationType _containerOrchestrationType;
         private string _ecsClusterArn;
+        private EksConfiguration _eksConfiguration;
         private string _serviceRole;
         private CEState _state;
         private CEStatus _status;
@@ -45,6 +47,7 @@ namespace Amazon.Batch.Model
         private CEType _type;
         private int? _unmanagedvCpus;
         private UpdatePolicy _updatePolicy;
+        private string _uuid;
 
         /// <summary>
         /// Gets and sets the property ComputeEnvironmentArn. 
@@ -68,7 +71,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ComputeEnvironmentName. 
         /// <para>
-        /// The name of the compute environment. It can be up to 128 letters long. It can contain
+        /// The name of the compute environment. It can be up to 128 characters long. It can contain
         /// uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).
         /// </para>
         /// </summary>
@@ -106,10 +109,29 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ContainerOrchestrationType. 
+        /// <para>
+        /// The orchestration type of the compute environment. The valid values are <code>ECS</code>
+        /// (default) or <code>EKS</code>.
+        /// </para>
+        /// </summary>
+        public OrchestrationType ContainerOrchestrationType
+        {
+            get { return this._containerOrchestrationType; }
+            set { this._containerOrchestrationType = value; }
+        }
+
+        // Check to see if ContainerOrchestrationType property is set
+        internal bool IsSetContainerOrchestrationType()
+        {
+            return this._containerOrchestrationType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EcsClusterArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster used by the compute
-        /// environment.
+        /// The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster that the compute
+        /// environment uses.
         /// </para>
         /// </summary>
         public string EcsClusterArn
@@ -125,10 +147,29 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EksConfiguration. 
+        /// <para>
+        /// The configuration for the Amazon EKS cluster that supports the Batch compute environment.
+        /// Only specify this parameter if the <code>containerOrchestrationType</code> is <code>EKS</code>.
+        /// </para>
+        /// </summary>
+        public EksConfiguration EksConfiguration
+        {
+            get { return this._eksConfiguration; }
+            set { this._eksConfiguration = value; }
+        }
+
+        // Check to see if EksConfiguration property is set
+        internal bool IsSetEksConfiguration()
+        {
+            return this._eksConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ServiceRole. 
         /// <para>
-        /// The service role associated with the compute environment that allows Batch to make
-        /// calls to Amazon Web Services API operations on your behalf. For more information,
+        /// The service role that's associated with the compute environment that allows Batch
+        /// to make calls to Amazon Web Services API operations on your behalf. For more information,
         /// see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch
         /// service IAM role</a> in the <i>Batch User Guide</i>.
         /// </para>
@@ -155,7 +196,7 @@ namespace Amazon.Batch.Model
         /// <para>
         /// If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place
         /// jobs from an associated job queue on the compute resources within the environment.
-        /// If the compute environment is managed, then it can scale its instances out or in automatically,
+        /// If the compute environment is managed, then it can scale its instances out or in automatically
         /// based on the job queue demand.
         /// </para>
         ///  
@@ -201,7 +242,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property StatusReason. 
         /// <para>
-        /// A short, human-readable string to provide additional details about the current status
+        /// A short, human-readable string to provide additional details for the current status
         /// of the compute environment.
         /// </para>
         /// </summary>
@@ -292,6 +333,24 @@ namespace Amazon.Batch.Model
         internal bool IsSetUpdatePolicy()
         {
             return this._updatePolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Uuid. 
+        /// <para>
+        /// Unique identifier for the compute environment.
+        /// </para>
+        /// </summary>
+        public string Uuid
+        {
+            get { return this._uuid; }
+            set { this._uuid = value; }
+        }
+
+        // Check to see if Uuid property is set
+        internal bool IsSetUuid()
+        {
+            return this._uuid != null;
         }
 
     }

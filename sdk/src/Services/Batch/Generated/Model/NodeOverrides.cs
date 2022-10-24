@@ -29,13 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// Object representing any node overrides to a job definition that's used in a <a>SubmitJob</a>
-    /// API operation.
+    /// An object that represents any node overrides to a job definition that's used in a
+    /// <a>SubmitJob</a> API operation.
     /// 
     ///  <note> 
     /// <para>
-    /// This isn't applicable to jobs that are running on Fargate resources and shouldn't
-    /// be provided; use <code>containerOverrides</code> instead.
+    /// This parameter isn't applicable to jobs that are running on Fargate resources. Don't
+    /// provide it for these jobs. Rather, use <code>containerOverrides</code> instead.
     /// </para>
     ///  </note>
     /// </summary>
@@ -66,22 +66,23 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property NumNodes. 
         /// <para>
         /// The number of nodes to use with a multi-node parallel job. This value overrides the
-        /// number of nodes that are specified in the job definition. To use this override:
+        /// number of nodes that are specified in the job definition. To use this override, you
+        /// must meet the following conditions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// There must be at least one node range in your job definition that has an open upper
-        /// boundary (such as <code>:</code> or <code>n:</code>).
+        /// boundary, such as <code>:</code> or <code>n:</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The lower boundary of the node range specified in the job definition must be fewer
-        /// than the number of nodes specified in the override.
+        /// The lower boundary of the node range that's specified in the job definition must be
+        /// fewer than the number of nodes specified in the override.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The main node index specified in the job definition must be fewer than the number
-        /// of nodes specified in the override.
+        /// The main node index that's specified in the job definition must be fewer than the
+        /// number of nodes specified in the override.
         /// </para>
         ///  </li> </ul>
         /// </summary>

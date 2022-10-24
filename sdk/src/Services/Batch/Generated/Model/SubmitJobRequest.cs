@@ -56,6 +56,7 @@ namespace Amazon.Batch.Model
         private ArrayProperties _arrayProperties;
         private ContainerOverrides _containerOverrides;
         private List<JobDependency> _dependsOn = new List<JobDependency>();
+        private EksPropertiesOverride _eksPropertiesOverride;
         private string _jobDefinition;
         private string _jobName;
         private string _jobQueue;
@@ -92,12 +93,12 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ContainerOverrides. 
         /// <para>
-        /// A list of container overrides in the JSON format that specify the name of a container
-        /// in the specified job definition and the overrides it receives. You can override the
-        /// default command for a container, which is specified in the job definition or the Docker
-        /// image, with a <code>command</code> override. You can also override existing environment
-        /// variables on a container or add new environment variables to it with an <code>environment</code>
-        /// override.
+        /// An object with various properties that override the defaults for the job definition
+        /// that specify the name of a container in the specified job definition and the overrides
+        /// it should receive. You can override the default command for a container, which is
+        /// specified in the job definition or the Docker image, with a <code>command</code> override.
+        /// You can also override existing environment variables on a container or add new environment
+        /// variables to it with an <code>environment</code> override.
         /// </para>
         /// </summary>
         public ContainerOverrides ContainerOverrides
@@ -133,6 +134,25 @@ namespace Amazon.Batch.Model
         internal bool IsSetDependsOn()
         {
             return this._dependsOn != null && this._dependsOn.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EksPropertiesOverride. 
+        /// <para>
+        /// An object that can only be specified for jobs that are run on Amazon EKS resources
+        /// with various properties that override defaults for the job definition.
+        /// </para>
+        /// </summary>
+        public EksPropertiesOverride EksPropertiesOverride
+        {
+            get { return this._eksPropertiesOverride; }
+            set { this._eksPropertiesOverride = value; }
+        }
+
+        // Check to see if EksPropertiesOverride property is set
+        internal bool IsSetEksPropertiesOverride()
+        {
+            return this._eksPropertiesOverride != null;
         }
 
         /// <summary>
@@ -289,10 +309,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property SchedulingPriorityOverride. 
         /// <para>
-        /// The scheduling priority for the job. This will only affect jobs in job queues with
-        /// a fair share policy. Jobs with a higher scheduling priority will be scheduled before
-        /// jobs with a lower scheduling priority. This will override any scheduling priority
-        /// in the job definition.
+        /// The scheduling priority for the job. This only affects jobs in job queues with a fair
+        /// share policy. Jobs with a higher scheduling priority are scheduled before jobs with
+        /// a lower scheduling priority. This overrides any scheduling priority in the job definition.
         /// </para>
         ///  
         /// <para>
@@ -314,7 +333,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ShareIdentifier. 
         /// <para>
-        /// The share identifier for the job. If the job queue does not have a scheduling policy,
+        /// The share identifier for the job. If the job queue doesn't have a scheduling policy,
         /// then this parameter must not be specified. If the job queue has a scheduling policy,
         /// then this parameter must be specified.
         /// </para>

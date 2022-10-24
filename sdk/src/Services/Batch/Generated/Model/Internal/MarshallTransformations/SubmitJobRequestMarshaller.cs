@@ -103,6 +103,17 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetEksPropertiesOverride())
+                {
+                    context.Writer.WritePropertyName("eksPropertiesOverride");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EksPropertiesOverrideMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EksPropertiesOverride, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetJobDefinition())
                 {
                     context.Writer.WritePropertyName("jobDefinition");

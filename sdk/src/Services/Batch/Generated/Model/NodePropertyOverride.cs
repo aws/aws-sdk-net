@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// Object representing any node overrides to a job definition that's used in a <a>SubmitJob</a>
-    /// API operation.
+    /// The object that represents any node overrides to a job definition that's used in a
+    /// <a>SubmitJob</a> API operation.
     /// </summary>
     public partial class NodePropertyOverride
     {
@@ -40,7 +40,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ContainerOverrides. 
         /// <para>
-        /// The overrides that should be sent to a node range.
+        /// The overrides that are sent to a node range.
         /// </para>
         /// </summary>
         public ContainerOverrides ContainerOverrides

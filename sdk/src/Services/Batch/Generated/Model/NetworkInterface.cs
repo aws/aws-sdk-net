@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// An object representing the elastic network interface for a multi-node parallel job
-    /// node.
+    /// An object that represents the elastic network interface for a multi-node parallel
+    /// job node.
     /// </summary>
     public partial class NetworkInterface
     {

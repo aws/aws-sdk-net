@@ -53,9 +53,9 @@ namespace Amazon.Batch.Model
     ///  </note> 
     /// <para>
     /// In an unmanaged compute environment, you can manage your own EC2 compute resources
-    /// and have a lot of flexibility with how you configure your compute resources. For example,
-    /// you can use custom AMIs. However, you must verify that each of your AMIs meet the
-    /// Amazon ECS container instance AMI specification. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container_instance_AMIs.html">container
+    /// and have flexibility with how you configure your compute resources. For example, you
+    /// can use custom AMIs. However, you must verify that each of your AMIs meet the Amazon
+    /// ECS container instance AMI specification. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container_instance_AMIs.html">container
     /// instance AMIs</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// After you created your unmanaged compute environment, you can use the <a>DescribeComputeEnvironments</a>
     /// operation to find the Amazon ECS cluster that's associated with it. Then, launch your
@@ -98,8 +98,8 @@ namespace Amazon.Batch.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Either do not set the service role (<code>serviceRole</code>) parameter or set it
-    /// to the <b>AWSBatchServiceRole</b> service-linked role.
+    /// Either don't set the service role (<code>serviceRole</code>) parameter or set it to
+    /// the <b>AWSBatchServiceRole</b> service-linked role.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -113,28 +113,28 @@ namespace Amazon.Batch.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Do not specify an AMI ID in <code>imageId</code>, <code>imageIdOverride</code> (in
+    /// Don't specify an AMI ID in <code>imageId</code>, <code>imageIdOverride</code> (in
     /// <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_Ec2Configuration.html">
     /// <code>ec2Configuration</code> </a>), or in the launch template (<code>launchTemplate</code>).
-    /// In that case Batch will select the latest Amazon ECS optimized AMI supported by Batch
-    /// at the time the infrastructure update is initiated. Alternatively you can specify
+    /// In that case, Batch selects the latest Amazon ECS optimized AMI that's supported by
+    /// Batch at the time the infrastructure update is initiated. Alternatively, you can specify
     /// the AMI ID in the <code>imageId</code> or <code>imageIdOverride</code> parameters,
     /// or the launch template identified by the <code>LaunchTemplate</code> properties. Changing
-    /// any of these properties will trigger an infrastructure update. If the AMI ID is specified
-    /// in the launch template, it can not be replaced by specifying an AMI ID in either the
+    /// any of these properties starts an infrastructure update. If the AMI ID is specified
+    /// in the launch template, it can't be replaced by specifying an AMI ID in either the
     /// <code>imageId</code> or <code>imageIdOverride</code> parameters. It can only be replaced
     /// by specifying a different launch template, or if the launch template version is set
     /// to <code>$Default</code> or <code>$Latest</code>, by setting either a new default
-    /// version for the launch template (if <code>$Default</code>)or by adding a new version
+    /// version for the launch template (if <code>$Default</code>) or by adding a new version
     /// to the launch template (if <code>$Latest</code>).
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// If these rules are followed, any update that triggers an infrastructure update will
-    /// cause the AMI ID to be re-selected. If the <code>version</code> setting in the launch
-    /// template (<code>launchTemplate</code>) is set to <code>$Latest</code> or <code>$Default</code>,
-    /// the latest or default version of the launch template will be evaluated up at the time
-    /// of the infrastructure update, even if the <code>launchTemplate</code> was not updated.
+    /// If these rules are followed, any update that starts an infrastructure update causes
+    /// the AMI ID to be re-selected. If the <code>version</code> setting in the launch template
+    /// (<code>launchTemplate</code>) is set to <code>$Latest</code> or <code>$Default</code>,
+    /// the latest or default version of the launch template is evaluated up at the time of
+    /// the infrastructure update, even if the <code>launchTemplate</code> wasn't updated.
     /// </para>
     ///  </note>
     /// </summary>
@@ -142,6 +142,7 @@ namespace Amazon.Batch.Model
     {
         private string _computeEnvironmentName;
         private ComputeResource _computeResources;
+        private EksConfiguration _eksConfiguration;
         private string _serviceRole;
         private CEState _state;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -151,8 +152,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ComputeEnvironmentName. 
         /// <para>
-        /// The name for your compute environment. It can be up to 128 letters long. It can contain
-        /// uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).
+        /// The name for your compute environment. It can be up to 128 characters long. It can
+        /// contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -189,6 +190,24 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EksConfiguration. 
+        /// <para>
+        /// The details for the Amazon EKS cluster that supports the compute environment.
+        /// </para>
+        /// </summary>
+        public EksConfiguration EksConfiguration
+        {
+            get { return this._eksConfiguration; }
+            set { this._eksConfiguration = value; }
+        }
+
+        // Check to see if EksConfiguration property is set
+        internal bool IsSetEksConfiguration()
+        {
+            return this._eksConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ServiceRole. 
         /// <para>
         /// The full Amazon Resource Name (ARN) of the IAM role that allows Batch to make calls
@@ -207,9 +226,8 @@ namespace Amazon.Batch.Model
         /// <para>
         /// If your specified role has a path other than <code>/</code>, then you must specify
         /// either the full role ARN (recommended) or prefix the role name with the path. For
-        /// example, if a role with the name <code>bar</code> has a path of <code>/foo/</code>
-        /// then you would specify <code>/foo/bar</code> as the role name. For more information,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
+        /// example, if a role with the name <code>bar</code> has a path of <code>/foo/</code>,
+        /// specify <code>/foo/bar</code> as the role name. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
         /// names and paths</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  <note> 

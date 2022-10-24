@@ -39,11 +39,12 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property AssignPublicIp. 
         /// <para>
-        /// Indicates whether the job should have a public IP address. For a job that is running
-        /// on Fargate resources in a private subnet to send outbound traffic to the internet
-        /// (for example, to pull container images), the private subnet requires a NAT gateway
-        /// be attached to route requests to the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Amazon
-        /// ECS task networking</a>. The default value is "DISABLED".
+        /// Indicates whether the job has a public IP address. For a job that's running on Fargate
+        /// resources in a private subnet to send outbound traffic to the internet (for example,
+        /// to pull container images), the private subnet requires a NAT gateway be attached to
+        /// route requests to the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Amazon
+        /// ECS task networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// The default value is "<code>DISABLED</code>".
         /// </para>
         /// </summary>
         public AssignPublicIp AssignPublicIp

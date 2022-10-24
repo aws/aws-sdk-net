@@ -82,6 +82,17 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetEksConfiguration())
+                {
+                    context.Writer.WritePropertyName("eksConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EksConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EksConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetServiceRole())
                 {
                     context.Writer.WritePropertyName("serviceRole");

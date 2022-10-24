@@ -114,8 +114,8 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This token should be treated as an opaque identifier that's only used to retrieve
-        /// the next items in a list and not for other programmatic purposes.
+        /// Treat this token as an opaque identifier that's only used to retrieve the next items
+        /// in a list and not for other programmatic purposes.
         /// </para>
         ///  </note>
         /// </summary>

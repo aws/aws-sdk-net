@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// An object representing the secret to expose to your container. Secrets can be exposed
+    /// An object that represents the secret to expose to your container. Secrets can be exposed
     /// to a container in the following ways:
     /// 
     ///  <ul> <li> 
@@ -75,16 +75,16 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ValueFrom. 
         /// <para>
-        /// The secret to expose to the container. The supported values are either the full ARN
-        /// of the Secrets Manager secret or the full ARN of the parameter in the Amazon Web Services
-        /// Systems Manager Parameter Store.
+        /// The secret to expose to the container. The supported values are either the full Amazon
+        /// Resource Name (ARN) of the Secrets Manager secret or the full ARN of the parameter
+        /// in the Amazon Web Services Systems Manager Parameter Store.
         /// </para>
         ///  <note> 
         /// <para>
         /// If the Amazon Web Services Systems Manager Parameter Store parameter exists in the
-        /// same Region as the job you're launching, then you can use either the full ARN or name
-        /// of the parameter. If the parameter exists in a different Region, then the full ARN
-        /// must be specified.
+        /// same Region as the job you're launching, then you can use either the full Amazon Resource
+        /// Name (ARN) or name of the parameter. If the parameter exists in a different Region,
+        /// then the full ARN must be specified.
         /// </para>
         ///  </note>
         /// </summary>

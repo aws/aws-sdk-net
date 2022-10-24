@@ -64,10 +64,22 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("containerOrchestrationType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ContainerOrchestrationType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("containerProperties", targetDepth))
                 {
                     var unmarshaller = ContainerPropertiesUnmarshaller.Instance;
                     unmarshalledObject.ContainerProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("eksProperties", targetDepth))
+                {
+                    var unmarshaller = EksPropertiesUnmarshaller.Instance;
+                    unmarshalledObject.EksProperties = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("jobDefinitionArn", targetDepth))

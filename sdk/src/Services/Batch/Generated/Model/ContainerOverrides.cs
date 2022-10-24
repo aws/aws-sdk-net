@@ -68,8 +68,8 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Environment variables must not start with <code>AWS_BATCH</code>; this naming convention
-        /// is reserved for variables that are set by the Batch service.
+        /// Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention
+        /// is reserved for variables that Batch sets.
         /// </para>
         ///  </note>
         /// </summary>
@@ -114,12 +114,12 @@ namespace Amazon.Batch.Model
         /// <para>
         /// This parameter is deprecated, use <code>resourceRequirements</code> to override the
         /// memory requirements specified in the job definition. It's not supported for jobs running
-        /// on Fargate resources. For jobs running on EC2 resources, it overrides the <code>memory</code>
-        /// parameter set in the job definition, but doesn't override any memory requirement specified
-        /// in the <code>resourceRequirements</code> structure in the job definition. To override
-        /// memory requirements that are specified in the <code>resourceRequirements</code> structure
-        /// in the job definition, <code>resourceRequirements</code> must be specified in the
-        /// <code>SubmitJob</code> request, with <code>type</code> set to <code>MEMORY</code>
+        /// on Fargate resources. For jobs that run on EC2 resources, it overrides the <code>memory</code>
+        /// parameter set in the job definition, but doesn't override any memory requirement that's
+        /// specified in the <code>resourceRequirements</code> structure in the job definition.
+        /// To override memory requirements that are specified in the <code>resourceRequirements</code>
+        /// structure in the job definition, <code>resourceRequirements</code> must be specified
+        /// in the <code>SubmitJob</code> request, with <code>type</code> set to <code>MEMORY</code>
         /// and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't
         /// override job definition resource requirements</a> in the <i>Batch User Guide</i>.
         /// </para>
@@ -162,7 +162,7 @@ namespace Amazon.Batch.Model
         /// <para>
         /// This parameter is deprecated, use <code>resourceRequirements</code> to override the
         /// <code>vcpus</code> parameter that's set in the job definition. It's not supported
-        /// for jobs running on Fargate resources. For jobs running on EC2 resources, it overrides
+        /// for jobs running on Fargate resources. For jobs that run on EC2 resources, it overrides
         /// the <code>vcpus</code> parameter set in the job definition, but doesn't override any
         /// vCPU requirement specified in the <code>resourceRequirements</code> structure in the
         /// job definition. To override vCPU requirements that are specified in the <code>resourceRequirements</code>

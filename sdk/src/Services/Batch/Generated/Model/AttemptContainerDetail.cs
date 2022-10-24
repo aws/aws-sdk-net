@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// An object representing the details of a container that's part of a job attempt.
+    /// An object that represents the details of a container that's part of a job attempt.
     /// </summary>
     public partial class AttemptContainerDetail
     {
@@ -62,7 +62,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ExitCode. 
         /// <para>
-        /// The exit code for the job attempt. A non-zero exit code is considered a failure.
+        /// The exit code for the job attempt. A non-zero exit code is considered failed.
         /// </para>
         /// </summary>
         public int ExitCode
@@ -80,8 +80,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property LogStreamName. 
         /// <para>
-        /// The name of the CloudWatch Logs log stream associated with the container. The log
-        /// group for Batch jobs is <code>/aws/batch/job</code>. Each container attempt receives
+        /// The name of the CloudWatch Logs log stream that's associated with the container. The
+        /// log group for Batch jobs is <code>/aws/batch/job</code>. Each container attempt receives
         /// a log stream name when they reach the <code>RUNNING</code> status.
         /// </para>
         /// </summary>
@@ -100,7 +100,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property NetworkInterfaces. 
         /// <para>
-        /// The network interfaces associated with the job attempt.
+        /// The network interfaces that are associated with the job attempt.
         /// </para>
         /// </summary>
         public List<NetworkInterface> NetworkInterfaces
@@ -118,7 +118,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Reason. 
         /// <para>
-        /// A short (255 max characters) human-readable string to provide additional details about
+        /// A short (255 max characters) human-readable string to provide additional details for
         /// a running or stopped container.
         /// </para>
         /// </summary>

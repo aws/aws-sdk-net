@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// An object representing summary details of a container within a job.
+    /// An object that represents summary details of a container within a job.
     /// </summary>
     public partial class ContainerSummary
     {
@@ -57,7 +57,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Reason. 
         /// <para>
-        /// A short (255 max characters) human-readable string to provide additional details about
+        /// A short (255 max characters) human-readable string to provide additional details for
         /// a running or stopped container.
         /// </para>
         /// </summary>

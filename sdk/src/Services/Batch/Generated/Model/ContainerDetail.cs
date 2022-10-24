@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// An object representing the details of a container that's part of a job.
+    /// An object that represents the details of a container that's part of a job.
     /// </summary>
     public partial class ContainerDetail
     {
@@ -104,8 +104,8 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Environment variables must not start with <code>AWS_BATCH</code>; this naming convention
-        /// is reserved for variables that are set by the Batch service.
+        /// Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention
+        /// is reserved for variables that Batch sets.
         /// </para>
         ///  </note>
         /// </summary>
@@ -222,7 +222,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property JobRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) associated with the job upon execution.
+        /// The Amazon Resource Name (ARN) that's associated with the job when run.
         /// </para>
         /// </summary>
         public string JobRoleArn
@@ -284,9 +284,9 @@ namespace Amazon.Batch.Model
         ///  </note> 
         /// <para>
         /// This parameter requires version 1.18 of the Docker Remote API or greater on your container
-        /// instance. To check the Docker Remote API version on your container instance, log into
-        /// your container instance and run the following command: <code>sudo docker version |
-        /// grep "Server API version"</code> 
+        /// instance. To check the Docker Remote API version on your container instance, log in
+        /// to your container instance and run the following command: <code>sudo docker version
+        /// | grep "Server API version"</code> 
         /// </para>
         ///  <note> 
         /// <para>
@@ -314,9 +314,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property LogStreamName. 
         /// <para>
-        /// The name of the CloudWatch Logs log stream associated with the container. The log
-        /// group for Batch jobs is <code>/aws/batch/job</code>. Each container attempt receives
-        /// a log stream name when they reach the <code>RUNNING</code> status.
+        /// The name of the Amazon CloudWatch Logs log stream that's associated with the container.
+        /// The log group for Batch jobs is <code>/aws/batch/job</code>. Each container attempt
+        /// receives a log stream name when they reach the <code>RUNNING</code> status.
         /// </para>
         /// </summary>
         public string LogStreamName
@@ -391,7 +391,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property NetworkInterfaces. 
         /// <para>
-        /// The network interfaces associated with the job.
+        /// The network interfaces that are associated with the job.
         /// </para>
         /// </summary>
         public List<NetworkInterface> NetworkInterfaces
@@ -410,12 +410,12 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property Privileged. 
         /// <para>
         /// When this parameter is true, the container is given elevated permissions on the host
-        /// container instance (similar to the <code>root</code> user). The default value is false.
+        /// container instance (similar to the <code>root</code> user). The default value is <code>false</code>.
         /// </para>
         ///  <note> 
         /// <para>
         /// This parameter isn't applicable to jobs that are running on Fargate resources and
-        /// shouldn't be provided, or specified as false.
+        /// shouldn't be provided, or specified as <code>false</code>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -456,7 +456,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Reason. 
         /// <para>
-        /// A short (255 max characters) human-readable string to provide additional details about
+        /// A short (255 max characters) human-readable string to provide additional details for
         /// a running or stopped container.
         /// </para>
         /// </summary>
@@ -615,7 +615,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Volumes. 
         /// <para>
-        /// A list of volumes associated with the job.
+        /// A list of volumes that are associated with the job.
         /// </para>
         /// </summary>
         public List<Volume> Volumes

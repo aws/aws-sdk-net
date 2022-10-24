@@ -35,6 +35,7 @@ namespace Amazon.Batch.Model
     public partial class RegisterJobDefinitionRequest : AmazonBatchRequest
     {
         private ContainerProperties _containerProperties;
+        private EksProperties _eksProperties;
         private string _jobDefinitionName;
         private NodeProperties _nodeProperties;
         private Dictionary<string, string> _parameters = new Dictionary<string, string>();
@@ -49,9 +50,10 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ContainerProperties. 
         /// <para>
-        /// An object with various properties specific to single-node container-based jobs. If
-        /// the job definition's <code>type</code> parameter is <code>container</code>, then you
-        /// must specify either <code>containerProperties</code> or <code>nodeProperties</code>.
+        /// An object with various properties specific to Amazon ECS based single-node container-based
+        /// jobs. If the job definition's <code>type</code> parameter is <code>container</code>,
+        /// then you must specify either <code>containerProperties</code> or <code>nodeProperties</code>.
+        /// This must not be specified for Amazon EKS based job definitions.
         /// </para>
         ///  <note> 
         /// <para>
@@ -70,6 +72,25 @@ namespace Amazon.Batch.Model
         internal bool IsSetContainerProperties()
         {
             return this._containerProperties != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EksProperties. 
+        /// <para>
+        /// An object with various properties that are specific to Amazon EKS based jobs. This
+        /// must not be specified for Amazon ECS based job definitions.
+        /// </para>
+        /// </summary>
+        public EksProperties EksProperties
+        {
+            get { return this._eksProperties; }
+            set { this._eksProperties = value; }
+        }
+
+        // Check to see if EksProperties property is set
+        internal bool IsSetEksProperties()
+        {
+            return this._eksProperties != null;
         }
 
         /// <summary>
@@ -106,6 +127,10 @@ namespace Amazon.Batch.Model
         /// <para>
         /// If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>;
         /// use <code>containerProperties</code> instead.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// If the job runs on Amazon EKS resources, then you must not specify <code>nodeProperties</code>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -147,6 +172,11 @@ namespace Amazon.Batch.Model
         /// The platform capabilities required by the job definition. If no value is specified,
         /// it defaults to <code>EC2</code>. To run the job on Fargate resources, specify <code>FARGATE</code>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If the job runs on Amazon EKS resources, then you must not specify <code>platformCapabilities</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<string> PlatformCapabilities
         {
@@ -170,6 +200,11 @@ namespace Amazon.Batch.Model
         /// tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code>
         /// state.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If the job runs on Amazon EKS resources, then you must not specify <code>propagateTags</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public bool PropagateTags
         {
@@ -208,8 +243,8 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property SchedulingPriority. 
         /// <para>
         /// The scheduling priority for jobs that are submitted with this job definition. This
-        /// will only affect jobs in job queues with a fair share policy. Jobs with a higher scheduling
-        /// priority will be scheduled before jobs with a lower scheduling priority.
+        /// only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling
+        /// priority are scheduled before jobs with a lower scheduling priority.
         /// </para>
         ///  
         /// <para>

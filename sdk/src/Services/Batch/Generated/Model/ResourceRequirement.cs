@@ -65,13 +65,13 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <dl> <dt>type="GPU"</dt> <dd> 
         /// <para>
-        /// The number of physical GPUs to reserve for the container. The number of GPUs reserved
-        /// for all containers in a job shouldn't exceed the number of available GPUs on the compute
-        /// resource that the job is launched on.
+        /// The number of physical GPUs to reserve for the container. Make sure that the number
+        /// of GPUs reserved for all containers in a job doesn't exceed the number of available
+        /// GPUs on the compute resource that the job is launched on.
         /// </para>
         ///  <note> 
         /// <para>
-        /// GPUs are not available for jobs that are running on Fargate resources.
+        /// GPUs aren't available for jobs that are running on Fargate resources.
         /// </para>
         ///  </note> </dd> <dt>type="MEMORY"</dt> <dd> 
         /// <para>

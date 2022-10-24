@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// An object representing the properties of the node range for a multi-node parallel
+    /// An object that represents the properties of the node range for a multi-node parallel
     /// job.
     /// </summary>
     public partial class NodeRangeProperty
@@ -63,8 +63,8 @@ namespace Amazon.Batch.Model
         /// range value is omitted (<code>:n</code>), then <code>0</code> is used to start the
         /// range. If the ending range value is omitted (<code>n:</code>), then the highest possible
         /// node index is used to end the range. Your accumulative node ranges must account for
-        /// all nodes (<code>0:n</code>). You can nest node ranges, for example <code>0:10</code>
-        /// and <code>4:5</code>, in which case the <code>4:5</code> range properties override
+        /// all nodes (<code>0:n</code>). You can nest node ranges (for example, <code>0:10</code>
+        /// and <code>4:5</code>). In this case, the <code>4:5</code> range properties override
         /// the <code>0:10</code> properties.
         /// </para>
         /// </summary>

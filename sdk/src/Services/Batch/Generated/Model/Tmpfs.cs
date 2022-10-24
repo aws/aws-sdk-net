@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// The container path, mount options, and size of the tmpfs mount.
+    /// The container path, mount options, and size of the <code>tmpfs</code> mount.
     /// 
     ///  <note> 
     /// <para>
@@ -46,7 +46,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ContainerPath. 
         /// <para>
-        /// The absolute file path in the container where the tmpfs volume is mounted.
+        /// The absolute file path in the container where the <code>tmpfs</code> volume is mounted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -65,7 +65,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property MountOptions. 
         /// <para>
-        /// The list of tmpfs volume mount options.
+        /// The list of <code>tmpfs</code> volume mount options.
         /// </para>
         ///  
         /// <para>
@@ -96,7 +96,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Size. 
         /// <para>
-        /// The size (in MiB) of the tmpfs volume.
+        /// The size (in MiB) of the <code>tmpfs</code> volume.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

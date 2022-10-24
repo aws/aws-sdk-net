@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// An object representing a job attempt.
+    /// An object that represents a job attempt.
     /// </summary>
     public partial class AttemptDetail
     {
@@ -41,7 +41,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Container. 
         /// <para>
-        /// Details about the container in this job attempt.
+        /// The details for the container in this job attempt.
         /// </para>
         /// </summary>
         public AttemptContainerDetail Container
@@ -78,7 +78,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property StatusReason. 
         /// <para>
-        /// A short, human-readable string to provide additional details about the current status
+        /// A short, human-readable string to provide additional details for the current status
         /// of the job attempt.
         /// </para>
         /// </summary>

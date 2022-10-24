@@ -44,7 +44,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Devices. 
         /// <para>
-        /// Any host devices to expose to the container. This parameter maps to <code>Devices</code>
+        /// Any of the host devices to expose to the container. This parameter maps to <code>Devices</code>
         /// in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
         /// Remote API</a> and the <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
@@ -52,8 +52,8 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter isn't applicable to jobs that are running on Fargate resources and
-        /// shouldn't be provided.
+        /// This parameter isn't applicable to jobs that are running on Fargate resources. Don't
+        /// provide it for these jobs.
         /// </para>
         ///  </note>
         /// </summary>
@@ -76,7 +76,7 @@ namespace Amazon.Batch.Model
         /// and reaps processes. This parameter maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>. This parameter requires version 1.25 of the Docker Remote API or greater
         /// on your container instance. To check the Docker Remote API version on your container
-        /// instance, log into your container instance and run the following command: <code>sudo
+        /// instance, log in to your container instance and run the following command: <code>sudo
         /// docker version | grep "Server API version"</code> 
         /// </para>
         /// </summary>
@@ -106,13 +106,13 @@ namespace Amazon.Batch.Model
         /// If a <code>maxSwap</code> value of <code>0</code> is specified, the container doesn't
         /// use swap. Accepted values are <code>0</code> or any positive integer. If the <code>maxSwap</code>
         /// parameter is omitted, the container doesn't use the swap configuration for the container
-        /// instance it is running on. A <code>maxSwap</code> value must be set for the <code>swappiness</code>
+        /// instance that it's running on. A <code>maxSwap</code> value must be set for the <code>swappiness</code>
         /// parameter to be used.
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter isn't applicable to jobs that are running on Fargate resources and
-        /// shouldn't be provided.
+        /// This parameter isn't applicable to jobs that are running on Fargate resources. Don't
+        /// provide it for these jobs.
         /// </para>
         ///  </note>
         /// </summary>
@@ -137,8 +137,8 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter isn't applicable to jobs that are running on Fargate resources and
-        /// shouldn't be provided.
+        /// This parameter isn't applicable to jobs that are running on Fargate resources. Don't
+        /// provide it for these jobs.
         /// </para>
         ///  </note>
         /// </summary>
@@ -157,11 +157,11 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Swappiness. 
         /// <para>
-        /// This allows you to tune a container's memory swappiness behavior. A <code>swappiness</code>
-        /// value of <code>0</code> causes swapping not to happen unless absolutely necessary.
-        /// A <code>swappiness</code> value of <code>100</code> causes pages to be swapped very
-        /// aggressively. Accepted values are whole numbers between <code>0</code> and <code>100</code>.
-        /// If the <code>swappiness</code> parameter isn't specified, a default value of <code>60</code>
+        /// You can use this parameter to tune a container's memory swappiness behavior. A <code>swappiness</code>
+        /// value of <code>0</code> causes swapping to not occur unless absolutely necessary.
+        /// A <code>swappiness</code> value of <code>100</code> causes pages to be swapped aggressively.
+        /// Valid values are whole numbers between <code>0</code> and <code>100</code>. If the
+        /// <code>swappiness</code> parameter isn't specified, a default value of <code>60</code>
         /// is used. If a value isn't specified for <code>maxSwap</code>, then this parameter
         /// is ignored. If <code>maxSwap</code> is set to 0, the container doesn't use swap. This
         /// parameter maps to the <code>--memory-swappiness</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
@@ -178,7 +178,7 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The Amazon ECS optimized AMIs don't have swap enabled by default. You must enable
+        /// By default, the Amazon ECS optimized AMIs don't have swap enabled. You must enable
         /// swap on the instance to use this feature. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-store-swap-volumes.html">Instance
         /// store swap volumes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> or
         /// <a href="http://aws.amazon.com/premiumsupport/knowledge-center/ec2-memory-swap-file/">How
@@ -192,14 +192,14 @@ namespace Amazon.Batch.Model
         ///  </li> <li> 
         /// <para>
         /// If the <code>maxSwap</code> and <code>swappiness</code> parameters are omitted from
-        /// a job definition, each container will have a default <code>swappiness</code> value
-        /// of 60, and the total swap usage will be limited to two times the memory reservation
-        /// of the container.
+        /// a job definition, each container has a default <code>swappiness</code> value of 60.
+        /// Moreover, the total swap usage is limited to two times the memory reservation of the
+        /// container.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// This parameter isn't applicable to jobs that are running on Fargate resources and
-        /// shouldn't be provided.
+        /// This parameter isn't applicable to jobs that are running on Fargate resources. Don't
+        /// provide it for these jobs.
         /// </para>
         ///  </note>
         /// </summary>
@@ -218,14 +218,14 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Tmpfs. 
         /// <para>
-        /// The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter
-        /// maps to the <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+        /// The container path, mount options, and size (in MiB) of the <code>tmpfs</code> mount.
+        /// This parameter maps to the <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter isn't applicable to jobs that are running on Fargate resources and
-        /// shouldn't be provided.
+        /// This parameter isn't applicable to jobs that are running on Fargate resources. Don't
+        /// provide this parameter for this resource type.
         /// </para>
         ///  </note>
         /// </summary>

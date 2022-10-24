@@ -41,7 +41,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property JobExecutionTimeoutMinutes. 
         /// <para>
-        /// Specifies the job timeout, in minutes, when the compute environment infrastructure
+        /// Specifies the job timeout (in minutes) when the compute environment infrastructure
         /// is updated. The default value is 30.
         /// </para>
         /// </summary>

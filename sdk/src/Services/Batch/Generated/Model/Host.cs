@@ -30,9 +30,9 @@ namespace Amazon.Batch.Model
 {
     /// <summary>
     /// Determine whether your data volume persists on the host container instance and where
-    /// it is stored. If this parameter is empty, then the Docker daemon assigns a host path
-    /// for your data volume, but the data isn't guaranteed to persist after the containers
-    /// associated with it stop running.
+    /// it's stored. If this parameter is empty, then the Docker daemon assigns a host path
+    /// for your data volume. However, the data isn't guaranteed to persist after the containers
+    /// that are associated with it stop running.
     /// </summary>
     public partial class Host
     {
@@ -50,8 +50,8 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter isn't applicable to jobs that run on Fargate resources and shouldn't
-        /// be provided.
+        /// This parameter isn't applicable to jobs that run on Fargate resources. Don't provide
+        /// this for these jobs.
         /// </para>
         ///  </note>
         /// </summary>

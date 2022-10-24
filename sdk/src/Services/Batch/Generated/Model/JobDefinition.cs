@@ -29,11 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// An object representing an Batch job definition.
+    /// An object that represents an Batch job definition.
     /// </summary>
     public partial class JobDefinition
     {
+        private OrchestrationType _containerOrchestrationType;
         private ContainerProperties _containerProperties;
+        private EksProperties _eksProperties;
         private string _jobDefinitionArn;
         private string _jobDefinitionName;
         private NodeProperties _nodeProperties;
@@ -49,9 +51,30 @@ namespace Amazon.Batch.Model
         private string _type;
 
         /// <summary>
+        /// Gets and sets the property ContainerOrchestrationType. 
+        /// <para>
+        /// The orchestration type of the compute environment. The valid values are <code>ECS</code>
+        /// (default) or <code>EKS</code>.
+        /// </para>
+        /// </summary>
+        public OrchestrationType ContainerOrchestrationType
+        {
+            get { return this._containerOrchestrationType; }
+            set { this._containerOrchestrationType = value; }
+        }
+
+        // Check to see if ContainerOrchestrationType property is set
+        internal bool IsSetContainerOrchestrationType()
+        {
+            return this._containerOrchestrationType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ContainerProperties. 
         /// <para>
-        /// An object with various properties specific to container-based jobs.
+        /// An object with various properties specific to Amazon ECS based jobs. Valid values
+        /// are <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>.
+        /// Only one can be specified.
         /// </para>
         /// </summary>
         public ContainerProperties ContainerProperties
@@ -64,6 +87,26 @@ namespace Amazon.Batch.Model
         internal bool IsSetContainerProperties()
         {
             return this._containerProperties != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EksProperties. 
+        /// <para>
+        /// An object with various properties that are specific to Amazon EKS based jobs. Valid
+        /// values are <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>.
+        /// Only one can be specified.
+        /// </para>
+        /// </summary>
+        public EksProperties EksProperties
+        {
+            get { return this._eksProperties; }
+            set { this._eksProperties = value; }
+        }
+
+        // Check to see if EksProperties property is set
+        internal bool IsSetEksProperties()
+        {
+            return this._eksProperties != null;
         }
 
         /// <summary>
@@ -107,12 +150,14 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property NodeProperties. 
         /// <para>
-        /// An object with various properties specific to multi-node parallel jobs.
+        /// An object with various properties that are specific to multi-node parallel jobs. Valid
+        /// values are <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>.
+        /// Only one can be specified.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>;
-        /// use <code>containerProperties</code> instead.
+        /// If the job runs on Fargate resources, don't specify <code>nodeProperties</code>. Use
+        /// <code>containerProperties</code> instead.
         /// </para>
         ///  </note>
         /// </summary>
@@ -174,8 +219,8 @@ namespace Amazon.Batch.Model
         /// <para>
         /// Specifies whether to propagate the tags from the job or job definition to the corresponding
         /// Amazon ECS task. If no value is specified, the tags aren't propagated. Tags can only
-        /// be propagated to the tasks during task creation. For tags with the same name, job
-        /// tags are given priority over job definitions tags. If the total number of combined
+        /// be propagated to the tasks when the tasks are created. For tags with the same name,
+        /// job tags are given priority over job definitions tags. If the total number of combined
         /// tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code>
         /// state.
         /// </para>
@@ -270,7 +315,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags applied to the job definition.
+        /// The tags that are applied to the job definition.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -289,9 +334,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Timeout. 
         /// <para>
-        /// The timeout configuration for jobs that are submitted with this job definition. You
-        /// can specify a timeout duration after which Batch terminates your jobs if they haven't
-        /// finished.
+        /// The timeout time for jobs that are submitted with this job definition. After the amount
+        /// of time you specify passes, Batch terminates your jobs if they aren't finished.
         /// </para>
         /// </summary>
         public JobTimeout Timeout
@@ -309,7 +353,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of job definition, either <code>container</code> or <code>multinode</code>.
+        /// The type of job definition. It's either <code>container</code> or <code>multinode</code>.
         /// If the job is run on Fargate resources, then <code>multinode</code> isn't supported.
         /// For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating
         /// a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.
