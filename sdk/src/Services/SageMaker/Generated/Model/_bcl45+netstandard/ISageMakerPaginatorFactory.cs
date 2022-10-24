@@ -161,6 +161,11 @@ namespace Amazon.SageMaker.Model
         IListInferenceRecommendationsJobsPaginator ListInferenceRecommendationsJobs(ListInferenceRecommendationsJobsRequest request);
 
         /// <summary>
+        /// Paginator for ListInferenceRecommendationsJobSteps operation
+        ///</summary>
+        IListInferenceRecommendationsJobStepsPaginator ListInferenceRecommendationsJobSteps(ListInferenceRecommendationsJobStepsRequest request);
+
+        /// <summary>
         /// Paginator for ListLabelingJobs operation
         ///</summary>
         IListLabelingJobsPaginator ListLabelingJobs(ListLabelingJobsRequest request);

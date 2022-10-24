@@ -8804,6 +8804,52 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListInferenceRecommendationsJobSteps
+
+
+        /// <summary>
+        /// Returns a list of the subtasks for an Inference Recommender job.
+        /// 
+        ///  
+        /// <para>
+        /// The supported subtasks are benchmarks, which evaluate the performance of your model
+        /// on different instance types.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInferenceRecommendationsJobSteps service method.</param>
+        /// 
+        /// <returns>The response from the ListInferenceRecommendationsJobSteps service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceRecommendationsJobSteps">REST API Reference for ListInferenceRecommendationsJobSteps Operation</seealso>
+        ListInferenceRecommendationsJobStepsResponse ListInferenceRecommendationsJobSteps(ListInferenceRecommendationsJobStepsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListInferenceRecommendationsJobSteps operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListInferenceRecommendationsJobSteps operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListInferenceRecommendationsJobSteps
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceRecommendationsJobSteps">REST API Reference for ListInferenceRecommendationsJobSteps Operation</seealso>
+        IAsyncResult BeginListInferenceRecommendationsJobSteps(ListInferenceRecommendationsJobStepsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListInferenceRecommendationsJobSteps operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListInferenceRecommendationsJobSteps.</param>
+        /// 
+        /// <returns>Returns a  ListInferenceRecommendationsJobStepsResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceRecommendationsJobSteps">REST API Reference for ListInferenceRecommendationsJobSteps Operation</seealso>
+        ListInferenceRecommendationsJobStepsResponse EndListInferenceRecommendationsJobSteps(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListLabelingJobs
 
 

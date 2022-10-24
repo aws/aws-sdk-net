@@ -7953,6 +7953,46 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListInferenceRecommendationsJobSteps
+
+        internal virtual ListInferenceRecommendationsJobStepsResponse ListInferenceRecommendationsJobSteps(ListInferenceRecommendationsJobStepsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInferenceRecommendationsJobStepsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInferenceRecommendationsJobStepsResponseUnmarshaller.Instance;
+
+            return Invoke<ListInferenceRecommendationsJobStepsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of the subtasks for an Inference Recommender job.
+        /// 
+        ///  
+        /// <para>
+        /// The supported subtasks are benchmarks, which evaluate the performance of your model
+        /// on different instance types.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInferenceRecommendationsJobSteps service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListInferenceRecommendationsJobSteps service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceRecommendationsJobSteps">REST API Reference for ListInferenceRecommendationsJobSteps Operation</seealso>
+        public virtual Task<ListInferenceRecommendationsJobStepsResponse> ListInferenceRecommendationsJobStepsAsync(ListInferenceRecommendationsJobStepsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInferenceRecommendationsJobStepsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInferenceRecommendationsJobStepsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListInferenceRecommendationsJobStepsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListLabelingJobs
 
         internal virtual ListLabelingJobsResponse ListLabelingJobs(ListLabelingJobsRequest request)

@@ -4864,6 +4864,30 @@ namespace Amazon.SageMaker
 
         #endregion
                 
+        #region  ListInferenceRecommendationsJobSteps
+
+
+
+        /// <summary>
+        /// Returns a list of the subtasks for an Inference Recommender job.
+        /// 
+        ///  
+        /// <para>
+        /// The supported subtasks are benchmarks, which evaluate the performance of your model
+        /// on different instance types.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInferenceRecommendationsJobSteps service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListInferenceRecommendationsJobSteps service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceRecommendationsJobSteps">REST API Reference for ListInferenceRecommendationsJobSteps Operation</seealso>
+        Task<ListInferenceRecommendationsJobStepsResponse> ListInferenceRecommendationsJobStepsAsync(ListInferenceRecommendationsJobStepsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListLabelingJobs
 
 
