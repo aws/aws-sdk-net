@@ -64,6 +64,24 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ebsSnapshot", targetDepth))
+                {
+                    var unmarshaller = EbsSnapshotConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.EbsSnapshot = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ecrRepository", targetDepth))
+                {
+                    var unmarshaller = EcrRepositoryConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.EcrRepository = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("efsFileSystem", targetDepth))
+                {
+                    var unmarshaller = EfsFileSystemConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.EfsFileSystem = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("iamRole", targetDepth))
                 {
                     var unmarshaller = IamRoleConfigurationUnmarshaller.Instance;
@@ -76,6 +94,18 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
                     unmarshalledObject.KmsKey = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("rdsDbClusterSnapshot", targetDepth))
+                {
+                    var unmarshaller = RdsDbClusterSnapshotConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.RdsDbClusterSnapshot = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("rdsDbSnapshot", targetDepth))
+                {
+                    var unmarshaller = RdsDbSnapshotConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.RdsDbSnapshot = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("s3Bucket", targetDepth))
                 {
                     var unmarshaller = S3BucketConfigurationUnmarshaller.Instance;
@@ -86,6 +116,12 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = SecretsManagerSecretConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SecretsManagerSecret = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("snsTopic", targetDepth))
+                {
+                    var unmarshaller = SnsTopicConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SnsTopic = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("sqsQueue", targetDepth))

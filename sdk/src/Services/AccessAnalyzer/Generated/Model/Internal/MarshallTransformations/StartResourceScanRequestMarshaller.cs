@@ -77,6 +77,12 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ResourceArn);
                 }
 
+                if(publicRequest.IsSetResourceOwnerAccount())
+                {
+                    context.Writer.WritePropertyName("resourceOwnerAccount");
+                    context.Writer.Write(publicRequest.ResourceOwnerAccount);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

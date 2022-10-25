@@ -925,6 +925,18 @@ namespace Amazon.AccessAnalyzer
     {
 
         /// <summary>
+        /// Constant AWSEC2Snapshot for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSEC2Snapshot = new ResourceType("AWS::EC2::Snapshot");
+        /// <summary>
+        /// Constant AWSECRRepository for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSECRRepository = new ResourceType("AWS::ECR::Repository");
+        /// <summary>
+        /// Constant AWSEFSFileSystem for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSEFSFileSystem = new ResourceType("AWS::EFS::FileSystem");
+        /// <summary>
         /// Constant AWSIAMRole for ResourceType
         /// </summary>
         public static readonly ResourceType AWSIAMRole = new ResourceType("AWS::IAM::Role");
@@ -941,6 +953,14 @@ namespace Amazon.AccessAnalyzer
         /// </summary>
         public static readonly ResourceType AWSLambdaLayerVersion = new ResourceType("AWS::Lambda::LayerVersion");
         /// <summary>
+        /// Constant AWSRDSDBClusterSnapshot for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSRDSDBClusterSnapshot = new ResourceType("AWS::RDS::DBClusterSnapshot");
+        /// <summary>
+        /// Constant AWSRDSDBSnapshot for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSRDSDBSnapshot = new ResourceType("AWS::RDS::DBSnapshot");
+        /// <summary>
         /// Constant AWSS3Bucket for ResourceType
         /// </summary>
         public static readonly ResourceType AWSS3Bucket = new ResourceType("AWS::S3::Bucket");
@@ -948,6 +968,10 @@ namespace Amazon.AccessAnalyzer
         /// Constant AWSSecretsManagerSecret for ResourceType
         /// </summary>
         public static readonly ResourceType AWSSecretsManagerSecret = new ResourceType("AWS::SecretsManager::Secret");
+        /// <summary>
+        /// Constant AWSSNSTopic for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSSNSTopic = new ResourceType("AWS::SNS::Topic");
         /// <summary>
         /// Constant AWSSQSQueue for ResourceType
         /// </summary>

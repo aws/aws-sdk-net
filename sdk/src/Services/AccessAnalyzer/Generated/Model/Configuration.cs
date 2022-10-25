@@ -34,11 +34,71 @@ namespace Amazon.AccessAnalyzer.Model
     /// </summary>
     public partial class Configuration
     {
+        private EbsSnapshotConfiguration _ebsSnapshot;
+        private EcrRepositoryConfiguration _ecrRepository;
+        private EfsFileSystemConfiguration _efsFileSystem;
         private IamRoleConfiguration _iamRole;
         private KmsKeyConfiguration _kmsKey;
+        private RdsDbClusterSnapshotConfiguration _rdsDbClusterSnapshot;
+        private RdsDbSnapshotConfiguration _rdsDbSnapshot;
         private S3BucketConfiguration _s3Bucket;
         private SecretsManagerSecretConfiguration _secretsManagerSecret;
+        private SnsTopicConfiguration _snsTopic;
         private SqsQueueConfiguration _sqsQueue;
+
+        /// <summary>
+        /// Gets and sets the property EbsSnapshot. 
+        /// <para>
+        /// The access control configuration is for an Amazon EBS volume snapshot.
+        /// </para>
+        /// </summary>
+        public EbsSnapshotConfiguration EbsSnapshot
+        {
+            get { return this._ebsSnapshot; }
+            set { this._ebsSnapshot = value; }
+        }
+
+        // Check to see if EbsSnapshot property is set
+        internal bool IsSetEbsSnapshot()
+        {
+            return this._ebsSnapshot != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EcrRepository. 
+        /// <para>
+        /// The access control configuration is for an Amazon ECR repository.
+        /// </para>
+        /// </summary>
+        public EcrRepositoryConfiguration EcrRepository
+        {
+            get { return this._ecrRepository; }
+            set { this._ecrRepository = value; }
+        }
+
+        // Check to see if EcrRepository property is set
+        internal bool IsSetEcrRepository()
+        {
+            return this._ecrRepository != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EfsFileSystem. 
+        /// <para>
+        /// The access control configuration is for an Amazon EFS file system.
+        /// </para>
+        /// </summary>
+        public EfsFileSystemConfiguration EfsFileSystem
+        {
+            get { return this._efsFileSystem; }
+            set { this._efsFileSystem = value; }
+        }
+
+        // Check to see if EfsFileSystem property is set
+        internal bool IsSetEfsFileSystem()
+        {
+            return this._efsFileSystem != null;
+        }
 
         /// <summary>
         /// Gets and sets the property IamRole. 
@@ -77,6 +137,42 @@ namespace Amazon.AccessAnalyzer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RdsDbClusterSnapshot. 
+        /// <para>
+        /// The access control configuration is for an Amazon RDS DB cluster snapshot.
+        /// </para>
+        /// </summary>
+        public RdsDbClusterSnapshotConfiguration RdsDbClusterSnapshot
+        {
+            get { return this._rdsDbClusterSnapshot; }
+            set { this._rdsDbClusterSnapshot = value; }
+        }
+
+        // Check to see if RdsDbClusterSnapshot property is set
+        internal bool IsSetRdsDbClusterSnapshot()
+        {
+            return this._rdsDbClusterSnapshot != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RdsDbSnapshot. 
+        /// <para>
+        /// The access control configuration is for an Amazon RDS DB snapshot.
+        /// </para>
+        /// </summary>
+        public RdsDbSnapshotConfiguration RdsDbSnapshot
+        {
+            get { return this._rdsDbSnapshot; }
+            set { this._rdsDbSnapshot = value; }
+        }
+
+        // Check to see if RdsDbSnapshot property is set
+        internal bool IsSetRdsDbSnapshot()
+        {
+            return this._rdsDbSnapshot != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property S3Bucket. 
         /// <para>
         /// The access control configuration is for an Amazon S3 Bucket. 
@@ -110,6 +206,24 @@ namespace Amazon.AccessAnalyzer.Model
         internal bool IsSetSecretsManagerSecret()
         {
             return this._secretsManagerSecret != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnsTopic. 
+        /// <para>
+        /// The access control configuration is for an Amazon SNS topic
+        /// </para>
+        /// </summary>
+        public SnsTopicConfiguration SnsTopic
+        {
+            get { return this._snsTopic; }
+            set { this._snsTopic = value; }
+        }
+
+        // Check to see if SnsTopic property is set
+        internal bool IsSetSnsTopic()
+        {
+            return this._snsTopic != null;
         }
 
         /// <summary>
