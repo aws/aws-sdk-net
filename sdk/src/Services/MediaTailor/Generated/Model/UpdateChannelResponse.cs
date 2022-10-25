@@ -47,7 +47,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the channel.
+        /// The Amazon Resource Name (ARN) associated with the channel.
         /// </para>
         /// </summary>
         public string Arn
@@ -83,7 +83,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property ChannelState. 
         /// <para>
-        /// Indicates whether the channel is in a running state or not.
+        /// Returns the state whether the channel is running or not.
         /// </para>
         /// </summary>
         public ChannelState ChannelState
@@ -119,7 +119,9 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property FillerSlate. 
         /// <para>
-        /// Contains information about the slate used to fill gaps between programs in the schedule.
+        /// The slate used to fill gaps between programs in the schedule. You must configure filler
+        /// slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor
+        /// doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>.
         /// </para>
         /// </summary>
         public SlateSource FillerSlate
@@ -137,7 +139,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        /// The timestamp of when the channel was last modified.
+        /// The timestamp that indicates when the channel was last modified.
         /// </para>
         /// </summary>
         public DateTime LastModifiedTime
@@ -173,7 +175,16 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property PlaybackMode. 
         /// <para>
-        /// The channel's playback mode.
+        /// The type of playback mode for this channel.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>LINEAR</code> - Programs play back-to-back only once.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>LOOP</code> - Programs play back-to-back in an endless loop. When the last
+        /// program in the schedule plays, playback loops back to the first program in the schedule.
         /// </para>
         /// </summary>
         public string PlaybackMode
@@ -191,7 +202,10 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags assigned to the channel.
+        /// The tags to assign to the channel. Tags are key-value pairs that you can associate
+        /// with Amazon resources to help with organization, access control, and cost tracking.
+        /// For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+        /// AWS Elemental MediaTailor Resources</a>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
@@ -209,7 +223,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Tier. 
         /// <para>
-        /// The channel's tier.
+        /// The tier associated with this Channel.
         /// </para>
         /// </summary>
         public string Tier

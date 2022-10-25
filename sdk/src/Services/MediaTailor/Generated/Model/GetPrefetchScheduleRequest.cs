@@ -30,9 +30,10 @@ namespace Amazon.MediaTailor.Model
 {
     /// <summary>
     /// Container for the parameters to the GetPrefetchSchedule operation.
-    /// Returns information about the prefetch schedule for a specific playback configuration.
-    /// If you call GetPrefetchSchedule on an expired prefetch schedule, MediaTailor returns
-    /// an HTTP 404 status code.
+    /// Retrieves a prefetch schedule for a playback configuration. A prefetch schedule allows
+    /// you to tell MediaTailor to fetch and prepare certain ads before an ad break happens.
+    /// For more information about ad prefetching, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/prefetching-ads.html">Using
+    /// ad prefetching</a> in the <i>MediaTailor User Guide</i>.
     /// </summary>
     public partial class GetPrefetchScheduleRequest : AmazonMediaTailorRequest
     {
@@ -42,7 +43,8 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The identifier for the playback configuration.
+        /// The name of the prefetch schedule. The name must be unique among all prefetch schedules
+        /// that are associated with the specified playback configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,7 +63,9 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property PlaybackConfigurationName. 
         /// <para>
-        /// The name of the playback configuration.
+        /// Returns information about the prefetch schedule for a specific playback configuration.
+        /// If you call <code>GetPrefetchSchedule</code> on an expired prefetch schedule, MediaTailor
+        /// returns an HTTP 404 status code.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

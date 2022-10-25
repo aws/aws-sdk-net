@@ -41,8 +41,9 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property AvailNum. 
         /// <para>
-        /// This is written to splice_insert.avail_num, as defined in section 9.7.3.1 of the SCTE-35
-        /// specification. The default value is 0. Values must be between 0 and 256, inclusive.
+        /// This is written to <code>splice_insert.avail_num</code>, as defined in section 9.7.3.1
+        /// of the SCTE-35 specification. The default value is <code>0</code>. Values must be
+        /// between <code>0</code> and <code>256</code>, inclusive.
         /// </para>
         /// </summary>
         public int AvailNum
@@ -60,9 +61,9 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property AvailsExpected. 
         /// <para>
-        /// This is written to splice_insert.avails_expected, as defined in section 9.7.3.1 of
-        /// the SCTE-35 specification. The default value is 0. Values must be between 0 and 256,
-        /// inclusive.
+        /// This is written to <code>splice_insert.avails_expected</code>, as defined in section
+        /// 9.7.3.1 of the SCTE-35 specification. The default value is <code>0</code>. Values
+        /// must be between <code>0</code> and <code>256</code>, inclusive.
         /// </para>
         /// </summary>
         public int AvailsExpected
@@ -80,8 +81,8 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property SpliceEventId. 
         /// <para>
-        /// This is written to splice_insert.splice_event_id, as defined in section 9.7.3.1 of
-        /// the SCTE-35 specification. The default value is 1.
+        /// This is written to <code>splice_insert.splice_event_id</code>, as defined in section
+        /// 9.7.3.1 of the SCTE-35 specification. The default value is <code>1</code>.
         /// </para>
         /// </summary>
         public int SpliceEventId
@@ -99,9 +100,9 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property UniqueProgramId. 
         /// <para>
-        /// This is written to splice_insert.unique_program_id, as defined in section 9.7.3.1
-        /// of the SCTE-35 specification. The default value is 0. Values must be between 0 and
-        /// 256, inclusive.
+        /// This is written to <code>splice_insert.unique_program_id</code>, as defined in section
+        /// 9.7.3.1 of the SCTE-35 specification. The default value is <code>0</code>. Values
+        /// must be between <code>0</code> and <code>256</code>, inclusive.
         /// </para>
         /// </summary>
         public int UniqueProgramId

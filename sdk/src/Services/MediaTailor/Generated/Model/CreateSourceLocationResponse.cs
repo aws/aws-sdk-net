@@ -46,7 +46,8 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property AccessConfiguration. 
         /// <para>
-        /// The access configuration for the source location.
+        /// Access configuration parameters. Configures the type of authentication used to access
+        /// content from your source location.
         /// </para>
         /// </summary>
         public AccessConfiguration AccessConfiguration
@@ -64,7 +65,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the source location.
+        /// The ARN to assign to the source location.
         /// </para>
         /// </summary>
         public string Arn
@@ -82,7 +83,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The timestamp that indicates when the source location was created.
+        /// The time the source location was created.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -100,7 +101,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property DefaultSegmentDeliveryConfiguration. 
         /// <para>
-        /// The default segment delivery configuration settings.
+        /// The optional configuration for the server that serves segments.
         /// </para>
         /// </summary>
         public DefaultSegmentDeliveryConfiguration DefaultSegmentDeliveryConfiguration
@@ -118,7 +119,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property HttpConfiguration. 
         /// <para>
-        /// The HTTP package configuration settings for the source location.
+        /// The source's HTTP package configurations.
         /// </para>
         /// </summary>
         public HttpConfiguration HttpConfiguration
@@ -136,7 +137,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        /// The timestamp that indicates when the source location was last modified.
+        /// The time the source location was last modified.
         /// </para>
         /// </summary>
         public DateTime LastModifiedTime
@@ -154,7 +155,9 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property SegmentDeliveryConfigurations. 
         /// <para>
-        /// A list of the segment delivery configurations associated with this resource.
+        /// The segment delivery configurations for the source location. For information about
+        /// MediaTailor configurations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working
+        /// with configurations in AWS Elemental MediaTailor</a>.
         /// </para>
         /// </summary>
         public List<SegmentDeliveryConfiguration> SegmentDeliveryConfigurations
@@ -172,7 +175,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property SourceLocationName. 
         /// <para>
-        /// The name of the source location.
+        /// The name to assign to the source location.
         /// </para>
         /// </summary>
         public string SourceLocationName
@@ -190,7 +193,10 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags assigned to the source location.
+        /// The tags to assign to the source location. Tags are key-value pairs that you can associate
+        /// with Amazon resources to help with organization, access control, and cost tracking.
+        /// For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+        /// AWS Elemental MediaTailor Resources</a>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

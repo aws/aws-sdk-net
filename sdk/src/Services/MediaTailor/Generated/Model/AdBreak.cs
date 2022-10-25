@@ -41,7 +41,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property MessageType. 
         /// <para>
-        /// The SCTE-35 ad insertion type. Accepted value: SPLICE_INSERT.
+        /// The SCTE-35 ad insertion type. Accepted value: <code>SPLICE_INSERT</code>, <code>TIME_SIGNAL</code>.
         /// </para>
         /// </summary>
         public MessageType MessageType
@@ -97,8 +97,9 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property SpliceInsertMessage. 
         /// <para>
-        /// This defines the SCTE-35 splice_insert() message inserted around the ad. For information
-        /// about using splice_insert(), see the SCTE-35 specficiaiton, section 9.7.3.1.
+        /// This defines the SCTE-35 <code>splice_insert()</code> message inserted around the
+        /// ad. For information about using <code>splice_insert()</code>, see the SCTE-35 specficiaiton,
+        /// section 9.7.3.1.
         /// </para>
         /// </summary>
         public SpliceInsertMessage SpliceInsertMessage

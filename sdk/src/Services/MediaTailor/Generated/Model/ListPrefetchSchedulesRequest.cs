@@ -30,7 +30,7 @@ namespace Amazon.MediaTailor.Model
 {
     /// <summary>
     /// Container for the parameters to the ListPrefetchSchedules operation.
-    /// Creates a new prefetch schedule.
+    /// Lists the prefetch schedules for a playback configuration.
     /// </summary>
     public partial class ListPrefetchSchedulesRequest : AmazonMediaTailorRequest
     {
@@ -43,8 +43,8 @@ namespace Amazon.MediaTailor.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of prefetch schedules that you want MediaTailor to return in response
-        /// to the current request. If the playback configuration has more than MaxResults prefetch
-        /// schedules, use the value of NextToken in the response to get the next page of results.
+        /// to the current request. If there are more than <code>MaxResults</code> prefetch schedules,
+        /// use the value of <code>NextToken</code> in the response to get the next page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -63,22 +63,22 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// (Optional) If the playback configuration has more than MaxResults prefetch schedules,
-        /// use NextToken to get the second and subsequent pages of results.
+        /// (Optional) If the playback configuration has more than <code>MaxResults</code> prefetch
+        /// schedules, use <code>NextToken</code> to get the second and subsequent pages of results.
         /// </para>
         ///  
         /// <para>
-        /// For the first ListPrefetchSchedulesRequest request, omit this value.
+        ///  For the first <code>ListPrefetchSchedulesRequest</code> request, omit this value.
         /// </para>
         ///  
         /// <para>
-        /// For the second and subsequent requests, get the value of NextToken from the previous
-        /// response and specify that value for NextToken in the request.
+        ///  For the second and subsequent requests, get the value of <code>NextToken</code> from
+        /// the previous response and specify that value for <code>NextToken</code> in the request.
         /// </para>
         ///  
         /// <para>
-        /// If the previous response didn't include a NextToken element, there are no more prefetch
-        /// schedules to get.
+        ///  If the previous response didn't include a <code>NextToken</code> element, there are
+        /// no more prefetch schedules to get.
         /// </para>
         /// </summary>
         public string NextToken
@@ -96,7 +96,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property PlaybackConfigurationName. 
         /// <para>
-        /// The name of the playback configuration.
+        /// Retrieves the prefetch schedule(s) for a specific playback configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -77,7 +77,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property ManifestName. 
         /// <para>
-        /// The name of the manifest for the channel. The name appears in the PlaybackUrl.
+        /// The name of the manifest for the channel. The name appears in the <code>PlaybackUrl</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -96,7 +96,8 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property SourceGroup. 
         /// <para>
-        /// A string used to match which HttpPackageConfiguration is used for each VodSource.
+        /// A string used to match which <code>HttpPackageConfiguration</code> is used for each
+        /// <code>VodSource</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

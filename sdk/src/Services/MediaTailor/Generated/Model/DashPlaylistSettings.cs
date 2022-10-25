@@ -41,8 +41,8 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property ManifestWindowSeconds. 
         /// <para>
-        /// The total duration (in seconds) of each manifest. Minimum value: 30 seconds. Maximum
-        /// value: 3600 seconds.
+        /// The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds.
+        /// Maximum value: <code>3600</code> seconds.
         /// </para>
         /// </summary>
         public int ManifestWindowSeconds
@@ -61,7 +61,8 @@ namespace Amazon.MediaTailor.Model
         /// Gets and sets the property MinBufferTimeSeconds. 
         /// <para>
         /// Minimum amount of content (measured in seconds) that a player must keep available
-        /// in the buffer. Minimum value: 2 seconds. Maximum value: 60 seconds.
+        /// in the buffer. Minimum value: <code>2</code> seconds. Maximum value: <code>60</code>
+        /// seconds.
         /// </para>
         /// </summary>
         public int MinBufferTimeSeconds
@@ -80,7 +81,8 @@ namespace Amazon.MediaTailor.Model
         /// Gets and sets the property MinUpdatePeriodSeconds. 
         /// <para>
         /// Minimum amount of time (in seconds) that the player should wait before requesting
-        /// updates to the manifest. Minimum value: 2 seconds. Maximum value: 60 seconds.
+        /// updates to the manifest. Minimum value: <code>2</code> seconds. Maximum value: <code>60</code>
+        /// seconds.
         /// </para>
         /// </summary>
         public int MinUpdatePeriodSeconds
@@ -99,7 +101,8 @@ namespace Amazon.MediaTailor.Model
         /// Gets and sets the property SuggestedPresentationDelaySeconds. 
         /// <para>
         /// Amount of time (in seconds) that the player should be from the live point at the end
-        /// of the manifest. Minimum value: 2 seconds. Maximum value: 60 seconds.
+        /// of the manifest. Minimum value: <code>2</code> seconds. Maximum value: <code>60</code>
+        /// seconds.
         /// </para>
         /// </summary>
         public int SuggestedPresentationDelaySeconds

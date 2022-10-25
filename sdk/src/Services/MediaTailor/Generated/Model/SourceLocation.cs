@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaTailor.Model
 {
     /// <summary>
-    /// This response includes only the "type" : "object" property.
+    /// A source location is a container for sources. For more information about source locations,
+    /// see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-source-locations.html">Working
+    /// with source locations</a> in the <i>MediaTailor User Guide</i>.
     /// </summary>
     public partial class SourceLocation
     {
@@ -193,7 +195,10 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags assigned to the source location.
+        /// The tags assigned to the source location. Tags are key-value pairs that you can associate
+        /// with Amazon resources to help with organization, access control, and cost tracking.
+        /// For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+        /// AWS Elemental MediaTailor Resources</a>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

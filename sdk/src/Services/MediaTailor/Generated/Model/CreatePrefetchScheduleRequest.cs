@@ -30,7 +30,10 @@ namespace Amazon.MediaTailor.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePrefetchSchedule operation.
-    /// Creates a new prefetch schedule for the specified playback configuration.
+    /// Creates a prefetch schedule for a playback configuration. A prefetch schedule allows
+    /// you to tell MediaTailor to fetch and prepare certain ads before an ad break happens.
+    /// For more information about ad prefetching, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/prefetching-ads.html">Using
+    /// ad prefetching</a> in the <i>MediaTailor User Guide</i>.
     /// </summary>
     public partial class CreatePrefetchScheduleRequest : AmazonMediaTailorRequest
     {
@@ -65,7 +68,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The identifier for the playback configuration.
+        /// The name to assign to the schedule request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -84,7 +87,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property PlaybackConfigurationName. 
         /// <para>
-        /// The name of the playback configuration.
+        /// The name to assign to the playback configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -125,10 +128,10 @@ namespace Amazon.MediaTailor.Model
         /// Gets and sets the property StreamId. 
         /// <para>
         /// An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams
-        /// that use the same playback configuration. If StreamId is specified, MediaTailor returns
-        /// all of the prefetch schedules with an exact match on StreamId. If not specified, MediaTailor
-        /// returns all of the prefetch schedules for the playback configuration, regardless of
-        /// StreamId.
+        /// that use the same playback configuration. If <code>StreamId</code> is specified, MediaTailor
+        /// returns all of the prefetch schedules with an exact match on <code>StreamId</code>.
+        /// If not specified, MediaTailor returns all of the prefetch schedules for the playback
+        /// configuration, regardless of <code>StreamId</code>.
         /// </para>
         /// </summary>
         public string StreamId

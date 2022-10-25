@@ -61,11 +61,11 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 
             if (!publicRequest.IsSetLiveSourceName())
                 throw new AmazonMediaTailorException("Request object does not have required field LiveSourceName set");
-            request.AddPathResource("{liveSourceName}", StringUtils.FromString(publicRequest.LiveSourceName));
+            request.AddPathResource("{LiveSourceName}", StringUtils.FromString(publicRequest.LiveSourceName));
             if (!publicRequest.IsSetSourceLocationName())
                 throw new AmazonMediaTailorException("Request object does not have required field SourceLocationName set");
-            request.AddPathResource("{sourceLocationName}", StringUtils.FromString(publicRequest.SourceLocationName));
-            request.ResourcePath = "/sourceLocation/{sourceLocationName}/liveSource/{liveSourceName}";
+            request.AddPathResource("{SourceLocationName}", StringUtils.FromString(publicRequest.SourceLocationName));
+            request.ResourcePath = "/sourceLocation/{SourceLocationName}/liveSource/{LiveSourceName}";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

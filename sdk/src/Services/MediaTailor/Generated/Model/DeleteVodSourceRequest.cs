@@ -30,7 +30,7 @@ namespace Amazon.MediaTailor.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteVodSource operation.
-    /// Deletes a specific VOD source in a specific source location.
+    /// The video on demand (VOD) source to delete.
     /// </summary>
     public partial class DeleteVodSourceRequest : AmazonMediaTailorRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property SourceLocationName. 
         /// <para>
-        /// The identifier for the source location you are working on.
+        /// The name of the source location associated with this VOD Source.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +59,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property VodSourceName. 
         /// <para>
-        /// The identifier for the VOD source you are working on.
+        /// The name of the VOD source.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

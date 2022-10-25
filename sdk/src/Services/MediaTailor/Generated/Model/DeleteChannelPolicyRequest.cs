@@ -30,7 +30,7 @@ namespace Amazon.MediaTailor.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteChannelPolicy operation.
-    /// Deletes a channel's IAM policy.
+    /// The channel policy to delete.
     /// </summary>
     public partial class DeleteChannelPolicyRequest : AmazonMediaTailorRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property ChannelName. 
         /// <para>
-        /// The identifier for the channel you are working on.
+        /// The name of the channel associated with this channel policy.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -60,8 +60,8 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 
             if (!publicRequest.IsSetSourceLocationName())
                 throw new AmazonMediaTailorException("Request object does not have required field SourceLocationName set");
-            request.AddPathResource("{sourceLocationName}", StringUtils.FromString(publicRequest.SourceLocationName));
-            request.ResourcePath = "/sourceLocation/{sourceLocationName}";
+            request.AddPathResource("{SourceLocationName}", StringUtils.FromString(publicRequest.SourceLocationName));
+            request.ResourcePath = "/sourceLocation/{SourceLocationName}";
 
             return request;
         }

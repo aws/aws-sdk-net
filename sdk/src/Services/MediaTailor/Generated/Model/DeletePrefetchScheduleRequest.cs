@@ -30,8 +30,10 @@ namespace Amazon.MediaTailor.Model
 {
     /// <summary>
     /// Container for the parameters to the DeletePrefetchSchedule operation.
-    /// Deletes a prefetch schedule for a specific playback configuration. If you call DeletePrefetchSchedule
-    /// on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code.
+    /// Deletes a prefetch schedule for a specific playback configuration. If you call <code>DeletePrefetchSchedule</code>
+    /// on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code. For
+    /// more information about ad prefetching, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/prefetching-ads.html">Using
+    /// ad prefetching</a> in the <i>MediaTailor User Guide</i>.
     /// </summary>
     public partial class DeletePrefetchScheduleRequest : AmazonMediaTailorRequest
     {
@@ -41,7 +43,8 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The identifier for the playback configuration.
+        /// The name of the prefetch schedule. If the action is successful, the service sends
+        /// back an HTTP 204 response with an empty HTTP body.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +63,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property PlaybackConfigurationName. 
         /// <para>
-        /// The name of the playback configuration.
+        /// The name of the playback configuration for this prefetch schedule.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

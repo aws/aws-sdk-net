@@ -64,7 +64,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the program.
+        /// The ARN to assign to the program.
         /// </para>
         /// </summary>
         public string Arn
@@ -82,7 +82,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property ChannelName. 
         /// <para>
-        /// The name of the channel that the program belongs to.
+        /// The name to assign to the channel for this program.
         /// </para>
         /// </summary>
         public string ChannelName
@@ -100,7 +100,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The timestamp of when the program was created.
+        /// The time the program was created.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -136,7 +136,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property ProgramName. 
         /// <para>
-        /// The name of the program.
+        /// The name to assign to this program.
         /// </para>
         /// </summary>
         public string ProgramName
@@ -154,9 +154,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property ScheduledStartTime. 
         /// <para>
-        /// The date and time that the program is scheduled to start in ISO 8601 format and Coordinated
-        /// Universal Time (UTC). For example, the value 2021-03-27T17:48:16.751Z represents March
-        /// 27, 2021 at 17:48:16.751 UTC.
+        /// The scheduled start time for this Program.
         /// </para>
         /// </summary>
         public DateTime ScheduledStartTime
@@ -174,7 +172,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property SourceLocationName. 
         /// <para>
-        /// The source location name.
+        /// The name to assign to the source location for this program.
         /// </para>
         /// </summary>
         public string SourceLocationName

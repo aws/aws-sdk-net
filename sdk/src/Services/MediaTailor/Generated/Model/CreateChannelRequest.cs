@@ -30,7 +30,8 @@ namespace Amazon.MediaTailor.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateChannel operation.
-    /// Creates a channel.
+    /// Creates a channel. For information about MediaTailor channels, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html">Working
+    /// with channels</a> in the <i>MediaTailor User Guide</i>.
     /// </summary>
     public partial class CreateChannelRequest : AmazonMediaTailorRequest
     {
@@ -44,7 +45,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property ChannelName. 
         /// <para>
-        /// The identifier for the channel you are working on.
+        /// The name of the channel.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -64,8 +65,8 @@ namespace Amazon.MediaTailor.Model
         /// Gets and sets the property FillerSlate. 
         /// <para>
         /// The slate used to fill gaps between programs in the schedule. You must configure filler
-        /// slate if your channel uses the LINEAR PlaybackMode. MediaTailor doesn't support filler
-        /// slate for channels using the LOOP PlaybackMode.
+        /// slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor
+        /// doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>.
         /// </para>
         /// </summary>
         public SlateSource FillerSlate
@@ -106,13 +107,14 @@ namespace Amazon.MediaTailor.Model
         /// </para>
         ///  
         /// <para>
-        /// LINEAR - The programs in the schedule play once back-to-back in the schedule.
+        ///  <code>LINEAR</code> - The programs in the schedule play once back-to-back in the
+        /// schedule.
         /// </para>
         ///  
         /// <para>
-        /// LOOP - The programs in the schedule play back-to-back in an endless loop. When the
-        /// last program in the schedule stops playing, playback loops back to the first program
-        /// in the schedule.
+        ///  <code>LOOP</code> - The programs in the schedule play back-to-back in an endless
+        /// loop. When the last program in the schedule stops playing, playback loops back to
+        /// the first program in the schedule.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -131,7 +133,10 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to assign to the channel.
+        /// The tags to assign to the channel. Tags are key-value pairs that you can associate
+        /// with Amazon resources to help with organization, access control, and cost tracking.
+        /// For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+        /// AWS Elemental MediaTailor Resources</a>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

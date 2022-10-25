@@ -30,7 +30,7 @@ namespace Amazon.MediaTailor.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateLiveSource operation.
-    /// Updates a specific live source in a specific source location.
+    /// Updates a live source's configuration.
     /// </summary>
     public partial class UpdateLiveSourceRequest : AmazonMediaTailorRequest
     {
@@ -60,7 +60,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property LiveSourceName. 
         /// <para>
-        /// The identifier for the live source you are working on.
+        /// The name of the live source.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -79,7 +79,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property SourceLocationName. 
         /// <para>
-        /// The identifier for the source location you are working on.
+        /// The name of the source location associated with this Live Source.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

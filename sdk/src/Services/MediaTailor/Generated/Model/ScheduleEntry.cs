@@ -178,10 +178,6 @@ namespace Amazon.MediaTailor.Model
         /// <para>
         /// The type of schedule entry.
         /// </para>
-        ///  
-        /// <para>
-        /// Valid values: PROGRAM or FILLER_SLATE.
-        /// </para>
         /// </summary>
         public ScheduleEntryType ScheduleEntryType
         {

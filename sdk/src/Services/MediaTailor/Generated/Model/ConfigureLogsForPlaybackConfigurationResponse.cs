@@ -42,6 +42,7 @@ namespace Amazon.MediaTailor.Model
         /// The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int PercentEnabled
         {
             get { return this._percentEnabled.GetValueOrDefault(); }

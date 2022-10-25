@@ -42,9 +42,9 @@ namespace Amazon.MediaTailor.Model
         /// Gets and sets the property Mode. 
         /// <para>
         /// Sets the ad suppression mode. By default, ad suppression is off and all ad breaks
-        /// are filled with ads or slate. When Mode is set to BEHIND_LIVE_EDGE, ad suppression
-        /// is active and MediaTailor won't fill ad breaks on or behind the ad suppression Value
-        /// time in the manifest lookback window.
+        /// are filled with ads or slate. When Mode is set to <code>BEHIND_LIVE_EDGE</code>, ad
+        /// suppression is active and MediaTailor won't fill ad breaks on or behind the ad suppression
+        /// Value time in the manifest lookback window.
         /// </para>
         /// </summary>
         public Mode Mode

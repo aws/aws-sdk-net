@@ -30,7 +30,8 @@ namespace Amazon.MediaTailor.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeChannel operation.
-    /// Describes the properties of a specific channel.
+    /// Describes a channel. For information about MediaTailor channels, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html">Working
+    /// with channels</a> in the <i>MediaTailor User Guide</i>.
     /// </summary>
     public partial class DescribeChannelRequest : AmazonMediaTailorRequest
     {
@@ -39,7 +40,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property ChannelName. 
         /// <para>
-        /// The identifier for the channel you are working on.
+        /// The name of the channel.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

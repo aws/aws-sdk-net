@@ -57,7 +57,8 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Pagination token from the list request. Use the token to fetch the next page of results.
+        /// Pagination token returned by the list request when results exceed the maximum allowed.
+        /// Use the token to fetch the next page of results.
         /// </para>
         /// </summary>
         public string NextToken

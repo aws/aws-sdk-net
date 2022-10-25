@@ -61,8 +61,8 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 
             if (!publicRequest.IsSetChannelName())
                 throw new AmazonMediaTailorException("Request object does not have required field ChannelName set");
-            request.AddPathResource("{channelName}", StringUtils.FromString(publicRequest.ChannelName));
-            request.ResourcePath = "/channel/{channelName}/start";
+            request.AddPathResource("{ChannelName}", StringUtils.FromString(publicRequest.ChannelName));
+            request.ResourcePath = "/channel/{ChannelName}/start";
 
             return request;
         }

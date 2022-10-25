@@ -30,7 +30,8 @@ namespace Amazon.MediaTailor.Model
 {
     /// <summary>
     /// Container for the parameters to the ListLiveSources operation.
-    /// lists all the live sources in a source location.
+    /// Lists the live sources contained in a source location. A source represents a piece
+    /// of content.
     /// </summary>
     public partial class ListLiveSourcesRequest : AmazonMediaTailorRequest
     {
@@ -41,7 +42,9 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Upper bound on number of records to return. The maximum number of results is 100.
+        /// The maximum number of live sources that you want MediaTailor to return in response
+        /// to the current request. If there are more than <code>MaxResults</code> live sources,
+        /// use the value of <code>NextToken</code> in the response to get the next page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -60,8 +63,8 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Pagination token from the GET list request. Use the token to fetch the next page of
-        /// results.
+        /// Pagination token returned by the list request when results exceed the maximum allowed.
+        /// Use the token to fetch the next page of results.
         /// </para>
         /// </summary>
         public string NextToken
@@ -79,7 +82,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property SourceLocationName. 
         /// <para>
-        /// The identifier for the source location you are working on.
+        /// The name of the source location associated with this Live Sources list.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

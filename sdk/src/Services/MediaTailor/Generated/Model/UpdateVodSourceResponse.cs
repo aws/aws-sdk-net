@@ -44,7 +44,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the VOD source.
+        /// The Amazon Resource Name (ARN) associated with the VOD source.
         /// </para>
         /// </summary>
         public string Arn
@@ -80,7 +80,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property HttpPackageConfigurations. 
         /// <para>
-        /// The HTTP package configurations.
+        /// A list of HTTP package configurations for the VOD source on this account.
         /// </para>
         /// </summary>
         public List<HttpPackageConfiguration> HttpPackageConfigurations
@@ -98,7 +98,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        /// The last modified time of the VOD source.
+        /// The timestamp that indicates when the VOD source was last modified.
         /// </para>
         /// </summary>
         public DateTime LastModifiedTime
@@ -134,7 +134,10 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags assigned to the VOD source.
+        /// The tags to assign to the VOD source. Tags are key-value pairs that you can associate
+        /// with Amazon resources to help with organization, access control, and cost tracking.
+        /// For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+        /// AWS Elemental MediaTailor Resources</a>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

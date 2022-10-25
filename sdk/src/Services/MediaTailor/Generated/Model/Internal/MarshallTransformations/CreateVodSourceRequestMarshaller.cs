@@ -61,11 +61,11 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 
             if (!publicRequest.IsSetSourceLocationName())
                 throw new AmazonMediaTailorException("Request object does not have required field SourceLocationName set");
-            request.AddPathResource("{sourceLocationName}", StringUtils.FromString(publicRequest.SourceLocationName));
+            request.AddPathResource("{SourceLocationName}", StringUtils.FromString(publicRequest.SourceLocationName));
             if (!publicRequest.IsSetVodSourceName())
                 throw new AmazonMediaTailorException("Request object does not have required field VodSourceName set");
-            request.AddPathResource("{vodSourceName}", StringUtils.FromString(publicRequest.VodSourceName));
-            request.ResourcePath = "/sourceLocation/{sourceLocationName}/vodSource/{vodSourceName}";
+            request.AddPathResource("{VodSourceName}", StringUtils.FromString(publicRequest.VodSourceName));
+            request.ResourcePath = "/sourceLocation/{SourceLocationName}/vodSource/{VodSourceName}";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);

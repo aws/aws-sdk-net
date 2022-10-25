@@ -30,7 +30,7 @@ namespace Amazon.MediaTailor.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateVodSource operation.
-    /// Creates name for a specific VOD source in a source location.
+    /// The VOD source configuration parameters.
     /// </summary>
     public partial class CreateVodSourceRequest : AmazonMediaTailorRequest
     {
@@ -61,7 +61,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property SourceLocationName. 
         /// <para>
-        /// The identifier for the source location you are working on.
+        /// The name of the source location for this VOD source.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,7 +80,10 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to assign to the VOD source.
+        /// The tags to assign to the VOD source. Tags are key-value pairs that you can associate
+        /// with Amazon resources to help with organization, access control, and cost tracking.
+        /// For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+        /// AWS Elemental MediaTailor Resources</a>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
@@ -98,7 +101,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property VodSourceName. 
         /// <para>
-        /// The identifier for the VOD source you are working on.
+        /// The name associated with the VOD source.&gt;
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

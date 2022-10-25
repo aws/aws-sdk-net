@@ -30,7 +30,9 @@ namespace Amazon.MediaTailor.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSourceLocation operation.
-    /// Creates a source location on a specific channel.
+    /// Creates a source location. A source location is a container for sources. For more
+    /// information about source locations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-source-locations.html">Working
+    /// with source locations</a> in the <i>MediaTailor User Guide</i>.
     /// </summary>
     public partial class CreateSourceLocationRequest : AmazonMediaTailorRequest
     {
@@ -118,7 +120,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property SourceLocationName. 
         /// <para>
-        /// The identifier for the source location you are working on.
+        /// The name associated with the source location.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -137,7 +139,10 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to assign to the source location.
+        /// The tags to assign to the source location. Tags are key-value pairs that you can associate
+        /// with Amazon resources to help with organization, access control, and cost tracking.
+        /// For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+        /// AWS Elemental MediaTailor Resources</a>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

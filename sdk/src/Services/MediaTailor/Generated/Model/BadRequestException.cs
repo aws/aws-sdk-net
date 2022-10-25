@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaTailor.Model
 {
     /// <summary>
-    /// Invalid request parameters.
+    /// A request contains unexpected data.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
