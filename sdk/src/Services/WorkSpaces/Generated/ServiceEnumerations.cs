@@ -956,6 +956,10 @@ namespace Amazon.WorkSpaces
         /// Constant AUTO_STOP for RunningMode
         /// </summary>
         public static readonly RunningMode AUTO_STOP = new RunningMode("AUTO_STOP");
+        /// <summary>
+        /// Constant MANUAL for RunningMode
+        /// </summary>
+        public static readonly RunningMode MANUAL = new RunningMode("MANUAL");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1273,6 +1277,10 @@ namespace Amazon.WorkSpaces
         /// </summary>
         public static readonly WorkspaceImageIngestionProcess BYOL_GRAPHICS_G4DN = new WorkspaceImageIngestionProcess("BYOL_GRAPHICS_G4DN");
         /// <summary>
+        /// Constant BYOL_GRAPHICS_G4DN_BYOP for WorkspaceImageIngestionProcess
+        /// </summary>
+        public static readonly WorkspaceImageIngestionProcess BYOL_GRAPHICS_G4DN_BYOP = new WorkspaceImageIngestionProcess("BYOL_GRAPHICS_G4DN_BYOP");
+        /// <summary>
         /// Constant BYOL_GRAPHICSPRO for WorkspaceImageIngestionProcess
         /// </summary>
         public static readonly WorkspaceImageIngestionProcess BYOL_GRAPHICSPRO = new WorkspaceImageIngestionProcess("BYOL_GRAPHICSPRO");
@@ -1280,6 +1288,10 @@ namespace Amazon.WorkSpaces
         /// Constant BYOL_REGULAR for WorkspaceImageIngestionProcess
         /// </summary>
         public static readonly WorkspaceImageIngestionProcess BYOL_REGULAR = new WorkspaceImageIngestionProcess("BYOL_REGULAR");
+        /// <summary>
+        /// Constant BYOL_REGULAR_BYOP for WorkspaceImageIngestionProcess
+        /// </summary>
+        public static readonly WorkspaceImageIngestionProcess BYOL_REGULAR_BYOP = new WorkspaceImageIngestionProcess("BYOL_REGULAR_BYOP");
         /// <summary>
         /// Constant BYOL_REGULAR_WSP for WorkspaceImageIngestionProcess
         /// </summary>

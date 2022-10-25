@@ -36,6 +36,13 @@ namespace Amazon.WorkSpaces.Model
     /// <para>
     /// This operation is asynchronous and returns before the WorkSpaces are created.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// The <code>MANUAL</code> running mode value is only supported by Amazon WorkSpaces
+    /// Core. Contact your account team to be allow-listed to use this value. For more information,
+    /// see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateWorkspacesRequest : AmazonWorkSpacesRequest
     {

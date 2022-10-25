@@ -158,7 +158,7 @@ namespace Amazon.WorkSpaces.Model
         /// Specifies whether the image is running on dedicated hardware. When Bring Your Own
         /// License (BYOL) is enabled, this value is set to DEDICATED. For more information, see
         /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.htm">
-        /// Bring Your Own Windows Desktop Images.</a> 
+        /// Bring Your Own Windows Desktop Images.</a>.
         /// </para>
         /// </summary>
         public WorkspaceImageRequiredTenancy RequiredTenancy

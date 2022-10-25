@@ -940,6 +940,13 @@ namespace Amazon.WorkSpaces
         /// <para>
         /// This operation is asynchronous and returns before the WorkSpaces are created.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <code>MANUAL</code> running mode value is only supported by Amazon WorkSpaces
+        /// Core. Contact your account team to be allow-listed to use this value. For more information,
+        /// see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWorkspaces service method.</param>
         /// 
@@ -962,6 +969,13 @@ namespace Amazon.WorkSpaces
         /// <para>
         /// This operation is asynchronous and returns before the WorkSpaces are created.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <code>MANUAL</code> running mode value is only supported by Amazon WorkSpaces
+        /// Core. Contact your account team to be allow-listed to use this value. For more information,
+        /// see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWorkspaces service method.</param>
         /// <param name="cancellationToken">
@@ -2549,10 +2563,10 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Imports the specified Windows 10 Bring Your Own License (BYOL) image into Amazon WorkSpaces.
-        /// The image must be an already licensed Amazon EC2 image that is in your Amazon Web
-        /// Services account, and you must own the image. For more information about creating
-        /// BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
+        /// Imports the specified Windows 10 Bring Your Own License (BYOL) or Windows Server 2016
+        /// BYOL image into Amazon WorkSpaces. The image must be an already licensed Amazon EC2
+        /// image that is in your Amazon Web Services account, and you must own the image. For
+        /// more information about creating BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
         /// Bring Your Own Windows Desktop Licenses</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportWorkspaceImage service method.</param>
@@ -2582,10 +2596,10 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Imports the specified Windows 10 Bring Your Own License (BYOL) image into Amazon WorkSpaces.
-        /// The image must be an already licensed Amazon EC2 image that is in your Amazon Web
-        /// Services account, and you must own the image. For more information about creating
-        /// BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
+        /// Imports the specified Windows 10 Bring Your Own License (BYOL) or Windows Server 2016
+        /// BYOL image into Amazon WorkSpaces. The image must be an already licensed Amazon EC2
+        /// image that is in your Amazon Web Services account, and you must own the image. For
+        /// more information about creating BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
         /// Bring Your Own Windows Desktop Licenses</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportWorkspaceImage service method.</param>
@@ -3097,7 +3111,15 @@ namespace Amazon.WorkSpaces
         /// <summary>
         /// Modifies the specified WorkSpace properties. For important information about how to
         /// modify the size of the root and user volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">
-        /// Modify a WorkSpace</a>.
+        /// Modify a WorkSpace</a>. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The <code>MANUAL</code> running mode value is only supported by Amazon WorkSpaces
+        /// Core. Contact your account team to be allow-listed to use this value. For more information,
+        /// see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyWorkspaceProperties service method.</param>
         /// 
@@ -3133,7 +3155,15 @@ namespace Amazon.WorkSpaces
         /// <summary>
         /// Modifies the specified WorkSpace properties. For important information about how to
         /// modify the size of the root and user volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">
-        /// Modify a WorkSpace</a>.
+        /// Modify a WorkSpace</a>. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The <code>MANUAL</code> running mode value is only supported by Amazon WorkSpaces
+        /// Core. Contact your account team to be allow-listed to use this value. For more information,
+        /// see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyWorkspaceProperties service method.</param>
         /// <param name="cancellationToken">

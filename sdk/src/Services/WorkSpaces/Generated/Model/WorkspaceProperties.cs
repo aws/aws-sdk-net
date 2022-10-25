@@ -84,6 +84,13 @@ namespace Amazon.WorkSpaces.Model
         /// The running mode. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
         /// the WorkSpace Running Mode</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <code>MANUAL</code> value is only supported by Amazon WorkSpaces Core. Contact
+        /// your account team to be allow-listed to use this value. For more information, see
+        /// <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public RunningMode RunningMode
         {
