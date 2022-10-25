@@ -87,9 +87,10 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// VectorHereExplore, VectorHereExploreTruck – <code>Firo GO Italic</code> | <code>Fira
-        /// GO Map</code> | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code>
-        /// | <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK JP Regular</code> 
+        /// VectorHereExplore, VectorHereExploreTruck, HybridHereExploreSatellite – <code>Fira
+        /// GO Italic</code> | <code>Fira GO Map</code> | <code>Fira GO Map Bold</code> | <code>Noto
+        /// Sans CJK JP Bold</code> | <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK
+        /// JP Regular</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

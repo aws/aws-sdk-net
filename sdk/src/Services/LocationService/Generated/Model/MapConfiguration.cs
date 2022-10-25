@@ -92,7 +92,13 @@ namespace Amazon.LocationService.Model
         ///  <code>VectorHereContrast</code> – The HERE Contrast (Berlin) map style is a high
         /// contrast detailed base map of the world that blends 3D and 2D rendering.
         /// </para>
-        ///  </li> <li> 
+        ///  <note> 
+        /// <para>
+        /// The <code>VectorHereContrast</code> style has been renamed from <code>VectorHereBerlin</code>.
+        /// <code>VectorHereBerlin</code> has been deprecated, but will continue to work in applications
+        /// that use it.
+        /// </para>
+        ///  </note> </li> <li> 
         /// <para>
         ///  <code>VectorHereExplore</code> – A default HERE map style containing a neutral, global
         /// map and its features including roads, buildings, landmarks, and water features. It
@@ -104,13 +110,25 @@ namespace Amazon.LocationService.Model
         /// and attributes (e.g. width / height / HAZMAT) symbolized with highlighted segments
         /// and icons on top of HERE Explore to support use cases within transport and logistics.
         /// </para>
-        ///  </li> </ul> <note> 
+        ///  </li> <li> 
         /// <para>
-        /// The <code>VectorHereContrast</code> style has been renamed from <code>VectorHereBerlin</code>.
-        /// <code>VectorHereBerlin</code> has been deprecated, but will continue to work in applications
-        /// that use it.
+        ///  <code>RasterHereExploreSatellite</code> – A global map containing high resolution
+        /// satellite imagery.
         /// </para>
-        ///  </note>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>HybridHereExploreSatellite</code> – A global map displaying the road network,
+        /// street names, and city labels over satellite imagery. This style will automatically
+        /// retrieve both raster and vector tiles, and your charges will be based on total tiles
+        /// retrieved.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Hybrid styles use both vector and raster tiles when rendering the map that you see.
+        /// This means that more tiles are retrieved than when using either vector or raster tiles
+        /// alone. Your charges will include all tiles retrieved.
+        /// </para>
+        ///  </note> </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
         public string Style

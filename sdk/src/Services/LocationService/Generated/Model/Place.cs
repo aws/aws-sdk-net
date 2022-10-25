@@ -273,7 +273,7 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property TimeZone. 
         /// <para>
         /// The time zone in which the <code>Place</code> is located. Returned only when using
-        /// Here as the selected partner.
+        /// HERE as the selected partner.
         /// </para>
         /// </summary>
         public TimeZone TimeZone

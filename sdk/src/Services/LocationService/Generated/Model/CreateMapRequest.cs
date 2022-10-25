@@ -53,7 +53,9 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        /// Specifies the map style selected from an available data provider.
+        /// Specifies the <code>MapConfiguration</code>, including the map style, for the map
+        /// resource that you create. The map style defines the look of maps and the data provider
+        /// for your map resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
