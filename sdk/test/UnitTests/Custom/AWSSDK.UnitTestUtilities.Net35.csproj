@@ -23,11 +23,14 @@
 
   <ItemGroup>
     <Compile Remove="**\**" />
+    <Compile Include="EndpointsTests.cs" />
     <Compile Include="EndpointsStandardLibraryTests.cs" />
     <Compile Include="Runtime\DeprecatedCodeTest.cs" />
     <Compile Include="Runtime\EC2InstanceMetadataServlet.cs" />
     <Compile Include="Runtime\HttpHandlerTests.cs" />
     <Compile Include="Mocking\TestUtils.cs" />
+    <Compile Include="Runtime\MockAmazonWebServiceRequest.cs" />
+    <Compile Include="Runtime\MockClientConfig.cs" />
     <Compile Include="Utils.cs" />
     <Compile Include="ConstantClassTestBase.cs" />
     <Compile Include="CapacityManagerTests.cs" />

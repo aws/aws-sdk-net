@@ -80,7 +80,7 @@ namespace Amazon.Runtime.Internal
                 var uriBuilder = new UriBuilder(requestContext.Request.Endpoint)
                 {
                     Scheme = Uri.UriSchemeHttp,
-                    Port = -1 // default port for scheme
+                    Port = requestContext.Request.Endpoint.IsDefaultPort ? -1 : requestContext.Request.Endpoint.Port
                 };
                 requestContext.Request.Endpoint = uriBuilder.Uri;
             }
