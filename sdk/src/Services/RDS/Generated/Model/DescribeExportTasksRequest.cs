@@ -40,6 +40,7 @@ namespace Amazon.RDS.Model
         private string _marker;
         private int? _maxRecords;
         private string _sourceArn;
+        private ExportSourceType _sourceType;
 
         /// <summary>
         /// Gets and sets the property ExportTaskIdentifier. 
@@ -192,6 +193,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetSourceArn()
         {
             return this._sourceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceType. 
+        /// <para>
+        /// The type of source for the export.
+        /// </para>
+        /// </summary>
+        public ExportSourceType SourceType
+        {
+            get { return this._sourceType; }
+            set { this._sourceType = value; }
+        }
+
+        // Check to see if SourceType property is set
+        internal bool IsSetSourceType()
+        {
+            return this._sourceType != null;
         }
 
     }

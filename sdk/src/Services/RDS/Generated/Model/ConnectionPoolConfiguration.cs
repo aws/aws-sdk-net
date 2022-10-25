@@ -103,6 +103,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
+        /// If you specify <code>MaxIdleConnectionsPercent</code>, then you must also include
+        /// a value for this parameter.
+        /// </para>
+        ///  
+        /// <para>
         /// Default: 10 for RDS for Microsoft SQL Server, and 100 for all other engines
         /// </para>
         ///  
@@ -130,6 +135,10 @@ namespace Amazon.RDS.Model
         /// for the RDS DB instance or Aurora DB cluster used by the target group. With a high
         /// value, the proxy leaves a high percentage of idle database connections open. A low
         /// value causes the proxy to close more idle connections and return them to the database.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify this parameter, then you must also include a value for <code>MaxConnectionsPercent</code>.
         /// </para>
         ///  
         /// <para>

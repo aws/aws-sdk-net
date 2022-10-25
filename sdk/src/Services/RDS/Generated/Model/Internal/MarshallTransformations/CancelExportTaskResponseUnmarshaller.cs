@@ -142,6 +142,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         response.SourceArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("SourceType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.SourceType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Status", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

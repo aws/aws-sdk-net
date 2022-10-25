@@ -12569,6 +12569,9 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the StartExportTask service method.</param>
         /// 
         /// <returns>The response from the StartExportTask service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterSnapshotNotFoundException">
         /// <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster
         /// snapshot.
@@ -12625,6 +12628,9 @@ namespace Amazon.RDS
         /// </param>
         /// 
         /// <returns>The response from the StartExportTask service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterSnapshotNotFoundException">
         /// <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster
         /// snapshot.

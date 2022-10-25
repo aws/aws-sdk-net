@@ -48,7 +48,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Instantiates DescribeEngineDefaultParametersRequest with the parameterized properties
         /// </summary>
-        /// <param name="dbParameterGroupFamily">The name of the DB parameter group family. Valid Values: <ul> <li>  <code>aurora5.6</code>  </li> <li>  <code>aurora-mysql5.7</code>  </li> <li>  <code>aurora-mysql8.0</code>  </li> <li>  <code>aurora-postgresql10</code>  </li> <li>  <code>aurora-postgresql11</code>  </li> <li>  <code>aurora-postgresql12</code>  </li> <li>  <code>aurora-postgresql13</code>  </li> <li>  <code>mariadb10.2</code>  </li> <li>  <code>mariadb10.3</code>  </li> <li>  <code>mariadb10.4</code>  </li> <li>  <code>mariadb10.5</code>  </li> <li>  <code>mariadb10.6</code>  </li> <li>  <code>mysql5.7</code>  </li> <li>  <code>mysql8.0</code>  </li> <li>  <code>postgres10</code>  </li> <li>  <code>postgres11</code>  </li> <li>  <code>postgres12</code>  </li> <li>  <code>postgres13</code>  </li> <li>  <code>postgres14</code>  </li> <li>  <code>sqlserver-ee-11.0</code>  </li> <li>  <code>sqlserver-ee-12.0</code>  </li> <li>  <code>sqlserver-ee-13.0</code>  </li> <li>  <code>sqlserver-ee-14.0</code>  </li> <li>  <code>sqlserver-ee-15.0</code>  </li> <li>  <code>sqlserver-ex-11.0</code>  </li> <li>  <code>sqlserver-ex-12.0</code>  </li> <li>  <code>sqlserver-ex-13.0</code>  </li> <li>  <code>sqlserver-ex-14.0</code>  </li> <li>  <code>sqlserver-ex-15.0</code>  </li> <li>  <code>sqlserver-se-11.0</code>  </li> <li>  <code>sqlserver-se-12.0</code>  </li> <li>  <code>sqlserver-se-13.0</code>  </li> <li>  <code>sqlserver-se-14.0</code>  </li> <li>  <code>sqlserver-se-15.0</code>  </li> <li>  <code>sqlserver-web-11.0</code>  </li> <li>  <code>sqlserver-web-12.0</code>  </li> <li>  <code>sqlserver-web-13.0</code>  </li> <li>  <code>sqlserver-web-14.0</code>  </li> <li>  <code>sqlserver-web-15.0</code>  </li> </ul></param>
+        /// <param name="dbParameterGroupFamily">The name of the DB parameter group family. Valid Values: <ul> <li>  <code>aurora5.6</code>  </li> <li>  <code>aurora-mysql5.7</code>  </li> <li>  <code>aurora-mysql8.0</code>  </li> <li>  <code>aurora-postgresql10</code>  </li> <li>  <code>aurora-postgresql11</code>  </li> <li>  <code>aurora-postgresql12</code>  </li> <li>  <code>aurora-postgresql13</code>  </li> <li>  <code>aurora-postgresql14</code>  </li> <li>  <code>custom-oracle-ee-19</code>  </li> <li>  <code>mariadb10.2</code>  </li> <li>  <code>mariadb10.3</code>  </li> <li>  <code>mariadb10.4</code>  </li> <li>  <code>mariadb10.5</code>  </li> <li>  <code>mariadb10.6</code>  </li> <li>  <code>mysql5.7</code>  </li> <li>  <code>mysql8.0</code>  </li> <li>  <code>oracle-ee-19</code>  </li> <li>  <code>oracle-ee-cdb-19</code>  </li> <li>  <code>oracle-ee-cdb-21</code>  </li> <li>  <code>oracle-se2-19</code>  </li> <li>  <code>oracle-se2-cdb-19</code>  </li> <li>  <code>oracle-se2-cdb-21</code>  </li> <li>  <code>postgres10</code>  </li> <li>  <code>postgres11</code>  </li> <li>  <code>postgres12</code>  </li> <li>  <code>postgres13</code>  </li> <li>  <code>postgres14</code>  </li> <li>  <code>sqlserver-ee-11.0</code>  </li> <li>  <code>sqlserver-ee-12.0</code>  </li> <li>  <code>sqlserver-ee-13.0</code>  </li> <li>  <code>sqlserver-ee-14.0</code>  </li> <li>  <code>sqlserver-ee-15.0</code>  </li> <li>  <code>sqlserver-ex-11.0</code>  </li> <li>  <code>sqlserver-ex-12.0</code>  </li> <li>  <code>sqlserver-ex-13.0</code>  </li> <li>  <code>sqlserver-ex-14.0</code>  </li> <li>  <code>sqlserver-ex-15.0</code>  </li> <li>  <code>sqlserver-se-11.0</code>  </li> <li>  <code>sqlserver-se-12.0</code>  </li> <li>  <code>sqlserver-se-13.0</code>  </li> <li>  <code>sqlserver-se-14.0</code>  </li> <li>  <code>sqlserver-se-15.0</code>  </li> <li>  <code>sqlserver-web-11.0</code>  </li> <li>  <code>sqlserver-web-12.0</code>  </li> <li>  <code>sqlserver-web-13.0</code>  </li> <li>  <code>sqlserver-web-14.0</code>  </li> <li>  <code>sqlserver-web-15.0</code>  </li> </ul></param>
         public DescribeEngineDefaultParametersRequest(string dbParameterGroupFamily)
         {
             _dbParameterGroupFamily = dbParameterGroupFamily;
@@ -93,6 +93,14 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>aurora-postgresql14</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>custom-oracle-ee-19</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>mariadb10.2</code> 
         /// </para>
         ///  </li> <li> 
@@ -118,6 +126,30 @@ namespace Amazon.RDS.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>mysql8.0</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>oracle-ee-19</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>oracle-ee-cdb-19</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>oracle-ee-cdb-21</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>oracle-se2-19</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>oracle-se2-cdb-19</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>oracle-se2-cdb-21</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>

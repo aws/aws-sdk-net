@@ -49,6 +49,7 @@ namespace Amazon.RDS.Model
         private string _s3Prefix;
         private DateTime? _snapshotTime;
         private string _sourceArn;
+        private ExportSourceType _sourceType;
         private string _status;
         private DateTime? _taskEndTime;
         private DateTime? _taskStartTime;
@@ -257,6 +258,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetSourceArn()
         {
             return this._sourceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceType. 
+        /// <para>
+        /// The type of source for the export.
+        /// </para>
+        /// </summary>
+        public ExportSourceType SourceType
+        {
+            get { return this._sourceType; }
+            set { this._sourceType = value; }
+        }
+
+        // Check to see if SourceType property is set
+        internal bool IsSetSourceType()
+        {
+            return this._sourceType != null;
         }
 
         /// <summary>

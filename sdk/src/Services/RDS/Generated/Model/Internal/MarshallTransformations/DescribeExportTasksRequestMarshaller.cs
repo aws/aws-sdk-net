@@ -95,6 +95,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("SourceArn", StringUtils.FromString(publicRequest.SourceArn));
                 }
+                if(publicRequest.IsSetSourceType())
+                {
+                    request.Parameters.Add("SourceType", StringUtils.FromString(publicRequest.SourceType));
+                }
             }
             return request;
         }
