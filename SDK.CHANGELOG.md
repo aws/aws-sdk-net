@@ -1,3 +1,18 @@
+### 3.7.403.0 (2022-10-25 18:22 UTC)
+* AccessAnalyzer (3.7.101.0)
+	* This release adds support for six new resource types in IAM Access Analyzer to help you easily identify public and cross-account access to your AWS resources. Updated service API, documentation, and paginators.
+* LocationService (3.7.100.2)
+	* Added new map styles with satellite imagery for map resources using HERE as a data provider.
+* MediaTailor (3.7.101.0)
+	* This release is a documentation update
+* RDS (3.7.101.0)
+	* Relational Database Service - This release adds support for exporting DB cluster data to Amazon S3.
+* WorkSpaces (3.7.101.0)
+	* This release adds new enums for supporting Workspaces Core features, including creating Manual running mode workspaces, importing regular Workspaces Core images and importing g4dn Workspaces Core images.
+* Core 3.7.100.2
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.402.0 (2022-10-24 19:07 UTC)
 * ACMPCA (3.7.101.0)
 	* AWS Private Certificate Authority (AWS Private CA) now offers usage modes which are combination of features to address specific use cases.
