@@ -75,6 +75,7 @@ namespace Amazon.Neptune.Model
         private string _readerEndpoint;
         private List<string> _readReplicaIdentifiers = new List<string>();
         private string _replicationSourceIdentifier;
+        private ServerlessV2ScalingConfigurationInfo _serverlessV2ScalingConfiguration;
         private string _status;
         private bool? _storageEncrypted;
         private List<VpcSecurityGroupMembership> _vpcSecurityGroups = new List<VpcSecurityGroupMembership>();
@@ -772,6 +773,21 @@ namespace Amazon.Neptune.Model
         internal bool IsSetReplicationSourceIdentifier()
         {
             return this._replicationSourceIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServerlessV2ScalingConfiguration.
+        /// </summary>
+        public ServerlessV2ScalingConfigurationInfo ServerlessV2ScalingConfiguration
+        {
+            get { return this._serverlessV2ScalingConfiguration; }
+            set { this._serverlessV2ScalingConfiguration = value; }
+        }
+
+        // Check to see if ServerlessV2ScalingConfiguration property is set
+        internal bool IsSetServerlessV2ScalingConfiguration()
+        {
+            return this._serverlessV2ScalingConfiguration != null;
         }
 
         /// <summary>

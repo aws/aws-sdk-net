@@ -91,6 +91,11 @@ namespace Amazon.Neptune.Model
         IDescribeEventSubscriptionsPaginator DescribeEventSubscriptions(DescribeEventSubscriptionsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeGlobalClusters operation
+        ///</summary>
+        IDescribeGlobalClustersPaginator DescribeGlobalClusters(DescribeGlobalClustersRequest request);
+
+        /// <summary>
         /// Paginator for DescribeOrderableDBInstanceOptions operation
         ///</summary>
         IDescribeOrderableDBInstanceOptionsPaginator DescribeOrderableDBInstanceOptions(DescribeOrderableDBInstanceOptionsRequest request);

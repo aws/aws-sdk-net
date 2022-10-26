@@ -70,6 +70,7 @@ namespace Amazon.Neptune.Model
         private string _preferredMaintenanceWindow;
         private string _preSignedUrl;
         private string _replicationSourceIdentifier;
+        private ServerlessV2ScalingConfiguration _serverlessV2ScalingConfiguration;
         private bool? _storageEncrypted;
         private List<Tag> _tags = new List<Tag>();
         private List<string> _vpcSecurityGroupIds = new List<string>();
@@ -646,6 +647,21 @@ namespace Amazon.Neptune.Model
         internal bool IsSetReplicationSourceIdentifier()
         {
             return this._replicationSourceIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServerlessV2ScalingConfiguration.
+        /// </summary>
+        public ServerlessV2ScalingConfiguration ServerlessV2ScalingConfiguration
+        {
+            get { return this._serverlessV2ScalingConfiguration; }
+            set { this._serverlessV2ScalingConfiguration = value; }
+        }
+
+        // Check to see if ServerlessV2ScalingConfiguration property is set
+        internal bool IsSetServerlessV2ScalingConfiguration()
+        {
+            return this._serverlessV2ScalingConfiguration != null;
         }
 
         /// <summary>

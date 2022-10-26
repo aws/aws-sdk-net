@@ -282,6 +282,12 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                         unmarshalledObject.ReplicationSourceIdentifier = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ServerlessV2ScalingConfiguration", targetDepth))
+                    {
+                        var unmarshaller = ServerlessV2ScalingConfigurationInfoUnmarshaller.Instance;
+                        unmarshalledObject.ServerlessV2ScalingConfiguration = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Status", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
