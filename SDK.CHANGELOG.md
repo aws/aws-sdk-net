@@ -1,3 +1,10 @@
+### 3.7.403.1 (2022-10-26 14:00 UTC)
+* S3 (3.7.101.3)
+	* fix: change incorrect docs for MinSizeBeforePartUpload property in S3; Corrected the root element emitted by S3 SelectObjectContentRequestMarshaller to conform to S3 API.
+* Core 3.7.100.3
+	* Retain custom uri port when UseHttp is enforced.
+	* All services packages updated to require new Core
+
 ### 3.7.403.0 (2022-10-25 18:22 UTC)
 * AccessAnalyzer (3.7.101.0)
 	* This release adds support for six new resource types in IAM Access Analyzer to help you easily identify public and cross-account access to your AWS resources. Updated service API, documentation, and paginators.
