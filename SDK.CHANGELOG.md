@@ -1,3 +1,13 @@
+### 3.7.404.0 (2022-10-26 18:22 UTC)
+* IdentityManagement (3.7.100.4)
+	* Doc only update that corrects instances of CLI not using an entity.
+* Kafka (3.7.101.0)
+	* This release adds support for Tiered Storage. UpdateStorage allows you to control the Storage Mode for supported storage tiers.
+* Neptune (3.7.101.0)
+	* Added a new cluster-level attribute to set the capacity range for Neptune Serverless instances.
+* SageMaker (3.7.103.0)
+	* Amazon SageMaker Automatic Model Tuning now supports specifying Grid Search strategy for tuning jobs, which evaluates all hyperparameter combinations exhaustively based on the categorical hyperparameters provided.
+
 ### 3.7.403.1 (2022-10-26 14:00 UTC)
 * S3 (3.7.101.3)
 	* fix: change incorrect docs for MinSizeBeforePartUpload property in S3; Corrected the root element emitted by S3 SelectObjectContentRequestMarshaller to conform to S3 API.
