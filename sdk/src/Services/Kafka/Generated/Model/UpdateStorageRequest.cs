@@ -29,32 +29,54 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kafka.Model
 {
     /// <summary>
-    /// Specifies the EBS volume upgrade information. The broker identifier must be set to
-    /// the keyword ALL. This means the changes apply to all the brokers in the cluster.
+    /// Container for the parameters to the UpdateStorage operation.
+    /// Updates cluster broker volume size (or) sets cluster storage mode to TIERED.
     /// </summary>
-    public partial class BrokerEBSVolumeInfo
+    public partial class UpdateStorageRequest : AmazonKafkaRequest
     {
-        private string _kafkaBrokerNodeId;
+        private string _clusterArn;
+        private string _currentVersion;
         private ProvisionedThroughput _provisionedThroughput;
+        private StorageMode _storageMode;
         private int? _volumeSizeGB;
 
         /// <summary>
-        /// Gets and sets the property KafkaBrokerNodeId.             
+        /// Gets and sets the property ClusterArn.             
         /// <para>
-        /// The ID of the broker to update.
+        /// The Amazon Resource Name (ARN) of the cluster to be updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string KafkaBrokerNodeId
+        public string ClusterArn
         {
-            get { return this._kafkaBrokerNodeId; }
-            set { this._kafkaBrokerNodeId = value; }
+            get { return this._clusterArn; }
+            set { this._clusterArn = value; }
         }
 
-        // Check to see if KafkaBrokerNodeId property is set
-        internal bool IsSetKafkaBrokerNodeId()
+        // Check to see if ClusterArn property is set
+        internal bool IsSetClusterArn()
         {
-            return this._kafkaBrokerNodeId != null;
+            return this._clusterArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CurrentVersion.             
+        /// <para>
+        /// The version of cluster to update from. A successful operation will then generate a
+        /// new version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string CurrentVersion
+        {
+            get { return this._currentVersion; }
+            set { this._currentVersion = value; }
+        }
+
+        // Check to see if CurrentVersion property is set
+        internal bool IsSetCurrentVersion()
+        {
+            return this._currentVersion != null;
         }
 
         /// <summary>
@@ -76,9 +98,27 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StorageMode.             
+        /// <para>
+        /// Controls storage mode for supported storage tiers.
+        /// </para>
+        /// </summary>
+        public StorageMode StorageMode
+        {
+            get { return this._storageMode; }
+            set { this._storageMode = value; }
+        }
+
+        // Check to see if StorageMode property is set
+        internal bool IsSetStorageMode()
+        {
+            return this._storageMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property VolumeSizeGB.             
         /// <para>
-        /// Size of the EBS volume to update.
+        /// size of the EBS volume to update.
         /// </para>
         /// </summary>
         public int VolumeSizeGB

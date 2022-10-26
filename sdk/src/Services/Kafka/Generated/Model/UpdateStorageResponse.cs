@@ -29,49 +29,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kafka.Model
 {
     /// <summary>
-    /// Contains information about the EBS storage volumes attached to Apache Kafka broker
-    /// nodes.
+    /// This is the response object from the UpdateStorage operation.
     /// </summary>
-    public partial class EBSStorageInfo
+    public partial class UpdateStorageResponse : AmazonWebServiceResponse
     {
-        private ProvisionedThroughput _provisionedThroughput;
-        private int? _volumeSize;
+        private string _clusterArn;
+        private string _clusterOperationArn;
 
         /// <summary>
-        /// Gets and sets the property ProvisionedThroughput.             
+        /// Gets and sets the property ClusterArn.             
         /// <para>
-        /// EBS volume provisioned throughput information.
+        /// The Amazon Resource Name (ARN) of the cluster.
         /// </para>
         /// </summary>
-        public ProvisionedThroughput ProvisionedThroughput
+        public string ClusterArn
         {
-            get { return this._provisionedThroughput; }
-            set { this._provisionedThroughput = value; }
+            get { return this._clusterArn; }
+            set { this._clusterArn = value; }
         }
 
-        // Check to see if ProvisionedThroughput property is set
-        internal bool IsSetProvisionedThroughput()
+        // Check to see if ClusterArn property is set
+        internal bool IsSetClusterArn()
         {
-            return this._provisionedThroughput != null;
+            return this._clusterArn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property VolumeSize.             
+        /// Gets and sets the property ClusterOperationArn.             
         /// <para>
-        /// The size in GiB of the EBS volume for the data drive on each broker node.
+        /// The Amazon Resource Name (ARN) of the cluster operation.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=16384)]
-        public int VolumeSize
+        public string ClusterOperationArn
         {
-            get { return this._volumeSize.GetValueOrDefault(); }
-            set { this._volumeSize = value; }
+            get { return this._clusterOperationArn; }
+            set { this._clusterOperationArn = value; }
         }
 
-        // Check to see if VolumeSize property is set
-        internal bool IsSetVolumeSize()
+        // Check to see if ClusterOperationArn property is set
+        internal bool IsSetClusterOperationArn()
         {
-            return this._volumeSize.HasValue; 
+            return this._clusterOperationArn != null;
         }
 
     }

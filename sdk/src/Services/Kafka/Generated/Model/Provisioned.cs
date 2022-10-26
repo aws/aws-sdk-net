@@ -41,6 +41,7 @@ namespace Amazon.Kafka.Model
         private LoggingInfo _loggingInfo;
         private int? _numberOfBrokerNodes;
         private OpenMonitoringInfo _openMonitoring;
+        private StorageMode _storageMode;
         private string _zookeeperConnectString;
         private string _zookeeperConnectStringTls;
 
@@ -189,6 +190,24 @@ namespace Amazon.Kafka.Model
         internal bool IsSetOpenMonitoring()
         {
             return this._openMonitoring != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageMode.             
+        /// <para>
+        /// This controls storage mode for supported storage tiers.
+        /// </para>
+        /// </summary>
+        public StorageMode StorageMode
+        {
+            get { return this._storageMode; }
+            set { this._storageMode = value; }
+        }
+
+        // Check to see if StorageMode property is set
+        internal bool IsSetStorageMode()
+        {
+            return this._storageMode != null;
         }
 
         /// <summary>

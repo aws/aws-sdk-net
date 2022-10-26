@@ -129,6 +129,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetStorageMode())
+            {
+                context.Writer.WritePropertyName("storageMode");
+                context.Writer.Write(requestObject.StorageMode);
+            }
+
         }
 
         /// <summary>

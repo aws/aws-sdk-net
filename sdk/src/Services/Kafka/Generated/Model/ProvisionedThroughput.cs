@@ -38,7 +38,10 @@ namespace Amazon.Kafka.Model
         private int? _volumeThroughput;
 
         /// <summary>
-        /// Gets and sets the property Enabled. Provisioned throughput is enabled or not.
+        /// Gets and sets the property Enabled.             
+        /// <para>
+        /// Provisioned throughput is enabled or not.
+        /// </para>
         /// </summary>
         public bool Enabled
         {
@@ -53,8 +56,11 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VolumeThroughput. Throughput value of the EBS volumes for
-        /// the data drive on each kafka broker node in MiB per second.
+        /// Gets and sets the property VolumeThroughput.             
+        /// <para>
+        /// Throughput value of the EBS volumes for the data drive on each kafka broker node in
+        /// MiB per second.
+        /// </para>
         /// </summary>
         public int VolumeThroughput
         {

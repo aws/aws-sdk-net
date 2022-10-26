@@ -155,6 +155,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetStorageMode())
+                {
+                    context.Writer.WritePropertyName("storageMode");
+                    context.Writer.Write(publicRequest.StorageMode);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");
