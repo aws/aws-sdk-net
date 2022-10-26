@@ -125,7 +125,7 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// Anyone who assumes the role from the or API can use the <code>DurationSeconds</code>
+        /// Anyone who assumes the role from the CLI or API can use the <code>DurationSeconds</code>
         /// API parameter or the <code>duration-seconds</code> CLI parameter to request a longer
         /// session. The <code>MaxSessionDuration</code> setting determines the maximum duration
         /// that can be requested using the <code>DurationSeconds</code> parameter. If users don't
