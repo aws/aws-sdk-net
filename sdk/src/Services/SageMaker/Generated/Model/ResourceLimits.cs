@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// The maximum number of training jobs that a hyperparameter tuning job can launch.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Min=1)]
         public int MaxNumberOfTrainingJobs
         {
             get { return this._maxNumberOfTrainingJobs.GetValueOrDefault(); }
