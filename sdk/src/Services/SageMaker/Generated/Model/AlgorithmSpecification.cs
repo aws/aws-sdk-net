@@ -41,6 +41,8 @@ namespace Amazon.SageMaker.Model
     public partial class AlgorithmSpecification
     {
         private string _algorithmName;
+        private List<string> _containerArguments = new List<string>();
+        private List<string> _containerEntrypoint = new List<string>();
         private bool? _enableSageMakerMetricsTimeSeries;
         private List<MetricDefinition> _metricDefinitions = new List<MetricDefinition>();
         private string _trainingImage;
@@ -82,6 +84,48 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetAlgorithmName()
         {
             return this._algorithmName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContainerArguments. 
+        /// <para>
+        /// The arguments for a container used to run a training job. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How
+        /// Amazon SageMaker Runs Your Training Image</a> for additional information.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public List<string> ContainerArguments
+        {
+            get { return this._containerArguments; }
+            set { this._containerArguments = value; }
+        }
+
+        // Check to see if ContainerArguments property is set
+        internal bool IsSetContainerArguments()
+        {
+            return this._containerArguments != null && this._containerArguments.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContainerEntrypoint. 
+        /// <para>
+        /// The <a href="https://docs.docker.com/engine/reference/builder/">entrypoint script
+        /// for a Docker container</a> used to run a training job. This script takes precedence
+        /// over the default train processing instructions. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How
+        /// Amazon SageMaker Runs Your Training Image</a> for more information.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<string> ContainerEntrypoint
+        {
+            get { return this._containerEntrypoint; }
+            set { this._containerEntrypoint = value; }
+        }
+
+        // Check to see if ContainerEntrypoint property is set
+        internal bool IsSetContainerEntrypoint()
+        {
+            return this._containerEntrypoint != null && this._containerEntrypoint.Count > 0; 
         }
 
         /// <summary>

@@ -51,6 +51,28 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AlgorithmName);
             }
 
+            if(requestObject.IsSetContainerArguments())
+            {
+                context.Writer.WritePropertyName("ContainerArguments");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectContainerArgumentsListValue in requestObject.ContainerArguments)
+                {
+                        context.Writer.Write(requestObjectContainerArgumentsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetContainerEntrypoint())
+            {
+                context.Writer.WritePropertyName("ContainerEntrypoint");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectContainerEntrypointListValue in requestObject.ContainerEntrypoint)
+                {
+                        context.Writer.Write(requestObjectContainerEntrypointListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetEnableSageMakerMetricsTimeSeries())
             {
                 context.Writer.WritePropertyName("EnableSageMakerMetricsTimeSeries");

@@ -3951,8 +3951,8 @@ namespace Amazon.SageMaker
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        ///  <code>InputDataConfig</code> - Describes the training dataset and the Amazon S3,
-        /// EFS, or FSx location where it is stored.
+        ///  <code>InputDataConfig</code> - Describes the input required by the training job and
+        /// the Amazon S3, EFS, or FSx location where it is stored.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4059,8 +4059,8 @@ namespace Amazon.SageMaker
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        ///  <code>InputDataConfig</code> - Describes the training dataset and the Amazon S3,
-        /// EFS, or FSx location where it is stored.
+        ///  <code>InputDataConfig</code> - Describes the input required by the training job and
+        /// the Amazon S3, EFS, or FSx location where it is stored.
         /// </para>
         ///  </li> <li> 
         /// <para>
