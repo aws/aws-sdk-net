@@ -33,9 +33,29 @@ namespace Amazon.FMS.Model
     /// </summary>
     public partial class StatefulRuleGroup
     {
+        private NetworkFirewallStatefulRuleGroupOverride _override;
         private int? _priority;
         private string _resourceId;
         private string _ruleGroupName;
+
+        /// <summary>
+        /// Gets and sets the property Override. 
+        /// <para>
+        /// The action that allows the policy owner to override the behavior of the rule group
+        /// within a policy.
+        /// </para>
+        /// </summary>
+        public NetworkFirewallStatefulRuleGroupOverride Override
+        {
+            get { return this._override; }
+            set { this._override = value; }
+        }
+
+        // Check to see if Override property is set
+        internal bool IsSetOverride()
+        {
+            return this._override != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Priority. 

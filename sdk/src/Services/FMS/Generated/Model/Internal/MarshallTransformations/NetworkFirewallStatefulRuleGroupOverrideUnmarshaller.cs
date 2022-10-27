@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StatefulRuleGroup Object
+    /// Response Unmarshaller for NetworkFirewallStatefulRuleGroupOverride Object
     /// </summary>  
-    public class StatefulRuleGroupUnmarshaller : IUnmarshaller<StatefulRuleGroup, XmlUnmarshallerContext>, IUnmarshaller<StatefulRuleGroup, JsonUnmarshallerContext>
+    public class NetworkFirewallStatefulRuleGroupOverrideUnmarshaller : IUnmarshaller<NetworkFirewallStatefulRuleGroupOverride, XmlUnmarshallerContext>, IUnmarshaller<NetworkFirewallStatefulRuleGroupOverride, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        StatefulRuleGroup IUnmarshaller<StatefulRuleGroup, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        NetworkFirewallStatefulRuleGroupOverride IUnmarshaller<NetworkFirewallStatefulRuleGroupOverride, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,21 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public StatefulRuleGroup Unmarshall(JsonUnmarshallerContext context)
+        public NetworkFirewallStatefulRuleGroupOverride Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            StatefulRuleGroup unmarshalledObject = new StatefulRuleGroup();
+            NetworkFirewallStatefulRuleGroupOverride unmarshalledObject = new NetworkFirewallStatefulRuleGroupOverride();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Override", targetDepth))
-                {
-                    var unmarshaller = NetworkFirewallStatefulRuleGroupOverrideUnmarshaller.Instance;
-                    unmarshalledObject.Override = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Priority", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Priority = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ResourceId", targetDepth))
+                if (context.TestExpression("Action", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RuleGroupName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RuleGroupName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Action = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +76,12 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         }
 
 
-        private static StatefulRuleGroupUnmarshaller _instance = new StatefulRuleGroupUnmarshaller();        
+        private static NetworkFirewallStatefulRuleGroupOverrideUnmarshaller _instance = new NetworkFirewallStatefulRuleGroupOverrideUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StatefulRuleGroupUnmarshaller Instance
+        public static NetworkFirewallStatefulRuleGroupOverrideUnmarshaller Instance
         {
             get
             {
