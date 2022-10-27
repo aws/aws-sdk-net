@@ -1,3 +1,20 @@
+### 3.7.405.0 (2022-10-27 19:28 UTC)
+* EC2 (3.7.101.0)
+	* Feature supports the replacement of instance root volume using an updated AMI without requiring customers to stop their instance.
+* FMS (3.7.101.0)
+	* Add support NetworkFirewall Managed Rule Group Override flag in GetViolationDetails API
+* Glue (3.7.101.0)
+	* Added support for custom datatypes when using custom csv classifier.
+* Redshift (3.7.100.4)
+	* This release clarifies use for the ElasticIp parameter of the CreateCluster and RestoreFromClusterSnapshot APIs.
+* SageMaker (3.7.104.0)
+	* This change allows customers to provide a custom entrypoint script for the docker container to be run while executing training jobs, and provide custom arguments to the entrypoint script.
+* WAFV2 (3.7.101.0)
+	* This release adds the following: Challenge rule action, to silently verify client browsers; rule group rule action override to any valid rule action, not just Count; token sharing between protected applications for challenge/CAPTCHA token; targeted rules option for Bot Control managed rule group.
+* Core 3.7.100.4
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.404.0 (2022-10-26 18:22 UTC)
 * IdentityManagement (3.7.100.4)
 	* Doc only update that corrects instances of CLI not using an entity.
