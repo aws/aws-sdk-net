@@ -82,6 +82,18 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CustomDatatypeConfigured", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.CustomDatatypeConfigured = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CustomDatatypes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.CustomDatatypes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Delimiter", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -57,6 +57,23 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ContainsHeader);
             }
 
+            if(requestObject.IsSetCustomDatatypeConfigured())
+            {
+                context.Writer.WritePropertyName("CustomDatatypeConfigured");
+                context.Writer.Write(requestObject.CustomDatatypeConfigured);
+            }
+
+            if(requestObject.IsSetCustomDatatypes())
+            {
+                context.Writer.WritePropertyName("CustomDatatypes");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectCustomDatatypesListValue in requestObject.CustomDatatypes)
+                {
+                        context.Writer.Write(requestObjectCustomDatatypesListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetDelimiter())
             {
                 context.Writer.WritePropertyName("Delimiter");
