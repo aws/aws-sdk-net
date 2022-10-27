@@ -66,6 +66,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(Guid.NewGuid().ToString()));
                 }
+                if(publicRequest.IsSetDeleteReplacedRootVolume())
+                {
+                    request.Parameters.Add("DeleteReplacedRootVolume", StringUtils.FromBool(publicRequest.DeleteReplacedRootVolume));
+                }
+                if(publicRequest.IsSetImageId())
+                {
+                    request.Parameters.Add("ImageId", StringUtils.FromString(publicRequest.ImageId));
+                }
                 if(publicRequest.IsSetInstanceId())
                 {
                     request.Parameters.Add("InstanceId", StringUtils.FromString(publicRequest.InstanceId));
