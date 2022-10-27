@@ -42,8 +42,8 @@ namespace Amazon.WAFV2.Model
     /// <para>
     /// This option is usually set to none. It does not affect how the rules in the rule group
     /// are evaluated. If you want the rules in the rule group to only count matches, do not
-    /// use this and instead exclude those rules in your rule group reference statement settings.
-    /// 
+    /// use this and instead use the rule action override option, with <code>Count</code>
+    /// action, in your rule group reference statement settings. 
     /// </para>
     ///  </note>
     /// </summary>
@@ -61,8 +61,8 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// This option is usually set to none. It does not affect how the rules in the rule group
         /// are evaluated. If you want the rules in the rule group to only count matches, do not
-        /// use this and instead exclude those rules in your rule group reference statement settings.
-        /// 
+        /// use this and instead use the rule action override option, with <code>Count</code>
+        /// action, in your rule group reference statement settings. 
         /// </para>
         ///  </note>
         /// </summary>

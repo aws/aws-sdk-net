@@ -53,6 +53,7 @@ namespace Amazon.WAFV2.Model
         private List<ExcludedRule> _excludedRules = new List<ExcludedRule>();
         private List<ManagedRuleGroupConfig> _managedRuleGroupConfigs = new List<ManagedRuleGroupConfig>();
         private string _name;
+        private List<RuleActionOverride> _ruleActionOverrides = new List<RuleActionOverride>();
         private Statement _scopeDownStatement;
         private string _vendorName;
         private string _version;
@@ -60,11 +61,14 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property ExcludedRules. 
         /// <para>
-        /// The rules in the referenced rule group whose actions are set to <code>Count</code>.
-        /// When you exclude a rule, WAF evaluates it exactly as it would if the rule action setting
-        /// were <code>Count</code>. This is a useful option for testing the rules in a rule group
-        /// without modifying how they handle your web traffic.
+        /// Rules in the referenced rule group whose actions are set to <code>Count</code>. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Instead of this option, use <code>RuleActionOverrides</code>. It accepts any valid
+        /// action setting, including <code>Count</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Max=100)]
         public List<ExcludedRule> ExcludedRules
@@ -82,22 +86,13 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property ManagedRuleGroupConfigs. 
         /// <para>
-        /// Additional information that's used by a managed rule group. Most managed rule groups
+        /// Additional information that's used by a managed rule group. Many managed rule groups
         /// don't require this.
         /// </para>
         ///  
         /// <para>
-        /// Use this for the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>,
-        /// to provide information about the sign-in page of your application. 
-        /// </para>
-        ///  
-        /// <para>
-        /// You can provide multiple individual <code>ManagedRuleGroupConfig</code> objects for
-        /// any rule group configuration, for example <code>UsernameField</code> and <code>PasswordField</code>.
-        /// The configuration that you provide depends on the needs of the managed rule group.
-        /// For the ATP managed rule group, you provide the following individual configuration
-        /// objects: <code>LoginPath</code>, <code>PasswordField</code>, <code>PayloadType</code>
-        /// and <code>UsernameField</code>.
+        /// Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure
+        /// the protection level that you want the Bot Control rule group to use. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -131,6 +126,34 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuleActionOverrides. 
+        /// <para>
+        /// Action settings to use in the place of the rule actions that are configured inside
+        /// the rule group. You specify one override for each rule whose action you want to change.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use overrides for testing, for example you can override all of rule actions
+        /// to <code>Count</code> and then monitor the resulting count metrics to understand how
+        /// the rule group would handle your web traffic. You can also permanently override some
+        /// or all actions, to modify how the rule group manages your web traffic.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public List<RuleActionOverride> RuleActionOverrides
+        {
+            get { return this._ruleActionOverrides; }
+            set { this._ruleActionOverrides = value; }
+        }
+
+        // Check to see if RuleActionOverrides property is set
+        internal bool IsSetRuleActionOverrides()
+        {
+            return this._ruleActionOverrides != null && this._ruleActionOverrides.Count > 0; 
         }
 
         /// <summary>

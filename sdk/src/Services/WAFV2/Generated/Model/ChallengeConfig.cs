@@ -29,36 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// Used for CAPTCHA and challenge token settings. Determines how long a <code>CAPTCHA</code>
-    /// or challenge timestamp remains valid after WAF updates it for a successful <code>CAPTCHA</code>
-    /// or challenge response.
+    /// Specifies how WAF should handle <code>Challenge</code> evaluations. This is available
+    /// at the web ACL level and in each rule.
     /// </summary>
-    public partial class ImmunityTimeProperty
+    public partial class ChallengeConfig
     {
-        private long? _immunityTime;
+        private ImmunityTimeProperty _immunityTimeProperty;
 
         /// <summary>
-        /// Gets and sets the property ImmunityTime. 
+        /// Gets and sets the property ImmunityTimeProperty. 
         /// <para>
-        /// The amount of time, in seconds, that a <code>CAPTCHA</code> or challenge timestamp
-        /// is considered valid by WAF. The default setting is 300. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For the Challenge action, the minimum setting is 300. 
+        /// Determines how long a challenge timestamp in the token remains valid after the client
+        /// successfully responds to a challenge. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=60, Max=259200)]
-        public long ImmunityTime
+        public ImmunityTimeProperty ImmunityTimeProperty
         {
-            get { return this._immunityTime.GetValueOrDefault(); }
-            set { this._immunityTime = value; }
+            get { return this._immunityTimeProperty; }
+            set { this._immunityTimeProperty = value; }
         }
 
-        // Check to see if ImmunityTime property is set
-        internal bool IsSetImmunityTime()
+        // Check to see if ImmunityTimeProperty property is set
+        internal bool IsSetImmunityTimeProperty()
         {
-            return this._immunityTime.HasValue; 
+            return this._immunityTimeProperty != null;
         }
 
     }

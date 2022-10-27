@@ -29,24 +29,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// Specifies a single rule in a rule group whose action you want to override to <code>Count</code>.
+    /// Action setting to use in the place of a rule action that is configured inside the
+    /// rule group. You specify one override for each rule whose action you want to change.
     /// 
     /// 
-    ///  <note> 
+    ///  
     /// <para>
-    /// Instead of this option, use <code>RuleActionOverrides</code>. It accepts any valid
-    /// action setting, including <code>Count</code>.
+    /// You can use overrides for testing, for example you can override all of rule actions
+    /// to <code>Count</code> and then monitor the resulting count metrics to understand how
+    /// the rule group would handle your web traffic. You can also permanently override some
+    /// or all actions, to modify how the rule group manages your web traffic.
     /// </para>
-    ///  </note>
     /// </summary>
-    public partial class ExcludedRule
+    public partial class RuleActionOverride
     {
+        private RuleAction _actionToUse;
         private string _name;
+
+        /// <summary>
+        /// Gets and sets the property ActionToUse. 
+        /// <para>
+        /// The override action to use, in place of the configured action of the rule in the rule
+        /// group. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public RuleAction ActionToUse
+        {
+            get { return this._actionToUse; }
+            set { this._actionToUse = value; }
+        }
+
+        // Check to see if ActionToUse property is set
+        internal bool IsSetActionToUse()
+        {
+            return this._actionToUse != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the rule whose action you want to override to <code>Count</code>.
+        /// The name of the rule to override.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

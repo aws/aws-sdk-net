@@ -78,6 +78,17 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetChallenge())
+            {
+                context.Writer.WritePropertyName("Challenge");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ChallengeActionMarshaller.Instance;
+                marshaller.Marshall(requestObject.Challenge, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetCount())
             {
                 context.Writer.WritePropertyName("Count");

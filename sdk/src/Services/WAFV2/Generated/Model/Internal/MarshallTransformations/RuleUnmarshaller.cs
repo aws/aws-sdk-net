@@ -76,6 +76,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.CaptchaConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ChallengeConfig", targetDepth))
+                {
+                    var unmarshaller = ChallengeConfigUnmarshaller.Instance;
+                    unmarshalledObject.ChallengeConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

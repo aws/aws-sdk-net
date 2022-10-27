@@ -30,7 +30,9 @@ namespace Amazon.WAFV2.Model
 {
     /// <summary>
     /// Custom request handling behavior that inserts custom headers into a web request. You
-    /// can add custom request handling for the rule actions allow and count. 
+    /// can add custom request handling for WAF to use when the rule action doesn't block
+    /// the request. For example, <code>CaptchaAction</code> for requests with valid t okens,
+    /// and <code>AllowAction</code>. 
     /// 
     ///  
     /// <para>

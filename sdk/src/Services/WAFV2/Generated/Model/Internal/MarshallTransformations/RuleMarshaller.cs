@@ -67,6 +67,17 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetChallengeConfig())
+            {
+                context.Writer.WritePropertyName("ChallengeConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ChallengeConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.ChallengeConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");

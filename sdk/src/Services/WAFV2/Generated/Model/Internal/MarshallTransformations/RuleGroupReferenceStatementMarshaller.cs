@@ -67,6 +67,22 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetRuleActionOverrides())
+            {
+                context.Writer.WritePropertyName("RuleActionOverrides");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectRuleActionOverridesListValue in requestObject.RuleActionOverrides)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RuleActionOverrideMarshaller.Instance;
+                    marshaller.Marshall(requestObjectRuleActionOverridesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>

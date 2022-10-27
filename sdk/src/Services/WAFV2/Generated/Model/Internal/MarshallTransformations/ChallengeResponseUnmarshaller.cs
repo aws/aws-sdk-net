@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ManagedRuleGroupConfig Object
+    /// Response Unmarshaller for ChallengeResponse Object
     /// </summary>  
-    public class ManagedRuleGroupConfigUnmarshaller : IUnmarshaller<ManagedRuleGroupConfig, XmlUnmarshallerContext>, IUnmarshaller<ManagedRuleGroupConfig, JsonUnmarshallerContext>
+    public class ChallengeResponseUnmarshaller : IUnmarshaller<ChallengeResponse, XmlUnmarshallerContext>, IUnmarshaller<ChallengeResponse, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ManagedRuleGroupConfig IUnmarshaller<ManagedRuleGroupConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ChallengeResponse IUnmarshaller<ChallengeResponse, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,33 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ManagedRuleGroupConfig Unmarshall(JsonUnmarshallerContext context)
+        public ChallengeResponse Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ManagedRuleGroupConfig unmarshalledObject = new ManagedRuleGroupConfig();
+            ChallengeResponse unmarshalledObject = new ChallengeResponse();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AWSManagedRulesBotControlRuleSet", targetDepth))
-                {
-                    var unmarshaller = AWSManagedRulesBotControlRuleSetUnmarshaller.Instance;
-                    unmarshalledObject.AWSManagedRulesBotControlRuleSet = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LoginPath", targetDepth))
+                if (context.TestExpression("FailureReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LoginPath = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("PasswordField", targetDepth))
+                if (context.TestExpression("ResponseCode", targetDepth))
                 {
-                    var unmarshaller = PasswordFieldUnmarshaller.Instance;
-                    unmarshalledObject.PasswordField = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ResponseCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("PayloadType", targetDepth))
+                if (context.TestExpression("SolveTimestamp", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PayloadType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("UsernameField", targetDepth))
-                {
-                    var unmarshaller = UsernameFieldUnmarshaller.Instance;
-                    unmarshalledObject.UsernameField = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.SolveTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +88,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static ManagedRuleGroupConfigUnmarshaller _instance = new ManagedRuleGroupConfigUnmarshaller();        
+        private static ChallengeResponseUnmarshaller _instance = new ChallengeResponseUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ManagedRuleGroupConfigUnmarshaller Instance
+        public static ChallengeResponseUnmarshaller Instance
         {
             get
             {

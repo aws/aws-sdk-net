@@ -82,6 +82,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.CaptchaConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ChallengeConfig", targetDepth))
+                {
+                    var unmarshaller = ChallengeConfigUnmarshaller.Instance;
+                    unmarshalledObject.ChallengeConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CustomResponseBodies", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, CustomResponseBody, StringUnmarshaller, CustomResponseBodyUnmarshaller>(StringUnmarshaller.Instance, CustomResponseBodyUnmarshaller.Instance);
@@ -140,6 +146,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<Rule, RuleUnmarshaller>(RuleUnmarshaller.Instance);
                     unmarshalledObject.Rules = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TokenDomains", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.TokenDomains = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("VisibilityConfig", targetDepth))

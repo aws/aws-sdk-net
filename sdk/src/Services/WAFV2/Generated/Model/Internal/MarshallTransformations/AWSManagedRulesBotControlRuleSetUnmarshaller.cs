@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ManagedRuleGroupConfig Object
+    /// Response Unmarshaller for AWSManagedRulesBotControlRuleSet Object
     /// </summary>  
-    public class ManagedRuleGroupConfigUnmarshaller : IUnmarshaller<ManagedRuleGroupConfig, XmlUnmarshallerContext>, IUnmarshaller<ManagedRuleGroupConfig, JsonUnmarshallerContext>
+    public class AWSManagedRulesBotControlRuleSetUnmarshaller : IUnmarshaller<AWSManagedRulesBotControlRuleSet, XmlUnmarshallerContext>, IUnmarshaller<AWSManagedRulesBotControlRuleSet, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ManagedRuleGroupConfig IUnmarshaller<ManagedRuleGroupConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AWSManagedRulesBotControlRuleSet IUnmarshaller<AWSManagedRulesBotControlRuleSet, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,21 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ManagedRuleGroupConfig Unmarshall(JsonUnmarshallerContext context)
+        public AWSManagedRulesBotControlRuleSet Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ManagedRuleGroupConfig unmarshalledObject = new ManagedRuleGroupConfig();
+            AWSManagedRulesBotControlRuleSet unmarshalledObject = new AWSManagedRulesBotControlRuleSet();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AWSManagedRulesBotControlRuleSet", targetDepth))
-                {
-                    var unmarshaller = AWSManagedRulesBotControlRuleSetUnmarshaller.Instance;
-                    unmarshalledObject.AWSManagedRulesBotControlRuleSet = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LoginPath", targetDepth))
+                if (context.TestExpression("InspectionLevel", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LoginPath = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("PasswordField", targetDepth))
-                {
-                    var unmarshaller = PasswordFieldUnmarshaller.Instance;
-                    unmarshalledObject.PasswordField = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("PayloadType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PayloadType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("UsernameField", targetDepth))
-                {
-                    var unmarshaller = UsernameFieldUnmarshaller.Instance;
-                    unmarshalledObject.UsernameField = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InspectionLevel = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +76,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static ManagedRuleGroupConfigUnmarshaller _instance = new ManagedRuleGroupConfigUnmarshaller();        
+        private static AWSManagedRulesBotControlRuleSetUnmarshaller _instance = new AWSManagedRulesBotControlRuleSetUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ManagedRuleGroupConfigUnmarshaller Instance
+        public static AWSManagedRulesBotControlRuleSetUnmarshaller Instance
         {
             get
             {

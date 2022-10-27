@@ -29,22 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// Additional information that's used by a managed rule group. Most managed rule groups
+    /// Additional information that's used by a managed rule group. Many managed rule groups
     /// don't require this.
     /// 
     ///  
     /// <para>
-    /// Use this for the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>,
-    /// to provide information about the sign-in page of your application. 
-    /// </para>
-    ///  
-    /// <para>
-    /// You can provide multiple individual <code>ManagedRuleGroupConfig</code> objects for
-    /// any rule group configuration, for example <code>UsernameField</code> and <code>PasswordField</code>.
-    /// The configuration that you provide depends on the needs of the managed rule group.
-    /// For the ATP managed rule group, you provide the following individual configuration
-    /// objects: <code>LoginPath</code>, <code>PasswordField</code>, <code>PayloadType</code>
-    /// and <code>UsernameField</code>.
+    /// Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure
+    /// the protection level that you want the Bot Control rule group to use. 
     /// </para>
     ///  
     /// <para>
@@ -53,10 +44,33 @@ namespace Amazon.WAFV2.Model
     /// </summary>
     public partial class ManagedRuleGroupConfig
     {
+        private AWSManagedRulesBotControlRuleSet _awsManagedRulesBotControlRuleSet;
         private string _loginPath;
         private PasswordField _passwordField;
         private PayloadType _payloadType;
         private UsernameField _usernameField;
+
+        /// <summary>
+        /// Gets and sets the property AWSManagedRulesBotControlRuleSet. 
+        /// <para>
+        /// Additional configuration for using the Bot Control managed rule group. Use this to
+        /// specify the inspection level that you want to use. For information about using the
+        /// Bot Control managed rule group, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html">WAF
+        /// Bot Control rule group</a> and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-bot-control.html">WAF
+        /// Bot Control</a> in the <i>WAF Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public AWSManagedRulesBotControlRuleSet AWSManagedRulesBotControlRuleSet
+        {
+            get { return this._awsManagedRulesBotControlRuleSet; }
+            set { this._awsManagedRulesBotControlRuleSet = value; }
+        }
+
+        // Check to see if AWSManagedRulesBotControlRuleSet property is set
+        internal bool IsSetAWSManagedRulesBotControlRuleSet()
+        {
+            return this._awsManagedRulesBotControlRuleSet != null;
+        }
 
         /// <summary>
         /// Gets and sets the property LoginPath. 

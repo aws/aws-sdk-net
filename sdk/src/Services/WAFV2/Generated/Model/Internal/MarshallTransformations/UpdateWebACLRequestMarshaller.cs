@@ -78,6 +78,17 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetChallengeConfig())
+                {
+                    context.Writer.WritePropertyName("ChallengeConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ChallengeConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ChallengeConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetCustomResponseBodies())
                 {
                     context.Writer.WritePropertyName("CustomResponseBodies");
@@ -152,6 +163,17 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("Scope");
                     context.Writer.Write(publicRequest.Scope);
+                }
+
+                if(publicRequest.IsSetTokenDomains())
+                {
+                    context.Writer.WritePropertyName("TokenDomains");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTokenDomainsListValue in publicRequest.TokenDomains)
+                    {
+                            context.Writer.Write(publicRequestTokenDomainsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetVisibilityConfig())

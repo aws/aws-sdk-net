@@ -29,36 +29,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// Used for CAPTCHA and challenge token settings. Determines how long a <code>CAPTCHA</code>
-    /// or challenge timestamp remains valid after WAF updates it for a successful <code>CAPTCHA</code>
-    /// or challenge response.
+    /// Details for your use of the Bot Control managed rule group, used in <code>ManagedRuleGroupConfig</code>.
     /// </summary>
-    public partial class ImmunityTimeProperty
+    public partial class AWSManagedRulesBotControlRuleSet
     {
-        private long? _immunityTime;
+        private InspectionLevel _inspectionLevel;
 
         /// <summary>
-        /// Gets and sets the property ImmunityTime. 
+        /// Gets and sets the property InspectionLevel. 
         /// <para>
-        /// The amount of time, in seconds, that a <code>CAPTCHA</code> or challenge timestamp
-        /// is considered valid by WAF. The default setting is 300. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For the Challenge action, the minimum setting is 300. 
+        /// The inspection level to use for the Bot Control rule group. The common level is the
+        /// least expensive. The targeted level includes all common level rules and adds rules
+        /// with more advanced inspection criteria. For details, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html">WAF
+        /// Bot Control rule group</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=60, Max=259200)]
-        public long ImmunityTime
+        [AWSProperty(Required=true)]
+        public InspectionLevel InspectionLevel
         {
-            get { return this._immunityTime.GetValueOrDefault(); }
-            set { this._immunityTime = value; }
+            get { return this._inspectionLevel; }
+            set { this._inspectionLevel = value; }
         }
 
-        // Check to see if ImmunityTime property is set
-        internal bool IsSetImmunityTime()
+        // Check to see if InspectionLevel property is set
+        internal bool IsSetInspectionLevel()
         {
-            return this._immunityTime.HasValue; 
+            return this._inspectionLevel != null;
         }
 
     }

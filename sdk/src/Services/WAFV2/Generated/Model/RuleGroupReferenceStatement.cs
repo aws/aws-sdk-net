@@ -44,6 +44,7 @@ namespace Amazon.WAFV2.Model
     {
         private string _arn;
         private List<ExcludedRule> _excludedRules = new List<ExcludedRule>();
+        private List<RuleActionOverride> _ruleActionOverrides = new List<RuleActionOverride>();
 
         /// <summary>
         /// Gets and sets the property ARN. 
@@ -67,11 +68,14 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property ExcludedRules. 
         /// <para>
-        /// The rules in the referenced rule group whose actions are set to <code>Count</code>.
-        /// When you exclude a rule, WAF evaluates it exactly as it would if the rule action setting
-        /// were <code>Count</code>. This is a useful option for testing the rules in a rule group
-        /// without modifying how they handle your web traffic.
+        /// Rules in the referenced rule group whose actions are set to <code>Count</code>. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Instead of this option, use <code>RuleActionOverrides</code>. It accepts any valid
+        /// action setting, including <code>Count</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Max=100)]
         public List<ExcludedRule> ExcludedRules
@@ -84,6 +88,34 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetExcludedRules()
         {
             return this._excludedRules != null && this._excludedRules.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuleActionOverrides. 
+        /// <para>
+        /// Action settings to use in the place of the rule actions that are configured inside
+        /// the rule group. You specify one override for each rule whose action you want to change.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use overrides for testing, for example you can override all of rule actions
+        /// to <code>Count</code> and then monitor the resulting count metrics to understand how
+        /// the rule group would handle your web traffic. You can also permanently override some
+        /// or all actions, to modify how the rule group manages your web traffic.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public List<RuleActionOverride> RuleActionOverrides
+        {
+            get { return this._ruleActionOverrides; }
+            set { this._ruleActionOverrides = value; }
+        }
+
+        // Check to see if RuleActionOverrides property is set
+        internal bool IsSetRuleActionOverrides()
+        {
+            return this._ruleActionOverrides != null && this._ruleActionOverrides.Count > 0; 
         }
 
     }

@@ -29,10 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// The result from the inspection of the web request for a valid <code>CAPTCHA</code>
-    /// token.
+    /// The result from the inspection of the web request for a valid challenge token.
     /// </summary>
-    public partial class CaptchaResponse
+    public partial class ChallengeResponse
     {
         private FailureReason _failureReason;
         private int? _responseCode;
@@ -59,9 +58,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property ResponseCode. 
         /// <para>
-        /// The HTTP response code indicating the status of the <code>CAPTCHA</code> token in
-        /// the web request. If the token is missing, invalid, or expired, this code is <code>405
-        /// Method Not Allowed</code>.
+        /// The HTTP response code indicating the status of the challenge token in the web request.
+        /// If the token is missing, invalid, or expired, this code is <code>202 Request Accepted</code>.
         /// </para>
         /// </summary>
         public int ResponseCode
@@ -79,7 +77,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property SolveTimestamp. 
         /// <para>
-        /// The time that the <code>CAPTCHA</code> was last solved for the supplied token. 
+        /// The time that the challenge was last solved for the supplied token. 
         /// </para>
         /// </summary>
         public long SolveTimestamp

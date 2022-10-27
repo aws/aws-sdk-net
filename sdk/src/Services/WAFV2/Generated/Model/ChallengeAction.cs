@@ -29,41 +29,59 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// Specifies that WAF should run a <code>CAPTCHA</code> check against the request: 
+    /// Specifies that WAF should run a <code>Challenge</code> check against the request to
+    /// verify that the request is coming from a legitimate client session: 
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// If the request includes a valid, unexpired <code>CAPTCHA</code> token, WAF applies
-    /// any custom request handling and labels that you've configured and then allows the
-    /// web request inspection to proceed to the next rule, similar to a <code>CountAction</code>.
-    /// 
+    /// If the request includes a valid, unexpired challenge token, WAF applies any custom
+    /// request handling and labels that you've configured and then allows the web request
+    /// inspection to proceed to the next rule, similar to a <code>CountAction</code>. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If the request doesn't include a valid, unexpired token, WAF discontinues the web
-    /// ACL evaluation of the request and blocks it from going to its intended destination.
+    /// If the request doesn't include a valid, unexpired challenge token, WAF discontinues
+    /// the web ACL evaluation of the request and blocks it from going to its intended destination.
     /// </para>
     ///  
     /// <para>
-    /// WAF generates a response that it sends back to the client, which includes the following:
-    /// 
+    /// WAF then generates a challenge response that it sends back to the client, which includes
+    /// the following: 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// The header <code>x-amzn-waf-action</code> with a value of <code>captcha</code>. 
+    /// The header <code>x-amzn-waf-action</code> with a value of <code>challenge</code>.
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The HTTP status code <code>405 Method Not Allowed</code>. 
+    /// The HTTP status code <code>202 Request Accepted</code>. 
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// If the request contains an <code>Accept</code> header with a value of <code>text/html</code>,
-    /// the response includes a <code>CAPTCHA</code> JavaScript page interstitial. 
+    /// the response includes a JavaScript page interstitial with a challenge script. 
     /// </para>
-    ///  </li> </ul> </li> </ul> 
+    ///  </li> </ul> 
     /// <para>
-    /// You can configure the expiration time in the <code>CaptchaConfig</code> <code>ImmunityTimeProperty</code>
+    /// Challenges run silent browser interrogations in the background, and don't generally
+    /// affect the end user experience. 
+    /// </para>
+    ///  
+    /// <para>
+    /// A challenge enforces token acquisition using an interstitial JavaScript challenge
+    /// that inspects the client session for legitimate behavior. The challenge blocks bots
+    /// or at least increases the cost of operating sophisticated bots. 
+    /// </para>
+    ///  
+    /// <para>
+    /// After the client session successfully responds to the challenge, it receives a new
+    /// token from WAF, which the challenge script uses to resubmit the original request.
+    /// 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// You can configure the expiration time in the <code>ChallengeConfig</code> <code>ImmunityTimeProperty</code>
     /// setting at the rule and web ACL level. The rule setting overrides the web ACL setting.
     /// 
     /// </para>
@@ -73,15 +91,15 @@ namespace Amazon.WAFV2.Model
     /// actions. 
     /// </para>
     /// </summary>
-    public partial class CaptchaAction
+    public partial class ChallengeAction
     {
         private CustomRequestHandling _customRequestHandling;
 
         /// <summary>
         /// Gets and sets the property CustomRequestHandling. 
         /// <para>
-        /// Defines custom handling for the web request, used when the <code>CAPTCHA</code> inspection
-        /// determines that the request's token is valid and unexpired.
+        /// Defines custom handling for the web request, used when the challenge inspection determines
+        /// that the request's token is valid and unexpired.
         /// </para>
         ///  
         /// <para>

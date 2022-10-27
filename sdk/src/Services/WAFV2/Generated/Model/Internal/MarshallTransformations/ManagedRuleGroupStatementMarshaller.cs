@@ -83,6 +83,22 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Name);
             }
 
+            if(requestObject.IsSetRuleActionOverrides())
+            {
+                context.Writer.WritePropertyName("RuleActionOverrides");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectRuleActionOverridesListValue in requestObject.RuleActionOverrides)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RuleActionOverrideMarshaller.Instance;
+                    marshaller.Marshall(requestObjectRuleActionOverridesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetScopeDownStatement())
             {
                 context.Writer.WritePropertyName("ScopeDownStatement");

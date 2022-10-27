@@ -983,6 +983,11 @@ namespace Amazon.WAFV2
         /// WAF couldn’t perform the operation because the resource that you tried to save is
         /// a duplicate of an existing one.
         /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFExpiredManagedRuleGroupVersionException">
+        /// The operation failed because the specified version for the managed rule group has
+        /// expired. You can retrieve the available versions for the managed rule group by calling
+        /// <a>ListAvailableManagedRuleGroupVersions</a>.
+        /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
         /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
@@ -1103,6 +1108,11 @@ namespace Amazon.WAFV2
         /// <exception cref="Amazon.WAFV2.Model.WAFDuplicateItemException">
         /// WAF couldn’t perform the operation because the resource that you tried to save is
         /// a duplicate of an existing one.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFExpiredManagedRuleGroupVersionException">
+        /// The operation failed because the specified version for the managed rule group has
+        /// expired. You can retrieve the available versions for the managed rule group by calling
+        /// <a>ListAvailableManagedRuleGroupVersions</a>.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
         /// Your request is valid, but WAF couldn’t perform the operation because of a system
@@ -2407,9 +2417,8 @@ namespace Amazon.WAFV2
         ///  
         /// <para>
         /// The mobile SDK is not generally available. Customers who have access to the mobile
-        /// SDK can use it to establish and manage Security Token Service (STS) security tokens
-        /// for use in HTTP(S) requests from a mobile device to WAF. For more information, see
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
+        /// SDK can use it to establish and manage WAF tokens for use in HTTP(S) requests from
+        /// a mobile device to WAF. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
         /// client application integration</a> in the <i>WAF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -2465,9 +2474,8 @@ namespace Amazon.WAFV2
         ///  
         /// <para>
         /// The mobile SDK is not generally available. Customers who have access to the mobile
-        /// SDK can use it to establish and manage Security Token Service (STS) security tokens
-        /// for use in HTTP(S) requests from a mobile device to WAF. For more information, see
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
+        /// SDK can use it to establish and manage WAF tokens for use in HTTP(S) requests from
+        /// a mobile device to WAF. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
         /// client application integration</a> in the <i>WAF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -2868,9 +2876,8 @@ namespace Amazon.WAFV2
         ///  
         /// <para>
         /// The mobile SDK is not generally available. Customers who have access to the mobile
-        /// SDK can use it to establish and manage Security Token Service (STS) security tokens
-        /// for use in HTTP(S) requests from a mobile device to WAF. For more information, see
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
+        /// SDK can use it to establish and manage WAF tokens for use in HTTP(S) requests from
+        /// a mobile device to WAF. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
         /// client application integration</a> in the <i>WAF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -2927,9 +2934,8 @@ namespace Amazon.WAFV2
         ///  
         /// <para>
         /// The mobile SDK is not generally available. Customers who have access to the mobile
-        /// SDK can use it to establish and manage Security Token Service (STS) security tokens
-        /// for use in HTTP(S) requests from a mobile device to WAF. For more information, see
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
+        /// SDK can use it to establish and manage WAF tokens for use in HTTP(S) requests from
+        /// a mobile device to WAF. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
         /// client application integration</a> in the <i>WAF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -4298,9 +4304,8 @@ namespace Amazon.WAFV2
         ///  
         /// <para>
         /// The mobile SDK is not generally available. Customers who have access to the mobile
-        /// SDK can use it to establish and manage Security Token Service (STS) security tokens
-        /// for use in HTTP(S) requests from a mobile device to WAF. For more information, see
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
+        /// SDK can use it to establish and manage WAF tokens for use in HTTP(S) requests from
+        /// a mobile device to WAF. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
         /// client application integration</a> in the <i>WAF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -4351,9 +4356,8 @@ namespace Amazon.WAFV2
         ///  
         /// <para>
         /// The mobile SDK is not generally available. Customers who have access to the mobile
-        /// SDK can use it to establish and manage Security Token Service (STS) security tokens
-        /// for use in HTTP(S) requests from a mobile device to WAF. For more information, see
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
+        /// SDK can use it to establish and manage WAF tokens for use in HTTP(S) requests from
+        /// a mobile device to WAF. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
         /// client application integration</a> in the <i>WAF Developer Guide</i>.
         /// </para>
         /// </summary>

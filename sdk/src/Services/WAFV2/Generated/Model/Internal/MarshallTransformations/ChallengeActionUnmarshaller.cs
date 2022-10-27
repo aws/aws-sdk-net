@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RuleGroupReferenceStatement Object
+    /// Response Unmarshaller for ChallengeAction Object
     /// </summary>  
-    public class RuleGroupReferenceStatementUnmarshaller : IUnmarshaller<RuleGroupReferenceStatement, XmlUnmarshallerContext>, IUnmarshaller<RuleGroupReferenceStatement, JsonUnmarshallerContext>
+    public class ChallengeActionUnmarshaller : IUnmarshaller<ChallengeAction, XmlUnmarshallerContext>, IUnmarshaller<ChallengeAction, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RuleGroupReferenceStatement IUnmarshaller<RuleGroupReferenceStatement, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ChallengeAction IUnmarshaller<ChallengeAction, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,21 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RuleGroupReferenceStatement Unmarshall(JsonUnmarshallerContext context)
+        public ChallengeAction Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RuleGroupReferenceStatement unmarshalledObject = new RuleGroupReferenceStatement();
+            ChallengeAction unmarshalledObject = new ChallengeAction();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ARN", targetDepth))
+                if (context.TestExpression("CustomRequestHandling", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ARN = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ExcludedRules", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ExcludedRule, ExcludedRuleUnmarshaller>(ExcludedRuleUnmarshaller.Instance);
-                    unmarshalledObject.ExcludedRules = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RuleActionOverrides", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<RuleActionOverride, RuleActionOverrideUnmarshaller>(RuleActionOverrideUnmarshaller.Instance);
-                    unmarshalledObject.RuleActionOverrides = unmarshaller.Unmarshall(context);
+                    var unmarshaller = CustomRequestHandlingUnmarshaller.Instance;
+                    unmarshalledObject.CustomRequestHandling = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +76,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static RuleGroupReferenceStatementUnmarshaller _instance = new RuleGroupReferenceStatementUnmarshaller();        
+        private static ChallengeActionUnmarshaller _instance = new ChallengeActionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RuleGroupReferenceStatementUnmarshaller Instance
+        public static ChallengeActionUnmarshaller Instance
         {
             get
             {

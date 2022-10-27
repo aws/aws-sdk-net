@@ -38,6 +38,7 @@ namespace Amazon.WAFV2.Model
     {
         private RuleAction _action;
         private CaptchaConfig _captchaConfig;
+        private ChallengeConfig _challengeConfig;
         private string _name;
         private OverrideAction _overrideAction;
         private int? _priority;
@@ -107,6 +108,25 @@ namespace Amazon.WAFV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ChallengeConfig. 
+        /// <para>
+        /// Specifies how WAF should handle <code>Challenge</code> evaluations. If you don't specify
+        /// this, WAF uses the challenge configuration that's defined for the web ACL. 
+        /// </para>
+        /// </summary>
+        public ChallengeConfig ChallengeConfig
+        {
+            get { return this._challengeConfig; }
+            set { this._challengeConfig = value; }
+        }
+
+        // Check to see if ChallengeConfig property is set
+        internal bool IsSetChallengeConfig()
+        {
+            return this._challengeConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the rule. You can't change the name of a <code>Rule</code> after you create
@@ -142,8 +162,8 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// This option is usually set to none. It does not affect how the rules in the rule group
         /// are evaluated. If you want the rules in the rule group to only count matches, do not
-        /// use this and instead exclude those rules in your rule group reference statement settings.
-        /// 
+        /// use this and instead use the rule action override option, with <code>Count</code>
+        /// action, in your rule group reference statement settings. 
         /// </para>
         ///  </note>
         /// </summary>

@@ -70,6 +70,7 @@ namespace Amazon.WAFV2.Model
     public partial class UpdateWebACLRequest : AmazonWAFV2Request
     {
         private CaptchaConfig _captchaConfig;
+        private ChallengeConfig _challengeConfig;
         private Dictionary<string, CustomResponseBody> _customResponseBodies = new Dictionary<string, CustomResponseBody>();
         private DefaultAction _defaultAction;
         private string _description;
@@ -78,6 +79,7 @@ namespace Amazon.WAFV2.Model
         private string _name;
         private List<Rule> _rules = new List<Rule>();
         private Scope _scope;
+        private List<string> _tokenDomains = new List<string>();
         private VisibilityConfig _visibilityConfig;
 
         /// <summary>
@@ -98,6 +100,26 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetCaptchaConfig()
         {
             return this._captchaConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChallengeConfig. 
+        /// <para>
+        /// Specifies how WAF should handle challenge evaluations for rules that don't have their
+        /// own <code>ChallengeConfig</code> settings. If you don't specify this, WAF uses its
+        /// default settings for <code>ChallengeConfig</code>. 
+        /// </para>
+        /// </summary>
+        public ChallengeConfig ChallengeConfig
+        {
+            get { return this._challengeConfig; }
+            set { this._challengeConfig = value; }
+        }
+
+        // Check to see if ChallengeConfig property is set
+        internal bool IsSetChallengeConfig()
+        {
+            return this._challengeConfig != null;
         }
 
         /// <summary>
@@ -295,6 +317,35 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetScope()
         {
             return this._scope != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TokenDomains. 
+        /// <para>
+        /// Specifies the domains that WAF should accept in a web request token. This enables
+        /// the use of tokens across multiple protected websites. When WAF provides a token, it
+        /// uses the domain of the Amazon Web Services resource that the web ACL is protecting.
+        /// If you don't specify a list of token domains, WAF accepts tokens only for the domain
+        /// of the protected resource. With a token domain list, WAF accepts the resource's host
+        /// domain plus all domains in the token domain list, including their prefixed subdomains.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example JSON: <code>"TokenDomains": { "mywebsite.com", "myotherwebsite.com" }</code>
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<string> TokenDomains
+        {
+            get { return this._tokenDomains; }
+            set { this._tokenDomains = value; }
+        }
+
+        // Check to see if TokenDomains property is set
+        internal bool IsSetTokenDomains()
+        {
+            return this._tokenDomains != null && this._tokenDomains.Count > 0; 
         }
 
         /// <summary>
