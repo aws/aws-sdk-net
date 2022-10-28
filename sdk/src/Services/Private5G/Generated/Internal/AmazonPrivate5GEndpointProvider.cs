@@ -70,7 +70,7 @@ namespace Amazon.Private5G.Internal
                 {
                     if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")) && Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
                     {
-                        return new Endpoint(Interpolate(@"https://privatenetworks-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        return new Endpoint(Interpolate(@"https://private-networks-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                     }
                     throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
                 }
@@ -78,7 +78,7 @@ namespace Amazon.Private5G.Internal
                 {
                     if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")))
                     {
-                        return new Endpoint(Interpolate(@"https://privatenetworks-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        return new Endpoint(Interpolate(@"https://private-networks-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                     }
                     throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
                 }
@@ -86,11 +86,11 @@ namespace Amazon.Private5G.Internal
                 {
                     if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
                     {
-                        return new Endpoint(Interpolate(@"https://privatenetworks.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        return new Endpoint(Interpolate(@"https://private-networks.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                     }
                     throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
                 }
-                return new Endpoint(Interpolate(@"https://privatenetworks.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                return new Endpoint(Interpolate(@"https://private-networks.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
             }
 
             throw new AmazonClientException("Cannot resolve endpoint");

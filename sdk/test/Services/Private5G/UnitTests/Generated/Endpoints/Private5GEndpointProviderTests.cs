@@ -31,13 +31,193 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("Private5G")]
+        [Description("For region us-west-2 with FIPS enabled and DualStack enabled")]
+        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new Private5GEndpointParameters();
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-west-2";
+            var endpoint = new AmazonPrivate5GEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://private-networks-fips.us-west-2.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Private5G")]
+        [Description("For region us-west-2 with FIPS enabled and DualStack disabled")]
+        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new Private5GEndpointParameters();
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-west-2";
+            var endpoint = new AmazonPrivate5GEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://private-networks-fips.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Private5G")]
+        [Description("For region us-west-2 with FIPS disabled and DualStack enabled")]
+        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new Private5GEndpointParameters();
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-west-2";
+            var endpoint = new AmazonPrivate5GEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://private-networks.us-west-2.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Private5G")]
+        [Description("For region us-west-2 with FIPS disabled and DualStack disabled")]
+        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new Private5GEndpointParameters();
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-west-2";
+            var endpoint = new AmazonPrivate5GEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://private-networks.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Private5G")]
+        [Description("For region us-east-1 with FIPS enabled and DualStack enabled")]
+        public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new Private5GEndpointParameters();
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-east-1";
+            var endpoint = new AmazonPrivate5GEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://private-networks-fips.us-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Private5G")]
+        [Description("For region us-east-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new Private5GEndpointParameters();
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-east-1";
+            var endpoint = new AmazonPrivate5GEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://private-networks-fips.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Private5G")]
+        [Description("For region us-east-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new Private5GEndpointParameters();
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-east-1";
+            var endpoint = new AmazonPrivate5GEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://private-networks.us-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Private5G")]
+        [Description("For region us-east-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new Private5GEndpointParameters();
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-east-1";
+            var endpoint = new AmazonPrivate5GEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://private-networks.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Private5G")]
+        [Description("For region us-east-2 with FIPS enabled and DualStack enabled")]
+        public void For_region_useast2_with_FIPS_enabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new Private5GEndpointParameters();
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-east-2";
+            var endpoint = new AmazonPrivate5GEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://private-networks-fips.us-east-2.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Private5G")]
+        [Description("For region us-east-2 with FIPS enabled and DualStack disabled")]
+        public void For_region_useast2_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new Private5GEndpointParameters();
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-east-2";
+            var endpoint = new AmazonPrivate5GEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://private-networks-fips.us-east-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Private5G")]
+        [Description("For region us-east-2 with FIPS disabled and DualStack enabled")]
+        public void For_region_useast2_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new Private5GEndpointParameters();
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-east-2";
+            var endpoint = new AmazonPrivate5GEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://private-networks.us-east-2.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Private5G")]
+        [Description("For region us-east-2 with FIPS disabled and DualStack disabled")]
+        public void For_region_useast2_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new Private5GEndpointParameters();
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-east-2";
+            var endpoint = new AmazonPrivate5GEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://private-networks.us-east-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Private5G")]
         [Description("For custom endpoint with fips disabled and dualstack disabled")]
         public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new Private5GEndpointParameters();
-            parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonPrivate5GEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://example.com", endpoint.URL);
@@ -52,9 +232,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new Private5GEndpointParameters();
-            parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonPrivate5GEndpointProvider().ResolveEndpoint(parameters);
         }
@@ -68,9 +248,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new Private5GEndpointParameters();
-            parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonPrivate5GEndpointProvider().ResolveEndpoint(parameters);
         }
