@@ -45,6 +45,7 @@ namespace Amazon.CloudFormation.Model
         private StackSetDriftDetectionDetails _stackSetDriftDetectionDetails;
         private string _stackSetId;
         private StackSetOperationStatus _status;
+        private StackSetOperationStatusDetails _statusDetails;
         private string _statusReason;
 
         /// <summary>
@@ -333,6 +334,24 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusDetails. 
+        /// <para>
+        /// Detailed information about the StackSet operation.
+        /// </para>
+        /// </summary>
+        public StackSetOperationStatusDetails StatusDetails
+        {
+            get { return this._statusDetails; }
+            set { this._statusDetails = value; }
+        }
+
+        // Check to see if StatusDetails property is set
+        internal bool IsSetStatusDetails()
+        {
+            return this._statusDetails != null;
         }
 
         /// <summary>

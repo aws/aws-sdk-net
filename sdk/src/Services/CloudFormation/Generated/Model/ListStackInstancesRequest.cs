@@ -87,10 +87,10 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// The status that stack instances are filtered by.
+        /// The filter to apply to stack instances
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1)]
+        [AWSProperty(Max=2)]
         public List<StackInstanceFilter> Filters
         {
             get { return this._filters; }

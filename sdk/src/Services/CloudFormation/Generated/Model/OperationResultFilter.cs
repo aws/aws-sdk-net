@@ -29,11 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// The filter to apply to stack instances
+    /// The status that operation results are filtered by.
     /// </summary>
-    public partial class StackInstanceFilter
+    public partial class OperationResultFilter
     {
-        private StackInstanceFilterName _name;
+        private OperationResultFilterName _name;
         private string _values;
 
         /// <summary>
@@ -42,7 +42,7 @@ namespace Amazon.CloudFormation.Model
         /// The type of filter to apply.
         /// </para>
         /// </summary>
-        public StackInstanceFilterName Name
+        public OperationResultFilterName Name
         {
             get { return this._name; }
             set { this._name = value; }
@@ -57,10 +57,10 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The status to filter by.
+        /// The value to filter by.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Min=6, Max=9)]
         public string Values
         {
             get { return this._values; }

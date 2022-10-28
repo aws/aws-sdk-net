@@ -1250,6 +1250,12 @@
     <pattern>arn:.+:iam::[0-9]{12}:role/.+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudFormation.Model.OperationResultFilter.Values</property>
+    <min>6</min>
+    <max>9</max>
+    <pattern>^\S{6,9}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudFormation.Model.Output.Description</property>
     <min>1</min>
     <max>1024</max>
@@ -1347,6 +1353,12 @@
     <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudFormation.Model.StackInstance.LastOperationId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9][-a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudFormation.Model.StackInstance.OrganizationalUnitId</property>
     <pattern>^(ou-[a-z0-9]{4,32}-[a-z0-9]{8,32}|r-[a-z0-9]{4,32})$</pattern>
   </property-value-rule>
@@ -1356,12 +1368,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.StackInstanceFilter.Values</property>
-    <min>6</min>
-    <max>10</max>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^\S{1,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.StackInstanceSummary.Account</property>
     <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.StackInstanceSummary.LastOperationId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9][-a-zA-Z0-9]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.StackInstanceSummary.OrganizationalUnitId</property>
@@ -1487,6 +1506,10 @@
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.StackSetOperationResultSummary.Region</property>
     <pattern>^[a-zA-Z0-9-]{1,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.StackSetOperationStatusDetails.FailedStackInstancesCount</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.StackSetOperationSummary.OperationId</property>

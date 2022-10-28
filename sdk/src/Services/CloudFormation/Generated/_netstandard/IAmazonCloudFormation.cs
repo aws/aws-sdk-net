@@ -2109,7 +2109,7 @@ namespace Amazon.CloudFormation
         ///  
         /// <para>
         /// Once you've initiated testing on an extension using <code>TestType</code>, you can
-        /// use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>
+        /// pass the returned <code>TypeVersionArn</code> into <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>
         /// to monitor the current test status and test status description for the extension.
         /// </para>
         ///  

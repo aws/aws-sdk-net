@@ -71,8 +71,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UNION</code>: (default value) StackSets includes additional accounts deployment
-        /// targets. 
+        ///  <code>UNION</code>: StackSets includes additional accounts deployment targets. 
         /// </para>
         ///  
         /// <para>

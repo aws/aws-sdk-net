@@ -29,48 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// The filter to apply to stack instances
+    /// Detailed information about the StackSet operation.
     /// </summary>
-    public partial class StackInstanceFilter
+    public partial class StackSetOperationStatusDetails
     {
-        private StackInstanceFilterName _name;
-        private string _values;
+        private int? _failedStackInstancesCount;
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property FailedStackInstancesCount. 
         /// <para>
-        /// The type of filter to apply.
+        /// The number of stack instances for which the StackSet operation failed.
         /// </para>
         /// </summary>
-        public StackInstanceFilterName Name
+        [AWSProperty(Min=0)]
+        public int FailedStackInstancesCount
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._failedStackInstancesCount.GetValueOrDefault(); }
+            set { this._failedStackInstancesCount = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if FailedStackInstancesCount property is set
+        internal bool IsSetFailedStackInstancesCount()
         {
-            return this._name != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Values. 
-        /// <para>
-        /// The status to filter by.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=128)]
-        public string Values
-        {
-            get { return this._values; }
-            set { this._values = value; }
-        }
-
-        // Check to see if Values property is set
-        internal bool IsSetValues()
-        {
-            return this._values != null;
+            return this._failedStackInstancesCount.HasValue; 
         }
 
     }

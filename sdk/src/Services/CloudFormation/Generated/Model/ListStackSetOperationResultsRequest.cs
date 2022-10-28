@@ -35,6 +35,7 @@ namespace Amazon.CloudFormation.Model
     public partial class ListStackSetOperationResultsRequest : AmazonCloudFormationRequest
     {
         private CallAs _callAs;
+        private List<OperationResultFilter> _filters = new List<OperationResultFilter>();
         private int? _maxResults;
         private string _nextToken;
         private string _operationId;
@@ -78,6 +79,25 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetCallAs()
         {
             return this._callAs != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Filters. 
+        /// <para>
+        /// The filter to apply to operation results.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public List<OperationResultFilter> Filters
+        {
+            get { return this._filters; }
+            set { this._filters = value; }
+        }
+
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
+        {
+            return this._filters != null && this._filters.Count > 0; 
         }
 
         /// <summary>

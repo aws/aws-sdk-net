@@ -126,6 +126,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("StatusDetails", targetDepth))
+                    {
+                        var unmarshaller = StackSetOperationStatusDetailsUnmarshaller.Instance;
+                        unmarshalledObject.StatusDetails = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("StatusReason", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

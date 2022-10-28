@@ -37,7 +37,9 @@ namespace Amazon.CloudFormation.Model
         private DateTime? _creationTimestamp;
         private DateTime? _endTimestamp;
         private string _operationId;
+        private StackSetOperationPreferences _operationPreferences;
         private StackSetOperationStatus _status;
+        private StackSetOperationStatusDetails _statusDetails;
         private string _statusReason;
 
         /// <summary>
@@ -123,6 +125,21 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OperationPreferences.
+        /// </summary>
+        public StackSetOperationPreferences OperationPreferences
+        {
+            get { return this._operationPreferences; }
+            set { this._operationPreferences = value; }
+        }
+
+        // Check to see if OperationPreferences property is set
+        internal bool IsSetOperationPreferences()
+        {
+            return this._operationPreferences != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
         /// The overall status of the operation.
@@ -173,6 +190,24 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusDetails. 
+        /// <para>
+        /// Detailed information about the stack set operation.
+        /// </para>
+        /// </summary>
+        public StackSetOperationStatusDetails StatusDetails
+        {
+            get { return this._statusDetails; }
+            set { this._statusDetails = value; }
+        }
+
+        // Check to see if StatusDetails property is set
+        internal bool IsSetStatusDetails()
+        {
+            return this._statusDetails != null;
         }
 
         /// <summary>

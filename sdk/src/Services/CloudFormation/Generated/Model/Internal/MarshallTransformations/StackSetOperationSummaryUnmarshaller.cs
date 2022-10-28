@@ -78,10 +78,22 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.OperationId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("OperationPreferences", targetDepth))
+                    {
+                        var unmarshaller = StackSetOperationPreferencesUnmarshaller.Instance;
+                        unmarshalledObject.OperationPreferences = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Status", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("StatusDetails", targetDepth))
+                    {
+                        var unmarshaller = StackSetOperationStatusDetailsUnmarshaller.Instance;
+                        unmarshalledObject.StatusDetails = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("StatusReason", targetDepth))

@@ -41,6 +41,7 @@ namespace Amazon.CloudFormation.Model
         private string _account;
         private StackDriftStatus _driftStatus;
         private DateTime? _lastDriftCheckTimestamp;
+        private string _lastOperationId;
         private string _organizationalUnitId;
         private List<Parameter> _parameterOverrides = new List<Parameter>();
         private string _region;
@@ -127,6 +128,25 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetLastDriftCheckTimestamp()
         {
             return this._lastDriftCheckTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastOperationId. 
+        /// <para>
+        /// The last unique ID of a StackSet operation performed on a stack instance.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string LastOperationId
+        {
+            get { return this._lastOperationId; }
+            set { this._lastOperationId = value; }
+        }
+
+        // Check to see if LastOperationId property is set
+        internal bool IsSetLastOperationId()
+        {
+            return this._lastOperationId != null;
         }
 
         /// <summary>
