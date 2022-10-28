@@ -699,6 +699,14 @@ namespace Amazon.AppRunner
         /// </summary>
         public static readonly Runtime CORRETTO_8 = new Runtime("CORRETTO_8");
         /// <summary>
+        /// Constant DOTNET_6 for Runtime
+        /// </summary>
+        public static readonly Runtime DOTNET_6 = new Runtime("DOTNET_6");
+        /// <summary>
+        /// Constant GO_1 for Runtime
+        /// </summary>
+        public static readonly Runtime GO_1 = new Runtime("GO_1");
+        /// <summary>
         /// Constant NODEJS_12 for Runtime
         /// </summary>
         public static readonly Runtime NODEJS_12 = new Runtime("NODEJS_12");
@@ -711,9 +719,17 @@ namespace Amazon.AppRunner
         /// </summary>
         public static readonly Runtime NODEJS_16 = new Runtime("NODEJS_16");
         /// <summary>
+        /// Constant PHP_81 for Runtime
+        /// </summary>
+        public static readonly Runtime PHP_81 = new Runtime("PHP_81");
+        /// <summary>
         /// Constant PYTHON_3 for Runtime
         /// </summary>
         public static readonly Runtime PYTHON_3 = new Runtime("PYTHON_3");
+        /// <summary>
+        /// Constant RUBY_31 for Runtime
+        /// </summary>
+        public static readonly Runtime RUBY_31 = new Runtime("RUBY_31");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
