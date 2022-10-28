@@ -30,7 +30,7 @@ namespace Amazon.GuardDuty
     public partial class AmazonGuardDutyConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.4");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.5");
 
         private string _userAgent = UserAgentString;
 

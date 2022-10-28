@@ -1,3 +1,24 @@
+### 3.7.406.0 (2022-10-28 18:27 UTC)
+* AppRunner (3.7.101.0)
+	* AWS App Runner adds .NET 6, Go 1, PHP 8.1 and Ruby 3.1 runtimes.
+* AppStream (3.7.101.0)
+	* This release includes CertificateBasedAuthProperties in CreateDirectoryConfig and UpdateDirectoryConfig.
+* Cloud9 (3.7.100.5)
+	* Update to the documentation section of the Cloud9 API Reference guide.
+* CloudFormation (3.7.101.0)
+	* This release adds more fields to improves visibility of AWS CloudFormation StackSets information in following APIs: ListStackInstances, DescribeStackInstance, ListStackSetOperationResults, ListStackSetOperations, DescribeStackSetOperation.
+* GameSparks (3.7.101.0)
+	* Add LATEST as a possible GameSDK Version on snapshot
+* MediaTailor (3.7.102.0)
+	* This release introduces support for SCTE-35 segmentation descriptor messages which can be sent within time signal messages.
+* Private5G (3.7.101.0)
+	* Fix incorrect endpoint-prefix in endpoint ruleset.
+* SupportApp (3.7.101.0)
+	* Fix incorrect endpoint-prefix in endpoint ruleset.
+* Core 3.7.100.5
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.405.0 (2022-10-27 19:28 UTC)
 * EC2 (3.7.101.0)
 	* Feature supports the replacement of instance root volume using an updated AMI without requiring customers to stop their instance.
