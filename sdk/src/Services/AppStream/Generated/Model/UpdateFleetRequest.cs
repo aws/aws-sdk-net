@@ -375,6 +375,14 @@ namespace Amazon.AppStream.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// stream.standard.xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.standard.2xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// stream.compute.large
         /// </para>
         ///  </li> <li> 
@@ -504,6 +512,18 @@ namespace Amazon.AppStream.Model
         ///  </li> <li> 
         /// <para>
         /// stream.standard.medium
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.standard.large
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.standard.xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.standard.2xlarge
         /// </para>
         ///  </li> </ul>
         /// </summary>

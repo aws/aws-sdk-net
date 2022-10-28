@@ -1047,8 +1047,8 @@ namespace Amazon.AppStream
 
 
         /// <summary>
-        /// Creates a fleet. A fleet consists of streaming instances that run a specified image
-        /// when using Always-On or On-Demand.
+        /// Creates a fleet. A fleet consists of streaming instances that your users access for
+        /// their applications and desktops.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFleet service method.</param>
         /// 
@@ -1100,8 +1100,8 @@ namespace Amazon.AppStream
 
 
         /// <summary>
-        /// Creates a fleet. A fleet consists of streaming instances that run a specified image
-        /// when using Always-On or On-Demand.
+        /// Creates a fleet. A fleet consists of streaming instances that your users access for
+        /// their applications and desktops.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFleet service method.</param>
         /// <param name="cancellationToken">

@@ -67,6 +67,17 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCertificateBasedAuthProperties())
+                {
+                    context.Writer.WritePropertyName("CertificateBasedAuthProperties");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CertificateBasedAuthPropertiesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CertificateBasedAuthProperties, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDirectoryName())
                 {
                     context.Writer.WritePropertyName("DirectoryName");

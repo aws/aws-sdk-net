@@ -30,8 +30,8 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateFleet operation.
-    /// Creates a fleet. A fleet consists of streaming instances that run a specified image
-    /// when using Always-On or On-Demand.
+    /// Creates a fleet. A fleet consists of streaming instances that your users access for
+    /// their applications and desktops.
     /// </summary>
     public partial class CreateFleetRequest : AmazonAppStreamRequest
     {
@@ -334,6 +334,14 @@ namespace Amazon.AppStream.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// stream.standard.xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.standard.2xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// stream.compute.large
         /// </para>
         ///  </li> <li> 
@@ -463,6 +471,18 @@ namespace Amazon.AppStream.Model
         ///  </li> <li> 
         /// <para>
         /// stream.standard.medium
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.standard.large
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.standard.xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// stream.standard.2xlarge
         /// </para>
         ///  </li> </ul>
         /// </summary>

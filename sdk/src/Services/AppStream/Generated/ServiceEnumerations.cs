@@ -251,6 +251,10 @@ namespace Amazon.AppStream
         /// </summary>
         public static readonly AuthenticationType API = new AuthenticationType("API");
         /// <summary>
+        /// Constant AWS_AD for AuthenticationType
+        /// </summary>
+        public static readonly AuthenticationType AWS_AD = new AuthenticationType("AWS_AD");
+        /// <summary>
         /// Constant SAML for AuthenticationType
         /// </summary>
         public static readonly AuthenticationType SAML = new AuthenticationType("SAML");
@@ -288,6 +292,60 @@ namespace Amazon.AppStream
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AuthenticationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CertificateBasedAuthStatus.
+    /// </summary>
+    public class CertificateBasedAuthStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for CertificateBasedAuthStatus
+        /// </summary>
+        public static readonly CertificateBasedAuthStatus DISABLED = new CertificateBasedAuthStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for CertificateBasedAuthStatus
+        /// </summary>
+        public static readonly CertificateBasedAuthStatus ENABLED = new CertificateBasedAuthStatus("ENABLED");
+        /// <summary>
+        /// Constant ENABLED_NO_DIRECTORY_LOGIN_FALLBACK for CertificateBasedAuthStatus
+        /// </summary>
+        public static readonly CertificateBasedAuthStatus ENABLED_NO_DIRECTORY_LOGIN_FALLBACK = new CertificateBasedAuthStatus("ENABLED_NO_DIRECTORY_LOGIN_FALLBACK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CertificateBasedAuthStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CertificateBasedAuthStatus FindValue(string value)
+        {
+            return FindValue<CertificateBasedAuthStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CertificateBasedAuthStatus(string value)
         {
             return FindValue(value);
         }

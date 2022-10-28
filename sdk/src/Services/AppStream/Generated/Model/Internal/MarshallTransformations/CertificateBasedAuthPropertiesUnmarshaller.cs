@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DirectoryConfig Object
+    /// Response Unmarshaller for CertificateBasedAuthProperties Object
     /// </summary>  
-    public class DirectoryConfigUnmarshaller : IUnmarshaller<DirectoryConfig, XmlUnmarshallerContext>, IUnmarshaller<DirectoryConfig, JsonUnmarshallerContext>
+    public class CertificateBasedAuthPropertiesUnmarshaller : IUnmarshaller<CertificateBasedAuthProperties, XmlUnmarshallerContext>, IUnmarshaller<CertificateBasedAuthProperties, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DirectoryConfig IUnmarshaller<DirectoryConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CertificateBasedAuthProperties IUnmarshaller<CertificateBasedAuthProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,27 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DirectoryConfig Unmarshall(JsonUnmarshallerContext context)
+        public CertificateBasedAuthProperties Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DirectoryConfig unmarshalledObject = new DirectoryConfig();
+            CertificateBasedAuthProperties unmarshalledObject = new CertificateBasedAuthProperties();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CertificateBasedAuthProperties", targetDepth))
-                {
-                    var unmarshaller = CertificateBasedAuthPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.CertificateBasedAuthProperties = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("CreatedTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DirectoryName", targetDepth))
+                if (context.TestExpression("CertificateAuthorityArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DirectoryName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CertificateAuthorityArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("OrganizationalUnitDistinguishedNames", targetDepth))
+                if (context.TestExpression("Status", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.OrganizationalUnitDistinguishedNames = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ServiceAccountCredentials", targetDepth))
-                {
-                    var unmarshaller = ServiceAccountCredentialsUnmarshaller.Instance;
-                    unmarshalledObject.ServiceAccountCredentials = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +82,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         }
 
 
-        private static DirectoryConfigUnmarshaller _instance = new DirectoryConfigUnmarshaller();        
+        private static CertificateBasedAuthPropertiesUnmarshaller _instance = new CertificateBasedAuthPropertiesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DirectoryConfigUnmarshaller Instance
+        public static CertificateBasedAuthPropertiesUnmarshaller Instance
         {
             get
             {

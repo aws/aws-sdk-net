@@ -36,9 +36,34 @@ namespace Amazon.AppStream.Model
     /// </summary>
     public partial class UpdateDirectoryConfigRequest : AmazonAppStreamRequest
     {
+        private CertificateBasedAuthProperties _certificateBasedAuthProperties;
         private string _directoryName;
         private List<string> _organizationalUnitDistinguishedNames = new List<string>();
         private ServiceAccountCredentials _serviceAccountCredentials;
+
+        /// <summary>
+        /// Gets and sets the property CertificateBasedAuthProperties. 
+        /// <para>
+        /// The certificate-based authentication properties used to authenticate SAML 2.0 Identity
+        /// Provider (IdP) user identities to Active Directory domain-joined streaming instances.
+        /// Fallback is turned on by default when certificate-based authentication is <b>Enabled</b>
+        /// . Fallback allows users to log in using their AD domain password if certificate-based
+        /// authentication is unsuccessful, or to unlock a desktop lock screen. <b>Enabled_no_directory_login_fallback</b>
+        /// enables certificate-based authentication, but does not allow users to log in using
+        /// their AD domain password. Users will be disconnected to re-authenticate using certificates.
+        /// </para>
+        /// </summary>
+        public CertificateBasedAuthProperties CertificateBasedAuthProperties
+        {
+            get { return this._certificateBasedAuthProperties; }
+            set { this._certificateBasedAuthProperties = value; }
+        }
+
+        // Check to see if CertificateBasedAuthProperties property is set
+        internal bool IsSetCertificateBasedAuthProperties()
+        {
+            return this._certificateBasedAuthProperties != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DirectoryName. 
