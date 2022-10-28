@@ -134,6 +134,10 @@ namespace Amazon.MediaTailor
         /// Constant SPLICE_INSERT for MessageType
         /// </summary>
         public static readonly MessageType SPLICE_INSERT = new MessageType("SPLICE_INSERT");
+        /// <summary>
+        /// Constant TIME_SIGNAL for MessageType
+        /// </summary>
+        public static readonly MessageType TIME_SIGNAL = new MessageType("TIME_SIGNAL");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

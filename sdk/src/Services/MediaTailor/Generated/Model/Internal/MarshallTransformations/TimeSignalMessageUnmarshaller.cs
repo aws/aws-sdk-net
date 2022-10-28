@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AdBreak Object
+    /// Response Unmarshaller for TimeSignalMessage Object
     /// </summary>  
-    public class AdBreakUnmarshaller : IUnmarshaller<AdBreak, XmlUnmarshallerContext>, IUnmarshaller<AdBreak, JsonUnmarshallerContext>
+    public class TimeSignalMessageUnmarshaller : IUnmarshaller<TimeSignalMessage, XmlUnmarshallerContext>, IUnmarshaller<TimeSignalMessage, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AdBreak IUnmarshaller<AdBreak, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TimeSignalMessage IUnmarshaller<TimeSignalMessage, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,21 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AdBreak Unmarshall(JsonUnmarshallerContext context)
+        public TimeSignalMessage Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AdBreak unmarshalledObject = new AdBreak();
+            TimeSignalMessage unmarshalledObject = new TimeSignalMessage();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("MessageType", targetDepth))
+                if (context.TestExpression("SegmentationDescriptors", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MessageType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("OffsetMillis", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.OffsetMillis = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Slate", targetDepth))
-                {
-                    var unmarshaller = SlateSourceUnmarshaller.Instance;
-                    unmarshalledObject.Slate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SpliceInsertMessage", targetDepth))
-                {
-                    var unmarshaller = SpliceInsertMessageUnmarshaller.Instance;
-                    unmarshalledObject.SpliceInsertMessage = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TimeSignalMessage", targetDepth))
-                {
-                    var unmarshaller = TimeSignalMessageUnmarshaller.Instance;
-                    unmarshalledObject.TimeSignalMessage = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<SegmentationDescriptor, SegmentationDescriptorUnmarshaller>(SegmentationDescriptorUnmarshaller.Instance);
+                    unmarshalledObject.SegmentationDescriptors = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +76,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         }
 
 
-        private static AdBreakUnmarshaller _instance = new AdBreakUnmarshaller();        
+        private static TimeSignalMessageUnmarshaller _instance = new TimeSignalMessageUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AdBreakUnmarshaller Instance
+        public static TimeSignalMessageUnmarshaller Instance
         {
             get
             {
