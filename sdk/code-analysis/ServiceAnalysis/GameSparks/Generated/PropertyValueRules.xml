@@ -614,7 +614,7 @@
     <property>Amazon.GameSparks.Model.Generator.GameSdkVersion</property>
     <min>5</min>
     <max>10</max>
-    <pattern>^(\d|[1-9]\d*)\.(\d|[0-9]\d*)\.(\d|[0-9]\d*)$</pattern>
+    <pattern>^((\d|[1-9]\d*)\.(\d|[0-9]\d*)\.(\d|[0-9]\d*)|LATEST)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameSparks.Model.Generator.Language</property>
