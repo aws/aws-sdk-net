@@ -303,7 +303,7 @@ namespace Amazon.Cloud9
 
 
         /// <summary>
-        /// Deletes an environment member from an Cloud9 development environment.
+        /// Deletes an environment member from a development environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironmentMembership service method.</param>
         /// 
