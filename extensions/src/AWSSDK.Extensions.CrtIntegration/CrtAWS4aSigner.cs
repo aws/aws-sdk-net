@@ -102,7 +102,15 @@ namespace Amazon.Extensions.CrtIntegration
                                               ImmutableCredentials credentials)
         {
             var signedAt = AWS4Signer.InitializeHeaders(request.Headers, request.Endpoint);
+            
             var serviceSigningName = !string.IsNullOrEmpty(request.OverrideSigningServiceName) ? request.OverrideSigningServiceName : AWS4Signer.DetermineService(clientConfig);
+            if (serviceSigningName == "s3")
+            {
+                // Older versions of the S3 package can be used with newer versions of Core, this guarantees no double encoding will be used.
+                // The new behavior uses endpoint resolution rules, which are not present prior to 3.7.100
+                request.UseDoubleEncoding = false;
+            }
+
             var regionSet = AWS4Signer.DetermineSigningRegion(clientConfig, clientConfig.RegionEndpointServiceName, request.AlternateEndpoint, request);
             request.DeterminedSigningRegion = regionSet;
             AWS4Signer.SetXAmzTrailerHeader(request.Headers, request.TrailingHeaders);

@@ -191,7 +191,15 @@ namespace Amazon.Runtime.Internal.Auth
         {
             ValidateRequest(request);
             var signedAt = InitializeHeaders(request.Headers, request.Endpoint);
+            
             var serviceSigningName = !string.IsNullOrEmpty(request.OverrideSigningServiceName) ? request.OverrideSigningServiceName : DetermineService(clientConfig);
+            if (serviceSigningName == "s3")
+            {
+                // Older versions of the S3 package can be used with newer versions of Core, this guarantees no double encoding will be used.
+                // The new behavior uses endpoint resolution rules, which are not present prior to 3.7.100
+                request.UseDoubleEncoding = false;
+            }
+
             request.DeterminedSigningRegion = DetermineSigningRegion(clientConfig, clientConfig.RegionEndpointServiceName, request.AlternateEndpoint, request);
             SetXAmzTrailerHeader(request.Headers, request.TrailingHeaders);
 
