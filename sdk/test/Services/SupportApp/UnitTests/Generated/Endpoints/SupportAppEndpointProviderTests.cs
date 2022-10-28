@@ -31,13 +31,193 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("SupportApp")]
+        [Description("For region us-west-2 with FIPS enabled and DualStack enabled")]
+        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new SupportAppEndpointParameters();
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-west-2";
+            var endpoint = new AmazonSupportAppEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://supportapp-fips.us-west-2.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("SupportApp")]
+        [Description("For region us-west-2 with FIPS enabled and DualStack disabled")]
+        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new SupportAppEndpointParameters();
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-west-2";
+            var endpoint = new AmazonSupportAppEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://supportapp-fips.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("SupportApp")]
+        [Description("For region us-west-2 with FIPS disabled and DualStack enabled")]
+        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new SupportAppEndpointParameters();
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-west-2";
+            var endpoint = new AmazonSupportAppEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://supportapp.us-west-2.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("SupportApp")]
+        [Description("For region us-west-2 with FIPS disabled and DualStack disabled")]
+        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new SupportAppEndpointParameters();
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-west-2";
+            var endpoint = new AmazonSupportAppEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://supportapp.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("SupportApp")]
+        [Description("For region eu-west-1 with FIPS enabled and DualStack enabled")]
+        public void For_region_euwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new SupportAppEndpointParameters();
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            parameters["Region"] = "eu-west-1";
+            var endpoint = new AmazonSupportAppEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://supportapp-fips.eu-west-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("SupportApp")]
+        [Description("For region eu-west-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_euwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new SupportAppEndpointParameters();
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "eu-west-1";
+            var endpoint = new AmazonSupportAppEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://supportapp-fips.eu-west-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("SupportApp")]
+        [Description("For region eu-west-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_euwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new SupportAppEndpointParameters();
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            parameters["Region"] = "eu-west-1";
+            var endpoint = new AmazonSupportAppEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://supportapp.eu-west-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("SupportApp")]
+        [Description("For region eu-west-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_euwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new SupportAppEndpointParameters();
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "eu-west-1";
+            var endpoint = new AmazonSupportAppEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://supportapp.eu-west-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("SupportApp")]
+        [Description("For region us-east-1 with FIPS enabled and DualStack enabled")]
+        public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new SupportAppEndpointParameters();
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-east-1";
+            var endpoint = new AmazonSupportAppEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://supportapp-fips.us-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("SupportApp")]
+        [Description("For region us-east-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new SupportAppEndpointParameters();
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-east-1";
+            var endpoint = new AmazonSupportAppEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://supportapp-fips.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("SupportApp")]
+        [Description("For region us-east-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new SupportAppEndpointParameters();
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-east-1";
+            var endpoint = new AmazonSupportAppEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://supportapp.us-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("SupportApp")]
+        [Description("For region us-east-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new SupportAppEndpointParameters();
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-east-1";
+            var endpoint = new AmazonSupportAppEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://supportapp.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("SupportApp")]
         [Description("For custom endpoint with fips disabled and dualstack disabled")]
         public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new SupportAppEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonSupportAppEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://example.com", endpoint.URL);
@@ -53,8 +233,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new SupportAppEndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonSupportAppEndpointProvider().ResolveEndpoint(parameters);
         }
@@ -69,8 +249,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new SupportAppEndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonSupportAppEndpointProvider().ResolveEndpoint(parameters);
         }
