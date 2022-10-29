@@ -1,3 +1,8 @@
+### 3.7.406.1 (2022-10-28 23:06 UTC)
+* Core 3.7.100.6
+	* Update SigV4 and SigV4a signers to improve compatibility with versions of AWSSDK.S3 before 3.7.100.0, when internal logic for constructing API endpoints was updated.
+	* All services packages updated to require new Core
+
 ### 3.7.406.0 (2022-10-28 18:27 UTC)
 * AppRunner (3.7.101.0)
 	* AWS App Runner adds .NET 6, Go 1, PHP 8.1 and Ruby 3.1 runtimes.
