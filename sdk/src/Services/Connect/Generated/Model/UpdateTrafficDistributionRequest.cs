@@ -30,10 +30,14 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateTrafficDistribution operation.
-    /// Updates the traffic distribution for a given traffic distribution group. For more
-    /// information about updating a traffic distribution group see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/update-telephony-traffic-distribution.html">Update
+    /// Updates the traffic distribution for a given traffic distribution group. 
+    /// 
+    ///  
+    /// <para>
+    /// For more information about updating a traffic distribution group, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/update-telephony-traffic-distribution.html">Update
     /// telephony traffic distribution across Amazon Web Services Regions </a> in the <i>Amazon
-    /// Connect Administrator Guide</i>.
+    /// Connect Administrator Guide</i>. 
+    /// </para>
     /// </summary>
     public partial class UpdateTrafficDistributionRequest : AmazonConnectRequest
     {

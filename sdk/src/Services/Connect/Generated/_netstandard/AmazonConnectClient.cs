@@ -4020,6 +4020,62 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DismissUserContact
+
+        internal virtual DismissUserContactResponse DismissUserContact(DismissUserContactRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DismissUserContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DismissUserContactResponseUnmarshaller.Instance;
+
+            return Invoke<DismissUserContactResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Dismisses contacts from an agent’s CCP and returns the agent to an available state,
+        /// which allows the agent to receive a new routed contact. Contacts can only be dismissed
+        /// if they are in a <code>MISSED</code>, <code>ERROR</code>, <code>ENDED</code>, or <code>REJECTED</code>
+        /// state in the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">Agent
+        /// Event Stream</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DismissUserContact service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DismissUserContact service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DismissUserContact">REST API Reference for DismissUserContact Operation</seealso>
+        public virtual Task<DismissUserContactResponse> DismissUserContactAsync(DismissUserContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DismissUserContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DismissUserContactResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DismissUserContactResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetContactAttributes
 
         internal virtual GetContactAttributesResponse GetContactAttributes(GetContactAttributesRequest request)
@@ -8814,10 +8870,14 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Updates the traffic distribution for a given traffic distribution group. For more
-        /// information about updating a traffic distribution group see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/update-telephony-traffic-distribution.html">Update
+        /// Updates the traffic distribution for a given traffic distribution group. 
+        /// 
+        ///  
+        /// <para>
+        /// For more information about updating a traffic distribution group, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/update-telephony-traffic-distribution.html">Update
         /// telephony traffic distribution across Amazon Web Services Regions </a> in the <i>Amazon
-        /// Connect Administrator Guide</i>.
+        /// Connect Administrator Guide</i>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTrafficDistribution service method.</param>
         /// <param name="cancellationToken">
