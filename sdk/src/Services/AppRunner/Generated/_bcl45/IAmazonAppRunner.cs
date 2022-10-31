@@ -584,6 +584,76 @@ namespace Amazon.AppRunner
 
         #endregion
         
+        #region  CreateVpcIngressConnection
+
+
+        /// <summary>
+        /// Create an App Runner VPC Ingress Connection resource. App Runner requires this resource
+        /// when you want to associate your App Runner service with an Amazon VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcIngressConnection service method.</param>
+        /// 
+        /// <returns>The response from the CreateVpcIngressConnection service method, as returned by AppRunner.</returns>
+        /// <exception cref="Amazon.AppRunner.Model.InternalServiceErrorException">
+        /// An unexpected service exception occurred.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.InvalidRequestException">
+        /// One or more input parameters aren't valid. Refer to the API action's document page,
+        /// correct the input parameters, and try the action again.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.InvalidStateException">
+        /// You can't perform this action when the resource is in its current state.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.ServiceQuotaExceededException">
+        /// App Runner can't create this resource. You've reached your account quota for this
+        /// resource type.
+        /// 
+        ///  
+        /// <para>
+        /// For App Runner per-resource quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/apprunner.html">App
+        /// Runner endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateVpcIngressConnection">REST API Reference for CreateVpcIngressConnection Operation</seealso>
+        CreateVpcIngressConnectionResponse CreateVpcIngressConnection(CreateVpcIngressConnectionRequest request);
+
+
+
+        /// <summary>
+        /// Create an App Runner VPC Ingress Connection resource. App Runner requires this resource
+        /// when you want to associate your App Runner service with an Amazon VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcIngressConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateVpcIngressConnection service method, as returned by AppRunner.</returns>
+        /// <exception cref="Amazon.AppRunner.Model.InternalServiceErrorException">
+        /// An unexpected service exception occurred.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.InvalidRequestException">
+        /// One or more input parameters aren't valid. Refer to the API action's document page,
+        /// correct the input parameters, and try the action again.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.InvalidStateException">
+        /// You can't perform this action when the resource is in its current state.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.ServiceQuotaExceededException">
+        /// App Runner can't create this resource. You've reached your account quota for this
+        /// resource type.
+        /// 
+        ///  
+        /// <para>
+        /// For App Runner per-resource quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/apprunner.html">App
+        /// Runner endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateVpcIngressConnection">REST API Reference for CreateVpcIngressConnection Operation</seealso>
+        Task<CreateVpcIngressConnectionResponse> CreateVpcIngressConnectionAsync(CreateVpcIngressConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteAutoScalingConfiguration
 
 
@@ -758,6 +828,12 @@ namespace Amazon.AppRunner
         /// <code>OperationId</code> and the <a>ListOperations</a> call to track the operation's
         /// progress.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Make sure that you don't have any active VPCIngressConnections associated with the
+        /// service you want to delete. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteService service method.</param>
         /// 
@@ -790,6 +866,12 @@ namespace Amazon.AppRunner
         /// <code>OperationId</code> and the <a>ListOperations</a> call to track the operation's
         /// progress.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Make sure that you don't have any active VPCIngressConnections associated with the
+        /// service you want to delete. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteService service method.</param>
         /// <param name="cancellationToken">
@@ -865,6 +947,102 @@ namespace Amazon.AppRunner
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteVpcConnector">REST API Reference for DeleteVpcConnector Operation</seealso>
         Task<DeleteVpcConnectorResponse> DeleteVpcConnectorAsync(DeleteVpcConnectorRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteVpcIngressConnection
+
+
+        /// <summary>
+        /// Delete an App Runner VPC Ingress Connection resource that's associated with an App
+        /// Runner service. The VPC Ingress Connection must be in one of the following states
+        /// to be deleted: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>AVAILABLE</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>FAILED_CREATION</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>FAILED_UPDATE</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>FAILED_DELETION</code> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcIngressConnection service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVpcIngressConnection service method, as returned by AppRunner.</returns>
+        /// <exception cref="Amazon.AppRunner.Model.InternalServiceErrorException">
+        /// An unexpected service exception occurred.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.InvalidRequestException">
+        /// One or more input parameters aren't valid. Refer to the API action's document page,
+        /// correct the input parameters, and try the action again.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.InvalidStateException">
+        /// You can't perform this action when the resource is in its current state.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteVpcIngressConnection">REST API Reference for DeleteVpcIngressConnection Operation</seealso>
+        DeleteVpcIngressConnectionResponse DeleteVpcIngressConnection(DeleteVpcIngressConnectionRequest request);
+
+
+
+        /// <summary>
+        /// Delete an App Runner VPC Ingress Connection resource that's associated with an App
+        /// Runner service. The VPC Ingress Connection must be in one of the following states
+        /// to be deleted: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>AVAILABLE</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>FAILED_CREATION</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>FAILED_UPDATE</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>FAILED_DELETION</code> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcIngressConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteVpcIngressConnection service method, as returned by AppRunner.</returns>
+        /// <exception cref="Amazon.AppRunner.Model.InternalServiceErrorException">
+        /// An unexpected service exception occurred.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.InvalidRequestException">
+        /// One or more input parameters aren't valid. Refer to the API action's document page,
+        /// correct the input parameters, and try the action again.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.InvalidStateException">
+        /// You can't perform this action when the resource is in its current state.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteVpcIngressConnection">REST API Reference for DeleteVpcIngressConnection Operation</seealso>
+        Task<DeleteVpcIngressConnectionResponse> DeleteVpcIngressConnectionAsync(DeleteVpcIngressConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1117,6 +1295,56 @@ namespace Amazon.AppRunner
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeVpcConnector">REST API Reference for DescribeVpcConnector Operation</seealso>
         Task<DescribeVpcConnectorResponse> DescribeVpcConnectorAsync(DescribeVpcConnectorRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeVpcIngressConnection
+
+
+        /// <summary>
+        /// Return a full description of an App Runner VPC Ingress Connection resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcIngressConnection service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVpcIngressConnection service method, as returned by AppRunner.</returns>
+        /// <exception cref="Amazon.AppRunner.Model.InternalServiceErrorException">
+        /// An unexpected service exception occurred.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.InvalidRequestException">
+        /// One or more input parameters aren't valid. Refer to the API action's document page,
+        /// correct the input parameters, and try the action again.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeVpcIngressConnection">REST API Reference for DescribeVpcIngressConnection Operation</seealso>
+        DescribeVpcIngressConnectionResponse DescribeVpcIngressConnection(DescribeVpcIngressConnectionRequest request);
+
+
+
+        /// <summary>
+        /// Return a full description of an App Runner VPC Ingress Connection resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcIngressConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeVpcIngressConnection service method, as returned by AppRunner.</returns>
+        /// <exception cref="Amazon.AppRunner.Model.InternalServiceErrorException">
+        /// An unexpected service exception occurred.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.InvalidRequestException">
+        /// One or more input parameters aren't valid. Refer to the API action's document page,
+        /// correct the input parameters, and try the action again.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeVpcIngressConnection">REST API Reference for DescribeVpcIngressConnection Operation</seealso>
+        Task<DescribeVpcIngressConnectionResponse> DescribeVpcIngressConnectionAsync(DescribeVpcIngressConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1562,6 +1790,48 @@ namespace Amazon.AppRunner
 
         #endregion
         
+        #region  ListVpcIngressConnections
+
+
+        /// <summary>
+        /// Return a list of App Runner VPC Ingress Connections in your Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVpcIngressConnections service method.</param>
+        /// 
+        /// <returns>The response from the ListVpcIngressConnections service method, as returned by AppRunner.</returns>
+        /// <exception cref="Amazon.AppRunner.Model.InternalServiceErrorException">
+        /// An unexpected service exception occurred.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.InvalidRequestException">
+        /// One or more input parameters aren't valid. Refer to the API action's document page,
+        /// correct the input parameters, and try the action again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListVpcIngressConnections">REST API Reference for ListVpcIngressConnections Operation</seealso>
+        ListVpcIngressConnectionsResponse ListVpcIngressConnections(ListVpcIngressConnectionsRequest request);
+
+
+
+        /// <summary>
+        /// Return a list of App Runner VPC Ingress Connections in your Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVpcIngressConnections service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListVpcIngressConnections service method, as returned by AppRunner.</returns>
+        /// <exception cref="Amazon.AppRunner.Model.InternalServiceErrorException">
+        /// An unexpected service exception occurred.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.InvalidRequestException">
+        /// One or more input parameters aren't valid. Refer to the API action's document page,
+        /// correct the input parameters, and try the action again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListVpcIngressConnections">REST API Reference for ListVpcIngressConnections Operation</seealso>
+        Task<ListVpcIngressConnectionsResponse> ListVpcIngressConnectionsAsync(ListVpcIngressConnectionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  PauseService
 
 
@@ -1985,6 +2255,92 @@ namespace Amazon.AppRunner
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/UpdateService">REST API Reference for UpdateService Operation</seealso>
         Task<UpdateServiceResponse> UpdateServiceAsync(UpdateServiceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateVpcIngressConnection
+
+
+        /// <summary>
+        /// Update an existing App Runner VPC Ingress Connection resource. The VPC Ingress Connection
+        /// must be in one of the following states to be updated:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  AVAILABLE 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  FAILED_CREATION 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  FAILED_UPDATE 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVpcIngressConnection service method.</param>
+        /// 
+        /// <returns>The response from the UpdateVpcIngressConnection service method, as returned by AppRunner.</returns>
+        /// <exception cref="Amazon.AppRunner.Model.InternalServiceErrorException">
+        /// An unexpected service exception occurred.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.InvalidRequestException">
+        /// One or more input parameters aren't valid. Refer to the API action's document page,
+        /// correct the input parameters, and try the action again.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.InvalidStateException">
+        /// You can't perform this action when the resource is in its current state.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/UpdateVpcIngressConnection">REST API Reference for UpdateVpcIngressConnection Operation</seealso>
+        UpdateVpcIngressConnectionResponse UpdateVpcIngressConnection(UpdateVpcIngressConnectionRequest request);
+
+
+
+        /// <summary>
+        /// Update an existing App Runner VPC Ingress Connection resource. The VPC Ingress Connection
+        /// must be in one of the following states to be updated:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  AVAILABLE 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  FAILED_CREATION 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  FAILED_UPDATE 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVpcIngressConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateVpcIngressConnection service method, as returned by AppRunner.</returns>
+        /// <exception cref="Amazon.AppRunner.Model.InternalServiceErrorException">
+        /// An unexpected service exception occurred.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.InvalidRequestException">
+        /// One or more input parameters aren't valid. Refer to the API action's document page,
+        /// correct the input parameters, and try the action again.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.InvalidStateException">
+        /// You can't perform this action when the resource is in its current state.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/UpdateVpcIngressConnection">REST API Reference for UpdateVpcIngressConnection Operation</seealso>
+        Task<UpdateVpcIngressConnectionResponse> UpdateVpcIngressConnectionAsync(UpdateVpcIngressConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

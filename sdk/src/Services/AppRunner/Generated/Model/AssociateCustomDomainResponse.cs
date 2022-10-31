@@ -36,6 +36,7 @@ namespace Amazon.AppRunner.Model
         private CustomDomain _customDomain;
         private string _dnsTarget;
         private string _serviceArn;
+        private List<VpcDNSTarget> _vpcDNSTargets = new List<VpcDNSTarget>();
 
         /// <summary>
         /// Gets and sets the property CustomDomain. 
@@ -94,6 +95,25 @@ namespace Amazon.AppRunner.Model
         internal bool IsSetServiceArn()
         {
             return this._serviceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcDNSTargets. 
+        /// <para>
+        /// DNS Target records for the custom domains of this Amazon VPC. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public List<VpcDNSTarget> VpcDNSTargets
+        {
+            get { return this._vpcDNSTargets; }
+            set { this._vpcDNSTargets = value; }
+        }
+
+        // Check to see if VpcDNSTargets property is set
+        internal bool IsSetVpcDNSTargets()
+        {
+            return this._vpcDNSTargets != null && this._vpcDNSTargets.Count > 0; 
         }
 
     }

@@ -279,7 +279,7 @@ namespace Amazon.AppRunner.Model
         /// access your service web application.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=51200)]
+        [AWSProperty(Min=0, Max=51200)]
         public string ServiceUrl
         {
             get { return this._serviceUrl; }

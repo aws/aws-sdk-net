@@ -56,6 +56,17 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetIngressConfiguration())
+            {
+                context.Writer.WritePropertyName("IngressConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = IngressConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.IngressConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

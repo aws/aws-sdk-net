@@ -488,6 +488,67 @@ namespace Amazon.AppRunner
 
         #endregion
         
+        #region  CreateVpcIngressConnection
+
+
+        /// <summary>
+        /// Create an App Runner VPC Ingress Connection resource. App Runner requires this resource
+        /// when you want to associate your App Runner service with an Amazon VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcIngressConnection service method.</param>
+        /// 
+        /// <returns>The response from the CreateVpcIngressConnection service method, as returned by AppRunner.</returns>
+        /// <exception cref="Amazon.AppRunner.Model.InternalServiceErrorException">
+        /// An unexpected service exception occurred.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.InvalidRequestException">
+        /// One or more input parameters aren't valid. Refer to the API action's document page,
+        /// correct the input parameters, and try the action again.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.InvalidStateException">
+        /// You can't perform this action when the resource is in its current state.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.ServiceQuotaExceededException">
+        /// App Runner can't create this resource. You've reached your account quota for this
+        /// resource type.
+        /// 
+        ///  
+        /// <para>
+        /// For App Runner per-resource quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/apprunner.html">App
+        /// Runner endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateVpcIngressConnection">REST API Reference for CreateVpcIngressConnection Operation</seealso>
+        CreateVpcIngressConnectionResponse CreateVpcIngressConnection(CreateVpcIngressConnectionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateVpcIngressConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcIngressConnection operation on AmazonAppRunnerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateVpcIngressConnection
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateVpcIngressConnection">REST API Reference for CreateVpcIngressConnection Operation</seealso>
+        IAsyncResult BeginCreateVpcIngressConnection(CreateVpcIngressConnectionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateVpcIngressConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateVpcIngressConnection.</param>
+        /// 
+        /// <returns>Returns a  CreateVpcIngressConnectionResult from AppRunner.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateVpcIngressConnection">REST API Reference for CreateVpcIngressConnection Operation</seealso>
+        CreateVpcIngressConnectionResponse EndCreateVpcIngressConnection(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteAutoScalingConfiguration
 
 
@@ -659,6 +720,12 @@ namespace Amazon.AppRunner
         /// <code>OperationId</code> and the <a>ListOperations</a> call to track the operation's
         /// progress.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Make sure that you don't have any active VPCIngressConnections associated with the
+        /// service you want to delete. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteService service method.</param>
         /// 
@@ -757,6 +824,80 @@ namespace Amazon.AppRunner
         /// <returns>Returns a  DeleteVpcConnectorResult from AppRunner.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteVpcConnector">REST API Reference for DeleteVpcConnector Operation</seealso>
         DeleteVpcConnectorResponse EndDeleteVpcConnector(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteVpcIngressConnection
+
+
+        /// <summary>
+        /// Delete an App Runner VPC Ingress Connection resource that's associated with an App
+        /// Runner service. The VPC Ingress Connection must be in one of the following states
+        /// to be deleted: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>AVAILABLE</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>FAILED_CREATION</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>FAILED_UPDATE</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>FAILED_DELETION</code> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcIngressConnection service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVpcIngressConnection service method, as returned by AppRunner.</returns>
+        /// <exception cref="Amazon.AppRunner.Model.InternalServiceErrorException">
+        /// An unexpected service exception occurred.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.InvalidRequestException">
+        /// One or more input parameters aren't valid. Refer to the API action's document page,
+        /// correct the input parameters, and try the action again.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.InvalidStateException">
+        /// You can't perform this action when the resource is in its current state.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteVpcIngressConnection">REST API Reference for DeleteVpcIngressConnection Operation</seealso>
+        DeleteVpcIngressConnectionResponse DeleteVpcIngressConnection(DeleteVpcIngressConnectionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVpcIngressConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcIngressConnection operation on AmazonAppRunnerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVpcIngressConnection
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteVpcIngressConnection">REST API Reference for DeleteVpcIngressConnection Operation</seealso>
+        IAsyncResult BeginDeleteVpcIngressConnection(DeleteVpcIngressConnectionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteVpcIngressConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVpcIngressConnection.</param>
+        /// 
+        /// <returns>Returns a  DeleteVpcIngressConnectionResult from AppRunner.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteVpcIngressConnection">REST API Reference for DeleteVpcIngressConnection Operation</seealso>
+        DeleteVpcIngressConnectionResponse EndDeleteVpcIngressConnection(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1013,6 +1154,57 @@ namespace Amazon.AppRunner
         /// <returns>Returns a  DescribeVpcConnectorResult from AppRunner.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeVpcConnector">REST API Reference for DescribeVpcConnector Operation</seealso>
         DescribeVpcConnectorResponse EndDescribeVpcConnector(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeVpcIngressConnection
+
+
+        /// <summary>
+        /// Return a full description of an App Runner VPC Ingress Connection resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcIngressConnection service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVpcIngressConnection service method, as returned by AppRunner.</returns>
+        /// <exception cref="Amazon.AppRunner.Model.InternalServiceErrorException">
+        /// An unexpected service exception occurred.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.InvalidRequestException">
+        /// One or more input parameters aren't valid. Refer to the API action's document page,
+        /// correct the input parameters, and try the action again.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeVpcIngressConnection">REST API Reference for DescribeVpcIngressConnection Operation</seealso>
+        DescribeVpcIngressConnectionResponse DescribeVpcIngressConnection(DescribeVpcIngressConnectionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVpcIngressConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcIngressConnection operation on AmazonAppRunnerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVpcIngressConnection
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeVpcIngressConnection">REST API Reference for DescribeVpcIngressConnection Operation</seealso>
+        IAsyncResult BeginDescribeVpcIngressConnection(DescribeVpcIngressConnectionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeVpcIngressConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVpcIngressConnection.</param>
+        /// 
+        /// <returns>Returns a  DescribeVpcIngressConnectionResult from AppRunner.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeVpcIngressConnection">REST API Reference for DescribeVpcIngressConnection Operation</seealso>
+        DescribeVpcIngressConnectionResponse EndDescribeVpcIngressConnection(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1445,6 +1637,53 @@ namespace Amazon.AppRunner
 
         #endregion
         
+        #region  ListVpcIngressConnections
+
+
+        /// <summary>
+        /// Return a list of App Runner VPC Ingress Connections in your Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVpcIngressConnections service method.</param>
+        /// 
+        /// <returns>The response from the ListVpcIngressConnections service method, as returned by AppRunner.</returns>
+        /// <exception cref="Amazon.AppRunner.Model.InternalServiceErrorException">
+        /// An unexpected service exception occurred.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.InvalidRequestException">
+        /// One or more input parameters aren't valid. Refer to the API action's document page,
+        /// correct the input parameters, and try the action again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListVpcIngressConnections">REST API Reference for ListVpcIngressConnections Operation</seealso>
+        ListVpcIngressConnectionsResponse ListVpcIngressConnections(ListVpcIngressConnectionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListVpcIngressConnections operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListVpcIngressConnections operation on AmazonAppRunnerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListVpcIngressConnections
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListVpcIngressConnections">REST API Reference for ListVpcIngressConnections Operation</seealso>
+        IAsyncResult BeginListVpcIngressConnections(ListVpcIngressConnectionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListVpcIngressConnections operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListVpcIngressConnections.</param>
+        /// 
+        /// <returns>Returns a  ListVpcIngressConnectionsResult from AppRunner.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListVpcIngressConnections">REST API Reference for ListVpcIngressConnections Operation</seealso>
+        ListVpcIngressConnectionsResponse EndListVpcIngressConnections(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  PauseService
 
 
@@ -1811,6 +2050,75 @@ namespace Amazon.AppRunner
         /// <returns>Returns a  UpdateServiceResult from AppRunner.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/UpdateService">REST API Reference for UpdateService Operation</seealso>
         UpdateServiceResponse EndUpdateService(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateVpcIngressConnection
+
+
+        /// <summary>
+        /// Update an existing App Runner VPC Ingress Connection resource. The VPC Ingress Connection
+        /// must be in one of the following states to be updated:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  AVAILABLE 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  FAILED_CREATION 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  FAILED_UPDATE 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVpcIngressConnection service method.</param>
+        /// 
+        /// <returns>The response from the UpdateVpcIngressConnection service method, as returned by AppRunner.</returns>
+        /// <exception cref="Amazon.AppRunner.Model.InternalServiceErrorException">
+        /// An unexpected service exception occurred.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.InvalidRequestException">
+        /// One or more input parameters aren't valid. Refer to the API action's document page,
+        /// correct the input parameters, and try the action again.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.InvalidStateException">
+        /// You can't perform this action when the resource is in its current state.
+        /// </exception>
+        /// <exception cref="Amazon.AppRunner.Model.ResourceNotFoundException">
+        /// A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon
+        /// Web Services account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/UpdateVpcIngressConnection">REST API Reference for UpdateVpcIngressConnection Operation</seealso>
+        UpdateVpcIngressConnectionResponse UpdateVpcIngressConnection(UpdateVpcIngressConnectionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateVpcIngressConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVpcIngressConnection operation on AmazonAppRunnerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateVpcIngressConnection
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/UpdateVpcIngressConnection">REST API Reference for UpdateVpcIngressConnection Operation</seealso>
+        IAsyncResult BeginUpdateVpcIngressConnection(UpdateVpcIngressConnectionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateVpcIngressConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateVpcIngressConnection.</param>
+        /// 
+        /// <returns>Returns a  UpdateVpcIngressConnectionResult from AppRunner.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/UpdateVpcIngressConnection">REST API Reference for UpdateVpcIngressConnection Operation</seealso>
+        UpdateVpcIngressConnectionResponse EndUpdateVpcIngressConnection(IAsyncResult asyncResult);
 
         #endregion
         

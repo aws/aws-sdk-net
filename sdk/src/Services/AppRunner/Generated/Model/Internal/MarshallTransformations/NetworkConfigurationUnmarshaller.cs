@@ -70,6 +70,12 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
                     unmarshalledObject.EgressConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IngressConfiguration", targetDepth))
+                {
+                    var unmarshaller = IngressConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.IngressConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

@@ -35,6 +35,7 @@ namespace Amazon.AppRunner.Model
     public partial class NetworkConfiguration
     {
         private EgressConfiguration _egressConfiguration;
+        private IngressConfiguration _ingressConfiguration;
 
         /// <summary>
         /// Gets and sets the property EgressConfiguration. 
@@ -52,6 +53,24 @@ namespace Amazon.AppRunner.Model
         internal bool IsSetEgressConfiguration()
         {
             return this._egressConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IngressConfiguration. 
+        /// <para>
+        /// Network configuration settings for inbound message traffic.
+        /// </para>
+        /// </summary>
+        public IngressConfiguration IngressConfiguration
+        {
+            get { return this._ingressConfiguration; }
+            set { this._ingressConfiguration = value; }
+        }
+
+        // Check to see if IngressConfiguration property is set
+        internal bool IsSetIngressConfiguration()
+        {
+            return this._ingressConfiguration != null;
         }
 
     }

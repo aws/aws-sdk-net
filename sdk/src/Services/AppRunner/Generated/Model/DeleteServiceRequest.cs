@@ -38,6 +38,12 @@ namespace Amazon.AppRunner.Model
     /// <code>OperationId</code> and the <a>ListOperations</a> call to track the operation's
     /// progress.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// Make sure that you don't have any active VPCIngressConnections associated with the
+    /// service you want to delete. 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DeleteServiceRequest : AmazonAppRunnerRequest
     {

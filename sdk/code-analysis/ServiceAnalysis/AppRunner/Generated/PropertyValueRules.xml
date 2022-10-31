@@ -82,6 +82,18 @@
     <pattern>[A-Za-z0-9][A-Za-z0-9\-_]{3,39}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppRunner.Model.CreateVpcIngressConnectionRequest.ServiceArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>arn:aws(-[\w]+)*:[a-z0-9-\\.]{0,63}:[a-z0-9-\\.]{0,63}:[0-9]{12}:(\w|\/|-){1,1011}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppRunner.Model.CreateVpcIngressConnectionRequest.VpcIngressConnectionName</property>
+    <min>4</min>
+    <max>40</max>
+    <pattern>[A-Za-z0-9][A-Za-z0-9\-_]{3,39}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppRunner.Model.DeleteAutoScalingConfigurationRequest.AutoScalingConfigurationArn</property>
     <min>1</min>
     <max>1011</max>
@@ -113,6 +125,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRunner.Model.DeleteVpcConnectorRequest.VpcConnectorArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>arn:aws(-[\w]+)*:[a-z0-9-\\.]{0,63}:[a-z0-9-\\.]{0,63}:[0-9]{12}:(\w|\/|-){1,1011}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppRunner.Model.DeleteVpcIngressConnectionRequest.VpcIngressConnectionArn</property>
     <min>1</min>
     <max>1011</max>
     <pattern>arn:aws(-[\w]+)*:[a-z0-9-\\.]{0,63}:[a-z0-9-\\.]{0,63}:[0-9]{12}:(\w|\/|-){1,1011}</pattern>
@@ -172,6 +190,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRunner.Model.DescribeVpcConnectorRequest.VpcConnectorArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>arn:aws(-[\w]+)*:[a-z0-9-\\.]{0,63}:[a-z0-9-\\.]{0,63}:[0-9]{12}:(\w|\/|-){1,1011}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppRunner.Model.DescribeVpcIngressConnectionRequest.VpcIngressConnectionArn</property>
     <min>1</min>
     <max>1011</max>
     <pattern>arn:aws(-[\w]+)*:[a-z0-9-\\.]{0,63}:[a-z0-9-\\.]{0,63}:[0-9]{12}:(\w|\/|-){1,1011}</pattern>
@@ -333,6 +357,23 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppRunner.Model.ListVpcIngressConnectionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppRunner.Model.ListVpcIngressConnectionsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppRunner.Model.ListVpcIngressConnectionsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppRunner.Model.PauseServiceRequest.ServiceArn</property>
     <min>1</min>
     <max>1011</max>
@@ -397,6 +438,12 @@
     <min>36</min>
     <max>36</max>
     <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppRunner.Model.UpdateVpcIngressConnectionRequest.VpcIngressConnectionArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>arn:aws(-[\w]+)*:[a-z0-9-\\.]{0,63}:[a-z0-9-\\.]{0,63}:[0-9]{12}:(\w|\/|-){1,1011}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRunner.Model.AuthenticationConfiguration.AccessRoleArn</property>
@@ -555,6 +602,18 @@
     <pattern>([0-9]{12}.dkr.ecr.[a-z\-]+-[0-9]{1}.amazonaws.com\/((?:[a-z0-9]+(?:[._-][a-z0-9]+)*\/)*[a-z0-9]+(?:[._-][a-z0-9]+)*)(:([\w\d+\-=._:\/@])+|@([\w\d\:]+))?)|(^public\.ecr\.aws\/.+\/((?:[a-z0-9]+(?:[._-][a-z0-9]+)*\/)*[a-z0-9]+(?:[._-][a-z0-9]+)*)(:([\w\d+\-=._:\/@])+|@([\w\d\:]+))?)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppRunner.Model.IngressVpcConfiguration.VpcEndpointId</property>
+    <min>0</min>
+    <max>51200</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppRunner.Model.IngressVpcConfiguration.VpcId</property>
+    <min>0</min>
+    <max>51200</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppRunner.Model.InstanceConfiguration.Cpu</property>
     <min>4</min>
     <max>6</max>
@@ -571,6 +630,18 @@
     <min>4</min>
     <max>4</max>
     <pattern>2048|3072|4096|(2|3|4) GB</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppRunner.Model.ListVpcIngressConnectionsFilter.ServiceArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>arn:aws(-[\w]+)*:[a-z0-9-\\.]{0,63}:[a-z0-9-\\.]{0,63}:[0-9]{12}:(\w|\/|-){1,1011}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppRunner.Model.ListVpcIngressConnectionsFilter.VpcEndpointId</property>
+    <min>0</min>
+    <max>51200</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppRunner.Model.ObservabilityConfiguration.ObservabilityConfigurationArn</property>
@@ -691,5 +762,65 @@
     <min>4</min>
     <max>40</max>
     <pattern>[A-Za-z0-9][A-Za-z0-9\-_]{3,39}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppRunner.Model.VpcDNSTarget.DomainName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[A-Za-z0-9*.-]{1,255}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppRunner.Model.VpcDNSTarget.VpcId</property>
+    <min>0</min>
+    <max>51200</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppRunner.Model.VpcDNSTarget.VpcIngressConnectionArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>arn:aws(-[\w]+)*:[a-z0-9-\\.]{0,63}:[a-z0-9-\\.]{0,63}:[0-9]{12}:(\w|\/|-){1,1011}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppRunner.Model.VpcIngressConnection.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppRunner.Model.VpcIngressConnection.DomainName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[A-Za-z0-9*.-]{1,255}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppRunner.Model.VpcIngressConnection.ServiceArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>arn:aws(-[\w]+)*:[a-z0-9-\\.]{0,63}:[a-z0-9-\\.]{0,63}:[0-9]{12}:(\w|\/|-){1,1011}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppRunner.Model.VpcIngressConnection.VpcIngressConnectionArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>arn:aws(-[\w]+)*:[a-z0-9-\\.]{0,63}:[a-z0-9-\\.]{0,63}:[0-9]{12}:(\w|\/|-){1,1011}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppRunner.Model.VpcIngressConnection.VpcIngressConnectionName</property>
+    <min>4</min>
+    <max>40</max>
+    <pattern>[A-Za-z0-9][A-Za-z0-9\-_]{3,39}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppRunner.Model.VpcIngressConnectionSummary.ServiceArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>arn:aws(-[\w]+)*:[a-z0-9-\\.]{0,63}:[a-z0-9-\\.]{0,63}:[0-9]{12}:(\w|\/|-){1,1011}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppRunner.Model.VpcIngressConnectionSummary.VpcIngressConnectionArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>arn:aws(-[\w]+)*:[a-z0-9-\\.]{0,63}:[a-z0-9-\\.]{0,63}:[0-9]{12}:(\w|\/|-){1,1011}</pattern>
   </property-value-rule>
 </property-value-rules>
