@@ -1,3 +1,22 @@
+### 3.7.407.0 (2022-10-31 18:30 UTC)
+* AppRunner (3.7.102.0)
+	* This release adds support for private App Runner services. Services may now be configured to be made private and only accessible from a VPC. The changes include a new VpcIngressConnection resource and several new and modified APIs.
+* CloudWatchLogs (3.7.101.0)
+	* SDK release to support tagging for destinations and log groups with TagResource. Also supports tag on create with PutDestination.
+* Connect (3.7.101.0)
+	* Amazon connect now support a new API DismissUserContact to dismiss or remove terminated contacts in Agent CCP
+* EC2 (3.7.102.0)
+	* Elastic IP transfer is a new Amazon VPC feature that allows you to transfer your Elastic IP addresses from one AWS Account to another.
+* IoT (3.7.101.0)
+	* This release adds the Amazon Location action to IoT Rules Engine.
+* SimpleEmailV2 (3.7.101.0)
+	* This release includes support for interacting with the Virtual Deliverability Manager, allowing you to opt in/out of the feature and to retrieve recommendations and metric data.
+* Textract (3.7.101.0)
+	* This release introduces additional support for 30+ normalized fields such as vendor address and currency. It also includes OCR output in the response and accuracy improvements for the already supported fields in previous version
+* Core 3.7.100.7
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.406.1 (2022-10-28 23:06 UTC)
 * Core 3.7.100.6
 	* Update SigV4 and SigV4a signers to improve compatibility with versions of AWSSDK.S3 before 3.7.100.0, when internal logic for constructing API endpoints was updated.
