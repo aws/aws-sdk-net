@@ -45,6 +45,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void AcceptAddressTransferMarshallTest()
+        {
+            var operation = service_model.FindOperation("AcceptAddressTransfer");
+
+            var request = InstantiateClassGenerator.Execute<AcceptAddressTransferRequest>();
+            var marshaller = new AcceptAddressTransferRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = AcceptAddressTransferResponseUnmarshaller.Instance.Unmarshall(context)
+                as AcceptAddressTransferResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void AcceptReservedInstancesExchangeQuoteMarshallTest()
         {
             var operation = service_model.FindOperation("AcceptReservedInstancesExchangeQuote");
@@ -4753,6 +4777,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DescribeAddressTransfersMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeAddressTransfers");
+
+            var request = InstantiateClassGenerator.Execute<DescribeAddressTransfersRequest>();
+            var marshaller = new DescribeAddressTransfersRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeAddressTransfersResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeAddressTransfersResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DescribeAggregateIdFormatMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeAggregateIdFormat");
@@ -8026,6 +8074,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DisableAddressTransferMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisableAddressTransfer");
+
+            var request = InstantiateClassGenerator.Execute<DisableAddressTransferRequest>();
+            var marshaller = new DisableAddressTransferRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DisableAddressTransferResponseUnmarshaller.Instance.Unmarshall(context)
+                as DisableAddressTransferResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DisableEbsEncryptionByDefaultMarshallTest()
         {
             var operation = service_model.FindOperation("DisableEbsEncryptionByDefault");
@@ -8530,6 +8602,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = DisassociateVpcCidrBlockResponseUnmarshaller.Instance.Unmarshall(context)
                 as DisassociateVpcCidrBlockResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void EnableAddressTransferMarshallTest()
+        {
+            var operation = service_model.FindOperation("EnableAddressTransfer");
+
+            var request = InstantiateClassGenerator.Execute<EnableAddressTransferRequest>();
+            var marshaller = new EnableAddressTransferRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = EnableAddressTransferResponseUnmarshaller.Instance.Unmarshall(context)
+                as EnableAddressTransferResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

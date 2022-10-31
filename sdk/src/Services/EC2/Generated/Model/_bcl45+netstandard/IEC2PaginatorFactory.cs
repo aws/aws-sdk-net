@@ -31,6 +31,11 @@ namespace Amazon.EC2.Model
         IDescribeAddressesAttributePaginator DescribeAddressesAttribute(DescribeAddressesAttributeRequest request);
 
         /// <summary>
+        /// Paginator for DescribeAddressTransfers operation
+        ///</summary>
+        IDescribeAddressTransfersPaginator DescribeAddressTransfers(DescribeAddressTransfersRequest request);
+
+        /// <summary>
         /// Paginator for DescribeByoipCidrs operation
         ///</summary>
         IDescribeByoipCidrsPaginator DescribeByoipCidrs(DescribeByoipCidrsRequest request);

@@ -319,6 +319,41 @@ namespace Amazon.EC2
         #endregion
 
 
+        #region  AcceptAddressTransfer
+
+        internal virtual AcceptAddressTransferResponse AcceptAddressTransfer(AcceptAddressTransferRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptAddressTransferRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptAddressTransferResponseUnmarshaller.Instance;
+
+            return Invoke<AcceptAddressTransferResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Accepts an Elastic IP address transfer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#using-instance-addressing-eips-transfer-accept">Accept
+        /// a transferred Elastic IP address</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptAddressTransfer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AcceptAddressTransfer service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptAddressTransfer">REST API Reference for AcceptAddressTransfer Operation</seealso>
+        public virtual Task<AcceptAddressTransferResponse> AcceptAddressTransferAsync(AcceptAddressTransferRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptAddressTransferRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptAddressTransferResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AcceptAddressTransferResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AcceptReservedInstancesExchangeQuote
 
         internal virtual AcceptReservedInstancesExchangeQuoteResponse AcceptReservedInstancesExchangeQuote(AcceptReservedInstancesExchangeQuoteRequest request)
@@ -9305,6 +9340,41 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeAddressTransfers
+
+        internal virtual DescribeAddressTransfersResponse DescribeAddressTransfers(DescribeAddressTransfersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAddressTransfersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAddressTransfersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAddressTransfersResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes an Elastic IP address transfer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#transfer-EIPs-intro">Transfer
+        /// Elastic IP addresses</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAddressTransfers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAddressTransfers service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddressTransfers">REST API Reference for DescribeAddressTransfers Operation</seealso>
+        public virtual Task<DescribeAddressTransfersResponse> DescribeAddressTransfersAsync(DescribeAddressTransfersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAddressTransfersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAddressTransfersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeAddressTransfersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeAggregateIdFormat
 
         internal virtual DescribeAggregateIdFormatResponse DescribeAggregateIdFormat(DescribeAggregateIdFormatRequest request)
@@ -15841,6 +15911,41 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisableAddressTransfer
+
+        internal virtual DisableAddressTransferResponse DisableAddressTransfer(DisableAddressTransferRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableAddressTransferRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableAddressTransferResponseUnmarshaller.Instance;
+
+            return Invoke<DisableAddressTransferResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Disables Elastic IP address transfer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#transfer-EIPs-intro">Transfer
+        /// Elastic IP addresses</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableAddressTransfer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableAddressTransfer service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableAddressTransfer">REST API Reference for DisableAddressTransfer Operation</seealso>
+        public virtual Task<DisableAddressTransferResponse> DisableAddressTransferAsync(DisableAddressTransferRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableAddressTransferRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableAddressTransferResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisableAddressTransferResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisableEbsEncryptionByDefault
 
         internal virtual DisableEbsEncryptionByDefaultResponse DisableEbsEncryptionByDefault(DisableEbsEncryptionByDefaultRequest request)
@@ -16727,6 +16832,41 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = DisassociateVpcCidrBlockResponseUnmarshaller.Instance;
 
             return InvokeAsync<DisassociateVpcCidrBlockResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  EnableAddressTransfer
+
+        internal virtual EnableAddressTransferResponse EnableAddressTransfer(EnableAddressTransferRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableAddressTransferRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableAddressTransferResponseUnmarshaller.Instance;
+
+            return Invoke<EnableAddressTransferResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Enables Elastic IP address transfer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#transfer-EIPs-intro">Transfer
+        /// Elastic IP addresses</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableAddressTransfer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableAddressTransfer service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableAddressTransfer">REST API Reference for EnableAddressTransfer Operation</seealso>
+        public virtual Task<EnableAddressTransferResponse> EnableAddressTransferAsync(EnableAddressTransferRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableAddressTransferRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableAddressTransferResponseUnmarshaller.Instance;
+
+            return InvokeAsync<EnableAddressTransferResponse>(request, options, cancellationToken);
         }
 
         #endregion

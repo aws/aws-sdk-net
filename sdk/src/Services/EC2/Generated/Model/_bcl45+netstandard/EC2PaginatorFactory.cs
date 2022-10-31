@@ -44,6 +44,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeAddressTransfers operation
+        ///</summary>
+        public IDescribeAddressTransfersPaginator DescribeAddressTransfers(DescribeAddressTransfersRequest request) 
+        {
+            return new DescribeAddressTransfersPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeByoipCidrs operation
         ///</summary>
         public IDescribeByoipCidrsPaginator DescribeByoipCidrs(DescribeByoipCidrsRequest request) 

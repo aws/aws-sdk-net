@@ -29,47 +29,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the ProvisionPublicIpv4PoolCidr operation.
+    /// This is the response object from the DescribeAddressTransfers operation.
     /// </summary>
-    public partial class ProvisionPublicIpv4PoolCidrResponse : AmazonWebServiceResponse
+    public partial class DescribeAddressTransfersResponse : AmazonWebServiceResponse
     {
-        private PublicIpv4PoolRange _poolAddressRange;
-        private string _poolId;
+        private List<AddressTransfer> _addressTransfers = new List<AddressTransfer>();
+        private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property PoolAddressRange. 
+        /// Gets and sets the property AddressTransfers. 
         /// <para>
-        /// Information about the address range of the public IPv4 pool.
+        /// The Elastic IP address transfer.
         /// </para>
         /// </summary>
-        public PublicIpv4PoolRange PoolAddressRange
+        public List<AddressTransfer> AddressTransfers
         {
-            get { return this._poolAddressRange; }
-            set { this._poolAddressRange = value; }
+            get { return this._addressTransfers; }
+            set { this._addressTransfers = value; }
         }
 
-        // Check to see if PoolAddressRange property is set
-        internal bool IsSetPoolAddressRange()
+        // Check to see if AddressTransfers property is set
+        internal bool IsSetAddressTransfers()
         {
-            return this._poolAddressRange != null;
+            return this._addressTransfers != null && this._addressTransfers.Count > 0; 
         }
 
         /// <summary>
-        /// Gets and sets the property PoolId. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The ID of the pool that you want to provision the CIDR to.
+        /// Specify the pagination token from a previous request to retrieve the next page of
+        /// results.
         /// </para>
         /// </summary>
-        public string PoolId
+        public string NextToken
         {
-            get { return this._poolId; }
-            set { this._poolId = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if PoolId property is set
-        internal bool IsSetPoolId()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._poolId != null;
+            return this._nextToken != null;
         }
 
     }

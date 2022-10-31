@@ -16,42 +16,23 @@
 /*
  * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
-using System.IO;
-using System.Net;
-
 using Amazon.Runtime;
-using Amazon.Runtime.Internal;
 
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the MoveByoipCidrToIpam operation.
-    /// </summary>
-    public partial class MoveByoipCidrToIpamResponse : AmazonWebServiceResponse
+    /// Paginator for the DescribeAddressTransfers operation
+    ///</summary>
+    public interface IDescribeAddressTransfersPaginator
     {
-        private ByoipCidr _byoipCidr;
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<DescribeAddressTransfersResponse> Responses { get; }
 
         /// <summary>
-        /// Gets and sets the property ByoipCidr. 
-        /// <para>
-        /// The BYOIP CIDR.
-        /// </para>
+        /// Enumerable containing all of the AddressTransfers
         /// </summary>
-        public ByoipCidr ByoipCidr
-        {
-            get { return this._byoipCidr; }
-            set { this._byoipCidr = value; }
-        }
-
-        // Check to see if ByoipCidr property is set
-        internal bool IsSetByoipCidr()
-        {
-            return this._byoipCidr != null;
-        }
-
+        IPaginatedEnumerable<AddressTransfer> AddressTransfers { get; }
     }
 }

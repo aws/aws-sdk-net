@@ -29,28 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the ModifyIpamResourceCidr operation.
+    /// This is the response object from the AcceptAddressTransfer operation.
     /// </summary>
-    public partial class ModifyIpamResourceCidrResponse : AmazonWebServiceResponse
+    public partial class AcceptAddressTransferResponse : AmazonWebServiceResponse
     {
-        private IpamResourceCidr _ipamResourceCidr;
+        private AddressTransfer _addressTransfer;
 
         /// <summary>
-        /// Gets and sets the property IpamResourceCidr. 
+        /// Gets and sets the property AddressTransfer. 
         /// <para>
-        /// The CIDR of the resource.
+        /// An Elastic IP address transfer.
         /// </para>
         /// </summary>
-        public IpamResourceCidr IpamResourceCidr
+        public AddressTransfer AddressTransfer
         {
-            get { return this._ipamResourceCidr; }
-            set { this._ipamResourceCidr = value; }
+            get { return this._addressTransfer; }
+            set { this._addressTransfer = value; }
         }
 
-        // Check to see if IpamResourceCidr property is set
-        internal bool IsSetIpamResourceCidr()
+        // Check to see if AddressTransfer property is set
+        internal bool IsSetAddressTransfer()
         {
-            return this._ipamResourceCidr != null;
+            return this._addressTransfer != null;
         }
 
     }

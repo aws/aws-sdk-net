@@ -175,7 +175,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceTag.
+        /// Gets and sets the property ResourceTag. 
+        /// <para>
+        /// The resource tag.
+        /// </para>
         /// </summary>
         public RequestIpamResourceTag ResourceTag
         {

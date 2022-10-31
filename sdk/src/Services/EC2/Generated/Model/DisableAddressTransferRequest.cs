@@ -29,28 +29,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the ModifyIpamResourceCidr operation.
+    /// Container for the parameters to the DisableAddressTransfer operation.
+    /// Disables Elastic IP address transfer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#transfer-EIPs-intro">Transfer
+    /// Elastic IP addresses</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
     /// </summary>
-    public partial class ModifyIpamResourceCidrResponse : AmazonWebServiceResponse
+    public partial class DisableAddressTransferRequest : AmazonEC2Request
     {
-        private IpamResourceCidr _ipamResourceCidr;
+        private string _allocationId;
 
         /// <summary>
-        /// Gets and sets the property IpamResourceCidr. 
+        /// Gets and sets the property AllocationId. 
         /// <para>
-        /// The CIDR of the resource.
+        /// The allocation ID of an Elastic IP address.
         /// </para>
         /// </summary>
-        public IpamResourceCidr IpamResourceCidr
+        [AWSProperty(Required=true)]
+        public string AllocationId
         {
-            get { return this._ipamResourceCidr; }
-            set { this._ipamResourceCidr = value; }
+            get { return this._allocationId; }
+            set { this._allocationId = value; }
         }
 
-        // Check to see if IpamResourceCidr property is set
-        internal bool IsSetIpamResourceCidr()
+        // Check to see if AllocationId property is set
+        internal bool IsSetAllocationId()
         {
-            return this._ipamResourceCidr != null;
+            return this._allocationId != null;
         }
 
     }

@@ -316,6 +316,61 @@ namespace Amazon.EC2
         #endregion
 
 
+        #region  AcceptAddressTransfer
+
+        /// <summary>
+        /// Accepts an Elastic IP address transfer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#using-instance-addressing-eips-transfer-accept">Accept
+        /// a transferred Elastic IP address</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptAddressTransfer service method.</param>
+        /// 
+        /// <returns>The response from the AcceptAddressTransfer service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptAddressTransfer">REST API Reference for AcceptAddressTransfer Operation</seealso>
+        public virtual AcceptAddressTransferResponse AcceptAddressTransfer(AcceptAddressTransferRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptAddressTransferRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptAddressTransferResponseUnmarshaller.Instance;
+
+            return Invoke<AcceptAddressTransferResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AcceptAddressTransfer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AcceptAddressTransfer operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAcceptAddressTransfer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptAddressTransfer">REST API Reference for AcceptAddressTransfer Operation</seealso>
+        public virtual IAsyncResult BeginAcceptAddressTransfer(AcceptAddressTransferRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptAddressTransferRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptAddressTransferResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AcceptAddressTransfer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAcceptAddressTransfer.</param>
+        /// 
+        /// <returns>Returns a  AcceptAddressTransferResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptAddressTransfer">REST API Reference for AcceptAddressTransfer Operation</seealso>
+        public virtual AcceptAddressTransferResponse EndAcceptAddressTransfer(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AcceptAddressTransferResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  AcceptReservedInstancesExchangeQuote
 
         /// <summary>
@@ -13302,6 +13357,61 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeAddressTransfers
+
+        /// <summary>
+        /// Describes an Elastic IP address transfer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#transfer-EIPs-intro">Transfer
+        /// Elastic IP addresses</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAddressTransfers service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAddressTransfers service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddressTransfers">REST API Reference for DescribeAddressTransfers Operation</seealso>
+        public virtual DescribeAddressTransfersResponse DescribeAddressTransfers(DescribeAddressTransfersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAddressTransfersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAddressTransfersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAddressTransfersResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAddressTransfers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAddressTransfers operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAddressTransfers
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddressTransfers">REST API Reference for DescribeAddressTransfers Operation</seealso>
+        public virtual IAsyncResult BeginDescribeAddressTransfers(DescribeAddressTransfersRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAddressTransfersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAddressTransfersResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAddressTransfers operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAddressTransfers.</param>
+        /// 
+        /// <returns>Returns a  DescribeAddressTransfersResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddressTransfers">REST API Reference for DescribeAddressTransfers Operation</seealso>
+        public virtual DescribeAddressTransfersResponse EndDescribeAddressTransfers(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeAddressTransfersResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeAggregateIdFormat
 
         /// <summary>
@@ -22314,6 +22424,61 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisableAddressTransfer
+
+        /// <summary>
+        /// Disables Elastic IP address transfer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#transfer-EIPs-intro">Transfer
+        /// Elastic IP addresses</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableAddressTransfer service method.</param>
+        /// 
+        /// <returns>The response from the DisableAddressTransfer service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableAddressTransfer">REST API Reference for DisableAddressTransfer Operation</seealso>
+        public virtual DisableAddressTransferResponse DisableAddressTransfer(DisableAddressTransferRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableAddressTransferRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableAddressTransferResponseUnmarshaller.Instance;
+
+            return Invoke<DisableAddressTransferResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableAddressTransfer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableAddressTransfer operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableAddressTransfer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableAddressTransfer">REST API Reference for DisableAddressTransfer Operation</seealso>
+        public virtual IAsyncResult BeginDisableAddressTransfer(DisableAddressTransferRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableAddressTransferRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableAddressTransferResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisableAddressTransfer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableAddressTransfer.</param>
+        /// 
+        /// <returns>Returns a  DisableAddressTransferResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableAddressTransfer">REST API Reference for DisableAddressTransfer Operation</seealso>
+        public virtual DisableAddressTransferResponse EndDisableAddressTransfer(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisableAddressTransferResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DisableEbsEncryptionByDefault
 
         /// <summary>
@@ -23640,6 +23805,61 @@ namespace Amazon.EC2
         public virtual DisassociateVpcCidrBlockResponse EndDisassociateVpcCidrBlock(IAsyncResult asyncResult)
         {
             return EndInvoke<DisassociateVpcCidrBlockResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  EnableAddressTransfer
+
+        /// <summary>
+        /// Enables Elastic IP address transfer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#transfer-EIPs-intro">Transfer
+        /// Elastic IP addresses</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableAddressTransfer service method.</param>
+        /// 
+        /// <returns>The response from the EnableAddressTransfer service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableAddressTransfer">REST API Reference for EnableAddressTransfer Operation</seealso>
+        public virtual EnableAddressTransferResponse EnableAddressTransfer(EnableAddressTransferRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableAddressTransferRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableAddressTransferResponseUnmarshaller.Instance;
+
+            return Invoke<EnableAddressTransferResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableAddressTransfer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableAddressTransfer operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableAddressTransfer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableAddressTransfer">REST API Reference for EnableAddressTransfer Operation</seealso>
+        public virtual IAsyncResult BeginEnableAddressTransfer(EnableAddressTransferRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableAddressTransferRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableAddressTransferResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  EnableAddressTransfer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableAddressTransfer.</param>
+        /// 
+        /// <returns>Returns a  EnableAddressTransferResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableAddressTransfer">REST API Reference for EnableAddressTransfer Operation</seealso>
+        public virtual EnableAddressTransferResponse EndEnableAddressTransfer(IAsyncResult asyncResult)
+        {
+            return EndInvoke<EnableAddressTransferResponse>(asyncResult);
         }
 
         #endregion
