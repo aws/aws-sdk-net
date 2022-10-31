@@ -33,9 +33,29 @@ namespace Amazon.Textract.Model
     /// </summary>
     public partial class ExpenseDocument
     {
+        private List<Block> _blocks = new List<Block>();
         private int? _expenseIndex;
         private List<LineItemGroup> _lineItemGroups = new List<LineItemGroup>();
         private List<ExpenseField> _summaryFields = new List<ExpenseField>();
+
+        /// <summary>
+        /// Gets and sets the property Blocks. 
+        /// <para>
+        /// This is a block object, the same as reported when DetectDocumentText is run on a document.
+        /// It provides word level recognition of text.
+        /// </para>
+        /// </summary>
+        public List<Block> Blocks
+        {
+            get { return this._blocks; }
+            set { this._blocks = value; }
+        }
+
+        // Check to see if Blocks property is set
+        internal bool IsSetBlocks()
+        {
+            return this._blocks != null && this._blocks.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property ExpenseIndex. 

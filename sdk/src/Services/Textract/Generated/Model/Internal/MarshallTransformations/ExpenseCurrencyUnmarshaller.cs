@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Textract.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ExpenseDocument Object
+    /// Response Unmarshaller for ExpenseCurrency Object
     /// </summary>  
-    public class ExpenseDocumentUnmarshaller : IUnmarshaller<ExpenseDocument, XmlUnmarshallerContext>, IUnmarshaller<ExpenseDocument, JsonUnmarshallerContext>
+    public class ExpenseCurrencyUnmarshaller : IUnmarshaller<ExpenseCurrency, XmlUnmarshallerContext>, IUnmarshaller<ExpenseCurrency, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ExpenseDocument IUnmarshaller<ExpenseDocument, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ExpenseCurrency IUnmarshaller<ExpenseCurrency, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ExpenseDocument Unmarshall(JsonUnmarshallerContext context)
+        public ExpenseCurrency Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ExpenseDocument unmarshalledObject = new ExpenseDocument();
+            ExpenseCurrency unmarshalledObject = new ExpenseCurrency();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Blocks", targetDepth))
+                if (context.TestExpression("Code", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Block, BlockUnmarshaller>(BlockUnmarshaller.Instance);
-                    unmarshalledObject.Blocks = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Code = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ExpenseIndex", targetDepth))
+                if (context.TestExpression("Confidence", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.ExpenseIndex = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LineItemGroups", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<LineItemGroup, LineItemGroupUnmarshaller>(LineItemGroupUnmarshaller.Instance);
-                    unmarshalledObject.LineItemGroups = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SummaryFields", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ExpenseField, ExpenseFieldUnmarshaller>(ExpenseFieldUnmarshaller.Instance);
-                    unmarshalledObject.SummaryFields = unmarshaller.Unmarshall(context);
+                    var unmarshaller = FloatUnmarshaller.Instance;
+                    unmarshalledObject.Confidence = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
         }
 
 
-        private static ExpenseDocumentUnmarshaller _instance = new ExpenseDocumentUnmarshaller();        
+        private static ExpenseCurrencyUnmarshaller _instance = new ExpenseCurrencyUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ExpenseDocumentUnmarshaller Instance
+        public static ExpenseCurrencyUnmarshaller Instance
         {
             get
             {

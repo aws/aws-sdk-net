@@ -64,6 +64,18 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Currency", targetDepth))
+                {
+                    var unmarshaller = ExpenseCurrencyUnmarshaller.Instance;
+                    unmarshalledObject.Currency = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("GroupProperties", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ExpenseGroupProperty, ExpenseGroupPropertyUnmarshaller>(ExpenseGroupPropertyUnmarshaller.Instance);
+                    unmarshalledObject.GroupProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LabelDetection", targetDepth))
                 {
                     var unmarshaller = ExpenseDetectionUnmarshaller.Instance;

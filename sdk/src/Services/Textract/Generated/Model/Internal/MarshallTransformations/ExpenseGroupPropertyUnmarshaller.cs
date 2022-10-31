@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Textract.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ExpenseDocument Object
+    /// Response Unmarshaller for ExpenseGroupProperty Object
     /// </summary>  
-    public class ExpenseDocumentUnmarshaller : IUnmarshaller<ExpenseDocument, XmlUnmarshallerContext>, IUnmarshaller<ExpenseDocument, JsonUnmarshallerContext>
+    public class ExpenseGroupPropertyUnmarshaller : IUnmarshaller<ExpenseGroupProperty, XmlUnmarshallerContext>, IUnmarshaller<ExpenseGroupProperty, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ExpenseDocument IUnmarshaller<ExpenseDocument, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ExpenseGroupProperty IUnmarshaller<ExpenseGroupProperty, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ExpenseDocument Unmarshall(JsonUnmarshallerContext context)
+        public ExpenseGroupProperty Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ExpenseDocument unmarshalledObject = new ExpenseDocument();
+            ExpenseGroupProperty unmarshalledObject = new ExpenseGroupProperty();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Blocks", targetDepth))
+                if (context.TestExpression("Id", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Block, BlockUnmarshaller>(BlockUnmarshaller.Instance);
-                    unmarshalledObject.Blocks = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ExpenseIndex", targetDepth))
+                if (context.TestExpression("Types", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.ExpenseIndex = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LineItemGroups", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<LineItemGroup, LineItemGroupUnmarshaller>(LineItemGroupUnmarshaller.Instance);
-                    unmarshalledObject.LineItemGroups = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SummaryFields", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ExpenseField, ExpenseFieldUnmarshaller>(ExpenseFieldUnmarshaller.Instance);
-                    unmarshalledObject.SummaryFields = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Types = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
         }
 
 
-        private static ExpenseDocumentUnmarshaller _instance = new ExpenseDocumentUnmarshaller();        
+        private static ExpenseGroupPropertyUnmarshaller _instance = new ExpenseGroupPropertyUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ExpenseDocumentUnmarshaller Instance
+        public static ExpenseGroupPropertyUnmarshaller Instance
         {
             get
             {

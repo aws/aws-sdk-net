@@ -279,9 +279,13 @@ namespace Amazon.Textract
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Queries.A QUERIES_RESULT Block object contains the answer to the query, the alias
-        /// associated and an ID that connect it to the query asked. This Block also contains
-        /// a location and attached confidence score.
+        /// Query. A QUERY Block object contains the query text, alias and link to the associated
+        /// Query results block object.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Query Result. A QUERY_RESULT Block object contains the answer to the query and an
+        /// ID that connects it to the query asked. This Block also contains a confidence score.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -409,7 +413,7 @@ namespace Amazon.Textract
         /// 
         ///  
         /// <para>
-        /// Information is returned as <code>ExpenseDocuments</code> and seperated as follows.
+        /// Information is returned as <code>ExpenseDocuments</code> and seperated as follows:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -612,9 +616,9 @@ namespace Amazon.Textract
 
         /// <summary>
         /// Detects text in the input document. Amazon Textract can detect lines of text and the
-        /// words that make up a line of text. The input document must be an image in JPEG, PNG,
-        /// PDF, or TIFF format. <code>DetectDocumentText</code> returns the detected text in
-        /// an array of <a>Block</a> objects. 
+        /// words that make up a line of text. The input document must be in one of the following
+        /// image formats: JPEG, PNG, PDF, or TIFF. <code>DetectDocumentText</code> returns the
+        /// detected text in an array of <a>Block</a> objects. 
         /// 
         ///  
         /// <para>
@@ -767,11 +771,21 @@ namespace Amazon.Textract
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Queries. A QUERIES_RESULT Block object contains the answer to the query, the alias
-        /// associated and an ID that connect it to the query asked. This Block also contains
-        /// a location and attached confidence score
+        /// Query. A QUERY Block object contains the query text, alias and link to the associated
+        /// Query results block object.
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> <li> 
+        /// <para>
+        /// Query Results. A QUERY_RESULT Block object contains the answer to the query and an
+        /// ID that connects it to the query asked. This Block also contains a confidence score.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// While processing a document with queries, look out for <code>INVALID_REQUEST_PARAMETERS</code>
+        /// output. This indicates that either the per page query limit has been exceeded or that
+        /// the operation is trying to query a page in the document which doesn’t exist. 
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Selection elements such as check boxes and option buttons (radio buttons) can be detected
         /// in form data and in tables. A SELECTION_ELEMENT <code>Block</code> object contains

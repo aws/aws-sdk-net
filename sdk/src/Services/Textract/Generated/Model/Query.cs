@@ -60,8 +60,8 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property Pages. 
         /// <para>
-        /// List of pages associated with the query. The following is a list of rules for using
-        /// this parameter.
+        /// Pages is a parameter that the user inputs to specify which pages to apply a query
+        /// to. The following is a list of rules for using this parameter.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -74,8 +74,7 @@ namespace Amazon.Textract.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// When using <code>*</code> to indicate all pages, it must be the only element in the
-        /// string.
+        /// When using * to indicate all pages, it must be the only element in the list.
         /// </para>
         ///  </li> <li> 
         /// <para>
