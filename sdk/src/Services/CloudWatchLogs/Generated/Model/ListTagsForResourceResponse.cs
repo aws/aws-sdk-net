@@ -29,17 +29,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// This is the response object from the ListTagsLogGroup operation.
+    /// This is the response object from the ListTagsForResource operation.
     /// </summary>
-    [Obsolete("Please use the generic tagging API model ListTagsForResourceRequest and ListTagsForResourceResponse")]
-    public partial class ListTagsLogGroupResponse : AmazonWebServiceResponse
+    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags for the log group.
+        /// The list of tags associated with the requested resource.&gt;
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

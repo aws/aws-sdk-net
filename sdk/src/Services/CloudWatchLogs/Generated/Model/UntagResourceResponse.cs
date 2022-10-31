@@ -29,31 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// This is the response object from the ListTagsLogGroup operation.
+    /// This is the response object from the UntagResource operation.
     /// </summary>
-    [Obsolete("Please use the generic tagging API model ListTagsForResourceRequest and ListTagsForResourceResponse")]
-    public partial class ListTagsLogGroupResponse : AmazonWebServiceResponse
+    public partial class UntagResourceResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
-
-        /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// The tags for the log group.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=50)]
-        public Dictionary<string, string> Tags
-        {
-            get { return this._tags; }
-            set { this._tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this._tags != null && this._tags.Count > 0; 
-        }
 
     }
 }

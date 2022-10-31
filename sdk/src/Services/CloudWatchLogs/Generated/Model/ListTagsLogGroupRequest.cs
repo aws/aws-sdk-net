@@ -30,8 +30,18 @@ namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsLogGroup operation.
+    /// <important> 
+    /// <para>
+    /// The ListTagsLogGroup operation is on the path to deprecation. We recommend that you
+    /// use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a>
+    /// instead.
+    /// </para>
+    ///  </important> 
+    /// <para>
     /// Lists the tags for the specified log group.
+    /// </para>
     /// </summary>
+    [Obsolete("Please use the generic tagging API model ListTagsForResourceRequest and ListTagsForResourceResponse")]
     public partial class ListTagsLogGroupRequest : AmazonCloudWatchLogsRequest
     {
         private string _logGroupName;

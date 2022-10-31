@@ -35,17 +35,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// you must use credentials that have permission to write to the S3 bucket that you specify
     /// as the destination.
     /// 
-    ///  <important> 
-    /// <para>
-    /// Exporting log data to Amazon S3 buckets that are encrypted by KMS is not supported.
-    /// Exporting log data to Amazon S3 buckets that have S3 Object Lock enabled with a retention
-    /// period is not supported.
-    /// </para>
     ///  
-    /// <para>
-    /// Exporting to S3 buckets that are encrypted with AES-256 is supported. 
-    /// </para>
-    ///  </important> 
     /// <para>
     /// This is an asynchronous call. If all the required information is provided, this operation
     /// initiates an export task and responds with the ID of the task. After the task has
@@ -59,12 +49,11 @@ namespace Amazon.CloudWatchLogs.Model
     /// bucket. To separate out log data for each export task, you can specify a prefix to
     /// be used as the Amazon S3 key prefix for all exported objects.
     /// </para>
-    ///  <note> 
+    ///  
     /// <para>
-    /// Time-based sorting on chunks of log data inside an exported file is not guaranteed.
-    /// You can sort the exported log fild data by using Linux utilities.
+    /// Exporting to S3 buckets that are encrypted with AES-256 is supported. Exporting to
+    /// S3 buckets encrypted with SSE-KMS is not supported. 
     /// </para>
-    ///  </note>
     /// </summary>
     public partial class CreateExportTaskRequest : AmazonCloudWatchLogsRequest
     {

@@ -443,17 +443,7 @@ namespace Amazon.CloudWatchLogs
         /// you must use credentials that have permission to write to the S3 bucket that you specify
         /// as the destination.
         /// 
-        ///  <important> 
-        /// <para>
-        /// Exporting log data to Amazon S3 buckets that are encrypted by KMS is not supported.
-        /// Exporting log data to Amazon S3 buckets that have S3 Object Lock enabled with a retention
-        /// period is not supported.
-        /// </para>
         ///  
-        /// <para>
-        /// Exporting to S3 buckets that are encrypted with AES-256 is supported. 
-        /// </para>
-        ///  </important> 
         /// <para>
         /// This is an asynchronous call. If all the required information is provided, this operation
         /// initiates an export task and responds with the ID of the task. After the task has
@@ -467,12 +457,11 @@ namespace Amazon.CloudWatchLogs
         /// bucket. To separate out log data for each export task, you can specify a prefix to
         /// be used as the Amazon S3 key prefix for all exported objects.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
-        /// Time-based sorting on chunks of log data inside an exported file is not guaranteed.
-        /// You can sort the exported log fild data by using Linux utilities.
+        /// Exporting to S3 buckets that are encrypted with AES-256 is supported. Exporting to
+        /// S3 buckets encrypted with SSE-KMS is not supported. 
         /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateExportTask service method.</param>
         /// <param name="cancellationToken">
@@ -1844,8 +1833,53 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
         
+        #region  ListTagsForResource
+
+        internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Displays the tags associated with a CloudWatch Logs resource. Currently, log groups
+        /// and destinations support tagging.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTagsLogGroup
 
+        [Obsolete("Please use the generic tagging API ListTagsForResource")]
         internal virtual ListTagsLogGroupResponse ListTagsLogGroup(ListTagsLogGroupRequest request)
         {
             var options = new InvokeOptions();
@@ -1858,7 +1892,16 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// The ListTagsLogGroup operation is on the path to deprecation. We recommend that you
+        /// use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a>
+        /// instead.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Lists the tags for the specified log group.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsLogGroup service method.</param>
         /// <param name="cancellationToken">
@@ -1873,6 +1916,7 @@ namespace Amazon.CloudWatchLogs
         /// The service cannot complete the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListTagsLogGroup">REST API Reference for ListTagsLogGroup Operation</seealso>
+        [Obsolete("Please use the generic tagging API ListTagsForResource")]
         public virtual Task<ListTagsLogGroupResponse> ListTagsLogGroupAsync(ListTagsLogGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2550,6 +2594,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  TagLogGroup
 
+        [Obsolete("Please use the generic tagging API TagResource")]
         internal virtual TagLogGroupResponse TagLogGroup(TagLogGroupRequest request)
         {
             var options = new InvokeOptions();
@@ -2562,12 +2607,20 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// The TagLogGroup operation is on the path to deprecation. We recommend that you use
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html">TagResource</a>
+        /// instead.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Adds or updates the specified tags for the specified log group.
-        /// 
+        /// </para>
         ///  
         /// <para>
-        /// To list the tags for a log group, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsLogGroup.html">ListTagsLogGroup</a>.
-        /// To remove tags, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagLogGroup.html">UntagLogGroup</a>.
+        /// To list the tags for a log group, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a>.
+        /// To remove tags, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html">UntagResource</a>.
         /// </para>
         ///  
         /// <para>
@@ -2595,6 +2648,7 @@ namespace Amazon.CloudWatchLogs
         /// The specified resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/TagLogGroup">REST API Reference for TagLogGroup Operation</seealso>
+        [Obsolete("Please use the generic tagging API TagResource")]
         public virtual Task<TagLogGroupResponse> TagLogGroupAsync(TagLogGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2602,6 +2656,78 @@ namespace Amazon.CloudWatchLogs
             options.ResponseUnmarshaller = TagLogGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<TagLogGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TagResource
+
+        internal virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Assigns one or more tags (key-value pairs) to the specified CloudWatch Logs resource.
+        /// Currently, the only CloudWatch Logs resources that can be tagged are log groups and
+        /// destinations. 
+        /// 
+        ///  
+        /// <para>
+        /// Tags can help you organize and categorize your resources. You can also use them to
+        /// scope user permissions by granting a user permission to access or change only resources
+        /// with certain tag values.
+        /// </para>
+        ///  
+        /// <para>
+        /// Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly
+        /// as strings of characters.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use the <code>TagResource</code> action with a resource that already has tags.
+        /// If you specify a new tag key for the alarm, this tag is appended to the list of tags
+        /// associated with the alarm. If you specify a tag key that is already associated with
+        /// the alarm, the new tag value that you specify replaces the previous value for that
+        /// tag.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can associate as many as 50 tags with a CloudWatch Logs resource.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.TooManyTagsException">
+        /// A resource can have no more than 50 tags.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2649,6 +2775,7 @@ namespace Amazon.CloudWatchLogs
         
         #region  UntagLogGroup
 
+        [Obsolete("Please use the generic tagging API UntagResource")]
         internal virtual UntagLogGroupResponse UntagLogGroup(UntagLogGroupRequest request)
         {
             var options = new InvokeOptions();
@@ -2661,12 +2788,20 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// The UntagLogGroup operation is on the path to deprecation. We recommend that you use
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html">UntagResource</a>
+        /// instead.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Removes the specified tags from the specified log group.
-        /// 
+        /// </para>
         ///  
         /// <para>
-        /// To list the tags for a log group, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsLogGroup.html">ListTagsLogGroup</a>.
-        /// To add tags, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagLogGroup.html">TagLogGroup</a>.
+        /// To list the tags for a log group, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a>.
+        /// To add tags, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html">TagResource</a>.
         /// </para>
         ///  
         /// <para>
@@ -2685,6 +2820,7 @@ namespace Amazon.CloudWatchLogs
         /// The specified resource does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UntagLogGroup">REST API Reference for UntagLogGroup Operation</seealso>
+        [Obsolete("Please use the generic tagging API UntagResource")]
         public virtual Task<UntagLogGroupResponse> UntagLogGroupAsync(UntagLogGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new InvokeOptions();
@@ -2692,6 +2828,49 @@ namespace Amazon.CloudWatchLogs
             options.ResponseUnmarshaller = UntagLogGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<UntagLogGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+        internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes one or more tags from the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
