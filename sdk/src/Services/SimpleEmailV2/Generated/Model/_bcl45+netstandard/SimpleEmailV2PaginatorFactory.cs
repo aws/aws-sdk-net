@@ -124,6 +124,14 @@ namespace Amazon.SimpleEmailV2.Model
         }
 
         /// <summary>
+        /// Paginator for ListRecommendations operation
+        ///</summary>
+        public IListRecommendationsPaginator ListRecommendations(ListRecommendationsRequest request) 
+        {
+            return new ListRecommendationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListSuppressedDestinations operation
         ///</summary>
         public IListSuppressedDestinationsPaginator ListSuppressedDestinations(ListSuppressedDestinationsRequest request) 

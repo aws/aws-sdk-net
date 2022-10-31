@@ -40,6 +40,7 @@ namespace Amazon.SimpleEmailV2.Model
         private SuppressionOptions _suppressionOptions;
         private List<Tag> _tags = new List<Tag>();
         private TrackingOptions _trackingOptions;
+        private VdmOptions _vdmOptions;
 
         /// <summary>
         /// Gets and sets the property ConfigurationSetName. 
@@ -171,6 +172,25 @@ namespace Amazon.SimpleEmailV2.Model
         internal bool IsSetTrackingOptions()
         {
             return this._trackingOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VdmOptions. 
+        /// <para>
+        /// An object that contains information about the VDM preferences for your configuration
+        /// set.
+        /// </para>
+        /// </summary>
+        public VdmOptions VdmOptions
+        {
+            get { return this._vdmOptions; }
+            set { this._vdmOptions = value; }
+        }
+
+        // Check to see if VdmOptions property is set
+        internal bool IsSetVdmOptions()
+        {
+            return this._vdmOptions != null;
         }
 
     }

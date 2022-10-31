@@ -53,6 +53,72 @@ namespace Amazon.SimpleEmailV2
         ISimpleEmailV2PaginatorFactory Paginators { get; }
 
         
+        #region  BatchGetMetricData
+
+
+        /// <summary>
+        /// Retrieves batches of metric data collected based on your sending activity.
+        /// 
+        ///  
+        /// <para>
+        /// You can execute this operation no more than 16 times per second, and with at most
+        /// 160 queries from the batches per second (cumulative).
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetMetricData service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetMetricData service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.InternalServiceErrorException">
+        /// The request couldn't be processed because an error occurred with the Amazon SES API
+        /// v2.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/BatchGetMetricData">REST API Reference for BatchGetMetricData Operation</seealso>
+        BatchGetMetricDataResponse BatchGetMetricData(BatchGetMetricDataRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves batches of metric data collected based on your sending activity.
+        /// 
+        ///  
+        /// <para>
+        /// You can execute this operation no more than 16 times per second, and with at most
+        /// 160 queries from the batches per second (cumulative).
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetMetricData service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetMetricData service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.InternalServiceErrorException">
+        /// The request couldn't be processed because an error occurred with the Amazon SES API
+        /// v2.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/BatchGetMetricData">REST API Reference for BatchGetMetricData Operation</seealso>
+        Task<BatchGetMetricDataResponse> BatchGetMetricDataAsync(BatchGetMetricDataRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateConfigurationSet
 
 
@@ -2993,6 +3059,64 @@ namespace Amazon.SimpleEmailV2
 
         #endregion
         
+        #region  ListRecommendations
+
+
+        /// <summary>
+        /// Lists the recommendations present in your Amazon SES account in the current Amazon
+        /// Web Services Region.
+        /// 
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRecommendations service method.</param>
+        /// 
+        /// <returns>The response from the ListRecommendations service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListRecommendations">REST API Reference for ListRecommendations Operation</seealso>
+        ListRecommendationsResponse ListRecommendations(ListRecommendationsRequest request);
+
+
+
+        /// <summary>
+        /// Lists the recommendations present in your Amazon SES account in the current Amazon
+        /// Web Services Region.
+        /// 
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRecommendations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRecommendations service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListRecommendations">REST API Reference for ListRecommendations Operation</seealso>
+        Task<ListRecommendationsResponse> ListRecommendationsAsync(ListRecommendationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListSuppressedDestinations
 
 
@@ -3259,6 +3383,56 @@ namespace Amazon.SimpleEmailV2
 
         #endregion
         
+        #region  PutAccountVdmAttributes
+
+
+        /// <summary>
+        /// Update your Amazon SES account VDM attributes.
+        /// 
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAccountVdmAttributes service method.</param>
+        /// 
+        /// <returns>The response from the PutAccountVdmAttributes service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutAccountVdmAttributes">REST API Reference for PutAccountVdmAttributes Operation</seealso>
+        PutAccountVdmAttributesResponse PutAccountVdmAttributes(PutAccountVdmAttributesRequest request);
+
+
+
+        /// <summary>
+        /// Update your Amazon SES account VDM attributes.
+        /// 
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAccountVdmAttributes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutAccountVdmAttributes service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutAccountVdmAttributes">REST API Reference for PutAccountVdmAttributes Operation</seealso>
+        Task<PutAccountVdmAttributesResponse> PutAccountVdmAttributesAsync(PutAccountVdmAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  PutConfigurationSetDeliveryOptions
 
 
@@ -3494,6 +3668,62 @@ namespace Amazon.SimpleEmailV2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutConfigurationSetTrackingOptions">REST API Reference for PutConfigurationSetTrackingOptions Operation</seealso>
         Task<PutConfigurationSetTrackingOptionsResponse> PutConfigurationSetTrackingOptionsAsync(PutConfigurationSetTrackingOptionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutConfigurationSetVdmOptions
+
+
+        /// <summary>
+        /// Specify VDM preferences for email that you send using the configuration set.
+        /// 
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutConfigurationSetVdmOptions service method.</param>
+        /// 
+        /// <returns>The response from the PutConfigurationSetVdmOptions service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutConfigurationSetVdmOptions">REST API Reference for PutConfigurationSetVdmOptions Operation</seealso>
+        PutConfigurationSetVdmOptionsResponse PutConfigurationSetVdmOptions(PutConfigurationSetVdmOptionsRequest request);
+
+
+
+        /// <summary>
+        /// Specify VDM preferences for email that you send using the configuration set.
+        /// 
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutConfigurationSetVdmOptions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutConfigurationSetVdmOptions service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutConfigurationSetVdmOptions">REST API Reference for PutConfigurationSetVdmOptions Operation</seealso>
+        Task<PutConfigurationSetVdmOptionsResponse> PutConfigurationSetVdmOptionsAsync(PutConfigurationSetVdmOptionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

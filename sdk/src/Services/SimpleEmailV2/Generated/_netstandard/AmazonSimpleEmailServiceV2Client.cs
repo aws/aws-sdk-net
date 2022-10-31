@@ -278,6 +278,59 @@ namespace Amazon.SimpleEmailV2
         #endregion
 
 
+        #region  BatchGetMetricData
+
+        internal virtual BatchGetMetricDataResponse BatchGetMetricData(BatchGetMetricDataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetMetricDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetMetricDataResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetMetricDataResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves batches of metric data collected based on your sending activity.
+        /// 
+        ///  
+        /// <para>
+        /// You can execute this operation no more than 16 times per second, and with at most
+        /// 160 queries from the batches per second (cumulative).
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetMetricData service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetMetricData service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.InternalServiceErrorException">
+        /// The request couldn't be processed because an error occurred with the Amazon SES API
+        /// v2.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/BatchGetMetricData">REST API Reference for BatchGetMetricData Operation</seealso>
+        public virtual Task<BatchGetMetricDataResponse> BatchGetMetricDataAsync(BatchGetMetricDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetMetricDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetMetricDataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchGetMetricDataResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateConfigurationSet
 
         internal virtual CreateConfigurationSetResponse CreateConfigurationSet(CreateConfigurationSetRequest request)
@@ -2748,6 +2801,55 @@ namespace Amazon.SimpleEmailV2
 
         #endregion
         
+        #region  ListRecommendations
+
+        internal virtual ListRecommendationsResponse ListRecommendations(ListRecommendationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRecommendationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListRecommendationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the recommendations present in your Amazon SES account in the current Amazon
+        /// Web Services Region.
+        /// 
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRecommendations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRecommendations service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListRecommendations">REST API Reference for ListRecommendations Operation</seealso>
+        public virtual Task<ListRecommendationsResponse> ListRecommendationsAsync(ListRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRecommendationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRecommendationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListSuppressedDestinations
 
         internal virtual ListSuppressedDestinationsResponse ListSuppressedDestinations(ListSuppressedDestinationsRequest request)
@@ -3001,6 +3103,51 @@ namespace Amazon.SimpleEmailV2
 
         #endregion
         
+        #region  PutAccountVdmAttributes
+
+        internal virtual PutAccountVdmAttributesResponse PutAccountVdmAttributes(PutAccountVdmAttributesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAccountVdmAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAccountVdmAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<PutAccountVdmAttributesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Update your Amazon SES account VDM attributes.
+        /// 
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAccountVdmAttributes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutAccountVdmAttributes service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutAccountVdmAttributes">REST API Reference for PutAccountVdmAttributes Operation</seealso>
+        public virtual Task<PutAccountVdmAttributesResponse> PutAccountVdmAttributesAsync(PutAccountVdmAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutAccountVdmAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAccountVdmAttributesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutAccountVdmAttributesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutConfigurationSetDeliveryOptions
 
         internal virtual PutConfigurationSetDeliveryOptionsResponse PutConfigurationSetDeliveryOptions(PutConfigurationSetDeliveryOptionsRequest request)
@@ -3216,6 +3363,54 @@ namespace Amazon.SimpleEmailV2
             options.ResponseUnmarshaller = PutConfigurationSetTrackingOptionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutConfigurationSetTrackingOptionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutConfigurationSetVdmOptions
+
+        internal virtual PutConfigurationSetVdmOptionsResponse PutConfigurationSetVdmOptions(PutConfigurationSetVdmOptionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutConfigurationSetVdmOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutConfigurationSetVdmOptionsResponseUnmarshaller.Instance;
+
+            return Invoke<PutConfigurationSetVdmOptionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Specify VDM preferences for email that you send using the configuration set.
+        /// 
+        ///  
+        /// <para>
+        /// You can execute this operation no more than once per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutConfigurationSetVdmOptions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutConfigurationSetVdmOptions service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutConfigurationSetVdmOptions">REST API Reference for PutConfigurationSetVdmOptions Operation</seealso>
+        public virtual Task<PutConfigurationSetVdmOptionsResponse> PutConfigurationSetVdmOptionsAsync(PutConfigurationSetVdmOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutConfigurationSetVdmOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutConfigurationSetVdmOptionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutConfigurationSetVdmOptionsResponse>(request, options, cancellationToken);
         }
 
         #endregion

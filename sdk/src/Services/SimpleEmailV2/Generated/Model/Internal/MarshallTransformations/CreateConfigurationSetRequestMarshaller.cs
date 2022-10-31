@@ -142,6 +142,17 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetVdmOptions())
+                {
+                    context.Writer.WritePropertyName("VdmOptions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = VdmOptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.VdmOptions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

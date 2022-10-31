@@ -93,6 +93,12 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                     response.TrackingOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("VdmOptions", targetDepth))
+                {
+                    var unmarshaller = VdmOptionsUnmarshaller.Instance;
+                    response.VdmOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;
