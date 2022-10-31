@@ -148,6 +148,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.Lambda = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("location", targetDepth))
+                {
+                    var unmarshaller = LocationActionUnmarshaller.Instance;
+                    unmarshalledObject.Location = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("openSearch", targetDepth))
                 {
                     var unmarshaller = OpenSearchActionUnmarshaller.Instance;

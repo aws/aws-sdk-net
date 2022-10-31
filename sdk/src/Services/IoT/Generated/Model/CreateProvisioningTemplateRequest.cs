@@ -89,7 +89,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property PreProvisioningHook. 
         /// <para>
-        /// Creates a pre-provisioning hook template.
+        /// Creates a pre-provisioning hook template. Only supports template of type <code>FLEET_PROVISIONING</code>.
+        /// For more information about provisioning template types, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type">type</a>.
         /// </para>
         /// </summary>
         public ProvisioningHook PreProvisioningHook

@@ -76,7 +76,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property VersionId. 
         /// <para>
-        /// The ID of the fleet privisioning template version.
+        /// The ID of the fleet provisioning template version.
         /// </para>
         /// </summary>
         public int VersionId
