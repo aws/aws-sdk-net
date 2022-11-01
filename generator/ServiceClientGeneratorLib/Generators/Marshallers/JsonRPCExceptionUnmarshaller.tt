@@ -37,8 +37,35 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
         {
             context.Read();
 
+    <#
+            if  (this.Config.ServiceModel.IsAwsQueryCompatible)
+            {
+#>         
+            string errorCode = errorResponse.Code;
+            if (context.ResponseData.IsHeaderPresent("x-amzn-query-error"))
+            {
+                string queryError = context.ResponseData.GetHeaderValue("x-amzn-query-error");
+                if (!string.IsNullOrEmpty(queryError) && queryError.Contains(";"))
+                {
+                    string[] queryErrorParts = queryError.Split(';');
+                    if (queryErrorParts.Length == 2)
+                    {
+                        errorCode = queryErrorParts[0];
+                    }
+                }
+            }
             <#=this.UnmarshallerBaseName #> unmarshalledObject = new <#=this.UnmarshallerBaseName #>(errorResponse.Message, errorResponse.InnerException,
+                errorResponse.Type, errorCode, errorResponse.RequestId, errorResponse.StatusCode);
+<#
+            }
+            else
+            {
+#>
+        <#=this.UnmarshallerBaseName #> unmarshalledObject = new <#=this.UnmarshallerBaseName #>(errorResponse.Message, errorResponse.InnerException,
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+<#
+            }
+#>
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))

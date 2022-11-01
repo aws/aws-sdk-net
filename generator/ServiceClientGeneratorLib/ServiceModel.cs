@@ -33,6 +33,7 @@ namespace ServiceClientGenerator
         public const string ServiceAbbreviationKey = "serviceAbbreviation";
         public const string SigningNameKey = "signingName";
         public const string ServiceIdKey = "serviceId";
+        public const string AWSQueryCompatibleKey = "awsQueryCompatible";
 
         // operations
         public const string OperationsKey = "operations";
@@ -164,6 +165,18 @@ namespace ServiceClientGenerator
         private void InitializePaginators(TextReader reader)
         {
             this.PaginatorsRoot = JsonMapper.ToObject(reader);
+        }
+
+        /// <summary>
+        /// Indicates that this service was converted from query to json 1.0
+        /// and may be sending AWSQuery compatible error code data in header.
+        /// </summary>
+        public bool IsAwsQueryCompatible
+        {
+            get
+            {
+                return this._metadata.PropertyNames.Contains(AWSQueryCompatibleKey);
+            }
         }
 
         /// <summary>
