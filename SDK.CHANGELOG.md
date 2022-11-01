@@ -1,3 +1,9 @@
+### 3.7.408.0 (2022-11-01 18:25 UTC)
+* RDS (3.7.102.0)
+	* Relational Database Service - This release adds support for configuring Storage Throughput on RDS database instances.
+* Textract (3.7.102.0)
+	* Add ocr results in AnalyzeIDResponse as blocks
+
 ### 3.7.407.0 (2022-10-31 18:30 UTC)
 * AppRunner (3.7.102.0)
 	* This release adds support for private App Runner services. Services may now be configured to be made private and only accessible from a VPC. The changes include a new VpcIngressConnection resource and several new and modified APIs.
