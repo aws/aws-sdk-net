@@ -33,8 +33,27 @@ namespace Amazon.Textract.Model
     /// </summary>
     public partial class IdentityDocument
     {
+        private List<Block> _blocks = new List<Block>();
         private int? _documentIndex;
         private List<IdentityDocumentField> _identityDocumentFields = new List<IdentityDocumentField>();
+
+        /// <summary>
+        /// Gets and sets the property Blocks. 
+        /// <para>
+        /// Individual word recognition, as returned by document detection.
+        /// </para>
+        /// </summary>
+        public List<Block> Blocks
+        {
+            get { return this._blocks; }
+            set { this._blocks = value; }
+        }
+
+        // Check to see if Blocks property is set
+        internal bool IsSetBlocks()
+        {
+            return this._blocks != null && this._blocks.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property DocumentIndex. 

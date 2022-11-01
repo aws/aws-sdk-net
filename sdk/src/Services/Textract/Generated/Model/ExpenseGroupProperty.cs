@@ -29,8 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Textract.Model
 {
     /// <summary>
-    /// Shows the group that a certain key belongs to. This helps differentiate responses
-    /// like addresses that can appear similar in response JSON.
+    /// Shows the group that a certain key belongs to. This helps differentiate between names
+    /// and addresses for different organizations, that can be hard to determine via JSON
+    /// response.
     /// </summary>
     public partial class ExpenseGroupProperty
     {
@@ -58,7 +59,7 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property Types. 
         /// <para>
-        /// Informs you on the kind of label associated with the group
+        /// Informs you on whether the expense group is a name or an address.
         /// </para>
         /// </summary>
         public List<string> Types

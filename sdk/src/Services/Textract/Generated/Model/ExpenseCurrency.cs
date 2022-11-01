@@ -39,8 +39,57 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property Code. 
         /// <para>
-        /// Currency code for detected currency.
+        /// Currency code for detected currency. the current supported codes are:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// USD
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EUR
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// GBP
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CAD
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INR
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// JPY
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CHF
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// AUD
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CNY
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// BZR
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// SEK
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// HKD
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Code
         {
