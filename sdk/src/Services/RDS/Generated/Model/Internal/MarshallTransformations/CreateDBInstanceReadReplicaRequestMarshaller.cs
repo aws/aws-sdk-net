@@ -195,6 +195,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("SourceDBInstanceIdentifier", StringUtils.FromString(publicRequest.SourceDBInstanceIdentifier));
                 }
+                if(publicRequest.IsSetStorageThroughput())
+                {
+                    request.Parameters.Add("StorageThroughput", StringUtils.FromInt(publicRequest.StorageThroughput));
+                }
                 if(publicRequest.IsSetStorageType())
                 {
                     request.Parameters.Add("StorageType", StringUtils.FromString(publicRequest.StorageType));

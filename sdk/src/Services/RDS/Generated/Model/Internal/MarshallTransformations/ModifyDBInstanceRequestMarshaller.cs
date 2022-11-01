@@ -264,6 +264,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ResumeFullAutomationModeMinutes", StringUtils.FromInt(publicRequest.ResumeFullAutomationModeMinutes));
                 }
+                if(publicRequest.IsSetStorageThroughput())
+                {
+                    request.Parameters.Add("StorageThroughput", StringUtils.FromInt(publicRequest.StorageThroughput));
+                }
                 if(publicRequest.IsSetStorageType())
                 {
                     request.Parameters.Add("StorageType", StringUtils.FromString(publicRequest.StorageType));

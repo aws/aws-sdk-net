@@ -492,9 +492,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// For information about valid <code>Iops</code> values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
-        /// RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User
-        /// Guide</i>.
+        /// For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
+        /// RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  
         /// <para>

@@ -61,8 +61,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
-        /// The user-supplied DB cluster identifier. If this parameter is specified, information
-        /// from only the specific DB cluster is returned. This parameter isn't case-sensitive.
+        /// The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of the DB
+        /// cluster. If this parameter is specified, information from only the specific DB cluster
+        /// is returned. This parameter isn't case-sensitive.
         /// </para>
         ///  
         /// <para>

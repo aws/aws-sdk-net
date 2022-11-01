@@ -37,7 +37,9 @@ namespace Amazon.RDS.Model
     {
         private List<DoubleRange> _iopsToStorageRatio = new List<DoubleRange>();
         private List<Range> _provisionedIops = new List<Range>();
+        private List<Range> _provisionedStorageThroughput = new List<Range>();
         private List<Range> _storageSize = new List<Range>();
+        private List<DoubleRange> _storageThroughputToIopsRatio = new List<DoubleRange>();
         private string _storageType;
         private bool? _supportsStorageAutoscaling;
 
@@ -63,7 +65,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ProvisionedIops. 
         /// <para>
-        /// The valid range of provisioned IOPS. For example, 1000-20000.
+        /// The valid range of provisioned IOPS. For example, 1000-256,000.
         /// </para>
         /// </summary>
         public List<Range> ProvisionedIops
@@ -79,9 +81,28 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ProvisionedStorageThroughput. 
+        /// <para>
+        /// The valid range of provisioned storage throughput. For example, 500-4,000 mebibytes
+        /// per second (MiBps).
+        /// </para>
+        /// </summary>
+        public List<Range> ProvisionedStorageThroughput
+        {
+            get { return this._provisionedStorageThroughput; }
+            set { this._provisionedStorageThroughput = value; }
+        }
+
+        // Check to see if ProvisionedStorageThroughput property is set
+        internal bool IsSetProvisionedStorageThroughput()
+        {
+            return this._provisionedStorageThroughput != null && this._provisionedStorageThroughput.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property StorageSize. 
         /// <para>
-        /// The valid range of storage in gibibytes (GiB). For example, 100 to 16384.
+        /// The valid range of storage in gibibytes (GiB). For example, 100 to 16,384.
         /// </para>
         /// </summary>
         public List<Range> StorageSize
@@ -97,9 +118,27 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StorageThroughputToIopsRatio. 
+        /// <para>
+        /// The valid range of storage throughput to provisioned IOPS ratios. For example, 0-0.25.
+        /// </para>
+        /// </summary>
+        public List<DoubleRange> StorageThroughputToIopsRatio
+        {
+            get { return this._storageThroughputToIopsRatio; }
+            set { this._storageThroughputToIopsRatio = value; }
+        }
+
+        // Check to see if StorageThroughputToIopsRatio property is set
+        internal bool IsSetStorageThroughputToIopsRatio()
+        {
+            return this._storageThroughputToIopsRatio != null && this._storageThroughputToIopsRatio.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        /// The valid storage types for your DB instance. For example, gp2, io1.
+        /// The valid storage types for your DB instance. For example: gp2, gp3, io1.
         /// </para>
         /// </summary>
         public string StorageType

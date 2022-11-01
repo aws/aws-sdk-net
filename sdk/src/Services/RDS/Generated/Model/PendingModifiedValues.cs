@@ -51,6 +51,7 @@ namespace Amazon.RDS.Model
         private int? _port;
         private List<ProcessorFeature> _processorFeatures = new List<ProcessorFeature>();
         private DateTime? _resumeFullAutomationModeTime;
+        private int? _storageThroughput;
         private string _storageType;
 
         /// <summary>
@@ -370,6 +371,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetResumeFullAutomationModeTime()
         {
             return this._resumeFullAutomationModeTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageThroughput. 
+        /// <para>
+        /// The storage throughput of the DB instance.
+        /// </para>
+        /// </summary>
+        public int StorageThroughput
+        {
+            get { return this._storageThroughput.GetValueOrDefault(); }
+            set { this._storageThroughput = value; }
+        }
+
+        // Check to see if StorageThroughput property is set
+        internal bool IsSetStorageThroughput()
+        {
+            return this._storageThroughput.HasValue; 
         }
 
         /// <summary>

@@ -80,6 +80,7 @@ namespace Amazon.RDS.Model
         private bool? _publiclyAccessible;
         private ReplicaMode _replicaMode;
         private int? _resumeFullAutomationModeMinutes;
+        private int? _storageThroughput;
         private string _storageType;
         private string _tdeCredentialArn;
         private string _tdeCredentialPassword;
@@ -1721,6 +1722,28 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StorageThroughput. 
+        /// <para>
+        /// Specifies the storage throughput value for the DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom or Amazon Aurora.
+        /// </para>
+        /// </summary>
+        public int StorageThroughput
+        {
+            get { return this._storageThroughput.GetValueOrDefault(); }
+            set { this._storageThroughput = value; }
+        }
+
+        // Check to see if StorageThroughput property is set
+        internal bool IsSetStorageThroughput()
+        {
+            return this._storageThroughput.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
         /// Specifies the storage type to be associated with the DB instance.
@@ -1746,7 +1769,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>standard | gp2 | io1</code> 
+        /// Valid values: <code>gp2 | gp3 | io1 | standard</code> 
         /// </para>
         ///  
         /// <para>

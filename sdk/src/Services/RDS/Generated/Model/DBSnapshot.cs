@@ -66,6 +66,7 @@ namespace Amazon.RDS.Model
         private string _sourceDBSnapshotIdentifier;
         private string _sourceRegion;
         private string _status;
+        private int? _storageThroughput;
         private string _storageType;
         private List<Tag> _tagList = new List<Tag>();
         private string _tdeCredentialArn;
@@ -582,6 +583,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageThroughput. 
+        /// <para>
+        /// Specifies the storage throughput for the DB snapshot.
+        /// </para>
+        /// </summary>
+        public int StorageThroughput
+        {
+            get { return this._storageThroughput.GetValueOrDefault(); }
+            set { this._storageThroughput = value; }
+        }
+
+        // Check to see if StorageThroughput property is set
+        internal bool IsSetStorageThroughput()
+        {
+            return this._storageThroughput.HasValue; 
         }
 
         /// <summary>

@@ -81,6 +81,7 @@ namespace Amazon.RDS.Model
         private string _sourceDBInstanceAutomatedBackupsArn;
         private string _sourceDBInstanceIdentifier;
         private string _sourceDbiResourceId;
+        private int? _storageThroughput;
         private string _storageType;
         private List<Tag> _tags = new List<Tag>();
         private string _targetDBInstanceIdentifier;
@@ -999,18 +1000,40 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StorageThroughput. 
+        /// <para>
+        /// Specifies the storage throughput value for the DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to RDS Custom or Amazon Aurora.
+        /// </para>
+        /// </summary>
+        public int StorageThroughput
+        {
+            get { return this._storageThroughput.GetValueOrDefault(); }
+            set { this._storageThroughput = value; }
+        }
+
+        // Check to see if StorageThroughput property is set
+        internal bool IsSetStorageThroughput()
+        {
+            return this._storageThroughput.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
         /// Specifies the storage type to be associated with the DB instance.
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>standard | gp2 | io1</code> 
+        /// Valid values: <code>gp2 | gp3 | io1 | standard</code> 
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>io1</code>, you must also include a value for the <code>Iops</code>
-        /// parameter.
+        /// If you specify <code>io1</code> or <code>gp3</code>, you must also include a value
+        /// for the <code>Iops</code> parameter.
         /// </para>
         ///  
         /// <para>

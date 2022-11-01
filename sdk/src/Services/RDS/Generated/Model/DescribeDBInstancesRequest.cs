@@ -54,8 +54,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceIdentifier. 
         /// <para>
-        /// The user-supplied instance identifier. If this parameter is specified, information
-        /// from only the specific DB instance is returned. This parameter isn't case-sensitive.
+        /// The user-supplied instance identifier or the Amazon Resource Name (ARN) of the DB
+        /// instance. If this parameter is specified, information from only the specific DB instance
+        /// is returned. This parameter isn't case-sensitive.
         /// </para>
         ///  
         /// <para>
