@@ -33,7 +33,29 @@ namespace Amazon.S3Control.Model
     /// </summary>
     public partial class NoncurrentVersionExpiration
     {
+        private int? _newerNoncurrentVersions;
         private int? _noncurrentDays;
+
+        /// <summary>
+        /// Gets and sets the property NewerNoncurrentVersions. 
+        /// <para>
+        /// Specifies how many noncurrent versions S3 on Outposts will retain. If there are this
+        /// many more recent noncurrent versions, S3 on Outposts will take the associated action.
+        /// For more information about noncurrent versions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html">Lifecycle
+        /// configuration elements</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public int NewerNoncurrentVersions
+        {
+            get { return this._newerNoncurrentVersions.GetValueOrDefault(); }
+            set { this._newerNoncurrentVersions = value; }
+        }
+
+        // Check to see if NewerNoncurrentVersions property is set
+        internal bool IsSetNewerNoncurrentVersions()
+        {
+            return this._newerNoncurrentVersions.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property NoncurrentDays. 

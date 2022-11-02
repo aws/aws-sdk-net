@@ -39,7 +39,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["AccountId"] = "123456789012";
             parameters["Region"] = "us-west-2";
             parameters["RequiresAccountId"] = true;
-            parameters["S3Control::UseArnRegion"] = false;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
@@ -58,7 +57,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["AccountId"] = "123456789012";
             parameters["Region"] = "us-west-2";
             parameters["RequiresAccountId"] = true;
-            parameters["S3Control::UseArnRegion"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
@@ -149,7 +147,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["AccountId"] = "123456789012";
             parameters["Region"] = "us-gov-west-1";
             parameters["RequiresAccountId"] = true;
-            parameters["S3Control::UseArnRegion"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
             var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
@@ -204,7 +201,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["AccountId"] = "123456789012";
             parameters["Region"] = "us-gov-west-1";
             parameters["RequiresAccountId"] = true;
-            parameters["S3Control::UseArnRegion"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
             var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
@@ -259,7 +255,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["AccountId"] = "123456789012";
             parameters["Region"] = "us-gov-west-1";
             parameters["RequiresAccountId"] = true;
-            parameters["S3Control::UseArnRegion"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
             var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
@@ -785,7 +780,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Bucket"] = "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket";
             parameters["Region"] = "us-west-2";
             parameters["RequiresAccountId"] = true;
-            parameters["S3Control::UseArnRegion"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
@@ -803,7 +797,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Bucket"] = "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket";
             parameters["Region"] = "us-gov-east-1";
             parameters["RequiresAccountId"] = true;
-            parameters["S3Control::UseArnRegion"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
@@ -890,7 +883,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Bucket"] = "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket";
             parameters["Region"] = "us-west-2";
             parameters["RequiresAccountId"] = true;
-            parameters["S3Control::UseArnRegion"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
@@ -908,7 +900,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Bucket"] = "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket";
             parameters["Region"] = "us-gov-east-1";
             parameters["RequiresAccountId"] = true;
-            parameters["S3Control::UseArnRegion"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
@@ -995,7 +986,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Bucket"] = "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket";
             parameters["Region"] = "us-west-2";
             parameters["RequiresAccountId"] = true;
-            parameters["S3Control::UseArnRegion"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
@@ -1013,7 +1003,6 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["Bucket"] = "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket";
             parameters["Region"] = "us-gov-east-1";
             parameters["RequiresAccountId"] = true;
-            parameters["S3Control::UseArnRegion"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);

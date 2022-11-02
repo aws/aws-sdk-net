@@ -124,11 +124,6 @@ namespace Amazon.S3Control.Model
         /// <para>
         /// The noncurrent version expiration of the lifecycle rule.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// This is not supported by Amazon S3 on Outposts buckets.
-        /// </para>
-        ///  </note>
         /// </summary>
         public NoncurrentVersionExpiration NoncurrentVersionExpiration
         {

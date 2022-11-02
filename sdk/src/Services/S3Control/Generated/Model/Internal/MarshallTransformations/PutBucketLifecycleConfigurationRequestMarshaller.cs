@@ -114,6 +114,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 if (publicRequestLifecycleConfigurationRulesValue.Filter.And != null) 
                                 {
                                     xmlWriter.WriteStartElement("And", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                                    if(publicRequestLifecycleConfigurationRulesValue.Filter.And.IsSetObjectSizeGreaterThan())
+                                        xmlWriter.WriteElementString("ObjectSizeGreaterThan", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromLong(publicRequestLifecycleConfigurationRulesValue.Filter.And.ObjectSizeGreaterThan));                 
+                    
+                                    if(publicRequestLifecycleConfigurationRulesValue.Filter.And.IsSetObjectSizeLessThan())
+                                        xmlWriter.WriteElementString("ObjectSizeLessThan", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromLong(publicRequestLifecycleConfigurationRulesValue.Filter.And.ObjectSizeLessThan));                 
+                    
                                     if(publicRequestLifecycleConfigurationRulesValue.Filter.And.IsSetPrefix())
                                         xmlWriter.WriteElementString("Prefix", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestLifecycleConfigurationRulesValue.Filter.And.Prefix));                 
                     
@@ -140,6 +146,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                     }
                                     xmlWriter.WriteEndElement();
                                 }
+                                if(publicRequestLifecycleConfigurationRulesValue.Filter.IsSetObjectSizeGreaterThan())
+                                    xmlWriter.WriteElementString("ObjectSizeGreaterThan", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromLong(publicRequestLifecycleConfigurationRulesValue.Filter.ObjectSizeGreaterThan));                 
+                
+                                if(publicRequestLifecycleConfigurationRulesValue.Filter.IsSetObjectSizeLessThan())
+                                    xmlWriter.WriteElementString("ObjectSizeLessThan", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromLong(publicRequestLifecycleConfigurationRulesValue.Filter.ObjectSizeLessThan));                 
+                
                                 if(publicRequestLifecycleConfigurationRulesValue.Filter.IsSetPrefix())
                                     xmlWriter.WriteElementString("Prefix", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestLifecycleConfigurationRulesValue.Filter.Prefix));                 
                 
@@ -164,6 +176,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             if (publicRequestLifecycleConfigurationRulesValue.NoncurrentVersionExpiration != null) 
                             {
                                 xmlWriter.WriteStartElement("NoncurrentVersionExpiration", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                                if(publicRequestLifecycleConfigurationRulesValue.NoncurrentVersionExpiration.IsSetNewerNoncurrentVersions())
+                                    xmlWriter.WriteElementString("NewerNoncurrentVersions", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequestLifecycleConfigurationRulesValue.NoncurrentVersionExpiration.NewerNoncurrentVersions));                 
+                
                                 if(publicRequestLifecycleConfigurationRulesValue.NoncurrentVersionExpiration.IsSetNoncurrentDays())
                                     xmlWriter.WriteElementString("NoncurrentDays", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequestLifecycleConfigurationRulesValue.NoncurrentVersionExpiration.NoncurrentDays));                 
                 

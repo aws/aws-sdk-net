@@ -55,6 +55,18 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("ObjectSizeGreaterThan", targetDepth))
+                    {
+                        var unmarshaller = LongUnmarshaller.Instance;
+                        unmarshalledObject.ObjectSizeGreaterThan = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ObjectSizeLessThan", targetDepth))
+                    {
+                        var unmarshaller = LongUnmarshaller.Instance;
+                        unmarshalledObject.ObjectSizeLessThan = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Prefix", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
