@@ -119,7 +119,8 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property Engagements. 
         /// <para>
-        /// The contacts and escalation plans that the response plan engages during an incident.
+        /// The Amazon Resource Name (ARN) for the contacts and escalation plans that the response
+        /// plan engages during an incident.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]

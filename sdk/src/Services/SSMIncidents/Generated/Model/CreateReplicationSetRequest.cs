@@ -37,11 +37,12 @@ namespace Amazon.SSMIncidents.Model
     {
         private string _clientToken;
         private Dictionary<string, RegionMapInputValue> _regions = new Dictionary<string, RegionMapInputValue>();
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A token ensuring that the operation is called only once with the specified details.
+        /// A token that ensures that the operation is called only once with the specified details.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=128)]
@@ -75,6 +76,25 @@ namespace Amazon.SSMIncidents.Model
         internal bool IsSetRegions()
         {
             return this._regions != null && this._regions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tags to add to the replication set.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

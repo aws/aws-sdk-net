@@ -148,8 +148,8 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property Engagements. 
         /// <para>
-        /// The contacts and escalation plans that Incident Manager engages at the start of the
-        /// incident.
+        /// The Amazon Resource Name (ARN) for the contacts and escalation plans that the response
+        /// plan engages during an incident.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
@@ -270,7 +270,8 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property IncidentTemplateTags. 
         /// <para>
-        /// Tags to apply to an incident when calling the <code>StartIncident</code> API action.
+        /// Tags to assign to the template. When the <code>StartIncident</code> API action is
+        /// called, Incident Manager assigns the tags specified in the template to the incident.
         /// To call this action, you must also have permission to call the <code>TagResource</code>
         /// API action for the incident record resource.
         /// </para>

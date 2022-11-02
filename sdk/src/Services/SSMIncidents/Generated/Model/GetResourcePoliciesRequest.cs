@@ -41,7 +41,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of resource policies to display per page of results.
+        /// The maximum number of resource policies to display for each page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

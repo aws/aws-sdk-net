@@ -83,7 +83,8 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property IncidentTags. 
         /// <para>
-        /// Tags to apply to an incident when calling the <code>StartIncident</code> API action.
+        /// Tags to assign to the template. When the <code>StartIncident</code> API action is
+        /// called, Incident Manager assigns the tags specified in the template to the incident.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

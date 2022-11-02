@@ -32,8 +32,8 @@ namespace Amazon.SSMIncidents.Model
     /// Container for the parameters to the PutResourcePolicy operation.
     /// Adds a resource policy to the specified response plan. The resource policy is used
     /// to share the response plan using Resource Access Manager (RAM). For more information
-    /// about cross-account sharing, see <a href="https://docs.aws.amazon.com/incident-manager/latest/userguide/xa.html">Setting
-    /// up cross-account functionality</a>.
+    /// about cross-account sharing, see <a href="https://docs.aws.amazon.com/incident-manager/latest/userguide/incident-manager-cross-account-cross-region.html">Cross-Region
+    /// and cross-account incident management</a>.
     /// </summary>
     public partial class PutResourcePolicyRequest : AmazonSSMIncidentsRequest
     {
@@ -62,8 +62,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the response plan you're adding the resource policy
-        /// to.
+        /// The Amazon Resource Name (ARN) of the response plan to add the resource policy to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1000)]
