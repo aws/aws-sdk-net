@@ -30,9 +30,9 @@ namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAccessPolicies operation.
-    /// Retrieves a paginated list of access policies for an identity (an Amazon Web Services
-    /// SSO user, an Amazon Web Services SSO group, or an IAM user) or an IoT SiteWise Monitor
-    /// resource (a portal or project).
+    /// Retrieves a paginated list of access policies for an identity (an IAM Identity Center
+    /// user, an IAM Identity Center group, or an IAM user) or an IoT SiteWise Monitor resource
+    /// (a portal or project).
     /// </summary>
     public partial class ListAccessPoliciesRequest : AmazonIoTSiteWiseRequest
     {
@@ -88,8 +88,8 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property IdentityType. 
         /// <para>
-        /// The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO group,
-        /// or IAM user). This parameter is required if you specify <code>identityId</code>.
+        /// The type of identity (IAM Identity Center user, IAM Identity Center group, or IAM
+        /// user). This parameter is required if you specify <code>identityId</code>.
         /// </para>
         /// </summary>
         public IdentityType IdentityType

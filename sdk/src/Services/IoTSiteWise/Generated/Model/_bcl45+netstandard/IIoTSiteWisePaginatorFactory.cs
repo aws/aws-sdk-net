@@ -61,9 +61,19 @@ namespace Amazon.IoTSiteWise.Model
         IListAccessPoliciesPaginator ListAccessPolicies(ListAccessPoliciesRequest request);
 
         /// <summary>
+        /// Paginator for ListAssetModelProperties operation
+        ///</summary>
+        IListAssetModelPropertiesPaginator ListAssetModelProperties(ListAssetModelPropertiesRequest request);
+
+        /// <summary>
         /// Paginator for ListAssetModels operation
         ///</summary>
         IListAssetModelsPaginator ListAssetModels(ListAssetModelsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAssetProperties operation
+        ///</summary>
+        IListAssetPropertiesPaginator ListAssetProperties(ListAssetPropertiesRequest request);
 
         /// <summary>
         /// Paginator for ListAssetRelationships operation

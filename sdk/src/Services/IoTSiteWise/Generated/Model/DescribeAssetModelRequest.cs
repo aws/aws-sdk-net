@@ -35,6 +35,7 @@ namespace Amazon.IoTSiteWise.Model
     public partial class DescribeAssetModelRequest : AmazonIoTSiteWiseRequest
     {
         private string _assetModelId;
+        private bool? _excludeProperties;
 
         /// <summary>
         /// Gets and sets the property AssetModelId. 
@@ -53,6 +54,24 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetAssetModelId()
         {
             return this._assetModelId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExcludeProperties. 
+        /// <para>
+        ///  Whether or not to exclude asset model properties from the response. 
+        /// </para>
+        /// </summary>
+        public bool ExcludeProperties
+        {
+            get { return this._excludeProperties.GetValueOrDefault(); }
+            set { this._excludeProperties = value; }
+        }
+
+        // Check to see if ExcludeProperties property is set
+        internal bool IsSetExcludeProperties()
+        {
+            return this._excludeProperties.HasValue; 
         }
 
     }

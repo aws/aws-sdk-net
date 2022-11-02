@@ -16,43 +16,23 @@
 /*
  * Do not modify this file. This file is generated from the iotsitewise-2019-12-02.normal.json service model.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
-using System.IO;
-using System.Net;
-
 using Amazon.Runtime;
-using Amazon.Runtime.Internal;
 
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
-    /// Contains information for a group identity in an access policy.
-    /// </summary>
-    public partial class GroupIdentity
+    /// Paginator for the ListAssetProperties operation
+    ///</summary>
+    public interface IListAssetPropertiesPaginator
     {
-        private string _id;
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<ListAssetPropertiesResponse> Responses { get; }
 
         /// <summary>
-        /// Gets and sets the property Id. 
-        /// <para>
-        /// The IAM Identity Center ID of the group.
-        /// </para>
+        /// Enumerable containing all of the AssetPropertySummaries
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
-        public string Id
-        {
-            get { return this._id; }
-            set { this._id = value; }
-        }
-
-        // Check to see if Id property is set
-        internal bool IsSetId()
-        {
-            return this._id != null;
-        }
-
+        IPaginatedEnumerable<AssetPropertySummary> AssetPropertySummaries { get; }
     }
 }

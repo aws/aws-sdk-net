@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AssetModelCompositeModel Object
+    /// Response Unmarshaller for AssetPropertySummary Object
     /// </summary>  
-    public class AssetModelCompositeModelUnmarshaller : IUnmarshaller<AssetModelCompositeModel, XmlUnmarshallerContext>, IUnmarshaller<AssetModelCompositeModel, JsonUnmarshallerContext>
+    public class AssetPropertySummaryUnmarshaller : IUnmarshaller<AssetPropertySummary, XmlUnmarshallerContext>, IUnmarshaller<AssetPropertySummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AssetModelCompositeModel IUnmarshaller<AssetModelCompositeModel, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AssetPropertySummary IUnmarshaller<AssetPropertySummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,21 +53,27 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AssetModelCompositeModel Unmarshall(JsonUnmarshallerContext context)
+        public AssetPropertySummary Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AssetModelCompositeModel unmarshalledObject = new AssetModelCompositeModel();
+            AssetPropertySummary unmarshalledObject = new AssetPropertySummary();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("alias", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Alias = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("assetCompositeModelId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AssetCompositeModelId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("id", targetDepth))
@@ -76,22 +82,16 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("notification", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    var unmarshaller = PropertyNotificationUnmarshaller.Instance;
+                    unmarshalledObject.Notification = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("properties", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<AssetModelProperty, AssetModelPropertyUnmarshaller>(AssetModelPropertyUnmarshaller.Instance);
-                    unmarshalledObject.Properties = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("unit", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Unit = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +100,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         }
 
 
-        private static AssetModelCompositeModelUnmarshaller _instance = new AssetModelCompositeModelUnmarshaller();        
+        private static AssetPropertySummaryUnmarshaller _instance = new AssetPropertySummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AssetModelCompositeModelUnmarshaller Instance
+        public static AssetPropertySummaryUnmarshaller Instance
         {
             get
             {

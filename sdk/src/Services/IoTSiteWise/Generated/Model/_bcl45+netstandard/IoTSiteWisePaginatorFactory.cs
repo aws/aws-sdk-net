@@ -92,11 +92,27 @@ namespace Amazon.IoTSiteWise.Model
         }
 
         /// <summary>
+        /// Paginator for ListAssetModelProperties operation
+        ///</summary>
+        public IListAssetModelPropertiesPaginator ListAssetModelProperties(ListAssetModelPropertiesRequest request) 
+        {
+            return new ListAssetModelPropertiesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAssetModels operation
         ///</summary>
         public IListAssetModelsPaginator ListAssetModels(ListAssetModelsRequest request) 
         {
             return new ListAssetModelsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAssetProperties operation
+        ///</summary>
+        public IListAssetPropertiesPaginator ListAssetProperties(ListAssetPropertiesRequest request) 
+        {
+            return new ListAssetPropertiesPaginator(this.client, request);
         }
 
         /// <summary>

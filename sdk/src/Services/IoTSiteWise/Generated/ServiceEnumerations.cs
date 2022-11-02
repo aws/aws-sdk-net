@@ -1303,6 +1303,106 @@ namespace Amazon.IoTSiteWise
 
 
     /// <summary>
+    /// Constants used for properties of type ListAssetModelPropertiesFilter.
+    /// </summary>
+    public class ListAssetModelPropertiesFilter : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for ListAssetModelPropertiesFilter
+        /// </summary>
+        public static readonly ListAssetModelPropertiesFilter ALL = new ListAssetModelPropertiesFilter("ALL");
+        /// <summary>
+        /// Constant BASE for ListAssetModelPropertiesFilter
+        /// </summary>
+        public static readonly ListAssetModelPropertiesFilter BASE = new ListAssetModelPropertiesFilter("BASE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ListAssetModelPropertiesFilter(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ListAssetModelPropertiesFilter FindValue(string value)
+        {
+            return FindValue<ListAssetModelPropertiesFilter>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ListAssetModelPropertiesFilter(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ListAssetPropertiesFilter.
+    /// </summary>
+    public class ListAssetPropertiesFilter : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for ListAssetPropertiesFilter
+        /// </summary>
+        public static readonly ListAssetPropertiesFilter ALL = new ListAssetPropertiesFilter("ALL");
+        /// <summary>
+        /// Constant BASE for ListAssetPropertiesFilter
+        /// </summary>
+        public static readonly ListAssetPropertiesFilter BASE = new ListAssetPropertiesFilter("BASE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ListAssetPropertiesFilter(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ListAssetPropertiesFilter FindValue(string value)
+        {
+            return FindValue<ListAssetPropertiesFilter>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ListAssetPropertiesFilter(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ListAssetsFilter.
     /// </summary>
     public class ListAssetsFilter : ConstantClass

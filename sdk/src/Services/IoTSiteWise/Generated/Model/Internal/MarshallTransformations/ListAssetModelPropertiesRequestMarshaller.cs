@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DescribeAssetModel Request Marshaller
+    /// ListAssetModelProperties Request Marshaller
     /// </summary>       
-    public class DescribeAssetModelRequestMarshaller : IMarshaller<IRequest, DescribeAssetModelRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListAssetModelPropertiesRequestMarshaller : IMarshaller<IRequest, ListAssetModelPropertiesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DescribeAssetModelRequest)input);
+            return this.Marshall((ListAssetModelPropertiesRequest)input);
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DescribeAssetModelRequest publicRequest)
+        public IRequest Marshall(ListAssetModelPropertiesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoTSiteWise");
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-02";
@@ -62,18 +62,24 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 throw new AmazonIoTSiteWiseException("Request object does not have required field AssetModelId set");
             request.AddPathResource("{assetModelId}", StringUtils.FromString(publicRequest.AssetModelId));
             
-            if (publicRequest.IsSetExcludeProperties())
-                request.Parameters.Add("excludeProperties", StringUtils.FromBool(publicRequest.ExcludeProperties));
-            request.ResourcePath = "/asset-models/{assetModelId}";
+            if (publicRequest.IsSetFilter())
+                request.Parameters.Add("filter", StringUtils.FromString(publicRequest.Filter));
+            
+            if (publicRequest.IsSetMaxResults())
+                request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
+            
+            if (publicRequest.IsSetNextToken())
+                request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            request.ResourcePath = "/asset-models/{assetModelId}/properties";
             request.UseQueryString = true;
             
             request.HostPrefix = $"api.";
 
             return request;
         }
-        private static DescribeAssetModelRequestMarshaller _instance = new DescribeAssetModelRequestMarshaller();        
+        private static ListAssetModelPropertiesRequestMarshaller _instance = new ListAssetModelPropertiesRequestMarshaller();        
 
-        internal static DescribeAssetModelRequestMarshaller GetInstance()
+        internal static ListAssetModelPropertiesRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -81,7 +87,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeAssetModelRequestMarshaller Instance
+        public static ListAssetModelPropertiesRequestMarshaller Instance
         {
             get
             {
