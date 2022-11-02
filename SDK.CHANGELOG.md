@@ -1,3 +1,16 @@
+### 3.7.409.0 (2022-11-02 18:50 UTC)
+* IoTSiteWise (3.7.101.0)
+	* This release adds the ListAssetModelProperties and ListAssetProperties APIs. You can list all properties that belong to a single asset model or asset using these two new APIs.
+* S3Control (3.7.101.0)
+	* S3 on Outposts launches support for Lifecycle configuration for Outposts buckets. With S3 Lifecycle configuration, you can mange objects so they are stored cost effectively. You can manage objects using size-based rules and specify how many noncurrent versions bucket will retain.
+* SageMaker (3.7.105.0)
+	* This release updates Framework model regex for ModelPackage to support new Framework version xgboost, sklearn.
+* SSMIncidents (3.7.101.0)
+	* Adds support for tagging replication-set on creation.
+* Core 3.7.100.8
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.408.0 (2022-11-01 18:25 UTC)
 * RDS (3.7.102.0)
 	* Relational Database Service - This release adds support for configuring Storage Throughput on RDS database instances.
