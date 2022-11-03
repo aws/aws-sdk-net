@@ -52,7 +52,7 @@
       "members": {
       },
       "error": {
-        "code": "AWS.SimpleQueueService.QueueDeletedRecently",
+        "code": "QueueDeletedRecently",
         "httpStatusCode": 400,
         "senderFault": true
       },

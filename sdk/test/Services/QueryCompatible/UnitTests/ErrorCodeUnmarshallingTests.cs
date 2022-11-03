@@ -1,23 +1,13 @@
 ﻿using System;
-using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Amazon.Runtime;
-using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
-
-using Amazon.QueryCompatible;
-using Amazon.QueryCompatible.Model;
 using Amazon.QueryCompatible.Model.Internal.MarshallTransformations;
-
-
 using ServiceClientGenerator;
-
 using AWSSDK_DotNet35.UnitTests.TestTools;
-using Amazon.Util;
 
 namespace AWSSDK_DotNet35.UnitTests.Marshalling
 {
@@ -30,29 +20,114 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("QueryCompatible")]
-        public void ModeledExcceptionUnmarshalTest()
+        public void ModeledExceptionUnmarshalTest_When_HeaderIsPresent()
         {
-            var response = GetJsonErrorResponse(
-                "{\"__type\":\"com.amazonaws.awsquerycompatible#QueueDeletedRecently\",\"message\":\"some-message\"}", "AWS.SimpleQueueService.QueueDeletedRecently");
-            Console.WriteLine(response.ErrorCode);
-            
+            var response = GetJsonErrorResponse("AWS.SimpleQueueService.QueueDeletedRecently;Sender");
+            Assert.AreEqual(response.ErrorCode, "AWS.SimpleQueueService.QueueDeletedRecently");
+            Assert.AreEqual(response.ErrorType, ErrorType.Sender);
         }
 
-        private QueueDeletedRecentlyException GetJsonErrorResponse(string body, string amznQueryErrorHeaderValue)
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("QueryCompatible")]
+        public void ModeledExceptionUnmarshalTest_IgnoresErrorType_When_TypeUnparsable()
         {
-            body = body ?? string.Empty;
+            var response = GetJsonErrorResponse("AWS.SimpleQueueService.QueueDeletedRecently;Some");
+            Assert.AreEqual(response.ErrorCode, "AWS.SimpleQueueService.QueueDeletedRecently");
+            Assert.AreEqual(response.ErrorType, ErrorType.Unknown);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("QueryCompatible")]
+        public void ModeledExceptionUnmarshalTest_When_HeaderIsNotPresent()
+        {
+            var response = GetJsonErrorResponse(null);
+            Assert.AreEqual(response.ErrorCode, "QueueDeletedRecently");
+            Assert.AreEqual(response.ErrorType, ErrorType.Unknown);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("QueryCompatible")]
+        public void ModeledExceptionUnmarshalTest_When_HeaderIsIncomplete()
+        {
+            var response = GetJsonErrorResponse("AWS.SimpleQueueService.QueueDeletedRecently");
+            Assert.AreEqual(response.ErrorCode, "QueueDeletedRecently");
+            Assert.AreEqual(response.ErrorType, ErrorType.Unknown);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("QueryCompatible")]
+        public void ModeledExceptionUnmarshalTest_When_HeaderIsEmpty()
+        {
+            var response = GetJsonErrorResponse("");
+            Assert.AreEqual(response.ErrorCode, "QueueDeletedRecently");
+            Assert.AreEqual(response.ErrorType, ErrorType.Unknown);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("QueryCompatible")]
+        public void UnmodeledExceptionUnmarshalTest_WhenHeaderIsPresent()
+        {
+            var body = "{\"__type\":\"com.amazonaws.awsquerycompatible#AccessDeniedException\"}";
+            var response = UnmarshalException(body, "AccessDeniedException", "AccessDenied;Sender");
+            Assert.AreEqual(response.ErrorCode, "AccessDenied");
+            Assert.AreEqual(response.ErrorType, ErrorType.Sender);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("QueryCompatible")]
+        public void UnmodeledExceptionUnmarshalTest_IgnoresErrorType_When_TypeUnparsable()
+        {
+            var body = "{\"__type\":\"com.amazonaws.awsquerycompatible#AccessDeniedException\"}";
+            var response = UnmarshalException(body, "AccessDeniedException", "AccessDenied;Some");
+            Assert.AreEqual(response.ErrorCode, "AccessDenied");
+            Assert.AreEqual(response.ErrorType, ErrorType.Unknown);
+        }
+
+        private AmazonServiceException UnmarshalException(string body, string exceptionName, string amznQueryErrorHeaderValue)
+        {
+            var webResponse = CreateResponse(body, exceptionName, amznQueryErrorHeaderValue);
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(body), true, webResponse, true);
+            var response = CreateQueueResponseUnmarshaller.Instance.UnmarshallException(context, null, HttpStatusCode.BadRequest);
+            return response;
+        }
+
+        private WebResponseData CreateResponse(string body, string exceptionName, string amznQueryErrorHeaderValue)
+        {
             var webResponse = new WebResponseData
             {
-                StatusCode = HttpStatusCode.BadRequest,
-                Headers = {}
+                StatusCode = HttpStatusCode.ServiceUnavailable,
+                Headers =
+                {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType", exceptionName},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(body).Length.ToString()}
+                }
             };
-
             if (amznQueryErrorHeaderValue != null)
                 webResponse.Headers.Add("x-amzn-query-error", amznQueryErrorHeaderValue);
-            Console.WriteLine(webResponse.Headers);
-            var context = new JsonUnmarshallerContext(AWSSDK_DotNet35.UnitTests.Utils.CreateStreamFromString(body), true, webResponse, true);
-            Console.WriteLine(context.ResponseData.GetHeaderNames());
-            return QueueDeletedRecentlyExceptionUnmarshaller.Instance.Unmarshall(context);
+            return webResponse;
+        }
+
+        private AmazonServiceException GetJsonErrorResponse(string amznQueryErrorHeaderValue)
+        {
+            var operation = service_model.FindOperation("CreateQueue");
+            var exception = operation.Exceptions.First(e => e.Name.Equals("QueueDeletedRecentlyException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var response = UnmarshalException(jsonResponse, exception.ErrorCode, amznQueryErrorHeaderValue);
+            return response;
         }
     }
 }

@@ -37,31 +37,38 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
         {
             context.Read();
 
-    <#
+<#
             if  (this.Config.ServiceModel.IsAwsQueryCompatible)
             {
 #>         
-            string errorCode = errorResponse.Code;
-            if (context.ResponseData.IsHeaderPresent("x-amzn-query-error"))
+            var errorCode = errorResponse.Code;
+            var errorType = errorResponse.Type;
+            var queryHeaderKey = Amazon.Util.HeaderKeys.XAmzQueryError;
+            if (context.ResponseData.IsHeaderPresent(queryHeaderKey))
             {
-                string queryError = context.ResponseData.GetHeaderValue("x-amzn-query-error");
+                var queryError = context.ResponseData.GetHeaderValue(queryHeaderKey);
                 if (!string.IsNullOrEmpty(queryError) && queryError.Contains(";"))
                 {
-                    string[] queryErrorParts = queryError.Split(';');
+                    var queryErrorParts = queryError.Split(';');
                     if (queryErrorParts.Length == 2)
                     {
                         errorCode = queryErrorParts[0];
+                        var errorTypeString = queryErrorParts[1];
+                        if (Enum.IsDefined(typeof(ErrorType), errorTypeString))
+                        {
+                            errorType = (ErrorType) Enum.Parse(typeof(ErrorType), errorTypeString);
+                        }
                     }
                 }
             }
             <#=this.UnmarshallerBaseName #> unmarshalledObject = new <#=this.UnmarshallerBaseName #>(errorResponse.Message, errorResponse.InnerException,
-                errorResponse.Type, errorCode, errorResponse.RequestId, errorResponse.StatusCode);
+                errorType, errorCode, errorResponse.RequestId, errorResponse.StatusCode);
 <#
             }
             else
             {
 #>
-        <#=this.UnmarshallerBaseName #> unmarshalledObject = new <#=this.UnmarshallerBaseName #>(errorResponse.Message, errorResponse.InnerException,
+            <#=this.UnmarshallerBaseName #> unmarshalledObject = new <#=this.UnmarshallerBaseName #>(errorResponse.Message, errorResponse.InnerException,
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
 <#
             }

@@ -58,22 +58,29 @@ namespace Amazon.QueryCompatible.Model.Internal.MarshallTransformations
         {
             context.Read();
 
-             
-                string errorCode = errorResponse.Code;
-                if (context.ResponseData.IsHeaderPresent("x-amzn-query-error"))
+         
+            var errorCode = errorResponse.Code;
+            var errorType = errorResponse.Type;
+            var queryHeaderKey = Amazon.Util.HeaderKeys.XAmzQueryError;
+            if (context.ResponseData.IsHeaderPresent(queryHeaderKey))
+            {
+                var queryError = context.ResponseData.GetHeaderValue(queryHeaderKey);
+                if (!string.IsNullOrEmpty(queryError) && queryError.Contains(";"))
                 {
-                    string queryError = context.ResponseData.GetHeaderValue("x-amzn-query-error");
-                    if (!string.IsNullOrEmpty(queryError) && queryError.Contains(";"))
+                    var queryErrorParts = queryError.Split(';');
+                    if (queryErrorParts.Length == 2)
                     {
-                        string[] queryErrorParts = queryError.Split(';');
-                        if (queryErrorParts.Length == 2)
+                        errorCode = queryErrorParts[0];
+                        var errorTypeString = queryErrorParts[1];
+                        if (Enum.IsDefined(typeof(ErrorType), errorTypeString))
                         {
-                            errorCode = queryErrorParts[0];
+                            errorType = (ErrorType) Enum.Parse(typeof(ErrorType), errorTypeString);
                         }
                     }
                 }
-                QueueNameExistsException unmarshalledObject = new QueueNameExistsException(errorResponse.Message, errorResponse.InnerException,
-                errorResponse.Type, errorCode, errorResponse.RequestId, errorResponse.StatusCode);
+            }
+            QueueNameExistsException unmarshalledObject = new QueueNameExistsException(errorResponse.Message, errorResponse.InnerException,
+                errorType, errorCode, errorResponse.RequestId, errorResponse.StatusCode);
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))

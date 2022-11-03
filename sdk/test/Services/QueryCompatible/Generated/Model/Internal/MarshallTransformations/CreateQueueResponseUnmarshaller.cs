@@ -78,9 +78,10 @@ namespace Amazon.QueryCompatible.Model.Internal.MarshallTransformations
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+  
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, true, context.ResponseData))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("AWS.SimpleQueueService.QueueDeletedRecently"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("QueueDeletedRecently"))
                 {
                     return QueueDeletedRecentlyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
@@ -89,7 +90,27 @@ namespace Amazon.QueryCompatible.Model.Internal.MarshallTransformations
                     return QueueNameExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
-            return new AmazonQueryCompatibleException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+            var errorCode = errorResponse.Code;
+            var errorType = errorResponse.Type;
+            var queryHeaderKey = Amazon.Util.HeaderKeys.XAmzQueryError;
+            if (context.ResponseData.IsHeaderPresent(queryHeaderKey))
+            {
+                var queryError = context.ResponseData.GetHeaderValue(queryHeaderKey);
+                if (!string.IsNullOrEmpty(queryError) && queryError.Contains(";"))
+                {
+                    var queryErrorParts = queryError.Split(';');                    
+                    if (queryErrorParts.Length == 2)
+                    {
+                        errorCode = queryErrorParts[0];
+                        var errorTypeString = queryErrorParts[1];
+                        if (Enum.IsDefined(typeof(ErrorType), errorTypeString))
+                        {
+                            errorType = (ErrorType)Enum.Parse(typeof(ErrorType), errorTypeString);
+                        }
+                    }
+                }
+            }
+            return new AmazonQueryCompatibleException(errorResponse.Message, errorResponse.InnerException, errorType, errorCode, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
         private static CreateQueueResponseUnmarshaller _instance = new CreateQueueResponseUnmarshaller();        
