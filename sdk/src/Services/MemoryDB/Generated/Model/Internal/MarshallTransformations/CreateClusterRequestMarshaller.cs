@@ -85,6 +85,12 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ClusterName);
                 }
 
+                if(publicRequest.IsSetDataTiering())
+                {
+                    context.Writer.WritePropertyName("DataTiering");
+                    context.Writer.Write(publicRequest.DataTiering);
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("Description");

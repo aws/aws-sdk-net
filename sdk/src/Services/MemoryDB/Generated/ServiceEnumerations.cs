@@ -125,6 +125,56 @@ namespace Amazon.MemoryDB
 
 
     /// <summary>
+    /// Constants used for properties of type DataTieringStatus.
+    /// </summary>
+    public class DataTieringStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant False for DataTieringStatus
+        /// </summary>
+        public static readonly DataTieringStatus False = new DataTieringStatus("false");
+        /// <summary>
+        /// Constant True for DataTieringStatus
+        /// </summary>
+        public static readonly DataTieringStatus True = new DataTieringStatus("true");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataTieringStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataTieringStatus FindValue(string value)
+        {
+            return FindValue<DataTieringStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataTieringStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InputAuthenticationType.
     /// </summary>
     public class InputAuthenticationType : ConstantClass

@@ -38,6 +38,7 @@ namespace Amazon.MemoryDB.Model
         private bool? _autoMinorVersionUpgrade;
         private AZStatus _availabilityMode;
         private Endpoint _clusterEndpoint;
+        private DataTieringStatus _dataTiering;
         private string _description;
         private string _enginePatchVersion;
         private string _engineVersion;
@@ -149,6 +150,27 @@ namespace Amazon.MemoryDB.Model
         internal bool IsSetClusterEndpoint()
         {
             return this._clusterEndpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataTiering. 
+        /// <para>
+        /// Enables data tiering. Data tiering is only supported for clusters using the r6gd node
+        /// type. This parameter must be set when using r6gd nodes. For more information, see
+        /// <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data
+        /// tiering</a>.
+        /// </para>
+        /// </summary>
+        public DataTieringStatus DataTiering
+        {
+            get { return this._dataTiering; }
+            set { this._dataTiering = value; }
+        }
+
+        // Check to see if DataTiering property is set
+        internal bool IsSetDataTiering()
+        {
+            return this._dataTiering != null;
         }
 
         /// <summary>
