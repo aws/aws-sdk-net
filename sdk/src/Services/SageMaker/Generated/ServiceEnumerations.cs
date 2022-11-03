@@ -12130,6 +12130,14 @@ namespace Amazon.SageMaker
         /// Constant MlP4d24xlarge for TrainingInstanceType
         /// </summary>
         public static readonly TrainingInstanceType MlP4d24xlarge = new TrainingInstanceType("ml.p4d.24xlarge");
+        /// <summary>
+        /// Constant MlTrn12xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlTrn12xlarge = new TrainingInstanceType("ml.trn1.2xlarge");
+        /// <summary>
+        /// Constant MlTrn132xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlTrn132xlarge = new TrainingInstanceType("ml.trn1.32xlarge");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
