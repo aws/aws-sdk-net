@@ -1,3 +1,14 @@
+### 3.7.411.0 (2022-11-04 19:30 UTC)
+* CloudWatchLogs (3.7.101.2)
+	* Doc-only update for bug fixes and support of export to buckets encrypted with SSE-KMS
+* EC2 (3.7.103.0)
+	* This release adds API support for the recipient of an AMI account share to remove shared AMI launch permissions.
+* EMRContainers (3.7.101.0)
+	* Adding support for Job templates. Job templates allow you to create and store templates to configure Spark applications parameters. This helps you ensure consistent settings across applications by reusing and enforcing configuration overrides in data pipelines.
+* Core 3.7.100.9
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.410.0 (2022-11-03 18:20 UTC)
 * MemoryDB (3.7.101.0)
 	* Adding support for r6gd instances for MemoryDB Redis with data tiering. In a cluster with data tiering enabled, when available memory capacity is exhausted, the least recently used data is automatically tiered to solid state drives for cost-effective capacity scaling with minimal performance impact.
