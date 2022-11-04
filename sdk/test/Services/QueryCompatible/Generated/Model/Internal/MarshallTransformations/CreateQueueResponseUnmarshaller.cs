@@ -105,7 +105,7 @@ namespace Amazon.QueryCompatible.Model.Internal.MarshallTransformations
                         var errorTypeString = queryErrorParts[1];
                         if (Enum.IsDefined(typeof(ErrorType), errorTypeString))
                         {
-                            errorType = (ErrorType)Enum.Parse(typeof(ErrorType), errorTypeString);
+                            errorType = (ErrorType) Enum.Parse(typeof(ErrorType), errorTypeString);
                         }
                     }
                 }
