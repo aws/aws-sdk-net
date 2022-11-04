@@ -499,6 +499,16 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
+        /// Exporting log data to Amazon S3 buckets that are encrypted by KMS is supported. Exporting
+        /// log data to Amazon S3 buckets that have S3 Object Lock enabled with a retention period
+        /// is also supported.
+        /// </para>
+        ///  
+        /// <para>
+        /// Exporting to S3 buckets that are encrypted with AES-256 is supported. 
+        /// </para>
+        ///  
+        /// <para>
         /// This is an asynchronous call. If all the required information is provided, this operation
         /// initiates an export task and responds with the ID of the task. After the task has
         /// started, you can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeExportTasks.html">DescribeExportTasks</a>
@@ -511,11 +521,12 @@ namespace Amazon.CloudWatchLogs
         /// bucket. To separate out log data for each export task, you can specify a prefix to
         /// be used as the Amazon S3 key prefix for all exported objects.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// Exporting to S3 buckets that are encrypted with AES-256 is supported. Exporting to
-        /// S3 buckets encrypted with SSE-KMS is not supported. 
+        /// Time-based sorting on chunks of log data inside an exported file is not guaranteed.
+        /// You can sort the exported log fild data by using Linux utilities.
         /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateExportTask service method.</param>
         /// 
@@ -557,6 +568,16 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
+        /// Exporting log data to Amazon S3 buckets that are encrypted by KMS is supported. Exporting
+        /// log data to Amazon S3 buckets that have S3 Object Lock enabled with a retention period
+        /// is also supported.
+        /// </para>
+        ///  
+        /// <para>
+        /// Exporting to S3 buckets that are encrypted with AES-256 is supported. 
+        /// </para>
+        ///  
+        /// <para>
         /// This is an asynchronous call. If all the required information is provided, this operation
         /// initiates an export task and responds with the ID of the task. After the task has
         /// started, you can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeExportTasks.html">DescribeExportTasks</a>
@@ -569,11 +590,12 @@ namespace Amazon.CloudWatchLogs
         /// bucket. To separate out log data for each export task, you can specify a prefix to
         /// be used as the Amazon S3 key prefix for all exported objects.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// Exporting to S3 buckets that are encrypted with AES-256 is supported. Exporting to
-        /// S3 buckets encrypted with SSE-KMS is not supported. 
+        /// Time-based sorting on chunks of log data inside an exported file is not guaranteed.
+        /// You can sort the exported log fild data by using Linux utilities.
         /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateExportTask service method.</param>
         /// <param name="cancellationToken">
@@ -2162,6 +2184,10 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
+        /// You must have the <code>logs;FilterLogEvents</code> permission to perform this operation.
+        /// </para>
+        ///  
+        /// <para>
         /// By default, this operation returns as many log events as can fit in 1 MB (up to 10,000
         /// log events) or all the events found within the time range that you specify. If the
         /// results include a token, then there are more log events available, and you can get
@@ -2201,6 +2227,10 @@ namespace Amazon.CloudWatchLogs
         /// Lists log events from the specified log group. You can list all the log events or
         /// filter the results using a filter pattern, a time range, and the name of the log stream.
         /// 
+        ///  
+        /// <para>
+        /// You must have the <code>logs;FilterLogEvents</code> permission to perform this operation.
+        /// </para>
         ///  
         /// <para>
         /// By default, this operation returns as many log events as can fit in 1 MB (up to 10,000
@@ -3404,6 +3434,23 @@ namespace Amazon.CloudWatchLogs
         /// <summary>
         /// Sets the retention of the specified log group. A retention policy allows you to configure
         /// the number of days for which to retain log events in the specified log group.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// CloudWatch Logs doesn’t immediately delete log events when they reach their retention
+        /// setting. It typically takes up to 72 hours after that before log events are deleted,
+        /// but in rare situations might take longer.
+        /// </para>
+        ///  
+        /// <para>
+        /// This means that if you change a log group to have a longer retention setting when
+        /// it contains log events that are past the expiration date, but haven’t been actually
+        /// deleted, those log events will take up to 72 hours to be deleted after the new retention
+        /// date is reached. To make sure that log data is deleted permanently, keep a log group
+        /// at its lower retention setting until 72 hours has passed after the end of the previous
+        /// retention period, or you have confirmed that the older log events are deleted. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutRetentionPolicy service method.</param>
         /// 
@@ -3434,6 +3481,23 @@ namespace Amazon.CloudWatchLogs
         /// <summary>
         /// Sets the retention of the specified log group. A retention policy allows you to configure
         /// the number of days for which to retain log events in the specified log group.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// CloudWatch Logs doesn’t immediately delete log events when they reach their retention
+        /// setting. It typically takes up to 72 hours after that before log events are deleted,
+        /// but in rare situations might take longer.
+        /// </para>
+        ///  
+        /// <para>
+        /// This means that if you change a log group to have a longer retention setting when
+        /// it contains log events that are past the expiration date, but haven’t been actually
+        /// deleted, those log events will take up to 72 hours to be deleted after the new retention
+        /// date is reached. To make sure that log data is deleted permanently, keep a log group
+        /// at its lower retention setting until 72 hours has passed after the end of the previous
+        /// retention period, or you have confirmed that the older log events are deleted. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutRetentionPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -3631,6 +3695,11 @@ namespace Amazon.CloudWatchLogs
         /// Queries time out after 15 minutes of execution. If your queries are timing out, reduce
         /// the time range being searched or partition your query into a number of queries.
         /// </para>
+        ///  
+        /// <para>
+        ///  You are limited to 20 concurrent CloudWatch Logs insights queries, including queries
+        /// that have been added to dashboards. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartQuery service method.</param>
         /// 
@@ -3681,6 +3750,11 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// Queries time out after 15 minutes of execution. If your queries are timing out, reduce
         /// the time range being searched or partition your query into a number of queries.
+        /// </para>
+        ///  
+        /// <para>
+        ///  You are limited to 20 concurrent CloudWatch Logs insights queries, including queries
+        /// that have been added to dashboards. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartQuery service method.</param>
