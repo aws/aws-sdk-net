@@ -1009,6 +1009,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void CancelImageLaunchPermissionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CancelImageLaunchPermission");
+
+            var request = InstantiateClassGenerator.Execute<CancelImageLaunchPermissionRequest>();
+            var marshaller = new CancelImageLaunchPermissionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = CancelImageLaunchPermissionResponseUnmarshaller.Instance.Unmarshall(context)
+                as CancelImageLaunchPermissionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void CancelImportTaskMarshallTest()
         {
             var operation = service_model.FindOperation("CancelImportTask");

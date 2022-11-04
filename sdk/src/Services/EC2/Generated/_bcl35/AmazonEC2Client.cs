@@ -3074,6 +3074,63 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CancelImageLaunchPermission
+
+        /// <summary>
+        /// Removes your Amazon Web Services account from the launch permissions for the specified
+        /// AMI. For more information, see <a href="https://docs.aws.amazon.com/">Cancel sharing
+        /// an AMI with your Amazon Web Services account</a> in the <i>Amazon Elastic Compute
+        /// Cloud User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelImageLaunchPermission service method.</param>
+        /// 
+        /// <returns>The response from the CancelImageLaunchPermission service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelImageLaunchPermission">REST API Reference for CancelImageLaunchPermission Operation</seealso>
+        public virtual CancelImageLaunchPermissionResponse CancelImageLaunchPermission(CancelImageLaunchPermissionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelImageLaunchPermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelImageLaunchPermissionResponseUnmarshaller.Instance;
+
+            return Invoke<CancelImageLaunchPermissionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelImageLaunchPermission operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelImageLaunchPermission operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelImageLaunchPermission
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelImageLaunchPermission">REST API Reference for CancelImageLaunchPermission Operation</seealso>
+        public virtual IAsyncResult BeginCancelImageLaunchPermission(CancelImageLaunchPermissionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelImageLaunchPermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelImageLaunchPermissionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CancelImageLaunchPermission operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelImageLaunchPermission.</param>
+        /// 
+        /// <returns>Returns a  CancelImageLaunchPermissionResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelImageLaunchPermission">REST API Reference for CancelImageLaunchPermission Operation</seealso>
+        public virtual CancelImageLaunchPermissionResponse EndCancelImageLaunchPermission(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CancelImageLaunchPermissionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CancelImportTask
 
         /// <summary>

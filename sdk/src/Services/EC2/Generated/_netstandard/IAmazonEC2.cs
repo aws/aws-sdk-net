@@ -1362,6 +1362,27 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  CancelImageLaunchPermission
+
+
+
+        /// <summary>
+        /// Removes your Amazon Web Services account from the launch permissions for the specified
+        /// AMI. For more information, see <a href="https://docs.aws.amazon.com/">Cancel sharing
+        /// an AMI with your Amazon Web Services account</a> in the <i>Amazon Elastic Compute
+        /// Cloud User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelImageLaunchPermission service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelImageLaunchPermission service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelImageLaunchPermission">REST API Reference for CancelImageLaunchPermission Operation</seealso>
+        Task<CancelImageLaunchPermissionResponse> CancelImageLaunchPermissionAsync(CancelImageLaunchPermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CancelImportTask
 
 
