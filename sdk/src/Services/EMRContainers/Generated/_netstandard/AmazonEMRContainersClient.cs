@@ -337,6 +337,52 @@ namespace Amazon.EMRContainers
 
         #endregion
         
+        #region  CreateJobTemplate
+
+        internal virtual CreateJobTemplateResponse CreateJobTemplate(CreateJobTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateJobTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateJobTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<CreateJobTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a job template. Job template stores values of StartJobRun API request in a
+        /// template and can be used to start a job run. Job template allows two use cases: avoid
+        /// repeating recurring StartJobRun API request values, enforcing certain values in StartJobRun
+        /// API request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateJobTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateJobTemplate service method, as returned by EMRContainers.</returns>
+        /// <exception cref="Amazon.EMRContainers.Model.InternalServerException">
+        /// This is an internal server exception.
+        /// </exception>
+        /// <exception cref="Amazon.EMRContainers.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.EMRContainers.Model.ValidationException">
+        /// There are invalid parameters in the client request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/CreateJobTemplate">REST API Reference for CreateJobTemplate Operation</seealso>
+        public virtual Task<CreateJobTemplateResponse> CreateJobTemplateAsync(CreateJobTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateJobTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateJobTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateJobTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateManagedEndpoint
 
         internal virtual CreateManagedEndpointResponse CreateManagedEndpoint(CreateManagedEndpointRequest request)
@@ -424,6 +470,49 @@ namespace Amazon.EMRContainers
             options.ResponseUnmarshaller = CreateVirtualClusterResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateVirtualClusterResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteJobTemplate
+
+        internal virtual DeleteJobTemplateResponse DeleteJobTemplate(DeleteJobTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteJobTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteJobTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteJobTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a job template. Job template stores values of StartJobRun API request in a
+        /// template and can be used to start a job run. Job template allows two use cases: avoid
+        /// repeating recurring StartJobRun API request values, enforcing certain values in StartJobRun
+        /// API request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteJobTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteJobTemplate service method, as returned by EMRContainers.</returns>
+        /// <exception cref="Amazon.EMRContainers.Model.InternalServerException">
+        /// This is an internal server exception.
+        /// </exception>
+        /// <exception cref="Amazon.EMRContainers.Model.ValidationException">
+        /// There are invalid parameters in the client request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DeleteJobTemplate">REST API Reference for DeleteJobTemplate Operation</seealso>
+        public virtual Task<DeleteJobTemplateResponse> DeleteJobTemplateAsync(DeleteJobTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteJobTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteJobTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteJobTemplateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -557,6 +646,52 @@ namespace Amazon.EMRContainers
 
         #endregion
         
+        #region  DescribeJobTemplate
+
+        internal virtual DescribeJobTemplateResponse DescribeJobTemplate(DescribeJobTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeJobTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeJobTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeJobTemplateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Displays detailed information about a specified job template. Job template stores
+        /// values of StartJobRun API request in a template and can be used to start a job run.
+        /// Job template allows two use cases: avoid repeating recurring StartJobRun API request
+        /// values, enforcing certain values in StartJobRun API request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeJobTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeJobTemplate service method, as returned by EMRContainers.</returns>
+        /// <exception cref="Amazon.EMRContainers.Model.InternalServerException">
+        /// This is an internal server exception.
+        /// </exception>
+        /// <exception cref="Amazon.EMRContainers.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.EMRContainers.Model.ValidationException">
+        /// There are invalid parameters in the client request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DescribeJobTemplate">REST API Reference for DescribeJobTemplate Operation</seealso>
+        public virtual Task<DescribeJobTemplateResponse> DescribeJobTemplateAsync(DescribeJobTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeJobTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeJobTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeJobTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeManagedEndpoint
 
         internal virtual DescribeManagedEndpointResponse DescribeManagedEndpoint(DescribeManagedEndpointRequest request)
@@ -686,6 +821,49 @@ namespace Amazon.EMRContainers
             options.ResponseUnmarshaller = ListJobRunsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListJobRunsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListJobTemplates
+
+        internal virtual ListJobTemplatesResponse ListJobTemplates(ListJobTemplatesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobTemplatesResponseUnmarshaller.Instance;
+
+            return Invoke<ListJobTemplatesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists job templates based on a set of parameters. Job template stores values of StartJobRun
+        /// API request in a template and can be used to start a job run. Job template allows
+        /// two use cases: avoid repeating recurring StartJobRun API request values, enforcing
+        /// certain values in StartJobRun API request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListJobTemplates service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListJobTemplates service method, as returned by EMRContainers.</returns>
+        /// <exception cref="Amazon.EMRContainers.Model.InternalServerException">
+        /// This is an internal server exception.
+        /// </exception>
+        /// <exception cref="Amazon.EMRContainers.Model.ValidationException">
+        /// There are invalid parameters in the client request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListJobTemplates">REST API Reference for ListJobTemplates Operation</seealso>
+        public virtual Task<ListJobTemplatesResponse> ListJobTemplatesAsync(ListJobTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobTemplatesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListJobTemplatesResponse>(request, options, cancellationToken);
         }
 
         #endregion

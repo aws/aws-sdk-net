@@ -16,33 +16,23 @@
 /*
  * Do not modify this file. This file is generated from the emr-containers-2020-10-01.normal.json service model.
  */
+using Amazon.Runtime;
 
 namespace Amazon.EMRContainers.Model
 {
     /// <summary>
-    /// Paginators for the EMRContainers service
+    /// Paginator for the ListJobTemplates operation
     ///</summary>
-    public interface IEMRContainersPaginatorFactory
+    public interface IListJobTemplatesPaginator
     {
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<ListJobTemplatesResponse> Responses { get; }
 
         /// <summary>
-        /// Paginator for ListJobRuns operation
-        ///</summary>
-        IListJobRunsPaginator ListJobRuns(ListJobRunsRequest request);
-
-        /// <summary>
-        /// Paginator for ListJobTemplates operation
-        ///</summary>
-        IListJobTemplatesPaginator ListJobTemplates(ListJobTemplatesRequest request);
-
-        /// <summary>
-        /// Paginator for ListManagedEndpoints operation
-        ///</summary>
-        IListManagedEndpointsPaginator ListManagedEndpoints(ListManagedEndpointsRequest request);
-
-        /// <summary>
-        /// Paginator for ListVirtualClusters operation
-        ///</summary>
-        IListVirtualClustersPaginator ListVirtualClusters(ListVirtualClustersRequest request);
+        /// Enumerable containing all of the Templates
+        /// </summary>
+        IPaginatedEnumerable<JobTemplate> Templates { get; }
     }
 }

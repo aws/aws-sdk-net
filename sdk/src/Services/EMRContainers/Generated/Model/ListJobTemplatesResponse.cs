@@ -29,48 +29,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EMRContainers.Model
 {
     /// <summary>
-    /// Specify the driver that the job runs on. Exactly one of the two available job drivers
-    /// is required, either sparkSqlJobDriver or sparkSubmitJobDriver.
+    /// This is the response object from the ListJobTemplates operation.
     /// </summary>
-    public partial class JobDriver
+    public partial class ListJobTemplatesResponse : AmazonWebServiceResponse
     {
-        private SparkSqlJobDriver _sparkSqlJobDriver;
-        private SparkSubmitJobDriver _sparkSubmitJobDriver;
+        private string _nextToken;
+        private List<JobTemplate> _templates = new List<JobTemplate>();
 
         /// <summary>
-        /// Gets and sets the property SparkSqlJobDriver. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The job driver for job type.
+        ///  This output displays the token for the next set of job templates.
         /// </para>
         /// </summary>
-        public SparkSqlJobDriver SparkSqlJobDriver
+        [AWSProperty(Min=1, Max=1024)]
+        public string NextToken
         {
-            get { return this._sparkSqlJobDriver; }
-            set { this._sparkSqlJobDriver = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if SparkSqlJobDriver property is set
-        internal bool IsSetSparkSqlJobDriver()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._sparkSqlJobDriver != null;
+            return this._nextToken != null;
         }
 
         /// <summary>
-        /// Gets and sets the property SparkSubmitJobDriver. 
+        /// Gets and sets the property Templates. 
         /// <para>
-        /// The job driver parameters specified for spark submit.
+        /// This output lists information about the specified job templates.
         /// </para>
         /// </summary>
-        public SparkSubmitJobDriver SparkSubmitJobDriver
+        public List<JobTemplate> Templates
         {
-            get { return this._sparkSubmitJobDriver; }
-            set { this._sparkSubmitJobDriver = value; }
+            get { return this._templates; }
+            set { this._templates = value; }
         }
 
-        // Check to see if SparkSubmitJobDriver property is set
-        internal bool IsSetSparkSubmitJobDriver()
+        // Check to see if Templates property is set
+        internal bool IsSetTemplates()
         {
-            return this._sparkSubmitJobDriver != null;
+            return this._templates != null && this._templates.Count > 0; 
         }
 
     }

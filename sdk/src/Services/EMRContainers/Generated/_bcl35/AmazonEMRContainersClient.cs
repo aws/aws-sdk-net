@@ -354,6 +354,72 @@ namespace Amazon.EMRContainers
 
         #endregion
         
+        #region  CreateJobTemplate
+
+        /// <summary>
+        /// Creates a job template. Job template stores values of StartJobRun API request in a
+        /// template and can be used to start a job run. Job template allows two use cases: avoid
+        /// repeating recurring StartJobRun API request values, enforcing certain values in StartJobRun
+        /// API request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateJobTemplate service method.</param>
+        /// 
+        /// <returns>The response from the CreateJobTemplate service method, as returned by EMRContainers.</returns>
+        /// <exception cref="Amazon.EMRContainers.Model.InternalServerException">
+        /// This is an internal server exception.
+        /// </exception>
+        /// <exception cref="Amazon.EMRContainers.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.EMRContainers.Model.ValidationException">
+        /// There are invalid parameters in the client request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/CreateJobTemplate">REST API Reference for CreateJobTemplate Operation</seealso>
+        public virtual CreateJobTemplateResponse CreateJobTemplate(CreateJobTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateJobTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateJobTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<CreateJobTemplateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateJobTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateJobTemplate operation on AmazonEMRContainersClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateJobTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/CreateJobTemplate">REST API Reference for CreateJobTemplate Operation</seealso>
+        public virtual IAsyncResult BeginCreateJobTemplate(CreateJobTemplateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateJobTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateJobTemplateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateJobTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateJobTemplate.</param>
+        /// 
+        /// <returns>Returns a  CreateJobTemplateResult from EMRContainers.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/CreateJobTemplate">REST API Reference for CreateJobTemplate Operation</seealso>
+        public virtual CreateJobTemplateResponse EndCreateJobTemplate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateJobTemplateResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateManagedEndpoint
 
         /// <summary>
@@ -481,6 +547,69 @@ namespace Amazon.EMRContainers
         public virtual CreateVirtualClusterResponse EndCreateVirtualCluster(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateVirtualClusterResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteJobTemplate
+
+        /// <summary>
+        /// Deletes a job template. Job template stores values of StartJobRun API request in a
+        /// template and can be used to start a job run. Job template allows two use cases: avoid
+        /// repeating recurring StartJobRun API request values, enforcing certain values in StartJobRun
+        /// API request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteJobTemplate service method.</param>
+        /// 
+        /// <returns>The response from the DeleteJobTemplate service method, as returned by EMRContainers.</returns>
+        /// <exception cref="Amazon.EMRContainers.Model.InternalServerException">
+        /// This is an internal server exception.
+        /// </exception>
+        /// <exception cref="Amazon.EMRContainers.Model.ValidationException">
+        /// There are invalid parameters in the client request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DeleteJobTemplate">REST API Reference for DeleteJobTemplate Operation</seealso>
+        public virtual DeleteJobTemplateResponse DeleteJobTemplate(DeleteJobTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteJobTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteJobTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteJobTemplateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteJobTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteJobTemplate operation on AmazonEMRContainersClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteJobTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DeleteJobTemplate">REST API Reference for DeleteJobTemplate Operation</seealso>
+        public virtual IAsyncResult BeginDeleteJobTemplate(DeleteJobTemplateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteJobTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteJobTemplateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteJobTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteJobTemplate.</param>
+        /// 
+        /// <returns>Returns a  DeleteJobTemplateResult from EMRContainers.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DeleteJobTemplate">REST API Reference for DeleteJobTemplate Operation</seealso>
+        public virtual DeleteJobTemplateResponse EndDeleteJobTemplate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteJobTemplateResponse>(asyncResult);
         }
 
         #endregion
@@ -674,6 +803,72 @@ namespace Amazon.EMRContainers
 
         #endregion
         
+        #region  DescribeJobTemplate
+
+        /// <summary>
+        /// Displays detailed information about a specified job template. Job template stores
+        /// values of StartJobRun API request in a template and can be used to start a job run.
+        /// Job template allows two use cases: avoid repeating recurring StartJobRun API request
+        /// values, enforcing certain values in StartJobRun API request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeJobTemplate service method.</param>
+        /// 
+        /// <returns>The response from the DescribeJobTemplate service method, as returned by EMRContainers.</returns>
+        /// <exception cref="Amazon.EMRContainers.Model.InternalServerException">
+        /// This is an internal server exception.
+        /// </exception>
+        /// <exception cref="Amazon.EMRContainers.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.EMRContainers.Model.ValidationException">
+        /// There are invalid parameters in the client request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DescribeJobTemplate">REST API Reference for DescribeJobTemplate Operation</seealso>
+        public virtual DescribeJobTemplateResponse DescribeJobTemplate(DescribeJobTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeJobTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeJobTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeJobTemplateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeJobTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeJobTemplate operation on AmazonEMRContainersClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeJobTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DescribeJobTemplate">REST API Reference for DescribeJobTemplate Operation</seealso>
+        public virtual IAsyncResult BeginDescribeJobTemplate(DescribeJobTemplateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeJobTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeJobTemplateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeJobTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeJobTemplate.</param>
+        /// 
+        /// <returns>Returns a  DescribeJobTemplateResult from EMRContainers.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DescribeJobTemplate">REST API Reference for DescribeJobTemplate Operation</seealso>
+        public virtual DescribeJobTemplateResponse EndDescribeJobTemplate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeJobTemplateResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeManagedEndpoint
 
         /// <summary>
@@ -863,6 +1058,69 @@ namespace Amazon.EMRContainers
         public virtual ListJobRunsResponse EndListJobRuns(IAsyncResult asyncResult)
         {
             return EndInvoke<ListJobRunsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListJobTemplates
+
+        /// <summary>
+        /// Lists job templates based on a set of parameters. Job template stores values of StartJobRun
+        /// API request in a template and can be used to start a job run. Job template allows
+        /// two use cases: avoid repeating recurring StartJobRun API request values, enforcing
+        /// certain values in StartJobRun API request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListJobTemplates service method.</param>
+        /// 
+        /// <returns>The response from the ListJobTemplates service method, as returned by EMRContainers.</returns>
+        /// <exception cref="Amazon.EMRContainers.Model.InternalServerException">
+        /// This is an internal server exception.
+        /// </exception>
+        /// <exception cref="Amazon.EMRContainers.Model.ValidationException">
+        /// There are invalid parameters in the client request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListJobTemplates">REST API Reference for ListJobTemplates Operation</seealso>
+        public virtual ListJobTemplatesResponse ListJobTemplates(ListJobTemplatesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobTemplatesResponseUnmarshaller.Instance;
+
+            return Invoke<ListJobTemplatesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListJobTemplates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListJobTemplates operation on AmazonEMRContainersClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListJobTemplates
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListJobTemplates">REST API Reference for ListJobTemplates Operation</seealso>
+        public virtual IAsyncResult BeginListJobTemplates(ListJobTemplatesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobTemplatesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListJobTemplates operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListJobTemplates.</param>
+        /// 
+        /// <returns>Returns a  ListJobTemplatesResult from EMRContainers.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListJobTemplates">REST API Reference for ListJobTemplates Operation</seealso>
+        public virtual ListJobTemplatesResponse EndListJobTemplates(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListJobTemplatesResponse>(asyncResult);
         }
 
         #endregion

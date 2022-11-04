@@ -29,48 +29,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EMRContainers.Model
 {
     /// <summary>
-    /// Specify the driver that the job runs on. Exactly one of the two available job drivers
-    /// is required, either sparkSqlJobDriver or sparkSubmitJobDriver.
+    /// The configuration of a job template parameter.
     /// </summary>
-    public partial class JobDriver
+    public partial class TemplateParameterConfiguration
     {
-        private SparkSqlJobDriver _sparkSqlJobDriver;
-        private SparkSubmitJobDriver _sparkSubmitJobDriver;
+        private string _defaultValue;
+        private TemplateParameterDataType _type;
 
         /// <summary>
-        /// Gets and sets the property SparkSqlJobDriver. 
+        /// Gets and sets the property DefaultValue. 
         /// <para>
-        /// The job driver for job type.
+        /// The default value for the job template parameter.
         /// </para>
         /// </summary>
-        public SparkSqlJobDriver SparkSqlJobDriver
+        [AWSProperty(Min=1, Max=1024)]
+        public string DefaultValue
         {
-            get { return this._sparkSqlJobDriver; }
-            set { this._sparkSqlJobDriver = value; }
+            get { return this._defaultValue; }
+            set { this._defaultValue = value; }
         }
 
-        // Check to see if SparkSqlJobDriver property is set
-        internal bool IsSetSparkSqlJobDriver()
+        // Check to see if DefaultValue property is set
+        internal bool IsSetDefaultValue()
         {
-            return this._sparkSqlJobDriver != null;
+            return this._defaultValue != null;
         }
 
         /// <summary>
-        /// Gets and sets the property SparkSubmitJobDriver. 
+        /// Gets and sets the property Type. 
         /// <para>
-        /// The job driver parameters specified for spark submit.
+        /// The type of the job template parameter. Allowed values are: ‘String’, ‘Number’.
         /// </para>
         /// </summary>
-        public SparkSubmitJobDriver SparkSubmitJobDriver
+        public TemplateParameterDataType Type
         {
-            get { return this._sparkSubmitJobDriver; }
-            set { this._sparkSubmitJobDriver = value; }
+            get { return this._type; }
+            set { this._type = value; }
         }
 
-        // Check to see if SparkSubmitJobDriver property is set
-        internal bool IsSetSparkSubmitJobDriver()
+        // Check to see if Type property is set
+        internal bool IsSetType()
         {
-            return this._sparkSubmitJobDriver != null;
+            return this._type != null;
         }
 
     }

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// StartJobRun Request Marshaller
+    /// CreateJobTemplate Request Marshaller
     /// </summary>       
-    public class StartJobRunRequestMarshaller : IMarshaller<IRequest, StartJobRunRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class CreateJobTemplateRequestMarshaller : IMarshaller<IRequest, CreateJobTemplateRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((StartJobRunRequest)input);
+            return this.Marshall((CreateJobTemplateRequest)input);
         }
 
         /// <summary>
@@ -52,17 +52,14 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(StartJobRunRequest publicRequest)
+        public IRequest Marshall(CreateJobTemplateRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EMRContainers");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-10-01";
             request.HttpMethod = "POST";
 
-            if (!publicRequest.IsSetVirtualClusterId())
-                throw new AmazonEMRContainersException("Request object does not have required field VirtualClusterId set");
-            request.AddPathResource("{virtualClusterId}", StringUtils.FromString(publicRequest.VirtualClusterId));
-            request.ResourcePath = "/virtualclusters/{virtualClusterId}/jobruns";
+            request.ResourcePath = "/jobtemplates";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -79,64 +76,27 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("clientToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
-                if(publicRequest.IsSetConfigurationOverrides())
+                if(publicRequest.IsSetJobTemplateData())
                 {
-                    context.Writer.WritePropertyName("configurationOverrides");
+                    context.Writer.WritePropertyName("jobTemplateData");
                     context.Writer.WriteObjectStart();
 
-                    var marshaller = ConfigurationOverridesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ConfigurationOverrides, context);
+                    var marshaller = JobTemplateDataMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.JobTemplateData, context);
 
                     context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetExecutionRoleArn())
+                if(publicRequest.IsSetKmsKeyArn())
                 {
-                    context.Writer.WritePropertyName("executionRoleArn");
-                    context.Writer.Write(publicRequest.ExecutionRoleArn);
-                }
-
-                if(publicRequest.IsSetJobDriver())
-                {
-                    context.Writer.WritePropertyName("jobDriver");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = JobDriverMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.JobDriver, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetJobTemplateId())
-                {
-                    context.Writer.WritePropertyName("jobTemplateId");
-                    context.Writer.Write(publicRequest.JobTemplateId);
-                }
-
-                if(publicRequest.IsSetJobTemplateParameters())
-                {
-                    context.Writer.WritePropertyName("jobTemplateParameters");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestJobTemplateParametersKvp in publicRequest.JobTemplateParameters)
-                    {
-                        context.Writer.WritePropertyName(publicRequestJobTemplateParametersKvp.Key);
-                        var publicRequestJobTemplateParametersValue = publicRequestJobTemplateParametersKvp.Value;
-
-                            context.Writer.Write(publicRequestJobTemplateParametersValue);
-                    }
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("kmsKeyArn");
+                    context.Writer.Write(publicRequest.KmsKeyArn);
                 }
 
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");
                     context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetReleaseLabel())
-                {
-                    context.Writer.WritePropertyName("releaseLabel");
-                    context.Writer.Write(publicRequest.ReleaseLabel);
                 }
 
                 if(publicRequest.IsSetTags())
@@ -161,9 +121,9 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static StartJobRunRequestMarshaller _instance = new StartJobRunRequestMarshaller();        
+        private static CreateJobTemplateRequestMarshaller _instance = new CreateJobTemplateRequestMarshaller();        
 
-        internal static StartJobRunRequestMarshaller GetInstance()
+        internal static CreateJobTemplateRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -171,7 +131,7 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StartJobRunRequestMarshaller Instance
+        public static CreateJobTemplateRequestMarshaller Instance
         {
             get
             {
