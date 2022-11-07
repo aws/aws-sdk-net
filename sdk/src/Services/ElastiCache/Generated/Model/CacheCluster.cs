@@ -50,7 +50,9 @@ namespace Amazon.ElastiCache.Model
         private Endpoint _configurationEndpoint;
         private string _engine;
         private string _engineVersion;
+        private IpDiscovery _ipDiscovery;
         private List<LogDeliveryConfiguration> _logDeliveryConfigurations = new List<LogDeliveryConfiguration>();
+        private NetworkType _networkType;
         private NotificationConfiguration _notificationConfiguration;
         private int? _numCacheNodes;
         private PendingModifiedValues _pendingModifiedValues;
@@ -273,8 +275,8 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>M6g node types:</b> (available only for Redis engine version 5.0.6 onward and
-        /// for Memcached engine version 1.5.16 onward): <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
+        ///  <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for
+        /// Memcached engine version 1.5.16 onward): <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
         /// <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>,
         /// <code>cache.m6g.12xlarge</code>, <code>cache.m6g.16xlarge</code> 
         /// </para>
@@ -297,8 +299,8 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>T4g node types</b> (available only for Redis engine version 5.0.6 onward and for
-        /// Memcached engine version 1.5.16 onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
+        ///  <b>T4g node types</b> (available only for Redis engine version 5.0.6 onward and Memcached
+        /// engine version 1.5.16 onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
         /// <code>cache.t4g.medium</code> 
         /// </para>
         ///  
@@ -342,24 +344,6 @@ namespace Amazon.ElastiCache.Model
         ///  
         /// <para>
         ///  <b>C1 node types:</b> <code>cache.c1.xlarge</code> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        /// Memory optimized with data tiering:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Current generation: 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
-        /// <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code>
-        /// 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -582,6 +566,27 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IpDiscovery. 
+        /// <para>
+        /// The network type associated with the cluster, either <code>ipv4</code> | <code>ipv6</code>.
+        /// IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached
+        /// engine version 1.6.6 on all instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+        /// system</a>.
+        /// </para>
+        /// </summary>
+        public IpDiscovery IpDiscovery
+        {
+            get { return this._ipDiscovery; }
+            set { this._ipDiscovery = value; }
+        }
+
+        // Check to see if IpDiscovery property is set
+        internal bool IsSetIpDiscovery()
+        {
+            return this._ipDiscovery != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LogDeliveryConfigurations. 
         /// <para>
         /// Returns the destination, format and type of the logs.
@@ -597,6 +602,27 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetLogDeliveryConfigurations()
         {
             return this._logDeliveryConfigurations != null && this._logDeliveryConfigurations.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6
+        /// is supported for workloads using Redis engine version 6.2 onward or Memcached engine
+        /// version 1.6.6 on all instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+        /// system</a>.
+        /// </para>
+        /// </summary>
+        public NetworkType NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
         }
 
         /// <summary>

@@ -37,6 +37,7 @@ namespace Amazon.ElastiCache.Model
         private AvailabilityZone _subnetAvailabilityZone;
         private string _subnetIdentifier;
         private SubnetOutpost _subnetOutpost;
+        private List<string> _supportedNetworkTypes = new List<string>();
 
         /// <summary>
         /// Gets and sets the property SubnetAvailabilityZone. 
@@ -90,6 +91,26 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetSubnetOutpost()
         {
             return this._subnetOutpost != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedNetworkTypes. 
+        /// <para>
+        /// Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported
+        /// for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6
+        /// on all instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+        /// </para>
+        /// </summary>
+        public List<string> SupportedNetworkTypes
+        {
+            get { return this._supportedNetworkTypes; }
+            set { this._supportedNetworkTypes = value; }
+        }
+
+        // Check to see if SupportedNetworkTypes property is set
+        internal bool IsSetSupportedNetworkTypes()
+        {
+            return this._supportedNetworkTypes != null && this._supportedNetworkTypes.Count > 0; 
         }
 
     }

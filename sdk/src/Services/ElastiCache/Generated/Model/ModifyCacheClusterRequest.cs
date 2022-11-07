@@ -46,6 +46,7 @@ namespace Amazon.ElastiCache.Model
         private string _cacheParameterGroupName;
         private List<string> _cacheSecurityGroupNames = new List<string>();
         private string _engineVersion;
+        private IpDiscovery _ipDiscovery;
         private List<LogDeliveryConfigurationRequest> _logDeliveryConfigurations = new List<LogDeliveryConfigurationRequest>();
         private List<string> _newAvailabilityZones = new List<string>();
         private string _notificationTopicArn;
@@ -371,6 +372,27 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetEngineVersion()
         {
             return this._engineVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpDiscovery. 
+        /// <para>
+        /// The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>.
+        /// IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached
+        /// engine version 1.6.6 on all instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+        /// system</a>.
+        /// </para>
+        /// </summary>
+        public IpDiscovery IpDiscovery
+        {
+            get { return this._ipDiscovery; }
+            set { this._ipDiscovery = value; }
+        }
+
+        // Check to see if IpDiscovery property is set
+        internal bool IsSetIpDiscovery()
+        {
+            return this._ipDiscovery != null;
         }
 
         /// <summary>

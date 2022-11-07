@@ -45,11 +45,13 @@ namespace Amazon.ElastiCache.Model
         private DataTieringStatus _dataTiering;
         private string _description;
         private GlobalReplicationGroupInfo _globalReplicationGroupInfo;
+        private IpDiscovery _ipDiscovery;
         private string _kmsKeyId;
         private List<LogDeliveryConfiguration> _logDeliveryConfigurations = new List<LogDeliveryConfiguration>();
         private List<string> _memberClusters = new List<string>();
         private List<string> _memberClustersOutpostArns = new List<string>();
         private MultiAZStatus _multiAZ;
+        private NetworkType _networkType;
         private List<NodeGroup> _nodeGroups = new List<NodeGroup>();
         private ReplicationGroupPendingModifiedValues _pendingModifiedValues;
         private DateTime? _replicationGroupCreateTime;
@@ -174,9 +176,9 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
-        ///  If you are running Redis engine version 6.0 or later, set this parameter to yes if
+        ///  If you are running Redis engine version 6.0 or later, set this parameter to yes if
         /// you want to opt-in to the next auto minor version upgrade campaign. This parameter
-        /// is disabled for previous versions.  
+        /// is disabled for previous versions. 
         /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade
@@ -311,6 +313,27 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IpDiscovery. 
+        /// <para>
+        /// The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>.
+        /// IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached
+        /// engine version 1.6.6 on all instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+        /// system</a>.
+        /// </para>
+        /// </summary>
+        public IpDiscovery IpDiscovery
+        {
+            get { return this._ipDiscovery; }
+            set { this._ipDiscovery = value; }
+        }
+
+        // Check to see if IpDiscovery property is set
+        internal bool IsSetIpDiscovery()
+        {
+            return this._ipDiscovery != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// The ID of the KMS key used to encrypt the disk in the cluster.
@@ -400,6 +423,27 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetMultiAZ()
         {
             return this._multiAZ != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6
+        /// is supported for workloads using Redis engine version 6.2 onward or Memcached engine
+        /// version 1.6.6 on all instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+        /// system</a>.
+        /// </para>
+        /// </summary>
+        public NetworkType NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
         }
 
         /// <summary>

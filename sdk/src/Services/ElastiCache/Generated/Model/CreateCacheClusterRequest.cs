@@ -50,7 +50,9 @@ namespace Amazon.ElastiCache.Model
         private string _cacheSubnetGroupName;
         private string _engine;
         private string _engineVersion;
+        private IpDiscovery _ipDiscovery;
         private List<LogDeliveryConfigurationRequest> _logDeliveryConfigurations = new List<LogDeliveryConfigurationRequest>();
+        private NetworkType _networkType;
         private string _notificationTopicArn;
         private int? _numCacheNodes;
         private OutpostMode _outpostMode;
@@ -516,6 +518,27 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IpDiscovery. 
+        /// <para>
+        /// The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>.
+        /// IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached
+        /// engine version 1.6.6 on all instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+        /// system</a>.
+        /// </para>
+        /// </summary>
+        public IpDiscovery IpDiscovery
+        {
+            get { return this._ipDiscovery; }
+            set { this._ipDiscovery = value; }
+        }
+
+        // Check to see if IpDiscovery property is set
+        internal bool IsSetIpDiscovery()
+        {
+            return this._ipDiscovery != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LogDeliveryConfigurations. 
         /// <para>
         /// Specifies the destination, format and type of the logs. 
@@ -531,6 +554,27 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetLogDeliveryConfigurations()
         {
             return this._logDeliveryConfigurations != null && this._logDeliveryConfigurations.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6
+        /// is supported for workloads using Redis engine version 6.2 onward or Memcached engine
+        /// version 1.6.6 on all instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+        /// system</a>. 
+        /// </para>
+        /// </summary>
+        public NetworkType NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
         }
 
         /// <summary>
@@ -939,14 +983,14 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property TransitEncryptionEnabled. 
         /// <para>
         /// A flag that enables in-transit encryption when set to true. You cannot modify the
-        /// value of <code>TransitEncryptionEnabled</code> after the cluster is created. To enable
-        /// in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code>
-        /// to true when you create a cluster. 
+        /// value of TransitEncryptionEnabled after the cluster is created. To enable in-transit
+        /// encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to true
+        /// when you create a cluster.
         /// </para>
         ///  
         /// <para>
-        ///  <b>Required:</b> Only available when creating a cache cluster in an Amazon VPC using
-        /// Memcached version <code>1.6.12</code> or later.
+        ///  Only available when creating a cache cluster in an Amazon VPC using Memcached version
+        /// 1.6.12 or later.
         /// </para>
         /// </summary>
         public bool TransitEncryptionEnabled

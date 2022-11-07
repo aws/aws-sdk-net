@@ -112,6 +112,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("EngineVersion", StringUtils.FromString(publicRequest.EngineVersion));
                 }
+                if(publicRequest.IsSetIpDiscovery())
+                {
+                    request.Parameters.Add("IpDiscovery", StringUtils.FromString(publicRequest.IpDiscovery));
+                }
                 if(publicRequest.IsSetLogDeliveryConfigurations())
                 {
                     int publicRequestlistValueIndex = 1;

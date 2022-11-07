@@ -103,6 +103,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("EngineVersion", StringUtils.FromString(publicRequest.EngineVersion));
                 }
+                if(publicRequest.IsSetIpDiscovery())
+                {
+                    request.Parameters.Add("IpDiscovery", StringUtils.FromString(publicRequest.IpDiscovery));
+                }
                 if(publicRequest.IsSetLogDeliveryConfigurations())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -143,6 +147,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         }
                         publicRequestlistValueIndex++;
                     }
+                }
+                if(publicRequest.IsSetNetworkType())
+                {
+                    request.Parameters.Add("NetworkType", StringUtils.FromString(publicRequest.NetworkType));
                 }
                 if(publicRequest.IsSetNotificationTopicArn())
                 {

@@ -177,13 +177,9 @@ namespace Amazon.ElastiCache.Model
         ///  
         /// <para>
         ///  <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for
-        /// Memcached engine version 1.5.16 onward).
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>,
-        /// <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
-        /// <code>cache.m6g.16xlarge</code> 
+        /// Memcached engine version 1.5.16 onward): <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
+        /// <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>,
+        /// <code>cache.m6g.12xlarge</code>, <code>cache.m6g.16xlarge</code> 
         /// </para>
         ///  <note> 
         /// <para>
@@ -205,12 +201,8 @@ namespace Amazon.ElastiCache.Model
         ///  
         /// <para>
         ///  <b>T4g node types</b> (available only for Redis engine version 5.0.6 onward and Memcached
-        /// engine version 1.5.16 onward):
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>, <code>cache.t4g.medium</code>
-        /// 
+        /// engine version 1.5.16 onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
+        /// <code>cache.t4g.medium</code> 
         /// </para>
         ///  
         /// <para>
@@ -256,24 +248,6 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Memory optimized with data tiering:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Current generation: 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
-        /// <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code>
-        /// 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
         /// Memory optimized:
         /// </para>
         ///  <ul> <li> 
@@ -292,11 +266,6 @@ namespace Amazon.ElastiCache.Model
         /// <code>cache.r6g.16xlarge</code> 
         /// </para>
         ///  <note> 
-        /// <para>
-        /// For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
-        /// Node Types</a> 
-        /// </para>
-        ///  </note> <note> 
         /// <para>
         /// For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
         /// Node Types</a> 
