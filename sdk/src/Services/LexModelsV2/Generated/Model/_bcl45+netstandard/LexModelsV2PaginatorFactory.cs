@@ -100,6 +100,14 @@ namespace Amazon.LexModelsV2.Model
         }
 
         /// <summary>
+        /// Paginator for ListCustomVocabularyItems operation
+        ///</summary>
+        public IListCustomVocabularyItemsPaginator ListCustomVocabularyItems(ListCustomVocabularyItemsRequest request) 
+        {
+            return new ListCustomVocabularyItemsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListExports operation
         ///</summary>
         public IListExportsPaginator ListExports(ListExportsRequest request) 

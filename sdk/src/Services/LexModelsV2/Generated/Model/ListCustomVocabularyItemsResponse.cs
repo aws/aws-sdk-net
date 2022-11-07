@@ -29,26 +29,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListRecommendedIntents operation.
-    /// Gets a list of recommended intents provided by the bot recommendation that you can
-    /// use in your bot. Intents in the response are ordered by relevance.
+    /// This is the response object from the ListCustomVocabularyItems operation.
     /// </summary>
-    public partial class ListRecommendedIntentsRequest : AmazonLexModelsV2Request
+    public partial class ListCustomVocabularyItemsResponse : AmazonWebServiceResponse
     {
         private string _botId;
-        private string _botRecommendationId;
         private string _botVersion;
+        private List<CustomVocabularyItem> _customVocabularyItems = new List<CustomVocabularyItem>();
         private string _localeId;
-        private int? _maxResults;
         private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property BotId. 
         /// <para>
-        /// The unique identifier of the bot associated with the recommended intents.
+        /// The unique identifier of the bot to the list custom vocabulary response.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=10, Max=10)]
+        [AWSProperty(Min=10, Max=10)]
         public string BotId
         {
             get { return this._botId; }
@@ -62,31 +59,12 @@ namespace Amazon.LexModelsV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BotRecommendationId. 
-        /// <para>
-        /// The identifier of the bot recommendation that contains the recommended intents.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=10, Max=10)]
-        public string BotRecommendationId
-        {
-            get { return this._botRecommendationId; }
-            set { this._botRecommendationId = value; }
-        }
-
-        // Check to see if BotRecommendationId property is set
-        internal bool IsSetBotRecommendationId()
-        {
-            return this._botRecommendationId != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property BotVersion. 
         /// <para>
-        /// The version of the bot that contains the recommended intents.
+        /// The bot version of the bot to the list custom vocabulary response.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=5, Max=5)]
+        [AWSProperty(Min=1, Max=5)]
         public string BotVersion
         {
             get { return this._botVersion; }
@@ -100,12 +78,29 @@ namespace Amazon.LexModelsV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LocaleId. 
+        /// Gets and sets the property CustomVocabularyItems. 
         /// <para>
-        /// The identifier of the language and locale of the recommended intents.
+        /// The custom vocabulary items from the list custom vocabulary response.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        public List<CustomVocabularyItem> CustomVocabularyItems
+        {
+            get { return this._customVocabularyItems; }
+            set { this._customVocabularyItems = value; }
+        }
+
+        // Check to see if CustomVocabularyItems property is set
+        internal bool IsSetCustomVocabularyItems()
+        {
+            return this._customVocabularyItems != null && this._customVocabularyItems.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LocaleId. 
+        /// <para>
+        /// The locale identifier of the bot to the list custom vocabulary response.
+        /// </para>
+        /// </summary>
         public string LocaleId
         {
             get { return this._localeId; }
@@ -119,31 +114,9 @@ namespace Amazon.LexModelsV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
-        /// <para>
-        /// The maximum number of bot recommendations to return in each page of results. If there
-        /// are fewer results than the max page size, only the actual number of results are returned.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
-        public int MaxResults
-        {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
-        }
-
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
-        {
-            return this._maxResults.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the response from the ListRecommendedIntents operation contains more results than
-        /// specified in the maxResults parameter, a token is returned in the response. Use that
-        /// token in the nextToken parameter to return the next page of results.
+        /// The nextToken identifier to the list custom vocabulary response.
         /// </para>
         /// </summary>
         public string NextToken

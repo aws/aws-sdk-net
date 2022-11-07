@@ -1163,6 +1163,64 @@ namespace Amazon.LexModelsV2
 
 
     /// <summary>
+    /// Constants used for properties of type ErrorCode.
+    /// </summary>
+    public class ErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DUPLICATE_INPUT for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode DUPLICATE_INPUT = new ErrorCode("DUPLICATE_INPUT");
+        /// <summary>
+        /// Constant INTERNAL_SERVER_FAILURE for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode INTERNAL_SERVER_FAILURE = new ErrorCode("INTERNAL_SERVER_FAILURE");
+        /// <summary>
+        /// Constant RESOURCE_ALREADY_EXISTS for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode RESOURCE_ALREADY_EXISTS = new ErrorCode("RESOURCE_ALREADY_EXISTS");
+        /// <summary>
+        /// Constant RESOURCE_DOES_NOT_EXIST for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode RESOURCE_DOES_NOT_EXIST = new ErrorCode("RESOURCE_DOES_NOT_EXIST");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ErrorCode FindValue(string value)
+        {
+            return FindValue<ErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ExportFilterName.
     /// </summary>
     public class ExportFilterName : ConstantClass
