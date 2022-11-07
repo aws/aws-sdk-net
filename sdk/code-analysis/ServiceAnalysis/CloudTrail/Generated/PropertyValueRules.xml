@@ -19,6 +19,12 @@
     <pattern>^[a-f0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudTrail.Model.CreateEventDataStoreRequest.KmsKeyId</property>
+    <min>1</min>
+    <max>350</max>
+    <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudTrail.Model.CreateEventDataStoreRequest.Name</property>
     <min>3</min>
     <max>128</max>
@@ -33,6 +39,12 @@
     <property>Amazon.CloudTrail.Model.CreateEventDataStoreResponse.EventDataStoreArn</property>
     <min>3</min>
     <max>256</max>
+    <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.CreateEventDataStoreResponse.KmsKeyId</property>
+    <min>1</min>
+    <max>350</max>
     <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -51,6 +63,12 @@
     <min>3</min>
     <max>256</max>
     <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.DeregisterOrganizationDelegatedAdminRequest.DelegatedAdminAccountId</property>
+    <min>12</min>
+    <max>16</max>
+    <pattern>\d+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudTrail.Model.DescribeQueryRequest.EventDataStore</property>
@@ -121,6 +139,12 @@
     <property>Amazon.CloudTrail.Model.GetEventDataStoreResponse.EventDataStoreArn</property>
     <min>3</min>
     <max>256</max>
+    <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.GetEventDataStoreResponse.KmsKeyId</property>
+    <min>1</min>
+    <max>350</max>
     <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -290,6 +314,12 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudTrail.Model.RegisterOrganizationDelegatedAdminRequest.MemberAccountId</property>
+    <min>12</min>
+    <max>16</max>
+    <pattern>\d+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudTrail.Model.RestoreEventDataStoreRequest.EventDataStore</property>
     <min>3</min>
     <max>256</max>
@@ -299,6 +329,12 @@
     <property>Amazon.CloudTrail.Model.RestoreEventDataStoreResponse.EventDataStoreArn</property>
     <min>3</min>
     <max>256</max>
+    <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.RestoreEventDataStoreResponse.KmsKeyId</property>
+    <min>1</min>
+    <max>350</max>
     <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -360,6 +396,12 @@
     <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudTrail.Model.UpdateEventDataStoreRequest.KmsKeyId</property>
+    <min>1</min>
+    <max>350</max>
+    <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudTrail.Model.UpdateEventDataStoreRequest.Name</property>
     <min>3</min>
     <max>128</max>
@@ -374,6 +416,12 @@
     <property>Amazon.CloudTrail.Model.UpdateEventDataStoreResponse.EventDataStoreArn</property>
     <min>3</min>
     <max>256</max>
+    <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.UpdateEventDataStoreResponse.KmsKeyId</property>
+    <min>1</min>
+    <max>350</max>
     <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
   </property-value-rule>
   <property-value-rule>

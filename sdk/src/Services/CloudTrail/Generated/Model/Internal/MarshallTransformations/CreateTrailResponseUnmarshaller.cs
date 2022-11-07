@@ -236,6 +236,10 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 {
                     return MaximumNumberOfTrailsExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("NoManagementAccountSLRExistsException"))
+                {
+                    return NoManagementAccountSLRExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("NotOrganizationMasterAccountException"))
                 {
                     return NotOrganizationMasterAccountExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

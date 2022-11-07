@@ -36,6 +36,7 @@ namespace Amazon.CloudTrail.Model
         private List<AdvancedEventSelector> _advancedEventSelectors = new List<AdvancedEventSelector>();
         private DateTime? _createdTimestamp;
         private string _eventDataStoreArn;
+        private string _kmsKeyId;
         private bool? _multiRegionEnabled;
         private string _name;
         private bool? _organizationEnabled;
@@ -98,6 +99,31 @@ namespace Amazon.CloudTrail.Model
         internal bool IsSetEventDataStoreArn()
         {
             return this._eventDataStoreArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value
+        /// is a fully specified ARN to a KMS key in the following format.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=350)]
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
         }
 
         /// <summary>

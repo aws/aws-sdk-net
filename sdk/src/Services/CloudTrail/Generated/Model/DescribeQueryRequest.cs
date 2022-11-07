@@ -46,7 +46,8 @@ namespace Amazon.CloudTrail.Model
         /// query was run.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=256)]
+        [Obsolete("EventDataStore is no longer required by DescribeQueryRequest")]
+        [AWSProperty(Min=3, Max=256)]
         public string EventDataStore
         {
             get { return this._eventDataStore; }

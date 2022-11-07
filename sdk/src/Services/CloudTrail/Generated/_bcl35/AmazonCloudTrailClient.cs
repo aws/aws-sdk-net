@@ -359,6 +359,10 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  </li> </ul>
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
+        /// This exception is thrown when the management account does not have a service-linked
+        /// role.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
         /// This exception is thrown when the Amazon Web Services account making the request to
         /// create or update an organization trail or event data store is not the management account
@@ -463,6 +467,10 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
         /// The request includes a parameter that is not valid.
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
+        /// This exception is thrown when the management account does not have a service-linked
+        /// role.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
         /// </exception>
@@ -549,12 +557,32 @@ namespace Amazon.CloudTrail
         /// resource lacks one or more required permissions for creating an organization resource
         /// in a required service.
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InsufficientEncryptionPolicyException">
+        /// This exception is thrown when the policy on the S3 bucket or KMS key does not have
+        /// sufficient permissions for the operation.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidKmsKeyIdException">
+        /// This exception is thrown when the KMS key ARN is not valid.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
         /// The request includes a parameter that is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidTagParameterException">
         /// This exception is thrown when the specified tag key or values are not valid. It can
         /// also occur if there are duplicate tags or too many tags on the resource.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.KmsException">
+        /// This exception is thrown when there is an issue with the specified KMS key and the
+        /// trail or event data store can't be updated.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.KmsKeyNotFoundException">
+        /// This exception is thrown when the KMS key does not exist, when the S3 bucket and the
+        /// KMS key are not in the same region, or when the KMS key associated with the Amazon
+        /// SNS topic either does not exist or is not in the same region.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
+        /// This exception is thrown when the management account does not have a service-linked
+        /// role.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
         /// This exception is thrown when the Amazon Web Services account making the request to
@@ -724,7 +752,7 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.KmsException">
         /// This exception is thrown when there is an issue with the specified KMS key and the
-        /// trail can’t be updated.
+        /// trail or event data store can't be updated.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.KmsKeyDisabledException">
         /// This exception is no longer in use.
@@ -736,6 +764,10 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.MaximumNumberOfTrailsExceededException">
         /// This exception is thrown when the maximum number of trails is reached.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
+        /// This exception is thrown when the management account does not have a service-linked
+        /// role.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
         /// This exception is thrown when the Amazon Web Services account making the request to
@@ -859,6 +891,10 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
         /// The request includes a parameter that is not valid.
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
+        /// This exception is thrown when the management account does not have a service-linked
+        /// role.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
         /// This exception is thrown when the Amazon Web Services account making the request to
         /// create or update an organization trail or event data store is not the management account
@@ -971,6 +1007,10 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  </li> </ul>
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
+        /// This exception is thrown when the management account does not have a service-linked
+        /// role.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
         /// This exception is thrown when the Amazon Web Services account making the request to
         /// create or update an organization trail or event data store is not the management account
@@ -1033,6 +1073,103 @@ namespace Amazon.CloudTrail
 
         #endregion
         
+        #region  DeregisterOrganizationDelegatedAdmin
+
+        /// <summary>
+        /// Removes CloudTrail delegated administrator permissions from a member account in an
+        /// organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterOrganizationDelegatedAdmin service method.</param>
+        /// 
+        /// <returns>The response from the DeregisterOrganizationDelegatedAdmin service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.AccountNotFoundException">
+        /// This exception is thrown when when the specified account is not found or not part
+        /// of an organization.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.AccountNotRegisteredException">
+        /// This exception is thrown when the specified account is not registered as the CloudTrail
+        /// delegated administrator.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.CloudTrailAccessNotEnabledException">
+        /// This exception is thrown when trusted access has not been enabled between CloudTrail
+        /// and Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling
+        /// Trusted Access with Other Amazon Web Services Services</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// For Creating a Trail For Your Organization</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
+        /// This exception is thrown when the IAM user or role that is used to create the organization
+        /// resource lacks one or more required permissions for creating an organization resource
+        /// in a required service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
+        /// The request includes a parameter that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationManagementAccountException">
+        /// This exception is thrown when the account making the request is not the organization's
+        /// management account.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OrganizationNotInAllFeaturesModeException">
+        /// This exception is thrown when Organizations is not configured to support all features.
+        /// All features must be enabled in Organizations to support creating an organization
+        /// trail or event data store.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OrganizationsNotInUseException">
+        /// This exception is thrown when the request is made from an Amazon Web Services account
+        /// that is not a member of an organization. To make this request, sign in using the credentials
+        /// of an account that belongs to an organization.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeregisterOrganizationDelegatedAdmin">REST API Reference for DeregisterOrganizationDelegatedAdmin Operation</seealso>
+        public virtual DeregisterOrganizationDelegatedAdminResponse DeregisterOrganizationDelegatedAdmin(DeregisterOrganizationDelegatedAdminRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterOrganizationDelegatedAdminRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterOrganizationDelegatedAdminResponseUnmarshaller.Instance;
+
+            return Invoke<DeregisterOrganizationDelegatedAdminResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeregisterOrganizationDelegatedAdmin operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterOrganizationDelegatedAdmin operation on AmazonCloudTrailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeregisterOrganizationDelegatedAdmin
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeregisterOrganizationDelegatedAdmin">REST API Reference for DeregisterOrganizationDelegatedAdmin Operation</seealso>
+        public virtual IAsyncResult BeginDeregisterOrganizationDelegatedAdmin(DeregisterOrganizationDelegatedAdminRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterOrganizationDelegatedAdminRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterOrganizationDelegatedAdminResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeregisterOrganizationDelegatedAdmin operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeregisterOrganizationDelegatedAdmin.</param>
+        /// 
+        /// <returns>Returns a  DeregisterOrganizationDelegatedAdminResult from CloudTrail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeregisterOrganizationDelegatedAdmin">REST API Reference for DeregisterOrganizationDelegatedAdmin Operation</seealso>
+        public virtual DeregisterOrganizationDelegatedAdminResponse EndDeregisterOrganizationDelegatedAdmin(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeregisterOrganizationDelegatedAdminResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeQuery
 
         /// <summary>
@@ -1055,6 +1192,10 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
         /// The request includes a parameter that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
+        /// This exception is thrown when the management account does not have a service-linked
+        /// role.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
@@ -1147,6 +1288,10 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  </li> </ul>
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
+        /// This exception is thrown when the management account does not have a service-linked
+        /// role.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
         /// </exception>
@@ -1193,6 +1338,10 @@ namespace Amazon.CloudTrail
         /// Not be in IP address format (for example, 192.168.5.4)
         /// </para>
         ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
+        /// This exception is thrown when the management account does not have a service-linked
+        /// role.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
@@ -1252,7 +1401,7 @@ namespace Amazon.CloudTrail
         /// Returns information about a specific channel. Amazon Web Services services create
         /// service-linked channels to get information about CloudTrail events on your behalf.
         /// For more information about service-linked channels, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/viewing-service-linked-channels.html">Viewing
-        /// service-linked channels for CloudTrail by using the CLI.</a>.
+        /// service-linked channels for CloudTrail by using the CLI</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetChannel service method.</param>
         /// 
@@ -1334,6 +1483,10 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
         /// The request includes a parameter that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
+        /// This exception is thrown when the management account does not have a service-linked
+        /// role.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
@@ -1454,6 +1607,10 @@ namespace Amazon.CloudTrail
         /// Not be in IP address format (for example, 192.168.5.4)
         /// </para>
         ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
+        /// This exception is thrown when the management account does not have a service-linked
+        /// role.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
@@ -1626,6 +1783,10 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  </li> </ul>
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
+        /// This exception is thrown when the management account does not have a service-linked
+        /// role.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
         /// </exception>
@@ -1700,6 +1861,10 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.InactiveEventDataStoreException">
         /// The event data store is inactive.
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InsufficientEncryptionPolicyException">
+        /// This exception is thrown when the policy on the S3 bucket or KMS key does not have
+        /// sufficient permissions for the operation.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidMaxResultsException">
         /// This exception is thrown if the limit specified is not valid.
         /// </exception>
@@ -1709,6 +1874,10 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
         /// The request includes a parameter that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
+        /// This exception is thrown when the management account does not have a service-linked
+        /// role.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
@@ -2032,6 +2201,10 @@ namespace Amazon.CloudTrail
         /// A token that is not valid, or a token that was previously used in a request with different
         /// parameters. This exception is thrown if the token is not valid.
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
+        /// This exception is thrown when the management account does not have a service-linked
+        /// role.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
         /// </exception>
@@ -2340,6 +2513,10 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.InvalidQueryStatusException">
         /// The query status is not valid for the operation.
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
+        /// This exception is thrown when the management account does not have a service-linked
+        /// role.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
         /// </exception>
@@ -2445,6 +2622,10 @@ namespace Amazon.CloudTrail
         /// Not be in IP address format (for example, 192.168.5.4)
         /// </para>
         ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
+        /// This exception is thrown when the management account does not have a service-linked
+        /// role.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
@@ -2850,6 +3031,10 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  </li> </ul>
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
+        /// This exception is thrown when the management account does not have a service-linked
+        /// role.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
         /// This exception is thrown when the Amazon Web Services account making the request to
         /// create or update an organization trail or event data store is not the management account
@@ -2971,7 +3156,11 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.KmsException">
         /// This exception is thrown when there is an issue with the specified KMS key and the
-        /// trail can’t be updated.
+        /// trail or event data store can't be updated.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
+        /// This exception is thrown when the management account does not have a service-linked
+        /// role.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
         /// This exception is thrown when the Amazon Web Services account making the request to
@@ -3038,6 +3227,110 @@ namespace Amazon.CloudTrail
 
         #endregion
         
+        #region  RegisterOrganizationDelegatedAdmin
+
+        /// <summary>
+        /// Registers an organization’s member account as the CloudTrail delegated administrator.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterOrganizationDelegatedAdmin service method.</param>
+        /// 
+        /// <returns>The response from the RegisterOrganizationDelegatedAdmin service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.AccountNotFoundException">
+        /// This exception is thrown when when the specified account is not found or not part
+        /// of an organization.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.AccountRegisteredException">
+        /// This exception is thrown when the account is already registered as the CloudTrail
+        /// delegated administrator.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.CannotDelegateManagementAccountException">
+        /// This exception is thrown when the management account of an organization is registered
+        /// as the CloudTrail delegated administrator.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.CloudTrailAccessNotEnabledException">
+        /// This exception is thrown when trusted access has not been enabled between CloudTrail
+        /// and Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling
+        /// Trusted Access with Other Amazon Web Services Services</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// For Creating a Trail For Your Organization</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.DelegatedAdminAccountLimitExceededException">
+        /// This exception is thrown when the maximum number of CloudTrail delegated administrators
+        /// is reached.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
+        /// This exception is thrown when the IAM user or role that is used to create the organization
+        /// resource lacks one or more required permissions for creating an organization resource
+        /// in a required service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
+        /// The request includes a parameter that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationManagementAccountException">
+        /// This exception is thrown when the account making the request is not the organization's
+        /// management account.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OrganizationNotInAllFeaturesModeException">
+        /// This exception is thrown when Organizations is not configured to support all features.
+        /// All features must be enabled in Organizations to support creating an organization
+        /// trail or event data store.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OrganizationsNotInUseException">
+        /// This exception is thrown when the request is made from an Amazon Web Services account
+        /// that is not a member of an organization. To make this request, sign in using the credentials
+        /// of an account that belongs to an organization.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RegisterOrganizationDelegatedAdmin">REST API Reference for RegisterOrganizationDelegatedAdmin Operation</seealso>
+        public virtual RegisterOrganizationDelegatedAdminResponse RegisterOrganizationDelegatedAdmin(RegisterOrganizationDelegatedAdminRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterOrganizationDelegatedAdminRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterOrganizationDelegatedAdminResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterOrganizationDelegatedAdminResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterOrganizationDelegatedAdmin operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterOrganizationDelegatedAdmin operation on AmazonCloudTrailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterOrganizationDelegatedAdmin
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RegisterOrganizationDelegatedAdmin">REST API Reference for RegisterOrganizationDelegatedAdmin Operation</seealso>
+        public virtual IAsyncResult BeginRegisterOrganizationDelegatedAdmin(RegisterOrganizationDelegatedAdminRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterOrganizationDelegatedAdminRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterOrganizationDelegatedAdminResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RegisterOrganizationDelegatedAdmin operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterOrganizationDelegatedAdmin.</param>
+        /// 
+        /// <returns>Returns a  RegisterOrganizationDelegatedAdminResult from CloudTrail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RegisterOrganizationDelegatedAdmin">REST API Reference for RegisterOrganizationDelegatedAdmin Operation</seealso>
+        public virtual RegisterOrganizationDelegatedAdminResponse EndRegisterOrganizationDelegatedAdmin(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RegisterOrganizationDelegatedAdminResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  RemoveTags
 
         /// <summary>
@@ -3092,6 +3385,10 @@ namespace Amazon.CloudTrail
         /// Not be in IP address format (for example, 192.168.5.4)
         /// </para>
         ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
+        /// This exception is thrown when the management account does not have a service-linked
+        /// role.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
         /// This exception is thrown when the Amazon Web Services account making the request to
@@ -3195,6 +3492,10 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
         /// The request includes a parameter that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
+        /// This exception is thrown when the management account does not have a service-linked
+        /// role.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
         /// This exception is thrown when the Amazon Web Services account making the request to
@@ -3424,6 +3725,10 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  </li> </ul>
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
+        /// This exception is thrown when the management account does not have a service-linked
+        /// role.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
         /// This exception is thrown when the Amazon Web Services account making the request to
         /// create or update an organization trail or event data store is not the management account
@@ -3506,6 +3811,10 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.InactiveEventDataStoreException">
         /// The event data store is inactive.
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InsufficientEncryptionPolicyException">
+        /// This exception is thrown when the policy on the S3 bucket or KMS key does not have
+        /// sufficient permissions for the operation.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientS3BucketPolicyException">
         /// This exception is thrown when the policy on the S3 bucket is not sufficient.
         /// </exception>
@@ -3526,6 +3835,10 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.MaxConcurrentQueriesException">
         /// You are already running the maximum number of concurrent queries. Wait a minute for
         /// some queries to finish, and then run the query again.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
+        /// This exception is thrown when the management account does not have a service-linked
+        /// role.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
@@ -3699,6 +4012,10 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  </li> </ul>
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
+        /// This exception is thrown when the management account does not have a service-linked
+        /// role.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
         /// This exception is thrown when the Amazon Web Services account making the request to
         /// create or update an organization trail or event data store is not the management account
@@ -3800,8 +4117,28 @@ namespace Amazon.CloudTrail
         /// resource lacks one or more required permissions for creating an organization resource
         /// in a required service.
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InsufficientEncryptionPolicyException">
+        /// This exception is thrown when the policy on the S3 bucket or KMS key does not have
+        /// sufficient permissions for the operation.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidKmsKeyIdException">
+        /// This exception is thrown when the KMS key ARN is not valid.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
         /// The request includes a parameter that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.KmsException">
+        /// This exception is thrown when there is an issue with the specified KMS key and the
+        /// trail or event data store can't be updated.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.KmsKeyNotFoundException">
+        /// This exception is thrown when the KMS key does not exist, when the S3 bucket and the
+        /// KMS key are not in the same region, or when the KMS key associated with the Amazon
+        /// SNS topic either does not exist or is not in the same region.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
+        /// This exception is thrown when the management account does not have a service-linked
+        /// role.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
         /// This exception is thrown when the Amazon Web Services account making the request to
@@ -3967,6 +4304,9 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterCombinationException">
         /// This exception is thrown when the combination of parameters provided is not valid.
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
+        /// The request includes a parameter that is not valid.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidS3BucketNameException">
         /// This exception is thrown when the provided S3 bucket name is not valid.
         /// </exception>
@@ -4006,7 +4346,7 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.KmsException">
         /// This exception is thrown when there is an issue with the specified KMS key and the
-        /// trail can’t be updated.
+        /// trail or event data store can't be updated.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.KmsKeyDisabledException">
         /// This exception is no longer in use.
@@ -4015,6 +4355,10 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the KMS key does not exist, when the S3 bucket and the
         /// KMS key are not in the same region, or when the KMS key associated with the Amazon
         /// SNS topic either does not exist or is not in the same region.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
+        /// This exception is thrown when the management account does not have a service-linked
+        /// role.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
         /// This exception is thrown when the Amazon Web Services account making the request to
