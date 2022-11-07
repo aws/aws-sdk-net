@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// A rule statement that defines a string match search against labels that have been
-    /// added to the web request by rules that have already run in the web ACL. 
+    /// A rule statement to match against labels that have been added to the web request by
+    /// rules that have already run in the web ACL. 
     /// 
     ///  
     /// <para>

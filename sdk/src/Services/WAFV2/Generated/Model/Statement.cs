@@ -99,7 +99,47 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property GeoMatchStatement. 
         /// <para>
-        /// A rule statement used to identify web requests based on country of origin. 
+        /// A rule statement that labels web requests by country and region and that matches against
+        /// web requests based on country code. A geo match rule labels every request that it
+        /// inspects regardless of whether it finds a match.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// To manage requests only by country, you can use this statement by itself and specify
+        /// the countries that you want to match against in the <code>CountryCodes</code> array.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Otherwise, configure your geo match rule with Count action so that it only labels
+        /// requests. Then, add one or more label match rules to run after the geo match rule
+        /// and configure them to match against the geographic labels and handle the requests
+        /// as needed. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// WAF labels requests using the alpha-2 country and region codes from the International
+        /// Organization for Standardization (ISO) 3166 standard. WAF determines the codes using
+        /// either the IP address in the web request origin or, if you specify it, the address
+        /// in the geo match <code>ForwardedIPConfig</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you use the web request origin, the label formats are <code>awswaf:clientip:geo:region:&lt;ISO
+        /// country code&gt;-&lt;ISO region code&gt;</code> and <code>awswaf:clientip:geo:country:&lt;ISO
+        /// country code&gt;</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you use a forwarded IP address, the label formats are <code>awswaf:forwardedip:geo:region:&lt;ISO
+        /// country code&gt;-&lt;ISO region code&gt;</code> and <code>awswaf:forwardedip:geo:country:&lt;ISO
+        /// country code&gt;</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For additional details, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-geo-match.html">Geographic
+        /// match rule statement</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+        /// Developer Guide</a>. 
         /// </para>
         /// </summary>
         public GeoMatchStatement GeoMatchStatement
@@ -144,8 +184,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property LabelMatchStatement. 
         /// <para>
-        /// A rule statement that defines a string match search against labels that have been
-        /// added to the web request by rules that have already run in the web ACL. 
+        /// A rule statement to match against labels that have been added to the web request by
+        /// rules that have already run in the web ACL. 
         /// </para>
         ///  
         /// <para>
