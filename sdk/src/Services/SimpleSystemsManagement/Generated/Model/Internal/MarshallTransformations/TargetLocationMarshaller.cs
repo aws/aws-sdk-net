@@ -73,6 +73,17 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetTargetLocationAlarmConfiguration())
+            {
+                context.Writer.WritePropertyName("TargetLocationAlarmConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AlarmConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.TargetLocationAlarmConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTargetLocationMaxConcurrency())
             {
                 context.Writer.WritePropertyName("TargetLocationMaxConcurrency");

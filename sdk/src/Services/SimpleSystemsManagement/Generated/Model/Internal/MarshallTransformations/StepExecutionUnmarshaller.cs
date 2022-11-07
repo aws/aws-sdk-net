@@ -190,6 +190,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.TimeoutSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TriggeredAlarms", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AlarmStateInformation, AlarmStateInformationUnmarshaller>(AlarmStateInformationUnmarshaller.Instance);
+                    unmarshalledObject.TriggeredAlarms = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ValidNextSteps", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

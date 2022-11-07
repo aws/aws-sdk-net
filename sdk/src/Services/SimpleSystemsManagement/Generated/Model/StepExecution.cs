@@ -54,6 +54,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private TargetLocation _targetLocation;
         private List<Target> _targets = new List<Target>();
         private long? _timeoutSeconds;
+        private List<AlarmStateInformation> _triggeredAlarms = new List<AlarmStateInformation>();
         private List<string> _validNextSteps = new List<string>();
 
         /// <summary>
@@ -440,6 +441,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetTimeoutSeconds()
         {
             return this._timeoutSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TriggeredAlarms. 
+        /// <para>
+        /// The CloudWatch alarms that were invoked by the automation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<AlarmStateInformation> TriggeredAlarms
+        {
+            get { return this._triggeredAlarms; }
+            set { this._triggeredAlarms = value; }
+        }
+
+        // Check to see if TriggeredAlarms property is set
+        internal bool IsSetTriggeredAlarms()
+        {
+            return this._triggeredAlarms != null && this._triggeredAlarms.Count > 0; 
         }
 
         /// <summary>

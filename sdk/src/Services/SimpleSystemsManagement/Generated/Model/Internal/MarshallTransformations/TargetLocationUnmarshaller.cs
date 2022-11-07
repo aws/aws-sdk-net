@@ -82,6 +82,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.Regions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TargetLocationAlarmConfiguration", targetDepth))
+                {
+                    var unmarshaller = AlarmConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.TargetLocationAlarmConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TargetLocationMaxConcurrency", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
