@@ -158,9 +158,9 @@ namespace Amazon.WellArchitected
         /// 
         ///  
         /// <para>
-        /// The owner of a lens can share it with other Amazon Web Services accounts and IAM users
-        /// in the same Amazon Web Services Region. Shared access to a lens is not removed until
-        /// the lens invitation is deleted.
+        /// The owner of a lens can share it with other Amazon Web Services accounts, IAM users,
+        /// an organization, and organizational units (OUs) in the same Amazon Web Services Region.
+        /// Shared access to a lens is not removed until the lens invitation is deleted.
         /// </para>
         ///  <note> 
         /// <para>
@@ -210,9 +210,9 @@ namespace Amazon.WellArchitected
         /// 
         ///  
         /// <para>
-        /// The owner of a lens can share it with other Amazon Web Services accounts and IAM users
-        /// in the same Amazon Web Services Region. Shared access to a lens is not removed until
-        /// the lens invitation is deleted.
+        /// The owner of a lens can share it with other Amazon Web Services accounts, IAM users,
+        /// an organization, and organizational units (OUs) in the same Amazon Web Services Region.
+        /// Shared access to a lens is not removed until the lens invitation is deleted.
         /// </para>
         ///  <note> 
         /// <para>
@@ -430,9 +430,9 @@ namespace Amazon.WellArchitected
         /// 
         ///  
         /// <para>
-        /// The owner of a workload can share the workload with other Amazon Web Services accounts
-        /// and IAM users in the same Amazon Web Services Region. Only the owner of a workload
-        /// can delete it.
+        /// The owner of a workload can share the workload with other Amazon Web Services accounts,
+        /// IAM users, an organization, and organizational units (OUs) in the same Amazon Web
+        /// Services Region. Only the owner of a workload can delete it.
         /// </para>
         ///  
         /// <para>
@@ -471,9 +471,9 @@ namespace Amazon.WellArchitected
         /// 
         ///  
         /// <para>
-        /// The owner of a workload can share the workload with other Amazon Web Services accounts
-        /// and IAM users in the same Amazon Web Services Region. Only the owner of a workload
-        /// can delete it.
+        /// The owner of a workload can share the workload with other Amazon Web Services accounts,
+        /// IAM users, an organization, and organizational units (OUs) in the same Amazon Web
+        /// Services Region. Only the owner of a workload can delete it.
         /// </para>
         ///  
         /// <para>
@@ -716,9 +716,9 @@ namespace Amazon.WellArchitected
         /// 
         ///  
         /// <para>
-        /// After the lens share is deleted, Amazon Web Services accounts and IAM users that you
-        /// shared the lens with can continue to use it, but they will no longer be able to apply
-        /// it to new workloads.
+        /// After the lens share is deleted, Amazon Web Services accounts, IAM users, organizations,
+        /// and organizational units (OUs) that you shared the lens with can continue to use it,
+        /// but they will no longer be able to apply it to new workloads.
         /// </para>
         ///  <note> 
         /// <para>
@@ -765,9 +765,9 @@ namespace Amazon.WellArchitected
         /// 
         ///  
         /// <para>
-        /// After the lens share is deleted, Amazon Web Services accounts and IAM users that you
-        /// shared the lens with can continue to use it, but they will no longer be able to apply
-        /// it to new workloads.
+        /// After the lens share is deleted, Amazon Web Services accounts, IAM users, organizations,
+        /// and organizational units (OUs) that you shared the lens with can continue to use it,
+        /// but they will no longer be able to apply it to new workloads.
         /// </para>
         ///  <note> 
         /// <para>
@@ -1718,6 +1718,122 @@ namespace Amazon.WellArchitected
 
         #endregion
         
+        #region  ListCheckDetails
+
+
+        /// <summary>
+        /// List of Trusted Advisor check details by account related to the workload.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCheckDetails service method.</param>
+        /// 
+        /// <returns>The response from the ListCheckDetails service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListCheckDetails">REST API Reference for ListCheckDetails Operation</seealso>
+        ListCheckDetailsResponse ListCheckDetails(ListCheckDetailsRequest request);
+
+
+
+        /// <summary>
+        /// List of Trusted Advisor check details by account related to the workload.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCheckDetails service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCheckDetails service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListCheckDetails">REST API Reference for ListCheckDetails Operation</seealso>
+        Task<ListCheckDetailsResponse> ListCheckDetailsAsync(ListCheckDetailsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListCheckSummaries
+
+
+        /// <summary>
+        /// List of Trusted Advisor checks summarized for all accounts related to the workload.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCheckSummaries service method.</param>
+        /// 
+        /// <returns>The response from the ListCheckSummaries service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListCheckSummaries">REST API Reference for ListCheckSummaries Operation</seealso>
+        ListCheckSummariesResponse ListCheckSummaries(ListCheckSummariesRequest request);
+
+
+
+        /// <summary>
+        /// List of Trusted Advisor checks summarized for all accounts related to the workload.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCheckSummaries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCheckSummaries service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListCheckSummaries">REST API Reference for ListCheckSummaries Operation</seealso>
+        Task<ListCheckSummariesResponse> ListCheckSummariesAsync(ListCheckSummariesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListLenses
 
 
@@ -2578,7 +2694,14 @@ namespace Amazon.WellArchitected
 
 
         /// <summary>
-        /// Update a workload invitation.
+        /// Update a workload or custom lens share invitation.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This API operation can be called independently of any resource. Previous documentation
+        /// implied that a workload ARN must be specified.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateShareInvitation service method.</param>
         /// 
@@ -2607,7 +2730,14 @@ namespace Amazon.WellArchitected
 
 
         /// <summary>
-        /// Update a workload invitation.
+        /// Update a workload or custom lens share invitation.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This API operation can be called independently of any resource. Previous documentation
+        /// implied that a workload ARN must be specified.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateShareInvitation service method.</param>
         /// <param name="cancellationToken">

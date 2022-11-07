@@ -29,28 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WellArchitected.Model
 {
     /// <summary>
-    /// This is the response object from the UpdateShareInvitation operation.
+    /// Discovery configuration associated to the workload.
     /// </summary>
-    public partial class UpdateShareInvitationResponse : AmazonWebServiceResponse
+    public partial class WorkloadDiscoveryConfig
     {
-        private ShareInvitation _shareInvitation;
+        private TrustedAdvisorIntegrationStatus _trustedAdvisorIntegrationStatus;
 
         /// <summary>
-        /// Gets and sets the property ShareInvitation. 
+        /// Gets and sets the property TrustedAdvisorIntegrationStatus. 
         /// <para>
-        /// The updated workload or custom lens share invitation.
+        /// Discovery integration status in respect to Trusted Advisor for the workload.
         /// </para>
         /// </summary>
-        public ShareInvitation ShareInvitation
+        public TrustedAdvisorIntegrationStatus TrustedAdvisorIntegrationStatus
         {
-            get { return this._shareInvitation; }
-            set { this._shareInvitation = value; }
+            get { return this._trustedAdvisorIntegrationStatus; }
+            set { this._trustedAdvisorIntegrationStatus = value; }
         }
 
-        // Check to see if ShareInvitation property is set
-        internal bool IsSetShareInvitation()
+        // Check to see if TrustedAdvisorIntegrationStatus property is set
+        internal bool IsSetTrustedAdvisorIntegrationStatus()
         {
-            return this._shareInvitation != null;
+            return this._trustedAdvisorIntegrationStatus != null;
         }
 
     }

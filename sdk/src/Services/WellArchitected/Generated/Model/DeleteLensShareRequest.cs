@@ -34,9 +34,9 @@ namespace Amazon.WellArchitected.Model
     /// 
     ///  
     /// <para>
-    /// After the lens share is deleted, Amazon Web Services accounts and IAM users that you
-    /// shared the lens with can continue to use it, but they will no longer be able to apply
-    /// it to new workloads.
+    /// After the lens share is deleted, Amazon Web Services accounts, IAM users, organizations,
+    /// and organizational units (OUs) that you shared the lens with can continue to use it,
+    /// but they will no longer be able to apply it to new workloads.
     /// </para>
     ///  <note> 
     /// <para>

@@ -70,6 +70,12 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                     unmarshalledObject.AccountIds = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Applications", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Applications = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ArchitecturalDesign", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -86,6 +92,12 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DiscoveryConfig", targetDepth))
+                {
+                    var unmarshaller = WorkloadDiscoveryConfigUnmarshaller.Instance;
+                    unmarshalledObject.DiscoveryConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Environment", targetDepth))

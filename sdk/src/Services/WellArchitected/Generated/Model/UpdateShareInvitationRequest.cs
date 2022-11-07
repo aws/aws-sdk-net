@@ -30,7 +30,14 @@ namespace Amazon.WellArchitected.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateShareInvitation operation.
-    /// Update a workload invitation.
+    /// Update a workload or custom lens share invitation.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This API operation can be called independently of any resource. Previous documentation
+    /// implied that a workload ARN must be specified.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class UpdateShareInvitationRequest : AmazonWellArchitectedRequest
     {

@@ -54,6 +54,7 @@
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.CreateWorkloadRequest.ArchitecturalDesign</property>
     <max>2048</max>
+    <pattern>^(|(https?|ftp):\/\/[^\s/$.?#].[^\s]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.CreateWorkloadRequest.Description</property>
@@ -338,6 +339,54 @@
     <pattern>[0-9a-f]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListCheckDetailsRequest.ChoiceId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListCheckDetailsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListCheckDetailsRequest.PillarId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListCheckDetailsRequest.QuestionId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListCheckDetailsRequest.WorkloadId</property>
+    <pattern>[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListCheckSummariesRequest.ChoiceId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListCheckSummariesRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListCheckSummariesRequest.PillarId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListCheckSummariesRequest.QuestionId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListCheckSummariesRequest.WorkloadId</property>
+    <pattern>[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListLensesRequest.LensName</property>
     <min>1</min>
     <max>128</max>
@@ -534,6 +583,7 @@
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.UpdateWorkloadRequest.ArchitecturalDesign</property>
     <max>2048</max>
+    <pattern>^(|(https?|ftp):\/\/[^\s/$.?#].[^\s]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.UpdateWorkloadRequest.Description</property>
@@ -645,6 +695,45 @@
     <property>Amazon.WellArchitected.Model.AnswerSummary.QuestionTitle</property>
     <min>1</min>
     <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CheckDetail.AccountId</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CheckDetail.ChoiceId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CheckDetail.FlaggedResources</property>
+    <min>1</min>
+    <max>9999</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CheckDetail.PillarId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CheckDetail.QuestionId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CheckSummary.ChoiceId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CheckSummary.PillarId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CheckSummary.QuestionId</property>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.Choice.ChoiceId</property>
@@ -941,6 +1030,7 @@
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.Workload.ArchitecturalDesign</property>
     <max>2048</max>
+    <pattern>^(|(https?|ftp):\/\/[^\s/$.?#].[^\s]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.Workload.Description</property>

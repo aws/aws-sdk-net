@@ -79,6 +79,17 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetApplications())
+                {
+                    context.Writer.WritePropertyName("Applications");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestApplicationsListValue in publicRequest.Applications)
+                    {
+                            context.Writer.Write(publicRequestApplicationsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetArchitecturalDesign())
                 {
                     context.Writer.WritePropertyName("ArchitecturalDesign");
@@ -100,6 +111,17 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("Description");
                     context.Writer.Write(publicRequest.Description);
+                }
+
+                if(publicRequest.IsSetDiscoveryConfig())
+                {
+                    context.Writer.WritePropertyName("DiscoveryConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = WorkloadDiscoveryConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DiscoveryConfig, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetEnvironment())

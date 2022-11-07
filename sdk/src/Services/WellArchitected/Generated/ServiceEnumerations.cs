@@ -137,6 +137,172 @@ namespace Amazon.WellArchitected
 
 
     /// <summary>
+    /// Constants used for properties of type CheckFailureReason.
+    /// </summary>
+    public class CheckFailureReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCESS_DENIED for CheckFailureReason
+        /// </summary>
+        public static readonly CheckFailureReason ACCESS_DENIED = new CheckFailureReason("ACCESS_DENIED");
+        /// <summary>
+        /// Constant ASSUME_ROLE_ERROR for CheckFailureReason
+        /// </summary>
+        public static readonly CheckFailureReason ASSUME_ROLE_ERROR = new CheckFailureReason("ASSUME_ROLE_ERROR");
+        /// <summary>
+        /// Constant PREMIUM_SUPPORT_REQUIRED for CheckFailureReason
+        /// </summary>
+        public static readonly CheckFailureReason PREMIUM_SUPPORT_REQUIRED = new CheckFailureReason("PREMIUM_SUPPORT_REQUIRED");
+        /// <summary>
+        /// Constant UNKNOWN_ERROR for CheckFailureReason
+        /// </summary>
+        public static readonly CheckFailureReason UNKNOWN_ERROR = new CheckFailureReason("UNKNOWN_ERROR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CheckFailureReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CheckFailureReason FindValue(string value)
+        {
+            return FindValue<CheckFailureReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CheckFailureReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CheckProvider.
+    /// </summary>
+    public class CheckProvider : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TRUSTED_ADVISOR for CheckProvider
+        /// </summary>
+        public static readonly CheckProvider TRUSTED_ADVISOR = new CheckProvider("TRUSTED_ADVISOR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CheckProvider(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CheckProvider FindValue(string value)
+        {
+            return FindValue<CheckProvider>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CheckProvider(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CheckStatus.
+    /// </summary>
+    public class CheckStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ERROR for CheckStatus
+        /// </summary>
+        public static readonly CheckStatus ERROR = new CheckStatus("ERROR");
+        /// <summary>
+        /// Constant FETCH_FAILED for CheckStatus
+        /// </summary>
+        public static readonly CheckStatus FETCH_FAILED = new CheckStatus("FETCH_FAILED");
+        /// <summary>
+        /// Constant NOT_AVAILABLE for CheckStatus
+        /// </summary>
+        public static readonly CheckStatus NOT_AVAILABLE = new CheckStatus("NOT_AVAILABLE");
+        /// <summary>
+        /// Constant OKAY for CheckStatus
+        /// </summary>
+        public static readonly CheckStatus OKAY = new CheckStatus("OKAY");
+        /// <summary>
+        /// Constant WARNING for CheckStatus
+        /// </summary>
+        public static readonly CheckStatus WARNING = new CheckStatus("WARNING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CheckStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CheckStatus FindValue(string value)
+        {
+            return FindValue<CheckStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CheckStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ChoiceReason.
     /// </summary>
     public class ChoiceReason : ConstantClass
@@ -910,6 +1076,56 @@ namespace Amazon.WellArchitected
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ShareStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TrustedAdvisorIntegrationStatus.
+    /// </summary>
+    public class TrustedAdvisorIntegrationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for TrustedAdvisorIntegrationStatus
+        /// </summary>
+        public static readonly TrustedAdvisorIntegrationStatus DISABLED = new TrustedAdvisorIntegrationStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for TrustedAdvisorIntegrationStatus
+        /// </summary>
+        public static readonly TrustedAdvisorIntegrationStatus ENABLED = new TrustedAdvisorIntegrationStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TrustedAdvisorIntegrationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TrustedAdvisorIntegrationStatus FindValue(string value)
+        {
+            return FindValue<TrustedAdvisorIntegrationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TrustedAdvisorIntegrationStatus(string value)
         {
             return FindValue(value);
         }

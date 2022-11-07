@@ -34,9 +34,9 @@ namespace Amazon.WellArchitected.Model
     /// 
     ///  
     /// <para>
-    /// The owner of a workload can share the workload with other Amazon Web Services accounts
-    /// and IAM users in the same Amazon Web Services Region. Only the owner of a workload
-    /// can delete it.
+    /// The owner of a workload can share the workload with other Amazon Web Services accounts,
+    /// IAM users, an organization, and organizational units (OUs) in the same Amazon Web
+    /// Services Region. Only the owner of a workload can delete it.
     /// </para>
     ///  
     /// <para>
@@ -47,10 +47,12 @@ namespace Amazon.WellArchitected.Model
     public partial class CreateWorkloadRequest : AmazonWellArchitectedRequest
     {
         private List<string> _accountIds = new List<string>();
+        private List<string> _applications = new List<string>();
         private string _architecturalDesign;
         private List<string> _awsRegions = new List<string>();
         private string _clientRequestToken;
         private string _description;
+        private WorkloadDiscoveryConfig _discoveryConfig;
         private WorkloadEnvironment _environment;
         private string _industry;
         private string _industryType;
@@ -76,6 +78,25 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetAccountIds()
         {
             return this._accountIds != null && this._accountIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Applications. 
+        /// <para>
+        /// List of AppRegistry application ARNs associated to the workload.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public List<string> Applications
+        {
+            get { return this._applications; }
+            set { this._applications = value; }
+        }
+
+        // Check to see if Applications property is set
+        internal bool IsSetApplications()
+        {
+            return this._applications != null && this._applications.Count > 0; 
         }
 
         /// <summary>
@@ -139,6 +160,24 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DiscoveryConfig. 
+        /// <para>
+        /// Well-Architected discovery configuration settings associated to the workload.
+        /// </para>
+        /// </summary>
+        public WorkloadDiscoveryConfig DiscoveryConfig
+        {
+            get { return this._discoveryConfig; }
+            set { this._discoveryConfig = value; }
+        }
+
+        // Check to see if DiscoveryConfig property is set
+        internal bool IsSetDiscoveryConfig()
+        {
+            return this._discoveryConfig != null;
         }
 
         /// <summary>

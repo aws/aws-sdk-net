@@ -44,6 +44,22 @@ namespace Amazon.WellArchitected.Model
         }
 
         /// <summary>
+        /// Paginator for ListCheckDetails operation
+        ///</summary>
+        public IListCheckDetailsPaginator ListCheckDetails(ListCheckDetailsRequest request) 
+        {
+            return new ListCheckDetailsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCheckSummaries operation
+        ///</summary>
+        public IListCheckSummariesPaginator ListCheckSummaries(ListCheckSummariesRequest request) 
+        {
+            return new ListCheckSummariesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListLenses operation
         ///</summary>
         public IListLensesPaginator ListLenses(ListLensesRequest request) 

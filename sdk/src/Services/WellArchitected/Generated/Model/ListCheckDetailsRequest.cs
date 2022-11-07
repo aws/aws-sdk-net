@@ -29,22 +29,56 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WellArchitected.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListWorkloadShares operation.
-    /// List the workload shares associated with the workload.
+    /// Container for the parameters to the ListCheckDetails operation.
+    /// List of Trusted Advisor check details by account related to the workload.
     /// </summary>
-    public partial class ListWorkloadSharesRequest : AmazonWellArchitectedRequest
+    public partial class ListCheckDetailsRequest : AmazonWellArchitectedRequest
     {
+        private string _choiceId;
+        private string _lensArn;
         private int? _maxResults;
         private string _nextToken;
-        private string _sharedWithPrefix;
-        private ShareStatus _status;
+        private string _pillarId;
+        private string _questionId;
         private string _workloadId;
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
+        /// Gets and sets the property ChoiceId.
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
+        public string ChoiceId
+        {
+            get { return this._choiceId; }
+            set { this._choiceId = value; }
+        }
+
+        // Check to see if ChoiceId property is set
+        internal bool IsSetChoiceId()
+        {
+            return this._choiceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LensArn. 
         /// <para>
-        /// The maximum number of results to return for this request.
+        /// Well-Architected Lens ARN.
         /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string LensArn
+        {
+            get { return this._lensArn; }
+            set { this._lensArn = value; }
+        }
+
+        // Check to see if LensArn property is set
+        internal bool IsSetLensArn()
+        {
+            return this._lensArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxResults.
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public int MaxResults
@@ -75,38 +109,35 @@ namespace Amazon.WellArchitected.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SharedWithPrefix. 
-        /// <para>
-        /// The Amazon Web Services account ID, IAM role, organization ID, or organizational unit
-        /// (OU) ID with which the workload is shared.
-        /// </para>
+        /// Gets and sets the property PillarId.
         /// </summary>
-        [AWSProperty(Max=100)]
-        public string SharedWithPrefix
+        [AWSProperty(Required=true, Min=1, Max=64)]
+        public string PillarId
         {
-            get { return this._sharedWithPrefix; }
-            set { this._sharedWithPrefix = value; }
+            get { return this._pillarId; }
+            set { this._pillarId = value; }
         }
 
-        // Check to see if SharedWithPrefix property is set
-        internal bool IsSetSharedWithPrefix()
+        // Check to see if PillarId property is set
+        internal bool IsSetPillarId()
         {
-            return this._sharedWithPrefix != null;
+            return this._pillarId != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Status.
+        /// Gets and sets the property QuestionId.
         /// </summary>
-        public ShareStatus Status
+        [AWSProperty(Required=true, Min=1, Max=128)]
+        public string QuestionId
         {
-            get { return this._status; }
-            set { this._status = value; }
+            get { return this._questionId; }
+            set { this._questionId = value; }
         }
 
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
+        // Check to see if QuestionId property is set
+        internal bool IsSetQuestionId()
         {
-            return this._status != null;
+            return this._questionId != null;
         }
 
         /// <summary>

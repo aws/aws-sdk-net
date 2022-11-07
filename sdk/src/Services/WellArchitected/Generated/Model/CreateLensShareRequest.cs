@@ -34,9 +34,9 @@ namespace Amazon.WellArchitected.Model
     /// 
     ///  
     /// <para>
-    /// The owner of a lens can share it with other Amazon Web Services accounts and IAM users
-    /// in the same Amazon Web Services Region. Shared access to a lens is not removed until
-    /// the lens invitation is deleted.
+    /// The owner of a lens can share it with other Amazon Web Services accounts, IAM users,
+    /// an organization, and organizational units (OUs) in the same Amazon Web Services Region.
+    /// Shared access to a lens is not removed until the lens invitation is deleted.
     /// </para>
     ///  <note> 
     /// <para>

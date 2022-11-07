@@ -31,6 +31,16 @@ namespace Amazon.WellArchitected.Model
         IListAnswersPaginator ListAnswers(ListAnswersRequest request);
 
         /// <summary>
+        /// Paginator for ListCheckDetails operation
+        ///</summary>
+        IListCheckDetailsPaginator ListCheckDetails(ListCheckDetailsRequest request);
+
+        /// <summary>
+        /// Paginator for ListCheckSummaries operation
+        ///</summary>
+        IListCheckSummariesPaginator ListCheckSummaries(ListCheckSummariesRequest request);
+
+        /// <summary>
         /// Paginator for ListLenses operation
         ///</summary>
         IListLensesPaginator ListLenses(ListLensesRequest request);

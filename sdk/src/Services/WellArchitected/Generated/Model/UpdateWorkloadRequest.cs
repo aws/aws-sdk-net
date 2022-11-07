@@ -35,9 +35,11 @@ namespace Amazon.WellArchitected.Model
     public partial class UpdateWorkloadRequest : AmazonWellArchitectedRequest
     {
         private List<string> _accountIds = new List<string>();
+        private List<string> _applications = new List<string>();
         private string _architecturalDesign;
         private List<string> _awsRegions = new List<string>();
         private string _description;
+        private WorkloadDiscoveryConfig _discoveryConfig;
         private WorkloadEnvironment _environment;
         private WorkloadImprovementStatus _improvementStatus;
         private string _industry;
@@ -64,6 +66,25 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetAccountIds()
         {
             return this._accountIds != null && this._accountIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Applications. 
+        /// <para>
+        /// List of AppRegistry application ARNs to associate to the workload.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public List<string> Applications
+        {
+            get { return this._applications; }
+            set { this._applications = value; }
+        }
+
+        // Check to see if Applications property is set
+        internal bool IsSetApplications()
+        {
+            return this._applications != null && this._applications.Count > 0; 
         }
 
         /// <summary>
@@ -112,6 +133,24 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DiscoveryConfig. 
+        /// <para>
+        /// Well-Architected discovery configuration settings to associate to the workload.
+        /// </para>
+        /// </summary>
+        public WorkloadDiscoveryConfig DiscoveryConfig
+        {
+            get { return this._discoveryConfig; }
+            set { this._discoveryConfig = value; }
+        }
+
+        // Check to see if DiscoveryConfig property is set
+        internal bool IsSetDiscoveryConfig()
+        {
+            return this._discoveryConfig != null;
         }
 
         /// <summary>
