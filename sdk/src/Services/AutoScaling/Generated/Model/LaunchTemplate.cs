@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Describes a launch template and overrides. You specify these properties as part of
-    /// a mixed instances policy.
+    /// Use this structure to specify the launch templates and instance types (overrides)
+    /// for a mixed instances policy.
     /// </summary>
     public partial class LaunchTemplate
     {
@@ -40,7 +40,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LaunchTemplateSpecification. 
         /// <para>
-        /// The launch template to use.
+        /// The launch template.
         /// </para>
         /// </summary>
         public LaunchTemplateSpecification LaunchTemplateSpecification
@@ -59,13 +59,6 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property Overrides. 
         /// <para>
         /// Any properties that you specify override the same properties in the launch template.
-        /// If not provided, Amazon EC2 Auto Scaling uses the instance type or instance type requirements
-        /// specified in the launch template when it launches an instance.
-        /// </para>
-        ///  
-        /// <para>
-        /// The overrides can include either one or more instance types or a set of instance requirements,
-        /// but not both.
         /// </para>
         /// </summary>
         public List<LaunchTemplateOverrides> Overrides

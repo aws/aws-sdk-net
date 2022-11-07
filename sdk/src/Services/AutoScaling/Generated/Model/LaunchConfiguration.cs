@@ -102,12 +102,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ClassicLinkVPCId. 
         /// <para>
-        ///  <i>EC2-Classic retires on August 15, 2022. This property is not supported after that
-        /// date.</i> 
-        /// </para>
-        ///  
-        /// <para>
-        /// The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
+        /// Available for backward compatibility.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -126,12 +121,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ClassicLinkVPCSecurityGroups. 
         /// <para>
-        ///  <i>EC2-Classic retires on August 15, 2022. This property is not supported after that
-        /// date.</i> 
-        /// </para>
-        ///  
-        /// <para>
-        /// The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>.
+        /// Available for backward compatibility.
         /// </para>
         /// </summary>
         public List<string> ClassicLinkVPCSecurityGroups

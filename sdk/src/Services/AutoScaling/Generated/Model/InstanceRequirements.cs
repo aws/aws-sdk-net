@@ -29,17 +29,46 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// When you specify multiple parameters, you get instance types that satisfy all of the
-    /// specified parameters. If you specify multiple values for a parameter, you get instance
-    /// types that satisfy any of the specified values.
+    /// The attributes for the instance types for a mixed instances policy. Amazon EC2 Auto
+    /// Scaling uses your specified requirements to identify instance types. Then, it uses
+    /// your On-Demand and Spot allocation strategies to launch instances from these instance
+    /// types.
     /// 
     ///  
     /// <para>
-    /// Represents requirements for the types of instances that can be launched. You must
-    /// specify <code>VCpuCount</code> and <code>MemoryMiB</code>, but all other parameters
-    /// are optional. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating
+    /// When you specify multiple attributes, you get instance types that satisfy all of the
+    /// specified attributes. If you specify multiple values for an attribute, you get instance
+    /// types that satisfy any of the specified values.
+    /// </para>
+    ///  
+    /// <para>
+    /// To limit the list of instance types from which Amazon EC2 Auto Scaling can identify
+    /// matching instance types, you can use one of the following parameters, but not both
+    /// in the same request:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>AllowedInstanceTypes</code> - The instance types to include in the list. All
+    /// other instance types are ignored, even if they match your specified attributes.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ExcludedInstanceTypes</code> - The instance types to exclude from the list,
+    /// even if they match your specified attributes.
+    /// </para>
+    ///  </li> </ul> <note> 
+    /// <para>
+    /// You must specify <code>VCpuCount</code> and <code>MemoryMiB</code>. All other attributes
+    /// are optional. Any unspecified optional attribute is set to its default.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating
     /// an Auto Scaling group using attribute-based instance type selection</a> in the <i>Amazon
-    /// EC2 Auto Scaling User Guide</i>.
+    /// EC2 Auto Scaling User Guide</i>. For help determining which instance types match your
+    /// attributes before you apply them to your Auto Scaling group, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html#ec2fleet-get-instance-types-from-instance-requirements">Preview
+    /// instance types with specified attributes</a> in the <i>Amazon EC2 User Guide for Linux
+    /// Instances</i>.
     /// </para>
     /// </summary>
     public partial class InstanceRequirements
@@ -49,6 +78,7 @@ namespace Amazon.AutoScaling.Model
         private List<string> _acceleratorNames = new List<string>();
         private AcceleratorTotalMemoryMiBRequest _acceleratorTotalMemoryMiB;
         private List<string> _acceleratorTypes = new List<string>();
+        private List<string> _allowedInstanceTypes = new List<string>();
         private BareMetal _bareMetal;
         private BaselineEbsBandwidthMbpsRequest _baselineEbsBandwidthMbps;
         private BurstablePerformance _burstablePerformance;
@@ -59,6 +89,7 @@ namespace Amazon.AutoScaling.Model
         private List<string> _localStorageTypes = new List<string>();
         private MemoryGiBPerVCpuRequest _memoryGiBPerVCpu;
         private MemoryMiBRequest _memoryMiB;
+        private NetworkBandwidthGbpsRequest _networkBandwidthGbps;
         private NetworkInterfaceCountRequest _networkInterfaceCount;
         private int? _onDemandMaxPricePercentageOverLowestPrice;
         private bool? _requireHibernateSupport;
@@ -78,7 +109,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: No minimum or maximum
+        /// Default: No minimum or maximum limits
         /// </para>
         /// </summary>
         public AcceleratorCountRequest AcceleratorCount
@@ -189,7 +220,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: No minimum or maximum
+        /// Default: No minimum or maximum limits
         /// </para>
         /// </summary>
         public AcceleratorTotalMemoryMiBRequest AcceleratorTotalMemoryMiB
@@ -239,6 +270,47 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AllowedInstanceTypes. 
+        /// <para>
+        /// The instance types to apply your specified attributes against. All other instance
+        /// types are ignored, even if they match your specified attributes.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>),
+        /// to allow an instance type, size, or generation. The following are examples: <code>m5.8xlarge</code>,
+        /// <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, if you specify <code>c5*</code>, Amazon EC2 Auto Scaling will allow the
+        /// entire C5 instance family, which includes all C5a and C5n instance types. If you specify
+        /// <code>m5a.*</code>, Amazon EC2 Auto Scaling will allow all the M5a instance types,
+        /// but not the M5n instance types.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you specify <code>AllowedInstanceTypes</code>, you can't specify <code>ExcludedInstanceTypes</code>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Default: All instance types
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=400)]
+        public List<string> AllowedInstanceTypes
+        {
+            get { return this._allowedInstanceTypes; }
+            set { this._allowedInstanceTypes = value; }
+        }
+
+        // Check to see if AllowedInstanceTypes property is set
+        internal bool IsSetAllowedInstanceTypes()
+        {
+            return this._allowedInstanceTypes != null && this._allowedInstanceTypes.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property BareMetal. 
         /// <para>
         /// Indicates whether bare metal instance types are included, excluded, or required.
@@ -269,7 +341,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: No minimum or maximum
+        /// Default: No minimum or maximum limits
         /// </para>
         /// </summary>
         public BaselineEbsBandwidthMbpsRequest BaselineEbsBandwidthMbps
@@ -351,17 +423,23 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ExcludedInstanceTypes. 
         /// <para>
-        /// Lists which instance types to exclude. You can use strings with one or more wild cards,
-        /// represented by an asterisk (<code>*</code>). The following are examples: <code>c5*</code>,
-        /// <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>. 
+        /// The instance types to exclude. You can use strings with one or more wild cards, represented
+        /// by an asterisk (<code>*</code>), to exclude an instance family, type, size, or generation.
+        /// The following are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
+        /// <code>r*</code>, <code>*3*</code>. 
         /// </para>
         ///  
         /// <para>
         /// For example, if you specify <code>c5*</code>, you are excluding the entire C5 instance
         /// family, which includes all C5a and C5n instance types. If you specify <code>m5a.*</code>,
-        /// you are excluding all the M5a instance types, but not the M5n instance types.
+        /// Amazon EC2 Auto Scaling will exclude all the M5a instance types, but not the M5n instance
+        /// types.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// If you specify <code>ExcludedInstanceTypes</code>, you can't specify <code>AllowedInstanceTypes</code>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Default: No excluded instance types
         /// </para>
@@ -474,7 +552,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: No minimum or maximum
+        /// Default: No minimum or maximum limits
         /// </para>
         /// </summary>
         public MemoryGiBPerVCpuRequest MemoryGiBPerVCpu
@@ -509,13 +587,35 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NetworkBandwidthGbps. 
+        /// <para>
+        /// The minimum and maximum amount of network bandwidth, in gigabits per second (Gbps).
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: No minimum or maximum limits
+        /// </para>
+        /// </summary>
+        public NetworkBandwidthGbpsRequest NetworkBandwidthGbps
+        {
+            get { return this._networkBandwidthGbps; }
+            set { this._networkBandwidthGbps = value; }
+        }
+
+        // Check to see if NetworkBandwidthGbps property is set
+        internal bool IsSetNetworkBandwidthGbps()
+        {
+            return this._networkBandwidthGbps != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NetworkInterfaceCount. 
         /// <para>
         /// The minimum and maximum number of network interfaces for an instance type.
         /// </para>
         ///  
         /// <para>
-        /// Default: No minimum or maximum
+        /// Default: No minimum or maximum limits
         /// </para>
         /// </summary>
         public NetworkInterfaceCountRequest NetworkInterfaceCount
@@ -629,7 +729,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: No minimum or maximum
+        /// Default: No minimum or maximum limits
         /// </para>
         /// </summary>
         public TotalLocalStorageGBRequest TotalLocalStorageGB

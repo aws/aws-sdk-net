@@ -540,11 +540,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MixedInstancesPolicy. 
         /// <para>
-        /// An embedded object that specifies a mixed instances policy.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
+        /// The mixed instances policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
         /// Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon
         /// EC2 Auto Scaling User Guide</i>.
         /// </para>

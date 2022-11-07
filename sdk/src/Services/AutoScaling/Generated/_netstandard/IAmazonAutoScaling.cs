@@ -451,6 +451,16 @@ namespace Amazon.AutoScaling
         /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchConfiguration.html">Launch
         /// configurations</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon EC2 Auto Scaling configures instances launched as part of an Auto Scaling group
+        /// using either a launch template or a launch configuration. We strongly recommend that
+        /// you do not use launch configurations. They do not provide full functionality for Amazon
+        /// EC2 Auto Scaling or Amazon EC2. For information about using launch templates, see
+        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/launch-templates.html">Launch
+        /// templates</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLaunchConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -531,12 +541,9 @@ namespace Amazon.AutoScaling
         ///  
         /// <para>
         /// If the group has instances or scaling activities in progress, you must specify the
-        /// option to force the deletion in order for it to succeed.
-        /// </para>
-        ///  
-        /// <para>
-        /// If the group has policies, deleting the group deletes the policies, the underlying
-        /// alarm actions, and any alarm that no longer has an associated action.
+        /// option to force the deletion in order for it to succeed. The force delete operation
+        /// will also terminate the EC2 instances. If the group has a warm pool, the force delete
+        /// option also deletes the warm pool.
         /// </para>
         ///  
         /// <para>
@@ -548,6 +555,16 @@ namespace Amazon.AutoScaling
         /// <para>
         /// To terminate all instances before deleting the Auto Scaling group, call the <a>UpdateAutoScalingGroup</a>
         /// API and set the minimum size and desired capacity of the Auto Scaling group to zero.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the group has scaling policies, deleting the group deletes the policies, the underlying
+        /// alarm actions, and any alarm that no longer has an associated action.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-process-shutdown.html">Delete
+        /// your Auto Scaling infrastructure</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAutoScalingGroup service method.</param>

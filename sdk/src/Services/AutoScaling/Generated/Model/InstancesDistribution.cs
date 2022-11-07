@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Describes an instances distribution for an Auto Scaling group.
+    /// Use this structure to specify the distribution of On-Demand Instances and Spot Instances
+    /// and the allocation strategies used to fulfill On-Demand and Spot capacities for a
+    /// mixed instances policy.
     /// </summary>
     public partial class InstancesDistribution
     {
@@ -208,14 +210,16 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property SpotMaxPrice. 
         /// <para>
         /// The maximum price per unit hour that you are willing to pay for a Spot Instance. If
-        /// you keep the value at its default (unspecified), Amazon EC2 Auto Scaling uses the
-        /// On-Demand price as the maximum Spot price. To remove a value that you previously set,
-        /// include the property but specify an empty string ("") for the value.
+        /// your maximum price is lower than the Spot price for the instance types that you selected,
+        /// your Spot Instances are not launched. We do not recommend specifying a maximum price
+        /// because it can lead to increased interruptions. When Spot Instances launch, you pay
+        /// the current Spot price. To remove a maximum price that you previously set, include
+        /// the property but specify an empty string ("") for the value.
         /// </para>
         ///  <important> 
         /// <para>
-        /// If your maximum price is lower than the Spot price for the instance types that you
-        /// selected, your Spot Instances are not launched.
+        /// If you specify a maximum price, your instances will be interrupted more frequently
+        /// than if you do not specify one.
         /// </para>
         ///  </important> 
         /// <para>

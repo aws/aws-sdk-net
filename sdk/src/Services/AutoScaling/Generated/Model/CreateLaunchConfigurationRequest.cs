@@ -44,6 +44,16 @@ namespace Amazon.AutoScaling.Model
     /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchConfiguration.html">Launch
     /// configurations</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// Amazon EC2 Auto Scaling configures instances launched as part of an Auto Scaling group
+    /// using either a launch template or a launch configuration. We strongly recommend that
+    /// you do not use launch configurations. They do not provide full functionality for Amazon
+    /// EC2 Auto Scaling or Amazon EC2. For information about using launch templates, see
+    /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/launch-templates.html">Launch
+    /// templates</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateLaunchConfigurationRequest : AmazonAutoScalingRequest
     {
@@ -125,14 +135,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ClassicLinkVPCId. 
         /// <para>
-        ///  <i>EC2-Classic retires on August 15, 2022. This property is not supported after that
-        /// date.</i> 
-        /// </para>
-        ///  
-        /// <para>
-        /// The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-        /// in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// Available for backward compatibility.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -151,16 +154,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ClassicLinkVPCSecurityGroups. 
         /// <para>
-        ///  <i>EC2-Classic retires on August 15, 2022. This property is not supported after that
-        /// date.</i> 
-        /// </para>
-        ///  
-        /// <para>
-        /// The IDs of one or more security groups for the specified ClassicLink-enabled VPC.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you specify the <code>ClassicLinkVPCId</code> property, you must specify <code>ClassicLinkVPCSecurityGroups</code>.
+        /// Available for backward compatibility.
         /// </para>
         /// </summary>
         public List<string> ClassicLinkVPCSecurityGroups
