@@ -4737,6 +4737,14 @@ namespace Amazon.MediaConvert
         /// </summary>
         public static readonly ColorSpace HLG_2020 = new ColorSpace("HLG_2020");
         /// <summary>
+        /// Constant P3D65_SDR for ColorSpace
+        /// </summary>
+        public static readonly ColorSpace P3D65_SDR = new ColorSpace("P3D65_SDR");
+        /// <summary>
+        /// Constant P3DCI for ColorSpace
+        /// </summary>
+        public static readonly ColorSpace P3DCI = new ColorSpace("P3DCI");
+        /// <summary>
         /// Constant REC_601 for ColorSpace
         /// </summary>
         public static readonly ColorSpace REC_601 = new ColorSpace("REC_601");
@@ -4802,6 +4810,14 @@ namespace Amazon.MediaConvert
         /// Constant FORCE_HLG_2020 for ColorSpaceConversion
         /// </summary>
         public static readonly ColorSpaceConversion FORCE_HLG_2020 = new ColorSpaceConversion("FORCE_HLG_2020");
+        /// <summary>
+        /// Constant FORCE_P3D65_SDR for ColorSpaceConversion
+        /// </summary>
+        public static readonly ColorSpaceConversion FORCE_P3D65_SDR = new ColorSpaceConversion("FORCE_P3D65_SDR");
+        /// <summary>
+        /// Constant FORCE_P3DCI for ColorSpaceConversion
+        /// </summary>
+        public static readonly ColorSpaceConversion FORCE_P3DCI = new ColorSpaceConversion("FORCE_P3DCI");
         /// <summary>
         /// Constant NONE for ColorSpaceConversion
         /// </summary>

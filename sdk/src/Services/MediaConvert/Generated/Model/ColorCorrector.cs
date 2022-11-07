@@ -40,6 +40,7 @@ namespace Amazon.MediaConvert.Model
         private int? _hue;
         private SampleRangeConversion _sampleRangeConversion;
         private int? _saturation;
+        private int? _sdrReferenceWhiteLevel;
 
         /// <summary>
         /// Gets and sets the property Brightness. Brightness level.
@@ -63,7 +64,9 @@ namespace Amazon.MediaConvert.Model
         /// formats, from SDR to HDR, and from HDR to SDR. SDR to HDR conversion doesn't upgrade
         /// the dynamic range. The converted video has an HDR format, but visually appears the
         /// same as an unconverted output. HDR to SDR conversion uses Elemental tone mapping technology
-        /// to approximate the outcome of manually regrading from HDR to SDR.
+        /// to approximate the outcome of manually regrading from HDR to SDR. Select Force P3D65
+        /// (SDR) to set the output color space metadata to the following: * Color primaries:
+        /// Display P3 * Transfer characteristics: SMPTE 428M * Matrix coefficients: BT.709
         /// </summary>
         public ColorSpaceConversion ColorSpaceConversion
         {
@@ -172,6 +175,29 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetSaturation()
         {
             return this._saturation.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SdrReferenceWhiteLevel. Specify the reference white level,
+        /// in nits, for all of your SDR inputs. Use to correct brightness levels within HDR10
+        /// outputs. The following color metadata must be present in your SDR input: color primaries,
+        /// transfer characteristics, and matrix coefficients. If your SDR input has missing color
+        /// metadata, or if you want to correct input color metadata, manually specify a color
+        /// space in the input video selector. For 1,000 nit peak brightness displays, we recommend
+        /// that you set SDR reference white level to 203 (according to ITU-R BT.2408). Leave
+        /// blank to use the default value of 100, or specify an integer from 100 to 1000.
+        /// </summary>
+        [AWSProperty(Min=100, Max=1000)]
+        public int SdrReferenceWhiteLevel
+        {
+            get { return this._sdrReferenceWhiteLevel.GetValueOrDefault(); }
+            set { this._sdrReferenceWhiteLevel = value; }
+        }
+
+        // Check to see if SdrReferenceWhiteLevel property is set
+        internal bool IsSetSdrReferenceWhiteLevel()
+        {
+            return this._sdrReferenceWhiteLevel.HasValue; 
         }
 
     }

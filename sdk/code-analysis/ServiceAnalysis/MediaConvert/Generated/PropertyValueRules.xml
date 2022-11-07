@@ -342,6 +342,11 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.ColorCorrector.SdrReferenceWhiteLevel</property>
+    <min>100</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.DashAdditionalManifest.ManifestNameModifier</property>
     <min>1</min>
   </property-value-rule>
@@ -527,8 +532,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.Eac3Settings.Bitrate</property>
-    <min>64000</min>
-    <max>640000</max>
+    <min>32000</min>
+    <max>3024000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.Eac3Settings.Dialnorm</property>
@@ -939,6 +944,11 @@
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.Id3Insertion.Timecode</property>
     <pattern>^([01][0-9]|2[0-4]):[0-5][0-9]:[0-5][0-9][:;][0-9]{2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.ImageInserter.SdrReferenceWhiteLevel</property>
+    <min>100</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.Input.DolbyVisionMetadataXml</property>

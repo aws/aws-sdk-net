@@ -106,6 +106,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.Saturation = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("sdrReferenceWhiteLevel", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.SdrReferenceWhiteLevel = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;
