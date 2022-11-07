@@ -1288,6 +1288,9 @@ namespace Amazon.Athena
         /// Indicates that something is wrong with the input to the request. For example, a required
         /// parameter may be missing or out of range.
         /// </exception>
+        /// <exception cref="Amazon.Athena.Model.TooManyRequestsException">
+        /// Indicates that the request was throttled.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetQueryResults">REST API Reference for GetQueryResults Operation</seealso>
         public virtual GetQueryResultsResponse GetQueryResults(GetQueryResultsRequest request)
         {
@@ -1334,6 +1337,9 @@ namespace Amazon.Athena
         /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
         /// Indicates that something is wrong with the input to the request. For example, a required
         /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.TooManyRequestsException">
+        /// Indicates that the request was throttled.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetQueryResults">REST API Reference for GetQueryResults Operation</seealso>
         public virtual Task<GetQueryResultsResponse> GetQueryResultsAsync(GetQueryResultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

@@ -94,6 +94,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                     unmarshalledObject.QueryQueueTimeInMillis = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ResultReuseInformation", targetDepth))
+                {
+                    var unmarshaller = ResultReuseInformationUnmarshaller.Instance;
+                    unmarshalledObject.ResultReuseInformation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ServiceProcessingTimeInMillis", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;

@@ -39,6 +39,7 @@ namespace Amazon.Athena.Model
         private long? _engineExecutionTimeInMillis;
         private long? _queryPlanningTimeInMillis;
         private long? _queryQueueTimeInMillis;
+        private ResultReuseInformation _resultReuseInformation;
         private long? _serviceProcessingTimeInMillis;
         private long? _totalExecutionTimeInMillis;
 
@@ -141,6 +142,24 @@ namespace Amazon.Athena.Model
         internal bool IsSetQueryQueueTimeInMillis()
         {
             return this._queryQueueTimeInMillis.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResultReuseInformation. 
+        /// <para>
+        /// Contains information about whether previous query results were reused for the query.
+        /// </para>
+        /// </summary>
+        public ResultReuseInformation ResultReuseInformation
+        {
+            get { return this._resultReuseInformation; }
+            set { this._resultReuseInformation = value; }
+        }
+
+        // Check to see if ResultReuseInformation property is set
+        internal bool IsSetResultReuseInformation()
+        {
+            return this._resultReuseInformation != null;
         }
 
         /// <summary>

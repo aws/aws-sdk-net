@@ -117,6 +117,17 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetResultReuseConfiguration())
+                {
+                    context.Writer.WritePropertyName("ResultReuseConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ResultReuseConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ResultReuseConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetWorkGroup())
                 {
                     context.Writer.WritePropertyName("WorkGroup");

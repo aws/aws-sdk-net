@@ -896,6 +896,9 @@ namespace Amazon.Athena
         /// Indicates that something is wrong with the input to the request. For example, a required
         /// parameter may be missing or out of range.
         /// </exception>
+        /// <exception cref="Amazon.Athena.Model.TooManyRequestsException">
+        /// Indicates that the request was throttled.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetQueryResults">REST API Reference for GetQueryResults Operation</seealso>
         GetQueryResultsResponse GetQueryResults(GetQueryResultsRequest request);
 

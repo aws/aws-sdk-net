@@ -100,6 +100,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                     unmarshalledObject.ResultConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ResultReuseConfiguration", targetDepth))
+                {
+                    var unmarshaller = ResultReuseConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ResultReuseConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("StatementType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

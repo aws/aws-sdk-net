@@ -39,6 +39,7 @@ namespace Amazon.Athena.Model
         private QueryExecutionContext _queryExecutionContext;
         private string _queryExecutionId;
         private ResultConfiguration _resultConfiguration;
+        private ResultReuseConfiguration _resultReuseConfiguration;
         private StatementType _statementType;
         private QueryExecutionStatistics _statistics;
         private QueryExecutionStatus _status;
@@ -157,6 +158,24 @@ namespace Amazon.Athena.Model
         internal bool IsSetResultConfiguration()
         {
             return this._resultConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResultReuseConfiguration. 
+        /// <para>
+        /// Specifies the query result reuse behavior that was used for the query.
+        /// </para>
+        /// </summary>
+        public ResultReuseConfiguration ResultReuseConfiguration
+        {
+            get { return this._resultReuseConfiguration; }
+            set { this._resultReuseConfiguration = value; }
+        }
+
+        // Check to see if ResultReuseConfiguration property is set
+        internal bool IsSetResultReuseConfiguration()
+        {
+            return this._resultReuseConfiguration != null;
         }
 
         /// <summary>
