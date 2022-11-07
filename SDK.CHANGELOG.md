@@ -1,3 +1,30 @@
+### 3.7.412.0 (2022-11-07 19:34 UTC)
+* Athena (3.7.101.0)
+	* Adds support for using Query Result Reuse
+* AutoScaling (3.7.101.0)
+	* This release adds support for two new attributes for attribute-based instance type selection - NetworkBandwidthGbps and AllowedInstanceTypes.
+* CloudTrail (3.7.101.0)
+	* This release includes support for configuring a delegated administrator to manage an AWS Organizations organization CloudTrail trails and event data stores, and AWS Key Management Service encryption of CloudTrail Lake event data stores.
+* EC2 (3.7.104.0)
+	* This release adds support for two new attributes for attribute-based instance type selection - NetworkBandwidthGbps and AllowedInstanceTypes.
+* ElastiCache (3.7.101.0)
+	* Added support for IPv6 and dual stack for Memcached and Redis clusters. Customers can now launch new Redis and Memcached clusters with IPv6 and dual stack networking support.
+* LexModelsV2 (3.7.101.0)
+	* Amazon Lex now supports new APIs for viewing and editing Custom Vocabulary in bots.
+* MediaConvert (3.7.101.0)
+	* The AWS Elemental MediaConvert SDK has added support for setting the SDR reference white point for HDR conversions and conversion of HDR10 to DolbyVision without mastering metadata.
+* SimpleSystemsManagement (3.7.101.0)
+	* This release includes support for applying a CloudWatch alarm to multi account multi region Systems Manager Automation
+* WAFV2 (3.7.101.6)
+	* The geo match statement now adds labels for country and region. You can match requests at the region level by combining a geo match statement with label match statements.
+* WellArchitected (3.7.101.0)
+	* This release adds support for integrations with AWS Trusted Advisor and AWS Service Catalog AppRegistry to improve workload discovery and speed up your workload reviews.
+* WorkSpaces (3.7.102.0)
+	* This release adds protocols attribute to workspaces properties data type. This enables customers to migrate workspaces from PC over IP (PCoIP) to WorkSpaces Streaming Protocol (WSP) using create and modify workspaces public APIs.
+* Core 3.7.100.10
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.411.0 (2022-11-04 19:30 UTC)
 * CloudWatchLogs (3.7.101.2)
 	* Doc-only update for bug fixes and support of export to buckets encrypted with SSE-KMS
