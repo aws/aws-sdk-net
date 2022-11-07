@@ -5741,6 +5741,7 @@
               "deprecated": true,
               "hostname": "fips.eks.us-west-2.amazonaws.com"
             },
+            "me-central-1": {},
             "me-south-1": {},
             "sa-east-1": {},
             "us-east-1": {
@@ -7142,6 +7143,7 @@
               "deprecated": true,
               "hostname": "firehose-fips.us-west-2.amazonaws.com"
             },
+            "me-central-1": {},
             "me-south-1": {},
             "sa-east-1": {},
             "us-east-1": {
