@@ -36,7 +36,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For information about launch templates, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">Launch
-    /// an instance from a launch template</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+    /// an instance from a launch template</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     /// </summary>
     public partial class FleetLaunchTemplateSpecification

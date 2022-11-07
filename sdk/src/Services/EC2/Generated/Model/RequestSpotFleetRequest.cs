@@ -65,14 +65,13 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot
-    /// Fleet requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+    /// Fleet requests</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     ///  <important> 
     /// <para>
     /// We strongly discourage using the RequestSpotFleet API because it is a legacy API with
     /// no planned investment. For options for requesting Spot Instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-best-practices.html#which-spot-request-method-to-use">Which
-    /// is the best Spot request method to use?</a> in the <i>Amazon EC2 User Guide for Linux
-    /// Instances</i>.
+    /// is the best Spot request method to use?</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     ///  </important>
     /// </summary>

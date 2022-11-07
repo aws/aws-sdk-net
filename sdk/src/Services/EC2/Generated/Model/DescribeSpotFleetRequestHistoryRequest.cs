@@ -41,8 +41,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/fleet-monitor.html">Monitor
-    /// fleet events using Amazon EventBridge</a> in the <i>Amazon EC2 User Guide for Linux
-    /// Instances</i>.
+    /// fleet events using Amazon EventBridge</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DescribeSpotFleetRequestHistoryRequest : AmazonEC2Request

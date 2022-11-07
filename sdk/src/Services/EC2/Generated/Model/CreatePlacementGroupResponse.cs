@@ -36,7 +36,10 @@ namespace Amazon.EC2.Model
         private PlacementGroup _placementGroup;
 
         /// <summary>
-        /// Gets and sets the property PlacementGroup.
+        /// Gets and sets the property PlacementGroup. 
+        /// <para>
+        /// Information about the placement group.
+        /// </para>
         /// </summary>
         public PlacementGroup PlacementGroup
         {

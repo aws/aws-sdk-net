@@ -87,6 +87,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.AcceleratorTypes.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("allowedInstanceTypeSet/item", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AllowedInstanceTypes.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("bareMetal", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -149,6 +156,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = MemoryMiBUnmarshaller.Instance;
                         unmarshalledObject.MemoryMiB = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("networkBandwidthGbps", targetDepth))
+                    {
+                        var unmarshaller = NetworkBandwidthGbpsUnmarshaller.Instance;
+                        unmarshalledObject.NetworkBandwidthGbps = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("networkInterfaceCount", targetDepth))

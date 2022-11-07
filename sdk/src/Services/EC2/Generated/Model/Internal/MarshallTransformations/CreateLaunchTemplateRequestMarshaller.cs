@@ -309,6 +309,15 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex++;
                             }
                         }
+                        if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetAllowedInstanceTypes())
+                        {
+                            int publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex = 1;
+                            foreach(var publicRequestLaunchTemplateDataInstanceRequirementslistValue in publicRequest.LaunchTemplateData.InstanceRequirements.AllowedInstanceTypes)
+                            {
+                                request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "AllowedInstanceType" + "." + publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestLaunchTemplateDataInstanceRequirementslistValue));
+                                publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex++;
+                            }
+                        }
                         if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetBareMetal())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "BareMetal", StringUtils.FromString(publicRequest.LaunchTemplateData.InstanceRequirements.BareMetal));
@@ -388,6 +397,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             if(publicRequest.LaunchTemplateData.InstanceRequirements.MemoryMiB.IsSetMin())
                             {
                                 request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "MemoryMiB" + "." + "Min", StringUtils.FromInt(publicRequest.LaunchTemplateData.InstanceRequirements.MemoryMiB.Min));
+                            }
+                        }
+                        if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetNetworkBandwidthGbps())
+                        {
+                            if(publicRequest.LaunchTemplateData.InstanceRequirements.NetworkBandwidthGbps.IsSetMax())
+                            {
+                                request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "NetworkBandwidthGbps" + "." + "Max", StringUtils.FromDouble(publicRequest.LaunchTemplateData.InstanceRequirements.NetworkBandwidthGbps.Max));
+                            }
+                            if(publicRequest.LaunchTemplateData.InstanceRequirements.NetworkBandwidthGbps.IsSetMin())
+                            {
+                                request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "NetworkBandwidthGbps" + "." + "Min", StringUtils.FromDouble(publicRequest.LaunchTemplateData.InstanceRequirements.NetworkBandwidthGbps.Min));
                             }
                         }
                         if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetNetworkInterfaceCount())

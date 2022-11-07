@@ -118,6 +118,15 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             publicRequestInstanceRequirementslistValueIndex++;
                         }
                     }
+                    if(publicRequest.InstanceRequirements.IsSetAllowedInstanceTypes())
+                    {
+                        int publicRequestInstanceRequirementslistValueIndex = 1;
+                        foreach(var publicRequestInstanceRequirementslistValue in publicRequest.InstanceRequirements.AllowedInstanceTypes)
+                        {
+                            request.Parameters.Add("InstanceRequirements" + "." + "AllowedInstanceType" + "." + publicRequestInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestInstanceRequirementslistValue));
+                            publicRequestInstanceRequirementslistValueIndex++;
+                        }
+                    }
                     if(publicRequest.InstanceRequirements.IsSetBareMetal())
                     {
                         request.Parameters.Add("InstanceRequirements" + "." + "BareMetal", StringUtils.FromString(publicRequest.InstanceRequirements.BareMetal));
@@ -197,6 +206,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         if(publicRequest.InstanceRequirements.MemoryMiB.IsSetMin())
                         {
                             request.Parameters.Add("InstanceRequirements" + "." + "MemoryMiB" + "." + "Min", StringUtils.FromInt(publicRequest.InstanceRequirements.MemoryMiB.Min));
+                        }
+                    }
+                    if(publicRequest.InstanceRequirements.IsSetNetworkBandwidthGbps())
+                    {
+                        if(publicRequest.InstanceRequirements.NetworkBandwidthGbps.IsSetMax())
+                        {
+                            request.Parameters.Add("InstanceRequirements" + "." + "NetworkBandwidthGbps" + "." + "Max", StringUtils.FromDouble(publicRequest.InstanceRequirements.NetworkBandwidthGbps.Max));
+                        }
+                        if(publicRequest.InstanceRequirements.NetworkBandwidthGbps.IsSetMin())
+                        {
+                            request.Parameters.Add("InstanceRequirements" + "." + "NetworkBandwidthGbps" + "." + "Min", StringUtils.FromDouble(publicRequest.InstanceRequirements.NetworkBandwidthGbps.Min));
                         }
                     }
                     if(publicRequest.InstanceRequirements.IsSetNetworkInterfaceCount())
