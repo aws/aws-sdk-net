@@ -51,6 +51,17 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ComputeTypeName);
             }
 
+            if(requestObject.IsSetProtocols())
+            {
+                context.Writer.WritePropertyName("Protocols");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectProtocolsListValue in requestObject.Protocols)
+                {
+                        context.Writer.Write(requestObjectProtocolsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetRootVolumeSizeGib())
             {
                 context.Writer.WritePropertyName("RootVolumeSizeGib");

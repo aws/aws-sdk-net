@@ -70,6 +70,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                     unmarshalledObject.ComputeTypeName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Protocols", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Protocols = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RootVolumeSizeGib", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
