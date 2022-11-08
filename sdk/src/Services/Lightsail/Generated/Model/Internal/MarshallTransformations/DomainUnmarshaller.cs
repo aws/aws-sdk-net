@@ -94,6 +94,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("registeredDomainDelegationInfo", targetDepth))
+                {
+                    var unmarshaller = RegisteredDomainDelegationInfoUnmarshaller.Instance;
+                    unmarshalledObject.RegisteredDomainDelegationInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("resourceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -29,12 +29,34 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
-    /// Describes the domain validation records of an Amazon Lightsail SSL/TLS certificate.
+    /// Describes the domain name system (DNS) records that you must add to the DNS of your
+    /// registered domain to validate ownership for an Amazon Lightsail SSL/TLS certificate.
     /// </summary>
     public partial class DomainValidationRecord
     {
+        private DnsRecordCreationState _dnsRecordCreationState;
         private string _domainName;
         private ResourceRecord _resourceRecord;
+        private CertificateDomainValidationStatus _validationStatus;
+
+        /// <summary>
+        /// Gets and sets the property DnsRecordCreationState. 
+        /// <para>
+        /// An object that describes the state of the canonical name (CNAME) records that are
+        /// automatically added by Lightsail to the DNS of the domain to validate domain ownership.
+        /// </para>
+        /// </summary>
+        public DnsRecordCreationState DnsRecordCreationState
+        {
+            get { return this._dnsRecordCreationState; }
+            set { this._dnsRecordCreationState = value; }
+        }
+
+        // Check to see if DnsRecordCreationState property is set
+        internal bool IsSetDnsRecordCreationState()
+        {
+            return this._dnsRecordCreationState != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DomainName. 
@@ -72,6 +94,24 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetResourceRecord()
         {
             return this._resourceRecord != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValidationStatus. 
+        /// <para>
+        /// The validation status of the record.
+        /// </para>
+        /// </summary>
+        public CertificateDomainValidationStatus ValidationStatus
+        {
+            get { return this._validationStatus; }
+            set { this._validationStatus = value; }
+        }
+
+        // Check to see if ValidationStatus property is set
+        internal bool IsSetValidationStatus()
+        {
+            return this._validationStatus != null;
         }
 
     }

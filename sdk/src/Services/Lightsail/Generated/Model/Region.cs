@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
-    /// Describes the AWS Region.
+    /// Describes the Amazon Web Services Region.
     /// </summary>
     public partial class Region
     {
@@ -79,8 +79,8 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the AWS Region (e.g., <code>This region is recommended to serve
-        /// users in the eastern United States and eastern Canada</code>).
+        /// The description of the Amazon Web Services Region (e.g., <code>This region is recommended
+        /// to serve users in the eastern United States and eastern Canada</code>).
         /// </para>
         /// </summary>
         public string Description

@@ -38,6 +38,7 @@ namespace Amazon.Lightsail.Model
         private List<DomainEntry> _domainEntries = new List<DomainEntry>();
         private ResourceLocation _location;
         private string _name;
+        private RegisteredDomainDelegationInfo _registeredDomainDelegationInfo;
         private ResourceType _resourceType;
         private string _supportCode;
         private List<Tag> _tags = new List<Tag>();
@@ -130,6 +131,25 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RegisteredDomainDelegationInfo. 
+        /// <para>
+        /// An object that describes the state of the Route 53 domain delegation to a Lightsail
+        /// DNS zone.
+        /// </para>
+        /// </summary>
+        public RegisteredDomainDelegationInfo RegisteredDomainDelegationInfo
+        {
+            get { return this._registeredDomainDelegationInfo; }
+            set { this._registeredDomainDelegationInfo = value; }
+        }
+
+        // Check to see if RegisteredDomainDelegationInfo property is set
+        internal bool IsSetRegisteredDomainDelegationInfo()
+        {
+            return this._registeredDomainDelegationInfo != null;
         }
 
         /// <summary>

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DomainValidationRecord Object
+    /// Response Unmarshaller for RegisteredDomainDelegationInfo Object
     /// </summary>  
-    public class DomainValidationRecordUnmarshaller : IUnmarshaller<DomainValidationRecord, XmlUnmarshallerContext>, IUnmarshaller<DomainValidationRecord, JsonUnmarshallerContext>
+    public class RegisteredDomainDelegationInfoUnmarshaller : IUnmarshaller<RegisteredDomainDelegationInfo, XmlUnmarshallerContext>, IUnmarshaller<RegisteredDomainDelegationInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DomainValidationRecord IUnmarshaller<DomainValidationRecord, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RegisteredDomainDelegationInfo IUnmarshaller<RegisteredDomainDelegationInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DomainValidationRecord Unmarshall(JsonUnmarshallerContext context)
+        public RegisteredDomainDelegationInfo Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DomainValidationRecord unmarshalledObject = new DomainValidationRecord();
+            RegisteredDomainDelegationInfo unmarshalledObject = new RegisteredDomainDelegationInfo();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("dnsRecordCreationState", targetDepth))
+                if (context.TestExpression("nameServersUpdateState", targetDepth))
                 {
-                    var unmarshaller = DnsRecordCreationStateUnmarshaller.Instance;
-                    unmarshalledObject.DnsRecordCreationState = unmarshaller.Unmarshall(context);
+                    var unmarshaller = NameServersUpdateStateUnmarshaller.Instance;
+                    unmarshalledObject.NameServersUpdateState = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("domainName", targetDepth))
+                if (context.TestExpression("r53HostedZoneDeletionState", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DomainName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("resourceRecord", targetDepth))
-                {
-                    var unmarshaller = ResourceRecordUnmarshaller.Instance;
-                    unmarshalledObject.ResourceRecord = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("validationStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ValidationStatus = unmarshaller.Unmarshall(context);
+                    var unmarshaller = R53HostedZoneDeletionStateUnmarshaller.Instance;
+                    unmarshalledObject.R53HostedZoneDeletionState = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         }
 
 
-        private static DomainValidationRecordUnmarshaller _instance = new DomainValidationRecordUnmarshaller();        
+        private static RegisteredDomainDelegationInfoUnmarshaller _instance = new RegisteredDomainDelegationInfoUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DomainValidationRecordUnmarshaller Instance
+        public static RegisteredDomainDelegationInfoUnmarshaller Instance
         {
             get
             {

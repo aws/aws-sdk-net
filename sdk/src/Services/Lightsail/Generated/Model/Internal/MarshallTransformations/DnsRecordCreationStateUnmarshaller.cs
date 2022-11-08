@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DomainValidationRecord Object
+    /// Response Unmarshaller for DnsRecordCreationState Object
     /// </summary>  
-    public class DomainValidationRecordUnmarshaller : IUnmarshaller<DomainValidationRecord, XmlUnmarshallerContext>, IUnmarshaller<DomainValidationRecord, JsonUnmarshallerContext>
+    public class DnsRecordCreationStateUnmarshaller : IUnmarshaller<DnsRecordCreationState, XmlUnmarshallerContext>, IUnmarshaller<DnsRecordCreationState, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DomainValidationRecord IUnmarshaller<DomainValidationRecord, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DnsRecordCreationState IUnmarshaller<DnsRecordCreationState, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DomainValidationRecord Unmarshall(JsonUnmarshallerContext context)
+        public DnsRecordCreationState Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DomainValidationRecord unmarshalledObject = new DomainValidationRecord();
+            DnsRecordCreationState unmarshalledObject = new DnsRecordCreationState();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("dnsRecordCreationState", targetDepth))
-                {
-                    var unmarshaller = DnsRecordCreationStateUnmarshaller.Instance;
-                    unmarshalledObject.DnsRecordCreationState = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("domainName", targetDepth))
+                if (context.TestExpression("code", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DomainName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Code = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("resourceRecord", targetDepth))
-                {
-                    var unmarshaller = ResourceRecordUnmarshaller.Instance;
-                    unmarshalledObject.ResourceRecord = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("validationStatus", targetDepth))
+                if (context.TestExpression("message", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ValidationStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Message = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         }
 
 
-        private static DomainValidationRecordUnmarshaller _instance = new DomainValidationRecordUnmarshaller();        
+        private static DnsRecordCreationStateUnmarshaller _instance = new DnsRecordCreationStateUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DomainValidationRecordUnmarshaller Instance
+        public static DnsRecordCreationStateUnmarshaller Instance
         {
             get
             {

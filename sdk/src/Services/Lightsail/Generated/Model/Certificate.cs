@@ -317,8 +317,8 @@ namespace Amazon.Lightsail.Model
         ///  <b> <code>ADDITIONAL_VERIFICATION_REQUIRED</code> </b> - Lightsail requires additional
         /// information to process this certificate request. This can happen as a fraud-protection
         /// measure, such as when the domain ranks within the Alexa top 1000 websites. To provide
-        /// the required information, use the <a href="https://console.aws.amazon.com/support/home">AWS
-        /// Support Center</a> to contact AWS Support.
+        /// the required information, use the <a href="https://console.aws.amazon.com/support/home">Amazon
+        /// Web Services Support Center</a> to contact Amazon Web Services Support.
         /// </para>
         ///  <note> 
         /// <para>
@@ -343,8 +343,8 @@ namespace Amazon.Lightsail.Model
         ///  
         /// <para>
         /// If you see this error and your domain is not included in the VirusTotal list, visit
-        /// the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and
-        /// create a case.
+        /// the <a href="https://console.aws.amazon.com/support/home">Amazon Web Services Support
+        /// Center</a> and create a case.
         /// </para>
         ///  </li> <li> 
         /// <para>

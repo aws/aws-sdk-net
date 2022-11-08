@@ -57,7 +57,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property RegionName. 
         /// <para>
-        /// The AWS Region name.
+        /// The Amazon Web Services Region name.
         /// </para>
         /// </summary>
         public RegionName RegionName

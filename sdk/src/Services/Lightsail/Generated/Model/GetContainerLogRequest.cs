@@ -42,7 +42,7 @@ namespace Amazon.Lightsail.Model
     /// <para>
     /// Container logs are retained for a certain amount of time. For more information, see
     /// <a href="https://docs.aws.amazon.com/general/latest/gr/lightsail.html">Amazon Lightsail
-    /// endpoints and quotas</a> in the <i>AWS General Reference</i>.
+    /// endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
     /// </para>
     ///  </note>
     /// </summary>

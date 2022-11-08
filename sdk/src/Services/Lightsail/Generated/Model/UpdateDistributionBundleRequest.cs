@@ -44,10 +44,11 @@ namespace Amazon.Lightsail.Model
     /// </para>
     ///  
     /// <para>
-    /// You can update your distribution's bundle only one time within your monthly AWS billing
-    /// cycle. To determine if you can update your distribution's bundle, use the <code>GetDistributions</code>
-    /// action. The <code>ableToUpdateBundle</code> parameter in the result will indicate
-    /// whether you can currently update your distribution's bundle.
+    /// You can update your distribution's bundle only one time within your monthly Amazon
+    /// Web Services billing cycle. To determine if you can update your distribution's bundle,
+    /// use the <code>GetDistributions</code> action. The <code>ableToUpdateBundle</code>
+    /// parameter in the result will indicate whether you can currently update your distribution's
+    /// bundle.
     /// </para>
     /// </summary>
     public partial class UpdateDistributionBundleRequest : AmazonLightsailRequest

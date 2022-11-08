@@ -69,7 +69,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The AWS Region where this access key was most recently used.
+        /// The Amazon Web Services Region where this access key was most recently used.
         /// </para>
         ///  
         /// <para>
@@ -91,7 +91,8 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
-        /// The name of the AWS service with which this access key was most recently used.
+        /// The name of the Amazon Web Services service with which this access key was most recently
+        /// used.
         /// </para>
         ///  
         /// <para>
