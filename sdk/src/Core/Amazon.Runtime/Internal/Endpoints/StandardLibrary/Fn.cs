@@ -253,7 +253,7 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
             return AWSSDKUtils.UrlEncode(value, true);
         }
 
-        private static string[] SupportedSchemas = new string[] { "http", "https" };
+        private static string[] SupportedSchemas = new string[] { "http", "https", "wss" };
         /// <summary>
         /// Parses url string into URL object.
         /// Given a string the function will attempt to parse the string into it’s URL components.
