@@ -1068,6 +1068,10 @@
       <Project>{9BC3A195-E720-4950-AE59-DB98890B168B}</Project>
       <Name>AWSSDK.ResilienceHub.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/ResourceExplorer2/AWSSDK.ResourceExplorer2.CodeAnalysis.csproj">
+      <Project>{783045D0-74E0-49A2-A1D8-61BFF79B2B35}</Project>
+      <Name>AWSSDK.ResourceExplorer2.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/ResourceGroups/AWSSDK.ResourceGroups.CodeAnalysis.csproj">
       <Project>{7A1F0C85-BF01-4FF0-9BEF-665FC572608C}</Project>
       <Name>AWSSDK.ResourceGroups.CodeAnalysis</Name>

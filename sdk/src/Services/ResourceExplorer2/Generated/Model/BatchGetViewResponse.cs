@@ -1,0 +1,77 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the resource-explorer-2-2022-07-28.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.ResourceExplorer2.Model
+{
+    /// <summary>
+    /// This is the response object from the BatchGetView operation.
+    /// </summary>
+    public partial class BatchGetViewResponse : AmazonWebServiceResponse
+    {
+        private List<BatchGetViewError> _errors = new List<BatchGetViewError>();
+        private List<View> _views = new List<View>();
+
+        /// <summary>
+        /// Gets and sets the property Errors. 
+        /// <para>
+        /// If any of the specified ARNs result in an error, then this structure describes the
+        /// error.
+        /// </para>
+        /// </summary>
+        public List<BatchGetViewError> Errors
+        {
+            get { return this._errors; }
+            set { this._errors = value; }
+        }
+
+        // Check to see if Errors property is set
+        internal bool IsSetErrors()
+        {
+            return this._errors != null && this._errors.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Views. 
+        /// <para>
+        /// A structure with a list of objects with details for each of the specified views.
+        /// </para>
+        /// </summary>
+        public List<View> Views
+        {
+            get { return this._views; }
+            set { this._views = value; }
+        }
+
+        // Check to see if Views property is set
+        internal bool IsSetViews()
+        {
+            return this._views != null && this._views.Count > 0; 
+        }
+
+    }
+}
