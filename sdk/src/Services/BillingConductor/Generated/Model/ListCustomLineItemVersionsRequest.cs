@@ -29,43 +29,43 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BillingConductor.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListBillingGroups operation.
-    /// A paginated call to retrieve a list of billing groups for the given billing period.
-    /// If you don't provide a billing group, the current billing period is used.
+    /// Container for the parameters to the ListCustomLineItemVersions operation.
+    /// A paginated call to get a list of all custom line item versions.
     /// </summary>
-    public partial class ListBillingGroupsRequest : AmazonBillingConductorRequest
+    public partial class ListCustomLineItemVersionsRequest : AmazonBillingConductorRequest
     {
-        private string _billingPeriod;
-        private ListBillingGroupsFilter _filters;
+        private string _arn;
+        private ListCustomLineItemVersionsFilter _filters;
         private int? _maxResults;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property BillingPeriod. 
+        /// Gets and sets the property Arn. 
         /// <para>
-        /// The preferred billing period to get billing groups. 
+        /// The Amazon Resource Name (ARN) for the custom line item.
         /// </para>
         /// </summary>
-        public string BillingPeriod
+        [AWSProperty(Required=true)]
+        public string Arn
         {
-            get { return this._billingPeriod; }
-            set { this._billingPeriod = value; }
+            get { return this._arn; }
+            set { this._arn = value; }
         }
 
-        // Check to see if BillingPeriod property is set
-        internal bool IsSetBillingPeriod()
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
         {
-            return this._billingPeriod != null;
+            return this._arn != null;
         }
 
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// A <code>ListBillingGroupsFilter</code> that specifies the billing group and pricing
-        /// plan to retrieve billing group information. 
+        /// A <code>ListCustomLineItemVersionsFilter</code> that specifies the billing period
+        /// range in which the custom line item versions are applied.
         /// </para>
         /// </summary>
-        public ListBillingGroupsFilter Filters
+        public ListCustomLineItemVersionsFilter Filters
         {
             get { return this._filters; }
             set { this._filters = value; }
@@ -80,7 +80,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of billing groups to retrieve. 
+        /// The maximum number of custom line item versions to retrieve.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -99,7 +99,8 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The pagination token that's used on subsequent calls to get billing groups. 
+        /// The pagination token that's used on subsequent calls to retrieve custom line item
+        /// versions.
         /// </para>
         /// </summary>
         public string NextToken

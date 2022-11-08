@@ -29,30 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BillingConductor.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeletePricingRule operation.
-    /// Deletes the pricing rule that's identified by the input Amazon Resource Name (ARN).
+    /// A filter that specifies the billing period range where the custom line item versions
+    /// reside.
     /// </summary>
-    public partial class DeletePricingRuleRequest : AmazonBillingConductorRequest
+    public partial class ListCustomLineItemVersionsFilter
     {
-        private string _arn;
+        private ListCustomLineItemVersionsBillingPeriodRangeFilter _billingPeriodRange;
 
         /// <summary>
-        /// Gets and sets the property Arn. 
+        /// Gets and sets the property BillingPeriodRange. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the pricing rule that you are deleting. 
+        /// The billing period range in which the custom line item version is applied.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string Arn
+        public ListCustomLineItemVersionsBillingPeriodRangeFilter BillingPeriodRange
         {
-            get { return this._arn; }
-            set { this._arn = value; }
+            get { return this._billingPeriodRange; }
+            set { this._billingPeriodRange = value; }
         }
 
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
+        // Check to see if BillingPeriodRange property is set
+        internal bool IsSetBillingPeriodRange()
         {
-            return this._arn != null;
+            return this._billingPeriodRange != null;
         }
 
     }

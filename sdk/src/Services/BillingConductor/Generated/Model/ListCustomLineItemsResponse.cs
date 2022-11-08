@@ -57,7 +57,8 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  The pagination token used on subsequent calls to get custom line items (FFLIs). 
+        ///  The pagination token that's used on subsequent calls to get custom line items (FFLIs).
+        /// 
         /// </para>
         /// </summary>
         public string NextToken

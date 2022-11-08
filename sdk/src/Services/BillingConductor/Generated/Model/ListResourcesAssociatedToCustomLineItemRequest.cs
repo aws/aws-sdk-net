@@ -30,7 +30,7 @@ namespace Amazon.BillingConductor.Model
 {
     /// <summary>
     /// Container for the parameters to the ListResourcesAssociatedToCustomLineItem operation.
-    /// List the resources associated to a custom line item.
+    /// List the resources that are associated to a custom line item.
     /// </summary>
     public partial class ListResourcesAssociatedToCustomLineItemRequest : AmazonBillingConductorRequest
     {
@@ -119,7 +119,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  (Optional) The pagination token returned by a previous request. 
+        ///  (Optional) The pagination token that's returned by a previous request. 
         /// </para>
         /// </summary>
         public string NextToken

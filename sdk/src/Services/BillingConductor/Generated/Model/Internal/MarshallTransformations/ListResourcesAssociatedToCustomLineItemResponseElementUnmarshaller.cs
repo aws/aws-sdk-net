@@ -70,6 +70,12 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EndBillingPeriod", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EndBillingPeriod = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Relationship", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

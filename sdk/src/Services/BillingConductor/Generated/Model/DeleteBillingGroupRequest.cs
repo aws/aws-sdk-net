@@ -39,7 +39,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the billing group you're deleting.
+        /// The Amazon Resource Name (ARN) of the billing group that you're deleting.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

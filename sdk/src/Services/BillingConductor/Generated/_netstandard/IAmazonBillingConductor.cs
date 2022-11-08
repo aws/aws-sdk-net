@@ -32,7 +32,7 @@ namespace Amazon.BillingConductor
     /// Interface for accessing BillingConductor
     ///
     /// Amazon Web Services Billing Conductor is a fully managed service that you can use
-    /// to customize a <a href="https://docs.aws.amazon.com/enterprisebilling/6b7c01c5-b592-467e-9769-90052eaf359c/userguide/understanding-eb.html#eb-other-definitions">pro
+    /// to customize a <a href="https://docs.aws.amazon.com/billingconductor/latest/userguide/understanding-eb.html#eb-other-definitions">pro
     /// forma</a> version of your billing data each month, to accurately show or chargeback
     /// your end customers. Amazon Web Services Billing Conductor doesn't change the way you're
     /// billed by Amazon Web Services each month by design. Instead, it provides you with
@@ -47,9 +47,9 @@ namespace Amazon.BillingConductor
     ///  
     /// <para>
     /// This documentation shows how you can configure Amazon Web Services Billing Conductor
-    /// using its API. For more information about using the <a href="https://console.aws.amazon.com/enterprisebilling/">Amazon
-    /// Web Services Billing Conductor</a> user interface, see the <a href="https://docs.aws.amazon.com/enterprisebilling/6b7c01c5-b592-467e-9769-90052eaf359c/userguide/what-is-enterprisebilling.html">
-    /// Amazon Web Services Enterprise Billing Console User Guide</a>.
+    /// using its API. For more information about using the <a href="https://console.aws.amazon.com/billingconductor/">Amazon
+    /// Web Services Billing Conductor</a> user interface, see the <a href="https://docs.aws.amazon.com/billingconductor/latest/userguide/what-is-billingconductor.html">
+    /// Amazon Web Services Billing Conductor User Guide</a>.
     /// </para>
     /// </summary>
     public partial interface IAmazonBillingConductor : IAmazonService, IDisposable
@@ -473,7 +473,7 @@ namespace Amazon.BillingConductor
 
 
         /// <summary>
-        /// Deletes the pricing rule identified by the input Amazon Resource Name (ARN).
+        /// Deletes the pricing rule that's identified by the input Amazon Resource Name (ARN).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePricingRule service method.</param>
         /// <param name="cancellationToken">
@@ -578,18 +578,10 @@ namespace Amazon.BillingConductor
 
 
         /// <summary>
-        /// <i> <b>Amazon Web Services Billing Conductor is in beta release and is subject to
-        /// change. Your use of Amazon Web Services Billing Conductor is subject to the Beta Service
-        /// Participation terms of the <a href="https://aws.amazon.com/service-terms/">Amazon
-        /// Web Services Service Terms</a> (Section 1.10).</b> </i> 
-        /// 
-        ///  
-        /// <para>
-        ///  This is a paginated call to list linked accounts that are linked to the payer account
+        /// This is a paginated call to list linked accounts that are linked to the payer account
         /// for the specified time period. If no information is provided, the current billing
-        /// period is used. The response will optionally include the billing group associated
+        /// period is used. The response will optionally include the billing group that's associated
         /// with the linked account.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccountAssociations service method.</param>
         /// <param name="cancellationToken">
@@ -720,6 +712,36 @@ namespace Amazon.BillingConductor
 
         #endregion
                 
+        #region  ListCustomLineItemVersions
+
+
+
+        /// <summary>
+        /// A paginated call to get a list of all custom line item versions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCustomLineItemVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCustomLineItemVersions service method, as returned by BillingConductor.</returns>
+        /// <exception cref="Amazon.BillingConductor.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.BillingConductor.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.BillingConductor.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListCustomLineItemVersions">REST API Reference for ListCustomLineItemVersions Operation</seealso>
+        Task<ListCustomLineItemVersionsResponse> ListCustomLineItemVersionsAsync(ListCustomLineItemVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListPricingPlans
 
 
@@ -756,7 +778,7 @@ namespace Amazon.BillingConductor
 
 
         /// <summary>
-        /// A list of the pricing plans associated with a pricing rule.
+        /// A list of the pricing plans that are associated with a pricing rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPricingPlansAssociatedWithPricingRule service method.</param>
         /// <param name="cancellationToken">
@@ -820,7 +842,7 @@ namespace Amazon.BillingConductor
 
 
         /// <summary>
-        /// Lists the pricing rules associated with a pricing plan.
+        /// Lists the pricing rules that are associated with a pricing plan.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPricingRulesAssociatedToPricingPlan service method.</param>
         /// <param name="cancellationToken">
@@ -853,7 +875,7 @@ namespace Amazon.BillingConductor
 
 
         /// <summary>
-        /// List the resources associated to a custom line item.
+        /// List the resources that are associated to a custom line item.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListResourcesAssociatedToCustomLineItem service method.</param>
         /// <param name="cancellationToken">

@@ -95,7 +95,8 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property PricingRuleArns. 
         /// <para>
-        ///  A list containing pricing rules associated with the requested pricing plan. 
+        ///  A list containing pricing rules that are associated with the requested pricing plan.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

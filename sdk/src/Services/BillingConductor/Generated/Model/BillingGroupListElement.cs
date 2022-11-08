@@ -81,7 +81,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        ///  The time the billing group was created. 
+        ///  The time when the billing group was created. 
         /// </para>
         /// </summary>
         public long CreationTime
@@ -99,7 +99,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The billing group description. 
+        /// The description of the billing group. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -118,7 +118,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        ///  The most recent time the billing group was modified. 
+        ///  The most recent time when the billing group was modified. 
         /// </para>
         /// </summary>
         public long LastModifiedTime
@@ -136,7 +136,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The billing group's name. 
+        /// The name of the billing group. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

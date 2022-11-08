@@ -29,36 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BillingConductor.Model
 {
     /// <summary>
-    /// A representation of a resource association for a custom line item.
+    /// A billing period filter that specifies the custom line item versions to retrieve.
     /// </summary>
-    public partial class ListResourcesAssociatedToCustomLineItemResponseElement
+    public partial class ListCustomLineItemVersionsBillingPeriodRangeFilter
     {
-        private string _arn;
         private string _endBillingPeriod;
-        private CustomLineItemRelationship _relationship;
-
-        /// <summary>
-        /// Gets and sets the property Arn. 
-        /// <para>
-        ///  The ARN of the associated resource. 
-        /// </para>
-        /// </summary>
-        public string Arn
-        {
-            get { return this._arn; }
-            set { this._arn = value; }
-        }
-
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
-        {
-            return this._arn != null;
-        }
+        private string _startBillingPeriod;
 
         /// <summary>
         /// Gets and sets the property EndBillingPeriod. 
         /// <para>
-        /// The end billing period of the associated resource.
+        /// The exclusive end billing period that defines a billing period range where a custom
+        /// line item version is applied.
         /// </para>
         /// </summary>
         public string EndBillingPeriod
@@ -74,22 +56,22 @@ namespace Amazon.BillingConductor.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Relationship. 
+        /// Gets and sets the property StartBillingPeriod. 
         /// <para>
-        ///  The type of relationship between the custom line item and the associated resource.
-        /// 
+        /// The inclusive start billing period that defines a billing period range where a custom
+        /// line item version is applied.
         /// </para>
         /// </summary>
-        public CustomLineItemRelationship Relationship
+        public string StartBillingPeriod
         {
-            get { return this._relationship; }
-            set { this._relationship = value; }
+            get { return this._startBillingPeriod; }
+            set { this._startBillingPeriod = value; }
         }
 
-        // Check to see if Relationship property is set
-        internal bool IsSetRelationship()
+        // Check to see if StartBillingPeriod property is set
+        internal bool IsSetStartBillingPeriod()
         {
-            return this._relationship != null;
+            return this._startBillingPeriod != null;
         }
 
     }

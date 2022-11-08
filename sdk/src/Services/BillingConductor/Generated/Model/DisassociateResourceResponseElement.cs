@@ -57,8 +57,8 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Error. 
         /// <para>
-        ///  An <code>AssociateResourceError</code> shown if the resource disassociation fails.
-        /// 
+        ///  An <code>AssociateResourceError</code> that's shown if the resource disassociation
+        /// fails. 
         /// </para>
         /// </summary>
         public AssociateResourceError Error

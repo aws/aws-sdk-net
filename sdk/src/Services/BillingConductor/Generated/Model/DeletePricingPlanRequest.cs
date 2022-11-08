@@ -40,7 +40,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the pricing plan you're deleting. 
+        /// The Amazon Resource Name (ARN) of the pricing plan that you're deleting. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

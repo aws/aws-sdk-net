@@ -68,6 +68,14 @@ namespace Amazon.BillingConductor.Model
         }
 
         /// <summary>
+        /// Paginator for ListCustomLineItemVersions operation
+        ///</summary>
+        public IListCustomLineItemVersionsPaginator ListCustomLineItemVersions(ListCustomLineItemVersionsRequest request) 
+        {
+            return new ListCustomLineItemVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListPricingPlans operation
         ///</summary>
         public IListPricingPlansPaginator ListPricingPlans(ListPricingPlansRequest request) 

@@ -43,7 +43,6 @@ namespace Amazon.BillingConductor.Model
         /// line is applied. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string ExclusiveEndBillingPeriod
         {
             get { return this._exclusiveEndBillingPeriod; }

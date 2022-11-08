@@ -29,36 +29,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BillingConductor.Model
 {
     /// <summary>
-    /// This is the response object from the ListPricingPlans operation.
+    /// This is the response object from the ListCustomLineItemVersions operation.
     /// </summary>
-    public partial class ListPricingPlansResponse : AmazonWebServiceResponse
+    public partial class ListCustomLineItemVersionsResponse : AmazonWebServiceResponse
     {
-        private string _billingPeriod;
+        private List<CustomLineItemVersionListElement> _customLineItemVersions = new List<CustomLineItemVersionListElement>();
         private string _nextToken;
-        private List<PricingPlanListElement> _pricingPlans = new List<PricingPlanListElement>();
 
         /// <summary>
-        /// Gets and sets the property BillingPeriod. 
+        /// Gets and sets the property CustomLineItemVersions. 
         /// <para>
-        ///  The billing period for which the described pricing plans are applicable. 
+        /// A list of <code>CustomLineItemVersionListElements</code> that are received.
         /// </para>
         /// </summary>
-        public string BillingPeriod
+        public List<CustomLineItemVersionListElement> CustomLineItemVersions
         {
-            get { return this._billingPeriod; }
-            set { this._billingPeriod = value; }
+            get { return this._customLineItemVersions; }
+            set { this._customLineItemVersions = value; }
         }
 
-        // Check to see if BillingPeriod property is set
-        internal bool IsSetBillingPeriod()
+        // Check to see if CustomLineItemVersions property is set
+        internal bool IsSetCustomLineItemVersions()
         {
-            return this._billingPeriod != null;
+            return this._customLineItemVersions != null && this._customLineItemVersions.Count > 0; 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The pagination token that's used on subsequent calls to get pricing plans. 
+        /// The pagination token that's used on subsequent calls to retrieve custom line item
+        /// versions.
         /// </para>
         /// </summary>
         public string NextToken
@@ -71,24 +71,6 @@ namespace Amazon.BillingConductor.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property PricingPlans. 
-        /// <para>
-        /// A list of <code>PricingPlanListElement</code> retrieved. 
-        /// </para>
-        /// </summary>
-        public List<PricingPlanListElement> PricingPlans
-        {
-            get { return this._pricingPlans; }
-            set { this._pricingPlans = value; }
-        }
-
-        // Check to see if PricingPlans property is set
-        internal bool IsSetPricingPlans()
-        {
-            return this._pricingPlans != null && this._pricingPlans.Count > 0; 
         }
 
     }

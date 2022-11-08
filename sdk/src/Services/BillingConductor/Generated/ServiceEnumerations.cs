@@ -43,6 +43,10 @@ namespace Amazon.BillingConductor
         /// </summary>
         public static readonly AssociateResourceErrorReason INVALID_ARN = new AssociateResourceErrorReason("INVALID_ARN");
         /// <summary>
+        /// Constant INVALID_BILLING_PERIOD_RANGE for AssociateResourceErrorReason
+        /// </summary>
+        public static readonly AssociateResourceErrorReason INVALID_BILLING_PERIOD_RANGE = new AssociateResourceErrorReason("INVALID_BILLING_PERIOD_RANGE");
+        /// <summary>
         /// Constant SERVICE_LIMIT_EXCEEDED for AssociateResourceErrorReason
         /// </summary>
         public static readonly AssociateResourceErrorReason SERVICE_LIMIT_EXCEEDED = new AssociateResourceErrorReason("SERVICE_LIMIT_EXCEEDED");
@@ -126,6 +130,68 @@ namespace Amazon.BillingConductor
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator BillingGroupStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConflictExceptionReason.
+    /// </summary>
+    public class ConflictExceptionReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PRICING_PLAN_ATTACHED_TO_BILLING_GROUP_DELETE_CONFLICT for ConflictExceptionReason
+        /// </summary>
+        public static readonly ConflictExceptionReason PRICING_PLAN_ATTACHED_TO_BILLING_GROUP_DELETE_CONFLICT = new ConflictExceptionReason("PRICING_PLAN_ATTACHED_TO_BILLING_GROUP_DELETE_CONFLICT");
+        /// <summary>
+        /// Constant PRICING_RULE_ATTACHED_TO_PRICING_PLAN_DELETE_CONFLICT for ConflictExceptionReason
+        /// </summary>
+        public static readonly ConflictExceptionReason PRICING_RULE_ATTACHED_TO_PRICING_PLAN_DELETE_CONFLICT = new ConflictExceptionReason("PRICING_RULE_ATTACHED_TO_PRICING_PLAN_DELETE_CONFLICT");
+        /// <summary>
+        /// Constant PRICING_RULE_IN_PRICING_PLAN_CONFLICT for ConflictExceptionReason
+        /// </summary>
+        public static readonly ConflictExceptionReason PRICING_RULE_IN_PRICING_PLAN_CONFLICT = new ConflictExceptionReason("PRICING_RULE_IN_PRICING_PLAN_CONFLICT");
+        /// <summary>
+        /// Constant RESOURCE_NAME_CONFLICT for ConflictExceptionReason
+        /// </summary>
+        public static readonly ConflictExceptionReason RESOURCE_NAME_CONFLICT = new ConflictExceptionReason("RESOURCE_NAME_CONFLICT");
+        /// <summary>
+        /// Constant WRITE_CONFLICT_RETRY for ConflictExceptionReason
+        /// </summary>
+        public static readonly ConflictExceptionReason WRITE_CONFLICT_RETRY = new ConflictExceptionReason("WRITE_CONFLICT_RETRY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConflictExceptionReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConflictExceptionReason FindValue(string value)
+        {
+            return FindValue<ConflictExceptionReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConflictExceptionReason(string value)
         {
             return FindValue(value);
         }
@@ -401,6 +467,10 @@ namespace Amazon.BillingConductor
         /// </summary>
         public static readonly ValidationExceptionReason CANNOT_PARSE = new ValidationExceptionReason("CANNOT_PARSE");
         /// <summary>
+        /// Constant CUSTOM_LINE_ITEM_ASSOCIATION_EXISTS for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason CUSTOM_LINE_ITEM_ASSOCIATION_EXISTS = new ValidationExceptionReason("CUSTOM_LINE_ITEM_ASSOCIATION_EXISTS");
+        /// <summary>
         /// Constant DUPLICATE_ACCOUNT for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason DUPLICATE_ACCOUNT = new ValidationExceptionReason("DUPLICATE_ACCOUNT");
@@ -428,6 +498,10 @@ namespace Amazon.BillingConductor
         /// Constant ILLEGAL_CHARGE_DETAILS for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason ILLEGAL_CHARGE_DETAILS = new ValidationExceptionReason("ILLEGAL_CHARGE_DETAILS");
+        /// <summary>
+        /// Constant ILLEGAL_CHILD_ASSOCIATE_RESOURCE for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason ILLEGAL_CHILD_ASSOCIATE_RESOURCE = new ValidationExceptionReason("ILLEGAL_CHILD_ASSOCIATE_RESOURCE");
         /// <summary>
         /// Constant ILLEGAL_CUSTOMLINEITEM for ValidationExceptionReason
         /// </summary>
@@ -469,9 +543,17 @@ namespace Amazon.BillingConductor
         /// </summary>
         public static readonly ValidationExceptionReason INVALID_ARN = new ValidationExceptionReason("INVALID_ARN");
         /// <summary>
+        /// Constant INVALID_BILLING_GROUP for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason INVALID_BILLING_GROUP = new ValidationExceptionReason("INVALID_BILLING_GROUP");
+        /// <summary>
         /// Constant INVALID_BILLING_GROUP_STATUS for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason INVALID_BILLING_GROUP_STATUS = new ValidationExceptionReason("INVALID_BILLING_GROUP_STATUS");
+        /// <summary>
+        /// Constant INVALID_BILLING_PERIOD_FOR_OPERATION for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason INVALID_BILLING_PERIOD_FOR_OPERATION = new ValidationExceptionReason("INVALID_BILLING_PERIOD_FOR_OPERATION");
         /// <summary>
         /// Constant INVALID_BILLINGVIEW_ARN for ValidationExceptionReason
         /// </summary>

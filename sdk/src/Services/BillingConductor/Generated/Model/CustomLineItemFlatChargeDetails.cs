@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BillingConductor.Model
 {
     /// <summary>
-    /// A representation of the charge details associated with a flat custom line item.
+    /// A representation of the charge details that are associated with a flat custom line
+    /// item.
     /// </summary>
     public partial class CustomLineItemFlatChargeDetails
     {

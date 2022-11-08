@@ -79,7 +79,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        ///  The most recent time the pricing plan was modified. 
+        ///  The most recent time when the pricing plan was modified. 
         /// </para>
         /// </summary>
         public long LastModifiedTime
@@ -116,7 +116,8 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Size. 
         /// <para>
-        ///  The pricing rules count currently associated with this pricing plan list. 
+        ///  The pricing rules count that's currently associated with this pricing plan list.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

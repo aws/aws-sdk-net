@@ -41,7 +41,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the pricing plan you're updating. 
+        /// The Amazon Resource Name (ARN) of the pricing plan that you're updating. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The pricing plan description. 
+        /// The description of the pricing plan. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

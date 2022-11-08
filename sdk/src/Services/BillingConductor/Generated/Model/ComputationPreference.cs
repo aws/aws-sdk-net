@@ -39,8 +39,8 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property PricingPlanArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the pricing plan used to compute the Amazon Web
-        /// Services charges for a billing group. 
+        ///  The Amazon Resource Name (ARN) of the pricing plan that's used to compute the Amazon
+        /// Web Services charges for a billing group. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -36,6 +36,7 @@ namespace Amazon.BillingConductor.Model
     #endif
     public partial class ConflictException : AmazonBillingConductorException
     {
+        private ConflictExceptionReason _reason;
         private string _resourceId;
         private string _resourceType;
 
@@ -99,6 +100,7 @@ namespace Amazon.BillingConductor.Model
         protected ConflictException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.Reason = (ConflictExceptionReason)info.GetValue("Reason", typeof(ConflictExceptionReason));
             this.ResourceId = (string)info.GetValue("ResourceId", typeof(string));
             this.ResourceType = (string)info.GetValue("ResourceType", typeof(string));
         }
@@ -121,10 +123,29 @@ namespace Amazon.BillingConductor.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("Reason", this.Reason);
             info.AddValue("ResourceId", this.ResourceId);
             info.AddValue("ResourceType", this.ResourceType);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property Reason. 
+        /// <para>
+        /// Reason for the inconsistent state. 
+        /// </para>
+        /// </summary>
+        public ConflictExceptionReason Reason
+        {
+            get { return this._reason; }
+            set { this._reason = value; }
+        }
+
+        // Check to see if Reason property is set
+        internal bool IsSetReason()
+        {
+            return this._reason != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ResourceId. 

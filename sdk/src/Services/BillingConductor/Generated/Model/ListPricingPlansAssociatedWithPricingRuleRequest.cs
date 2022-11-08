@@ -30,7 +30,7 @@ namespace Amazon.BillingConductor.Model
 {
     /// <summary>
     /// Container for the parameters to the ListPricingPlansAssociatedWithPricingRule operation.
-    /// A list of the pricing plans associated with a pricing rule.
+    /// A list of the pricing plans that are associated with a pricing rule.
     /// </summary>
     public partial class ListPricingPlansAssociatedWithPricingRuleRequest : AmazonBillingConductorRequest
     {

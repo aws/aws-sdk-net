@@ -46,7 +46,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        ///  The token that is needed to support idempotency. Idempotency isn't currently supported,
+        ///  The token that's needed to support idempotency. Idempotency isn't currently supported,
         /// but will be implemented in a future update. 
         /// </para>
         /// </summary>
@@ -85,7 +85,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property ModifierPercentage. 
         /// <para>
-        ///  A percentage modifier applied on the public pricing rates. 
+        ///  A percentage modifier that's applied on the public pricing rates. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
@@ -123,7 +123,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Scope. 
         /// <para>
-        ///  The scope of pricing rule that indicates if it is globally applicable, or is service-specific.
+        ///  The scope of pricing rule that indicates if it's globally applicable, or it's service-specific.
         /// 
         /// </para>
         /// </summary>

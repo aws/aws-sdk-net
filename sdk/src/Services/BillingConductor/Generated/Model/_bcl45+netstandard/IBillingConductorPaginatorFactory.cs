@@ -46,6 +46,11 @@ namespace Amazon.BillingConductor.Model
         IListCustomLineItemsPaginator ListCustomLineItems(ListCustomLineItemsRequest request);
 
         /// <summary>
+        /// Paginator for ListCustomLineItemVersions operation
+        ///</summary>
+        IListCustomLineItemVersionsPaginator ListCustomLineItemVersions(ListCustomLineItemVersionsRequest request);
+
+        /// <summary>
         /// Paginator for ListPricingPlans operation
         ///</summary>
         IListPricingPlansPaginator ListPricingPlans(ListPricingPlansRequest request);

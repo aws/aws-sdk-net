@@ -58,7 +58,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  The pagination token used on subsequent calls to get pricing rules. 
+        ///  The pagination token that's used on subsequent calls to get pricing rules. 
         /// </para>
         /// </summary>
         public string NextToken

@@ -84,7 +84,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        ///  The time the pricing rule was created. 
+        ///  The time when the pricing rule was created. 
         /// </para>
         /// </summary>
         public long CreationTime
@@ -121,7 +121,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        ///  The most recent time the pricing rule was modified. 
+        ///  The most recent time when the pricing rule was modified. 
         /// </para>
         /// </summary>
         public long LastModifiedTime

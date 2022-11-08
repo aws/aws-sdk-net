@@ -106,7 +106,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The billing group description. 
+        /// The description of the billing group. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

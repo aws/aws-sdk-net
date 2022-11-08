@@ -39,7 +39,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        ///  The reason the resource association failed. 
+        ///  The reason why the resource association failed. 
         /// </para>
         /// </summary>
         public string Message
@@ -57,7 +57,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Reason. 
         /// <para>
-        ///  A static error code that used to classify the type of failure. 
+        ///  A static error code that's used to classify the type of failure. 
         /// </para>
         /// </summary>
         public AssociateResourceErrorReason Reason

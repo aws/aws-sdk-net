@@ -29,40 +29,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BillingConductor.Model
 {
     /// <summary>
-    /// This is the response object from the UpdateCustomLineItem operation.
+    /// A representation of a custom line item version.
     /// </summary>
-    public partial class UpdateCustomLineItemResponse : AmazonWebServiceResponse
+    public partial class CustomLineItemVersionListElement
     {
-        private string _arn;
         private long? _associationSize;
         private string _billingGroupArn;
         private ListCustomLineItemChargeDetails _chargeDetails;
+        private long? _creationTime;
+        private CurrencyCode _currencyCode;
         private string _description;
+        private string _endBillingPeriod;
         private long? _lastModifiedTime;
         private string _name;
-
-        /// <summary>
-        /// Gets and sets the property Arn. 
-        /// <para>
-        ///  The ARN of the successfully updated custom line item. 
-        /// </para>
-        /// </summary>
-        public string Arn
-        {
-            get { return this._arn; }
-            set { this._arn = value; }
-        }
-
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
-        {
-            return this._arn != null;
-        }
+        private string _productCode;
+        private string _startBillingPeriod;
 
         /// <summary>
         /// Gets and sets the property AssociationSize. 
         /// <para>
-        ///  The number of resources that are associated to the custom line item. 
+        /// The number of resources that are associated with the custom line item.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -81,7 +67,8 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property BillingGroupArn. 
         /// <para>
-        ///  The ARN of the billing group that the custom line item is applied to. 
+        /// The Amazon Resource Name (ARN) of the billing group that the custom line item applies
+        /// to.
         /// </para>
         /// </summary>
         public string BillingGroupArn
@@ -97,11 +84,7 @@ namespace Amazon.BillingConductor.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ChargeDetails. 
-        /// <para>
-        ///  A <code>ListCustomLineItemChargeDetails</code> containing the charge details of the
-        /// successfully updated custom line item. 
-        /// </para>
+        /// Gets and sets the property ChargeDetails.
         /// </summary>
         public ListCustomLineItemChargeDetails ChargeDetails
         {
@@ -116,9 +99,45 @@ namespace Amazon.BillingConductor.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CreationTime. 
+        /// <para>
+        /// The time when the custom line item version was created.
+        /// </para>
+        /// </summary>
+        public long CreationTime
+        {
+            get { return this._creationTime.GetValueOrDefault(); }
+            set { this._creationTime = value; }
+        }
+
+        // Check to see if CreationTime property is set
+        internal bool IsSetCreationTime()
+        {
+            return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CurrencyCode. 
+        /// <para>
+        /// The charge value currency of the custom line item.
+        /// </para>
+        /// </summary>
+        public CurrencyCode CurrencyCode
+        {
+            get { return this._currencyCode; }
+            set { this._currencyCode = value; }
+        }
+
+        // Check to see if CurrencyCode property is set
+        internal bool IsSetCurrencyCode()
+        {
+            return this._currencyCode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  The description of the successfully updated custom line item. 
+        /// The description of the custom line item.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -135,9 +154,27 @@ namespace Amazon.BillingConductor.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EndBillingPeriod. 
+        /// <para>
+        /// The end billing period of the custom line item version.
+        /// </para>
+        /// </summary>
+        public string EndBillingPeriod
+        {
+            get { return this._endBillingPeriod; }
+            set { this._endBillingPeriod = value; }
+        }
+
+        // Check to see if EndBillingPeriod property is set
+        internal bool IsSetEndBillingPeriod()
+        {
+            return this._endBillingPeriod != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        ///  The most recent time when the custom line item was modified. 
+        /// The most recent time that the custom line item version was modified.
         /// </para>
         /// </summary>
         public long LastModifiedTime
@@ -155,7 +192,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the successfully updated custom line item. 
+        /// The name of the custom line item.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -169,6 +206,43 @@ namespace Amazon.BillingConductor.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProductCode. 
+        /// <para>
+        /// The product code that’s associated with the custom line item.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=29)]
+        public string ProductCode
+        {
+            get { return this._productCode; }
+            set { this._productCode = value; }
+        }
+
+        // Check to see if ProductCode property is set
+        internal bool IsSetProductCode()
+        {
+            return this._productCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartBillingPeriod. 
+        /// <para>
+        /// The start billing period of the custom line item version.
+        /// </para>
+        /// </summary>
+        public string StartBillingPeriod
+        {
+            get { return this._startBillingPeriod; }
+            set { this._startBillingPeriod = value; }
+        }
+
+        // Check to see if StartBillingPeriod property is set
+        internal bool IsSetStartBillingPeriod()
+        {
+            return this._startBillingPeriod != null;
         }
 
     }
