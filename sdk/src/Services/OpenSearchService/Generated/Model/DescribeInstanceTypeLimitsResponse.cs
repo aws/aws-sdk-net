@@ -29,15 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Container for the parameters received from the <code> <a>DescribeInstanceTypeLimits</a>
-    /// </code> operation.
+    /// Container for the parameters received from the <code>DescribeInstanceTypeLimits</code>
+    /// operation.
     /// </summary>
     public partial class DescribeInstanceTypeLimitsResponse : AmazonWebServiceResponse
     {
         private Dictionary<string, Limits> _limitsByRole = new Dictionary<string, Limits>();
 
         /// <summary>
-        /// Gets and sets the property LimitsByRole.
+        /// Gets and sets the property LimitsByRole. 
+        /// <para>
+        /// Map that contains all applicable instance type limits.<code>data</code> refers to
+        /// data nodes.<code>master</code> refers to dedicated master nodes.
+        /// </para>
         /// </summary>
         public Dictionary<string, Limits> LimitsByRole
         {

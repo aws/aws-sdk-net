@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The result of a <code> <a>RejectInboundConnection</a> </code> operation. Contains
-    /// details about the rejected inbound connection.
+    /// Represents the output of a <code>RejectInboundConnection</code> operation.
     /// </summary>
     public partial class RejectInboundConnectionResponse : AmazonWebServiceResponse
     {
@@ -39,7 +38,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Connection. 
         /// <para>
-        /// The <code> <a>InboundConnection</a> </code> of the rejected inbound connection. 
+        /// Contains details about the rejected inbound connection.
         /// </para>
         /// </summary>
         public InboundConnection Connection

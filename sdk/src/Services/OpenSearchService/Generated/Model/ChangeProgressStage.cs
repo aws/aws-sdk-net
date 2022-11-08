@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// A progress stage details of a specific domain configuration change.
+    /// Progress details for each stage of a domain update.
     /// </summary>
     public partial class ChangeProgressStage
     {
@@ -41,7 +41,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the progress stage.
+        /// The description of the stage.
         /// </para>
         /// </summary>
         public string Description
@@ -59,7 +59,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property LastUpdated. 
         /// <para>
-        /// The last updated timestamp of the progress stage.
+        /// The most recent updated timestamp of the stage.
         /// </para>
         /// </summary>
         public DateTime LastUpdated
@@ -77,7 +77,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the specific progress stage.
+        /// The name of the stage.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -96,7 +96,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The overall status of a specific progress stage.
+        /// The status of the stage.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

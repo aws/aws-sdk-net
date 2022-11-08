@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// 
+    /// Lists all instance types and available features for a given OpenSearch or Elasticsearch
+    /// version.
     /// </summary>
     public partial class InstanceTypeDetails
     {
@@ -42,7 +43,10 @@ namespace Amazon.OpenSearchService.Model
         private bool? _warmEnabled;
 
         /// <summary>
-        /// Gets and sets the property AdvancedSecurityEnabled.
+        /// Gets and sets the property AdvancedSecurityEnabled. 
+        /// <para>
+        /// Whether fine-grained access control is supported for the instance type.
+        /// </para>
         /// </summary>
         public bool AdvancedSecurityEnabled
         {
@@ -57,7 +61,10 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AppLogsEnabled.
+        /// Gets and sets the property AppLogsEnabled. 
+        /// <para>
+        /// Whether logging is supported for the instance type.
+        /// </para>
         /// </summary>
         public bool AppLogsEnabled
         {
@@ -72,7 +79,10 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CognitoEnabled.
+        /// Gets and sets the property CognitoEnabled. 
+        /// <para>
+        /// Whether Amazon Cognito access is supported for the instance type.
+        /// </para>
         /// </summary>
         public bool CognitoEnabled
         {
@@ -87,7 +97,11 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EncryptionEnabled.
+        /// Gets and sets the property EncryptionEnabled. 
+        /// <para>
+        /// Whether encryption at rest and node-to-node encryption are supported for the instance
+        /// type.
+        /// </para>
         /// </summary>
         public bool EncryptionEnabled
         {
@@ -102,7 +116,11 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceRole.
+        /// Gets and sets the property InstanceRole. 
+        /// <para>
+        /// Whether the instance acts as a data node, a dedicated master node, or an UltraWarm
+        /// node.
+        /// </para>
         /// </summary>
         public List<string> InstanceRole
         {
@@ -117,7 +135,10 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceType.
+        /// Gets and sets the property InstanceType. 
+        /// <para>
+        /// The instance type.
+        /// </para>
         /// </summary>
         public OpenSearchPartitionInstanceType InstanceType
         {
@@ -132,7 +153,10 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property WarmEnabled.
+        /// Gets and sets the property WarmEnabled. 
+        /// <para>
+        /// Whether UltraWarm is supported for the instance type.
+        /// </para>
         /// </summary>
         public bool WarmEnabled
         {

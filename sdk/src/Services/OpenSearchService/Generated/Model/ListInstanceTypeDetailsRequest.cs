@@ -30,7 +30,8 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListInstanceTypeDetails operation.
-    /// 
+    /// Lists all instance types and available features for a given OpenSearch or Elasticsearch
+    /// version.
     /// </summary>
     public partial class ListInstanceTypeDetailsRequest : AmazonOpenSearchServiceRequest
     {
@@ -40,7 +41,10 @@ namespace Amazon.OpenSearchService.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property DomainName.
+        /// Gets and sets the property DomainName. 
+        /// <para>
+        /// Name of the domain to list instance type details for.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=28)]
         public string DomainName
@@ -56,7 +60,11 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EngineVersion.
+        /// Gets and sets the property EngineVersion. 
+        /// <para>
+        /// Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y.
+        /// Defaults to the latest version of OpenSearch.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=14, Max=18)]
         public string EngineVersion
@@ -72,7 +80,11 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// An optional parameter that specifies the maximum number of results to return. You
+        /// can use <code>nextToken</code> to get the next page of results.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
         public int MaxResults
@@ -88,7 +100,12 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// If your initial <code>ListInstanceTypeDetails</code> operation returns a <code>nextToken</code>,
+        /// you can include the returned <code>nextToken</code> in subsequent <code>ListInstanceTypeDetails</code>
+        /// operations, which returns results in the next page.
+        /// </para>
         /// </summary>
         public string NextToken
         {

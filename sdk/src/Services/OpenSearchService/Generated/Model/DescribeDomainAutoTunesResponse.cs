@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The result of a <code>DescribeDomainAutoTunes</code> request. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-    /// target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
+    /// The result of a <code>DescribeDomainAutoTunes</code> request.
     /// </summary>
     public partial class DescribeDomainAutoTunesResponse : AmazonWebServiceResponse
     {
@@ -40,9 +39,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property AutoTunes. 
         /// <para>
-        /// The list of setting adjustments that Auto-Tune has made to the domain. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-        /// target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
-        /// 
+        /// The list of setting adjustments that Auto-Tune has made to the domain.
         /// </para>
         /// </summary>
         public List<AutoTune> AutoTunes
@@ -60,7 +57,9 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// An identifier to allow retrieval of paginated results.
+        /// When <code>nextToken</code> is returned, there are more results available. The value
+        /// of <code>nextToken</code> is a unique pagination token for each page. Make the call
+        /// again using the returned token to retrieve the next page.
         /// </para>
         /// </summary>
         public string NextToken

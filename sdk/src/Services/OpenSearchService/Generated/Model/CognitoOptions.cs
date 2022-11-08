@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Options to specify the Cognito user and identity pools for OpenSearch Dashboards authentication.
-    /// For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html"
-    /// target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
+    /// Container for the parameters required to enable Cognito authentication for an OpenSearch
+    /// Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html">Configuring
+    /// Amazon Cognito authentication for OpenSearch Dashboards</a>.
     /// </summary>
     public partial class CognitoOptions
     {
@@ -43,7 +43,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// The option to enable Cognito for OpenSearch Dashboards authentication.
+        /// Whether to enable or disable Amazon Cognito authentication for OpenSearch Dashboards.
         /// </para>
         /// </summary>
         public bool Enabled
@@ -61,7 +61,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property IdentityPoolId. 
         /// <para>
-        /// The Cognito identity pool ID for OpenSearch Dashboards authentication.
+        /// The Amazon Cognito identity pool ID that you want OpenSearch Service to use for OpenSearch
+        /// Dashboards authentication.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=55)]
@@ -80,7 +81,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The role ARN that provides OpenSearch permissions for accessing Cognito resources.
+        /// The <code>AmazonOpenSearchServiceCognitoAccess</code> role that allows OpenSearch
+        /// Service to configure your user pool and identity pool.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -99,7 +101,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The Cognito user pool ID for OpenSearch Dashboards authentication.
+        /// The Amazon Cognito user pool ID that you want OpenSearch Service to use for OpenSearch
+        /// Dashboards authentication.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=55)]

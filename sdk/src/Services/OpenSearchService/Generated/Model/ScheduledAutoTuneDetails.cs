@@ -29,8 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Specifies details about the scheduled Auto-Tune action. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-    /// target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
+    /// Specifies details about a scheduled Auto-Tune action. For more information, see <a
+    /// href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune
+    /// for Amazon OpenSearch Service</a>.
     /// </summary>
     public partial class ScheduledAutoTuneDetails
     {
@@ -42,7 +43,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// The Auto-Tune action description.
+        /// A description of the Auto-Tune action.
         /// </para>
         /// </summary>
         public string Action
@@ -60,7 +61,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property ActionType. 
         /// <para>
-        /// The Auto-Tune action type. Valid values are JVM_HEAP_SIZE_TUNING and JVM_YOUNG_GEN_TUNING.
+        /// The type of Auto-Tune action.
         /// </para>
         /// </summary>
         public ScheduledAutoTuneActionType ActionType
@@ -78,7 +79,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Date. 
         /// <para>
-        /// The timestamp of the Auto-Tune action scheduled for the domain.
+        /// The date and time when the Auto-Tune action is scheduled for the domain.
         /// </para>
         /// </summary>
         public DateTime Date
@@ -96,7 +97,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Severity. 
         /// <para>
-        /// The Auto-Tune action severity. Valid values are LOW, MEDIUM, and HIGH.
+        /// The severity of the Auto-Tune action. Valid values are <code>LOW</code>, <code>MEDIUM</code>,
+        /// and <code>HIGH</code>.
         /// </para>
         /// </summary>
         public ScheduledAutoTuneSeverityType Severity

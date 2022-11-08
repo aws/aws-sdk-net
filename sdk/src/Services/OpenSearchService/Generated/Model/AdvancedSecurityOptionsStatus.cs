@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The status of advanced security options for the specified domain.
+    /// The status of fine-grained access control settings for a domain.
     /// </summary>
     public partial class AdvancedSecurityOptionsStatus
     {
@@ -39,7 +39,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Options. 
         /// <para>
-        /// Advanced security options for the specified domain.
+        /// Container for fine-grained access control settings.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,7 +58,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Status of the advanced security options for the specified domain.
+        /// Status of the fine-grained access control settings for a domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The advanced security configuration: whether advanced security is enabled, whether
-    /// the internal database option is enabled.
+    /// Container for fine-grained access control settings.
     /// </summary>
     public partial class AdvancedSecurityOptions
     {
@@ -43,7 +42,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property AnonymousAuthDisableDate. 
         /// <para>
-        /// Specifies the Anonymous Auth Disable Date when Anonymous Auth is enabled.
+        /// Date and time when the migration period will be disabled. Only necessary when <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing">enabling
+        /// fine-grained access control on an existing domain</a>.
         /// </para>
         /// </summary>
         public DateTime AnonymousAuthDisableDate
@@ -61,8 +61,9 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property AnonymousAuthEnabled. 
         /// <para>
-        /// True if Anonymous auth is enabled. Anonymous auth can be enabled only when AdvancedSecurity
-        /// is enabled on existing domains.
+        /// True if a 30-day migration period is enabled, during which administrators can create
+        /// role mappings. Only necessary when <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing">enabling
+        /// fine-grained access control on an existing domain</a>.
         /// </para>
         /// </summary>
         public bool AnonymousAuthEnabled
@@ -80,7 +81,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// True if advanced security is enabled.
+        /// True if fine-grained access control is enabled.
         /// </para>
         /// </summary>
         public bool Enabled
@@ -116,7 +117,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property SAMLOptions. 
         /// <para>
-        /// Describes the SAML application configured for a domain.
+        /// Container for information about the SAML configuration for OpenSearch Dashboards.
         /// </para>
         /// </summary>
         public SAMLOptionsOutput SAMLOptions

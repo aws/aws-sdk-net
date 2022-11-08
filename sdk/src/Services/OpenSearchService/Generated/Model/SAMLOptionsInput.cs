@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The SAML application configuration for the domain.
+    /// The SAML authentication configuration for an Amazon OpenSearch Service domain.
     /// </summary>
     public partial class SAMLOptionsInput
     {
@@ -44,7 +44,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// True if SAML is enabled.
+        /// True to enable SAML authentication for a domain.
         /// </para>
         /// </summary>
         public bool Enabled
@@ -99,8 +99,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property MasterUserName. 
         /// <para>
-        /// The SAML master username, which is stored in the Amazon OpenSearch Service domain's
-        /// internal database.
+        /// The SAML master user name, which is stored in the domain's internal user database.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -119,7 +118,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property RolesKey. 
         /// <para>
-        /// Element of the SAML assertion to use for backend roles. Default is roles.
+        /// Element of the SAML assertion to use for backend roles. Default is <code>roles</code>.
         /// </para>
         /// </summary>
         public string RolesKey
@@ -138,7 +137,7 @@ namespace Amazon.OpenSearchService.Model
         /// Gets and sets the property SessionTimeoutMinutes. 
         /// <para>
         /// The duration, in minutes, after which a user session becomes inactive. Acceptable
-        /// values are between 1 and 1440, and the default value is 60. 
+        /// values are between 1 and 1440, and the default value is 60.
         /// </para>
         /// </summary>
         public int SessionTimeoutMinutes
@@ -156,7 +155,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property SubjectKey. 
         /// <para>
-        /// Element of the SAML assertion to use for username. Default is NameID.
+        /// Element of the SAML assertion to use for the user name. Default is <code>NameID</code>.
         /// </para>
         /// </summary>
         public string SubjectKey

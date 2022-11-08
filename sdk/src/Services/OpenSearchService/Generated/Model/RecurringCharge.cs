@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Contains the specific price and frequency of a recurring charges for a reserved OpenSearch
-    /// instance, or for a reserved OpenSearch instance offering.
+    /// Contains the specific price and frequency of a recurring charges for an OpenSearch
+    /// Reserved Instance, or for a Reserved Instance offering.
     /// </summary>
     public partial class RecurringCharge
     {

@@ -30,7 +30,9 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdatePackage operation.
-    /// Updates a package for use with Amazon OpenSearch Service domains.
+    /// Updates a package for use with Amazon OpenSearch Service domains. For more information,
+    /// see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom
+    /// packages for Amazon OpenSearch Service</a>.
     /// </summary>
     public partial class UpdatePackageRequest : AmazonOpenSearchServiceRequest
     {
@@ -42,8 +44,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property CommitMessage. 
         /// <para>
-        /// A commit message for the new version which is shown as part of <code>GetPackageVersionHistoryResponse</code>.
-        /// 
+        /// Commit message for the updated file, which is shown as part of <code>GetPackageVersionHistoryResponse</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=160)]
@@ -98,7 +99,10 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PackageSource.
+        /// Gets and sets the property PackageSource. 
+        /// <para>
+        /// Amazon S3 bucket and key for the package.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public PackageSource PackageSource

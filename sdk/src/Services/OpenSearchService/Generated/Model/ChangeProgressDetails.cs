@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Specifies change details of the domain configuration change.
+    /// Container for information about a configuration change happening on a domain.
     /// </summary>
     public partial class ChangeProgressDetails
     {
@@ -39,7 +39,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property ChangeId. 
         /// <para>
-        /// The unique change identifier associated with a specific domain configuration change.
+        /// The ID of the configuration change.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -58,7 +58,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// Contains an optional message associated with the domain configuration change.
+        /// A message corresponding to the status of the configuration change.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

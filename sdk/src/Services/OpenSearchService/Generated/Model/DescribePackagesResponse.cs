@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Container for the response returned by the <code> <a>DescribePackages</a> </code>
-    /// operation.
+    /// Container for the response returned by the <code>DescribePackages</code> operation.
     /// </summary>
     public partial class DescribePackagesResponse : AmazonWebServiceResponse
     {
@@ -38,7 +37,12 @@ namespace Amazon.OpenSearchService.Model
         private List<PackageDetails> _packageDetailsList = new List<PackageDetails>();
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// When <code>nextToken</code> is returned, there are more results available. The value
+        /// of <code>nextToken</code> is a unique pagination token for each page. Make the call
+        /// again using the returned token to retrieve the next page.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -55,7 +59,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property PackageDetailsList. 
         /// <para>
-        /// List of <code>PackageDetails</code> objects. 
+        /// Basic information about a package.
         /// </para>
         /// </summary>
         public List<PackageDetails> PackageDetailsList

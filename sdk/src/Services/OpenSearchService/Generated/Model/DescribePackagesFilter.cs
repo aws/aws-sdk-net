@@ -39,7 +39,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Any field from <code>PackageDetails</code>. 
+        /// Any field from <code>PackageDetails</code>.
         /// </para>
         /// </summary>
         public DescribePackagesFilterName Name
@@ -57,7 +57,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// A list of values for the specified field.
+        /// A list of values for the specified filter field.
         /// </para>
         /// </summary>
         public List<string> Value

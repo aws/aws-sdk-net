@@ -30,7 +30,9 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the StartServiceSoftwareUpdate operation.
-    /// Schedules a service software update for an Amazon OpenSearch Service domain.
+    /// Schedules a service software update for an Amazon OpenSearch Service domain. For more
+    /// information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/service-software.html">Service
+    /// software updates in Amazon OpenSearch Service</a>.
     /// </summary>
     public partial class StartServiceSoftwareUpdateRequest : AmazonOpenSearchServiceRequest
     {

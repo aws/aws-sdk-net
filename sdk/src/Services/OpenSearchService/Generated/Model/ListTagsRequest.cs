@@ -30,7 +30,9 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTags operation.
-    /// Returns all tags for the given domain.
+    /// Returns all resource tags for an Amazon OpenSearch Service domain. For more information,
+    /// see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-awsresourcetagging.html">Tagging
+    /// Amazon OpenSearch Service domains</a>.
     /// </summary>
     public partial class ListTagsRequest : AmazonOpenSearchServiceRequest
     {
@@ -39,8 +41,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property ARN. 
         /// <para>
-        /// Specify the <code>ARN</code> of the domain that the tags you want to view are attached
-        /// to. 
+        /// Amazon Resource Name (ARN) for the domain to view tags for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

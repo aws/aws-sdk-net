@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// A filter used to limit results when describing inbound or outbound cross-cluster
-    /// connections. Multiple values can be specified per filter. A cross-cluster connection
-    /// must match at least one of the specified values for it to be returned from an operation.
+    /// A filter used to limit results when describing inbound or outbound cross-cluster connections.
+    /// You can specify multiple values per filter. A cross-cluster connection must match
+    /// at least one of the specified values for it to be returned from an operation.
     /// </summary>
     public partial class Filter
     {
@@ -41,7 +41,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the filter. 
+        /// The name of the filter.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -60,7 +60,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        ///  Contains one or more values for the filter. 
+        /// One or more values for the filter.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

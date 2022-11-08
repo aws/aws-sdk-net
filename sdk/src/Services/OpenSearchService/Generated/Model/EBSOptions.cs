@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Options to enable, disable, and specify the properties of EBS storage volumes.
+    /// Container for the parameters required to enable EBS-based storage for an OpenSearch
+    /// Service domain.
     /// </summary>
     public partial class EBSOptions
     {
@@ -42,7 +43,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property EBSEnabled. 
         /// <para>
-        /// Whether EBS-based storage is enabled.
+        /// Indicates whether EBS volumes are attached to data nodes in an OpenSearch Service
+        /// domain.
         /// </para>
         /// </summary>
         public bool EBSEnabled
@@ -60,7 +62,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Iops. 
         /// <para>
-        /// The IOPS for Provisioned IOPS And GP3 EBS volume (SSD).
+        /// Specifies the baseline input/output (I/O) performance of EBS volumes attached to data
+        /// nodes. Applicable only for the <code>gp3</code> and provisioned IOPS EBS volume types.
         /// </para>
         /// </summary>
         public int Iops
@@ -78,7 +81,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Throughput. 
         /// <para>
-        /// The Throughput for GP3 EBS volume (SSD).
+        /// Specifies the throughput (in MiB/s) of the EBS volumes attached to data nodes. Applicable
+        /// only for the <code>gp3</code> volume type.
         /// </para>
         /// </summary>
         public int Throughput
@@ -96,7 +100,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property VolumeSize. 
         /// <para>
-        /// Integer to specify the size of an EBS volume.
+        /// Specifies the size (in GiB) of EBS volumes attached to data nodes.
         /// </para>
         /// </summary>
         public int VolumeSize
@@ -114,7 +118,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property VolumeType. 
         /// <para>
-        /// The volume type for EBS-based storage.
+        /// Specifies the type of EBS volumes attached to data nodes.
         /// </para>
         /// </summary>
         public VolumeType VolumeType

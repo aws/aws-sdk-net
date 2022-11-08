@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The result of a <code> <a>DeleteInboundConnection</a> </code> operation. Contains
-    /// details about the deleted inbound connection.
+    /// The results of a <code>DeleteInboundConnection</code> operation. Contains details
+    /// about the deleted inbound connection.
     /// </summary>
     public partial class DeleteInboundConnectionResponse : AmazonWebServiceResponse
     {
@@ -39,7 +39,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Connection. 
         /// <para>
-        /// The <code> <a>InboundConnection</a> </code> of the deleted inbound connection. 
+        /// The deleted inbound connection.
         /// </para>
         /// </summary>
         public InboundConnection Connection

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Limits that are applicable for the given storage type.
+    /// Limits that are applicable for the given Amazon OpenSearch Service storage type.
     /// </summary>
     public partial class StorageTypeLimit
     {
@@ -39,19 +39,40 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property LimitName. 
         /// <para>
-        ///  Name of storage limits that are applicable for the given storage type. If <code>
-        /// <a>StorageType</a> </code> is "ebs", the following storage options are applicable:
-        /// <ol> <li>MinimumVolumeSize</li> Minimum amount of volume size that is applicable for
-        /// the given storage type. Can be empty if not applicable. <li>MaximumVolumeSize</li>
-        /// Maximum amount of volume size that is applicable for the given storage type. Can be
-        /// empty if not applicable. <li>MaximumIops</li> Maximum amount of Iops that is applicable
-        /// for given the storage type. Can be empty if not applicable. <li>MinimumIops</li> Minimum
-        /// amount of Iops that is applicable for given the storage type. Can be empty if not
-        /// applicable. <li>MaximumThroughput</li> Maximum amount of Throughput that is applicable
-        /// for given the storage type. Can be empty if not applicable. <li>MinimumThroughput</li>
-        /// Minimum amount of Throughput that is applicable for given the storage type. Can be
-        /// empty if not applicable. </ol> 
+        ///  Name of storage limits that are applicable for the given storage type. If <code>StorageType</code>
+        /// is <code>ebs</code>, the following options are available:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>MinimumVolumeSize</b> - Minimum volume size that is available for the given storage
+        /// type. Can be empty if not applicable.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>MaximumVolumeSize</b> - Maximum volume size that is available for the given storage
+        /// type. Can be empty if not applicable.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>MaximumIops</b> - Maximum amount of IOPS that is available for the given the storage
+        /// type. Can be empty if not applicable.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>MinimumIops</b> - Minimum amount of IOPS that is available for the given the storage
+        /// type. Can be empty if not applicable.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>MaximumThroughput</b> - Maximum amount of throughput that is available for the
+        /// given the storage type. Can be empty if not applicable.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>MinimumThroughput</b> - Minimum amount of throughput that is available for the
+        /// given the storage type. Can be empty if not applicable.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string LimitName
         {
@@ -68,7 +89,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property LimitValues. 
         /// <para>
-        ///  Values for the <code> <a>StorageTypeLimit$LimitName</a> </code> . 
+        /// The limit values.
         /// </para>
         /// </summary>
         public List<string> LimitValues

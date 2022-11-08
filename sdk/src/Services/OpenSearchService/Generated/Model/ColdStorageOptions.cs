@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Specifies the configuration for cold storage options such as enabled
+    /// Container for the parameters required to enable cold storage for an OpenSearch Service
+    /// domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cold-storage.html">Cold
+    /// storage for Amazon OpenSearch Service</a>.
     /// </summary>
     public partial class ColdStorageOptions
     {
@@ -38,7 +40,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Enable cold storage option. Accepted values true or false
+        /// Whether to enable or disable cold storage on the domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The result of a <code>DescribeDomainConfig</code> request. Contains the configuration
-    /// information of the requested domain.
+    /// Contains the configuration information of the requested domain.
     /// </summary>
     public partial class DescribeDomainConfigResponse : AmazonWebServiceResponse
     {
@@ -39,8 +38,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property DomainConfig. 
         /// <para>
-        /// The configuration information of the domain requested in the <code>DescribeDomainConfig</code>
-        /// request. 
+        /// Container for the configuration of the OpenSearch Service domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

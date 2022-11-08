@@ -82,7 +82,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property CompletedProperties. 
         /// <para>
-        /// The list of properties involved in the domain configuration change that are completed.
+        /// The list of properties in the domain configuration change that have completed.
         /// </para>
         /// </summary>
         public List<string> CompletedProperties
@@ -100,8 +100,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property PendingProperties. 
         /// <para>
-        /// The list of properties involved in the domain configuration change that are still
-        /// in pending.
+        /// The list of properties in the domain configuration change that are still pending.
         /// </para>
         /// </summary>
         public List<string> PendingProperties
@@ -137,9 +136,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The overall status of the domain configuration change. This field can take the following
-        /// values: <code>PENDING</code>, <code>PROCESSING</code>, <code>COMPLETED</code> and
-        /// <code>FAILED</code>
+        /// The overall status of the domain configuration change.
         /// </para>
         /// </summary>
         public OverallChangeStatus Status

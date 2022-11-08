@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The result of a <code>StartServiceSoftwareUpdate</code> operation. Contains the status
-    /// of the update.
+    /// Represents the output of a <code>StartServiceSoftwareUpdate</code> operation. Contains
+    /// the status of the update.
     /// </summary>
     public partial class StartServiceSoftwareUpdateResponse : AmazonWebServiceResponse
     {
@@ -39,7 +39,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property ServiceSoftwareOptions. 
         /// <para>
-        /// The current status of the OpenSearch service software update.
+        /// The current status of the OpenSearch Service software update.
         /// </para>
         /// </summary>
         public ServiceSoftwareOptions ServiceSoftwareOptions

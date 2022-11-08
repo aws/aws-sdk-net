@@ -29,15 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Specifies details about the Auto-Tune action. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-    /// target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
+    /// Specifies details about a scheduled Auto-Tune action. For more information, see <a
+    /// href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune
+    /// for Amazon OpenSearch Service</a>.
     /// </summary>
     public partial class AutoTuneDetails
     {
         private ScheduledAutoTuneDetails _scheduledAutoTuneDetails;
 
         /// <summary>
-        /// Gets and sets the property ScheduledAutoTuneDetails.
+        /// Gets and sets the property ScheduledAutoTuneDetails. 
+        /// <para>
+        /// Container for details about a scheduled Auto-Tune action.
+        /// </para>
         /// </summary>
         public ScheduledAutoTuneDetails ScheduledAutoTuneDetails
         {

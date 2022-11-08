@@ -30,7 +30,9 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetPackageVersionHistory operation.
-    /// Returns a list of package versions, along with their creation time and commit message.
+    /// Returns a list of Amazon OpenSearch Service package versions, along with their creation
+    /// time and commit message. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom
+    /// packages for Amazon OpenSearch Service</a>.
     /// </summary>
     public partial class GetPackageVersionHistoryRequest : AmazonOpenSearchServiceRequest
     {
@@ -41,7 +43,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Limits results to a maximum number of package versions.
+        /// An optional parameter that specifies the maximum number of results to return. You
+        /// can use <code>nextToken</code> to get the next page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
@@ -60,8 +63,9 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Used for pagination. Only necessary if a previous API call includes a non-null NextToken
-        /// value. If provided, returns results for the next page. 
+        /// If your initial <code>GetPackageVersionHistory</code> operation returns a <code>nextToken</code>,
+        /// you can include the returned <code>nextToken</code> in subsequent <code>GetPackageVersionHistory</code>
+        /// operations, which returns results in the next page. 
         /// </para>
         /// </summary>
         public string NextToken
@@ -79,7 +83,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property PackageID. 
         /// <para>
-        /// Returns an audit history of package versions.
+        /// The unique identifier of the package.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

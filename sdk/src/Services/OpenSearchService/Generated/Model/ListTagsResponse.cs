@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The result of a <code>ListTags</code> operation. Contains tags for all requested domains.
+    /// The results of a <code>ListTags</code> operation.
     /// </summary>
     public partial class ListTagsResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property TagList. 
         /// <para>
-        /// List of <code>Tag</code> for the requested domain. 
+        /// List of resource tags associated with the specified domain.
         /// </para>
         /// </summary>
         public List<Tag> TagList

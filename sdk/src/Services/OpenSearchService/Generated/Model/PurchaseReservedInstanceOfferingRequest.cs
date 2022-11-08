@@ -30,7 +30,7 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the PurchaseReservedInstanceOffering operation.
-    /// Allows you to purchase reserved OpenSearch instances.
+    /// Allows you to purchase Amazon OpenSearch Service Reserved Instances.
     /// </summary>
     public partial class PurchaseReservedInstanceOfferingRequest : AmazonOpenSearchServiceRequest
     {
@@ -79,7 +79,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property ReservedInstanceOfferingId. 
         /// <para>
-        /// The ID of the reserved OpenSearch instance offering to purchase.
+        /// The ID of the Reserved Instance offering to purchase.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// 
+    /// Results of a dry run performed in an update domain request.
     /// </summary>
     public partial class DryRunResults
     {
@@ -39,13 +39,27 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property DeploymentType. 
         /// <para>
-        ///  Specifies the way in which Amazon OpenSearch Service applies the update. Possible
-        /// responses are <code>Blue/Green</code> (the update requires a blue/green deployment),
-        /// <code>DynamicUpdate</code> (no blue/green required), <code>Undetermined</code> (the
-        /// domain is undergoing an update and can't predict the deployment type; try again after
-        /// the update is complete), and <code>None</code> (the request doesn't include any configuration
-        /// changes). 
+        ///  Specifies the way in which OpenSearch Service will apply an update. Possible values
+        /// are:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Blue/Green</b> - The update requires a blue/green deployment.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>DynamicUpdate</b> - No blue/green deployment required
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Undetermined</b> - The domain is in the middle of an update and can't predict
+        /// the deployment type. Try again after the update is complete.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>None</b> - The request doesn't include any configuration changes.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=2, Max=128)]
         public string DeploymentType
@@ -63,7 +77,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// Contains an optional message associated with the DryRunResults.
+        /// A message corresponding to the deployment type.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The configured endpoint options for the domain and their current status.
+    /// The configured endpoint options for a domain and their current status.
     /// </summary>
     public partial class DomainEndpointOptionsStatus
     {
@@ -39,7 +39,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Options. 
         /// <para>
-        /// Options to configure the endpoint for the domain.
+        /// Options to configure the endpoint for a domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,8 +58,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the endpoint options for the domain. See <code>OptionStatus</code> for
-        /// the status information that's included. 
+        /// The status of the endpoint options for a domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

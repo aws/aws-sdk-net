@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// InstanceCountLimits represents the limits on the number of instances that can be
-    /// created in Amazon OpenSearch Service for a given InstanceType.
+    /// Limits on the number of instances that can be created in OpenSearch Service for a
+    /// given instance type.
     /// </summary>
     public partial class InstanceCountLimits
     {
@@ -38,7 +38,10 @@ namespace Amazon.OpenSearchService.Model
         private int? _minimumInstanceCount;
 
         /// <summary>
-        /// Gets and sets the property MaximumInstanceCount.
+        /// Gets and sets the property MaximumInstanceCount. 
+        /// <para>
+        /// The minimum allowed number of instances.
+        /// </para>
         /// </summary>
         public int MaximumInstanceCount
         {
@@ -53,7 +56,10 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MinimumInstanceCount.
+        /// Gets and sets the property MinimumInstanceCount. 
+        /// <para>
+        /// The maximum allowed number of instances.
+        /// </para>
         /// </summary>
         public int MinimumInstanceCount
         {

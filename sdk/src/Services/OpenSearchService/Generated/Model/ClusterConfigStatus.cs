@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The configuration status for the specified domain.
+    /// The cluster configuration status for a domain.
     /// </summary>
     public partial class ClusterConfigStatus
     {
@@ -39,7 +39,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Options. 
         /// <para>
-        /// The cluster configuration for the specified domain.
+        /// Cluster configuration options for the specified domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,7 +58,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The cluster configuration status for the specified domain.
+        /// The status of cluster configuration options for the specified domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

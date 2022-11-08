@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Provides the current status of the entity.
+    /// Provides the current status of an entity.
     /// </summary>
     public partial class OptionStatus
     {
@@ -42,7 +42,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property CreationDate. 
         /// <para>
-        /// The timestamp of when the entity was created.
+        /// The timestamp when the entity was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,7 +61,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property PendingDeletion. 
         /// <para>
-        /// Indicates whether the domain is being deleted.
+        /// Indicates whether the entity is being deleted.
         /// </para>
         /// </summary>
         public bool PendingDeletion
@@ -79,7 +79,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// Provides the <code>OptionState</code> for the domain. 
+        /// The state of the entity.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -30,7 +30,8 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the RejectInboundConnection operation.
-    /// Allows the remote domain owner to reject an inbound cross-cluster connection request.
+    /// Allows the remote Amazon OpenSearch Service domain owner to reject an inbound cross-cluster
+    /// connection request.
     /// </summary>
     public partial class RejectInboundConnectionRequest : AmazonOpenSearchServiceRequest
     {
@@ -39,7 +40,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property ConnectionId. 
         /// <para>
-        /// The ID of the inbound connection to reject.
+        /// The unique identifier of the inbound connection to reject.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=256)]

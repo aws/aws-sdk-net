@@ -30,8 +30,7 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDomainConfig operation.
-    /// Provides cluster configuration information about the specified domain, such as the
-    /// state, creation date, update version, and update date for cluster options.
+    /// Returns the configuration of an Amazon OpenSearch Service domain.
     /// </summary>
     public partial class DescribeDomainConfigRequest : AmazonOpenSearchServiceRequest
     {
@@ -40,7 +39,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The domain you want to get information about.
+        /// Name of the OpenSearch Service domain configuration that you want to describe.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=28)]

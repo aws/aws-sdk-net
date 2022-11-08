@@ -38,23 +38,19 @@ namespace Amazon.OpenSearchService
     /// <summary>
     /// Implementation for accessing OpenSearchService
     ///
-    /// Amazon OpenSearch Configuration Service 
-    /// <para>
-    /// Use the Amazon OpenSearch configuration API to create, configure, and manage Amazon
+    /// Use the Amazon OpenSearch Service configuration API to create, configure, and manage
     /// OpenSearch Service domains.
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// For sample code that uses the configuration API, see the <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/opensearch-configuration-samples.html">
-    /// Amazon OpenSearch Service Developer Guide</a>. The guide also contains <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/request-signing.html">
-    /// sample code for sending signed HTTP requests to the OpenSearch APIs</a>. 
-    /// </para>
-    ///  
-    /// <para>
-    /// The endpoint for configuration service requests is region-specific: es.<i>region</i>.amazonaws.com.
-    /// For example, es.us-east-1.amazonaws.com. For a current list of supported regions and
-    /// endpoints, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#service-regions"
-    /// target="_blank">Regions and Endpoints</a>. 
+    /// <i>Amazon OpenSearch Service Developer Guide</i> </a>. The guide also contains <a
+    /// href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/request-signing.html">sample
+    /// code</a> for sending signed HTTP requests to the OpenSearch APIs. The endpoint for
+    /// configuration service requests is Region specific: es.<i>region</i>.amazonaws.com.
+    /// For example, es.us-east-1.amazonaws.com. For a current list of supported Regions and
+    /// endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#service-regions">Amazon
+    /// Web Services service endpoints</a>.
     /// </para>
     /// </summary>
     public partial class AmazonOpenSearchServiceClient : AmazonServiceClient, IAmazonOpenSearchService
@@ -298,7 +294,9 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Allows the remote domain owner to accept an inbound cross-cluster connection request.
+        /// Allows the destination Amazon OpenSearch Service domain owner to accept an inbound
+        /// cross-cluster search connection request. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html">Cross-cluster
+        /// search for Amazon OpenSearch Service</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AcceptInboundConnection service method.</param>
         /// <param name="cancellationToken">
@@ -344,9 +342,9 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Attaches tags to an existing domain. Tags are a set of case-sensitive key value pairs.
-        /// An domain can have up to 10 tags. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-awsresorcetagging"
-        /// target="_blank"> Tagging Amazon OpenSearch Service domains</a> for more information.
+        /// Attaches tags to an existing Amazon OpenSearch Service domain. Tags are a set of case-sensitive
+        /// key-value pairs. An domain can have up to 10 tags. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-awsresorcetagging">
+        /// Tagging Amazon OpenSearch Service domains</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddTags service method.</param>
         /// <param name="cancellationToken">
@@ -394,7 +392,9 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Associates a package with an Amazon OpenSearch Service domain.
+        /// Associates a package with an Amazon OpenSearch Service domain. For more information,
+        /// see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom
+        /// packages for Amazon OpenSearch Service</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociatePackage service method.</param>
         /// <param name="cancellationToken">
@@ -436,6 +436,63 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  AuthorizeVpcEndpointAccess
+
+        internal virtual AuthorizeVpcEndpointAccessResponse AuthorizeVpcEndpointAccess(AuthorizeVpcEndpointAccessRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AuthorizeVpcEndpointAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AuthorizeVpcEndpointAccessResponseUnmarshaller.Instance;
+
+            return Invoke<AuthorizeVpcEndpointAccessResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Provides access to an Amazon OpenSearch Service domain through the use of an interface
+        /// VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AuthorizeVpcEndpointAccess service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AuthorizeVpcEndpointAccess service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.LimitExceededException">
+        /// An exception for trying to create more than allowed resources or sub-resources. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AuthorizeVpcEndpointAccess">REST API Reference for AuthorizeVpcEndpointAccess Operation</seealso>
+        public virtual Task<AuthorizeVpcEndpointAccessResponse> AuthorizeVpcEndpointAccessAsync(AuthorizeVpcEndpointAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AuthorizeVpcEndpointAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AuthorizeVpcEndpointAccessResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AuthorizeVpcEndpointAccessResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CancelServiceSoftwareUpdate
 
         internal virtual CancelServiceSoftwareUpdateResponse CancelServiceSoftwareUpdate(CancelServiceSoftwareUpdateRequest request)
@@ -452,7 +509,9 @@ namespace Amazon.OpenSearchService
         /// <summary>
         /// Cancels a scheduled service software update for an Amazon OpenSearch Service domain.
         /// You can only perform this operation before the <code>AutomatedUpdateDate</code> and
-        /// when the <code>UpdateStatus</code> is in the <code>PENDING_UPDATE</code> state.
+        /// when the domain's <code>UpdateStatus</code> is <code>PENDING_UPDATE</code>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/service-software.html">Service
+        /// software updates in Amazon OpenSearch Service</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelServiceSoftwareUpdate service method.</param>
         /// <param name="cancellationToken">
@@ -500,9 +559,8 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Creates a new Amazon OpenSearch Service domain. For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html"
-        /// target="_blank">Creating and managing Amazon OpenSearch Service domains </a> in the
-        /// <i>Amazon OpenSearch Service Developer Guide</i>.
+        /// Creates an Amazon OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html">Creating
+        /// and managing Amazon OpenSearch Service domains</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDomain service method.</param>
         /// <param name="cancellationToken">
@@ -562,8 +620,9 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Creates a new cross-cluster connection from a local OpenSearch domain to a remote
-        /// OpenSearch domain.
+        /// Creates a new cross-cluster search connection from a source Amazon OpenSearch Service
+        /// domain to a destination domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html">Cross-cluster
+        /// search for Amazon OpenSearch Service</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateOutboundConnection service method.</param>
         /// <param name="cancellationToken">
@@ -613,7 +672,9 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Create a package for use with Amazon OpenSearch Service domains.
+        /// Creates a package for use with Amazon OpenSearch Service domains. For more information,
+        /// see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom
+        /// packages for Amazon OpenSearch Service</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePackage service method.</param>
         /// <param name="cancellationToken">
@@ -659,6 +720,62 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  CreateVpcEndpoint
+
+        internal virtual CreateVpcEndpointResponse CreateVpcEndpoint(CreateVpcEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVpcEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVpcEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVpcEndpointResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an Amazon OpenSearch Service-managed VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateVpcEndpoint service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ConflictException">
+        /// An error occurred because the client attempts to remove a resource that is currently
+        /// in use. Returns HTTP status code 409.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.LimitExceededException">
+        /// An exception for trying to create more than allowed resources or sub-resources. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CreateVpcEndpoint">REST API Reference for CreateVpcEndpoint Operation</seealso>
+        public virtual Task<CreateVpcEndpointResponse> CreateVpcEndpointAsync(CreateVpcEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVpcEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVpcEndpointResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateVpcEndpointResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteDomain
 
         internal virtual DeleteDomainResponse DeleteDomain(DeleteDomainRequest request)
@@ -673,8 +790,8 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Permanently deletes the specified domain and all of its data. Once a domain is deleted,
-        /// it cannot be recovered.
+        /// Deletes an Amazon OpenSearch Service domain and all of its data. You can't recover
+        /// a domain after you delete it.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDomain service method.</param>
         /// <param name="cancellationToken">
@@ -722,7 +839,9 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Allows the remote domain owner to delete an existing inbound cross-cluster connection.
+        /// Allows the destination Amazon OpenSearch Service domain owner to delete an existing
+        /// inbound cross-cluster search connection. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html">Cross-cluster
+        /// search for Amazon OpenSearch Service</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteInboundConnection service method.</param>
         /// <param name="cancellationToken">
@@ -764,7 +883,9 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Allows the local domain owner to delete an existing outbound cross-cluster connection.
+        /// Allows the source Amazon OpenSearch Service domain owner to delete an existing outbound
+        /// cross-cluster search connection. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html">Cross-cluster
+        /// search for Amazon OpenSearch Service</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteOutboundConnection service method.</param>
         /// <param name="cancellationToken">
@@ -806,7 +927,8 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Deletes the package.
+        /// Deletes an Amazon OpenSearch Service package. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom
+        /// packages for Amazon OpenSearch Service</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePackage service method.</param>
         /// <param name="cancellationToken">
@@ -848,6 +970,55 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  DeleteVpcEndpoint
+
+        internal virtual DeleteVpcEndpointResponse DeleteVpcEndpoint(DeleteVpcEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVpcEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVpcEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVpcEndpointResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an Amazon OpenSearch Service-managed interface VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteVpcEndpoint service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteVpcEndpoint">REST API Reference for DeleteVpcEndpoint Operation</seealso>
+        public virtual Task<DeleteVpcEndpointResponse> DeleteVpcEndpointAsync(DeleteVpcEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVpcEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVpcEndpointResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteVpcEndpointResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeDomain
 
         internal virtual DescribeDomainResponse DescribeDomain(DescribeDomainRequest request)
@@ -862,8 +1033,8 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Returns domain configuration information about the specified domain, including the
-        /// domain ID, domain endpoint, and domain ARN.
+        /// Describes the domain configuration for the specified Amazon OpenSearch Service domain,
+        /// including the domain ID, domain service endpoint, and domain ARN.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDomain service method.</param>
         /// <param name="cancellationToken">
@@ -911,8 +1082,9 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Provides scheduled Auto-Tune action details for the domain, such as Auto-Tune action
-        /// type, description, severity, and scheduled date.
+        /// Returns the list of optimizations that Auto-Tune has made to an Amazon OpenSearch
+        /// Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune
+        /// for Amazon OpenSearch Service</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDomainAutoTunes service method.</param>
         /// <param name="cancellationToken">
@@ -960,8 +1132,9 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Returns information about the current blue/green deployment happening on a domain,
-        /// including a change ID, status, and progress stages.
+        /// Returns information about the current blue/green deployment happening on an Amazon
+        /// OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes.html">Making
+        /// configuration changes in Amazon OpenSearch Service</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDomainChangeProgress service method.</param>
         /// <param name="cancellationToken">
@@ -1009,8 +1182,7 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Provides cluster configuration information about the specified domain, such as the
-        /// state, creation date, update version, and update date for cluster options.
+        /// Returns the configuration of an Amazon OpenSearch Service domain.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDomainConfig service method.</param>
         /// <param name="cancellationToken">
@@ -1058,8 +1230,8 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Returns domain configuration information about the specified domains, including the
-        /// domain ID, domain endpoint, and domain ARN.
+        /// Returns domain configuration information about the specified Amazon OpenSearch Service
+        /// domains.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDomains service method.</param>
         /// <param name="cancellationToken">
@@ -1103,7 +1275,9 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Lists all the inbound cross-cluster connections for a remote domain.
+        /// Lists all the inbound cross-cluster search connections for a destination (remote)
+        /// Amazon OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html">Cross-cluster
+        /// search for Amazon OpenSearch Service</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInboundConnections service method.</param>
         /// <param name="cancellationToken">
@@ -1145,9 +1319,8 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Describe the limits for a given instance type and OpenSearch or Elasticsearch version.
-        /// When modifying an existing domain, specify the <code> <a>DomainName</a> </code> to
-        /// see which limits you can modify.
+        /// Describes the instance count, storage, and master node limits for a given OpenSearch
+        /// or Elasticsearch version and instance type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceTypeLimits service method.</param>
         /// <param name="cancellationToken">
@@ -1203,7 +1376,9 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Lists all the outbound cross-cluster connections for a local domain.
+        /// Lists all the outbound cross-cluster connections for a local (source) Amazon OpenSearch
+        /// Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html">Cross-cluster
+        /// search for Amazon OpenSearch Service</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeOutboundConnections service method.</param>
         /// <param name="cancellationToken">
@@ -1245,8 +1420,9 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Describes all packages available to Amazon OpenSearch Service domains. Includes options
-        /// for filtering, limiting the number of results, and pagination.
+        /// Describes all packages available to OpenSearch Service. For more information, see
+        /// <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom
+        /// packages for Amazon OpenSearch Service</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePackages service method.</param>
         /// <param name="cancellationToken">
@@ -1298,7 +1474,9 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Lists available reserved OpenSearch instance offerings.
+        /// Describes the available Amazon OpenSearch Service Reserved Instance offerings for
+        /// a given Region. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ri.html">Reserved
+        /// Instances in Amazon OpenSearch Service</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedInstanceOfferings service method.</param>
         /// <param name="cancellationToken">
@@ -1347,7 +1525,9 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Returns information about reserved OpenSearch instances for this account.
+        /// Describes the Amazon OpenSearch Service instances that you have reserved in a given
+        /// Region. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ri.html">Reserved
+        /// Instances in Amazon OpenSearch Service</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedInstances service method.</param>
         /// <param name="cancellationToken">
@@ -1382,6 +1562,54 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  DescribeVpcEndpoints
+
+        internal virtual DescribeVpcEndpointsResponse DescribeVpcEndpoints(DescribeVpcEndpointsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVpcEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVpcEndpointsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVpcEndpointsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes one or more Amazon OpenSearch Service-managed VPC endpoints.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEndpoints service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeVpcEndpoints service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeVpcEndpoints">REST API Reference for DescribeVpcEndpoints Operation</seealso>
+        public virtual Task<DescribeVpcEndpointsResponse> DescribeVpcEndpointsAsync(DescribeVpcEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVpcEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVpcEndpointsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeVpcEndpointsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DissociatePackage
 
         internal virtual DissociatePackageResponse DissociatePackage(DissociatePackageRequest request)
@@ -1396,7 +1624,11 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Dissociates a package from the Amazon OpenSearch Service domain.
+        /// Removes a package from the specified Amazon OpenSearch Service domain. The package
+        /// can't be in use with any OpenSearch index for the dissociation to succeed. The package
+        /// is still available in OpenSearch Service for association later. For more information,
+        /// see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom
+        /// packages for Amazon OpenSearch Service</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DissociatePackage service method.</param>
         /// <param name="cancellationToken">
@@ -1452,9 +1684,8 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Returns a list of upgrade-compatible versions of OpenSearch/Elasticsearch. You can
-        /// optionally pass a <code> <a>DomainName</a> </code> to get all upgrade-compatible versions
-        /// of OpenSearch/Elasticsearch for that specific domain.
+        /// Returns a map of OpenSearch or Elasticsearch versions and the versions you can upgrade
+        /// them to.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCompatibleVersions service method.</param>
         /// <param name="cancellationToken">
@@ -1506,7 +1737,9 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Returns a list of package versions, along with their creation time and commit message.
+        /// Returns a list of Amazon OpenSearch Service package versions, along with their creation
+        /// time and commit message. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom
+        /// packages for Amazon OpenSearch Service</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPackageVersionHistory service method.</param>
         /// <param name="cancellationToken">
@@ -1558,7 +1791,8 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Retrieves the complete history of the last 10 upgrades performed on the domain.
+        /// Retrieves the complete history of the last 10 upgrades performed on an Amazon OpenSearch
+        /// Service domain.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetUpgradeHistory service method.</param>
         /// <param name="cancellationToken">
@@ -1610,8 +1844,8 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Retrieves the latest status of the last upgrade or upgrade eligibility check performed
-        /// on the domain.
+        /// Returns the most recent status of the last upgrade or upgrade eligibility check performed
+        /// on an Amazon OpenSearch Service domain.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetUpgradeStatus service method.</param>
         /// <param name="cancellationToken">
@@ -1663,7 +1897,8 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Returns the names of all domains owned by the current user's account.
+        /// Returns the names of all Amazon OpenSearch Service domains owned by the current user
+        /// in the active Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDomainNames service method.</param>
         /// <param name="cancellationToken">
@@ -1703,7 +1938,9 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Lists all Amazon OpenSearch Service domains associated with the package.
+        /// Lists all Amazon OpenSearch Service domains associated with a given package. For more
+        /// information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom
+        /// packages for Amazon OpenSearch Service</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDomainsForPackage service method.</param>
         /// <param name="cancellationToken">
@@ -1755,7 +1992,8 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// 
+        /// Lists all instance types and available features for a given OpenSearch or Elasticsearch
+        /// version.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInstanceTypeDetails service method.</param>
         /// <param name="cancellationToken">
@@ -1803,7 +2041,9 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Lists all packages associated with the Amazon OpenSearch Service domain.
+        /// Lists all packages associated with an Amazon OpenSearch Service domain. For more information,
+        /// see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom
+        /// packages for Amazon OpenSearch Service</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPackagesForDomain service method.</param>
         /// <param name="cancellationToken">
@@ -1855,7 +2095,9 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Returns all tags for the given domain.
+        /// Returns all resource tags for an Amazon OpenSearch Service domain. For more information,
+        /// see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-awsresourcetagging.html">Tagging
+        /// Amazon OpenSearch Service domains</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTags service method.</param>
         /// <param name="cancellationToken">
@@ -1903,7 +2145,8 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// List all supported versions of OpenSearch and Elasticsearch.
+        /// Lists all versions of OpenSearch and Elasticsearch that Amazon OpenSearch Service
+        /// supports.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListVersions service method.</param>
         /// <param name="cancellationToken">
@@ -1937,6 +2180,153 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  ListVpcEndpointAccess
+
+        internal virtual ListVpcEndpointAccessResponse ListVpcEndpointAccess(ListVpcEndpointAccessRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVpcEndpointAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVpcEndpointAccessResponseUnmarshaller.Instance;
+
+            return Invoke<ListVpcEndpointAccessResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves information about each Amazon Web Services principal that is allowed to
+        /// access a given Amazon OpenSearch Service domain through the use of an interface VPC
+        /// endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVpcEndpointAccess service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListVpcEndpointAccess service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListVpcEndpointAccess">REST API Reference for ListVpcEndpointAccess Operation</seealso>
+        public virtual Task<ListVpcEndpointAccessResponse> ListVpcEndpointAccessAsync(ListVpcEndpointAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVpcEndpointAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVpcEndpointAccessResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListVpcEndpointAccessResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListVpcEndpoints
+
+        internal virtual ListVpcEndpointsResponse ListVpcEndpoints(ListVpcEndpointsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVpcEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVpcEndpointsResponseUnmarshaller.Instance;
+
+            return Invoke<ListVpcEndpointsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves all Amazon OpenSearch Service-managed VPC endpoints in the current Amazon
+        /// Web Services account and Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVpcEndpoints service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListVpcEndpoints service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListVpcEndpoints">REST API Reference for ListVpcEndpoints Operation</seealso>
+        public virtual Task<ListVpcEndpointsResponse> ListVpcEndpointsAsync(ListVpcEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVpcEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVpcEndpointsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListVpcEndpointsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListVpcEndpointsForDomain
+
+        internal virtual ListVpcEndpointsForDomainResponse ListVpcEndpointsForDomain(ListVpcEndpointsForDomainRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVpcEndpointsForDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVpcEndpointsForDomainResponseUnmarshaller.Instance;
+
+            return Invoke<ListVpcEndpointsForDomainResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves all Amazon OpenSearch Service-managed VPC endpoints associated with a particular
+        /// domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVpcEndpointsForDomain service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListVpcEndpointsForDomain service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListVpcEndpointsForDomain">REST API Reference for ListVpcEndpointsForDomain Operation</seealso>
+        public virtual Task<ListVpcEndpointsForDomainResponse> ListVpcEndpointsForDomainAsync(ListVpcEndpointsForDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVpcEndpointsForDomainRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVpcEndpointsForDomainResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListVpcEndpointsForDomainResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PurchaseReservedInstanceOffering
 
         internal virtual PurchaseReservedInstanceOfferingResponse PurchaseReservedInstanceOffering(PurchaseReservedInstanceOfferingRequest request)
@@ -1951,7 +2341,7 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Allows you to purchase reserved OpenSearch instances.
+        /// Allows you to purchase Amazon OpenSearch Service Reserved Instances.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PurchaseReservedInstanceOffering service method.</param>
         /// <param name="cancellationToken">
@@ -2008,7 +2398,8 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Allows the remote domain owner to reject an inbound cross-cluster connection request.
+        /// Allows the remote Amazon OpenSearch Service domain owner to reject an inbound cross-cluster
+        /// connection request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RejectInboundConnection service method.</param>
         /// <param name="cancellationToken">
@@ -2050,7 +2441,9 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Removes the specified set of tags from the given domain.
+        /// Removes the specified set of tags from an Amazon OpenSearch Service domain. For more
+        /// information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-awsresorcetagging">
+        /// Tagging Amazon OpenSearch Service domains</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveTags service method.</param>
         /// <param name="cancellationToken">
@@ -2080,6 +2473,59 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  RevokeVpcEndpointAccess
+
+        internal virtual RevokeVpcEndpointAccessResponse RevokeVpcEndpointAccess(RevokeVpcEndpointAccessRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RevokeVpcEndpointAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RevokeVpcEndpointAccessResponseUnmarshaller.Instance;
+
+            return Invoke<RevokeVpcEndpointAccessResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Revokes access to an Amazon OpenSearch Service domain that was provided through an
+        /// interface VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RevokeVpcEndpointAccess service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RevokeVpcEndpointAccess service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/RevokeVpcEndpointAccess">REST API Reference for RevokeVpcEndpointAccess Operation</seealso>
+        public virtual Task<RevokeVpcEndpointAccessResponse> RevokeVpcEndpointAccessAsync(RevokeVpcEndpointAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RevokeVpcEndpointAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RevokeVpcEndpointAccessResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RevokeVpcEndpointAccessResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartServiceSoftwareUpdate
 
         internal virtual StartServiceSoftwareUpdateResponse StartServiceSoftwareUpdate(StartServiceSoftwareUpdateRequest request)
@@ -2094,7 +2540,9 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Schedules a service software update for an Amazon OpenSearch Service domain.
+        /// Schedules a service software update for an Amazon OpenSearch Service domain. For more
+        /// information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/service-software.html">Service
+        /// software updates in Amazon OpenSearch Service</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartServiceSoftwareUpdate service method.</param>
         /// <param name="cancellationToken">
@@ -2142,8 +2590,7 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Modifies the cluster configuration of the specified domain, such as setting the instance
-        /// type and the number of instances.
+        /// Modifies the cluster configuration of the specified Amazon OpenSearch Service domain.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDomainConfig service method.</param>
         /// <param name="cancellationToken">
@@ -2199,7 +2646,9 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Updates a package for use with Amazon OpenSearch Service domains.
+        /// Updates a package for use with Amazon OpenSearch Service domains. For more information,
+        /// see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom
+        /// packages for Amazon OpenSearch Service</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePackage service method.</param>
         /// <param name="cancellationToken">
@@ -2241,6 +2690,62 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  UpdateVpcEndpoint
+
+        internal virtual UpdateVpcEndpointResponse UpdateVpcEndpoint(UpdateVpcEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateVpcEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateVpcEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateVpcEndpointResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Modifies an Amazon OpenSearch Service-managed interface VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVpcEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateVpcEndpoint service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ConflictException">
+        /// An error occurred because the client attempts to remove a resource that is currently
+        /// in use. Returns HTTP status code 409.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateVpcEndpoint">REST API Reference for UpdateVpcEndpoint Operation</seealso>
+        public virtual Task<UpdateVpcEndpointResponse> UpdateVpcEndpointAsync(UpdateVpcEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateVpcEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateVpcEndpointResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateVpcEndpointResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpgradeDomain
 
         internal virtual UpgradeDomainResponse UpgradeDomain(UpgradeDomainRequest request)
@@ -2255,8 +2760,8 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Allows you to either upgrade your domain or perform an upgrade eligibility check to
-        /// a compatible version of OpenSearch or Elasticsearch.
+        /// Allows you to either upgrade your Amazon OpenSearch Service domain or perform an upgrade
+        /// eligibility check to a compatible version of OpenSearch or Elasticsearch.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpgradeDomain service method.</param>
         /// <param name="cancellationToken">

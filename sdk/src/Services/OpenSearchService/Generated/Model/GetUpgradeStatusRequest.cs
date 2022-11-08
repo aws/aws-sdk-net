@@ -30,15 +30,18 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetUpgradeStatus operation.
-    /// Retrieves the latest status of the last upgrade or upgrade eligibility check performed
-    /// on the domain.
+    /// Returns the most recent status of the last upgrade or upgrade eligibility check performed
+    /// on an Amazon OpenSearch Service domain.
     /// </summary>
     public partial class GetUpgradeStatusRequest : AmazonOpenSearchServiceRequest
     {
         private string _domainName;
 
         /// <summary>
-        /// Gets and sets the property DomainName.
+        /// Gets and sets the property DomainName. 
+        /// <para>
+        /// The domain of the domain to get upgrade status information for.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=28)]
         public string DomainName

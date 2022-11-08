@@ -39,7 +39,9 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Provides an identifier to allow retrieval of paginated results.
+        /// When <code>nextToken</code> is returned, there are more results available. The value
+        /// of <code>nextToken</code> is a unique pagination token for each page. Make the call
+        /// again using the returned token to retrieve the next page.
         /// </para>
         /// </summary>
         public string NextToken
@@ -57,7 +59,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property ReservedInstances. 
         /// <para>
-        /// List of reserved OpenSearch instances.
+        /// List of Reserved Instances in the current Region.
         /// </para>
         /// </summary>
         public List<ReservedInstance> ReservedInstances

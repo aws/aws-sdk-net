@@ -37,7 +37,11 @@ namespace Amazon.OpenSearchService.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property InstanceTypeDetails.
+        /// Gets and sets the property InstanceTypeDetails. 
+        /// <para>
+        /// Lists all supported instance types and features for the given OpenSearch or Elasticsearch
+        /// version.
+        /// </para>
         /// </summary>
         public List<InstanceTypeDetails> InstanceTypeDetails
         {
@@ -52,7 +56,12 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// When <code>nextToken</code> is returned, there are more results available. The value
+        /// of <code>nextToken</code> is a unique pagination token for each page. Make the call
+        /// again using the returned token to retrieve the next page.
+        /// </para>
         /// </summary>
         public string NextToken
         {

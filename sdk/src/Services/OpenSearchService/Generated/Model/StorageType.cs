@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// StorageTypes represents the list of storage-related types and their attributes that
-    /// are available for a given InstanceType.
+    /// A list of storage types for an Amazon OpenSearch Service domain that are available
+    /// for a given intance type.
     /// </summary>
     public partial class StorageType
     {
@@ -39,7 +39,10 @@ namespace Amazon.OpenSearchService.Model
         private string _storageTypeName;
 
         /// <summary>
-        /// Gets and sets the property StorageSubTypeName.
+        /// Gets and sets the property StorageSubTypeName. 
+        /// <para>
+        /// The storage sub-type, such as <code>gp3</code> or <code>io1</code>.
+        /// </para>
         /// </summary>
         public string StorageSubTypeName
         {
@@ -56,7 +59,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property StorageTypeLimits. 
         /// <para>
-        /// Limits that are applicable for the given storage type. 
+        /// Limits that are applicable for the given storage type.
         /// </para>
         /// </summary>
         public List<StorageTypeLimit> StorageTypeLimits
@@ -72,7 +75,10 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StorageTypeName.
+        /// Gets and sets the property StorageTypeName. 
+        /// <para>
+        /// The name of the storage type.
+        /// </para>
         /// </summary>
         public string StorageTypeName
         {

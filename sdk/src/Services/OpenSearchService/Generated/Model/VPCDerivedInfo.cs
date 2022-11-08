@@ -29,9 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Options to specify the subnets and security groups for the VPC endpoint. For more
-    /// information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html"
-    /// target="_blank"> Launching your Amazon OpenSearch Service domains using a VPC</a>.
+    /// Information about the subnets and security groups for an Amazon OpenSearch Service
+    /// domain provisioned within a virtual private cloud (VPC). For more information, see
+    /// <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching
+    /// your Amazon OpenSearch Service domains using a VPC</a>. This information only exists
+    /// if the domain was created with <code>VPCOptions</code>.
     /// </summary>
     public partial class VPCDerivedInfo
     {
@@ -43,8 +45,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
-        /// The Availability Zones for the domain. Exists only if the domain was created with
-        /// <code>VPCOptions</code>.
+        /// The list of Availability Zones associated with the VPC subnets.
         /// </para>
         /// </summary>
         public List<string> AvailabilityZones
@@ -62,7 +63,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
-        /// The security groups for the VPC endpoint.
+        /// The list of security group IDs associated with the VPC endpoints for the domain.
         /// </para>
         /// </summary>
         public List<string> SecurityGroupIds
@@ -80,7 +81,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// The subnets for the VPC endpoint.
+        /// A list of subnet IDs associated with the VPC endpoints for the domain.
         /// </para>
         /// </summary>
         public List<string> SubnetIds
@@ -98,7 +99,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property VPCId. 
         /// <para>
-        /// The VPC ID for the domain. Exists only if the domain was created with <code>VPCOptions</code>.
+        /// The ID for your VPC. Amazon VPC generates this value when you create a VPC.
         /// </para>
         /// </summary>
         public string VPCId

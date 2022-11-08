@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Status of a daily automated snapshot.
+    /// Container for information about a daily automated snapshot for an OpenSearch Service
+    /// domain.
     /// </summary>
     public partial class SnapshotOptionsStatus
     {

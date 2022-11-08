@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The zone awareness configuration for the domain cluster, such as the number of availability
-    /// zones.
+    /// The zone awareness configuration for an Amazon OpenSearch Service domain.
     /// </summary>
     public partial class ZoneAwarenessConfig
     {
@@ -39,9 +38,9 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZoneCount. 
         /// <para>
-        /// An integer value to indicate the number of availability zones for a domain when zone
-        /// awareness is enabled. This should be equal to number of subnets if VPC endpoints is
-        /// enabled. 
+        /// If you enabled multiple Availability Zones, this value is the number of zones that
+        /// you want the domain to use. Valid values are <code>2</code> and <code>3</code>. If
+        /// your domain is provisioned within a VPC, this value be equal to number of subnets.
         /// </para>
         /// </summary>
         public int AvailabilityZoneCount

@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The Amazon S3 location for importing the package specified as <code>S3BucketName</code>
-    /// and <code>S3Key</code>
+    /// The Amazon S3 location to import the package from.
     /// </summary>
     public partial class PackageSource
     {

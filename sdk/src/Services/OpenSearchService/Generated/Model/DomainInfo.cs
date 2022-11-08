@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// 
+    /// Information about an OpenSearch Service domain.
     /// </summary>
     public partial class DomainInfo
     {
@@ -39,7 +39,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The <code>DomainName</code>. 
+        /// Name of the domain.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=28)]
@@ -58,7 +58,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property EngineType. 
         /// <para>
-        ///  Specifies the <code>EngineType</code> of the domain.
+        /// The type of search engine that the domain is running.<code>OpenSearch</code> for an
+        /// OpenSearch engine, or <code>Elasticsearch</code> for a legacy Elasticsearch OSS engine.
         /// </para>
         /// </summary>
         public EngineType EngineType

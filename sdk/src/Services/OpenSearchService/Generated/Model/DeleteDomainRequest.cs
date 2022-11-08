@@ -30,8 +30,8 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDomain operation.
-    /// Permanently deletes the specified domain and all of its data. Once a domain is deleted,
-    /// it cannot be recovered.
+    /// Deletes an Amazon OpenSearch Service domain and all of its data. You can't recover
+    /// a domain after you delete it.
     /// </summary>
     public partial class DeleteDomainRequest : AmazonOpenSearchServiceRequest
     {

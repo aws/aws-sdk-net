@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The Auto-Tune options: the Auto-Tune desired state for the domain and list of maintenance
-    /// schedules.
+    /// The Auto-Tune settings for a domain, displayed when enabling or disabling Auto-Tune.
     /// </summary>
     public partial class AutoTuneOptionsOutput
     {
@@ -40,7 +39,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// The error message while enabling or disabling Auto-Tune.
+        /// Any errors that occurred while enabling or disabling Auto-Tune.
         /// </para>
         /// </summary>
         public string ErrorMessage
@@ -58,7 +57,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The <code>AutoTuneState</code> for the domain. 
+        /// The current state of Auto-Tune on the domain.
         /// </para>
         /// </summary>
         public AutoTuneState State

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Credentials for the master user: username and password, ARN, or both.
+    /// Credentials for the master user for a domain.
     /// </summary>
     public partial class MasterUserOptions
     {
@@ -40,7 +40,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property MasterUserARN. 
         /// <para>
-        /// ARN for the master user (if IAM is enabled).
+        /// Amazon Resource Name (ARN) for the master user. Only specify if <code>InternalUserDatabaseEnabled</code>
+        /// is <code>false</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -59,8 +60,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property MasterUserName. 
         /// <para>
-        /// The master user's username, which is stored in the Amazon OpenSearch Service domain's
-        /// internal database.
+        /// User name for the master user. Only specify if <code>InternalUserDatabaseEnabled</code>
+        /// is <code>true</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -79,8 +80,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property MasterUserPassword. 
         /// <para>
-        /// The master user's password, which is stored in the Amazon OpenSearch Service domain's
-        /// internal database.
+        /// Password for the master user. Only specify if <code>InternalUserDatabaseEnabled</code>
+        /// is <code>true</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=8, Max=128)]

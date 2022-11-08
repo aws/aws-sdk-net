@@ -30,8 +30,7 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDomainConfig operation.
-    /// Modifies the cluster configuration of the specified domain, such as setting the instance
-    /// type and the number of instances.
+    /// Modifies the cluster configuration of the specified Amazon OpenSearch Service domain.
     /// </summary>
     public partial class UpdateDomainConfigRequest : AmazonOpenSearchServiceRequest
     {
@@ -54,7 +53,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property AccessPolicies. 
         /// <para>
-        /// IAM access policy as a JSON-formatted string.
+        /// Identity and Access Management (IAM) access policy as a JSON-formatted string.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=102400)]
@@ -73,10 +72,41 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property AdvancedOptions. 
         /// <para>
-        /// Modifies the advanced option to allow references to indices in an HTTP request body.
-        /// Must be <code>false</code> when configuring access to individual sub-resources. By
-        /// default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
-        /// target="_blank">Advanced options </a> for more information. 
+        /// Key-value pairs to specify advanced configuration options. The following key-value
+        /// pairs are supported:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note the
+        /// use of a string rather than a boolean. Specifies whether explicit references to indexes
+        /// are allowed inside the body of HTTP requests. If you want to configure access policies
+        /// for domain sub-resources, such as specific indexes and domain APIs, you must disable
+        /// this property. Default is true.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string rather
+        /// than a boolean. Specifies the percentage of heap space allocated to field data. Default
+        /// is unbounded.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a string
+        /// rather than a boolean. Specifies the maximum number of clauses allowed in a Lucene
+        /// boolean query. Default is 1,024. Queries with more than the permitted number of clauses
+        /// result in a <code>TooManyClauses</code> error.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>"override_main_response_version": "true" | "false"</code> - Note the use of
+        /// a string rather than a boolean. Specifies whether the domain reports its version as
+        /// 7.10 to allow Elasticsearch OSS clients and plugins to continue working with it. Default
+        /// is false when creating a domain and true when upgrading a domain.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced
+        /// cluster parameters</a>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> AdvancedOptions
@@ -94,7 +124,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property AdvancedSecurityOptions. 
         /// <para>
-        /// Specifies advanced security options.
+        /// Options for fine-grained access control.
         /// </para>
         /// </summary>
         public AdvancedSecurityOptionsInput AdvancedSecurityOptions
@@ -112,7 +142,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property AutoTuneOptions. 
         /// <para>
-        /// Specifies Auto-Tune options.
+        /// Options for Auto-Tune.
         /// </para>
         /// </summary>
         public AutoTuneOptions AutoTuneOptions
@@ -130,7 +160,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property ClusterConfig. 
         /// <para>
-        /// The type and number of instances to instantiate for the domain cluster.
+        /// Changes that you want to make to the cluster configuration, such as the instance type
+        /// and number of EC2 instances.
         /// </para>
         /// </summary>
         public ClusterConfig ClusterConfig
@@ -148,10 +179,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property CognitoOptions. 
         /// <para>
-        /// Options to specify the Cognito user and identity pools for OpenSearch Dashboards authentication.
-        /// For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html"
-        /// target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
-        /// 
+        /// Key-value pairs to configure Amazon Cognito authentication for OpenSearch Dashboards.
         /// </para>
         /// </summary>
         public CognitoOptions CognitoOptions
@@ -169,7 +197,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property DomainEndpointOptions. 
         /// <para>
-        /// Options to specify configuration that will be applied to the domain endpoint.
+        /// Additional options for the domain endpoint, such as whether to require HTTPS for all
+        /// traffic.
         /// </para>
         /// </summary>
         public DomainEndpointOptions DomainEndpointOptions
@@ -187,7 +216,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The name of the domain you're updating.
+        /// The name of the domain that you're updating.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=28)]
@@ -207,8 +236,7 @@ namespace Amazon.OpenSearchService.Model
         /// Gets and sets the property DryRun. 
         /// <para>
         /// This flag, when set to True, specifies whether the <code>UpdateDomain</code> request
-        /// should return the results of validation checks (DryRunResults) without actually applying
-        /// the change.
+        /// should return the results of validation check without actually applying the change.
         /// </para>
         /// </summary>
         public bool DryRun
@@ -226,7 +254,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property EBSOptions. 
         /// <para>
-        /// Specify the type and size of the EBS volume to use.
+        /// The type and size of the EBS volume to attach to instances in the domain.
         /// </para>
         /// </summary>
         public EBSOptions EBSOptions
@@ -244,7 +272,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property EncryptionAtRestOptions. 
         /// <para>
-        /// Specifies encryption of data at rest options.
+        /// Encryption at rest options for the domain.
         /// </para>
         /// </summary>
         public EncryptionAtRestOptions EncryptionAtRestOptions
@@ -262,8 +290,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property LogPublishingOptions. 
         /// <para>
-        /// Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing
-        /// options to publish a given type of OpenSearch log. 
+        /// Options to publish OpenSearch lots to Amazon CloudWatch Logs.
         /// </para>
         /// </summary>
         public Dictionary<string, LogPublishingOption> LogPublishingOptions
@@ -281,7 +308,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property NodeToNodeEncryptionOptions. 
         /// <para>
-        /// Specifies node-to-node encryption options.
+        /// Node-To-Node Encryption options for the domain.
         /// </para>
         /// </summary>
         public NodeToNodeEncryptionOptions NodeToNodeEncryptionOptions
@@ -318,10 +345,9 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property VPCOptions. 
         /// <para>
-        /// Options to specify the subnets and security groups for the VPC endpoint. For more
-        /// information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html"
-        /// target="_blank">Launching your Amazon OpenSearch Service domains using a VPC </a>.
-        /// 
+        /// Options to specify the subnets and security groups for a VPC endpoint. For more information,
+        /// see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching
+        /// your Amazon OpenSearch Service domains using a VPC</a>.
         /// </para>
         /// </summary>
         public VPCOptions VPCOptions

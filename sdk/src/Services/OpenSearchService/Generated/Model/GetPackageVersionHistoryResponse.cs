@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Container for response returned by <code> <a>GetPackageVersionHistory</a> </code>
-    /// operation.
+    /// Container for response returned by <code>GetPackageVersionHistory</code> operation.
     /// </summary>
     public partial class GetPackageVersionHistoryResponse : AmazonWebServiceResponse
     {
@@ -39,7 +38,12 @@ namespace Amazon.OpenSearchService.Model
         private List<PackageVersionHistory> _packageVersionHistoryList = new List<PackageVersionHistory>();
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// When <code>nextToken</code> is returned, there are more results available. The value
+        /// of <code>nextToken</code> is a unique pagination token for each page. Make the call
+        /// again using the returned token to retrieve the next page.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -54,7 +58,10 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PackageID.
+        /// Gets and sets the property PackageID. 
+        /// <para>
+        /// The unique identifier of the package.
+        /// </para>
         /// </summary>
         public string PackageID
         {
@@ -71,7 +78,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property PackageVersionHistoryList. 
         /// <para>
-        /// List of <code>PackageVersionHistory</code> objects. 
+        /// A list of package versions, along with their creation time and commit message.
         /// </para>
         /// </summary>
         public List<PackageVersionHistory> PackageVersionHistoryList

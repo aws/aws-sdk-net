@@ -30,7 +30,9 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteInboundConnection operation.
-    /// Allows the remote domain owner to delete an existing inbound cross-cluster connection.
+    /// Allows the destination Amazon OpenSearch Service domain owner to delete an existing
+    /// inbound cross-cluster search connection. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html">Cross-cluster
+    /// search for Amazon OpenSearch Service</a>.
     /// </summary>
     public partial class DeleteInboundConnectionRequest : AmazonOpenSearchServiceRequest
     {

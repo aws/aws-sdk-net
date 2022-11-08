@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The Auto-Tune options: the Auto-Tune desired state for the domain and list of maintenance
-    /// schedules.
+    /// Options for configuring Auto-Tune. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune
+    /// for Amazon OpenSearch Service</a>.
     /// </summary>
     public partial class AutoTuneOptionsInput
     {
@@ -40,7 +40,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property DesiredState. 
         /// <para>
-        /// The Auto-Tune desired state. Valid values are ENABLED and DISABLED.
+        /// Whether Auto-Tune is enabled or disabled.
         /// </para>
         /// </summary>
         public AutoTuneDesiredState DesiredState
@@ -58,9 +58,11 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property MaintenanceSchedules. 
         /// <para>
-        /// A list of maintenance schedules. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-        /// target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
-        /// 
+        /// A list of maintenance schedules during which Auto-Tune can deploy changes. Maintenance
+        /// schedules are overwrite, not append. If your request includes no schedules, the request
+        /// deletes all existing schedules. To preserve existing schedules, make a call to <code>DescribeDomainConfig</code>
+        /// first and use the <code>MaintenanceSchedules</code> portion of the response as the
+        /// basis for this section.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]

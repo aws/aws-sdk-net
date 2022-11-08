@@ -30,7 +30,9 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePackage operation.
-    /// Create a package for use with Amazon OpenSearch Service domains.
+    /// Creates a package for use with Amazon OpenSearch Service domains. For more information,
+    /// see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom
+    /// packages for Amazon OpenSearch Service</a>.
     /// </summary>
     public partial class CreatePackageRequest : AmazonOpenSearchServiceRequest
     {
@@ -61,7 +63,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property PackageName. 
         /// <para>
-        /// Unique identifier for the package.
+        /// Unique name for the package.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=28)]
@@ -80,7 +82,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property PackageSource. 
         /// <para>
-        /// The Amazon S3 location from which to import the package. 
+        /// The Amazon S3 location from which to import the package.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -99,7 +101,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property PackageType. 
         /// <para>
-        /// Type of package. Currently supports only TXT-DICTIONARY.
+        /// Type of package.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Details of a reserved OpenSearch instance.
+    /// Details of an OpenSearch Reserved Instance.
     /// </summary>
     public partial class ReservedInstance
     {
@@ -49,7 +49,10 @@ namespace Amazon.OpenSearchService.Model
         private double? _usagePrice;
 
         /// <summary>
-        /// Gets and sets the property BillingSubscriptionId.
+        /// Gets and sets the property BillingSubscriptionId. 
+        /// <para>
+        /// The unique identifier of the billing subscription.
+        /// </para>
         /// </summary>
         public long BillingSubscriptionId
         {
@@ -66,7 +69,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property CurrencyCode. 
         /// <para>
-        /// The currency code for the reserved OpenSearch instance offering.
+        /// The currency code for the offering.
         /// </para>
         /// </summary>
         public string CurrencyCode
@@ -102,8 +105,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property FixedPrice. 
         /// <para>
-        /// The upfront fixed charge you will paid to purchase the specific reserved OpenSearch
-        /// instance offering.
+        /// The upfront fixed charge you will paid to purchase the specific Reserved Instance
+        /// offering.
         /// </para>
         /// </summary>
         public double FixedPrice
@@ -139,7 +142,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The OpenSearch instance type offered by the reserved instance offering.
+        /// The OpenSearch instance type offered by theReserved Instance offering.
         /// </para>
         /// </summary>
         public OpenSearchPartitionInstanceType InstanceType
@@ -157,7 +160,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property PaymentOption. 
         /// <para>
-        /// The payment option as defined in the reserved OpenSearch instance offering.
+        /// The payment option as defined in the Reserved Instance offering.
         /// </para>
         /// </summary>
         public ReservedInstancePaymentOption PaymentOption
@@ -175,8 +178,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property RecurringCharges. 
         /// <para>
-        /// The charge to your account regardless of whether you are creating any domains using
-        /// the instance offering.
+        /// The recurring charge to your account, regardless of whether you create any domains
+        /// using the Reserved Instance offering.
         /// </para>
         /// </summary>
         public List<RecurringCharge> RecurringCharges
@@ -232,7 +235,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property ReservedInstanceOfferingId. 
         /// <para>
-        /// The offering identifier.
+        /// The unique identifier of the Reserved Instance offering.
         /// </para>
         /// </summary>
         public string ReservedInstanceOfferingId
@@ -250,7 +253,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The time the reservation started.
+        /// The date and time when the reservation was purchased.
         /// </para>
         /// </summary>
         public DateTime StartTime
@@ -268,7 +271,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state of the reserved OpenSearch instance.
+        /// The state of the Reserved Instance.
         /// </para>
         /// </summary>
         public string State
@@ -286,8 +289,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property UsagePrice. 
         /// <para>
-        /// The rate you are charged for each hour for the domain that is using this reserved
-        /// instance.
+        /// The hourly rate at which you're charged for the domain using this Reserved Instance.
         /// </para>
         /// </summary>
         public double UsagePrice

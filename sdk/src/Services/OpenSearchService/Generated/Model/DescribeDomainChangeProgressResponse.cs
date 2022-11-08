@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The result of a <code>DescribeDomainChangeProgress</code> request. Contains the progress
-    /// information of the requested domain change.
+    /// The result of a <code>DescribeDomainChangeProgress</code> request. Contains progress
+    /// information for the requested domain change.
     /// </summary>
     public partial class DescribeDomainChangeProgressResponse : AmazonWebServiceResponse
     {
@@ -39,8 +39,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property ChangeProgressStatus. 
         /// <para>
-        /// Progress information for the configuration change that is requested in the <code>DescribeDomainChangeProgress</code>
-        /// request. 
+        /// Container for information about the stages of a configuration change happening on
+        /// a domain.
         /// </para>
         /// </summary>
         public ChangeProgressStatusDetails ChangeProgressStatus

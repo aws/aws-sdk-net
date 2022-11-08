@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// 
+    /// Additional information if the package is in an error state. Null otherwise.
     /// </summary>
     public partial class ErrorDetails
     {
@@ -37,7 +37,10 @@ namespace Amazon.OpenSearchService.Model
         private string _errorType;
 
         /// <summary>
-        /// Gets and sets the property ErrorMessage.
+        /// Gets and sets the property ErrorMessage. 
+        /// <para>
+        /// A message describing the error.
+        /// </para>
         /// </summary>
         public string ErrorMessage
         {
@@ -52,7 +55,10 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ErrorType.
+        /// Gets and sets the property ErrorType. 
+        /// <para>
+        /// The type of error that occurred.
+        /// </para>
         /// </summary>
         public string ErrorType
         {

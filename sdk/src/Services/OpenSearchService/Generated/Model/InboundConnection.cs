@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Details of an inbound connection.
+    /// Describes an inbound cross-cluster connection for Amazon OpenSearch Service. For more
+    /// information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html">Cross-cluster
+    /// search for Amazon OpenSearch Service</a>.
     /// </summary>
     public partial class InboundConnection
     {
@@ -41,7 +43,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property ConnectionId. 
         /// <para>
-        /// The connection ID for the inbound cross-cluster connection.
+        /// The unique identifier of the connection.
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=256)]
@@ -60,7 +62,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property ConnectionStatus. 
         /// <para>
-        /// The <code> <a>InboundConnectionStatus</a> </code> for the outbound connection. 
+        /// The current status of the connection.
         /// </para>
         /// </summary>
         public InboundConnectionStatus ConnectionStatus
@@ -78,7 +80,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property LocalDomainInfo. 
         /// <para>
-        /// The <code> <a>AWSDomainInformation</a> </code> for the local OpenSearch domain. 
+        /// Information about the source (local) domain.
         /// </para>
         /// </summary>
         public DomainInformationContainer LocalDomainInfo
@@ -96,7 +98,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property RemoteDomainInfo. 
         /// <para>
-        /// The <code> <a>AWSDomainInformation</a> </code> for the remote OpenSearch domain. 
+        /// Information about the destination (remote) domain.
         /// </para>
         /// </summary>
         public DomainInformationContainer RemoteDomainInfo

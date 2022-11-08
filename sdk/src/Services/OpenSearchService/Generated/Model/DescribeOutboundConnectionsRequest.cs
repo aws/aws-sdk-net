@@ -30,7 +30,9 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeOutboundConnections operation.
-    /// Lists all the outbound cross-cluster connections for a local domain.
+    /// Lists all the outbound cross-cluster connections for a local (source) Amazon OpenSearch
+    /// Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html">Cross-cluster
+    /// search for Amazon OpenSearch Service</a>.
     /// </summary>
     public partial class DescribeOutboundConnectionsRequest : AmazonOpenSearchServiceRequest
     {
@@ -41,10 +43,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        ///  A list of filters used to match properties for outbound cross-cluster connections.
-        /// Available <code> <a>Filter</a> </code> names for this operation are: <ul> <li>connection-id</li>
-        /// <li>remote-domain-info.domain-name</li> <li>remote-domain-info.owner-id</li> <li>remote-domain-info.region</li>
-        /// <li>local-domain-info.domain-name</li> </ul> 
+        /// List of filter names and values that you can use for requests.
         /// </para>
         /// </summary>
         public List<Filter> Filters
@@ -62,8 +61,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Set this value to limit the number of results returned. If not specified, defaults
-        /// to 100.
+        /// An optional parameter that specifies the maximum number of results to return. You
+        /// can use <code>nextToken</code> to get the next page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
@@ -82,8 +81,9 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// NextToken is sent in case the earlier API call results contain the NextToken parameter.
-        /// Used for pagination.
+        /// If your initial <code>DescribeOutboundConnections</code> operation returns a <code>nextToken</code>,
+        /// you can include the returned <code>nextToken</code> in subsequent <code>DescribeOutboundConnections</code>
+        /// operations, which returns results in the next page.
         /// </para>
         /// </summary>
         public string NextToken

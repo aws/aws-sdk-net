@@ -29,14 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// 
+    /// Container for information about an OpenSearch Service domain.
     /// </summary>
     public partial class DomainInformationContainer
     {
         private AWSDomainInformation _awsDomainInformation;
 
         /// <summary>
-        /// Gets and sets the property AWSDomainInformation.
+        /// Gets and sets the property AWSDomainInformation. 
+        /// <para>
+        /// Information about an Amazon OpenSearch Service domain.
+        /// </para>
         /// </summary>
         public AWSDomainInformation AWSDomainInformation
         {

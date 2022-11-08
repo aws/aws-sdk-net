@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Container for response returned by <code> <a>UpgradeDomain</a> </code> operation.
+    /// Container for the response returned by <code>UpgradeDomain</code> operation.
     /// </summary>
     public partial class UpgradeDomainResponse : AmazonWebServiceResponse
     {
@@ -41,7 +41,10 @@ namespace Amazon.OpenSearchService.Model
         private string _upgradeId;
 
         /// <summary>
-        /// Gets and sets the property AdvancedOptions.
+        /// Gets and sets the property AdvancedOptions. 
+        /// <para>
+        /// The advanced options configuration for the domain.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> AdvancedOptions
         {
@@ -56,7 +59,10 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ChangeProgressDetails.
+        /// Gets and sets the property ChangeProgressDetails. 
+        /// <para>
+        /// Container for information about a configuration change happening on a domain.
+        /// </para>
         /// </summary>
         public ChangeProgressDetails ChangeProgressDetails
         {
@@ -71,7 +77,10 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DomainName.
+        /// Gets and sets the property DomainName. 
+        /// <para>
+        /// The name of the domain that was upgraded.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=28)]
         public string DomainName
@@ -89,8 +98,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property PerformCheckOnly. 
         /// <para>
-        ///  When true, indicates that an upgrade eligibility check needs to be performed. Does
-        /// not actually perform the upgrade. 
+        /// When true, indicates that an upgrade eligibility check was performed.
         /// </para>
         /// </summary>
         public bool PerformCheckOnly
@@ -108,7 +116,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property TargetVersion. 
         /// <para>
-        /// The version of OpenSearch that you intend to upgrade the domain to.
+        /// OpenSearch or Elasticsearch version that the domain was upgraded to.
         /// </para>
         /// </summary>
         [AWSProperty(Min=14, Max=18)]
@@ -125,7 +133,10 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UpgradeId.
+        /// Gets and sets the property UpgradeId. 
+        /// <para>
+        /// The unique identifier of the domain upgrade.
+        /// </para>
         /// </summary>
         public string UpgradeId
         {

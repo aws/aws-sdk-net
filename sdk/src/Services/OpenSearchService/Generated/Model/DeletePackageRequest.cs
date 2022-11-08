@@ -30,7 +30,8 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeletePackage operation.
-    /// Deletes the package.
+    /// Deletes an Amazon OpenSearch Service package. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom
+    /// packages for Amazon OpenSearch Service</a>.
     /// </summary>
     public partial class DeletePackageRequest : AmazonOpenSearchServiceRequest
     {
@@ -40,7 +41,7 @@ namespace Amazon.OpenSearchService.Model
         /// Gets and sets the property PackageID. 
         /// <para>
         /// The internal ID of the package you want to delete. Use <code>DescribePackages</code>
-        /// to find this value. 
+        /// to find this value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,10 +29,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Log Publishing option that is set for a given domain. <br/>Attributes and their details:
-    /// <ul> <li>CloudWatchLogsLogGroupArn: ARN of the Cloudwatch log group to publish logs
-    /// to.</li> <li>Enabled: Whether the log publishing for a given log type is enabled or
-    /// not.</li> </ul>
+    /// Specifies whether the Amazon OpenSearch Service domain publishes the OpenSearch application
+    /// and slow logs to Amazon CloudWatch. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createdomain-configure-slow-logs.html">Monitoring
+    /// OpenSearch logs with Amazon CloudWatch Logs</a>.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// After you enable log publishing, you still have to enable the collection of slow logs
+    /// using the OpenSearch REST API.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class LogPublishingOption
     {
@@ -40,7 +46,10 @@ namespace Amazon.OpenSearchService.Model
         private bool? _enabled;
 
         /// <summary>
-        /// Gets and sets the property CloudWatchLogsLogGroupArn.
+        /// Gets and sets the property CloudWatchLogsLogGroupArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the CloudWatch Logs group to publish logs to.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
         public string CloudWatchLogsLogGroupArn
@@ -58,7 +67,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Whether the given log publishing option is enabled or not.
+        /// Whether the log should be published.
         /// </para>
         /// </summary>
         public bool Enabled

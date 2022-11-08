@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Container for the response parameters to the <code> <a>ListDomainsForPackage</a>
-    /// </code> operation.
+    /// Container for the response parameters to the <code>ListDomainsForPackage</code> operation.
     /// </summary>
     public partial class ListDomainsForPackageResponse : AmazonWebServiceResponse
     {
@@ -40,7 +39,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property DomainPackageDetailsList. 
         /// <para>
-        /// List of <code>DomainPackageDetails</code> objects. 
+        /// Information about all domains associated with a package.
         /// </para>
         /// </summary>
         public List<DomainPackageDetails> DomainPackageDetailsList
@@ -56,7 +55,12 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// When <code>nextToken</code> is returned, there are more results available. The value
+        /// of <code>nextToken</code> is a unique pagination token for each page. Make the call
+        /// again using the returned token to retrieve the next page.
+        /// </para>
         /// </summary>
         public string NextToken
         {

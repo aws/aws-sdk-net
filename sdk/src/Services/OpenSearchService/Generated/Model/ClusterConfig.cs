@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The configuration for the domain cluster, such as the type and number of instances.
+    /// Container for the cluster configuration of an OpenSearch Service domain. For more
+    /// information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html">Creating
+    /// and managing Amazon OpenSearch Service domains</a>.
     /// </summary>
     public partial class ClusterConfig
     {
@@ -48,7 +50,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property ColdStorageOptions. 
         /// <para>
-        /// Specifies the <code>ColdStorageOptions</code> config for a Domain
+        /// Container for cold storage configuration options.
         /// </para>
         /// </summary>
         public ColdStorageOptions ColdStorageOptions
@@ -66,7 +68,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property DedicatedMasterCount. 
         /// <para>
-        /// Total number of dedicated master nodes, active and on standby, for the cluster.
+        /// Number of dedicated master nodes in the cluster. This number must be greater than
+        /// 1, otherwise you receive a validation exception.
         /// </para>
         /// </summary>
         public int DedicatedMasterCount
@@ -84,9 +87,9 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property DedicatedMasterEnabled. 
         /// <para>
-        /// A boolean value to indicate whether a dedicated master node is enabled. See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-dedicatedmasternodes"
-        /// target="_blank">Dedicated master nodes in Amazon OpenSearch Service </a> for more
-        /// information. 
+        /// Indicates whether dedicated master nodes are enabled for the cluster.<code>True</code>
+        /// if the cluster will use a dedicated master node.<code>False</code> if the cluster
+        /// will not.
         /// </para>
         /// </summary>
         public bool DedicatedMasterEnabled
@@ -104,7 +107,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property DedicatedMasterType. 
         /// <para>
-        /// The instance type for a dedicated master node.
+        /// OpenSearch Service instance type of the dedicated master nodes in the cluster.
         /// </para>
         /// </summary>
         public OpenSearchPartitionInstanceType DedicatedMasterType
@@ -122,7 +125,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property InstanceCount. 
         /// <para>
-        /// The number of instances in the specified domain cluster.
+        /// Number of dedicated master nodes in the cluster. This number must be greater than
+        /// 1, otherwise you receive a validation exception.
         /// </para>
         /// </summary>
         public int InstanceCount
@@ -140,8 +144,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type for an OpenSearch cluster. UltraWarm instance types are not supported
-        /// for data instances. 
+        /// Instance type of data nodes in the cluster.
         /// </para>
         /// </summary>
         public OpenSearchPartitionInstanceType InstanceType
@@ -159,7 +162,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property WarmCount. 
         /// <para>
-        /// The number of UltraWarm nodes in the cluster.
+        /// The number of warm nodes in the cluster.
         /// </para>
         /// </summary>
         public int WarmCount
@@ -177,7 +180,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property WarmEnabled. 
         /// <para>
-        /// True to enable UltraWarm storage.
+        /// Whether to enable warm storage for the cluster.
         /// </para>
         /// </summary>
         public bool WarmEnabled
@@ -195,7 +198,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property WarmType. 
         /// <para>
-        /// The instance type for the OpenSearch cluster's warm nodes.
+        /// The instance type for the cluster's warm nodes.
         /// </para>
         /// </summary>
         public OpenSearchWarmPartitionInstanceType WarmType
@@ -213,7 +216,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property ZoneAwarenessConfig. 
         /// <para>
-        /// The zone awareness configuration for a domain when zone awareness is enabled.
+        /// Container for zone awareness configuration options. Only required if <code>ZoneAwarenessEnabled</code>
+        /// is <code>true</code>.
         /// </para>
         /// </summary>
         public ZoneAwarenessConfig ZoneAwarenessConfig
@@ -231,9 +235,9 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property ZoneAwarenessEnabled. 
         /// <para>
-        /// A boolean value to indicate whether zone awareness is enabled. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html"
-        /// target="_blank">Configuring a multi-AZ domain in Amazon OpenSearch Service </a> for
-        /// more information. 
+        /// Indicates whether multiple Availability Zones are enabled. For more information, see
+        /// <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html">Configuring
+        /// a multi-AZ domain in Amazon OpenSearch Service</a>.
         /// </para>
         /// </summary>
         public bool ZoneAwarenessEnabled

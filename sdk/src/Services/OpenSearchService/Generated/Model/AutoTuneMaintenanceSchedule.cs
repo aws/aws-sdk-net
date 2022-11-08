@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Specifies the Auto-Tune maintenance schedule. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-    /// target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
+    /// The Auto-Tune maintenance schedule. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune
+    /// for Amazon OpenSearch Service</a>.
     /// </summary>
     public partial class AutoTuneMaintenanceSchedule
     {
@@ -41,9 +41,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property CronExpressionForRecurrence. 
         /// <para>
-        /// A cron expression for a recurring maintenance schedule. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-        /// target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
-        /// 
+        /// A cron expression for a recurring maintenance schedule during which Auto-Tune can
+        /// deploy changes.
         /// </para>
         /// </summary>
         public string CronExpressionForRecurrence
@@ -61,10 +60,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Duration. 
         /// <para>
-        /// Specifies maintenance schedule duration: duration value and duration unit. See <a
-        /// href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-        /// target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
-        /// 
+        /// The duration of the maintenance schedule. For example, <code>"Duration": {"Value":
+        /// 2, "Unit": "HOURS"}</code>.
         /// </para>
         /// </summary>
         public Duration Duration
@@ -82,7 +79,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property StartAt. 
         /// <para>
-        /// The timestamp at which the Auto-Tune maintenance schedule starts.
+        /// The Epoch timestamp at which the Auto-Tune maintenance schedule starts.
         /// </para>
         /// </summary>
         public DateTime StartAt

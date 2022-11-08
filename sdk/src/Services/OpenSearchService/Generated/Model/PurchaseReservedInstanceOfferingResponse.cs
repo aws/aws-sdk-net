@@ -58,7 +58,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property ReservedInstanceId. 
         /// <para>
-        /// Details of the reserved OpenSearch instance which was purchased.
+        /// The ID of the Reserved Instance offering that was purchased.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]

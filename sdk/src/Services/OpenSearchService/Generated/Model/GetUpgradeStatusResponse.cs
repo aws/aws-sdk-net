@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Container for the response returned by the <code> <a>GetUpgradeStatus</a> </code>
-    /// operation.
+    /// Container for the response returned by the <code>GetUpgradeStatus</code> operation.
     /// </summary>
     public partial class GetUpgradeStatusResponse : AmazonWebServiceResponse
     {
@@ -41,9 +40,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property StepStatus. 
         /// <para>
-        ///  One of four statuses an upgrade have, returned as part of the <code> <a>GetUpgradeStatusResponse</a>
-        /// </code> object. The status can take one of the following values: <ul> <li>In Progress</li>
-        /// <li>Succeeded</li> <li>Succeeded with Issues</li> <li>Failed</li> </ul> 
+        /// The status of the current step that an upgrade is on.
         /// </para>
         /// </summary>
         public UpgradeStatus StepStatus
@@ -61,7 +58,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property UpgradeName. 
         /// <para>
-        /// A string that briefly describes the update.
+        /// A string that describes the update.
         /// </para>
         /// </summary>
         public string UpgradeName
@@ -79,8 +76,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property UpgradeStep. 
         /// <para>
-        ///  One of three steps an upgrade or upgrade eligibility check goes through: <ul> <li>PreUpgradeCheck</li>
-        /// <li>Snapshot</li> <li>Upgrade</li> </ul> 
+        /// One of three steps that an upgrade or upgrade eligibility check goes through.
         /// </para>
         /// </summary>
         public UpgradeStep UpgradeStep

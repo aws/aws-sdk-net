@@ -30,7 +30,8 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListVersions operation.
-    /// List all supported versions of OpenSearch and Elasticsearch.
+    /// Lists all versions of OpenSearch and Elasticsearch that Amazon OpenSearch Service
+    /// supports.
     /// </summary>
     public partial class ListVersionsRequest : AmazonOpenSearchServiceRequest
     {
@@ -40,8 +41,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        ///  Set this value to limit the number of results returned. Value must be greater than
-        /// 10 or it won't be honored. 
+        /// An optional parameter that specifies the maximum number of results to return. You
+        /// can use <code>nextToken</code> to get the next page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
@@ -58,7 +59,12 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// If your initial <code>ListVersions</code> operation returns a <code>nextToken</code>,
+        /// you can include the returned <code>nextToken</code> in subsequent <code>ListVersions</code>
+        /// operations, which returns results in the next page.
+        /// </para>
         /// </summary>
         public string NextToken
         {

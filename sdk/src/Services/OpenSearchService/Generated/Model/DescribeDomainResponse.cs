@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The result of a <code>DescribeDomain</code> request. Contains the status of the domain
-    /// specified in the request.
+    /// Contains the status of the domain specified in the request.
     /// </summary>
     public partial class DescribeDomainResponse : AmazonWebServiceResponse
     {
@@ -39,7 +38,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property DomainStatus. 
         /// <para>
-        /// The current status of the domain.
+        /// List that contains the status of each specified OpenSearch Service domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -30,8 +30,8 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDomains operation.
-    /// Returns domain configuration information about the specified domains, including the
-    /// domain ID, domain endpoint, and domain ARN.
+    /// Returns domain configuration information about the specified Amazon OpenSearch Service
+    /// domains.
     /// </summary>
     public partial class DescribeDomainsRequest : AmazonOpenSearchServiceRequest
     {
@@ -40,7 +40,9 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property DomainNames. 
         /// <para>
-        /// The domains for which you want information.
+        /// Array of OpenSearch Service domain names that you want information about. If you don't
+        /// specify any domains, OpenSearch Service returns information about all domains owned
+        /// by the account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

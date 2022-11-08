@@ -30,7 +30,9 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeInboundConnections operation.
-    /// Lists all the inbound cross-cluster connections for a remote domain.
+    /// Lists all the inbound cross-cluster search connections for a destination (remote)
+    /// Amazon OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html">Cross-cluster
+    /// search for Amazon OpenSearch Service</a>.
     /// </summary>
     public partial class DescribeInboundConnectionsRequest : AmazonOpenSearchServiceRequest
     {
@@ -42,9 +44,6 @@ namespace Amazon.OpenSearchService.Model
         /// Gets and sets the property Filters. 
         /// <para>
         ///  A list of filters used to match properties for inbound cross-cluster connections.
-        /// Available <code> <a>Filter</a> </code> values are: <ul> <li>connection-id</li> <li>local-domain-info.domain-name</li>
-        /// <li>local-domain-info.owner-id</li> <li>local-domain-info.region</li> <li>remote-domain-info.domain-name</li>
-        /// </ul> 
         /// </para>
         /// </summary>
         public List<Filter> Filters
@@ -62,8 +61,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Set this value to limit the number of results returned. If not specified, defaults
-        /// to 100.
+        /// An optional parameter that specifies the maximum number of results to return. You
+        /// can use <code>nextToken</code> to get the next page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
@@ -82,8 +81,9 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If more results are available and NextToken is present, make the next request to the
-        /// same API with the received NextToken to paginate the remaining results.
+        /// If your initial <code>DescribeInboundConnections</code> operation returns a <code>nextToken</code>,
+        /// you can include the returned <code>nextToken</code> in subsequent <code>DescribeInboundConnections</code>
+        /// operations, which returns results in the next page.
         /// </para>
         /// </summary>
         public string NextToken

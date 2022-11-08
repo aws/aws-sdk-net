@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Information on a package associated with a domain.
+    /// Information about a package that is associated with a domain. For more information,
+    /// see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom
+    /// packages for Amazon OpenSearch Service</a>.
     /// </summary>
     public partial class DomainPackageDetails
     {
@@ -46,7 +48,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The name of the domain you've associated a package with.
+        /// Name of the domain that the package is associated with.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=28)]
@@ -65,8 +67,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property DomainPackageStatus. 
         /// <para>
-        /// State of the association. Values are ASSOCIATING, ASSOCIATION_FAILED, ACTIVE, DISSOCIATING,
-        /// and DISSOCIATION_FAILED.
+        /// State of the association.
         /// </para>
         /// </summary>
         public DomainPackageStatus DomainPackageStatus
@@ -102,7 +103,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property LastUpdated. 
         /// <para>
-        /// The timestamp of the most recent update to the package association status.
+        /// Timestamp of the most recent update to the package association status.
         /// </para>
         /// </summary>
         public DateTime LastUpdated
@@ -120,7 +121,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property PackageID. 
         /// <para>
-        /// The internal ID of the package.
+        /// Internal ID of the package.
         /// </para>
         /// </summary>
         public string PackageID
@@ -157,7 +158,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property PackageType. 
         /// <para>
-        /// Currently supports only TXT-DICTIONARY.
+        /// The type of package.
         /// </para>
         /// </summary>
         public PackageType PackageType
@@ -173,7 +174,10 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PackageVersion.
+        /// Gets and sets the property PackageVersion. 
+        /// <para>
+        /// The current version of the package.
+        /// </para>
         /// </summary>
         public string PackageVersion
         {
@@ -190,8 +194,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property ReferencePath. 
         /// <para>
-        /// The relative path on Amazon OpenSearch Service nodes, which can be used as synonym_path
-        /// when the package is a synonym file.
+        /// Denotes the location of the package on the OpenSearch Service cluster nodes. It's
+        /// the same as <code>synonym_path</code> for dictionary files.
         /// </para>
         /// </summary>
         public string ReferencePath

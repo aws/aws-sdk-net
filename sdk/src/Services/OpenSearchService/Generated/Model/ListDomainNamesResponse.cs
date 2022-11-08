@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The result of a <code>ListDomainNames</code> operation. Contains the names of all
+    /// The results of a <code>ListDomainNames</code> operation. Contains the names of all
     /// domains owned by this account and their respective engine types.
     /// </summary>
     public partial class ListDomainNamesResponse : AmazonWebServiceResponse
@@ -39,7 +39,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property DomainNames. 
         /// <para>
-        /// List of domain names and respective engine types.
+        /// The names of all OpenSearch Service domains owned by the current user and their respective
+        /// engine types.
         /// </para>
         /// </summary>
         public List<DomainInfo> DomainNames

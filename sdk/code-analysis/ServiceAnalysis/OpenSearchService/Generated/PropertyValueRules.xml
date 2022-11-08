@@ -19,6 +19,16 @@
     <pattern>[a-z][a-z0-9\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.AuthorizeVpcEndpointAccessRequest.Account</property>
+    <pattern>^[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.AuthorizeVpcEndpointAccessRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.CancelServiceSoftwareUpdateRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
@@ -69,6 +79,17 @@
     <pattern>[a-z][a-z0-9\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.CreateVpcEndpointRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.CreateVpcEndpointRequest.DomainArn</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>arn:aws[a-z\-]*:[a-z]+:[a-z0-9\-]+:[0-9]+:domain\/[a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.DeleteDomainRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
@@ -85,6 +106,12 @@
     <min>10</min>
     <max>256</max>
     <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DeleteVpcEndpointRequest.VpcEndpointId</property>
+    <min>5</min>
+    <max>256</max>
+    <pattern>^aos-[a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.DescribeDomainRequest.DomainName</property>
@@ -234,6 +261,18 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.ListVpcEndpointAccessRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.ListVpcEndpointsForDomainRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.PurchaseReservedInstanceOfferingRequest.InstanceCount</property>
     <min>1</min>
   </property-value-rule>
@@ -272,6 +311,16 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.RevokeVpcEndpointAccessRequest.Account</property>
+    <pattern>^[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.RevokeVpcEndpointAccessRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.StartServiceSoftwareUpdateRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
@@ -296,6 +345,12 @@
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.UpdatePackageRequest.PackageDescription</property>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.UpdateVpcEndpointRequest.VpcEndpointId</property>
+    <min>5</min>
+    <max>256</max>
+    <pattern>^aos-[a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.UpgradeDomainRequest.DomainName</property>
@@ -606,5 +661,43 @@
     <min>14</min>
     <max>18</max>
     <pattern>^Elasticsearch_[0-9]{1}\.[0-9]{1,2}$|^OpenSearch_[0-9]{1,2}\.[0-9]{1,2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.VpcEndpoint.DomainArn</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>arn:aws[a-z\-]*:[a-z]+:[a-z0-9\-]+:[0-9]+:domain\/[a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.VpcEndpoint.Endpoint</property>
+    <pattern>^[A-Za-z0-9\-\.]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.VpcEndpoint.VpcEndpointId</property>
+    <min>5</min>
+    <max>256</max>
+    <pattern>^aos-[a-zA-Z0-9]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.VpcEndpoint.VpcEndpointOwner</property>
+    <pattern>^[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.VpcEndpointError.VpcEndpointId</property>
+    <min>5</min>
+    <max>256</max>
+    <pattern>^aos-[a-zA-Z0-9]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.VpcEndpointSummary.DomainArn</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>arn:aws[a-z\-]*:[a-z]+:[a-z0-9\-]+:[0-9]+:domain\/[a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.VpcEndpointSummary.VpcEndpointId</property>
+    <min>5</min>
+    <max>256</max>
+    <pattern>^aos-[a-zA-Z0-9]*$</pattern>
   </property-value-rule>
 </property-value-rules>

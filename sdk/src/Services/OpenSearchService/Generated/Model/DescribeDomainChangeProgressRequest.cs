@@ -30,8 +30,9 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDomainChangeProgress operation.
-    /// Returns information about the current blue/green deployment happening on a domain,
-    /// including a change ID, status, and progress stages.
+    /// Returns information about the current blue/green deployment happening on an Amazon
+    /// OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes.html">Making
+    /// configuration changes in Amazon OpenSearch Service</a>.
     /// </summary>
     public partial class DescribeDomainChangeProgressRequest : AmazonOpenSearchServiceRequest
     {
@@ -41,9 +42,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property ChangeId. 
         /// <para>
-        /// The specific change ID for which you want to get progress information. This is an
-        /// optional parameter. If omitted, the service returns information about the most recent
-        /// configuration change. 
+        /// The specific change ID for which you want to get progress information. If omitted,
+        /// the request returns information about the most recent configuration change.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -62,7 +62,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The domain you want to get the progress information about.
+        /// The name of the domain to get progress information for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=28)]
