@@ -605,6 +605,10 @@ namespace Amazon.Polly
         /// </summary>
         public static readonly VoiceId Dora = new VoiceId("Dora");
         /// <summary>
+        /// Constant Elin for VoiceId
+        /// </summary>
+        public static readonly VoiceId Elin = new VoiceId("Elin");
+        /// <summary>
         /// Constant Emma for VoiceId
         /// </summary>
         public static readonly VoiceId Emma = new VoiceId("Emma");
@@ -648,6 +652,10 @@ namespace Amazon.Polly
         /// Constant Hiujin for VoiceId
         /// </summary>
         public static readonly VoiceId Hiujin = new VoiceId("Hiujin");
+        /// <summary>
+        /// Constant Ida for VoiceId
+        /// </summary>
+        public static readonly VoiceId Ida = new VoiceId("Ida");
         /// <summary>
         /// Constant Ines for VoiceId
         /// </summary>
@@ -696,6 +704,10 @@ namespace Amazon.Polly
         /// Constant Kimberly for VoiceId
         /// </summary>
         public static readonly VoiceId Kimberly = new VoiceId("Kimberly");
+        /// <summary>
+        /// Constant Laura for VoiceId
+        /// </summary>
+        public static readonly VoiceId Laura = new VoiceId("Laura");
         /// <summary>
         /// Constant Lea for VoiceId
         /// </summary>
@@ -800,6 +812,10 @@ namespace Amazon.Polly
         /// Constant Seoyeon for VoiceId
         /// </summary>
         public static readonly VoiceId Seoyeon = new VoiceId("Seoyeon");
+        /// <summary>
+        /// Constant Suvi for VoiceId
+        /// </summary>
+        public static readonly VoiceId Suvi = new VoiceId("Suvi");
         /// <summary>
         /// Constant Takumi for VoiceId
         /// </summary>
