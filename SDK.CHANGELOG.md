@@ -1,3 +1,26 @@
+### 3.7.413.0 (2022-11-08 19:26 UTC)
+* BillingConductor (3.7.101.0)
+	* This release adds the Recurring Custom Line Item feature along with a new API ListCustomLineItemVersions.
+* CertificateManager (3.7.101.0)
+	* Support added for requesting elliptic curve certificate key algorithm types P-256 (EC_prime256v1) and P-384 (EC_secp384r1).
+* EC2 (3.7.105.0)
+	* This release enables sharing of EC2 Placement Groups across accounts and within AWS Organizations using Resource Access Manager
+* FMS (3.7.102.0)
+	* AWS Firewall Manager now supports importing existing AWS Network Firewall firewalls into Firewall Manager policies.
+* Lightsail (3.7.101.0)
+	* This release adds support for Amazon Lightsail to automate the delegation of domains registered through Amazon Route 53 to Lightsail DNS management and to automate record creation for DNS validation of Lightsail SSL/TLS certificates.
+* OpenSearchService (3.7.101.0)
+	* Amazon OpenSearch Service now offers managed VPC endpoints to connect to your Amazon OpenSearch Service VPC-enabled domain in a Virtual Private Cloud (VPC). This feature allows you to privately access OpenSearch Service domain without using public IPs or requiring traffic to traverse the Internet.
+* Polly (3.7.101.0)
+	* Amazon Polly adds new voices: Elin (sv-SE), Ida (nb-NO), Laura (nl-NL) and Suvi (fi-FI). They are available as neural voices only.
+* ResourceExplorer2 (3.7.100.0)
+	* This is the initial SDK release for AWS Resource Explorer. AWS Resource Explorer lets your users search for and discover your AWS resources across the AWS Regions in your account.
+* Route53 (3.7.101.0)
+	* Amazon Route 53 now supports the Europe (Zurich) Region (eu-central-2) for latency records, geoproximity records, and private DNS for Amazon VPCs in that region.
+* Core 3.7.100.11
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.412.0 (2022-11-07 19:34 UTC)
 * Athena (3.7.101.0)
 	* Adds support for using Query Result Reuse
