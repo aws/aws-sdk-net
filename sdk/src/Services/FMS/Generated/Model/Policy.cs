@@ -37,10 +37,12 @@ namespace Amazon.FMS.Model
         private Dictionary<string, List<string>> _excludeMap = new Dictionary<string, List<string>>();
         private bool? _excludeResourceTags;
         private Dictionary<string, List<string>> _includeMap = new Dictionary<string, List<string>>();
+        private string _policyDescription;
         private string _policyId;
         private string _policyName;
         private string _policyUpdateToken;
         private bool? _remediationEnabled;
+        private List<string> _resourceSetIds = new List<string>();
         private List<ResourceTag> _resourceTags = new List<ResourceTag>();
         private string _resourceType;
         private List<string> _resourceTypeList = new List<string>();
@@ -199,6 +201,25 @@ namespace Amazon.FMS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PolicyDescription. 
+        /// <para>
+        /// The definition of the Network Firewall firewall policy.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string PolicyDescription
+        {
+            get { return this._policyDescription; }
+            set { this._policyDescription = value; }
+        }
+
+        // Check to see if PolicyDescription property is set
+        internal bool IsSetPolicyDescription()
+        {
+            return this._policyDescription != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PolicyId. 
         /// <para>
         /// The ID of the Firewall Manager policy.
@@ -275,6 +296,24 @@ namespace Amazon.FMS.Model
         internal bool IsSetRemediationEnabled()
         {
             return this._remediationEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceSetIds. 
+        /// <para>
+        /// The unique identifiers of the resource sets used by the policy.
+        /// </para>
+        /// </summary>
+        public List<string> ResourceSetIds
+        {
+            get { return this._resourceSetIds; }
+            set { this._resourceSetIds = value; }
+        }
+
+        // Check to see if ResourceSetIds property is set
+        internal bool IsSetResourceSetIds()
+        {
+            return this._resourceSetIds != null && this._resourceSetIds.Count > 0; 
         }
 
         /// <summary>
