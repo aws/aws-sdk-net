@@ -29,7 +29,40 @@ namespace Amazon.Route53
     /// <summary>
     /// Interface for accessing Route53
     ///
-    /// Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service.
+    /// Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service.
+    /// 
+    ///  
+    /// <para>
+    /// You can use Route 53 to:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Register domain names.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-domain-registration.html">How
+    /// domain registration works</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Route internet traffic to the resources for your domain
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-dns-service.html">How
+    /// internet traffic is routed to your website or web application</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Check the health of your resources.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-health-checks.html">How
+    /// Route 53 checks the health of your resources</a>.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial interface IAmazonRoute53 : IAmazonService, IDisposable
     {
@@ -1244,6 +1277,12 @@ namespace Amazon.Route53
         /// The Key management service (KMS) key you specified doesn’t exist or it can’t be used
         /// with the log group associated with query log. Update or provide a resource policy
         /// to grant permissions for the KMS key.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Key management service (KMS) key you specified is marked as disabled for the log
+        /// group associated with query log. Update or provide a resource policy to grant permissions
+        /// for the KMS key.
         /// </para>
         ///  </li> </ul>
         /// </exception>

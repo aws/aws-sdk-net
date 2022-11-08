@@ -299,6 +299,10 @@ namespace Amazon.Route53
         /// </summary>
         public static readonly CloudWatchRegion EuCentral1 = new CloudWatchRegion("eu-central-1");
         /// <summary>
+        /// Constant EuCentral2 for CloudWatchRegion
+        /// </summary>
+        public static readonly CloudWatchRegion EuCentral2 = new CloudWatchRegion("eu-central-2");
+        /// <summary>
         /// Constant EuNorth1 for CloudWatchRegion
         /// </summary>
         public static readonly CloudWatchRegion EuNorth1 = new CloudWatchRegion("eu-north-1");
@@ -879,6 +883,10 @@ namespace Amazon.Route53
         /// </summary>
         public static readonly ResourceRecordSetRegion EuCentral1 = new ResourceRecordSetRegion("eu-central-1");
         /// <summary>
+        /// Constant EuCentral2 for ResourceRecordSetRegion
+        /// </summary>
+        public static readonly ResourceRecordSetRegion EuCentral2 = new ResourceRecordSetRegion("eu-central-2");
+        /// <summary>
         /// Constant EuNorth1 for ResourceRecordSetRegion
         /// </summary>
         public static readonly ResourceRecordSetRegion EuNorth1 = new ResourceRecordSetRegion("eu-north-1");
@@ -898,6 +906,10 @@ namespace Amazon.Route53
         /// Constant EuWest3 for ResourceRecordSetRegion
         /// </summary>
         public static readonly ResourceRecordSetRegion EuWest3 = new ResourceRecordSetRegion("eu-west-3");
+        /// <summary>
+        /// Constant MeCentral1 for ResourceRecordSetRegion
+        /// </summary>
+        public static readonly ResourceRecordSetRegion MeCentral1 = new ResourceRecordSetRegion("me-central-1");
         /// <summary>
         /// Constant MeSouth1 for ResourceRecordSetRegion
         /// </summary>
@@ -1264,6 +1276,10 @@ namespace Amazon.Route53
         /// Constant EuCentral1 for VPCRegion
         /// </summary>
         public static readonly VPCRegion EuCentral1 = new VPCRegion("eu-central-1");
+        /// <summary>
+        /// Constant EuCentral2 for VPCRegion
+        /// </summary>
+        public static readonly VPCRegion EuCentral2 = new VPCRegion("eu-central-2");
         /// <summary>
         /// Constant EuNorth1 for VPCRegion
         /// </summary>
