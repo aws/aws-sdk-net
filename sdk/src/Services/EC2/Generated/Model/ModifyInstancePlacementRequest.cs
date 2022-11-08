@@ -67,6 +67,7 @@ namespace Amazon.EC2.Model
     public partial class ModifyInstancePlacementRequest : AmazonEC2Request
     {
         private Affinity _affinity;
+        private string _groupId;
         private string _groupName;
         private string _hostId;
         private string _hostResourceGroupArn;
@@ -90,6 +91,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetAffinity()
         {
             return this._affinity != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GroupId. 
+        /// <para>
+        /// The Group Id of a placement group. You must specify the Placement Group <b>Group Id</b>
+        /// to launch an instance in a shared placement group.
+        /// </para>
+        /// </summary>
+        public string GroupId
+        {
+            get { return this._groupId; }
+            set { this._groupId = value; }
+        }
+
+        // Check to see if GroupId property is set
+        internal bool IsSetGroupId()
+        {
+            return this._groupId != null;
         }
 
         /// <summary>

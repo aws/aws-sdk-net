@@ -319,6 +319,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                     {
                                         request.Parameters.Add("LaunchTemplateConfig" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "Placement" + "." + "AvailabilityZone", StringUtils.FromString(publicRequestlistValuelistValue.Placement.AvailabilityZone));
                                     }
+                                    if(publicRequestlistValuelistValue.Placement.IsSetGroupId())
+                                    {
+                                        request.Parameters.Add("LaunchTemplateConfig" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "Placement" + "." + "GroupId", StringUtils.FromString(publicRequestlistValuelistValue.Placement.GroupId));
+                                    }
                                     if(publicRequestlistValuelistValue.Placement.IsSetGroupName())
                                     {
                                         request.Parameters.Add("LaunchTemplateConfig" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "Placement" + "." + "GroupName", StringUtils.FromString(publicRequestlistValuelistValue.Placement.GroupName));
