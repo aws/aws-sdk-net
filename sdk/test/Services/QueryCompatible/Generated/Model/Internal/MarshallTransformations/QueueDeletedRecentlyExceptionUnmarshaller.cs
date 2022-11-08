@@ -58,7 +58,6 @@ namespace Amazon.QueryCompatible.Model.Internal.MarshallTransformations
         {
             context.Read();
 
-         
             var errorCode = errorResponse.Code;
             var errorType = errorResponse.Type;
             var queryHeaderKey = Amazon.Util.HeaderKeys.XAmzQueryError;

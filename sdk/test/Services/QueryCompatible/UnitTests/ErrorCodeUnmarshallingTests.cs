@@ -23,8 +23,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void ModeledExceptionUnmarshalTest_When_HeaderIsPresent()
         {
             var response = GetJsonErrorResponse("AWS.SimpleQueueService.QueueDeletedRecently;Sender");
-            Assert.AreEqual(response.ErrorCode, "AWS.SimpleQueueService.QueueDeletedRecently");
-            Assert.AreEqual(response.ErrorType, ErrorType.Sender);
+            Assert.AreEqual("AWS.SimpleQueueService.QueueDeletedRecently", response.ErrorCode);
+            Assert.AreEqual(ErrorType.Sender, response.ErrorType);
         }
 
         [TestMethod]
@@ -34,8 +34,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void ModeledExceptionUnmarshalTest_IgnoresErrorType_When_TypeUnparsable()
         {
             var response = GetJsonErrorResponse("AWS.SimpleQueueService.QueueDeletedRecently;Some");
-            Assert.AreEqual(response.ErrorCode, "AWS.SimpleQueueService.QueueDeletedRecently");
-            Assert.AreEqual(response.ErrorType, ErrorType.Unknown);
+            Assert.AreEqual("AWS.SimpleQueueService.QueueDeletedRecently", response.ErrorCode);
+            Assert.AreEqual(ErrorType.Unknown, response.ErrorType);
         }
 
         [TestMethod]
@@ -45,8 +45,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void ModeledExceptionUnmarshalTest_When_HeaderIsNotPresent()
         {
             var response = GetJsonErrorResponse(null);
-            Assert.AreEqual(response.ErrorCode, "QueueDeletedRecently");
-            Assert.AreEqual(response.ErrorType, ErrorType.Unknown);
+            Assert.AreEqual("QueueDeletedRecently", response.ErrorCode);
+            Assert.AreEqual(ErrorType.Unknown, response.ErrorType);
         }
 
         [TestMethod]
@@ -56,8 +56,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void ModeledExceptionUnmarshalTest_When_HeaderIsIncomplete()
         {
             var response = GetJsonErrorResponse("AWS.SimpleQueueService.QueueDeletedRecently");
-            Assert.AreEqual(response.ErrorCode, "QueueDeletedRecently");
-            Assert.AreEqual(response.ErrorType, ErrorType.Unknown);
+            Assert.AreEqual("QueueDeletedRecently", response.ErrorCode);
+            Assert.AreEqual(ErrorType.Unknown, response.ErrorType);
         }
 
         [TestMethod]
@@ -67,8 +67,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         public void ModeledExceptionUnmarshalTest_When_HeaderIsEmpty()
         {
             var response = GetJsonErrorResponse("");
-            Assert.AreEqual(response.ErrorCode, "QueueDeletedRecently");
-            Assert.AreEqual(response.ErrorType, ErrorType.Unknown);
+            Assert.AreEqual("QueueDeletedRecently", response.ErrorCode);
+            Assert.AreEqual(ErrorType.Unknown, response.ErrorType);
         }
 
         [TestMethod]
@@ -79,8 +79,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var body = "{\"__type\":\"com.amazonaws.awsquerycompatible#AccessDeniedException\"}";
             var response = UnmarshalException(body, "AccessDeniedException", "AccessDenied;Sender");
-            Assert.AreEqual(response.ErrorCode, "AccessDenied");
-            Assert.AreEqual(response.ErrorType, ErrorType.Sender);
+            Assert.AreEqual("AccessDenied", response.ErrorCode);
+            Assert.AreEqual(ErrorType.Sender, response.ErrorType);
         }
 
         [TestMethod]
@@ -91,8 +91,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         {
             var body = "{\"__type\":\"com.amazonaws.awsquerycompatible#AccessDeniedException\"}";
             var response = UnmarshalException(body, "AccessDeniedException", "AccessDenied;Some");
-            Assert.AreEqual(response.ErrorCode, "AccessDenied");
-            Assert.AreEqual(response.ErrorType, ErrorType.Unknown);
+            Assert.AreEqual("AccessDenied", response.ErrorCode);
+            Assert.AreEqual(ErrorType.Unknown, response.ErrorType);
         }
 
         private AmazonServiceException UnmarshalException(string body, string exceptionName, string amznQueryErrorHeaderValue)

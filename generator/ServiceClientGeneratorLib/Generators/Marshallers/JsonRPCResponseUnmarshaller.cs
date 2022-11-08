@@ -305,10 +305,16 @@ namespace ServiceClientGenerator.Generators.Marshallers
             
             #line default
             #line hidden
-            this.Write("  \r\n            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, " +
-                    "true, context.ResponseData))\r\n");
             
-            #line 140 "C:\Users\ezhilani\source\repos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
+            #line 139 "C:\Users\ezhilani\source\repos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
+ // Create a copy of context with headers in the response 
+            
+            #line default
+            #line hidden
+            this.Write("\r\n            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, tr" +
+                    "ue, context.ResponseData))\r\n");
+            
+            #line 142 "C:\Users\ezhilani\source\repos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
 
             }
             else
@@ -320,7 +326,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, fals" +
                     "e, null))\r\n");
             
-            #line 146 "C:\Users\ezhilani\source\repos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
+            #line 148 "C:\Users\ezhilani\source\repos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
 
             }
 
@@ -329,7 +335,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("            {\r\n");
             
-            #line 150 "C:\Users\ezhilani\source\repos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
+            #line 152 "C:\Users\ezhilani\source\repos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
 
     foreach (var exception in this.Operation.Exceptions)
     {
@@ -339,14 +345,14 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("                if (errorResponse.Code != null && errorResponse.Code.Equals(\"");
             
-            #line 154 "C:\Users\ezhilani\source\repos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
+            #line 156 "C:\Users\ezhilani\source\repos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(exception.Code));
             
             #line default
             #line hidden
             this.Write("\"))\r\n                {\r\n                    return ");
             
-            #line 156 "C:\Users\ezhilani\source\repos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
+            #line 158 "C:\Users\ezhilani\source\repos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(exception.Name));
             
             #line default
@@ -354,7 +360,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("Unmarshaller.Instance.Unmarshall(contextCopy, errorResponse);\r\n                }\r" +
                     "\n");
             
-            #line 158 "C:\Users\ezhilani\source\repos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
+            #line 160 "C:\Users\ezhilani\source\repos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
 
     }
 
@@ -363,37 +369,18 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("            }\r\n");
             
-            #line 162 "C:\Users\ezhilani\source\repos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
+            #line 164 "C:\Users\ezhilani\source\repos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
 
             if  (this.Config.ServiceModel.IsAwsQueryCompatible)
             {
+                GenerateAWSQueryCompatibleBlock();
 
             
             #line default
             #line hidden
-            this.Write(@"            var errorCode = errorResponse.Code;
-            var errorType = errorResponse.Type;
-            var queryHeaderKey = Amazon.Util.HeaderKeys.XAmzQueryError;
-            if (context.ResponseData.IsHeaderPresent(queryHeaderKey))
-            {
-                var queryError = context.ResponseData.GetHeaderValue(queryHeaderKey);
-                if (!string.IsNullOrEmpty(queryError) && queryError.Contains("";""))
-                {
-                    var queryErrorParts = queryError.Split(';');                    
-                    if (queryErrorParts.Length == 2)
-                    {
-                        errorCode = queryErrorParts[0];
-                        var errorTypeString = queryErrorParts[1];
-                        if (Enum.IsDefined(typeof(ErrorType), errorTypeString))
-                        {
-                            errorType = (ErrorType) Enum.Parse(typeof(ErrorType), errorTypeString);
-                        }
-                    }
-                }
-            }
-            return new ");
+            this.Write("            return new ");
             
-            #line 186 "C:\Users\ezhilani\source\repos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
+            #line 169 "C:\Users\ezhilani\source\repos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.BaseException));
             
             #line default
@@ -401,7 +388,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("(errorResponse.Message, errorResponse.InnerException, errorType, errorCode, error" +
                     "Response.RequestId, errorResponse.StatusCode);\r\n");
             
-            #line 187 "C:\Users\ezhilani\source\repos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
+            #line 170 "C:\Users\ezhilani\source\repos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
 
             }
             else
@@ -412,7 +399,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("            return new ");
             
-            #line 192 "C:\Users\ezhilani\source\repos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
+            #line 175 "C:\Users\ezhilani\source\repos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.BaseException));
             
             #line default
@@ -420,7 +407,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorRe" +
                     "sponse.Code, errorResponse.RequestId, errorResponse.StatusCode);\r\n");
             
-            #line 193 "C:\Users\ezhilani\source\repos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
+            #line 176 "C:\Users\ezhilani\source\repos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
 
             }
 
@@ -429,7 +416,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("        }\r\n\r\n");
             
-            #line 198 "C:\Users\ezhilani\source\repos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
+            #line 181 "C:\Users\ezhilani\source\repos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
 
     if (payload != null && payload.IsStreaming)
     {
@@ -450,7 +437,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
 
 ");
             
-            #line 213 "C:\Users\ezhilani\source\repos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
+            #line 196 "C:\Users\ezhilani\source\repos\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCResponseUnmarshaller.tt"
 
 	}
     this.AddResponseSingletonMethod();

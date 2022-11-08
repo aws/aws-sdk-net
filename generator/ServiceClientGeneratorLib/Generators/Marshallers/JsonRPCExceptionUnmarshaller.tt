@@ -40,27 +40,8 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 <#
             if  (this.Config.ServiceModel.IsAwsQueryCompatible)
             {
-#>         
-            var errorCode = errorResponse.Code;
-            var errorType = errorResponse.Type;
-            var queryHeaderKey = Amazon.Util.HeaderKeys.XAmzQueryError;
-            if (context.ResponseData.IsHeaderPresent(queryHeaderKey))
-            {
-                var queryError = context.ResponseData.GetHeaderValue(queryHeaderKey);
-                if (!string.IsNullOrEmpty(queryError) && queryError.Contains(";"))
-                {
-                    var queryErrorParts = queryError.Split(';');
-                    if (queryErrorParts.Length == 2)
-                    {
-                        errorCode = queryErrorParts[0];
-                        var errorTypeString = queryErrorParts[1];
-                        if (Enum.IsDefined(typeof(ErrorType), errorTypeString))
-                        {
-                            errorType = (ErrorType) Enum.Parse(typeof(ErrorType), errorTypeString);
-                        }
-                    }
-                }
-            }
+                GenerateAWSQueryCompatibleBlock();
+#>
             <#=this.UnmarshallerBaseName #> unmarshalledObject = new <#=this.UnmarshallerBaseName #>(errorResponse.Message, errorResponse.InnerException,
                 errorType, errorCode, errorResponse.RequestId, errorResponse.StatusCode);
 <#

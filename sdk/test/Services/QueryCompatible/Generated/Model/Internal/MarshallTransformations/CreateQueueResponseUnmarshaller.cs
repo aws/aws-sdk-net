@@ -78,7 +78,7 @@ namespace Amazon.QueryCompatible.Model.Internal.MarshallTransformations
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-  
+
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, true, context.ResponseData))
             {
                 if (errorResponse.Code != null && errorResponse.Code.Equals("QueueDeletedRecently"))
@@ -98,7 +98,7 @@ namespace Amazon.QueryCompatible.Model.Internal.MarshallTransformations
                 var queryError = context.ResponseData.GetHeaderValue(queryHeaderKey);
                 if (!string.IsNullOrEmpty(queryError) && queryError.Contains(";"))
                 {
-                    var queryErrorParts = queryError.Split(';');                    
+                    var queryErrorParts = queryError.Split(';');
                     if (queryErrorParts.Length == 2)
                     {
                         errorCode = queryErrorParts[0];
