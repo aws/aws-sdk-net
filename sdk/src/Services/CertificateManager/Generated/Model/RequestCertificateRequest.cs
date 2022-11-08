@@ -62,6 +62,7 @@ namespace Amazon.CertificateManager.Model
         private string _domainName;
         private List<DomainValidationOption> _domainValidationOptions = new List<DomainValidationOption>();
         private string _idempotencyToken;
+        private KeyAlgorithm _keyAlgorithm;
         private CertificateOptions _options;
         private List<string> _subjectAlternativeNames = new List<string>();
         private List<Tag> _tags = new List<Tag>();
@@ -73,8 +74,8 @@ namespace Amazon.CertificateManager.Model
         /// The Amazon Resource Name (ARN) of the private certificate authority (CA) that will
         /// be used to issue the certificate. If you do not provide an ARN and you are trying
         /// to request a private certificate, ACM will attempt to issue a public certificate.
-        /// For more information about private CAs, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Certificate
-        /// Manager Private Certificate Authority</a> user guide. The ARN must have the following
+        /// For more information about private CAs, see the <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaWelcome.html">Amazon
+        /// Web Services Private Certificate Authority</a> user guide. The ARN must have the following
         /// form: 
         /// </para>
         ///  
@@ -167,6 +168,35 @@ namespace Amazon.CertificateManager.Model
         internal bool IsSetIdempotencyToken()
         {
             return this._idempotencyToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KeyAlgorithm. 
+        /// <para>
+        /// Specifies the algorithm of the public and private key pair that your certificate uses
+        /// to encrypt data. RSA is the default key algorithm for ACM certificates. Elliptic Curve
+        /// Digital Signature Algorithm (ECDSA) keys are smaller, offering security comparable
+        /// to RSA keys but with greater computing efficiency. However, ECDSA is not supported
+        /// by all network clients. Some AWS services may require RSA keys, or only support ECDSA
+        /// keys of a particular size, while others allow the use of either RSA and ECDSA keys
+        /// to ensure that compatibility is not broken. Check the requirements for the AWS service
+        /// where you plan to deploy your certificate.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: RSA_2048
+        /// </para>
+        /// </summary>
+        public KeyAlgorithm KeyAlgorithm
+        {
+            get { return this._keyAlgorithm; }
+            set { this._keyAlgorithm = value; }
+        }
+
+        // Check to see if KeyAlgorithm property is set
+        internal bool IsSetKeyAlgorithm()
+        {
+            return this._keyAlgorithm != null;
         }
 
         /// <summary>

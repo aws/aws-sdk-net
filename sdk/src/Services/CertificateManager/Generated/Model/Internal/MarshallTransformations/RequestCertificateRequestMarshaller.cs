@@ -101,6 +101,12 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.IdempotencyToken);
                 }
 
+                if(publicRequest.IsSetKeyAlgorithm())
+                {
+                    context.Writer.WritePropertyName("KeyAlgorithm");
+                    context.Writer.Write(publicRequest.KeyAlgorithm);
+                }
+
                 if(publicRequest.IsSetOptions())
                 {
                     context.Writer.WritePropertyName("Options");
