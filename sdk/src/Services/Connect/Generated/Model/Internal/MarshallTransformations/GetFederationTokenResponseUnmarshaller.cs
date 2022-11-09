@@ -57,6 +57,24 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     response.Credentials = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SignInUrl", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SignInUrl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UserArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.UserArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UserId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.UserId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

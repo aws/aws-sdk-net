@@ -72,7 +72,7 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property InstanceId. 
         /// <para>
         /// The identifier of the Amazon Connect instance. You can find the instanceId in the
-        /// ARN of the instance.
+        /// ARN of the instance. You can provide the <code>InstanceId</code>, or the entire ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=250)]

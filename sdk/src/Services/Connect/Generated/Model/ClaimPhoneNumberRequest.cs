@@ -58,6 +58,11 @@ namespace Amazon.Connect.Model
         /// more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
         /// retries safe with idempotent APIs</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// Pattern: <code>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</code>
+        /// 
+        /// </para>
         /// </summary>
         [AWSProperty(Max=500)]
         public string ClientToken
