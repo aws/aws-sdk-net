@@ -1,3 +1,8 @@
+### 3.7.413.1 (2022-11-09 00:31 UTC)
+* Core 3.7.100.12
+	* WebSocket protocol enabled for ServiceUrl overrides
+	* All services packages updated to require new Core
+
 ### 3.7.413.0 (2022-11-08 19:26 UTC)
 * BillingConductor (3.7.101.0)
 	* This release adds the Recurring Custom Line Item feature along with a new API ListCustomLineItemVersions.
