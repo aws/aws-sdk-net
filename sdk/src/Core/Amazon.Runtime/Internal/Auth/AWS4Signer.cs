@@ -1211,6 +1211,13 @@ namespace Amazon.Runtime.Internal.Auth
                                                  string service,
                                                  string overrideSigningRegion)
         {
+            if (service == "s3")
+            {
+                // Older versions of the S3 package can be used with newer versions of Core, this guarantees no double encoding will be used.
+                // The new behavior uses endpoint resolution rules, which are not present prior to 3.7.100
+                request.UseDoubleEncoding = false;
+            }
+
             // clean up any prior signature in the headers if resigning
             request.Headers.Remove(HeaderKeys.AuthorizationHeader);
             if (!request.Headers.ContainsKey(HeaderKeys.HostHeader))

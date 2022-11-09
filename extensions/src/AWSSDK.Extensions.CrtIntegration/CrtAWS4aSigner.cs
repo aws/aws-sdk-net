@@ -179,6 +179,13 @@ namespace Amazon.Extensions.CrtIntegration
                                             string serviceSigningName,
                                             string overrideSigningRegion)
         {
+            if (serviceSigningName == "s3")
+            {
+                // Older versions of the S3 package can be used with newer versions of Core, this guarantees no double encoding will be used.
+                // The new behavior uses endpoint resolution rules, which are not present prior to 3.7.100
+                request.UseDoubleEncoding = false;
+            }
+
             var signedAt = AWS4Signer.InitializeHeaders(request.Headers, request.Endpoint);
             var regionSet = overrideSigningRegion ?? AWS4Signer.DetermineSigningRegion(clientConfig, clientConfig.RegionEndpointServiceName, request.AlternateEndpoint, request);
 
