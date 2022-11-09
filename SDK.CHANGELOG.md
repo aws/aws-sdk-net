@@ -1,8 +1,3 @@
-### 3.7.413.2 (2022-11-09 04:24 UTC)
-* Core 3.7.100.13
-	* Added fix for pre-signed url generation
-	* All services packages updated to require new Core
-
 ### 3.7.413.1 (2022-11-09 00:31 UTC)
 * Core 3.7.100.12
 	* WebSocket protocol enabled for ServiceUrl overrides
