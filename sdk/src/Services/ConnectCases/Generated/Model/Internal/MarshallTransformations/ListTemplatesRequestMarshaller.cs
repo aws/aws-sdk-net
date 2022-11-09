@@ -68,6 +68,9 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            
+            if (publicRequest.IsSetStatus())
+                request.ParameterCollection.Add("status", publicRequest.Status);
             request.ResourcePath = "/domains/{domainId}/templates-list";
             request.UseQueryString = true;
 

@@ -38,6 +38,7 @@ namespace Amazon.ConnectCases.Model
         private string _domainId;
         private int? _maxResults;
         private string _nextToken;
+        private List<string> _status = new List<string>();
 
         /// <summary>
         /// Gets and sets the property DomainId. 
@@ -95,6 +96,25 @@ namespace Amazon.ConnectCases.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// A list of status values to filter on.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2)]
+        public List<string> Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null && this._status.Count > 0; 
         }
 
     }

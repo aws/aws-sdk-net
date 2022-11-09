@@ -75,6 +75,12 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
                     response.RequiredFields = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("tags", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);

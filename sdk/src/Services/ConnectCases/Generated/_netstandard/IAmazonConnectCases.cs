@@ -376,10 +376,11 @@ namespace Amazon.ConnectCases
 
         /// <summary>
         /// Creates a template in the Cases domain. This template is used to define the case object
-        /// model (that is, define what data can be captured on cases) in a Cases domain. A template
-        /// must have a unique name within a domain, and it must reference existing field IDs
-        /// and layout IDs. Additionally, multiple fields with same IDs are not allowed within
-        /// the same Template.
+        /// model (that is, to define what data can be captured on cases) in a Cases domain. A
+        /// template must have a unique name within a domain, and it must reference existing field
+        /// IDs and layout IDs. Additionally, multiple fields with same IDs are not allowed within
+        /// the same Template. A template can be either Active or Inactive, as indicated by its
+        /// status. Inactive templates cannot be used to create cases.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -1145,6 +1146,10 @@ namespace Amazon.ConnectCases
         /// created in the same Amazon Web Services Region as your request, and try your request
         /// again.
         /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
+        /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
         /// The rate has been exceeded for this API. Please try again after a few minutes.
         /// </exception>
@@ -1162,10 +1167,10 @@ namespace Amazon.ConnectCases
 
         /// <summary>
         /// Updates the attributes of an existing template. The template attributes that can be
-        /// modified include <code>name</code>, <code>description</code>, <code>layouts</code>,
-        /// and <code>requiredFields</code>. At least one of these attributes must not be null.
-        /// If a null value is provided for a given attribute, that attribute is ignored and its
-        /// current value is preserved.
+        /// modified include <code>name</code>, <code>description</code>, <code>layoutConfiguration</code>,
+        /// <code>requiredFields</code>, and <code>status</code>. At least one of these attributes
+        /// must not be null. If a null value is provided for a given attribute, that attribute
+        /// is ignored and its current value is preserved.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTemplate service method.</param>
         /// <param name="cancellationToken">

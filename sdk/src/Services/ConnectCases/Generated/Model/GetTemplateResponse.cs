@@ -37,6 +37,7 @@ namespace Amazon.ConnectCases.Model
         private LayoutConfiguration _layoutConfiguration;
         private string _name;
         private List<RequiredField> _requiredFields = new List<RequiredField>();
+        private TemplateStatus _status;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _templateArn;
         private string _templateId;
@@ -115,6 +116,25 @@ namespace Amazon.ConnectCases.Model
         internal bool IsSetRequiredFields()
         {
             return this._requiredFields != null && this._requiredFields.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the template.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public TemplateStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
         /// <summary>

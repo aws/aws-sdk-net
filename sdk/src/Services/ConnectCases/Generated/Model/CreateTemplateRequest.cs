@@ -31,10 +31,11 @@ namespace Amazon.ConnectCases.Model
     /// <summary>
     /// Container for the parameters to the CreateTemplate operation.
     /// Creates a template in the Cases domain. This template is used to define the case object
-    /// model (that is, define what data can be captured on cases) in a Cases domain. A template
-    /// must have a unique name within a domain, and it must reference existing field IDs
-    /// and layout IDs. Additionally, multiple fields with same IDs are not allowed within
-    /// the same Template.
+    /// model (that is, to define what data can be captured on cases) in a Cases domain. A
+    /// template must have a unique name within a domain, and it must reference existing field
+    /// IDs and layout IDs. Additionally, multiple fields with same IDs are not allowed within
+    /// the same Template. A template can be either Active or Inactive, as indicated by its
+    /// status. Inactive templates cannot be used to create cases.
     /// </summary>
     public partial class CreateTemplateRequest : AmazonConnectCasesRequest
     {
@@ -43,6 +44,7 @@ namespace Amazon.ConnectCases.Model
         private LayoutConfiguration _layoutConfiguration;
         private string _name;
         private List<RequiredField> _requiredFields = new List<RequiredField>();
+        private TemplateStatus _status;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -137,6 +139,24 @@ namespace Amazon.ConnectCases.Model
         internal bool IsSetRequiredFields()
         {
             return this._requiredFields != null && this._requiredFields.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the template.
+        /// </para>
+        /// </summary>
+        public TemplateStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
     }

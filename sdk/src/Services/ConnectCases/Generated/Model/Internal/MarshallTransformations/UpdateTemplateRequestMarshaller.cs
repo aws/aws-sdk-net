@@ -110,6 +110,12 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetStatus())
+                {
+                    context.Writer.WritePropertyName("status");
+                    context.Writer.Write(publicRequest.Status);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

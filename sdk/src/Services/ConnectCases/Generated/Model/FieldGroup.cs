@@ -42,7 +42,7 @@ namespace Amazon.ConnectCases.Model
         /// Represents an ordered list containing field related information.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=30)]
+        [AWSProperty(Required=true, Min=0, Max=100)]
         public List<FieldItem> Fields
         {
             get { return this._fields; }

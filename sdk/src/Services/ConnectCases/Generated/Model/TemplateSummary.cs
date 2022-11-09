@@ -34,6 +34,7 @@ namespace Amazon.ConnectCases.Model
     public partial class TemplateSummary
     {
         private string _name;
+        private TemplateStatus _status;
         private string _templateArn;
         private string _templateId;
 
@@ -54,6 +55,25 @@ namespace Amazon.ConnectCases.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the template.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public TemplateStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
         /// <summary>
