@@ -82,6 +82,12 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
                     unmarshalledObject.IncludeEncoderConfigurationInSegments = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("includeIframeOnlyStream", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IncludeIframeOnlyStream = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("periodTriggers", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

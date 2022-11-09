@@ -78,6 +78,12 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.IncludeEncoderConfigurationInSegments);
             }
 
+            if(requestObject.IsSetIncludeIframeOnlyStream())
+            {
+                context.Writer.WritePropertyName("includeIframeOnlyStream");
+                context.Writer.Write(requestObject.IncludeIframeOnlyStream);
+            }
+
             if(requestObject.IsSetPeriodTriggers())
             {
                 context.Writer.WritePropertyName("periodTriggers");
