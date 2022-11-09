@@ -857,6 +857,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly ArchitectureType Arm64 = new ArchitectureType("arm64");
         /// <summary>
+        /// Constant Arm64_mac for ArchitectureType
+        /// </summary>
+        public static readonly ArchitectureType Arm64_mac = new ArchitectureType("arm64_mac");
+        /// <summary>
         /// Constant I386 for ArchitectureType
         /// </summary>
         public static readonly ArchitectureType I386 = new ArchitectureType("i386");
@@ -914,6 +918,10 @@ namespace Amazon.EC2
         /// Constant Arm64 for ArchitectureValues
         /// </summary>
         public static readonly ArchitectureValues Arm64 = new ArchitectureValues("arm64");
+        /// <summary>
+        /// Constant Arm64_mac for ArchitectureValues
+        /// </summary>
+        public static readonly ArchitectureValues Arm64_mac = new ArchitectureValues("arm64_mac");
         /// <summary>
         /// Constant I386 for ArchitectureValues
         /// </summary>
@@ -9193,6 +9201,14 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType T4gXlarge = new InstanceType("t4g.xlarge");
         /// <summary>
+        /// Constant Trn12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Trn12xlarge = new InstanceType("trn1.2xlarge");
+        /// <summary>
+        /// Constant Trn132xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Trn132xlarge = new InstanceType("trn1.32xlarge");
+        /// <summary>
         /// Constant U12tb1112xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType U12tb1112xlarge = new InstanceType("u-12tb1.112xlarge");
@@ -9201,9 +9217,17 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType U12tb1Metal = new InstanceType("u-12tb1.metal");
         /// <summary>
+        /// Constant U18tb1112xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType U18tb1112xlarge = new InstanceType("u-18tb1.112xlarge");
+        /// <summary>
         /// Constant U18tb1Metal for InstanceType
         /// </summary>
         public static readonly InstanceType U18tb1Metal = new InstanceType("u-18tb1.metal");
+        /// <summary>
+        /// Constant U24tb1112xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType U24tb1112xlarge = new InstanceType("u-24tb1.112xlarge");
         /// <summary>
         /// Constant U24tb1Metal for InstanceType
         /// </summary>
