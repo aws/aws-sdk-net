@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.7.413.3",
+    "ProductVersion" : "3.7.414.0",
     "CoreVersion"    : "3.7.100.14",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -152,7 +152,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.7.105.3",
+            "Version" : "3.7.106.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.100.14"
@@ -1058,7 +1058,7 @@
             "InPreview"               : false
         },
         "Connect"                         : {
-            "Version" : "3.7.101.7",
+            "Version" : "3.7.102.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.100.14"
@@ -1394,7 +1394,7 @@
             "InPreview"               : false
         },
         "MediaPackageVod"                 : {
-            "Version" : "3.7.100.14",
+            "Version" : "3.7.101.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.100.14"
@@ -1402,7 +1402,7 @@
             "InPreview"               : false
         },
         "GroundStation"                   : {
-            "Version" : "3.7.100.14",
+            "Version" : "3.7.101.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.100.14"
@@ -2546,7 +2546,7 @@
             "InPreview"               : false
         },
         "ConnectCases"                        : {
-            "Version" : "3.7.100.14",
+            "Version" : "3.7.101.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.100.14"

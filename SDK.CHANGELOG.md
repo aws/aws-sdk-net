@@ -1,3 +1,15 @@
+### 3.7.414.0 (2022-11-09 19:38 UTC)
+* Connect (3.7.102.0)
+	* This release adds new fields SignInUrl, UserArn, and UserId to GetFederationToken response payload.
+* ConnectCases (3.7.101.0)
+	* This release adds the ability to disable templates through the UpdateTemplate API. Disabling templates prevents customers from creating cases using the template. For more information see https://docs.aws.amazon.com/cases/latest/APIReference/Welcome.html
+* EC2 (3.7.106.0)
+	* Amazon EC2 Trn1 instances, powered by AWS Trainium chips, are purpose built for high-performance deep learning training. u-24tb1.112xlarge and u-18tb1.112xlarge High Memory instances are purpose-built to run large in-memory databases.
+* GroundStation (3.7.101.0)
+	* This release adds the preview of customer-provided ephemeris support for AWS Ground Station, allowing space vehicle owners to provide their own position and trajectory information for a satellite.
+* MediaPackageVod (3.7.101.0)
+	* This release adds "IncludeIframeOnlyStream" for Dash endpoints.
+
 ### 3.7.413.3 (2022-11-09 08:17 UTC)
 * Core 3.7.100.14
 	* Added fix for pre-signed url generation
