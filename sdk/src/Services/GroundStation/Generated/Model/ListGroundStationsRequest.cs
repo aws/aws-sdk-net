@@ -44,6 +44,7 @@ namespace Amazon.GroundStation.Model
         /// Maximum number of ground stations returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -62,6 +63,7 @@ namespace Amazon.GroundStation.Model
         /// Next token that can be supplied in the next call to get the next page of ground stations.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=1000)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -80,6 +82,7 @@ namespace Amazon.GroundStation.Model
         /// Satellite ID to retrieve on-boarded ground stations.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string SatelliteId
         {
             get { return this._satelliteId; }

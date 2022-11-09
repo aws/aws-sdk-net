@@ -55,7 +55,7 @@ namespace Amazon.GroundStation.Model
         /// Endpoint details of each endpoint in the dataflow endpoint group.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=500)]
         public List<EndpointDetails> EndpointDetails
         {
             get { return this._endpointDetails; }

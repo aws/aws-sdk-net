@@ -43,7 +43,7 @@ namespace Amazon.GroundStation.Model
         /// The month being requested, with a value of 1-12.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=12)]
         public int Month
         {
             get { return this._month.GetValueOrDefault(); }
@@ -62,7 +62,7 @@ namespace Amazon.GroundStation.Model
         /// The year being requested, in the format of YYYY.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=2018, Max=3000)]
         public int Year
         {
             get { return this._year.GetValueOrDefault(); }

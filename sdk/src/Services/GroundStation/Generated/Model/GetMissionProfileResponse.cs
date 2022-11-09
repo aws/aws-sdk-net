@@ -51,7 +51,7 @@ namespace Amazon.GroundStation.Model
         /// indicating the pass has finished.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=21600)]
+        [AWSProperty(Min=0, Max=21600)]
         public int ContactPostPassDurationSeconds
         {
             get { return this._contactPostPassDurationSeconds.GetValueOrDefault(); }
@@ -71,7 +71,7 @@ namespace Amazon.GroundStation.Model
         /// an upcoming pass.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=21600)]
+        [AWSProperty(Min=0, Max=21600)]
         public int ContactPrePassDurationSeconds
         {
             get { return this._contactPrePassDurationSeconds.GetValueOrDefault(); }
@@ -91,6 +91,7 @@ namespace Amazon.GroundStation.Model
         /// and a <i>to</i> <code>Config</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=500)]
         public List<List<string>> DataflowEdges
         {
             get { return this._dataflowEdges; }
@@ -147,6 +148,7 @@ namespace Amazon.GroundStation.Model
         /// UUID of a mission profile.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string MissionProfileId
         {
             get { return this._missionProfileId; }
@@ -165,6 +167,7 @@ namespace Amazon.GroundStation.Model
         /// Name of a mission profile.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -183,6 +186,7 @@ namespace Amazon.GroundStation.Model
         /// Region of a mission profile.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string Region
         {
             get { return this._region; }

@@ -60,6 +60,7 @@ namespace Amazon.GroundStation.Model
         /// Next token that can be supplied in the next call to get the next page of ground stations.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=1000)]
         public string NextToken
         {
             get { return this._nextToken; }

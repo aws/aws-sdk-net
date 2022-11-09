@@ -51,6 +51,12 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("currentEphemeris", targetDepth))
+                {
+                    var unmarshaller = EphemerisMetaDataUnmarshaller.Instance;
+                    response.CurrentEphemeris = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("groundStations", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

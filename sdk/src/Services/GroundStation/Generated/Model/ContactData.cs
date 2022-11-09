@@ -53,6 +53,7 @@ namespace Amazon.GroundStation.Model
         /// UUID of a contact.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string ContactId
         {
             get { return this._contactId; }
@@ -86,7 +87,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// End time of a contact.
+        /// End time of a contact in UTC.
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -250,7 +251,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// Start time of a contact.
+        /// Start time of a contact in UTC.
         /// </para>
         /// </summary>
         public DateTime StartTime

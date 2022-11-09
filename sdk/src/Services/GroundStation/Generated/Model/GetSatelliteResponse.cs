@@ -33,10 +33,29 @@ namespace Amazon.GroundStation.Model
     /// </summary>
     public partial class GetSatelliteResponse : AmazonWebServiceResponse
     {
+        private EphemerisMetaData _currentEphemeris;
         private List<string> _groundStations = new List<string>();
         private int? _noradSatelliteID;
         private string _satelliteArn;
         private string _satelliteId;
+
+        /// <summary>
+        /// Gets and sets the property CurrentEphemeris. 
+        /// <para>
+        /// The current ephemeris being used to compute the trajectory of the satellite.
+        /// </para>
+        /// </summary>
+        public EphemerisMetaData CurrentEphemeris
+        {
+            get { return this._currentEphemeris; }
+            set { this._currentEphemeris = value; }
+        }
+
+        // Check to see if CurrentEphemeris property is set
+        internal bool IsSetCurrentEphemeris()
+        {
+            return this._currentEphemeris != null;
+        }
 
         /// <summary>
         /// Gets and sets the property GroundStations. 
@@ -44,6 +63,7 @@ namespace Amazon.GroundStation.Model
         /// A list of ground stations to which the satellite is on-boarded.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=500)]
         public List<string> GroundStations
         {
             get { return this._groundStations; }
@@ -62,7 +82,7 @@ namespace Amazon.GroundStation.Model
         /// NORAD satellite ID number.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=99999)]
+        [AWSProperty(Min=0, Max=99999)]
         public int NoradSatelliteID
         {
             get { return this._noradSatelliteID.GetValueOrDefault(); }

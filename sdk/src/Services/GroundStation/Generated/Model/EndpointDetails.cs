@@ -57,7 +57,8 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property SecurityDetails. 
         /// <para>
-        /// Endpoint security details.
+        /// Endpoint security details including a list of subnets, a list of security groups and
+        /// a role to connect streams to instances.
         /// </para>
         /// </summary>
         public SecurityDetails SecurityDetails

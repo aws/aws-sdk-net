@@ -483,6 +483,65 @@ namespace Amazon.GroundStation
 
         #endregion
         
+        #region  CreateEphemeris
+
+
+        /// <summary>
+        /// Creates an Ephemeris with the specified <code>EphemerisData</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEphemeris service method.</param>
+        /// 
+        /// <returns>The response from the CreateEphemeris service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/CreateEphemeris">REST API Reference for CreateEphemeris Operation</seealso>
+        public virtual CreateEphemerisResponse CreateEphemeris(CreateEphemerisRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEphemerisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEphemerisResponseUnmarshaller.Instance;
+
+            return Invoke<CreateEphemerisResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates an Ephemeris with the specified <code>EphemerisData</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEphemeris service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateEphemeris service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/CreateEphemeris">REST API Reference for CreateEphemeris Operation</seealso>
+        public virtual Task<CreateEphemerisResponse> CreateEphemerisAsync(CreateEphemerisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEphemerisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEphemerisResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateEphemerisResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateMissionProfile
 
 
@@ -672,6 +731,65 @@ namespace Amazon.GroundStation
 
         #endregion
         
+        #region  DeleteEphemeris
+
+
+        /// <summary>
+        /// Deletes an ephemeris
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEphemeris service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEphemeris service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DeleteEphemeris">REST API Reference for DeleteEphemeris Operation</seealso>
+        public virtual DeleteEphemerisResponse DeleteEphemeris(DeleteEphemerisRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEphemerisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEphemerisResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEphemerisResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes an ephemeris
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEphemeris service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteEphemeris service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DeleteEphemeris">REST API Reference for DeleteEphemeris Operation</seealso>
+        public virtual Task<DeleteEphemerisResponse> DeleteEphemerisAsync(DeleteEphemerisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEphemerisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEphemerisResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteEphemerisResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteMissionProfile
 
 
@@ -786,6 +904,65 @@ namespace Amazon.GroundStation
             options.ResponseUnmarshaller = DescribeContactResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeContactResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeEphemeris
+
+
+        /// <summary>
+        /// Describes an existing ephemeris.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEphemeris service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEphemeris service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DescribeEphemeris">REST API Reference for DescribeEphemeris Operation</seealso>
+        public virtual DescribeEphemerisResponse DescribeEphemeris(DescribeEphemerisRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEphemerisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEphemerisResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEphemerisResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes an existing ephemeris.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEphemeris service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeEphemeris service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DescribeEphemeris">REST API Reference for DescribeEphemeris Operation</seealso>
+        public virtual Task<DescribeEphemerisResponse> DescribeEphemerisAsync(DescribeEphemerisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEphemerisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEphemerisResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeEphemerisResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1284,6 +1461,65 @@ namespace Amazon.GroundStation
 
         #endregion
         
+        #region  ListEphemerides
+
+
+        /// <summary>
+        /// List existing ephemerides.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEphemerides service method.</param>
+        /// 
+        /// <returns>The response from the ListEphemerides service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListEphemerides">REST API Reference for ListEphemerides Operation</seealso>
+        public virtual ListEphemeridesResponse ListEphemerides(ListEphemeridesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEphemeridesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEphemeridesResponseUnmarshaller.Instance;
+
+            return Invoke<ListEphemeridesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// List existing ephemerides.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEphemerides service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListEphemerides service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListEphemerides">REST API Reference for ListEphemerides Operation</seealso>
+        public virtual Task<ListEphemeridesResponse> ListEphemeridesAsync(ListEphemeridesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEphemeridesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEphemeridesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListEphemeridesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListGroundStations
 
 
@@ -1764,6 +2000,65 @@ namespace Amazon.GroundStation
             options.ResponseUnmarshaller = UpdateConfigResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateConfigResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateEphemeris
+
+
+        /// <summary>
+        /// Updates an existing ephemeris
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEphemeris service method.</param>
+        /// 
+        /// <returns>The response from the UpdateEphemeris service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/UpdateEphemeris">REST API Reference for UpdateEphemeris Operation</seealso>
+        public virtual UpdateEphemerisResponse UpdateEphemeris(UpdateEphemerisRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEphemerisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEphemerisResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateEphemerisResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates an existing ephemeris
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEphemeris service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateEphemeris service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/UpdateEphemeris">REST API Reference for UpdateEphemeris Operation</seealso>
+        public virtual Task<UpdateEphemerisResponse> UpdateEphemerisAsync(UpdateEphemerisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEphemerisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEphemerisResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateEphemerisResponse>(request, options, cancellationToken);
         }
 
         #endregion

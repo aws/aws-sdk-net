@@ -57,7 +57,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property KeyTemplate. 
         /// <para>
-        /// Template of the S3 key used.
+        /// Key template used for the S3 Recording Configuration
         /// </para>
         /// </summary>
         public string KeyTemplate

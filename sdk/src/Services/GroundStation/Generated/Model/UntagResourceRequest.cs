@@ -43,7 +43,7 @@ namespace Amazon.GroundStation.Model
         /// ARN of a resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=5, Max=1024)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -62,7 +62,7 @@ namespace Amazon.GroundStation.Model
         /// Keys of a resource tag.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=500)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

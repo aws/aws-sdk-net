@@ -41,6 +41,11 @@ namespace Amazon.GroundStation.Model
         IListDataflowEndpointGroupsPaginator ListDataflowEndpointGroups(ListDataflowEndpointGroupsRequest request);
 
         /// <summary>
+        /// Paginator for ListEphemerides operation
+        ///</summary>
+        IListEphemeridesPaginator ListEphemerides(ListEphemeridesRequest request);
+
+        /// <summary>
         /// Paginator for ListGroundStations operation
         ///</summary>
         IListGroundStationsPaginator ListGroundStations(ListGroundStationsRequest request);

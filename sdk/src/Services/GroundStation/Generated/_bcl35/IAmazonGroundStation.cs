@@ -214,6 +214,55 @@ namespace Amazon.GroundStation
 
         #endregion
         
+        #region  CreateEphemeris
+
+
+        /// <summary>
+        /// Creates an Ephemeris with the specified <code>EphemerisData</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEphemeris service method.</param>
+        /// 
+        /// <returns>The response from the CreateEphemeris service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/CreateEphemeris">REST API Reference for CreateEphemeris Operation</seealso>
+        CreateEphemerisResponse CreateEphemeris(CreateEphemerisRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateEphemeris operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateEphemeris operation on AmazonGroundStationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateEphemeris
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/CreateEphemeris">REST API Reference for CreateEphemeris Operation</seealso>
+        IAsyncResult BeginCreateEphemeris(CreateEphemerisRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateEphemeris operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateEphemeris.</param>
+        /// 
+        /// <returns>Returns a  CreateEphemerisResult from GroundStation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/CreateEphemeris">REST API Reference for CreateEphemeris Operation</seealso>
+        CreateEphemerisResponse EndCreateEphemeris(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateMissionProfile
 
 
@@ -367,6 +416,55 @@ namespace Amazon.GroundStation
 
         #endregion
         
+        #region  DeleteEphemeris
+
+
+        /// <summary>
+        /// Deletes an ephemeris
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEphemeris service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEphemeris service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DeleteEphemeris">REST API Reference for DeleteEphemeris Operation</seealso>
+        DeleteEphemerisResponse DeleteEphemeris(DeleteEphemerisRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEphemeris operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEphemeris operation on AmazonGroundStationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEphemeris
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DeleteEphemeris">REST API Reference for DeleteEphemeris Operation</seealso>
+        IAsyncResult BeginDeleteEphemeris(DeleteEphemerisRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteEphemeris operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEphemeris.</param>
+        /// 
+        /// <returns>Returns a  DeleteEphemerisResult from GroundStation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DeleteEphemeris">REST API Reference for DeleteEphemeris Operation</seealso>
+        DeleteEphemerisResponse EndDeleteEphemeris(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteMissionProfile
 
 
@@ -462,6 +560,55 @@ namespace Amazon.GroundStation
         /// <returns>Returns a  DescribeContactResult from GroundStation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DescribeContact">REST API Reference for DescribeContact Operation</seealso>
         DescribeContactResponse EndDescribeContact(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeEphemeris
+
+
+        /// <summary>
+        /// Describes an existing ephemeris.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEphemeris service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEphemeris service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DescribeEphemeris">REST API Reference for DescribeEphemeris Operation</seealso>
+        DescribeEphemerisResponse DescribeEphemeris(DescribeEphemerisRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEphemeris operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEphemeris operation on AmazonGroundStationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEphemeris
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DescribeEphemeris">REST API Reference for DescribeEphemeris Operation</seealso>
+        IAsyncResult BeginDescribeEphemeris(DescribeEphemerisRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeEphemeris operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEphemeris.</param>
+        /// 
+        /// <returns>Returns a  DescribeEphemerisResult from GroundStation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DescribeEphemeris">REST API Reference for DescribeEphemeris Operation</seealso>
+        DescribeEphemerisResponse EndDescribeEphemeris(IAsyncResult asyncResult);
 
         #endregion
         
@@ -868,6 +1015,55 @@ namespace Amazon.GroundStation
 
         #endregion
         
+        #region  ListEphemerides
+
+
+        /// <summary>
+        /// List existing ephemerides.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEphemerides service method.</param>
+        /// 
+        /// <returns>The response from the ListEphemerides service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListEphemerides">REST API Reference for ListEphemerides Operation</seealso>
+        ListEphemeridesResponse ListEphemerides(ListEphemeridesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListEphemerides operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListEphemerides operation on AmazonGroundStationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListEphemerides
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListEphemerides">REST API Reference for ListEphemerides Operation</seealso>
+        IAsyncResult BeginListEphemerides(ListEphemeridesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListEphemerides operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListEphemerides.</param>
+        /// 
+        /// <returns>Returns a  ListEphemeridesResult from GroundStation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListEphemerides">REST API Reference for ListEphemerides Operation</seealso>
+        ListEphemeridesResponse EndListEphemerides(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListGroundStations
 
 
@@ -1263,6 +1459,55 @@ namespace Amazon.GroundStation
         /// <returns>Returns a  UpdateConfigResult from GroundStation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/UpdateConfig">REST API Reference for UpdateConfig Operation</seealso>
         UpdateConfigResponse EndUpdateConfig(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateEphemeris
+
+
+        /// <summary>
+        /// Updates an existing ephemeris
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEphemeris service method.</param>
+        /// 
+        /// <returns>The response from the UpdateEphemeris service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/UpdateEphemeris">REST API Reference for UpdateEphemeris Operation</seealso>
+        UpdateEphemerisResponse UpdateEphemeris(UpdateEphemerisRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateEphemeris operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEphemeris operation on AmazonGroundStationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateEphemeris
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/UpdateEphemeris">REST API Reference for UpdateEphemeris Operation</seealso>
+        IAsyncResult BeginUpdateEphemeris(UpdateEphemerisRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateEphemeris operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateEphemeris.</param>
+        /// 
+        /// <returns>Returns a  UpdateEphemerisResult from GroundStation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/UpdateEphemeris">REST API Reference for UpdateEphemeris Operation</seealso>
+        UpdateEphemerisResponse EndUpdateEphemeris(IAsyncResult asyncResult);
 
         #endregion
         
