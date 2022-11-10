@@ -88,6 +88,11 @@ namespace Amazon
         public static readonly RegionEndpoint EUCentral1 = GetEndpoint("eu-central-1", "Europe (Frankfurt)");
 
         /// <summary>
+        /// The Europe (Zurich) endpoint.
+        /// </summary>
+        public static readonly RegionEndpoint EUCentral2 = GetEndpoint("eu-central-2", "Europe (Zurich)");
+
+        /// <summary>
         /// The Europe (Stockholm) endpoint.
         /// </summary>
         public static readonly RegionEndpoint EUNorth1 = GetEndpoint("eu-north-1", "Europe (Stockholm)");
