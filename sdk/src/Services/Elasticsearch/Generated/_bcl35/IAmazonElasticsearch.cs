@@ -232,6 +232,69 @@ namespace Amazon.Elasticsearch
 
         #endregion
         
+        #region  AuthorizeVpcEndpointAccess
+
+
+        /// <summary>
+        /// Provides access to an Amazon OpenSearch Service domain through the use of an interface
+        /// VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AuthorizeVpcEndpointAccess service method.</param>
+        /// 
+        /// <returns>The response from the AuthorizeVpcEndpointAccess service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.LimitExceededException">
+        /// An exception for trying to create more than allowed resources or sub-resources. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/AuthorizeVpcEndpointAccess">REST API Reference for AuthorizeVpcEndpointAccess Operation</seealso>
+        AuthorizeVpcEndpointAccessResponse AuthorizeVpcEndpointAccess(AuthorizeVpcEndpointAccessRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AuthorizeVpcEndpointAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AuthorizeVpcEndpointAccess operation on AmazonElasticsearchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAuthorizeVpcEndpointAccess
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/AuthorizeVpcEndpointAccess">REST API Reference for AuthorizeVpcEndpointAccess Operation</seealso>
+        IAsyncResult BeginAuthorizeVpcEndpointAccess(AuthorizeVpcEndpointAccessRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AuthorizeVpcEndpointAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAuthorizeVpcEndpointAccess.</param>
+        /// 
+        /// <returns>Returns a  AuthorizeVpcEndpointAccessResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/AuthorizeVpcEndpointAccess">REST API Reference for AuthorizeVpcEndpointAccess Operation</seealso>
+        AuthorizeVpcEndpointAccessResponse EndAuthorizeVpcEndpointAccess(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CancelElasticsearchServiceSoftwareUpdate
 
 
@@ -476,6 +539,68 @@ namespace Amazon.Elasticsearch
         /// <returns>Returns a  CreatePackageResult from Elasticsearch.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CreatePackage">REST API Reference for CreatePackage Operation</seealso>
         CreatePackageResponse EndCreatePackage(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateVpcEndpoint
+
+
+        /// <summary>
+        /// Creates an Amazon OpenSearch Service-managed VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the CreateVpcEndpoint service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ConflictException">
+        /// An error occurred because the client attempts to remove a resource that is currently
+        /// in use. Returns HTTP status code 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.LimitExceededException">
+        /// An exception for trying to create more than allowed resources or sub-resources. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CreateVpcEndpoint">REST API Reference for CreateVpcEndpoint Operation</seealso>
+        CreateVpcEndpointResponse CreateVpcEndpoint(CreateVpcEndpointRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateVpcEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcEndpoint operation on AmazonElasticsearchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateVpcEndpoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CreateVpcEndpoint">REST API Reference for CreateVpcEndpoint Operation</seealso>
+        IAsyncResult BeginCreateVpcEndpoint(CreateVpcEndpointRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateVpcEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateVpcEndpoint.</param>
+        /// 
+        /// <returns>Returns a  CreateVpcEndpointResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CreateVpcEndpoint">REST API Reference for CreateVpcEndpoint Operation</seealso>
+        CreateVpcEndpointResponse EndCreateVpcEndpoint(IAsyncResult asyncResult);
 
         #endregion
         
@@ -745,6 +870,61 @@ namespace Amazon.Elasticsearch
         /// <returns>Returns a  DeletePackageResult from Elasticsearch.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeletePackage">REST API Reference for DeletePackage Operation</seealso>
         DeletePackageResponse EndDeletePackage(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteVpcEndpoint
+
+
+        /// <summary>
+        /// Deletes an Amazon OpenSearch Service-managed interface VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVpcEndpoint service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeleteVpcEndpoint">REST API Reference for DeleteVpcEndpoint Operation</seealso>
+        DeleteVpcEndpointResponse DeleteVpcEndpoint(DeleteVpcEndpointRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVpcEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcEndpoint operation on AmazonElasticsearchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVpcEndpoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeleteVpcEndpoint">REST API Reference for DeleteVpcEndpoint Operation</seealso>
+        IAsyncResult BeginDeleteVpcEndpoint(DeleteVpcEndpointRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteVpcEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVpcEndpoint.</param>
+        /// 
+        /// <returns>Returns a  DeleteVpcEndpointResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeleteVpcEndpoint">REST API Reference for DeleteVpcEndpoint Operation</seealso>
+        DeleteVpcEndpointResponse EndDeleteVpcEndpoint(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1345,6 +1525,60 @@ namespace Amazon.Elasticsearch
         /// <returns>Returns a  DescribeReservedElasticsearchInstancesResult from Elasticsearch.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeReservedElasticsearchInstances">REST API Reference for DescribeReservedElasticsearchInstances Operation</seealso>
         DescribeReservedElasticsearchInstancesResponse EndDescribeReservedElasticsearchInstances(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeVpcEndpoints
+
+
+        /// <summary>
+        /// Describes one or more Amazon OpenSearch Service-managed VPC endpoints.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEndpoints service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVpcEndpoints service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeVpcEndpoints">REST API Reference for DescribeVpcEndpoints Operation</seealso>
+        DescribeVpcEndpointsResponse DescribeVpcEndpoints(DescribeVpcEndpointsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVpcEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEndpoints operation on AmazonElasticsearchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVpcEndpoints
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeVpcEndpoints">REST API Reference for DescribeVpcEndpoints Operation</seealso>
+        IAsyncResult BeginDescribeVpcEndpoints(DescribeVpcEndpointsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeVpcEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVpcEndpoints.</param>
+        /// 
+        /// <returns>Returns a  DescribeVpcEndpointsResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeVpcEndpoints">REST API Reference for DescribeVpcEndpoints Operation</seealso>
+        DescribeVpcEndpointsResponse EndDescribeVpcEndpoints(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1971,6 +2205,170 @@ namespace Amazon.Elasticsearch
 
         #endregion
         
+        #region  ListVpcEndpointAccess
+
+
+        /// <summary>
+        /// Retrieves information about each principal that is allowed to access a given Amazon
+        /// OpenSearch Service domain through the use of an interface VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVpcEndpointAccess service method.</param>
+        /// 
+        /// <returns>The response from the ListVpcEndpointAccess service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListVpcEndpointAccess">REST API Reference for ListVpcEndpointAccess Operation</seealso>
+        ListVpcEndpointAccessResponse ListVpcEndpointAccess(ListVpcEndpointAccessRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListVpcEndpointAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListVpcEndpointAccess operation on AmazonElasticsearchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListVpcEndpointAccess
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListVpcEndpointAccess">REST API Reference for ListVpcEndpointAccess Operation</seealso>
+        IAsyncResult BeginListVpcEndpointAccess(ListVpcEndpointAccessRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListVpcEndpointAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListVpcEndpointAccess.</param>
+        /// 
+        /// <returns>Returns a  ListVpcEndpointAccessResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListVpcEndpointAccess">REST API Reference for ListVpcEndpointAccess Operation</seealso>
+        ListVpcEndpointAccessResponse EndListVpcEndpointAccess(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListVpcEndpoints
+
+
+        /// <summary>
+        /// Retrieves all Amazon OpenSearch Service-managed VPC endpoints in the current account
+        /// and Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVpcEndpoints service method.</param>
+        /// 
+        /// <returns>The response from the ListVpcEndpoints service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListVpcEndpoints">REST API Reference for ListVpcEndpoints Operation</seealso>
+        ListVpcEndpointsResponse ListVpcEndpoints(ListVpcEndpointsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListVpcEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListVpcEndpoints operation on AmazonElasticsearchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListVpcEndpoints
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListVpcEndpoints">REST API Reference for ListVpcEndpoints Operation</seealso>
+        IAsyncResult BeginListVpcEndpoints(ListVpcEndpointsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListVpcEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListVpcEndpoints.</param>
+        /// 
+        /// <returns>Returns a  ListVpcEndpointsResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListVpcEndpoints">REST API Reference for ListVpcEndpoints Operation</seealso>
+        ListVpcEndpointsResponse EndListVpcEndpoints(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListVpcEndpointsForDomain
+
+
+        /// <summary>
+        /// Retrieves all Amazon OpenSearch Service-managed VPC endpoints associated with a particular
+        /// domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVpcEndpointsForDomain service method.</param>
+        /// 
+        /// <returns>The response from the ListVpcEndpointsForDomain service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListVpcEndpointsForDomain">REST API Reference for ListVpcEndpointsForDomain Operation</seealso>
+        ListVpcEndpointsForDomainResponse ListVpcEndpointsForDomain(ListVpcEndpointsForDomainRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListVpcEndpointsForDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListVpcEndpointsForDomain operation on AmazonElasticsearchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListVpcEndpointsForDomain
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListVpcEndpointsForDomain">REST API Reference for ListVpcEndpointsForDomain Operation</seealso>
+        IAsyncResult BeginListVpcEndpointsForDomain(ListVpcEndpointsForDomainRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListVpcEndpointsForDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListVpcEndpointsForDomain.</param>
+        /// 
+        /// <returns>Returns a  ListVpcEndpointsForDomainResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListVpcEndpointsForDomain">REST API Reference for ListVpcEndpointsForDomain Operation</seealso>
+        ListVpcEndpointsForDomainResponse EndListVpcEndpointsForDomain(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  PurchaseReservedElasticsearchInstanceOffering
 
 
@@ -2130,6 +2528,65 @@ namespace Amazon.Elasticsearch
         /// <returns>Returns a  RemoveTagsResult from Elasticsearch.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         RemoveTagsResponse EndRemoveTags(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  RevokeVpcEndpointAccess
+
+
+        /// <summary>
+        /// Revokes access to an Amazon OpenSearch Service domain that was provided through an
+        /// interface VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RevokeVpcEndpointAccess service method.</param>
+        /// 
+        /// <returns>The response from the RevokeVpcEndpointAccess service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/RevokeVpcEndpointAccess">REST API Reference for RevokeVpcEndpointAccess Operation</seealso>
+        RevokeVpcEndpointAccessResponse RevokeVpcEndpointAccess(RevokeVpcEndpointAccessRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RevokeVpcEndpointAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RevokeVpcEndpointAccess operation on AmazonElasticsearchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRevokeVpcEndpointAccess
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/RevokeVpcEndpointAccess">REST API Reference for RevokeVpcEndpointAccess Operation</seealso>
+        IAsyncResult BeginRevokeVpcEndpointAccess(RevokeVpcEndpointAccessRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RevokeVpcEndpointAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRevokeVpcEndpointAccess.</param>
+        /// 
+        /// <returns>Returns a  RevokeVpcEndpointAccessResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/RevokeVpcEndpointAccess">REST API Reference for RevokeVpcEndpointAccess Operation</seealso>
+        RevokeVpcEndpointAccessResponse EndRevokeVpcEndpointAccess(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2309,6 +2766,68 @@ namespace Amazon.Elasticsearch
         /// <returns>Returns a  UpdatePackageResult from Elasticsearch.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/UpdatePackage">REST API Reference for UpdatePackage Operation</seealso>
         UpdatePackageResponse EndUpdatePackage(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateVpcEndpoint
+
+
+        /// <summary>
+        /// Modifies an Amazon OpenSearch Service-managed interface VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVpcEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the UpdateVpcEndpoint service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ConflictException">
+        /// An error occurred because the client attempts to remove a resource that is currently
+        /// in use. Returns HTTP status code 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/UpdateVpcEndpoint">REST API Reference for UpdateVpcEndpoint Operation</seealso>
+        UpdateVpcEndpointResponse UpdateVpcEndpoint(UpdateVpcEndpointRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateVpcEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVpcEndpoint operation on AmazonElasticsearchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateVpcEndpoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/UpdateVpcEndpoint">REST API Reference for UpdateVpcEndpoint Operation</seealso>
+        IAsyncResult BeginUpdateVpcEndpoint(UpdateVpcEndpointRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateVpcEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateVpcEndpoint.</param>
+        /// 
+        /// <returns>Returns a  UpdateVpcEndpointResult from Elasticsearch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/UpdateVpcEndpoint">REST API Reference for UpdateVpcEndpoint Operation</seealso>
+        UpdateVpcEndpointResponse EndUpdateVpcEndpoint(IAsyncResult asyncResult);
 
         #endregion
         

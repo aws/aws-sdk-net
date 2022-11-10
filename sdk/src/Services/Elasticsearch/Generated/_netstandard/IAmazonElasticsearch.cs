@@ -164,6 +164,47 @@ namespace Amazon.Elasticsearch
 
         #endregion
                 
+        #region  AuthorizeVpcEndpointAccess
+
+
+
+        /// <summary>
+        /// Provides access to an Amazon OpenSearch Service domain through the use of an interface
+        /// VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AuthorizeVpcEndpointAccess service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AuthorizeVpcEndpointAccess service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.LimitExceededException">
+        /// An exception for trying to create more than allowed resources or sub-resources. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/AuthorizeVpcEndpointAccess">REST API Reference for AuthorizeVpcEndpointAccess Operation</seealso>
+        Task<AuthorizeVpcEndpointAccessResponse> AuthorizeVpcEndpointAccessAsync(AuthorizeVpcEndpointAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CancelElasticsearchServiceSoftwareUpdate
 
 
@@ -323,6 +364,46 @@ namespace Amazon.Elasticsearch
 
         #endregion
                 
+        #region  CreateVpcEndpoint
+
+
+
+        /// <summary>
+        /// Creates an Amazon OpenSearch Service-managed VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateVpcEndpoint service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ConflictException">
+        /// An error occurred because the client attempts to remove a resource that is currently
+        /// in use. Returns HTTP status code 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.LimitExceededException">
+        /// An exception for trying to create more than allowed resources or sub-resources. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CreateVpcEndpoint">REST API Reference for CreateVpcEndpoint Operation</seealso>
+        Task<CreateVpcEndpointResponse> CreateVpcEndpointAsync(CreateVpcEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteElasticsearchDomain
 
 
@@ -479,6 +560,39 @@ namespace Amazon.Elasticsearch
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeletePackage">REST API Reference for DeletePackage Operation</seealso>
         Task<DeletePackageResponse> DeletePackageAsync(DeletePackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteVpcEndpoint
+
+
+
+        /// <summary>
+        /// Deletes an Amazon OpenSearch Service-managed interface VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteVpcEndpoint service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeleteVpcEndpoint">REST API Reference for DeleteVpcEndpoint Operation</seealso>
+        Task<DeleteVpcEndpointResponse> DeleteVpcEndpointAsync(DeleteVpcEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -837,6 +951,38 @@ namespace Amazon.Elasticsearch
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeReservedElasticsearchInstances">REST API Reference for DescribeReservedElasticsearchInstances Operation</seealso>
         Task<DescribeReservedElasticsearchInstancesResponse> DescribeReservedElasticsearchInstancesAsync(DescribeReservedElasticsearchInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeVpcEndpoints
+
+
+
+        /// <summary>
+        /// Describes one or more Amazon OpenSearch Service-managed VPC endpoints.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEndpoints service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeVpcEndpoints service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DescribeVpcEndpoints">REST API Reference for DescribeVpcEndpoints Operation</seealso>
+        Task<DescribeVpcEndpointsResponse> DescribeVpcEndpointsAsync(DescribeVpcEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1221,6 +1367,104 @@ namespace Amazon.Elasticsearch
 
         #endregion
                 
+        #region  ListVpcEndpointAccess
+
+
+
+        /// <summary>
+        /// Retrieves information about each principal that is allowed to access a given Amazon
+        /// OpenSearch Service domain through the use of an interface VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVpcEndpointAccess service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListVpcEndpointAccess service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListVpcEndpointAccess">REST API Reference for ListVpcEndpointAccess Operation</seealso>
+        Task<ListVpcEndpointAccessResponse> ListVpcEndpointAccessAsync(ListVpcEndpointAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListVpcEndpoints
+
+
+
+        /// <summary>
+        /// Retrieves all Amazon OpenSearch Service-managed VPC endpoints in the current account
+        /// and Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVpcEndpoints service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListVpcEndpoints service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListVpcEndpoints">REST API Reference for ListVpcEndpoints Operation</seealso>
+        Task<ListVpcEndpointsResponse> ListVpcEndpointsAsync(ListVpcEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListVpcEndpointsForDomain
+
+
+
+        /// <summary>
+        /// Retrieves all Amazon OpenSearch Service-managed VPC endpoints associated with a particular
+        /// domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVpcEndpointsForDomain service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListVpcEndpointsForDomain service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListVpcEndpointsForDomain">REST API Reference for ListVpcEndpointsForDomain Operation</seealso>
+        Task<ListVpcEndpointsForDomainResponse> ListVpcEndpointsForDomainAsync(ListVpcEndpointsForDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  PurchaseReservedElasticsearchInstanceOffering
 
 
@@ -1314,6 +1558,43 @@ namespace Amazon.Elasticsearch
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         Task<RemoveTagsResponse> RemoveTagsAsync(RemoveTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  RevokeVpcEndpointAccess
+
+
+
+        /// <summary>
+        /// Revokes access to an Amazon OpenSearch Service domain that was provided through an
+        /// interface VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RevokeVpcEndpointAccess service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RevokeVpcEndpointAccess service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/RevokeVpcEndpointAccess">REST API Reference for RevokeVpcEndpointAccess Operation</seealso>
+        Task<RevokeVpcEndpointAccessResponse> RevokeVpcEndpointAccessAsync(RevokeVpcEndpointAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1427,6 +1708,46 @@ namespace Amazon.Elasticsearch
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/UpdatePackage">REST API Reference for UpdatePackage Operation</seealso>
         Task<UpdatePackageResponse> UpdatePackageAsync(UpdatePackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateVpcEndpoint
+
+
+
+        /// <summary>
+        /// Modifies an Amazon OpenSearch Service-managed interface VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVpcEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateVpcEndpoint service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ConflictException">
+        /// An error occurred because the client attempts to remove a resource that is currently
+        /// in use. Returns HTTP status code 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access a not supported operation. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/UpdateVpcEndpoint">REST API Reference for UpdateVpcEndpoint Operation</seealso>
+        Task<UpdateVpcEndpointResponse> UpdateVpcEndpointAsync(UpdateVpcEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

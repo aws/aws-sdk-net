@@ -1181,6 +1181,56 @@ namespace Amazon.Elasticsearch
 
 
     /// <summary>
+    /// Constants used for properties of type PrincipalType.
+    /// </summary>
+    public class PrincipalType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_ACCOUNT for PrincipalType
+        /// </summary>
+        public static readonly PrincipalType AWS_ACCOUNT = new PrincipalType("AWS_ACCOUNT");
+        /// <summary>
+        /// Constant AWS_SERVICE for PrincipalType
+        /// </summary>
+        public static readonly PrincipalType AWS_SERVICE = new PrincipalType("AWS_SERVICE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PrincipalType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PrincipalType FindValue(string value)
+        {
+            return FindValue<PrincipalType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PrincipalType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ReservedElasticsearchInstancePaymentOption.
     /// </summary>
     public class ReservedElasticsearchInstancePaymentOption : ConstantClass
@@ -1648,6 +1698,126 @@ namespace Amazon.Elasticsearch
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator VolumeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VpcEndpointErrorCode.
+    /// </summary>
+    public class VpcEndpointErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ENDPOINT_NOT_FOUND for VpcEndpointErrorCode
+        /// </summary>
+        public static readonly VpcEndpointErrorCode ENDPOINT_NOT_FOUND = new VpcEndpointErrorCode("ENDPOINT_NOT_FOUND");
+        /// <summary>
+        /// Constant SERVER_ERROR for VpcEndpointErrorCode
+        /// </summary>
+        public static readonly VpcEndpointErrorCode SERVER_ERROR = new VpcEndpointErrorCode("SERVER_ERROR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VpcEndpointErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VpcEndpointErrorCode FindValue(string value)
+        {
+            return FindValue<VpcEndpointErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VpcEndpointErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VpcEndpointStatus.
+    /// </summary>
+    public class VpcEndpointStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for VpcEndpointStatus
+        /// </summary>
+        public static readonly VpcEndpointStatus ACTIVE = new VpcEndpointStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATE_FAILED for VpcEndpointStatus
+        /// </summary>
+        public static readonly VpcEndpointStatus CREATE_FAILED = new VpcEndpointStatus("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATING for VpcEndpointStatus
+        /// </summary>
+        public static readonly VpcEndpointStatus CREATING = new VpcEndpointStatus("CREATING");
+        /// <summary>
+        /// Constant DELETE_FAILED for VpcEndpointStatus
+        /// </summary>
+        public static readonly VpcEndpointStatus DELETE_FAILED = new VpcEndpointStatus("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETING for VpcEndpointStatus
+        /// </summary>
+        public static readonly VpcEndpointStatus DELETING = new VpcEndpointStatus("DELETING");
+        /// <summary>
+        /// Constant UPDATE_FAILED for VpcEndpointStatus
+        /// </summary>
+        public static readonly VpcEndpointStatus UPDATE_FAILED = new VpcEndpointStatus("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATING for VpcEndpointStatus
+        /// </summary>
+        public static readonly VpcEndpointStatus UPDATING = new VpcEndpointStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VpcEndpointStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VpcEndpointStatus FindValue(string value)
+        {
+            return FindValue<VpcEndpointStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VpcEndpointStatus(string value)
         {
             return FindValue(value);
         }
