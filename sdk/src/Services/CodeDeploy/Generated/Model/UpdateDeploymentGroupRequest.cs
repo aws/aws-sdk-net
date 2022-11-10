@@ -137,10 +137,32 @@ namespace Amazon.CodeDeploy.Model
             set { this._autoScalingGroups = value; }
         }
 
+        /// <summary>
+        /// This property is set to true if the property <seealso cref="AutoScalingGroups"/>
+        /// is set; false otherwise.
+        /// This property can be used to determine if the related property
+        /// was returned by a service response or if the related property
+        /// should be sent to the service during a service call.
+        /// </summary>
+        /// <returns>
+        /// True if the related property was set or will be sent to a service; false otherwise.
+        /// </returns>
+        public bool IsAutoScalingGroupsSet
+        {
+            get
+            {
+                return Amazon.Util.Internal.InternalSDKUtils.GetIsSet(this._autoScalingGroups);
+            }
+            set
+            {
+                Amazon.Util.Internal.InternalSDKUtils.SetIsSet(value, ref this._autoScalingGroups);
+            }
+        }
+
         // Check to see if AutoScalingGroups property is set
         internal bool IsSetAutoScalingGroups()
         {
-            return this._autoScalingGroups != null && this._autoScalingGroups.Count > 0; 
+            return this.IsAutoScalingGroupsSet; 
         }
 
         /// <summary>
