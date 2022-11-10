@@ -1913,6 +1913,82 @@ namespace Amazon.ECS
 
         #endregion
         
+        #region  GetTaskProtection
+
+
+        /// <summary>
+        /// Retrieves the protection status of tasks in an Amazon ECS service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTaskProtection service method.</param>
+        /// 
+        /// <returns>The response from the GetTaskProtection service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ResourceNotFoundException">
+        /// The specified resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/GetTaskProtection">REST API Reference for GetTaskProtection Operation</seealso>
+        GetTaskProtectionResponse GetTaskProtection(GetTaskProtectionRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the protection status of tasks in an Amazon ECS service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTaskProtection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTaskProtection service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ResourceNotFoundException">
+        /// The specified resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/GetTaskProtection">REST API Reference for GetTaskProtection Operation</seealso>
+        Task<GetTaskProtectionResponse> GetTaskProtectionAsync(GetTaskProtectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListAccountSettings
 
 
@@ -4438,6 +4514,158 @@ namespace Amazon.ECS
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateServicePrimaryTaskSet">REST API Reference for UpdateServicePrimaryTaskSet Operation</seealso>
         Task<UpdateServicePrimaryTaskSetResponse> UpdateServicePrimaryTaskSetAsync(UpdateServicePrimaryTaskSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateTaskProtection
+
+
+        /// <summary>
+        /// Updates the protection status of a task. You can set <code>protectionEnabled</code>
+        /// to <code>true</code> to protect your task from termination during scale-in events
+        /// from <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-auto-scaling.html">Service
+        /// Autoscaling</a> or <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">deployments</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Task-protection, by default, expires after 2 hours at which point Amazon ECS unsets
+        /// the <code>protectionEnabled</code> property making the task eligible for termination
+        /// by a subsequent scale-in event.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify a custom expiration period for task protection from 1 minute to up
+        /// to 2,880 minutes (48 hours). To specify the custom expiration period, set the <code>expiresInMinutes</code>
+        /// property. The <code>expiresInMinutes</code> property is always reset when you invoke
+        /// this operation for a task that already has <code>protectionEnabled</code> set to <code>true</code>.
+        /// You can keep extending the protection expiration period of a task by invoking this
+        /// operation repeatedly.
+        /// </para>
+        ///  
+        /// <para>
+        /// To learn more about Amazon ECS task protection, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-scale-in-protection.html">Task
+        /// scale-in protection</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This operation is only supported for tasks belonging to an Amazon ECS service. Invoking
+        /// this operation for a standalone task will result in an <code>TASK_NOT_VALID</code>
+        /// failure. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html.html">API
+        /// failure reasons</a>.
+        /// </para>
+        ///  </note> <important> 
+        /// <para>
+        /// If you prefer to set task protection from within the container, we recommend using
+        /// the <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-endpoint.html">Amazon
+        /// ECS container agent endpoint</a>.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTaskProtection service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTaskProtection service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ResourceNotFoundException">
+        /// The specified resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateTaskProtection">REST API Reference for UpdateTaskProtection Operation</seealso>
+        UpdateTaskProtectionResponse UpdateTaskProtection(UpdateTaskProtectionRequest request);
+
+
+
+        /// <summary>
+        /// Updates the protection status of a task. You can set <code>protectionEnabled</code>
+        /// to <code>true</code> to protect your task from termination during scale-in events
+        /// from <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-auto-scaling.html">Service
+        /// Autoscaling</a> or <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">deployments</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Task-protection, by default, expires after 2 hours at which point Amazon ECS unsets
+        /// the <code>protectionEnabled</code> property making the task eligible for termination
+        /// by a subsequent scale-in event.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify a custom expiration period for task protection from 1 minute to up
+        /// to 2,880 minutes (48 hours). To specify the custom expiration period, set the <code>expiresInMinutes</code>
+        /// property. The <code>expiresInMinutes</code> property is always reset when you invoke
+        /// this operation for a task that already has <code>protectionEnabled</code> set to <code>true</code>.
+        /// You can keep extending the protection expiration period of a task by invoking this
+        /// operation repeatedly.
+        /// </para>
+        ///  
+        /// <para>
+        /// To learn more about Amazon ECS task protection, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-scale-in-protection.html">Task
+        /// scale-in protection</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This operation is only supported for tasks belonging to an Amazon ECS service. Invoking
+        /// this operation for a standalone task will result in an <code>TASK_NOT_VALID</code>
+        /// failure. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html.html">API
+        /// failure reasons</a>.
+        /// </para>
+        ///  </note> <important> 
+        /// <para>
+        /// If you prefer to set task protection from within the container, we recommend using
+        /// the <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-endpoint.html">Amazon
+        /// ECS container agent endpoint</a>.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTaskProtection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateTaskProtection service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource,. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a>ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ResourceNotFoundException">
+        /// The specified resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateTaskProtection">REST API Reference for UpdateTaskProtection Operation</seealso>
+        Task<UpdateTaskProtectionResponse> UpdateTaskProtectionAsync(UpdateTaskProtectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

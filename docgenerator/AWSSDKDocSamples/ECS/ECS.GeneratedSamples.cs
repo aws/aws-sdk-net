@@ -232,6 +232,25 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
             #endregion
         }
 
+        public void ECSGetTaskProtection()
+        {
+            #region get-the-protection-status-for-a-single-task-2022-11-02T06:56:32.553Z
+
+            var client = new AmazonECSClient();
+            var response = client.GetTaskProtection(new GetTaskProtectionRequest 
+            {
+                Cluster = "test-task-protection",
+                Tasks = new List<string> {
+                    "b8b1cf532d0e46ba8d44a40d1de16772"
+                }
+            });
+
+            List<Failure> failures = response.Failures;
+            List<ProtectedTask> protectedTasks = response.ProtectedTasks;
+
+            #endregion
+        }
+
         public void ECSListAccountSettings()
         {
             #region to-view-your-account-settings-1549524118170
@@ -570,6 +589,67 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
                 Service = "my-http-service"
             });
 
+
+            #endregion
+        }
+
+        public void ECSUpdateTaskProtection()
+        {
+            #region enable-the-protection-status-for-a-single-task-for-60-minutes-2022-11-02T06:56:32.553Z
+
+            var client = new AmazonECSClient();
+            var response = client.UpdateTaskProtection(new UpdateTaskProtectionRequest 
+            {
+                Cluster = "test-task-protection",
+                ExpiresInMinutes = 60,
+                ProtectionEnabled = true,
+                Tasks = new List<string> {
+                    "b8b1cf532d0e46ba8d44a40d1de16772"
+                }
+            });
+
+            List<Failure> failures = response.Failures;
+            List<ProtectedTask> protectedTasks = response.ProtectedTasks;
+
+            #endregion
+        }
+
+        public void ECSUpdateTaskProtection()
+        {
+            #region enable-the-protection-status-for-a-single-task-with-default-expiresinminutes-2022-11-02T06:56:32.553Z
+
+            var client = new AmazonECSClient();
+            var response = client.UpdateTaskProtection(new UpdateTaskProtectionRequest 
+            {
+                Cluster = "test-task-protection",
+                ProtectionEnabled = true,
+                Tasks = new List<string> {
+                    "b8b1cf532d0e46ba8d44a40d1de16772"
+                }
+            });
+
+            List<Failure> failures = response.Failures;
+            List<ProtectedTask> protectedTasks = response.ProtectedTasks;
+
+            #endregion
+        }
+
+        public void ECSUpdateTaskProtection()
+        {
+            #region disable-scale-in-protection-on-a-single-task
+
+            var client = new AmazonECSClient();
+            var response = client.UpdateTaskProtection(new UpdateTaskProtectionRequest 
+            {
+                Cluster = "test-task-protection",
+                ProtectionEnabled = false,
+                Tasks = new List<string> {
+                    "b8b1cf532d0e46ba8d44a40d1de16772"
+                }
+            });
+
+            List<Failure> failures = response.Failures;
+            List<ProtectedTask> protectedTasks = response.ProtectedTasks;
 
             #endregion
         }

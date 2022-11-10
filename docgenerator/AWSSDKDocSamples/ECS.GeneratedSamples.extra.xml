@@ -249,6 +249,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.ECS.IAmazonECS.GetTaskProtection(Amazon.ECS.Model.GetTaskProtectionRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.GetTaskProtection(Amazon.ECS.Model.GetTaskProtectionRequest)" />
+            <member name="T:Amazon.ECS.Model.GetTaskProtectionRequest" />
+            <member name="T:Amazon.ECS.Model.GetTaskProtectionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    In this example, we get the protection status for a single task.
+                </para>
+                <code
+                    title="To get the protection status of a task"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="get-the-protection-status-for-a-single-task-2022-11-02T06:56:32.553Z" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.ECS.IAmazonECS.ListAccountSettings(Amazon.ECS.Model.ListAccountSettingsRequest)" />
             <member name="M:Amazon.ECS.AmazonECSClient.ListAccountSettings(Amazon.ECS.Model.ListAccountSettingsRequest)" />
             <member name="T:Amazon.ECS.Model.ListAccountSettingsRequest" />
@@ -643,6 +662,63 @@
                     title="To change the number of tasks in a service"
                     source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
                     region="9581d6c5-02e3-4140-8cc1-5a4301586633" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.UpdateTaskProtection(Amazon.ECS.Model.UpdateTaskProtectionRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.UpdateTaskProtection(Amazon.ECS.Model.UpdateTaskProtectionRequest)" />
+            <member name="T:Amazon.ECS.Model.UpdateTaskProtectionRequest" />
+            <member name="T:Amazon.ECS.Model.UpdateTaskProtectionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example enables scale-in protection for a task for 60 minutes.
+                </para>
+                <code
+                    title="To set task scale-in protection for a task for 60 minutes"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="enable-the-protection-status-for-a-single-task-for-60-minutes-2022-11-02T06:56:32.553Z" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.UpdateTaskProtection(Amazon.ECS.Model.UpdateTaskProtectionRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.UpdateTaskProtection(Amazon.ECS.Model.UpdateTaskProtectionRequest)" />
+            <member name="T:Amazon.ECS.Model.UpdateTaskProtectionRequest" />
+            <member name="T:Amazon.ECS.Model.UpdateTaskProtectionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example enables task scale-in protection for a task, without specifying the expiresInMinutes parameter, for the default protection period of 120 minutes.
+                </para>
+                <code
+                    title="To set task scale-in protection for the default time period in minutes"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="enable-the-protection-status-for-a-single-task-with-default-expiresinminutes-2022-11-02T06:56:32.553Z" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.UpdateTaskProtection(Amazon.ECS.Model.UpdateTaskProtectionRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.UpdateTaskProtection(Amazon.ECS.Model.UpdateTaskProtectionRequest)" />
+            <member name="T:Amazon.ECS.Model.UpdateTaskProtectionRequest" />
+            <member name="T:Amazon.ECS.Model.UpdateTaskProtectionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example removes scale-in protection for a task.
+                </para>
+                <code
+                    title="To remove task scale-in protection"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="disable-scale-in-protection-on-a-single-task" />
             </example>
         </value>
     </doc>
