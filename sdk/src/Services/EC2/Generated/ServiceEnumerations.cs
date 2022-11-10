@@ -610,6 +610,10 @@ namespace Amazon.EC2
         /// Constant LowestPrice for AllocationStrategy
         /// </summary>
         public static readonly AllocationStrategy LowestPrice = new AllocationStrategy("lowestPrice");
+        /// <summary>
+        /// Constant PriceCapacityOptimized for AllocationStrategy
+        /// </summary>
+        public static readonly AllocationStrategy PriceCapacityOptimized = new AllocationStrategy("priceCapacityOptimized");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -14788,6 +14792,10 @@ namespace Amazon.EC2
         /// Constant LowestPrice for SpotAllocationStrategy
         /// </summary>
         public static readonly SpotAllocationStrategy LowestPrice = new SpotAllocationStrategy("lowest-price");
+        /// <summary>
+        /// Constant PriceCapacityOptimized for SpotAllocationStrategy
+        /// </summary>
+        public static readonly SpotAllocationStrategy PriceCapacityOptimized = new SpotAllocationStrategy("price-capacity-optimized");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
