@@ -95,6 +95,16 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The name of the Auto Scaling group. This name must be unique per Region per account.
         /// </para>
+        ///  
+        /// <para>
+        /// The name can contain any ASCII character 33 to 126 including most punctuation characters,
+        /// digits, and upper and lowercased letters.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You cannot use a colon (:) in the name.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string AutoScalingGroupName
@@ -304,8 +314,9 @@ namespace Amazon.AutoScaling.Model
         /// the health status of an EC2 instance that has come into service and marking it unhealthy
         /// due to a failed Elastic Load Balancing or custom health check. This is useful if your
         /// instances do not immediately pass these health checks after they enter the <code>InService</code>
-        /// state. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
-        /// check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// state. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set
+        /// the health check grace period for an Auto Scaling group</a> in the <i>Amazon EC2 Auto
+        /// Scaling User Guide</i>.
         /// </para>
         ///  
         /// <para>
