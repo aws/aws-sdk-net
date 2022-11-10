@@ -1,3 +1,20 @@
+### 3.7.415.0 (2022-11-10 19:22 UTC)
+* AutoScaling (3.7.101.5)
+	* This release adds a new price capacity optimized allocation strategy for Spot Instances to help customers optimize provisioning of Spot Instances via EC2 Auto Scaling, EC2 Fleet, and Spot Fleet. It allocates Spot Instances based on both spare capacity availability and Spot Instance price.
+* EC2 (3.7.107.0)
+	* This release adds a new price capacity optimized allocation strategy for Spot Instances to help customers optimize provisioning of Spot Instances via EC2 Auto Scaling, EC2 Fleet, and Spot Fleet. It allocates Spot Instances based on both spare capacity availability and Spot Instance price.
+* ECS (3.7.101.0)
+	* This release adds support for task scale-in protection with updateTaskProtection and getTaskProtection APIs. UpdateTaskProtection API can be used to protect a service managed task from being terminated by scale-in events and getTaskProtection API to get the scale-in protection status of a task.
+* Elasticsearch (3.7.101.0)
+	* Amazon OpenSearch Service now offers managed VPC endpoints to connect to your Amazon OpenSearch Service VPC-enabled domain in a Virtual Private Cloud (VPC). This feature allows you to privately access OpenSearch Service domain without using public IPs or requiring traffic to traverse the Internet.
+* ResourceExplorer2 (3.7.100.4)
+	* Text only updates to some Resource Explorer descriptions.
+* Scheduler (3.7.100.0)
+	* AWS introduces the new Amazon EventBridge Scheduler. EventBridge Scheduler is a serverless scheduler that allows you to create, run, and manage tasks from one central, managed service.
+* Core 3.7.100.15
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.414.0 (2022-11-09 19:38 UTC)
 * Connect (3.7.102.0)
 	* This release adds new fields SignInUrl, UserArn, and UserId to GetFederationToken response payload.
