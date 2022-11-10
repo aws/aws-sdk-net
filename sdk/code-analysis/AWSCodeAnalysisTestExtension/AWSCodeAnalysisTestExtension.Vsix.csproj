@@ -1140,6 +1140,10 @@
       <Project>{33B3CEB0-7C8F-442C-BC89-CDCEF81341B3}</Project>
       <Name>AWSSDK.SavingsPlans.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Scheduler/AWSSDK.Scheduler.CodeAnalysis.csproj">
+      <Project>{AC147831-C182-4B3B-BBFA-D488BBD94AAF}</Project>
+      <Name>AWSSDK.Scheduler.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Schemas/AWSSDK.Schemas.CodeAnalysis.csproj">
       <Project>{6A3CAE10-454C-472B-8DA5-87489F700248}</Project>
       <Name>AWSSDK.Schemas.CodeAnalysis</Name>
