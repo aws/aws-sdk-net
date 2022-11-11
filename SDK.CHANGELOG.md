@@ -1,3 +1,22 @@
+### 3.7.416.0 (2022-11-11 20:09 UTC)
+* Glue (3.7.101.12)
+	* Added links related to enabling job bookmarks.
+* IoT (3.7.102.0)
+	* This release add new api listRelatedResourcesForAuditFinding and new member type IssuerCertificates for Iot device device defender Audit.
+* LicenseManager (3.7.101.0)
+	* AWS License Manager now supports onboarded Management Accounts or Delegated Admins to view granted licenses aggregated from all accounts in the organization.
+* MarketplaceCatalog (3.7.101.0)
+	* Added three new APIs to support tagging and tag-based authorization: TagResource, UntagResource, and ListTagsForResource. Added optional parameters to the StartChangeSet API to support tagging a resource while making a request to create it.
+* Rekognition (3.7.101.0)
+	* Adding support for ImageProperties feature to detect dominant colors and image brightness, sharpness, and contrast, inclusion and exclusion filters for labels and label categories, new fields to the API response, "aliases" and "categories"
+* SecurityHub (3.7.100.16)
+	* Documentation updates for Security Hub
+* SSMIncidents (3.7.102.0)
+	* RelatedItems now have an ID field which can be used for referencing them else where. Introducing event references in TimelineEvent API and increasing maximum length of "eventData" to 12K characters.
+* Core 3.7.100.16
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.415.0 (2022-11-10 19:22 UTC)
 * AutoScaling (3.7.101.5)
 	* This release adds a new price capacity optimized allocation strategy for Spot Instances to help customers optimize provisioning of Spot Instances via EC2 Auto Scaling, EC2 Fleet, and Spot Fleet. It allocates Spot Instances based on both spare capacity availability and Spot Instance price.
