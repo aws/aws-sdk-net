@@ -2768,7 +2768,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Retrieves all the development endpoints in this AWS account.
+        /// Retrieves all the development endpoints in this Amazon Web Services account.
         /// 
         ///  <note> 
         /// <para>
@@ -2837,6 +2837,27 @@ namespace Amazon.Glue
 
         /// <summary>
         /// Returns information on a job bookmark entry.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about enabling and using job bookmarks, see:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-continuations.html">Tracking
+        /// processed data using job bookmarks</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Job
+        /// parameters used by Glue</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-Job">Job
+        /// structure</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetJobBookmark service method.</param>
         /// <param name="cancellationToken">
@@ -4889,6 +4910,27 @@ namespace Amazon.Glue
 
         /// <summary>
         /// Resets a bookmark entry.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about enabling and using job bookmarks, see:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-continuations.html">Tracking
+        /// processed data using job bookmarks</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Job
+        /// parameters used by Glue</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-Job">Job
+        /// structure</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResetJobBookmark service method.</param>
         /// <param name="cancellationToken">

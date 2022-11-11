@@ -89,7 +89,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The AWS Availability Zone where this <code>DevEndpoint</code> is located.
+        /// The Amazon Web Services Availability Zone where this <code>DevEndpoint</code> is located.
         /// </para>
         /// </summary>
         public string AvailabilityZone
