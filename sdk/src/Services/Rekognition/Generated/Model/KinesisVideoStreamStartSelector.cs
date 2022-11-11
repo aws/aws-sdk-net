@@ -30,7 +30,9 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Specifies the starting point in a Kinesis stream to start processing. You can use
-    /// the producer timestamp or the fragment number. For more information, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>.
+    /// the producer timestamp or the fragment number. One of either producer timestamp or
+    /// fragment number is required. If you use the producer timestamp, you must put the time
+    /// in milliseconds. For more information about fragment numbers, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>.
     /// </summary>
     public partial class KinesisVideoStreamStartSelector
     {
@@ -60,7 +62,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property ProducerTimestamp. 
         /// <para>
-        ///  The timestamp from the producer corresponding to the fragment. 
+        ///  The timestamp from the producer corresponding to the fragment, in milliseconds, expressed
+        /// in unix time format. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

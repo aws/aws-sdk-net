@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Instance Object
+    /// Response Unmarshaller for DetectLabelsImageQuality Object
     /// </summary>  
-    public class InstanceUnmarshaller : IUnmarshaller<Instance, XmlUnmarshallerContext>, IUnmarshaller<Instance, JsonUnmarshallerContext>
+    public class DetectLabelsImageQualityUnmarshaller : IUnmarshaller<DetectLabelsImageQuality, XmlUnmarshallerContext>, IUnmarshaller<DetectLabelsImageQuality, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Instance IUnmarshaller<Instance, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DetectLabelsImageQuality IUnmarshaller<DetectLabelsImageQuality, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,33 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Instance Unmarshall(JsonUnmarshallerContext context)
+        public DetectLabelsImageQuality Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Instance unmarshalledObject = new Instance();
+            DetectLabelsImageQuality unmarshalledObject = new DetectLabelsImageQuality();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("BoundingBox", targetDepth))
-                {
-                    var unmarshaller = BoundingBoxUnmarshaller.Instance;
-                    unmarshalledObject.BoundingBox = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Confidence", targetDepth))
+                if (context.TestExpression("Brightness", targetDepth))
                 {
                     var unmarshaller = FloatUnmarshaller.Instance;
-                    unmarshalledObject.Confidence = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Brightness = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DominantColors", targetDepth))
+                if (context.TestExpression("Contrast", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<DominantColor, DominantColorUnmarshaller>(DominantColorUnmarshaller.Instance);
-                    unmarshalledObject.DominantColors = unmarshaller.Unmarshall(context);
+                    var unmarshaller = FloatUnmarshaller.Instance;
+                    unmarshalledObject.Contrast = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Sharpness", targetDepth))
+                {
+                    var unmarshaller = FloatUnmarshaller.Instance;
+                    unmarshalledObject.Sharpness = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +88,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         }
 
 
-        private static InstanceUnmarshaller _instance = new InstanceUnmarshaller();        
+        private static DetectLabelsImageQualityUnmarshaller _instance = new DetectLabelsImageQualityUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static InstanceUnmarshaller Instance
+        public static DetectLabelsImageQualityUnmarshaller Instance
         {
             get
             {

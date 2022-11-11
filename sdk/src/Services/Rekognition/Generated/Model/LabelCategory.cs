@@ -29,30 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// This is a required parameter for label detection stream processors and should not
-    /// be used to start a face search stream processor.
+    /// The category that applies to a given label.
     /// </summary>
-    public partial class StreamProcessingStartSelector
+    public partial class LabelCategory
     {
-        private KinesisVideoStreamStartSelector _kvsStreamStartSelector;
+        private string _name;
 
         /// <summary>
-        /// Gets and sets the property KVSStreamStartSelector. 
+        /// Gets and sets the property Name. 
         /// <para>
-        ///  Specifies the starting point in the stream to start processing. This can be done
-        /// with a producer timestamp or a fragment number in a Kinesis stream. 
+        /// The name of a category that applies to a given label.
         /// </para>
         /// </summary>
-        public KinesisVideoStreamStartSelector KVSStreamStartSelector
+        public string Name
         {
-            get { return this._kvsStreamStartSelector; }
-            set { this._kvsStreamStartSelector = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if KVSStreamStartSelector property is set
-        internal bool IsSetKVSStreamStartSelector()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._kvsStreamStartSelector != null;
+            return this._name != null;
         }
 
     }

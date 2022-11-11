@@ -3470,13 +3470,7 @@ namespace Amazon.Rekognition
         /// For an example, see Analyzing images stored in an Amazon S3 bucket in the Amazon Rekognition
         /// Developer Guide.
         /// </para>
-        ///  <note> 
-        /// <para>
-        ///  <code>DetectLabels</code> does not support the detection of activities. However,
-        /// activity detection is supported for label detection in videos. For more information,
-        /// see StartLabelDetection in the Amazon Rekognition Developer Guide.
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// You pass the input image as base64-encoded image bytes or as a reference to an image
         /// in an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition operations,
@@ -3485,10 +3479,105 @@ namespace Amazon.Rekognition
         /// </para>
         ///  
         /// <para>
-        ///  For each object, scene, and concept the API returns one or more labels. Each label
-        /// provides the object name, and the level of confidence that the image contains the
-        /// object. For example, suppose the input image has a lighthouse, the sea, and a rock.
-        /// The response includes all three labels, one for each object. 
+        ///  <b>Optional Parameters</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify one or both of the <code>GENERAL_LABELS</code> and <code>IMAGE_PROPERTIES</code>
+        /// feature types when calling the DetectLabels API. Including <code>GENERAL_LABELS</code>
+        /// will ensure the response includes the labels detected in the input image, while including
+        /// <code>IMAGE_PROPERTIES </code>will ensure the response includes information about
+        /// the image quality and color.
+        /// </para>
+        ///  
+        /// <para>
+        /// When using <code>GENERAL_LABELS</code> and/or <code>IMAGE_PROPERTIES</code> you can
+        /// provide filtering criteria to the Settings parameter. You can filter with sets of
+        /// individual labels or with label categories. You can specify inclusive filters, exclusive
+        /// filters, or a combination of inclusive and exclusive filters. For more information
+        /// on filtering see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/labels-detect-labels-image.html">Detecting
+        /// Labels in an Image</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify <code>MinConfidence</code> to control the confidence threshold for
+        /// the labels returned. The default is 55%. You can also add the <code>MaxLabels</code>
+        /// parameter to limit the number of labels returned. The default and upper limit is 1000
+        /// labels.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Response Elements</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  For each object, scene, and concept the API returns one or more labels. The API returns
+        /// the following types of information regarding labels:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  Name - The name of the detected label. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Confidence - The level of confidence in the label assigned to a detected object.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Parents - The ancestor labels for a detected label. DetectLabels returns a hierarchical
+        /// taxonomy of detected labels. For example, a detected car might be assigned the label
+        /// car. The label car has two parent labels: Vehicle (its parent) and Transportation
+        /// (its grandparent). The response includes the all ancestors for a label, where every
+        /// ancestor is a unique label. In the previous example, Car, Vehicle, and Transportation
+        /// are returned as unique labels in the response. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Aliases - Possible Aliases for the label. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Categories - The label categories that the detected label belongs to. A given label
+        /// can belong to more than one category. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  BoundingBox — Bounding boxes are described for all instances of detected common object
+        /// labels, returned in an array of Instance objects. An Instance object contains a BoundingBox
+        /// object, describing the location of the label on the input image. It also includes
+        /// the confidence for the accuracy of the detected bounding box. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  The API returns the following information regarding the image, as part of the ImageProperties
+        /// structure:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Quality - Information about the Sharpness, Brightness, and Contrast of the input image,
+        /// scored between 0 to 100. Image quality is returned for the entire image, as well as
+        /// the background and the foreground. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Dominant Color - An array of the dominant colors in the image. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Foreground - Information about the Sharpness and Brightness of the input image’s foreground.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Background - Information about the Sharpness and Brightness of the input image’s background.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The list of returned labels will include at least one label for every detected object,
+        /// along with information about that label. In the following example, suppose the input
+        /// image has a lighthouse, the sea, and a rock. The response includes all three labels,
+        /// one for each object, as well as the confidence in the label:
         /// </para>
         ///  
         /// <para>
@@ -3504,10 +3593,9 @@ namespace Amazon.Rekognition
         /// </para>
         ///  
         /// <para>
-        /// In the preceding example, the operation returns one label for each of the three objects.
-        /// The operation can also return multiple labels for the same object in the image. For
-        /// example, if the input image shows a flower (for example, a tulip), the operation might
-        /// return the following three labels. 
+        /// The list of labels can include multiple labels for the same object. For example, if
+        /// the input image shows a flower (for example, a tulip), the operation might return
+        /// the following three labels. 
         /// </para>
         ///  
         /// <para>
@@ -3526,36 +3614,12 @@ namespace Amazon.Rekognition
         /// In this example, the detection algorithm more precisely identifies the flower as a
         /// tulip.
         /// </para>
-        ///  
-        /// <para>
-        /// In response, the API returns an array of labels. In addition, the response also includes
-        /// the orientation correction. Optionally, you can specify <code>MinConfidence</code>
-        /// to control the confidence threshold for the labels returned. The default is 55%. You
-        /// can also add the <code>MaxLabels</code> parameter to limit the number of labels returned.
-        /// 
-        /// </para>
         ///  <note> 
         /// <para>
         /// If the object detected is a person, the operation doesn't provide the same facial
         /// details that the <a>DetectFaces</a> operation provides.
         /// </para>
         ///  </note> 
-        /// <para>
-        ///  <code>DetectLabels</code> returns bounding boxes for instances of common object labels
-        /// in an array of <a>Instance</a> objects. An <code>Instance</code> object contains a
-        /// <a>BoundingBox</a> object, for the location of the label on the image. It also includes
-        /// the confidence by which the bounding box was detected.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>DetectLabels</code> also returns a hierarchical taxonomy of detected labels.
-        /// For example, a detected car might be assigned the label <i>car</i>. The label <i>car</i>
-        /// has two parent labels: <i>Vehicle</i> (its parent) and <i>Transportation</i> (its
-        /// grandparent). The response returns the entire list of ancestors for a label. Each
-        /// ancestor is a unique label in the response. In the previous example, <i>Car</i>, <i>Vehicle</i>,
-        /// and <i>Transportation</i> are returned as unique labels in the response. 
-        /// </para>
-        ///  
         /// <para>
         /// This is a stateless API operation. That is, the operation does not persist any data.
         /// </para>
@@ -3617,13 +3681,7 @@ namespace Amazon.Rekognition
         /// For an example, see Analyzing images stored in an Amazon S3 bucket in the Amazon Rekognition
         /// Developer Guide.
         /// </para>
-        ///  <note> 
-        /// <para>
-        ///  <code>DetectLabels</code> does not support the detection of activities. However,
-        /// activity detection is supported for label detection in videos. For more information,
-        /// see StartLabelDetection in the Amazon Rekognition Developer Guide.
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// You pass the input image as base64-encoded image bytes or as a reference to an image
         /// in an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition operations,
@@ -3632,10 +3690,105 @@ namespace Amazon.Rekognition
         /// </para>
         ///  
         /// <para>
-        ///  For each object, scene, and concept the API returns one or more labels. Each label
-        /// provides the object name, and the level of confidence that the image contains the
-        /// object. For example, suppose the input image has a lighthouse, the sea, and a rock.
-        /// The response includes all three labels, one for each object. 
+        ///  <b>Optional Parameters</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify one or both of the <code>GENERAL_LABELS</code> and <code>IMAGE_PROPERTIES</code>
+        /// feature types when calling the DetectLabels API. Including <code>GENERAL_LABELS</code>
+        /// will ensure the response includes the labels detected in the input image, while including
+        /// <code>IMAGE_PROPERTIES </code>will ensure the response includes information about
+        /// the image quality and color.
+        /// </para>
+        ///  
+        /// <para>
+        /// When using <code>GENERAL_LABELS</code> and/or <code>IMAGE_PROPERTIES</code> you can
+        /// provide filtering criteria to the Settings parameter. You can filter with sets of
+        /// individual labels or with label categories. You can specify inclusive filters, exclusive
+        /// filters, or a combination of inclusive and exclusive filters. For more information
+        /// on filtering see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/labels-detect-labels-image.html">Detecting
+        /// Labels in an Image</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify <code>MinConfidence</code> to control the confidence threshold for
+        /// the labels returned. The default is 55%. You can also add the <code>MaxLabels</code>
+        /// parameter to limit the number of labels returned. The default and upper limit is 1000
+        /// labels.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Response Elements</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  For each object, scene, and concept the API returns one or more labels. The API returns
+        /// the following types of information regarding labels:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  Name - The name of the detected label. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Confidence - The level of confidence in the label assigned to a detected object.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Parents - The ancestor labels for a detected label. DetectLabels returns a hierarchical
+        /// taxonomy of detected labels. For example, a detected car might be assigned the label
+        /// car. The label car has two parent labels: Vehicle (its parent) and Transportation
+        /// (its grandparent). The response includes the all ancestors for a label, where every
+        /// ancestor is a unique label. In the previous example, Car, Vehicle, and Transportation
+        /// are returned as unique labels in the response. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Aliases - Possible Aliases for the label. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Categories - The label categories that the detected label belongs to. A given label
+        /// can belong to more than one category. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  BoundingBox — Bounding boxes are described for all instances of detected common object
+        /// labels, returned in an array of Instance objects. An Instance object contains a BoundingBox
+        /// object, describing the location of the label on the input image. It also includes
+        /// the confidence for the accuracy of the detected bounding box. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  The API returns the following information regarding the image, as part of the ImageProperties
+        /// structure:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Quality - Information about the Sharpness, Brightness, and Contrast of the input image,
+        /// scored between 0 to 100. Image quality is returned for the entire image, as well as
+        /// the background and the foreground. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Dominant Color - An array of the dominant colors in the image. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Foreground - Information about the Sharpness and Brightness of the input image’s foreground.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Background - Information about the Sharpness and Brightness of the input image’s background.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The list of returned labels will include at least one label for every detected object,
+        /// along with information about that label. In the following example, suppose the input
+        /// image has a lighthouse, the sea, and a rock. The response includes all three labels,
+        /// one for each object, as well as the confidence in the label:
         /// </para>
         ///  
         /// <para>
@@ -3651,10 +3804,9 @@ namespace Amazon.Rekognition
         /// </para>
         ///  
         /// <para>
-        /// In the preceding example, the operation returns one label for each of the three objects.
-        /// The operation can also return multiple labels for the same object in the image. For
-        /// example, if the input image shows a flower (for example, a tulip), the operation might
-        /// return the following three labels. 
+        /// The list of labels can include multiple labels for the same object. For example, if
+        /// the input image shows a flower (for example, a tulip), the operation might return
+        /// the following three labels. 
         /// </para>
         ///  
         /// <para>
@@ -3673,36 +3825,12 @@ namespace Amazon.Rekognition
         /// In this example, the detection algorithm more precisely identifies the flower as a
         /// tulip.
         /// </para>
-        ///  
-        /// <para>
-        /// In response, the API returns an array of labels. In addition, the response also includes
-        /// the orientation correction. Optionally, you can specify <code>MinConfidence</code>
-        /// to control the confidence threshold for the labels returned. The default is 55%. You
-        /// can also add the <code>MaxLabels</code> parameter to limit the number of labels returned.
-        /// 
-        /// </para>
         ///  <note> 
         /// <para>
         /// If the object detected is a person, the operation doesn't provide the same facial
         /// details that the <a>DetectFaces</a> operation provides.
         /// </para>
         ///  </note> 
-        /// <para>
-        ///  <code>DetectLabels</code> returns bounding boxes for instances of common object labels
-        /// in an array of <a>Instance</a> objects. An <code>Instance</code> object contains a
-        /// <a>BoundingBox</a> object, for the location of the label on the image. It also includes
-        /// the confidence by which the bounding box was detected.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>DetectLabels</code> also returns a hierarchical taxonomy of detected labels.
-        /// For example, a detected car might be assigned the label <i>car</i>. The label <i>car</i>
-        /// has two parent labels: <i>Vehicle</i> (its parent) and <i>Transportation</i> (its
-        /// grandparent). The response returns the entire list of ancestors for a label. Each
-        /// ancestor is a unique label in the response. In the previous example, <i>Car</i>, <i>Vehicle</i>,
-        /// and <i>Transportation</i> are returned as unique labels in the response. 
-        /// </para>
-        ///  
         /// <para>
         /// This is a stateless API operation. That is, the operation does not persist any data.
         /// </para>

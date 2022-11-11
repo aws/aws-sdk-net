@@ -59,7 +59,8 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property Timestamp. 
         /// <para>
         /// Time, in milliseconds from the beginning of the video, that the content moderation
-        /// label was detected.
+        /// label was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate
+        /// to the individual frame where the moderated content first appears.
         /// </para>
         /// </summary>
         public long Timestamp

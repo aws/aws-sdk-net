@@ -29,30 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// This is a required parameter for label detection stream processors and should not
-    /// be used to start a face search stream processor.
+    /// Settings for the IMAGE_PROPERTIES feature type.
     /// </summary>
-    public partial class StreamProcessingStartSelector
+    public partial class DetectLabelsImagePropertiesSettings
     {
-        private KinesisVideoStreamStartSelector _kvsStreamStartSelector;
+        private int? _maxDominantColors;
 
         /// <summary>
-        /// Gets and sets the property KVSStreamStartSelector. 
+        /// Gets and sets the property MaxDominantColors. 
         /// <para>
-        ///  Specifies the starting point in the stream to start processing. This can be done
-        /// with a producer timestamp or a fragment number in a Kinesis stream. 
+        /// The maximum number of dominant colors to return when detecting labels in an image.
+        /// The default value is 10.
         /// </para>
         /// </summary>
-        public KinesisVideoStreamStartSelector KVSStreamStartSelector
+        [AWSProperty(Min=0, Max=20)]
+        public int MaxDominantColors
         {
-            get { return this._kvsStreamStartSelector; }
-            set { this._kvsStreamStartSelector = value; }
+            get { return this._maxDominantColors.GetValueOrDefault(); }
+            set { this._maxDominantColors = value; }
         }
 
-        // Check to see if KVSStreamStartSelector property is set
-        internal bool IsSetKVSStreamStartSelector()
+        // Check to see if MaxDominantColors property is set
+        internal bool IsSetMaxDominantColors()
         {
-            return this._kvsStreamStartSelector != null;
+            return this._maxDominantColors.HasValue; 
         }
 
     }

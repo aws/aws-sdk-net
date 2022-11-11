@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Instance Object
+    /// Response Unmarshaller for DominantColor Object
     /// </summary>  
-    public class InstanceUnmarshaller : IUnmarshaller<Instance, XmlUnmarshallerContext>, IUnmarshaller<Instance, JsonUnmarshallerContext>
+    public class DominantColorUnmarshaller : IUnmarshaller<DominantColor, XmlUnmarshallerContext>, IUnmarshaller<DominantColor, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Instance IUnmarshaller<Instance, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DominantColor IUnmarshaller<DominantColor, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,57 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Instance Unmarshall(JsonUnmarshallerContext context)
+        public DominantColor Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Instance unmarshalledObject = new Instance();
+            DominantColor unmarshalledObject = new DominantColor();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("BoundingBox", targetDepth))
+                if (context.TestExpression("Blue", targetDepth))
                 {
-                    var unmarshaller = BoundingBoxUnmarshaller.Instance;
-                    unmarshalledObject.BoundingBox = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Blue = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Confidence", targetDepth))
+                if (context.TestExpression("CSSColor", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CSSColor = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Green", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Green = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("HexCode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.HexCode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PixelPercent", targetDepth))
                 {
                     var unmarshaller = FloatUnmarshaller.Instance;
-                    unmarshalledObject.Confidence = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PixelPercent = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DominantColors", targetDepth))
+                if (context.TestExpression("Red", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<DominantColor, DominantColorUnmarshaller>(DominantColorUnmarshaller.Instance);
-                    unmarshalledObject.DominantColors = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Red = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SimplifiedColor", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SimplifiedColor = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +112,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         }
 
 
-        private static InstanceUnmarshaller _instance = new InstanceUnmarshaller();        
+        private static DominantColorUnmarshaller _instance = new DominantColorUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static InstanceUnmarshaller Instance
+        public static DominantColorUnmarshaller Instance
         {
             get
             {

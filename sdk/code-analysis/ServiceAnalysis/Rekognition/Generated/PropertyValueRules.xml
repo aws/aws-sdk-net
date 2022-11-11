@@ -994,10 +994,32 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Rekognition.Model.DetectLabelsImagePropertiesSettings.MaxDominantColors</property>
+    <min>0</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Rekognition.Model.DistributeDataset.Arn</property>
     <min>20</min>
     <max>2048</max>
     <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/dataset\/(train|test)\/[0-9]+$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.DominantColor.Blue</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.DominantColor.Green</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.DominantColor.PixelPercent</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.DominantColor.Red</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.Emotion.Confidence</property>

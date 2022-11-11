@@ -33,9 +33,29 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class DetectLabelsResponse : AmazonWebServiceResponse
     {
+        private DetectLabelsImageProperties _imageProperties;
         private string _labelModelVersion;
         private List<Label> _labels = new List<Label>();
         private OrientationCorrection _orientationCorrection;
+
+        /// <summary>
+        /// Gets and sets the property ImageProperties. 
+        /// <para>
+        /// Information about the properties of the input image, such as brightness, sharpness,
+        /// contrast, and dominant colors.
+        /// </para>
+        /// </summary>
+        public DetectLabelsImageProperties ImageProperties
+        {
+            get { return this._imageProperties; }
+            set { this._imageProperties = value; }
+        }
+
+        // Check to see if ImageProperties property is set
+        internal bool IsSetImageProperties()
+        {
+            return this._imageProperties != null;
+        }
 
         /// <summary>
         /// Gets and sets the property LabelModelVersion. 

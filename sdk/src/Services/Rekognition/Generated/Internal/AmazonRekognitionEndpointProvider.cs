@@ -82,6 +82,10 @@ namespace Amazon.Rekognition.Internal
                         {
                             return new Endpoint("https://rekognition-fips.ca-central-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                         }
+                        if (Equals(refs["Region"], "rekognition.us-east-1"))
+                        {
+                            return new Endpoint("https://rekognition-fips.us-east-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        }
                         if (Equals(refs["Region"], "rekognition.us-east-2"))
                         {
                             return new Endpoint("https://rekognition-fips.us-east-2.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
@@ -89,10 +93,6 @@ namespace Amazon.Rekognition.Internal
                         if (Equals(refs["Region"], "rekognition.us-west-1"))
                         {
                             return new Endpoint("https://rekognition-fips.us-west-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                        }
-                        if (Equals(refs["Region"], "rekognition.us-east-1"))
-                        {
-                            return new Endpoint("https://rekognition-fips.us-east-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                         }
                         if (Equals(refs["Region"], "rekognition.us-west-2"))
                         {

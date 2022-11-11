@@ -36,6 +36,7 @@ namespace Amazon.Rekognition.Model
     {
         private BoundingBox _boundingBox;
         private float? _confidence;
+        private List<DominantColor> _dominantColors = new List<DominantColor>();
 
         /// <summary>
         /// Gets and sets the property BoundingBox. 
@@ -72,6 +73,24 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetConfidence()
         {
             return this._confidence.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DominantColors. 
+        /// <para>
+        /// The dominant colors found in an individual instance of a label.
+        /// </para>
+        /// </summary>
+        public List<DominantColor> DominantColors
+        {
+            get { return this._dominantColors; }
+            set { this._dominantColors = value; }
+        }
+
+        // Check to see if DominantColors property is set
+        internal bool IsSetDominantColors()
+        {
+            return this._dominantColors != null && this._dominantColors.Count > 0; 
         }
 
     }

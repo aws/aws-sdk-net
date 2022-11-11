@@ -64,6 +64,18 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Aliases", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<LabelAlias, LabelAliasUnmarshaller>(LabelAliasUnmarshaller.Instance);
+                    unmarshalledObject.Aliases = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Categories", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<LabelCategory, LabelCategoryUnmarshaller>(LabelCategoryUnmarshaller.Instance);
+                    unmarshalledObject.Categories = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Confidence", targetDepth))
                 {
                     var unmarshaller = FloatUnmarshaller.Instance;

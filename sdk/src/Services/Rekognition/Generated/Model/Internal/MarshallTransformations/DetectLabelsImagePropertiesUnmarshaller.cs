@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Instance Object
+    /// Response Unmarshaller for DetectLabelsImageProperties Object
     /// </summary>  
-    public class InstanceUnmarshaller : IUnmarshaller<Instance, XmlUnmarshallerContext>, IUnmarshaller<Instance, JsonUnmarshallerContext>
+    public class DetectLabelsImagePropertiesUnmarshaller : IUnmarshaller<DetectLabelsImageProperties, XmlUnmarshallerContext>, IUnmarshaller<DetectLabelsImageProperties, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Instance IUnmarshaller<Instance, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DetectLabelsImageProperties IUnmarshaller<DetectLabelsImageProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,21 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Instance Unmarshall(JsonUnmarshallerContext context)
+        public DetectLabelsImageProperties Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Instance unmarshalledObject = new Instance();
+            DetectLabelsImageProperties unmarshalledObject = new DetectLabelsImageProperties();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("BoundingBox", targetDepth))
+                if (context.TestExpression("Background", targetDepth))
                 {
-                    var unmarshaller = BoundingBoxUnmarshaller.Instance;
-                    unmarshalledObject.BoundingBox = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Confidence", targetDepth))
-                {
-                    var unmarshaller = FloatUnmarshaller.Instance;
-                    unmarshalledObject.Confidence = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DetectLabelsImageBackgroundUnmarshaller.Instance;
+                    unmarshalledObject.Background = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DominantColors", targetDepth))
@@ -82,18 +76,30 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     unmarshalledObject.DominantColors = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Foreground", targetDepth))
+                {
+                    var unmarshaller = DetectLabelsImageForegroundUnmarshaller.Instance;
+                    unmarshalledObject.Foreground = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Quality", targetDepth))
+                {
+                    var unmarshaller = DetectLabelsImageQualityUnmarshaller.Instance;
+                    unmarshalledObject.Quality = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;
         }
 
 
-        private static InstanceUnmarshaller _instance = new InstanceUnmarshaller();        
+        private static DetectLabelsImagePropertiesUnmarshaller _instance = new DetectLabelsImagePropertiesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static InstanceUnmarshaller Instance
+        public static DetectLabelsImagePropertiesUnmarshaller Instance
         {
             get
             {

@@ -67,6 +67,17 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetFeatures())
+                {
+                    context.Writer.WritePropertyName("Features");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestFeaturesListValue in publicRequest.Features)
+                    {
+                            context.Writer.Write(publicRequestFeaturesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetImage())
                 {
                     context.Writer.WritePropertyName("Image");
@@ -88,6 +99,17 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("MinConfidence");
                     context.Writer.Write(publicRequest.MinConfidence);
+                }
+
+                if(publicRequest.IsSetSettings())
+                {
+                    context.Writer.WritePropertyName("Settings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DetectLabelsSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Settings, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 writer.WriteObjectEnd();
