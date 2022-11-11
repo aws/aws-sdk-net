@@ -82,6 +82,22 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EventData);
                 }
 
+                if(publicRequest.IsSetEventReferences())
+                {
+                    context.Writer.WritePropertyName("eventReferences");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestEventReferencesListValue in publicRequest.EventReferences)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EventReferenceMarshaller.Instance;
+                        marshaller.Marshall(publicRequestEventReferencesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetEventTime())
                 {
                     context.Writer.WritePropertyName("eventTime");

@@ -39,6 +39,7 @@ namespace Amazon.SSMIncidents.Model
     {
         private string _clientToken;
         private string _eventData;
+        private List<EventReference> _eventReferences = new List<EventReference>();
         private DateTime? _eventTime;
         private string _eventType;
         private string _incidentRecordArn;
@@ -68,7 +69,7 @@ namespace Amazon.SSMIncidents.Model
         /// A short description of the event.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=6000)]
+        [AWSProperty(Required=true, Min=0, Max=12000)]
         public string EventData
         {
             get { return this._eventData; }
@@ -79,6 +80,31 @@ namespace Amazon.SSMIncidents.Model
         internal bool IsSetEventData()
         {
             return this._eventData != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventReferences. 
+        /// <para>
+        /// Adds one or more references to the <code>TimelineEvent</code>. A reference can be
+        /// an Amazon Web Services resource involved in the incident or in some way associated
+        /// with it. When you specify a reference, you enter the Amazon Resource Name (ARN) of
+        /// the resource. You can also specify a related item. As an example, you could specify
+        /// the ARN of an Amazon DynamoDB (DynamoDB) table. The table for this example is the
+        /// resource. You could also specify a Amazon CloudWatch metric for that table. The metric
+        /// is the related item.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<EventReference> EventReferences
+        {
+            get { return this._eventReferences; }
+            set { this._eventReferences = value; }
+        }
+
+        // Check to see if EventReferences property is set
+        internal bool IsSetEventReferences()
+        {
+            return this._eventReferences != null && this._eventReferences.Count > 0; 
         }
 
         /// <summary>

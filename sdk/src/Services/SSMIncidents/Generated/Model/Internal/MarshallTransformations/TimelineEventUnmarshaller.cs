@@ -76,6 +76,12 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
                     unmarshalledObject.EventId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("eventReferences", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<EventReference, EventReferenceUnmarshaller>(EventReferenceUnmarshaller.Instance);
+                    unmarshalledObject.EventReferences = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("eventTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

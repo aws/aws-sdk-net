@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RelatedItem Marshaller
+    /// EventReference Marshaller
     /// </summary>
-    public class RelatedItemMarshaller : IRequestMarshaller<RelatedItem, JsonMarshallerContext> 
+    public class EventReferenceMarshaller : IRequestMarshaller<EventReference, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,29 +43,18 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RelatedItem requestObject, JsonMarshallerContext context)
+        public void Marshall(EventReference requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetGeneratedId())
+            if(requestObject.IsSetRelatedItemId())
             {
-                context.Writer.WritePropertyName("generatedId");
-                context.Writer.Write(requestObject.GeneratedId);
+                context.Writer.WritePropertyName("relatedItemId");
+                context.Writer.Write(requestObject.RelatedItemId);
             }
 
-            if(requestObject.IsSetIdentifier())
+            if(requestObject.IsSetResource())
             {
-                context.Writer.WritePropertyName("identifier");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ItemIdentifierMarshaller.Instance;
-                marshaller.Marshall(requestObject.Identifier, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetTitle())
-            {
-                context.Writer.WritePropertyName("title");
-                context.Writer.Write(requestObject.Title);
+                context.Writer.WritePropertyName("resource");
+                context.Writer.Write(requestObject.Resource);
             }
 
         }
@@ -73,7 +62,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static RelatedItemMarshaller Instance = new RelatedItemMarshaller();
+        public readonly static EventReferenceMarshaller Instance = new EventReferenceMarshaller();
 
     }
 }

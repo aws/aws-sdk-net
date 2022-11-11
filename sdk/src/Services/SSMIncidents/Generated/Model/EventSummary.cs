@@ -34,6 +34,7 @@ namespace Amazon.SSMIncidents.Model
     public partial class EventSummary
     {
         private string _eventId;
+        private List<EventReference> _eventReferences = new List<EventReference>();
         private DateTime? _eventTime;
         private string _eventType;
         private DateTime? _eventUpdatedTime;
@@ -56,6 +57,25 @@ namespace Amazon.SSMIncidents.Model
         internal bool IsSetEventId()
         {
             return this._eventId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventReferences. 
+        /// <para>
+        /// A list of references in a <code>TimelineEvent</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<EventReference> EventReferences
+        {
+            get { return this._eventReferences; }
+            set { this._eventReferences = value; }
+        }
+
+        // Check to see if EventReferences property is set
+        internal bool IsSetEventReferences()
+        {
+            return this._eventReferences != null && this._eventReferences.Count > 0; 
         }
 
         /// <summary>

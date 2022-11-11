@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RelatedItem Object
+    /// Response Unmarshaller for EventReference Object
     /// </summary>  
-    public class RelatedItemUnmarshaller : IUnmarshaller<RelatedItem, XmlUnmarshallerContext>, IUnmarshaller<RelatedItem, JsonUnmarshallerContext>
+    public class EventReferenceUnmarshaller : IUnmarshaller<EventReference, XmlUnmarshallerContext>, IUnmarshaller<EventReference, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RelatedItem IUnmarshaller<RelatedItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EventReference IUnmarshaller<EventReference, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RelatedItem Unmarshall(JsonUnmarshallerContext context)
+        public EventReference Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RelatedItem unmarshalledObject = new RelatedItem();
+            EventReference unmarshalledObject = new EventReference();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("generatedId", targetDepth))
+                if (context.TestExpression("relatedItemId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GeneratedId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RelatedItemId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("identifier", targetDepth))
-                {
-                    var unmarshaller = ItemIdentifierUnmarshaller.Instance;
-                    unmarshalledObject.Identifier = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("title", targetDepth))
+                if (context.TestExpression("resource", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Title = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Resource = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +82,12 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
         }
 
 
-        private static RelatedItemUnmarshaller _instance = new RelatedItemUnmarshaller();        
+        private static EventReferenceUnmarshaller _instance = new EventReferenceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RelatedItemUnmarshaller Instance
+        public static EventReferenceUnmarshaller Instance
         {
             get
             {
