@@ -37,6 +37,7 @@ namespace Amazon.MarketplaceCatalog.Model
         private string _changeType;
         private string _details;
         private Entity _entity;
+        private List<Tag> _entityTags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property ChangeName. 
@@ -114,6 +115,25 @@ namespace Amazon.MarketplaceCatalog.Model
         internal bool IsSetEntity()
         {
             return this._entity != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EntityTags. 
+        /// <para>
+        /// The tags associated with the change.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public List<Tag> EntityTags
+        {
+            get { return this._entityTags; }
+            set { this._entityTags = value; }
+        }
+
+        // Check to see if EntityTags property is set
+        internal bool IsSetEntityTags()
+        {
+            return this._entityTags != null && this._entityTags.Count > 0; 
         }
 
     }

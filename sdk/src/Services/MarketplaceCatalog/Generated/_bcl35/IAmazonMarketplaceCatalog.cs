@@ -343,22 +343,79 @@ namespace Amazon.MarketplaceCatalog
 
         #endregion
         
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Lists all tags that have been added to a resource (either an <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#catalog-api-entities">entity</a>
+        /// or <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets">change
+        /// set</a>).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by MarketplaceCatalog.</returns>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.InternalServiceException">
+        /// There was an internal service exception.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.ThrottlingException">
+        /// Too many requests.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.ValidationException">
+        /// An error occurred during validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation on AmazonMarketplaceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
+        /// 
+        /// <returns>Returns a  ListTagsForResourceResult from MarketplaceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  StartChangeSet
 
 
         /// <summary>
-        /// This operation allows you to request changes for your entities. Within a single ChangeSet,
-        /// you cannot start the same change type against the same entity multiple times. Additionally,
-        /// when a ChangeSet is running, all the entities targeted by the different changes are
-        /// locked until the ChangeSet has completed (either succeeded, cancelled, or failed).
-        /// If you try to start a ChangeSet containing a change against an entity that is already
-        /// locked, you will receive a <code>ResourceInUseException</code>.
+        /// Allows you to request changes for your entities. Within a single <code>ChangeSet</code>,
+        /// you can't start the same change type against the same entity multiple times. Additionally,
+        /// when a <code>ChangeSet</code> is running, all the entities targeted by the different
+        /// changes are locked until the change set has completed (either succeeded, cancelled,
+        /// or failed). If you try to start a change set containing a change against an entity
+        /// that is already locked, you will receive a <code>ResourceInUseException</code> error.
         /// 
         ///  
         /// <para>
-        /// For example, you cannot start the ChangeSet described in the <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_StartChangeSet.html#API_StartChangeSet_Examples">example</a>
-        /// later in this topic, because it contains two changes to execute the same change type
-        /// (<code>AddRevisions</code>) against the same entity (<code>entity-id@1)</code>.
+        /// For example, you can't start the <code>ChangeSet</code> described in the <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_StartChangeSet.html#API_StartChangeSet_Examples">example</a>
+        /// later in this topic because it contains two changes to run the same change type (<code>AddRevisions</code>)
+        /// against the same entity (<code>entity-id@1</code>).
         /// </para>
         ///  
         /// <para>
@@ -418,6 +475,120 @@ namespace Amazon.MarketplaceCatalog
         /// <returns>Returns a  StartChangeSetResult from MarketplaceCatalog.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/StartChangeSet">REST API Reference for StartChangeSet Operation</seealso>
         StartChangeSetResponse EndStartChangeSet(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Tags a resource (either an <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#catalog-api-entities">entity</a>
+        /// or <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets">change
+        /// set</a>).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by MarketplaceCatalog.</returns>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.InternalServiceException">
+        /// There was an internal service exception.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.ThrottlingException">
+        /// Too many requests.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.ValidationException">
+        /// An error occurred during validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse TagResource(TagResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation on AmazonMarketplaceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/TagResource">REST API Reference for TagResource Operation</seealso>
+        IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
+        /// 
+        /// <returns>Returns a  TagResourceResult from MarketplaceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse EndTagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Removes a tag or list of tags from a resource (either an <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#catalog-api-entities">entity</a>
+        /// or <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets">change
+        /// set</a>).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by MarketplaceCatalog.</returns>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.InternalServiceException">
+        /// There was an internal service exception.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.ThrottlingException">
+        /// Too many requests.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.ValidationException">
+        /// An error occurred during validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation on AmazonMarketplaceCatalogClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
+        /// 
+        /// <returns>Returns a  UntagResourceResult from MarketplaceCatalog.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
 
         #endregion
         

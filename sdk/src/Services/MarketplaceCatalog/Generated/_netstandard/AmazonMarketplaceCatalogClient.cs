@@ -536,6 +536,57 @@ namespace Amazon.MarketplaceCatalog
 
         #endregion
         
+        #region  ListTagsForResource
+
+        internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all tags that have been added to a resource (either an <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#catalog-api-entities">entity</a>
+        /// or <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets">change
+        /// set</a>).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by MarketplaceCatalog.</returns>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.InternalServiceException">
+        /// There was an internal service exception.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.ThrottlingException">
+        /// Too many requests.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.ValidationException">
+        /// An error occurred during validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartChangeSet
 
         internal virtual StartChangeSetResponse StartChangeSet(StartChangeSetRequest request)
@@ -550,18 +601,18 @@ namespace Amazon.MarketplaceCatalog
 
 
         /// <summary>
-        /// This operation allows you to request changes for your entities. Within a single ChangeSet,
-        /// you cannot start the same change type against the same entity multiple times. Additionally,
-        /// when a ChangeSet is running, all the entities targeted by the different changes are
-        /// locked until the ChangeSet has completed (either succeeded, cancelled, or failed).
-        /// If you try to start a ChangeSet containing a change against an entity that is already
-        /// locked, you will receive a <code>ResourceInUseException</code>.
+        /// Allows you to request changes for your entities. Within a single <code>ChangeSet</code>,
+        /// you can't start the same change type against the same entity multiple times. Additionally,
+        /// when a <code>ChangeSet</code> is running, all the entities targeted by the different
+        /// changes are locked until the change set has completed (either succeeded, cancelled,
+        /// or failed). If you try to start a change set containing a change against an entity
+        /// that is already locked, you will receive a <code>ResourceInUseException</code> error.
         /// 
         ///  
         /// <para>
-        /// For example, you cannot start the ChangeSet described in the <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_StartChangeSet.html#API_StartChangeSet_Examples">example</a>
-        /// later in this topic, because it contains two changes to execute the same change type
-        /// (<code>AddRevisions</code>) against the same entity (<code>entity-id@1)</code>.
+        /// For example, you can't start the <code>ChangeSet</code> described in the <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_StartChangeSet.html#API_StartChangeSet_Examples">example</a>
+        /// later in this topic because it contains two changes to run the same change type (<code>AddRevisions</code>)
+        /// against the same entity (<code>entity-id@1</code>).
         /// </para>
         ///  
         /// <para>
@@ -604,6 +655,108 @@ namespace Amazon.MarketplaceCatalog
             options.ResponseUnmarshaller = StartChangeSetResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartChangeSetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TagResource
+
+        internal virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Tags a resource (either an <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#catalog-api-entities">entity</a>
+        /// or <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets">change
+        /// set</a>).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by MarketplaceCatalog.</returns>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.InternalServiceException">
+        /// There was an internal service exception.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.ThrottlingException">
+        /// Too many requests.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.ValidationException">
+        /// An error occurred during validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+        internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes a tag or list of tags from a resource (either an <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#catalog-api-entities">entity</a>
+        /// or <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets">change
+        /// set</a>).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by MarketplaceCatalog.</returns>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.InternalServiceException">
+        /// There was an internal service exception.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.ThrottlingException">
+        /// Too many requests.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.ValidationException">
+        /// An error occurred during validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion

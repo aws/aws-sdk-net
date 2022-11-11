@@ -167,6 +167,18 @@
     <pattern>^[\w+=.:@\-\/]$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^arn:[\w+=/,.@-]+:aws-marketplace:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.ListTagsForResourceResponse.ResourceArn</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^arn:[\w+=/,.@-]+:aws-marketplace:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.StartChangeSetRequest.Catalog</property>
     <min>1</min>
     <max>64</max>
@@ -181,8 +193,8 @@
   <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.StartChangeSetRequest.ClientRequestToken</property>
     <min>1</min>
-    <max>36</max>
-    <pattern>^[\w\-]+$</pattern>
+    <max>64</max>
+    <pattern>^[!-~]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.StartChangeSetResponse.ChangeSetArn</property>
@@ -195,6 +207,18 @@
     <min>1</min>
     <max>255</max>
     <pattern>^[\w\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.TagResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^arn:[\w+=/,.@-]+:aws-marketplace:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.UntagResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^arn:[\w+=/,.@-]+:aws-marketplace:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.Change.ChangeName</property>
@@ -333,5 +357,17 @@
     <min>1</min>
     <max>255</max>
     <pattern>^[a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.Tag.Key</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.Tag.Value</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
   </property-value-rule>
 </property-value-rules>

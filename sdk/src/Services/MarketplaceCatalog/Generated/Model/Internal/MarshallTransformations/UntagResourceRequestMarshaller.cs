@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// StartChangeSet Request Marshaller
+    /// UntagResource Request Marshaller
     /// </summary>       
-    public class StartChangeSetRequestMarshaller : IMarshaller<IRequest, StartChangeSetRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UntagResourceRequestMarshaller : IMarshaller<IRequest, UntagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((StartChangeSetRequest)input);
+            return this.Marshall((UntagResourceRequest)input);
         }
 
         /// <summary>
@@ -52,74 +52,36 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(StartChangeSetRequest publicRequest)
+        public IRequest Marshall(UntagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MarketplaceCatalog");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-17";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/StartChangeSet";
+            request.ResourcePath = "/UntagResource";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCatalog())
+                if(publicRequest.IsSetResourceArn())
                 {
-                    context.Writer.WritePropertyName("Catalog");
-                    context.Writer.Write(publicRequest.Catalog);
+                    context.Writer.WritePropertyName("ResourceArn");
+                    context.Writer.Write(publicRequest.ResourceArn);
                 }
 
-                if(publicRequest.IsSetChangeSet())
+                if(publicRequest.IsSetTagKeys())
                 {
-                    context.Writer.WritePropertyName("ChangeSet");
+                    context.Writer.WritePropertyName("TagKeys");
                     context.Writer.WriteArrayStart();
-                    foreach(var publicRequestChangeSetListValue in publicRequest.ChangeSet)
+                    foreach(var publicRequestTagKeysListValue in publicRequest.TagKeys)
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ChangeMarshaller.Instance;
-                        marshaller.Marshall(publicRequestChangeSetListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.Write(publicRequestTagKeysListValue);
                     }
                     context.Writer.WriteArrayEnd();
                 }
 
-                if(publicRequest.IsSetChangeSetName())
-                {
-                    context.Writer.WritePropertyName("ChangeSetName");
-                    context.Writer.Write(publicRequest.ChangeSetName);
-                }
-
-                if(publicRequest.IsSetChangeSetTags())
-                {
-                    context.Writer.WritePropertyName("ChangeSetTags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestChangeSetTagsListValue in publicRequest.ChangeSetTags)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestChangeSetTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetClientRequestToken())
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
@@ -128,9 +90,9 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static StartChangeSetRequestMarshaller _instance = new StartChangeSetRequestMarshaller();        
+        private static UntagResourceRequestMarshaller _instance = new UntagResourceRequestMarshaller();        
 
-        internal static StartChangeSetRequestMarshaller GetInstance()
+        internal static UntagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -138,7 +100,7 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StartChangeSetRequestMarshaller Instance
+        public static UntagResourceRequestMarshaller Instance
         {
             get
             {
