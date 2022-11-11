@@ -141,7 +141,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property Principals. 
         /// <para>
-        /// The grant principals.
+        /// The grant principals. This value should be specified as an Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1)]
