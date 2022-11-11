@@ -37,8 +37,10 @@ namespace Amazon.IoT.Model
         private string _caCertificateId;
         private string _clientId;
         private string _cognitoIdentityPoolId;
+        private string _deviceCertificateArn;
         private string _deviceCertificateId;
         private string _iamRoleArn;
+        private IssuerCertificateIdentifier _issuerCertificateIdentifier;
         private PolicyVersionIdentifier _policyVersionIdentifier;
         private string _roleAliasArn;
 
@@ -117,6 +119,24 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DeviceCertificateArn. 
+        /// <para>
+        /// The ARN of the identified device certificate.
+        /// </para>
+        /// </summary>
+        public string DeviceCertificateArn
+        {
+            get { return this._deviceCertificateArn; }
+            set { this._deviceCertificateArn = value; }
+        }
+
+        // Check to see if DeviceCertificateArn property is set
+        internal bool IsSetDeviceCertificateArn()
+        {
+            return this._deviceCertificateArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DeviceCertificateId. 
         /// <para>
         /// The ID of the certificate attached to the resource.
@@ -152,6 +172,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetIamRoleArn()
         {
             return this._iamRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IssuerCertificateIdentifier. 
+        /// <para>
+        /// The issuer certificate identifier.
+        /// </para>
+        /// </summary>
+        public IssuerCertificateIdentifier IssuerCertificateIdentifier
+        {
+            get { return this._issuerCertificateIdentifier; }
+            set { this._issuerCertificateIdentifier = value; }
+        }
+
+        // Check to see if IssuerCertificateIdentifier property is set
+        internal bool IsSetIssuerCertificateIdentifier()
+        {
+            return this._issuerCertificateIdentifier != null;
         }
 
         /// <summary>

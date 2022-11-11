@@ -3183,6 +3183,10 @@ namespace Amazon.IoT
         /// </summary>
         public static readonly ResourceType IOT_POLICY = new ResourceType("IOT_POLICY");
         /// <summary>
+        /// Constant ISSUER_CERTIFICATE for ResourceType
+        /// </summary>
+        public static readonly ResourceType ISSUER_CERTIFICATE = new ResourceType("ISSUER_CERTIFICATE");
+        /// <summary>
         /// Constant ROLE_ALIAS for ResourceType
         /// </summary>
         public static readonly ResourceType ROLE_ALIAS = new ResourceType("ROLE_ALIAS");

@@ -69,6 +69,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CognitoIdentityPoolId);
             }
 
+            if(requestObject.IsSetDeviceCertificateArn())
+            {
+                context.Writer.WritePropertyName("deviceCertificateArn");
+                context.Writer.Write(requestObject.DeviceCertificateArn);
+            }
+
             if(requestObject.IsSetDeviceCertificateId())
             {
                 context.Writer.WritePropertyName("deviceCertificateId");
@@ -79,6 +85,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("iamRoleArn");
                 context.Writer.Write(requestObject.IamRoleArn);
+            }
+
+            if(requestObject.IsSetIssuerCertificateIdentifier())
+            {
+                context.Writer.WritePropertyName("issuerCertificateIdentifier");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = IssuerCertificateIdentifierMarshaller.Instance;
+                marshaller.Marshall(requestObject.IssuerCertificateIdentifier, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetPolicyVersionIdentifier())

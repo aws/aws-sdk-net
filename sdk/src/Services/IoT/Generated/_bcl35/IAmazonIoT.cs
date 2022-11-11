@@ -11754,6 +11754,105 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  ListRelatedResourcesForAuditFinding
+
+
+        /// <summary>
+        /// The related resources of an Audit finding. The following resources can be returned
+        /// from calling this API:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// DEVICE_CERTIFICATE
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CA_CERTIFICATE
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// IOT_POLICY
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// COGNITO_IDENTITY_POOL
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLIENT_ID
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_SETTINGS
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ROLE_ALIAS
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// IAM_ROLE
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ISSUER_CERTIFICATE
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// This API is similar to DescribeAuditFinding's <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeAuditFinding.html">RelatedResources</a>
+        /// but provides pagination and is not limited to 10 resources. When calling <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeAuditFinding.html">DescribeAuditFinding</a>
+        /// for the intermediate CA revoked for active device certificates check, RelatedResources
+        /// will not be populated. You must use this API, ListRelatedResourcesForAuditFinding,
+        /// to list the certificates.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRelatedResourcesForAuditFinding service method.</param>
+        /// 
+        /// <returns>The response from the ListRelatedResourcesForAuditFinding service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListRelatedResourcesForAuditFinding">REST API Reference for ListRelatedResourcesForAuditFinding Operation</seealso>
+        ListRelatedResourcesForAuditFindingResponse ListRelatedResourcesForAuditFinding(ListRelatedResourcesForAuditFindingRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRelatedResourcesForAuditFinding operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRelatedResourcesForAuditFinding operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRelatedResourcesForAuditFinding
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListRelatedResourcesForAuditFinding">REST API Reference for ListRelatedResourcesForAuditFinding Operation</seealso>
+        IAsyncResult BeginListRelatedResourcesForAuditFinding(ListRelatedResourcesForAuditFindingRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListRelatedResourcesForAuditFinding operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListRelatedResourcesForAuditFinding.</param>
+        /// 
+        /// <returns>Returns a  ListRelatedResourcesForAuditFindingResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListRelatedResourcesForAuditFinding">REST API Reference for ListRelatedResourcesForAuditFinding Operation</seealso>
+        ListRelatedResourcesForAuditFindingResponse EndListRelatedResourcesForAuditFinding(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListRoleAliases
 
 
@@ -12572,7 +12671,8 @@ namespace Amazon.IoT
         /// Lists your things. Use the <b>attributeName</b> and <b>attributeValue</b> parameters
         /// to filter your things. For example, calling <code>ListThings</code> with attributeName=Color
         /// and attributeValue=Red retrieves all things in the registry that contain an attribute
-        /// <b>Color</b> with the value <b>Red</b>. 
+        /// <b>Color</b> with the value <b>Red</b>. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/thing-registry.html#list-things">List
+        /// Things</a> from the <i>Amazon Web Services IoT Core Developer Guide</i>.
         /// 
         ///  
         /// <para>
@@ -12611,7 +12711,8 @@ namespace Amazon.IoT
         /// Lists your things. Use the <b>attributeName</b> and <b>attributeValue</b> parameters
         /// to filter your things. For example, calling <code>ListThings</code> with attributeName=Color
         /// and attributeValue=Red retrieves all things in the registry that contain an attribute
-        /// <b>Color</b> with the value <b>Red</b>. 
+        /// <b>Color</b> with the value <b>Red</b>. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/thing-registry.html#list-things">List
+        /// Things</a> from the <i>Amazon Web Services IoT Core Developer Guide</i>.
         /// 
         ///  
         /// <para>

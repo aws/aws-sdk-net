@@ -2000,6 +2000,17 @@
     <pattern>^[0-9A-Za-z_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.ListRelatedResourcesForAuditFindingRequest.FindingId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ListRelatedResourcesForAuditFindingRequest.MaxResults</property>
+    <min>1</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.ListRoleAliasesRequest.Marker</property>
     <max>1024</max>
     <pattern>[A-Za-z0-9+/]+={0,2}</pattern>
@@ -3207,6 +3218,20 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.IotEventsAction.MessageId</property>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.IssuerCertificateIdentifier.IssuerCertificateSerialNumber</property>
+    <max>20</max>
+    <pattern>[a-fA-F0-9:]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.IssuerCertificateIdentifier.IssuerCertificateSubject</property>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.IssuerCertificateIdentifier.IssuerId</property>
+    <max>64</max>
+    <pattern>(0x)?[a-fA-F0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.Job.Comment</property>
