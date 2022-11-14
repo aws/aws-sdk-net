@@ -112,7 +112,7 @@ namespace Amazon.LakeFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using
+        /// For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using
         /// Service-Linked Roles for Lake Formation</a>.
         /// </para>
         /// </summary>

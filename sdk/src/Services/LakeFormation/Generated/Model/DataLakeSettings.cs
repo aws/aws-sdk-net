@@ -41,6 +41,7 @@ namespace Amazon.LakeFormation.Model
         private List<PrincipalPermissions> _createTableDefaultPermissions = new List<PrincipalPermissions>();
         private List<DataLakePrincipal> _dataLakeAdmins = new List<DataLakePrincipal>();
         private List<DataLakePrincipal> _externalDataFilteringAllowList = new List<DataLakePrincipal>();
+        private Dictionary<string, string> _parameters = new Dictionary<string, string>();
         private List<string> _trustedResourceOwners = new List<string>();
 
         /// <summary>
@@ -102,8 +103,7 @@ namespace Amazon.LakeFormation.Model
         /// Gets and sets the property CreateDatabaseDefaultPermissions. 
         /// <para>
         /// Specifies whether access control on newly created database is managed by Lake Formation
-        /// permissions or exclusively by IAM permissions. You can override this default setting
-        /// when you create a database.
+        /// permissions or exclusively by IAM permissions.
         /// </para>
         ///  
         /// <para>
@@ -208,6 +208,26 @@ namespace Amazon.LakeFormation.Model
         internal bool IsSetExternalDataFilteringAllowList()
         {
             return this._externalDataFilteringAllowList != null && this._externalDataFilteringAllowList.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Parameters. 
+        /// <para>
+        /// A key-value map that provides an additional configuration on your data lake. CrossAccountVersion
+        /// is the key you can configure in the Parameters field. Accepted values for the CrossAccountVersion
+        /// key are 1, 2, and 3.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Parameters
+        {
+            get { return this._parameters; }
+            set { this._parameters = value; }
+        }
+
+        // Check to see if Parameters property is set
+        internal bool IsSetParameters()
+        {
+            return this._parameters != null && this._parameters.Count > 0; 
         }
 
         /// <summary>

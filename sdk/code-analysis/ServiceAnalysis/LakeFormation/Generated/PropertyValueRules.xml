@@ -344,7 +344,7 @@
   <property-value-rule>
     <property>Amazon.LakeFormation.Model.SearchDatabasesByLFTagsRequest.MaxResults</property>
     <min>1</min>
-    <max>1000</max>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LakeFormation.Model.SearchTablesByLFTagsRequest.CatalogId</property>
@@ -354,7 +354,7 @@
   <property-value-rule>
     <property>Amazon.LakeFormation.Model.SearchTablesByLFTagsRequest.MaxResults</property>
     <min>1</min>
-    <max>1000</max>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LakeFormation.Model.StartQueryPlanningRequest.QueryString</property>
