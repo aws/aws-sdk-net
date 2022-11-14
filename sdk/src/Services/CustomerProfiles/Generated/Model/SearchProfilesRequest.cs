@@ -30,16 +30,50 @@ namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
     /// Container for the parameters to the SearchProfiles operation.
-    /// Searches for profiles within a specific domain name using name, phone number, email
-    /// address, account number, or a custom defined index.
+    /// Searches for profiles within a specific domain using one or more predefined search
+    /// keys (e.g., _fullName, _phone, _email, _account, etc.) and/or custom-defined search
+    /// keys. A search key is a data type pair that consists of a <code>KeyName</code> and
+    /// <code>Values</code> list.
+    /// 
+    ///  
+    /// <para>
+    /// This operation supports searching for profiles with a minimum of 1 key-value(s) pair
+    /// and up to 5 key-value(s) pairs using either <code>AND</code> or <code>OR</code> logic.
+    /// </para>
     /// </summary>
     public partial class SearchProfilesRequest : AmazonCustomerProfilesRequest
     {
+        private List<AdditionalSearchKey> _additionalSearchKeys = new List<AdditionalSearchKey>();
         private string _domainName;
         private string _keyName;
+        private LogicalOperator _logicalOperator;
         private int? _maxResults;
         private string _nextToken;
         private List<string> _values = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property AdditionalSearchKeys. 
+        /// <para>
+        /// A list of <code>AdditionalSearchKey</code> objects that are each searchable identifiers
+        /// of a profile. Each <code>AdditionalSearchKey</code> object contains a <code>KeyName</code>
+        /// and a list of <code>Values</code> associated with that specific key (i.e., a key-value(s)
+        /// pair). These additional search keys will be used in conjunction with the <code>LogicalOperator</code>
+        /// and the required <code>KeyName</code> and <code>Values</code> parameters to search
+        /// for profiles that satisfy the search criteria. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=4)]
+        public List<AdditionalSearchKey> AdditionalSearchKeys
+        {
+            get { return this._additionalSearchKeys; }
+            set { this._additionalSearchKeys = value; }
+        }
+
+        // Check to see if AdditionalSearchKeys property is set
+        internal bool IsSetAdditionalSearchKeys()
+        {
+            return this._additionalSearchKeys != null && this._additionalSearchKeys.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property DomainName. 
@@ -84,9 +118,54 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LogicalOperator. 
+        /// <para>
+        /// Relationship between all specified search keys that will be used to search for profiles.
+        /// This includes the required <code>KeyName</code> and <code>Values</code> parameters
+        /// as well as any key-value(s) pairs specified in the <code>AdditionalSearchKeys</code>
+        /// list.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter influences which profiles will be returned in the response in the following
+        /// manner:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>AND</code> - The response only includes profiles that match all of the search
+        /// keys.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>OR</code> - The response includes profiles that match at least one of the search
+        /// keys.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The <code>OR</code> relationship is the default behavior if this parameter is not
+        /// included in the request.
+        /// </para>
+        /// </summary>
+        public LogicalOperator LogicalOperator
+        {
+            get { return this._logicalOperator; }
+            set { this._logicalOperator = value; }
+        }
+
+        // Check to see if LogicalOperator property is set
+        internal bool IsSetLogicalOperator()
+        {
+            return this._logicalOperator != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of objects returned per page.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default is 20 if this parameter is not included in the request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

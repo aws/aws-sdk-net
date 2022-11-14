@@ -37,22 +37,12 @@ namespace Amazon.CustomerProfiles
     ///
     /// Amazon Connect Customer Profiles 
     /// <para>
-    /// Welcome to the Amazon Connect Customer Profiles API Reference. This guide provides
-    /// information about the Amazon Connect Customer Profiles API, including supported operations,
-    /// data types, parameters, and schemas.
-    /// </para>
-    ///  
-    /// <para>
     /// Amazon Connect Customer Profiles is a unified customer profile for your contact center
     /// that has pre-built connectors powered by AppFlow that make it easy to combine customer
     /// information from third party applications, such as Salesforce (CRM), ServiceNow (ITSM),
     /// and your enterprise resource planning (ERP), with contact history from your Amazon
-    /// Connect contact center.
-    /// </para>
-    ///  
-    /// <para>
-    /// If you're new to Amazon Connect , you might find it helpful to also review the <a
-    /// href="https://docs.aws.amazon.com/connect/latest/adminguide/what-is-amazon-connect.html">Amazon
+    /// Connect contact center. If you're new to Amazon Connect, you might find it helpful
+    /// to review the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/">Amazon
     /// Connect Administrator Guide</a>.
     /// </para>
     /// </summary>
@@ -2759,8 +2749,16 @@ namespace Amazon.CustomerProfiles
         #region  SearchProfiles
 
         /// <summary>
-        /// Searches for profiles within a specific domain name using name, phone number, email
-        /// address, account number, or a custom defined index.
+        /// Searches for profiles within a specific domain using one or more predefined search
+        /// keys (e.g., _fullName, _phone, _email, _account, etc.) and/or custom-defined search
+        /// keys. A search key is a data type pair that consists of a <code>KeyName</code> and
+        /// <code>Values</code> list.
+        /// 
+        ///  
+        /// <para>
+        /// This operation supports searching for profiles with a minimum of 1 key-value(s) pair
+        /// and up to 5 key-value(s) pairs using either <code>AND</code> or <code>OR</code> logic.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchProfiles service method.</param>
         /// 

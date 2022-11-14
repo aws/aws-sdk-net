@@ -29,48 +29,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
-    /// This is the response object from the SearchProfiles operation.
+    /// A data type pair that consists of a <code>KeyName</code> and <code>Values</code> list
+    /// that were used to find a profile returned in response to a <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a>
+    /// request.
     /// </summary>
-    public partial class SearchProfilesResponse : AmazonWebServiceResponse
+    public partial class FoundByKeyValue
     {
-        private List<Profile> _items = new List<Profile>();
-        private string _nextToken;
+        private string _keyName;
+        private List<string> _values = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property Items. 
+        /// Gets and sets the property KeyName. 
         /// <para>
-        /// The list of Profiles matching the search criteria.
+        /// A searchable identifier of a customer profile.
         /// </para>
         /// </summary>
-        public List<Profile> Items
+        [AWSProperty(Min=1, Max=64)]
+        public string KeyName
         {
-            get { return this._items; }
-            set { this._items = value; }
+            get { return this._keyName; }
+            set { this._keyName = value; }
         }
 
-        // Check to see if Items property is set
-        internal bool IsSetItems()
+        // Check to see if KeyName property is set
+        internal bool IsSetKeyName()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._keyName != null;
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property Values. 
         /// <para>
-        /// The pagination token from the previous SearchProfiles API call.
+        /// A list of key values.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
-        public string NextToken
+        public List<string> Values
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._values; }
+            set { this._values = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if Values property is set
+        internal bool IsSetValues()
         {
-            return this._nextToken != null;
+            return this._values != null && this._values.Count > 0; 
         }
 
     }

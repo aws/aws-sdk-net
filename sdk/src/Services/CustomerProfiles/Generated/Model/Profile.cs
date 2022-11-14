@@ -44,6 +44,7 @@ namespace Amazon.CustomerProfiles.Model
         private string _businessPhoneNumber;
         private string _emailAddress;
         private string _firstName;
+        private List<FoundByKeyValue> _foundByItems = new List<FoundByKeyValue>();
         private Gender _gender;
         private string _homePhoneNumber;
         private string _lastName;
@@ -261,6 +262,52 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetFirstName()
         {
             return this._firstName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FoundByItems. 
+        /// <para>
+        /// A list of items used to find a profile returned in a <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a>
+        /// response. An item is a key-value(s) pair that matches an attribute in the profile.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the optional <code>AdditionalSearchKeys</code> parameter was included in the <a
+        /// href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a>
+        /// request, the <code>FoundByItems</code> list should be interpreted based on the <code>LogicalOperator</code>
+        /// used in the request:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>AND</code> - The profile included in the response matched all of the search
+        /// keys specified in the request. The <code>FoundByItems</code> will include all of the
+        /// key-value(s) pairs that were specified in the request (as this is a requirement of
+        /// <code>AND</code> search logic).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>OR</code> - The profile included in the response matched at least one of the
+        /// search keys specified in the request. The <code>FoundByItems</code> will include each
+        /// of the key-value(s) pairs that the profile was found by.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The <code>OR</code> relationship is the default behavior if the <code>LogicalOperator</code>
+        /// parameter is not included in the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a>
+        /// request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public List<FoundByKeyValue> FoundByItems
+        {
+            get { return this._foundByItems; }
+            set { this._foundByItems = value; }
+        }
+
+        // Check to see if FoundByItems property is set
+        internal bool IsSetFoundByItems()
+        {
+            return this._foundByItems != null && this._foundByItems.Count > 0; 
         }
 
         /// <summary>

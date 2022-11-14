@@ -130,6 +130,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     unmarshalledObject.FirstName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FoundByItems", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<FoundByKeyValue, FoundByKeyValueUnmarshaller>(FoundByKeyValueUnmarshaller.Instance);
+                    unmarshalledObject.FoundByItems = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Gender", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

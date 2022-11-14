@@ -980,6 +980,12 @@
     <pattern>[a-f0-9]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.AdditionalSearchKey.KeyName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.Address.Address1</property>
     <min>1</min>
     <max>255</max>
@@ -1164,6 +1170,12 @@
     <min>20</min>
     <max>2048</max>
     <pattern>arn:aws:kms:.*:[0-9]+:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.FoundByKeyValue.KeyName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.IdentityResolutionJob.DomainName</property>
