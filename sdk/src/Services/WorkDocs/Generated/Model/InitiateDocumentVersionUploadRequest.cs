@@ -192,7 +192,7 @@ namespace Amazon.WorkDocs.Model
         /// The ID of the parent folder.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=128)]
         public string ParentFolderId
         {
             get { return this._parentFolderId; }

@@ -236,6 +236,23 @@
     <pattern>[\w+-.@]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DeleteDocumentVersionRequest.AuthenticationToken</property>
+    <min>1</min>
+    <max>8199</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DeleteDocumentVersionRequest.DocumentId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DeleteDocumentVersionRequest.VersionId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkDocs.Model.DeleteFolderRequest.AuthenticationToken</property>
     <min>1</min>
     <max>8199</max>
@@ -310,7 +327,7 @@
   <property-value-rule>
     <property>Amazon.WorkDocs.Model.DescribeActivitiesRequest.Marker</property>
     <min>1</min>
-    <max>2048</max>
+    <max>12288</max>
     <pattern>[\u0000-\u00FF]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -334,7 +351,7 @@
   <property-value-rule>
     <property>Amazon.WorkDocs.Model.DescribeActivitiesResponse.Marker</property>
     <min>1</min>
-    <max>2048</max>
+    <max>12288</max>
     <pattern>[\u0000-\u00FF]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -773,6 +790,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkDocs.Model.RemoveResourcePermissionRequest.ResourceId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.RestoreDocumentVersionsRequest.AuthenticationToken</property>
+    <min>1</min>
+    <max>8199</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.RestoreDocumentVersionsRequest.DocumentId</property>
     <min>1</min>
     <max>128</max>
     <pattern>[\w+-.@]+</pattern>

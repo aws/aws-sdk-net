@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeResourcePermissions operation
+    /// Response Unmarshaller for DeleteDocumentVersion operation
     /// </summary>  
-    public class DescribeResourcePermissionsResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DeleteDocumentVersionResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,25 +45,8 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeResourcePermissionsResponse response = new DescribeResourcePermissionsResponse();
+            DeleteDocumentVersionResponse response = new DeleteDocumentVersionResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("Marker", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Marker = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Principals", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Principal, PrincipalUnmarshaller>(PrincipalUnmarshaller.Instance);
-                    response.Principals = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -86,17 +69,29 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConcurrentModificationException"))
+                {
+                    return ConcurrentModificationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictingOperationException"))
+                {
+                    return ConflictingOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("EntityNotExistsException"))
+                {
+                    return EntityNotExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("FailedDependencyException"))
                 {
                     return FailedDependencyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidArgumentException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidOperationException"))
                 {
-                    return InvalidArgumentExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InvalidOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceUnavailableException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ProhibitedStateException"))
                 {
-                    return ServiceUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ProhibitedStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("UnauthorizedOperationException"))
                 {
@@ -110,9 +105,9 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             return new AmazonWorkDocsException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DescribeResourcePermissionsResponseUnmarshaller _instance = new DescribeResourcePermissionsResponseUnmarshaller();        
+        private static DeleteDocumentVersionResponseUnmarshaller _instance = new DeleteDocumentVersionResponseUnmarshaller();        
 
-        internal static DescribeResourcePermissionsResponseUnmarshaller GetInstance()
+        internal static DeleteDocumentVersionResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -120,7 +115,7 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeResourcePermissionsResponseUnmarshaller Instance
+        public static DeleteDocumentVersionResponseUnmarshaller Instance
         {
             get
             {

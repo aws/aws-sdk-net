@@ -1226,6 +1226,10 @@ namespace Amazon.WorkDocs
         /// Constant HTTPS for SubscriptionProtocolType
         /// </summary>
         public static readonly SubscriptionProtocolType HTTPS = new SubscriptionProtocolType("HTTPS");
+        /// <summary>
+        /// Constant SQS for SubscriptionProtocolType
+        /// </summary>
+        public static readonly SubscriptionProtocolType SQS = new SubscriptionProtocolType("SQS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

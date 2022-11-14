@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkDocs.Model
 {
     /// <summary>
-    /// The maximum of 100,000 folders under the parent folder has been exceeded.
+    /// The maximum of 100,000 files and folders under the parent folder has been exceeded.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

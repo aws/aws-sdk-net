@@ -124,7 +124,10 @@ namespace Amazon.WorkDocs.Model
 #endif
 
         /// <summary>
-        /// Gets and sets the property EntityIds.
+        /// Gets and sets the property EntityIds. 
+        /// <para>
+        /// The IDs of the non-existent resources.
+        /// </para>
         /// </summary>
         public List<string> EntityIds
         {

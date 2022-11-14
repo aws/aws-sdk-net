@@ -75,6 +75,33 @@ namespace Amazon.WorkDocs
     /// three use cases above, as well as give users the ability to grant access on a selective
     /// basis using the IAM model.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// The pricing for Amazon WorkDocs APIs varies depending on the API call type for these
+    /// actions:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>READ (Get*)</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>WRITE (Activate*, Add*, Create*, Deactivate*, Initiate*, Update*)</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>LIST (Describe*)</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>DELETE*, CANCEL</code> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For information about Amazon WorkDocs API pricing, see <a href="https://aws.amazon.com/workdocs/pricing/">Amazon
+    /// WorkDocs Pricing</a>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class AmazonWorkDocsClient : AmazonServiceClient, IAmazonWorkDocs
     {
@@ -310,6 +337,9 @@ namespace Amazon.WorkDocs
         /// <param name="request">Container for the necessary parameters to execute the AbortDocumentVersionUpload service method.</param>
         /// 
         /// <returns>The response from the AbortDocumentVersionUpload service method, as returned by WorkDocs.</returns>
+        /// <exception cref="Amazon.WorkDocs.Model.ConcurrentModificationException">
+        /// The resource hierarchy is changing.
+        /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.EntityNotExistsException">
         /// The resource does not exist.
         /// </exception>
@@ -351,6 +381,9 @@ namespace Amazon.WorkDocs
         /// </param>
         /// 
         /// <returns>The response from the AbortDocumentVersionUpload service method, as returned by WorkDocs.</returns>
+        /// <exception cref="Amazon.WorkDocs.Model.ConcurrentModificationException">
+        /// The resource hierarchy is changing.
+        /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.EntityNotExistsException">
         /// The resource does not exist.
         /// </exception>
@@ -469,6 +502,9 @@ namespace Amazon.WorkDocs
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
+        /// The specified document version is not in the INITIALIZED state.
+        /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
         /// One or more of the dependencies is unavailable.
         /// </exception>
@@ -502,6 +538,9 @@ namespace Amazon.WorkDocs
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
+        /// The specified document version is not in the INITIALIZED state.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
         /// One or more of the dependencies is unavailable.
@@ -713,6 +752,9 @@ namespace Amazon.WorkDocs
         /// <param name="request">Container for the necessary parameters to execute the CreateFolder service method.</param>
         /// 
         /// <returns>The response from the CreateFolder service method, as returned by WorkDocs.</returns>
+        /// <exception cref="Amazon.WorkDocs.Model.ConcurrentModificationException">
+        /// The resource hierarchy is changing.
+        /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ConflictingOperationException">
         /// Another operation is in progress on the resource that conflicts with the current operation.
         /// </exception>
@@ -727,7 +769,7 @@ namespace Amazon.WorkDocs
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.LimitExceededException">
-        /// The maximum of 100,000 folders under the parent folder has been exceeded.
+        /// The maximum of 100,000 files and folders under the parent folder has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
         /// The specified document version is not in the INITIALIZED state.
@@ -761,6 +803,9 @@ namespace Amazon.WorkDocs
         /// </param>
         /// 
         /// <returns>The response from the CreateFolder service method, as returned by WorkDocs.</returns>
+        /// <exception cref="Amazon.WorkDocs.Model.ConcurrentModificationException">
+        /// The resource hierarchy is changing.
+        /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ConflictingOperationException">
         /// Another operation is in progress on the resource that conflicts with the current operation.
         /// </exception>
@@ -775,7 +820,7 @@ namespace Amazon.WorkDocs
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.LimitExceededException">
-        /// The maximum of 100,000 folders under the parent folder has been exceeded.
+        /// The maximum of 100,000 files and folders under the parent folder has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
         /// The specified document version is not in the INITIALIZED state.
@@ -889,13 +934,16 @@ namespace Amazon.WorkDocs
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/workdocs/latest/developerguide/subscribe-notifications.html">Subscribe
-        /// to Notifications</a> in the <i>Amazon WorkDocs Developer Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/workdocs/latest/developerguide/manage-notifications.html">Setting
+        /// up notifications for an IAM user or role</a> in the <i>Amazon WorkDocs Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNotificationSubscription service method.</param>
         /// 
         /// <returns>The response from the CreateNotificationSubscription service method, as returned by WorkDocs.</returns>
+        /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
+        /// The pagination marker or limit fields are not valid.
+        /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
         /// One or more of the dependencies is unavailable.
         /// </exception>
@@ -922,8 +970,8 @@ namespace Amazon.WorkDocs
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/workdocs/latest/developerguide/subscribe-notifications.html">Subscribe
-        /// to Notifications</a> in the <i>Amazon WorkDocs Developer Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/workdocs/latest/developerguide/manage-notifications.html">Setting
+        /// up notifications for an IAM user or role</a> in the <i>Amazon WorkDocs Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNotificationSubscription service method.</param>
@@ -932,6 +980,9 @@ namespace Amazon.WorkDocs
         /// </param>
         /// 
         /// <returns>The response from the CreateNotificationSubscription service method, as returned by WorkDocs.</returns>
+        /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
+        /// The pagination marker or limit fields are not valid.
+        /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
         /// One or more of the dependencies is unavailable.
         /// </exception>
@@ -1289,6 +1340,9 @@ namespace Amazon.WorkDocs
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.LimitExceededException">
+        /// The maximum of 100,000 files and folders under the parent folder has been exceeded.
+        /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
         /// The specified document version is not in the INITIALIZED state.
         /// </exception>
@@ -1334,6 +1388,9 @@ namespace Amazon.WorkDocs
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.LimitExceededException">
+        /// The maximum of 100,000 files and folders under the parent folder has been exceeded.
+        /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
         /// The specified document version is not in the INITIALIZED state.
         /// </exception>
@@ -1354,6 +1411,99 @@ namespace Amazon.WorkDocs
             options.ResponseUnmarshaller = DeleteDocumentResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteDocumentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteDocumentVersion
+
+
+        /// <summary>
+        /// Deletes a version of an Amazon WorkDocs document. Use the <code>DeletePriorVersions</code>
+        /// parameter to delete prior versions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDocumentVersion service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDocumentVersion service method, as returned by WorkDocs.</returns>
+        /// <exception cref="Amazon.WorkDocs.Model.ConcurrentModificationException">
+        /// The resource hierarchy is changing.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.ConflictingOperationException">
+        /// Another operation is in progress on the resource that conflicts with the current operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.EntityNotExistsException">
+        /// The resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
+        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// the control of the organization is failing, such as a connected Active Directory.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.InvalidOperationException">
+        /// The operation is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
+        /// The specified document version is not in the INITIALIZED state.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.UnauthorizedOperationException">
+        /// The operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.UnauthorizedResourceAccessException">
+        /// The caller does not have access to perform the action on the resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteDocumentVersion">REST API Reference for DeleteDocumentVersion Operation</seealso>
+        public virtual DeleteDocumentVersionResponse DeleteDocumentVersion(DeleteDocumentVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDocumentVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDocumentVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDocumentVersionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a version of an Amazon WorkDocs document. Use the <code>DeletePriorVersions</code>
+        /// parameter to delete prior versions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDocumentVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDocumentVersion service method, as returned by WorkDocs.</returns>
+        /// <exception cref="Amazon.WorkDocs.Model.ConcurrentModificationException">
+        /// The resource hierarchy is changing.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.ConflictingOperationException">
+        /// Another operation is in progress on the resource that conflicts with the current operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.EntityNotExistsException">
+        /// The resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
+        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// the control of the organization is failing, such as a connected Active Directory.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.InvalidOperationException">
+        /// The operation is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
+        /// The specified document version is not in the INITIALIZED state.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.UnauthorizedOperationException">
+        /// The operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.UnauthorizedResourceAccessException">
+        /// The caller does not have access to perform the action on the resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteDocumentVersion">REST API Reference for DeleteDocumentVersion Operation</seealso>
+        public virtual Task<DeleteDocumentVersionResponse> DeleteDocumentVersionAsync(DeleteDocumentVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDocumentVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDocumentVersionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteDocumentVersionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1379,6 +1529,9 @@ namespace Amazon.WorkDocs
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.LimitExceededException">
+        /// The maximum of 100,000 files and folders under the parent folder has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
         /// The specified document version is not in the INITIALIZED state.
@@ -1424,6 +1577,9 @@ namespace Amazon.WorkDocs
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.LimitExceededException">
+        /// The maximum of 100,000 files and folders under the parent folder has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
         /// The specified document version is not in the INITIALIZED state.
@@ -1550,6 +1706,9 @@ namespace Amazon.WorkDocs
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
+        /// The specified document version is not in the INITIALIZED state.
+        /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
         /// One or more of the dependencies is unavailable.
         /// </exception>
@@ -1585,6 +1744,9 @@ namespace Amazon.WorkDocs
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
+        /// The specified document version is not in the INITIALIZED state.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
         /// One or more of the dependencies is unavailable.
@@ -1921,6 +2083,9 @@ namespace Amazon.WorkDocs
         /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
         /// The pagination marker or limit fields are not valid.
         /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.InvalidPasswordException">
+        /// The password is invalid.
+        /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
         /// The specified document version is not in the INITIALIZED state.
         /// </exception>
@@ -1967,6 +2132,9 @@ namespace Amazon.WorkDocs
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
         /// The pagination marker or limit fields are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.InvalidPasswordException">
+        /// The password is invalid.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
         /// The specified document version is not in the INITIALIZED state.
@@ -2226,6 +2394,9 @@ namespace Amazon.WorkDocs
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
+        /// The pagination marker or limit fields are not valid.
+        /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
         /// One or more of the dependencies is unavailable.
         /// </exception>
@@ -2258,6 +2429,9 @@ namespace Amazon.WorkDocs
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
+        /// The pagination marker or limit fields are not valid.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
         /// One or more of the dependencies is unavailable.
@@ -3108,6 +3282,12 @@ namespace Amazon.WorkDocs
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.InvalidPasswordException">
+        /// The password is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.LimitExceededException">
+        /// The maximum of 100,000 files and folders under the parent folder has been exceeded.
+        /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
         /// The specified document version is not in the INITIALIZED state.
         /// </exception>
@@ -3174,6 +3354,12 @@ namespace Amazon.WorkDocs
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.InvalidPasswordException">
+        /// The password is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.LimitExceededException">
+        /// The maximum of 100,000 files and folders under the parent folder has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
         /// The specified document version is not in the INITIALIZED state.
@@ -3342,6 +3528,97 @@ namespace Amazon.WorkDocs
 
         #endregion
         
+        #region  RestoreDocumentVersions
+
+
+        /// <summary>
+        /// Recovers a deleted version of an Amazon WorkDocs document.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreDocumentVersions service method.</param>
+        /// 
+        /// <returns>The response from the RestoreDocumentVersions service method, as returned by WorkDocs.</returns>
+        /// <exception cref="Amazon.WorkDocs.Model.ConcurrentModificationException">
+        /// The resource hierarchy is changing.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.ConflictingOperationException">
+        /// Another operation is in progress on the resource that conflicts with the current operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.EntityNotExistsException">
+        /// The resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
+        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// the control of the organization is failing, such as a connected Active Directory.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.InvalidOperationException">
+        /// The operation is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
+        /// The specified document version is not in the INITIALIZED state.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.UnauthorizedOperationException">
+        /// The operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.UnauthorizedResourceAccessException">
+        /// The caller does not have access to perform the action on the resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/RestoreDocumentVersions">REST API Reference for RestoreDocumentVersions Operation</seealso>
+        public virtual RestoreDocumentVersionsResponse RestoreDocumentVersions(RestoreDocumentVersionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestoreDocumentVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreDocumentVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<RestoreDocumentVersionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Recovers a deleted version of an Amazon WorkDocs document.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreDocumentVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RestoreDocumentVersions service method, as returned by WorkDocs.</returns>
+        /// <exception cref="Amazon.WorkDocs.Model.ConcurrentModificationException">
+        /// The resource hierarchy is changing.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.ConflictingOperationException">
+        /// Another operation is in progress on the resource that conflicts with the current operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.EntityNotExistsException">
+        /// The resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
+        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// the control of the organization is failing, such as a connected Active Directory.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.InvalidOperationException">
+        /// The operation is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
+        /// The specified document version is not in the INITIALIZED state.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.UnauthorizedOperationException">
+        /// The operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.UnauthorizedResourceAccessException">
+        /// The caller does not have access to perform the action on the resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/RestoreDocumentVersions">REST API Reference for RestoreDocumentVersions Operation</seealso>
+        public virtual Task<RestoreDocumentVersionsResponse> RestoreDocumentVersionsAsync(RestoreDocumentVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RestoreDocumentVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreDocumentVersionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RestoreDocumentVersionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateDocument
 
 
@@ -3369,7 +3646,7 @@ namespace Amazon.WorkDocs
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.LimitExceededException">
-        /// The maximum of 100,000 folders under the parent folder has been exceeded.
+        /// The maximum of 100,000 files and folders under the parent folder has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
         /// The specified document version is not in the INITIALIZED state.
@@ -3421,7 +3698,7 @@ namespace Amazon.WorkDocs
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.LimitExceededException">
-        /// The maximum of 100,000 folders under the parent folder has been exceeded.
+        /// The maximum of 100,000 files and folders under the parent folder has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
         /// The specified document version is not in the INITIALIZED state.
@@ -3579,7 +3856,7 @@ namespace Amazon.WorkDocs
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.LimitExceededException">
-        /// The maximum of 100,000 folders under the parent folder has been exceeded.
+        /// The maximum of 100,000 files and folders under the parent folder has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
         /// The specified document version is not in the INITIALIZED state.
@@ -3631,7 +3908,7 @@ namespace Amazon.WorkDocs
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.LimitExceededException">
-        /// The maximum of 100,000 folders under the parent folder has been exceeded.
+        /// The maximum of 100,000 files and folders under the parent folder has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
         /// The specified document version is not in the INITIALIZED state.
@@ -3683,6 +3960,9 @@ namespace Amazon.WorkDocs
         /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
         /// The pagination marker or limit fields are not valid.
         /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
+        /// The specified document version is not in the INITIALIZED state.
+        /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
         /// One or more of the dependencies is unavailable.
         /// </exception>
@@ -3728,6 +4008,9 @@ namespace Amazon.WorkDocs
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
         /// The pagination marker or limit fields are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
+        /// The specified document version is not in the INITIALIZED state.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
         /// One or more of the dependencies is unavailable.
