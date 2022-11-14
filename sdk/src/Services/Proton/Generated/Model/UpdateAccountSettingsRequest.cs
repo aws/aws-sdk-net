@@ -36,6 +36,7 @@ namespace Amazon.Proton.Model
     public partial class UpdateAccountSettingsRequest : AmazonProtonRequest
     {
         private bool? _deletePipelineProvisioningRepository;
+        private string _pipelineCodebuildRoleArn;
         private RepositoryBranchInput _pipelineProvisioningRepository;
         private string _pipelineServiceRoleArn;
 
@@ -56,6 +57,26 @@ namespace Amazon.Proton.Model
         internal bool IsSetDeletePipelineProvisioningRepository()
         {
             return this._deletePipelineProvisioningRepository.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PipelineCodebuildRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the service role you want to use for provisioning
+        /// pipelines. Proton assumes this role for CodeBuild-based provisioning.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
+        public string PipelineCodebuildRoleArn
+        {
+            get { return this._pipelineCodebuildRoleArn; }
+            set { this._pipelineCodebuildRoleArn = value; }
+        }
+
+        // Check to see if PipelineCodebuildRoleArn property is set
+        internal bool IsSetPipelineCodebuildRoleArn()
+        {
+            return this._pipelineCodebuildRoleArn != null;
         }
 
         /// <summary>

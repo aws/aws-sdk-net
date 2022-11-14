@@ -38,14 +38,20 @@ namespace Amazon.Proton.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Amazon Web Services-managed provisioning: Proton makes direct calls to provision your
-    /// resources.
+    ///  <b>Amazon Web Services-managed provisioning</b> – Proton makes direct calls to provision
+    /// your resources.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Self-managed provisioning: Proton makes pull requests on your repository to provide
-    /// compiled infrastructure as code (IaC) files that your IaC engine uses to provision
-    /// resources.
+    ///  <b>Self-managed provisioning</b> – Proton makes pull requests on your repository
+    /// to provide compiled infrastructure as code (IaC) files that your IaC engine uses to
+    /// provision resources.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>CodeBuild-based provisioning</b> – Proton uses CodeBuild to run shell commands
+    /// that you provide. Your commands can read inputs that Proton provides, and are responsible
+    /// for provisioning or deprovisioning infrastructure and generating output values.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -56,6 +62,7 @@ namespace Amazon.Proton.Model
     /// </summary>
     public partial class CreateEnvironmentRequest : AmazonProtonRequest
     {
+        private string _codebuildRoleArn;
         private string _componentRoleArn;
         private string _description;
         private string _environmentAccountConnectionId;
@@ -67,6 +74,32 @@ namespace Amazon.Proton.Model
         private string _templateMajorVersion;
         private string _templateMinorVersion;
         private string _templateName;
+
+        /// <summary>
+        /// Gets and sets the property CodebuildRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision
+        /// infrastructure using CodeBuild-based provisioning on your behalf.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use CodeBuild-based provisioning for the environment or for any service instance
+        /// running in the environment, specify either the <code>environmentAccountConnectionId</code>
+        /// or <code>codebuildRoleArn</code> parameter.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string CodebuildRoleArn
+        {
+            get { return this._codebuildRoleArn; }
+            set { this._codebuildRoleArn = value; }
+        }
+
+        // Check to see if CodebuildRoleArn property is set
+        internal bool IsSetCodebuildRoleArn()
+        {
+            return this._codebuildRoleArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ComponentRoleArn. 
@@ -86,7 +119,7 @@ namespace Amazon.Proton.Model
         /// components</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=200)]
+        [AWSProperty(Min=1, Max=2048)]
         public string ComponentRoleArn
         {
             get { return this._componentRoleArn; }
@@ -121,16 +154,15 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property EnvironmentAccountConnectionId. 
         /// <para>
-        /// The ID of the environment account connection that you provide if you're provisioning
-        /// your environment infrastructure resources to an environment account. For more information,
-        /// see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
+        /// The ID of the environment account connection that you provide if you want Proton to
+        /// provision infrastructure resources for your environment or for any of the service
+        /// instances running in it in an environment account. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
         /// account connections</a> in the <i>Proton User guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// To use Amazon Web Services-managed provisioning for the environment, specify either
-        /// the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
-        /// parameter and omit the <code>provisioningRepository</code> parameter.
+        /// If you specify the <code>environmentAccountConnectionId</code> parameter, don't specify
+        /// <code>protonServiceRoleArn</code>, <code>codebuildRoleArn</code>, or <code>provisioningRepository</code>.
         /// </para>
         /// </summary>
         public string EnvironmentAccountConnectionId
@@ -167,14 +199,15 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property ProtonServiceRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make
-        /// calls to other services on your behalf.
+        /// The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision
+        /// infrastructure using Amazon Web Services-managed provisioning and CloudFormation on
+        /// your behalf.
         /// </para>
         ///  
         /// <para>
-        /// To use Amazon Web Services-managed provisioning for the environment, specify either
-        /// the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
-        /// parameter and omit the <code>provisioningRepository</code> parameter.
+        /// To use Amazon Web Services-managed provisioning for the environment or for any service
+        /// instance running in the environment, specify either the <code>environmentAccountConnectionId</code>
+        /// or <code>protonServiceRoleArn</code> parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -199,9 +232,8 @@ namespace Amazon.Proton.Model
         /// </para>
         ///  
         /// <para>
-        /// To use self-managed provisioning for the environment, specify this parameter and omit
-        /// the <code>environmentAccountConnectionId</code> and <code>protonServiceRoleArn</code>
-        /// parameters.
+        /// To use self-managed provisioning for the environment or for any service instance running
+        /// in the environment, specify this parameter.
         /// </para>
         /// </summary>
         public RepositoryBranchInput ProvisioningRepository

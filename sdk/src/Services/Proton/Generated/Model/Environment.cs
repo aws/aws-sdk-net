@@ -35,6 +35,7 @@ namespace Amazon.Proton.Model
     public partial class Environment
     {
         private string _arn;
+        private string _codebuildRoleArn;
         private string _componentRoleArn;
         private DateTime? _createdAt;
         private DeploymentStatus _deploymentStatus;
@@ -73,6 +74,26 @@ namespace Amazon.Proton.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CodebuildRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision
+        /// infrastructure using CodeBuild-based provisioning on your behalf.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string CodebuildRoleArn
+        {
+            get { return this._codebuildRoleArn; }
+            set { this._codebuildRoleArn = value; }
+        }
+
+        // Check to see if CodebuildRoleArn property is set
+        internal bool IsSetCodebuildRoleArn()
+        {
+            return this._codebuildRoleArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ComponentRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning
@@ -90,7 +111,7 @@ namespace Amazon.Proton.Model
         /// components</a> in the <i>Proton User Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=200)]
+        [AWSProperty(Min=1, Max=2048)]
         public string ComponentRoleArn
         {
             get { return this._componentRoleArn; }
@@ -181,7 +202,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property EnvironmentAccountConnectionId. 
         /// <para>
-        /// The ID of the environment account connection that's used to provision infrastructure
+        /// The ID of the environment account connection that Proton uses to provision infrastructure
         /// resources in an environment account.
         /// </para>
         /// </summary>
@@ -276,8 +297,9 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property ProtonServiceRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make
-        /// calls to other services on your behalf.
+        /// The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision
+        /// infrastructure using Amazon Web Services-managed provisioning and CloudFormation on
+        /// your behalf.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]

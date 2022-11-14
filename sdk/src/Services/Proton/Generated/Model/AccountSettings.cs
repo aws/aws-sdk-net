@@ -33,8 +33,29 @@ namespace Amazon.Proton.Model
     /// </summary>
     public partial class AccountSettings
     {
+        private string _pipelineCodebuildRoleArn;
         private RepositoryBranch _pipelineProvisioningRepository;
         private string _pipelineServiceRoleArn;
+
+        /// <summary>
+        /// Gets and sets the property PipelineCodebuildRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the service role that Proton uses for provisioning
+        /// pipelines. Proton assumes this role for CodeBuild-based provisioning.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
+        public string PipelineCodebuildRoleArn
+        {
+            get { return this._pipelineCodebuildRoleArn; }
+            set { this._pipelineCodebuildRoleArn = value; }
+        }
+
+        // Check to see if PipelineCodebuildRoleArn property is set
+        internal bool IsSetPipelineCodebuildRoleArn()
+        {
+            return this._pipelineCodebuildRoleArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property PipelineProvisioningRepository. 
@@ -60,9 +81,8 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property PipelineServiceRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the service role you want to use for provisioning
-        /// pipelines. Assumed by Proton for Amazon Web Services-managed provisioning, and by
-        /// customer-owned automation for self-managed provisioning.
+        /// The Amazon Resource Name (ARN) of the service role that Proton uses for provisioning
+        /// pipelines. Proton assumes this role for Amazon Web Services-managed provisioning.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
