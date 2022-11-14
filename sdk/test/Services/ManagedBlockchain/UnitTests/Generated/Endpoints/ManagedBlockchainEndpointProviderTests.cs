@@ -35,9 +35,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_euwest2_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
+            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
             parameters["Region"] = "eu-west-2";
-            parameters["UseDualStack"] = true;
             var endpoint = new AmazonManagedBlockchainEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://managedblockchain-fips.eu-west-2.api.aws", endpoint.URL);
         }
@@ -50,9 +50,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_euwest2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
+            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
             parameters["Region"] = "eu-west-2";
-            parameters["UseDualStack"] = false;
             var endpoint = new AmazonManagedBlockchainEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://managedblockchain-fips.eu-west-2.amazonaws.com", endpoint.URL);
         }
@@ -65,9 +65,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_euwest2_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
+            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
             parameters["Region"] = "eu-west-2";
-            parameters["UseDualStack"] = true;
             var endpoint = new AmazonManagedBlockchainEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://managedblockchain.eu-west-2.api.aws", endpoint.URL);
         }
@@ -80,9 +80,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_euwest2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
+            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
             parameters["Region"] = "eu-west-2";
-            parameters["UseDualStack"] = false;
             var endpoint = new AmazonManagedBlockchainEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://managedblockchain.eu-west-2.amazonaws.com", endpoint.URL);
         }
@@ -95,9 +95,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_euwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
+            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
             parameters["Region"] = "eu-west-1";
-            parameters["UseDualStack"] = true;
             var endpoint = new AmazonManagedBlockchainEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://managedblockchain-fips.eu-west-1.api.aws", endpoint.URL);
         }
@@ -110,9 +110,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_euwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
+            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
             parameters["Region"] = "eu-west-1";
-            parameters["UseDualStack"] = false;
             var endpoint = new AmazonManagedBlockchainEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://managedblockchain-fips.eu-west-1.amazonaws.com", endpoint.URL);
         }
@@ -125,9 +125,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_euwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
+            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
             parameters["Region"] = "eu-west-1";
-            parameters["UseDualStack"] = true;
             var endpoint = new AmazonManagedBlockchainEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://managedblockchain.eu-west-1.api.aws", endpoint.URL);
         }
@@ -140,9 +140,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_euwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
+            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
             parameters["Region"] = "eu-west-1";
-            parameters["UseDualStack"] = false;
             var endpoint = new AmazonManagedBlockchainEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://managedblockchain.eu-west-1.amazonaws.com", endpoint.URL);
         }
@@ -155,9 +155,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apnortheast2_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
+            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
             parameters["Region"] = "ap-northeast-2";
-            parameters["UseDualStack"] = true;
             var endpoint = new AmazonManagedBlockchainEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://managedblockchain-fips.ap-northeast-2.api.aws", endpoint.URL);
         }
@@ -170,9 +170,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apnortheast2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
+            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
             parameters["Region"] = "ap-northeast-2";
-            parameters["UseDualStack"] = false;
             var endpoint = new AmazonManagedBlockchainEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://managedblockchain-fips.ap-northeast-2.amazonaws.com", endpoint.URL);
         }
@@ -185,9 +185,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apnortheast2_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
+            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
             parameters["Region"] = "ap-northeast-2";
-            parameters["UseDualStack"] = true;
             var endpoint = new AmazonManagedBlockchainEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://managedblockchain.ap-northeast-2.api.aws", endpoint.URL);
         }
@@ -200,9 +200,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apnortheast2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
+            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
             parameters["Region"] = "ap-northeast-2";
-            parameters["UseDualStack"] = false;
             var endpoint = new AmazonManagedBlockchainEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://managedblockchain.ap-northeast-2.amazonaws.com", endpoint.URL);
         }
@@ -215,9 +215,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
+            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
             parameters["Region"] = "ap-northeast-1";
-            parameters["UseDualStack"] = true;
             var endpoint = new AmazonManagedBlockchainEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://managedblockchain-fips.ap-northeast-1.api.aws", endpoint.URL);
         }
@@ -230,9 +230,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
+            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
             parameters["Region"] = "ap-northeast-1";
-            parameters["UseDualStack"] = false;
             var endpoint = new AmazonManagedBlockchainEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://managedblockchain-fips.ap-northeast-1.amazonaws.com", endpoint.URL);
         }
@@ -245,9 +245,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
+            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
             parameters["Region"] = "ap-northeast-1";
-            parameters["UseDualStack"] = true;
             var endpoint = new AmazonManagedBlockchainEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://managedblockchain.ap-northeast-1.api.aws", endpoint.URL);
         }
@@ -260,9 +260,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
+            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
             parameters["Region"] = "ap-northeast-1";
-            parameters["UseDualStack"] = false;
             var endpoint = new AmazonManagedBlockchainEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://managedblockchain.ap-northeast-1.amazonaws.com", endpoint.URL);
         }
@@ -275,9 +275,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
+            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
             parameters["Region"] = "us-gov-west-1";
-            parameters["UseDualStack"] = true;
             var endpoint = new AmazonManagedBlockchainEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://managedblockchain-fips.us-gov-west-1.api.aws", endpoint.URL);
         }
@@ -290,9 +290,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
+            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
             parameters["Region"] = "us-gov-west-1";
-            parameters["UseDualStack"] = false;
             var endpoint = new AmazonManagedBlockchainEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://managedblockchain-fips.us-gov-west-1.amazonaws.com", endpoint.URL);
         }
@@ -305,9 +305,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
+            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
             parameters["Region"] = "us-gov-west-1";
-            parameters["UseDualStack"] = true;
             var endpoint = new AmazonManagedBlockchainEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://managedblockchain.us-gov-west-1.api.aws", endpoint.URL);
         }
@@ -320,9 +320,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
+            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
             parameters["Region"] = "us-gov-west-1";
-            parameters["UseDualStack"] = false;
             var endpoint = new AmazonManagedBlockchainEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://managedblockchain.us-gov-west-1.amazonaws.com", endpoint.URL);
         }
@@ -335,9 +335,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apsoutheast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
+            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
             parameters["Region"] = "ap-southeast-1";
-            parameters["UseDualStack"] = true;
             var endpoint = new AmazonManagedBlockchainEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://managedblockchain-fips.ap-southeast-1.api.aws", endpoint.URL);
         }
@@ -350,9 +350,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apsoutheast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
+            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
             parameters["Region"] = "ap-southeast-1";
-            parameters["UseDualStack"] = false;
             var endpoint = new AmazonManagedBlockchainEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://managedblockchain-fips.ap-southeast-1.amazonaws.com", endpoint.URL);
         }
@@ -365,9 +365,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apsoutheast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
+            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
             parameters["Region"] = "ap-southeast-1";
-            parameters["UseDualStack"] = true;
             var endpoint = new AmazonManagedBlockchainEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://managedblockchain.ap-southeast-1.api.aws", endpoint.URL);
         }
@@ -380,9 +380,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apsoutheast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
+            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
             parameters["Region"] = "ap-southeast-1";
-            parameters["UseDualStack"] = false;
             var endpoint = new AmazonManagedBlockchainEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://managedblockchain.ap-southeast-1.amazonaws.com", endpoint.URL);
         }
@@ -395,9 +395,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
+            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = true;
             var endpoint = new AmazonManagedBlockchainEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://managedblockchain-fips.us-east-1.api.aws", endpoint.URL);
         }
@@ -410,9 +410,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
+            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             var endpoint = new AmazonManagedBlockchainEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://managedblockchain-fips.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -425,9 +425,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
+            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = true;
             var endpoint = new AmazonManagedBlockchainEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://managedblockchain.us-east-1.api.aws", endpoint.URL);
         }
@@ -440,9 +440,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
+            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             var endpoint = new AmazonManagedBlockchainEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://managedblockchain.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -455,9 +455,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
+            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonManagedBlockchainEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://example.com", endpoint.URL);
@@ -472,9 +472,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
+            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonManagedBlockchainEndpointProvider().ResolveEndpoint(parameters);
         }
@@ -488,9 +488,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new ManagedBlockchainEndpointParameters();
+            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = true;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonManagedBlockchainEndpointProvider().ResolveEndpoint(parameters);
         }

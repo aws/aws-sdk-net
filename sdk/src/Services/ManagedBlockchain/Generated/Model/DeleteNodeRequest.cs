@@ -82,6 +82,10 @@ namespace Amazon.ManagedBlockchain.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>n-ethereum-goerli</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>n-ethereum-rinkeby</code> 
         /// </para>
         ///  </li> <li> 

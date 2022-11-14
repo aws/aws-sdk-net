@@ -62,8 +62,8 @@ namespace Amazon.ManagedBlockchain.Model
         /// Gets and sets the property WebSocketEndpoint. 
         /// <para>
         /// The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC methods over
-        /// WebSockets connections from a client. Use this endpoint in client code for smart contracts
-        /// when using a WebSockets connection. Connections to this endpoint are authenticated
+        /// WebSocket connections from a client. Use this endpoint in client code for smart contracts
+        /// when using a WebSocket connection. Connections to this endpoint are authenticated
         /// using <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
         /// Version 4</a>.
         /// </para>
