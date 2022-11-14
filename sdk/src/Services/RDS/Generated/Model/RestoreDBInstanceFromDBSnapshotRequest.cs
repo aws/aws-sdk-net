@@ -66,6 +66,7 @@ namespace Amazon.RDS.Model
         private string _backupTarget;
         private bool? _copyTagsToSnapshot;
         private string _customIamInstanceProfile;
+        private string _dbClusterSnapshotIdentifier;
         private string _dbInstanceClass;
         private string _dbInstanceIdentifier;
         private string _dbName;
@@ -104,7 +105,7 @@ namespace Amazon.RDS.Model
         /// Instantiates RestoreDBInstanceFromDBSnapshotRequest with the parameterized properties
         /// </summary>
         /// <param name="dbInstanceIdentifier">Name of the DB instance to create from the DB snapshot. This parameter isn't case-sensitive. Constraints: <ul> <li> Must contain from 1 to 63 numbers, letters, or hyphens </li> <li> First character must be a letter </li> <li> Can't end with a hyphen or contain two consecutive hyphens </li> </ul> Example: <code>my-snapshot-id</code> </param>
-        /// <param name="dbSnapshotIdentifier">The identifier for the DB snapshot to restore from. Constraints: <ul> <li> Must match the identifier of an existing DBSnapshot. </li> <li> If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot. </li> </ul></param>
+        /// <param name="dbSnapshotIdentifier">The identifier for the DB snapshot to restore from. Constraints: <ul> <li> Must match the identifier of an existing DBSnapshot. </li> <li> Can't be specified when <code>DBClusterSnapshotIdentifier</code> is specified. </li> <li> Must be specified when <code>DBClusterSnapshotIdentifier</code> isn't specified. </li> <li> If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot. </li> </ul></param>
         public RestoreDBInstanceFromDBSnapshotRequest(string dbInstanceIdentifier, string dbSnapshotIdentifier)
         {
             _dbInstanceIdentifier = dbInstanceIdentifier;
@@ -268,6 +269,60 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DBClusterSnapshotIdentifier. 
+        /// <para>
+        /// The identifier for the RDS for MySQL Multi-AZ DB cluster snapshot to restore from.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+        /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
+        /// User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must match the identifier of an existing Multi-AZ DB cluster snapshot.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can't be specified when <code>DBSnapshotIdentifier</code> is specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must be specified when <code>DBSnapshotIdentifier</code> isn't specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are restoring from a shared manual Multi-AZ DB cluster snapshot, the <code>DBClusterSnapshotIdentifier</code>
+        /// must be the ARN of the shared snapshot.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can't be the identifier of an Aurora DB cluster snapshot.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can't be the identifier of an RDS for PostgreSQL Multi-AZ DB cluster snapshot.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string DBClusterSnapshotIdentifier
+        {
+            get { return this._dbClusterSnapshotIdentifier; }
+            set { this._dbClusterSnapshotIdentifier = value; }
+        }
+
+        // Check to see if DBClusterSnapshotIdentifier property is set
+        internal bool IsSetDBClusterSnapshotIdentifier()
+        {
+            return this._dbClusterSnapshotIdentifier != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
         /// The compute and memory capacity of the Amazon RDS DB instance, for example db.m4.large.
@@ -418,12 +473,19 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// Can't be specified when <code>DBClusterSnapshotIdentifier</code> is specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must be specified when <code>DBClusterSnapshotIdentifier</code> isn't specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code>
         /// must be the ARN of the shared DB snapshot.
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string DBSnapshotIdentifier
         {
             get { return this._dbSnapshotIdentifier; }

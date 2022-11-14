@@ -12561,6 +12561,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void RestoreDBInstanceFromDBSnapshot_DBClusterSnapshotNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RestoreDBInstanceFromDBSnapshot");
+
+            var request = InstantiateClassGenerator.Execute<RestoreDBInstanceFromDBSnapshotRequest>();
+            var marshaller = new RestoreDBInstanceFromDBSnapshotRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("DBClusterSnapshotNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = RestoreDBInstanceFromDBSnapshotResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void RestoreDBInstanceFromDBSnapshot_DBInstanceAlreadyExistsExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("RestoreDBInstanceFromDBSnapshot");

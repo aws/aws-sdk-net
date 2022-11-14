@@ -1728,6 +1728,10 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
+        /// This setting applies only to the <code>gp3</code> storage type.
+        /// </para>
+        ///  
+        /// <para>
         /// This setting doesn't apply to RDS Custom or Amazon Aurora.
         /// </para>
         /// </summary>

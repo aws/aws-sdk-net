@@ -1648,6 +1648,10 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Specifies the storage throughput for the DB instance.
         /// </para>
+        ///  
+        /// <para>
+        /// This setting applies only to the <code>gp3</code> storage type.
+        /// </para>
         /// </summary>
         public int StorageThroughput
         {
