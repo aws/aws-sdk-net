@@ -70,10 +70,22 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
                     unmarshalledObject.Aliases = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EdgeType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EdgeType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EndTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ReceivedEventAgeHistogram", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<HistogramEntry, HistogramEntryUnmarshaller>(HistogramEntryUnmarshaller.Instance);
+                    unmarshalledObject.ReceivedEventAgeHistogram = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ReferenceId", targetDepth))
