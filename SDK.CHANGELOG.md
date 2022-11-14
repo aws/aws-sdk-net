@@ -1,3 +1,19 @@
+### 3.7.417.0 (2022-11-14 19:25 UTC)
+* CustomerProfiles (3.7.101.0)
+	* This release enhances the SearchProfiles API by providing functionality to search for profiles using multiple keys and logical operators.
+* LakeFormation (3.7.101.0)
+	* This release adds a new parameter "Parameters" in the DataLakeSettings.
+* ManagedBlockchain (3.7.100.17)
+	* Updating the API docs data type: NetworkEthereumAttributes, and the operations DeleteNode, and CreateNode to also include the supported Goerli network.
+* Proton (3.7.101.0)
+	* Add support for CodeBuild Provisioning
+* RDS (3.7.103.0)
+	* This release adds support for restoring an RDS Multi-AZ DB cluster snapshot to a Single-AZ deployment or a Multi-AZ DB instance deployment.
+* WorkDocs (3.7.101.0)
+	* Added 2 new document related operations, DeleteDocumentVersion and RestoreDocumentVersions.
+* XRay (3.7.101.0)
+	* This release enhances GetServiceGraph API to support new type of edge to represent links between SQS and Lambda in event-driven applications.
+
 ### 3.7.416.0 (2022-11-11 20:09 UTC)
 * Glue (3.7.101.12)
 	* Added links related to enabling job bookmarks.
