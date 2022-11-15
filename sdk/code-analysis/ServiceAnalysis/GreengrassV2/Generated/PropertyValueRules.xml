@@ -50,6 +50,10 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GreengrassV2.Model.CreateDeploymentRequest.ParentTargetArn</property>
+    <pattern>arn:[^:]*:iot:[^:]*:[0-9]+:thinggroup/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GreengrassV2.Model.CreateDeploymentRequest.TargetArn</property>
     <pattern>arn:[^:]*:iot:[^:]*:[0-9]+:(thing|thinggroup)/.+</pattern>
   </property-value-rule>
@@ -155,6 +159,10 @@
     <pattern>arn:[^:]*:iot:[^:]+:[0-9]+:job/.+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GreengrassV2.Model.GetDeploymentResponse.ParentTargetArn</property>
+    <pattern>arn:[^:]*:iot:[^:]*:[0-9]+:thinggroup/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GreengrassV2.Model.GetDeploymentResponse.RevisionId</property>
     <min>1</min>
   </property-value-rule>
@@ -199,6 +207,10 @@
     <property>Amazon.GreengrassV2.Model.ListDeploymentsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GreengrassV2.Model.ListDeploymentsRequest.ParentTargetArn</property>
+    <pattern>arn:[^:]*:iot:[^:]*:[0-9]+:thinggroup/.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.ListDeploymentsRequest.TargetArn</property>
@@ -365,6 +377,10 @@
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.Deployment.DeploymentName</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GreengrassV2.Model.Deployment.ParentTargetArn</property>
+    <pattern>arn:[^:]*:iot:[^:]*:[0-9]+:thinggroup/.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.Deployment.RevisionId</property>

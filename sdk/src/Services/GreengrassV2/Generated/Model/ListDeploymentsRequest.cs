@@ -37,6 +37,7 @@ namespace Amazon.GreengrassV2.Model
         private DeploymentHistoryFilter _historyFilter;
         private int? _maxResults;
         private string _nextToken;
+        private string _parentTargetArn;
         private string _targetArn;
 
         /// <summary>
@@ -104,6 +105,25 @@ namespace Amazon.GreengrassV2.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParentTargetArn. 
+        /// <para>
+        /// The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+        /// within a subdeployment.
+        /// </para>
+        /// </summary>
+        public string ParentTargetArn
+        {
+            get { return this._parentTargetArn; }
+            set { this._parentTargetArn = value; }
+        }
+
+        // Check to see if ParentTargetArn property is set
+        internal bool IsSetParentTargetArn()
+        {
+            return this._parentTargetArn != null;
         }
 
         /// <summary>

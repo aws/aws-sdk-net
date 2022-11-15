@@ -94,6 +94,12 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.IsLatestForTarget = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("parentTargetArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ParentTargetArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("revisionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

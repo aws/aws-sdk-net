@@ -90,13 +90,13 @@ namespace Amazon.GreengrassV2.Internal
                     }
                     throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
                 }
-                if (Equals(refs["Region"], "dataplane-us-gov-west-1"))
-                {
-                    return new Endpoint("https://greengrass-ats.iot.us-gov-west-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                }
                 if (Equals(refs["Region"], "dataplane-us-gov-east-1"))
                 {
                     return new Endpoint("https://greengrass-ats.iot.us-gov-east-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                }
+                if (Equals(refs["Region"], "dataplane-us-gov-west-1"))
+                {
+                    return new Endpoint("https://greengrass-ats.iot.us-gov-west-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                 }
                 return new Endpoint(Interpolate(@"https://greengrass.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
             }

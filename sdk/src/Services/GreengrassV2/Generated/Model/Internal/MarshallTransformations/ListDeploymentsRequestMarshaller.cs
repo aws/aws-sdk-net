@@ -68,6 +68,9 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             
+            if (publicRequest.IsSetParentTargetArn())
+                request.Parameters.Add("parentTargetArn", StringUtils.FromString(publicRequest.ParentTargetArn));
+            
             if (publicRequest.IsSetTargetArn())
                 request.Parameters.Add("targetArn", StringUtils.FromString(publicRequest.TargetArn));
             request.ResourcePath = "/greengrass/v2/deployments";

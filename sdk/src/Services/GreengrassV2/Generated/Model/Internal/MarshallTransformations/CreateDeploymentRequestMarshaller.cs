@@ -123,6 +123,12 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetParentTargetArn())
+                {
+                    context.Writer.WritePropertyName("parentTargetArn");
+                    context.Writer.Write(publicRequest.ParentTargetArn);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");
