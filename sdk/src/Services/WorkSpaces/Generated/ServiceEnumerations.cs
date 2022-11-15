@@ -187,6 +187,56 @@ namespace Amazon.WorkSpaces
 
 
     /// <summary>
+    /// Constants used for properties of type CertificateBasedAuthStatusEnum.
+    /// </summary>
+    public class CertificateBasedAuthStatusEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for CertificateBasedAuthStatusEnum
+        /// </summary>
+        public static readonly CertificateBasedAuthStatusEnum DISABLED = new CertificateBasedAuthStatusEnum("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for CertificateBasedAuthStatusEnum
+        /// </summary>
+        public static readonly CertificateBasedAuthStatusEnum ENABLED = new CertificateBasedAuthStatusEnum("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CertificateBasedAuthStatusEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CertificateBasedAuthStatusEnum FindValue(string value)
+        {
+            return FindValue<CertificateBasedAuthStatusEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CertificateBasedAuthStatusEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ClientDeviceType.
     /// </summary>
     public class ClientDeviceType : ConstantClass
@@ -582,6 +632,52 @@ namespace Amazon.WorkSpaces
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DedicatedTenancySupportResultEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DeletableCertificateBasedAuthProperty.
+    /// </summary>
+    public class DeletableCertificateBasedAuthProperty : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CERTIFICATE_BASED_AUTH_PROPERTIES_CERTIFICATE_AUTHORITY_ARN for DeletableCertificateBasedAuthProperty
+        /// </summary>
+        public static readonly DeletableCertificateBasedAuthProperty CERTIFICATE_BASED_AUTH_PROPERTIES_CERTIFICATE_AUTHORITY_ARN = new DeletableCertificateBasedAuthProperty("CERTIFICATE_BASED_AUTH_PROPERTIES_CERTIFICATE_AUTHORITY_ARN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeletableCertificateBasedAuthProperty(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeletableCertificateBasedAuthProperty FindValue(string value)
+        {
+            return FindValue<DeletableCertificateBasedAuthProperty>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeletableCertificateBasedAuthProperty(string value)
         {
             return FindValue(value);
         }
