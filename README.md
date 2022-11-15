@@ -694,6 +694,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS Systems Manager Incident Manager enables faster resolution of critical application availability and performance issues, management of contacts and post incident analysis
 * [AWSSDK.SSMIncidents](https://www.nuget.org/packages/AWSSDK.SSMIncidents/)
 	* AWS Systems Manager Incident Manager enables faster resolution of critical application availability and performance issues, management of contacts and post-incident analysis
+* [AWSSDK.SsmSap](https://www.nuget.org/packages/AWSSDK.SsmSap/)
+	* AWS Systems Manager for SAP provides simplified operations and management of SAP applications such as SAP HANA. With this release, SAP customers and partners can automate and simplify their SAP system administration tasks such as backup/restore of SAP HANA.
 * [AWSSDK.SSO](https://www.nuget.org/packages/AWSSDK.SSO/)
 	* This is an initial release of AWS Single Sign-On (SSO) end-user access. This release adds support for accessing AWS accounts assigned in AWS SSO using short term credentials.
 * [AWSSDK.SSOAdmin](https://www.nuget.org/packages/AWSSDK.SSOAdmin/)
