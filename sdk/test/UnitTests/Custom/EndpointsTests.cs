@@ -51,5 +51,35 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(7777, endpoint.Port);
             Assert.AreEqual("http", endpoint.Scheme);
         }
+
+        /// <summary>
+        /// Asserts that UseHTTP=true does not manipulate 
+        /// an explicit ServiceURL using HTTPS
+        /// </summary>
+        [TestMethod]
+        [TestCategory("Endpoints")]
+        public void EndpointResolverHttpsServiceURLVsUseHttp()
+        {
+            var serviceURL = "https://service.amazonaws.com";
+
+            var config = new MockClientConfig
+            {
+                EndpointProvider = new TestEndpointProvider(),
+                ServiceURL = serviceURL,
+                UseHttp = true
+            };
+            var requestContext = new RequestContext(false, new NullSigner())
+            {
+                ClientConfig = config,
+                Request = new DefaultRequest(new MockAmazonWebServiceRequest(), "test-service")
+            };
+
+            var executionContext = new ExecutionContext(requestContext, null);
+            var resolver = new BaseEndpointResolver();
+            resolver.ProcessRequestHandlers(executionContext);
+            var endpoint = executionContext.RequestContext.Request.Endpoint;
+
+            Assert.AreEqual("https", endpoint.Scheme);
+        }
     }
 }

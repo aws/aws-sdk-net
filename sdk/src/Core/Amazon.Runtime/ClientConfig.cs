@@ -250,6 +250,7 @@ namespace Amazon.Runtime
         /// to use HTTP protocol, if the target endpoint supports it.
         /// By default, this property is set to false.
         /// </summary>
+        /// <remarks>This does not apply if an explicit <see cref="ServiceURL"/> is specified.</remarks>
         public bool UseHttp
         {
             get { return this.useHttp; }

@@ -75,7 +75,9 @@ namespace Amazon.Runtime.Internal
             }
             requestContext.Request.Endpoint = new Uri(endpoint.URL);
 
-            if (config.UseHttp)
+            // If an explicit ServiceURL was provided, do not manipulate it based on UseHttp
+            // This preserves existing behavior prior to 3.7.100
+            if (config.UseHttp && string.IsNullOrEmpty(requestContext.ClientConfig.ServiceURL))
             {
                 var uriBuilder = new UriBuilder(requestContext.Request.Endpoint)
                 {
