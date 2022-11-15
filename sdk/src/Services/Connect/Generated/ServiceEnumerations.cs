@@ -1129,6 +1129,10 @@ namespace Amazon.Connect
         /// </summary>
         public static readonly InstanceAttributeType EARLY_MEDIA = new InstanceAttributeType("EARLY_MEDIA");
         /// <summary>
+        /// Constant ENHANCED_CONTACT_MONITORING for InstanceAttributeType
+        /// </summary>
+        public static readonly InstanceAttributeType ENHANCED_CONTACT_MONITORING = new InstanceAttributeType("ENHANCED_CONTACT_MONITORING");
+        /// <summary>
         /// Constant HIGH_VOLUME_OUTBOUND for InstanceAttributeType
         /// </summary>
         public static readonly InstanceAttributeType HIGH_VOLUME_OUTBOUND = new InstanceAttributeType("HIGH_VOLUME_OUTBOUND");
