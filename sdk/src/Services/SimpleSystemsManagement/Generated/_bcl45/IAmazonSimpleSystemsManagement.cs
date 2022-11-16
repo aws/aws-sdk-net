@@ -1494,6 +1494,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemAccessDeniedException">
+        /// You don't have permission to view OpsItems in the specified account. Verify that your
+        /// account is configured either as a Systems Manager delegated administrator or that
+        /// you are logged into the Organizations management account.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemAlreadyExistsException">
         /// The OpsItem already exists.
         /// </exception>
@@ -1533,6 +1538,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the CreateOpsItem service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemAccessDeniedException">
+        /// You don't have permission to view OpsItems in the specified account. Verify that your
+        /// account is configured either as a Systems Manager delegated administrator or that
+        /// you are logged into the Organizations management account.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemAlreadyExistsException">
         /// The OpsItem already exists.
@@ -2554,6 +2564,68 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteResourceDataSync">REST API Reference for DeleteResourceDataSync Operation</seealso>
         Task<DeleteResourceDataSyncResponse> DeleteResourceDataSyncAsync(DeleteResourceDataSyncRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteResourcePolicy
+
+
+        /// <summary>
+        /// Deletes a Systems Manager resource policy. A resource policy helps you to define the
+        /// IAM entity (for example, an Amazon Web Services account) that can manage your Systems
+        /// Manager resources. Currently, <code>OpsItemGroup</code> is the only resource that
+        /// supports Systems Manager resource policies. The resource policy for <code>OpsItemGroup</code>
+        /// enables Amazon Web Services accounts to view and interact with OpsCenter operational
+        /// work items (OpsItems).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourcePolicyConflictException">
+        /// The hash provided in the call doesn't match the stored hash. This exception is thrown
+        /// when trying to update an obsolete policy version or when multiple requests to update
+        /// a policy are sent.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourcePolicyInvalidParameterException">
+        /// One or more parameters specified for the call aren't valid. Verify the parameters
+        /// and their values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a Systems Manager resource policy. A resource policy helps you to define the
+        /// IAM entity (for example, an Amazon Web Services account) that can manage your Systems
+        /// Manager resources. Currently, <code>OpsItemGroup</code> is the only resource that
+        /// supports Systems Manager resource policies. The resource policy for <code>OpsItemGroup</code>
+        /// enables Amazon Web Services accounts to view and interact with OpsCenter operational
+        /// work items (OpsItems).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourcePolicyConflictException">
+        /// The hash provided in the call doesn't match the stored hash. This exception is thrown
+        /// when trying to update an obsolete policy version or when multiple requests to update
+        /// a policy are sent.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourcePolicyInvalidParameterException">
+        /// One or more parameters specified for the call aren't valid. Verify the parameters
+        /// and their values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -6088,6 +6160,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemAccessDeniedException">
+        /// You don't have permission to view OpsItems in the specified account. Verify that your
+        /// account is configured either as a Systems Manager delegated administrator or that
+        /// you are logged into the Organizations management account.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemNotFoundException">
         /// The specified OpsItem ID doesn't exist. Verify the ID and try again.
         /// </exception>
@@ -6118,6 +6195,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the GetOpsItem service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemAccessDeniedException">
+        /// You don't have permission to view OpsItems in the specified account. Verify that your
+        /// account is configured either as a Systems Manager delegated administrator or that
+        /// you are logged into the Organizations management account.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemNotFoundException">
         /// The specified OpsItem ID doesn't exist. Verify the ID and try again.
@@ -6618,6 +6700,48 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetPatchBaselineForPatchGroup">REST API Reference for GetPatchBaselineForPatchGroup Operation</seealso>
         Task<GetPatchBaselineForPatchGroupResponse> GetPatchBaselineForPatchGroupAsync(GetPatchBaselineForPatchGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetResourcePolicies
+
+
+        /// <summary>
+        /// Returns an array of the <code>Policy</code> object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicies service method.</param>
+        /// 
+        /// <returns>The response from the GetResourcePolicies service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourcePolicyInvalidParameterException">
+        /// One or more parameters specified for the call aren't valid. Verify the parameters
+        /// and their values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetResourcePolicies">REST API Reference for GetResourcePolicies Operation</seealso>
+        GetResourcePoliciesResponse GetResourcePolicies(GetResourcePoliciesRequest request);
+
+
+
+        /// <summary>
+        /// Returns an array of the <code>Policy</code> object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicies service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetResourcePolicies service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourcePolicyInvalidParameterException">
+        /// One or more parameters specified for the call aren't valid. Verify the parameters
+        /// and their values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetResourcePolicies">REST API Reference for GetResourcePolicies Operation</seealso>
+        Task<GetResourcePoliciesResponse> GetResourcePoliciesAsync(GetResourcePoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -8923,6 +9047,78 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutParameter">REST API Reference for PutParameter Operation</seealso>
         Task<PutParameterResponse> PutParameterAsync(PutParameterRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutResourcePolicy
+
+
+        /// <summary>
+        /// Creates or updates a Systems Manager resource policy. A resource policy helps you
+        /// to define the IAM entity (for example, an Amazon Web Services account) that can manage
+        /// your Systems Manager resources. Currently, <code>OpsItemGroup</code> is the only resource
+        /// that supports Systems Manager resource policies. The resource policy for <code>OpsItemGroup</code>
+        /// enables Amazon Web Services accounts to view and interact with OpsCenter operational
+        /// work items (OpsItems).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutResourcePolicy service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourcePolicyConflictException">
+        /// The hash provided in the call doesn't match the stored hash. This exception is thrown
+        /// when trying to update an obsolete policy version or when multiple requests to update
+        /// a policy are sent.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourcePolicyInvalidParameterException">
+        /// One or more parameters specified for the call aren't valid. Verify the parameters
+        /// and their values and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourcePolicyLimitExceededException">
+        /// The <a>PutResourcePolicy</a> API action enforces two limits. A policy can't be greater
+        /// than 1024 bytes in size. And only one policy can be attached to <code>OpsItemGroup</code>.
+        /// Verify these limits and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request);
+
+
+
+        /// <summary>
+        /// Creates or updates a Systems Manager resource policy. A resource policy helps you
+        /// to define the IAM entity (for example, an Amazon Web Services account) that can manage
+        /// your Systems Manager resources. Currently, <code>OpsItemGroup</code> is the only resource
+        /// that supports Systems Manager resource policies. The resource policy for <code>OpsItemGroup</code>
+        /// enables Amazon Web Services accounts to view and interact with OpsCenter operational
+        /// work items (OpsItems).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutResourcePolicy service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourcePolicyConflictException">
+        /// The hash provided in the call doesn't match the stored hash. This exception is thrown
+        /// when trying to update an obsolete policy version or when multiple requests to update
+        /// a policy are sent.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourcePolicyInvalidParameterException">
+        /// One or more parameters specified for the call aren't valid. Verify the parameters
+        /// and their values and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourcePolicyLimitExceededException">
+        /// The <a>PutResourcePolicy</a> API action enforces two limits. A policy can't be greater
+        /// than 1024 bytes in size. And only one policy can be attached to <code>OpsItemGroup</code>.
+        /// Verify these limits and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -11253,6 +11449,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemAccessDeniedException">
+        /// You don't have permission to view OpsItems in the specified account. Verify that your
+        /// account is configured either as a Systems Manager delegated administrator or that
+        /// you are logged into the Organizations management account.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemAlreadyExistsException">
         /// The OpsItem already exists.
         /// </exception>
@@ -11294,6 +11495,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the UpdateOpsItem service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemAccessDeniedException">
+        /// You don't have permission to view OpsItems in the specified account. Verify that your
+        /// account is configured either as a Systems Manager delegated administrator or that
+        /// you are logged into the Organizations management account.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemAlreadyExistsException">
         /// The OpsItem already exists.

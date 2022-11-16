@@ -73,6 +73,10 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 {
                     return InternalServerErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("OpsItemAccessDeniedException"))
+                {
+                    return OpsItemAccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("OpsItemAlreadyExistsException"))
                 {
                     return OpsItemAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

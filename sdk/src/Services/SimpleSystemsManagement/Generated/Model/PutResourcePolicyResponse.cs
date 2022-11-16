@@ -29,48 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// This is the response object from the CreateOpsItem operation.
+    /// This is the response object from the PutResourcePolicy operation.
     /// </summary>
-    public partial class CreateOpsItemResponse : AmazonWebServiceResponse
+    public partial class PutResourcePolicyResponse : AmazonWebServiceResponse
     {
-        private string _opsItemArn;
-        private string _opsItemId;
+        private string _policyHash;
+        private string _policyId;
 
         /// <summary>
-        /// Gets and sets the property OpsItemArn. 
+        /// Gets and sets the property PolicyHash. 
         /// <para>
-        /// The OpsItem Amazon Resource Name (ARN).
+        /// ID of the current policy version. The hash helps to prevent a situation where multiple
+        /// users attempt to overwrite a policy. You must provide this hash when updating or deleting
+        /// a policy.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=20, Max=2048)]
-        public string OpsItemArn
+        public string PolicyHash
         {
-            get { return this._opsItemArn; }
-            set { this._opsItemArn = value; }
+            get { return this._policyHash; }
+            set { this._policyHash = value; }
         }
 
-        // Check to see if OpsItemArn property is set
-        internal bool IsSetOpsItemArn()
+        // Check to see if PolicyHash property is set
+        internal bool IsSetPolicyHash()
         {
-            return this._opsItemArn != null;
+            return this._policyHash != null;
         }
 
         /// <summary>
-        /// Gets and sets the property OpsItemId. 
+        /// Gets and sets the property PolicyId. 
         /// <para>
-        /// The ID of the OpsItem.
+        /// The policy ID. To update a policy, you must specify <code>PolicyId</code> and <code>PolicyHash</code>.
         /// </para>
         /// </summary>
-        public string OpsItemId
+        public string PolicyId
         {
-            get { return this._opsItemId; }
-            set { this._opsItemId = value; }
+            get { return this._policyId; }
+            set { this._policyId = value; }
         }
 
-        // Check to see if OpsItemId property is set
-        internal bool IsSetOpsItemId()
+        // Check to see if PolicyId property is set
+        internal bool IsSetPolicyId()
         {
-            return this._opsItemId != null;
+            return this._policyId != null;
         }
 
     }

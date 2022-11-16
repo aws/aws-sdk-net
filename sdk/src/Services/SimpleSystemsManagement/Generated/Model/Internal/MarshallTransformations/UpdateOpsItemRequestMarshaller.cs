@@ -137,6 +137,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetOpsItemArn())
+                {
+                    context.Writer.WritePropertyName("OpsItemArn");
+                    context.Writer.Write(publicRequest.OpsItemArn);
+                }
+
                 if(publicRequest.IsSetOpsItemId())
                 {
                     context.Writer.WritePropertyName("OpsItemId");

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GetOpsItem Request Marshaller
+    /// PutResourcePolicy Request Marshaller
     /// </summary>       
-    public class GetOpsItemRequestMarshaller : IMarshaller<IRequest, GetOpsItemRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class PutResourcePolicyRequestMarshaller : IMarshaller<IRequest, PutResourcePolicyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((GetOpsItemRequest)input);
+            return this.Marshall((PutResourcePolicyRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(GetOpsItemRequest publicRequest)
+        public IRequest Marshall(PutResourcePolicyRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleSystemsManagement");
-            string target = "AmazonSSM.GetOpsItem";
+            string target = "AmazonSSM.PutResourcePolicy";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-11-06";
@@ -67,16 +67,28 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetOpsItemArn())
+                if(publicRequest.IsSetPolicy())
                 {
-                    context.Writer.WritePropertyName("OpsItemArn");
-                    context.Writer.Write(publicRequest.OpsItemArn);
+                    context.Writer.WritePropertyName("Policy");
+                    context.Writer.Write(publicRequest.Policy);
                 }
 
-                if(publicRequest.IsSetOpsItemId())
+                if(publicRequest.IsSetPolicyHash())
                 {
-                    context.Writer.WritePropertyName("OpsItemId");
-                    context.Writer.Write(publicRequest.OpsItemId);
+                    context.Writer.WritePropertyName("PolicyHash");
+                    context.Writer.Write(publicRequest.PolicyHash);
+                }
+
+                if(publicRequest.IsSetPolicyId())
+                {
+                    context.Writer.WritePropertyName("PolicyId");
+                    context.Writer.Write(publicRequest.PolicyId);
+                }
+
+                if(publicRequest.IsSetResourceArn())
+                {
+                    context.Writer.WritePropertyName("ResourceArn");
+                    context.Writer.Write(publicRequest.ResourceArn);
                 }
 
                 writer.WriteObjectEnd();
@@ -87,9 +99,9 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static GetOpsItemRequestMarshaller _instance = new GetOpsItemRequestMarshaller();        
+        private static PutResourcePolicyRequestMarshaller _instance = new PutResourcePolicyRequestMarshaller();        
 
-        internal static GetOpsItemRequestMarshaller GetInstance()
+        internal static PutResourcePolicyRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -97,7 +109,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetOpsItemRequestMarshaller Instance
+        public static PutResourcePolicyRequestMarshaller Instance
         {
             get
             {

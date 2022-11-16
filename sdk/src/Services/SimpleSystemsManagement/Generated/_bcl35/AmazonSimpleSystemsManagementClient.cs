@@ -1402,6 +1402,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemAccessDeniedException">
+        /// You don't have permission to view OpsItems in the specified account. Verify that your
+        /// account is configured either as a Systems Manager delegated administrator or that
+        /// you are logged into the Organizations management account.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemAlreadyExistsException">
         /// The OpsItem already exists.
         /// </exception>
@@ -2489,6 +2494,77 @@ namespace Amazon.SimpleSystemsManagement
         public virtual DeleteResourceDataSyncResponse EndDeleteResourceDataSync(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteResourceDataSyncResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteResourcePolicy
+
+        /// <summary>
+        /// Deletes a Systems Manager resource policy. A resource policy helps you to define the
+        /// IAM entity (for example, an Amazon Web Services account) that can manage your Systems
+        /// Manager resources. Currently, <code>OpsItemGroup</code> is the only resource that
+        /// supports Systems Manager resource policies. The resource policy for <code>OpsItemGroup</code>
+        /// enables Amazon Web Services accounts to view and interact with OpsCenter operational
+        /// work items (OpsItems).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourcePolicyConflictException">
+        /// The hash provided in the call doesn't match the stored hash. This exception is thrown
+        /// when trying to update an obsolete policy version or when multiple requests to update
+        /// a policy are sent.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourcePolicyInvalidParameterException">
+        /// One or more parameters specified for the call aren't valid. Verify the parameters
+        /// and their values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteResourcePolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteResourcePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual IAsyncResult BeginDeleteResourcePolicy(DeleteResourcePolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteResourcePolicy.</param>
+        /// 
+        /// <returns>Returns a  DeleteResourcePolicyResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual DeleteResourcePolicyResponse EndDeleteResourcePolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteResourcePolicyResponse>(asyncResult);
         }
 
         #endregion
@@ -6324,6 +6400,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemAccessDeniedException">
+        /// You don't have permission to view OpsItems in the specified account. Verify that your
+        /// account is configured either as a Systems Manager delegated administrator or that
+        /// you are logged into the Organizations management account.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemNotFoundException">
         /// The specified OpsItem ID doesn't exist. Verify the ID and try again.
         /// </exception>
@@ -6936,6 +7017,67 @@ namespace Amazon.SimpleSystemsManagement
         public virtual GetPatchBaselineForPatchGroupResponse EndGetPatchBaselineForPatchGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<GetPatchBaselineForPatchGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetResourcePolicies
+
+        /// <summary>
+        /// Returns an array of the <code>Policy</code> object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicies service method.</param>
+        /// 
+        /// <returns>The response from the GetResourcePolicies service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourcePolicyInvalidParameterException">
+        /// One or more parameters specified for the call aren't valid. Verify the parameters
+        /// and their values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetResourcePolicies">REST API Reference for GetResourcePolicies Operation</seealso>
+        public virtual GetResourcePoliciesResponse GetResourcePolicies(GetResourcePoliciesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourcePoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcePoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<GetResourcePoliciesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetResourcePolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicies operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetResourcePolicies
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetResourcePolicies">REST API Reference for GetResourcePolicies Operation</seealso>
+        public virtual IAsyncResult BeginGetResourcePolicies(GetResourcePoliciesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResourcePoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcePoliciesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetResourcePolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetResourcePolicies.</param>
+        /// 
+        /// <returns>Returns a  GetResourcePoliciesResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetResourcePolicies">REST API Reference for GetResourcePolicies Operation</seealso>
+        public virtual GetResourcePoliciesResponse EndGetResourcePolicies(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetResourcePoliciesResponse>(asyncResult);
         }
 
         #endregion
@@ -8979,6 +9121,82 @@ namespace Amazon.SimpleSystemsManagement
         public virtual PutParameterResponse EndPutParameter(IAsyncResult asyncResult)
         {
             return EndInvoke<PutParameterResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutResourcePolicy
+
+        /// <summary>
+        /// Creates or updates a Systems Manager resource policy. A resource policy helps you
+        /// to define the IAM entity (for example, an Amazon Web Services account) that can manage
+        /// your Systems Manager resources. Currently, <code>OpsItemGroup</code> is the only resource
+        /// that supports Systems Manager resource policies. The resource policy for <code>OpsItemGroup</code>
+        /// enables Amazon Web Services accounts to view and interact with OpsCenter operational
+        /// work items (OpsItems).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutResourcePolicy service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourcePolicyConflictException">
+        /// The hash provided in the call doesn't match the stored hash. This exception is thrown
+        /// when trying to update an obsolete policy version or when multiple requests to update
+        /// a policy are sent.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourcePolicyInvalidParameterException">
+        /// One or more parameters specified for the call aren't valid. Verify the parameters
+        /// and their values and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourcePolicyLimitExceededException">
+        /// The <a>PutResourcePolicy</a> API action enforces two limits. A policy can't be greater
+        /// than 1024 bytes in size. And only one policy can be attached to <code>OpsItemGroup</code>.
+        /// Verify these limits and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutResourcePolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutResourcePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual IAsyncResult BeginPutResourcePolicy(PutResourcePolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutResourcePolicy.</param>
+        /// 
+        /// <returns>Returns a  PutResourcePolicyResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual PutResourcePolicyResponse EndPutResourcePolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutResourcePolicyResponse>(asyncResult);
         }
 
         #endregion
@@ -11161,6 +11379,11 @@ namespace Amazon.SimpleSystemsManagement
         /// <returns>The response from the UpdateOpsItem service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemAccessDeniedException">
+        /// You don't have permission to view OpsItems in the specified account. Verify that your
+        /// account is configured either as a Systems Manager delegated administrator or that
+        /// you are logged into the Organizations management account.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsItemAlreadyExistsException">
         /// The OpsItem already exists.

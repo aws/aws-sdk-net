@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetOpsItem operation
+    /// Response Unmarshaller for DeleteResourcePolicy operation
     /// </summary>  
-    public class GetOpsItemResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DeleteResourcePolicyResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,19 +45,8 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetOpsItemResponse response = new GetOpsItemResponse();
+            DeleteResourcePolicyResponse response = new DeleteResourcePolicyResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("OpsItem", targetDepth))
-                {
-                    var unmarshaller = OpsItemUnmarshaller.Instance;
-                    response.OpsItem = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -84,21 +73,21 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 {
                     return InternalServerErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("OpsItemAccessDeniedException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourcePolicyConflictException"))
                 {
-                    return OpsItemAccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ResourcePolicyConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("OpsItemNotFoundException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourcePolicyInvalidParameterException"))
                 {
-                    return OpsItemNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ResourcePolicyInvalidParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonSimpleSystemsManagementException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetOpsItemResponseUnmarshaller _instance = new GetOpsItemResponseUnmarshaller();        
+        private static DeleteResourcePolicyResponseUnmarshaller _instance = new DeleteResourcePolicyResponseUnmarshaller();        
 
-        internal static GetOpsItemResponseUnmarshaller GetInstance()
+        internal static DeleteResourcePolicyResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -106,7 +95,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetOpsItemResponseUnmarshaller Instance
+        public static DeleteResourcePolicyResponseUnmarshaller Instance
         {
             get
             {

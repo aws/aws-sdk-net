@@ -138,6 +138,12 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services Systems
         /// Manager User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can't specify an IAM service-linked role for this parameter. You must create a
+        /// unique role.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]
         public string IamRole

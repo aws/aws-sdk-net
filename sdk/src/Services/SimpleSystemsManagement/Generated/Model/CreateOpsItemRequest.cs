@@ -45,6 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class CreateOpsItemRequest : AmazonSimpleSystemsManagementRequest
     {
+        private string _accountId;
         private DateTime? _actualEndTime;
         private DateTime? _actualStartTime;
         private string _category;
@@ -60,6 +61,28 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _source;
         private List<Tag> _tags = new List<Tag>();
         private string _title;
+
+        /// <summary>
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// The target Amazon Web Services account where you want to create an OpsItem. To make
+        /// this call, your account must be configured to work with OpsItems across accounts.
+        /// For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-OpsCenter-multiple-accounts.html">Setting
+        /// up OpsCenter to work with OpsItems across accounts</a> in the <i>Amazon Web Services
+        /// Systems Manager User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string AccountId
+        {
+            get { return this._accountId; }
+            set { this._accountId = value; }
+        }
+
+        // Check to see if AccountId property is set
+        internal bool IsSetAccountId()
+        {
+            return this._accountId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ActualEndTime. 
@@ -202,9 +225,35 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property OpsItemType. 
         /// <para>
-        /// The type of OpsItem to create. Currently, the only valid values are <code>/aws/changerequest</code>
-        /// and <code>/aws/issue</code>.
+        /// The type of OpsItem to create. Systems Manager supports the following types of OpsItems:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>/aws/issue</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// This type of OpsItem is used for default OpsItems created by OpsCenter. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>/aws/changerequest</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// This type of OpsItem is used by Change Manager for reviewing and approving or rejecting
+        /// change requests. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>/aws/insights</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate
+        /// OpsItems. 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string OpsItemType
         {

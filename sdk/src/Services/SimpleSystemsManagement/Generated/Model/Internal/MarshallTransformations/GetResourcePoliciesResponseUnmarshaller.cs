@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetOpsItem operation
+    /// Response Unmarshaller for GetResourcePolicies operation
     /// </summary>  
-    public class GetOpsItemResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetResourcePoliciesResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,22 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetOpsItemResponse response = new GetOpsItemResponse();
+            GetResourcePoliciesResponse response = new GetResourcePoliciesResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("OpsItem", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth))
                 {
-                    var unmarshaller = OpsItemUnmarshaller.Instance;
-                    response.OpsItem = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Policies", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<GetResourcePoliciesResponseEntry, GetResourcePoliciesResponseEntryUnmarshaller>(GetResourcePoliciesResponseEntryUnmarshaller.Instance);
+                    response.Policies = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -84,21 +90,17 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 {
                     return InternalServerErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("OpsItemAccessDeniedException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourcePolicyInvalidParameterException"))
                 {
-                    return OpsItemAccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("OpsItemNotFoundException"))
-                {
-                    return OpsItemNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ResourcePolicyInvalidParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonSimpleSystemsManagementException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetOpsItemResponseUnmarshaller _instance = new GetOpsItemResponseUnmarshaller();        
+        private static GetResourcePoliciesResponseUnmarshaller _instance = new GetResourcePoliciesResponseUnmarshaller();        
 
-        internal static GetOpsItemResponseUnmarshaller GetInstance()
+        internal static GetResourcePoliciesResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -106,7 +108,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetOpsItemResponseUnmarshaller Instance
+        public static GetResourcePoliciesResponseUnmarshaller Instance
         {
             get
             {

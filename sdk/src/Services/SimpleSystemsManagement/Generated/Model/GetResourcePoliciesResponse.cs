@@ -29,48 +29,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// This is the response object from the CreateOpsItem operation.
+    /// This is the response object from the GetResourcePolicies operation.
     /// </summary>
-    public partial class CreateOpsItemResponse : AmazonWebServiceResponse
+    public partial class GetResourcePoliciesResponse : AmazonWebServiceResponse
     {
-        private string _opsItemArn;
-        private string _opsItemId;
+        private string _nextToken;
+        private List<GetResourcePoliciesResponseEntry> _policies = new List<GetResourcePoliciesResponseEntry>();
 
         /// <summary>
-        /// Gets and sets the property OpsItemArn. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The OpsItem Amazon Resource Name (ARN).
+        /// The token for the next set of items to return. Use this token to get the next set
+        /// of results.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=20, Max=2048)]
-        public string OpsItemArn
+        public string NextToken
         {
-            get { return this._opsItemArn; }
-            set { this._opsItemArn = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if OpsItemArn property is set
-        internal bool IsSetOpsItemArn()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._opsItemArn != null;
+            return this._nextToken != null;
         }
 
         /// <summary>
-        /// Gets and sets the property OpsItemId. 
+        /// Gets and sets the property Policies. 
         /// <para>
-        /// The ID of the OpsItem.
+        /// An array of the <code>Policy</code> object.
         /// </para>
         /// </summary>
-        public string OpsItemId
+        public List<GetResourcePoliciesResponseEntry> Policies
         {
-            get { return this._opsItemId; }
-            set { this._opsItemId = value; }
+            get { return this._policies; }
+            set { this._policies = value; }
         }
 
-        // Check to see if OpsItemId property is set
-        internal bool IsSetOpsItemId()
+        // Check to see if Policies property is set
+        internal bool IsSetPolicies()
         {
-            return this._opsItemId != null;
+            return this._policies != null && this._policies.Count > 0; 
         }
 
     }

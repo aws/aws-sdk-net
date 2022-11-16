@@ -45,7 +45,27 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class GetOpsItemRequest : AmazonSimpleSystemsManagementRequest
     {
+        private string _opsItemArn;
         private string _opsItemId;
+
+        /// <summary>
+        /// Gets and sets the property OpsItemArn. 
+        /// <para>
+        /// The OpsItem Amazon Resource Name (ARN).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string OpsItemArn
+        {
+            get { return this._opsItemArn; }
+            set { this._opsItemArn = value; }
+        }
+
+        // Check to see if OpsItemArn property is set
+        internal bool IsSetOpsItemArn()
+        {
+            return this._opsItemArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property OpsItemId. 
