@@ -225,6 +225,56 @@ namespace Amazon.XRay
 
         #endregion
         
+        #region  DeleteResourcePolicy
+
+
+        /// <summary>
+        /// Deletes a resource policy from the target Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidPolicyRevisionIdException">
+        /// A policy revision id was provided which does not match the latest policy revision.
+        /// This exception is also if a policy revision id of 0 is provided via <code>PutResourcePolicy</code>
+        /// and a policy with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a resource policy from the target Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidPolicyRevisionIdException">
+        /// A policy revision id was provided which does not match the latest policy revision.
+        /// This exception is also if a policy revision id of 0 is provided via <code>PutResourcePolicy</code>
+        /// and a policy with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteSamplingRule
 
 
@@ -901,6 +951,46 @@ namespace Amazon.XRay
 
         #endregion
         
+        #region  ListResourcePolicies
+
+
+        /// <summary>
+        /// Returns the list of resource policies in the target Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourcePolicies service method.</param>
+        /// 
+        /// <returns>The response from the ListResourcePolicies service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/ListResourcePolicies">REST API Reference for ListResourcePolicies Operation</seealso>
+        ListResourcePoliciesResponse ListResourcePolicies(ListResourcePoliciesRequest request);
+
+
+
+        /// <summary>
+        /// Returns the list of resource policies in the target Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourcePolicies service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListResourcePolicies service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/ListResourcePolicies">REST API Reference for ListResourcePolicies Operation</seealso>
+        Task<ListResourcePoliciesResponse> ListResourcePoliciesAsync(ListResourcePoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListTagsForResource
 
 
@@ -988,6 +1078,86 @@ namespace Amazon.XRay
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutEncryptionConfig">REST API Reference for PutEncryptionConfig Operation</seealso>
         Task<PutEncryptionConfigResponse> PutEncryptionConfigAsync(PutEncryptionConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutResourcePolicy
+
+
+        /// <summary>
+        /// Sets the resource policy to grant one or more Amazon Web Services services and accounts
+        /// permissions to access X-Ray. Each resource policy will be associated with a specific
+        /// Amazon Web Services account. Each Amazon Web Services account can have a maximum of
+        /// 5 resource policies, and each policy name must be unique within that account. The
+        /// maximum size of each resource policy is 5KB.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutResourcePolicy service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidPolicyRevisionIdException">
+        /// A policy revision id was provided which does not match the latest policy revision.
+        /// This exception is also if a policy revision id of 0 is provided via <code>PutResourcePolicy</code>
+        /// and a policy with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.LockoutPreventionException">
+        /// The provided resource policy would prevent the caller of this request from calling
+        /// PutResourcePolicy in the future.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.MalformedPolicyDocumentException">
+        /// Invalid policy document provided in request.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.PolicyCountLimitExceededException">
+        /// Exceeded the maximum number of resource policies for a target Amazon Web Services
+        /// account.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.PolicySizeLimitExceededException">
+        /// Exceeded the maximum size for a resource policy.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request);
+
+
+
+        /// <summary>
+        /// Sets the resource policy to grant one or more Amazon Web Services services and accounts
+        /// permissions to access X-Ray. Each resource policy will be associated with a specific
+        /// Amazon Web Services account. Each Amazon Web Services account can have a maximum of
+        /// 5 resource policies, and each policy name must be unique within that account. The
+        /// maximum size of each resource policy is 5KB.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutResourcePolicy service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidPolicyRevisionIdException">
+        /// A policy revision id was provided which does not match the latest policy revision.
+        /// This exception is also if a policy revision id of 0 is provided via <code>PutResourcePolicy</code>
+        /// and a policy with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.LockoutPreventionException">
+        /// The provided resource policy would prevent the caller of this request from calling
+        /// PutResourcePolicy in the future.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.MalformedPolicyDocumentException">
+        /// Invalid policy document provided in request.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.PolicyCountLimitExceededException">
+        /// Exceeded the maximum number of resource policies for a target Amazon Web Services
+        /// account.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.PolicySizeLimitExceededException">
+        /// Exceeded the maximum size for a resource policy.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

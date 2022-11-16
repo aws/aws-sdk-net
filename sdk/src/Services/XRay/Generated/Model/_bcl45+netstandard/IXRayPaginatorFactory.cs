@@ -74,5 +74,15 @@ namespace Amazon.XRay.Model
         /// Paginator for GetTraceSummaries operation
         ///</summary>
         IGetTraceSummariesPaginator GetTraceSummaries(GetTraceSummariesRequest request);
+
+        /// <summary>
+        /// Paginator for ListResourcePolicies operation
+        ///</summary>
+        IListResourcePoliciesPaginator ListResourcePolicies(ListResourcePoliciesRequest request);
+
+        /// <summary>
+        /// Paginator for ListTagsForResource operation
+        ///</summary>
+        IListTagsForResourcePaginator ListTagsForResource(ListTagsForResourceRequest request);
     }
 }
