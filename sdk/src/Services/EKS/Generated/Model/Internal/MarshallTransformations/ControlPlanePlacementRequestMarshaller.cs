@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// OutpostConfigRequest Marshaller
+    /// ControlPlanePlacementRequest Marshaller
     /// </summary>
-    public class OutpostConfigRequestMarshaller : IRequestMarshaller<OutpostConfigRequest, JsonMarshallerContext> 
+    public class ControlPlanePlacementRequestMarshaller : IRequestMarshaller<ControlPlanePlacementRequest, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,34 +43,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(OutpostConfigRequest requestObject, JsonMarshallerContext context)
+        public void Marshall(ControlPlanePlacementRequest requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetControlPlaneInstanceType())
+            if(requestObject.IsSetGroupName())
             {
-                context.Writer.WritePropertyName("controlPlaneInstanceType");
-                context.Writer.Write(requestObject.ControlPlaneInstanceType);
-            }
-
-            if(requestObject.IsSetControlPlanePlacement())
-            {
-                context.Writer.WritePropertyName("controlPlanePlacement");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ControlPlanePlacementRequestMarshaller.Instance;
-                marshaller.Marshall(requestObject.ControlPlanePlacement, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetOutpostArns())
-            {
-                context.Writer.WritePropertyName("outpostArns");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectOutpostArnsListValue in requestObject.OutpostArns)
-                {
-                        context.Writer.Write(requestObjectOutpostArnsListValue);
-                }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WritePropertyName("groupName");
+                context.Writer.Write(requestObject.GroupName);
             }
 
         }
@@ -78,7 +56,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static OutpostConfigRequestMarshaller Instance = new OutpostConfigRequestMarshaller();
+        public readonly static ControlPlanePlacementRequestMarshaller Instance = new ControlPlanePlacementRequestMarshaller();
 
     }
 }

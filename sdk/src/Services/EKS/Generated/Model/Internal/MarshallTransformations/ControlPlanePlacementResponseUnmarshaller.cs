@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OutpostConfigResponse Object
+    /// Response Unmarshaller for ControlPlanePlacementResponse Object
     /// </summary>  
-    public class OutpostConfigResponseUnmarshaller : IUnmarshaller<OutpostConfigResponse, XmlUnmarshallerContext>, IUnmarshaller<OutpostConfigResponse, JsonUnmarshallerContext>
+    public class ControlPlanePlacementResponseUnmarshaller : IUnmarshaller<ControlPlanePlacementResponse, XmlUnmarshallerContext>, IUnmarshaller<ControlPlanePlacementResponse, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        OutpostConfigResponse IUnmarshaller<OutpostConfigResponse, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ControlPlanePlacementResponse IUnmarshaller<ControlPlanePlacementResponse, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,21 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public OutpostConfigResponse Unmarshall(JsonUnmarshallerContext context)
+        public ControlPlanePlacementResponse Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            OutpostConfigResponse unmarshalledObject = new OutpostConfigResponse();
+            ControlPlanePlacementResponse unmarshalledObject = new ControlPlanePlacementResponse();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("controlPlaneInstanceType", targetDepth))
+                if (context.TestExpression("groupName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ControlPlaneInstanceType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("controlPlanePlacement", targetDepth))
-                {
-                    var unmarshaller = ControlPlanePlacementResponseUnmarshaller.Instance;
-                    unmarshalledObject.ControlPlanePlacement = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("outpostArns", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.OutpostArns = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GroupName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +76,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         }
 
 
-        private static OutpostConfigResponseUnmarshaller _instance = new OutpostConfigResponseUnmarshaller();        
+        private static ControlPlanePlacementResponseUnmarshaller _instance = new ControlPlanePlacementResponseUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OutpostConfigResponseUnmarshaller Instance
+        public static ControlPlanePlacementResponseUnmarshaller Instance
         {
             get
             {

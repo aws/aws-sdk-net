@@ -36,6 +36,7 @@ namespace Amazon.EKS.Model
     public partial class OutpostConfigResponse
     {
         private string _controlPlaneInstanceType;
+        private ControlPlanePlacementResponse _controlPlanePlacement;
         private List<string> _outpostArns = new List<string>();
 
         /// <summary>
@@ -56,6 +57,27 @@ namespace Amazon.EKS.Model
         internal bool IsSetControlPlaneInstanceType()
         {
             return this._controlPlaneInstanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ControlPlanePlacement. 
+        /// <para>
+        /// An object representing the placement configuration for all the control plane instance
+        /// of your local Amazon EKS cluster on an Amazon Web Services Outpost. For more information,
+        /// see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity
+        /// considerations</a> in the <i>Amazon EKS User Guide</i>.
+        /// </para>
+        /// </summary>
+        public ControlPlanePlacementResponse ControlPlanePlacement
+        {
+            get { return this._controlPlanePlacement; }
+            set { this._controlPlanePlacement = value; }
+        }
+
+        // Check to see if ControlPlanePlacement property is set
+        internal bool IsSetControlPlanePlacement()
+        {
+            return this._controlPlanePlacement != null;
         }
 
         /// <summary>

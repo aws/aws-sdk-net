@@ -30,45 +30,33 @@ namespace Amazon.EKS.Model
 {
     /// <summary>
     /// The configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost.
-    /// Before creating a cluster on an Outpost, review <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-cluster-outpost.html">Creating
-    /// a local Amazon EKS cluster on an Amazon Web Services Outpost</a> in the <i>Amazon
-    /// EKS User Guide</i>. This API isn't available for Amazon EKS clusters on the Amazon
-    /// Web Services cloud.
+    /// Before creating a cluster on an Outpost, review <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-local-cluster-create.html">Creating
+    /// a local cluster on an Outpost</a> in the <i>Amazon EKS User Guide</i>. This API isn't
+    /// available for Amazon EKS clusters on the Amazon Web Services cloud.
     /// </summary>
     public partial class OutpostConfigRequest
     {
         private string _controlPlaneInstanceType;
+        private ControlPlanePlacementRequest _controlPlanePlacement;
         private List<string> _outpostArns = new List<string>();
 
         /// <summary>
         /// Gets and sets the property ControlPlaneInstanceType. 
         /// <para>
         /// The Amazon EC2 instance type that you want to use for your local Amazon EKS cluster
-        /// on Outposts. The instance type that you specify is used for all Kubernetes control
-        /// plane instances. The instance type can't be changed after cluster creation.
+        /// on Outposts. Choose an instance type based on the number of nodes that your cluster
+        /// will have. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity
+        /// considerations</a> in the <i>Amazon EKS User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// Choose an instance type based on the number of nodes that your cluster will have.
-        /// If your cluster will have:
+        /// The instance type that you specify is used for all Kubernetes control plane instances.
+        /// The instance type can't be changed after cluster creation. The control plane is not
+        /// automatically scaled by Amazon EKS.
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        /// 1–20 nodes, then we recommend specifying a <code>large</code> instance type.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// 21–100 nodes, then we recommend specifying an <code>xlarge</code> instance type.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// 101–250 nodes, then we recommend specifying a <code>2xlarge</code> instance type.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For a list of the available Amazon EC2 instance types, see Compute and storage in
-        /// <a href="http://aws.amazon.com/outposts/rack/features/">Outposts rack features</a>.
-        /// The control plane is not automatically scaled by Amazon EKS.
+        ///  
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -82,6 +70,27 @@ namespace Amazon.EKS.Model
         internal bool IsSetControlPlaneInstanceType()
         {
             return this._controlPlaneInstanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ControlPlanePlacement. 
+        /// <para>
+        /// An object representing the placement configuration for all the control plane instance
+        /// of your local Amazon EKS cluster on an Amazon Web Services Outpost. For more information,
+        /// see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity
+        /// considerations</a> in the <i>Amazon EKS User Guide</i>.
+        /// </para>
+        /// </summary>
+        public ControlPlanePlacementRequest ControlPlanePlacement
+        {
+            get { return this._controlPlanePlacement; }
+            set { this._controlPlanePlacement = value; }
+        }
+
+        // Check to see if ControlPlanePlacement property is set
+        internal bool IsSetControlPlanePlacement()
+        {
+            return this._controlPlanePlacement != null;
         }
 
         /// <summary>
