@@ -43,6 +43,7 @@ namespace Amazon.IoTTwinMaker.Model
         private bool? _isSchemaInitialized;
         private bool? _isSingleton;
         private Dictionary<string, PropertyDefinitionResponse> _propertyDefinitions = new Dictionary<string, PropertyDefinitionResponse>();
+        private Dictionary<string, PropertyGroupResponse> _propertyGroups = new Dictionary<string, PropertyGroupResponse>();
         private Status _status;
         private DateTime? _updateDateTime;
         private string _workspaceId;
@@ -233,6 +234,28 @@ namespace Amazon.IoTTwinMaker.Model
         internal bool IsSetPropertyDefinitions()
         {
             return this._propertyDefinitions != null && this._propertyDefinitions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PropertyGroups. 
+        /// <para>
+        /// The maximum number of results to return at one time. The default is 25.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Range: Minimum value of 1. Maximum value of 250.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, PropertyGroupResponse> PropertyGroups
+        {
+            get { return this._propertyGroups; }
+            set { this._propertyGroups = value; }
+        }
+
+        // Check to see if PropertyGroups property is set
+        internal bool IsSetPropertyGroups()
+        {
+            return this._propertyGroups != null && this._propertyGroups.Count > 0; 
         }
 
         /// <summary>

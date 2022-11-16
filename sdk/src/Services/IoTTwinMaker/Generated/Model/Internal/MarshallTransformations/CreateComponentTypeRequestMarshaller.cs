@@ -132,6 +132,25 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetPropertyGroups())
+                {
+                    context.Writer.WritePropertyName("propertyGroups");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestPropertyGroupsKvp in publicRequest.PropertyGroups)
+                    {
+                        context.Writer.WritePropertyName(publicRequestPropertyGroupsKvp.Key);
+                        var publicRequestPropertyGroupsValue = publicRequestPropertyGroupsKvp.Value;
+
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PropertyGroupRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequestPropertyGroupsValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");

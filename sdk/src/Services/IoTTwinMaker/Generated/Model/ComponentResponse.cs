@@ -38,6 +38,7 @@ namespace Amazon.IoTTwinMaker.Model
         private string _definedIn;
         private string _description;
         private Dictionary<string, PropertyResponse> _properties = new Dictionary<string, PropertyResponse>();
+        private Dictionary<string, ComponentPropertyGroupResponse> _propertyGroups = new Dictionary<string, ComponentPropertyGroupResponse>();
         private Status _status;
 
         /// <summary>
@@ -133,6 +134,24 @@ namespace Amazon.IoTTwinMaker.Model
         internal bool IsSetProperties()
         {
             return this._properties != null && this._properties.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PropertyGroups. 
+        /// <para>
+        /// The property groups.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, ComponentPropertyGroupResponse> PropertyGroups
+        {
+            get { return this._propertyGroups; }
+            set { this._propertyGroups = value; }
+        }
+
+        // Check to see if PropertyGroups property is set
+        internal bool IsSetPropertyGroups()
+        {
+            return this._propertyGroups != null && this._propertyGroups.Count > 0; 
         }
 
         /// <summary>

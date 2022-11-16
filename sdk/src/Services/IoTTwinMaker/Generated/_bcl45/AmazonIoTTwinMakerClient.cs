@@ -924,6 +924,85 @@ namespace Amazon.IoTTwinMaker
 
         #endregion
         
+        #region  ExecuteQuery
+
+
+        /// <summary>
+        /// Run queries to access information from your knowledge graph of entities within individual
+        /// workspaces.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteQuery service method.</param>
+        /// 
+        /// <returns>The response from the ExecuteQuery service method, as returned by IoTTwinMaker.</returns>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.InternalServerException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.QueryTimeoutException">
+        /// The query timeout exception.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ServiceQuotaExceededException">
+        /// The service quota was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ValidationException">
+        /// Failed
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ExecuteQuery">REST API Reference for ExecuteQuery Operation</seealso>
+        public virtual ExecuteQueryResponse ExecuteQuery(ExecuteQueryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExecuteQueryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExecuteQueryResponseUnmarshaller.Instance;
+
+            return Invoke<ExecuteQueryResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Run queries to access information from your knowledge graph of entities within individual
+        /// workspaces.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteQuery service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ExecuteQuery service method, as returned by IoTTwinMaker.</returns>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.InternalServerException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.QueryTimeoutException">
+        /// The query timeout exception.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ServiceQuotaExceededException">
+        /// The service quota was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ValidationException">
+        /// Failed
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ExecuteQuery">REST API Reference for ExecuteQuery Operation</seealso>
+        public virtual Task<ExecuteQueryResponse> ExecuteQueryAsync(ExecuteQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExecuteQueryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExecuteQueryResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ExecuteQueryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetComponentType
 
 
@@ -944,6 +1023,9 @@ namespace Amazon.IoTTwinMaker
         /// </exception>
         /// <exception cref="Amazon.IoTTwinMaker.Model.ThrottlingException">
         /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ValidationException">
+        /// Failed
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetComponentType">REST API Reference for GetComponentType Operation</seealso>
         public virtual GetComponentTypeResponse GetComponentType(GetComponentTypeRequest request)
@@ -976,6 +1058,9 @@ namespace Amazon.IoTTwinMaker
         /// </exception>
         /// <exception cref="Amazon.IoTTwinMaker.Model.ThrottlingException">
         /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ValidationException">
+        /// Failed
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetComponentType">REST API Reference for GetComponentType Operation</seealso>
         public virtual Task<GetComponentTypeResponse> GetComponentTypeAsync(GetComponentTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1056,6 +1141,71 @@ namespace Amazon.IoTTwinMaker
             options.ResponseUnmarshaller = GetEntityResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetEntityResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetPricingPlan
+
+
+        /// <summary>
+        /// Gets the pricing plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPricingPlan service method.</param>
+        /// 
+        /// <returns>The response from the GetPricingPlan service method, as returned by IoTTwinMaker.</returns>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.InternalServerException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ValidationException">
+        /// Failed
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetPricingPlan">REST API Reference for GetPricingPlan Operation</seealso>
+        public virtual GetPricingPlanResponse GetPricingPlan(GetPricingPlanRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPricingPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPricingPlanResponseUnmarshaller.Instance;
+
+            return Invoke<GetPricingPlanResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets the pricing plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPricingPlan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPricingPlan service method, as returned by IoTTwinMaker.</returns>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.InternalServerException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ValidationException">
+        /// Failed
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetPricingPlan">REST API Reference for GetPricingPlan Operation</seealso>
+        public virtual Task<GetPricingPlanResponse> GetPricingPlanAsync(GetPricingPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPricingPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPricingPlanResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetPricingPlanResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1977,6 +2127,71 @@ namespace Amazon.IoTTwinMaker
             options.ResponseUnmarshaller = UpdateEntityResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateEntityResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdatePricingPlan
+
+
+        /// <summary>
+        /// Update the pricing plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePricingPlan service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePricingPlan service method, as returned by IoTTwinMaker.</returns>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.InternalServerException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ValidationException">
+        /// Failed
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/UpdatePricingPlan">REST API Reference for UpdatePricingPlan Operation</seealso>
+        public virtual UpdatePricingPlanResponse UpdatePricingPlan(UpdatePricingPlanRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePricingPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePricingPlanResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePricingPlanResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Update the pricing plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePricingPlan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdatePricingPlan service method, as returned by IoTTwinMaker.</returns>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.InternalServerException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ValidationException">
+        /// Failed
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/UpdatePricingPlan">REST API Reference for UpdatePricingPlan Operation</seealso>
+        public virtual Task<UpdatePricingPlanResponse> UpdatePricingPlanAsync(UpdatePricingPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePricingPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePricingPlanResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdatePricingPlanResponse>(request, options, cancellationToken);
         }
 
         #endregion

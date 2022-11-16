@@ -40,6 +40,7 @@ namespace Amazon.IoTTwinMaker.Model
         private Dictionary<string, FunctionRequest> _functions = new Dictionary<string, FunctionRequest>();
         private bool? _isSingleton;
         private Dictionary<string, PropertyDefinitionRequest> _propertyDefinitions = new Dictionary<string, PropertyDefinitionRequest>();
+        private Dictionary<string, PropertyGroupRequest> _propertyGroups = new Dictionary<string, PropertyGroupRequest>();
         private string _workspaceId;
 
         /// <summary>
@@ -153,6 +154,24 @@ namespace Amazon.IoTTwinMaker.Model
         internal bool IsSetPropertyDefinitions()
         {
             return this._propertyDefinitions != null && this._propertyDefinitions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PropertyGroups. 
+        /// <para>
+        /// The property groups
+        /// </para>
+        /// </summary>
+        public Dictionary<string, PropertyGroupRequest> PropertyGroups
+        {
+            get { return this._propertyGroups; }
+            set { this._propertyGroups = value; }
+        }
+
+        // Check to see if PropertyGroups property is set
+        internal bool IsSetPropertyGroups()
+        {
+            return this._propertyGroups != null && this._propertyGroups.Count > 0; 
         }
 
         /// <summary>

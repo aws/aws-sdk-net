@@ -25,6 +25,60 @@ namespace Amazon.IoTTwinMaker
 {
 
     /// <summary>
+    /// Constants used for properties of type ColumnType.
+    /// </summary>
+    public class ColumnType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EDGE for ColumnType
+        /// </summary>
+        public static readonly ColumnType EDGE = new ColumnType("EDGE");
+        /// <summary>
+        /// Constant NODE for ColumnType
+        /// </summary>
+        public static readonly ColumnType NODE = new ColumnType("NODE");
+        /// <summary>
+        /// Constant VALUE for ColumnType
+        /// </summary>
+        public static readonly ColumnType VALUE = new ColumnType("VALUE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ColumnType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ColumnType FindValue(string value)
+        {
+            return FindValue<ColumnType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ColumnType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ComponentUpdateType.
     /// </summary>
     public class ComponentUpdateType : ConstantClass
@@ -129,6 +183,52 @@ namespace Amazon.IoTTwinMaker
 
 
     /// <summary>
+    /// Constants used for properties of type GroupType.
+    /// </summary>
+    public class GroupType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TABULAR for GroupType
+        /// </summary>
+        public static readonly GroupType TABULAR = new GroupType("TABULAR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GroupType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GroupType FindValue(string value)
+        {
+            return FindValue<GroupType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GroupType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InterpolationType.
     /// </summary>
     public class InterpolationType : ConstantClass
@@ -168,6 +268,56 @@ namespace Amazon.IoTTwinMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InterpolationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Order.
+    /// </summary>
+    public class Order : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASCENDING for Order
+        /// </summary>
+        public static readonly Order ASCENDING = new Order("ASCENDING");
+        /// <summary>
+        /// Constant DESCENDING for Order
+        /// </summary>
+        public static readonly Order DESCENDING = new Order("DESCENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Order(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Order FindValue(string value)
+        {
+            return FindValue<Order>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Order(string value)
         {
             return FindValue(value);
         }
@@ -268,6 +418,172 @@ namespace Amazon.IoTTwinMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ParentEntityUpdateType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PricingMode.
+    /// </summary>
+    public class PricingMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BASIC for PricingMode
+        /// </summary>
+        public static readonly PricingMode BASIC = new PricingMode("BASIC");
+        /// <summary>
+        /// Constant STANDARD for PricingMode
+        /// </summary>
+        public static readonly PricingMode STANDARD = new PricingMode("STANDARD");
+        /// <summary>
+        /// Constant TIERED_BUNDLE for PricingMode
+        /// </summary>
+        public static readonly PricingMode TIERED_BUNDLE = new PricingMode("TIERED_BUNDLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PricingMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PricingMode FindValue(string value)
+        {
+            return FindValue<PricingMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PricingMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PricingTier.
+    /// </summary>
+    public class PricingTier : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TIER_1 for PricingTier
+        /// </summary>
+        public static readonly PricingTier TIER_1 = new PricingTier("TIER_1");
+        /// <summary>
+        /// Constant TIER_2 for PricingTier
+        /// </summary>
+        public static readonly PricingTier TIER_2 = new PricingTier("TIER_2");
+        /// <summary>
+        /// Constant TIER_3 for PricingTier
+        /// </summary>
+        public static readonly PricingTier TIER_3 = new PricingTier("TIER_3");
+        /// <summary>
+        /// Constant TIER_4 for PricingTier
+        /// </summary>
+        public static readonly PricingTier TIER_4 = new PricingTier("TIER_4");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PricingTier(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PricingTier FindValue(string value)
+        {
+            return FindValue<PricingTier>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PricingTier(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PropertyGroupUpdateType.
+    /// </summary>
+    public class PropertyGroupUpdateType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE for PropertyGroupUpdateType
+        /// </summary>
+        public static readonly PropertyGroupUpdateType CREATE = new PropertyGroupUpdateType("CREATE");
+        /// <summary>
+        /// Constant DELETE for PropertyGroupUpdateType
+        /// </summary>
+        public static readonly PropertyGroupUpdateType DELETE = new PropertyGroupUpdateType("DELETE");
+        /// <summary>
+        /// Constant UPDATE for PropertyGroupUpdateType
+        /// </summary>
+        public static readonly PropertyGroupUpdateType UPDATE = new PropertyGroupUpdateType("UPDATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PropertyGroupUpdateType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PropertyGroupUpdateType FindValue(string value)
+        {
+            return FindValue<PropertyGroupUpdateType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PropertyGroupUpdateType(string value)
         {
             return FindValue(value);
         }
@@ -508,6 +824,68 @@ namespace Amazon.IoTTwinMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Type(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UpdateReason.
+    /// </summary>
+    public class UpdateReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEFAULT for UpdateReason
+        /// </summary>
+        public static readonly UpdateReason DEFAULT = new UpdateReason("DEFAULT");
+        /// <summary>
+        /// Constant ENTITY_COUNT_UPDATE for UpdateReason
+        /// </summary>
+        public static readonly UpdateReason ENTITY_COUNT_UPDATE = new UpdateReason("ENTITY_COUNT_UPDATE");
+        /// <summary>
+        /// Constant OVERWRITTEN for UpdateReason
+        /// </summary>
+        public static readonly UpdateReason OVERWRITTEN = new UpdateReason("OVERWRITTEN");
+        /// <summary>
+        /// Constant PRICING_MODE_UPDATE for UpdateReason
+        /// </summary>
+        public static readonly UpdateReason PRICING_MODE_UPDATE = new UpdateReason("PRICING_MODE_UPDATE");
+        /// <summary>
+        /// Constant PRICING_TIER_UPDATE for UpdateReason
+        /// </summary>
+        public static readonly UpdateReason PRICING_TIER_UPDATE = new UpdateReason("PRICING_TIER_UPDATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UpdateReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UpdateReason FindValue(string value)
+        {
+            return FindValue<UpdateReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UpdateReason(string value)
         {
             return FindValue(value);
         }

@@ -121,7 +121,7 @@ namespace Amazon.IoTTwinMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/roci/latest/roci-api/API_PropertyValue.html">PropertyValue</a>.
+        /// For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_PropertyValue.html">PropertyValue</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=35)]
@@ -178,7 +178,11 @@ namespace Amazon.IoTTwinMaker.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return.
+        /// The maximum number of results to return at one time. The default is 25.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Range: Minimum value of 1. Maximum value of 250.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
@@ -295,7 +299,7 @@ namespace Amazon.IoTTwinMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/roci/latest/roci-api/API_PropertyValue.html">PropertyValue</a>.
+        /// For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_PropertyValue.html">PropertyValue</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=35)]

@@ -76,6 +76,25 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetPropertyGroups())
+            {
+                context.Writer.WritePropertyName("propertyGroups");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectPropertyGroupsKvp in requestObject.PropertyGroups)
+                {
+                    context.Writer.WritePropertyName(requestObjectPropertyGroupsKvp.Key);
+                    var requestObjectPropertyGroupsValue = requestObjectPropertyGroupsKvp.Value;
+
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ComponentPropertyGroupRequestMarshaller.Instance;
+                    marshaller.Marshall(requestObjectPropertyGroupsValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

@@ -552,6 +552,65 @@ namespace Amazon.IoTTwinMaker
 
         #endregion
         
+        #region  ExecuteQuery
+
+
+        /// <summary>
+        /// Run queries to access information from your knowledge graph of entities within individual
+        /// workspaces.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteQuery service method.</param>
+        /// 
+        /// <returns>The response from the ExecuteQuery service method, as returned by IoTTwinMaker.</returns>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.InternalServerException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.QueryTimeoutException">
+        /// The query timeout exception.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ServiceQuotaExceededException">
+        /// The service quota was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ValidationException">
+        /// Failed
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ExecuteQuery">REST API Reference for ExecuteQuery Operation</seealso>
+        ExecuteQueryResponse ExecuteQuery(ExecuteQueryRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExecuteQuery operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteQuery operation on AmazonIoTTwinMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExecuteQuery
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ExecuteQuery">REST API Reference for ExecuteQuery Operation</seealso>
+        IAsyncResult BeginExecuteQuery(ExecuteQueryRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ExecuteQuery operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExecuteQuery.</param>
+        /// 
+        /// <returns>Returns a  ExecuteQueryResult from IoTTwinMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ExecuteQuery">REST API Reference for ExecuteQuery Operation</seealso>
+        ExecuteQueryResponse EndExecuteQuery(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetComponentType
 
 
@@ -572,6 +631,9 @@ namespace Amazon.IoTTwinMaker
         /// </exception>
         /// <exception cref="Amazon.IoTTwinMaker.Model.ThrottlingException">
         /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ValidationException">
+        /// Failed
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetComponentType">REST API Reference for GetComponentType Operation</seealso>
         GetComponentTypeResponse GetComponentType(GetComponentTypeRequest request);
@@ -656,6 +718,58 @@ namespace Amazon.IoTTwinMaker
         /// <returns>Returns a  GetEntityResult from IoTTwinMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetEntity">REST API Reference for GetEntity Operation</seealso>
         GetEntityResponse EndGetEntity(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetPricingPlan
+
+
+        /// <summary>
+        /// Gets the pricing plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPricingPlan service method.</param>
+        /// 
+        /// <returns>The response from the GetPricingPlan service method, as returned by IoTTwinMaker.</returns>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.InternalServerException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ValidationException">
+        /// Failed
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetPricingPlan">REST API Reference for GetPricingPlan Operation</seealso>
+        GetPricingPlanResponse GetPricingPlan(GetPricingPlanRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPricingPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPricingPlan operation on AmazonIoTTwinMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPricingPlan
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetPricingPlan">REST API Reference for GetPricingPlan Operation</seealso>
+        IAsyncResult BeginGetPricingPlan(GetPricingPlanRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPricingPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPricingPlan.</param>
+        /// 
+        /// <returns>Returns a  GetPricingPlanResult from IoTTwinMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetPricingPlan">REST API Reference for GetPricingPlan Operation</seealso>
+        GetPricingPlanResponse EndGetPricingPlan(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1370,6 +1484,58 @@ namespace Amazon.IoTTwinMaker
         /// <returns>Returns a  UpdateEntityResult from IoTTwinMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/UpdateEntity">REST API Reference for UpdateEntity Operation</seealso>
         UpdateEntityResponse EndUpdateEntity(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdatePricingPlan
+
+
+        /// <summary>
+        /// Update the pricing plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePricingPlan service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePricingPlan service method, as returned by IoTTwinMaker.</returns>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.InternalServerException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoTTwinMaker.Model.ValidationException">
+        /// Failed
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/UpdatePricingPlan">REST API Reference for UpdatePricingPlan Operation</seealso>
+        UpdatePricingPlanResponse UpdatePricingPlan(UpdatePricingPlanRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdatePricingPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePricingPlan operation on AmazonIoTTwinMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdatePricingPlan
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/UpdatePricingPlan">REST API Reference for UpdatePricingPlan Operation</seealso>
+        IAsyncResult BeginUpdatePricingPlan(UpdatePricingPlanRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdatePricingPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdatePricingPlan.</param>
+        /// 
+        /// <returns>Returns a  UpdatePricingPlanResult from IoTTwinMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/UpdatePricingPlan">REST API Reference for UpdatePricingPlan Operation</seealso>
+        UpdatePricingPlanResponse EndUpdatePricingPlan(IAsyncResult asyncResult);
 
         #endregion
         

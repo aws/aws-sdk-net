@@ -86,6 +86,24 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EntityId);
                 }
 
+                if(publicRequest.IsSetMaxResults())
+                {
+                    context.Writer.WritePropertyName("maxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
+                }
+
+                if(publicRequest.IsSetNextToken())
+                {
+                    context.Writer.WritePropertyName("nextToken");
+                    context.Writer.Write(publicRequest.NextToken);
+                }
+
+                if(publicRequest.IsSetPropertyGroupName())
+                {
+                    context.Writer.WritePropertyName("propertyGroupName");
+                    context.Writer.Write(publicRequest.PropertyGroupName);
+                }
+
                 if(publicRequest.IsSetSelectedProperties())
                 {
                     context.Writer.WritePropertyName("selectedProperties");
@@ -95,6 +113,17 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                             context.Writer.Write(publicRequestSelectedPropertiesListValue);
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetTabularConditions())
+                {
+                    context.Writer.WritePropertyName("tabularConditions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TabularConditionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TabularConditions, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 writer.WriteObjectEnd();

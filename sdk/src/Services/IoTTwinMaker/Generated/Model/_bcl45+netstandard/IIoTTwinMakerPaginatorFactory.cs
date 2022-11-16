@@ -26,6 +26,16 @@ namespace Amazon.IoTTwinMaker.Model
     {
 
         /// <summary>
+        /// Paginator for ExecuteQuery operation
+        ///</summary>
+        IExecuteQueryPaginator ExecuteQuery(ExecuteQueryRequest request);
+
+        /// <summary>
+        /// Paginator for GetPropertyValue operation
+        ///</summary>
+        IGetPropertyValuePaginator GetPropertyValue(GetPropertyValueRequest request);
+
+        /// <summary>
         /// Paginator for GetPropertyValueHistory operation
         ///</summary>
         IGetPropertyValueHistoryPaginator GetPropertyValueHistory(GetPropertyValueHistoryRequest request);
