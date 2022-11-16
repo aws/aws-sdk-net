@@ -45,6 +45,7 @@ namespace Amazon.RDS.Model
         private string _dbClusterIdentifier;
         private string _dbClusterSnapshotArn;
         private string _dbClusterSnapshotIdentifier;
+        private string _dbSystemId;
         private string _engine;
         private string _engineMode;
         private string _engineVersion;
@@ -171,6 +172,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBClusterSnapshotIdentifier()
         {
             return this._dbClusterSnapshotIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBSystemId. 
+        /// <para>
+        /// Reserved for future use.
+        /// </para>
+        /// </summary>
+        public string DBSystemId
+        {
+            get { return this._dbSystemId; }
+            set { this._dbSystemId = value; }
+        }
+
+        // Check to see if DBSystemId property is set
+        internal bool IsSetDBSystemId()
+        {
+            return this._dbSystemId != null;
         }
 
         /// <summary>

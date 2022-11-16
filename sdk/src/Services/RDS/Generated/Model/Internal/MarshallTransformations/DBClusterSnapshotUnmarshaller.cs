@@ -91,6 +91,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.DBClusterSnapshotIdentifier = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DBSystemId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DBSystemId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Engine", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

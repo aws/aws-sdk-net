@@ -43,6 +43,12 @@
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RDS.Model.CreateCustomDBEngineVersionResponse.CustomDBEngineVersionManifest</property>
+    <min>1</min>
+    <max>51000</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RDS.Model.CreateDBProxyEndpointRequest.DBProxyEndpointName</property>
     <min>1</min>
     <max>63</max>
@@ -65,6 +71,12 @@
     <min>1</min>
     <max>60</max>
     <pattern>^(11\.\d{1}|12\.\d{1}|18|19)(\.[a-zA-Z0-9_.-]{1,50})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDS.Model.DeleteCustomDBEngineVersionResponse.CustomDBEngineVersionManifest</property>
+    <min>1</min>
+    <max>51000</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.DeleteDBProxyEndpointRequest.DBProxyEndpointName</property>
@@ -138,6 +150,12 @@
     <min>1</min>
     <max>60</max>
     <pattern>^(11\.\d{1}|12\.\d{1}|18|19)(\.[a-zA-Z0-9_.-]{1,50})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDS.Model.ModifyCustomDBEngineVersionResponse.CustomDBEngineVersionManifest</property>
+    <min>1</min>
+    <max>51000</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RDS.Model.ModifyDBInstanceRequest.AwsBackupRecoveryPointArn</property>

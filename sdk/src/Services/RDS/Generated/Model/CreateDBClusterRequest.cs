@@ -64,6 +64,7 @@ namespace Amazon.RDS.Model
         private string _dbClusterInstanceClass;
         private string _dbClusterParameterGroupName;
         private string _dbSubnetGroupName;
+        private string _dbSystemId;
         private bool? _deletionProtection;
         private string _domain;
         private string _domainIAMRoleName;
@@ -456,6 +457,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBSubnetGroupName()
         {
             return this._dbSubnetGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBSystemId. 
+        /// <para>
+        /// Reserved for future use.
+        /// </para>
+        /// </summary>
+        public string DBSystemId
+        {
+            get { return this._dbSystemId; }
+            set { this._dbSystemId = value; }
+        }
+
+        // Check to see if DBSystemId property is set
+        internal bool IsSetDBSystemId()
+        {
+            return this._dbSystemId != null;
         }
 
         /// <summary>

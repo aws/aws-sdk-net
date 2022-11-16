@@ -34,11 +34,52 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class ClusterPendingModifiedValues
     {
+        private int? _allocatedStorage;
+        private int? _backupRetentionPeriod;
         private string _dbClusterIdentifier;
         private string _engineVersion;
         private bool? _iamDatabaseAuthenticationEnabled;
+        private int? _iops;
         private string _masterUserPassword;
         private PendingCloudwatchLogsExports _pendingCloudwatchLogsExports;
+
+        /// <summary>
+        /// Gets and sets the property AllocatedStorage. 
+        /// <para>
+        /// The allocated storage size in gibibytes (GiB) for all database engines except Amazon
+        /// Aurora. For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora
+        /// DB cluster storage size isn't fixed, but instead automatically adjusts as needed.
+        /// </para>
+        /// </summary>
+        public int AllocatedStorage
+        {
+            get { return this._allocatedStorage.GetValueOrDefault(); }
+            set { this._allocatedStorage = value; }
+        }
+
+        // Check to see if AllocatedStorage property is set
+        internal bool IsSetAllocatedStorage()
+        {
+            return this._allocatedStorage.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BackupRetentionPeriod. 
+        /// <para>
+        /// The number of days for which automatic DB snapshots are retained.
+        /// </para>
+        /// </summary>
+        public int BackupRetentionPeriod
+        {
+            get { return this._backupRetentionPeriod.GetValueOrDefault(); }
+            set { this._backupRetentionPeriod = value; }
+        }
+
+        // Check to see if BackupRetentionPeriod property is set
+        internal bool IsSetBackupRetentionPeriod()
+        {
+            return this._backupRetentionPeriod.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property DBClusterIdentifier. 
@@ -93,6 +134,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetIAMDatabaseAuthenticationEnabled()
         {
             return this._iamDatabaseAuthenticationEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Iops. 
+        /// <para>
+        /// The Provisioned IOPS (I/O operations per second) value. This setting is only for non-Aurora
+        /// Multi-AZ DB clusters.
+        /// </para>
+        /// </summary>
+        public int Iops
+        {
+            get { return this._iops.GetValueOrDefault(); }
+            set { this._iops = value; }
+        }
+
+        // Check to see if Iops property is set
+        internal bool IsSetIops()
+        {
+            return this._iops.HasValue; 
         }
 
         /// <summary>

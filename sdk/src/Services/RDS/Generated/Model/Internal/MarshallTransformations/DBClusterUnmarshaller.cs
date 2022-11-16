@@ -227,6 +227,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.DBSubnetGroup = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DBSystemId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DBSystemId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DeletionProtection", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;

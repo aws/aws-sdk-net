@@ -74,6 +74,7 @@ namespace Amazon.RDS.Model
         private List<DBParameterGroupStatus> _dbParameterGroups = new List<DBParameterGroupStatus>();
         private List<DBSecurityGroupMembership> _dbSecurityGroups = new List<DBSecurityGroupMembership>();
         private DBSubnetGroup _dbSubnetGroup;
+        private string _dbSystemId;
         private bool? _deletionProtection;
         private List<DomainMembership> _domainMemberships = new List<DomainMembership>();
         private List<string> _enabledCloudwatchLogsExports = new List<string>();
@@ -786,6 +787,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBSubnetGroup()
         {
             return this._dbSubnetGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBSystemId. 
+        /// <para>
+        /// The Oracle system ID (Oracle SID) for a container database (CDB). The Oracle SID is
+        /// also the name of the CDB. This setting is valid for RDS Custom only.
+        /// </para>
+        /// </summary>
+        public string DBSystemId
+        {
+            get { return this._dbSystemId; }
+            set { this._dbSystemId = value; }
+        }
+
+        // Check to see if DBSystemId property is set
+        internal bool IsSetDBSystemId()
+        {
+            return this._dbSystemId != null;
         }
 
         /// <summary>

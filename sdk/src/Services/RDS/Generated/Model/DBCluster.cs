@@ -88,6 +88,7 @@ namespace Amazon.RDS.Model
         private string _dbClusterParameterGroup;
         private string _dbClusterResourceId;
         private string _dbSubnetGroup;
+        private string _dbSystemId;
         private bool? _deletionProtection;
         private List<DomainMembership> _domainMemberships = new List<DomainMembership>();
         private DateTime? _earliestBacktrackTime;
@@ -670,6 +671,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBSubnetGroup()
         {
             return this._dbSubnetGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBSystemId. 
+        /// <para>
+        /// Reserved for future use.
+        /// </para>
+        /// </summary>
+        public string DBSystemId
+        {
+            get { return this._dbSystemId; }
+            set { this._dbSystemId = value; }
+        }
+
+        // Check to see if DBSystemId property is set
+        internal bool IsSetDBSystemId()
+        {
+            return this._dbSystemId != null;
         }
 
         /// <summary>

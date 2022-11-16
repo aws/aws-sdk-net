@@ -34,6 +34,7 @@ namespace Amazon.RDS.Model
     public partial class CreateCustomDBEngineVersionResponse : AmazonWebServiceResponse
     {
         private DateTime? _createTime;
+        private string _customDBEngineVersionManifest;
         private string _databaseInstallationFilesS3BucketName;
         private string _databaseInstallationFilesS3Prefix;
         private string _dbEngineDescription;
@@ -76,6 +77,30 @@ namespace Amazon.RDS.Model
         internal bool IsSetCreateTime()
         {
             return this._createTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomDBEngineVersionManifest. 
+        /// <para>
+        /// JSON string that lists the installation files and parameters that RDS Custom uses
+        /// to create a custom engine version (CEV). RDS Custom applies the patches in the order
+        /// in which they're listed in the manifest. You can set the Oracle home, Oracle base,
+        /// and UNIX/Linux user and group using the installation parameters. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON
+        /// fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=51000)]
+        public string CustomDBEngineVersionManifest
+        {
+            get { return this._customDBEngineVersionManifest; }
+            set { this._customDBEngineVersionManifest = value; }
+        }
+
+        // Check to see if CustomDBEngineVersionManifest property is set
+        internal bool IsSetCustomDBEngineVersionManifest()
+        {
+            return this._customDBEngineVersionManifest != null;
         }
 
         /// <summary>

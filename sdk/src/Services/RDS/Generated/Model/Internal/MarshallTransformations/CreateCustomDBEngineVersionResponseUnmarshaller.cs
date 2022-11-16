@@ -87,6 +87,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         response.CreateTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("CustomDBEngineVersionManifest", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.CustomDBEngineVersionManifest = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DatabaseInstallationFilesS3BucketName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
