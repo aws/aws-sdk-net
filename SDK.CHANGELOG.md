@@ -1,3 +1,38 @@
+### 3.7.419.0 (2022-11-16 19:36 UTC)
+* Batch (3.7.101.18)
+	* Documentation updates related to Batch on EKS
+* BillingConductor (3.7.102.0)
+	* This release adds a new feature BillingEntity pricing rule.
+* CloudFormation (3.7.102.0)
+	* Added UnsupportedTarget HandlerErrorCode for use with CFN Resource Hooks
+* ComprehendMedical (3.7.101.0)
+	* This release supports new set of entities and traits. It also adds new category (BEHAVIORAL_ENVIRONMENTAL_SOCIAL).
+* Connect (3.7.104.0)
+	* This release adds a new MonitorContact API for initiating monitoring of ongoing Voice and Chat contacts.
+* EKS (3.7.101.0)
+	* Adds support for customer-provided placement groups for Kubernetes control plane instances when creating local EKS clusters on Outposts
+* ElastiCache (3.7.102.0)
+	* for Redis now supports AWS Identity and Access Management authentication access to Redis clusters starting with redis-engine version 7.0
+* IoTTwinMaker (3.7.101.0)
+	* This release adds the following: 1) ExecuteQuery API allows users to query their AWS IoT TwinMaker Knowledge Graph 2) Pricing plan APIs allow users to configure and manage their pricing mode 3) Support for property groups and tabular property values in existing AWS IoT TwinMaker APIs.
+* PersonalizeEvents (3.7.101.0)
+	* This release provides support for creation and use of metric attributions in AWS Personalize
+* Proton (3.7.102.0)
+	* Add support for sorting and filtering in ListServiceInstances
+* RDS (3.7.104.0)
+	* This release adds support for container databases (CDBs) to Amazon RDS Custom for Oracle. A CDB contains one PDB at creation. You can add more PDBs using Oracle SQL. You can also customize your database installation by setting the Oracle base, Oracle home, and the OS user name and group.
+* SimpleSystemsManagement (3.7.102.0)
+	* This release adds support for cross account access in CreateOpsItem, UpdateOpsItem and GetOpsItem. It introduces new APIs to setup resource policies for SSM resources: PutResourcePolicy, GetResourcePolicies and DeleteResourcePolicy.
+* SSMIncidents (3.7.103.0)
+	* Add support for PagerDuty integrations on ResponsePlan, IncidentRecord, and RelatedItem APIs
+* Transfer (3.7.101.0)
+	* Allow additional operations to throw ThrottlingException
+* XRay (3.7.102.0)
+	* This release adds new APIs - PutResourcePolicy, DeleteResourcePolicy, ListResourcePolicies for supporting resource based policies for AWS X-Ray.
+* Core 3.7.100.19
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.418.1 (2022-11-16 14:30 UTC)
 * Core 3.7.100.18
 	* Restore pre-3.7.100 behavior by not allowing UseHttp to manipulate an explicit ServiceURL
