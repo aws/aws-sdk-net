@@ -30,6 +30,14 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// The search criteria to be used to return queues.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// The <code>name</code> and <code>description</code> fields support "contains" queries
+    /// with a minimum of 2 characters and a maximum of 25 characters. Any queries with character
+    /// lengths outside of this range will throw invalid results. 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class QueueSearchCriteria
     {

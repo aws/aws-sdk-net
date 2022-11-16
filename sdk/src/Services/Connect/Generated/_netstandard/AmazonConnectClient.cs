@@ -6094,6 +6094,62 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  MonitorContact
+
+        internal virtual MonitorContactResponse MonitorContact(MonitorContactRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = MonitorContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = MonitorContactResponseUnmarshaller.Instance;
+
+            return Invoke<MonitorContactResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Initiates silent monitoring of a contact. The Contact Control Panel (CCP) of the user
+        /// specified by <i>userId</i> will be set to silent monitoring mode on the contact.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the MonitorContact service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the MonitorContact service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.IdempotencyException">
+        /// An entity with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/MonitorContact">REST API Reference for MonitorContact Operation</seealso>
+        public virtual Task<MonitorContactResponse> MonitorContactAsync(MonitorContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = MonitorContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = MonitorContactResponseUnmarshaller.Instance;
+
+            return InvokeAsync<MonitorContactResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutUserStatus
 
         internal virtual PutUserStatusResponse PutUserStatus(PutUserStatusRequest request)
@@ -7036,7 +7092,8 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the StopContact service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.ContactNotFoundException">
-        /// The contact with the specified ID is not active or does not exist.
+        /// The contact with the specified ID is not active or does not exist. Applies to Voice
+        /// calls only, not to Chat, Task, or Voice Callback.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
