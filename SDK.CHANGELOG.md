@@ -1,3 +1,8 @@
+### 3.7.418.1 (2022-11-16 14:30 UTC)
+* Core 3.7.100.18
+	* Restore pre-3.7.100 behavior by not allowing UseHttp to manipulate an explicit ServiceURL
+	* All services packages updated to require new Core
+
 ### 3.7.418.0 (2022-11-15 19:25 UTC)
 * Connect (3.7.103.0)
 	* This release updates the APIs: UpdateInstanceAttribute, DescribeInstanceAttribute, and ListInstanceAttributes. You can use it to programmatically enable/disable enhanced contact monitoring using attribute type ENHANCED_CONTACT_MONITORING on the specified Amazon Connect instance.
