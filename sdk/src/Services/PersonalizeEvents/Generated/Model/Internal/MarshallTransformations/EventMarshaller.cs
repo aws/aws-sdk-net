@@ -80,6 +80,17 @@ namespace Amazon.PersonalizeEvents.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ItemId);
             }
 
+            if(requestObject.IsSetMetricAttribution())
+            {
+                context.Writer.WritePropertyName("metricAttribution");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = MetricAttributionMarshaller.Instance;
+                marshaller.Marshall(requestObject.MetricAttribution, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetProperties())
             {
                 context.Writer.WritePropertyName("properties");

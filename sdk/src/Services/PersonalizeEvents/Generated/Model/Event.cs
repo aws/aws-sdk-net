@@ -39,6 +39,7 @@ namespace Amazon.PersonalizeEvents.Model
         private float? _eventValue;
         private List<string> _impression = new List<string>();
         private string _itemId;
+        private MetricAttribution _metricAttribution;
         private string _properties;
         private string _recommendationId;
         private DateTime? _sentAt;
@@ -108,7 +109,10 @@ namespace Amazon.PersonalizeEvents.Model
         /// Gets and sets the property Impression. 
         /// <para>
         /// A list of item IDs that represents the sequence of items you have shown the user.
-        /// For example, <code>["itemId1", "itemId2", "itemId3"]</code>.
+        /// For example, <code>["itemId1", "itemId2", "itemId3"]</code>. Provide a list of items
+        /// to manually record impressions data for an event. For more information on recording
+        /// impressions data, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording
+        /// impressions data</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]
@@ -142,6 +146,26 @@ namespace Amazon.PersonalizeEvents.Model
         internal bool IsSetItemId()
         {
             return this._itemId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetricAttribution. 
+        /// <para>
+        /// Contains information about the metric attribution associated with an event. For more
+        /// information about metric attributions, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring
+        /// impact of recommendations</a>.
+        /// </para>
+        /// </summary>
+        public MetricAttribution MetricAttribution
+        {
+            get { return this._metricAttribution; }
+            set { this._metricAttribution = value; }
+        }
+
+        // Check to see if MetricAttribution property is set
+        internal bool IsSetMetricAttribution()
+        {
+            return this._metricAttribution != null;
         }
 
         /// <summary>
@@ -183,7 +207,17 @@ namespace Amazon.PersonalizeEvents.Model
         /// <summary>
         /// Gets and sets the property RecommendationId. 
         /// <para>
-        /// The ID of the recommendation.
+        /// The ID of the list of recommendations that contains the item the user interacted with.
+        /// Provide a <code>recommendationId</code> to have Amazon Personalize implicitly record
+        /// the recommendations you show your user as impressions data. Or provide a <code>recommendationId</code>
+        /// if you use a metric attribution to measure the impact of recommendations. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  For more information on recording impressions data, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording
+        /// impressions data</a>. For more information on creating a metric attribution see <a
+        /// href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring
+        /// impact of recommendations</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=40)]
