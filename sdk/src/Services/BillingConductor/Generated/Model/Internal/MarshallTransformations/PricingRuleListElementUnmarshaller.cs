@@ -76,6 +76,12 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
                     unmarshalledObject.AssociatedPricingPlanCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("BillingEntity", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BillingEntity = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;

@@ -35,6 +35,7 @@ namespace Amazon.BillingConductor.Model
     {
         private string _arn;
         private long? _associatedPricingPlanCount;
+        private string _billingEntity;
         private long? _creationTime;
         private string _description;
         private long? _lastModifiedTime;
@@ -79,6 +80,25 @@ namespace Amazon.BillingConductor.Model
         internal bool IsSetAssociatedPricingPlanCount()
         {
             return this._associatedPricingPlanCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BillingEntity. 
+        /// <para>
+        ///  The seller of services provided by Amazon Web Services, their affiliates, or third-party
+        /// providers selling services via Amazon Web Services Marketplace. 
+        /// </para>
+        /// </summary>
+        public string BillingEntity
+        {
+            get { return this._billingEntity; }
+            set { this._billingEntity = value; }
+        }
+
+        // Check to see if BillingEntity property is set
+        internal bool IsSetBillingEntity()
+        {
+            return this._billingEntity != null;
         }
 
         /// <summary>

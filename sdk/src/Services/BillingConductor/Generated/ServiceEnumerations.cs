@@ -355,6 +355,10 @@ namespace Amazon.BillingConductor
     {
 
         /// <summary>
+        /// Constant BILLING_ENTITY for PricingRuleScope
+        /// </summary>
+        public static readonly PricingRuleScope BILLING_ENTITY = new PricingRuleScope("BILLING_ENTITY");
+        /// <summary>
         /// Constant GLOBAL for PricingRuleScope
         /// </summary>
         public static readonly PricingRuleScope GLOBAL = new PricingRuleScope("GLOBAL");
@@ -487,6 +491,10 @@ namespace Amazon.BillingConductor
         /// </summary>
         public static readonly ValidationExceptionReason ILLEGAL_ACCOUNTS = new ValidationExceptionReason("ILLEGAL_ACCOUNTS");
         /// <summary>
+        /// Constant ILLEGAL_BILLING_ENTITY for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason ILLEGAL_BILLING_ENTITY = new ValidationExceptionReason("ILLEGAL_BILLING_ENTITY");
+        /// <summary>
         /// Constant ILLEGAL_BILLING_PERIOD for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason ILLEGAL_BILLING_PERIOD = new ValidationExceptionReason("ILLEGAL_BILLING_PERIOD");
@@ -518,6 +526,10 @@ namespace Amazon.BillingConductor
         /// Constant ILLEGAL_EXPRESSION for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason ILLEGAL_EXPRESSION = new ValidationExceptionReason("ILLEGAL_EXPRESSION");
+        /// <summary>
+        /// Constant ILLEGAL_MODIFIER_PERCENTAGE for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason ILLEGAL_MODIFIER_PERCENTAGE = new ValidationExceptionReason("ILLEGAL_MODIFIER_PERCENTAGE");
         /// <summary>
         /// Constant ILLEGAL_PRIMARY_ACCOUNT for ValidationExceptionReason
         /// </summary>

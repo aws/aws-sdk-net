@@ -65,6 +65,12 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetBillingEntity())
+                {
+                    context.Writer.WritePropertyName("BillingEntity");
+                    context.Writer.Write(publicRequest.BillingEntity);
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("Description");

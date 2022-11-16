@@ -96,6 +96,10 @@
     <pattern>(arn:aws(-cn)?:billingconductor::[0-9]{12}:pricingplan/)?[a-zA-Z0-9]{10}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BillingConductor.Model.CreatePricingRuleRequest.BillingEntity</property>
+    <pattern>[a-zA-Z0-9 ]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BillingConductor.Model.CreatePricingRuleRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
@@ -459,6 +463,10 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BillingConductor.Model.UpdatePricingRuleResponse.BillingEntity</property>
+    <pattern>[a-zA-Z0-9 ]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BillingConductor.Model.UpdatePricingRuleResponse.Description</property>
     <min>0</min>
     <max>1024</max>
@@ -668,6 +676,10 @@
   <property-value-rule>
     <property>Amazon.BillingConductor.Model.PricingRuleListElement.AssociatedPricingPlanCount</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BillingConductor.Model.PricingRuleListElement.BillingEntity</property>
+    <pattern>[a-zA-Z0-9 ]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BillingConductor.Model.PricingRuleListElement.Description</property>

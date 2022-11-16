@@ -34,6 +34,7 @@ namespace Amazon.BillingConductor.Model
     /// </summary>
     public partial class CreatePricingRuleRequest : AmazonBillingConductorRequest
     {
+        private string _billingEntity;
         private string _clientToken;
         private string _description;
         private double? _modifierPercentage;
@@ -42,6 +43,25 @@ namespace Amazon.BillingConductor.Model
         private string _service;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private PricingRuleType _type;
+
+        /// <summary>
+        /// Gets and sets the property BillingEntity. 
+        /// <para>
+        ///  The seller of services provided by Amazon Web Services, their affiliates, or third-party
+        /// providers selling services via Amazon Web Services Marketplace. 
+        /// </para>
+        /// </summary>
+        public string BillingEntity
+        {
+            get { return this._billingEntity; }
+            set { this._billingEntity = value; }
+        }
+
+        // Check to see if BillingEntity property is set
+        internal bool IsSetBillingEntity()
+        {
+            return this._billingEntity != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
