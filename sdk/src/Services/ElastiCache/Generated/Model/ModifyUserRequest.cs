@@ -36,6 +36,7 @@ namespace Amazon.ElastiCache.Model
     {
         private string _accessString;
         private string _appendAccessString;
+        private AuthenticationMode _authenticationMode;
         private bool? _noPasswordRequired;
         private List<string> _passwords = new List<string>();
         private string _userId;
@@ -74,6 +75,24 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetAppendAccessString()
         {
             return this._appendAccessString != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AuthenticationMode. 
+        /// <para>
+        /// Specifies how to authenticate the user.
+        /// </para>
+        /// </summary>
+        public AuthenticationMode AuthenticationMode
+        {
+            get { return this._authenticationMode; }
+            set { this._authenticationMode = value; }
+        }
+
+        // Check to see if AuthenticationMode property is set
+        internal bool IsSetAuthenticationMode()
+        {
+            return this._authenticationMode != null;
         }
 
         /// <summary>

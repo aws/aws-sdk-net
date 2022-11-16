@@ -66,6 +66,22 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AppendAccessString", StringUtils.FromString(publicRequest.AppendAccessString));
                 }
+                if(publicRequest.IsSetAuthenticationMode())
+                {
+                    if(publicRequest.AuthenticationMode.IsSetPasswords())
+                    {
+                        int publicRequestAuthenticationModelistValueIndex = 1;
+                        foreach(var publicRequestAuthenticationModelistValue in publicRequest.AuthenticationMode.Passwords)
+                        {
+                            request.Parameters.Add("AuthenticationMode" + "." + "Passwords" + "." + "member" + "." + publicRequestAuthenticationModelistValueIndex, StringUtils.FromString(publicRequestAuthenticationModelistValue));
+                            publicRequestAuthenticationModelistValueIndex++;
+                        }
+                    }
+                    if(publicRequest.AuthenticationMode.IsSetType())
+                    {
+                        request.Parameters.Add("AuthenticationMode" + "." + "Type", StringUtils.FromString(publicRequest.AuthenticationMode.Type));
+                    }
+                }
                 if(publicRequest.IsSetNoPasswordRequired())
                 {
                     request.Parameters.Add("NoPasswordRequired", StringUtils.FromBool(publicRequest.NoPasswordRequired));
