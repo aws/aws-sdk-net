@@ -36,8 +36,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new ComprehendMedicalEndpointParameters();
             parameters["Region"] = "ca-central-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonComprehendMedicalEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://comprehendmedical-fips.ca-central-1.api.aws", endpoint.URL);
         }
@@ -51,8 +51,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new ComprehendMedicalEndpointParameters();
             parameters["Region"] = "ca-central-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonComprehendMedicalEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://comprehendmedical-fips.ca-central-1.amazonaws.com", endpoint.URL);
         }
@@ -66,8 +66,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new ComprehendMedicalEndpointParameters();
             parameters["Region"] = "ca-central-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonComprehendMedicalEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://comprehendmedical.ca-central-1.api.aws", endpoint.URL);
         }
@@ -81,8 +81,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new ComprehendMedicalEndpointParameters();
             parameters["Region"] = "ca-central-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonComprehendMedicalEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://comprehendmedical.ca-central-1.amazonaws.com", endpoint.URL);
         }
@@ -96,8 +96,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new ComprehendMedicalEndpointParameters();
             parameters["Region"] = "us-west-2";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonComprehendMedicalEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://comprehendmedical-fips.us-west-2.api.aws", endpoint.URL);
         }
@@ -111,8 +111,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new ComprehendMedicalEndpointParameters();
             parameters["Region"] = "us-west-2";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonComprehendMedicalEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://comprehendmedical-fips.us-west-2.amazonaws.com", endpoint.URL);
         }
@@ -126,8 +126,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new ComprehendMedicalEndpointParameters();
             parameters["Region"] = "us-west-2";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonComprehendMedicalEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://comprehendmedical.us-west-2.api.aws", endpoint.URL);
         }
@@ -141,8 +141,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new ComprehendMedicalEndpointParameters();
             parameters["Region"] = "us-west-2";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonComprehendMedicalEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://comprehendmedical.us-west-2.amazonaws.com", endpoint.URL);
         }
@@ -156,8 +156,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new ComprehendMedicalEndpointParameters();
             parameters["Region"] = "eu-west-2";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonComprehendMedicalEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://comprehendmedical-fips.eu-west-2.api.aws", endpoint.URL);
         }
@@ -171,8 +171,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new ComprehendMedicalEndpointParameters();
             parameters["Region"] = "eu-west-2";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonComprehendMedicalEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://comprehendmedical-fips.eu-west-2.amazonaws.com", endpoint.URL);
         }
@@ -186,8 +186,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new ComprehendMedicalEndpointParameters();
             parameters["Region"] = "eu-west-2";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonComprehendMedicalEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://comprehendmedical.eu-west-2.api.aws", endpoint.URL);
         }
@@ -201,8 +201,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new ComprehendMedicalEndpointParameters();
             parameters["Region"] = "eu-west-2";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonComprehendMedicalEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://comprehendmedical.eu-west-2.amazonaws.com", endpoint.URL);
         }
@@ -216,8 +216,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new ComprehendMedicalEndpointParameters();
             parameters["Region"] = "eu-west-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonComprehendMedicalEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://comprehendmedical-fips.eu-west-1.api.aws", endpoint.URL);
         }
@@ -231,8 +231,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new ComprehendMedicalEndpointParameters();
             parameters["Region"] = "eu-west-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonComprehendMedicalEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://comprehendmedical-fips.eu-west-1.amazonaws.com", endpoint.URL);
         }
@@ -246,8 +246,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new ComprehendMedicalEndpointParameters();
             parameters["Region"] = "eu-west-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonComprehendMedicalEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://comprehendmedical.eu-west-1.api.aws", endpoint.URL);
         }
@@ -261,8 +261,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new ComprehendMedicalEndpointParameters();
             parameters["Region"] = "eu-west-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonComprehendMedicalEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://comprehendmedical.eu-west-1.amazonaws.com", endpoint.URL);
         }
@@ -276,8 +276,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new ComprehendMedicalEndpointParameters();
             parameters["Region"] = "us-gov-west-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonComprehendMedicalEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://comprehendmedical-fips.us-gov-west-1.api.aws", endpoint.URL);
         }
@@ -291,8 +291,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new ComprehendMedicalEndpointParameters();
             parameters["Region"] = "us-gov-west-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonComprehendMedicalEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://comprehendmedical-fips.us-gov-west-1.amazonaws.com", endpoint.URL);
         }
@@ -306,8 +306,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new ComprehendMedicalEndpointParameters();
             parameters["Region"] = "us-gov-west-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonComprehendMedicalEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://comprehendmedical.us-gov-west-1.api.aws", endpoint.URL);
         }
@@ -321,8 +321,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new ComprehendMedicalEndpointParameters();
             parameters["Region"] = "us-gov-west-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonComprehendMedicalEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://comprehendmedical.us-gov-west-1.amazonaws.com", endpoint.URL);
         }
@@ -336,8 +336,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new ComprehendMedicalEndpointParameters();
             parameters["Region"] = "ap-southeast-2";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonComprehendMedicalEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://comprehendmedical-fips.ap-southeast-2.api.aws", endpoint.URL);
         }
@@ -351,8 +351,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new ComprehendMedicalEndpointParameters();
             parameters["Region"] = "ap-southeast-2";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonComprehendMedicalEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://comprehendmedical-fips.ap-southeast-2.amazonaws.com", endpoint.URL);
         }
@@ -366,8 +366,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new ComprehendMedicalEndpointParameters();
             parameters["Region"] = "ap-southeast-2";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonComprehendMedicalEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://comprehendmedical.ap-southeast-2.api.aws", endpoint.URL);
         }
@@ -381,8 +381,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new ComprehendMedicalEndpointParameters();
             parameters["Region"] = "ap-southeast-2";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonComprehendMedicalEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://comprehendmedical.ap-southeast-2.amazonaws.com", endpoint.URL);
         }
@@ -396,8 +396,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new ComprehendMedicalEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonComprehendMedicalEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://comprehendmedical-fips.us-east-1.api.aws", endpoint.URL);
         }
@@ -411,8 +411,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new ComprehendMedicalEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonComprehendMedicalEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://comprehendmedical-fips.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -426,8 +426,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new ComprehendMedicalEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonComprehendMedicalEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://comprehendmedical.us-east-1.api.aws", endpoint.URL);
         }
@@ -441,8 +441,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new ComprehendMedicalEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonComprehendMedicalEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://comprehendmedical.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -456,8 +456,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new ComprehendMedicalEndpointParameters();
             parameters["Region"] = "us-east-2";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonComprehendMedicalEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://comprehendmedical-fips.us-east-2.api.aws", endpoint.URL);
         }
@@ -471,8 +471,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new ComprehendMedicalEndpointParameters();
             parameters["Region"] = "us-east-2";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonComprehendMedicalEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://comprehendmedical-fips.us-east-2.amazonaws.com", endpoint.URL);
         }
@@ -486,8 +486,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new ComprehendMedicalEndpointParameters();
             parameters["Region"] = "us-east-2";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonComprehendMedicalEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://comprehendmedical.us-east-2.api.aws", endpoint.URL);
         }
@@ -501,8 +501,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new ComprehendMedicalEndpointParameters();
             parameters["Region"] = "us-east-2";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonComprehendMedicalEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://comprehendmedical.us-east-2.amazonaws.com", endpoint.URL);
         }
@@ -516,8 +516,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new ComprehendMedicalEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonComprehendMedicalEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://example.com", endpoint.URL);
@@ -533,8 +533,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new ComprehendMedicalEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonComprehendMedicalEndpointProvider().ResolveEndpoint(parameters);
         }
@@ -549,8 +549,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new ComprehendMedicalEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonComprehendMedicalEndpointProvider().ResolveEndpoint(parameters);
         }

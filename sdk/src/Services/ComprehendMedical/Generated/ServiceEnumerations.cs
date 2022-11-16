@@ -35,9 +35,29 @@ namespace Amazon.ComprehendMedical
         /// </summary>
         public static readonly AttributeName DIAGNOSIS = new AttributeName("DIAGNOSIS");
         /// <summary>
+        /// Constant FUTURE for AttributeName
+        /// </summary>
+        public static readonly AttributeName FUTURE = new AttributeName("FUTURE");
+        /// <summary>
+        /// Constant HYPOTHETICAL for AttributeName
+        /// </summary>
+        public static readonly AttributeName HYPOTHETICAL = new AttributeName("HYPOTHETICAL");
+        /// <summary>
+        /// Constant LOW_CONFIDENCE for AttributeName
+        /// </summary>
+        public static readonly AttributeName LOW_CONFIDENCE = new AttributeName("LOW_CONFIDENCE");
+        /// <summary>
         /// Constant NEGATION for AttributeName
         /// </summary>
         public static readonly AttributeName NEGATION = new AttributeName("NEGATION");
+        /// <summary>
+        /// Constant PAST_HISTORY for AttributeName
+        /// </summary>
+        public static readonly AttributeName PAST_HISTORY = new AttributeName("PAST_HISTORY");
+        /// <summary>
+        /// Constant PERTAINS_TO_FAMILY for AttributeName
+        /// </summary>
+        public static readonly AttributeName PERTAINS_TO_FAMILY = new AttributeName("PERTAINS_TO_FAMILY");
         /// <summary>
         /// Constant SIGN for AttributeName
         /// </summary>
@@ -101,6 +121,18 @@ namespace Amazon.ComprehendMedical
         /// </summary>
         public static readonly EntitySubType AGE = new EntitySubType("AGE");
         /// <summary>
+        /// Constant ALCOHOL_CONSUMPTION for EntitySubType
+        /// </summary>
+        public static readonly EntitySubType ALCOHOL_CONSUMPTION = new EntitySubType("ALCOHOL_CONSUMPTION");
+        /// <summary>
+        /// Constant ALLERGIES for EntitySubType
+        /// </summary>
+        public static readonly EntitySubType ALLERGIES = new EntitySubType("ALLERGIES");
+        /// <summary>
+        /// Constant AMOUNT for EntitySubType
+        /// </summary>
+        public static readonly EntitySubType AMOUNT = new EntitySubType("AMOUNT");
+        /// <summary>
         /// Constant BRAND_NAME for EntitySubType
         /// </summary>
         public static readonly EntitySubType BRAND_NAME = new EntitySubType("BRAND_NAME");
@@ -141,6 +173,10 @@ namespace Amazon.ComprehendMedical
         /// </summary>
         public static readonly EntitySubType FREQUENCY = new EntitySubType("FREQUENCY");
         /// <summary>
+        /// Constant GENDER for EntitySubType
+        /// </summary>
+        public static readonly EntitySubType GENDER = new EntitySubType("GENDER");
+        /// <summary>
         /// Constant GENERIC_NAME for EntitySubType
         /// </summary>
         public static readonly EntitySubType GENERIC_NAME = new EntitySubType("GENERIC_NAME");
@@ -177,9 +213,17 @@ namespace Amazon.ComprehendMedical
         /// </summary>
         public static readonly EntitySubType QUANTITY = new EntitySubType("QUANTITY");
         /// <summary>
+        /// Constant RACE_ETHNICITY for EntitySubType
+        /// </summary>
+        public static readonly EntitySubType RACE_ETHNICITY = new EntitySubType("RACE_ETHNICITY");
+        /// <summary>
         /// Constant RATE for EntitySubType
         /// </summary>
         public static readonly EntitySubType RATE = new EntitySubType("RATE");
+        /// <summary>
+        /// Constant REC_DRUG_USE for EntitySubType
+        /// </summary>
+        public static readonly EntitySubType REC_DRUG_USE = new EntitySubType("REC_DRUG_USE");
         /// <summary>
         /// Constant ROUTE_OR_MODE for EntitySubType
         /// </summary>
@@ -232,6 +276,10 @@ namespace Amazon.ComprehendMedical
         /// Constant TIME_TO_TREATMENT_NAME for EntitySubType
         /// </summary>
         public static readonly EntitySubType TIME_TO_TREATMENT_NAME = new EntitySubType("TIME_TO_TREATMENT_NAME");
+        /// <summary>
+        /// Constant TOBACCO_USE for EntitySubType
+        /// </summary>
+        public static readonly EntitySubType TOBACCO_USE = new EntitySubType("TOBACCO_USE");
         /// <summary>
         /// Constant TREATMENT_NAME for EntitySubType
         /// </summary>
@@ -286,6 +334,10 @@ namespace Amazon.ComprehendMedical
         /// Constant ANATOMY for EntityType
         /// </summary>
         public static readonly EntityType ANATOMY = new EntityType("ANATOMY");
+        /// <summary>
+        /// Constant BEHAVIORAL_ENVIRONMENTAL_SOCIAL for EntityType
+        /// </summary>
+        public static readonly EntityType BEHAVIORAL_ENVIRONMENTAL_SOCIAL = new EntityType("BEHAVIORAL_ENVIRONMENTAL_SOCIAL");
         /// <summary>
         /// Constant MEDICAL_CONDITION for EntityType
         /// </summary>
@@ -569,9 +621,21 @@ namespace Amazon.ComprehendMedical
         /// </summary>
         public static readonly ICD10CMTraitName DIAGNOSIS = new ICD10CMTraitName("DIAGNOSIS");
         /// <summary>
+        /// Constant HYPOTHETICAL for ICD10CMTraitName
+        /// </summary>
+        public static readonly ICD10CMTraitName HYPOTHETICAL = new ICD10CMTraitName("HYPOTHETICAL");
+        /// <summary>
+        /// Constant LOW_CONFIDENCE for ICD10CMTraitName
+        /// </summary>
+        public static readonly ICD10CMTraitName LOW_CONFIDENCE = new ICD10CMTraitName("LOW_CONFIDENCE");
+        /// <summary>
         /// Constant NEGATION for ICD10CMTraitName
         /// </summary>
         public static readonly ICD10CMTraitName NEGATION = new ICD10CMTraitName("NEGATION");
+        /// <summary>
+        /// Constant PERTAINS_TO_FAMILY for ICD10CMTraitName
+        /// </summary>
+        public static readonly ICD10CMTraitName PERTAINS_TO_FAMILY = new ICD10CMTraitName("PERTAINS_TO_FAMILY");
         /// <summary>
         /// Constant SIGN for ICD10CMTraitName
         /// </summary>
@@ -746,6 +810,10 @@ namespace Amazon.ComprehendMedical
         /// Constant ADMINISTERED_VIA for RelationshipType
         /// </summary>
         public static readonly RelationshipType ADMINISTERED_VIA = new RelationshipType("ADMINISTERED_VIA");
+        /// <summary>
+        /// Constant AMOUNT for RelationshipType
+        /// </summary>
+        public static readonly RelationshipType AMOUNT = new RelationshipType("AMOUNT");
         /// <summary>
         /// Constant DIRECTION for RelationshipType
         /// </summary>
@@ -1317,9 +1385,29 @@ namespace Amazon.ComprehendMedical
         /// </summary>
         public static readonly SNOMEDCTTraitName DIAGNOSIS = new SNOMEDCTTraitName("DIAGNOSIS");
         /// <summary>
+        /// Constant FUTURE for SNOMEDCTTraitName
+        /// </summary>
+        public static readonly SNOMEDCTTraitName FUTURE = new SNOMEDCTTraitName("FUTURE");
+        /// <summary>
+        /// Constant HYPOTHETICAL for SNOMEDCTTraitName
+        /// </summary>
+        public static readonly SNOMEDCTTraitName HYPOTHETICAL = new SNOMEDCTTraitName("HYPOTHETICAL");
+        /// <summary>
+        /// Constant LOW_CONFIDENCE for SNOMEDCTTraitName
+        /// </summary>
+        public static readonly SNOMEDCTTraitName LOW_CONFIDENCE = new SNOMEDCTTraitName("LOW_CONFIDENCE");
+        /// <summary>
         /// Constant NEGATION for SNOMEDCTTraitName
         /// </summary>
         public static readonly SNOMEDCTTraitName NEGATION = new SNOMEDCTTraitName("NEGATION");
+        /// <summary>
+        /// Constant PAST_HISTORY for SNOMEDCTTraitName
+        /// </summary>
+        public static readonly SNOMEDCTTraitName PAST_HISTORY = new SNOMEDCTTraitName("PAST_HISTORY");
+        /// <summary>
+        /// Constant PERTAINS_TO_FAMILY for SNOMEDCTTraitName
+        /// </summary>
+        public static readonly SNOMEDCTTraitName PERTAINS_TO_FAMILY = new SNOMEDCTTraitName("PERTAINS_TO_FAMILY");
         /// <summary>
         /// Constant SIGN for SNOMEDCTTraitName
         /// </summary>
