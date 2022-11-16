@@ -590,6 +590,31 @@
     <pattern>^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SSMIncidents.Model.PagerDutyConfiguration.Name</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMIncidents.Model.PagerDutyConfiguration.SecretId</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMIncidents.Model.PagerDutyIncidentConfiguration.ServiceId</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMIncidents.Model.PagerDutyIncidentDetail.Id</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMIncidents.Model.PagerDutyIncidentDetail.SecretId</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SSMIncidents.Model.RegionInfo.SseKmsKeyId</property>
     <min>0</min>
     <max>2048</max>

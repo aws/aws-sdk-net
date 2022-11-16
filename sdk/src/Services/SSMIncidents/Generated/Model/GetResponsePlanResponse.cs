@@ -39,6 +39,7 @@ namespace Amazon.SSMIncidents.Model
         private string _displayName;
         private List<string> _engagements = new List<string>();
         private IncidentTemplate _incidentTemplate;
+        private List<Integration> _integrations = new List<Integration>();
         private string _name;
 
         /// <summary>
@@ -153,6 +154,26 @@ namespace Amazon.SSMIncidents.Model
         internal bool IsSetIncidentTemplate()
         {
             return this._incidentTemplate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Integrations. 
+        /// <para>
+        /// Information about third-party services integrated into the Incident Manager response
+        /// plan.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public List<Integration> Integrations
+        {
+            get { return this._integrations; }
+            set { this._integrations = value; }
+        }
+
+        // Check to see if Integrations property is set
+        internal bool IsSetIntegrations()
+        {
+            return this._integrations != null && this._integrations.Count > 0; 
         }
 
         /// <summary>

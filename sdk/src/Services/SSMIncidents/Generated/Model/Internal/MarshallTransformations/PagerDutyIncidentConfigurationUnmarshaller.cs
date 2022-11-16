@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ItemValue Object
+    /// Response Unmarshaller for PagerDutyIncidentConfiguration Object
     /// </summary>  
-    public class ItemValueUnmarshaller : IUnmarshaller<ItemValue, XmlUnmarshallerContext>, IUnmarshaller<ItemValue, JsonUnmarshallerContext>
+    public class PagerDutyIncidentConfigurationUnmarshaller : IUnmarshaller<PagerDutyIncidentConfiguration, XmlUnmarshallerContext>, IUnmarshaller<PagerDutyIncidentConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ItemValue IUnmarshaller<ItemValue, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PagerDutyIncidentConfiguration IUnmarshaller<PagerDutyIncidentConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,21 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ItemValue Unmarshall(JsonUnmarshallerContext context)
+        public PagerDutyIncidentConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ItemValue unmarshalledObject = new ItemValue();
+            PagerDutyIncidentConfiguration unmarshalledObject = new PagerDutyIncidentConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("serviceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("metricDefinition", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MetricDefinition = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("pagerDutyIncidentDetail", targetDepth))
-                {
-                    var unmarshaller = PagerDutyIncidentDetailUnmarshaller.Instance;
-                    unmarshalledObject.PagerDutyIncidentDetail = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("url", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Url = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ServiceId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +76,12 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
         }
 
 
-        private static ItemValueUnmarshaller _instance = new ItemValueUnmarshaller();        
+        private static PagerDutyIncidentConfigurationUnmarshaller _instance = new PagerDutyIncidentConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ItemValueUnmarshaller Instance
+        public static PagerDutyIncidentConfigurationUnmarshaller Instance
         {
             get
             {

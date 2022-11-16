@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ItemValue Marshaller
+    /// PagerDutyIncidentDetail Marshaller
     /// </summary>
-    public class ItemValueMarshaller : IRequestMarshaller<ItemValue, JsonMarshallerContext> 
+    public class PagerDutyIncidentDetailMarshaller : IRequestMarshaller<PagerDutyIncidentDetail, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,35 +43,24 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ItemValue requestObject, JsonMarshallerContext context)
+        public void Marshall(PagerDutyIncidentDetail requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetArn())
+            if(requestObject.IsSetAutoResolve())
             {
-                context.Writer.WritePropertyName("arn");
-                context.Writer.Write(requestObject.Arn);
+                context.Writer.WritePropertyName("autoResolve");
+                context.Writer.Write(requestObject.AutoResolve);
             }
 
-            if(requestObject.IsSetMetricDefinition())
+            if(requestObject.IsSetId())
             {
-                context.Writer.WritePropertyName("metricDefinition");
-                context.Writer.Write(requestObject.MetricDefinition);
+                context.Writer.WritePropertyName("id");
+                context.Writer.Write(requestObject.Id);
             }
 
-            if(requestObject.IsSetPagerDutyIncidentDetail())
+            if(requestObject.IsSetSecretId())
             {
-                context.Writer.WritePropertyName("pagerDutyIncidentDetail");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = PagerDutyIncidentDetailMarshaller.Instance;
-                marshaller.Marshall(requestObject.PagerDutyIncidentDetail, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetUrl())
-            {
-                context.Writer.WritePropertyName("url");
-                context.Writer.Write(requestObject.Url);
+                context.Writer.WritePropertyName("secretId");
+                context.Writer.Write(requestObject.SecretId);
             }
 
         }
@@ -79,7 +68,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ItemValueMarshaller Instance = new ItemValueMarshaller();
+        public readonly static PagerDutyIncidentDetailMarshaller Instance = new PagerDutyIncidentDetailMarshaller();
 
     }
 }

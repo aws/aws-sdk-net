@@ -180,6 +180,22 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.IncidentTemplateTitle);
                 }
 
+                if(publicRequest.IsSetIntegrations())
+                {
+                    context.Writer.WritePropertyName("integrations");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestIntegrationsListValue in publicRequest.Integrations)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = IntegrationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestIntegrationsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ItemValue Object
+    /// Response Unmarshaller for Integration Object
     /// </summary>  
-    public class ItemValueUnmarshaller : IUnmarshaller<ItemValue, XmlUnmarshallerContext>, IUnmarshaller<ItemValue, JsonUnmarshallerContext>
+    public class IntegrationUnmarshaller : IUnmarshaller<Integration, XmlUnmarshallerContext>, IUnmarshaller<Integration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ItemValue IUnmarshaller<ItemValue, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Integration IUnmarshaller<Integration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,21 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ItemValue Unmarshall(JsonUnmarshallerContext context)
+        public Integration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ItemValue unmarshalledObject = new ItemValue();
+            Integration unmarshalledObject = new Integration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("pagerDutyConfiguration", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("metricDefinition", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MetricDefinition = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("pagerDutyIncidentDetail", targetDepth))
-                {
-                    var unmarshaller = PagerDutyIncidentDetailUnmarshaller.Instance;
-                    unmarshalledObject.PagerDutyIncidentDetail = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("url", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Url = unmarshaller.Unmarshall(context);
+                    var unmarshaller = PagerDutyConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.PagerDutyConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +76,12 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
         }
 
 
-        private static ItemValueUnmarshaller _instance = new ItemValueUnmarshaller();        
+        private static IntegrationUnmarshaller _instance = new IntegrationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ItemValueUnmarshaller Instance
+        public static IntegrationUnmarshaller Instance
         {
             get
             {

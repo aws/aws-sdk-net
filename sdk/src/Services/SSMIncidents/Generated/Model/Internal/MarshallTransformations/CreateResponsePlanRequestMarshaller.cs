@@ -131,6 +131,22 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetIntegrations())
+                {
+                    context.Writer.WritePropertyName("integrations");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestIntegrationsListValue in publicRequest.Integrations)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = IntegrationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestIntegrationsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");

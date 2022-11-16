@@ -35,6 +35,7 @@ namespace Amazon.SSMIncidents.Model
     {
         private string _arn;
         private string _metricDefinition;
+        private PagerDutyIncidentDetail _pagerDutyIncidentDetail;
         private string _url;
 
         /// <summary>
@@ -74,6 +75,24 @@ namespace Amazon.SSMIncidents.Model
         internal bool IsSetMetricDefinition()
         {
             return this._metricDefinition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PagerDutyIncidentDetail. 
+        /// <para>
+        /// Details about an incident that is associated with a PagerDuty incident.
+        /// </para>
+        /// </summary>
+        public PagerDutyIncidentDetail PagerDutyIncidentDetail
+        {
+            get { return this._pagerDutyIncidentDetail; }
+            set { this._pagerDutyIncidentDetail = value; }
+        }
+
+        // Check to see if PagerDutyIncidentDetail property is set
+        internal bool IsSetPagerDutyIncidentDetail()
+        {
+            return this._pagerDutyIncidentDetail != null;
         }
 
         /// <summary>
