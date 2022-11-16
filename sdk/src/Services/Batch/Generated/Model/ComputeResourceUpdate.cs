@@ -154,6 +154,12 @@ namespace Amazon.Batch.Model
         /// This parameter isn't applicable to jobs that are running on Fargate resources. Don't
         /// specify it.
         /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// Batch doesn't support changing the desired number of vCPUs of an existing compute
+        /// environment. Don't specify this parameter for compute environments using Amazon EKS
+        /// clusters.
+        /// </para>
         ///  </note>
         /// </summary>
         public int DesiredvCpus

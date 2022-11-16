@@ -70,7 +70,7 @@ namespace Amazon.Batch.Model
         ///  
         /// <para>
         /// Valid values: <code>Default</code> | <code>ClusterFirst</code> | <code>ClusterFirstWithHostNet</code>
-        /// | <code>None</code> 
+        /// 
         /// </para>
         /// </summary>
         public string DnsPolicy
