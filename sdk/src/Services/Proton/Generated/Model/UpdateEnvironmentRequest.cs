@@ -35,8 +35,8 @@ namespace Amazon.Proton.Model
     ///  
     /// <para>
     /// If the environment is associated with an environment account connection, <i>don't</i>
-    /// update or include the <code>protonServiceRoleArn</code>, <code>codebuildRoleArn</code>,
-    /// and <code>provisioningRepository</code> parameters.
+    /// update or include the <code>protonServiceRoleArn</code> and <code>provisioningRepository</code>
+    /// parameter to update or connect to an environment account connection.
     /// </para>
     ///  
     /// <para>
@@ -53,19 +53,19 @@ namespace Amazon.Proton.Model
     /// </para>
     ///  
     /// <para>
-    /// You can update either <code>environmentAccountConnectionId</code> or one or more of
-    /// <code>protonServiceRoleArn</code>, <code>codebuildRoleArn</code>, and <code>provisioningRepository</code>.
+    /// You can update either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
+    /// parameter and value. You can’t update both.
     /// </para>
     ///  
     /// <para>
-    /// If the environment was configured for Amazon Web Services-managed or CodeBuild-based
-    /// provisioning, omit the <code>provisioningRepository</code> parameter.
+    /// If the environment was configured for Amazon Web Services-managed provisioning, omit
+    /// the <code>provisioningRepository</code> parameter.
     /// </para>
     ///  
     /// <para>
     /// If the environment was configured for self-managed provisioning, specify the <code>provisioningRepository</code>
-    /// parameter and omit the <code>protonServiceRoleArn</code>, <code>codebuildRoleArn</code>,
-    /// and <code>provisioningRepository</code> parameters.
+    /// parameter and omit the <code>protonServiceRoleArn</code> and <code>environmentAccountConnectionId</code>
+    /// parameters.
     /// </para>
     ///  
     /// <para>
@@ -268,10 +268,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property EnvironmentAccountConnectionId. 
         /// <para>
-        /// The ID of the environment account connection that you provide if you want Proton to
-        /// provision infrastructure resources for your environment or for any of the service
-        /// instances running in it in an environment account. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
-        /// account connections</a> in the <i>Proton User guide</i>.
+        /// The ID of the environment account connection.
         /// </para>
         ///  
         /// <para>
@@ -314,9 +311,8 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property ProtonServiceRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision
-        /// infrastructure using Amazon Web Services-managed provisioning and CloudFormation on
-        /// your behalf.
+        /// The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make
+        /// API calls to other services your behalf.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]

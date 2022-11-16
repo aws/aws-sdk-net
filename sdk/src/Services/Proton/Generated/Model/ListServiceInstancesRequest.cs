@@ -30,13 +30,36 @@ namespace Amazon.Proton.Model
 {
     /// <summary>
     /// Container for the parameters to the ListServiceInstances operation.
-    /// List service instances with summary data.
+    /// List service instances with summary data. This action lists service instances of all
+    /// services in the Amazon Web Services account.
     /// </summary>
     public partial class ListServiceInstancesRequest : AmazonProtonRequest
     {
+        private List<ListServiceInstancesFilter> _filters = new List<ListServiceInstancesFilter>();
         private int? _maxResults;
         private string _nextToken;
         private string _serviceName;
+        private ListServiceInstancesSortBy _sortBy;
+        private SortOrder _sortOrder;
+
+        /// <summary>
+        /// Gets and sets the property Filters. 
+        /// <para>
+        /// An array of filtering criteria that scope down the result list. By default, all service
+        /// instances in the Amazon Web Services account are returned.
+        /// </para>
+        /// </summary>
+        public List<ListServiceInstancesFilter> Filters
+        {
+            get { return this._filters; }
+            set { this._filters = value; }
+        }
+
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
+        {
+            return this._filters != null && this._filters.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -93,6 +116,55 @@ namespace Amazon.Proton.Model
         internal bool IsSetServiceName()
         {
             return this._serviceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SortBy. 
+        /// <para>
+        /// The field that the result list is sorted by.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you choose to sort by <code>serviceName</code>, service instances within each
+        /// service are sorted by service instance name.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>serviceName</code> 
+        /// </para>
+        /// </summary>
+        public ListServiceInstancesSortBy SortBy
+        {
+            get { return this._sortBy; }
+            set { this._sortBy = value; }
+        }
+
+        // Check to see if SortBy property is set
+        internal bool IsSetSortBy()
+        {
+            return this._sortBy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SortOrder. 
+        /// <para>
+        /// Result list sort order.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>ASCENDING</code> 
+        /// </para>
+        /// </summary>
+        public SortOrder SortOrder
+        {
+            get { return this._sortOrder; }
+            set { this._sortOrder = value; }
+        }
+
+        // Check to see if SortOrder property is set
+        internal bool IsSetSortOrder()
+        {
+            return this._sortOrder != null;
         }
 
     }

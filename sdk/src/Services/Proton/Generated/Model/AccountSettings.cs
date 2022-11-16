@@ -81,8 +81,9 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property PipelineServiceRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the service role that Proton uses for provisioning
-        /// pipelines. Proton assumes this role for Amazon Web Services-managed provisioning.
+        /// The Amazon Resource Name (ARN) of the service role you want to use for provisioning
+        /// pipelines. Assumed by Proton for Amazon Web Services-managed provisioning, and by
+        /// customer-owned automation for self-managed provisioning.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]

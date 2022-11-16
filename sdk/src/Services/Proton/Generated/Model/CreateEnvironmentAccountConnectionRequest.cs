@@ -96,10 +96,9 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property ComponentRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an IAM service role in the environment account.
-        /// Proton uses this role to provision directly defined components in the associated environment
-        /// account. It determines the scope of infrastructure that a component can provision
-        /// in the account.
+        /// The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning
+        /// directly defined components in the associated environment account. It determines the
+        /// scope of infrastructure that a component can provision in the account.
         /// </para>
         ///  
         /// <para>
@@ -169,9 +168,9 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an IAM service role in the environment account.
-        /// Proton uses this role to provision infrastructure resources using Amazon Web Services-managed
-        /// provisioning and CloudFormation in the associated environment account.
+        /// The Amazon Resource Name (ARN) of the IAM service role that's created in the environment
+        /// account. Proton uses this role to provision infrastructure resources in the associated
+        /// environment account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

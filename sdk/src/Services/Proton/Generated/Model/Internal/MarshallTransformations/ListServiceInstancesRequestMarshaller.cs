@@ -67,6 +67,22 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetFilters())
+                {
+                    context.Writer.WritePropertyName("filters");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestFiltersListValue in publicRequest.Filters)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ListServiceInstancesFilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequestFiltersListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("maxResults");
@@ -83,6 +99,18 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("serviceName");
                     context.Writer.Write(publicRequest.ServiceName);
+                }
+
+                if(publicRequest.IsSetSortBy())
+                {
+                    context.Writer.WritePropertyName("sortBy");
+                    context.Writer.Write(publicRequest.SortBy);
+                }
+
+                if(publicRequest.IsSetSortOrder())
+                {
+                    context.Writer.WritePropertyName("sortOrder");
+                    context.Writer.Write(publicRequest.SortOrder);
                 }
 
                 writer.WriteObjectEnd();

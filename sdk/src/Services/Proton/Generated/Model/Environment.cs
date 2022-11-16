@@ -202,7 +202,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property EnvironmentAccountConnectionId. 
         /// <para>
-        /// The ID of the environment account connection that Proton uses to provision infrastructure
+        /// The ID of the environment account connection that's used to provision infrastructure
         /// resources in an environment account.
         /// </para>
         /// </summary>
@@ -297,9 +297,8 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property ProtonServiceRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision
-        /// infrastructure using Amazon Web Services-managed provisioning and CloudFormation on
-        /// your behalf.
+        /// The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make
+        /// calls to other services on your behalf.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]

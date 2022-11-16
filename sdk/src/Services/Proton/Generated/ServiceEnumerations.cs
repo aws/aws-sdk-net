@@ -311,6 +311,158 @@ namespace Amazon.Proton
 
 
     /// <summary>
+    /// Constants used for properties of type ListServiceInstancesFilterBy.
+    /// </summary>
+    public class ListServiceInstancesFilterBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CreatedAtAfter for ListServiceInstancesFilterBy
+        /// </summary>
+        public static readonly ListServiceInstancesFilterBy CreatedAtAfter = new ListServiceInstancesFilterBy("createdAtAfter");
+        /// <summary>
+        /// Constant CreatedAtBefore for ListServiceInstancesFilterBy
+        /// </summary>
+        public static readonly ListServiceInstancesFilterBy CreatedAtBefore = new ListServiceInstancesFilterBy("createdAtBefore");
+        /// <summary>
+        /// Constant DeployedTemplateVersionStatus for ListServiceInstancesFilterBy
+        /// </summary>
+        public static readonly ListServiceInstancesFilterBy DeployedTemplateVersionStatus = new ListServiceInstancesFilterBy("deployedTemplateVersionStatus");
+        /// <summary>
+        /// Constant DeploymentStatus for ListServiceInstancesFilterBy
+        /// </summary>
+        public static readonly ListServiceInstancesFilterBy DeploymentStatus = new ListServiceInstancesFilterBy("deploymentStatus");
+        /// <summary>
+        /// Constant EnvironmentName for ListServiceInstancesFilterBy
+        /// </summary>
+        public static readonly ListServiceInstancesFilterBy EnvironmentName = new ListServiceInstancesFilterBy("environmentName");
+        /// <summary>
+        /// Constant LastDeploymentAttemptedAtAfter for ListServiceInstancesFilterBy
+        /// </summary>
+        public static readonly ListServiceInstancesFilterBy LastDeploymentAttemptedAtAfter = new ListServiceInstancesFilterBy("lastDeploymentAttemptedAtAfter");
+        /// <summary>
+        /// Constant LastDeploymentAttemptedAtBefore for ListServiceInstancesFilterBy
+        /// </summary>
+        public static readonly ListServiceInstancesFilterBy LastDeploymentAttemptedAtBefore = new ListServiceInstancesFilterBy("lastDeploymentAttemptedAtBefore");
+        /// <summary>
+        /// Constant Name for ListServiceInstancesFilterBy
+        /// </summary>
+        public static readonly ListServiceInstancesFilterBy Name = new ListServiceInstancesFilterBy("name");
+        /// <summary>
+        /// Constant ServiceName for ListServiceInstancesFilterBy
+        /// </summary>
+        public static readonly ListServiceInstancesFilterBy ServiceName = new ListServiceInstancesFilterBy("serviceName");
+        /// <summary>
+        /// Constant TemplateName for ListServiceInstancesFilterBy
+        /// </summary>
+        public static readonly ListServiceInstancesFilterBy TemplateName = new ListServiceInstancesFilterBy("templateName");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ListServiceInstancesFilterBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ListServiceInstancesFilterBy FindValue(string value)
+        {
+            return FindValue<ListServiceInstancesFilterBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ListServiceInstancesFilterBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ListServiceInstancesSortBy.
+    /// </summary>
+    public class ListServiceInstancesSortBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CreatedAt for ListServiceInstancesSortBy
+        /// </summary>
+        public static readonly ListServiceInstancesSortBy CreatedAt = new ListServiceInstancesSortBy("createdAt");
+        /// <summary>
+        /// Constant DeploymentStatus for ListServiceInstancesSortBy
+        /// </summary>
+        public static readonly ListServiceInstancesSortBy DeploymentStatus = new ListServiceInstancesSortBy("deploymentStatus");
+        /// <summary>
+        /// Constant EnvironmentName for ListServiceInstancesSortBy
+        /// </summary>
+        public static readonly ListServiceInstancesSortBy EnvironmentName = new ListServiceInstancesSortBy("environmentName");
+        /// <summary>
+        /// Constant LastDeploymentAttemptedAt for ListServiceInstancesSortBy
+        /// </summary>
+        public static readonly ListServiceInstancesSortBy LastDeploymentAttemptedAt = new ListServiceInstancesSortBy("lastDeploymentAttemptedAt");
+        /// <summary>
+        /// Constant Name for ListServiceInstancesSortBy
+        /// </summary>
+        public static readonly ListServiceInstancesSortBy Name = new ListServiceInstancesSortBy("name");
+        /// <summary>
+        /// Constant ServiceName for ListServiceInstancesSortBy
+        /// </summary>
+        public static readonly ListServiceInstancesSortBy ServiceName = new ListServiceInstancesSortBy("serviceName");
+        /// <summary>
+        /// Constant TemplateName for ListServiceInstancesSortBy
+        /// </summary>
+        public static readonly ListServiceInstancesSortBy TemplateName = new ListServiceInstancesSortBy("templateName");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ListServiceInstancesSortBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ListServiceInstancesSortBy FindValue(string value)
+        {
+            return FindValue<ListServiceInstancesSortBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ListServiceInstancesSortBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ProvisionedResourceEngine.
     /// </summary>
     public class ProvisionedResourceEngine : ConstantClass
@@ -772,6 +924,56 @@ namespace Amazon.Proton
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ServiceTemplateSupportedComponentSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SortOrder.
+    /// </summary>
+    public class SortOrder : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASCENDING for SortOrder
+        /// </summary>
+        public static readonly SortOrder ASCENDING = new SortOrder("ASCENDING");
+        /// <summary>
+        /// Constant DESCENDING for SortOrder
+        /// </summary>
+        public static readonly SortOrder DESCENDING = new SortOrder("DESCENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SortOrder(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SortOrder FindValue(string value)
+        {
+            return FindValue<SortOrder>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SortOrder(string value)
         {
             return FindValue(value);
         }
