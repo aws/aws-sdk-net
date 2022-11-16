@@ -948,6 +948,10 @@ namespace Amazon.CloudFormation
         /// Constant Unknown for HandlerErrorCode
         /// </summary>
         public static readonly HandlerErrorCode Unknown = new HandlerErrorCode("Unknown");
+        /// <summary>
+        /// Constant UnsupportedTarget for HandlerErrorCode
+        /// </summary>
+        public static readonly HandlerErrorCode UnsupportedTarget = new HandlerErrorCode("UnsupportedTarget");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
