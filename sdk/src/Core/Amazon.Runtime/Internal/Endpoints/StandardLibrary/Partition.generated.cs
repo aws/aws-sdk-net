@@ -36,7 +36,7 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
                 supportsFIPS = true,
                 supportsDualStack = true
             };
-            _partitionsByRegex.Add(@"^(us|eu|ap|sa|ca|me|af)-\w+-\d+$", aws);
+            _partitionsByRegex.Add(@"^(us|eu|ap|sa|ca|me|af)\-\w+\-\d+$", aws);
             _partitionsByRegionName.Add("af-south-1", aws);
             _partitionsByRegionName.Add("ap-east-1", aws);
             _partitionsByRegionName.Add("ap-northeast-1", aws);
@@ -46,10 +46,13 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
             _partitionsByRegionName.Add("ap-southeast-1", aws);
             _partitionsByRegionName.Add("ap-southeast-2", aws);
             _partitionsByRegionName.Add("ap-southeast-3", aws);
+            _partitionsByRegionName.Add("aws-global", aws);
             _partitionsByRegionName.Add("ca-central-1", aws);
             _partitionsByRegionName.Add("eu-central-1", aws);
+            _partitionsByRegionName.Add("eu-central-2", aws);
             _partitionsByRegionName.Add("eu-north-1", aws);
             _partitionsByRegionName.Add("eu-south-1", aws);
+            _partitionsByRegionName.Add("eu-south-2", aws);
             _partitionsByRegionName.Add("eu-west-1", aws);
             _partitionsByRegionName.Add("eu-west-2", aws);
             _partitionsByRegionName.Add("eu-west-3", aws);
@@ -60,20 +63,6 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
             _partitionsByRegionName.Add("us-east-2", aws);
             _partitionsByRegionName.Add("us-west-1", aws);
             _partitionsByRegionName.Add("us-west-2", aws);
-            _partitionsByRegionName.Add("aws-global", aws);
-
-            var aws_us_gov = new PartitionAttributesShape
-            {
-                name = "aws-us-gov",
-                dnsSuffix = "amazonaws.com",
-                dualStackDnsSuffix = "api.aws",
-                supportsFIPS = true,
-                supportsDualStack = true
-            };
-            _partitionsByRegex.Add(@"^us\-gov\-\w+\-\d+$", aws_us_gov);
-            _partitionsByRegionName.Add("us-gov-west-1", aws_us_gov);
-            _partitionsByRegionName.Add("us-gov-east-1", aws_us_gov);
-            _partitionsByRegionName.Add("aws-us-gov-global", aws_us_gov);
 
             var aws_cn = new PartitionAttributesShape
             {
@@ -84,9 +73,22 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
                 supportsDualStack = true
             };
             _partitionsByRegex.Add(@"^cn\-\w+\-\d+$", aws_cn);
+            _partitionsByRegionName.Add("aws-cn-global", aws_cn);
             _partitionsByRegionName.Add("cn-north-1", aws_cn);
             _partitionsByRegionName.Add("cn-northwest-1", aws_cn);
-            _partitionsByRegionName.Add("aws-cn-global", aws_cn);
+
+            var aws_us_gov = new PartitionAttributesShape
+            {
+                name = "aws-us-gov",
+                dnsSuffix = "amazonaws.com",
+                dualStackDnsSuffix = "api.aws",
+                supportsFIPS = true,
+                supportsDualStack = true
+            };
+            _partitionsByRegex.Add(@"^us\-gov\-\w+\-\d+$", aws_us_gov);
+            _partitionsByRegionName.Add("aws-us-gov-global", aws_us_gov);
+            _partitionsByRegionName.Add("us-gov-east-1", aws_us_gov);
+            _partitionsByRegionName.Add("us-gov-west-1", aws_us_gov);
 
             var aws_iso = new PartitionAttributesShape
             {
@@ -97,9 +99,9 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
                 supportsDualStack = false
             };
             _partitionsByRegex.Add(@"^us\-iso\-\w+\-\d+$", aws_iso);
+            _partitionsByRegionName.Add("aws-iso-global", aws_iso);
             _partitionsByRegionName.Add("us-iso-east-1", aws_iso);
             _partitionsByRegionName.Add("us-iso-west-1", aws_iso);
-            _partitionsByRegionName.Add("aws-iso-global", aws_iso);
 
             var aws_iso_b = new PartitionAttributesShape
             {
@@ -110,8 +112,8 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
                 supportsDualStack = false
             };
             _partitionsByRegex.Add(@"^us\-isob\-\w+\-\d+$", aws_iso_b);
-            _partitionsByRegionName.Add("us-isob-east-1", aws_iso_b);
             _partitionsByRegionName.Add("aws-iso-b-global", aws_iso_b);
+            _partitionsByRegionName.Add("us-isob-east-1", aws_iso_b);
 
             _defaultPartition = aws;
         }
