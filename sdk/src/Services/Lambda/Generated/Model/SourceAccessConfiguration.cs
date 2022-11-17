@@ -55,27 +55,30 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>VPC_SUBNET</code> - The subnets associated with your VPC. Lambda connects to
-        /// these subnets to fetch data from your self-managed Apache Kafka cluster.
+        ///  <code>VPC_SUBNET</code> - (Self-managed Apache Kafka) The subnets associated with
+        /// your VPC. Lambda connects to these subnets to fetch data from your self-managed Apache
+        /// Kafka cluster.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>VPC_SECURITY_GROUP</code> - The VPC security group used to manage access to
-        /// your self-managed Apache Kafka brokers.
+        ///  <code>VPC_SECURITY_GROUP</code> - (Self-managed Apache Kafka) The VPC security group
+        /// used to manage access to your self-managed Apache Kafka brokers.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SASL_SCRAM_256_AUTH</code> - The Secrets Manager ARN of your secret key used
-        /// for SASL SCRAM-256 authentication of your self-managed Apache Kafka brokers.
+        ///  <code>SASL_SCRAM_256_AUTH</code> - (Self-managed Apache Kafka) The Secrets Manager
+        /// ARN of your secret key used for SASL SCRAM-256 authentication of your self-managed
+        /// Apache Kafka brokers.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SASL_SCRAM_512_AUTH</code> - The Secrets Manager ARN of your secret key used
-        /// for SASL SCRAM-512 authentication of your self-managed Apache Kafka brokers.
+        ///  <code>SASL_SCRAM_512_AUTH</code> - (Amazon MSK, Self-managed Apache Kafka) The Secrets
+        /// Manager ARN of your secret key used for SASL SCRAM-512 authentication of your self-managed
+        /// Apache Kafka brokers.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>VIRTUAL_HOST</code> - (Amazon MQ) The name of the virtual host in your RabbitMQ
+        ///  <code>VIRTUAL_HOST</code> - (RabbitMQ) The name of the virtual host in your RabbitMQ
         /// broker. Lambda uses this RabbitMQ host as the event source. This property cannot be
         /// specified in an UpdateEventSourceMapping API call.
         /// </para>

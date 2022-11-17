@@ -42,7 +42,8 @@ namespace Amazon.Lambda.Model
         /// The identifier for the Kafka consumer group to join. The consumer group ID must be
         /// unique among all your Kafka event sources. After creating a Kafka event source mapping
         /// with the consumer group ID specified, you cannot update this value. For more information,
-        /// see <a>services-msk-consumer-group-id</a>.
+        /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-consumer-group-id">Customizable
+        /// consumer group ID</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]

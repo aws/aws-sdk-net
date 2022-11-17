@@ -59,7 +59,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Variables. 
         /// <para>
-        /// Environment variable key-value pairs.
+        /// Environment variable key-value pairs. Omitted from CloudTrail logs.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Variables

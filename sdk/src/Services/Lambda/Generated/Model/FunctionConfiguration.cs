@@ -164,7 +164,7 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property Environment. 
         /// <para>
         /// The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment
-        /// variables</a>.
+        /// variables</a>. Omitted from CloudTrail logs.
         /// </para>
         /// </summary>
         public EnvironmentResponse Environment
