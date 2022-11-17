@@ -342,7 +342,8 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property TargetResource. 
         /// <para>
         /// Specifies the destination bucket ARN for the batch copy operation. For example, to
-        /// copy objects to a bucket named "destinationBucket", set the TargetResource to "arn:aws:s3:::destinationBucket".
+        /// copy objects to a bucket named <code>destinationBucket</code>, set the <code>TargetResource</code>
+        /// property to <code>arn:aws:s3:::destinationBucket</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

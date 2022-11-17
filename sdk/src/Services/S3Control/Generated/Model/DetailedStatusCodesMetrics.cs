@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// The container element for Amazon S3 Storage Lens activity metrics. Activity metrics
-    /// show details about how your storage is requested, such as requests (for example, All
-    /// requests, Get requests, Put requests), bytes uploaded or downloaded, and errors.
+    /// The container element for Amazon S3 Storage Lens detailed status code metrics. Detailed
+    /// status code metrics generate metrics for HTTP status codes, such as <code>200 OK</code>,
+    /// <code>403 Forbidden</code>, <code>503 Service Unavailable</code> and others. 
     /// 
     ///  
     /// <para>
@@ -41,14 +41,14 @@ namespace Amazon.S3Control.Model
     /// Storage Lens metrics glossary</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
     /// </summary>
-    public partial class ActivityMetrics
+    public partial class DetailedStatusCodesMetrics
     {
         private bool? _isEnabled;
 
         /// <summary>
         /// Gets and sets the property IsEnabled. 
         /// <para>
-        /// A container that indicates whether activity metrics are enabled.
+        /// A container that indicates whether detailed status code metrics are enabled.
         /// </para>
         /// </summary>
         public bool IsEnabled

@@ -30,9 +30,9 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// Contains the configuration parameters for a Set Object ACL operation. S3 Batch Operations
-    /// passes every object to the underlying PUT Object acl API. For more information about
-    /// the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTacl.html">PUT
-    /// Object acl</a>.
+    /// passes every object to the underlying <code>PutObjectAcl</code> API. For more information
+    /// about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTacl.html">
+    /// <code>PutObjectAcl</code> </a>.
     /// </summary>
     public partial class S3SetObjectAclOperation
     {

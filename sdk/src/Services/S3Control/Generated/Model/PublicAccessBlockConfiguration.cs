@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model
     /// 
     ///  
     /// <para>
-    /// This is not supported for Amazon S3 on Outposts.
+    /// This data type is not supported for Amazon S3 on Outposts.
     /// </para>
     /// </summary>
     public partial class PublicAccessBlockConfiguration
@@ -54,7 +54,8 @@ namespace Amazon.S3Control.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// PUT Bucket acl and PUT Object acl calls fail if the specified ACL is public.
+        ///  <code>PutBucketAcl</code> and <code>PutObjectAcl</code> calls fail if the specified
+        /// ACL is public.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -70,7 +71,7 @@ namespace Amazon.S3Control.Model
         /// </para>
         ///  
         /// <para>
-        /// This is not supported for Amazon S3 on Outposts.
+        /// This property is not supported for Amazon S3 on Outposts.
         /// </para>
         /// </summary>
         public bool BlockPublicAcls
@@ -98,7 +99,7 @@ namespace Amazon.S3Control.Model
         /// </para>
         ///  
         /// <para>
-        /// This is not supported for Amazon S3 on Outposts.
+        /// This property is not supported for Amazon S3 on Outposts.
         /// </para>
         /// </summary>
         public bool BlockPublicPolicy
@@ -127,7 +128,7 @@ namespace Amazon.S3Control.Model
         /// </para>
         ///  
         /// <para>
-        /// This is not supported for Amazon S3 on Outposts.
+        /// This property is not supported for Amazon S3 on Outposts.
         /// </para>
         /// </summary>
         public bool IgnorePublicAcls
@@ -158,7 +159,7 @@ namespace Amazon.S3Control.Model
         /// </para>
         ///  
         /// <para>
-        /// This is not supported for Amazon S3 on Outposts.
+        /// This property is not supported for Amazon S3 on Outposts.
         /// </para>
         /// </summary>
         public bool RestrictPublicBuckets

@@ -33,18 +33,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AccountLevel Object
+    /// Response Unmarshaller for AdvancedCostOptimizationMetrics Object
     /// </summary>  
-    public class AccountLevelUnmarshaller : IUnmarshaller<AccountLevel, XmlUnmarshallerContext>
+    public class AdvancedCostOptimizationMetricsUnmarshaller : IUnmarshaller<AdvancedCostOptimizationMetrics, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AccountLevel Unmarshall(XmlUnmarshallerContext context)
+        public AdvancedCostOptimizationMetrics Unmarshall(XmlUnmarshallerContext context)
         {
-            AccountLevel unmarshalledObject = new AccountLevel();
+            AdvancedCostOptimizationMetrics unmarshalledObject = new AdvancedCostOptimizationMetrics();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -55,34 +55,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("ActivityMetrics", targetDepth))
+                    if (context.TestExpression("IsEnabled", targetDepth))
                     {
-                        var unmarshaller = ActivityMetricsUnmarshaller.Instance;
-                        unmarshalledObject.ActivityMetrics = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("AdvancedCostOptimizationMetrics", targetDepth))
-                    {
-                        var unmarshaller = AdvancedCostOptimizationMetricsUnmarshaller.Instance;
-                        unmarshalledObject.AdvancedCostOptimizationMetrics = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("AdvancedDataProtectionMetrics", targetDepth))
-                    {
-                        var unmarshaller = AdvancedDataProtectionMetricsUnmarshaller.Instance;
-                        unmarshalledObject.AdvancedDataProtectionMetrics = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("BucketLevel", targetDepth))
-                    {
-                        var unmarshaller = BucketLevelUnmarshaller.Instance;
-                        unmarshalledObject.BucketLevel = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("DetailedStatusCodesMetrics", targetDepth))
-                    {
-                        var unmarshaller = DetailedStatusCodesMetricsUnmarshaller.Instance;
-                        unmarshalledObject.DetailedStatusCodesMetrics = unmarshaller.Unmarshall(context);
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.IsEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -94,12 +70,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static AccountLevelUnmarshaller _instance = new AccountLevelUnmarshaller();        
+        private static AdvancedCostOptimizationMetricsUnmarshaller _instance = new AdvancedCostOptimizationMetricsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AccountLevelUnmarshaller Instance
+        public static AdvancedCostOptimizationMetricsUnmarshaller Instance
         {
             get
             {
