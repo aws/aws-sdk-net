@@ -167,7 +167,7 @@ namespace Amazon.SecurityToken.Internal
                 }
                 if (Equals(refs["Region"], "aws-global"))
                 {
-                    return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""sts"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
+                    return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""sts""}]}", refs), InterpolateJson(@"", refs));
                 }
                 return new Endpoint(Interpolate(@"https://sts.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
             }

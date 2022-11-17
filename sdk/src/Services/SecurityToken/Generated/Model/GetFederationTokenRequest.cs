@@ -92,9 +92,9 @@ namespace Amazon.SecurityToken.Model
     /// <para>
     /// You must pass an inline or managed <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
     /// policy</a> to this operation. You can pass a single JSON policy document to use as
-    /// an inline session policy. You can also specify up to 10 managed policies to use as
-    /// managed session policies. The plaintext that you use for both inline and managed session
-    /// policies can't exceed 2,048 characters.
+    /// an inline session policy. You can also specify up to 10 managed policy Amazon Resource
+    /// Names (ARNs) to use as managed session policies. The plaintext that you use for both
+    /// inline and managed session policies can't exceed 2,048 characters.
     /// </para>
     ///  
     /// <para>
@@ -234,8 +234,8 @@ namespace Amazon.SecurityToken.Model
         /// <para>
         /// You must pass an inline or managed <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
         /// policy</a> to this operation. You can pass a single JSON policy document to use as
-        /// an inline session policy. You can also specify up to 10 managed policies to use as
-        /// managed session policies.
+        /// an inline session policy. You can also specify up to 10 managed policy Amazon Resource
+        /// Names (ARNs) to use as managed session policies.
         /// </para>
         ///  
         /// <para>
@@ -268,11 +268,11 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// An Amazon Web Services conversion compresses the passed session policies and session
-        /// tags into a packed binary format that has a separate limit. Your request can fail
-        /// for this limit even if your plaintext meets the other requirements. The <code>PackedPolicySize</code>
-        /// response element indicates by percentage how close the policies and tags for your
-        /// request are to the upper size limit. 
+        /// An Amazon Web Services conversion compresses the passed inline session policy, managed
+        /// policy ARNs, and session tags into a packed binary format that has a separate limit.
+        /// Your request can fail for this limit even if your plaintext meets the other requirements.
+        /// The <code>PackedPolicySize</code> response element indicates by percentage how close
+        /// the policies and tags for your request are to the upper size limit.
         /// </para>
         ///  </note>
         /// </summary>
@@ -300,10 +300,10 @@ namespace Amazon.SecurityToken.Model
         /// <para>
         /// You must pass an inline or managed <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
         /// policy</a> to this operation. You can pass a single JSON policy document to use as
-        /// an inline session policy. You can also specify up to 10 managed policies to use as
-        /// managed session policies. The plaintext that you use for both inline and managed session
-        /// policies can't exceed 2,048 characters. You can provide up to 10 managed policy ARNs.
-        /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// an inline session policy. You can also specify up to 10 managed policy Amazon Resource
+        /// Names (ARNs) to use as managed session policies. The plaintext that you use for both
+        /// inline and managed session policies can't exceed 2,048 characters. You can provide
+        /// up to 10 managed policy ARNs. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
         /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the Amazon
         /// Web Services General Reference.
         /// </para>
@@ -331,11 +331,11 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// An Amazon Web Services conversion compresses the passed session policies and session
-        /// tags into a packed binary format that has a separate limit. Your request can fail
-        /// for this limit even if your plaintext meets the other requirements. The <code>PackedPolicySize</code>
-        /// response element indicates by percentage how close the policies and tags for your
-        /// request are to the upper size limit. 
+        /// An Amazon Web Services conversion compresses the passed inline session policy, managed
+        /// policy ARNs, and session tags into a packed binary format that has a separate limit.
+        /// Your request can fail for this limit even if your plaintext meets the other requirements.
+        /// The <code>PackedPolicySize</code> response element indicates by percentage how close
+        /// the policies and tags for your request are to the upper size limit.
         /// </para>
         ///  </note>
         /// </summary>
@@ -367,11 +367,11 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// An Amazon Web Services conversion compresses the passed session policies and session
-        /// tags into a packed binary format that has a separate limit. Your request can fail
-        /// for this limit even if your plaintext meets the other requirements. The <code>PackedPolicySize</code>
-        /// response element indicates by percentage how close the policies and tags for your
-        /// request are to the upper size limit. 
+        /// An Amazon Web Services conversion compresses the passed inline session policy, managed
+        /// policy ARNs, and session tags into a packed binary format that has a separate limit.
+        /// Your request can fail for this limit even if your plaintext meets the other requirements.
+        /// The <code>PackedPolicySize</code> response element indicates by percentage how close
+        /// the policies and tags for your request are to the upper size limit.
         /// </para>
         ///  </note> 
         /// <para>
