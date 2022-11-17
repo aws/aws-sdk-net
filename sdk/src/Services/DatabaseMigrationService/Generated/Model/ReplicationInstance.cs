@@ -42,12 +42,14 @@ namespace Amazon.DatabaseMigrationService.Model
         private DateTime? _instanceCreateTime;
         private string _kmsKeyId;
         private bool? _multiAZ;
+        private string _networkType;
         private ReplicationPendingModifiedValues _pendingModifiedValues;
         private string _preferredMaintenanceWindow;
         private bool? _publiclyAccessible;
         private string _replicationInstanceArn;
         private string _replicationInstanceClass;
         private string _replicationInstanceIdentifier;
+        private List<string> _replicationInstanceIpv6Addresses = new List<string>();
         private string _replicationInstancePrivateIpAddress;
         private List<string> _replicationInstancePrivateIpAddresses = new List<string>();
         private string _replicationInstancePublicIpAddress;
@@ -246,6 +248,25 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// The type of IP address protocol used by a replication instance, such as IPv4 only
+        /// or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.
+        /// </para>
+        /// </summary>
+        public string NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PendingModifiedValues. 
         /// <para>
         /// The pending modification values.
@@ -383,6 +404,24 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetReplicationInstanceIdentifier()
         {
             return this._replicationInstanceIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicationInstanceIpv6Addresses. 
+        /// <para>
+        /// One or more IPv6 addresses for the replication instance.
+        /// </para>
+        /// </summary>
+        public List<string> ReplicationInstanceIpv6Addresses
+        {
+            get { return this._replicationInstanceIpv6Addresses; }
+            set { this._replicationInstanceIpv6Addresses = value; }
+        }
+
+        // Check to see if ReplicationInstanceIpv6Addresses property is set
+        internal bool IsSetReplicationInstanceIpv6Addresses()
+        {
+            return this._replicationInstanceIpv6Addresses != null && this._replicationInstanceIpv6Addresses.Count > 0; 
         }
 
         /// <summary>

@@ -193,8 +193,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property ArchivedLogsOnly. 
         /// <para>
         /// When this field is set to <code>Y</code>, DMS only accesses the archived redo logs.
-        /// If the archived redo logs are stored on Oracle ASM only, the DMS user account needs
-        /// to be granted ASM privileges.
+        /// If the archived redo logs are stored on Automatic Storage Management (ASM) only, the
+        /// DMS user account needs to be granted ASM privileges.
         /// </para>
         /// </summary>
         public bool ArchivedLogsOnly
@@ -669,8 +669,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SecretsManagerOracleAsmAccessRoleArn. 
         /// <para>
-        /// Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full
-        /// ARN of the IAM role that specifies DMS as the trusted entity and grants the required
+        /// Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The
+        /// full ARN of the IAM role that specifies DMS as the trusted entity and grants the required
         /// permissions to access the <code>SecretsManagerOracleAsmSecret</code>. This <code>SecretsManagerOracleAsmSecret</code>
         /// has the secret value that allows access to the Oracle ASM of the endpoint.
         /// </para>
@@ -702,8 +702,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SecretsManagerOracleAsmSecretId. 
         /// <para>
-        /// Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full
-        /// ARN, partial ARN, or friendly name of the <code>SecretsManagerOracleAsmSecret</code>
+        /// Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The
+        /// full ARN, partial ARN, or friendly name of the <code>SecretsManagerOracleAsmSecret</code>
         /// that contains the Oracle ASM connection details for the Oracle endpoint.
         /// </para>
         /// </summary>

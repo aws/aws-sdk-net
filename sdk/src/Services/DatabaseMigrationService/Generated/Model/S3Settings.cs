@@ -309,7 +309,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property CdcMinFileSize. 
         /// <para>
-        /// Minimum file size, defined in megabytes, to reach for a file output to Amazon S3.
+        /// Minimum file size, defined in kilobytes, to reach for a file output to Amazon S3.
         /// </para>
         ///  
         /// <para>

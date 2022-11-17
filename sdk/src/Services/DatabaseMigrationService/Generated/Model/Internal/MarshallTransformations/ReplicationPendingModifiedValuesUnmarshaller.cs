@@ -82,6 +82,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.MultiAZ = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NetworkType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NetworkType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ReplicationInstanceClass", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

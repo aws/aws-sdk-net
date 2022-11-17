@@ -64,6 +64,30 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AppliedDdls", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.AppliedDdls = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AppliedDeletes", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.AppliedDeletes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AppliedInserts", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.AppliedInserts = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AppliedUpdates", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.AppliedUpdates = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Ddls", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;

@@ -51,6 +51,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _engineVersion;
         private string _kmsKeyId;
         private bool? _multiAZ;
+        private string _networkType;
         private string _preferredMaintenanceWindow;
         private bool? _publiclyAccessible;
         private string _replicationInstanceClass;
@@ -215,6 +216,25 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetMultiAZ()
         {
             return this._multiAZ.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// The type of IP address protocol used by a replication instance, such as IPv4 only
+        /// or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.
+        /// </para>
+        /// </summary>
+        public string NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
         }
 
         /// <summary>

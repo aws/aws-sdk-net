@@ -279,13 +279,12 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EngineName. 
         /// <para>
-        /// The type of engine for the endpoint. Valid values, depending on the EndpointType,
-        /// include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>,
-        /// <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>,
-        /// <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>,
-        /// <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
-        /// <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, <code>"sqlserver"</code>,
-        /// and <code>"neptune"</code>.
+        /// The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>,
+        /// <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
+        /// <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
+        /// <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
+        /// <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
+        /// <code>"documentdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and <code>"babelfish"</code>.
         /// </para>
         /// </summary>
         public string EngineName

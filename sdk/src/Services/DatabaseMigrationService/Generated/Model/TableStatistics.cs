@@ -34,6 +34,10 @@ namespace Amazon.DatabaseMigrationService.Model
     /// </summary>
     public partial class TableStatistics
     {
+        private long? _appliedDdls;
+        private long? _appliedDeletes;
+        private long? _appliedInserts;
+        private long? _appliedUpdates;
         private long? _ddls;
         private long? _deletes;
         private long? _fullLoadCondtnlChkFailedRows;
@@ -53,6 +57,79 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _validationState;
         private string _validationStateDetails;
         private long? _validationSuspendedRecords;
+
+        /// <summary>
+        /// Gets and sets the property AppliedDdls. 
+        /// <para>
+        /// The number of data definition language (DDL) statements used to build and modify the
+        /// structure of your tables applied on the target.
+        /// </para>
+        /// </summary>
+        public long AppliedDdls
+        {
+            get { return this._appliedDdls.GetValueOrDefault(); }
+            set { this._appliedDdls = value; }
+        }
+
+        // Check to see if AppliedDdls property is set
+        internal bool IsSetAppliedDdls()
+        {
+            return this._appliedDdls.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AppliedDeletes. 
+        /// <para>
+        /// The number of delete actions applied on a target table.
+        /// </para>
+        /// </summary>
+        public long AppliedDeletes
+        {
+            get { return this._appliedDeletes.GetValueOrDefault(); }
+            set { this._appliedDeletes = value; }
+        }
+
+        // Check to see if AppliedDeletes property is set
+        internal bool IsSetAppliedDeletes()
+        {
+            return this._appliedDeletes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AppliedInserts. 
+        /// <para>
+        /// The number of insert actions applied on a target table.
+        /// </para>
+        /// </summary>
+        public long AppliedInserts
+        {
+            get { return this._appliedInserts.GetValueOrDefault(); }
+            set { this._appliedInserts = value; }
+        }
+
+        // Check to see if AppliedInserts property is set
+        internal bool IsSetAppliedInserts()
+        {
+            return this._appliedInserts.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AppliedUpdates. 
+        /// <para>
+        /// The number of update actions applied on a target table.
+        /// </para>
+        /// </summary>
+        public long AppliedUpdates
+        {
+            get { return this._appliedUpdates.GetValueOrDefault(); }
+            set { this._appliedUpdates = value; }
+        }
+
+        // Check to see if AppliedUpdates property is set
+        internal bool IsSetAppliedUpdates()
+        {
+            return this._appliedUpdates.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Ddls. 

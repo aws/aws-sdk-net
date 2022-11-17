@@ -38,6 +38,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _replicationSubnetGroupIdentifier;
         private string _subnetGroupStatus;
         private List<Subnet> _subnets = new List<Subnet>();
+        private List<string> _supportedNetworkTypes = new List<string>();
         private string _vpcId;
 
         /// <summary>
@@ -110,6 +111,26 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetSubnets()
         {
             return this._subnets != null && this._subnets.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedNetworkTypes. 
+        /// <para>
+        /// The IP addressing protocol supported by the subnet group. This is used by a replication
+        /// instance with values such as IPv4 only or Dual-stack that supports both IPv4 and IPv6
+        /// addressing. IPv6 only is not yet supported.
+        /// </para>
+        /// </summary>
+        public List<string> SupportedNetworkTypes
+        {
+            get { return this._supportedNetworkTypes; }
+            set { this._supportedNetworkTypes = value; }
+        }
+
+        // Check to see if SupportedNetworkTypes property is set
+        internal bool IsSetSupportedNetworkTypes()
+        {
+            return this._supportedNetworkTypes != null && this._supportedNetworkTypes.Count > 0; 
         }
 
         /// <summary>

@@ -109,6 +109,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.MultiAZ);
                 }
 
+                if(publicRequest.IsSetNetworkType())
+                {
+                    context.Writer.WritePropertyName("NetworkType");
+                    context.Writer.Write(publicRequest.NetworkType);
+                }
+
                 if(publicRequest.IsSetPreferredMaintenanceWindow())
                 {
                     context.Writer.WritePropertyName("PreferredMaintenanceWindow");
