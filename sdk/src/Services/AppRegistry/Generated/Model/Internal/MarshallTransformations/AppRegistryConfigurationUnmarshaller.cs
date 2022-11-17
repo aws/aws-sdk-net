@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ResourceInfo Object
+    /// Response Unmarshaller for AppRegistryConfiguration Object
     /// </summary>  
-    public class ResourceInfoUnmarshaller : IUnmarshaller<ResourceInfo, XmlUnmarshallerContext>, IUnmarshaller<ResourceInfo, JsonUnmarshallerContext>
+    public class AppRegistryConfigurationUnmarshaller : IUnmarshaller<AppRegistryConfiguration, XmlUnmarshallerContext>, IUnmarshaller<AppRegistryConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ResourceInfo IUnmarshaller<ResourceInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AppRegistryConfiguration IUnmarshaller<AppRegistryConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,21 @@ namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ResourceInfo Unmarshall(JsonUnmarshallerContext context)
+        public AppRegistryConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ResourceInfo unmarshalledObject = new ResourceInfo();
+            AppRegistryConfiguration unmarshalledObject = new AppRegistryConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("tagQueryConfiguration", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("resourceDetails", targetDepth))
-                {
-                    var unmarshaller = ResourceDetailsUnmarshaller.Instance;
-                    unmarshalledObject.ResourceDetails = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("resourceType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
+                    var unmarshaller = TagQueryConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.TagQueryConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +76,12 @@ namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
         }
 
 
-        private static ResourceInfoUnmarshaller _instance = new ResourceInfoUnmarshaller();        
+        private static AppRegistryConfigurationUnmarshaller _instance = new AppRegistryConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ResourceInfoUnmarshaller Instance
+        public static AppRegistryConfigurationUnmarshaller Instance
         {
             get
             {

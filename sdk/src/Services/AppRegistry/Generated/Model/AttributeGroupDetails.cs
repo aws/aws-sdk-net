@@ -75,11 +75,17 @@ namespace Amazon.AppRegistry.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property Name. <important> 
         /// <para>
-        /// The name of the attribute group. 
+        ///  This field is no longer supported. We recommend you don't use the field when using
+        /// <code>ListAttributeGroupsForApplication</code>. 
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  The name of the attribute group. 
         /// </para>
         /// </summary>
+        [Obsolete("This field is deprecated. We recommend not using the field when using ListAttributeGroupsForApplication.")]
         [AWSProperty(Min=1, Max=256)]
         public string Name
         {

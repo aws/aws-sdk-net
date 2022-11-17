@@ -645,6 +645,40 @@ namespace Amazon.AppRegistry
 
         #endregion
         
+        #region  GetConfiguration
+
+
+        /// <summary>
+        /// Retrieves a <code>TagKey</code> configuration from an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetConfiguration service method, as returned by AppRegistry.</returns>
+        /// <exception cref="Amazon.AppRegistry.Model.InternalServerException">
+        /// The service is experiencing internal problems.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetConfiguration">REST API Reference for GetConfiguration Operation</seealso>
+        GetConfigurationResponse GetConfiguration(GetConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves a <code>TagKey</code> configuration from an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetConfiguration service method, as returned by AppRegistry.</returns>
+        /// <exception cref="Amazon.AppRegistry.Model.InternalServerException">
+        /// The service is experiencing internal problems.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetConfiguration">REST API Reference for GetConfiguration Operation</seealso>
+        Task<GetConfigurationResponse> GetConfigurationAsync(GetConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListApplications
 
 
@@ -737,7 +771,16 @@ namespace Amazon.AppRegistry
 
 
         /// <summary>
-        /// Lists all resources that are associated with specified application. Results are paginated.
+        /// Lists all of the resources that are associated with the specified application. Results
+        /// are paginated. 
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  If you share an application, and a consumer account associates a tag query to the
+        /// application, all of the users who can access the application can also view the tag
+        /// values in all accounts that are associated with it using this API. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAssociatedResources service method.</param>
         /// 
@@ -757,7 +800,16 @@ namespace Amazon.AppRegistry
 
 
         /// <summary>
-        /// Lists all resources that are associated with specified application. Results are paginated.
+        /// Lists all of the resources that are associated with the specified application. Results
+        /// are paginated. 
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  If you share an application, and a consumer account associates a tag query to the
+        /// application, all of the users who can access the application can also view the tag
+        /// values in all accounts that are associated with it using this API. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAssociatedResources service method.</param>
         /// <param name="cancellationToken">
@@ -910,6 +962,54 @@ namespace Amazon.AppRegistry
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutConfiguration
+
+
+        /// <summary>
+        /// Associates a <code>TagKey</code> configuration to an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutConfiguration service method, as returned by AppRegistry.</returns>
+        /// <exception cref="Amazon.AppRegistry.Model.ConflictException">
+        /// There was a conflict when processing the request (for example, a resource with the
+        /// given name already exists within the account).
+        /// </exception>
+        /// <exception cref="Amazon.AppRegistry.Model.InternalServerException">
+        /// The service is experiencing internal problems.
+        /// </exception>
+        /// <exception cref="Amazon.AppRegistry.Model.ValidationException">
+        /// The request has invalid or missing parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/PutConfiguration">REST API Reference for PutConfiguration Operation</seealso>
+        PutConfigurationResponse PutConfiguration(PutConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Associates a <code>TagKey</code> configuration to an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutConfiguration service method, as returned by AppRegistry.</returns>
+        /// <exception cref="Amazon.AppRegistry.Model.ConflictException">
+        /// There was a conflict when processing the request (for example, a resource with the
+        /// given name already exists within the account).
+        /// </exception>
+        /// <exception cref="Amazon.AppRegistry.Model.InternalServerException">
+        /// The service is experiencing internal problems.
+        /// </exception>
+        /// <exception cref="Amazon.AppRegistry.Model.ValidationException">
+        /// The request has invalid or missing parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/PutConfiguration">REST API Reference for PutConfiguration Operation</seealso>
+        Task<PutConfigurationResponse> PutConfigurationAsync(PutConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

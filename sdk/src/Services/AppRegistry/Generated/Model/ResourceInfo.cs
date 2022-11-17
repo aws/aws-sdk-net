@@ -35,6 +35,8 @@ namespace Amazon.AppRegistry.Model
     {
         private string _arn;
         private string _name;
+        private ResourceDetails _resourceDetails;
+        private ResourceType _resourceType;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -42,6 +44,7 @@ namespace Amazon.AppRegistry.Model
         /// The Amazon resource name (ARN) that specifies the resource across services.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1600)]
         public string Arn
         {
             get { return this._arn; }
@@ -71,6 +74,42 @@ namespace Amazon.AppRegistry.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceDetails. 
+        /// <para>
+        ///  The details related to the resource. 
+        /// </para>
+        /// </summary>
+        public ResourceDetails ResourceDetails
+        {
+            get { return this._resourceDetails; }
+            set { this._resourceDetails = value; }
+        }
+
+        // Check to see if ResourceDetails property is set
+        internal bool IsSetResourceDetails()
+        {
+            return this._resourceDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceType. 
+        /// <para>
+        ///  Provides information about the Service Catalog App Registry resource type. 
+        /// </para>
+        /// </summary>
+        public ResourceType ResourceType
+        {
+            get { return this._resourceType; }
+            set { this._resourceType = value; }
+        }
+
+        // Check to see if ResourceType property is set
+        internal bool IsSetResourceType()
+        {
+            return this._resourceType != null;
         }
 
     }

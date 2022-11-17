@@ -100,6 +100,10 @@ namespace Amazon.AppRegistry
         /// Constant CFN_STACK for ResourceType
         /// </summary>
         public static readonly ResourceType CFN_STACK = new ResourceType("CFN_STACK");
+        /// <summary>
+        /// Constant RESOURCE_TAG_VALUE for ResourceType
+        /// </summary>
+        public static readonly ResourceType RESOURCE_TAG_VALUE = new ResourceType("RESOURCE_TAG_VALUE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

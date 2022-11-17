@@ -30,7 +30,16 @@ namespace Amazon.AppRegistry.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAssociatedResources operation.
-    /// Lists all resources that are associated with specified application. Results are paginated.
+    /// Lists all of the resources that are associated with the specified application. Results
+    /// are paginated. 
+    /// 
+    ///  <note> 
+    /// <para>
+    ///  If you share an application, and a consumer account associates a tag query to the
+    /// application, all of the users who can access the application can also view the tag
+    /// values in all accounts that are associated with it using this API. 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListAssociatedResourcesRequest : AmazonAppRegistryRequest
     {
@@ -64,7 +73,7 @@ namespace Amazon.AppRegistry.Model
         /// is omitted, it defaults to 25. This value is optional.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=25)]
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

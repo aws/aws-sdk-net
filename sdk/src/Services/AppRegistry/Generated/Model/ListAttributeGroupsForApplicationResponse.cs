@@ -39,7 +39,7 @@ namespace Amazon.AppRegistry.Model
         /// <summary>
         /// Gets and sets the property AttributeGroupsDetails. 
         /// <para>
-        ///  The details related to a specific AttributeGroup. 
+        ///  The details related to a specific attribute group. 
         /// </para>
         /// </summary>
         public List<AttributeGroupDetails> AttributeGroupsDetails

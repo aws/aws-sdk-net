@@ -139,8 +139,8 @@ namespace Amazon.AppRegistry.Model
         /// <summary>
         /// Gets and sets the property Integrations. 
         /// <para>
-        /// The information about the integration of the application with other services, such
-        /// as Resource Groups.
+        ///  The information about the integration of the application with other services, such
+        /// as Resource Groups. 
         /// </para>
         /// </summary>
         public Integrations Integrations

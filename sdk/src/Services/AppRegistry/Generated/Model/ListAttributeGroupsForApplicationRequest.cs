@@ -65,7 +65,7 @@ namespace Amazon.AppRegistry.Model
         /// you omit this parameter, it defaults to 25. This value is optional.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=25)]
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
