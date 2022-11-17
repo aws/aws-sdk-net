@@ -46,6 +46,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  
         /// <para>
+        /// For Application Load Balancer target groups, the specified Availability Zone value
+        /// is only applicable when cross-zone load balancing is off. Otherwise the parameter
+        /// is ignored and treated as <code>all</code>.
+        /// </para>
+        ///  
+        /// <para>
         /// This parameter is not supported if the target type of the target group is <code>instance</code>
         /// or <code>alb</code>.
         /// </para>
@@ -57,8 +63,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  
         /// <para>
-        /// With an Application Load Balancer, if the target type is <code>ip</code> and the IP
-        /// address is outside the VPC for the target group, the only supported value is <code>all</code>.
+        /// For Application Load Balancer target groups with cross-zone load balancing off, if
+        /// the target type is <code>ip</code> and the IP address is outside of the VPC for the
+        /// target group, this should be an Availability Zone inside the VPC for the target group.
         /// </para>
         ///  
         /// <para>

@@ -43,12 +43,19 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  
         /// <para>
-        /// The following attribute is supported by all load balancers:
+        /// The following attributes are supported by all load balancers:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <code>deletion_protection.enabled</code> - Indicates whether deletion protection
         /// is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load
+        /// balancing is enabled. The possible values are <code>true</code> and <code>false</code>.
+        /// The default for Network Load Balancers and Gateway Load Balancers is <code>false</code>.
+        /// The default for Application Load Balancers is <code>true</code>, and cannot be changed.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -163,16 +170,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         ///  <code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load
         /// balancer to route requests to targets if it is unable to forward the request to Amazon
         /// Web Services WAF. The possible values are <code>true</code> and <code>false</code>.
-        /// The default is <code>false</code>.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// The following attribute is supported by Network Load Balancers and Gateway Load Balancers:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load
-        /// balancing is enabled. The possible values are <code>true</code> and <code>false</code>.
         /// The default is <code>false</code>.
         /// </para>
         ///  </li> </ul>

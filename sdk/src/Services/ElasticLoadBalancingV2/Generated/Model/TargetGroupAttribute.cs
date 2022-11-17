@@ -43,7 +43,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  
         /// <para>
-        /// The following attribute is supported by all load balancers:
+        /// The following attributes are supported by all load balancers:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -53,12 +53,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// default value is 300 seconds. If the target is a Lambda function, this attribute is
         /// not supported.
         /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// The following attributes are supported by Application Load Balancers, Network Load
-        /// Balancers, and Gateway Load Balancers:
-        /// </para>
-        ///  <ul> <li> 
+        ///  </li> <li> 
         /// <para>
         ///  <code>stickiness.enabled</code> - Indicates whether target stickiness is enabled.
         /// The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.
@@ -66,7 +61,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>stickiness.type</code> - Indicates the type of stickiness. The possible values
-        /// are: 
+        /// are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -82,6 +77,48 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Load Balancers.
         /// </para>
         ///  </li> </ul> </li> </ul> 
+        /// <para>
+        /// The following attributes are supported by Application Load Balancers and Network Load
+        /// Balancers:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross zone load
+        /// balancing is enabled. The value is <code>true</code>, <code>false</code> or <code>use_load_balancer_configuration</code>.
+        /// The default is <code>use_load_balancer_configuration</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>target_group_health.dns_failover.minimum_healthy_targets.count</code> - The
+        /// minimum number of targets that must be healthy. If the number of healthy targets is
+        /// below this value, mark the zone as unhealthy in DNS, so that traffic is routed only
+        /// to healthy zones. The possible values are <code>off</code> or an integer from 1 to
+        /// the maximum number of targets. The default is <code>off</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>target_group_health.dns_failover.minimum_healthy_targets.percentage</code>
+        /// - The minimum percentage of targets that must be healthy. If the percentage of healthy
+        /// targets is below this value, mark the zone as unhealthy in DNS, so that traffic is
+        /// routed only to healthy zones. The possible values are <code>off</code> or an integer
+        /// from 1 to 100. The default is <code>off</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>target_group_health.unhealthy_state_routing.minimum_healthy_targets.count</code>
+        /// - The minimum number of targets that must be healthy. If the number of healthy targets
+        /// is below this value, send traffic to all targets, including unhealthy targets. The
+        /// possible values are 1 to the maximum number of targets. The default is 1.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>target_group_health.unhealthy_state_routing.minimum_healthy_targets.percentage</code>
+        /// - The minimum percentage of targets that must be healthy. If the percentage of healthy
+        /// targets is below this value, send traffic to all targets, including unhealthy targets.
+        /// The possible values are <code>off</code> or an integer from 1 to 100. The default
+        /// is <code>off</code>.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// The following attributes are supported only if the load balancer is an Application
         /// Load Balancer and the target is an instance or an IP address:

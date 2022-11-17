@@ -45,7 +45,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// One or more source IP addresses, in CIDR format. You can use both IPv4 and IPv6 addresses.
+        /// The source IP addresses, in CIDR format. You can use both IPv4 and IPv6 addresses.
         /// Wildcards are not supported.
         /// </para>
         ///  

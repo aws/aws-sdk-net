@@ -32,12 +32,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// Container for the parameters to the ModifyTargetGroup operation.
     /// Modifies the health checks used when evaluating the health state of the targets in
     /// the specified target group.
-    /// 
-    ///  
-    /// <para>
-    /// If the protocol of the target group is TCP, TLS, UDP, or TCP_UDP, you can't modify
-    /// the health check protocol, interval, timeout, or success codes.
-    /// </para>
     /// </summary>
     public partial class ModifyTargetGroupRequest : AmazonElasticLoadBalancingV2Request
     {
@@ -74,7 +68,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property HealthCheckIntervalSeconds. 
         /// <para>
         /// The approximate amount of time, in seconds, between health checks of an individual
-        /// target. For TCP health checks, the supported values are 10 or 30 seconds.
+        /// target.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=300)]
@@ -203,7 +197,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property Matcher. 
         /// <para>
         /// [HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful
-        /// response from a target.
+        /// response from a target. For target groups with a protocol of TCP, TCP_UDP, UDP or
+        /// TLS the range is 200-599. For target groups with a protocol of HTTP or HTTPS, the
+        /// range is 200-499. For target groups with a protocol of GENEVE, the range is 200-399.
         /// </para>
         /// </summary>
         public Matcher Matcher
@@ -241,8 +237,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property UnhealthyThresholdCount. 
         /// <para>
         /// The number of consecutive health check failures required before considering the target
-        /// unhealthy. For target groups with a protocol of TCP or TLS, this value must be the
-        /// same as the healthy threshold count.
+        /// unhealthy.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=10)]
