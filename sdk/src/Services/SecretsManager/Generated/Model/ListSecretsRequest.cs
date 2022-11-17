@@ -142,7 +142,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// Lists secrets in the requested order. 
+        /// Secrets are listed by <code>CreatedDate</code>. 
         /// </para>
         /// </summary>
         public SortOrderType SortOrder

@@ -112,7 +112,7 @@ namespace Amazon.SecretsManager.Model
         /// Use this parameter with caution. This parameter causes the operation to skip the normal
         /// recovery window before the permanent deletion that Secrets Manager would normally
         /// impose with the <code>RecoveryWindowInDays</code> parameter. If you delete a secret
-        /// with the <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity
+        /// with the <code>ForceDeleteWithoutRecovery</code> parameter, then you have no opportunity
         /// to recover the secret. You lose the secret permanently.
         /// </para>
         ///  </important>
