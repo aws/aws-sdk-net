@@ -187,6 +187,56 @@ namespace Amazon.WorkSpaces
 
 
     /// <summary>
+    /// Constants used for properties of type BundleType.
+    /// </summary>
+    public class BundleType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant REGULAR for BundleType
+        /// </summary>
+        public static readonly BundleType REGULAR = new BundleType("REGULAR");
+        /// <summary>
+        /// Constant STANDBY for BundleType
+        /// </summary>
+        public static readonly BundleType STANDBY = new BundleType("STANDBY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BundleType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BundleType FindValue(string value)
+        {
+            return FindValue<BundleType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BundleType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CertificateBasedAuthStatusEnum.
     /// </summary>
     public class CertificateBasedAuthStatusEnum : ConstantClass
@@ -1197,6 +1247,56 @@ namespace Amazon.WorkSpaces
 
 
     /// <summary>
+    /// Constants used for properties of type StandbyWorkspaceRelationshipType.
+    /// </summary>
+    public class StandbyWorkspaceRelationshipType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PRIMARY for StandbyWorkspaceRelationshipType
+        /// </summary>
+        public static readonly StandbyWorkspaceRelationshipType PRIMARY = new StandbyWorkspaceRelationshipType("PRIMARY");
+        /// <summary>
+        /// Constant STANDBY for StandbyWorkspaceRelationshipType
+        /// </summary>
+        public static readonly StandbyWorkspaceRelationshipType STANDBY = new StandbyWorkspaceRelationshipType("STANDBY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StandbyWorkspaceRelationshipType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StandbyWorkspaceRelationshipType FindValue(string value)
+        {
+            return FindValue<StandbyWorkspaceRelationshipType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StandbyWorkspaceRelationshipType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TargetWorkspaceState.
     /// </summary>
     public class TargetWorkspaceState : ConstantClass
@@ -1290,6 +1390,60 @@ namespace Amazon.WorkSpaces
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Tenancy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WorkspaceBundleState.
+    /// </summary>
+    public class WorkspaceBundleState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for WorkspaceBundleState
+        /// </summary>
+        public static readonly WorkspaceBundleState AVAILABLE = new WorkspaceBundleState("AVAILABLE");
+        /// <summary>
+        /// Constant ERROR for WorkspaceBundleState
+        /// </summary>
+        public static readonly WorkspaceBundleState ERROR = new WorkspaceBundleState("ERROR");
+        /// <summary>
+        /// Constant PENDING for WorkspaceBundleState
+        /// </summary>
+        public static readonly WorkspaceBundleState PENDING = new WorkspaceBundleState("PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WorkspaceBundleState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WorkspaceBundleState FindValue(string value)
+        {
+            return FindValue<WorkspaceBundleState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WorkspaceBundleState(string value)
         {
             return FindValue(value);
         }

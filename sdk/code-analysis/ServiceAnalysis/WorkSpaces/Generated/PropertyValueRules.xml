@@ -93,6 +93,12 @@
     <pattern>wsipg-[0-9a-z]{8,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.CreateStandbyWorkspacesRequest.PrimaryRegion</property>
+    <min>1</min>
+    <max>31</max>
+    <pattern>^[-0-9a-z]{1,31}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpaces.Model.CreateTagsRequest.ResourceId</property>
     <min>1</min>
   </property-value-rule>
@@ -813,11 +819,36 @@
     <pattern>^(http|https)\://\S+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.PendingCreateStandbyWorkspacesRequest.DirectoryId</property>
+    <min>10</min>
+    <max>65</max>
+    <pattern>^d-[0-9a-f]{8,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.PendingCreateStandbyWorkspacesRequest.UserName</property>
+    <min>1</min>
+    <max>63</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.PendingCreateStandbyWorkspacesRequest.WorkspaceId</property>
+    <pattern>^ws-[0-9a-z]{8,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpaces.Model.RebootRequest.WorkspaceId</property>
     <pattern>^ws-[0-9a-z]{8,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.RebuildRequest.WorkspaceId</property>
+    <pattern>^ws-[0-9a-z]{8,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.RelatedWorkspaceProperties.Region</property>
+    <min>1</min>
+    <max>31</max>
+    <pattern>^[-0-9a-z]{1,31}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.RelatedWorkspaceProperties.WorkspaceId</property>
     <pattern>^ws-[0-9a-z]{8,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -841,6 +872,16 @@
     <min>8</min>
     <max>200</max>
     <pattern>^(http|https)\://\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.StandbyWorkspace.DirectoryId</property>
+    <min>10</min>
+    <max>65</max>
+    <pattern>^d-[0-9a-f]{8,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.StandbyWorkspace.PrimaryWorkspaceId</property>
+    <pattern>^ws-[0-9a-z]{8,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.StartRequest.WorkspaceId</property>

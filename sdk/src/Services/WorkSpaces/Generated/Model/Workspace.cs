@@ -40,6 +40,7 @@ namespace Amazon.WorkSpaces.Model
         private string _errorMessage;
         private string _ipAddress;
         private List<ModificationState> _modificationStates = new List<ModificationState>();
+        private List<RelatedWorkspaceProperties> _relatedWorkspaces = new List<RelatedWorkspaceProperties>();
         private bool? _rootVolumeEncryptionEnabled;
         private WorkspaceState _state;
         private string _subnetId;
@@ -176,6 +177,24 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetModificationStates()
         {
             return this._modificationStates != null && this._modificationStates.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RelatedWorkspaces. 
+        /// <para>
+        /// The Standby WorkSpace or Primary WorkSpace related to the specified WorkSpace.
+        /// </para>
+        /// </summary>
+        public List<RelatedWorkspaceProperties> RelatedWorkspaces
+        {
+            get { return this._relatedWorkspaces; }
+            set { this._relatedWorkspaces = value; }
+        }
+
+        // Check to see if RelatedWorkspaces property is set
+        internal bool IsSetRelatedWorkspaces()
+        {
+            return this._relatedWorkspaces != null && this._relatedWorkspaces.Count > 0; 
         }
 
         /// <summary>

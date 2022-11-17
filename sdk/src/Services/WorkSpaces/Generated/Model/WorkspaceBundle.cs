@@ -34,6 +34,7 @@ namespace Amazon.WorkSpaces.Model
     public partial class WorkspaceBundle
     {
         private string _bundleId;
+        private BundleType _bundleType;
         private ComputeType _computeType;
         private DateTime? _creationTime;
         private string _description;
@@ -42,6 +43,7 @@ namespace Amazon.WorkSpaces.Model
         private string _name;
         private string _owner;
         private RootStorage _rootStorage;
+        private WorkspaceBundleState _state;
         private UserStorage _userStorage;
 
         /// <summary>
@@ -60,6 +62,24 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetBundleId()
         {
             return this._bundleId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BundleType. 
+        /// <para>
+        /// The type of WorkSpace bundle.
+        /// </para>
+        /// </summary>
+        public BundleType BundleType
+        {
+            get { return this._bundleType; }
+            set { this._bundleType = value; }
+        }
+
+        // Check to see if BundleType property is set
+        internal bool IsSetBundleType()
+        {
+            return this._bundleType != null;
         }
 
         /// <summary>
@@ -207,6 +227,24 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetRootStorage()
         {
             return this._rootStorage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property State. 
+        /// <para>
+        /// The state of the WorkSpace bundle.
+        /// </para>
+        /// </summary>
+        public WorkspaceBundleState State
+        {
+            get { return this._state; }
+            set { this._state = value; }
+        }
+
+        // Check to see if State property is set
+        internal bool IsSetState()
+        {
+            return this._state != null;
         }
 
         /// <summary>

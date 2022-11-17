@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ModifyWorkspaceState operation
+    /// Response Unmarshaller for CreateStandbyWorkspaces operation
     /// </summary>  
-    public class ModifyWorkspaceStateResponseUnmarshaller : JsonResponseUnmarshaller
+    public class CreateStandbyWorkspacesResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,8 +45,25 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            ModifyWorkspaceStateResponse response = new ModifyWorkspaceStateResponse();
+            CreateStandbyWorkspacesResponse response = new CreateStandbyWorkspacesResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("FailedStandbyRequests", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<FailedCreateStandbyWorkspacesRequest, FailedCreateStandbyWorkspacesRequestUnmarshaller>(FailedCreateStandbyWorkspacesRequestUnmarshaller.Instance);
+                    response.FailedStandbyRequests = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PendingStandbyRequests", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<PendingCreateStandbyWorkspacesRequest, PendingCreateStandbyWorkspacesRequestUnmarshaller>(PendingCreateStandbyWorkspacesRequestUnmarshaller.Instance);
+                    response.PendingStandbyRequests = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -69,17 +86,21 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
+                {
+                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValuesException"))
                 {
                     return InvalidParameterValuesExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidResourceStateException"))
-                {
-                    return InvalidResourceStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotSupportedException"))
                 {
                     return OperationNotSupportedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceLimitExceededException"))
+                {
+                    return ResourceLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
@@ -89,9 +110,9 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             return new AmazonWorkSpacesException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static ModifyWorkspaceStateResponseUnmarshaller _instance = new ModifyWorkspaceStateResponseUnmarshaller();        
+        private static CreateStandbyWorkspacesResponseUnmarshaller _instance = new CreateStandbyWorkspacesResponseUnmarshaller();        
 
-        internal static ModifyWorkspaceStateResponseUnmarshaller GetInstance()
+        internal static CreateStandbyWorkspacesResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -99,7 +120,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ModifyWorkspaceStateResponseUnmarshaller Instance
+        public static CreateStandbyWorkspacesResponseUnmarshaller Instance
         {
             get
             {
