@@ -63,6 +63,10 @@ namespace Amazon.Textract
         /// </summary>
         public static readonly BlockType SELECTION_ELEMENT = new BlockType("SELECTION_ELEMENT");
         /// <summary>
+        /// Constant SIGNATURE for BlockType
+        /// </summary>
+        public static readonly BlockType SIGNATURE = new BlockType("SIGNATURE");
+        /// <summary>
         /// Constant TABLE for BlockType
         /// </summary>
         public static readonly BlockType TABLE = new BlockType("TABLE");
@@ -228,6 +232,10 @@ namespace Amazon.Textract
         /// Constant QUERIES for FeatureType
         /// </summary>
         public static readonly FeatureType QUERIES = new FeatureType("QUERIES");
+        /// <summary>
+        /// Constant SIGNATURES for FeatureType
+        /// </summary>
+        public static readonly FeatureType SIGNATURES = new FeatureType("SIGNATURES");
         /// <summary>
         /// Constant TABLES for FeatureType
         /// </summary>

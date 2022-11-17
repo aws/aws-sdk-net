@@ -133,6 +133,11 @@ namespace Amazon.Textract.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <i>SIGNATURE</i> - The location and confidene score of a signature detected on a
+        /// document page. Can be returned as part of a Key-Value pair or a detected cell.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <i>QUERY</i> - A question asked during the call of AnalyzeDocument. Contains an alias
         /// and an ID that attaches it to its answer.
         /// </para>

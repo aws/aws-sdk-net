@@ -281,6 +281,12 @@ namespace Amazon.Textract
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// Signatures. A SIGNATURE <code>Block</code> object contains the location information
+        /// of a signature in a document. If used in conjunction with forms or tables, a signature
+        /// can be given a Key-Value pairing or be detected in the cell of a table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Query. A QUERY Block object contains the query text, alias and link to the associated
         /// Query results block object.
         /// </para>
@@ -399,6 +405,12 @@ namespace Amazon.Textract
         /// <code>Block</code> objects. All lines and words that are detected in the document
         /// are returned (including text that doesn't have a relationship with the value of <code>FeatureTypes</code>).
         /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Signatures. A SIGNATURE <code>Block</code> object contains the location information
+        /// of a signature in a document. If used in conjunction with forms or tables, a signature
+        /// can be given a Key-Value pairing or be detected in the cell of a table.
         /// </para>
         ///  </li> <li> 
         /// <para>
