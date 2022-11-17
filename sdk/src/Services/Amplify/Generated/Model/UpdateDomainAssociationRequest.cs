@@ -141,7 +141,7 @@ namespace Amazon.Amplify.Model
         ///  Describes the settings for the subdomain. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=255)]
+        [AWSProperty(Max=500)]
         public List<SubDomainSetting> SubDomainSettings
         {
             get { return this._subDomainSettings; }

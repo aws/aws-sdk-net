@@ -237,6 +237,10 @@ namespace Amazon.Amplify
         /// </summary>
         public static readonly Platform WEB = new Platform("WEB");
         /// <summary>
+        /// Constant WEB_COMPUTE for Platform
+        /// </summary>
+        public static readonly Platform WEB_COMPUTE = new Platform("WEB_COMPUTE");
+        /// <summary>
         /// Constant WEB_DYNAMIC for Platform
         /// </summary>
         public static readonly Platform WEB_DYNAMIC = new Platform("WEB_DYNAMIC");

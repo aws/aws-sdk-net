@@ -201,7 +201,7 @@ namespace Amazon.Amplify.Model
         ///  The subdomains for the domain association. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=255)]
+        [AWSProperty(Required=true, Max=500)]
         public List<SubDomain> SubDomains
         {
             get { return this._subDomains; }
