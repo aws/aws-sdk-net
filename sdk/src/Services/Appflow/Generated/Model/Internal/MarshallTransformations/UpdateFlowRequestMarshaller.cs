@@ -93,6 +93,17 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.FlowName);
                 }
 
+                if(publicRequest.IsSetMetadataCatalogConfig())
+                {
+                    context.Writer.WritePropertyName("metadataCatalogConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MetadataCatalogConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.MetadataCatalogConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSourceFlowConfig())
                 {
                     context.Writer.WritePropertyName("sourceFlowConfig");

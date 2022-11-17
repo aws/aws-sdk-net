@@ -39,6 +39,7 @@ namespace Amazon.Appflow.Model
         private ExecutionResult _executionResult;
         private ExecutionStatus _executionStatus;
         private DateTime? _lastUpdatedAt;
+        private List<MetadataCatalogDetail> _metadataCatalogDetails = new List<MetadataCatalogDetail>();
         private DateTime? _startedAt;
 
         /// <summary>
@@ -151,6 +152,25 @@ namespace Amazon.Appflow.Model
         internal bool IsSetLastUpdatedAt()
         {
             return this._lastUpdatedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetadataCatalogDetails. 
+        /// <para>
+        /// Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow
+        /// used for the associated flow run.
+        /// </para>
+        /// </summary>
+        public List<MetadataCatalogDetail> MetadataCatalogDetails
+        {
+            get { return this._metadataCatalogDetails; }
+            set { this._metadataCatalogDetails = value; }
+        }
+
+        // Check to see if MetadataCatalogDetails property is set
+        internal bool IsSetMetadataCatalogDetails()
+        {
+            return this._metadataCatalogDetails != null && this._metadataCatalogDetails.Count > 0; 
         }
 
         /// <summary>

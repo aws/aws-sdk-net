@@ -43,8 +43,11 @@ namespace Amazon.Appflow.Model
         private string _flowStatusMessage;
         private string _kmsArn;
         private ExecutionDetails _lastRunExecutionDetails;
+        private List<MetadataCatalogDetail> _lastRunMetadataCatalogDetails = new List<MetadataCatalogDetail>();
         private DateTime? _lastUpdatedAt;
         private string _lastUpdatedBy;
+        private MetadataCatalogConfig _metadataCatalogConfig;
+        private long? _schemaVersion;
         private SourceFlowConfig _sourceFlowConfig;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private List<Task> _tasks = new List<Task>();
@@ -243,6 +246,25 @@ namespace Amazon.Appflow.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LastRunMetadataCatalogDetails. 
+        /// <para>
+        /// Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow
+        /// used for the associated flow run.
+        /// </para>
+        /// </summary>
+        public List<MetadataCatalogDetail> LastRunMetadataCatalogDetails
+        {
+            get { return this._lastRunMetadataCatalogDetails; }
+            set { this._lastRunMetadataCatalogDetails = value; }
+        }
+
+        // Check to see if LastRunMetadataCatalogDetails property is set
+        internal bool IsSetLastRunMetadataCatalogDetails()
+        {
+            return this._lastRunMetadataCatalogDetails != null && this._lastRunMetadataCatalogDetails.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property LastUpdatedAt. 
         /// <para>
         ///  Specifies when the flow was last updated. 
@@ -277,6 +299,59 @@ namespace Amazon.Appflow.Model
         internal bool IsSetLastUpdatedBy()
         {
             return this._lastUpdatedBy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetadataCatalogConfig. 
+        /// <para>
+        /// Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's
+        /// transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow,
+        /// it stores metadata in a data catalog.
+        /// </para>
+        /// </summary>
+        public MetadataCatalogConfig MetadataCatalogConfig
+        {
+            get { return this._metadataCatalogConfig; }
+            set { this._metadataCatalogConfig = value; }
+        }
+
+        // Check to see if MetadataCatalogConfig property is set
+        internal bool IsSetMetadataCatalogConfig()
+        {
+            return this._metadataCatalogConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SchemaVersion. 
+        /// <para>
+        /// The version number of your data schema. Amazon AppFlow assigns this version number.
+        /// The version number increases by one when you change any of the following settings
+        /// in your flow configuration:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Source-to-destination field mappings
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Field data types
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Partition keys
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public long SchemaVersion
+        {
+            get { return this._schemaVersion.GetValueOrDefault(); }
+            set { this._schemaVersion = value; }
+        }
+
+        // Check to see if SchemaVersion property is set
+        internal bool IsSetSchemaVersion()
+        {
+            return this._schemaVersion.HasValue; 
         }
 
         /// <summary>

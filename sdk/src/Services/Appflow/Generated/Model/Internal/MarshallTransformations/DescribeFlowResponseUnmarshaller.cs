@@ -111,6 +111,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                     response.LastRunExecutionDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("lastRunMetadataCatalogDetails", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<MetadataCatalogDetail, MetadataCatalogDetailUnmarshaller>(MetadataCatalogDetailUnmarshaller.Instance);
+                    response.LastRunMetadataCatalogDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lastUpdatedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -121,6 +127,18 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LastUpdatedBy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("metadataCatalogConfig", targetDepth))
+                {
+                    var unmarshaller = MetadataCatalogConfigUnmarshaller.Instance;
+                    response.MetadataCatalogConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("schemaVersion", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    response.SchemaVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("sourceFlowConfig", targetDepth))

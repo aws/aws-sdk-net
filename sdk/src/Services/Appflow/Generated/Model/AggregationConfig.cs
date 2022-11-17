@@ -35,6 +35,7 @@ namespace Amazon.Appflow.Model
     public partial class AggregationConfig
     {
         private AggregationType _aggregationType;
+        private long? _targetFileSize;
 
         /// <summary>
         /// Gets and sets the property AggregationType. 
@@ -53,6 +54,27 @@ namespace Amazon.Appflow.Model
         internal bool IsSetAggregationType()
         {
             return this._aggregationType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetFileSize. 
+        /// <para>
+        /// The desired file size, in MB, for each output file that Amazon AppFlow writes to the
+        /// flow destination. For each file, Amazon AppFlow attempts to achieve the size that
+        /// you specify. The actual file sizes might differ from this target based on the number
+        /// and size of the records that each file contains.
+        /// </para>
+        /// </summary>
+        public long TargetFileSize
+        {
+            get { return this._targetFileSize.GetValueOrDefault(); }
+            set { this._targetFileSize = value; }
+        }
+
+        // Check to see if TargetFileSize property is set
+        internal bool IsSetTargetFileSize()
+        {
+            return this._targetFileSize.HasValue; 
         }
 
     }

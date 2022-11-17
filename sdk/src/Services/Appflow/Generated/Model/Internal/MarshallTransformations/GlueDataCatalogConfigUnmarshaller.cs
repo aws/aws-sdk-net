@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AggregationConfig Object
+    /// Response Unmarshaller for GlueDataCatalogConfig Object
     /// </summary>  
-    public class AggregationConfigUnmarshaller : IUnmarshaller<AggregationConfig, XmlUnmarshallerContext>, IUnmarshaller<AggregationConfig, JsonUnmarshallerContext>
+    public class GlueDataCatalogConfigUnmarshaller : IUnmarshaller<GlueDataCatalogConfig, XmlUnmarshallerContext>, IUnmarshaller<GlueDataCatalogConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AggregationConfig IUnmarshaller<AggregationConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        GlueDataCatalogConfig IUnmarshaller<GlueDataCatalogConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,33 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AggregationConfig Unmarshall(JsonUnmarshallerContext context)
+        public GlueDataCatalogConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AggregationConfig unmarshalledObject = new AggregationConfig();
+            GlueDataCatalogConfig unmarshalledObject = new GlueDataCatalogConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("aggregationType", targetDepth))
+                if (context.TestExpression("databaseName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AggregationType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DatabaseName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("targetFileSize", targetDepth))
+                if (context.TestExpression("roleArn", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.TargetFileSize = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("tablePrefix", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TablePrefix = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +88,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         }
 
 
-        private static AggregationConfigUnmarshaller _instance = new AggregationConfigUnmarshaller();        
+        private static GlueDataCatalogConfigUnmarshaller _instance = new GlueDataCatalogConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AggregationConfigUnmarshaller Instance
+        public static GlueDataCatalogConfigUnmarshaller Instance
         {
             get
             {

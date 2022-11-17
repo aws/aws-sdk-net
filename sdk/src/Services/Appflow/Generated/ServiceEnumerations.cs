@@ -179,6 +179,52 @@ namespace Amazon.Appflow
 
 
     /// <summary>
+    /// Constants used for properties of type CatalogType.
+    /// </summary>
+    public class CatalogType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GLUE for CatalogType
+        /// </summary>
+        public static readonly CatalogType GLUE = new CatalogType("GLUE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CatalogType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CatalogType FindValue(string value)
+        {
+            return FindValue<CatalogType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CatalogType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConnectionMode.
     /// </summary>
     public class ConnectionMode : ConstantClass
@@ -1363,6 +1409,10 @@ namespace Amazon.Appflow
         /// </summary>
         public static readonly OperatorPropertiesKeys MATH_OPERATION_FIELDS_ORDER = new OperatorPropertiesKeys("MATH_OPERATION_FIELDS_ORDER");
         /// <summary>
+        /// Constant ORDERED_PARTITION_KEYS_LIST for OperatorPropertiesKeys
+        /// </summary>
+        public static readonly OperatorPropertiesKeys ORDERED_PARTITION_KEYS_LIST = new OperatorPropertiesKeys("ORDERED_PARTITION_KEYS_LIST");
+        /// <summary>
         /// Constant SOURCE_DATA_TYPE for OperatorPropertiesKeys
         /// </summary>
         public static readonly OperatorPropertiesKeys SOURCE_DATA_TYPE = new OperatorPropertiesKeys("SOURCE_DATA_TYPE");
@@ -1546,6 +1596,56 @@ namespace Amazon.Appflow
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Operators(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PathPrefix.
+    /// </summary>
+    public class PathPrefix : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXECUTION_ID for PathPrefix
+        /// </summary>
+        public static readonly PathPrefix EXECUTION_ID = new PathPrefix("EXECUTION_ID");
+        /// <summary>
+        /// Constant SCHEMA_VERSION for PathPrefix
+        /// </summary>
+        public static readonly PathPrefix SCHEMA_VERSION = new PathPrefix("SCHEMA_VERSION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PathPrefix(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PathPrefix FindValue(string value)
+        {
+            return FindValue<PathPrefix>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PathPrefix(string value)
         {
             return FindValue(value);
         }
@@ -2700,6 +2800,10 @@ namespace Amazon.Appflow
         /// Constant Merge for TaskType
         /// </summary>
         public static readonly TaskType Merge = new TaskType("Merge");
+        /// <summary>
+        /// Constant Partition for TaskType
+        /// </summary>
+        public static readonly TaskType Partition = new TaskType("Partition");
         /// <summary>
         /// Constant Passthrough for TaskType
         /// </summary>

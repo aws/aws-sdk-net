@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AggregationConfig Marshaller
+    /// GlueDataCatalogConfig Marshaller
     /// </summary>
-    public class AggregationConfigMarshaller : IRequestMarshaller<AggregationConfig, JsonMarshallerContext> 
+    public class GlueDataCatalogConfigMarshaller : IRequestMarshaller<GlueDataCatalogConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,18 +43,24 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AggregationConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(GlueDataCatalogConfig requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAggregationType())
+            if(requestObject.IsSetDatabaseName())
             {
-                context.Writer.WritePropertyName("aggregationType");
-                context.Writer.Write(requestObject.AggregationType);
+                context.Writer.WritePropertyName("databaseName");
+                context.Writer.Write(requestObject.DatabaseName);
             }
 
-            if(requestObject.IsSetTargetFileSize())
+            if(requestObject.IsSetRoleArn())
             {
-                context.Writer.WritePropertyName("targetFileSize");
-                context.Writer.Write(requestObject.TargetFileSize);
+                context.Writer.WritePropertyName("roleArn");
+                context.Writer.Write(requestObject.RoleArn);
+            }
+
+            if(requestObject.IsSetTablePrefix())
+            {
+                context.Writer.WritePropertyName("tablePrefix");
+                context.Writer.Write(requestObject.TablePrefix);
             }
 
         }
@@ -62,7 +68,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static AggregationConfigMarshaller Instance = new AggregationConfigMarshaller();
+        public readonly static GlueDataCatalogConfigMarshaller Instance = new GlueDataCatalogConfigMarshaller();
 
     }
 }

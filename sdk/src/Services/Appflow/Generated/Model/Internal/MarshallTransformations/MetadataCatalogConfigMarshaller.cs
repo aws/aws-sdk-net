@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AggregationConfig Marshaller
+    /// MetadataCatalogConfig Marshaller
     /// </summary>
-    public class AggregationConfigMarshaller : IRequestMarshaller<AggregationConfig, JsonMarshallerContext> 
+    public class MetadataCatalogConfigMarshaller : IRequestMarshaller<MetadataCatalogConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,18 +43,17 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AggregationConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(MetadataCatalogConfig requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAggregationType())
+            if(requestObject.IsSetGlueDataCatalog())
             {
-                context.Writer.WritePropertyName("aggregationType");
-                context.Writer.Write(requestObject.AggregationType);
-            }
+                context.Writer.WritePropertyName("glueDataCatalog");
+                context.Writer.WriteObjectStart();
 
-            if(requestObject.IsSetTargetFileSize())
-            {
-                context.Writer.WritePropertyName("targetFileSize");
-                context.Writer.Write(requestObject.TargetFileSize);
+                var marshaller = GlueDataCatalogConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.GlueDataCatalog, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
         }
@@ -62,7 +61,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static AggregationConfigMarshaller Instance = new AggregationConfigMarshaller();
+        public readonly static MetadataCatalogConfigMarshaller Instance = new MetadataCatalogConfigMarshaller();
 
     }
 }

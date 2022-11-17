@@ -660,6 +660,19 @@
     <pattern>[a-zA-Z0-9][\w!@#.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Appflow.Model.GlueDataCatalogConfig.DatabaseName</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.GlueDataCatalogConfig.RoleArn</property>
+    <max>512</max>
+    <pattern>arn:aws:iam:.*:[0-9]+:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.GlueDataCatalogConfig.TablePrefix</property>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Appflow.Model.GoogleAnalyticsConnectorProfileCredentials.AccessToken</property>
     <max>4096</max>
     <pattern>\S+</pattern>
@@ -768,6 +781,11 @@
     <property>Amazon.Appflow.Model.MarketoSourceProperties.Object</property>
     <max>512</max>
     <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.MetadataCatalogDetail.TableName</property>
+    <max>2048</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.OAuth2Credentials.AccessToken</property>
@@ -890,6 +908,16 @@
     <property>Amazon.Appflow.Model.RedshiftDestinationProperties.Object</property>
     <max>512</max>
     <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.RegistrationOutput.Message</property>
+    <max>2048</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.RegistrationOutput.Result</property>
+    <max>2048</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.S3DestinationProperties.BucketName</property>

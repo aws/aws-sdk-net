@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AggregationConfig Object
+    /// Response Unmarshaller for MetadataCatalogConfig Object
     /// </summary>  
-    public class AggregationConfigUnmarshaller : IUnmarshaller<AggregationConfig, XmlUnmarshallerContext>, IUnmarshaller<AggregationConfig, JsonUnmarshallerContext>
+    public class MetadataCatalogConfigUnmarshaller : IUnmarshaller<MetadataCatalogConfig, XmlUnmarshallerContext>, IUnmarshaller<MetadataCatalogConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AggregationConfig IUnmarshaller<AggregationConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MetadataCatalogConfig IUnmarshaller<MetadataCatalogConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,21 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AggregationConfig Unmarshall(JsonUnmarshallerContext context)
+        public MetadataCatalogConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AggregationConfig unmarshalledObject = new AggregationConfig();
+            MetadataCatalogConfig unmarshalledObject = new MetadataCatalogConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("aggregationType", targetDepth))
+                if (context.TestExpression("glueDataCatalog", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AggregationType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("targetFileSize", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.TargetFileSize = unmarshaller.Unmarshall(context);
+                    var unmarshaller = GlueDataCatalogConfigUnmarshaller.Instance;
+                    unmarshalledObject.GlueDataCatalog = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +76,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         }
 
 
-        private static AggregationConfigUnmarshaller _instance = new AggregationConfigUnmarshaller();        
+        private static MetadataCatalogConfigUnmarshaller _instance = new MetadataCatalogConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AggregationConfigUnmarshaller Instance
+        public static MetadataCatalogConfigUnmarshaller Instance
         {
             get
             {

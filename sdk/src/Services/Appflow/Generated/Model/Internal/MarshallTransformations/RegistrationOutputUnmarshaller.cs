@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AggregationConfig Object
+    /// Response Unmarshaller for RegistrationOutput Object
     /// </summary>  
-    public class AggregationConfigUnmarshaller : IUnmarshaller<AggregationConfig, XmlUnmarshallerContext>, IUnmarshaller<AggregationConfig, JsonUnmarshallerContext>
+    public class RegistrationOutputUnmarshaller : IUnmarshaller<RegistrationOutput, XmlUnmarshallerContext>, IUnmarshaller<RegistrationOutput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AggregationConfig IUnmarshaller<AggregationConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RegistrationOutput IUnmarshaller<RegistrationOutput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,33 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AggregationConfig Unmarshall(JsonUnmarshallerContext context)
+        public RegistrationOutput Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AggregationConfig unmarshalledObject = new AggregationConfig();
+            RegistrationOutput unmarshalledObject = new RegistrationOutput();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("aggregationType", targetDepth))
+                if (context.TestExpression("message", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AggregationType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Message = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("targetFileSize", targetDepth))
+                if (context.TestExpression("result", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.TargetFileSize = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Result = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +88,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         }
 
 
-        private static AggregationConfigUnmarshaller _instance = new AggregationConfigUnmarshaller();        
+        private static RegistrationOutputUnmarshaller _instance = new RegistrationOutputUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AggregationConfigUnmarshaller Instance
+        public static RegistrationOutputUnmarshaller Instance
         {
             get
             {

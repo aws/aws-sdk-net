@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AggregationConfig Object
+    /// Response Unmarshaller for MetadataCatalogDetail Object
     /// </summary>  
-    public class AggregationConfigUnmarshaller : IUnmarshaller<AggregationConfig, XmlUnmarshallerContext>, IUnmarshaller<AggregationConfig, JsonUnmarshallerContext>
+    public class MetadataCatalogDetailUnmarshaller : IUnmarshaller<MetadataCatalogDetail, XmlUnmarshallerContext>, IUnmarshaller<MetadataCatalogDetail, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AggregationConfig IUnmarshaller<AggregationConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MetadataCatalogDetail IUnmarshaller<MetadataCatalogDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,39 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AggregationConfig Unmarshall(JsonUnmarshallerContext context)
+        public MetadataCatalogDetail Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AggregationConfig unmarshalledObject = new AggregationConfig();
+            MetadataCatalogDetail unmarshalledObject = new MetadataCatalogDetail();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("aggregationType", targetDepth))
+                if (context.TestExpression("catalogType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AggregationType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CatalogType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("targetFileSize", targetDepth))
+                if (context.TestExpression("partitionRegistrationOutput", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.TargetFileSize = unmarshaller.Unmarshall(context);
+                    var unmarshaller = RegistrationOutputUnmarshaller.Instance;
+                    unmarshalledObject.PartitionRegistrationOutput = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("tableName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TableName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("tableRegistrationOutput", targetDepth))
+                {
+                    var unmarshaller = RegistrationOutputUnmarshaller.Instance;
+                    unmarshalledObject.TableRegistrationOutput = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +94,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         }
 
 
-        private static AggregationConfigUnmarshaller _instance = new AggregationConfigUnmarshaller();        
+        private static MetadataCatalogDetailUnmarshaller _instance = new MetadataCatalogDetailUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AggregationConfigUnmarshaller Instance
+        public static MetadataCatalogDetailUnmarshaller Instance
         {
             get
             {

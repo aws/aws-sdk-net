@@ -37,6 +37,7 @@ namespace Amazon.Appflow.Model
         private string _description;
         private List<DestinationFlowConfig> _destinationFlowConfigList = new List<DestinationFlowConfig>();
         private string _flowName;
+        private MetadataCatalogConfig _metadataCatalogConfig;
         private SourceFlowConfig _sourceFlowConfig;
         private List<Task> _tasks = new List<Task>();
         private TriggerConfig _triggerConfig;
@@ -98,6 +99,26 @@ namespace Amazon.Appflow.Model
         internal bool IsSetFlowName()
         {
             return this._flowName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetadataCatalogConfig. 
+        /// <para>
+        /// Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's
+        /// transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow,
+        /// it stores metadata in a data catalog.
+        /// </para>
+        /// </summary>
+        public MetadataCatalogConfig MetadataCatalogConfig
+        {
+            get { return this._metadataCatalogConfig; }
+            set { this._metadataCatalogConfig = value; }
+        }
+
+        // Check to see if MetadataCatalogConfig property is set
+        internal bool IsSetMetadataCatalogConfig()
+        {
+            return this._metadataCatalogConfig != null;
         }
 
         /// <summary>
