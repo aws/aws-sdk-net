@@ -70,9 +70,15 @@ namespace Amazon.Ivschat
     /// </para>
     ///  
     /// <para>
-    /// The following resource is part of Amazon IVS Chat:
+    /// The following resources are part of Amazon IVS Chat:
     /// </para>
     ///  <ul> <li> 
+    /// <para>
+    ///  <b>LoggingConfiguration</b> — A configuration that allows customers to store and
+    /// record sent messages in a chat room. See the Logging Configuration endpoints for more
+    /// information.
+    /// </para>
+    ///  </li> <li> 
     /// <para>
     ///  <b>Room</b> — The central Amazon IVS Chat resource through which clients connect
     /// to and exchange chat messages. See the Room endpoints for more information.
@@ -206,9 +212,11 @@ namespace Amazon.Ivschat
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>CreateChatToken</a> — Creates an encrypted token that is used to establish an
-    /// individual WebSocket connection to a room. The token is valid for one minute, and
-    /// a connection (session) established with the token is valid for the specified duration.
+    ///  <a>CreateChatToken</a> — Creates an encrypted token that is used by a chat participant
+    /// to establish an individual WebSocket chat connection to a room. When the token is
+    /// used to connect to chat, the connection is valid for the session duration specified
+    /// in the request. The token becomes invalid at the token-expiration timestamp included
+    /// in the response.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -234,6 +242,32 @@ namespace Amazon.Ivschat
     ///  </li> <li> 
     /// <para>
     ///  <a>UpdateRoom</a> — Updates a room’s configuration.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Logging Configuration Endpoints</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateLoggingConfiguration</a> — Creates a logging configuration that allows clients
+    /// to store and record sent messages.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteLoggingConfiguration</a> — Deletes the specified logging configuration.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetLoggingConfiguration</a> — Gets the specified logging configuration.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListLoggingConfigurations</a> — Gets summary information about all your logging
+    /// configurations in the AWS region where the API request is processed.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateLoggingConfiguration</a> — Updates a specified logging configuration.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -489,10 +523,23 @@ namespace Amazon.Ivschat
         #region  CreateChatToken
 
         /// <summary>
-        /// Creates an encrypted token that is used to establish an individual WebSocket connection
-        /// to a room. The token is valid for one minute, and a connection (session) established
-        /// with the token is valid for the specified duration.
+        /// Creates an encrypted token that is used by a chat participant to establish an individual
+        /// WebSocket chat connection to a room. When the token is used to connect to chat, the
+        /// connection is valid for the session duration specified in the request. The token becomes
+        /// invalid at the token-expiration timestamp included in the response.
         /// 
+        ///  
+        /// <para>
+        /// Use the <code>capabilities</code> field to permit an end user to send messages or
+        /// moderate a room.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>attributes</code> field securely attaches structured data to the chat session;
+        /// the data is included within each message sent by the end user and received by other
+        /// participants in the room. Common use cases for attributes include passing end-user
+        /// profile data like an icon, display name, colors, badges, and other display features.
+        /// </para>
         ///  
         /// <para>
         /// Encryption keys are owned by Amazon IVS Chat and never used directly by your application.
@@ -555,6 +602,78 @@ namespace Amazon.Ivschat
         public virtual CreateChatTokenResponse EndCreateChatToken(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateChatTokenResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateLoggingConfiguration
+
+        /// <summary>
+        /// Creates a logging configuration that allows clients to store and record sent messages.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLoggingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the CreateLoggingConfiguration service method, as returned by Ivschat.</returns>
+        /// <exception cref="Amazon.Ivschat.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Ivschat.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Ivschat.Model.PendingVerificationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Ivschat.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Ivschat.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Ivschat.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/CreateLoggingConfiguration">REST API Reference for CreateLoggingConfiguration Operation</seealso>
+        public virtual CreateLoggingConfigurationResponse CreateLoggingConfiguration(CreateLoggingConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLoggingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLoggingConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLoggingConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateLoggingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateLoggingConfiguration operation on AmazonIvschatClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLoggingConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/CreateLoggingConfiguration">REST API Reference for CreateLoggingConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginCreateLoggingConfiguration(CreateLoggingConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLoggingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLoggingConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateLoggingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLoggingConfiguration.</param>
+        /// 
+        /// <returns>Returns a  CreateLoggingConfigurationResult from Ivschat.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/CreateLoggingConfiguration">REST API Reference for CreateLoggingConfiguration Operation</seealso>
+        public virtual CreateLoggingConfigurationResponse EndCreateLoggingConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateLoggingConfigurationResponse>(asyncResult);
         }
 
         #endregion
@@ -627,6 +746,75 @@ namespace Amazon.Ivschat
         public virtual CreateRoomResponse EndCreateRoom(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateRoomResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteLoggingConfiguration
+
+        /// <summary>
+        /// Deletes the specified logging configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLoggingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLoggingConfiguration service method, as returned by Ivschat.</returns>
+        /// <exception cref="Amazon.Ivschat.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Ivschat.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Ivschat.Model.PendingVerificationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Ivschat.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Ivschat.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/DeleteLoggingConfiguration">REST API Reference for DeleteLoggingConfiguration Operation</seealso>
+        public virtual DeleteLoggingConfigurationResponse DeleteLoggingConfiguration(DeleteLoggingConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLoggingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLoggingConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLoggingConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteLoggingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLoggingConfiguration operation on AmazonIvschatClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLoggingConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/DeleteLoggingConfiguration">REST API Reference for DeleteLoggingConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginDeleteLoggingConfiguration(DeleteLoggingConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLoggingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLoggingConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteLoggingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLoggingConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteLoggingConfigurationResult from Ivschat.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/DeleteLoggingConfiguration">REST API Reference for DeleteLoggingConfiguration Operation</seealso>
+        public virtual DeleteLoggingConfigurationResponse EndDeleteLoggingConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteLoggingConfigurationResponse>(asyncResult);
         }
 
         #endregion
@@ -835,6 +1023,69 @@ namespace Amazon.Ivschat
 
         #endregion
         
+        #region  GetLoggingConfiguration
+
+        /// <summary>
+        /// Gets the specified logging configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLoggingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetLoggingConfiguration service method, as returned by Ivschat.</returns>
+        /// <exception cref="Amazon.Ivschat.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Ivschat.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Ivschat.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/GetLoggingConfiguration">REST API Reference for GetLoggingConfiguration Operation</seealso>
+        public virtual GetLoggingConfigurationResponse GetLoggingConfiguration(GetLoggingConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLoggingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLoggingConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetLoggingConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLoggingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLoggingConfiguration operation on AmazonIvschatClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetLoggingConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/GetLoggingConfiguration">REST API Reference for GetLoggingConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginGetLoggingConfiguration(GetLoggingConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLoggingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLoggingConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetLoggingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetLoggingConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetLoggingConfigurationResult from Ivschat.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/GetLoggingConfiguration">REST API Reference for GetLoggingConfiguration Operation</seealso>
+        public virtual GetLoggingConfigurationResponse EndGetLoggingConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetLoggingConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetRoom
 
         /// <summary>
@@ -894,6 +1145,67 @@ namespace Amazon.Ivschat
         public virtual GetRoomResponse EndGetRoom(IAsyncResult asyncResult)
         {
             return EndInvoke<GetRoomResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListLoggingConfigurations
+
+        /// <summary>
+        /// Gets summary information about all your logging configurations in the AWS region where
+        /// the API request is processed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLoggingConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListLoggingConfigurations service method, as returned by Ivschat.</returns>
+        /// <exception cref="Amazon.Ivschat.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Ivschat.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/ListLoggingConfigurations">REST API Reference for ListLoggingConfigurations Operation</seealso>
+        public virtual ListLoggingConfigurationsResponse ListLoggingConfigurations(ListLoggingConfigurationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLoggingConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLoggingConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListLoggingConfigurationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListLoggingConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListLoggingConfigurations operation on AmazonIvschatClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListLoggingConfigurations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/ListLoggingConfigurations">REST API Reference for ListLoggingConfigurations Operation</seealso>
+        public virtual IAsyncResult BeginListLoggingConfigurations(ListLoggingConfigurationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLoggingConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLoggingConfigurationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListLoggingConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListLoggingConfigurations.</param>
+        /// 
+        /// <returns>Returns a  ListLoggingConfigurationsResult from Ivschat.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/ListLoggingConfigurations">REST API Reference for ListLoggingConfigurations Operation</seealso>
+        public virtual ListLoggingConfigurationsResponse EndListLoggingConfigurations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListLoggingConfigurationsResponse>(asyncResult);
         }
 
         #endregion
@@ -1215,6 +1527,72 @@ namespace Amazon.Ivschat
         public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<UntagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateLoggingConfiguration
+
+        /// <summary>
+        /// Updates a specified logging configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLoggingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateLoggingConfiguration service method, as returned by Ivschat.</returns>
+        /// <exception cref="Amazon.Ivschat.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Ivschat.Model.PendingVerificationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Ivschat.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Ivschat.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/UpdateLoggingConfiguration">REST API Reference for UpdateLoggingConfiguration Operation</seealso>
+        public virtual UpdateLoggingConfigurationResponse UpdateLoggingConfiguration(UpdateLoggingConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLoggingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLoggingConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateLoggingConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateLoggingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLoggingConfiguration operation on AmazonIvschatClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateLoggingConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/UpdateLoggingConfiguration">REST API Reference for UpdateLoggingConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginUpdateLoggingConfiguration(UpdateLoggingConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLoggingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLoggingConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateLoggingConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateLoggingConfiguration.</param>
+        /// 
+        /// <returns>Returns a  UpdateLoggingConfigurationResult from Ivschat.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/UpdateLoggingConfiguration">REST API Reference for UpdateLoggingConfiguration Operation</seealso>
+        public virtual UpdateLoggingConfigurationResponse EndUpdateLoggingConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateLoggingConfigurationResponse>(asyncResult);
         }
 
         #endregion

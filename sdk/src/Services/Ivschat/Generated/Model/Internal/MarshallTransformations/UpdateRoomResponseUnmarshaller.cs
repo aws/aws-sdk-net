@@ -69,6 +69,12 @@ namespace Amazon.Ivschat.Model.Internal.MarshallTransformations
                     response.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("loggingConfigurationIdentifiers", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.LoggingConfigurationIdentifiers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("maximumMessageLength", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

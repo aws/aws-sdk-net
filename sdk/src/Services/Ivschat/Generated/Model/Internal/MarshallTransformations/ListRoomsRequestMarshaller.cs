@@ -65,6 +65,12 @@ namespace Amazon.Ivschat.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetLoggingConfigurationIdentifier())
+                {
+                    context.Writer.WritePropertyName("loggingConfigurationIdentifier");
+                    context.Writer.Write(publicRequest.LoggingConfigurationIdentifier);
+                }
+
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("maxResults");

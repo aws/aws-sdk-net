@@ -35,10 +35,30 @@ namespace Amazon.Ivschat.Model
     /// </summary>
     public partial class ListRoomsRequest : AmazonIvschatRequest
     {
+        private string _loggingConfigurationIdentifier;
         private int? _maxResults;
         private string _messageReviewHandlerUri;
         private string _name;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property LoggingConfigurationIdentifier. 
+        /// <para>
+        /// Logging-configuration identifier.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string LoggingConfigurationIdentifier
+        {
+            get { return this._loggingConfigurationIdentifier; }
+            set { this._loggingConfigurationIdentifier = value; }
+        }
+
+        // Check to see if LoggingConfigurationIdentifier property is set
+        internal bool IsSetLoggingConfigurationIdentifier()
+        {
+            return this._loggingConfigurationIdentifier != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 

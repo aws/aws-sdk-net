@@ -73,9 +73,15 @@ namespace Amazon.Ivschat
     /// </para>
     ///  
     /// <para>
-    /// The following resource is part of Amazon IVS Chat:
+    /// The following resources are part of Amazon IVS Chat:
     /// </para>
     ///  <ul> <li> 
+    /// <para>
+    ///  <b>LoggingConfiguration</b> — A configuration that allows customers to store and
+    /// record sent messages in a chat room. See the Logging Configuration endpoints for more
+    /// information.
+    /// </para>
+    ///  </li> <li> 
     /// <para>
     ///  <b>Room</b> — The central Amazon IVS Chat resource through which clients connect
     /// to and exchange chat messages. See the Room endpoints for more information.
@@ -209,9 +215,11 @@ namespace Amazon.Ivschat
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>CreateChatToken</a> — Creates an encrypted token that is used to establish an
-    /// individual WebSocket connection to a room. The token is valid for one minute, and
-    /// a connection (session) established with the token is valid for the specified duration.
+    ///  <a>CreateChatToken</a> — Creates an encrypted token that is used by a chat participant
+    /// to establish an individual WebSocket chat connection to a room. When the token is
+    /// used to connect to chat, the connection is valid for the session duration specified
+    /// in the request. The token becomes invalid at the token-expiration timestamp included
+    /// in the response.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -237,6 +245,32 @@ namespace Amazon.Ivschat
     ///  </li> <li> 
     /// <para>
     ///  <a>UpdateRoom</a> — Updates a room’s configuration.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Logging Configuration Endpoints</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateLoggingConfiguration</a> — Creates a logging configuration that allows clients
+    /// to store and record sent messages.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteLoggingConfiguration</a> — Deletes the specified logging configuration.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetLoggingConfiguration</a> — Gets the specified logging configuration.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListLoggingConfigurations</a> — Gets summary information about all your logging
+    /// configurations in the AWS region where the API request is processed.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateLoggingConfiguration</a> — Updates a specified logging configuration.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -503,10 +537,23 @@ namespace Amazon.Ivschat
 
 
         /// <summary>
-        /// Creates an encrypted token that is used to establish an individual WebSocket connection
-        /// to a room. The token is valid for one minute, and a connection (session) established
-        /// with the token is valid for the specified duration.
+        /// Creates an encrypted token that is used by a chat participant to establish an individual
+        /// WebSocket chat connection to a room. When the token is used to connect to chat, the
+        /// connection is valid for the session duration specified in the request. The token becomes
+        /// invalid at the token-expiration timestamp included in the response.
         /// 
+        ///  
+        /// <para>
+        /// Use the <code>capabilities</code> field to permit an end user to send messages or
+        /// moderate a room.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>attributes</code> field securely attaches structured data to the chat session;
+        /// the data is included within each message sent by the end user and received by other
+        /// participants in the room. Common use cases for attributes include passing end-user
+        /// profile data like an icon, display name, colors, badges, and other display features.
+        /// </para>
         ///  
         /// <para>
         /// Encryption keys are owned by Amazon IVS Chat and never used directly by your application.
@@ -538,6 +585,58 @@ namespace Amazon.Ivschat
             options.ResponseUnmarshaller = CreateChatTokenResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateChatTokenResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateLoggingConfiguration
+
+        internal virtual CreateLoggingConfigurationResponse CreateLoggingConfiguration(CreateLoggingConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLoggingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLoggingConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLoggingConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a logging configuration that allows clients to store and record sent messages.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLoggingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLoggingConfiguration service method, as returned by Ivschat.</returns>
+        /// <exception cref="Amazon.Ivschat.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Ivschat.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Ivschat.Model.PendingVerificationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Ivschat.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Ivschat.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Ivschat.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/CreateLoggingConfiguration">REST API Reference for CreateLoggingConfiguration Operation</seealso>
+        public virtual Task<CreateLoggingConfigurationResponse> CreateLoggingConfigurationAsync(CreateLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLoggingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLoggingConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateLoggingConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -590,6 +689,55 @@ namespace Amazon.Ivschat
             options.ResponseUnmarshaller = CreateRoomResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateRoomResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteLoggingConfiguration
+
+        internal virtual DeleteLoggingConfigurationResponse DeleteLoggingConfiguration(DeleteLoggingConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLoggingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLoggingConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLoggingConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the specified logging configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLoggingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteLoggingConfiguration service method, as returned by Ivschat.</returns>
+        /// <exception cref="Amazon.Ivschat.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Ivschat.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Ivschat.Model.PendingVerificationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Ivschat.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Ivschat.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/DeleteLoggingConfiguration">REST API Reference for DeleteLoggingConfiguration Operation</seealso>
+        public virtual Task<DeleteLoggingConfigurationResponse> DeleteLoggingConfigurationAsync(DeleteLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLoggingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLoggingConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteLoggingConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -738,6 +886,49 @@ namespace Amazon.Ivschat
 
         #endregion
         
+        #region  GetLoggingConfiguration
+
+        internal virtual GetLoggingConfigurationResponse GetLoggingConfiguration(GetLoggingConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLoggingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLoggingConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetLoggingConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets the specified logging configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLoggingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetLoggingConfiguration service method, as returned by Ivschat.</returns>
+        /// <exception cref="Amazon.Ivschat.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Ivschat.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Ivschat.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/GetLoggingConfiguration">REST API Reference for GetLoggingConfiguration Operation</seealso>
+        public virtual Task<GetLoggingConfigurationResponse> GetLoggingConfigurationAsync(GetLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLoggingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLoggingConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetLoggingConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetRoom
 
         internal virtual GetRoomResponse GetRoom(GetRoomRequest request)
@@ -777,6 +968,47 @@ namespace Amazon.Ivschat
             options.ResponseUnmarshaller = GetRoomResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetRoomResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListLoggingConfigurations
+
+        internal virtual ListLoggingConfigurationsResponse ListLoggingConfigurations(ListLoggingConfigurationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLoggingConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLoggingConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListLoggingConfigurationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets summary information about all your logging configurations in the AWS region where
+        /// the API request is processed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLoggingConfigurations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListLoggingConfigurations service method, as returned by Ivschat.</returns>
+        /// <exception cref="Amazon.Ivschat.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Ivschat.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/ListLoggingConfigurations">REST API Reference for ListLoggingConfigurations Operation</seealso>
+        public virtual Task<ListLoggingConfigurationsResponse> ListLoggingConfigurationsAsync(ListLoggingConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLoggingConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLoggingConfigurationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListLoggingConfigurationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -998,6 +1230,52 @@ namespace Amazon.Ivschat
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateLoggingConfiguration
+
+        internal virtual UpdateLoggingConfigurationResponse UpdateLoggingConfiguration(UpdateLoggingConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLoggingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLoggingConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateLoggingConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates a specified logging configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLoggingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateLoggingConfiguration service method, as returned by Ivschat.</returns>
+        /// <exception cref="Amazon.Ivschat.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Ivschat.Model.PendingVerificationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Ivschat.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Ivschat.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/UpdateLoggingConfiguration">REST API Reference for UpdateLoggingConfiguration Operation</seealso>
+        public virtual Task<UpdateLoggingConfigurationResponse> UpdateLoggingConfigurationAsync(UpdateLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateLoggingConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLoggingConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateLoggingConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion

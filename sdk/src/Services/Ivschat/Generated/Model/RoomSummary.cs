@@ -36,6 +36,7 @@ namespace Amazon.Ivschat.Model
         private string _arn;
         private DateTime? _createTime;
         private string _id;
+        private List<string> _loggingConfigurationIdentifiers = new List<string>();
         private MessageReviewHandler _messageReviewHandler;
         private string _name;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -100,6 +101,25 @@ namespace Amazon.Ivschat.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LoggingConfigurationIdentifiers. 
+        /// <para>
+        /// List of logging-configuration identifiers attached to the room.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=3)]
+        public List<string> LoggingConfigurationIdentifiers
+        {
+            get { return this._loggingConfigurationIdentifiers; }
+            set { this._loggingConfigurationIdentifiers = value; }
+        }
+
+        // Check to see if LoggingConfigurationIdentifiers property is set
+        internal bool IsSetLoggingConfigurationIdentifiers()
+        {
+            return this._loggingConfigurationIdentifiers != null && this._loggingConfigurationIdentifiers.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property MessageReviewHandler. 
         /// <para>
         /// Configuration information for optional review of messages.
@@ -139,7 +159,8 @@ namespace Amazon.Ivschat.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags attached to the resource. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// Tags attached to the resource. Array of maps, each of the form <code>string:string
+        /// (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
         /// AWS Resources</a> for details, including restrictions that apply to tags and "Tag
         /// naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is
         /// documented there.

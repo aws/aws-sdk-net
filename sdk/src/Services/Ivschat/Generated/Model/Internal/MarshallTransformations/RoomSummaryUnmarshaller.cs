@@ -82,6 +82,12 @@ namespace Amazon.Ivschat.Model.Internal.MarshallTransformations
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("loggingConfigurationIdentifiers", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.LoggingConfigurationIdentifiers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("messageReviewHandler", targetDepth))
                 {
                     var unmarshaller = MessageReviewHandlerUnmarshaller.Instance;

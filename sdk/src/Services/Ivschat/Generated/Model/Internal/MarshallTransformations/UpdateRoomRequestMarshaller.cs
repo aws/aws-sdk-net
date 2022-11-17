@@ -71,6 +71,17 @@ namespace Amazon.Ivschat.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Identifier);
                 }
 
+                if(publicRequest.IsSetLoggingConfigurationIdentifiers())
+                {
+                    context.Writer.WritePropertyName("loggingConfigurationIdentifiers");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestLoggingConfigurationIdentifiersListValue in publicRequest.LoggingConfigurationIdentifiers)
+                    {
+                            context.Writer.Write(publicRequestLoggingConfigurationIdentifiersListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetMaximumMessageLength())
                 {
                     context.Writer.WritePropertyName("maximumMessageLength");

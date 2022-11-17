@@ -26,6 +26,11 @@ namespace Amazon.Ivschat.Model
     {
 
         /// <summary>
+        /// Paginator for ListLoggingConfigurations operation
+        ///</summary>
+        IListLoggingConfigurationsPaginator ListLoggingConfigurations(ListLoggingConfigurationsRequest request);
+
+        /// <summary>
         /// Paginator for ListRooms operation
         ///</summary>
         IListRoomsPaginator ListRooms(ListRoomsRequest request);
