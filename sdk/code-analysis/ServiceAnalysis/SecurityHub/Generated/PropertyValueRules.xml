@@ -2967,6 +2967,10 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsLambdaFunctionDetails.PackageType</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityHub.Model.AwsLambdaFunctionDetails.RevisionId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -5075,6 +5079,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.SoftwarePackage.Remediation</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.SoftwarePackage.SourceLayerArn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.SoftwarePackage.SourceLayerHash</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>

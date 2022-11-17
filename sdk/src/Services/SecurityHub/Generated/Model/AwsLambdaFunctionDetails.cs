@@ -29,10 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Details about a function's configuration.
+    /// Details about an Lambda function's configuration.
     /// </summary>
     public partial class AwsLambdaFunctionDetails
     {
+        private List<string> _architectures = new List<string>();
         private AwsLambdaFunctionCode _code;
         private string _codeSha256;
         private AwsLambdaFunctionDeadLetterConfig _deadLetterConfig;
@@ -44,6 +45,7 @@ namespace Amazon.SecurityHub.Model
         private List<AwsLambdaFunctionLayer> _layers = new List<AwsLambdaFunctionLayer>();
         private string _masterArn;
         private int? _memorySize;
+        private string _packageType;
         private string _revisionId;
         private string _role;
         private string _runtime;
@@ -51,6 +53,25 @@ namespace Amazon.SecurityHub.Model
         private AwsLambdaFunctionTracingConfig _tracingConfig;
         private string _version;
         private AwsLambdaFunctionVpcConfig _vpcConfig;
+
+        /// <summary>
+        /// Gets and sets the property Architectures. 
+        /// <para>
+        /// The instruction set architecture that the function uses. Valid values are <code>x86_64</code>
+        /// or <code>arm64</code>.
+        /// </para>
+        /// </summary>
+        public List<string> Architectures
+        {
+            get { return this._architectures; }
+            set { this._architectures = value; }
+        }
+
+        // Check to see if Architectures property is set
+        internal bool IsSetArchitectures()
+        {
+            return this._architectures != null && this._architectures.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Code. 
@@ -255,6 +276,26 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetMemorySize()
         {
             return this._memorySize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PackageType. 
+        /// <para>
+        /// The type of deployment package that's used to deploy the function code to Lambda.
+        /// Set to <code>Image</code> for a container image and <code>Zip</code> for a .zip file
+        /// archive. 
+        /// </para>
+        /// </summary>
+        public string PackageType
+        {
+            get { return this._packageType; }
+            set { this._packageType = value; }
+        }
+
+        // Check to see if PackageType property is set
+        internal bool IsSetPackageType()
+        {
+            return this._packageType != null;
         }
 
         /// <summary>

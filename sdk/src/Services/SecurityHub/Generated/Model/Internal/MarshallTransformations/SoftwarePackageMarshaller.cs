@@ -93,6 +93,18 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Remediation);
             }
 
+            if(requestObject.IsSetSourceLayerArn())
+            {
+                context.Writer.WritePropertyName("SourceLayerArn");
+                context.Writer.Write(requestObject.SourceLayerArn);
+            }
+
+            if(requestObject.IsSetSourceLayerHash())
+            {
+                context.Writer.WritePropertyName("SourceLayerHash");
+                context.Writer.Write(requestObject.SourceLayerHash);
+            }
+
             if(requestObject.IsSetVersion())
             {
                 context.Writer.WritePropertyName("Version");

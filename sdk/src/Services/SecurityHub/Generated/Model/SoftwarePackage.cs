@@ -41,6 +41,8 @@ namespace Amazon.SecurityHub.Model
         private string _packageManager;
         private string _release;
         private string _remediation;
+        private string _sourceLayerArn;
+        private string _sourceLayerHash;
         private string _version;
 
         /// <summary>
@@ -187,6 +189,42 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetRemediation()
         {
             return this._remediation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceLayerArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the source layer. 
+        /// </para>
+        /// </summary>
+        public string SourceLayerArn
+        {
+            get { return this._sourceLayerArn; }
+            set { this._sourceLayerArn = value; }
+        }
+
+        // Check to see if SourceLayerArn property is set
+        internal bool IsSetSourceLayerArn()
+        {
+            return this._sourceLayerArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceLayerHash. 
+        /// <para>
+        /// The source layer hash of the vulnerable package. 
+        /// </para>
+        /// </summary>
+        public string SourceLayerHash
+        {
+            get { return this._sourceLayerHash; }
+            set { this._sourceLayerHash = value; }
+        }
+
+        // Check to see if SourceLayerHash property is set
+        internal bool IsSetSourceLayerHash()
+        {
+            return this._sourceLayerHash != null;
         }
 
         /// <summary>

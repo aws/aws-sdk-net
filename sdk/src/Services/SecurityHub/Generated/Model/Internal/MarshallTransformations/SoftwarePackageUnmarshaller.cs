@@ -112,6 +112,18 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.Remediation = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SourceLayerArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceLayerArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SourceLayerHash", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceLayerHash = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Version", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
