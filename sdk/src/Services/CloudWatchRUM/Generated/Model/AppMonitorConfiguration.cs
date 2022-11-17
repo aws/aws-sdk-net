@@ -176,8 +176,11 @@ namespace Amazon.CloudWatchRUM.Model
         /// If this app monitor is to collect data from only certain pages in your application,
         /// this structure lists those pages. 
         /// </para>
-        ///  <pre><code> &lt;p&gt;You can't include both &lt;code&gt;ExcludedPages&lt;/code&gt;
-        /// and &lt;code&gt;IncludedPages&lt;/code&gt; in the same operation.&lt;/p&gt; </code></pre>
+        ///  
+        /// <para>
+        /// You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in
+        /// the same operation.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public List<string> IncludedPages

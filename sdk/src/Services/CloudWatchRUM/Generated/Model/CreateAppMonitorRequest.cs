@@ -51,6 +51,7 @@ namespace Amazon.CloudWatchRUM.Model
     public partial class CreateAppMonitorRequest : AmazonCloudWatchRUMRequest
     {
         private AppMonitorConfiguration _appMonitorConfiguration;
+        private CustomEvents _customEvents;
         private bool? _cwLogEnabled;
         private string _domain;
         private string _name;
@@ -82,6 +83,30 @@ namespace Amazon.CloudWatchRUM.Model
         internal bool IsSetAppMonitorConfiguration()
         {
             return this._appMonitorConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomEvents. 
+        /// <para>
+        /// Specifies whether this app monitor allows the web client to define and send custom
+        /// events. If you omit this parameter, custom events are <code>DISABLED</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about custom events, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send
+        /// custom events</a>.
+        /// </para>
+        /// </summary>
+        public CustomEvents CustomEvents
+        {
+            get { return this._customEvents; }
+            set { this._customEvents = value; }
+        }
+
+        // Check to see if CustomEvents property is set
+        internal bool IsSetCustomEvents()
+        {
+            return this._customEvents != null;
         }
 
         /// <summary>
@@ -163,9 +188,15 @@ namespace Amazon.CloudWatchRUM.Model
         /// Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly
         /// as strings of characters.
         /// </para>
-        ///  <pre><code> &lt;p&gt;You can associate as many as 50 tags with an app monitor.&lt;/p&gt;
-        /// &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html&quot;&gt;Tagging
-        /// Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code></pre>
+        ///  
+        /// <para>
+        /// You can associate as many as 50 tags with an app monitor.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// Amazon Web Services resources</a>.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
         {

@@ -37,6 +37,7 @@ namespace Amazon.CloudWatchRUM.Model
     {
         private AppMonitorConfiguration _appMonitorConfiguration;
         private string _created;
+        private CustomEvents _customEvents;
         private DataStorage _dataStorage;
         private string _domain;
         private string _id;
@@ -80,6 +81,30 @@ namespace Amazon.CloudWatchRUM.Model
         internal bool IsSetCreated()
         {
             return this._created != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomEvents. 
+        /// <para>
+        /// Specifies whether this app monitor allows the web client to define and send custom
+        /// events.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about custom events, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send
+        /// custom events</a>.
+        /// </para>
+        /// </summary>
+        public CustomEvents CustomEvents
+        {
+            get { return this._customEvents; }
+            set { this._customEvents = value; }
+        }
+
+        // Check to see if CustomEvents property is set
+        internal bool IsSetCustomEvents()
+        {
+            return this._customEvents != null;
         }
 
         /// <summary>

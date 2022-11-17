@@ -76,6 +76,17 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetCustomEvents())
+                {
+                    context.Writer.WritePropertyName("CustomEvents");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CustomEventsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CustomEvents, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetCwLogEnabled())
                 {
                     context.Writer.WritePropertyName("CwLogEnabled");

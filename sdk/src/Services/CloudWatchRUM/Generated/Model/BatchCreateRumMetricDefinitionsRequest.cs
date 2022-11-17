@@ -53,15 +53,28 @@ namespace Amazon.CloudWatchRUM.Model
     /// The maximum number of metric definitions that you can specify in one <code>BatchCreateRumMetricDefinitions</code>
     /// operation is 200.
     /// </para>
-    ///  <pre><code> &lt;p&gt;The maximum number of metric definitions that one destination
-    /// can contain is 2000.&lt;/p&gt; &lt;p&gt;Extended metrics sent are charged as CloudWatch
-    /// custom metrics. Each combination of additional dimension name and dimension value
-    /// counts as a custom metric. For more information, see &lt;a href=&quot;https://aws.amazon.com/cloudwatch/pricing/&quot;&gt;Amazon
-    /// CloudWatch Pricing&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;You must have already created a destination
-    /// for the metrics before you send them. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_PutRumMetricsDestination.html&quot;&gt;PutRumMetricsDestination&lt;/a&gt;.&lt;/p&gt;
-    /// &lt;p&gt;If some metric definitions specified in a &lt;code&gt;BatchCreateRumMetricDefinitions&lt;/code&gt;
+    ///  
+    /// <para>
+    /// The maximum number of metric definitions that one destination can contain is 2000.
+    /// </para>
+    ///  
+    /// <para>
+    /// Extended metrics sent are charged as CloudWatch custom metrics. Each combination of
+    /// additional dimension name and dimension value counts as a custom metric. For more
+    /// information, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
+    /// Pricing</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// You must have already created a destination for the metrics before you send them.
+    /// For more information, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_PutRumMetricsDestination.html">PutRumMetricsDestination</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// If some metric definitions specified in a <code>BatchCreateRumMetricDefinitions</code>
     /// operations are not valid, those metric definitions fail and return errors, but all
-    /// valid metric definitions in the same operation still succeed.&lt;/p&gt; </code></pre>
+    /// valid metric definitions in the same operation still succeed.
+    /// </para>
     /// </summary>
     public partial class BatchCreateRumMetricDefinitionsRequest : AmazonCloudWatchRUMRequest
     {

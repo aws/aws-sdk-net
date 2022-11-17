@@ -76,6 +76,12 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
                     unmarshalledObject.Created = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CustomEvents", targetDepth))
+                {
+                    var unmarshaller = CustomEventsUnmarshaller.Instance;
+                    unmarshalledObject.CustomEvents = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DataStorage", targetDepth))
                 {
                     var unmarshaller = DataStorageUnmarshaller.Instance;

@@ -152,8 +152,10 @@ namespace Amazon.CloudWatchRUM.Model
         /// <para>
         ///  <code>"event_details.fileType": "FileType"</code> 
         /// </para>
-        ///  </li> </ul> <pre><code> &lt;p&gt; All dimensions listed in this field must also be
-        /// included in &lt;code&gt;EventPattern&lt;/code&gt;.&lt;/p&gt; </code></pre>
+        ///  </li> </ul> 
+        /// <para>
+        ///  All dimensions listed in this field must also be included in <code>EventPattern</code>.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> DimensionKeys
         {
