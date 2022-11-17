@@ -31,6 +31,11 @@
     <pattern>^(\*[\w\d-]*\.)?([\w\d-]+\.)+[\w\d-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppSync.Model.CreateFunctionRequest.Code</property>
+    <min>1</min>
+    <max>32768</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppSync.Model.CreateFunctionRequest.DataSourceName</property>
     <min>1</min>
     <max>65536</max>
@@ -58,6 +63,11 @@
     <min>1</min>
     <max>65536</max>
     <pattern>^.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.CreateResolverRequest.Code</property>
+    <min>1</min>
+    <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.CreateResolverRequest.DataSourceName</property>
@@ -135,6 +145,23 @@
     <min>1</min>
     <max>253</max>
     <pattern>^(\*[\w\d-]*\.)?([\w\d-]+\.)+[\w\d-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.EvaluateCodeRequest.Code</property>
+    <min>1</min>
+    <max>32768</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.EvaluateCodeRequest.Context</property>
+    <min>2</min>
+    <max>28000</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.EvaluateCodeResponse.EvaluationResult</property>
+    <min>0</min>
+    <max>65536</max>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.EvaluateMappingTemplateRequest.Context</property>
@@ -369,6 +396,11 @@
     <pattern>^(\*[\w\d-]*\.)?([\w\d-]+\.)+[\w\d-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppSync.Model.UpdateFunctionRequest.Code</property>
+    <min>1</min>
+    <max>32768</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppSync.Model.UpdateFunctionRequest.DataSourceName</property>
     <min>1</min>
     <max>65536</max>
@@ -402,6 +434,11 @@
     <min>1</min>
     <max>65536</max>
     <pattern>^.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.UpdateResolverRequest.Code</property>
+    <min>1</min>
+    <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.UpdateResolverRequest.DataSourceName</property>
@@ -475,6 +512,11 @@
     <pattern>^(\*[\w\d-]*\.)?([\w\d-]+\.)+[\w\d-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppSync.Model.FunctionConfiguration.Code</property>
+    <min>1</min>
+    <max>32768</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppSync.Model.FunctionConfiguration.DataSourceName</property>
     <min>1</min>
     <max>65536</max>
@@ -513,6 +555,11 @@
     <property>Amazon.AppSync.Model.LambdaAuthorizerConfig.AuthorizerResultTtlInSeconds</property>
     <min>0</min>
     <max>3600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.Resolver.Code</property>
+    <min>1</min>
+    <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.Resolver.DataSourceName</property>

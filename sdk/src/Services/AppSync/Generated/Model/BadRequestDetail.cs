@@ -29,29 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppSync.Model
 {
     /// <summary>
-    /// Contains the list of errors generated. When using JavaScript, this will apply to the
-    /// request or response function evaluation.
+    /// Provides further details for the reason behind the bad request. For reason type <code>CODE_ERROR</code>,
+    /// the detail will contain a list of code errors.
     /// </summary>
-    public partial class ErrorDetail
+    public partial class BadRequestDetail
     {
-        private string _message;
+        private List<CodeError> _codeErrors = new List<CodeError>();
 
         /// <summary>
-        /// Gets and sets the property Message. 
+        /// Gets and sets the property CodeErrors. 
         /// <para>
-        /// The error payload.
+        /// Contains the list of errors in the request.
         /// </para>
         /// </summary>
-        public string Message
+        public List<CodeError> CodeErrors
         {
-            get { return this._message; }
-            set { this._message = value; }
+            get { return this._codeErrors; }
+            set { this._codeErrors = value; }
         }
 
-        // Check to see if Message property is set
-        internal bool IsSetMessage()
+        // Check to see if CodeErrors property is set
+        internal bool IsSetCodeErrors()
         {
-            return this._message != null;
+            return this._codeErrors != null && this._codeErrors.Count > 0; 
         }
 
     }

@@ -63,6 +63,12 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     response.EvaluationResult = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("logs", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.Logs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

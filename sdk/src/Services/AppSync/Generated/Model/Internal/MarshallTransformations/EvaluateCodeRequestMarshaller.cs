@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateFunction Request Marshaller
+    /// EvaluateCode Request Marshaller
     /// </summary>       
-    public class UpdateFunctionRequestMarshaller : IMarshaller<IRequest, UpdateFunctionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class EvaluateCodeRequestMarshaller : IMarshaller<IRequest, EvaluateCodeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateFunctionRequest)input);
+            return this.Marshall((EvaluateCodeRequest)input);
         }
 
         /// <summary>
@@ -52,20 +52,14 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateFunctionRequest publicRequest)
+        public IRequest Marshall(EvaluateCodeRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AppSync");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";
             request.HttpMethod = "POST";
 
-            if (!publicRequest.IsSetApiId())
-                throw new AmazonAppSyncException("Request object does not have required field ApiId set");
-            request.AddPathResource("{apiId}", StringUtils.FromString(publicRequest.ApiId));
-            if (!publicRequest.IsSetFunctionId())
-                throw new AmazonAppSyncException("Request object does not have required field FunctionId set");
-            request.AddPathResource("{functionId}", StringUtils.FromString(publicRequest.FunctionId));
-            request.ResourcePath = "/v1/apis/{apiId}/functions/{functionId}";
+            request.ResourcePath = "/v1/dataplane-evaluatecode";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -77,46 +71,16 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Code);
                 }
 
-                if(publicRequest.IsSetDataSourceName())
+                if(publicRequest.IsSetContext())
                 {
-                    context.Writer.WritePropertyName("dataSourceName");
-                    context.Writer.Write(publicRequest.DataSourceName);
+                    context.Writer.WritePropertyName("context");
+                    context.Writer.Write(publicRequest.Context);
                 }
 
-                if(publicRequest.IsSetDescription())
+                if(publicRequest.IsSetFunction())
                 {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetFunctionVersion())
-                {
-                    context.Writer.WritePropertyName("functionVersion");
-                    context.Writer.Write(publicRequest.FunctionVersion);
-                }
-
-                if(publicRequest.IsSetMaxBatchSize())
-                {
-                    context.Writer.WritePropertyName("maxBatchSize");
-                    context.Writer.Write(publicRequest.MaxBatchSize);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetRequestMappingTemplate())
-                {
-                    context.Writer.WritePropertyName("requestMappingTemplate");
-                    context.Writer.Write(publicRequest.RequestMappingTemplate);
-                }
-
-                if(publicRequest.IsSetResponseMappingTemplate())
-                {
-                    context.Writer.WritePropertyName("responseMappingTemplate");
-                    context.Writer.Write(publicRequest.ResponseMappingTemplate);
+                    context.Writer.WritePropertyName("function");
+                    context.Writer.Write(publicRequest.Function);
                 }
 
                 if(publicRequest.IsSetRuntime())
@@ -130,17 +94,6 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSyncConfig())
-                {
-                    context.Writer.WritePropertyName("syncConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SyncConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SyncConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
@@ -149,9 +102,9 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static UpdateFunctionRequestMarshaller _instance = new UpdateFunctionRequestMarshaller();        
+        private static EvaluateCodeRequestMarshaller _instance = new EvaluateCodeRequestMarshaller();        
 
-        internal static UpdateFunctionRequestMarshaller GetInstance()
+        internal static EvaluateCodeRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -159,7 +112,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateFunctionRequestMarshaller Instance
+        public static EvaluateCodeRequestMarshaller Instance
         {
             get
             {

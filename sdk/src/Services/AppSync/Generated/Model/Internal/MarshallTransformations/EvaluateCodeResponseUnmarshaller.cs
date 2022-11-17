@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateResolver operation
+    /// Response Unmarshaller for EvaluateCode operation
     /// </summary>  
-    public class CreateResolverResponseUnmarshaller : JsonResponseUnmarshaller
+    public class EvaluateCodeResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,28 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateResolverResponse response = new CreateResolverResponse();
+            EvaluateCodeResponse response = new EvaluateCodeResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("resolver", targetDepth))
+                if (context.TestExpression("error", targetDepth))
                 {
-                    var unmarshaller = ResolverUnmarshaller.Instance;
-                    response.Resolver = unmarshaller.Unmarshall(context);
+                    var unmarshaller = EvaluateCodeErrorDetailUnmarshaller.Instance;
+                    response.Error = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("evaluationResult", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.EvaluationResult = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("logs", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.Logs = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -80,33 +92,25 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
+                {
+                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("BadRequestException"))
                 {
                     return BadRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConcurrentModificationException"))
-                {
-                    return ConcurrentModificationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalFailureException"))
                 {
                     return InternalFailureExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("NotFoundException"))
-                {
-                    return NotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("UnauthorizedException"))
-                {
-                    return UnauthorizedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
             }
             return new AmazonAppSyncException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreateResolverResponseUnmarshaller _instance = new CreateResolverResponseUnmarshaller();        
+        private static EvaluateCodeResponseUnmarshaller _instance = new EvaluateCodeResponseUnmarshaller();        
 
-        internal static CreateResolverResponseUnmarshaller GetInstance()
+        internal static EvaluateCodeResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -114,7 +118,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateResolverResponseUnmarshaller Instance
+        public static EvaluateCodeResponseUnmarshaller Instance
         {
             get
             {

@@ -458,6 +458,10 @@ namespace Amazon.AppSync
         /// <param name="request">Container for the necessary parameters to execute the CreateResolver service method.</param>
         /// 
         /// <returns>The response from the CreateResolver service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
         /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
         /// Another modification is in progress at this time and it must complete before you can
         /// make your change.
@@ -913,6 +917,10 @@ namespace Amazon.AppSync
         /// <param name="request">Container for the necessary parameters to execute the DeleteResolver service method.</param>
         /// 
         /// <returns>The response from the DeleteResolver service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
         /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
         /// Another modification is in progress at this time and it must complete before you can
         /// make your change.
@@ -1071,6 +1079,61 @@ namespace Amazon.AppSync
         /// <returns>Returns a  DisassociateApiResult from AppSync.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DisassociateApi">REST API Reference for DisassociateApi Operation</seealso>
         DisassociateApiResponse EndDisassociateApi(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  EvaluateCode
+
+
+        /// <summary>
+        /// Evaluates the given code and returns the response. The code definition requirements
+        /// depend on the specified runtime. For <code>APPSYNC_JS</code> runtimes, the code defines
+        /// the request and response functions. The request function takes the incoming request
+        /// after a GraphQL operation is parsed and converts it into a request configuration for
+        /// the selected data source operation. The response function interprets responses from
+        /// the data source and maps it to the shape of the GraphQL field output type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EvaluateCode service method.</param>
+        /// 
+        /// <returns>The response from the EvaluateCode service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
+        /// You don't have access to perform this operation on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/EvaluateCode">REST API Reference for EvaluateCode Operation</seealso>
+        EvaluateCodeResponse EvaluateCode(EvaluateCodeRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EvaluateCode operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EvaluateCode operation on AmazonAppSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEvaluateCode
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/EvaluateCode">REST API Reference for EvaluateCode Operation</seealso>
+        IAsyncResult BeginEvaluateCode(EvaluateCodeRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  EvaluateCode operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEvaluateCode.</param>
+        /// 
+        /// <returns>Returns a  EvaluateCodeResult from AppSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/EvaluateCode">REST API Reference for EvaluateCode Operation</seealso>
+        EvaluateCodeResponse EndEvaluateCode(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2782,6 +2845,10 @@ namespace Amazon.AppSync
         /// <param name="request">Container for the necessary parameters to execute the UpdateResolver service method.</param>
         /// 
         /// <returns>The response from the UpdateResolver service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
         /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
         /// Another modification is in progress at this time and it must complete before you can
         /// make your change.

@@ -29,12 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppSync.Model
 {
     /// <summary>
-    /// Contains the list of errors generated. When using JavaScript, this will apply to the
-    /// request or response function evaluation.
+    /// Contains the list of errors from a code evaluation response.
     /// </summary>
-    public partial class ErrorDetail
+    public partial class EvaluateCodeErrorDetail
     {
+        private List<CodeError> _codeErrors = new List<CodeError>();
         private string _message;
+
+        /// <summary>
+        /// Gets and sets the property CodeErrors. 
+        /// <para>
+        /// Contains the list of <code>CodeError</code> objects.
+        /// </para>
+        /// </summary>
+        public List<CodeError> CodeErrors
+        {
+            get { return this._codeErrors; }
+            set { this._codeErrors = value; }
+        }
+
+        // Check to see if CodeErrors property is set
+        internal bool IsSetCodeErrors()
+        {
+            return this._codeErrors != null && this._codeErrors.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Message. 

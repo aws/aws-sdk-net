@@ -640,6 +640,10 @@ namespace Amazon.AppSync
         /// </param>
         /// 
         /// <returns>The response from the CreateResolver service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
         /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
         /// Another modification is in progress at this time and it must complete before you can
         /// make your change.
@@ -1047,6 +1051,10 @@ namespace Amazon.AppSync
         /// </param>
         /// 
         /// <returns>The response from the DeleteResolver service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
         /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
         /// Another modification is in progress at this time and it must complete before you can
         /// make your change.
@@ -1173,6 +1181,55 @@ namespace Amazon.AppSync
             options.ResponseUnmarshaller = DisassociateApiResponseUnmarshaller.Instance;
 
             return InvokeAsync<DisassociateApiResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  EvaluateCode
+
+        internal virtual EvaluateCodeResponse EvaluateCode(EvaluateCodeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EvaluateCodeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EvaluateCodeResponseUnmarshaller.Instance;
+
+            return Invoke<EvaluateCodeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Evaluates the given code and returns the response. The code definition requirements
+        /// depend on the specified runtime. For <code>APPSYNC_JS</code> runtimes, the code defines
+        /// the request and response functions. The request function takes the incoming request
+        /// after a GraphQL operation is parsed and converts it into a request configuration for
+        /// the selected data source operation. The response function interprets responses from
+        /// the data source and maps it to the shape of the GraphQL field output type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EvaluateCode service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EvaluateCode service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.AccessDeniedException">
+        /// You don't have access to perform this operation on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/EvaluateCode">REST API Reference for EvaluateCode Operation</seealso>
+        public virtual Task<EvaluateCodeResponse> EvaluateCodeAsync(EvaluateCodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EvaluateCodeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EvaluateCodeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<EvaluateCodeResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2718,6 +2775,10 @@ namespace Amazon.AppSync
         /// </param>
         /// 
         /// <returns>The response from the UpdateResolver service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
         /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
         /// Another modification is in progress at this time and it must complete before you can
         /// make your change.

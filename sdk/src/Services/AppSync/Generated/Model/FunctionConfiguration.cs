@@ -34,6 +34,7 @@ namespace Amazon.AppSync.Model
     /// </summary>
     public partial class FunctionConfiguration
     {
+        private string _code;
         private string _dataSourceName;
         private string _description;
         private string _functionArn;
@@ -43,7 +44,29 @@ namespace Amazon.AppSync.Model
         private string _name;
         private string _requestMappingTemplate;
         private string _responseMappingTemplate;
+        private AppSyncRuntime _runtime;
         private SyncConfig _syncConfig;
+
+        /// <summary>
+        /// Gets and sets the property Code. 
+        /// <para>
+        /// The <code>function</code> code that contains the request and response functions. When
+        /// code is used, the <code>runtime</code> is required. The <code>runtime</code> value
+        /// must be <code>APPSYNC_JS</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=32768)]
+        public string Code
+        {
+            get { return this._code; }
+            set { this._code = value; }
+        }
+
+        // Check to see if Code property is set
+        internal bool IsSetCode()
+        {
+            return this._code != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DataSourceName. 
@@ -212,6 +235,21 @@ namespace Amazon.AppSync.Model
         internal bool IsSetResponseMappingTemplate()
         {
             return this._responseMappingTemplate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Runtime.
+        /// </summary>
+        public AppSyncRuntime Runtime
+        {
+            get { return this._runtime; }
+            set { this._runtime = value; }
+        }
+
+        // Check to see if Runtime property is set
+        internal bool IsSetRuntime()
+        {
+            return this._runtime != null;
         }
 
         /// <summary>

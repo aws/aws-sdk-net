@@ -34,6 +34,7 @@ namespace Amazon.AppSync.Model
     public partial class Resolver
     {
         private CachingConfig _cachingConfig;
+        private string _code;
         private string _dataSourceName;
         private string _fieldName;
         private ResolverKind _kind;
@@ -42,6 +43,7 @@ namespace Amazon.AppSync.Model
         private string _requestMappingTemplate;
         private string _resolverArn;
         private string _responseMappingTemplate;
+        private AppSyncRuntime _runtime;
         private SyncConfig _syncConfig;
         private string _typeName;
 
@@ -61,6 +63,27 @@ namespace Amazon.AppSync.Model
         internal bool IsSetCachingConfig()
         {
             return this._cachingConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Code. 
+        /// <para>
+        /// The <code>resolver</code> code that contains the request and response functions. When
+        /// code is used, the <code>runtime</code> is required. The <code>runtime</code> value
+        /// must be <code>APPSYNC_JS</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=32768)]
+        public string Code
+        {
+            get { return this._code; }
+            set { this._code = value; }
+        }
+
+        // Check to see if Code property is set
+        internal bool IsSetCode()
+        {
+            return this._code != null;
         }
 
         /// <summary>
@@ -222,6 +245,21 @@ namespace Amazon.AppSync.Model
         internal bool IsSetResponseMappingTemplate()
         {
             return this._responseMappingTemplate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Runtime.
+        /// </summary>
+        public AppSyncRuntime Runtime
+        {
+            get { return this._runtime; }
+            set { this._runtime = value; }
+        }
+
+        // Check to see if Runtime property is set
+        internal bool IsSetRuntime()
+        {
+            return this._runtime != null;
         }
 
         /// <summary>

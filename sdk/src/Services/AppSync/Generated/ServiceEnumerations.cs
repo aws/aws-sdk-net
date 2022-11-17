@@ -401,6 +401,52 @@ namespace Amazon.AppSync
 
 
     /// <summary>
+    /// Constants used for properties of type BadRequestReason.
+    /// </summary>
+    public class BadRequestReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CODE_ERROR for BadRequestReason
+        /// </summary>
+        public static readonly BadRequestReason CODE_ERROR = new BadRequestReason("CODE_ERROR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BadRequestReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BadRequestReason FindValue(string value)
+        {
+            return FindValue<BadRequestReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BadRequestReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConflictDetectionType.
     /// </summary>
     public class ConflictDetectionType : ConstantClass
@@ -822,6 +868,52 @@ namespace Amazon.AppSync
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResolverKind(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RuntimeName.
+    /// </summary>
+    public class RuntimeName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPSYNC_JS for RuntimeName
+        /// </summary>
+        public static readonly RuntimeName APPSYNC_JS = new RuntimeName("APPSYNC_JS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RuntimeName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RuntimeName FindValue(string value)
+        {
+            return FindValue<RuntimeName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RuntimeName(string value)
         {
             return FindValue(value);
         }

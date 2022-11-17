@@ -34,46 +34,46 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for BadRequestException Object
+    /// Response Unmarshaller for EvaluateCodeErrorDetail Object
     /// </summary>  
-    public class BadRequestExceptionUnmarshaller : IErrorResponseUnmarshaller<BadRequestException, JsonUnmarshallerContext>
+    public class EvaluateCodeErrorDetailUnmarshaller : IUnmarshaller<EvaluateCodeErrorDetail, XmlUnmarshallerContext>, IUnmarshaller<EvaluateCodeErrorDetail, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public BadRequestException Unmarshall(JsonUnmarshallerContext context)
+        EvaluateCodeErrorDetail IUnmarshaller<EvaluateCodeErrorDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
+            throw new NotImplementedException();
         }
 
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public BadRequestException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
+        public EvaluateCodeErrorDetail Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
 
-            BadRequestException unmarshalledObject = new BadRequestException(errorResponse.Message, errorResponse.InnerException,
-                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+            EvaluateCodeErrorDetail unmarshalledObject = new EvaluateCodeErrorDetail();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("detail", targetDepth))
+                if (context.TestExpression("codeErrors", targetDepth))
                 {
-                    var unmarshaller = BadRequestDetailUnmarshaller.Instance;
-                    unmarshalledObject.Detail = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<CodeError, CodeErrorUnmarshaller>(CodeErrorUnmarshaller.Instance);
+                    unmarshalledObject.CodeErrors = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("reason", targetDepth))
+                if (context.TestExpression("message", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Reason = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Message = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -81,12 +81,13 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static BadRequestExceptionUnmarshaller _instance = new BadRequestExceptionUnmarshaller();        
+
+        private static EvaluateCodeErrorDetailUnmarshaller _instance = new EvaluateCodeErrorDetailUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static BadRequestExceptionUnmarshaller Instance
+        public static EvaluateCodeErrorDetailUnmarshaller Instance
         {
             get
             {

@@ -29,21 +29,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppSync.Model
 {
     /// <summary>
-    /// This is the response object from the EvaluateMappingTemplate operation.
+    /// This is the response object from the EvaluateCode operation.
     /// </summary>
-    public partial class EvaluateMappingTemplateResponse : AmazonWebServiceResponse
+    public partial class EvaluateCodeResponse : AmazonWebServiceResponse
     {
-        private ErrorDetail _error;
+        private EvaluateCodeErrorDetail _error;
         private string _evaluationResult;
         private List<string> _logs = new List<string>();
 
         /// <summary>
         /// Gets and sets the property Error. 
         /// <para>
-        /// The <code>ErrorDetail</code> object.
+        /// Contains the payload of the response error.
         /// </para>
         /// </summary>
-        public ErrorDetail Error
+        public EvaluateCodeErrorDetail Error
         {
             get { return this._error; }
             set { this._error = value; }
@@ -58,7 +58,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property EvaluationResult. 
         /// <para>
-        /// The mapping template; this can be a request or response template.
+        /// The result of the evaluation operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65536)]
