@@ -1232,10 +1232,6 @@
       <Project>{6680B639-338F-4ACA-8021-D44F72D7187A}</Project>
       <Name>AWSSDK.SSMIncidents.CodeAnalysis</Name>
     </ProjectReference>
-    <ProjectReference Include="../ServiceAnalysis/SsmSap/AWSSDK.SsmSap.CodeAnalysis.csproj">
-      <Project>{6C332DEC-9CC4-4D92-950D-8196F223704C}</Project>
-      <Name>AWSSDK.SsmSap.CodeAnalysis</Name>
-    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/SSO/AWSSDK.SSO.CodeAnalysis.csproj">
       <Project>{1D5634B9-7F53-48CC-BC00-4CE57AE8457E}</Project>
       <Name>AWSSDK.SSO.CodeAnalysis</Name>
