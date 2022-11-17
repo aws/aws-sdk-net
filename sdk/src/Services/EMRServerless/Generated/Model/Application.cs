@@ -34,6 +34,7 @@ namespace Amazon.EMRServerless.Model
     public partial class Application
     {
         private string _applicationId;
+        private Architecture _architecture;
         private string _arn;
         private AutoStartConfig _autoStartConfiguration;
         private AutoStopConfig _autoStopConfiguration;
@@ -66,6 +67,24 @@ namespace Amazon.EMRServerless.Model
         internal bool IsSetApplicationId()
         {
             return this._applicationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Architecture. 
+        /// <para>
+        /// The CPU architecture of an application.
+        /// </para>
+        /// </summary>
+        public Architecture Architecture
+        {
+            get { return this._architecture; }
+            set { this._architecture = value; }
+        }
+
+        // Check to see if Architecture property is set
+        internal bool IsSetArchitecture()
+        {
+            return this._architecture != null;
         }
 
         /// <summary>

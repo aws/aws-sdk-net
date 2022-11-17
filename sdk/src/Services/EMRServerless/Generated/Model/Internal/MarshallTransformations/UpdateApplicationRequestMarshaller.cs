@@ -68,6 +68,12 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetArchitecture())
+                {
+                    context.Writer.WritePropertyName("architecture");
+                    context.Writer.Write(publicRequest.Architecture);
+                }
+
                 if(publicRequest.IsSetAutoStartConfiguration())
                 {
                     context.Writer.WritePropertyName("autoStartConfiguration");

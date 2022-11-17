@@ -33,6 +33,7 @@ namespace Amazon.EMRServerless.Model
     /// </summary>
     public partial class ApplicationSummary
     {
+        private Architecture _architecture;
         private string _arn;
         private DateTime? _createdAt;
         private string _id;
@@ -42,6 +43,24 @@ namespace Amazon.EMRServerless.Model
         private string _stateDetails;
         private string _type;
         private DateTime? _updatedAt;
+
+        /// <summary>
+        /// Gets and sets the property Architecture. 
+        /// <para>
+        /// The CPU architecture of an application.
+        /// </para>
+        /// </summary>
+        public Architecture Architecture
+        {
+            get { return this._architecture; }
+            set { this._architecture = value; }
+        }
+
+        // Check to see if Architecture property is set
+        internal bool IsSetArchitecture()
+        {
+            return this._architecture != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. 
