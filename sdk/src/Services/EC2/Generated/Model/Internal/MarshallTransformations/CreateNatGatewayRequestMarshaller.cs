@@ -74,6 +74,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ConnectivityType", StringUtils.FromString(publicRequest.ConnectivityType));
                 }
+                if(publicRequest.IsSetPrivateIpAddress())
+                {
+                    request.Parameters.Add("PrivateIpAddress", StringUtils.FromString(publicRequest.PrivateIpAddress));
+                }
                 if(publicRequest.IsSetSubnetId())
                 {
                     request.Parameters.Add("SubnetId", StringUtils.FromString(publicRequest.SubnetId));

@@ -57,6 +57,7 @@ namespace Amazon.EC2.Model
         private string _allocationId;
         private string _clientToken;
         private ConnectivityType _connectivityType;
+        private string _privateIpAddress;
         private string _subnetId;
         private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
 
@@ -122,6 +123,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetConnectivityType()
         {
             return this._connectivityType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateIpAddress. 
+        /// <para>
+        /// The private IPv4 address to assign to the NAT gateway. If you don't provide an address,
+        /// a private IPv4 address will be automatically assigned.
+        /// </para>
+        /// </summary>
+        public string PrivateIpAddress
+        {
+            get { return this._privateIpAddress; }
+            set { this._privateIpAddress = value; }
+        }
+
+        // Check to see if PrivateIpAddress property is set
+        internal bool IsSetPrivateIpAddress()
+        {
+            return this._privateIpAddress != null;
         }
 
         /// <summary>

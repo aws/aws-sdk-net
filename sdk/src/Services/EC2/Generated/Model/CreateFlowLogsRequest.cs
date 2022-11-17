@@ -230,9 +230,11 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property LogFormat. 
         /// <para>
         /// The fields to include in the flow log record. List the fields in the order in which
-        /// they should appear. For more information about the available fields, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
-        /// log records</a>. If you omit this parameter, the flow log is created using the default
-        /// format. If you specify this parameter, you must include at least one field.
+        /// they should appear. If you omit this parameter, the flow log is created using the
+        /// default format. If you specify this parameter, you must include at least one field.
+        /// For more information about the available fields, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
+        /// log records</a> in the <i>Amazon VPC User Guide</i> or <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-flow-logs.html#flow-log-records">Transit
+        /// Gateway Flow Log records</a> in the <i>Amazon Web Services Transit Gateway Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -280,7 +282,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property MaxAggregationInterval. 
         /// <para>
         /// The maximum interval of time during which a flow of packets is captured and aggregated
-        /// into a flow log record. You can specify 60 seconds (1 minute) or 600 seconds (10 minutes).
+        /// into a flow log record. The possible values are 60 seconds (1 minute) or 600 seconds
+        /// (10 minutes). This parameter must be 60 seconds for transit gateway resource types.
         /// </para>
         ///  
         /// <para>
@@ -313,7 +316,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Maximum of 1000 resources
+        /// Constraints: Maximum of 25 for transit gateway resource types. Maximum of 1000 for
+        /// the other resource types.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -370,6 +374,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property TrafficType. 
         /// <para>
         /// The type of traffic to monitor (accepted traffic, rejected traffic, or all traffic).
+        /// This parameter is not supported for transit gateway resource types. It is required
+        /// for the other resource types.
         /// </para>
         /// </summary>
         public TrafficType TrafficType
