@@ -113,9 +113,29 @@ namespace Amazon.Personalize.Model
     /// </summary>
     public partial class CreateSolutionVersionRequest : AmazonPersonalizeRequest
     {
+        private string _name;
         private string _solutionArn;
         private List<Tag> _tags = new List<Tag>();
         private TrainingMode _trainingMode;
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the solution version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=63)]
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
 
         /// <summary>
         /// Gets and sets the property SolutionArn. 

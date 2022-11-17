@@ -82,6 +82,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("recipeArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RecipeArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("solutionArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

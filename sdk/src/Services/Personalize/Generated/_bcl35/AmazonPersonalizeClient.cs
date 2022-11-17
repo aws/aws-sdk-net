@@ -1266,6 +1266,78 @@ namespace Amazon.Personalize
 
         #endregion
         
+        #region  CreateMetricAttribution
+
+        /// <summary>
+        /// Creates a metric attribution. A metric attribution creates reports on the data that
+        /// you import into Amazon Personalize. Depending on how you imported the data, you can
+        /// view reports in Amazon CloudWatch or Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring
+        /// impact of recommendations</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMetricAttribution service method.</param>
+        /// 
+        /// <returns>The response from the CreateMetricAttribution service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.LimitExceededException">
+        /// The limit on the number of requests per second has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateMetricAttribution">REST API Reference for CreateMetricAttribution Operation</seealso>
+        public virtual CreateMetricAttributionResponse CreateMetricAttribution(CreateMetricAttributionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMetricAttributionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMetricAttributionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateMetricAttributionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateMetricAttribution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateMetricAttribution operation on AmazonPersonalizeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateMetricAttribution
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateMetricAttribution">REST API Reference for CreateMetricAttribution Operation</seealso>
+        public virtual IAsyncResult BeginCreateMetricAttribution(CreateMetricAttributionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMetricAttributionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMetricAttributionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateMetricAttribution operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateMetricAttribution.</param>
+        /// 
+        /// <returns>Returns a  CreateMetricAttributionResult from Personalize.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateMetricAttribution">REST API Reference for CreateMetricAttribution Operation</seealso>
+        public virtual CreateMetricAttributionResponse EndCreateMetricAttribution(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateMetricAttributionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateRecommender
 
         /// <summary>
@@ -1760,6 +1832,9 @@ namespace Amazon.Personalize
         /// <exception cref="Amazon.Personalize.Model.LimitExceededException">
         /// The limit on the number of requests per second has been exceeded.
         /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
         /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
         /// The specified resource is in use.
         /// </exception>
@@ -2146,6 +2221,69 @@ namespace Amazon.Personalize
         public virtual DeleteFilterResponse EndDeleteFilter(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteFilterResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteMetricAttribution
+
+        /// <summary>
+        /// Deletes a metric attribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMetricAttribution service method.</param>
+        /// 
+        /// <returns>The response from the DeleteMetricAttribution service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteMetricAttribution">REST API Reference for DeleteMetricAttribution Operation</seealso>
+        public virtual DeleteMetricAttributionResponse DeleteMetricAttribution(DeleteMetricAttributionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMetricAttributionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMetricAttributionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteMetricAttributionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteMetricAttribution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMetricAttribution operation on AmazonPersonalizeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMetricAttribution
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteMetricAttribution">REST API Reference for DeleteMetricAttribution Operation</seealso>
+        public virtual IAsyncResult BeginDeleteMetricAttribution(DeleteMetricAttributionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMetricAttributionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMetricAttributionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteMetricAttribution operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteMetricAttribution.</param>
+        /// 
+        /// <returns>Returns a  DeleteMetricAttributionResult from Personalize.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteMetricAttribution">REST API Reference for DeleteMetricAttribution Operation</seealso>
+        public virtual DeleteMetricAttributionResponse EndDeleteMetricAttribution(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteMetricAttributionResponse>(asyncResult);
         }
 
         #endregion
@@ -3034,6 +3172,66 @@ namespace Amazon.Personalize
         public virtual DescribeFilterResponse EndDescribeFilter(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeFilterResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeMetricAttribution
+
+        /// <summary>
+        /// Describes a metric attribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMetricAttribution service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMetricAttribution service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeMetricAttribution">REST API Reference for DescribeMetricAttribution Operation</seealso>
+        public virtual DescribeMetricAttributionResponse DescribeMetricAttribution(DescribeMetricAttributionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMetricAttributionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMetricAttributionResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeMetricAttributionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMetricAttribution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMetricAttribution operation on AmazonPersonalizeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMetricAttribution
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeMetricAttribution">REST API Reference for DescribeMetricAttribution Operation</seealso>
+        public virtual IAsyncResult BeginDescribeMetricAttribution(DescribeMetricAttributionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMetricAttributionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMetricAttributionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeMetricAttribution operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMetricAttribution.</param>
+        /// 
+        /// <returns>Returns a  DescribeMetricAttributionResult from Personalize.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeMetricAttribution">REST API Reference for DescribeMetricAttribution Operation</seealso>
+        public virtual DescribeMetricAttributionResponse EndDescribeMetricAttribution(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeMetricAttributionResponse>(asyncResult);
         }
 
         #endregion
@@ -4016,6 +4214,126 @@ namespace Amazon.Personalize
 
         #endregion
         
+        #region  ListMetricAttributionMetrics
+
+        /// <summary>
+        /// Lists the metrics for the metric attribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMetricAttributionMetrics service method.</param>
+        /// 
+        /// <returns>The response from the ListMetricAttributionMetrics service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.InvalidNextTokenException">
+        /// The token is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListMetricAttributionMetrics">REST API Reference for ListMetricAttributionMetrics Operation</seealso>
+        public virtual ListMetricAttributionMetricsResponse ListMetricAttributionMetrics(ListMetricAttributionMetricsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMetricAttributionMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMetricAttributionMetricsResponseUnmarshaller.Instance;
+
+            return Invoke<ListMetricAttributionMetricsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMetricAttributionMetrics operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMetricAttributionMetrics operation on AmazonPersonalizeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMetricAttributionMetrics
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListMetricAttributionMetrics">REST API Reference for ListMetricAttributionMetrics Operation</seealso>
+        public virtual IAsyncResult BeginListMetricAttributionMetrics(ListMetricAttributionMetricsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMetricAttributionMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMetricAttributionMetricsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMetricAttributionMetrics operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMetricAttributionMetrics.</param>
+        /// 
+        /// <returns>Returns a  ListMetricAttributionMetricsResult from Personalize.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListMetricAttributionMetrics">REST API Reference for ListMetricAttributionMetrics Operation</seealso>
+        public virtual ListMetricAttributionMetricsResponse EndListMetricAttributionMetrics(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListMetricAttributionMetricsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListMetricAttributions
+
+        /// <summary>
+        /// Lists metric attributions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMetricAttributions service method.</param>
+        /// 
+        /// <returns>The response from the ListMetricAttributions service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.InvalidNextTokenException">
+        /// The token is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListMetricAttributions">REST API Reference for ListMetricAttributions Operation</seealso>
+        public virtual ListMetricAttributionsResponse ListMetricAttributions(ListMetricAttributionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMetricAttributionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMetricAttributionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListMetricAttributionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMetricAttributions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMetricAttributions operation on AmazonPersonalizeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMetricAttributions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListMetricAttributions">REST API Reference for ListMetricAttributions Operation</seealso>
+        public virtual IAsyncResult BeginListMetricAttributions(ListMetricAttributionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMetricAttributionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMetricAttributionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMetricAttributions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMetricAttributions.</param>
+        /// 
+        /// <returns>Returns a  ListMetricAttributionsResult from Personalize.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListMetricAttributions">REST API Reference for ListMetricAttributions Operation</seealso>
+        public virtual ListMetricAttributionsResponse EndListMetricAttributions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListMetricAttributionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListRecipes
 
         /// <summary>
@@ -4822,6 +5140,72 @@ namespace Amazon.Personalize
         public virtual UpdateCampaignResponse EndUpdateCampaign(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateCampaignResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateMetricAttribution
+
+        /// <summary>
+        /// Updates a metric attribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMetricAttribution service method.</param>
+        /// 
+        /// <returns>The response from the UpdateMetricAttribution service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateMetricAttribution">REST API Reference for UpdateMetricAttribution Operation</seealso>
+        public virtual UpdateMetricAttributionResponse UpdateMetricAttribution(UpdateMetricAttributionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMetricAttributionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMetricAttributionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMetricAttributionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateMetricAttribution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMetricAttribution operation on AmazonPersonalizeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateMetricAttribution
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateMetricAttribution">REST API Reference for UpdateMetricAttribution Operation</seealso>
+        public virtual IAsyncResult BeginUpdateMetricAttribution(UpdateMetricAttributionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMetricAttributionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMetricAttributionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateMetricAttribution operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateMetricAttribution.</param>
+        /// 
+        /// <returns>Returns a  UpdateMetricAttributionResult from Personalize.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateMetricAttribution">REST API Reference for UpdateMetricAttribution Operation</seealso>
+        public virtual UpdateMetricAttributionResponse EndUpdateMetricAttribution(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateMetricAttributionResponse>(asyncResult);
         }
 
         #endregion

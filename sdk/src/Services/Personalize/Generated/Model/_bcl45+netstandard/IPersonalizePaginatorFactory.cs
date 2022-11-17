@@ -71,6 +71,16 @@ namespace Amazon.Personalize.Model
         IListFiltersPaginator ListFilters(ListFiltersRequest request);
 
         /// <summary>
+        /// Paginator for ListMetricAttributionMetrics operation
+        ///</summary>
+        IListMetricAttributionMetricsPaginator ListMetricAttributionMetrics(ListMetricAttributionMetricsRequest request);
+
+        /// <summary>
+        /// Paginator for ListMetricAttributions operation
+        ///</summary>
+        IListMetricAttributionsPaginator ListMetricAttributions(ListMetricAttributionsRequest request);
+
+        /// <summary>
         /// Paginator for ListRecipes operation
         ///</summary>
         IListRecipesPaginator ListRecipes(ListRecipesRequest request);

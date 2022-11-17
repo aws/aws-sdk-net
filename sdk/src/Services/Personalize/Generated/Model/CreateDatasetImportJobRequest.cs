@@ -88,6 +88,7 @@ namespace Amazon.Personalize.Model
         private DataSource _dataSource;
         private ImportMode _importMode;
         private string _jobName;
+        private bool? _publishAttributionMetricsToS3;
         private string _roleArn;
         private List<Tag> _tags = new List<Tag>();
 
@@ -178,6 +179,25 @@ namespace Amazon.Personalize.Model
         internal bool IsSetJobName()
         {
             return this._jobName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PublishAttributionMetricsToS3. 
+        /// <para>
+        /// If you created a metric attribution, specify whether to publish metrics for this import
+        /// job to Amazon S3
+        /// </para>
+        /// </summary>
+        public bool PublishAttributionMetricsToS3
+        {
+            get { return this._publishAttributionMetricsToS3.GetValueOrDefault(); }
+            set { this._publishAttributionMetricsToS3 = value; }
+        }
+
+        // Check to see if PublishAttributionMetricsToS3 property is set
+        internal bool IsSetPublishAttributionMetricsToS3()
+        {
+            return this._publishAttributionMetricsToS3.HasValue; 
         }
 
         /// <summary>

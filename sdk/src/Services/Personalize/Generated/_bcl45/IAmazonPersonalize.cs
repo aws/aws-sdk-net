@@ -1325,6 +1325,70 @@ namespace Amazon.Personalize
 
         #endregion
         
+        #region  CreateMetricAttribution
+
+
+        /// <summary>
+        /// Creates a metric attribution. A metric attribution creates reports on the data that
+        /// you import into Amazon Personalize. Depending on how you imported the data, you can
+        /// view reports in Amazon CloudWatch or Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring
+        /// impact of recommendations</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMetricAttribution service method.</param>
+        /// 
+        /// <returns>The response from the CreateMetricAttribution service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.LimitExceededException">
+        /// The limit on the number of requests per second has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateMetricAttribution">REST API Reference for CreateMetricAttribution Operation</seealso>
+        CreateMetricAttributionResponse CreateMetricAttribution(CreateMetricAttributionRequest request);
+
+
+
+        /// <summary>
+        /// Creates a metric attribution. A metric attribution creates reports on the data that
+        /// you import into Amazon Personalize. Depending on how you imported the data, you can
+        /// view reports in Amazon CloudWatch or Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring
+        /// impact of recommendations</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMetricAttribution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateMetricAttribution service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.LimitExceededException">
+        /// The limit on the number of requests per second has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateMetricAttribution">REST API Reference for CreateMetricAttribution Operation</seealso>
+        Task<CreateMetricAttributionResponse> CreateMetricAttributionAsync(CreateMetricAttributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateRecommender
 
 
@@ -1981,6 +2045,9 @@ namespace Amazon.Personalize
         /// <exception cref="Amazon.Personalize.Model.LimitExceededException">
         /// The limit on the number of requests per second has been exceeded.
         /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
         /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
         /// The specified resource is in use.
         /// </exception>
@@ -2088,6 +2155,9 @@ namespace Amazon.Personalize
         /// </exception>
         /// <exception cref="Amazon.Personalize.Model.LimitExceededException">
         /// The limit on the number of requests per second has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
         /// </exception>
         /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
         /// The specified resource is in use.
@@ -2370,6 +2440,52 @@ namespace Amazon.Personalize
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteFilter">REST API Reference for DeleteFilter Operation</seealso>
         Task<DeleteFilterResponse> DeleteFilterAsync(DeleteFilterRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteMetricAttribution
+
+
+        /// <summary>
+        /// Deletes a metric attribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMetricAttribution service method.</param>
+        /// 
+        /// <returns>The response from the DeleteMetricAttribution service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteMetricAttribution">REST API Reference for DeleteMetricAttribution Operation</seealso>
+        DeleteMetricAttributionResponse DeleteMetricAttribution(DeleteMetricAttributionRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a metric attribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMetricAttribution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteMetricAttribution service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteMetricAttribution">REST API Reference for DeleteMetricAttribution Operation</seealso>
+        Task<DeleteMetricAttributionResponse> DeleteMetricAttributionAsync(DeleteMetricAttributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3026,6 +3142,46 @@ namespace Amazon.Personalize
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeFilter">REST API Reference for DescribeFilter Operation</seealso>
         Task<DescribeFilterResponse> DescribeFilterAsync(DescribeFilterRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeMetricAttribution
+
+
+        /// <summary>
+        /// Describes a metric attribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMetricAttribution service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMetricAttribution service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeMetricAttribution">REST API Reference for DescribeMetricAttribution Operation</seealso>
+        DescribeMetricAttributionResponse DescribeMetricAttribution(DescribeMetricAttributionRequest request);
+
+
+
+        /// <summary>
+        /// Describes a metric attribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMetricAttribution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeMetricAttribution service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeMetricAttribution">REST API Reference for DescribeMetricAttribution Operation</seealso>
+        Task<DescribeMetricAttributionResponse> DescribeMetricAttributionAsync(DescribeMetricAttributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3785,6 +3941,86 @@ namespace Amazon.Personalize
 
         #endregion
         
+        #region  ListMetricAttributionMetrics
+
+
+        /// <summary>
+        /// Lists the metrics for the metric attribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMetricAttributionMetrics service method.</param>
+        /// 
+        /// <returns>The response from the ListMetricAttributionMetrics service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.InvalidNextTokenException">
+        /// The token is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListMetricAttributionMetrics">REST API Reference for ListMetricAttributionMetrics Operation</seealso>
+        ListMetricAttributionMetricsResponse ListMetricAttributionMetrics(ListMetricAttributionMetricsRequest request);
+
+
+
+        /// <summary>
+        /// Lists the metrics for the metric attribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMetricAttributionMetrics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMetricAttributionMetrics service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.InvalidNextTokenException">
+        /// The token is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListMetricAttributionMetrics">REST API Reference for ListMetricAttributionMetrics Operation</seealso>
+        Task<ListMetricAttributionMetricsResponse> ListMetricAttributionMetricsAsync(ListMetricAttributionMetricsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListMetricAttributions
+
+
+        /// <summary>
+        /// Lists metric attributions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMetricAttributions service method.</param>
+        /// 
+        /// <returns>The response from the ListMetricAttributions service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.InvalidNextTokenException">
+        /// The token is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListMetricAttributions">REST API Reference for ListMetricAttributions Operation</seealso>
+        ListMetricAttributionsResponse ListMetricAttributions(ListMetricAttributionsRequest request);
+
+
+
+        /// <summary>
+        /// Lists metric attributions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMetricAttributions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMetricAttributions service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.InvalidNextTokenException">
+        /// The token is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListMetricAttributions">REST API Reference for ListMetricAttributions Operation</seealso>
+        Task<ListMetricAttributionsResponse> ListMetricAttributionsAsync(ListMetricAttributionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListRecipes
 
 
@@ -4442,6 +4678,58 @@ namespace Amazon.Personalize
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateCampaign">REST API Reference for UpdateCampaign Operation</seealso>
         Task<UpdateCampaignResponse> UpdateCampaignAsync(UpdateCampaignRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateMetricAttribution
+
+
+        /// <summary>
+        /// Updates a metric attribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMetricAttribution service method.</param>
+        /// 
+        /// <returns>The response from the UpdateMetricAttribution service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateMetricAttribution">REST API Reference for UpdateMetricAttribution Operation</seealso>
+        UpdateMetricAttributionResponse UpdateMetricAttribution(UpdateMetricAttributionRequest request);
+
+
+
+        /// <summary>
+        /// Updates a metric attribution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMetricAttribution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateMetricAttribution service method, as returned by Personalize.</returns>
+        /// <exception cref="Amazon.Personalize.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.Personalize.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateMetricAttribution">REST API Reference for UpdateMetricAttribution Operation</seealso>
+        Task<UpdateMetricAttributionResponse> UpdateMetricAttributionAsync(UpdateMetricAttributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

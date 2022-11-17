@@ -52,6 +52,7 @@ namespace Amazon.Personalize.Model
         private ImportMode _importMode;
         private string _jobName;
         private DateTime? _lastUpdatedDateTime;
+        private bool? _publishAttributionMetricsToS3;
         private string _roleArn;
         private string _status;
 
@@ -200,6 +201,24 @@ namespace Amazon.Personalize.Model
         internal bool IsSetLastUpdatedDateTime()
         {
             return this._lastUpdatedDateTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PublishAttributionMetricsToS3. 
+        /// <para>
+        /// Whether the job publishes metrics to Amazon S3 for a metric attribution.
+        /// </para>
+        /// </summary>
+        public bool PublishAttributionMetricsToS3
+        {
+            get { return this._publishAttributionMetricsToS3.GetValueOrDefault(); }
+            set { this._publishAttributionMetricsToS3 = value; }
+        }
+
+        // Check to see if PublishAttributionMetricsToS3 property is set
+        internal bool IsSetPublishAttributionMetricsToS3()
+        {
+            return this._publishAttributionMetricsToS3.HasValue; 
         }
 
         /// <summary>

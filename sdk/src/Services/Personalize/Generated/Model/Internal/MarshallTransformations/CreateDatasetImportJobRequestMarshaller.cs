@@ -96,6 +96,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.JobName);
                 }
 
+                if(publicRequest.IsSetPublishAttributionMetricsToS3())
+                {
+                    context.Writer.WritePropertyName("publishAttributionMetricsToS3");
+                    context.Writer.Write(publicRequest.PublishAttributionMetricsToS3);
+                }
+
                 if(publicRequest.IsSetRoleArn())
                 {
                     context.Writer.WritePropertyName("roleArn");

@@ -39,6 +39,7 @@ namespace Amazon.Personalize.Model
         private string _eventType;
         private string _failureReason;
         private DateTime? _lastUpdatedDateTime;
+        private string _name;
         private bool? _performAutoML;
         private bool? _performhpo;
         private string _recipeArn;
@@ -140,6 +141,25 @@ namespace Amazon.Personalize.Model
         internal bool IsSetLastUpdatedDateTime()
         {
             return this._lastUpdatedDateTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the solution version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=63)]
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
         }
 
         /// <summary>
