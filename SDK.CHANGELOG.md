@@ -1,3 +1,46 @@
+### 3.7.420.0 (2022-11-17 19:36 UTC)
+* Amplify (3.7.101.0)
+	* Adds a new value (WEB_COMPUTE) to the Platform enum that allows customers to create Amplify Apps with Server-Side Rendering support.
+* Appflow (3.7.101.0)
+	* AppFlow simplifies the preparation and cataloging of SaaS data into the AWS Glue Data Catalog where your data can be discovered and accessed by AWS analytics and ML services. AppFlow now also supports data field partitioning and file size optimization to improve query performance and reduce cost.
+* AppRegistry (3.7.101.0)
+	* This release adds support for tagged resource associations, which allows you to associate a group of resources with a defined resource tag key and value to the application.
+* AppSync (3.7.101.0)
+	* This release introduces the APPSYNC_JS runtime, and adds support for JavaScript in AppSync functions and AppSync pipeline resolvers.
+* CloudWatchRUM (3.7.101.0)
+	* CloudWatch RUM now supports custom events. To use custom events, create an app monitor or update an app monitor with CustomEvent Status as ENABLED.
+* DatabaseMigrationService (3.7.101.0)
+	* Adds support for Internet Protocol Version 6 (IPv6) on DMS Replication Instances
+* EC2 (3.7.108.0)
+	* This release adds a new optional parameter "privateIpAddress" for the CreateNatGateway API. PrivateIPAddress will allow customers to select a custom Private IPv4 address instead of having it be auto-assigned.
+* ElasticLoadBalancingV2 (3.7.100.20)
+	* Provides new target group attributes to turn on/off cross zone load balancing and configure target group health for Network Load Balancers and Application Load Balancers. Provides improvements to health check configuration for Network Load Balancers.
+* EMRServerless (3.7.101.0)
+	* Adds support for AWS Graviton2 based applications. You can now select CPU architecture when creating new applications or updating existing ones.
+* Ivschat (3.7.101.0)
+	* Adds LoggingConfiguration APIs for IVS Chat - a feature that allows customers to store and record sent messages in a chat room to S3 buckets, CloudWatch logs, or Kinesis firehose.
+* Lambda (3.7.101.0)
+	* Add Node 18 (nodejs18.x) support to AWS Lambda.
+* Personalize (3.7.101.0)
+	* This release provides support for creation and use of metric attributions in AWS Personalize
+* Polly (3.7.102.0)
+	* Add two new neural voices - Ola (pl-PL) and Hala (ar-AE).
+* S3Control (3.7.102.0)
+	* Added 34 new S3 Storage Lens metrics to support additional customer use cases.
+* SecretsManager (3.7.100.20)
+	* Documentation updates for Secrets Manager.
+* SecurityHub (3.7.101.0)
+	* Added SourceLayerArn and SourceLayerHash field for security findings.  Updated AwsLambdaFunction Resource detail
+* SecurityToken (3.7.100.20)
+	* Documentation updates for AWS Security Token Service.
+* Textract (3.7.103.0)
+	* This release adds support for specifying and extracting information from documents using the Signatures feature within Analyze Document API
+* WorkSpaces (3.7.104.0)
+	* The release introduces CreateStandbyWorkspaces, an API that allows you to create standby WorkSpaces associated with a primary WorkSpace in another Region. DescribeWorkspaces now includes related WorkSpaces properties. DescribeWorkspaceBundles and CreateWorkspaceBundle now return more bundle details.
+* Core 3.7.100.20
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.419.0 (2022-11-16 19:36 UTC)
 * Batch (3.7.101.18)
 	* Documentation updates related to Batch on EKS
