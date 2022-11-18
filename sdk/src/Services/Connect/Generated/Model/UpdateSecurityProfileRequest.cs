@@ -39,10 +39,32 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class UpdateSecurityProfileRequest : AmazonConnectRequest
     {
+        private Dictionary<string, string> _allowedAccessControlTags = new Dictionary<string, string>();
         private string _description;
         private string _instanceId;
         private List<string> _permissions = new List<string>();
         private string _securityProfileId;
+        private List<string> _tagRestrictedResources = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property AllowedAccessControlTags. 
+        /// <para>
+        /// The list of tags that a security profile uses to restrict access to resources in Amazon
+        /// Connect.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2)]
+        public Dictionary<string, string> AllowedAccessControlTags
+        {
+            get { return this._allowedAccessControlTags; }
+            set { this._allowedAccessControlTags = value; }
+        }
+
+        // Check to see if AllowedAccessControlTags property is set
+        internal bool IsSetAllowedAccessControlTags()
+        {
+            return this._allowedAccessControlTags != null && this._allowedAccessControlTags.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -121,6 +143,26 @@ namespace Amazon.Connect.Model
         internal bool IsSetSecurityProfileId()
         {
             return this._securityProfileId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagRestrictedResources. 
+        /// <para>
+        /// The list of resources that a security profile applies tag restrictions to in Amazon
+        /// Connect.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=10)]
+        public List<string> TagRestrictedResources
+        {
+            get { return this._tagRestrictedResources; }
+            set { this._tagRestrictedResources = value; }
+        }
+
+        // Check to see if TagRestrictedResources property is set
+        internal bool IsSetTagRestrictedResources()
+        {
+            return this._tagRestrictedResources != null && this._tagRestrictedResources.Count > 0; 
         }
 
     }

@@ -277,6 +277,12 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.CreateSecurityProfileRequest.SecurityProfileName</property>
+    <min>1</min>
+    <max>127</max>
+    <pattern>^[ a-zA-Z0-9_@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.CreateTaskTemplateRequest.ClientToken</property>
     <max>500</max>
   </property-value-rule>

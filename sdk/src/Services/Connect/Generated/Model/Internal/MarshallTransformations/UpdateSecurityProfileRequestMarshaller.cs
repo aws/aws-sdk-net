@@ -71,6 +71,20 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAllowedAccessControlTags())
+                {
+                    context.Writer.WritePropertyName("AllowedAccessControlTags");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestAllowedAccessControlTagsKvp in publicRequest.AllowedAccessControlTags)
+                    {
+                        context.Writer.WritePropertyName(publicRequestAllowedAccessControlTagsKvp.Key);
+                        var publicRequestAllowedAccessControlTagsValue = publicRequestAllowedAccessControlTagsKvp.Value;
+
+                            context.Writer.Write(publicRequestAllowedAccessControlTagsValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("Description");
@@ -84,6 +98,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     foreach(var publicRequestPermissionsListValue in publicRequest.Permissions)
                     {
                             context.Writer.Write(publicRequestPermissionsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetTagRestrictedResources())
+                {
+                    context.Writer.WritePropertyName("TagRestrictedResources");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTagRestrictedResourcesListValue in publicRequest.TagRestrictedResources)
+                    {
+                            context.Writer.Write(publicRequestTagRestrictedResourcesListValue);
                     }
                     context.Writer.WriteArrayEnd();
                 }
