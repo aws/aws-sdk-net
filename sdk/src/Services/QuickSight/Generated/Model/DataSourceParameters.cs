@@ -41,6 +41,7 @@ namespace Amazon.QuickSight.Model
         private AuroraParameters _auroraParameters;
         private AuroraPostgreSqlParameters _auroraPostgreSqlParameters;
         private AwsIotAnalyticsParameters _awsIotAnalyticsParameters;
+        private DatabricksParameters _databricksParameters;
         private ExasolParameters _exasolParameters;
         private JiraParameters _jiraParameters;
         private MariaDbParameters _mariaDbParameters;
@@ -164,6 +165,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetAwsIotAnalyticsParameters()
         {
             return this._awsIotAnalyticsParameters != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DatabricksParameters. 
+        /// <para>
+        /// The required parameters that are needed to connect to a Databricks data source.
+        /// </para>
+        /// </summary>
+        public DatabricksParameters DatabricksParameters
+        {
+            get { return this._databricksParameters; }
+            set { this._databricksParameters = value; }
+        }
+
+        // Check to see if DatabricksParameters property is set
+        internal bool IsSetDatabricksParameters()
+        {
+            return this._databricksParameters != null;
         }
 
         /// <summary>

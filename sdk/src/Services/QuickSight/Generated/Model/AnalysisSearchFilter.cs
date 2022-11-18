@@ -41,8 +41,48 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the value that you want to use as a filter, for example <code>"Name":
-        /// "QUICKSIGHT_USER"</code>.
+        /// "QUICKSIGHT_OWNER"</code>.
         /// </para>
+        ///  
+        /// <para>
+        /// Valid values are defined as follows:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any
+        /// analyses with that ARN listed as one of the analysis' owners or viewers are returned.
+        /// Implicit permissions from folders or groups are considered. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any analyses
+        /// with that ARN listed as one of the owners of the analyses are returned. Implicit permissions
+        /// from folders or groups are considered.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DIRECT_QUICKSIGHT_SOLE_OWNER</code>: Provide an ARN of a user or group, and
+        /// any analyses with that ARN listed as the only owner of the analysis are returned.
+        /// Implicit permissions from folders or groups are not considered.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DIRECT_QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any
+        /// analyses with that ARN listed as one of the owners of the analyses are returned. Implicit
+        /// permissions from folders or groups are not considered.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DIRECT_QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group,
+        /// and any analyses with that ARN listed as one of the owners or viewers of the analyses
+        /// are returned. Implicit permissions from folders or groups are not considered. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ANALYSIS_NAME</code>: Any analyses whose names have a substring match to this
+        /// value will be returned.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public AnalysisFilterAttribute Name
         {
@@ -60,7 +100,21 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property Operator. 
         /// <para>
         /// The comparison operator that you want to use as a filter, for example <code>"Operator":
-        /// "StringEquals"</code>.
+        /// "StringEquals"</code>. Valid values are <code>"StringEquals"</code> and <code>"StringLike"</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you set the operator value to <code>"StringEquals"</code>, you need to provide
+        /// an ownership related filter in the <code>"NAME"</code> field and the arn of the user
+        /// or group whose folders you want to search in the <code>"Value"</code> field. For example,
+        /// <code>"Name":"DIRECT_QUICKSIGHT_OWNER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you set the value to <code>"StringLike"</code>, you need to provide the name of
+        /// the folders you are searching for. For example, <code>"Name":"ANALYSIS_NAME", "Operator":
+        /// "StringLike", "Value": "Test"</code>. The <code>"StringLike"</code> operator only
+        /// supports the <code>NAME</code> value <code>ANALYSIS_NAME</code>.
         /// </para>
         /// </summary>
         public FilterOperator Operator

@@ -146,5 +146,21 @@ namespace Amazon.QuickSight.Model
         {
             return new SearchDashboardsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for SearchDataSets operation
+        ///</summary>
+        public ISearchDataSetsPaginator SearchDataSets(SearchDataSetsRequest request) 
+        {
+            return new SearchDataSetsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchDataSources operation
+        ///</summary>
+        public ISearchDataSourcesPaginator SearchDataSources(SearchDataSourcesRequest request) 
+        {
+            return new SearchDataSourcesPaginator(this.client, request);
+        }
     }
 }

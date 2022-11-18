@@ -2360,6 +2360,105 @@ namespace Amazon.QuickSight
 
         #endregion
         
+        #region  DeleteAccountSubscription
+
+
+        /// <summary>
+        /// Use the <code>DeleteAccountSubscription</code> operation to delete an Amazon QuickSight
+        /// account. This operation will result in an error message if you have configured your
+        /// account termination protection settings to <code>True</code>. To change this setting
+        /// and delete your account, call the <code>UpdateAccountSettings</code> API and set the
+        /// value of the <code>TerminationProtectionEnabled</code> parameter to <code>False</code>,
+        /// then make another call to the <code>DeleteAccountSubscription</code> API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccountSubscription service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAccountSubscription service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
+        /// This resource is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAccountSubscription">REST API Reference for DeleteAccountSubscription Operation</seealso>
+        public virtual DeleteAccountSubscriptionResponse DeleteAccountSubscription(DeleteAccountSubscriptionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAccountSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAccountSubscriptionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAccountSubscriptionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Use the <code>DeleteAccountSubscription</code> operation to delete an Amazon QuickSight
+        /// account. This operation will result in an error message if you have configured your
+        /// account termination protection settings to <code>True</code>. To change this setting
+        /// and delete your account, call the <code>UpdateAccountSettings</code> API and set the
+        /// value of the <code>TerminationProtectionEnabled</code> parameter to <code>False</code>,
+        /// then make another call to the <code>DeleteAccountSubscription</code> API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccountSubscription service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAccountSubscription service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
+        /// This resource is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAccountSubscription">REST API Reference for DeleteAccountSubscription Operation</seealso>
+        public virtual Task<DeleteAccountSubscriptionResponse> DeleteAccountSubscriptionAsync(DeleteAccountSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAccountSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAccountSubscriptionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteAccountSubscriptionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteAnalysis
 
 
@@ -4112,7 +4211,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Use the DescribeAccountSubscription operation to receive a description of a Amazon
+        /// Use the DescribeAccountSubscription operation to receive a description of an Amazon
         /// QuickSight account's subscription. A successful API call returns an <code>AccountInfo</code>
         /// object that includes an account's name, subscription status, authentication type,
         /// edition, and notification email address.
@@ -4153,7 +4252,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Use the DescribeAccountSubscription operation to receive a description of a Amazon
+        /// Use the DescribeAccountSubscription operation to receive a description of an Amazon
         /// QuickSight account's subscription. A successful API call returns an <code>AccountInfo</code>
         /// object that includes an account's name, subscription status, authentication type,
         /// edition, and notification email address.
@@ -9337,6 +9436,176 @@ namespace Amazon.QuickSight
 
         #endregion
         
+        #region  SearchDataSets
+
+
+        /// <summary>
+        /// Use the <code>SearchDataSets</code> operation to search for datasets that belong to
+        /// an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchDataSets service method.</param>
+        /// 
+        /// <returns>The response from the SearchDataSets service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchDataSets">REST API Reference for SearchDataSets Operation</seealso>
+        public virtual SearchDataSetsResponse SearchDataSets(SearchDataSetsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchDataSetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchDataSetsResponseUnmarshaller.Instance;
+
+            return Invoke<SearchDataSetsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Use the <code>SearchDataSets</code> operation to search for datasets that belong to
+        /// an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchDataSets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchDataSets service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchDataSets">REST API Reference for SearchDataSets Operation</seealso>
+        public virtual Task<SearchDataSetsResponse> SearchDataSetsAsync(SearchDataSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchDataSetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchDataSetsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SearchDataSetsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SearchDataSources
+
+
+        /// <summary>
+        /// Use the <code>SearchDataSources</code> operation to search for data sources that belong
+        /// to an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchDataSources service method.</param>
+        /// 
+        /// <returns>The response from the SearchDataSources service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchDataSources">REST API Reference for SearchDataSources Operation</seealso>
+        public virtual SearchDataSourcesResponse SearchDataSources(SearchDataSourcesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchDataSourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchDataSourcesResponseUnmarshaller.Instance;
+
+            return Invoke<SearchDataSourcesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Use the <code>SearchDataSources</code> operation to search for data sources that belong
+        /// to an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchDataSources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchDataSources service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct access keys.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchDataSources">REST API Reference for SearchDataSources Operation</seealso>
+        public virtual Task<SearchDataSourcesResponse> SearchDataSourcesAsync(SearchDataSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchDataSourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchDataSourcesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SearchDataSourcesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  SearchFolders
 
 
@@ -9360,6 +9629,10 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidRequestException">
+        /// You don't have this feature activated for your account. To fix this issue, contact
+        /// Amazon Web Services support.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -9407,6 +9680,10 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidRequestException">
+        /// You don't have this feature activated for your account. To fix this issue, contact
+        /// Amazon Web Services support.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.

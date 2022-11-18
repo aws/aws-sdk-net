@@ -94,6 +94,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.PublicSharingEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TerminationProtectionEnabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.TerminationProtectionEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

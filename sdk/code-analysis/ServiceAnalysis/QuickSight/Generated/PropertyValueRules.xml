@@ -376,6 +376,12 @@
     <pattern>^[a-zA-Z0-9._-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.DeleteAccountSubscriptionRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.DeleteAnalysisRequest.AnalysisId</property>
     <min>1</min>
     <max>2048</max>
@@ -1510,6 +1516,28 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.SearchDataSetsRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.SearchDataSetsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.SearchDataSourcesRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.SearchDataSourcesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.SearchFoldersRequest.AwsAccountId</property>
     <min>12</min>
     <max>12</max>
@@ -2030,6 +2058,17 @@
     <pattern>[\w\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.AnonymousUserQSearchBarEmbeddingConfiguration.InitialTopicId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.AthenaParameters.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.AthenaParameters.WorkGroup</property>
     <min>1</min>
     <max>128</max>
@@ -2185,6 +2224,21 @@
     <pattern>[\w\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.DatabricksParameters.Host</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DatabricksParameters.Port</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DatabricksParameters.SqlEndpointPath</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.DataColorPalette.EmptyFillColor</property>
     <pattern>^#[A-F0-9]{6}$</pattern>
   </property-value-rule>
@@ -2222,6 +2276,11 @@
     <min>1</min>
     <max>2048</max>
     <pattern>^arn:[-a-z0-9]*:secretsmanager:[-a-z0-9]*:[0-9]{12}:secret:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DataSourceSummary.Name</property>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.DateTimeParameter.Name</property>

@@ -94,5 +94,15 @@ namespace Amazon.QuickSight.Model
         /// Paginator for SearchDashboards operation
         ///</summary>
         ISearchDashboardsPaginator SearchDashboards(SearchDashboardsRequest request);
+
+        /// <summary>
+        /// Paginator for SearchDataSets operation
+        ///</summary>
+        ISearchDataSetsPaginator SearchDataSets(SearchDataSetsRequest request);
+
+        /// <summary>
+        /// Paginator for SearchDataSources operation
+        ///</summary>
+        ISearchDataSourcesPaginator SearchDataSources(SearchDataSourcesRequest request);
     }
 }

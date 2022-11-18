@@ -37,6 +37,7 @@ namespace Amazon.QuickSight.Model
         private string _awsAccountId;
         private string _defaultNamespace;
         private string _notificationEmail;
+        private bool? _terminationProtectionEnabled;
 
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
@@ -97,6 +98,27 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetNotificationEmail()
         {
             return this._notificationEmail != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TerminationProtectionEnabled. 
+        /// <para>
+        /// A boolean value that determines whether or not an Amazon QuickSight account can be
+        /// deleted. A <code>True</code> value doesn't allow the account to be deleted and results
+        /// in an error message if a user tries to make a <code>DeleteAccountSubscription</code>
+        /// request. A <code>False</code> value will allow the account to be deleted.
+        /// </para>
+        /// </summary>
+        public bool TerminationProtectionEnabled
+        {
+            get { return this._terminationProtectionEnabled.GetValueOrDefault(); }
+            set { this._terminationProtectionEnabled = value; }
+        }
+
+        // Check to see if TerminationProtectionEnabled property is set
+        internal bool IsSetTerminationProtectionEnabled()
+        {
+            return this._terminationProtectionEnabled.HasValue; 
         }
 
     }

@@ -38,6 +38,7 @@ namespace Amazon.QuickSight.Model
         private Edition _edition;
         private string _notificationEmail;
         private bool? _publicSharingEnabled;
+        private bool? _terminationProtectionEnabled;
 
         /// <summary>
         /// Gets and sets the property AccountName. 
@@ -132,6 +133,27 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetPublicSharingEnabled()
         {
             return this._publicSharingEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TerminationProtectionEnabled. 
+        /// <para>
+        /// A boolean value that determines whether or not an Amazon QuickSight account can be
+        /// deleted. A <code>True</code> value doesn't allow the account to be deleted and results
+        /// in an error message if a user tries to make a <code>DeleteAccountSubsctiption</code>
+        /// request. A <code>False</code> value will allow the ccount to be deleted. 
+        /// </para>
+        /// </summary>
+        public bool TerminationProtectionEnabled
+        {
+            get { return this._terminationProtectionEnabled.GetValueOrDefault(); }
+            set { this._terminationProtectionEnabled = value; }
+        }
+
+        // Check to see if TerminationProtectionEnabled property is set
+        internal bool IsSetTerminationProtectionEnabled()
+        {
+            return this._terminationProtectionEnabled.HasValue; 
         }
 
     }

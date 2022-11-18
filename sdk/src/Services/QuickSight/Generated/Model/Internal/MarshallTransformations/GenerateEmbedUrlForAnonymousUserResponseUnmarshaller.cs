@@ -51,6 +51,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AnonymousUserArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AnonymousUserArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EmbedUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

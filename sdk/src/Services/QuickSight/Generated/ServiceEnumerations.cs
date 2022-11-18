@@ -113,9 +113,33 @@ namespace Amazon.QuickSight
     {
 
         /// <summary>
+        /// Constant ANALYSIS_NAME for AnalysisFilterAttribute
+        /// </summary>
+        public static readonly AnalysisFilterAttribute ANALYSIS_NAME = new AnalysisFilterAttribute("ANALYSIS_NAME");
+        /// <summary>
+        /// Constant DIRECT_QUICKSIGHT_OWNER for AnalysisFilterAttribute
+        /// </summary>
+        public static readonly AnalysisFilterAttribute DIRECT_QUICKSIGHT_OWNER = new AnalysisFilterAttribute("DIRECT_QUICKSIGHT_OWNER");
+        /// <summary>
+        /// Constant DIRECT_QUICKSIGHT_SOLE_OWNER for AnalysisFilterAttribute
+        /// </summary>
+        public static readonly AnalysisFilterAttribute DIRECT_QUICKSIGHT_SOLE_OWNER = new AnalysisFilterAttribute("DIRECT_QUICKSIGHT_SOLE_OWNER");
+        /// <summary>
+        /// Constant DIRECT_QUICKSIGHT_VIEWER_OR_OWNER for AnalysisFilterAttribute
+        /// </summary>
+        public static readonly AnalysisFilterAttribute DIRECT_QUICKSIGHT_VIEWER_OR_OWNER = new AnalysisFilterAttribute("DIRECT_QUICKSIGHT_VIEWER_OR_OWNER");
+        /// <summary>
+        /// Constant QUICKSIGHT_OWNER for AnalysisFilterAttribute
+        /// </summary>
+        public static readonly AnalysisFilterAttribute QUICKSIGHT_OWNER = new AnalysisFilterAttribute("QUICKSIGHT_OWNER");
+        /// <summary>
         /// Constant QUICKSIGHT_USER for AnalysisFilterAttribute
         /// </summary>
         public static readonly AnalysisFilterAttribute QUICKSIGHT_USER = new AnalysisFilterAttribute("QUICKSIGHT_USER");
+        /// <summary>
+        /// Constant QUICKSIGHT_VIEWER_OR_OWNER for AnalysisFilterAttribute
+        /// </summary>
+        public static readonly AnalysisFilterAttribute QUICKSIGHT_VIEWER_OR_OWNER = new AnalysisFilterAttribute("QUICKSIGHT_VIEWER_OR_OWNER");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -507,9 +531,33 @@ namespace Amazon.QuickSight
     {
 
         /// <summary>
+        /// Constant DASHBOARD_NAME for DashboardFilterAttribute
+        /// </summary>
+        public static readonly DashboardFilterAttribute DASHBOARD_NAME = new DashboardFilterAttribute("DASHBOARD_NAME");
+        /// <summary>
+        /// Constant DIRECT_QUICKSIGHT_OWNER for DashboardFilterAttribute
+        /// </summary>
+        public static readonly DashboardFilterAttribute DIRECT_QUICKSIGHT_OWNER = new DashboardFilterAttribute("DIRECT_QUICKSIGHT_OWNER");
+        /// <summary>
+        /// Constant DIRECT_QUICKSIGHT_SOLE_OWNER for DashboardFilterAttribute
+        /// </summary>
+        public static readonly DashboardFilterAttribute DIRECT_QUICKSIGHT_SOLE_OWNER = new DashboardFilterAttribute("DIRECT_QUICKSIGHT_SOLE_OWNER");
+        /// <summary>
+        /// Constant DIRECT_QUICKSIGHT_VIEWER_OR_OWNER for DashboardFilterAttribute
+        /// </summary>
+        public static readonly DashboardFilterAttribute DIRECT_QUICKSIGHT_VIEWER_OR_OWNER = new DashboardFilterAttribute("DIRECT_QUICKSIGHT_VIEWER_OR_OWNER");
+        /// <summary>
+        /// Constant QUICKSIGHT_OWNER for DashboardFilterAttribute
+        /// </summary>
+        public static readonly DashboardFilterAttribute QUICKSIGHT_OWNER = new DashboardFilterAttribute("QUICKSIGHT_OWNER");
+        /// <summary>
         /// Constant QUICKSIGHT_USER for DashboardFilterAttribute
         /// </summary>
         public static readonly DashboardFilterAttribute QUICKSIGHT_USER = new DashboardFilterAttribute("QUICKSIGHT_USER");
+        /// <summary>
+        /// Constant QUICKSIGHT_VIEWER_OR_OWNER for DashboardFilterAttribute
+        /// </summary>
+        public static readonly DashboardFilterAttribute QUICKSIGHT_VIEWER_OR_OWNER = new DashboardFilterAttribute("QUICKSIGHT_VIEWER_OR_OWNER");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -590,6 +638,72 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DashboardUIState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DataSetFilterAttribute.
+    /// </summary>
+    public class DataSetFilterAttribute : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DATASET_NAME for DataSetFilterAttribute
+        /// </summary>
+        public static readonly DataSetFilterAttribute DATASET_NAME = new DataSetFilterAttribute("DATASET_NAME");
+        /// <summary>
+        /// Constant DIRECT_QUICKSIGHT_OWNER for DataSetFilterAttribute
+        /// </summary>
+        public static readonly DataSetFilterAttribute DIRECT_QUICKSIGHT_OWNER = new DataSetFilterAttribute("DIRECT_QUICKSIGHT_OWNER");
+        /// <summary>
+        /// Constant DIRECT_QUICKSIGHT_SOLE_OWNER for DataSetFilterAttribute
+        /// </summary>
+        public static readonly DataSetFilterAttribute DIRECT_QUICKSIGHT_SOLE_OWNER = new DataSetFilterAttribute("DIRECT_QUICKSIGHT_SOLE_OWNER");
+        /// <summary>
+        /// Constant DIRECT_QUICKSIGHT_VIEWER_OR_OWNER for DataSetFilterAttribute
+        /// </summary>
+        public static readonly DataSetFilterAttribute DIRECT_QUICKSIGHT_VIEWER_OR_OWNER = new DataSetFilterAttribute("DIRECT_QUICKSIGHT_VIEWER_OR_OWNER");
+        /// <summary>
+        /// Constant QUICKSIGHT_OWNER for DataSetFilterAttribute
+        /// </summary>
+        public static readonly DataSetFilterAttribute QUICKSIGHT_OWNER = new DataSetFilterAttribute("QUICKSIGHT_OWNER");
+        /// <summary>
+        /// Constant QUICKSIGHT_VIEWER_OR_OWNER for DataSetFilterAttribute
+        /// </summary>
+        public static readonly DataSetFilterAttribute QUICKSIGHT_VIEWER_OR_OWNER = new DataSetFilterAttribute("QUICKSIGHT_VIEWER_OR_OWNER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataSetFilterAttribute(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataSetFilterAttribute FindValue(string value)
+        {
+            return FindValue<DataSetFilterAttribute>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataSetFilterAttribute(string value)
         {
             return FindValue(value);
         }
@@ -721,6 +835,64 @@ namespace Amazon.QuickSight
 
 
     /// <summary>
+    /// Constants used for properties of type DataSourceFilterAttribute.
+    /// </summary>
+    public class DataSourceFilterAttribute : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DATASOURCE_NAME for DataSourceFilterAttribute
+        /// </summary>
+        public static readonly DataSourceFilterAttribute DATASOURCE_NAME = new DataSourceFilterAttribute("DATASOURCE_NAME");
+        /// <summary>
+        /// Constant DIRECT_QUICKSIGHT_OWNER for DataSourceFilterAttribute
+        /// </summary>
+        public static readonly DataSourceFilterAttribute DIRECT_QUICKSIGHT_OWNER = new DataSourceFilterAttribute("DIRECT_QUICKSIGHT_OWNER");
+        /// <summary>
+        /// Constant DIRECT_QUICKSIGHT_SOLE_OWNER for DataSourceFilterAttribute
+        /// </summary>
+        public static readonly DataSourceFilterAttribute DIRECT_QUICKSIGHT_SOLE_OWNER = new DataSourceFilterAttribute("DIRECT_QUICKSIGHT_SOLE_OWNER");
+        /// <summary>
+        /// Constant DIRECT_QUICKSIGHT_VIEWER_OR_OWNER for DataSourceFilterAttribute
+        /// </summary>
+        public static readonly DataSourceFilterAttribute DIRECT_QUICKSIGHT_VIEWER_OR_OWNER = new DataSourceFilterAttribute("DIRECT_QUICKSIGHT_VIEWER_OR_OWNER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataSourceFilterAttribute(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataSourceFilterAttribute FindValue(string value)
+        {
+            return FindValue<DataSourceFilterAttribute>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataSourceFilterAttribute(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DataSourceType.
     /// </summary>
     public class DataSourceType : ConstantClass
@@ -754,6 +926,10 @@ namespace Amazon.QuickSight
         /// Constant AWS_IOT_ANALYTICS for DataSourceType
         /// </summary>
         public static readonly DataSourceType AWS_IOT_ANALYTICS = new DataSourceType("AWS_IOT_ANALYTICS");
+        /// <summary>
+        /// Constant DATABRICKS for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType DATABRICKS = new DataSourceType("DATABRICKS");
         /// <summary>
         /// Constant EXASOL for DataSourceType
         /// </summary>
@@ -1124,6 +1300,10 @@ namespace Amazon.QuickSight
         /// Constant StringEquals for FilterOperator
         /// </summary>
         public static readonly FilterOperator StringEquals = new FilterOperator("StringEquals");
+        /// <summary>
+        /// Constant StringLike for FilterOperator
+        /// </summary>
+        public static readonly FilterOperator StringLike = new FilterOperator("StringLike");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1167,9 +1347,33 @@ namespace Amazon.QuickSight
     {
 
         /// <summary>
+        /// Constant DIRECT_QUICKSIGHT_OWNER for FolderFilterAttribute
+        /// </summary>
+        public static readonly FolderFilterAttribute DIRECT_QUICKSIGHT_OWNER = new FolderFilterAttribute("DIRECT_QUICKSIGHT_OWNER");
+        /// <summary>
+        /// Constant DIRECT_QUICKSIGHT_SOLE_OWNER for FolderFilterAttribute
+        /// </summary>
+        public static readonly FolderFilterAttribute DIRECT_QUICKSIGHT_SOLE_OWNER = new FolderFilterAttribute("DIRECT_QUICKSIGHT_SOLE_OWNER");
+        /// <summary>
+        /// Constant DIRECT_QUICKSIGHT_VIEWER_OR_OWNER for FolderFilterAttribute
+        /// </summary>
+        public static readonly FolderFilterAttribute DIRECT_QUICKSIGHT_VIEWER_OR_OWNER = new FolderFilterAttribute("DIRECT_QUICKSIGHT_VIEWER_OR_OWNER");
+        /// <summary>
+        /// Constant FOLDER_NAME for FolderFilterAttribute
+        /// </summary>
+        public static readonly FolderFilterAttribute FOLDER_NAME = new FolderFilterAttribute("FOLDER_NAME");
+        /// <summary>
         /// Constant PARENT_FOLDER_ARN for FolderFilterAttribute
         /// </summary>
         public static readonly FolderFilterAttribute PARENT_FOLDER_ARN = new FolderFilterAttribute("PARENT_FOLDER_ARN");
+        /// <summary>
+        /// Constant QUICKSIGHT_OWNER for FolderFilterAttribute
+        /// </summary>
+        public static readonly FolderFilterAttribute QUICKSIGHT_OWNER = new FolderFilterAttribute("QUICKSIGHT_OWNER");
+        /// <summary>
+        /// Constant QUICKSIGHT_VIEWER_OR_OWNER for FolderFilterAttribute
+        /// </summary>
+        public static readonly FolderFilterAttribute QUICKSIGHT_VIEWER_OR_OWNER = new FolderFilterAttribute("QUICKSIGHT_VIEWER_OR_OWNER");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

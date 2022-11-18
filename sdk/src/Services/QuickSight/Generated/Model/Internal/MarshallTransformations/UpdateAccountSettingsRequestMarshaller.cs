@@ -80,6 +80,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NotificationEmail);
                 }
 
+                if(publicRequest.IsSetTerminationProtectionEnabled())
+                {
+                    context.Writer.WritePropertyName("TerminationProtectionEnabled");
+                    context.Writer.Write(publicRequest.TerminationProtectionEnabled);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
