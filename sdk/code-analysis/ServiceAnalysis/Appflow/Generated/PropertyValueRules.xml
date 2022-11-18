@@ -284,6 +284,21 @@
     <pattern>arn:aws:appflow:.*:[0-9]+:.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Appflow.Model.UpdateConnectorRegistrationRequest.ConnectorLabel</property>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9][\w!@#.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.UpdateConnectorRegistrationRequest.Description</property>
+    <max>1024</max>
+    <pattern>[\s\w/!@#+=.-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.UpdateConnectorRegistrationResponse.ConnectorArn</property>
+    <max>512</max>
+    <pattern>arn:aws:.*:.*:[0-9]+:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Appflow.Model.UpdateFlowRequest.Description</property>
     <max>2048</max>
     <pattern>[\w!@#\-.?,\s]*</pattern>

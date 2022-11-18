@@ -30,8 +30,8 @@ namespace Amazon.Appflow.Model
 {
     /// <summary>
     /// Container for the parameters to the UnregisterConnector operation.
-    /// Unregisters the custom connector registered in your account that matches the connectorLabel
-    /// provided in the request.
+    /// Unregisters the custom connector registered in your account that matches the connector
+    /// label provided in the request.
     /// </summary>
     public partial class UnregisterConnectorRequest : AmazonAppflowRequest
     {

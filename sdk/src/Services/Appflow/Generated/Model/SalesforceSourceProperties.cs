@@ -83,7 +83,7 @@ namespace Amazon.Appflow.Model
         /// Amazon AppFlow uses only Salesforce REST API. By choosing this option, you ensure
         /// that your flow writes consistent output, but you decrease performance for large data
         /// transfers that are better suited for Bulk API 2.0. In some cases, if your flow attempts
-        /// to transfer a vary large set of data, it might fail with a timed out error.
+        /// to transfer a vary large set of data, it might fail wituh a timed out error.
         /// </para>
         ///  </dd> </dl>
         /// </summary>

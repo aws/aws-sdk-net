@@ -29,26 +29,34 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Appflow.Model
 {
     /// <summary>
-    /// Container for the parameters to the RegisterConnector operation.
-    /// Registers a new custom connector with your Amazon Web Services account. Before you
-    /// can register the connector, you must deploy the associated AWS lambda function in
-    /// your account.
+    /// Container for the parameters to the UpdateConnectorRegistration operation.
+    /// Updates a custom connector that you've previously registered. This operation updates
+    /// the connector with one of the following:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// The latest version of the AWS Lambda function that's assigned to the connector
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// A new AWS Lambda function that you specify
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
-    public partial class RegisterConnectorRequest : AmazonAppflowRequest
+    public partial class UpdateConnectorRegistrationRequest : AmazonAppflowRequest
     {
         private string _connectorLabel;
         private ConnectorProvisioningConfig _connectorProvisioningConfig;
-        private ConnectorProvisioningType _connectorProvisioningType;
         private string _description;
 
         /// <summary>
         /// Gets and sets the property ConnectorLabel. 
         /// <para>
-        ///  The name of the connector. The name is unique for each <code>ConnectorRegistration</code>
-        /// in your Amazon Web Services account.
+        /// The name of the connector. The name is unique for each connector registration in your
+        /// AWS account.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Required=true, Max=256)]
         public string ConnectorLabel
         {
             get { return this._connectorLabel; }
@@ -62,10 +70,7 @@ namespace Amazon.Appflow.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ConnectorProvisioningConfig. 
-        /// <para>
-        /// The provisioning type of the connector. Currently the only supported value is LAMBDA.
-        /// </para>
+        /// Gets and sets the property ConnectorProvisioningConfig.
         /// </summary>
         public ConnectorProvisioningConfig ConnectorProvisioningConfig
         {
@@ -80,28 +85,9 @@ namespace Amazon.Appflow.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ConnectorProvisioningType. 
-        /// <para>
-        /// The provisioning type of the connector. Currently the only supported value is LAMBDA.
-        /// 
-        /// </para>
-        /// </summary>
-        public ConnectorProvisioningType ConnectorProvisioningType
-        {
-            get { return this._connectorProvisioningType; }
-            set { this._connectorProvisioningType = value; }
-        }
-
-        // Check to see if ConnectorProvisioningType property is set
-        internal bool IsSetConnectorProvisioningType()
-        {
-            return this._connectorProvisioningType != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description about the connector that's being registered.
+        /// A description about the update that you're applying to the connector.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

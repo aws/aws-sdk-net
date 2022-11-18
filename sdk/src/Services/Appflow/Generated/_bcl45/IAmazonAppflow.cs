@@ -892,8 +892,9 @@ namespace Amazon.Appflow
 
 
         /// <summary>
-        /// Registers a new connector with your Amazon Web Services account. Before you can register
-        /// the connector, you must deploy lambda in your account.
+        /// Registers a new custom connector with your Amazon Web Services account. Before you
+        /// can register the connector, you must deploy the associated AWS lambda function in
+        /// your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterConnector service method.</param>
         /// 
@@ -935,8 +936,9 @@ namespace Amazon.Appflow
 
 
         /// <summary>
-        /// Registers a new connector with your Amazon Web Services account. Before you can register
-        /// the connector, you must deploy lambda in your account.
+        /// Registers a new custom connector with your Amazon Web Services account. Before you
+        /// can register the connector, you must deploy the associated AWS lambda function in
+        /// your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterConnector service method.</param>
         /// <param name="cancellationToken">
@@ -1160,8 +1162,8 @@ namespace Amazon.Appflow
 
 
         /// <summary>
-        /// Unregisters the custom connector registered in your account that matches the connectorLabel
-        /// provided in the request.
+        /// Unregisters the custom connector registered in your account that matches the connector
+        /// label provided in the request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UnregisterConnector service method.</param>
         /// 
@@ -1185,8 +1187,8 @@ namespace Amazon.Appflow
 
 
         /// <summary>
-        /// Unregisters the custom connector registered in your account that matches the connectorLabel
-        /// provided in the request.
+        /// Unregisters the custom connector registered in your account that matches the connector
+        /// label provided in the request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UnregisterConnector service method.</param>
         /// <param name="cancellationToken">
@@ -1325,6 +1327,118 @@ namespace Amazon.Appflow
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/UpdateConnectorProfile">REST API Reference for UpdateConnectorProfile Operation</seealso>
         Task<UpdateConnectorProfileResponse> UpdateConnectorProfileAsync(UpdateConnectorProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateConnectorRegistration
+
+
+        /// <summary>
+        /// Updates a custom connector that you've previously registered. This operation updates
+        /// the connector with one of the following:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The latest version of the AWS Lambda function that's assigned to the connector
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A new AWS Lambda function that you specify
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnectorRegistration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateConnectorRegistration service method, as returned by Appflow.</returns>
+        /// <exception cref="Amazon.Appflow.Model.AccessDeniedException">
+        /// AppFlow/Requester has invalid or missing permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.ConflictException">
+        /// There was a conflict when processing the request (for example, a flow with the given
+        /// name already exists within the account. Check for conflicting resource names and try
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.ConnectorAuthenticationException">
+        /// An error occurred when authenticating with the connector endpoint.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.ConnectorServerException">
+        /// An error occurred when retrieving data from the connector endpoint.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.InternalServerException">
+        /// An internal service error occurred during the processing of your request. Try again
+        /// later.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.ResourceNotFoundException">
+        /// The resource specified in the request (such as the source or destination connector
+        /// profile) is not found.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota (such as the number of flows) to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.ThrottlingException">
+        /// API calls have exceeded the maximum allowed API request rate per account and per Region.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.ValidationException">
+        /// The request has invalid or missing parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/UpdateConnectorRegistration">REST API Reference for UpdateConnectorRegistration Operation</seealso>
+        UpdateConnectorRegistrationResponse UpdateConnectorRegistration(UpdateConnectorRegistrationRequest request);
+
+
+
+        /// <summary>
+        /// Updates a custom connector that you've previously registered. This operation updates
+        /// the connector with one of the following:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The latest version of the AWS Lambda function that's assigned to the connector
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A new AWS Lambda function that you specify
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnectorRegistration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateConnectorRegistration service method, as returned by Appflow.</returns>
+        /// <exception cref="Amazon.Appflow.Model.AccessDeniedException">
+        /// AppFlow/Requester has invalid or missing permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.ConflictException">
+        /// There was a conflict when processing the request (for example, a flow with the given
+        /// name already exists within the account. Check for conflicting resource names and try
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.ConnectorAuthenticationException">
+        /// An error occurred when authenticating with the connector endpoint.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.ConnectorServerException">
+        /// An error occurred when retrieving data from the connector endpoint.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.InternalServerException">
+        /// An internal service error occurred during the processing of your request. Try again
+        /// later.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.ResourceNotFoundException">
+        /// The resource specified in the request (such as the source or destination connector
+        /// profile) is not found.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota (such as the number of flows) to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.ThrottlingException">
+        /// API calls have exceeded the maximum allowed API request rate per account and per Region.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.ValidationException">
+        /// The request has invalid or missing parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/UpdateConnectorRegistration">REST API Reference for UpdateConnectorRegistration Operation</seealso>
+        Task<UpdateConnectorRegistrationResponse> UpdateConnectorRegistrationAsync(UpdateConnectorRegistrationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
