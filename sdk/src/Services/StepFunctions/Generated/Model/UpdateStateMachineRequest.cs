@@ -132,7 +132,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property TracingConfiguration. 
         /// <para>
-        /// Selects whether AWS X-Ray tracing is enabled.
+        /// Selects whether X-Ray tracing is enabled.
         /// </para>
         /// </summary>
         public TracingConfiguration TracingConfiguration

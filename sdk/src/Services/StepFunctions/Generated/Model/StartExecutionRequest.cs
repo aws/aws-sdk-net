@@ -34,11 +34,17 @@ namespace Amazon.StepFunctions.Model
     /// 
     ///  <note> 
     /// <para>
-    ///  <code>StartExecution</code> is idempotent. If <code>StartExecution</code> is called
-    /// with the same name and input as a running execution, the call will succeed and return
-    /// the same response as the original request. If the execution is closed or if the input
-    /// is different, it will return a 400 <code>ExecutionAlreadyExists</code> error. Names
-    /// can be reused after 90 days. 
+    ///  <code>StartExecution</code> is idempotent for <code>STANDARD</code> workflows. For
+    /// a <code>STANDARD</code> workflow, if <code>StartExecution</code> is called with the
+    /// same name and input as a running execution, the call will succeed and return the same
+    /// response as the original request. If the execution is closed or if the input is different,
+    /// it will return a <code>400 ExecutionAlreadyExists</code> error. Names can be reused
+    /// after 90 days. 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>StartExecution</code> is not idempotent for <code>EXPRESS</code> workflows.
+    /// 
     /// </para>
     ///  </note>
     /// </summary>
@@ -85,9 +91,9 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the execution. This name must be unique for your AWS account, region,
-        /// and state machine for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-        /// Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer
+        /// The name of the execution. This name must be unique for your Amazon Web Services account,
+        /// region, and state machine for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
+        /// Limits Related to State Machine Executions</a> in the <i>Step Functions Developer
         /// Guide</i>.
         /// </para>
         ///  
@@ -155,7 +161,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property TraceHeader. 
         /// <para>
-        /// Passes the AWS X-Ray trace header. The trace header can also be passed in the request
+        /// Passes the X-Ray trace header. The trace header can also be passed in the request
         /// payload.
         /// </para>
         /// </summary>

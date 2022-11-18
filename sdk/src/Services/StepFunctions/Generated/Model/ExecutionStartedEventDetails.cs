@@ -78,7 +78,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM role used for executing AWS Lambda tasks.
+        /// The Amazon Resource Name (ARN) of the IAM role used for executing Lambda tasks.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// Contains details about a lambda function that failed during an execution.
+    /// Contains details about a Lambda function that failed during an execution.
     /// </summary>
     public partial class LambdaFunctionFailedEventDetails
     {

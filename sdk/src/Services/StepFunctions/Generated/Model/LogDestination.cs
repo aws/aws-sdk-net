@@ -39,7 +39,7 @@ namespace Amazon.StepFunctions.Model
         /// Gets and sets the property CloudWatchLogsLogGroup. 
         /// <para>
         /// An object describing a CloudWatch log group. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html">AWS::Logs::LogGroup</a>
-        /// in the AWS CloudFormation User Guide.
+        /// in the CloudFormation User Guide.
         /// </para>
         /// </summary>
         public CloudWatchLogsLogGroup CloudWatchLogsLogGroup

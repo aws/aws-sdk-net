@@ -298,7 +298,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property TraceHeader. 
         /// <para>
-        /// The AWS X-Ray trace header that was passed to the execution.
+        /// The X-Ray trace header that was passed to the execution.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]

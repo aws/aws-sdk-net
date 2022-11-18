@@ -149,7 +149,8 @@ namespace Amazon.StepFunctions.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role used when creating this state machine.
-        /// (The IAM role maintains security by granting Step Functions access to AWS resources.)
+        /// (The IAM role maintains security by granting Step Functions access to Amazon Web Services
+        /// resources.)
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -205,7 +206,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property TracingConfiguration. 
         /// <para>
-        /// Selects whether AWS X-Ray tracing is enabled.
+        /// Selects whether X-Ray tracing is enabled.
         /// </para>
         /// </summary>
         public TracingConfiguration TracingConfiguration

@@ -38,6 +38,7 @@ namespace Amazon.StepFunctions.Model
         private string _region;
         private string _resource;
         private string _resourceType;
+        private TaskCredentials _taskCredentials;
         private long? _timeoutInSeconds;
 
         /// <summary>
@@ -100,7 +101,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property Resource. 
         /// <para>
-        /// The service name of the resource in a task state.
+        /// The action of the resource called by a task state.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=80)]
@@ -119,7 +120,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The action of the resource called by a task state.
+        /// The service name of the resource in a task state.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=80)]
@@ -133,6 +134,24 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetResourceType()
         {
             return this._resourceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskCredentials. 
+        /// <para>
+        /// The credentials that Step Functions uses for the task.
+        /// </para>
+        /// </summary>
+        public TaskCredentials TaskCredentials
+        {
+            get { return this._taskCredentials; }
+            set { this._taskCredentials = value; }
+        }
+
+        // Check to see if TaskCredentials property is set
+        internal bool IsSetTaskCredentials()
+        {
+            return this._taskCredentials != null;
         }
 
         /// <summary>

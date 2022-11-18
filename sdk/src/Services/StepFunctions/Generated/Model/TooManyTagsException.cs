@@ -30,7 +30,7 @@ namespace Amazon.StepFunctions.Model
 {
     /// <summary>
     /// You've exceeded the number of tags allowed for a resource. See the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html">
-    /// Limits Topic</a> in the AWS Step Functions Developer Guide.
+    /// Limits Topic</a> in the Step Functions Developer Guide.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

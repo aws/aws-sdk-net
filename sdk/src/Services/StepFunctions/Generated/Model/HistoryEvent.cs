@@ -323,7 +323,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property LambdaFunctionSucceededEventDetails. 
         /// <para>
-        /// Contains details about a lambda function that terminated successfully during an execution.
+        /// Contains details about a Lambda function that terminated successfully during an execution.
         /// </para>
         /// </summary>
         public LambdaFunctionSucceededEventDetails LambdaFunctionSucceededEventDetails

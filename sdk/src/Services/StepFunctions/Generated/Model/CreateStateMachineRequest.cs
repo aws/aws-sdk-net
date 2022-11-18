@@ -35,7 +35,7 @@ namespace Amazon.StepFunctions.Model
     /// states), stop an execution with an error (<code>Fail</code> states), and so on. State
     /// machines are specified using a JSON-based, structured language. For more information,
     /// see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
-    /// States Language</a> in the AWS Step Functions User Guide.
+    /// States Language</a> in the Step Functions User Guide.
     /// 
     ///  <note> 
     /// <para>
@@ -94,7 +94,7 @@ namespace Amazon.StepFunctions.Model
         /// <para>
         /// By default, the <code>level</code> is set to <code>OFF</code>. For more information
         /// see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log
-        /// Levels</a> in the AWS Step Functions User Guide.
+        /// Levels</a> in the Step Functions User Guide.
         /// </para>
         ///  </note>
         /// </summary>
@@ -185,8 +185,8 @@ namespace Amazon.StepFunctions.Model
         ///  
         /// <para>
         /// An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-        /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>,
-        /// and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
+        /// Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
+        /// User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling
         /// Access Using IAM Tags</a>.
         /// </para>
         ///  
@@ -210,7 +210,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property TracingConfiguration. 
         /// <para>
-        /// Selects whether AWS X-Ray tracing is enabled.
+        /// Selects whether X-Ray tracing is enabled.
         /// </para>
         /// </summary>
         public TracingConfiguration TracingConfiguration

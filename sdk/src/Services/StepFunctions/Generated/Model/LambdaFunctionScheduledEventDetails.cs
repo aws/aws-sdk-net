@@ -29,19 +29,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// Contains details about a lambda function scheduled during an execution.
+    /// Contains details about a Lambda function scheduled during an execution.
     /// </summary>
     public partial class LambdaFunctionScheduledEventDetails
     {
         private string _input;
         private HistoryEventExecutionDataDetails _inputDetails;
         private string _resource;
+        private TaskCredentials _taskCredentials;
         private long? _timeoutInSeconds;
 
         /// <summary>
         /// Gets and sets the property Input. 
         /// <para>
-        /// The JSON data input to the lambda function. Length constraints apply to the payload
+        /// The JSON data input to the Lambda function. Length constraints apply to the payload
         /// size, and are expressed as bytes in UTF-8 encoding.
         /// </para>
         /// </summary>
@@ -79,7 +80,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property Resource. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the scheduled lambda function.
+        /// The Amazon Resource Name (ARN) of the scheduled Lambda function.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -96,9 +97,27 @@ namespace Amazon.StepFunctions.Model
         }
 
         /// <summary>
+        /// Gets and sets the property TaskCredentials. 
+        /// <para>
+        /// The credentials that Step Functions uses for the task.
+        /// </para>
+        /// </summary>
+        public TaskCredentials TaskCredentials
+        {
+            get { return this._taskCredentials; }
+            set { this._taskCredentials = value; }
+        }
+
+        // Check to see if TaskCredentials property is set
+        internal bool IsSetTaskCredentials()
+        {
+            return this._taskCredentials != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property TimeoutInSeconds. 
         /// <para>
-        /// The maximum allowed duration of the lambda function.
+        /// The maximum allowed duration of the Lambda function.
         /// </para>
         /// </summary>
         public long TimeoutInSeconds

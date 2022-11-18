@@ -29,28 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// Selects whether or not the state machine's X-Ray tracing is enabled. Default is <code>false</code>
+    /// Contains details about the credentials that Step Functions uses for a task.
     /// </summary>
-    public partial class TracingConfiguration
+    public partial class TaskCredentials
     {
-        private bool? _enabled;
+        private string _roleArn;
 
         /// <summary>
-        /// Gets and sets the property Enabled. 
+        /// Gets and sets the property RoleArn. 
         /// <para>
-        /// When set to <code>true</code>, X-Ray tracing is enabled.
+        /// The ARN of an IAM role that Step Functions assumes for the task. The role can allow
+        /// cross-account access to resources.
         /// </para>
         /// </summary>
-        public bool Enabled
+        [AWSProperty(Min=1, Max=1600)]
+        public string RoleArn
         {
-            get { return this._enabled.GetValueOrDefault(); }
-            set { this._enabled = value; }
+            get { return this._roleArn; }
+            set { this._roleArn = value; }
         }
 
-        // Check to see if Enabled property is set
-        internal bool IsSetEnabled()
+        // Check to see if RoleArn property is set
+        internal bool IsSetRoleArn()
         {
-            return this._enabled.HasValue; 
+            return this._roleArn != null;
         }
 
     }

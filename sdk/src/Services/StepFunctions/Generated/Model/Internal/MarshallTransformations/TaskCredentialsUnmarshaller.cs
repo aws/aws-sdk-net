@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LambdaFunctionScheduledEventDetails Object
+    /// Response Unmarshaller for TaskCredentials Object
     /// </summary>  
-    public class LambdaFunctionScheduledEventDetailsUnmarshaller : IUnmarshaller<LambdaFunctionScheduledEventDetails, XmlUnmarshallerContext>, IUnmarshaller<LambdaFunctionScheduledEventDetails, JsonUnmarshallerContext>
+    public class TaskCredentialsUnmarshaller : IUnmarshaller<TaskCredentials, XmlUnmarshallerContext>, IUnmarshaller<TaskCredentials, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        LambdaFunctionScheduledEventDetails IUnmarshaller<LambdaFunctionScheduledEventDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TaskCredentials IUnmarshaller<TaskCredentials, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,21 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public LambdaFunctionScheduledEventDetails Unmarshall(JsonUnmarshallerContext context)
+        public TaskCredentials Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            LambdaFunctionScheduledEventDetails unmarshalledObject = new LambdaFunctionScheduledEventDetails();
+            TaskCredentials unmarshalledObject = new TaskCredentials();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("input", targetDepth))
+                if (context.TestExpression("roleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Input = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("inputDetails", targetDepth))
-                {
-                    var unmarshaller = HistoryEventExecutionDataDetailsUnmarshaller.Instance;
-                    unmarshalledObject.InputDetails = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("resource", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Resource = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("taskCredentials", targetDepth))
-                {
-                    var unmarshaller = TaskCredentialsUnmarshaller.Instance;
-                    unmarshalledObject.TaskCredentials = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("timeoutInSeconds", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.TimeoutInSeconds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +76,12 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
         }
 
 
-        private static LambdaFunctionScheduledEventDetailsUnmarshaller _instance = new LambdaFunctionScheduledEventDetailsUnmarshaller();        
+        private static TaskCredentialsUnmarshaller _instance = new TaskCredentialsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LambdaFunctionScheduledEventDetailsUnmarshaller Instance
+        public static TaskCredentialsUnmarshaller Instance
         {
             get
             {

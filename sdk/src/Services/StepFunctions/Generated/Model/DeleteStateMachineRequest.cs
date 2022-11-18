@@ -35,7 +35,7 @@ namespace Amazon.StepFunctions.Model
     /// 
     ///  <note> 
     /// <para>
-    /// For <code>EXPRESS</code>state machines, the deletion will happen eventually (usually
+    /// For <code>EXPRESS</code> state machines, the deletion will happen eventually (usually
     /// less than a minute). Running executions may emit logs after <code>DeleteStateMachine</code>
     /// API is called.
     /// </para>

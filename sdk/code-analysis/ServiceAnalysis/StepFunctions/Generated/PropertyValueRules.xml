@@ -620,6 +620,11 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StepFunctions.Model.TaskCredentials.RoleArn</property>
+    <min>1</min>
+    <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StepFunctions.Model.TaskFailedEventDetails.Cause</property>
     <min>0</min>
     <max>32768</max>

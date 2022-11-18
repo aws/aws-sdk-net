@@ -79,7 +79,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property Resource. 
         /// <para>
-        /// The service name of the resource in a task state.
+        /// The action of the resource called by a task state.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=80)]
@@ -98,7 +98,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The action of the resource called by a task state.
+        /// The service name of the resource in a task state.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=80)]
