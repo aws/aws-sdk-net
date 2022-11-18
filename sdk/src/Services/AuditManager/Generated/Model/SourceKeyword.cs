@@ -142,15 +142,6 @@ namespace Amazon.AuditManager.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Service-linked rule name: securityhub-api-gw-cache-encrypted-101104e1
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>keywordValue</code>: <code>Custom_securityhub-api-gw-cache-encrypted</code>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// Service-linked rule name: OrgConfigRule-s3-bucket-versioning-enabled-dbgzf8ba
         /// </para>
         ///  

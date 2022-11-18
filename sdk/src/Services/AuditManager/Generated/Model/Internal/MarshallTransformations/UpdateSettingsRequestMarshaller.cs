@@ -92,6 +92,12 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetEvidenceFinderEnabled())
+                {
+                    context.Writer.WritePropertyName("evidenceFinderEnabled");
+                    context.Writer.Write(publicRequest.EvidenceFinderEnabled);
+                }
+
                 if(publicRequest.IsSetKmsKey())
                 {
                     context.Writer.WritePropertyName("kmsKey");

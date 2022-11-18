@@ -35,6 +35,7 @@ namespace Amazon.AuditManager.Model
     {
         private AssessmentReportsDestination _defaultAssessmentReportsDestination;
         private List<Role> _defaultProcessOwners = new List<Role>();
+        private EvidenceFinderEnablement _evidenceFinderEnablement;
         private bool? _isAwsOrgEnabled;
         private string _kmsKey;
         private string _snsTopic;
@@ -73,6 +74,24 @@ namespace Amazon.AuditManager.Model
         internal bool IsSetDefaultProcessOwners()
         {
             return this._defaultProcessOwners != null && this._defaultProcessOwners.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EvidenceFinderEnablement. 
+        /// <para>
+        /// The current evidence finder status and event data store details.
+        /// </para>
+        /// </summary>
+        public EvidenceFinderEnablement EvidenceFinderEnablement
+        {
+            get { return this._evidenceFinderEnablement; }
+            set { this._evidenceFinderEnablement = value; }
+        }
+
+        // Check to see if EvidenceFinderEnablement property is set
+        internal bool IsSetEvidenceFinderEnablement()
+        {
+            return this._evidenceFinderEnablement != null;
         }
 
         /// <summary>

@@ -569,6 +569,38 @@ namespace Amazon.AuditManager
 
         /// <summary>
         /// Uploads one or more pieces of evidence to a control in an Audit Manager assessment.
+        /// You can upload manual evidence from any Amazon Simple Storage Service (Amazon S3)
+        /// bucket by specifying the S3 URI of the evidence. 
+        /// 
+        ///  
+        /// <para>
+        /// You must upload manual evidence to your S3 bucket before you can upload it to your
+        /// assessment. For instructions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
+        /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+        /// in the <i>Amazon Simple Storage Service API Reference.</i> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following restrictions apply to this action:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Maximum size of an individual evidence file: 100 MB
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Number of daily manual evidence uploads per control: 100
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Supported file formats: See <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files">Supported
+        /// file types for manual evidence</a> in the <i>Audit Manager User Guide</i> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about Audit Manager service restrictions, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas
+        /// and restrictions for Audit Manager</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchImportEvidenceToAssessmentControl service method.</param>
         /// <param name="cancellationToken">
@@ -1201,7 +1233,7 @@ namespace Amazon.AuditManager
         /// Removes the specified Amazon Web Services account as a delegated administrator for
         /// Audit Manager. 
         /// 
-        ///  <important> 
+        ///  
         /// <para>
         /// When you remove a delegated administrator from your Audit Manager settings, you continue
         /// to have access to the evidence that you previously collected under that account. This
@@ -1209,7 +1241,29 @@ namespace Amazon.AuditManager
         /// However, Audit Manager will stop collecting and attaching evidence to that delegated
         /// administrator account moving forward.
         /// </para>
-        ///  </important> <note> 
+        ///  <important> 
+        /// <para>
+        /// Keep in mind the following cleanup task if you use evidence finder:
+        /// </para>
+        ///  
+        /// <para>
+        /// Before you use your management account to remove a delegated administrator, make sure
+        /// that the current delegated administrator account signs in to Audit Manager and disables
+        /// evidence finder first. Disabling evidence finder automatically deletes the event data
+        /// store that was created in their account when they enabled evidence finder. If this
+        /// task isn’t completed, the event data store remains in their account. In this case,
+        /// we recommend that the original delegated administrator goes to CloudTrail Lake and
+        /// manually <a href="https://docs.aws.amazon.com/userguide/awscloudtrail/latest/userguide/query-eds-disable-termination.html">deletes
+        /// the event data store</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This cleanup task is necessary to ensure that you don't end up with multiple event
+        /// data stores. Audit Manager will ignore an unused event data store after you remove
+        /// or change a delegated administrator account. However, the unused event data store
+        /// continues to incur storage costs from CloudTrail Lake if you don't delete it.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// When you deregister a delegated administrator account for Audit Manager, the data
         /// for that account isn’t deleted. If you want to delete resource data for a delegated
@@ -1256,7 +1310,6 @@ namespace Amazon.AuditManager
         /// At this time, Audit Manager doesn't provide an option to delete evidence. All available
         /// delete operations are listed above.
         /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterOrganizationAdminAccount service method.</param>
         /// <param name="cancellationToken">
@@ -2055,7 +2108,10 @@ namespace Amazon.AuditManager
 
 
         /// <summary>
-        /// Returns a list of the in-scope Amazon Web Services for the specified assessment.
+        /// Returns a list of all of the Amazon Web Services that you can choose to include in
+        /// your assessment. When you <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_CreateAssessment.html">create
+        /// an assessment</a>, specify which of these services you want to include to narrow the
+        /// assessment's <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_Scope.html">scope</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetServicesInScope service method.</param>
         /// <param name="cancellationToken">

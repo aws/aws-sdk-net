@@ -36,6 +36,7 @@ namespace Amazon.AuditManager.Model
     {
         private AssessmentReportsDestination _defaultAssessmentReportsDestination;
         private List<Role> _defaultProcessOwners = new List<Role>();
+        private bool? _evidenceFinderEnabled;
         private string _kmsKey;
         private string _snsTopic;
 
@@ -73,6 +74,40 @@ namespace Amazon.AuditManager.Model
         internal bool IsSetDefaultProcessOwners()
         {
             return this._defaultProcessOwners != null && this._defaultProcessOwners.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EvidenceFinderEnabled. 
+        /// <para>
+        /// Specifies whether the evidence finder feature is enabled. Change this attribute to
+        /// enable or disable evidence finder.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// When you use this attribute to disable evidence finder, Audit Manager deletes the
+        /// event data store that’s used to query your evidence data. As a result, you can’t re-enable
+        /// evidence finder and use the feature again. Your only alternative is to <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister</a>
+        /// and then <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a>
+        /// Audit Manager. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Disabling evidence finder is permanent, so consider this decision carefully before
+        /// you proceed. If you’re using Audit Manager as a delegated administrator, keep in mind
+        /// that this action applies to all member accounts in your organization.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public bool EvidenceFinderEnabled
+        {
+            get { return this._evidenceFinderEnabled.GetValueOrDefault(); }
+            set { this._evidenceFinderEnabled = value; }
+        }
+
+        // Check to see if EvidenceFinderEnabled property is set
+        internal bool IsSetEvidenceFinderEnabled()
+        {
+            return this._evidenceFinderEnabled.HasValue; 
         }
 
         /// <summary>

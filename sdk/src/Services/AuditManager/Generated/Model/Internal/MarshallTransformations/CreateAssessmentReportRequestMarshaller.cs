@@ -80,6 +80,12 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetQueryStatement())
+                {
+                    context.Writer.WritePropertyName("queryStatement");
+                    context.Writer.Write(publicRequest.QueryStatement);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

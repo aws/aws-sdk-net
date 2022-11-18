@@ -118,6 +118,12 @@
     <pattern>^[a-zA-Z0-9-_\.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AuditManager.Model.CreateAssessmentReportRequest.QueryStatement</property>
+    <min>1</min>
+    <max>10000</max>
+    <pattern>(?s).*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AuditManager.Model.CreateControlRequest.ActionPlanInstructions</property>
     <max>1000</max>
     <pattern>^[\w\W\s\S]*$</pattern>
@@ -1614,6 +1620,17 @@
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AuditManager.Model.EvidenceFinderEnablement.Error</property>
+    <max>300</max>
+    <pattern>^[\w\W\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AuditManager.Model.EvidenceFinderEnablement.EventDataStoreArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:.*:cloudtrail:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AuditManager.Model.Framework.Arn</property>
     <min>20</min>
     <max>2048</max>
@@ -1741,6 +1758,12 @@
     <min>20</min>
     <max>2048</max>
     <pattern>^arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AuditManager.Model.Resource.ComplianceCheck</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.Resource.Value</property>

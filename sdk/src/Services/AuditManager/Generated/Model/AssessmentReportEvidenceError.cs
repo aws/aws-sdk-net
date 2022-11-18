@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// An error entity for the <code>AssessmentReportEvidence</code> API. This is used to
-    /// provide more meaningful errors than a simple string message.
+    /// An error entity for assessment report evidence errors. This is used to provide more
+    /// meaningful errors than a simple string message.
     /// </summary>
     public partial class AssessmentReportEvidenceError
     {
@@ -41,7 +41,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ErrorCode. 
         /// <para>
-        ///  The error code that the <code>AssessmentReportEvidence</code> API returned. 
+        ///  The error code that was returned. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=3)]
@@ -60,7 +60,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        ///  The error message that the <code>AssessmentReportEvidence</code> API returned. 
+        ///  The error message that was returned. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=300)]

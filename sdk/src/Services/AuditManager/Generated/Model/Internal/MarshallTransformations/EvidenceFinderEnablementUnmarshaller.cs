@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Resource Object
+    /// Response Unmarshaller for EvidenceFinderEnablement Object
     /// </summary>  
-    public class ResourceUnmarshaller : IUnmarshaller<Resource, XmlUnmarshallerContext>, IUnmarshaller<Resource, JsonUnmarshallerContext>
+    public class EvidenceFinderEnablementUnmarshaller : IUnmarshaller<EvidenceFinderEnablement, XmlUnmarshallerContext>, IUnmarshaller<EvidenceFinderEnablement, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Resource IUnmarshaller<Resource, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EvidenceFinderEnablement IUnmarshaller<EvidenceFinderEnablement, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,39 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Resource Unmarshall(JsonUnmarshallerContext context)
+        public EvidenceFinderEnablement Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Resource unmarshalledObject = new Resource();
+            EvidenceFinderEnablement unmarshalledObject = new EvidenceFinderEnablement();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("backfillStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BackfillStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("complianceCheck", targetDepth))
+                if (context.TestExpression("enablementStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ComplianceCheck = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EnablementStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("value", targetDepth))
+                if (context.TestExpression("error", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Value = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Error = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("eventDataStoreArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EventDataStoreArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +94,12 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
         }
 
 
-        private static ResourceUnmarshaller _instance = new ResourceUnmarshaller();        
+        private static EvidenceFinderEnablementUnmarshaller _instance = new EvidenceFinderEnablementUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ResourceUnmarshaller Instance
+        public static EvidenceFinderEnablementUnmarshaller Instance
         {
             get
             {
