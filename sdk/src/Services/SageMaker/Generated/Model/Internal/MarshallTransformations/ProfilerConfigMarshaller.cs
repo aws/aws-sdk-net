@@ -45,6 +45,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ProfilerConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetDisableProfiler())
+            {
+                context.Writer.WritePropertyName("DisableProfiler");
+                context.Writer.Write(requestObject.DisableProfiler);
+            }
+
             if(requestObject.IsSetProfilingIntervalInMilliseconds())
             {
                 context.Writer.WritePropertyName("ProfilingIntervalInMilliseconds");

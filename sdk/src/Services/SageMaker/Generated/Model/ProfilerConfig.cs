@@ -34,9 +34,28 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ProfilerConfig
     {
+        private bool? _disableProfiler;
         private long? _profilingIntervalInMilliseconds;
         private Dictionary<string, string> _profilingParameters = new Dictionary<string, string>();
         private string _s3OutputPath;
+
+        /// <summary>
+        /// Gets and sets the property DisableProfiler. 
+        /// <para>
+        /// To disable system monitoring and profiling, set to <code>True</code>.
+        /// </para>
+        /// </summary>
+        public bool DisableProfiler
+        {
+            get { return this._disableProfiler.GetValueOrDefault(); }
+            set { this._disableProfiler = value; }
+        }
+
+        // Check to see if DisableProfiler property is set
+        internal bool IsSetDisableProfiler()
+        {
+            return this._disableProfiler.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ProfilingIntervalInMilliseconds. 
@@ -89,7 +108,7 @@ namespace Amazon.SageMaker.Model
         /// Path to Amazon S3 storage location for system and framework metrics.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=1024)]
+        [AWSProperty(Max=1024)]
         public string S3OutputPath
         {
             get { return this._s3OutputPath; }
