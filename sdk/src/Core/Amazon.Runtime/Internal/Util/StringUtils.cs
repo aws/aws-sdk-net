@@ -68,6 +68,11 @@ namespace Amazon.Runtime.Internal.Util
             return value.ToString(CultureInfo.InvariantCulture);
         }
 
+        public static string FromFloat(float value)
+        {
+            return value.ToString(CultureInfo.InvariantCulture);
+        }
+
         public static string FromBool(bool value)
         {
             return value ? "true" : "false";
