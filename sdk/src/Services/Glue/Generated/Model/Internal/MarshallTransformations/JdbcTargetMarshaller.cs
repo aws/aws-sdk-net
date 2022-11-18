@@ -51,6 +51,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ConnectionName);
             }
 
+            if(requestObject.IsSetEnableAdditionalMetadata())
+            {
+                context.Writer.WritePropertyName("EnableAdditionalMetadata");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectEnableAdditionalMetadataListValue in requestObject.EnableAdditionalMetadata)
+                {
+                        context.Writer.Write(requestObjectEnableAdditionalMetadataListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetExclusions())
             {
                 context.Writer.WritePropertyName("Exclusions");
