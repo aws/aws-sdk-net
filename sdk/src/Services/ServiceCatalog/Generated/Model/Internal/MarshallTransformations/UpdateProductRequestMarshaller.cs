@@ -130,6 +130,17 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetSourceConnection())
+                {
+                    context.Writer.WritePropertyName("SourceConnection");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SourceConnectionMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SourceConnection, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSupportDescription())
                 {
                     context.Writer.WritePropertyName("SupportDescription");

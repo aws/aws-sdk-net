@@ -30,7 +30,8 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the ListPrincipalsForPortfolio operation.
-    /// Lists all principal ARNs associated with the specified portfolio.
+    /// Lists all <code>PrincipalARN</code>s and corresponding <code>PrincipalType</code>s
+    /// associated with the specified portfolio.
     /// </summary>
     public partial class ListPrincipalsForPortfolioRequest : AmazonServiceCatalogRequest
     {

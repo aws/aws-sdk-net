@@ -30,12 +30,12 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdatePortfolioShare operation.
-    /// Updates the specified portfolio share. You can use this API to enable or disable TagOptions
-    /// sharing for an existing portfolio share. 
+    /// Updates the specified portfolio share. You can use this API to enable or disable <code>TagOptions</code>
+    /// sharing or Principal sharing for an existing portfolio share. 
     /// 
     ///  
     /// <para>
-    /// The portfolio share cannot be updated if the <code> CreatePortfolioShare</code> operation
+    /// The portfolio share cannot be updated if the <code>CreatePortfolioShare</code> operation
     /// is <code>IN_PROGRESS</code>, as the share is not available to recipient entities.
     /// In this case, you must wait for the portfolio share to be COMPLETED.
     /// </para>
@@ -55,6 +55,20 @@ namespace Amazon.ServiceCatalog.Model
     /// This API cannot be used for removing the portfolio share. You must use <code>DeletePortfolioShare</code>
     /// API for that action. 
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// When you associate a principal with portfolio, a potential privilege escalation path
+    /// may occur when that portfolio is then shared with other accounts. For a user in a
+    /// recipient account who is <i>not</i> an Service Catalog Admin, but still has the ability
+    /// to create Principals (Users/Groups/Roles), that user could create a role that matches
+    /// a principal name association for the portfolio. Although this user may not know which
+    /// principal names are associated through Service Catalog, they may be able to guess
+    /// the user. If this potential escalation path is a concern, then Service Catalog recommends
+    /// using <code>PrincipalType</code> as <code>IAM</code>. With this configuration, the
+    /// <code>PrincipalARN</code> must already exist in the recipient account before it can
+    /// be associated. 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class UpdatePortfolioShareRequest : AmazonServiceCatalogRequest
     {
@@ -62,6 +76,7 @@ namespace Amazon.ServiceCatalog.Model
         private string _accountId;
         private OrganizationNode _organizationNode;
         private string _portfolioId;
+        private bool? _sharePrincipals;
         private bool? _shareTagOptions;
 
         /// <summary>
@@ -150,11 +165,31 @@ namespace Amazon.ServiceCatalog.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SharePrincipals. 
+        /// <para>
+        /// A flag to enables or disables <code>Principals</code> sharing in the portfolio. If
+        /// this field is not provided, the current state of the <code>Principals</code> sharing
+        /// on the portfolio share will not be modified. 
+        /// </para>
+        /// </summary>
+        public bool SharePrincipals
+        {
+            get { return this._sharePrincipals.GetValueOrDefault(); }
+            set { this._sharePrincipals = value; }
+        }
+
+        // Check to see if SharePrincipals property is set
+        internal bool IsSetSharePrincipals()
+        {
+            return this._sharePrincipals.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ShareTagOptions. 
         /// <para>
-        /// A flag to enable or disable TagOptions sharing for the portfolio share. If this field
-        /// is not provided, the current state of TagOptions sharing on the portfolio share will
-        /// not be modified.
+        /// Enables or disables <code>TagOptions</code> sharing for the portfolio share. If this
+        /// field is not provided, the current state of TagOptions sharing on the portfolio share
+        /// will not be modified.
         /// </para>
         /// </summary>
         public bool ShareTagOptions

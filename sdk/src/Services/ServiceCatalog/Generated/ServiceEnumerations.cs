@@ -395,6 +395,56 @@ namespace Amazon.ServiceCatalog
 
 
     /// <summary>
+    /// Constants used for properties of type LastSyncStatus.
+    /// </summary>
+    public class LastSyncStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for LastSyncStatus
+        /// </summary>
+        public static readonly LastSyncStatus FAILED = new LastSyncStatus("FAILED");
+        /// <summary>
+        /// Constant SUCCEEDED for LastSyncStatus
+        /// </summary>
+        public static readonly LastSyncStatus SUCCEEDED = new LastSyncStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LastSyncStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LastSyncStatus FindValue(string value)
+        {
+            return FindValue<LastSyncStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LastSyncStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OrganizationNodeType.
     /// </summary>
     public class OrganizationNodeType : ConstantClass
@@ -512,6 +562,10 @@ namespace Amazon.ServiceCatalog
         /// Constant IAM for PrincipalType
         /// </summary>
         public static readonly PrincipalType IAM = new PrincipalType("IAM");
+        /// <summary>
+        /// Constant IAM_PATTERN for PrincipalType
+        /// </summary>
+        public static readonly PrincipalType IAM_PATTERN = new PrincipalType("IAM_PATTERN");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1684,6 +1738,52 @@ namespace Amazon.ServiceCatalog
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SortOrder(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SourceType.
+    /// </summary>
+    public class SourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CODESTAR for SourceType
+        /// </summary>
+        public static readonly SourceType CODESTAR = new SourceType("CODESTAR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SourceType FindValue(string value)
+        {
+            return FindValue<SourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SourceType(string value)
         {
             return FindValue(value);
         }

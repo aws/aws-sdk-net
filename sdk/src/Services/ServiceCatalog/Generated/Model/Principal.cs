@@ -39,7 +39,9 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property PrincipalARN. 
         /// <para>
-        /// The ARN of the principal (IAM user, role, or group).
+        /// The ARN of the principal (IAM user, role, or group). This field allows for an ARN
+        /// with no <code>accountID</code> if the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -58,7 +60,9 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property PrincipalType. 
         /// <para>
-        /// The principal type. The supported value is <code>IAM</code>.
+        /// The principal type. The supported value is <code>IAM</code> if you use a fully defined
+        /// ARN, or <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>.
+        /// 
         /// </para>
         /// </summary>
         public PrincipalType PrincipalType

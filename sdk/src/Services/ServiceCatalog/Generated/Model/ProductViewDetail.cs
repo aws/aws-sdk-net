@@ -36,6 +36,7 @@ namespace Amazon.ServiceCatalog.Model
         private DateTime? _createdTime;
         private string _productARN;
         private ProductViewSummary _productViewSummary;
+        private SourceConnectionDetail _sourceConnection;
         private Status _status;
 
         /// <summary>
@@ -91,6 +92,28 @@ namespace Amazon.ServiceCatalog.Model
         internal bool IsSetProductViewSummary()
         {
             return this._productViewSummary != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceConnection. 
+        /// <para>
+        /// A top level <code>ProductViewDetail</code> response containing details about the product’s
+        /// connection. Service Catalog returns this field for the <code>CreateProduct</code>,
+        /// <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>, and <code>SearchProductAsAdmin</code>
+        /// APIs. This response contains the same fields as the <code>ConnectionParameters</code>
+        /// request, with the addition of the <code>LastSync</code> response.
+        /// </para>
+        /// </summary>
+        public SourceConnectionDetail SourceConnection
+        {
+            get { return this._sourceConnection; }
+            set { this._sourceConnection = value; }
+        }
+
+        // Check to see if SourceConnection property is set
+        internal bool IsSetSourceConnection()
+        {
+            return this._sourceConnection != null;
         }
 
         /// <summary>

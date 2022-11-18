@@ -31,12 +31,27 @@ namespace Amazon.ServiceCatalog.Model
     /// <summary>
     /// Container for the parameters to the DisassociatePrincipalFromPortfolio operation.
     /// Disassociates a previously associated principal ARN from a specified portfolio.
+    /// 
+    ///  
+    /// <para>
+    /// The <code>PrincipalType</code> and <code>PrincipalARN</code> must match the <code>AssociatePrincipalWithPortfolio</code>
+    /// call request details. For example, to disassociate an association created with a <code>PrincipalARN</code>
+    /// of <code>PrincipalType</code> IAM you must use the <code>PrincipalType</code> IAM
+    /// when calling <code>DisassociatePrincipalFromPortfolio</code>. 
+    /// </para>
+    ///  
+    /// <para>
+    /// For portfolios that have been shared with principal name sharing enabled: after disassociating
+    /// a principal, share recipient accounts will no longer be able to provision products
+    /// in this portfolio using a role matching the name of the associated principal. 
+    /// </para>
     /// </summary>
     public partial class DisassociatePrincipalFromPortfolioRequest : AmazonServiceCatalogRequest
     {
         private string _acceptLanguage;
         private string _portfolioId;
         private string _principalARN;
+        private PrincipalType _principalType;
 
         /// <summary>
         /// Gets and sets the property AcceptLanguage. 
@@ -92,7 +107,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property PrincipalARN. 
         /// <para>
-        /// The ARN of the principal (IAM user, role, or group).
+        /// The ARN of the principal (IAM user, role, or group). This field allows an ARN with
+        /// no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1000)]
@@ -106,6 +122,25 @@ namespace Amazon.ServiceCatalog.Model
         internal bool IsSetPrincipalARN()
         {
             return this._principalARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrincipalType. 
+        /// <para>
+        /// The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code>
+        /// if you use no <code>accountID</code>. 
+        /// </para>
+        /// </summary>
+        public PrincipalType PrincipalType
+        {
+            get { return this._principalType; }
+            set { this._principalType = value; }
+        }
+
+        // Check to see if PrincipalType property is set
+        internal bool IsSetPrincipalType()
+        {
+            return this._principalType != null;
         }
 
     }

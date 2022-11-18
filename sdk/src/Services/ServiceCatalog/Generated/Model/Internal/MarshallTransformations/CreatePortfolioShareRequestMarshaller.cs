@@ -96,6 +96,12 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PortfolioId);
                 }
 
+                if(publicRequest.IsSetSharePrincipals())
+                {
+                    context.Writer.WritePropertyName("SharePrincipals");
+                    context.Writer.Write(publicRequest.SharePrincipals);
+                }
+
                 if(publicRequest.IsSetShareTagOptions())
                 {
                     context.Writer.WritePropertyName("ShareTagOptions");

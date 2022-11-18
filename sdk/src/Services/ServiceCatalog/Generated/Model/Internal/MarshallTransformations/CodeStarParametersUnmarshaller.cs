@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ProvisioningArtifactDetail Object
+    /// Response Unmarshaller for CodeStarParameters Object
     /// </summary>  
-    public class ProvisioningArtifactDetailUnmarshaller : IUnmarshaller<ProvisioningArtifactDetail, XmlUnmarshallerContext>, IUnmarshaller<ProvisioningArtifactDetail, JsonUnmarshallerContext>
+    public class CodeStarParametersUnmarshaller : IUnmarshaller<CodeStarParameters, XmlUnmarshallerContext>, IUnmarshaller<CodeStarParameters, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ProvisioningArtifactDetail IUnmarshaller<ProvisioningArtifactDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CodeStarParameters IUnmarshaller<CodeStarParameters, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,63 +53,39 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ProvisioningArtifactDetail Unmarshall(JsonUnmarshallerContext context)
+        public CodeStarParameters Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ProvisioningArtifactDetail unmarshalledObject = new ProvisioningArtifactDetail();
+            CodeStarParameters unmarshalledObject = new CodeStarParameters();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Active", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.Active = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("CreatedTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("ArtifactPath", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ArtifactPath = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Guidance", targetDepth))
+                if (context.TestExpression("Branch", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Guidance = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Branch = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("ConnectionArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConnectionArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Repository", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SourceRevision", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceRevision = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Repository = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -118,12 +94,12 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         }
 
 
-        private static ProvisioningArtifactDetailUnmarshaller _instance = new ProvisioningArtifactDetailUnmarshaller();        
+        private static CodeStarParametersUnmarshaller _instance = new CodeStarParametersUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ProvisioningArtifactDetailUnmarshaller Instance
+        public static CodeStarParametersUnmarshaller Instance
         {
             get
             {

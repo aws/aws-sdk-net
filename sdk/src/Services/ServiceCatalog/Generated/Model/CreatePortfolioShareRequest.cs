@@ -53,8 +53,22 @@ namespace Amazon.ServiceCatalog.Model
     /// <para>
     /// If the portfolio share with the specified account or organization node already exists,
     /// this action will have no effect and will not return an error. To update an existing
-    /// share, you must use the <code> UpdatePortfolioShare</code> API instead.
+    /// share, you must use the <code> UpdatePortfolioShare</code> API instead. 
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// When you associate a principal with portfolio, a potential privilege escalation path
+    /// may occur when that portfolio is then shared with other accounts. For a user in a
+    /// recipient account who is <i>not</i> an Service Catalog Admin, but still has the ability
+    /// to create Principals (Users/Groups/Roles), that user could create a role that matches
+    /// a principal name association for the portfolio. Although this user may not know which
+    /// principal names are associated through Service Catalog, they may be able to guess
+    /// the user. If this potential escalation path is a concern, then Service Catalog recommends
+    /// using <code>PrincipalType</code> as <code>IAM</code>. With this configuration, the
+    /// <code>PrincipalARN</code> must already exist in the recipient account before it can
+    /// be associated. 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreatePortfolioShareRequest : AmazonServiceCatalogRequest
     {
@@ -62,6 +76,7 @@ namespace Amazon.ServiceCatalog.Model
         private string _accountId;
         private OrganizationNode _organizationNode;
         private string _portfolioId;
+        private bool? _sharePrincipals;
         private bool? _shareTagOptions;
 
         /// <summary>
@@ -153,6 +168,34 @@ namespace Amazon.ServiceCatalog.Model
         internal bool IsSetPortfolioId()
         {
             return this._portfolioId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SharePrincipals. 
+        /// <para>
+        /// Enables or disables <code>Principal</code> sharing when creating the portfolio share.
+        /// If this flag is not provided, principal sharing is disabled. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When you enable Principal Name Sharing for a portfolio share, the share recipient
+        /// account end users with a principal that matches any of the associated IAM patterns
+        /// can provision products from the portfolio. Once shared, the share recipient can view
+        /// associations of <code>PrincipalType</code>: <code>IAM_PATTERN</code> on their portfolio.
+        /// You can create the principals in the recipient account before or after creating the
+        /// share. 
+        /// </para>
+        /// </summary>
+        public bool SharePrincipals
+        {
+            get { return this._sharePrincipals.GetValueOrDefault(); }
+            set { this._sharePrincipals = value; }
+        }
+
+        // Check to see if SharePrincipals property is set
+        internal bool IsSetSharePrincipals()
+        {
+            return this._sharePrincipals.HasValue; 
         }
 
         /// <summary>

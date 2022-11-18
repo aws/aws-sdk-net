@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PortfolioShareDetail Object
+    /// Response Unmarshaller for SourceConnectionParameters Object
     /// </summary>  
-    public class PortfolioShareDetailUnmarshaller : IUnmarshaller<PortfolioShareDetail, XmlUnmarshallerContext>, IUnmarshaller<PortfolioShareDetail, JsonUnmarshallerContext>
+    public class SourceConnectionParametersUnmarshaller : IUnmarshaller<SourceConnectionParameters, XmlUnmarshallerContext>, IUnmarshaller<SourceConnectionParameters, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PortfolioShareDetail IUnmarshaller<PortfolioShareDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SourceConnectionParameters IUnmarshaller<SourceConnectionParameters, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,21 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public PortfolioShareDetail Unmarshall(JsonUnmarshallerContext context)
+        public SourceConnectionParameters Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PortfolioShareDetail unmarshalledObject = new PortfolioShareDetail();
+            SourceConnectionParameters unmarshalledObject = new SourceConnectionParameters();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Accepted", targetDepth))
+                if (context.TestExpression("CodeStar", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.Accepted = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("PrincipalId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PrincipalId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SharePrincipals", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.SharePrincipals = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ShareTagOptions", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.ShareTagOptions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    var unmarshaller = CodeStarParametersUnmarshaller.Instance;
+                    unmarshalledObject.CodeStar = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +76,12 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         }
 
 
-        private static PortfolioShareDetailUnmarshaller _instance = new PortfolioShareDetailUnmarshaller();        
+        private static SourceConnectionParametersUnmarshaller _instance = new SourceConnectionParametersUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PortfolioShareDetailUnmarshaller Instance
+        public static SourceConnectionParametersUnmarshaller Instance
         {
             get
             {

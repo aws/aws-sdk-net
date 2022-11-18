@@ -42,6 +42,7 @@ namespace Amazon.ServiceCatalog.Model
         private string _name;
         private string _owner;
         private List<string> _removeTags = new List<string>();
+        private SourceConnection _sourceConnection;
         private string _supportDescription;
         private string _supportEmail;
         private string _supportUrl;
@@ -208,6 +209,36 @@ namespace Amazon.ServiceCatalog.Model
         internal bool IsSetRemoveTags()
         {
             return this._removeTags != null && this._removeTags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceConnection. 
+        /// <para>
+        /// Specifies connection details for the updated product and syncs the product to the
+        /// connection source artifact. This automatically manages the product's artifacts based
+        /// on changes to the source. The <code>SourceConnection</code> parameter consists of
+        /// the following sub-fields.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Type</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ConnectionParamters</code> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public SourceConnection SourceConnection
+        {
+            get { return this._sourceConnection; }
+            set { this._sourceConnection = value; }
+        }
+
+        // Check to see if SourceConnection property is set
+        internal bool IsSetSourceConnection()
+        {
+            return this._sourceConnection != null;
         }
 
         /// <summary>

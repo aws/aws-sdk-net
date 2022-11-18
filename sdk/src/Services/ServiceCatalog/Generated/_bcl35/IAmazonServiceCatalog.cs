@@ -29,9 +29,9 @@ namespace Amazon.ServiceCatalog
     /// <summary>
     /// Interface for accessing ServiceCatalog
     ///
-    /// AWS Service Catalog 
+    /// Service Catalog 
     /// <para>
-    ///  <a href="https://aws.amazon.com/servicecatalog/">Service Catalog</a> enables organizations
+    ///  <a href="http://aws.amazon.com/servicecatalog">Service Catalog</a> enables organizations
     /// to create and manage catalogs of IT services that are approved for Amazon Web Services.
     /// To get the most out of this documentation, you should be familiar with the terminology
     /// discussed in <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/what-is_concepts.html">Service
@@ -159,6 +159,36 @@ namespace Amazon.ServiceCatalog
 
         /// <summary>
         /// Associates the specified principal ARN with the specified portfolio.
+        /// 
+        ///  
+        /// <para>
+        /// If you share the portfolio with principal name sharing enabled, the <code>PrincipalARN</code>
+        /// association is included in the share. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>PortfolioID</code>, <code>PrincipalARN</code>, and <code>PrincipalType</code>
+        /// parameters are required. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can associate a maximum of 10 Principals with a portfolio using <code>PrincipalType</code>
+        /// as <code>IAM_PATTERN</code> 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// When you associate a principal with portfolio, a potential privilege escalation path
+        /// may occur when that portfolio is then shared with other accounts. For a user in a
+        /// recipient account who is <i>not</i> an Service Catalog Admin, but still has the ability
+        /// to create Principals (Users/Groups/Roles), that user could create a role that matches
+        /// a principal name association for the portfolio. Although this user may not know which
+        /// principal names are associated through Service Catalog, they may be able to guess
+        /// the user. If this potential escalation path is a concern, then Service Catalog recommends
+        /// using <code>PrincipalType</code> as <code>IAM</code>. With this configuration, the
+        /// <code>PrincipalARN</code> must already exist in the recipient account before it can
+        /// be associated. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociatePrincipalWithPortfolio service method.</param>
         /// 
@@ -657,8 +687,22 @@ namespace Amazon.ServiceCatalog
         /// <para>
         /// If the portfolio share with the specified account or organization node already exists,
         /// this action will have no effect and will not return an error. To update an existing
-        /// share, you must use the <code> UpdatePortfolioShare</code> API instead.
+        /// share, you must use the <code> UpdatePortfolioShare</code> API instead. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// When you associate a principal with portfolio, a potential privilege escalation path
+        /// may occur when that portfolio is then shared with other accounts. For a user in a
+        /// recipient account who is <i>not</i> an Service Catalog Admin, but still has the ability
+        /// to create Principals (Users/Groups/Roles), that user could create a role that matches
+        /// a principal name association for the portfolio. Although this user may not know which
+        /// principal names are associated through Service Catalog, they may be able to guess
+        /// the user. If this potential escalation path is a concern, then Service Catalog recommends
+        /// using <code>PrincipalType</code> as <code>IAM</code>. With this configuration, the
+        /// <code>PrincipalARN</code> must already exist in the recipient account before it can
+        /// be associated. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePortfolioShare service method.</param>
         /// 
@@ -2341,6 +2385,20 @@ namespace Amazon.ServiceCatalog
 
         /// <summary>
         /// Disassociates a previously associated principal ARN from a specified portfolio.
+        /// 
+        ///  
+        /// <para>
+        /// The <code>PrincipalType</code> and <code>PrincipalARN</code> must match the <code>AssociatePrincipalWithPortfolio</code>
+        /// call request details. For example, to disassociate an association created with a <code>PrincipalARN</code>
+        /// of <code>PrincipalType</code> IAM you must use the <code>PrincipalType</code> IAM
+        /// when calling <code>DisassociatePrincipalFromPortfolio</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For portfolios that have been shared with principal name sharing enabled: after disassociating
+        /// a principal, share recipient accounts will no longer be able to provision products
+        /// in this portfolio using a role matching the name of the associated principal. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociatePrincipalFromPortfolio service method.</param>
         /// 
@@ -2804,10 +2862,10 @@ namespace Amazon.ServiceCatalog
 
 
         /// <summary>
-        /// Requests the import of a resource as a Amazon Web Services Service Catalog provisioned
-        /// product that is associated to a Amazon Web Services Service Catalog product and provisioning
-        /// artifact. Once imported, all supported Amazon Web Services Service Catalog governance
-        /// actions are supported on the provisioned product.
+        /// Requests the import of a resource as an Service Catalog provisioned product that is
+        /// associated to an Service Catalog product and provisioning artifact. Once imported,
+        /// all supported Service Catalog governance actions are supported on the provisioned
+        /// product.
         /// 
         ///  
         /// <para>
@@ -2823,7 +2881,7 @@ namespace Amazon.ServiceCatalog
         ///  
         /// <para>
         /// Import of the resource requires that the CloudFormation stack template matches the
-        /// associated Amazon Web Services Service Catalog product provisioning artifact. 
+        /// associated Service Catalog product provisioning artifact. 
         /// </para>
         ///  
         /// <para>
@@ -3267,7 +3325,8 @@ namespace Amazon.ServiceCatalog
 
 
         /// <summary>
-        /// Lists all principal ARNs associated with the specified portfolio.
+        /// Lists all <code>PrincipalARN</code>s and corresponding <code>PrincipalType</code>s
+        /// associated with the specified portfolio.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPrincipalsForPortfolio service method.</param>
         /// 
@@ -4192,12 +4251,12 @@ namespace Amazon.ServiceCatalog
 
 
         /// <summary>
-        /// Updates the specified portfolio share. You can use this API to enable or disable TagOptions
-        /// sharing for an existing portfolio share. 
+        /// Updates the specified portfolio share. You can use this API to enable or disable <code>TagOptions</code>
+        /// sharing or Principal sharing for an existing portfolio share. 
         /// 
         ///  
         /// <para>
-        /// The portfolio share cannot be updated if the <code> CreatePortfolioShare</code> operation
+        /// The portfolio share cannot be updated if the <code>CreatePortfolioShare</code> operation
         /// is <code>IN_PROGRESS</code>, as the share is not available to recipient entities.
         /// In this case, you must wait for the portfolio share to be COMPLETED.
         /// </para>
@@ -4217,6 +4276,20 @@ namespace Amazon.ServiceCatalog
         /// This API cannot be used for removing the portfolio share. You must use <code>DeletePortfolioShare</code>
         /// API for that action. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// When you associate a principal with portfolio, a potential privilege escalation path
+        /// may occur when that portfolio is then shared with other accounts. For a user in a
+        /// recipient account who is <i>not</i> an Service Catalog Admin, but still has the ability
+        /// to create Principals (Users/Groups/Roles), that user could create a role that matches
+        /// a principal name association for the portfolio. Although this user may not know which
+        /// principal names are associated through Service Catalog, they may be able to guess
+        /// the user. If this potential escalation path is a concern, then Service Catalog recommends
+        /// using <code>PrincipalType</code> as <code>IAM</code>. With this configuration, the
+        /// <code>PrincipalARN</code> must already exist in the recipient account before it can
+        /// be associated. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePortfolioShare service method.</param>
         /// 

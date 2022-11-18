@@ -39,6 +39,7 @@ namespace Amazon.ServiceCatalog.Model
         private ProvisioningArtifactGuidance _guidance;
         private string _id;
         private string _name;
+        private string _sourceRevision;
         private ProvisioningArtifactType _type;
 
         /// <summary>
@@ -151,6 +152,34 @@ namespace Amazon.ServiceCatalog.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceRevision. 
+        /// <para>
+        /// Specifies the revision of the external artifact that was used to automatically sync
+        /// the Service Catalog product and create the provisioning artifact. Service Catalog
+        /// includes this response parameter as a high level field to the existing <code>ProvisioningArtifactDetail</code>
+        /// type, which is returned as part of the response for <code>CreateProduct</code>, <code>UpdateProduct</code>,
+        /// <code>DescribeProductAsAdmin</code>, <code>DescribeProvisioningArtifact</code>, <code>ListProvisioningArtifact</code>,
+        /// and <code>UpdateProvisioningArticat</code> APIs. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This field only exists for Repo-Synced products. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=512)]
+        public string SourceRevision
+        {
+            get { return this._sourceRevision; }
+            set { this._sourceRevision = value; }
+        }
+
+        // Check to see if SourceRevision property is set
+        internal bool IsSetSourceRevision()
+        {
+            return this._sourceRevision != null;
         }
 
         /// <summary>

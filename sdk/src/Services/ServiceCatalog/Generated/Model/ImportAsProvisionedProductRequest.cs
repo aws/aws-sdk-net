@@ -30,10 +30,10 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the ImportAsProvisionedProduct operation.
-    /// Requests the import of a resource as a Amazon Web Services Service Catalog provisioned
-    /// product that is associated to a Amazon Web Services Service Catalog product and provisioning
-    /// artifact. Once imported, all supported Amazon Web Services Service Catalog governance
-    /// actions are supported on the provisioned product.
+    /// Requests the import of a resource as an Service Catalog provisioned product that is
+    /// associated to an Service Catalog product and provisioning artifact. Once imported,
+    /// all supported Service Catalog governance actions are supported on the provisioned
+    /// product.
     /// 
     ///  
     /// <para>
@@ -49,7 +49,7 @@ namespace Amazon.ServiceCatalog.Model
     ///  
     /// <para>
     /// Import of the resource requires that the CloudFormation stack template matches the
-    /// associated Amazon Web Services Service Catalog product provisioning artifact. 
+    /// associated Service Catalog product provisioning artifact. 
     /// </para>
     ///  
     /// <para>

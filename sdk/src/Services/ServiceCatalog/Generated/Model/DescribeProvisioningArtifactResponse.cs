@@ -40,8 +40,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Info. 
         /// <para>
-        /// The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit,
-        /// or GitHub in JSON format.
+        /// The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

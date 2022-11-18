@@ -85,6 +85,12 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PrincipalARN);
                 }
 
+                if(publicRequest.IsSetPrincipalType())
+                {
+                    context.Writer.WritePropertyName("PrincipalType");
+                    context.Writer.Write(publicRequest.PrincipalType);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

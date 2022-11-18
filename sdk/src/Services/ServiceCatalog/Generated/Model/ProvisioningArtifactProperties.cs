@@ -62,8 +62,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property DisableTemplateValidation. 
         /// <para>
-        /// If set to true, Amazon Web Services Service Catalog stops validating the specified
-        /// provisioning artifact even if it is invalid.
+        /// If set to true, Service Catalog stops validating the specified provisioning artifact
+        /// even if it is invalid.
         /// </para>
         /// </summary>
         public bool DisableTemplateValidation
@@ -86,8 +86,8 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  
         /// <para>
-        /// The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit,
-        /// or GitHub in JSON format. Specify the URL in JSON format as follows:
+        /// The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. Specify
+        /// the URL in JSON format as follows:
         /// </para>
         ///  
         /// <para>
@@ -102,7 +102,7 @@ namespace Amazon.ServiceCatalog.Model
         /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=100)]
         public Dictionary<string, string> Info
         {
             get { return this._info; }
