@@ -192,7 +192,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>platform</code> - The platform. To only list Windows-based AMIs, use <code>windows</code>.
+        ///  <code>platform</code> - The platform. The only supported value is <code>windows</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>

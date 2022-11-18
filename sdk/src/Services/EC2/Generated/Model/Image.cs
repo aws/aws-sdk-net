@@ -383,8 +383,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property PlatformDetails. 
         /// <para>
         /// The platform details associated with the billing code of the AMI. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understanding
-        /// AMI billing</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand
+        /// AMI billing information</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         public string PlatformDetails

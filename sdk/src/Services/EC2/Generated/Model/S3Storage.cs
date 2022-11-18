@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The access key ID of the owner of the bucket. Before you specify a value for your
         /// access key ID, review and follow the guidance in <a href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best
-        /// Practices for Managing Amazon Web Services Access Keys</a>.
+        /// practices for managing Amazon Web Services access keys</a>.
         /// </para>
         /// </summary>
         public string AWSAccessKeyId
