@@ -30,7 +30,7 @@ namespace Amazon.EventBridge
     public partial class AmazonEventBridgeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.20");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.21");
 
         private string _userAgent = UserAgentString;
 
