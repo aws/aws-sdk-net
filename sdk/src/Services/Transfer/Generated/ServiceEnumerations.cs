@@ -442,6 +442,10 @@ namespace Amazon.Transfer
         /// Constant AES256_CBC for EncryptionAlg
         /// </summary>
         public static readonly EncryptionAlg AES256_CBC = new EncryptionAlg("AES256_CBC");
+        /// <summary>
+        /// Constant NONE for EncryptionAlg
+        /// </summary>
+        public static readonly EncryptionAlg NONE = new EncryptionAlg("NONE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
