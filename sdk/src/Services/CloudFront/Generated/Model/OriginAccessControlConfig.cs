@@ -45,7 +45,6 @@ namespace Amazon.CloudFront.Model
         /// A description of the origin access control.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string Description
         {
             get { return this._description; }

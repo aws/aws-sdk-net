@@ -40,6 +40,8 @@ namespace Amazon.CloudFront.Internal
             if (parameters == null) 
                 throw new ArgumentNullException("parameters");
 
+            if (parameters["Region"] == null)
+                throw new AmazonClientException("Region parameter must be set for endpoint resolution");
             if (parameters["UseDualStack"] == null)
                 throw new AmazonClientException("UseDualStack parameter must be set for endpoint resolution");
             if (parameters["UseFIPS"] == null)
@@ -72,7 +74,7 @@ namespace Amazon.CloudFront.Internal
                     {
                         if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")) && Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
                         {
-                            return new Endpoint(Interpolate(@"https://cloudfront-fips.{Region}.api.aws", refs), InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""cloudfront"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
+                            return new Endpoint(Interpolate(@"https://cloudfront-fips.{Region}.api.aws", refs), InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""cloudfront""}]}", refs), InterpolateJson(@"", refs));
                         }
                         throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
                     }
@@ -80,7 +82,7 @@ namespace Amazon.CloudFront.Internal
                     {
                         if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")))
                         {
-                            return new Endpoint(Interpolate(@"https://cloudfront-fips.{Region}.amazonaws.com", refs), InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""cloudfront"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
+                            return new Endpoint(Interpolate(@"https://cloudfront-fips.{Region}.amazonaws.com", refs), InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""cloudfront""}]}", refs), InterpolateJson(@"", refs));
                         }
                         throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
                     }
@@ -88,11 +90,11 @@ namespace Amazon.CloudFront.Internal
                     {
                         if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
                         {
-                            return new Endpoint(Interpolate(@"https://cloudfront.{Region}.api.aws", refs), InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""cloudfront"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
+                            return new Endpoint(Interpolate(@"https://cloudfront.{Region}.api.aws", refs), InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""cloudfront""}]}", refs), InterpolateJson(@"", refs));
                         }
                         throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
                     }
-                    return new Endpoint("https://cloudfront.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""cloudfront"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
+                    return new Endpoint("https://cloudfront.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""cloudfront""}]}", refs), InterpolateJson(@"", refs));
                 }
                 if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-cn"))
                 {
@@ -100,7 +102,7 @@ namespace Amazon.CloudFront.Internal
                     {
                         if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")) && Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
                         {
-                            return new Endpoint(Interpolate(@"https://cloudfront-fips.{Region}.api.amazonwebservices.com.cn", refs), InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""cloudfront"",""signingRegion"":""cn-northwest-1""}]}", refs), InterpolateJson(@"", refs));
+                            return new Endpoint(Interpolate(@"https://cloudfront-fips.{Region}.api.amazonwebservices.com.cn", refs), InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""cn-northwest-1"",""signingName"":""cloudfront""}]}", refs), InterpolateJson(@"", refs));
                         }
                         throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
                     }
@@ -108,7 +110,7 @@ namespace Amazon.CloudFront.Internal
                     {
                         if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")))
                         {
-                            return new Endpoint(Interpolate(@"https://cloudfront-fips.{Region}.amazonaws.com.cn", refs), InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""cloudfront"",""signingRegion"":""cn-northwest-1""}]}", refs), InterpolateJson(@"", refs));
+                            return new Endpoint(Interpolate(@"https://cloudfront-fips.{Region}.amazonaws.com.cn", refs), InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""cn-northwest-1"",""signingName"":""cloudfront""}]}", refs), InterpolateJson(@"", refs));
                         }
                         throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
                     }
@@ -116,11 +118,11 @@ namespace Amazon.CloudFront.Internal
                     {
                         if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
                         {
-                            return new Endpoint(Interpolate(@"https://cloudfront.{Region}.api.amazonwebservices.com.cn", refs), InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""cloudfront"",""signingRegion"":""cn-northwest-1""}]}", refs), InterpolateJson(@"", refs));
+                            return new Endpoint(Interpolate(@"https://cloudfront.{Region}.api.amazonwebservices.com.cn", refs), InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""cn-northwest-1"",""signingName"":""cloudfront""}]}", refs), InterpolateJson(@"", refs));
                         }
                         throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
                     }
-                    return new Endpoint("https://cloudfront.cn-northwest-1.amazonaws.com.cn", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""cloudfront"",""signingRegion"":""cn-northwest-1""}]}", refs), InterpolateJson(@"", refs));
+                    return new Endpoint("https://cloudfront.cn-northwest-1.amazonaws.com.cn", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""cn-northwest-1"",""signingName"":""cloudfront""}]}", refs), InterpolateJson(@"", refs));
                 }
                 if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
                 {
@@ -148,11 +150,11 @@ namespace Amazon.CloudFront.Internal
                 }
                 if (Equals(refs["Region"], "aws-global"))
                 {
-                    return new Endpoint("https://cloudfront.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""cloudfront"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
+                    return new Endpoint("https://cloudfront.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""cloudfront""}]}", refs), InterpolateJson(@"", refs));
                 }
                 if (Equals(refs["Region"], "aws-cn-global"))
                 {
-                    return new Endpoint("https://cloudfront.cn-northwest-1.amazonaws.com.cn", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""cloudfront"",""signingRegion"":""cn-northwest-1""}]}", refs), InterpolateJson(@"", refs));
+                    return new Endpoint("https://cloudfront.cn-northwest-1.amazonaws.com.cn", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""cn-northwest-1"",""signingName"":""cloudfront""}]}", refs), InterpolateJson(@"", refs));
                 }
                 return new Endpoint(Interpolate(@"https://cloudfront.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
             }

@@ -295,6 +295,56 @@ namespace Amazon.CloudFront
 
 
     /// <summary>
+    /// Constants used for properties of type ContinuousDeploymentPolicyType.
+    /// </summary>
+    public class ContinuousDeploymentPolicyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SingleHeader for ContinuousDeploymentPolicyType
+        /// </summary>
+        public static readonly ContinuousDeploymentPolicyType SingleHeader = new ContinuousDeploymentPolicyType("SingleHeader");
+        /// <summary>
+        /// Constant SingleWeight for ContinuousDeploymentPolicyType
+        /// </summary>
+        public static readonly ContinuousDeploymentPolicyType SingleWeight = new ContinuousDeploymentPolicyType("SingleWeight");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContinuousDeploymentPolicyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContinuousDeploymentPolicyType FindValue(string value)
+        {
+            return FindValue<ContinuousDeploymentPolicyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContinuousDeploymentPolicyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EventType.
     /// </summary>
     public class EventType : ConstantClass

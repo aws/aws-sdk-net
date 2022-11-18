@@ -252,6 +252,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     return RealtimeLogConfigOwnerMismatchExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("StagingDistributionInUse"))
+                {
+                    return StagingDistributionInUseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyCacheBehaviors"))
                 {
                     return TooManyCacheBehaviorsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
