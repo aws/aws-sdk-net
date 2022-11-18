@@ -194,6 +194,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* The Amazon Chime SDK Meetings APIs allow software developers to create meetings and attendees for interactive audio, video, screen and content sharing in custom meeting applications which use the Amazon Chime SDK.
 * [AWSSDK.ChimeSDKMessaging](https://www.nuget.org/packages/AWSSDK.ChimeSDKMessaging/)
 	* The Amazon Chime SDK Messaging APIs allow software developers to send and receive messages in custom messaging applications.
+* [AWSSDK.ChimeSDKVoice](https://www.nuget.org/packages/AWSSDK.ChimeSDKVoice/)
+	* Amazon Chime Voice Connector, Voice Connector Group and PSTN Audio Service APIs are now available in the Amazon Chime SDK Voice namespace. See https://docs.aws.amazon.com/chime-sdk/latest/dg/sdk-available-regions.html for more details.
 * [AWSSDK.Cloud9](https://www.nuget.org/packages/AWSSDK.Cloud9/)
 	* Adds support for creating and managing AWS Cloud9 development environments. AWS Cloud9 is a cloud-based integrated development environment (IDE) that you use to write, run, and debug code.
 * [AWSSDK.CloudControlApi](https://www.nuget.org/packages/AWSSDK.CloudControlApi/)

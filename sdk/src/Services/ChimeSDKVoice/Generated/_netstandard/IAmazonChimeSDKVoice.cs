@@ -1,0 +1,2971 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the chime-sdk-voice-2022-08-03.normal.json service model.
+ */
+
+
+using System;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+
+using Amazon.Runtime;
+using Amazon.ChimeSDKVoice.Model;
+
+namespace Amazon.ChimeSDKVoice
+{
+    /// <summary>
+    /// Interface for accessing ChimeSDKVoice
+    ///
+    /// 
+    /// </summary>
+    public partial interface IAmazonChimeSDKVoice : IAmazonService, IDisposable
+    {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IChimeSDKVoicePaginatorFactory Paginators { get; }
+#endif
+                
+        #region  AssociatePhoneNumbersWithVoiceConnector
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociatePhoneNumbersWithVoiceConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociatePhoneNumbersWithVoiceConnector service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/AssociatePhoneNumbersWithVoiceConnector">REST API Reference for AssociatePhoneNumbersWithVoiceConnector Operation</seealso>
+        Task<AssociatePhoneNumbersWithVoiceConnectorResponse> AssociatePhoneNumbersWithVoiceConnectorAsync(AssociatePhoneNumbersWithVoiceConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  AssociatePhoneNumbersWithVoiceConnectorGroup
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociatePhoneNumbersWithVoiceConnectorGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociatePhoneNumbersWithVoiceConnectorGroup service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/AssociatePhoneNumbersWithVoiceConnectorGroup">REST API Reference for AssociatePhoneNumbersWithVoiceConnectorGroup Operation</seealso>
+        Task<AssociatePhoneNumbersWithVoiceConnectorGroupResponse> AssociatePhoneNumbersWithVoiceConnectorGroupAsync(AssociatePhoneNumbersWithVoiceConnectorGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  BatchDeletePhoneNumber
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeletePhoneNumber service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchDeletePhoneNumber service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/BatchDeletePhoneNumber">REST API Reference for BatchDeletePhoneNumber Operation</seealso>
+        Task<BatchDeletePhoneNumberResponse> BatchDeletePhoneNumberAsync(BatchDeletePhoneNumberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  BatchUpdatePhoneNumber
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdatePhoneNumber service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchUpdatePhoneNumber service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/BatchUpdatePhoneNumber">REST API Reference for BatchUpdatePhoneNumber Operation</seealso>
+        Task<BatchUpdatePhoneNumberResponse> BatchUpdatePhoneNumberAsync(BatchUpdatePhoneNumberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreatePhoneNumberOrder
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePhoneNumberOrder service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePhoneNumberOrder service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ResourceLimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/CreatePhoneNumberOrder">REST API Reference for CreatePhoneNumberOrder Operation</seealso>
+        Task<CreatePhoneNumberOrderResponse> CreatePhoneNumberOrderAsync(CreatePhoneNumberOrderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateProxySession
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProxySession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateProxySession service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/CreateProxySession">REST API Reference for CreateProxySession Operation</seealso>
+        Task<CreateProxySessionResponse> CreateProxySessionAsync(CreateProxySessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateSipMediaApplication
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSipMediaApplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateSipMediaApplication service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ResourceLimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/CreateSipMediaApplication">REST API Reference for CreateSipMediaApplication Operation</seealso>
+        Task<CreateSipMediaApplicationResponse> CreateSipMediaApplicationAsync(CreateSipMediaApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateSipMediaApplicationCall
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSipMediaApplicationCall service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateSipMediaApplicationCall service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ResourceLimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/CreateSipMediaApplicationCall">REST API Reference for CreateSipMediaApplicationCall Operation</seealso>
+        Task<CreateSipMediaApplicationCallResponse> CreateSipMediaApplicationCallAsync(CreateSipMediaApplicationCallRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateSipRule
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSipRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateSipRule service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ResourceLimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/CreateSipRule">REST API Reference for CreateSipRule Operation</seealso>
+        Task<CreateSipRuleResponse> CreateSipRuleAsync(CreateSipRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateVoiceConnector
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVoiceConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateVoiceConnector service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ResourceLimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/CreateVoiceConnector">REST API Reference for CreateVoiceConnector Operation</seealso>
+        Task<CreateVoiceConnectorResponse> CreateVoiceConnectorAsync(CreateVoiceConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateVoiceConnectorGroup
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVoiceConnectorGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateVoiceConnectorGroup service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ResourceLimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/CreateVoiceConnectorGroup">REST API Reference for CreateVoiceConnectorGroup Operation</seealso>
+        Task<CreateVoiceConnectorGroupResponse> CreateVoiceConnectorGroupAsync(CreateVoiceConnectorGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeletePhoneNumber
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePhoneNumber service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePhoneNumber service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeletePhoneNumber">REST API Reference for DeletePhoneNumber Operation</seealso>
+        Task<DeletePhoneNumberResponse> DeletePhoneNumberAsync(DeletePhoneNumberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteProxySession
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProxySession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteProxySession service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteProxySession">REST API Reference for DeleteProxySession Operation</seealso>
+        Task<DeleteProxySessionResponse> DeleteProxySessionAsync(DeleteProxySessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteSipMediaApplication
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSipMediaApplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteSipMediaApplication service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteSipMediaApplication">REST API Reference for DeleteSipMediaApplication Operation</seealso>
+        Task<DeleteSipMediaApplicationResponse> DeleteSipMediaApplicationAsync(DeleteSipMediaApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteSipRule
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSipRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteSipRule service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteSipRule">REST API Reference for DeleteSipRule Operation</seealso>
+        Task<DeleteSipRuleResponse> DeleteSipRuleAsync(DeleteSipRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteVoiceConnector
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVoiceConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteVoiceConnector service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceConnector">REST API Reference for DeleteVoiceConnector Operation</seealso>
+        Task<DeleteVoiceConnectorResponse> DeleteVoiceConnectorAsync(DeleteVoiceConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteVoiceConnectorEmergencyCallingConfiguration
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVoiceConnectorEmergencyCallingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteVoiceConnectorEmergencyCallingConfiguration service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceConnectorEmergencyCallingConfiguration">REST API Reference for DeleteVoiceConnectorEmergencyCallingConfiguration Operation</seealso>
+        Task<DeleteVoiceConnectorEmergencyCallingConfigurationResponse> DeleteVoiceConnectorEmergencyCallingConfigurationAsync(DeleteVoiceConnectorEmergencyCallingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteVoiceConnectorGroup
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVoiceConnectorGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteVoiceConnectorGroup service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceConnectorGroup">REST API Reference for DeleteVoiceConnectorGroup Operation</seealso>
+        Task<DeleteVoiceConnectorGroupResponse> DeleteVoiceConnectorGroupAsync(DeleteVoiceConnectorGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteVoiceConnectorOrigination
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVoiceConnectorOrigination service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteVoiceConnectorOrigination service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceConnectorOrigination">REST API Reference for DeleteVoiceConnectorOrigination Operation</seealso>
+        Task<DeleteVoiceConnectorOriginationResponse> DeleteVoiceConnectorOriginationAsync(DeleteVoiceConnectorOriginationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteVoiceConnectorProxy
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVoiceConnectorProxy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteVoiceConnectorProxy service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceConnectorProxy">REST API Reference for DeleteVoiceConnectorProxy Operation</seealso>
+        Task<DeleteVoiceConnectorProxyResponse> DeleteVoiceConnectorProxyAsync(DeleteVoiceConnectorProxyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteVoiceConnectorStreamingConfiguration
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVoiceConnectorStreamingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteVoiceConnectorStreamingConfiguration service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceConnectorStreamingConfiguration">REST API Reference for DeleteVoiceConnectorStreamingConfiguration Operation</seealso>
+        Task<DeleteVoiceConnectorStreamingConfigurationResponse> DeleteVoiceConnectorStreamingConfigurationAsync(DeleteVoiceConnectorStreamingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteVoiceConnectorTermination
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVoiceConnectorTermination service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteVoiceConnectorTermination service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceConnectorTermination">REST API Reference for DeleteVoiceConnectorTermination Operation</seealso>
+        Task<DeleteVoiceConnectorTerminationResponse> DeleteVoiceConnectorTerminationAsync(DeleteVoiceConnectorTerminationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteVoiceConnectorTerminationCredentials
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVoiceConnectorTerminationCredentials service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteVoiceConnectorTerminationCredentials service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceConnectorTerminationCredentials">REST API Reference for DeleteVoiceConnectorTerminationCredentials Operation</seealso>
+        Task<DeleteVoiceConnectorTerminationCredentialsResponse> DeleteVoiceConnectorTerminationCredentialsAsync(DeleteVoiceConnectorTerminationCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DisassociatePhoneNumbersFromVoiceConnector
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociatePhoneNumbersFromVoiceConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociatePhoneNumbersFromVoiceConnector service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DisassociatePhoneNumbersFromVoiceConnector">REST API Reference for DisassociatePhoneNumbersFromVoiceConnector Operation</seealso>
+        Task<DisassociatePhoneNumbersFromVoiceConnectorResponse> DisassociatePhoneNumbersFromVoiceConnectorAsync(DisassociatePhoneNumbersFromVoiceConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DisassociatePhoneNumbersFromVoiceConnectorGroup
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociatePhoneNumbersFromVoiceConnectorGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociatePhoneNumbersFromVoiceConnectorGroup service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DisassociatePhoneNumbersFromVoiceConnectorGroup">REST API Reference for DisassociatePhoneNumbersFromVoiceConnectorGroup Operation</seealso>
+        Task<DisassociatePhoneNumbersFromVoiceConnectorGroupResponse> DisassociatePhoneNumbersFromVoiceConnectorGroupAsync(DisassociatePhoneNumbersFromVoiceConnectorGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetGlobalSettings
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGlobalSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetGlobalSettings service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetGlobalSettings">REST API Reference for GetGlobalSettings Operation</seealso>
+        Task<GetGlobalSettingsResponse> GetGlobalSettingsAsync(GetGlobalSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetPhoneNumber
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPhoneNumber service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPhoneNumber service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetPhoneNumber">REST API Reference for GetPhoneNumber Operation</seealso>
+        Task<GetPhoneNumberResponse> GetPhoneNumberAsync(GetPhoneNumberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetPhoneNumberOrder
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPhoneNumberOrder service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPhoneNumberOrder service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetPhoneNumberOrder">REST API Reference for GetPhoneNumberOrder Operation</seealso>
+        Task<GetPhoneNumberOrderResponse> GetPhoneNumberOrderAsync(GetPhoneNumberOrderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetPhoneNumberSettings
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPhoneNumberSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPhoneNumberSettings service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetPhoneNumberSettings">REST API Reference for GetPhoneNumberSettings Operation</seealso>
+        Task<GetPhoneNumberSettingsResponse> GetPhoneNumberSettingsAsync(GetPhoneNumberSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetProxySession
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetProxySession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetProxySession service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetProxySession">REST API Reference for GetProxySession Operation</seealso>
+        Task<GetProxySessionResponse> GetProxySessionAsync(GetProxySessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetSipMediaApplication
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSipMediaApplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSipMediaApplication service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetSipMediaApplication">REST API Reference for GetSipMediaApplication Operation</seealso>
+        Task<GetSipMediaApplicationResponse> GetSipMediaApplicationAsync(GetSipMediaApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetSipMediaApplicationAlexaSkillConfiguration
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSipMediaApplicationAlexaSkillConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSipMediaApplicationAlexaSkillConfiguration service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetSipMediaApplicationAlexaSkillConfiguration">REST API Reference for GetSipMediaApplicationAlexaSkillConfiguration Operation</seealso>
+        Task<GetSipMediaApplicationAlexaSkillConfigurationResponse> GetSipMediaApplicationAlexaSkillConfigurationAsync(GetSipMediaApplicationAlexaSkillConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetSipMediaApplicationLoggingConfiguration
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSipMediaApplicationLoggingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSipMediaApplicationLoggingConfiguration service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetSipMediaApplicationLoggingConfiguration">REST API Reference for GetSipMediaApplicationLoggingConfiguration Operation</seealso>
+        Task<GetSipMediaApplicationLoggingConfigurationResponse> GetSipMediaApplicationLoggingConfigurationAsync(GetSipMediaApplicationLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetSipRule
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSipRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSipRule service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetSipRule">REST API Reference for GetSipRule Operation</seealso>
+        Task<GetSipRuleResponse> GetSipRuleAsync(GetSipRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetVoiceConnector
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVoiceConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetVoiceConnector service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnector">REST API Reference for GetVoiceConnector Operation</seealso>
+        Task<GetVoiceConnectorResponse> GetVoiceConnectorAsync(GetVoiceConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetVoiceConnectorEmergencyCallingConfiguration
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVoiceConnectorEmergencyCallingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetVoiceConnectorEmergencyCallingConfiguration service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnectorEmergencyCallingConfiguration">REST API Reference for GetVoiceConnectorEmergencyCallingConfiguration Operation</seealso>
+        Task<GetVoiceConnectorEmergencyCallingConfigurationResponse> GetVoiceConnectorEmergencyCallingConfigurationAsync(GetVoiceConnectorEmergencyCallingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetVoiceConnectorGroup
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVoiceConnectorGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetVoiceConnectorGroup service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnectorGroup">REST API Reference for GetVoiceConnectorGroup Operation</seealso>
+        Task<GetVoiceConnectorGroupResponse> GetVoiceConnectorGroupAsync(GetVoiceConnectorGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetVoiceConnectorLoggingConfiguration
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVoiceConnectorLoggingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetVoiceConnectorLoggingConfiguration service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnectorLoggingConfiguration">REST API Reference for GetVoiceConnectorLoggingConfiguration Operation</seealso>
+        Task<GetVoiceConnectorLoggingConfigurationResponse> GetVoiceConnectorLoggingConfigurationAsync(GetVoiceConnectorLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetVoiceConnectorOrigination
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVoiceConnectorOrigination service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetVoiceConnectorOrigination service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnectorOrigination">REST API Reference for GetVoiceConnectorOrigination Operation</seealso>
+        Task<GetVoiceConnectorOriginationResponse> GetVoiceConnectorOriginationAsync(GetVoiceConnectorOriginationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetVoiceConnectorProxy
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVoiceConnectorProxy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetVoiceConnectorProxy service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnectorProxy">REST API Reference for GetVoiceConnectorProxy Operation</seealso>
+        Task<GetVoiceConnectorProxyResponse> GetVoiceConnectorProxyAsync(GetVoiceConnectorProxyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetVoiceConnectorStreamingConfiguration
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVoiceConnectorStreamingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetVoiceConnectorStreamingConfiguration service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnectorStreamingConfiguration">REST API Reference for GetVoiceConnectorStreamingConfiguration Operation</seealso>
+        Task<GetVoiceConnectorStreamingConfigurationResponse> GetVoiceConnectorStreamingConfigurationAsync(GetVoiceConnectorStreamingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetVoiceConnectorTermination
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVoiceConnectorTermination service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetVoiceConnectorTermination service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnectorTermination">REST API Reference for GetVoiceConnectorTermination Operation</seealso>
+        Task<GetVoiceConnectorTerminationResponse> GetVoiceConnectorTerminationAsync(GetVoiceConnectorTerminationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetVoiceConnectorTerminationHealth
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVoiceConnectorTerminationHealth service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetVoiceConnectorTerminationHealth service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnectorTerminationHealth">REST API Reference for GetVoiceConnectorTerminationHealth Operation</seealso>
+        Task<GetVoiceConnectorTerminationHealthResponse> GetVoiceConnectorTerminationHealthAsync(GetVoiceConnectorTerminationHealthRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListAvailableVoiceConnectorRegions
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAvailableVoiceConnectorRegions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAvailableVoiceConnectorRegions service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListAvailableVoiceConnectorRegions">REST API Reference for ListAvailableVoiceConnectorRegions Operation</seealso>
+        Task<ListAvailableVoiceConnectorRegionsResponse> ListAvailableVoiceConnectorRegionsAsync(ListAvailableVoiceConnectorRegionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListPhoneNumberOrders
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPhoneNumberOrders service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPhoneNumberOrders service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListPhoneNumberOrders">REST API Reference for ListPhoneNumberOrders Operation</seealso>
+        Task<ListPhoneNumberOrdersResponse> ListPhoneNumberOrdersAsync(ListPhoneNumberOrdersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListPhoneNumbers
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPhoneNumbers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPhoneNumbers service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListPhoneNumbers">REST API Reference for ListPhoneNumbers Operation</seealso>
+        Task<ListPhoneNumbersResponse> ListPhoneNumbersAsync(ListPhoneNumbersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListProxySessions
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProxySessions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListProxySessions service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListProxySessions">REST API Reference for ListProxySessions Operation</seealso>
+        Task<ListProxySessionsResponse> ListProxySessionsAsync(ListProxySessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListSipMediaApplications
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSipMediaApplications service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSipMediaApplications service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListSipMediaApplications">REST API Reference for ListSipMediaApplications Operation</seealso>
+        Task<ListSipMediaApplicationsResponse> ListSipMediaApplicationsAsync(ListSipMediaApplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListSipRules
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSipRules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSipRules service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListSipRules">REST API Reference for ListSipRules Operation</seealso>
+        Task<ListSipRulesResponse> ListSipRulesAsync(ListSipRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListSupportedPhoneNumberCountries
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSupportedPhoneNumberCountries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSupportedPhoneNumberCountries service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListSupportedPhoneNumberCountries">REST API Reference for ListSupportedPhoneNumberCountries Operation</seealso>
+        Task<ListSupportedPhoneNumberCountriesResponse> ListSupportedPhoneNumberCountriesAsync(ListSupportedPhoneNumberCountriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListVoiceConnectorGroups
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVoiceConnectorGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListVoiceConnectorGroups service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListVoiceConnectorGroups">REST API Reference for ListVoiceConnectorGroups Operation</seealso>
+        Task<ListVoiceConnectorGroupsResponse> ListVoiceConnectorGroupsAsync(ListVoiceConnectorGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListVoiceConnectors
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVoiceConnectors service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListVoiceConnectors service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListVoiceConnectors">REST API Reference for ListVoiceConnectors Operation</seealso>
+        Task<ListVoiceConnectorsResponse> ListVoiceConnectorsAsync(ListVoiceConnectorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListVoiceConnectorTerminationCredentials
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVoiceConnectorTerminationCredentials service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListVoiceConnectorTerminationCredentials service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListVoiceConnectorTerminationCredentials">REST API Reference for ListVoiceConnectorTerminationCredentials Operation</seealso>
+        Task<ListVoiceConnectorTerminationCredentialsResponse> ListVoiceConnectorTerminationCredentialsAsync(ListVoiceConnectorTerminationCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutSipMediaApplicationAlexaSkillConfiguration
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutSipMediaApplicationAlexaSkillConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutSipMediaApplicationAlexaSkillConfiguration service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutSipMediaApplicationAlexaSkillConfiguration">REST API Reference for PutSipMediaApplicationAlexaSkillConfiguration Operation</seealso>
+        Task<PutSipMediaApplicationAlexaSkillConfigurationResponse> PutSipMediaApplicationAlexaSkillConfigurationAsync(PutSipMediaApplicationAlexaSkillConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutSipMediaApplicationLoggingConfiguration
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutSipMediaApplicationLoggingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutSipMediaApplicationLoggingConfiguration service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutSipMediaApplicationLoggingConfiguration">REST API Reference for PutSipMediaApplicationLoggingConfiguration Operation</seealso>
+        Task<PutSipMediaApplicationLoggingConfigurationResponse> PutSipMediaApplicationLoggingConfigurationAsync(PutSipMediaApplicationLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutVoiceConnectorEmergencyCallingConfiguration
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutVoiceConnectorEmergencyCallingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutVoiceConnectorEmergencyCallingConfiguration service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutVoiceConnectorEmergencyCallingConfiguration">REST API Reference for PutVoiceConnectorEmergencyCallingConfiguration Operation</seealso>
+        Task<PutVoiceConnectorEmergencyCallingConfigurationResponse> PutVoiceConnectorEmergencyCallingConfigurationAsync(PutVoiceConnectorEmergencyCallingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutVoiceConnectorLoggingConfiguration
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutVoiceConnectorLoggingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutVoiceConnectorLoggingConfiguration service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutVoiceConnectorLoggingConfiguration">REST API Reference for PutVoiceConnectorLoggingConfiguration Operation</seealso>
+        Task<PutVoiceConnectorLoggingConfigurationResponse> PutVoiceConnectorLoggingConfigurationAsync(PutVoiceConnectorLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutVoiceConnectorOrigination
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutVoiceConnectorOrigination service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutVoiceConnectorOrigination service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutVoiceConnectorOrigination">REST API Reference for PutVoiceConnectorOrigination Operation</seealso>
+        Task<PutVoiceConnectorOriginationResponse> PutVoiceConnectorOriginationAsync(PutVoiceConnectorOriginationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutVoiceConnectorProxy
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutVoiceConnectorProxy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutVoiceConnectorProxy service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutVoiceConnectorProxy">REST API Reference for PutVoiceConnectorProxy Operation</seealso>
+        Task<PutVoiceConnectorProxyResponse> PutVoiceConnectorProxyAsync(PutVoiceConnectorProxyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutVoiceConnectorStreamingConfiguration
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutVoiceConnectorStreamingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutVoiceConnectorStreamingConfiguration service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutVoiceConnectorStreamingConfiguration">REST API Reference for PutVoiceConnectorStreamingConfiguration Operation</seealso>
+        Task<PutVoiceConnectorStreamingConfigurationResponse> PutVoiceConnectorStreamingConfigurationAsync(PutVoiceConnectorStreamingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutVoiceConnectorTermination
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutVoiceConnectorTermination service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutVoiceConnectorTermination service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutVoiceConnectorTermination">REST API Reference for PutVoiceConnectorTermination Operation</seealso>
+        Task<PutVoiceConnectorTerminationResponse> PutVoiceConnectorTerminationAsync(PutVoiceConnectorTerminationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutVoiceConnectorTerminationCredentials
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutVoiceConnectorTerminationCredentials service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutVoiceConnectorTerminationCredentials service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutVoiceConnectorTerminationCredentials">REST API Reference for PutVoiceConnectorTerminationCredentials Operation</seealso>
+        Task<PutVoiceConnectorTerminationCredentialsResponse> PutVoiceConnectorTerminationCredentialsAsync(PutVoiceConnectorTerminationCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  RestorePhoneNumber
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestorePhoneNumber service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RestorePhoneNumber service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ResourceLimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/RestorePhoneNumber">REST API Reference for RestorePhoneNumber Operation</seealso>
+        Task<RestorePhoneNumberResponse> RestorePhoneNumberAsync(RestorePhoneNumberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  SearchAvailablePhoneNumbers
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchAvailablePhoneNumbers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchAvailablePhoneNumbers service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/SearchAvailablePhoneNumbers">REST API Reference for SearchAvailablePhoneNumbers Operation</seealso>
+        Task<SearchAvailablePhoneNumbersResponse> SearchAvailablePhoneNumbersAsync(SearchAvailablePhoneNumbersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateGlobalSettings
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGlobalSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateGlobalSettings service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdateGlobalSettings">REST API Reference for UpdateGlobalSettings Operation</seealso>
+        Task<UpdateGlobalSettingsResponse> UpdateGlobalSettingsAsync(UpdateGlobalSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdatePhoneNumber
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePhoneNumber service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdatePhoneNumber service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdatePhoneNumber">REST API Reference for UpdatePhoneNumber Operation</seealso>
+        Task<UpdatePhoneNumberResponse> UpdatePhoneNumberAsync(UpdatePhoneNumberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdatePhoneNumberSettings
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePhoneNumberSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdatePhoneNumberSettings service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdatePhoneNumberSettings">REST API Reference for UpdatePhoneNumberSettings Operation</seealso>
+        Task<UpdatePhoneNumberSettingsResponse> UpdatePhoneNumberSettingsAsync(UpdatePhoneNumberSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateProxySession
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProxySession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateProxySession service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdateProxySession">REST API Reference for UpdateProxySession Operation</seealso>
+        Task<UpdateProxySessionResponse> UpdateProxySessionAsync(UpdateProxySessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateSipMediaApplication
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSipMediaApplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateSipMediaApplication service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdateSipMediaApplication">REST API Reference for UpdateSipMediaApplication Operation</seealso>
+        Task<UpdateSipMediaApplicationResponse> UpdateSipMediaApplicationAsync(UpdateSipMediaApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateSipMediaApplicationCall
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSipMediaApplicationCall service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateSipMediaApplicationCall service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ResourceLimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdateSipMediaApplicationCall">REST API Reference for UpdateSipMediaApplicationCall Operation</seealso>
+        Task<UpdateSipMediaApplicationCallResponse> UpdateSipMediaApplicationCallAsync(UpdateSipMediaApplicationCallRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateSipRule
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSipRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateSipRule service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ResourceLimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdateSipRule">REST API Reference for UpdateSipRule Operation</seealso>
+        Task<UpdateSipRuleResponse> UpdateSipRuleAsync(UpdateSipRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateVoiceConnector
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVoiceConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateVoiceConnector service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdateVoiceConnector">REST API Reference for UpdateVoiceConnector Operation</seealso>
+        Task<UpdateVoiceConnectorResponse> UpdateVoiceConnectorAsync(UpdateVoiceConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateVoiceConnectorGroup
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVoiceConnectorGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateVoiceConnectorGroup service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdateVoiceConnectorGroup">REST API Reference for UpdateVoiceConnectorGroup Operation</seealso>
+        Task<UpdateVoiceConnectorGroupResponse> UpdateVoiceConnectorGroupAsync(UpdateVoiceConnectorGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ValidateE911Address
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ValidateE911Address service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ValidateE911Address service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ValidateE911Address">REST API Reference for ValidateE911Address Operation</seealso>
+        Task<ValidateE911AddressResponse> ValidateE911AddressAsync(ValidateE911AddressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+    }
+}

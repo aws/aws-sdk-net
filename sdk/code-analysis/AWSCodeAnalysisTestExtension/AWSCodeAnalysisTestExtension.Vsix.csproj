@@ -232,6 +232,10 @@
       <Project>{CFF95961-210B-4DDE-915B-31EBEDDF8098}</Project>
       <Name>AWSSDK.ChimeSDKMessaging.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/ChimeSDKVoice/AWSSDK.ChimeSDKVoice.CodeAnalysis.csproj">
+      <Project>{42A487B0-B057-4921-9A4B-9AC8FA3DD0A7}</Project>
+      <Name>AWSSDK.ChimeSDKVoice.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Cloud9/AWSSDK.Cloud9.CodeAnalysis.csproj">
       <Project>{3566CC31-603D-45F7-A615-37C7963B3753}</Project>
       <Name>AWSSDK.Cloud9.CodeAnalysis</Name>
