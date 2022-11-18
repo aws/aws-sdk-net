@@ -690,7 +690,8 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATING</code> - The table is being updated.
+        ///  <code>UPDATING</code> - The table/index configuration is being updated. The table/index
+        /// remains available for data operations when <code>UPDATING</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>

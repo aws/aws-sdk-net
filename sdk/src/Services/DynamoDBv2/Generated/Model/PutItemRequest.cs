@@ -40,7 +40,7 @@ namespace Amazon.DynamoDBv2.Model
     ///  
     /// <para>
     /// When you add an item, the primary key attributes are the only required attributes.
-    /// Attribute values cannot be null.
+    /// 
     /// </para>
     ///  
     /// <para>

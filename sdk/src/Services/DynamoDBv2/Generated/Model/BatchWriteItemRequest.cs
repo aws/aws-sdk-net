@@ -40,8 +40,10 @@ namespace Amazon.DynamoDBv2.Model
     /// 
     ///  <note> 
     /// <para>
-    ///  <code>BatchWriteItem</code> cannot update items. To update items, use the <code>UpdateItem</code>
-    /// action.
+    ///  <code>BatchWriteItem</code> cannot update items. If you perform a <code>BatchWriteItem</code>
+    /// operation on an existing item, that item's values will be overwritten by the operation
+    /// and it will appear like it was updated. To update items, we recommend you use the
+    /// <code>UpdateItem</code> action.
     /// </para>
     ///  </note> 
     /// <para>

@@ -96,7 +96,7 @@ namespace Amazon.DynamoDBv2.Internal
                 }
                 if (Equals(refs["Region"], "local"))
                 {
-                    return new Endpoint("https://localhost:8000", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""dynamodb"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
+                    return new Endpoint("https://localhost:8000", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""dynamodb""}]}", refs), InterpolateJson(@"", refs));
                 }
                 return new Endpoint(Interpolate(@"https://dynamodb.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
             }

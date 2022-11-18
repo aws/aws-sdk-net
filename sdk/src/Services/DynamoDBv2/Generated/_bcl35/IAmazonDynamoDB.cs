@@ -468,8 +468,10 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <note> 
         /// <para>
-        ///  <code>BatchWriteItem</code> cannot update items. To update items, use the <code>UpdateItem</code>
-        /// action.
+        ///  <code>BatchWriteItem</code> cannot update items. If you perform a <code>BatchWriteItem</code>
+        /// operation on an existing item, that item's values will be overwritten by the operation
+        /// and it will appear like it was updated. To update items, we recommend you use the
+        /// <code>UpdateItem</code> action.
         /// </para>
         ///  </note> 
         /// <para>
@@ -603,8 +605,10 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <note> 
         /// <para>
-        ///  <code>BatchWriteItem</code> cannot update items. To update items, use the <code>UpdateItem</code>
-        /// action.
+        ///  <code>BatchWriteItem</code> cannot update items. If you perform a <code>BatchWriteItem</code>
+        /// operation on an existing item, that item's values will be overwritten by the operation
+        /// and it will appear like it was updated. To update items, we recommend you use the
+        /// <code>UpdateItem</code> action.
         /// </para>
         ///  </note> 
         /// <para>
@@ -828,16 +832,20 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  
         /// <para>
-        /// Up to 500 simultaneous table operations are allowed per account. These operations
-        /// include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// For most purposes, up to 500 simultaneous table operations are allowed per account.
+        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
         /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
         /// </para>
         ///  
         /// <para>
-        /// The only exception is when you are creating a table with one or more secondary indexes.
-        /// You can have up to 250 such requests running at a time; however, if the table or index
-        /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
-        /// operations.
+        /// When you are creating a table with one or more secondary indexes, you can have up
+        /// to 250 such requests running at a time. However, if the table or index specifications
+        /// are complex, then DynamoDB might temporarily reduce the number of concurrent operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// When importing into DynamoDB, up to 50 simultaneous import table operations are allowed
+        /// per account.
         /// </para>
         ///  
         /// <para>
@@ -975,16 +983,20 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  
         /// <para>
-        /// Up to 500 simultaneous table operations are allowed per account. These operations
-        /// include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// For most purposes, up to 500 simultaneous table operations are allowed per account.
+        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
         /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
         /// </para>
         ///  
         /// <para>
-        /// The only exception is when you are creating a table with one or more secondary indexes.
-        /// You can have up to 250 such requests running at a time; however, if the table or index
-        /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
-        /// operations.
+        /// When you are creating a table with one or more secondary indexes, you can have up
+        /// to 250 such requests running at a time. However, if the table or index specifications
+        /// are complex, then DynamoDB might temporarily reduce the number of concurrent operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// When importing into DynamoDB, up to 50 simultaneous import table operations are allowed
+        /// per account.
         /// </para>
         ///  
         /// <para>
@@ -1069,16 +1081,20 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  
         /// <para>
-        /// Up to 500 simultaneous table operations are allowed per account. These operations
-        /// include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// For most purposes, up to 500 simultaneous table operations are allowed per account.
+        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
         /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
         /// </para>
         ///  
         /// <para>
-        /// The only exception is when you are creating a table with one or more secondary indexes.
-        /// You can have up to 250 such requests running at a time; however, if the table or index
-        /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
-        /// operations.
+        /// When you are creating a table with one or more secondary indexes, you can have up
+        /// to 250 such requests running at a time. However, if the table or index specifications
+        /// are complex, then DynamoDB might temporarily reduce the number of concurrent operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// When importing into DynamoDB, up to 50 simultaneous import table operations are allowed
+        /// per account.
         /// </para>
         ///  
         /// <para>
@@ -1129,16 +1145,20 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  
         /// <para>
-        /// Up to 500 simultaneous table operations are allowed per account. These operations
-        /// include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// For most purposes, up to 500 simultaneous table operations are allowed per account.
+        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
         /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
         /// </para>
         ///  
         /// <para>
-        /// The only exception is when you are creating a table with one or more secondary indexes.
-        /// You can have up to 250 such requests running at a time; however, if the table or index
-        /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
-        /// operations.
+        /// When you are creating a table with one or more secondary indexes, you can have up
+        /// to 250 such requests running at a time. However, if the table or index specifications
+        /// are complex, then DynamoDB might temporarily reduce the number of concurrent operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// When importing into DynamoDB, up to 50 simultaneous import table operations are allowed
+        /// per account.
         /// </para>
         ///  
         /// <para>
@@ -1210,16 +1230,20 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  
         /// <para>
-        /// Up to 500 simultaneous table operations are allowed per account. These operations
-        /// include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// For most purposes, up to 500 simultaneous table operations are allowed per account.
+        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
         /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
         /// </para>
         ///  
         /// <para>
-        /// The only exception is when you are creating a table with one or more secondary indexes.
-        /// You can have up to 250 such requests running at a time; however, if the table or index
-        /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
-        /// operations.
+        /// When you are creating a table with one or more secondary indexes, you can have up
+        /// to 250 such requests running at a time. However, if the table or index specifications
+        /// are complex, then DynamoDB might temporarily reduce the number of concurrent operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// When importing into DynamoDB, up to 50 simultaneous import table operations are allowed
+        /// per account.
         /// </para>
         ///  
         /// <para>
@@ -1506,16 +1530,20 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  
         /// <para>
-        /// Up to 500 simultaneous table operations are allowed per account. These operations
-        /// include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// For most purposes, up to 500 simultaneous table operations are allowed per account.
+        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
         /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
         /// </para>
         ///  
         /// <para>
-        /// The only exception is when you are creating a table with one or more secondary indexes.
-        /// You can have up to 250 such requests running at a time; however, if the table or index
-        /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
-        /// operations.
+        /// When you are creating a table with one or more secondary indexes, you can have up
+        /// to 250 such requests running at a time. However, if the table or index specifications
+        /// are complex, then DynamoDB might temporarily reduce the number of concurrent operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// When importing into DynamoDB, up to 50 simultaneous import table operations are allowed
+        /// per account.
         /// </para>
         ///  
         /// <para>
@@ -1575,16 +1603,20 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  
         /// <para>
-        /// Up to 500 simultaneous table operations are allowed per account. These operations
-        /// include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// For most purposes, up to 500 simultaneous table operations are allowed per account.
+        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
         /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
         /// </para>
         ///  
         /// <para>
-        /// The only exception is when you are creating a table with one or more secondary indexes.
-        /// You can have up to 250 such requests running at a time; however, if the table or index
-        /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
-        /// operations.
+        /// When you are creating a table with one or more secondary indexes, you can have up
+        /// to 250 such requests running at a time. However, if the table or index specifications
+        /// are complex, then DynamoDB might temporarily reduce the number of concurrent operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// When importing into DynamoDB, up to 50 simultaneous import table operations are allowed
+        /// per account.
         /// </para>
         ///  
         /// <para>
@@ -1858,16 +1890,20 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  
         /// <para>
-        /// Up to 500 simultaneous table operations are allowed per account. These operations
-        /// include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// For most purposes, up to 500 simultaneous table operations are allowed per account.
+        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
         /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
         /// </para>
         ///  
         /// <para>
-        /// The only exception is when you are creating a table with one or more secondary indexes.
-        /// You can have up to 250 such requests running at a time; however, if the table or index
-        /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
-        /// operations.
+        /// When you are creating a table with one or more secondary indexes, you can have up
+        /// to 250 such requests running at a time. However, if the table or index specifications
+        /// are complex, then DynamoDB might temporarily reduce the number of concurrent operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// When importing into DynamoDB, up to 50 simultaneous import table operations are allowed
+        /// per account.
         /// </para>
         ///  
         /// <para>
@@ -2453,16 +2489,20 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  
         /// <para>
-        /// Up to 500 simultaneous table operations are allowed per account. These operations
-        /// include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// For most purposes, up to 500 simultaneous table operations are allowed per account.
+        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
         /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
         /// </para>
         ///  
         /// <para>
-        /// The only exception is when you are creating a table with one or more secondary indexes.
-        /// You can have up to 250 such requests running at a time; however, if the table or index
-        /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
-        /// operations.
+        /// When you are creating a table with one or more secondary indexes, you can have up
+        /// to 250 such requests running at a time. However, if the table or index specifications
+        /// are complex, then DynamoDB might temporarily reduce the number of concurrent operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// When importing into DynamoDB, up to 50 simultaneous import table operations are allowed
+        /// per account.
         /// </para>
         ///  
         /// <para>
@@ -2529,16 +2569,20 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  
         /// <para>
-        /// Up to 500 simultaneous table operations are allowed per account. These operations
-        /// include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// For most purposes, up to 500 simultaneous table operations are allowed per account.
+        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
         /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
         /// </para>
         ///  
         /// <para>
-        /// The only exception is when you are creating a table with one or more secondary indexes.
-        /// You can have up to 250 such requests running at a time; however, if the table or index
-        /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
-        /// operations.
+        /// When you are creating a table with one or more secondary indexes, you can have up
+        /// to 250 such requests running at a time. However, if the table or index specifications
+        /// are complex, then DynamoDB might temporarily reduce the number of concurrent operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// When importing into DynamoDB, up to 50 simultaneous import table operations are allowed
+        /// per account.
         /// </para>
         ///  
         /// <para>
@@ -3016,16 +3060,20 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  
         /// <para>
-        /// Up to 500 simultaneous table operations are allowed per account. These operations
-        /// include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// For most purposes, up to 500 simultaneous table operations are allowed per account.
+        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
         /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
         /// </para>
         ///  
         /// <para>
-        /// The only exception is when you are creating a table with one or more secondary indexes.
-        /// You can have up to 250 such requests running at a time; however, if the table or index
-        /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
-        /// operations.
+        /// When you are creating a table with one or more secondary indexes, you can have up
+        /// to 250 such requests running at a time. However, if the table or index specifications
+        /// are complex, then DynamoDB might temporarily reduce the number of concurrent operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// When importing into DynamoDB, up to 50 simultaneous import table operations are allowed
+        /// per account.
         /// </para>
         ///  
         /// <para>
@@ -3238,16 +3286,20 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  
         /// <para>
-        /// Up to 500 simultaneous table operations are allowed per account. These operations
-        /// include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// For most purposes, up to 500 simultaneous table operations are allowed per account.
+        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
         /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
         /// </para>
         ///  
         /// <para>
-        /// The only exception is when you are creating a table with one or more secondary indexes.
-        /// You can have up to 250 such requests running at a time; however, if the table or index
-        /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
-        /// operations.
+        /// When you are creating a table with one or more secondary indexes, you can have up
+        /// to 250 such requests running at a time. However, if the table or index specifications
+        /// are complex, then DynamoDB might temporarily reduce the number of concurrent operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// When importing into DynamoDB, up to 50 simultaneous import table operations are allowed
+        /// per account.
         /// </para>
         ///  
         /// <para>
@@ -3411,16 +3463,20 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  
         /// <para>
-        /// Up to 500 simultaneous table operations are allowed per account. These operations
-        /// include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// For most purposes, up to 500 simultaneous table operations are allowed per account.
+        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
         /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
         /// </para>
         ///  
         /// <para>
-        /// The only exception is when you are creating a table with one or more secondary indexes.
-        /// You can have up to 250 such requests running at a time; however, if the table or index
-        /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
-        /// operations.
+        /// When you are creating a table with one or more secondary indexes, you can have up
+        /// to 250 such requests running at a time. However, if the table or index specifications
+        /// are complex, then DynamoDB might temporarily reduce the number of concurrent operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// When importing into DynamoDB, up to 50 simultaneous import table operations are allowed
+        /// per account.
         /// </para>
         ///  
         /// <para>
@@ -3522,16 +3578,20 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  
         /// <para>
-        /// Up to 500 simultaneous table operations are allowed per account. These operations
-        /// include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// For most purposes, up to 500 simultaneous table operations are allowed per account.
+        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
         /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
         /// </para>
         ///  
         /// <para>
-        /// The only exception is when you are creating a table with one or more secondary indexes.
-        /// You can have up to 250 such requests running at a time; however, if the table or index
-        /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
-        /// operations.
+        /// When you are creating a table with one or more secondary indexes, you can have up
+        /// to 250 such requests running at a time. However, if the table or index specifications
+        /// are complex, then DynamoDB might temporarily reduce the number of concurrent operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// When importing into DynamoDB, up to 50 simultaneous import table operations are allowed
+        /// per account.
         /// </para>
         ///  
         /// <para>
@@ -3738,7 +3798,7 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// When you add an item, the primary key attributes are the only required attributes.
-        /// Attribute values cannot be null.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -3812,7 +3872,7 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// When you add an item, the primary key attributes are the only required attributes.
-        /// Attribute values cannot be null.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -3887,7 +3947,7 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// When you add an item, the primary key attributes are the only required attributes.
-        /// Attribute values cannot be null.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -4161,16 +4221,20 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  
         /// <para>
-        /// Up to 500 simultaneous table operations are allowed per account. These operations
-        /// include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// For most purposes, up to 500 simultaneous table operations are allowed per account.
+        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
         /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
         /// </para>
         ///  
         /// <para>
-        /// The only exception is when you are creating a table with one or more secondary indexes.
-        /// You can have up to 250 such requests running at a time; however, if the table or index
-        /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
-        /// operations.
+        /// When you are creating a table with one or more secondary indexes, you can have up
+        /// to 250 such requests running at a time. However, if the table or index specifications
+        /// are complex, then DynamoDB might temporarily reduce the number of concurrent operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// When importing into DynamoDB, up to 50 simultaneous import table operations are allowed
+        /// per account.
         /// </para>
         ///  
         /// <para>
@@ -4304,16 +4368,20 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  
         /// <para>
-        /// Up to 500 simultaneous table operations are allowed per account. These operations
-        /// include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// For most purposes, up to 500 simultaneous table operations are allowed per account.
+        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
         /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
         /// </para>
         ///  
         /// <para>
-        /// The only exception is when you are creating a table with one or more secondary indexes.
-        /// You can have up to 250 such requests running at a time; however, if the table or index
-        /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
-        /// operations.
+        /// When you are creating a table with one or more secondary indexes, you can have up
+        /// to 250 such requests running at a time. However, if the table or index specifications
+        /// are complex, then DynamoDB might temporarily reduce the number of concurrent operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// When importing into DynamoDB, up to 50 simultaneous import table operations are allowed
+        /// per account.
         /// </para>
         ///  
         /// <para>
@@ -4682,16 +4750,20 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  
         /// <para>
-        /// Up to 500 simultaneous table operations are allowed per account. These operations
-        /// include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// For most purposes, up to 500 simultaneous table operations are allowed per account.
+        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
         /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
         /// </para>
         ///  
         /// <para>
-        /// The only exception is when you are creating a table with one or more secondary indexes.
-        /// You can have up to 250 such requests running at a time; however, if the table or index
-        /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
-        /// operations.
+        /// When you are creating a table with one or more secondary indexes, you can have up
+        /// to 250 such requests running at a time. However, if the table or index specifications
+        /// are complex, then DynamoDB might temporarily reduce the number of concurrent operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// When importing into DynamoDB, up to 50 simultaneous import table operations are allowed
+        /// per account.
         /// </para>
         ///  
         /// <para>
@@ -5472,16 +5544,20 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  
         /// <para>
-        /// Up to 500 simultaneous table operations are allowed per account. These operations
-        /// include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// For most purposes, up to 500 simultaneous table operations are allowed per account.
+        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
         /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
         /// </para>
         ///  
         /// <para>
-        /// The only exception is when you are creating a table with one or more secondary indexes.
-        /// You can have up to 250 such requests running at a time; however, if the table or index
-        /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
-        /// operations.
+        /// When you are creating a table with one or more secondary indexes, you can have up
+        /// to 250 such requests running at a time. However, if the table or index specifications
+        /// are complex, then DynamoDB might temporarily reduce the number of concurrent operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// When importing into DynamoDB, up to 50 simultaneous import table operations are allowed
+        /// per account.
         /// </para>
         ///  
         /// <para>
@@ -5758,16 +5834,20 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  
         /// <para>
-        /// Up to 500 simultaneous table operations are allowed per account. These operations
-        /// include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// For most purposes, up to 500 simultaneous table operations are allowed per account.
+        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
         /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
         /// </para>
         ///  
         /// <para>
-        /// The only exception is when you are creating a table with one or more secondary indexes.
-        /// You can have up to 250 such requests running at a time; however, if the table or index
-        /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
-        /// operations.
+        /// When you are creating a table with one or more secondary indexes, you can have up
+        /// to 250 such requests running at a time. However, if the table or index specifications
+        /// are complex, then DynamoDB might temporarily reduce the number of concurrent operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// When importing into DynamoDB, up to 50 simultaneous import table operations are allowed
+        /// per account.
         /// </para>
         ///  
         /// <para>
@@ -6038,16 +6118,20 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  
         /// <para>
-        /// Up to 500 simultaneous table operations are allowed per account. These operations
-        /// include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// For most purposes, up to 500 simultaneous table operations are allowed per account.
+        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
         /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
         /// </para>
         ///  
         /// <para>
-        /// The only exception is when you are creating a table with one or more secondary indexes.
-        /// You can have up to 250 such requests running at a time; however, if the table or index
-        /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
-        /// operations.
+        /// When you are creating a table with one or more secondary indexes, you can have up
+        /// to 250 such requests running at a time. However, if the table or index specifications
+        /// are complex, then DynamoDB might temporarily reduce the number of concurrent operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// When importing into DynamoDB, up to 50 simultaneous import table operations are allowed
+        /// per account.
         /// </para>
         ///  
         /// <para>
@@ -6107,16 +6191,20 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  
         /// <para>
-        /// Up to 500 simultaneous table operations are allowed per account. These operations
-        /// include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// For most purposes, up to 500 simultaneous table operations are allowed per account.
+        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
         /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
         /// </para>
         ///  
         /// <para>
-        /// The only exception is when you are creating a table with one or more secondary indexes.
-        /// You can have up to 250 such requests running at a time; however, if the table or index
-        /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
-        /// operations.
+        /// When you are creating a table with one or more secondary indexes, you can have up
+        /// to 250 such requests running at a time. However, if the table or index specifications
+        /// are complex, then DynamoDB might temporarily reduce the number of concurrent operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// When importing into DynamoDB, up to 50 simultaneous import table operations are allowed
+        /// per account.
         /// </para>
         ///  
         /// <para>
@@ -6187,16 +6275,20 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  
         /// <para>
-        /// Up to 500 simultaneous table operations are allowed per account. These operations
-        /// include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// For most purposes, up to 500 simultaneous table operations are allowed per account.
+        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
         /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
         /// </para>
         ///  
         /// <para>
-        /// The only exception is when you are creating a table with one or more secondary indexes.
-        /// You can have up to 250 such requests running at a time; however, if the table or index
-        /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
-        /// operations.
+        /// When you are creating a table with one or more secondary indexes, you can have up
+        /// to 250 such requests running at a time. However, if the table or index specifications
+        /// are complex, then DynamoDB might temporarily reduce the number of concurrent operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// When importing into DynamoDB, up to 50 simultaneous import table operations are allowed
+        /// per account.
         /// </para>
         ///  
         /// <para>
@@ -6298,16 +6390,20 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  
         /// <para>
-        /// Up to 500 simultaneous table operations are allowed per account. These operations
-        /// include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// For most purposes, up to 500 simultaneous table operations are allowed per account.
+        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
         /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
         /// </para>
         ///  
         /// <para>
-        /// The only exception is when you are creating a table with one or more secondary indexes.
-        /// You can have up to 250 such requests running at a time; however, if the table or index
-        /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
-        /// operations.
+        /// When you are creating a table with one or more secondary indexes, you can have up
+        /// to 250 such requests running at a time. However, if the table or index specifications
+        /// are complex, then DynamoDB might temporarily reduce the number of concurrent operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// When importing into DynamoDB, up to 50 simultaneous import table operations are allowed
+        /// per account.
         /// </para>
         ///  
         /// <para>
