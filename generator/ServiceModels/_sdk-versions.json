@@ -2586,7 +2586,7 @@
             "InPreview"               : false
         },
         "SsmSap"                              : {
-            "Version" : "3.7.100.0",
+            "Version" : "3.7.100.4",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.100.21"

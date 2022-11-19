@@ -23,7 +23,7 @@
 	* Added DisableProfiler flag as a new field in ProfilerConfig
 * ServiceCatalog (3.7.101.0)
 	* This release 1. adds support for Principal Name Sharing with Service Catalog portfolio sharing. 2. Introduces repo sourced products which are created and managed with existing SC APIs. These products are synced to external repos and auto create new product versions based on changes in the repo.
-* SsmSap (3.7.100.0)
+* SsmSap (3.7.100.4)
 	* AWS Systems Manager for SAP provides simplified operations and management of SAP applications such as SAP HANA. With this release, SAP customers and partners can automate and simplify their SAP system administration tasks such as backup/restore of SAP HANA.
 * StepFunctions (3.7.101.0)
 	* This release adds support for using Step Functions service integrations to invoke any cross-account AWS resource, even if that service doesn't support resource-based policies or cross-account calls. See https://docs.aws.amazon.com/step-functions/latest/dg/concepts-access-cross-acct-resources.html
