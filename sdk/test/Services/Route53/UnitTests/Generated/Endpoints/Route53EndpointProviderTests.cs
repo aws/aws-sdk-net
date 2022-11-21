@@ -36,8 +36,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new Route53EndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "aws-cn-global";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonRoute53EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://route53.amazonaws.com.cn", endpoint.URL);
         }
@@ -51,8 +51,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new Route53EndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "aws-global";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonRoute53EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://route53.amazonaws.com", endpoint.URL);
         }
@@ -66,8 +66,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new Route53EndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "aws-iso-global";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonRoute53EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://route53.c2s.ic.gov", endpoint.URL);
         }
@@ -81,8 +81,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new Route53EndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "aws-iso-b-global";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonRoute53EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://route53.sc2s.sgov.gov", endpoint.URL);
         }
@@ -96,8 +96,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new Route53EndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "aws-us-gov-global";
+            parameters["UseFIPS"] = false;
             var endpoint = new AmazonRoute53EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://route53.us-gov.amazonaws.com", endpoint.URL);
         }
@@ -111,8 +111,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new Route53EndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonRoute53EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://example.com", endpoint.URL);
@@ -128,8 +128,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new Route53EndpointParameters();
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
             parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonRoute53EndpointProvider().ResolveEndpoint(parameters);
         }
@@ -144,8 +144,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new Route53EndpointParameters();
             parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = false;
             parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonRoute53EndpointProvider().ResolveEndpoint(parameters);
         }
