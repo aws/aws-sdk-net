@@ -1,3 +1,12 @@
+### 3.7.423.0 (2022-11-22 19:24 UTC)
+* Appflow (3.7.103.0)
+	* Adding support for Amazon AppFlow to transfer the data to Amazon Redshift databases through Amazon Redshift Data API service. This feature will support the Redshift destination connector on both public and private accessible Amazon Redshift Clusters and Amazon Redshift Serverless.
+* KinesisAnalyticsV2 (3.7.101.0)
+	* Support for Apache Flink 1.15 in Kinesis Data Analytics.
+* Core 3.7.100.22
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.422.0 (2022-11-21 23:23 UTC)
 * Route53 (3.7.103.0)
 	* Amazon Route 53 now supports the Asia Pacific (Hyderabad) Region (ap-south-2) for latency records, geoproximity records, and private DNS for Amazon VPCs in that region.

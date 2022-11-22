@@ -30,7 +30,7 @@ namespace Amazon.TranscribeService
     public partial class AmazonTranscribeServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.100.21");
+            InternalSDKUtils.BuildUserAgentString("3.7.100.22");
 
         private string _userAgent = UserAgentString;
 
