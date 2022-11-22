@@ -1,3 +1,7 @@
+### 3.7.422.0 (2022-11-21 23:23 UTC)
+* Route53 (3.7.103.0)
+	* Amazon Route 53 now supports the Asia Pacific (Hyderabad) Region (ap-south-2) for latency records, geoproximity records, and private DNS for Amazon VPCs in that region.
+
 ### 3.7.421.0 (2022-11-18 20:43 UTC)
 * Appflow (3.7.102.0)
 	* AppFlow provides a new API called UpdateConnectorRegistration to update a custom connector that customers have previously registered. With this API, customers no longer need to unregister and then register a connector to make an update.
