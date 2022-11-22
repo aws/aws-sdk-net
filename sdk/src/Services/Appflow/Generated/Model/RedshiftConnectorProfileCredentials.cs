@@ -42,7 +42,7 @@ namespace Amazon.Appflow.Model
         ///  The password that corresponds to the user name. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=512)]
+        [AWSProperty(Max=512)]
         public string Password
         {
             get { return this._password; }
@@ -61,7 +61,7 @@ namespace Amazon.Appflow.Model
         ///  The name of the user. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=512)]
+        [AWSProperty(Max=2048)]
         public string Username
         {
             get { return this._username; }

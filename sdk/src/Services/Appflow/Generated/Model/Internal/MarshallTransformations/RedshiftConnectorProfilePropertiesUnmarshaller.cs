@@ -76,16 +76,46 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                     unmarshalledObject.BucketPrefix = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("clusterIdentifier", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ClusterIdentifier = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("dataApiRoleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DataApiRoleArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("databaseName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DatabaseName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("databaseUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DatabaseUrl = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("isRedshiftServerless", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsRedshiftServerless = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("roleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("workgroupName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.WorkgroupName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

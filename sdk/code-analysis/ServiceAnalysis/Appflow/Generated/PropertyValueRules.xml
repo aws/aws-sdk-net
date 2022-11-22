@@ -884,8 +884,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.RedshiftConnectorProfileCredentials.Username</property>
-    <max>512</max>
-    <pattern>\S+</pattern>
+    <max>2048</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.RedshiftConnectorProfileProperties.BucketName</property>
@@ -899,6 +899,21 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Appflow.Model.RedshiftConnectorProfileProperties.ClusterIdentifier</property>
+    <max>512</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.RedshiftConnectorProfileProperties.DataApiRoleArn</property>
+    <max>512</max>
+    <pattern>arn:aws:iam:.*:[0-9]+:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.RedshiftConnectorProfileProperties.DatabaseName</property>
+    <max>512</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Appflow.Model.RedshiftConnectorProfileProperties.DatabaseUrl</property>
     <max>512</max>
     <pattern>\S+</pattern>
@@ -907,6 +922,11 @@
     <property>Amazon.Appflow.Model.RedshiftConnectorProfileProperties.RoleArn</property>
     <max>512</max>
     <pattern>arn:aws:iam:.*:[0-9]+:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.RedshiftConnectorProfileProperties.WorkgroupName</property>
+    <max>512</max>
+    <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.RedshiftDestinationProperties.BucketPrefix</property>
