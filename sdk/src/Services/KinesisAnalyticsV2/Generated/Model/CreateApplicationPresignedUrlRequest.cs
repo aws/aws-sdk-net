@@ -31,7 +31,6 @@ namespace Amazon.KinesisAnalyticsV2.Model
     /// <summary>
     /// Container for the parameters to the CreateApplicationPresignedUrl operation.
     /// Creates and returns a URL that you can use to connect to an application's extension.
-    /// Currently, the only available extension is the Apache Flink dashboard.
     /// 
     ///  
     /// <para>

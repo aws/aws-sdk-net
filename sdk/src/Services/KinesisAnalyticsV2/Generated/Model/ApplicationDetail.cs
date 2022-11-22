@@ -339,8 +339,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property RuntimeEnvironment. 
         /// <para>
-        /// The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>,
-        /// <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).
+        /// The runtime environment for the application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
