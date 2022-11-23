@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateRule Request Marshaller
+    /// LockRule Request Marshaller
     /// </summary>       
-    public class CreateRuleRequestMarshaller : IMarshaller<IRequest, CreateRuleRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class LockRuleRequestMarshaller : IMarshaller<IRequest, LockRuleRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateRuleRequest)input);
+            return this.Marshall((LockRuleRequest)input);
         }
 
         /// <summary>
@@ -52,25 +52,22 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateRuleRequest publicRequest)
+        public IRequest Marshall(LockRuleRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.RecycleBin");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-06-15";
-            request.HttpMethod = "POST";
+            request.HttpMethod = "PATCH";
 
-            request.ResourcePath = "/rules";
+            if (!publicRequest.IsSetIdentifier())
+                throw new AmazonRecycleBinException("Request object does not have required field Identifier set");
+            request.AddPathResource("{identifier}", StringUtils.FromString(publicRequest.Identifier));
+            request.ResourcePath = "/rules/{identifier}/lock";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
                 if(publicRequest.IsSetLockConfiguration())
                 {
                     context.Writer.WritePropertyName("LockConfiguration");
@@ -82,55 +79,6 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetResourceTags())
-                {
-                    context.Writer.WritePropertyName("ResourceTags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestResourceTagsListValue in publicRequest.ResourceTags)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ResourceTagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestResourceTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetResourceType())
-                {
-                    context.Writer.WritePropertyName("ResourceType");
-                    context.Writer.Write(publicRequest.ResourceType);
-                }
-
-                if(publicRequest.IsSetRetentionPeriod())
-                {
-                    context.Writer.WritePropertyName("RetentionPeriod");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RetentionPeriodMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.RetentionPeriod, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
@@ -139,9 +87,9 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateRuleRequestMarshaller _instance = new CreateRuleRequestMarshaller();        
+        private static LockRuleRequestMarshaller _instance = new LockRuleRequestMarshaller();        
 
-        internal static CreateRuleRequestMarshaller GetInstance()
+        internal static LockRuleRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -149,7 +97,7 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateRuleRequestMarshaller Instance
+        public static LockRuleRequestMarshaller Instance
         {
             get
             {

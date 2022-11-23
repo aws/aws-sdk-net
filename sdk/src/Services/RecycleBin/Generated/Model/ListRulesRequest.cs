@@ -34,10 +34,30 @@ namespace Amazon.RecycleBin.Model
     /// </summary>
     public partial class ListRulesRequest : AmazonRecycleBinRequest
     {
+        private LockState _lockState;
         private int? _maxResults;
         private string _nextToken;
         private List<ResourceTag> _resourceTags = new List<ResourceTag>();
         private ResourceType _resourceType;
+
+        /// <summary>
+        /// Gets and sets the property LockState. 
+        /// <para>
+        /// The lock state of the retention rules to list. Only retention rules with the specified
+        /// lock state are returned.
+        /// </para>
+        /// </summary>
+        public LockState LockState
+        {
+            get { return this._lockState; }
+            set { this._lockState = value; }
+        }
+
+        // Check to see if LockState property is set
+        internal bool IsSetLockState()
+        {
+            return this._lockState != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 

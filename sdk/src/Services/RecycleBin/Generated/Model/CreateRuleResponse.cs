@@ -35,6 +35,8 @@ namespace Amazon.RecycleBin.Model
     {
         private string _description;
         private string _identifier;
+        private LockConfiguration _lockConfiguration;
+        private LockState _lockState;
         private List<ResourceTag> _resourceTags = new List<ResourceTag>();
         private ResourceType _resourceType;
         private RetentionPeriod _retentionPeriod;
@@ -75,6 +77,64 @@ namespace Amazon.RecycleBin.Model
         internal bool IsSetIdentifier()
         {
             return this._identifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LockConfiguration. 
+        /// <para>
+        /// Information about the retention rule lock configuration.
+        /// </para>
+        /// </summary>
+        public LockConfiguration LockConfiguration
+        {
+            get { return this._lockConfiguration; }
+            set { this._lockConfiguration = value; }
+        }
+
+        // Check to see if LockConfiguration property is set
+        internal bool IsSetLockConfiguration()
+        {
+            return this._lockConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LockState. 
+        /// <para>
+        /// The lock state for the retention rule.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>locked</code> - The retention rule is locked and can't be modified or deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>pending_unlock</code> - The retention rule has been unlocked but it is still
+        /// within the unlock delay period. The retention rule can be modified or deleted only
+        /// after the unlock delay period has expired.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>unlocked</code> - The retention rule is unlocked and it can be modified or
+        /// deleted by any user with the required permissions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>null</code> - The retention rule has never been locked. Once a retention rule
+        /// has been locked, it can transition between the <code>locked</code> and <code>unlocked</code>
+        /// states only; it can never transition back to <code>null</code>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public LockState LockState
+        {
+            get { return this._lockState; }
+            set { this._lockState = value; }
+        }
+
+        // Check to see if LockState property is set
+        internal bool IsSetLockState()
+        {
+            return this._lockState != null;
         }
 
         /// <summary>

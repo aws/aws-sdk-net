@@ -30,7 +30,10 @@ namespace Amazon.RecycleBin.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateRule operation.
-    /// Updates an existing Recycle Bin retention rule. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-update-rule">
+    /// Updates an existing Recycle Bin retention rule. You can update a retention rule's
+    /// description, resource tags, and retention period at any time after creation. You can't
+    /// update a retention rule's resource type after creation. For more information, see
+    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-update-rule">
     /// Update Recycle Bin retention rules</a> in the <i>Amazon Elastic Compute Cloud User
     /// Guide</i>.
     /// </summary>
@@ -115,12 +118,12 @@ namespace Amazon.RecycleBin.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceType. 
+        /// Gets and sets the property ResourceType. <note> 
         /// <para>
-        /// The resource type to be retained by the retention rule. Currently, only Amazon EBS
-        /// snapshots and EBS-backed AMIs are supported. To retain snapshots, specify <code>EBS_SNAPSHOT</code>.
-        /// To retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.
+        /// This parameter is currently not supported. You can't update a retention rule's resource
+        /// type after creation.
         /// </para>
+        ///  </note>
         /// </summary>
         public ResourceType ResourceType
         {

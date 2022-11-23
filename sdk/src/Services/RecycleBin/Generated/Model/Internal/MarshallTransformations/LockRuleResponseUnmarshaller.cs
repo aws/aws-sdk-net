@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeleteRule operation
+    /// Response Unmarshaller for LockRule operation
     /// </summary>  
-    public class DeleteRuleResponseUnmarshaller : JsonResponseUnmarshaller
+    public class LockRuleResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,8 +45,61 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DeleteRuleResponse response = new DeleteRuleResponse();
+            LockRuleResponse response = new LockRuleResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("Description", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Identifier", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Identifier = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LockConfiguration", targetDepth))
+                {
+                    var unmarshaller = LockConfigurationUnmarshaller.Instance;
+                    response.LockConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LockState", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LockState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ResourceTags", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ResourceTag, ResourceTagUnmarshaller>(ResourceTagUnmarshaller.Instance);
+                    response.ResourceTags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ResourceType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ResourceType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RetentionPeriod", targetDepth))
+                {
+                    var unmarshaller = RetentionPeriodUnmarshaller.Instance;
+                    response.RetentionPeriod = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -89,9 +142,9 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
             return new AmazonRecycleBinException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DeleteRuleResponseUnmarshaller _instance = new DeleteRuleResponseUnmarshaller();        
+        private static LockRuleResponseUnmarshaller _instance = new LockRuleResponseUnmarshaller();        
 
-        internal static DeleteRuleResponseUnmarshaller GetInstance()
+        internal static LockRuleResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -99,7 +152,7 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteRuleResponseUnmarshaller Instance
+        public static LockRuleResponseUnmarshaller Instance
         {
             get
             {

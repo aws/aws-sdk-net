@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RuleSummary Object
+    /// Response Unmarshaller for LockConfiguration Object
     /// </summary>  
-    public class RuleSummaryUnmarshaller : IUnmarshaller<RuleSummary, XmlUnmarshallerContext>, IUnmarshaller<RuleSummary, JsonUnmarshallerContext>
+    public class LockConfigurationUnmarshaller : IUnmarshaller<LockConfiguration, XmlUnmarshallerContext>, IUnmarshaller<LockConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RuleSummary IUnmarshaller<RuleSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        LockConfiguration IUnmarshaller<LockConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,21 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RuleSummary Unmarshall(JsonUnmarshallerContext context)
+        public LockConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RuleSummary unmarshalledObject = new RuleSummary();
+            LockConfiguration unmarshalledObject = new LockConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("UnlockDelay", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Identifier", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Identifier = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LockState", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LockState = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RetentionPeriod", targetDepth))
-                {
-                    var unmarshaller = RetentionPeriodUnmarshaller.Instance;
-                    unmarshalledObject.RetentionPeriod = unmarshaller.Unmarshall(context);
+                    var unmarshaller = UnlockDelayUnmarshaller.Instance;
+                    unmarshalledObject.UnlockDelay = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +76,12 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
         }
 
 
-        private static RuleSummaryUnmarshaller _instance = new RuleSummaryUnmarshaller();        
+        private static LockConfigurationUnmarshaller _instance = new LockConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RuleSummaryUnmarshaller Instance
+        public static LockConfigurationUnmarshaller Instance
         {
             get
             {

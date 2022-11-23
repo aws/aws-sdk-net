@@ -25,6 +25,106 @@ namespace Amazon.RecycleBin
 {
 
     /// <summary>
+    /// Constants used for properties of type ConflictExceptionReason.
+    /// </summary>
+    public class ConflictExceptionReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INVALID_RULE_STATE for ConflictExceptionReason
+        /// </summary>
+        public static readonly ConflictExceptionReason INVALID_RULE_STATE = new ConflictExceptionReason("INVALID_RULE_STATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConflictExceptionReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConflictExceptionReason FindValue(string value)
+        {
+            return FindValue<ConflictExceptionReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConflictExceptionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LockState.
+    /// </summary>
+    public class LockState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Locked for LockState
+        /// </summary>
+        public static readonly LockState Locked = new LockState("locked");
+        /// <summary>
+        /// Constant Pending_unlock for LockState
+        /// </summary>
+        public static readonly LockState Pending_unlock = new LockState("pending_unlock");
+        /// <summary>
+        /// Constant Unlocked for LockState
+        /// </summary>
+        public static readonly LockState Unlocked = new LockState("unlocked");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LockState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LockState FindValue(string value)
+        {
+            return FindValue<LockState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LockState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResourceNotFoundExceptionReason.
     /// </summary>
     public class ResourceNotFoundExceptionReason : ConstantClass
@@ -256,6 +356,52 @@ namespace Amazon.RecycleBin
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ServiceQuotaExceededExceptionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UnlockDelayUnit.
+    /// </summary>
+    public class UnlockDelayUnit : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DAYS for UnlockDelayUnit
+        /// </summary>
+        public static readonly UnlockDelayUnit DAYS = new UnlockDelayUnit("DAYS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UnlockDelayUnit(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UnlockDelayUnit FindValue(string value)
+        {
+            return FindValue<UnlockDelayUnit>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UnlockDelayUnit(string value)
         {
             return FindValue(value);
         }

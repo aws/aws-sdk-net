@@ -63,6 +63,18 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
                     response.Identifier = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LockConfiguration", targetDepth))
+                {
+                    var unmarshaller = LockConfigurationUnmarshaller.Instance;
+                    response.LockConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LockState", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LockState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ResourceTags", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<ResourceTag, ResourceTagUnmarshaller>(ResourceTagUnmarshaller.Instance);

@@ -65,6 +65,12 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetLockState())
+                {
+                    context.Writer.WritePropertyName("LockState");
+                    context.Writer.Write(publicRequest.LockState);
+                }
+
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");

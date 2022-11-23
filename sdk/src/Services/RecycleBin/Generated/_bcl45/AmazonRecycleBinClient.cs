@@ -357,6 +357,9 @@ namespace Amazon.RecycleBin
         /// <param name="request">Container for the necessary parameters to execute the DeleteRule service method.</param>
         /// 
         /// <returns>The response from the DeleteRule service method, as returned by RecycleBin.</returns>
+        /// <exception cref="Amazon.RecycleBin.Model.ConflictException">
+        /// The specified retention rule lock request can't be completed.
+        /// </exception>
         /// <exception cref="Amazon.RecycleBin.Model.InternalServerException">
         /// The service could not respond to the request due to an internal problem.
         /// </exception>
@@ -388,6 +391,9 @@ namespace Amazon.RecycleBin
         /// </param>
         /// 
         /// <returns>The response from the DeleteRule service method, as returned by RecycleBin.</returns>
+        /// <exception cref="Amazon.RecycleBin.Model.ConflictException">
+        /// The specified retention rule lock request can't be completed.
+        /// </exception>
         /// <exception cref="Amazon.RecycleBin.Model.InternalServerException">
         /// The service could not respond to the request due to an internal problem.
         /// </exception>
@@ -580,6 +586,71 @@ namespace Amazon.RecycleBin
 
         #endregion
         
+        #region  LockRule
+
+
+        /// <summary>
+        /// Locks a retention rule. A locked retention rule can't be modified or deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the LockRule service method.</param>
+        /// 
+        /// <returns>The response from the LockRule service method, as returned by RecycleBin.</returns>
+        /// <exception cref="Amazon.RecycleBin.Model.ConflictException">
+        /// The specified retention rule lock request can't be completed.
+        /// </exception>
+        /// <exception cref="Amazon.RecycleBin.Model.InternalServerException">
+        /// The service could not respond to the request due to an internal problem.
+        /// </exception>
+        /// <exception cref="Amazon.RecycleBin.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.RecycleBin.Model.ValidationException">
+        /// One or more of the parameters in the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/LockRule">REST API Reference for LockRule Operation</seealso>
+        public virtual LockRuleResponse LockRule(LockRuleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = LockRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = LockRuleResponseUnmarshaller.Instance;
+
+            return Invoke<LockRuleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Locks a retention rule. A locked retention rule can't be modified or deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the LockRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the LockRule service method, as returned by RecycleBin.</returns>
+        /// <exception cref="Amazon.RecycleBin.Model.ConflictException">
+        /// The specified retention rule lock request can't be completed.
+        /// </exception>
+        /// <exception cref="Amazon.RecycleBin.Model.InternalServerException">
+        /// The service could not respond to the request due to an internal problem.
+        /// </exception>
+        /// <exception cref="Amazon.RecycleBin.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.RecycleBin.Model.ValidationException">
+        /// One or more of the parameters in the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/LockRule">REST API Reference for LockRule Operation</seealso>
+        public virtual Task<LockRuleResponse> LockRuleAsync(LockRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = LockRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = LockRuleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<LockRuleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  TagResource
 
 
@@ -647,6 +718,73 @@ namespace Amazon.RecycleBin
 
         #endregion
         
+        #region  UnlockRule
+
+
+        /// <summary>
+        /// Unlocks a retention rule. After a retention rule is unlocked, it can be modified or
+        /// deleted only after the unlock delay period expires.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UnlockRule service method.</param>
+        /// 
+        /// <returns>The response from the UnlockRule service method, as returned by RecycleBin.</returns>
+        /// <exception cref="Amazon.RecycleBin.Model.ConflictException">
+        /// The specified retention rule lock request can't be completed.
+        /// </exception>
+        /// <exception cref="Amazon.RecycleBin.Model.InternalServerException">
+        /// The service could not respond to the request due to an internal problem.
+        /// </exception>
+        /// <exception cref="Amazon.RecycleBin.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.RecycleBin.Model.ValidationException">
+        /// One or more of the parameters in the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/UnlockRule">REST API Reference for UnlockRule Operation</seealso>
+        public virtual UnlockRuleResponse UnlockRule(UnlockRuleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UnlockRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UnlockRuleResponseUnmarshaller.Instance;
+
+            return Invoke<UnlockRuleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Unlocks a retention rule. After a retention rule is unlocked, it can be modified or
+        /// deleted only after the unlock delay period expires.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UnlockRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UnlockRule service method, as returned by RecycleBin.</returns>
+        /// <exception cref="Amazon.RecycleBin.Model.ConflictException">
+        /// The specified retention rule lock request can't be completed.
+        /// </exception>
+        /// <exception cref="Amazon.RecycleBin.Model.InternalServerException">
+        /// The service could not respond to the request due to an internal problem.
+        /// </exception>
+        /// <exception cref="Amazon.RecycleBin.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.RecycleBin.Model.ValidationException">
+        /// One or more of the parameters in the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/UnlockRule">REST API Reference for UnlockRule Operation</seealso>
+        public virtual Task<UnlockRuleResponse> UnlockRuleAsync(UnlockRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UnlockRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UnlockRuleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UnlockRuleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UntagResource
 
 
@@ -710,13 +848,19 @@ namespace Amazon.RecycleBin
 
 
         /// <summary>
-        /// Updates an existing Recycle Bin retention rule. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-update-rule">
+        /// Updates an existing Recycle Bin retention rule. You can update a retention rule's
+        /// description, resource tags, and retention period at any time after creation. You can't
+        /// update a retention rule's resource type after creation. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-update-rule">
         /// Update Recycle Bin retention rules</a> in the <i>Amazon Elastic Compute Cloud User
         /// Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRule service method.</param>
         /// 
         /// <returns>The response from the UpdateRule service method, as returned by RecycleBin.</returns>
+        /// <exception cref="Amazon.RecycleBin.Model.ConflictException">
+        /// The specified retention rule lock request can't be completed.
+        /// </exception>
         /// <exception cref="Amazon.RecycleBin.Model.InternalServerException">
         /// The service could not respond to the request due to an internal problem.
         /// </exception>
@@ -738,7 +882,10 @@ namespace Amazon.RecycleBin
 
 
         /// <summary>
-        /// Updates an existing Recycle Bin retention rule. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-update-rule">
+        /// Updates an existing Recycle Bin retention rule. You can update a retention rule's
+        /// description, resource tags, and retention period at any time after creation. You can't
+        /// update a retention rule's resource type after creation. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-update-rule">
         /// Update Recycle Bin retention rules</a> in the <i>Amazon Elastic Compute Cloud User
         /// Guide</i>.
         /// </summary>
@@ -748,6 +895,9 @@ namespace Amazon.RecycleBin
         /// </param>
         /// 
         /// <returns>The response from the UpdateRule service method, as returned by RecycleBin.</returns>
+        /// <exception cref="Amazon.RecycleBin.Model.ConflictException">
+        /// The specified retention rule lock request can't be completed.
+        /// </exception>
         /// <exception cref="Amazon.RecycleBin.Model.InternalServerException">
         /// The service could not respond to the request due to an internal problem.
         /// </exception>
