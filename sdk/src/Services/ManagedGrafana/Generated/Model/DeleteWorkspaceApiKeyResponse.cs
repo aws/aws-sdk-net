@@ -39,7 +39,7 @@ namespace Amazon.ManagedGrafana.Model
         /// <summary>
         /// Gets and sets the property KeyName. 
         /// <para>
-        /// The name of the API key that was deleted.
+        /// The name of the key that was deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

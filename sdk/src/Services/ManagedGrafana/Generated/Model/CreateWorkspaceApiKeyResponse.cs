@@ -40,8 +40,8 @@ namespace Amazon.ManagedGrafana.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The key token that was created. Use this value as a bearer token to authenticate HTTP
-        /// requests to the workspace.
+        /// The key token. Use this value as a bearer token to authenticate HTTP requests to the
+        /// workspace.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

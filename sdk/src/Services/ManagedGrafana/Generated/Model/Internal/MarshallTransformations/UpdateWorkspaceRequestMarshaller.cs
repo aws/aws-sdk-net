@@ -86,10 +86,27 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PermissionType);
                 }
 
+                if(publicRequest.IsSetRemoveVpcConfiguration())
+                {
+                    context.Writer.WritePropertyName("removeVpcConfiguration");
+                    context.Writer.Write(publicRequest.RemoveVpcConfiguration);
+                }
+
                 if(publicRequest.IsSetStackSetName())
                 {
                     context.Writer.WritePropertyName("stackSetName");
                     context.Writer.Write(publicRequest.StackSetName);
+                }
+
+                if(publicRequest.IsSetVpcConfiguration())
+                {
+                    context.Writer.WritePropertyName("vpcConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = VpcConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.VpcConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetWorkspaceDataSources())

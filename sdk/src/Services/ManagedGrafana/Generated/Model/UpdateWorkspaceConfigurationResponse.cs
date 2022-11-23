@@ -29,31 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedGrafana.Model
 {
     /// <summary>
-    /// A structure containing information about how this workspace works with IAM Identity
-    /// Center.
+    /// This is the response object from the UpdateWorkspaceConfiguration operation.
     /// </summary>
-    public partial class AwsSsoAuthentication
+    public partial class UpdateWorkspaceConfigurationResponse : AmazonWebServiceResponse
     {
-        private string _ssoClientId;
-
-        /// <summary>
-        /// Gets and sets the property SsoClientId. 
-        /// <para>
-        /// The ID of the IAM Identity Center-managed application that is created by Amazon Managed
-        /// Grafana.
-        /// </para>
-        /// </summary>
-        public string SsoClientId
-        {
-            get { return this._ssoClientId; }
-            set { this._ssoClientId = value; }
-        }
-
-        // Check to see if SsoClientId property is set
-        internal bool IsSetSsoClientId()
-        {
-            return this._ssoClientId != null;
-        }
 
     }
 }

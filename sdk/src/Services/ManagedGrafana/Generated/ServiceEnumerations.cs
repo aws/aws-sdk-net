@@ -159,6 +159,10 @@ namespace Amazon.ManagedGrafana
         /// </summary>
         public static readonly DataSourceType TIMESTREAM = new DataSourceType("TIMESTREAM");
         /// <summary>
+        /// Constant TWINMAKER for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType TWINMAKER = new DataSourceType("TWINMAKER");
+        /// <summary>
         /// Constant XRAY for DataSourceType
         /// </summary>
         public static readonly DataSourceType XRAY = new DataSourceType("XRAY");

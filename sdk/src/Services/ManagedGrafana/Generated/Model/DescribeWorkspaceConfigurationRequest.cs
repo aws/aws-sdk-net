@@ -29,37 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedGrafana.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteWorkspaceApiKey operation.
-    /// Deletes a Grafana API key for the workspace.
+    /// Container for the parameters to the DescribeWorkspaceConfiguration operation.
+    /// Gets the current configuration string for the given workspace.
     /// </summary>
-    public partial class DeleteWorkspaceApiKeyRequest : AmazonManagedGrafanaRequest
+    public partial class DescribeWorkspaceConfigurationRequest : AmazonManagedGrafanaRequest
     {
-        private string _keyName;
         private string _workspaceId;
-
-        /// <summary>
-        /// Gets and sets the property KeyName. 
-        /// <para>
-        /// The name of the API key to delete.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
-        public string KeyName
-        {
-            get { return this._keyName; }
-            set { this._keyName = value; }
-        }
-
-        // Check to see if KeyName property is set
-        internal bool IsSetKeyName()
-        {
-            return this._keyName != null;
-        }
 
         /// <summary>
         /// Gets and sets the property WorkspaceId. 
         /// <para>
-        /// The ID of the workspace to delete.
+        /// The ID of the workspace to get configuration information for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -30,10 +30,9 @@ namespace Amazon.ManagedGrafana.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateWorkspaceApiKey operation.
-    /// Creates an API key for the workspace. This key can be used to authenticate requests
-    /// sent to the workspace's HTTP API. See <a href=" https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">
-    /// https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a> for
-    /// available APIs and example requests.
+    /// Creates a Grafana API key for the workspace. This key can be used to authenticate
+    /// requests sent to the workspace's HTTP API. See <a href="https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a>
+    /// for available APIs and example requests.
     /// </summary>
     public partial class CreateWorkspaceApiKeyRequest : AmazonManagedGrafanaRequest
     {
@@ -45,7 +44,7 @@ namespace Amazon.ManagedGrafana.Model
         /// <summary>
         /// Gets and sets the property KeyName. 
         /// <para>
-        /// Specifies the name of the key to create. Key names must be unique to the workspace.
+        /// Specifies the name of the key. Keynames must be unique to the workspace.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -68,7 +67,7 @@ namespace Amazon.ManagedGrafana.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>VIEWER</code> | <code>EDITOR</code> | <code>ADMIN</code> 
+        ///  Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -107,7 +106,7 @@ namespace Amazon.ManagedGrafana.Model
         /// <summary>
         /// Gets and sets the property WorkspaceId. 
         /// <para>
-        /// The ID of the workspace in which to create an API key.
+        /// The ID of the workspace to create an API key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

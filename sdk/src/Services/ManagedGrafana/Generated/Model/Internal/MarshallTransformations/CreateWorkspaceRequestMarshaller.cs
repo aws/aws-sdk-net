@@ -93,6 +93,12 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("clientToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetConfiguration())
+                {
+                    context.Writer.WritePropertyName("configuration");
+                    context.Writer.Write(publicRequest.Configuration);
+                }
+
                 if(publicRequest.IsSetOrganizationRoleName())
                 {
                     context.Writer.WritePropertyName("organizationRoleName");
@@ -122,6 +128,17 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
 
                             context.Writer.Write(publicRequestTagsValue);
                     }
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetVpcConfiguration())
+                {
+                    context.Writer.WritePropertyName("vpcConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = VpcConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.VpcConfiguration, context);
+
                     context.Writer.WriteObjectEnd();
                 }
 

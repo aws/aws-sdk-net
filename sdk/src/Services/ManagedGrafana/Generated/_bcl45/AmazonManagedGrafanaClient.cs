@@ -447,10 +447,9 @@ namespace Amazon.ManagedGrafana
 
 
         /// <summary>
-        /// Creates an API key for the workspace. This key can be used to authenticate requests
-        /// sent to the workspace's HTTP API. See <a href=" https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">
-        /// https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a> for
-        /// available APIs and example requests.
+        /// Creates a Grafana API key for the workspace. This key can be used to authenticate
+        /// requests sent to the workspace's HTTP API. See <a href="https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a>
+        /// for available APIs and example requests.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWorkspaceApiKey service method.</param>
         /// 
@@ -488,10 +487,9 @@ namespace Amazon.ManagedGrafana
 
 
         /// <summary>
-        /// Creates an API key for the workspace. This key can be used to authenticate requests
-        /// sent to the workspace's HTTP API. See <a href=" https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">
-        /// https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a> for
-        /// available APIs and example requests.
+        /// Creates a Grafana API key for the workspace. This key can be used to authenticate
+        /// requests sent to the workspace's HTTP API. See <a href="https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a>
+        /// for available APIs and example requests.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWorkspaceApiKey service method.</param>
         /// <param name="cancellationToken">
@@ -613,7 +611,7 @@ namespace Amazon.ManagedGrafana
 
 
         /// <summary>
-        /// Deletes an API key for a workspace.
+        /// Deletes a Grafana API key for the workspace.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteWorkspaceApiKey service method.</param>
         /// 
@@ -648,7 +646,7 @@ namespace Amazon.ManagedGrafana
 
 
         /// <summary>
-        /// Deletes an API key for a workspace.
+        /// Deletes a Grafana API key for the workspace.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteWorkspaceApiKey service method.</param>
         /// <param name="cancellationToken">
@@ -826,6 +824,71 @@ namespace Amazon.ManagedGrafana
             options.ResponseUnmarshaller = DescribeWorkspaceAuthenticationResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeWorkspaceAuthenticationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeWorkspaceConfiguration
+
+
+        /// <summary>
+        /// Gets the current configuration string for the given workspace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspaceConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DescribeWorkspaceConfiguration service method, as returned by ManagedGrafana.</returns>
+        /// <exception cref="Amazon.ManagedGrafana.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.InternalServerException">
+        /// Unexpected error while processing the request. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DescribeWorkspaceConfiguration">REST API Reference for DescribeWorkspaceConfiguration Operation</seealso>
+        public virtual DescribeWorkspaceConfigurationResponse DescribeWorkspaceConfiguration(DescribeWorkspaceConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWorkspaceConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorkspaceConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeWorkspaceConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets the current configuration string for the given workspace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspaceConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeWorkspaceConfiguration service method, as returned by ManagedGrafana.</returns>
+        /// <exception cref="Amazon.ManagedGrafana.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.InternalServerException">
+        /// Unexpected error while processing the request. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DescribeWorkspaceConfiguration">REST API Reference for DescribeWorkspaceConfiguration Operation</seealso>
+        public virtual Task<DescribeWorkspaceConfigurationResponse> DescribeWorkspaceConfigurationAsync(DescribeWorkspaceConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWorkspaceConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorkspaceConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeWorkspaceConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1363,7 +1426,7 @@ namespace Amazon.ManagedGrafana
         ///  
         /// <para>
         /// To modify the user authentication methods that the workspace uses, such as SAML or
-        /// Amazon Web Services SSO, use <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdateWorkspaceAuthentication.html">UpdateWorkspaceAuthentication</a>.
+        /// IAM Identity Center, use <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdateWorkspaceAuthentication.html">UpdateWorkspaceAuthentication</a>.
         /// </para>
         ///  
         /// <para>
@@ -1410,7 +1473,7 @@ namespace Amazon.ManagedGrafana
         ///  
         /// <para>
         /// To modify the user authentication methods that the workspace uses, such as SAML or
-        /// Amazon Web Services SSO, use <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdateWorkspaceAuthentication.html">UpdateWorkspaceAuthentication</a>.
+        /// IAM Identity Center, use <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdateWorkspaceAuthentication.html">UpdateWorkspaceAuthentication</a>.
         /// </para>
         ///  
         /// <para>
@@ -1533,6 +1596,83 @@ namespace Amazon.ManagedGrafana
             options.ResponseUnmarshaller = UpdateWorkspaceAuthenticationResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateWorkspaceAuthenticationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateWorkspaceConfiguration
+
+
+        /// <summary>
+        /// Updates the configuration string for the given workspace
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWorkspaceConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateWorkspaceConfiguration service method, as returned by ManagedGrafana.</returns>
+        /// <exception cref="Amazon.ManagedGrafana.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ConflictException">
+        /// A resource was in an inconsistent state during an update or a deletion.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.InternalServerException">
+        /// Unexpected error while processing the request. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/UpdateWorkspaceConfiguration">REST API Reference for UpdateWorkspaceConfiguration Operation</seealso>
+        public virtual UpdateWorkspaceConfigurationResponse UpdateWorkspaceConfiguration(UpdateWorkspaceConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateWorkspaceConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkspaceConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateWorkspaceConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the configuration string for the given workspace
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWorkspaceConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateWorkspaceConfiguration service method, as returned by ManagedGrafana.</returns>
+        /// <exception cref="Amazon.ManagedGrafana.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ConflictException">
+        /// A resource was in an inconsistent state during an update or a deletion.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.InternalServerException">
+        /// Unexpected error while processing the request. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ResourceNotFoundException">
+        /// The request references a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedGrafana.Model.ValidationException">
+        /// The value of a parameter in the request caused an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/UpdateWorkspaceConfiguration">REST API Reference for UpdateWorkspaceConfiguration Operation</seealso>
+        public virtual Task<UpdateWorkspaceConfigurationResponse> UpdateWorkspaceConfigurationAsync(UpdateWorkspaceConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateWorkspaceConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkspaceConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateWorkspaceConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion

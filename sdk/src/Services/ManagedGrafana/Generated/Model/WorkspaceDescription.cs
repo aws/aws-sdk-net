@@ -55,6 +55,7 @@ namespace Amazon.ManagedGrafana.Model
         private string _stackSetName;
         private WorkspaceStatus _status;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private VpcConfiguration _vpcConfiguration;
         private string _workspaceRoleArn;
 
         /// <summary>
@@ -82,8 +83,8 @@ namespace Amazon.ManagedGrafana.Model
         /// <summary>
         /// Gets and sets the property Authentication. 
         /// <para>
-        /// A structure that describes whether the workspace uses SAML, Amazon Web Services SSO,
-        /// or both methods for user authentication.
+        /// A structure that describes whether the workspace uses SAML, IAM Identity Center, or
+        /// both methods for user authentication.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -475,6 +476,25 @@ namespace Amazon.ManagedGrafana.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfiguration. 
+        /// <para>
+        /// The configuration for connecting to data sources in a private VPC (Amazon Virtual
+        /// Private Cloud).
+        /// </para>
+        /// </summary>
+        public VpcConfiguration VpcConfiguration
+        {
+            get { return this._vpcConfiguration; }
+            set { this._vpcConfiguration = value; }
+        }
+
+        // Check to see if VpcConfiguration property is set
+        internal bool IsSetVpcConfiguration()
+        {
+            return this._vpcConfiguration != null;
         }
 
         /// <summary>

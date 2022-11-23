@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedGrafana.Model
 {
     /// <summary>
-    /// A structure containing the identity of one user or group and the <code>Admin</code>
-    /// or <code>Editor</code> role that they have.
+    /// A structure containing the identity of one user or group and the <code>Admin</code>,
+    /// <code>Editor</code>, or <code>Viewer</code> role that they have.
     /// </summary>
     public partial class PermissionEntry
     {
@@ -40,8 +40,8 @@ namespace Amazon.ManagedGrafana.Model
         /// <summary>
         /// Gets and sets the property Role. 
         /// <para>
-        /// Specifies whether the user or group has the <code>Admin</code> or <code>Editor</code>
-        /// role.
+        /// Specifies whether the user or group has the <code>Admin</code>, <code>Editor</code>,
+        /// or <code>Viewer</code> role.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

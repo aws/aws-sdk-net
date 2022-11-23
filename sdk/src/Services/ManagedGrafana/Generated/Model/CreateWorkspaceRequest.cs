@@ -45,10 +45,12 @@ namespace Amazon.ManagedGrafana.Model
         private AccountAccessType _accountAccessType;
         private List<string> _authenticationProviders = new List<string>();
         private string _clientToken;
+        private string _configuration;
         private string _organizationRoleName;
         private PermissionType _permissionType;
         private string _stackSetName;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private VpcConfiguration _vpcConfiguration;
         private List<string> _workspaceDataSources = new List<string>();
         private string _workspaceDescription;
         private string _workspaceName;
@@ -82,9 +84,9 @@ namespace Amazon.ManagedGrafana.Model
         /// <summary>
         /// Gets and sets the property AuthenticationProviders. 
         /// <para>
-        /// Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On,
-        /// or both to authenticate users for using the Grafana console within a workspace. For
-        /// more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User
+        /// Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to
+        /// Single Sign-On), or both to authenticate users for using the Grafana console within
+        /// a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User
         /// authentication in Amazon Managed Grafana</a>.
         /// </para>
         /// </summary>
@@ -121,6 +123,27 @@ namespace Amazon.ManagedGrafana.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Configuration. 
+        /// <para>
+        /// The configuration string for the workspace that you create. For more information about
+        /// the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working
+        /// in your Grafana workspace</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=65536)]
+        public string Configuration
+        {
+            get { return this._configuration; }
+            set { this._configuration = value; }
+        }
+
+        // Check to see if Configuration property is set
+        internal bool IsSetConfiguration()
+        {
+            return this._configuration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OrganizationRoleName. 
         /// <para>
         /// The name of an IAM role that already exists to use with Organizations to access Amazon
@@ -146,8 +169,11 @@ namespace Amazon.ManagedGrafana.Model
         /// If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed
         /// Grafana automatically creates the IAM roles and provisions the permissions that the
         /// workspace needs to use Amazon Web Services data sources and notification channels.
-        /// In CLI mode, the permissionType <code>SERVICE_MANAGED</code> will not create the IAM
-        /// role for you.
+        /// In the CLI mode, the permissionType <code>SERVICE_MANAGED</code> will not create the
+        /// IAM role for you. The ability for the Amazon Managed Grafana to create the IAM role
+        /// on behalf of the user is supported only in the Amazon Managed Grafana AWS console.
+        /// Use only the <code>CUSTOMER_MANAGED</code> permission type when creating a workspace
+        /// in the CLI. 
         /// </para>
         ///  
         /// <para>
@@ -213,6 +239,25 @@ namespace Amazon.ManagedGrafana.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfiguration. 
+        /// <para>
+        /// The configuration settings for an Amazon VPC that contains data sources for your Grafana
+        /// workspace to connect to.
+        /// </para>
+        /// </summary>
+        public VpcConfiguration VpcConfiguration
+        {
+            get { return this._vpcConfiguration; }
+            set { this._vpcConfiguration = value; }
+        }
+
+        // Check to see if VpcConfiguration property is set
+        internal bool IsSetVpcConfiguration()
+        {
+            return this._vpcConfiguration != null;
         }
 
         /// <summary>

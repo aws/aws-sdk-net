@@ -29,37 +29,39 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedGrafana.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteWorkspaceApiKey operation.
-    /// Deletes a Grafana API key for the workspace.
+    /// Container for the parameters to the UpdateWorkspaceConfiguration operation.
+    /// Updates the configuration string for the given workspace
     /// </summary>
-    public partial class DeleteWorkspaceApiKeyRequest : AmazonManagedGrafanaRequest
+    public partial class UpdateWorkspaceConfigurationRequest : AmazonManagedGrafanaRequest
     {
-        private string _keyName;
+        private string _configuration;
         private string _workspaceId;
 
         /// <summary>
-        /// Gets and sets the property KeyName. 
+        /// Gets and sets the property Configuration. 
         /// <para>
-        /// The name of the API key to delete.
+        /// The new configuration string for the workspace. For more information about the format
+        /// and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working
+        /// in your Grafana workspace</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
-        public string KeyName
+        [AWSProperty(Required=true, Min=2, Max=65536)]
+        public string Configuration
         {
-            get { return this._keyName; }
-            set { this._keyName = value; }
+            get { return this._configuration; }
+            set { this._configuration = value; }
         }
 
-        // Check to see if KeyName property is set
-        internal bool IsSetKeyName()
+        // Check to see if Configuration property is set
+        internal bool IsSetConfiguration()
         {
-            return this._keyName != null;
+            return this._configuration != null;
         }
 
         /// <summary>
         /// Gets and sets the property WorkspaceId. 
         /// <para>
-        /// The ID of the workspace to delete.
+        /// The ID of the workspace to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

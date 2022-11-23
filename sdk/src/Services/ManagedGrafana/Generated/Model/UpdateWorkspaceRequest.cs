@@ -36,7 +36,7 @@ namespace Amazon.ManagedGrafana.Model
     ///  
     /// <para>
     /// To modify the user authentication methods that the workspace uses, such as SAML or
-    /// Amazon Web Services SSO, use <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdateWorkspaceAuthentication.html">UpdateWorkspaceAuthentication</a>.
+    /// IAM Identity Center, use <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdateWorkspaceAuthentication.html">UpdateWorkspaceAuthentication</a>.
     /// </para>
     ///  
     /// <para>
@@ -49,7 +49,9 @@ namespace Amazon.ManagedGrafana.Model
         private AccountAccessType _accountAccessType;
         private string _organizationRoleName;
         private PermissionType _permissionType;
+        private bool? _removeVpcConfiguration;
         private string _stackSetName;
+        private VpcConfiguration _vpcConfiguration;
         private List<string> _workspaceDataSources = new List<string>();
         private string _workspaceDescription;
         private string _workspaceId;
@@ -134,6 +136,29 @@ namespace Amazon.ManagedGrafana.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RemoveVpcConfiguration. 
+        /// <para>
+        /// Whether to remove the VPC configuration from the workspace.
+        /// </para>
+        ///  
+        /// <para>
+        /// Setting this to <code>true</code> and providing a <code>vpcConfiguration</code> to
+        /// set will return an error.
+        /// </para>
+        /// </summary>
+        public bool RemoveVpcConfiguration
+        {
+            get { return this._removeVpcConfiguration.GetValueOrDefault(); }
+            set { this._removeVpcConfiguration = value; }
+        }
+
+        // Check to see if RemoveVpcConfiguration property is set
+        internal bool IsSetRemoveVpcConfiguration()
+        {
+            return this._removeVpcConfiguration.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property StackSetName. 
         /// <para>
         /// The name of the CloudFormation stack set to use to generate IAM roles to be used for
@@ -150,6 +175,25 @@ namespace Amazon.ManagedGrafana.Model
         internal bool IsSetStackSetName()
         {
             return this._stackSetName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfiguration. 
+        /// <para>
+        /// The configuration settings for an Amazon VPC that contains data sources for your Grafana
+        /// workspace to connect to.
+        /// </para>
+        /// </summary>
+        public VpcConfiguration VpcConfiguration
+        {
+            get { return this._vpcConfiguration; }
+            set { this._vpcConfiguration = value; }
+        }
+
+        // Check to see if VpcConfiguration property is set
+        internal bool IsSetVpcConfiguration()
+        {
+            return this._vpcConfiguration != null;
         }
 
         /// <summary>

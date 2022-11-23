@@ -44,9 +44,9 @@ namespace Amazon.ManagedGrafana.Model
         /// <summary>
         /// Gets and sets the property AuthenticationProviders. 
         /// <para>
-        /// Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On,
-        /// or both to authenticate users for using the Grafana console within a workspace. For
-        /// more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User
+        /// Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to
+        /// Single Sign-On), or both to authenticate users for using the Grafana console within
+        /// a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User
         /// authentication in Amazon Managed Grafana</a>.
         /// </para>
         /// </summary>

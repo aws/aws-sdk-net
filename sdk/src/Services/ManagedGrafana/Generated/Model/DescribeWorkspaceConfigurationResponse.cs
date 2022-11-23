@@ -29,30 +29,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedGrafana.Model
 {
     /// <summary>
-    /// A structure containing information about how this workspace works with IAM Identity
-    /// Center.
+    /// This is the response object from the DescribeWorkspaceConfiguration operation.
     /// </summary>
-    public partial class AwsSsoAuthentication
+    public partial class DescribeWorkspaceConfigurationResponse : AmazonWebServiceResponse
     {
-        private string _ssoClientId;
+        private string _configuration;
 
         /// <summary>
-        /// Gets and sets the property SsoClientId. 
+        /// Gets and sets the property Configuration. 
         /// <para>
-        /// The ID of the IAM Identity Center-managed application that is created by Amazon Managed
-        /// Grafana.
+        /// The configuration string for the workspace that you requested. For more information
+        /// about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working
+        /// in your Grafana workspace</a>.
         /// </para>
         /// </summary>
-        public string SsoClientId
+        [AWSProperty(Required=true, Min=2, Max=65536)]
+        public string Configuration
         {
-            get { return this._ssoClientId; }
-            set { this._ssoClientId = value; }
+            get { return this._configuration; }
+            set { this._configuration = value; }
         }
 
-        // Check to see if SsoClientId property is set
-        internal bool IsSetSsoClientId()
+        // Check to see if Configuration property is set
+        internal bool IsSetConfiguration()
         {
-            return this._ssoClientId != null;
+            return this._configuration != null;
         }
 
     }
