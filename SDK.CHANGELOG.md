@@ -1,3 +1,9 @@
+### 3.7.424.0 (2022-11-23 19:31 UTC)
+* ManagedGrafana (3.7.101.0)
+	* This release includes support for configuring a Grafana workspace to connect to a datasource within a VPC as well as new APIs for configuring Grafana settings.
+* RecycleBin (3.7.101.0)
+	* This release adds support for Rule Lock for Recycle Bin, which allows you to lock retention rules so that they can no longer be modified or deleted.
+
 ### 3.7.423.0 (2022-11-22 19:24 UTC)
 * Appflow (3.7.103.0)
 	* Adding support for Amazon AppFlow to transfer the data to Amazon Redshift databases through Amazon Redshift Data API service. This feature will support the Redshift destination connector on both public and private accessible Amazon Redshift Clusters and Amazon Redshift Serverless.
