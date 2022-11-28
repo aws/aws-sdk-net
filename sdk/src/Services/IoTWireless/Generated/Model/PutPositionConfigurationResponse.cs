@@ -31,6 +31,7 @@ namespace Amazon.IoTWireless.Model
     /// <summary>
     /// This is the response object from the PutPositionConfiguration operation.
     /// </summary>
+    [Obsolete("This operation is no longer supported.")]
     public partial class PutPositionConfigurationResponse : AmazonWebServiceResponse
     {
 

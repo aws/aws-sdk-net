@@ -31,7 +31,16 @@ namespace Amazon.IoTWireless.Model
     /// <summary>
     /// Container for the parameters to the UpdatePosition operation.
     /// Update the position information of a resource.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// This action is no longer supported. Calls to update the position information should
+    /// use the <a href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateResourcePosition.html">UpdateResourcePosition</a>
+    /// API operation instead.
+    /// </para>
+    ///  </important>
     /// </summary>
+    [Obsolete("This operation is no longer supported.")]
     public partial class UpdatePositionRequest : AmazonIoTWirelessRequest
     {
         private List<float> _position = new List<float>();

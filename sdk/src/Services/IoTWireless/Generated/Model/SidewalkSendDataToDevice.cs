@@ -40,7 +40,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property AckModeRetryDurationSecs. 
         /// <para>
-        /// The duration of time in seconds for which you want to retry sending the ACK.
+        /// The duration of time in seconds to retry sending the ACK.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=604800)]

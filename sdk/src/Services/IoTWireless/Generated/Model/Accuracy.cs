@@ -42,7 +42,8 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property HorizontalAccuracy. 
         /// <para>
-        /// The horizontal accuracy of the estimated position in meters.
+        /// The horizontal accuracy of the estimated position, which is the difference between
+        /// the estimated location and the actual device location.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -61,7 +62,8 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property VerticalAccuracy. 
         /// <para>
-        /// The vertical accuracy of the estimated position in meters.
+        /// The vertical accuracy of the estimated position, which is the difference between the
+        /// estimated altitude and actual device latitude in meters.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

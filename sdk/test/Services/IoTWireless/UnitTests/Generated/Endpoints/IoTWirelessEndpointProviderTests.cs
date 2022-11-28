@@ -35,8 +35,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apsouth1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new IoTWirelessEndpointParameters();
-            parameters["Region"] = "ap-south-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ap-south-1";
             parameters["UseFIPS"] = true;
             var endpoint = new AmazonIoTWirelessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://api.iotwireless-fips.ap-south-1.api.aws", endpoint.URL);
@@ -50,8 +50,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apsouth1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new IoTWirelessEndpointParameters();
-            parameters["Region"] = "ap-south-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-south-1";
             parameters["UseFIPS"] = true;
             var endpoint = new AmazonIoTWirelessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://api.iotwireless-fips.ap-south-1.amazonaws.com", endpoint.URL);
@@ -65,8 +65,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apsouth1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new IoTWirelessEndpointParameters();
-            parameters["Region"] = "ap-south-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ap-south-1";
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonIoTWirelessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://api.iotwireless.ap-south-1.api.aws", endpoint.URL);
@@ -80,8 +80,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apsouth1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new IoTWirelessEndpointParameters();
-            parameters["Region"] = "ap-south-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-south-1";
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonIoTWirelessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://api.iotwireless.ap-south-1.amazonaws.com", endpoint.URL);
@@ -95,8 +95,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_cacentral1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new IoTWirelessEndpointParameters();
-            parameters["Region"] = "ca-central-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ca-central-1";
             parameters["UseFIPS"] = true;
             var endpoint = new AmazonIoTWirelessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://api.iotwireless-fips.ca-central-1.api.aws", endpoint.URL);
@@ -110,8 +110,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_cacentral1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new IoTWirelessEndpointParameters();
-            parameters["Region"] = "ca-central-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ca-central-1";
             parameters["UseFIPS"] = true;
             var endpoint = new AmazonIoTWirelessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://api.iotwireless-fips.ca-central-1.amazonaws.com", endpoint.URL);
@@ -125,8 +125,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_cacentral1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new IoTWirelessEndpointParameters();
-            parameters["Region"] = "ca-central-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ca-central-1";
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonIoTWirelessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://api.iotwireless.ca-central-1.api.aws", endpoint.URL);
@@ -140,8 +140,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_cacentral1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new IoTWirelessEndpointParameters();
-            parameters["Region"] = "ca-central-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ca-central-1";
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonIoTWirelessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://api.iotwireless.ca-central-1.amazonaws.com", endpoint.URL);
@@ -155,8 +155,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_eucentral1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new IoTWirelessEndpointParameters();
-            parameters["Region"] = "eu-central-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "eu-central-1";
             parameters["UseFIPS"] = true;
             var endpoint = new AmazonIoTWirelessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://api.iotwireless-fips.eu-central-1.api.aws", endpoint.URL);
@@ -170,8 +170,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_eucentral1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new IoTWirelessEndpointParameters();
-            parameters["Region"] = "eu-central-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "eu-central-1";
             parameters["UseFIPS"] = true;
             var endpoint = new AmazonIoTWirelessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://api.iotwireless-fips.eu-central-1.amazonaws.com", endpoint.URL);
@@ -185,8 +185,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new IoTWirelessEndpointParameters();
-            parameters["Region"] = "eu-central-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "eu-central-1";
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonIoTWirelessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://api.iotwireless.eu-central-1.api.aws", endpoint.URL);
@@ -200,8 +200,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new IoTWirelessEndpointParameters();
-            parameters["Region"] = "eu-central-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "eu-central-1";
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonIoTWirelessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://api.iotwireless.eu-central-1.amazonaws.com", endpoint.URL);
@@ -215,8 +215,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_uswest2_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new IoTWirelessEndpointParameters();
-            parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-west-2";
             parameters["UseFIPS"] = true;
             var endpoint = new AmazonIoTWirelessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://api.iotwireless-fips.us-west-2.api.aws", endpoint.URL);
@@ -230,8 +230,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_uswest2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new IoTWirelessEndpointParameters();
-            parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-west-2";
             parameters["UseFIPS"] = true;
             var endpoint = new AmazonIoTWirelessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://api.iotwireless-fips.us-west-2.amazonaws.com", endpoint.URL);
@@ -245,8 +245,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_uswest2_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new IoTWirelessEndpointParameters();
-            parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-west-2";
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonIoTWirelessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://api.iotwireless.us-west-2.api.aws", endpoint.URL);
@@ -260,8 +260,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_uswest2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new IoTWirelessEndpointParameters();
-            parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-west-2";
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonIoTWirelessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://api.iotwireless.us-west-2.amazonaws.com", endpoint.URL);
@@ -275,8 +275,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_euwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new IoTWirelessEndpointParameters();
-            parameters["Region"] = "eu-west-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "eu-west-1";
             parameters["UseFIPS"] = true;
             var endpoint = new AmazonIoTWirelessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://api.iotwireless-fips.eu-west-1.api.aws", endpoint.URL);
@@ -290,8 +290,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_euwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new IoTWirelessEndpointParameters();
-            parameters["Region"] = "eu-west-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "eu-west-1";
             parameters["UseFIPS"] = true;
             var endpoint = new AmazonIoTWirelessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://api.iotwireless-fips.eu-west-1.amazonaws.com", endpoint.URL);
@@ -305,8 +305,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_euwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new IoTWirelessEndpointParameters();
-            parameters["Region"] = "eu-west-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "eu-west-1";
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonIoTWirelessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://api.iotwireless.eu-west-1.api.aws", endpoint.URL);
@@ -320,8 +320,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_euwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new IoTWirelessEndpointParameters();
-            parameters["Region"] = "eu-west-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "eu-west-1";
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonIoTWirelessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://api.iotwireless.eu-west-1.amazonaws.com", endpoint.URL);
@@ -335,8 +335,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new IoTWirelessEndpointParameters();
-            parameters["Region"] = "ap-northeast-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ap-northeast-1";
             parameters["UseFIPS"] = true;
             var endpoint = new AmazonIoTWirelessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://api.iotwireless-fips.ap-northeast-1.api.aws", endpoint.URL);
@@ -350,8 +350,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apnortheast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new IoTWirelessEndpointParameters();
-            parameters["Region"] = "ap-northeast-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-northeast-1";
             parameters["UseFIPS"] = true;
             var endpoint = new AmazonIoTWirelessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://api.iotwireless-fips.ap-northeast-1.amazonaws.com", endpoint.URL);
@@ -365,8 +365,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new IoTWirelessEndpointParameters();
-            parameters["Region"] = "ap-northeast-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ap-northeast-1";
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonIoTWirelessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://api.iotwireless.ap-northeast-1.api.aws", endpoint.URL);
@@ -380,8 +380,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new IoTWirelessEndpointParameters();
-            parameters["Region"] = "ap-northeast-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-northeast-1";
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonIoTWirelessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://api.iotwireless.ap-northeast-1.amazonaws.com", endpoint.URL);
@@ -395,8 +395,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_saeast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new IoTWirelessEndpointParameters();
-            parameters["Region"] = "sa-east-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "sa-east-1";
             parameters["UseFIPS"] = true;
             var endpoint = new AmazonIoTWirelessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://api.iotwireless-fips.sa-east-1.api.aws", endpoint.URL);
@@ -410,8 +410,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_saeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new IoTWirelessEndpointParameters();
-            parameters["Region"] = "sa-east-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "sa-east-1";
             parameters["UseFIPS"] = true;
             var endpoint = new AmazonIoTWirelessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://api.iotwireless-fips.sa-east-1.amazonaws.com", endpoint.URL);
@@ -425,8 +425,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_saeast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new IoTWirelessEndpointParameters();
-            parameters["Region"] = "sa-east-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "sa-east-1";
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonIoTWirelessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://api.iotwireless.sa-east-1.api.aws", endpoint.URL);
@@ -440,8 +440,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_saeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new IoTWirelessEndpointParameters();
-            parameters["Region"] = "sa-east-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "sa-east-1";
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonIoTWirelessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://api.iotwireless.sa-east-1.amazonaws.com", endpoint.URL);
@@ -455,8 +455,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apsoutheast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new IoTWirelessEndpointParameters();
-            parameters["Region"] = "ap-southeast-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ap-southeast-1";
             parameters["UseFIPS"] = true;
             var endpoint = new AmazonIoTWirelessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://api.iotwireless-fips.ap-southeast-1.api.aws", endpoint.URL);
@@ -470,8 +470,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apsoutheast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new IoTWirelessEndpointParameters();
-            parameters["Region"] = "ap-southeast-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-southeast-1";
             parameters["UseFIPS"] = true;
             var endpoint = new AmazonIoTWirelessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://api.iotwireless-fips.ap-southeast-1.amazonaws.com", endpoint.URL);
@@ -485,8 +485,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apsoutheast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new IoTWirelessEndpointParameters();
-            parameters["Region"] = "ap-southeast-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ap-southeast-1";
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonIoTWirelessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://api.iotwireless.ap-southeast-1.api.aws", endpoint.URL);
@@ -500,8 +500,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apsoutheast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new IoTWirelessEndpointParameters();
-            parameters["Region"] = "ap-southeast-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-southeast-1";
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonIoTWirelessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://api.iotwireless.ap-southeast-1.amazonaws.com", endpoint.URL);
@@ -515,8 +515,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apsoutheast2_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new IoTWirelessEndpointParameters();
-            parameters["Region"] = "ap-southeast-2";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ap-southeast-2";
             parameters["UseFIPS"] = true;
             var endpoint = new AmazonIoTWirelessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://api.iotwireless-fips.ap-southeast-2.api.aws", endpoint.URL);
@@ -530,8 +530,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apsoutheast2_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new IoTWirelessEndpointParameters();
-            parameters["Region"] = "ap-southeast-2";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-southeast-2";
             parameters["UseFIPS"] = true;
             var endpoint = new AmazonIoTWirelessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://api.iotwireless-fips.ap-southeast-2.amazonaws.com", endpoint.URL);
@@ -545,8 +545,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apsoutheast2_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new IoTWirelessEndpointParameters();
-            parameters["Region"] = "ap-southeast-2";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ap-southeast-2";
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonIoTWirelessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://api.iotwireless.ap-southeast-2.api.aws", endpoint.URL);
@@ -560,8 +560,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apsoutheast2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new IoTWirelessEndpointParameters();
-            parameters["Region"] = "ap-southeast-2";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-southeast-2";
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonIoTWirelessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://api.iotwireless.ap-southeast-2.amazonaws.com", endpoint.URL);
@@ -575,8 +575,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new IoTWirelessEndpointParameters();
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-east-1";
             parameters["UseFIPS"] = true;
             var endpoint = new AmazonIoTWirelessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://api.iotwireless-fips.us-east-1.api.aws", endpoint.URL);
@@ -590,8 +590,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new IoTWirelessEndpointParameters();
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-east-1";
             parameters["UseFIPS"] = true;
             var endpoint = new AmazonIoTWirelessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://api.iotwireless-fips.us-east-1.amazonaws.com", endpoint.URL);
@@ -605,8 +605,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new IoTWirelessEndpointParameters();
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-east-1";
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonIoTWirelessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://api.iotwireless.us-east-1.api.aws", endpoint.URL);
@@ -620,8 +620,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new IoTWirelessEndpointParameters();
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-east-1";
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonIoTWirelessEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://api.iotwireless.us-east-1.amazonaws.com", endpoint.URL);
@@ -635,8 +635,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new IoTWirelessEndpointParameters();
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-east-1";
             parameters["UseFIPS"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonIoTWirelessEndpointProvider().ResolveEndpoint(parameters);
@@ -652,8 +652,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new IoTWirelessEndpointParameters();
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-east-1";
             parameters["UseFIPS"] = true;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonIoTWirelessEndpointProvider().ResolveEndpoint(parameters);
@@ -668,8 +668,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new IoTWirelessEndpointParameters();
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-east-1";
             parameters["UseFIPS"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonIoTWirelessEndpointProvider().ResolveEndpoint(parameters);

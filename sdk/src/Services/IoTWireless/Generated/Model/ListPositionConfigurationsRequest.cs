@@ -31,7 +31,16 @@ namespace Amazon.IoTWireless.Model
     /// <summary>
     /// Container for the parameters to the ListPositionConfigurations operation.
     /// List position configurations for a given resource, such as positioning solvers.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// This action is no longer supported. Calls to retrieve position information should
+    /// use the <a href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html">GetResourcePosition</a>
+    /// API operation instead.
+    /// </para>
+    ///  </important>
     /// </summary>
+    [Obsolete("This operation is no longer supported.")]
     public partial class ListPositionConfigurationsRequest : AmazonIoTWirelessRequest
     {
         private int? _maxResults;

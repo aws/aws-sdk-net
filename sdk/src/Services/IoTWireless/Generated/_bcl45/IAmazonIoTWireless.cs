@@ -2799,6 +2799,14 @@ namespace Amazon.IoTWireless
 
         /// <summary>
         /// Get the position information for a given resource.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// This action is no longer supported. Calls to retrieve the position information should
+        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html">GetResourcePosition</a>
+        /// API operation instead.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPosition service method.</param>
         /// 
@@ -2819,12 +2827,21 @@ namespace Amazon.IoTWireless
         /// The input did not meet the specified constraints.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetPosition">REST API Reference for GetPosition Operation</seealso>
+        [Obsolete("This operation is no longer supported.")]
         GetPositionResponse GetPosition(GetPositionRequest request);
 
 
 
         /// <summary>
         /// Get the position information for a given resource.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// This action is no longer supported. Calls to retrieve the position information should
+        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html">GetResourcePosition</a>
+        /// API operation instead.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPosition service method.</param>
         /// <param name="cancellationToken">
@@ -2848,6 +2865,7 @@ namespace Amazon.IoTWireless
         /// The input did not meet the specified constraints.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetPosition">REST API Reference for GetPosition Operation</seealso>
+        [Obsolete("This operation is no longer supported.")]
         Task<GetPositionResponse> GetPositionAsync(GetPositionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2857,6 +2875,14 @@ namespace Amazon.IoTWireless
 
         /// <summary>
         /// Get position configuration for a given resource.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// This action is no longer supported. Calls to retrieve the position configuration should
+        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html">GetResourcePosition</a>
+        /// API operation instead.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPositionConfiguration service method.</param>
         /// 
@@ -2877,12 +2903,21 @@ namespace Amazon.IoTWireless
         /// The input did not meet the specified constraints.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetPositionConfiguration">REST API Reference for GetPositionConfiguration Operation</seealso>
+        [Obsolete("This operation is no longer supported.")]
         GetPositionConfigurationResponse GetPositionConfiguration(GetPositionConfigurationRequest request);
 
 
 
         /// <summary>
         /// Get position configuration for a given resource.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// This action is no longer supported. Calls to retrieve the position configuration should
+        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html">GetResourcePosition</a>
+        /// API operation instead.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPositionConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -2906,7 +2941,68 @@ namespace Amazon.IoTWireless
         /// The input did not meet the specified constraints.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetPositionConfiguration">REST API Reference for GetPositionConfiguration Operation</seealso>
+        [Obsolete("This operation is no longer supported.")]
         Task<GetPositionConfigurationResponse> GetPositionConfigurationAsync(GetPositionConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetPositionEstimate
+
+
+        /// <summary>
+        /// Get estimated position information as a payload in GeoJSON format. The payload measurement
+        /// data is resolved using solvers that are provided by third-party vendors.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPositionEstimate service method.</param>
+        /// 
+        /// <returns>The response from the GetPositionEstimate service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetPositionEstimate">REST API Reference for GetPositionEstimate Operation</seealso>
+        GetPositionEstimateResponse GetPositionEstimate(GetPositionEstimateRequest request);
+
+
+
+        /// <summary>
+        /// Get estimated position information as a payload in GeoJSON format. The payload measurement
+        /// data is resolved using solvers that are provided by third-party vendors.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPositionEstimate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPositionEstimate service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetPositionEstimate">REST API Reference for GetPositionEstimate Operation</seealso>
+        Task<GetPositionEstimateResponse> GetPositionEstimateAsync(GetPositionEstimateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3025,6 +3121,68 @@ namespace Amazon.IoTWireless
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetResourceLogLevel">REST API Reference for GetResourceLogLevel Operation</seealso>
         Task<GetResourceLogLevelResponse> GetResourceLogLevelAsync(GetResourceLogLevelRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetResourcePosition
+
+
+        /// <summary>
+        /// Get the position information for a given wireless device or a wireless gateway resource.
+        /// The postion information uses the <a href="https://gisgeography.com/wgs84-world-geodetic-system/">
+        /// World Geodetic System (WGS84)</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePosition service method.</param>
+        /// 
+        /// <returns>The response from the GetResourcePosition service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetResourcePosition">REST API Reference for GetResourcePosition Operation</seealso>
+        GetResourcePositionResponse GetResourcePosition(GetResourcePositionRequest request);
+
+
+
+        /// <summary>
+        /// Get the position information for a given wireless device or a wireless gateway resource.
+        /// The postion information uses the <a href="https://gisgeography.com/wgs84-world-geodetic-system/">
+        /// World Geodetic System (WGS84)</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePosition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetResourcePosition service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetResourcePosition">REST API Reference for GetResourcePosition Operation</seealso>
+        Task<GetResourcePositionResponse> GetResourcePositionAsync(GetResourcePositionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -4031,6 +4189,14 @@ namespace Amazon.IoTWireless
 
         /// <summary>
         /// List position configurations for a given resource, such as positioning solvers.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// This action is no longer supported. Calls to retrieve position information should
+        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html">GetResourcePosition</a>
+        /// API operation instead.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPositionConfigurations service method.</param>
         /// 
@@ -4048,12 +4214,21 @@ namespace Amazon.IoTWireless
         /// The input did not meet the specified constraints.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListPositionConfigurations">REST API Reference for ListPositionConfigurations Operation</seealso>
+        [Obsolete("This operation is no longer supported.")]
         ListPositionConfigurationsResponse ListPositionConfigurations(ListPositionConfigurationsRequest request);
 
 
 
         /// <summary>
         /// List position configurations for a given resource, such as positioning solvers.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// This action is no longer supported. Calls to retrieve position information should
+        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html">GetResourcePosition</a>
+        /// API operation instead.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPositionConfigurations service method.</param>
         /// <param name="cancellationToken">
@@ -4074,6 +4249,7 @@ namespace Amazon.IoTWireless
         /// The input did not meet the specified constraints.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListPositionConfigurations">REST API Reference for ListPositionConfigurations Operation</seealso>
+        [Obsolete("This operation is no longer supported.")]
         Task<ListPositionConfigurationsResponse> ListPositionConfigurationsAsync(ListPositionConfigurationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4407,6 +4583,14 @@ namespace Amazon.IoTWireless
 
         /// <summary>
         /// Put position configuration for a given resource.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// This action is no longer supported. Calls to update the position configuration should
+        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateResourcePosition.html">UpdateResourcePosition</a>
+        /// API operation instead.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutPositionConfiguration service method.</param>
         /// 
@@ -4427,12 +4611,21 @@ namespace Amazon.IoTWireless
         /// The input did not meet the specified constraints.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/PutPositionConfiguration">REST API Reference for PutPositionConfiguration Operation</seealso>
+        [Obsolete("This operation is no longer supported.")]
         PutPositionConfigurationResponse PutPositionConfiguration(PutPositionConfigurationRequest request);
 
 
 
         /// <summary>
         /// Put position configuration for a given resource.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// This action is no longer supported. Calls to update the position configuration should
+        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateResourcePosition.html">UpdateResourcePosition</a>
+        /// API operation instead.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutPositionConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -4456,6 +4649,7 @@ namespace Amazon.IoTWireless
         /// The input did not meet the specified constraints.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/PutPositionConfiguration">REST API Reference for PutPositionConfiguration Operation</seealso>
+        [Obsolete("This operation is no longer supported.")]
         Task<PutPositionConfigurationResponse> PutPositionConfigurationAsync(PutPositionConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5597,6 +5791,14 @@ namespace Amazon.IoTWireless
 
         /// <summary>
         /// Update the position information of a resource.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// This action is no longer supported. Calls to update the position information should
+        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateResourcePosition.html">UpdateResourcePosition</a>
+        /// API operation instead.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePosition service method.</param>
         /// 
@@ -5617,12 +5819,21 @@ namespace Amazon.IoTWireless
         /// The input did not meet the specified constraints.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdatePosition">REST API Reference for UpdatePosition Operation</seealso>
+        [Obsolete("This operation is no longer supported.")]
         UpdatePositionResponse UpdatePosition(UpdatePositionRequest request);
 
 
 
         /// <summary>
         /// Update the position information of a resource.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// This action is no longer supported. Calls to update the position information should
+        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateResourcePosition.html">UpdateResourcePosition</a>
+        /// API operation instead.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePosition service method.</param>
         /// <param name="cancellationToken">
@@ -5646,6 +5857,7 @@ namespace Amazon.IoTWireless
         /// The input did not meet the specified constraints.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdatePosition">REST API Reference for UpdatePosition Operation</seealso>
+        [Obsolete("This operation is no longer supported.")]
         Task<UpdatePositionResponse> UpdatePositionAsync(UpdatePositionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5711,6 +5923,68 @@ namespace Amazon.IoTWireless
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateResourceEventConfiguration">REST API Reference for UpdateResourceEventConfiguration Operation</seealso>
         Task<UpdateResourceEventConfigurationResponse> UpdateResourceEventConfigurationAsync(UpdateResourceEventConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateResourcePosition
+
+
+        /// <summary>
+        /// Update the position information of a given wireless device or a wireless gateway resource.
+        /// The postion coordinates are based on the <a href="https://gisgeography.com/wgs84-world-geodetic-system/">
+        /// World Geodetic System (WGS84)</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResourcePosition service method.</param>
+        /// 
+        /// <returns>The response from the UpdateResourcePosition service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateResourcePosition">REST API Reference for UpdateResourcePosition Operation</seealso>
+        UpdateResourcePositionResponse UpdateResourcePosition(UpdateResourcePositionRequest request);
+
+
+
+        /// <summary>
+        /// Update the position information of a given wireless device or a wireless gateway resource.
+        /// The postion coordinates are based on the <a href="https://gisgeography.com/wgs84-world-geodetic-system/">
+        /// World Geodetic System (WGS84)</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResourcePosition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateResourcePosition service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateResourcePosition">REST API Reference for UpdateResourcePosition Operation</seealso>
+        Task<UpdateResourcePositionResponse> UpdateResourcePositionAsync(UpdateResourcePositionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

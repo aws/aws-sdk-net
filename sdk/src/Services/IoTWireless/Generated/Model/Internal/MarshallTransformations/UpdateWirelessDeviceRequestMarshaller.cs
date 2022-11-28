@@ -97,6 +97,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetPositioning())
+                {
+                    context.Writer.WritePropertyName("Positioning");
+                    context.Writer.Write(publicRequest.Positioning);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

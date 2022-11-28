@@ -33,10 +33,29 @@ namespace Amazon.IoTWireless.Model
     /// </summary>
     public partial class FPorts
     {
+        private List<ApplicationConfig> _applications = new List<ApplicationConfig>();
         private int? _clockSync;
         private int? _fuota;
         private int? _multicast;
         private Positioning _positioning;
+
+        /// <summary>
+        /// Gets and sets the property Applications. 
+        /// <para>
+        /// Optional LoRaWAN application information, which can be used for geolocation.
+        /// </para>
+        /// </summary>
+        public List<ApplicationConfig> Applications
+        {
+            get { return this._applications; }
+            set { this._applications = value; }
+        }
+
+        // Check to see if Applications property is set
+        internal bool IsSetApplications()
+        {
+            return this._applications != null && this._applications.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property ClockSync.

@@ -45,6 +45,22 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateFPorts requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetApplications())
+            {
+                context.Writer.WritePropertyName("Applications");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectApplicationsListValue in requestObject.Applications)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ApplicationConfigMarshaller.Instance;
+                    marshaller.Marshall(requestObjectApplicationsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetPositioning())
             {
                 context.Writer.WritePropertyName("Positioning");

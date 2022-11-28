@@ -31,7 +31,16 @@ namespace Amazon.IoTWireless.Model
     /// <summary>
     /// Container for the parameters to the PutPositionConfiguration operation.
     /// Put position configuration for a given resource.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// This action is no longer supported. Calls to update the position configuration should
+    /// use the <a href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateResourcePosition.html">UpdateResourcePosition</a>
+    /// API operation instead.
+    /// </para>
+    ///  </important>
     /// </summary>
+    [Obsolete("This operation is no longer supported.")]
     public partial class PutPositionConfigurationRequest : AmazonIoTWirelessRequest
     {
         private string _destination;
